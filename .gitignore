@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Experiment outputs (keep specs/code, ignore generated artifacts)
+runs/
+outputs/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+wandb/
+logs/
+*.log
+
+# Data (regenerable synthetic data shouldn't be committed)
+data/
+*.npy
+*.npz
+
+# Plots / generated figures (regenerable)
+figures/
+*.png
+*.pdf
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
