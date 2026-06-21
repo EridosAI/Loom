@@ -8,7 +8,9 @@ signal being **entangled** with content (α→1).* A pass *licenses* proceeding 
 Stage-0 MVP with order-as-content rather than order-as-index; it does **not** validate the
 full claim under co-developing encoders/pooling/drift (that's the MVP). Full design and
 pre-registered failure conditions: [`SPEC.md`](SPEC.md); measured outcomes:
-[`RESULTS.md`](RESULTS.md).
+[`RESULTS.md`](RESULTS.md) (single-seed core gate) and [`RESULTS_stacked.md`](RESULTS_stacked.md)
+(the faithful **high-σ ∧ high-α** corner + multi-seed verification, via
+[`stacked_corner.py`](stacked_corner.py)).
 
 This is the bridge rung between **exp02** (order-as-*index*, the explicit position index
 was the unvalidated crutch) and the MVP (order-as-content, full loop). exp02's crutch is

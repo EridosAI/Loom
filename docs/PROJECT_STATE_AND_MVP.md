@@ -191,12 +191,23 @@ axes — representation and time.
 
 ## 6. Order, segmentation, replay **[mixed]**
 
-**Order — order-as-content, not order-as-operation [SETTLED].** The mechanism never
-*steps through* time. Order lives *in* the stored/evoked structure as content (via
-wave-relative position), and the whole thing completes from a partial cue at once. The
+**Order — order-as-content, not order-as-operation [SETTLED; isolation-confirmed].** The
+mechanism never *steps through* time. Order lives *in* the stored/evoked structure as content
+(via wave-relative position), and the whole thing completes from a partial cue at once. The
 discriminator: **random access to an ordered whole = sideways (correct); sequential access
 only = forward predictor (drift).** You must be able to cue from the *end* of a practised
 sequence and recover its *beginning*.
+
+> **Isolation evidence — exp03 PASS (falsification gate).** `experiments/03_order_as_content`
+> confirms this *in isolation*: random-access cue-end→recover-begin survives a shuffled bundle
+> set (no array axis), a drifting carrier with σ>0 (no clean coordinate), and entanglement of
+> position into the content coordinates (α→1) — verified at the **stacked faithful corner
+> (high-σ ∧ high-α)** across seeds, with an independent probe establishing the order was
+> extractable there (so a hypothetical operator collapse would have been a real failure, not a
+> data ceiling). Lineage: exp02 showed the property under an explicit position *index*; exp03
+> removes that crutch (order-as-content). **Scope:** this licenses building order-as-content
+> into the Stage-0 MVP; it does *not* validate it under co-developing encoders + pooling +
+> convergence-driven drift — that remains the MVP integration test. See `docs/progress_log.md`.
 
 **Non-causal masking [SETTLED].** PAM learns by masking *interior* spans and reconstructing
 from *both* sides. Causal masking (past→future only) would make PAM a forward predictor.

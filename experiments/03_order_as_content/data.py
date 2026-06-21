@@ -214,3 +214,26 @@ def linear_separability_r2(fam, cb, sigma: float, alpha: float, *, n_draw: int =
     ss_res = (resid ** 2).sum()
     ss_tot = ((dflat - dflat.mean()) ** 2).sum()
     return (1.0 - ss_res / ss_tot).item()
+
+
+def ols_order_recovery(fam, cb, sigma: float, alpha: float, *, n_train: int = 200,
+                       n_eval: int = 200, seed: int = 7) -> dict:
+    """A FIXED, non-learned (closed-form OLS) ceiling probe, independent of the operator.
+    Fit a linear read of the drift from the mixture content on a train MC, then on a fresh
+    eval MC report begin=argmin of the OLS-predicted drift vs the oracle. If even this weak
+    fixed probe recovers order ~ the oracle, the order is extractable at this (sigma,alpha)
+    cell -> an operator collapse there is a real F4 failure, not a data ceiling."""
+    g = torch.Generator().manual_seed(seed)
+    Xtr = fam.X.repeat(n_train, 1)
+    dtr = make_drift(fam.K * n_train, fam.L, sigma, g)
+    Ctr = inject(cb.E[Xtr], dtr, alpha, cb).reshape(-1, cb.dc)
+    A = torch.cat([Ctr, torch.ones(Ctr.shape[0], 1)], dim=1)
+    w = torch.linalg.lstsq(A, dtr.reshape(-1, 1)).solution            # (dc+1, 1)
+    Xte = fam.X.repeat(n_eval, 1)
+    dte = make_drift(fam.K * n_eval, fam.L, sigma, torch.Generator().manual_seed(seed + 1))
+    Cte = inject(cb.E[Xte], dte, alpha, cb)
+    pred = (Cte @ w[:-1] + w[-1]).squeeze(-1)                         # (B, L)
+    return dict(
+        probe_begin_is_argmin=(pred.argmin(1) == 0).float().mean().item(),
+        oracle_begin_is_argmin=(dte.argmin(1) == 0).float().mean().item(),
+    )
