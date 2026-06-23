@@ -83,7 +83,127 @@ deployed corner = **high-σ ∧ high-α**.
 
 ---
 
-### Next
+## [2026-06-23] Stage-0 build-blockers resolved in design; initialisation closed
 
-Initialisation (the bootstrap-from-newborn / minimum pre-existing dense structure) is
-downstream of this result — not started.
+Design session. All four §11 build-blockers are now **resolved in design** — the Stage-0
+MVP is fully specifiable. Validation of these resolutions is the **MVP run itself** (they
+are loop-level claims, not isolation-testable per §9). No code this session except exp03
+(logged separately).
+
+**Blocker — component count [RESOLVED: latent OUT for Stage 0].** PAM runs masked completion
+directly on **concatenated cortex-space**; the distinct PAM latent is deferred to Stage 1+.
+Resolved *against the success signals*, not by picking the simplest build: gap-3 (convergence
+error shaping vision) does **not** need a distinct latent — masking a slot and evoking it from
+the sibling, then backprop through concat (identity, differentiable) into the encoders, carries
+joint-association pressure regardless. What the latent buys (char-10 modality-blindness, a
+compressible associative space) are **not** Stage-0 signals; concatenation already preserves
+**own-space** (the harder half of char 10) and defers only blindness. Second reason: the codec
+is a *second* co-developing matched pair (encode↔decode round-trip) whose decode job is
+store-compatibility — no store at Stage 0, and it doubles the attribution surface. Honest
+deferral of modality-blindness, **not** a char-10 violation.
+
+**Blocker — PAM per-wave loss [RESOLVED in shape].** (wave, slot) cells over a **W ≥ 3** window
+of concatenated bundles. Each wave: slide the window one, draw a mask from the **full cue-shape
+distribution** {single-slot, whole-wave, interior-both-sides, one-sided-edge, sparse, near-all},
+run **one** completion pass, take **one** gradient step — distribution sampled across **time**
+(this is what holds it online / phase-free). Target = the **actual emitted content** of the
+masked cells (the encoders' own outputs; self-supervised) = evoked-vs-actual = **convergence
+error**. Loss = **embedding-distance on masked cells only**, distance-based (exp01 readout
+constraint), no free linear head. Reconciliations: "in latent" → "in concatenated cortex-space";
+"non-causal" is **vacuous within a wave** (no internal order, char 1), so it **forces W ≥ 3**
+across waves — within-wave completion (char 2) is the single-wave sub-case, across-wave
+non-causal (char 3) is the point, and **Stage 0 is the PAM-setting test exp02 deferred**. The
+operator's internal form stays **open** (denoising pass / attractor settling / PC inference) —
+must not become a masked transformer; exp02's at-once check evaluates a **single** completion
+act. Cue-shape sampling (exp02 rule #3) is mandatory or it learns gap-filling, not random access.
+
+**Fork inside the loss — collapse-control / stop-grad [RESOLVED: no stop-grad; anchor +
+SIGReg-style spread].** Standard collapse-control stop-grads the target; but gap-3's
+differentiation pressure *is* the **target-side gradient on the masked vision slot** (coarse
+"ball" emitted as target, convergence-vs-evoked push, contradictory across red/green instances =
+§4 intra-group disagreement → unpool consumption) — so target-stop-grad severs exactly the path
+Stage 0 exists to observe. Resolution decomposes collapse-control by **reference-and-relaxation
+(structural / kinetic)**: the **anchor** (fixed pretrained word encoder) guarantees *target
+diversity* on word-as-target maskings → removes collapse as a global optimum (**structural**;
+replaces stop-grad's non-moving-target role **without cutting gradient**); a **SIGReg-style spread
+constraint on vision** keeps the vision marginal diverse on vision-as-target maskings and repels
+early collapse (**kinetic**) — **without** stop-grad, so the gap-3 target-side gradient survives.
+Net: **drop stop-grad, keep an active spread term.** SIGReg verified this session — it is from
+**LeJEPA (Balestriero & LeCun, Nov 2025)**, *not* V-JEPA 2 (prior summary mis-attributed it);
+characteristic-function matching toward an isotropic Gaussian over random 1D projections; no
+stop-grad / no EMA. "Target diversity ⇒ no collapsed global optimum" is a 2026 VJEPA-variant
+theorem. **Caveat:** LeJEPA + follow-ons are Nov 2025–Mar 2026; treat quantitative claims as
+provisional; the *class* (distributional spread, no stop-grad) is multiply reproduced.
+**Pre-registered asymmetric falsification (= success-signal-4):** degrading the anchor must
+collapse the **word-as-target half specifically** — collapses-everything (spread wasn't holding
+the vision half) or collapses-nothing (anchor wasn't holding the word half) both **falsify the
+decomposition**. **Attribution watch:** SIGReg (→ isotropic spread) and pooling differentiation
+(→ tight clusters) act on the same vision outputs; if differentiation underperforms, check whether
+they share a vector and **interpose a projector** (SIGReg on a throwaway projected head, pooling
+on the emitted backbone summary).
+
+**Blocker — order representation [RESOLVED: order-as-content; VALIDATED in isolation, exp03].**
+Order-as-index (oracle external label) vs order-as-content (internal σ>0 OU-drift signal) are
+different *suppliers* of position, **not** two strengths — index→content is a mechanism swap,
+disqualified as a stand-in. Order-as-content adopted: position carried by **genuine OU drift**,
+σ pinned **low-but-nonzero** (build-full/pin/release on the drift *dynamics*). Carrier
+**dedicated-but-drifting** for rung 1, with an **entanglement fraction α** as a continuous knob
+(`x_i(α) = [c_i + α·P(d_i) ; (1−α)·d_i]`, the *same* OU source relocated) — so **α=0 (separable)**
+and **σ=0 (clean coordinate)** are both degenerate corners to **sweep past, not pin**. Two
+orthogonal easy-outs (σ, α); faithful corner = **high-σ ∧ high-α**. **exp03 PASSED**, then the
+stacked-corner re-run also PASSED: all F1–F4 + controls; the faithful corner (σ=0.8, α=1)
+verified **directly** — operator begin-recon 0.821, independent MLP probe 0.848 ≈ oracle 0.847,
+fixed OLS probe 0.681 < oracle (the tell of genuine entanglement); 3-seed. The rig caught its own
+**vacuous F4 near-pass** (drift injected on a content-free axis, R²=0.994 → re-injected on the
+codebook's top PC, R²=0.80). Licenses Stage 0 with order-as-content (entangled, σ>0); does **not**
+validate it under co-developing encoders + pooling + convergence-drift (MVP). **Residue:** the
+operator reads order as a within-window comparator with **residual scale-sensitivity** — deployed
+drift has no controlled scale, so the MVP must re-examine this.
+
+**Blocker — initialisation [RESOLVED].** The t=0 *stable-vs-smooth* fork dissolved: vision starts
+**near-fully-pooled but CONVERGED at that depth** — a functioning coarse vision system that
+reliably emits the same embedding for the same blob. This gives PAM a **stable coarse target**
+(stable because *converged*, not frozen — no char-8 crutch; the space still drifts as it unpools)
+with **no cold-start wobble** (the coarse system is done settling before PAM begins associating).
+Already-fixed pieces: word encoder pretrained-stable (the anchor); drift carrier starts its OU at
+σ>0 (not plastic, no cold-start); gain ramps from 0; PAM cold-starts off structured inputs (needs
+only sane scale — its reference is the cortex spaces, not its own seed).
+
+*Gain ramp [RESOLVED]:* build gain **confidence-gatable AND capacity-boundable** in structure;
+**pin both OFF for run 1** (pure fixed ramp) and **sweep the rate** (deliverable = the response
+curve, not a tuned value); the capacity bound enters at **release**. The **inert-error correction**
+(this session): unresolved contrast is **not** inert — its gradient flows and lands on the
+**coarse** weights it can reach = **corruption pressure on the seeded coarse target**. So the safe
+condition is a property of **gain** (how hard error presses vs *current capacity*), not of the
+curriculum. Confidence-gating *raises* gain exactly when it's dangerous (PAM confident while
+vision has no capacity); **capacity-gating** holds it down → the **safer release gate**. The bound
+is left out of run 1 because (a) it is **moot by construction** (slow ramp + first-order unpooling
+⇒ gain is small early), (b) it adds coupling that breaks clean attribution, (c) the readout
+catches the mode anyway.
+
+*New Stage-0 component — stimulation curriculum (external loop).* Stage 0's impoverished
+environment (single scene, fixed vocab) needs a hand-supplied **parent**: it reads system
+confidence and adds the next **contrast** word when a vision/word pairing goes confident.
+**External, not a PAM mechanism** (preserves no-external-objective). **Contrast-not-rename rule:**
+a new word with no contrasting pair present supplies a *consistent* gradient = a **rename**, no
+split; differentiation needs the **contrast present in experience** (cricket-ball *vs*
+not-cricket-ball, both labeled, gradients point apart). This contrast requirement is the **external
+face** of the cue-shape / gap-3 mechanism already in the loss. The deployed system doesn't build
+this — its rich environment + parent does it naturally.
+
+*Three rates, held separate* (they want to blur): **(1) unpool clock** — capacity opening, the
+only *deployed* rate (maturational); **(2) gain ramp** — how hard evocation presses (pinned-swept
+run 1, capacity-bound at release; attribution-control); **(3) curriculum rate** — when the parent
+adds contrast (confidence-triggered; environment).
+
+*Success-signal-2 split readout.* Same observable (vision differentiating a visually-salient vs a
+word-relevant axis), two readings split by **whether the word is present yet**: **persistent**
+salience with the word present and contrast available = **gap-3 FAIL** (evocation shaped by the
+wrong teacher); **transient** salience while the word is still pending = **NORMAL**, and the
+**curriculum's signal to advance the word side** (a child asking about something it has no word for
+is not a fault). The naive reading (salience = gap-3 broken) would throw false failures across
+run 1.
+
+**Next:** write the Stage-0 MVP build spec (in a fresh chat, opening from the updated state doc),
+with the §11 success signals — including the split readout above and the asymmetric anchor
+falsification — pre-registered before the run, exp03-style.

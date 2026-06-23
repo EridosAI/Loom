@@ -4,7 +4,14 @@
 it stands (settled / proposed / deferred), the open gaps, and a suggested MVP. Written to
 be self-contained — the base for a new chat to develop the MVP. Companion: `HANDOFF.md`
 (how to work), `substrate_description.md` (substrate detail), the twelve-characteristic
-spec (stable), the mechanism map (possibility space).
+spec (stable), the mechanism map (possibility space), `progress_log.md` (append-only
+history of what happened when).
+
+> **Validation status (see §9):** three standalone mechanism rigs are now run and green —
+> the pooling substrate (real risk, validated), non-causal masked completion (lower risk,
+> toy-validated), and order-as-content (exp03 — the novel claim, isolation-confirmed). They
+> produced three forward design rules that refine the sections below; those rules are marked
+> inline and consolidated in §9. The four §11 Stage-0 build-blockers are now resolved in design.
 
 > **Status legend:** **[SETTLED]** decided and stable · **[PROPOSED]** this-lineage
 > leading bet, not yet pressure-tested, do not inherit as settled · **[DEFERRED]** real
@@ -46,6 +53,11 @@ changed.)
 - **The word cortex is the stability anchor** ("the parent"): a pretrained, near-trivial,
   high-accuracy encoder providing clarity and certainty for the rest of the system to
   co-develop against. Recedes in influence as cross-cortical structure takes over.
+  - The anchor is also the **structural half of collapse-control** (see §11): being a *fixed*
+    target, it guarantees target-diversity on word-as-target maskings and so removes
+    representational collapse as a global optimum **without** any stop-gradient — the
+    non-moving-target role that stop-grad usually plays, supplied by the parent being fixed.
+    (Kinetic half = a SIGReg-style spread constraint on vision; §11.)
 
 ### 2.2 PAM (Predictive Associative Memory) — the central operation **[SETTLED in shape]**
 - The sole **associator**. Built on the pooling substrate (§4). Operates in its **own
@@ -111,10 +123,11 @@ memory-deep = divergent.
 
 ---
 
-## 4. The substrate — pooling-state capacity **[SETTLED]**
+## 4. The substrate — pooling-state capacity **[SETTLED · empirically validated, exp01]**
 
 (Full detail in `substrate_description.md`; essentials here so this doc stands alone. This
-is the first deliberate *mechanism* commitment.)
+is the first deliberate *mechanism* commitment. **Validated in isolation — Experiment 01
+(§9); the genuinely uncertain bet, and it held.**)
 
 **Soft-tied weight pooling.** Full parameter budget allocated at init; nothing is ever
 added or removed. "Capacity" means *resolution*, not parameter count. A group of weights
@@ -142,17 +155,23 @@ swap is what makes it the project's, not an import.
   predictable). Capacity opens *first*; perception of the finer distinction *follows* —
   the system can't detect "I need a distinction I can't yet represent," so growth leads and
   error consumes. (The red-ball realisation lags the capacity, as in real development.)
+  *Design rule from exp01 (§9): when λ becomes adaptive post-v1, it must scale with local
+  signal strength to hold the unpool break-through threshold constant — otherwise a strong
+  differentiation gradient breaks through the tie and the clock stops being the consistent
+  pacer.*
 - **Differentiation of freed members — intra-group gradient disagreement.** Once unpooled,
   members receive their own gradients; if those point apart, experience differentiates them
   (red vs green). This is the *consumption* signal — what freed capacity becomes — **not**
   the unpool trigger.
 - **Re-pool (capacity reclaimed) — reversible re-tightening.** Trigger: **sustained low
-  intra-group disagreement AND sustained low recent use.** Both required (low disagreement
-  alone would re-pool successfully-learned distinctions; use distinguishes
-  mastered-and-active from unused). **Reversible tie, not migration** — freed resolution
-  stays within its own branch. **Fast-out / slow-in hysteresis** (prevents thrash, protects
-  dormant-but-real distinctions). **Graceful** — sheds detail, keeps coarse value; worst
-  case is coarsening, never erasure.
+  pull-apart force AND sustained low recent use.** Both required (low force alone would
+  re-pool successfully-learned distinctions; use distinguishes mastered-and-active from
+  unused). *Trigger is force **magnitude**, not gradient cosine — exp01 (§9): cosine is
+  ill-defined as gradients vanish; cosine is a useful diagnostic of whether members want
+  to differentiate, but magnitude is what drives re-pool.* **Reversible tie, not
+  migration** — freed resolution stays within its own branch. **Fast-out / slow-in
+  hysteresis** (prevents thrash, protects dormant-but-real distinctions). **Graceful** —
+  sheds detail, keeps coarse value; worst case is coarsening, never erasure.
 
 **Cross-compat (this is the gap-3 fusion):** the identical pooling law runs in the
 **encoder** and in **PAM**, each fed by its native error (JEPA predictor error in the
@@ -177,7 +196,7 @@ mechanism map confirmed a substrate-independent decay knob is unattested; we sto
 looking for it):
 
 1. **Pooling** — sheds *representation* detail (resolution). Re-pool under sustained low
-   disagreement + low use. Coarsens, never erases.
+   pull-apart force + low use (force magnitude, per exp01 §9). Coarsens, never erases.
 2. **Drift** — representational drift of the space, on a much slower timescale; the **only
    true eraser** (carries a region to eventual inaccessibility).
 3. **Downsampling / store eviction** — sheds *temporal* detail and bounds store size.
@@ -191,27 +210,28 @@ axes — representation and time.
 
 ## 6. Order, segmentation, replay **[mixed]**
 
-**Order — order-as-content, not order-as-operation [SETTLED; isolation-confirmed].** The
-mechanism never *steps through* time. Order lives *in* the stored/evoked structure as content
-(via wave-relative position), and the whole thing completes from a partial cue at once. The
-discriminator: **random access to an ordered whole = sideways (correct); sequential access
+**Order — order-as-content, not order-as-operation [SETTLED; isolation-confirmed (exp03)].**
+The mechanism never *steps through* time. Order lives *in* the stored/evoked structure as
+content (via wave-relative position), and the whole thing completes from a partial cue at once.
+The discriminator: **random access to an ordered whole = sideways (correct); sequential access
 only = forward predictor (drift).** You must be able to cue from the *end* of a practised
 sequence and recover its *beginning*.
 
-> **Isolation evidence — exp03 PASS (falsification gate).** `experiments/03_order_as_content`
-> confirms this *in isolation*: random-access cue-end→recover-begin survives a shuffled bundle
-> set (no array axis), a drifting carrier with σ>0 (no clean coordinate), and entanglement of
-> position into the content coordinates (α→1) — verified at the **stacked faithful corner
-> (high-σ ∧ high-α)** across seeds, with an independent probe establishing the order was
-> extractable there (so a hypothetical operator collapse would have been a real failure, not a
-> data ceiling). Lineage: exp02 showed the property under an explicit position *index*; exp03
-> removes that crutch (order-as-content). **Scope:** this licenses building order-as-content
-> into the Stage-0 MVP; it does *not* validate it under co-developing encoders + pooling +
-> convergence-driven drift — that remains the MVP integration test. See `docs/progress_log.md`.
+> exp03 removed exp02's explicit-index crutch and validated order-as-content **in isolation**:
+> position carried by genuine σ>0 OU drift, **entangled** with content (α=1) and **shuffled**,
+> still supports random access (cue-end → recover-begin) at the faithful **high-σ ∧ high-α**
+> corner. **Scope:** confirmed with *fixed generators and a single completion operator*; **not**
+> validated under co-developing encoders + pooling + convergence-drift (that is the MVP). Residue:
+> the operator is a within-window comparator with **residual scale-sensitivity** — the deployed
+> drift has no controlled scale, so the MVP must re-examine it. (Detail: §9, `progress_log.md`.)
 
-**Non-causal masking [SETTLED].** PAM learns by masking *interior* spans and reconstructing
-from *both* sides. Causal masking (past→future only) would make PAM a forward predictor.
-This is the single most important discipline in the recall/learning machinery.
+**Non-causal masking [SETTLED · toy-validated, exp02].** PAM learns by masking *interior*
+spans and reconstructing from *both* sides. Causal masking (past→future only) would make
+PAM a forward predictor. This is the single most important discipline in the recall/learning
+machinery. **Validated in the toy setting — Experiment 02 (§9): non-causal recovers the
+beginning from the end in one pass (1.000); the causal control cannot, by construction
+(0.062 = chance). Caveat: toy setting uses explicit position indices, so this validates the
+masked-LM property, NOT order-as-content (which waits for the PAM-setting test).**
 
 **Within-span vs across-span [SETTLED — critical].** Within a stored span: whole-at-once
 surfacing (sideways, no stepping). Across spans: tracing (char 4, confidence-gated,
@@ -281,14 +301,14 @@ introspective "memory is less vivid unless meditative") *and* the creativity kno
 
 ---
 
-## 8. Logged from the latest mechanism map (confirmations + three additions)
+## 8. Logged from the latest mechanism map (confirmations + four additions)
 
 The map mostly **confirms** rather than redirects. Trust its tension map and `[CONFIRMED]`
 items (the 6+8+10 triad as a real gap; the two-hub split; the major tensions). Treat its
 *recommendations* and staged build with caution — they lean conservative (lead with a
 shared space, defer drift = trade away the novel part first).
 
-Three additions worth carrying:
+Four additions worth carrying:
 1. **Resonator networks (Frady, Kent & Olshausen 2020)** — the named mechanism for
    recovering each cortex's slice from one superposed bundle. Fills the previously-blank
    "how does a cortex extract its slice from the broadcast" step (char-10 consumption).
@@ -301,6 +321,15 @@ Three additions worth carrying:
    choice once there are >2 cortices under drift.
 3. **Silent-swap / Dreamer warning** — the canonical drift for tracing: bolting a
    value/planner model on to extend horizon. Named tripwire (see HANDOFF live-vector 3).
+4. **SIGReg / LeJEPA (Balestriero & LeCun, Nov 2025)** — distributional-spread collapse-control
+   (characteristic-function matching to an isotropic Gaussian over random projections) that uses
+   **no stop-gradient and no EMA**. This is the collapse-control class adopted for the vision
+   encoder (§11), chosen *because* it doesn't stop-grad the target and so preserves the gap-3
+   gradient path. **Corrected provenance:** it is LeJEPA's, not V-JEPA 2's; and it is distinct
+   from the registers line (Darcet et al.). "Target diversity ⇒ no collapsed global optimum" is a
+   2026 VJEPA-variant theorem, the formal backing for the word-anchor's structural collapse role.
+   Caveat: Nov 2025–Mar 2026 sources, quantitative claims provisional; the *class* is multiply
+   reproduced.
 
 Plus a **new foundational gap** the map surfaces: **asynchronous cortex rates vs a fixed
 central wave** — no surveyed mechanism sets wave duration relative to per-channel rates
@@ -309,21 +338,98 @@ the start; it raises the priority of the wave↔rate interface for a future sess
 
 ---
 
-## 9. Open questions / gaps (prioritised)
+## 9. Empirical validation & findings to date
 
-**Block even a minimal build:**
-- **Initialisation (Fork A, never closed).** The *minimum dense structure* PAM and the
-  visual encoder start with so the loop's error is meaningful from wave 1. Word-encoder is
-  pretrained-stable; visual seed is "temporally-smooth summaries"; convergence gain ramps
-  from 0 — but the concrete t=0 state isn't pinned.
-- **PAM's masked-completion objective, concretely.** The *shape* is set (non-causal masked
-  completion over the bundle stream, online); the *actual loss* — what's masked, what's
-  predicted, the per-wave gradient — isn't written.
-- **v0 component count.** Whether v0 runs with PAM's distinct latent (full encode/decode)
-  or even simpler (PAM operating directly on concatenated cortex output, distinct latent
-  added when it earns its place).
+Three standalone mechanism rigs run — all green, all pushed to the repo. Detailed results in
+`progress_log.md` and each experiment's `RESULTS.md`. These move three design bets from
+"designed" to "validated in isolation," and surfaced three forward design rules (marked
+inline above) plus one readout constraint.
+
+**Experiment 01 — Pooling substrate. [VALIDATED — real risk].** Soft-tied weight pooling
+genuinely opens (unpool) and reclaims (re-pool) resolution under local signals; robust across
+the full `r_fine/σ` sweep, degrading only as the task itself becomes unlearnable, not as the
+substrate fails. Gradual unpool pays no accuracy cost vs always-unpooled (0.96 vs 0.95);
+always-pooled caps near chance for the fine distinction (0.30). All four claims passed
+pre-registered conditions. The rig caught a validity bug in its own spec first (a free linear
+head leaks the fine distinction through pooled weights → switched to nearest-prototype
+readout). **This was the genuinely uncertain bet; it held.**
+
+**Experiment 02 — Non-causal masked completion. [VALIDATED in toy setting — lower risk].**
+Non-causal completion gives random-access fill-in (cue the end → reconstruct the beginning,
+single pass = 1.000); the causal/forward control fails by construction (0.062 = chance). The
+random-access sweep (causal whole-recon decaying 1.0→0.21 as the cue moves rightward,
+non-causal flat-high) is the clearest anti-drift artifact to date. **Confirms "sideways, not
+forward" — but only the *toy* property under explicit position indices.** The at-risk version
+(order-as-content in a learned latent over bundles, under drift) is **not** validated; it
+waits for the PAM-setting test.
+
+**Experiment 03 — Order-as-content. [VALIDATED in isolation — the novel claim].** Removed
+exp02's explicit-index crutch and tested whether position carried by a **drifting, shuffled,
+entangled** signal still supports random access. **PASS** on all pre-registered conditions
+(F1 array-axis, F2 index-in-costume, F3 not-at-once, F4 separability-dependence) plus Control A
+and a carrier-ablation gate. The **faithful corner** (high-σ ∧ high-α — the regime closest to
+the deployed mechanism) was verified **directly** by a stacked-corner re-run: at σ=0.8, α=1,
+operator begin-recon 0.821, an independent (weaker, fixed) MLP probe 0.848 ≈ oracle 0.847, and a
+fixed OLS probe 0.681 < oracle — the OLS-below-oracle gap is the tell that the corner is
+**genuinely entangled** (a pure linear read is confounded) while the operator reaches the
+disentangling ceiling. 3-seed. The rig **caught its own vacuous F4 near-pass** (drift injected on
+a content-free axis → R²=0.994 → re-injected on the codebook's top PC → R²=0.80), a concrete
+instance of the "green for the wrong reason" risk caught by adversarial review. **Licenses**
+proceeding to Stage 0 with order-as-content; **does not** validate it in the loop.
+
+**Three forward design rules these produced (carry into the build):**
+1. **Re-pool trigger = pull-apart force magnitude, NOT gradient cosine** (exp01). Cosine is
+   ill-defined as gradients vanish; magnitude is well-defined and is what should drive
+   re-pool. Cosine remains a diagnostic. *(Already applied to §4/§5.)*
+2. **Adaptive-λ scales with local signal strength** (exp01). Fixed λ lets a strong
+   differentiation gradient break through the tie, drifting the clock-vs-error balance with
+   signal magnitude. Post-v1 adaptive λ must scale with signal strength to hold the break-
+   through threshold constant, keeping the clock the consistent pacer. *(Applied to §4.)*
+3. **PAM's completion objective must sample the full cue-shape distribution** (exp02).
+   Masked completion trained only on dense, centered masking learns gap-*filling*, not random
+   access. Random access requires training on the full range of cue-shapes — sparse,
+   one-sided, endpoint-only — or recall lacks the property, discovered late. *(Constrains §10
+   blocker 2.)*
+
+**One readout constraint confirmed (exp01).** A free linear readout leaks fine distinctions
+through shared pooled weights, breaking the capacity-tracks-pooling property. Readouts must be
+distance/similarity-based (nearest-prototype) — which also matches the architecture's own
+commitment (concepts = regions completed by similarity, not linear boundaries). Bears on how
+PAM's readout and any cortex heads are built.
+
+**What this leaves:** all three *standalone-testable* mechanism bets are now tested;
+order-as-content is **isolation-confirmed** (exp03). The remaining load-bearing claims —
+gap-3 fusion, order-as-content **in the loop**, confidence-as-currency, the recall loop — are
+**loop-level only**: they are validated by the Stage-0 MVP (§11), not by another isolation rig.
+The §11 build-blockers are now resolved in design, so the next frontier is the first
+integration itself.
+
+---
+
+## 10. Open questions / gaps (prioritised)
+
+**Block even a minimal build:** *All three former Stage-0 build-blockers are now resolved in
+design — see §11. Briefly:*
+- **Initialisation [RESOLVED].** Vision starts **near-fully-pooled but converged at that depth**
+  (a working coarse encoder) → a stable coarse target for PAM with no cold-start, no stationarity
+  crutch. Word encoder pretrained; drift carrier starts at σ>0; gain ramps from 0.
+- **PAM's per-wave loss [RESOLVED in shape].** Non-causal masked completion over a **W≥3** window
+  of concatenated bundles; distance-based loss on masked cells only; **full cue-shape distribution**
+  sampled across time (the exp02 constraint); gradient into **both** encoders (no stop-grad). §11.
+- **Component count [RESOLVED: latent OUT].** PAM runs directly on **concatenated cortex output**
+  for Stage 0; distinct latent deferred to Stage 1+ (it buys only char-10 blindness + a codec, a
+  second co-dev pair with no store to serve). §11.
 
 **Build on the foundation (deferred, with triggers):**
+- **Cross-cortex completion from impoverished cues [DEFERRED].** Completion must be able to fill a
+  gap spanning multiple/all cortices from accumulated structure (weights + store), not from a
+  co-present cue slot — the same capability **char 11 (priming)** requires. Stage 0's clean-cue
+  environment brackets it, and **must not design it out**: the loss's full cue-shape sampling
+  (sparse / one-sided / near-all) keeps it structurally available. Two halves on different clocks —
+  **fill-from-weights** is incidentally live at Stage 0 (an all-masked two-cortex bundle has no
+  co-present slot, so it completes from weights or not at all); **fill-from-store** is Stage 1+.
+  Re-entry: when the store enters, or when the environment first produces impoverished bundles
+  (occlusion, missing channel).
 - **Wave↔cortex-rate aliasing** — what sets wave duration vs per-channel rates. Re-entry:
   when adding a cortex whose rate differs sharply (audio at 100–500× compression).
 - **Within-bundle variable confidence** (ball vs players in one frame) — **[DEFERRED]**,
@@ -341,7 +447,7 @@ the start; it raises the priority of the wave↔rate interface for a future sess
 
 ---
 
-## 10. Suggested MVP (Stage 0)
+## 11. Suggested MVP (Stage 0)
 
 **Goal:** the smallest system that runs the one operation end-to-end and lets the deferred
 questions become observable. Not the full architecture — a foundation the rest builds on.
@@ -357,29 +463,97 @@ questions become observable. Not the full architecture — a foundation the rest
 - **Single visual scene + word channel** — the environment where within-bundle variable
   confidence barely fires, so whole-bundle binding is correct rather than a stopgap.
 
-### The three decisions Stage 0 must make first (currently open — resolve in the build chat)
-1. **Initialisation / t=0 state.** The minimum dense structure for vision-encoder and PAM
-   such that wave-1 error is meaningful. (Fork A.)
-2. **PAM's per-wave loss.** Concretely: what is masked, what is predicted, what the gradient
-   is — as non-causal masked completion over the fused bundle, online, no train/run split.
-3. **v0 component count.** Distinct PAM latent (full encode/decode) from the start, or PAM
-   directly over concatenated cortex output with the latent added later. Decide consciously
-   — it sets how much is built first.
+### Stage-0 build decisions — RESOLVED
+
+All four former build-blockers are now **resolved in design** — the Stage-0 MVP is fully
+specifiable. Their **validation is the MVP run itself** (loop-level claims, not isolation-
+testable per §9); subsections below marked **[SETTLED in design; MVP-validated]** are fixed in
+design but only the loop can confirm them.
+
+> **1. Initialisation / t=0 [RESOLVED].** Vision encoder starts **near-fully-pooled but converged
+> at that depth** — a functioning coarse vision system (colours/blobs) that reliably emits the
+> same embedding for the same input. This is the *stable coarse target* PAM associates against:
+> stable because **converged**, not frozen (the space still drifts as it unpools — no char-8
+> crutch), and there is **no cold-start wobble** because the coarse system finishes settling
+> before PAM begins. Word encoder pretrained-stable; drift carrier starts its OU at σ>0; gain
+> ramps from 0; PAM cold-starts off structured inputs (needs only sane scale).
+>
+> **2. PAM's per-wave loss [RESOLVED in shape].** (wave, slot) cells over a **W≥3** window of
+> concatenated bundles. Each wave: slide one, draw a mask from the **full cue-shape distribution**
+> {single-slot, whole-wave, interior-both-sides, one-sided-edge, sparse, near-all}, one completion
+> pass, one gradient step — sampled **across time** (this is what makes it online / phase-free).
+> Target = the **actual emitted content** of masked cells (self-supervised) = convergence error.
+> Loss = **distance on masked cells only** (no free linear head). "Non-causal" is vacuous within a
+> wave (char 1) and therefore **forces W≥3** across waves; within-wave completion (char 2) is the
+> single-wave sub-case, across-wave (char 3) is the point — **Stage 0 is the PAM-setting test exp02
+> deferred**. Operator internal form stays **open** (not a masked transformer); evaluate a
+> **single** completion act (exp02 at-once).
+>
+> **3. Component count [RESOLVED: latent OUT].** PAM runs masked completion **directly on
+> concatenated cortex-space**; the distinct PAM latent is **deferred to Stage 1+**. gap-3 does not
+> need a latent (masking a slot and evoking from the sibling, backprop through concat into the
+> encoders, carries the joint-association pressure either way); concatenation already preserves
+> **own-space** and defers only blindness, which Stage 0 doesn't test; the codec would be a second
+> co-dev pair whose decode serves a store that doesn't exist yet. Honest deferral, not a violation.
+
+### Collapse-control [SETTLED in design; MVP-validated]
+
+**No stop-gradient.** Standard collapse-control stop-grads the target, but gap-3's differentiation
+pressure **is** the target-side gradient on the masked vision slot — stop-grad would sever the
+path Stage 0 observes. Decompose by reference-and-relaxation: **anchor (structural)** — the fixed
+word encoder guarantees target-diversity on word-as-target maskings, removing collapse as a global
+optimum without cutting gradient; **SIGReg-style spread on vision (kinetic)** — keeps the vision
+marginal diverse on vision-as-target maskings and repels early collapse, without stop-grad. Net:
+**drop stop-grad, keep an active spread term.** **Attribution watch:** spread (→ isotropic) and
+pooling differentiation (→ tight clusters) act on the same vision outputs — if differentiation
+underperforms, interpose a **projector** (spread on a throwaway head, pooling on the backbone
+summary). (SIGReg/LeJEPA: §8.)
+
+### Gain ramp [SETTLED in design; swept in run 1]
+
+Build gain **confidence-gatable AND capacity-boundable** in structure; **pin both OFF for run 1**
+(pure fixed ramp) and **sweep the rate** — the deliverable is the **response curve**, not a tuned
+value. Rationale: unresolved contrast is **not inert** — its gradient lands on the coarse weights
+= corruption pressure on the seeded coarse target — so the binding constraint is on **gain** (press
+vs current capacity), not the curriculum. **Capacity-gating** (not confidence-gating) is the safer
+**release** gate (confidence rises exactly when capacity is absent and the push is dangerous). Bound
+out of run 1 because it is moot by construction (slow ramp + first-order unpool), adds attribution-
+breaking coupling, and is caught by the readout anyway.
+
+### Stimulation curriculum — external loop [Stage-0 component]
+
+Stage 0's impoverished environment needs a hand-supplied **parent**: read system confidence, add
+the next **contrast** word when a vision/word pairing goes confident. **External, not a PAM
+mechanism** (preserves no-external-objective). **Contrast-not-rename:** a new word with no
+contrasting pair present = a consistent gradient = a rename, no split; differentiation needs the
+contrast present in experience (cricket-ball vs not-cricket-ball, both labeled). This is the
+external face of the cue-shape / gap-3 mechanism already in the loss.
+
+### Three rates — keep separate
+
+**(1) unpool clock** (capacity; the only deployed rate; maturational) · **(2) gain ramp** (how
+hard evocation presses; pinned-swept run 1, capacity-bound release; attribution-control) ·
+**(3) curriculum rate** (when the parent adds contrast; confidence-triggered; environment). They
+are different clocks with different owners; do not let them blur.
 
 ### What "working" looks like at Stage 0 (success signals)
-- The loop runs every wave with no train/run phase (char 7 holds in code, not just on
-  paper).
-- Convergence error meaningfully shapes the vision encoder (gap-3 fusion observable:
-  evocation pressure shows up as encoder differentiation).
-- Pooling visibly does *something* — a coarse association differentiating as capacity opens,
-  under a fixed maturation rate.
-- The word/parent anchor demonstrably stabilises co-development (removing/degrading it
-  destabilises, confirming the reference role).
+- **Char 7 holds in code** — the loop runs every wave with no train/run phase.
+- **gap-3 fusion observable**, read via the **split signal**: vision differentiating a
+  **word-relevant** axis = gap-3 working; vision differentiating a **visually-salient** axis with
+  the **word present and contrast available** = **gap-3 FAIL** (wrong teacher); the same salience
+  while the **word is still pending** = **normal**, and the **curriculum's cue to advance the word
+  side** (not a fault). The naive "salience = broken" reading throws false failures.
+- **Pooling visibly does something** — a coarse association differentiating as capacity opens
+  under the fixed maturation rate.
+- **Anchor stabilises co-development**, tested as the **asymmetric falsification**: degrading the
+  anchor must collapse the **word-as-target half specifically** — collapses-everything or
+  collapses-nothing both falsify the collapse-control decomposition. (This *is* the
+  collapse-control test; one experiment serves both.)
 
 ### What Stage 0 deliberately does NOT test
 Tracing, multi-step reach, the store and one-shot/rare-experience recall, segmentation,
 replay, vividness/creativity, within-bundle association, async cortex rates, motor, reward.
-Each has a re-entry trigger in §9. Resist building toward them — the point of Stage 0 is the
+Each has a re-entry trigger in §10. Resist building toward them — the point of Stage 0 is the
 foundation they require.
 
 ### The discipline to hold during the build (from HANDOFF)
