@@ -21,22 +21,27 @@ risk.
 
 ## What changed about the discipline (read carefully)
 
-The project has now crossed from *pure paradigm* into *first mechanism commitments* (the
-pooling substrate, PAM-as-JEPA, the encode/decode codec). This **changes where drift
-enters**:
+The project has moved through three stages, and the discipline shifts at each:
 
-- **Before:** drift looked like "stop staying at paradigm level, jump to architecture."
-  The discipline was "stay at paradigm, refuse mechanism."
-- **Now:** the mechanism is partly chosen. Drift no longer looks like picking an
-  architecture — it looks like **forward-prediction re-entering through the *details* of
-  the chosen mechanism.** Specifically through: masking scheme (causal vs non-causal),
-  tracing (stepped vs whole-surfaced), recall (generate-next vs complete-whole), and the
-  temptation to bolt a planner onto tracing to extend reach.
+- **Stage 1 — pure paradigm.** Drift looked like "jump to architecture." Discipline: stay at
+  paradigm, refuse mechanism.
+- **Stage 2 — first mechanism commitments** (pooling substrate, PAM as the masked-completion
+  operation, the encode/decode codec). Drift stopped looking like picking an architecture and
+  started looking like **forward-prediction re-entering through the *details* of the chosen
+  mechanism** — masking scheme (causal vs non-causal), tracing (stepped vs whole-surfaced),
+  recall (generate-next vs complete-whole), the temptation to bolt a planner onto tracing.
+- **Stage 3 (current) — first mechanisms validated in isolation; now at the integration
+  frontier** (the Stage-0 MVP). Two standalone bets are tested and green (pooling substrate,
+  non-causal masked completion). The remaining load-bearing claims (gap-3 fusion,
+  order-as-content in a latent, confidence-as-currency, the recall loop) are **not**
+  isolation-testable — they only appear in the loop. So drift now *also* hides in
+  **integration**: an MVP that "works" by quietly violating a characteristic (a fixed-capacity
+  v0; a shared-space fusion that never exercises char 10) teaches nothing about whether the
+  real design works. Watch for the loop succeeding for the wrong reason.
 
-So the new discipline is: **the mechanism is committed; keep testing that its
-*realisation* still serves the paradigm's functions.** Test against *functions*, not
-vocabulary. A JEPA encoder is sanctioned; a JEPA *predictor becoming the association
-operation* is the drift. Same words, opposite outcomes.
+The through-line across all three: **test the mechanism's *realisation* against the paradigm's
+*functions*, not its vocabulary.** A JEPA encoder is sanctioned; a JEPA *predictor becoming the
+association operation* is the drift. Same words, opposite outcomes.
 
 ---
 
@@ -44,7 +49,10 @@ operation* is the drift. Same words, opposite outcomes.
 
 1. **Causal masking.** PAM learns by *non-causal* masked completion (predict an interior
    span from *both* sides). The instant masking becomes causal (past-predicts-future),
-   PAM is a forward predictor wearing a mask. Hold this line explicitly.
+   PAM is a forward predictor wearing a mask. Hold this line explicitly. *(Exp02 showed this
+   directly: the causal control fails end-cues-beginning by construction — 0.062 vs 1.000.
+   The random-access sweep plot is the standing anti-drift artifact; point at it when forward
+   prediction tempts its way back.)*
 2. **Stepped recall.** Within a stored span, material is surfaced *whole* (sideways,
    random-access). Only *across* spans is there a trace, and that trace is the
    already-accepted confidence-gated char-4 mechanism. "Generate each step from the last"
@@ -92,6 +100,22 @@ trigger, hop-looseness, vividness, and segmentation are all *one* signal (invers
 prediction error) wearing different hats. When a new mechanism needs a control signal,
 check whether confidence already supplies it before adding a knob.
 
+**Isolate and pre-register.** Where a mechanism's success criterion is *local* (doesn't depend
+on the rest of the loop), test it standalone before integrating — and write the **failure
+condition first**. An isolation test with no pre-registered failure becomes a demo that always
+"works." This has earned its keep: exp01's rig caught a validity bug in its own spec (a leaky
+readout) *because* the failure condition was explicit, before it could produce a false pass.
+Mechanisms whose criterion is only meaningful *in the loop* (fusion, confidence, recall) are
+integration tests, not isolation tests — don't fake a standalone version.
+
+**Testing a property of a mechanism ≠ adopting it.** Using a transformer (or any familiar
+architecture) in an *isolation rig to test a property of it* is not drift — it is not being
+built into the system. Adoption is when the mechanism becomes load-bearing in the
+architecture. Keep the two separate: exp02 used a tiny transformer to *demonstrate* that
+non-causal beats causal for random-access recall; that does **not** put a transformer in PAM.
+Expect this to recur (trigger words like "transformer"/"attention" will flag during builds) —
+the question is always *adopting* vs *testing a property of*.
+
 ---
 
 ## Tone / process preferences
@@ -108,14 +132,31 @@ check whether confidence already supplies it before adding a knob.
 
 ## How to use the companion docs
 
-- `PROJECT_STATE_AND_MVP.md` — the full architecture, every decision, status (settled /
-  proposed / deferred), open gaps, and the suggested MVP. **This is the base for the MVP
-  build chat.**
-- `substrate_description.md` — the detailed pooling-substrate spec (folded in summary into
-  the state doc, but the standalone has the full detail).
+The docs are **three tiers by lifespan** — keep them in their lanes:
+- **This doc (`HANDOFF.md`)** — *how to work*. Stable; rarely changes.
+- **`PROJECT_STATE_AND_MVP.md`** — *what's true now*. Full architecture, every decision,
+  status (settled / proposed / deferred), open gaps, and the suggested MVP. **The base for the
+  MVP build chat** — §9 is the validation status, §10 the open blockers, §11 the MVP; those
+  are the live frontier. Rewritten as decisions move; keeps no history.
+- **`progress_log.md`** — *what happened when*. Append-only; the trail behind the state doc.
+
+**The rule:** a *decision* edits the state doc; an *event* (experiment run, fork resolved,
+thing learned) appends to the log. Most sessions touch both.
+
+Reference docs (don't edit lightly):
+- `substrate_description.md` — the detailed pooling-substrate spec (summarised into state §4).
 - `association_cortex_operation_spec.md` — the twelve characteristics. **Stable. Do not
-  re-litigate.** The open-questions framing in it predates the current architecture; the
-  state doc supersedes it.
+  re-litigate.** Its open-questions framing predates the current architecture; the state doc
+  supersedes it.
 - The **mechanism map** (latest version) — a map of the *possibility space*, not a design.
-  Trust its tension map and `[CONFIRMED]` items; treat its *recommendations* and staged
-  build with caution (they lean conservative — they trade away the novel part, drift, first).
+  Trust its tension map and `[CONFIRMED]` items; treat its *recommendations* and staged build
+  with caution (they lean conservative — they trade away the novel part, drift, first).
+
+**Implementation lives in the repo, not the chat.** Design happens in chat; Claude Code (CC)
+implements in `github.com/EridosAI/Loom`; the docs are the bridge. The validated build-time
+constraints from the experiments — re-pool trigger = force magnitude; adaptive-λ scales with
+signal strength; PAM's loss must sample the full cue-shape distribution; readouts
+distance/similarity-based — live in state doc §9; carry them into any build. **Doc-sync
+caveat:** commit refs and the README layout recorded in the docs come from CC's reports and are
+unverified against the actual repo — reconcile them in CC's next pass so docs and code stay in
+step.
