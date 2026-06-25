@@ -258,7 +258,34 @@ comparable," not "PAM does N× the work"). Everything below is *isolating* it, n
 **The build is correct and gap-3 is present (path alive); what's open is (a) cleanly isolating
 gap-3 from autonomous resolution and (b) the entangled (vs linearly-separable) order corner.**
 
-**Next:** (a) clean gap-3 — full config + suppress autonomous B-resolution so the no-word arm
-stays in the floor-band; (b) restore the entangled order corner (a 3rd within-dwell content axis
-along `u`) and/or run the full config; (c) §5 throwaway projector for SPREAD_FIGHTS_POOLING;
-then (d) Phase 2 (Readout A ladders) + the gain-rate sweep.
+**Next — open on the DESIGN FORK, not a build.** Cleanly isolating gap-3 requires making
+`floor_B` genuinely **autonomous-unreachable** so the matched no-word arm stays in the floor-band.
+This must be **re-calibration of the existing regime — NEVER a new mechanism that gates vision
+from learning B except via the word.** A gate would *manufacture* gap-3 (measuring an effect you
+built in) — the wrong-reason failure. Legitimate suppression keeps B autonomously *representable*
+(the capacity-open oracle, no word, still recovers B) but not autonomously *acquired* in-run.
+
+Two knobs, both **pinned constants** — *surface for review before changing anything*:
+- **(band) — recommended, first.** Deepen B's subtle band (`r_fine`↓ / `sigma_stim`↑) so the
+  coarse-autonomous encoder + JEPA genuinely cannot find B (`floor_B`≈chance *even with capacity
+  open*), while the word-taught `ceiling_B` stays high. exp03's σ-band logic applied to B, selected
+  **pre-loop via the validity probe**. Cleanest single-variable change; directly targets
+  "autonomous-unreachable." Risk: too subtle → even the word can't teach it (ceiling drops, gap
+  closes); the validity gate (`floor_B`≈chance ∧ `ceiling_B` high) is the guardrail.
+- **(clock) — secondary lever.** Slow the unpool clock (`t2` / unpool rate) so capacity opens
+  late enough that autonomous resolution cannot complete in-run while the word's contrast-aligned
+  gradient still drives differentiation. Risk: too slow → B never resolves at all (BOUNDARY).
+
+**Discriminator (legitimate re-calibration vs the manufacture-gap-3 trap):** after re-calibration
+the **no-word capacity-open oracle must still recover B** (B remains representable — merely not
+acquired by vision-without-word), and there is **no gate/stop-grad** forbidding vision from
+learning B without the word. The same vision encoder *plus* the word CAN learn it.
+
+**Standing Readout-D debt (carry forward):** Readout D is **PASS-LINEAR-REGIME**, not clean —
+`full_ols_r2 ≈ 1.0` (linearly-separable). Re-test the **entangled corner** (`full_ols_r2 < 0.9`,
+exp03 hit ~0.80 at α=1) the **moment within-window content drift returns** (a 3rd within-dwell
+content axis along `u`, or the deployed moving-content regime). The band/clock work is a
+Readout-**G** change and does not discharge this **D** debt.
+
+Then (downstream of the fork): §5 throwaway projector for SPREAD_FIGHTS_POOLING; Phase 2 (Readout
+A ladders) + the gain-rate sweep.
