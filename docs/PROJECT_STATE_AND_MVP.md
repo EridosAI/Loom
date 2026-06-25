@@ -397,12 +397,39 @@ distance/similarity-based (nearest-prototype) — which also matches the archite
 commitment (concepts = regions completed by similarity, not linear boundaries). Bears on how
 PAM's readout and any cortex heads are built.
 
-**What this leaves:** all three *standalone-testable* mechanism bets are now tested;
-order-as-content is **isolation-confirmed** (exp03). The remaining load-bearing claims —
-gap-3 fusion, order-as-content **in the loop**, confidence-as-currency, the recall loop — are
-**loop-level only**: they are validated by the Stage-0 MVP (§11), not by another isolation rig.
-The §11 build-blockers are now resolved in design, so the next frontier is the first
-integration itself.
+**Experiment 04 — Stage-0 MVP (Phase-1 core). [BUILT — first integration; gap-3 PRESENT
+(gradient path alive), not yet cleanly isolated].** The first fusion of the three rigs in one
+loop — vision pooling cortex + frozen word cortex + a non-causal **prototype-resonance**
+associator (no softmax-attention) — in `experiments/04_stage0_mvp/`, built from
+`STAGE0_MVP_SPEC.md`. **The headline result is the gradient-attribution split:** PAM's
+convergence error reaches the masked vision slot with **no detach** — `vision_grad_from_PAM` is
+**nonzero every eval window** (gap-3 is wired and active), with magnitude **order-1 (comparable
+to JEPA), seed/time-variable** (cross-seed mean ratio ≈ 0.8×; rises in late windows; *not*
+robustly dominant). **Build-correctness verified every eval window:** word anchor frozen
+(param-delta = 0); no detach (vision-from-PAM and -JEPA both nonzero); block-level whole-slice
+masking over all **six** cue-shape families; **no softmax-attention**; order-as-content not
+order-as-index (live carrier max single-coordinate R² < 0.9 every window); one code path
+(char-7). **Phase-1 readouts (3-seed `--quick`):** **Readout D = PASS-LINEAR-REGIME (a qualified
+pass, NOT a clean PASS)** — order *is* recovered in-loop and carrier-zero collapses it (real),
+**but `full_ols_r2 ≈ 1.0 ≥ 0.9`**: a full linear read recovers the drift, so this validates
+order-**in-loop**, not the *entangled* order-as-content corner (exp03 hit 0.80 at α=1). Cause:
+the dwell-stable fix froze A/B within a dwell, leaving drift as the only within-window variation
+→ linearly separable; the **entangled corner is DEFERRED** (carrier-zero collapse is
+necessary-but-not-sufficient; `full_ols_r2` is the tell). Both **structural signals PASS**
+(capacity opens ~8–14× from pooled; char-7 holds). **Readout G is seed-unstable / WRONG_REASON**
+— B rises but the matched **no-word arm also rises** (genuine *autonomous* B-resolution from the
+visual input + JEPA; **leak ruled out** — null token is B-agnostic, schedules independent, stream
+matched), so the Stage-3 discipline flags it rather than declaring a false PASS. Phase 2 (Readout
+A ladders), the gain-rate sweep, and Readout O are deferred per the spec's Phase 1 → Phase 2 staging.
+
+**What this leaves:** all three *standalone-testable* mechanism bets are tested
+(order-as-content **isolation-confirmed**, exp03) and the **first integration is now built**
+(exp04) — **gap-3 is present (the gradient path is alive)** and the build-correctness invariants
+all hold. What is *not* yet clean: **(a)** cleanly **isolating** gap-3 from autonomous resolution
+(Readout G — suppress autonomous B-resolution so the no-word arm stays in the floor-band); **(b)**
+the **entangled** order-as-content corner in-loop (Readout D is currently the linearly-separable
+regime). Order is recovered in-loop; the entangled corner and the clean gap-3 isolation are the
+next frontier, then Phase 2 (collapse-control asymmetry) and the gain sweep.
 
 ---
 

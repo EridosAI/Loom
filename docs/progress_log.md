@@ -207,3 +207,58 @@ run 1.
 **Next:** write the Stage-0 MVP build spec (in a fresh chat, opening from the updated state doc),
 with the §11 success signals — including the split readout above and the asymmetric anchor
 falsification — pre-registered before the run, exp03-style.
+
+---
+
+## 2026-06-25 — Stage-0 MVP built (Phase-1 core)
+
+**Built the first integration** from `STAGE0_MVP_SPEC.md`: vision pooling cortex + frozen
+word cortex + a non-causal **prototype-resonance** associator, fused in one wave loop.
+Shared, validated primitives promoted into `src/loom/` (pooling, poolmetrics, order,
+completion, spread); the Stage-0-specific rig in `experiments/04_stage0_mvp/`. Scope this
+pass = **Phase-1 core** (validity probe, Readout G, Readout D, two structural signals);
+Phase 2 (Readout A ladders), the gain sweep, and Readout O deferred per the spec's staging.
+
+**Operator (surfaced & approved, §2-ii):** a single at-once **distance-kernel resonance** over
+a second pooling-substrate population (the PAM weights), keyed by an order-as-content position
+read (Fourier on a learned `pos_extract`). It replaces exp03's `nn.TransformerEncoder` — **no
+softmax-attention, no free head, no PAM latent** (in_dim == out_dim), basin-hosting (content
+sits on the pooling substrate).
+
+**Build-correctness — all guards pass** (static + every eval window): word anchor frozen
+(param-delta = 0); **no detach** on the PAM target (gap-3 target-side gradient reaches the
+masked vision slot — vision-from-PAM and vision-from-JEPA both nonzero); block-level whole-slice
+masking covering **all six** cue-shape families; order-as-content never order-as-index (live
+carrier max single-coord R² < 0.9 every window — gated on the within-window no-clean-slot test,
+with a cumulative content nuisance confound on `u`); one code path (char-7). Pre-registration
+self-tests pass (every named verdict outcome incl. WRONG_REASON; cue-shape coverage).
+
+**Headline — gap-3 is present.** The deliverable is the gradient-attribution split:
+`vision_grad_from_PAM` is **nonzero every eval window** (PAM's convergence error reaches the
+masked vision slot, no detach — gap-3 wired and active), magnitude **order-1 vs JEPA**
+(cross-seed mean ratio ≈ 0.8×; rises in late windows; *not* robustly dominant — "present and
+comparable," not "PAM does N× the work"). Everything below is *isolating* it, not whether it's there.
+
+**Results (3-seed `--quick`, honest):**
+- **Readout D: PASS-LINEAR-REGIME (a QUALIFIED pass, not a clean PASS)** all seeds — order *is*
+  recovered in-loop (order-recovery ≈ 0.77 ≫ chance 0.33) and **carrier-zero collapses** it,
+  **but `full_ols_r2 ≈ 1.0 ≥ 0.9`**: a full linear read recovers the drift → the **linearly-
+  separable** regime, not exp03's *entangled* corner (0.80 at α=1). Cause: the dwell-stable fix
+  froze A/B within a dwell, leaving drift as the only within-window variation. The single-coord
+  no-clean-slot gate (`max_coord_r2 < 0.9`) still holds; carrier-zero collapse is
+  necessary-but-not-sufficient (`full_ols_r2` is the tell). **Entangled corner DEFERRED.**
+- **Structural #1 (char-7) PASS; Structural #2 (pooling does something) PASS** — capacity
+  opens ~8–14× from pooled. **OBSERVATION: SPREAD_FIGHTS_POOLING** (intermittent; §5 watch).
+- **Readout G (gap-3 fusion): seed-unstable / WRONG_REASON** — B rises (intact > no-word) but
+  the matched no-word arm **also** rises. Cause = genuine **autonomous** B-resolution (B is in
+  the visual input; JEPA + the unpool clock open capacity); **leak ruled out** (null token
+  B-agnostic, schedules independent, stream matched). Read the gap **paired & sustained** (a
+  single-window inversion, e.g. seed 1, is no-word eval noise). **build-failure invariants: NONE.**
+
+**The build is correct and gap-3 is present (path alive); what's open is (a) cleanly isolating
+gap-3 from autonomous resolution and (b) the entangled (vs linearly-separable) order corner.**
+
+**Next:** (a) clean gap-3 — full config + suppress autonomous B-resolution so the no-word arm
+stays in the floor-band; (b) restore the entangled order corner (a 3rd within-dwell content axis
+along `u`) and/or run the full config; (c) §5 throwaway projector for SPREAD_FIGHTS_POOLING;
+then (d) Phase 2 (Readout A ladders) + the gain-rate sweep.
