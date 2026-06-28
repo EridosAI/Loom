@@ -431,6 +431,66 @@ the **entangled** order-as-content corner in-loop (Readout D is currently the li
 regime). Order is recovered in-loop; the entangled corner and the clean gap-3 isolation are the
 next frontier, then Phase 2 (collapse-control asymmetry) and the gain sweep.
 
+**Experiment 04 — Stage-0 characterisation sweep. [RESULT — pre-registered EMPTY-GAP; gap-3 wired
+but inert for acquisition].** The post-Phase-1 sweep built from `STAGE0_CHARACTERISATION_SWEEP_SPEC.md`
+(`experiments/04_stage0_mvp/{oracle_probe,calibrate_step0,band_ladder,run_sweep,sweep_metrics,analyze_sweep}.py`;
+**480 runs** = 12 bands × 2 rates × 20 seeds; commit `2b70d74`, `spec_hash d1f0936c92e1`; full read in
+`SWEEP_RESULTS.md`, surface in `figures/response_surface.png`).
+
+- **Verdict — EMPTY-GAP, not F1–F4, not a rig failure.** No clean Readout-G window opens at any cell
+  (`cleanG_frequency = 0.00` everywhere). The decisive, **calibration-independent** measurement is the
+  gap-3 **lift** `= intact_B_res − noword_B_acq ≈ 0` across all 24 cells (range −0.004 … +0.048, mean
+  ~0.01, per-cell SE ≈ 0.013, **no consistent cross-rate sign**): the word-present and no-word arms
+  decline in lockstep as the band hardens and never separate. **Not F2** — autonomous resolution
+  genuinely *falls* 1.00 → 0.00 (transition r/σ ≈ 4–5); there IS a regime where vision cannot resolve
+  B autonomously.
+- **Not F3 — B is representable (the load-bearing sentence the oracle/raw separation was built to
+  license).** The substrate oracle confirms B is **representable across the whole admissible ladder**
+  (oracle ≥ threshold 0.4375; the F3 cap sits just below at r/σ ≈ 1.0). The failure is therefore
+  **"the word does not teach a representable B," not "B is unrepresentable"** — this is exactly what
+  distinguishes the clean negative from manufactured-gap-3.
+- **Methodological finding (the most reusable lesson — must not be lost).** PAM-grad **share** *does*
+  rise through the rapid phase (`s_curve_signature_frequency` 0.80–1.00 at every band) — but it is
+  **non-discriminating**: identical at easy bands where the word is *provably inert* (lift = 0,
+  autonomous resolution does everything). The rise is a real phenomenon **and a false success signal.**
+  Naive trajectory-only (share-only) instrumentation would have reported this surface as a
+  paradigm-positive S-curve. **Acquisition lift is the load-bearing metric, and it is null.**
+- **Mechanistic reading.** gap-3 is **wired** (Phase-1: convergence-error gradient reaches the masked
+  vision slot; sweep: `pam_grad_share` ≈ 0.6, rising in rapid) but **inert for acquisition** — the
+  gradient arrives at vision and does not drive B-differentiation. Sharpens Phase-1's
+  "present-but-weak / WRONG_REASON" into a clean negative across the full band × rate surface.
+- **Scope (both halves).** The negative is precise to the **Stage-0 operating point** — two cortices,
+  no store, single scene, weights-only. It is a sharp, useful negative *there*; it is **not** a
+  falsification of the mature claim (concepts-on-concepts, store-fed rare associations, multi-cortex
+  coherence). Neither "Stage-0 killed it" nor "just a tuning miss" is supported.
+- **Capacity-non-saturation caveat (scoped).** Δ2 grows slowly **without bound** at λ2 = 0 (depth
+  0.73 MOD → 1.15 SLOW → 1.37 at 3.4× length), so `capacity_fraction` self-normalises to a
+  non-stationary level and `t_run ≈ steps`. This **bounds the S-curve-shape and developmental-clock
+  claims** but does **not** touch the lift headline (null at every depth tested). It is a candidate
+  **substrate** issue for the next design session (the clock lacks a saturating-capacity / re-pool
+  mechanism) — **not** a reason the verdict is provisional.
+- **The live frontier — a design-table call, not a CC task.** The result cannot distinguish: **(i)**
+  Stage-0 is too impoverished to exercise the mechanism (no associative scaffolding for evocation to
+  teach *from*, so the rapid phase the claim is about is never created in this environment → next move
+  is the deferred **Stage-1 increment**: store / third cortex / richer environment, not more Stage-0);
+  vs **(ii)** the mechanism is genuinely inert at the centre → architecture rethink. **Discriminating
+  test:** re-run the same **lift** metric once cross-concept scaffolding exists (first Stage-1
+  increment) — lift-still-null ⇒ (ii) gains weight; lift-appears ⇒ (i), Stage-0 was pre-rapid. The
+  real mechanism the empty-gap did **not** test — **attention-sculpting via evocation-driven
+  unpooling** (the word shapes *which* distinctions are worth maintaining, not acquisition; re-pool
+  the associatively-inert against intrinsic decay) — is the forward bet in
+  `docs/FRONTIER_attention_sculpting.md` (`[PROPOSED]`), which re-scopes the negative to
+  acquisition-only and specifies the non-redundant discriminating rig (the 4→8 conflict, **reversed-lift**
+  readout: does the *intact* arm re-pool the associatively-inert distractor axis the no-word arm keeps).
+- **Why the negative is trustworthy (process provenance).** The oracle's divergence gate had its
+  **original directional criterion falsified by data** and was **re-pre-registered** to
+  divergence + content-driven, the superseded gate kept in the canon (exp03 vacuous-F4 discipline,
+  `oracle_gate_record.json`); **Step 0 surfaced a ~3× run-length shortfall** — Phase-1's 4000 steps
+  sat at depth ~0.156 ≈ **28 % of plateau**, the quantitative confirmation of §12.A's "sitting in the
+  toe"; the **verdict logic was frozen in `spec_hash` before the surface existed**; convergence was
+  checked across depth 0.73 → 1.37 (~4× range) via MODERATE-vs-SLOW and a 3.4×-length extended run at
+  the prime clean-G candidates b7/b8 (lift −0.014 / −0.011).
+
 ---
 
 ## 10. Open questions / gaps (prioritised)
@@ -609,6 +669,8 @@ The working model for how PAM's pressure shapes vision over development:
 
 **Status.** This is a hypothesis about the *shape*, to be drawn by instrumentation (§C), not a target to land. The deliverable is the curve; a clean Readout-G window is one point on it, not the goal.
 
+**RESULT (2026-06-26) — the curve was drawn; outcome = EMPTY-GAP (see §9 / `SWEEP_RESULTS.md`).** The rapid-phase PAM-grad-**share** rise the hypothesis named IS present (s_curve_sig 0.80–1.00) — but it is **non-discriminating and non-load-bearing**: it appears identically where the word is provably inert, and the acquisition **lift** (intact − no-word) is null everywhere. So the observed S-curve is **not** the paradigm S-curve. The hypothesis is *not* confirmed; the new live frontier is the **(i) impoverished-Stage-0 vs (ii) inert-mechanism** fork (§9) — the real untested mechanism (attention-sculpting via evocation-driven unpooling) and its discriminating rig are in `docs/FRONTIER_attention_sculpting.md` (`[PROPOSED]`).
+
 ---
 
 ### B. Slow-start unpool ramp [SETTLED in design — architecture addition]
@@ -624,17 +686,58 @@ This supersedes the §4 "unpool clock — clock-led, v1 gate pinned to 1" note *
 
 ---
 
-### C. Characterisation sweep [NEXT SESSION — design open; do NOT pre-commit here]
+### C. Characterisation sweep [RESOLVED — design closed; spec issued]
 
-The next step is **not** "make Readout G go clean." It is **characterise the curve** and let the run draw the shape. Reasoning has reached the point where it predicts less than measurement does — both open knobs are now "try it and see," instrumented.
+The knob fork is closed. Finalised design lives in `docs/STAGE0_CHARACTERISATION_SWEEP_SPEC.md`
+(exp03-style; CC builds from it). The next step is **not** "make Readout G go clean" — it is
+**characterise the curve**, computed not eyeballed.
 
-**Shape of the next-session work (to be finalised in a fresh design chat, then handed to CC):**
+**Resolution (the design CC builds):**
 
-1. **Coarse sweep, both knobs together** — band (`r_fine`↓ / `sigma_stim`↑) × unpool-rate — **instrumented to log the PAM-grad / JEPA-grad share across the trajectory, not at a checkpoint.** Deliverable is the **response surface / curve**, not a PASS (exactly how the gain ramp was handled — the surface *is* the result).
-2. **Read three things off it:** (a) does a clean Readout-G window open anywhere on the surface; (b) does PAM-grad share rise through the rapid phase (the paradigm test); (c) does the curve show the S-shape at all, or something else.
-3. **Lightweight pre-registration before running** — name the expected shape loosely ("PAM-grad share rises in the rapid phase"; "clean window opens at deeper bands") so the characterisation stays a *measurement* and does not slide into reading shapes into noise after the fact. exp03's rigour was the pre-registered failure condition; a sweep deserves the same lightweight version. Not a heavy gate — just name the expected shape so the run can surprise you.
+1. **Asymmetric, not a symmetric grid.** Band (`r_fine`↓ / `sigma_stim`↑) is the **dense** axis —
+   it moves the autonomous-vs-associative balance, the quantity Readout G measures. Unpool-rate is
+   the **coarse** axis — two constant rates (`MODERATE` = the §12.B-pinned clock, `SLOW` = a
+   fraction below it), tempo only, **fast cell dropped**. Crossing symmetrically would entangle
+   balance with tempo (the gain-ramp 1D attribution-blur); hence band-dense × rate-coarse.
+2. **Runs reach plateau on each clock's own terms.** `T95` = first wave at capacity-fraction ≥ 0.95;
+   `T_run = 1.25·T95` per (cell, rate, seed). Compute is not a constraint — the fast cell's "get out
+   of the toe" rationale was a cost substitution and is dropped; the toe's length is part of the
+   S-curve hypothesis, so a moderate/slow clock measures it rather than compressing it.
+3. **Seeds are the instrument** (≥20/cell). Phase-1's G ambiguity was seed-instability; the
+   deliverable shifts from "does a window appear" to "in what fraction of seeds, how sustained."
+4. **Oracle is a logged column at every cell** (no-word capacity-open B-recovery), compared to a
+   threshold **calibrated on the live commit** (Step 0 — B00 oracle calibration: `chance + margin`,
+   below the easy-band ceiling; **never** a guessed literal — the oracle floor sets the band cap, so
+   a guess either never fires F3 or caps inside the clean-G window). The cell where oracle-recovery
+   crosses the threshold is the cap on the sweep (F3) — the drift-trap line.
+5. **The verdict is arithmetic.** `pam_grad_share` (bounded) logged across the trajectory vs
+   `capacity_fraction` (the only axis that compares two clocks). S-curve signature pre-registered as
+   an inequality over the seed distribution: `delta_rapid > 0 ∧ delta_plateau ≤ tol`. clean-G
+   sustainedness pinned as a rule; `autonomous_resolution_frequency` is the F2/F4 discriminator;
+   F1–F4 failure taxonomy pre-registered in the spec.
 
-**Knob-choice guardrail (carried from the prior session, still binding).** The band/clock work must be **re-calibration of the existing regime** — never a mechanism that gates vision from learning B except via the word (that manufactures gap-3 = wrong-reason). **Discriminator, written in:** the no-word capacity-open oracle must still recover B (representable, just not *acquired*) — no gate, no stop-grad. The slow-start ramp (B) passes this discriminator by construction (it paces the clock; it does not touch representability).
+**Still binding (carried, unchanged):** the sweep is **re-calibration of the existing regime**,
+never a gate that lets vision learn B only via the word (manufactures gap-3 = wrong-reason);
+discriminator = the no-word capacity-open oracle must still recover B; no stop-grad. Constant
+unpool-rate here is a coarse **S-curve locator**, orthogonal to §12.B's ramp (**pinned off for the
+sweep regardless of run length**) — **not** a finding about developmental pacing. This is a
+Readout-**G** change and does **not** discharge the §12.D Readout-**D** entangled-corner debt.
+
+**RESULT (2026-06-26) — BUILT, RUN, CLOSED → EMPTY-GAP.** 480 cells + extended confirmation (§9 /
+`SWEEP_RESULTS.md`). No clean-G window at any cell; gap-3 wired but **inert** (lift ≈ 0 everywhere);
+B **representable** throughout (not F3). The sweep delivered exactly the falsifiable read it was built
+for. The remaining open question is **not** a CC sweep task — it is the design-table **(i)/(ii)** fork
+(§9): is Stage-0 pre-rapid (→ Stage-1 increment) or is the mechanism inert at the centre (→ rethink)?
+Also surfaced a **substrate** issue for the next design session: capacity does not saturate (Δ2 grows
+unbounded at λ2 = 0), so the developmental clock lacks a re-pool / saturating-capacity mechanism.
+
+**Next-frontier doc (forward bet, `[PROPOSED]`):** `docs/FRONTIER_attention_sculpting.md` —
+attention-sculpting via evocation-driven unpooling against intrinsic decay, the mechanism the
+empty-gap did **not** test (it tested the *redundant* acquisition reading; the real one is "the word
+shapes which distinctions are worth *maintaining*"). Held provisionally per sit-with-it-before-canon;
+its §7 A-vs-B mechanism fork (is the unpool force the existing gap-3 gradient, or a new
+evocation-divergence computation?) gates any build spec, and its §8 reversed-lift rig is the
+non-redundant test the Stage-0 stimulus structurally could not provide.
 
 ---
 

@@ -294,3 +294,95 @@ change and does **not** discharge this **D** debt.
 
 Then (downstream): §5 throwaway projector for SPREAD_FIGHTS_POOLING; Phase 2 (Readout A ladders) +
 the gain-rate sweep.
+
+## 2026-06-25 — Characterisation-sweep knob fork CLOSED (design pass; no code)
+
+Design session. The §12.C knob fork is **resolved**; finalised sweep design written to
+`docs/STAGE0_CHARACTERISATION_SWEEP_SPEC.md` (exp03-style; CC builds from it). No code this session.
+
+**Fork closed: which knob(s).** Resolution = **asymmetric band-dense × rate-coarse**, not a
+symmetric grid. Band (`r_fine`↓ / `sigma_stim`↑) is the dense search axis (moves the
+autonomous-vs-associative balance = what Readout G measures); unpool-rate is a coarse locator (two
+constant rates, tempo only). A symmetric grid would entangle balance with tempo — the gain-ramp 1D
+attribution-blur.
+
+**Compute-is-free corrections folded in** (nothing rushed; runs take as long as needed):
+- **Fast unpool-rate cell dropped** — its "get out of the toe" rationale was a cost substitution;
+  with compute free, lengthen runs (`T_run = 1.25·T95`) so a moderate/slow clock traverses
+  toe→rapid→plateau on its own clock. The toe's length is part of the S-curve hypothesis; a fast
+  clock would never measure it. Also dissolves the §12.B "faster is good" tension.
+- **Band axis made genuinely dense** (≥10 steps, not 3) — the transition shape (sharp vs gradual
+  autonomous fall-off; oracle-loses-B cliff vs clean-G window; plateau vs knife-edge) is the
+  scientific content; freed compute goes here first.
+- **Seeds become an instrument** (≥20/cell) — Phase-1's G ambiguity was seed-instability;
+  deliverable shifts to "in what fraction of seeds, how sustained," converting the uninterpretable
+  thing into a measurement.
+
+**Calibrate-don't-guess (the spec's central discipline).** Every scale-dependent threshold is
+`[RECONCILE]` — set from the live rig on the run commit, not by feel. **Step 0 = B00 oracle
+calibration**: on current HEAD, measure chance / intact-ceiling / oracle-ceiling, set
+`oracle_threshold = chance + margin` below the easy-band ceiling. The oracle floor sets the band
+cap, so a guess either never fires F3 (no cap) or caps inside the clean-G window (deletes the
+result). Phase-1's numbers explicitly barred (ran a94863e; sweep may run on a different commit).
+
+**Verdict operationalised** (not eyeballed): `pam_grad_share` (bounded) + `pam_jepa_grad_ratio`
+across the trajectory vs `capacity_fraction` (primary cross-rate axis). S-curve signature =
+pre-registered inequality over the seed distribution (`delta_rapid > 0 ∧ delta_plateau ≤ tol`).
+clean-G sustainedness pinned as a rule; `autonomous_resolution_frequency` = F2/F4 discriminator;
+F1–F4 pre-registered; every row carries `commit_hash` + `spec_hash`.
+
+**Still binding (carried):** re-calibration of the existing regime only — never a gate letting
+vision learn B except via the word (wrong-reason); discriminator = no-word capacity-open oracle
+must still recover B; no stop-grad. Constant unpool-rate = coarse S-curve locator, orthogonal to
+§12.B's ramp (**pinned off for the sweep regardless of run length**), not a pacing finding.
+Readout-G change; does NOT discharge the §12.D Readout-D debt.
+
+**Next (CC):** read the spec → confirm HEAD → run Step 0 (B00 oracle calibration on live commit) →
+**surface the calibrated `[RECONCILE]` values + resulting band ladder for review** (not the knob
+choice — settled) → then build. Pre-register F1–F4 + the phase-metric inequality before any run.
+
+---
+
+## 2026-06-26 — Characterisation sweep RUN → EMPTY-GAP (gap-3 wired but inert)  ·  runs on 2b70d74, spec_hash d1f0936c92e1
+
+Built and ran the sweep (`experiments/04_stage0_mvp/{oracle_probe,calibrate_step0,band_ladder,run_sweep,
+sweep_metrics,analyze_sweep}.py`; 480 runs = 12 bands × 2 rates × 20 seeds). Full read in
+`SWEEP_RESULTS.md`; surface in `figures/response_surface.png`. Verdict folded into PROJECT_STATE §9.
+
+- **Verdict — pre-registered EMPTY-GAP; not F1–F4; not a rig failure.** `cleanG_frequency = 0.00` at
+  every one of the 24 cells. Decisive, **calibration-independent** measurement: gap-3 **lift** =
+  `intact_B − noword_B ≈ 0` across all cells (range −0.004…+0.048, mean ~0.01, SE≈0.013, no consistent
+  cross-rate sign); arms decline in lockstep, never separate.
+- **Not F2** — autonomous resolution genuinely falls 1.00 → 0.00 (transition r/σ≈4–5). **Not F3 —
+  B is representable** across the whole admissible ladder (substrate oracle ≥ threshold; F3 cap at
+  r/σ≈1.0). The failure is **"word doesn't teach a representable B," not "B unrepresentable"** — the
+  sentence the oracle/raw separation was built to license; it makes the negative *clean*, not
+  manufactured-gap-3.
+- **Methodological lesson (most reusable — do not lose):** PAM-grad **share** rises through the rapid
+  phase (s_curve_sig 0.80–1.00) but is **non-discriminating** — identical at easy bands where the word
+  is provably inert. The rise is real **and a false success signal**; **acquisition lift is the
+  load-bearing metric, and it's null.** Share-only trajectory instrumentation would have called this a
+  paradigm-positive S-curve.
+- **Mechanistic:** gap-3 wired (gradient reaches the masked vision slot; share≈0.6, rising) but inert
+  for acquisition. Sharpens Phase-1's present-but-weak / WRONG_REASON into a clean negative across the
+  full surface.
+- **Scope (both halves):** a sharp, useful negative at the **Stage-0 operating point** (two cortices,
+  no store, single scene, weights-only); **not** a falsification of the mature claim
+  (concepts-on-concepts, store-fed rare associations, multi-cortex coherence).
+- **Caveat (scoped, not verdict-provisional):** Δ2 grows unbounded at λ2=0 (depth 0.73→1.15→1.37);
+  bounds the S-curve-shape / developmental-clock claims, not the lift (null at every depth). Candidate
+  substrate fix for the design table: a saturating-capacity / re-pool clock.
+- **Live frontier (design-table call, NOT CC):** can't yet distinguish **(i)** Stage-0 too impoverished
+  (no scaffolding to teach from → rapid phase never created → do the Stage-1 increment) vs **(ii)**
+  mechanism inert at the centre (→ rethink). **Discriminating test:** re-run the lift metric once
+  cross-concept scaffolding exists (first Stage-1 increment) — still-null ⇒ (ii); appears ⇒ (i).
+- **Why trustworthy (provenance):** oracle gate's original directional criterion **falsified by data**,
+  re-pre-registered to divergence+content-driven, superseded gate kept in canon (exp03 vacuous-F4
+  discipline); Step 0 surfaced the **~3× run-length shortfall** (Phase-1 at ~28% of plateau —
+  quantitative confirmation of §12.A "sitting in the toe"); **verdict frozen in spec_hash before the
+  surface existed**; convergence checked across depth 0.73→1.37 (MODERATE-vs-SLOW + 3.4×-length
+  extended run at b7/b8: lift −0.014 / −0.011).
+
+**Next:** the (i)/(ii) fork is the design-table's, not a CC sweep — the discriminating move is the
+deferred **Stage-1 increment** (store / third cortex / richer environment), then re-run the lift
+metric. §12.D Readout-D entangled-corner debt remains undischarged (untouched by this Readout-G sweep).

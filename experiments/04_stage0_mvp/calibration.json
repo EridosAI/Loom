@@ -1,0 +1,120 @@
+{
+  "commit_hash": "2b70d743885ce75d2d3c4435c39844bbfe70dc6a",
+  "spec_hash": "786d8513af86",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "B00": {
+    "r_fine": 2.5,
+    "sigma_stim": 0.2
+  },
+  "chance": 0.25,
+  "empirical_floor_B": 0.255078125,
+  "floor_B_std": 0.02206599100390406,
+  "ceiling_B_raw_B00": 1.0,
+  "oracle_easy_ceiling": 1.0,
+  "oracle_easy_ceiling_per_seed": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "intact_easy_ceiling": 0.5581597222222222,
+  "intact_per_seed": [
+    0.5199652777777778,
+    0.5526258680555556,
+    0.6042751736111112,
+    0.6005859375,
+    0.5133463541666666
+  ],
+  "B00_full_depth": 0.4883590072393417,
+  "B00_full_depth_per_seed": [
+    0.5559738998611768,
+    0.4528852750857671,
+    0.46307899182041484,
+    0.5197390777369341,
+    0.4501177916924159
+  ],
+  "B00_T95": 9040,
+  "B00_T95_per_seed": [
+    8200,
+    7300,
+    9100,
+    10300,
+    10300
+  ],
+  "B00_T_run": 11300.0,
+  "margin_oracle": 0.1875,
+  "oracle_threshold": 0.4375,
+  "noword_eps": 0.06619797301171218,
+  "noword_floor_band": [
+    0.25,
+    0.31619797301171215
+  ],
+  "intact_bar": 0.4040798611111111,
+  "anchor_sweep": [
+    {
+      "r_fine": 0.2,
+      "r_over_sigma": 1.0,
+      "oracle_mean": 0.373046875,
+      "breaches": true
+    },
+    {
+      "r_fine": 0.15,
+      "r_over_sigma": 0.7499999999999999,
+      "oracle_mean": 0.265625,
+      "breaches": true
+    },
+    {
+      "r_fine": 0.1,
+      "r_over_sigma": 0.5,
+      "oracle_mean": 0.248046875,
+      "breaches": true
+    }
+  ],
+  "anchor_breach_at": {
+    "r_fine": 0.2,
+    "r_over_sigma": 1.0,
+    "oracle_mean": 0.373046875,
+    "breaches": true
+  },
+  "b00_ablation_ok": true,
+  "bracket_ok": true,
+  "calib_params": {
+    "B00": {
+      "r_fine": 2.5,
+      "sigma_stim": 0.2
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "margin_oracle_frac": 0.25,
+    "intact_bar_k": 0.5,
+    "noword_eps_floor": 0.05,
+    "noword_eps_k": 3.0,
+    "anchor_r_fine": [
+      0.2,
+      0.15,
+      0.1
+    ],
+    "bracket_sep": 0.05,
+    "oracle_steps": 600,
+    "long_steps": 12000,
+    "long_T": 14000,
+    "eval_every": 100,
+    "plateau_frac": 0.2,
+    "intact_tail_frac": 0.3,
+    "t95_level": 0.95
+  },
+  "problems": [],
+  "STEP0_OK": true
+}

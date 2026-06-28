@@ -1,0 +1,526 @@
+{
+  "commit_hash": "2b70d743885ce75d2d3c4435c39844bbfe70dc6a",
+  "spec_hash": "786d8513af86",
+  "oracle_threshold": 0.4375,
+  "chance": 0.25,
+  "oracle_easy_ceiling": 1.0,
+  "params": {
+    "sigma_stim": 0.2,
+    "r_over_sigma_top": 7.5,
+    "r_over_sigma_bottom": 1.3,
+    "n_cells": 12,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "oracle_steps": 600,
+    "bottom_margin": 0.05,
+    "raw_clean_bar": 0.9,
+    "floor_eps": 0.1,
+    "f3_bracket_r_over_sigma": [
+      1.15,
+      1.0,
+      0.85
+    ]
+  },
+  "cells": [
+    {
+      "r_fine": 1.5,
+      "r_over_sigma": 7.5,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 1.0,
+      "oracle_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.9908854166666666,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.009114583333333334,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 1.3873,
+      "r_over_sigma": 6.936,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 1.0,
+      "oracle_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.9729817708333334,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.027018229166666668,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 1.2745,
+      "r_over_sigma": 6.373,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 1.0,
+      "oracle_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.9322916666666666,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.06770833333333333,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 1.1618,
+      "r_over_sigma": 5.809,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.9986979166666666,
+      "oracle_per_seed": [
+        1.0,
+        0.998,
+        0.998
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.87890625,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.12109375,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 1.0491,
+      "r_over_sigma": 5.245,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.9986979166666666,
+      "oracle_per_seed": [
+        1.0,
+        0.998,
+        0.998
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.7900390625,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.2099609375,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.9364,
+      "r_over_sigma": 4.682,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.9947916666666666,
+      "oracle_per_seed": [
+        0.998,
+        0.998,
+        0.988
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.6842447916666666,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.3157552083333333,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.8236,
+      "r_over_sigma": 4.118,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.98828125,
+      "oracle_per_seed": [
+        0.992,
+        0.996,
+        0.977
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.5625,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.4375,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.7109,
+      "r_over_sigma": 3.555,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.9694010416666666,
+      "oracle_per_seed": [
+        0.973,
+        0.986,
+        0.949
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.4563802083333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.5436197916666666,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.5982,
+      "r_over_sigma": 2.991,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.93359375,
+      "oracle_per_seed": [
+        0.928,
+        0.955,
+        0.918
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.3811848958333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.6188151041666666,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.4855,
+      "r_over_sigma": 2.427,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.8776041666666666,
+      "oracle_per_seed": [
+        0.861,
+        0.908,
+        0.863
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.3186848958333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.6813151041666666,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.3727,
+      "r_over_sigma": 1.864,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.7682291666666666,
+      "oracle_per_seed": [
+        0.732,
+        0.783,
+        0.789
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.2845052083333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.7154947916666666,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.26,
+      "r_over_sigma": 1.3,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.5813802083333334,
+      "oracle_per_seed": [
+        0.555,
+        0.584,
+        0.605
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.2659505208333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.7340494791666666,
+      "F3_prone": false,
+      "admissible": true
+    }
+  ],
+  "admissible_cells": [
+    {
+      "r_fine": 1.5,
+      "r_over_sigma": 7.5,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 1.0,
+      "oracle_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.9908854166666666,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.009114583333333334,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 1.3873,
+      "r_over_sigma": 6.936,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 1.0,
+      "oracle_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.9729817708333334,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.027018229166666668,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 1.2745,
+      "r_over_sigma": 6.373,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 1.0,
+      "oracle_per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.9322916666666666,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.06770833333333333,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 1.1618,
+      "r_over_sigma": 5.809,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.9986979166666666,
+      "oracle_per_seed": [
+        1.0,
+        0.998,
+        0.998
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.87890625,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.12109375,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 1.0491,
+      "r_over_sigma": 5.245,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.9986979166666666,
+      "oracle_per_seed": [
+        1.0,
+        0.998,
+        0.998
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.7900390625,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.2099609375,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.9364,
+      "r_over_sigma": 4.682,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.9947916666666666,
+      "oracle_per_seed": [
+        0.998,
+        0.998,
+        0.988
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.6842447916666666,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.3157552083333333,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.8236,
+      "r_over_sigma": 4.118,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.98828125,
+      "oracle_per_seed": [
+        0.992,
+        0.996,
+        0.977
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.5625,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.4375,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.7109,
+      "r_over_sigma": 3.555,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.9694010416666666,
+      "oracle_per_seed": [
+        0.973,
+        0.986,
+        0.949
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.4563802083333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.5436197916666666,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.5982,
+      "r_over_sigma": 2.991,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.93359375,
+      "oracle_per_seed": [
+        0.928,
+        0.955,
+        0.918
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.3811848958333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.6188151041666666,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.4855,
+      "r_over_sigma": 2.427,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.8776041666666666,
+      "oracle_per_seed": [
+        0.861,
+        0.908,
+        0.863
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.3186848958333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.6813151041666666,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.3727,
+      "r_over_sigma": 1.864,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.7682291666666666,
+      "oracle_per_seed": [
+        0.732,
+        0.783,
+        0.789
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.2845052083333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.7154947916666666,
+      "F3_prone": false,
+      "admissible": true
+    },
+    {
+      "r_fine": 0.26,
+      "r_over_sigma": 1.3,
+      "sigma_stim": 0.2,
+      "oracle_substrate": 0.5813802083333334,
+      "oracle_per_seed": [
+        0.555,
+        0.584,
+        0.605
+      ],
+      "ablation_ok": true,
+      "ceiling_B_raw": 0.2659505208333333,
+      "A_salience": 1.0,
+      "floor_B": 0.2568359375,
+      "confusion": 0.7340494791666666,
+      "F3_prone": false,
+      "admissible": true
+    }
+  ],
+  "f3_bracket": [
+    {
+      "r_over_sigma": 1.15,
+      "r_fine": 0.23,
+      "oracle_substrate": 0.46484375,
+      "breaches": false
+    },
+    {
+      "r_over_sigma": 1.0,
+      "r_fine": 0.2,
+      "oracle_substrate": 0.3587239583333333,
+      "breaches": true
+    },
+    {
+      "r_over_sigma": 0.85,
+      "r_fine": 0.17,
+      "oracle_substrate": 0.2897135416666667,
+      "breaches": true
+    }
+  ],
+  "top": {
+    "r_fine": 1.5,
+    "r_over_sigma": 7.5,
+    "sigma_stim": 0.2,
+    "oracle_substrate": 1.0,
+    "oracle_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "ablation_ok": true,
+    "ceiling_B_raw": 0.9908854166666666,
+    "A_salience": 1.0,
+    "floor_B": 0.2568359375,
+    "confusion": 0.009114583333333334,
+    "F3_prone": false,
+    "admissible": true
+  },
+  "bottom": {
+    "r_fine": 0.26,
+    "r_over_sigma": 1.3,
+    "sigma_stim": 0.2,
+    "oracle_substrate": 0.5813802083333334,
+    "oracle_per_seed": [
+      0.555,
+      0.584,
+      0.605
+    ],
+    "ablation_ok": true,
+    "ceiling_B_raw": 0.2659505208333333,
+    "A_salience": 1.0,
+    "floor_B": 0.2568359375,
+    "confusion": 0.7340494791666666,
+    "F3_prone": false,
+    "admissible": true
+  },
+  "checks": {
+    "n_admissible": 12,
+    "ten_dense_ok": true,
+    "top_not_oracle_depressed": true,
+    "bottom_brackets_F3": true
+  },
+  "LADDER_OK": true
+}

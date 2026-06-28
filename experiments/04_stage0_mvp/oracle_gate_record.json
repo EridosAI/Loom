@@ -1,0 +1,92 @@
+{
+  "commit_hash": "2b70d743885ce75d2d3c4435c39844bbfe70dc6a",
+  "deployed_alpha_spread": 0.1,
+  "P": 64,
+  "chance": 0.25,
+  "divergence_margin": 0.25,
+  "B00": {
+    "ceiling_B_raw": 1.0,
+    "oracle_B_rec": 1.0,
+    "ablation_rec": 0.265625,
+    "ablation_collapsed": true,
+    "alpha_spread": 0.1,
+    "P": 64,
+    "chance": 0.25,
+    "r_fine": 2.5,
+    "sigma_stim": 0.2
+  },
+  "parity_ok": true,
+  "band_sweep": [
+    {
+      "r_fine": 2.5,
+      "r_over_sigma": 12.5,
+      "ceiling_B_raw": 1.0,
+      "oracle_on": 1.0,
+      "oracle_off": 1.0,
+      "ablation_collapsed": true
+    },
+    {
+      "r_fine": 1.5,
+      "r_over_sigma": 7.5,
+      "ceiling_B_raw": 0.98046875,
+      "oracle_on": 1.0,
+      "oracle_off": 1.0,
+      "ablation_collapsed": true
+    },
+    {
+      "r_fine": 1.0,
+      "r_over_sigma": 5.0,
+      "ceiling_B_raw": 0.7451171875,
+      "oracle_on": 1.0,
+      "oracle_off": 1.0,
+      "ablation_collapsed": true
+    },
+    {
+      "r_fine": 0.7,
+      "r_over_sigma": 3.4999999999999996,
+      "ceiling_B_raw": 0.4091796875,
+      "oracle_on": 0.970703125,
+      "oracle_off": 0.96875,
+      "ablation_collapsed": true
+    },
+    {
+      "r_fine": 0.5,
+      "r_over_sigma": 2.5,
+      "ceiling_B_raw": 0.2802734375,
+      "oracle_on": 0.873046875,
+      "oracle_off": 0.87890625,
+      "ablation_collapsed": true
+    },
+    {
+      "r_fine": 0.35,
+      "r_over_sigma": 1.7499999999999998,
+      "ceiling_B_raw": 0.2548828125,
+      "oracle_on": 0.701171875,
+      "oracle_off": 0.70703125,
+      "ablation_collapsed": true
+    }
+  ],
+  "re_preregistered": {
+    "criterion": "non-degeneracy: |oracle-raw|>=margin at some band AND ablation collapses at all bands AND oracle HIGH at B00 AND alpha/P parity",
+    "divergence_from_raw": {
+      "r_fine": 1.0,
+      "r_over_sigma": 5.0,
+      "ceiling_B_raw": 0.7451171875,
+      "oracle_on": 1.0,
+      "oracle_off": 1.0,
+      "ablation_collapsed": true,
+      "abs_divergence": 0.2548828125
+    },
+    "content_driven_all_bands": true,
+    "b00_high": true,
+    "parity_ok": true
+  },
+  "original_criterion": {
+    "criterion": "oracle-LOW while raw-HIGH at deployed strength (band-moved)",
+    "status": "FALSIFIED",
+    "found_at": null,
+    "note": "substrate oracle OVER-performs raw; deployed SIGReg(0.1) ~no effect"
+  },
+  "GATE_PASS": true,
+  "verdict_against": "re_preregistered"
+}
