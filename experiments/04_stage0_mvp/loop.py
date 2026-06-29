@@ -42,13 +42,14 @@ class Stage0Loop:
         self.gen = torch.Generator().manual_seed(cfg.seed)
         torch.manual_seed(cfg.seed)
 
-        self.stim = Stimulus(cfg.D, cfg.n_A, cfg.n_B, R_coarse=cfg.R_coarse,
-                             r_fine=cfg.r_fine, sigma=cfg.sigma_stim, seed=cfg.seed)
+        # Construction via overridable factories (Stage-1 SculptLoop swaps the conflict
+        # stimulus / category word-cortex in; the defaults below are Phase-1-identical).
+        self.stim = self._make_stim()
         # converged-coarse start: centre the vision pool on the data mean (still plastic).
         init_center = self.stim.centre.reshape(-1, cfg.D).mean(0)
         self.vision = VisionCortex(cfg.D, cfg.n_A, cfg.n_B, init_center=init_center,
                                    seed=cfg.seed)
-        self.word = WordCortex(cfg.D, cfg.n_B, seed=cfg.seed + 1)
+        self.word = self._make_word()
         self.op = PrototypeResonanceOperator(
             D_slice=cfg.D, n_slots=cfg.n_slots, d_model=cfg.d_model, n_freq=cfg.n_freq,
             pam_groups=cfg.pam_groups, pam_members=cfg.pam_members, seed=cfg.seed + 2)
@@ -56,12 +57,8 @@ class Stage0Loop:
         self.unpool = StepSchedule(cfg.lam1_hi, cfg.lam1_lo, cfg.lam2_hi, cfg.lam2_lo,
                                    cfg.t1, cfg.t2, activity_gate=1.0)
         self.gain = GainRamp(cfg.gain_max, cfg.ramp_steps)
-        self.curric = Curriculum(cfg.n_B, threshold=cfg.curric_threshold,
-                                 start_active=cfg.curric_start_active,
-                                 null_token=self.word.null_token)
-        self.stream = make_stream(cfg.T, cfg.n_A, cfg.n_B, W=cfg.W, sigma=cfg.sigma_drift,
-                                  slope=cfg.slope, dwell_extra=cfg.dwell_extra,
-                                  seed=cfg.seed + 3)
+        self.curric = self._make_curric()
+        self.stream = self._make_stream()
 
         # entanglement direction u + scale kappa from a sample of CLEAN emitted content.
         self.cb = self._build_codebook()
@@ -73,6 +70,40 @@ class Stage0Loop:
 
         self.slot_ids = torch.tensor([s for _ in range(cfg.W) for s in range(cfg.n_slots)])
 
+    # ------------------------------------------------------------------ factories / hooks
+    # Defaults reproduce Phase-1 exactly; Stage-1 SculptLoop overrides these (one code path,
+    # the dynamics in step()/build_cells are inherited unchanged).
+    def _make_stim(self):
+        cfg = self.cfg
+        return Stimulus(cfg.D, cfg.n_A, cfg.n_B, R_coarse=cfg.R_coarse,
+                        r_fine=cfg.r_fine, sigma=cfg.sigma_stim, seed=cfg.seed)
+
+    def _make_word(self):
+        cfg = self.cfg
+        return WordCortex(cfg.D, cfg.n_B, seed=cfg.seed + 1)
+
+    def _make_curric(self):
+        cfg = self.cfg
+        return Curriculum(cfg.n_B, threshold=cfg.curric_threshold,
+                          start_active=cfg.curric_start_active,
+                          null_token=self.word.null_token)
+
+    def _make_stream(self):
+        cfg = self.cfg
+        return make_stream(cfg.T, cfg.n_A, cfg.n_B, W=cfg.W, sigma=cfg.sigma_drift,
+                           slope=cfg.slope, dwell_extra=cfg.dwell_extra, seed=cfg.seed + 3)
+
+    def _word_label(self, b):
+        """The word label for member index ``b``. Identity in Phase-1 (word names the member);
+        Stage-1 overrides this to name the CATEGORY component only (word is category-agnostic of
+        the distractor) — the whole reason the distractor is associatively inert."""
+        return b
+
+    def _post_step(self):
+        """Post-optimizer-step substrate hook (no-op in Phase-1). Stage-1 applies the constant
+        intrinsic Delta2 re-pool here (G3: occupancy decay, envelope untouched)."""
+        pass
+
     # ------------------------------------------------------------------ setup
     @torch.no_grad()
     def _build_codebook(self):
@@ -81,7 +112,7 @@ class Stage0Loop:
         b = torch.randint(0, self.cfg.n_B, (256,), generator=g)
         raw = self.stim.raw(a, b, g)
         e_vis = self.vision.emit(raw)
-        e_word = self.word.emit(b)
+        e_word = self.word.emit(self._word_label(b))
         content = torch.cat([e_vis, e_word], dim=0)        # (512, D) sample of slices
         return order.make_codebook_from_content(content)
 
@@ -92,7 +123,8 @@ class Stage0Loop:
         a, b, drift_w, dwell = win["a"], win["b"], win["drift"], win["dwell_id"]
         raw = self.stim.raw(a, b, gen)                     # (W, D)
         e_vis = self.vision.emit(raw)                      # (W, D) plastic, grad
-        tokens = torch.tensor([self.curric.word_token(int(b[w]), no_word=no_word)
+        wl = self._word_label(b)                            # member -> word label (category in Stage-1)
+        tokens = torch.tensor([self.curric.word_token(int(wl[w]), no_word=no_word)
                                for w in range(cfg.W)])
         e_word = self.word.emit(tokens)                    # (W, D) frozen
         content = torch.stack([e_vis, e_word], dim=1)      # (W, n_slots, D), clean targets
@@ -156,6 +188,7 @@ class Stage0Loop:
         self.opt.zero_grad(set_to_none=True)
         L.backward()
         self.opt.step()
+        self._post_step()                                  # Stage-1: constant Delta2 re-pool (G3 no-op in Phase-1)
         self._t += 1
         return dict(l_pam=l_pam.item(), l_jepa=float(l_jepa.detach()),
                     l_spread=l_spread.item(), gain=gain, fam=bc["fam"],

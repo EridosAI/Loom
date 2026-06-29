@@ -121,10 +121,41 @@ class StepSchedule:
         pass
 
 
+@torch.no_grad()
+def constant_repool_delta2(model: "HierarchicalPoolingModel", rate: float) -> None:
+    """CONSTANT INTRINSIC RE-POOL on **occupancy** (Stage-1 attention-sculpting, FRONTIER §5).
+
+    Relax each member deviation Delta2_i toward its group's member-mean by a constant fraction
+    ``rate`` every step — an untargeted, signal-free decay of *occupancy* opposed only by the
+    gap-3 pull-apart gradient. Equilibrium = balance of intermittent occupy-pull vs constant
+    decay; whatever isn't held collapses.
+
+    G3 — THIS ACTS ON Delta2 (occupancy) ONLY. lambda2 (the envelope/tie-strength) and Delta1
+    (the coarse/group node) are UNTOUCHED, so the opened capacity STAYS OPEN ("seed waiting":
+    re-occupation is instant when divergence returns — no waiting on the clock). This is NOT
+    ``AdaptiveRepool``: that *raises lambda2* (re-tightens the envelope), collapsing Delta2 only
+    as a downstream side-effect — that is **Tier-2 envelope re-pool, DEFERRED** (FRONTIER §6b).
+    Do not substitute one for the other.
+
+    Applied under no_grad as a post-optimizer-step substrate force (not a loss term) — efficiency
+    stays an emergent property of the substrate, never a global objective (G4).
+    Depth-grading (steeper at leaves than root) is the release form (stage 3); pinned constant /
+    depth-independent here — the constant rate is the special case, so no debt.
+    """
+    if rate <= 0.0:
+        return
+    d2 = model.delta2.data.view(model.G, model.M, model.D)      # (G, M, D) view of the parameter
+    member_mean = d2.mean(dim=1, keepdim=True)                  # (G, 1, D) pooled (within-group) mean
+    d2.add_(d2 - member_mean, alpha=-rate)                      # in-place: Delta2 -= rate*(Delta2 - mean)
+
+
 class AdaptiveRepool:
     """Re-pool when the pull-apart FORCE magnitude is sustained below ``frac`` of its
     peak (§4 / §13 re-pool; trigger is pull-apart magnitude, NOT gradient cosine).
     Self-calibrating against the largest force seen; fast-out/slow-in via ``ramp_steps``.
+
+    NOTE (Stage-1): this raises lambda2 = ENVELOPE re-pool (Tier-2, DEFERRED). The Stage-1
+    attention-sculpting rig uses ``constant_repool_delta2`` (occupancy decay) instead — see G3.
     """
 
     def __init__(self, lam1, lam2_lo, lam2_hi, frac=0.15, patience=4, ramp_steps=400):

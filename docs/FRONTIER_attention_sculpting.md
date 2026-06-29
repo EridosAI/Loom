@@ -225,28 +225,41 @@ Build the depth-graded law in full; **pin it to a constant (depth-independent) s
 first rig**; release the grading once the constant-rate version is stable and characterised.
 Constant-rate is the special case → no debt.
 
-### THE OPEN FORK (gates any build spec): how is the unpool force actually computed?
-Two readings, **not yet resolved**, and the empty-gap result bears on the choice:
+### FORK RESOLVED — Reading A: occupancy is the existing gap-3 gradient's intra-group disagreement
+The capacity/occupancy split (§5/§6b) resolved this. Once divergence only has to **fill and hold**
+capacity the clock already opened — never *open* it — the occupancy force is exactly exp01's
+validated mechanism: intra-group gradient disagreement drives members of an already-loosened tie to
+differentiate.
 
-- **Reading A — it is the existing gap-3 gradient, reinterpreted.** A pooling group whose members
-  are bound to *different* PAM successors already receives **contradictory intra-group gradients**
-  (exp01's pull-apart) → unpools; a group whose members predict the *same* bundle receives
-  *consistent* gradients → no pull-apart → intrinsic re-pool collapses it. If so, the unpool side is
-  **mostly already built**; what's new is only the *constant intrinsic re-pool* and the
-  *depth-grading*. **But:** the empty-gap showed the gap-3 gradient *inert in the redundant case* —
-  which either (i) means this signal is too weak, or (ii) doesn't bear on it, because redundancy (both
-  members already predicting fine) is not the test. Only a **non-redundant** rig (§8) can tell which.
-- **Reading B — a new explicit evocation-divergence computation.** In normal operation PAM is cued
-  by the *actual current bundle*, not counterfactually by "member A vs member B" of a pooling group.
-  Reading B says divergence-across-a-distinction must be computed explicitly (and integrated over
-  some timescale) and coupled to the group's λ. More expressive; more machinery; more surface for
-  drift to re-enter.
+**The load-bearing identity:** *per-distinction divergence = per-instance convergence error
+aggregated across the group's members* — the same signal at two descriptions. Trace it: mask a
+member's vision slot, PAM evokes it from co-present context, backprop convergence error into the
+(still-shared) tied weights. If the two members are associated with the **same** PAM successors
+(colour → same word/context), PAM evokes the same target for both → gradient pulls both the same way
+→ **consistent → no pull-apart → intrinsic re-pool keeps them merged** (inert distinction, correctly
+not occupied). If associated with **different** successors (handle → different word/context), PAM
+evokes different targets → gradient pulls them apart → **contradictory → pull-apart → they occupy
+the opened capacity** (productive distinction, correctly occupied). "Do the two sides evoke different
+bundles" *is* "do the members receive contradictory convergence-error gradients." No separate
+divergence computation needed.
 
-**This is the design pass that must precede a spec.** It is the analog of pinning gap-3's gradient
-path ("backprop through concat, no detach") for Phase-1 — the load-bearing mechanism detail, and
-exactly where forward-prediction or a smuggled objective could creep back. Resolve A-vs-B (and, if
-B, the divergence definition + integration timescale + coupling to λ) **before** writing a build
-spec.
+**So the unpool/occupy side is mostly already built** (the gap-3 gradient, validated alive in
+Phase-1). Genuinely new: only (1) **constant intrinsic re-pool** (the substrate currently has
+*disuse-triggered* re-pool; this needs constant-force decay) and (2) depth-grading (release stage).
+
+**The one line the rig must assert (or A collapses into a predictor):** convergence error must come
+from **non-causal** evocation (mask evoked from *all co-present context*, not from predecessors —
+HANDOFF live-vector 1 / exp02). Causal masking would make the occupancy gradient a *next-step
+prediction error*, silently converting "maintain associatively-productive distinctions" into
+"maintain temporally-predictive distinctions" — a different, wrong objective. A holds *only* under
+non-causal masking.
+
+**Bootstrap (broken by the anchor):** occupancy can't begin until PAM has *learned* enough
+association to evoke differentially — but the word distinction is *given* (the anchored word cortex
+emits distinct words from t=0), so PAM acquires word↔context association first, *then* its
+differential evocation drives vision's occupancy. Occupancy **lags** PAM's word-association
+acquisition — a clean signature that the split is driven by association, not by vision splitting
+alone. (This lag is the manipulated variable in §8.)
 
 ### Genuinely open (the rig measures these; pre-register failure conditions)
 - **Stability under *intermittent* predictive load.** Most distinctions matter *sometimes*. Does a
@@ -269,33 +282,76 @@ gating-law are known to agree).
 
 ---
 
-## 8. The rig this points to (specifiable once §7's fork is closed)
+## 8. The rig (fork closed — now specifiable; build spec is the companion doc)
 
-**Stimulus — the 4→8 conflict** (the structure the sweep entirely lacked): objects *mostly visually
-dissimilar, sharing a few characteristics*, engineered so that **vision-alone provably keeps
-same-category instances apart** (otherwise the word is redundant again — the F2-analog for this
-experiment). Must contain both: a **distractor axis** (high-salience, freely splittable, but
-associatively inert — the colour) and a **category axis** (less salient, associatively load-bearing —
-the handle). 4→8 gives both "same category, different appearance" and "different category, similar
-appearance" — the genuine same/different conflict, repeated.
+**Mechanism under test:** Reading A (§7) — occupancy = gap-3 intra-group gradient disagreement,
+sourced from PAM's **anchored-word-seeded** associations, **non-causal masking asserted**. New
+substrate piece: **constant intrinsic re-pool** (depth-grading deferred to release).
 
-**Readout — reversed lift** (the sharpest test of "the word teaches what to attend to"): does the
-**intact arm re-pool the distractor axis** (give up the irrelevant split because the word reveals it
-carries no associative weight) **while the no-word arm keeps it**? Same two-arm, calibration-
-independent difference-of-arms discipline as the sweep — but the measured quantity is *distractor-axis
-resolution*, and the prediction is **intact < no-word** (the word caused vision to shed a distinction
-it would otherwise keep). Same eyes, different attention, measured directly.
+**Stimulus — the 4→8 conflict** (the structure the empty-gap sweep entirely lacked). Objects
+*mostly visually dissimilar, sharing a few characteristics*, engineered so **vision-alone provably
+occupies the wrong (salient) axis**. Two axes: a **distractor axis** (high-salience, freely
+splittable, associatively *inert* — colour) and a **category axis** (less salient, associatively
+load-bearing — handle). 4→8 gives both "same category, different appearance" and "different category,
+similar appearance." *Control that makes the whole thing valid:* the timing sweep must run on **this
+conflict stimulus, not a visually-resolvable one** — else vision succeeds alone, lift is null across
+all conditions for the wrong reason, and timing looks irrelevant when really the stimulus didn't need
+the word.
 
-**Build path (three stages; pin/sweep/release; the established method):**
-1. Fixed wide ratio, depth-independent, slow re-pool. Get the equilibrium-with-PAM-unpool **stable at
-   all**. Pre-register: intermittently-predictive distinction finds a stable depth vs oscillates.
-2. Sweep the ratio inward; characterise where it oscillates — **the response surface** (as the
+**Primary manipulation — word-vs-capacity timing.** The variable that "leads or lags" is **not** two
+onsets but two *confidence trajectories*: when capacity has opened enough to host the distinction
+(a point on the unpool ramp) vs when PAM's word-association is confident enough to evoke
+differentially (a learning curve built over repetition). Operationalized as a single scalar:
+**unpool-onset delay** relative to word-exposure (word channel active and PAM associating from t=0;
+the *clock onset* is delayed by a swept offset). Negative offset = words-before; zero = same;
+positive = words-after. *Experimental instrument only* — deployment-realism is the **rate-ratio**
+(how fast association builds vs how fast capacity opens), not a delay; do **not** read a timing
+result as a developmental-pacing finding (same caution as §12-B's rate-is-a-locator line).
+
+**Readout — two timescales** (richer than a single reversed-lift number):
+- **Fast (first-growth-phase efficiency):** does the word redirect occupancy from distractor to
+  category *before* vision commits to the distractor? Measured as reversed lift — intact arm
+  *fails to occupy / re-pools* the distractor where the no-word arm occupies it (calibration-
+  independent difference-of-arms, as in the sweep). Expected strong at words-before, weak/absent at
+  words-after.
+- **Slow (does the cycle provide rate-flexibility):** does occupancy *eventually* reach the category
+  axis and shed the distractor across re-pool/unpool cycles, **regardless of timing**? Requires the
+  run to cover **≥1 full distractor re-pool/re-unpool cycle** (esp. words-after — run it Phase-1-short
+  and recovery is missed, mis-read as permanent failure; the empty-gap run-length finding says cycles
+  are ~3× longer than first assumed).
+
+**Words-after = a structured OPEN QUESTION, not a prediction** (confident in the paradigm, unsure of
+the architecture's behaviour):
+- *Soft prior (not a gate):* words-after recovers at the **occupancy** level (the cycle cleans up and
+  covers over) but **scars at the envelope level** — this rig has **no envelope re-pool** (Tier 2,
+  §6b deferred), so the first allocation literally lasts; the cycle redirects occupancy *within the
+  branch the first impression opened* but cannot reclaim/reallocate the branch.
+- *What the rig measures:* the **asymptotic words-before vs words-after gap** (after both have cycled
+  fully) = the size of the **envelope-level scar** = a lower bound on what envelope re-pool (Tier 2)
+  would recover. **A deferral paying rent:** the first rig *sizes the deferred mechanism's value*.
+  Small gap → Tier 2 is minor, deferral was cheap. Large gap → Tier 2 is doing real work, its
+  re-entry trigger should fire sooner.
+- *Genuinely open:* how large the scar is. Full recovery → "first impressions last" was wrong and the
+  occupancy cycle is stronger than expected (a finding). Heavy scar → Tier 2 earns priority.
+
+**Disambiguation control — pretrained-PAM** (run only if the online result is ambiguous on
+learning-vs-gradient). If occupancy lags, is it because PAM hasn't *learned* the association, or
+because the *gradient* is weak? Enter PAM with the word-association already confident → any remaining
+lag is the gradient's doing. The analog of the oracle's forced-open/read-only trick (hold one
+variable to attribute the other). **The one admissible train/run split** — as an *isolation control*,
+not the deployed mechanism (exp02 logic: testing a property ≠ adopting it).
+
+**Build path (three stages; pin/sweep/release):**
+1. Fixed wide ratio, depth-independent, slow constant re-pool. Get the equilibrium-with-PAM-unpool
+   **stable at all**. Pre-register: intermittently-predictive distinction finds a stable depth vs
+   oscillates (§7 dynamics question).
+2. Sweep the rate ratio inward; characterise where it oscillates — the response surface (as the
    unpool-clock rate was handled).
 3. Release the depth-grading, using the surface as the reference for the force law.
 
-Two cortices, **no store needed** — a targeted addition on the current Stage-0 rig, cleaner than
-dragging in the store. Stays Stage-0-shaped in components; new in *stimulus*, *readout*, and the
-*intrinsic-re-pool + evocation-driven-unpool* mechanism.
+Two cortices, **no store needed** — a targeted addition on the current Stage-0 rig. Stays
+Stage-0-shaped in components; new in *stimulus*, *timing manipulation*, *two-timescale readout*, and
+the *constant-intrinsic-re-pool + evocation-driven-occupancy* mechanism.
 
 ---
 
@@ -310,5 +366,110 @@ dragging in the store. Stays Stage-0-shaped in components; new in *stimulus*, *r
   architecture from "a fixed encoder with an association table" into "a thing that becomes what it has
   experienced" — the line between a tool and a developing mind, and the reason the project exists.
 
-**Immediate next step is a design pass, not a build:** close §7's A-vs-B fork (and find the stability
-reference for the rate gap). Then — and only then — the rig in §8 is specifiable, exp03-style.
+**Status of the next step:** the A-vs-B fork is **closed** (Reading A, §7) and the §8 rig is
+**specified** — see the companion build doc `STAGE1_ATTENTION_SCULPTING_RIG_SPEC.md` (exp03-style,
+CC-ready). The rate-gap stability reference is pinned for the first rig (fixed + slow constant
+re-pool) and swept as stage 2. Remaining genuinely-open items (envelope-scar magnitude; intermittent-
+load stability; depth-grading) are what the rig *measures* or are deferred-with-triggers — none
+blocks the build. **[SUPERSEDED by §10, 2026-06-29: the build proceeded and surfaced a GATING
+PRECONDITION that blocks the rig — a dead evocation channel. Read §10 before acting on §8.]**
+
+---
+
+## 10. The gating precondition — a live evocation channel (design-table brief, 2026-06-29)
+
+**Status:** `[BLOCKER — design-table decision]`. The Stage-1 rig of §8 was built faithfully (the
+constant Δ2 re-pool of §5/G3; the 4→8 conflict stimulus of §2; the category oracle; Step-0 (a)/(b)/(c);
+the conflict-strength ladder — `experiments/05_attention_sculpting/`, with only behavior-preserving
+hooks added to the `[SETTLED]` exp04 + `src/loom/constant_repool_delta2`). Building it surfaced a
+prerequisite the whole program rests on and does not yet have: **the operator's evocation channel is
+content-dead in the deployed regime.** Everything below is **verified** (4-lens adversarial panel,
+unanimous; content-agnostic neutral (d)-gate); the redesign that fixes it is **the design table's to
+scope**, not a CC patch.
+
+### 10.1 What is dead, and why it blocks §8
+The mechanism under test (Reading A, §7) routes occupancy through PAM's evocation: a distinction is
+maintained iff its sides **evoke different bundles**. Empirically, in the deployed Stage-0/Stage-1 rig
+the `PrototypeResonanceOperator`'s PAM substrate **collapses to a single point** (prototype within-group
+spread 6.8e-3 init → ~1e-9…1e-11 by a few k steps, all 3 seeds, present from ~t=300), so `z = pa @ Wp`
+is **content-invariant** (random-input output std ~1e-9; on-manifold member/word/drift evocation differs
+by ~1e-7). The gap-3 gradient still reaches the masked vision **target** (so "gap-3 alive" / grad>0
+passes), but it is a **member-invariant constant pull**, carrying no word/member information — vision's
+above-chance B_track (0.34–0.84) comes from the spread/JEPA terms, **not** PAM evocation. **A
+reversed-lift run on this channel would be a WRONG-REASON null** ("the word doesn't teach" is
+indistinguishable from "the channel was too dead to carry the signal"). So §8 cannot be run until the
+channel is live. (The operator's *form* is fine: a fresh operator trained on a clean neutral 2-member
+association routes at (d)≈1.27 even at init 1e-3 — the collapse is purely the **deployed regime**.)
+
+### 10.2 The candidate levers (causal structure UNDETERMINED — do not read as a solved diagnosis)
+The contained fix authorised by the design table (operator-side, scale-robust, minimal-DOF,
+no tuned dial, validated content-agnostically) was **pursued to exhaustion**; every candidate was
+**insufficient alone**, and only a *stack* moved the needle — which establishes the factors are
+**jointly movable, NOT their causal structure**:
+
+| candidate change | revival (neutral (d)-gate) | note |
+|---|---|---|
+| prototype-init rescale 0.3 / 0.5 / 1.0 | none (≈0) | init=1.0's on-stimulus 0.23 was a `clamp_min` magnitude **artifact**, rejected by (d) |
+| window-center the cells (parameter-free) | none | within-dwell **content is itself window-constant** → centering removes content with the carrier |
+| remove carrier-DC along `u` | none | prototypes don't lift under the diffuse multi-member task |
+| **stimulus-side: bound carrier to within-window-relative** | none | so it is **not** just the absolute carrier scale |
+| cosine (scale-invariant) resonance + pam_lam=0 + init=1.0 + 2× training | ~0.197 (~15% of clean capacity) | only the *stack* revives, and weakly |
+
+Three named candidate levers — **carrier scale × PAM pool penalty × the diffuse multi-member completion
+signal** — were each shown insufficient and jointly movable. **The load-bearing lever is undetermined.**
+The most under-decomposed gap is **clean-2-member (d≈1.27) vs diffuse-multi-member deployed (dead)**:
+the real lever may be **how PAM's completion task is posed** (task structure) rather than the operator
+or the carrier at all. The redesign must decompose this before committing to a mechanism.
+
+### 10.3 The exp03 residue — verified, come-due, necessary-not-sufficient
+exp03 pre-registered (`experiments/03_order_as_content/RESULTS.md:120-126`; echoed PROJECT_STATE §6) that
+the operator is a **within-window comparator, not scale-invariant — "retains some absolute-scale
+sensitivity (large out-of-distribution per-sequence offsets degrade it)."** Stage-0 then made the order
+carrier **one continuous unbounded walk** ("never reset per window", loop.py), feeding the comparator
+OOD-large absolute offsets (deployed `ctx` on real cells ≈ **333**: `in_proj(cells)`≈1348,
+`pos_extract(cells)`≈252; prototypes ≈ **0.03** → ~4-order mismatch → uniform soft-assignment). So the
+residue has **come due**, and it correctly points at the harness's uncontrolled carrier scale — **but
+bounding the carrier alone does not revive the channel** (row 4 above). The residue is therefore
+**real-but-partial / necessary-not-sufficient**: a genuine contributing cause, not the whole cause.
+
+### 10.4 What this does to the empty-gap reading (a sharpening, not a retraction)
+The empty-gap `lift ≈ 0` headline **stands** — it is calibration-independent of *why* evocation fails.
+But because the evocation channel was **content-dead throughout Phase-1 and every contained fix failed**,
+the channel was **never close to live in any Stage-0 configuration.** Consequently:
+- The entire Stage-0 program provides **ZERO bearing on the (i)-impoverished vs (ii)-inert fork, in
+  *either* direction.** (i)/(ii) asks what happens *when the channel works*; the channel never worked, so
+  the question was never posed. (i)/(ii) becomes answerable **only on a redesigned, channel-live rig** —
+  it is not "(ii) gains weight," it is "unasked." *(This supersedes the §9 "discriminating test" bullet
+  and the earlier "strengthens (i)" note.)*
+- The empty-gap's scope **collapses to its channel-independent part**: *"vision does not need the word
+  for a visually-resolvable distinction"* (Step-0 (a) reconfirms this: no-word vision occupies the
+  salient distractor at 0.95, neglects the subtle category at ≈chance). That much is solid and useful.
+- **Plainly: the central paradigm bet — evocation-as-teacher — is wholly untested**, because evocation
+  has never carried information end-to-end in a deployed loop.
+
+### 10.5 The blocker, framed as a design problem (not a bug)
+**A live evocation channel in the deployed regime is the prerequisite for the entire attention-sculpting
+program** (and, in retrospect, for any evocation-as-teacher claim). Producing one is an **open
+operator/PAM-substrate (and possibly completion-task) redesign decision** — the design table's to scope,
+informed by §10.2's undecomposed levers. exp06 (a channel-revival experiment) should be designed *from*
+this brief once a direction is chosen, **not instead of it** — the load-bearing lever is unknown, so a
+premature exp06 would test the wrong thing. The neutral (d)-gate (associated-different vs
+associated-same on random content + content-ablation) is the **pre-registered liveness pass** any
+redesign must clear before Stage-1 is re-attempted; order recovery and the no-clean-slot ceiling are
+guards (both were **unchanged** across every operator patch — operator-side levers don't disturb the
+order paradigm).
+
+### 10.6 The Stage-1 rig's status, and why this is the apparatus working
+The Stage-1 rig is **built, faithful, and not wrong** — Step-0 (a)/(b) pass (salience→distractor;
+category representable+ablation-guarded), (c) is blocked on the dead channel. It **waits on the channel
+redesign**; it does not need rebuilding.
+
+**Process provenance (why the escalation is trustworthy).** The contained fix was pursued to
+exhaustion before escalating; the neutral (d)-gate **rejected the init=1.0 `clamp` artifact** — a
+manufacturing-shaped false positive (apparent on-stimulus divergence with a still-dead channel) caught
+**before it entered canon**. That is the apparatus doing its job: this is **not the project failing
+twice.** It is the instrumentation refusing to let an **untested** bet masquerade as a tested one — two
+apparent "the word doesn't teach" nulls (the empty-gap interpretation; the Stage-1 preview), **both
+dead-channel artifacts, both caught, both kept out of canon.** The central claim is **exactly as alive
+as it ever was** — it has simply **never been tested**, and now we know precisely what must exist before
+it can be: an evocation channel that carries information in the deployed loop.

@@ -386,3 +386,38 @@ sweep_metrics,analyze_sweep}.py`; 480 runs = 12 bands × 2 rates × 20 seeds). F
 **Next:** the (i)/(ii) fork is the design-table's, not a CC sweep — the discriminating move is the
 deferred **Stage-1 increment** (store / third cortex / richer environment), then re-run the lift
 metric. §12.D Readout-D entangled-corner debt remains undischarged (untouched by this Readout-G sweep).
+
+---
+
+## 2026-06-29 — Stage-1 attention-sculpting rig BUILT; blocked on a dead evocation channel (gating precondition)
+
+Built the Stage-1 rig from `STAGE1_ATTENTION_SCULPTING_RIG_SPEC.md` at `experiments/05_attention_sculpting/`
+(constant Δ2 re-pool / G3 = `src/loom/constant_repool_delta2`, λ2/Δ1 untouched, **not** exp01's λ2-raise;
+4→8 conflict stimulus; category oracle; Step-0 (a)/(b)/(c); conflict-strength ladder), with only
+behavior-preserving hooks added to the `[SETTLED]` exp04 (backward-compat verified). **Step-0 (a)/(b)
+pass** (vision-alone occupies the salient distractor 0.95 / neglects the subtle category ≈chance;
+category oracle-representable + ablation-guarded). **(c) is blocked**, and the root is upstream:
+
+**BLOCKER — the operator's evocation channel is content-dead in the deployed regime** (4-lens adversarial
+panel, unanimous; content-agnostic neutral (d)-gate). PAM prototypes collapse to a point (spread
+6.8e-3→~1e-10, all seeds, from ~t=300) → `z=pa@Wp` content-invariant → gap-3 is a member-invariant
+constant pull (the gradient reaches the target but carries no information). The contained operator-side
+fix (authorised, scale-robust, minimal-DOF, no dial, content-agnostically validated) was pursued **to
+exhaustion** — init-rescale / window-center / carrier-DC-removal / **stimulus-side carrier-bound** all
+gave no revival; only a stack (cosine + pam_lam=0 + init + 2× training) reached ~15% capacity. Candidate
+levers (carrier scale × pool penalty × diffuse multi-member signal) **each insufficient alone, causal
+structure undetermined**; the clean-2-member (d≈1.27) vs diffuse-deployed (dead) gap is under-decomposed
+(task structure may be the real lever). exp03's pre-flagged comparator scale-sensitivity (RESULTS.md:120-126)
+has **come due** but is **necessary-not-sufficient** (bounding the carrier alone doesn't discharge it).
+
+**Empty-gap re-read (sharpening, not retraction):** the channel was never live in any Stage-0 config →
+Stage-0 gives **zero bearing on (i)/(ii) in either direction**; the fork is **unasked** until a
+channel-live rig exists. `lift≈0` stands; scope collapses to "vision doesn't need the word for a
+resolvable distinction." **Evocation-as-teacher is wholly untested.** Full brief: `FRONTIER` §10 /
+PROJECT_STATE §12.E. The (d)-gate rejected a manufacturing-shaped init=1.0 `clamp` false-positive before
+canon — the apparatus working, not the project failing.
+
+**Next:** design-table decision on reviving the deployed evocation channel (operator/PAM-substrate, possibly
+completion-task redesign), informed by the undecomposed levers; exp06 to be designed *from* the brief, not
+instead of it. The neutral (d)-gate is the pre-registered liveness pass any redesign must clear. No code
+beyond the built (uncommitted) rig; nothing committed.
