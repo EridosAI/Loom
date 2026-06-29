@@ -1,0 +1,183 @@
+{
+  "commit_hash": "1a9e8baf8316e71154e773cffb8092c4160109a2",
+  "spec_hash": "c1c56cbd9cb6",
+  "live_bar": 0.8672,
+  "dead_d": 2.8177587419284085e-08,
+  "clean_d": 1.412156061867751,
+  "clean_revived": true,
+  "singles_from_dead": {
+    "member-count": {
+      "code": [
+        0,
+        1,
+        1
+      ],
+      "d": 3.9822149115697814e-08,
+      "std": 2.173318894577624e-08,
+      "lift": 1.1644561696413729e-08,
+      "revived": false,
+      "undone_factor": "member-count"
+    },
+    "cue-diffuseness": {
+      "code": [
+        1,
+        0,
+        1
+      ],
+      "d": 2.3547998710218772e-08,
+      "std": 1.231680800649171e-08,
+      "lift": -4.6295887090653126e-09,
+      "revived": false,
+      "undone_factor": "cue-diffuseness"
+    },
+    "pam-pool-penalty": {
+      "code": [
+        1,
+        1,
+        0
+      ],
+      "d": 7.210847465317338e-08,
+      "std": 2.017979601587912e-08,
+      "lift": 4.393088723388929e-08,
+      "revived": false,
+      "undone_factor": "pam-pool-penalty"
+    }
+  },
+  "pairs_from_dead": {
+    "member-count+cue-diffuseness": {
+      "code": [
+        0,
+        0,
+        1
+      ],
+      "d": 1.7842457582072236e-08,
+      "std": 2.5968784073930495e-08,
+      "lift": -1.033512983721185e-08,
+      "revived": false,
+      "undone_factors": [
+        "member-count",
+        "cue-diffuseness"
+      ],
+      "constituent_codes": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "sum_constituent_lifts": 7.014972987348416e-09,
+      "superadditive": false,
+      "superadd_margin": 0.1,
+      "superadd_excess": -1.7350102824560266e-08
+    },
+    "member-count+pam-pool-penalty": {
+      "code": [
+        0,
+        1,
+        0
+      ],
+      "d": 1.699310261043204e-05,
+      "std": 2.781692194608712e-05,
+      "lift": 1.6964925023012756e-05,
+      "revived": false,
+      "undone_factors": [
+        "member-count",
+        "pam-pool-penalty"
+      ],
+      "constituent_codes": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "sum_constituent_lifts": 5.557544893030301e-08,
+      "superadditive": false,
+      "superadd_margin": 0.1,
+      "superadd_excess": 1.6909349574082453e-05
+    },
+    "cue-diffuseness+pam-pool-penalty": {
+      "code": [
+        1,
+        0,
+        0
+      ],
+      "d": 1.0046945594642287,
+      "std": 0.1589228398076257,
+      "lift": 1.0046945312866413,
+      "revived": true,
+      "undone_factors": [
+        "cue-diffuseness",
+        "pam-pool-penalty"
+      ],
+      "constituent_codes": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "sum_constituent_lifts": 3.9301298524823975e-08,
+      "superadditive": true,
+      "superadd_margin": 0.47676851942288234,
+      "superadd_excess": 1.0046944919853429
+    }
+  },
+  "VERDICT": "joint lever (pair)",
+  "LEVER": [
+    [
+      "cue-diffuseness",
+      "pam-pool-penalty"
+    ]
+  ],
+  "DIRECTION_exp07": "re-pose PAM's COMPLETION TASK (the under-decomposed clean-2-member vs diffuse-multi-member gap) \u2014 addresses the joint lever, not a single-factor tweak",
+  "soft_cell_routing": {
+    "soft_cell": [
+      0,
+      1,
+      0
+    ],
+    "deciding_pair_cells": [
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "deciding_constituents": [
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "soft_cell_in_deciding_measurement": false,
+    "diffuse_textured_cells_in_deciding": [
+      [
+        1,
+        1,
+        0
+      ]
+    ]
+  }
+}

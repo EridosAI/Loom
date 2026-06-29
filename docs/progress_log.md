@@ -421,3 +421,41 @@ canon — the apparatus working, not the project failing.
 completion-task redesign), informed by the undecomposed levers; exp06 to be designed *from* the brief, not
 instead of it. The neutral (d)-gate is the pre-registered liveness pass any redesign must clear. No code
 beyond the built (uncommitted) rig; nothing committed.
+
+## 2026-06-29 — exp06 channel-revival factorial → LEVER DETERMINED: JOINT {cue-diffuseness, pool-penalty}  ·  gate commit 335f36d, spec_hash c1c56cbd9cb6
+
+`experiments/05_attention_sculpting/` (exp06_factorial.py, dgate.py, exp06_gate_validation.py,
+exp06_interior_read.py, exp06_reconfirm.py). The decompose-first factorial that **named the redesign
+direction** for the dead channel (the design-table fork from the 2026-06-29 blocker entry above).
+
+- **Design.** 2×2×2 over **member-count × cue-diffuseness × PAM pool-penalty**, carrier **bounded as the
+  necessary-not-sufficient baseline in every cell** (so it is NOT a factor). Measured by the now-committed
+  neutral content-agnostic **(d)-gate** (`dgate.py`, promoted from the exp05 design) — train a fresh op on a
+  neutral M-member associative task under each cell's factors, measure associated-different separation
+  (d_diff) with d_same + ablation guards. [RECONCILE] levels read programmatically from `SculptConfig`.
+- **Pre-registered failures / gating (exp03 discipline).** Step-0 validity **triad resolved first and
+  fully** (execution-order pinned: gates before any interior read; V3 before super-additivity): **V1** clean
+  anchor live (d 1.41, d_same 0), **V2** dead anchor collapsed (d 0.000, proto 4e-7), **V3** ≥1 toggle
+  traverses. **PASS** → committed standalone (`335f36d`) as a clean provenance point carrying **no
+  direction-finding**.
+- **Gate-validity probes (the 0.000's are real).** Collapse cells reach d=0 **and** proto=0 by step 200 and
+  stay flat (not under-training); raw un-normalised member separation ≈0 with normal output norm and
+  chance-level noise-decodability (not a magnitude artifact); d_same=0 on the live cells (genuine
+  differential separation). Cue radii read from `SculptConfig` (provenance, not circular).
+- **Interior read (§4/§5), adversarially verified (5 lenses, unanimous SURVIVES).** From the dead corner,
+  undoing **any single factor** stays dead; undoing **diffuseness AND penalty together** revives (d≈1.1) —
+  **super-additive** (1.005 vs Σ-singles 0). **VERDICT: JOINT LEVER = {cue-diffuseness, PAM pool-penalty};
+  member-count tolerated-deployed** (a ~22% degrader, NOT a killer); 3-way irreducible-conjunction
+  **rejected**. Kill-texture asymmetry (penalty point-collapse vs diffuseness near-collapse+residual) is
+  characterisation only, kept out of the lever arithmetic.
+- **Deciding cell re-confirmed at plateau (the fork hung on it).** [1,0,0] was unconverged at 4000 steps;
+  re-run to 12000 (16 seeds): **d_diff plateaus flat ~1.09–1.11 from step 6000** (mean 1.106, mean−2·SEM
+  1.040 ≥ threshold 0.967). **Convergence accepted on the d-mean:** prototype spread keeps growing in the
+  live regime (clean does the same while its d is rock-flat) — **proto-flat is a DEATH certificate, not a
+  LIFE one**, so (d) is the convergence signal for a live cell. Routing held (constituents stay hard-zero,
+  soft cell stays out).
+- **Direction (exp07).** **Re-pose PAM's COMPLETION TASK** as a joint, symmetric redesign over both lever
+  factors — (a) how the cue is posed; (b) drop/reshape the λ2-tie on PAM's prototypes — **no penalty-first
+  ordering**. Must clear the (d)-gate at the healthy bar **in the deployed loop** before Stage-1 (§8). The
+  empty-gap **(i)/(ii) fork stays unasked** until exp07 revives the *deployed* loop (exp06 revives the
+  *neutral probe* + names the lever). Full record: `FRONTIER` §10.7 / PROJECT_STATE §12.E.

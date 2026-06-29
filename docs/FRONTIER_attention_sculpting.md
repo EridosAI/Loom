@@ -402,6 +402,10 @@ channel is live. (The operator's *form* is fine: a fresh operator trained on a c
 association routes at (d)≈1.27 even at init 1e-3 — the collapse is purely the **deployed regime**.)
 
 ### 10.2 The candidate levers (causal structure UNDETERMINED — do not read as a solved diagnosis)
+> **[SUPERSEDED 2026-06-29 by §10.7 — exp06 determined the lever: JOINT {cue-diffuseness, PAM
+> pool-penalty}; member-count tolerated-deployed. The "undetermined" framing below is the
+> pre-decomposition state, kept for the record.]**
+
 The contained fix authorised by the design table (operator-side, scale-robust, minimal-DOF,
 no tuned dial, validated content-agnostically) was **pursued to exhaustion**; every candidate was
 **insufficient alone**, and only a *stack* moved the needle — which establishes the factors are
@@ -448,6 +452,10 @@ the channel was **never close to live in any Stage-0 configuration.** Consequent
   has never carried information end-to-end in a deployed loop.
 
 ### 10.5 The blocker, framed as a design problem (not a bug)
+> **[RESOLVED 2026-06-29 — see §10.7. exp06 was designed from this brief, decomposed the levers, and
+> named the direction: re-pose PAM's completion task over the JOINT {cue-diffuseness, pool-penalty}
+> lever. The "lever unknown" caution below is discharged.]**
+
 **A live evocation channel in the deployed regime is the prerequisite for the entire attention-sculpting
 program** (and, in retrospect, for any evocation-as-teacher claim). Producing one is an **open
 operator/PAM-substrate (and possibly completion-task) redesign decision** — the design table's to scope,
@@ -473,3 +481,49 @@ apparent "the word doesn't teach" nulls (the empty-gap interpretation; the Stage
 dead-channel artifacts, both caught, both kept out of canon.** The central claim is **exactly as alive
 as it ever was** — it has simply **never been tested**, and now we know precisely what must exist before
 it can be: an evocation channel that carries information in the deployed loop.
+
+### 10.7 exp06 resolves the lever — JOINT {cue-diffuseness, pool-penalty} → re-pose completion (2026-06-29)
+**Status:** `[RESOLVED → exp07 scoped]`. The channel-revival factorial (`EXP06_CHANNEL_REVIVAL_FACTORIAL_SPEC.md`;
+`experiments/05_attention_sculpting/`) decomposed §10.2's jointly-movable candidates in **factorial form**,
+so interaction was *in the design*, not a post-hoc caveat. Decompose-first over **member-count ×
+cue-diffuseness × PAM pool-penalty**, **carrier bounded as the necessary-not-sufficient baseline in every
+cell** (§10.3), measured by the now-committed neutral content-agnostic **(d)-gate** (`dgate.py`, promoted
+from the exp05 design — the §10.5 pre-registered liveness pass).
+
+**Method discipline.** Step-0 validity **triad resolved first and fully, gate committed standalone**
+(`335f36d`, no direction-finding): **V1** clean anchor live (d 1.41, d_same 0 → genuine differential
+separation), **V2** dead anchor collapsed (d 0.000, proto 4e-7), **V3** ≥1 single-toggle traverses. Four
+gate-validity probes confirmed the 0.000's are **genuine death, not under-training or magnitude artifacts**
+(`exp06_gate_validation.py`): collapse cells reach d=0 **and** proto=0 by step 200 and stay flat; raw
+un-normalised member separation ≈0 with normal output norm; chance-level noise-decodability. The interior
+read was **adversarially verified** (5 independent lenses — arithmetic, §4/§5 rule, soft-cell routing,
+neutrality, steelman-the-alternative — unanimous SURVIVES, no overturning alternative).
+
+**Verdict (binary at the healthy bar; super-additivity = interaction evidence only).** From the dead
+corner, undoing **any single factor** stays dead (d 0.000); undoing **cue-diffuseness AND pool-penalty
+together** revives (d≈1.1) — **super-additive** (1.005 vs Σ-singles 0, margin 0.477). So the **JOINT LEVER
+= {cue-diffuseness, PAM pool-penalty}**. **Member-count is tolerated-deployed — a ~22% degrader, NOT a
+killer** (manyOnly plateaus d≈1.11 vs clean 1.42, comfortably above the live bar); the **3-way
+irreducible-conjunction alternative is rejected** at convergence. The penalty/diffuseness **kill-texture
+asymmetry** (penalty = perfect point-collapse proto=0; diffuseness = near-collapse proto>0 + faint seed
+residual) is **characterisation only** — kept out of the lever arithmetic (which used d_diff means).
+
+**Why convergence was accepted on the d-mean (load-bearing — written here so it survives compaction).**
+The whole joint-vs-conjunction fork hung on the deciding cell [1,0,0], unconverged at the 4000-step gate
+budget. It was **re-confirmed to plateau** (`exp06_reconfirm.py`, 16 seeds, to 12000): **d_diff plateaus
+flat ~1.09–1.11 from step 6000** (mean 1.106, sem 0.033, **mean−2·SEM 1.040 ≥ threshold 0.967**). The
+pre-registered "(d) flat **AND** proto stable" criterion's proto-clause never fires because **prototype
+spread keeps growing monotonically — but the clean cell does exactly the same** (clean proto 1.71→2.23
+while clean d is rock-flat 1.418). **Proto-flat is a DEATH certificate (dead cells: proto→0 and stay 0),
+not a LIFE one**: for a live cell the substrate keeps differentiating, which can only sustain/raise d. So
+**(d) is the convergence signal for a live cell**, it has plateaued, any residual creep is *upward*
+(safer), and the §4 decision rests on the converged d-mean. Routing held under the longer budget (both
+deciding-pair constituents stay hard-zero; the soft diffOnly cell stays out of the deciding arithmetic).
+
+**exp07 direction (scoped from this).** **Re-pose PAM's COMPLETION TASK** as a **joint, symmetric**
+redesign over the two lever factors — (a) **how the cue is posed**; (b) **drop/reshape the λ2-tie on PAM's
+own prototypes** — pursued together, with **NO penalty-first ordering** (the texture asymmetry stays out).
+exp07 must clear the same neutral (d)-gate at the **healthy** bar **in the deployed loop** before Stage-1
+(§8) is re-attempted. **The empty-gap (i)/(ii) fork stays unasked** until exp07 revives the *deployed*
+loop — exp06 revives the *neutral probe* and names the lever; it does not by itself make the deployed
+channel live.
