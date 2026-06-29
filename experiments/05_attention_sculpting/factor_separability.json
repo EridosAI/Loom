@@ -1,0 +1,25 @@
+{
+  "separable": true,
+  "outcome": "A (separable) -> full 2x2x2 cube",
+  "constructible_member_diffuse_combos": [
+    [
+      2,
+      false
+    ],
+    [
+      2,
+      true
+    ],
+    [
+      16,
+      false
+    ],
+    [
+      16,
+      true
+    ]
+  ],
+  "construction_notes": "member_count (int) and diffuse (bool) are independent fields of dgate.Factors with no shared state; cue-diffuseness is a cue-structure knob (shared-salient-base vs pure-differentiating cue) that applies identically at any member-count, and member-count is a cardinality knob that applies at either diffuseness. All four (member-count x diffuseness) combinations were constructed independently: [(2, False), (2, True), (16, False), (16, True)]. pam_lam is a third orthogonal knob (training-loss penalty coefficient). No structural coupling -> Outcome A.",
+  "commit_hash": "1a9e8baf8316e71154e773cffb8092c4160109a2",
+  "spec_hash": "c1c56cbd9cb6"
+}
