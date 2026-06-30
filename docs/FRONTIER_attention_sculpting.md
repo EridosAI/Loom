@@ -594,3 +594,60 @@ cardinality; it converges slower than drop). **Still unmeasured / unasked:** the
 structured diffuseness; revival of the *deployed* loop (exp07 Phase-0 revives only the neutral probe surface);
 the empty-gap (i)/(ii) fork. Numbers in `exp07_interior_read.json` (LEGITIMACY / CUE_RECOVERABILITY_SCOPE /
 CONVERGENCE_FLAGS / TOPOLOGY_INVARIANT_16_vs_2); adversarial record in the workflow output.
+
+## §10.9 — Cue-floor / structured-diffuseness (the build-robust half) — SHELVED with trigger
+
+**Deferred, not abandoned.** The structured-diffuseness floor (the build-robust half of the exp07 two-part
+cue fix) is a property of the **static `ConflictStimulus` construction** (R_coarse/r_distractor/r_category
+block geometry, σ=0.20 noise), **not of the co-development loop**. It surfaced because Phase-0's floor≈0 was
+**construction-bound** (common-mode cue + global-mean-centre remover). Measuring the structured floor
+optimizes one static single-frame stimulus — **off the loop's critical path *conditional on the revival
+result holding in the regime the loop test runs in*** (the bet; the Trigger below names when it's wrong).
+
+**Why deferred.** Signal/clutter separation becomes structurally easier with the two mechanisms the
+architecture already intends and we have **deliberately not built** — **continual time** (earned salience:
+background becomes low-surprise through exposure; signal separates because the system *learned* the
+environment) and **multiple cortices** (cross-modal association recovers a faint signal through the
+co-occurrence PAM exists to build). Forcing a single static frame to separate signal from structured clutter
+— with PCA/whitening/block-centre disqualified as **variance-matching-circular**, leaving only global
+mean-centring — asks one frame to do in isolation the job the loop's **time-and-association machinery** is
+designed for.
+
+**Epistemic status.** "Easier later" is a **prior, not a measured fact** — same status as the temporal floor
+we declined to assume. The deferral is a **bet, recorded as one.**
+
+**Trigger to resume.** If the loop test stalls because **evocation cannot carry enough signal to teach** —
+i.e. the channel-carries-information result does not hold in the regime the loop test actually runs in — the
+within-frame structured floor becomes load-bearing and **Phase-1 resumes with a measured reason.**
+
+**Banked pickup artifact — CC's read-only rig analysis** (resume from this, do not re-derive):
+- **Structured decomposition** of the deployed `centre` (read-only, exact): **full-16 = 68% structured /
+  31.8% global-common-mode; within-group = 13.5% structured** (coarse becomes the within-group common-mode,
+  distractor is the residual). Of the globally-centred residual: coarse 80% / **distractor 19%** / category
+  **signal 0.5%**. PCA spectrum `[10,10,10,8.49,1.41,0,0,0]` — **category signal @ s=1.41 vs distractor @
+  s=8.49 (6× gap), sitting near the σ=0.20 noise floor.**
+- **Circularity ladder:** **global-mean-centre = the ONLY non-circular floor instrument** (removes just the
+  single global-mean direction); **PCA / whitening / block-centre = variance-matching-circular** (their basis
+  *is* the constructed clutter blocks → forced floor) — usable only as **upper-bound references, never the
+  floor**. **The ablation guard does NOT catch variance-matching circularity** (it catches signal-injection
+  only). Shared-parameter loci that create the trap: the block layout (`n_A/n_distractor/n_category` + the
+  divmod map), the rotation `Q`, the population covariance/variance ordering, the magnitudes.
+- **Design (scoped, not written): calibrated-synthetic + deployed-direct-validation.** The (d)-gate is
+  rotation-agnostic, so a synthetic construction matching the extractable block energies/counts/assignment
+  reproduces the deployed endpoint exactly *and* preserves the Phase-0 floor≈0 anchor at sweep=0;
+  deployed-direct (`ConflictStimulus` is standalone-extractable) is the calibration target + validation check.
+  Floor measured with global-mean-centre only.
+- **Phase-1 spec scoped, NOT written. Resume from the analysis.** No code; `ac7ea57` stands as the last build.
+
+## §10.10 — LIVE FRONTIER: evocation-as-teacher remains UNTESTED
+
+exp06/07 established the **channel revives** — it clears the neutral (d)-gate **above the live bar** (revival
+d≈1.0–1.1 vs the clean-2 *healthy* ≈1.41) once **cue and penalty are jointly addressed** (cue re-organization
+dominant for common-mode diffuseness **(structured/build-robust half shelved, §10.9)**; preserve-style
+open-and-stay-open tie legitimate on uniformity grounds at a measured, scale-growing capacity cost). **The channel carries information; it has NOT been shown to
+teach** — to **sculpt cortex representation via evocation-divergence.**
+
+**Next phase: scope the minimal rig that tests whether evocation sculpts cortex representation.** Open
+instinct (Jason): may need **continual time + a second cortex from the start** — to be posed as the **opening
+fork, not presumed.** [Bar note: exp06/07 cleared the *live* bar (0.867), not the full *healthy* value
+(~1.41); "revives" = above-live-bar, not healthy-restored.]

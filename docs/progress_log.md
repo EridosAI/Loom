@@ -500,3 +500,18 @@ corner-gate) surfaced and signed off before any interior read** (the standing ga
   cost; slower convergence). **Still unmeasured/open:** structured-diffuseness floor; *deployed-loop*
   revival; empty-gap (i)/(ii). Full record: `FRONTIER` §10.8 / PROJECT_STATE §12.E; numbers in
   `exp07_interior_read.json`.
+
+## 2026-06-30 — Cue-floor (build-robust half) SHELVED with trigger
+
+Caught that the **structured-diffuseness floor is a property of the static `ConflictStimulus` construction,
+not the loop** — a now-vs-later problem we'd stopped questioning after the exp07 SNR work. **Deferred, not
+abandoned;** trigger = **the loop test stalls on evocation signal capacity** (channel-carries-information
+doesn't hold in the regime the loop test runs in) → the within-frame structured floor becomes load-bearing
+and Phase-1 resumes with a measured reason. Reasoning: signal/clutter separation gets structurally easier
+with the two mechanisms the architecture intends but we haven't built — **continual time** (earned salience)
+and **multiple cortices** (cross-modal recovery) — so forcing one static frame to do it (PCA/whitening/block-
+centre variance-matching-circular; only global-mean-centre is a fair instrument) asks a frame to do the
+loop's job. **"Easier later" recorded as a prior, not a fact** (same status as the temporal floor). **CC's
+read-only rig analysis banked as the pickup artifact** (structured decomposition, circularity ladder,
+calibrated-synthetic + deployed-direct-validation design — Phase-1 spec scoped, not written; FRONTIER §10.9).
+No code; `ac7ea57` stands as the last build.
