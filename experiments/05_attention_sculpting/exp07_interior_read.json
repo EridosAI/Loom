@@ -1,0 +1,358 @@
+{
+  "commit_hash": "43e03c099568db0105055c2592904f73084af0ed",
+  "spec_hash": "2d95199151ef",
+  "live_bar": 0.8672,
+  "significance_band_k": 2.0,
+  "ceilings_from": "reconfirm (10 seeds, plateau-checked) where available; surface fallback",
+  "CARD16": {
+    "columns": {
+      "off": {
+        "flat_baseline": 0.0,
+        "ceiling_C": 1.1263,
+        "ceiling_std": 0.1402,
+        "ceiling_sem": 0.0443,
+        "ceiling_per_seed": [
+          1.0174,
+          1.0357,
+          1.1365,
+          1.2085,
+          1.2654,
+          1.2703,
+          1.0296,
+          1.1398,
+          1.299,
+          0.8608
+        ],
+        "ceiling_plateaued": true,
+        "ceiling_source": "reconfirm@36000",
+        "own_sharp": 1.1463,
+        "own_sharp_source": "reconfirm@30000",
+        "own_sharp_floor": 0.0199,
+        "recoverable_inflated": 1.1263,
+        "irreducible_floor": {
+          "value": 0.0199,
+          "raw": 0.0199,
+          "uncertainty": 0.0559,
+          "fully_recoverable": true
+        },
+        "revives": true,
+        "ablation_collapses": true
+      },
+      "reshaped": {
+        "flat_baseline": 0.0,
+        "ceiling_C": 1.0234,
+        "ceiling_std": 0.0793,
+        "ceiling_sem": 0.0251,
+        "ceiling_per_seed": [
+          1.0147,
+          1.0366,
+          0.9218,
+          1.0162,
+          1.0743,
+          1.0553,
+          1.0517,
+          1.1427,
+          1.059,
+          0.8619
+        ],
+        "ceiling_plateaued": true,
+        "ceiling_source": "reconfirm@36000",
+        "own_sharp": 1.0707,
+        "own_sharp_source": "reconfirm@30000",
+        "own_sharp_floor": 0.0473,
+        "recoverable_inflated": 1.0234,
+        "irreducible_floor": {
+          "value": 0.1228,
+          "raw": 0.1228,
+          "uncertainty": 0.0422,
+          "fully_recoverable": false
+        },
+        "revives": true,
+        "ablation_collapses": true
+      },
+      "deployed": {
+        "flat_baseline": 0.0,
+        "ceiling_C": 0.0,
+        "ceiling_std": 0.0,
+        "ceiling_sem": 0.0,
+        "ceiling_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ceiling_plateaued": null,
+        "ceiling_source": "surface",
+        "own_sharp": 0.0,
+        "own_sharp_source": "surface",
+        "own_sharp_floor": 0.0,
+        "recoverable_inflated": -0.0,
+        "irreducible_floor": {
+          "value": 1.1463,
+          "raw": 1.1463,
+          "uncertainty": 0.034,
+          "fully_recoverable": false
+        },
+        "revives": false,
+        "ablation_collapses": true
+      }
+    },
+    "floors": {
+      "off": 0.0199,
+      "reshaped": 0.1228,
+      "deployed": 1.1463
+    },
+    "topology": {
+      "klass": "monotonic",
+      "min_regime": "off",
+      "spread": 1.1264
+    }
+  },
+  "CARD2": {
+    "columns": {
+      "off": {
+        "flat_baseline": 0.0,
+        "ceiling_C": 1.3793,
+        "ceiling_std": 0.2203,
+        "ceiling_sem": 0.0697,
+        "ceiling_per_seed": [
+          1.6817,
+          1.0198,
+          1.6383,
+          1.3048,
+          1.4647,
+          1.1312,
+          1.4374,
+          1.5869,
+          1.292,
+          1.2355
+        ],
+        "ceiling_plateaued": true,
+        "ceiling_source": "reconfirm@30000",
+        "own_sharp": 1.3822,
+        "own_sharp_source": "reconfirm@30000",
+        "own_sharp_floor": 0.003,
+        "recoverable_inflated": 1.3792,
+        "irreducible_floor": {
+          "value": 0.003,
+          "raw": 0.003,
+          "uncertainty": 0.0992,
+          "fully_recoverable": true
+        },
+        "revives": true,
+        "ablation_collapses": true
+      },
+      "reshaped": {
+        "flat_baseline": 0.0,
+        "ceiling_C": 1.3766,
+        "ceiling_std": 0.2133,
+        "ceiling_sem": 0.0674,
+        "ceiling_per_seed": [
+          1.6819,
+          1.02,
+          1.5838,
+          1.3078,
+          1.4647,
+          1.1485,
+          1.4379,
+          1.5986,
+          1.2926,
+          1.2303
+        ],
+        "ceiling_plateaued": true,
+        "ceiling_source": "reconfirm@30000",
+        "own_sharp": 1.3819,
+        "own_sharp_source": "reconfirm@30000",
+        "own_sharp_floor": 0.0053,
+        "recoverable_inflated": 1.3766,
+        "irreducible_floor": {
+          "value": 0.0056,
+          "raw": 0.0056,
+          "uncertainty": 0.0976,
+          "fully_recoverable": true
+        },
+        "revives": true,
+        "ablation_collapses": true
+      },
+      "deployed": {
+        "flat_baseline": 0.0,
+        "ceiling_C": 0.0,
+        "ceiling_std": 0.0,
+        "ceiling_sem": 0.0,
+        "ceiling_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ceiling_plateaued": null,
+        "ceiling_source": "surface",
+        "own_sharp": 0.0,
+        "own_sharp_source": "surface",
+        "own_sharp_floor": 0.0,
+        "recoverable_inflated": 0.0,
+        "irreducible_floor": {
+          "value": 1.3822,
+          "raw": 1.3822,
+          "uncertainty": 0.0706,
+          "fully_recoverable": false
+        },
+        "revives": false,
+        "ablation_collapses": true
+      }
+    },
+    "floors": {
+      "off": 0.003,
+      "reshaped": 0.0056,
+      "deployed": 1.3822
+    },
+    "topology": {
+      "klass": "monotonic",
+      "min_regime": "off",
+      "spread": 1.3792
+    }
+  },
+  "TOPOLOGY_INVARIANT_16_vs_2": {
+    "klass_match": true,
+    "klass_match_note": "coarse klass-string match; near-FORCED because deployed-dead pins the floor spread to maximum at both cards (separable unreachable) -> reduces to the single bit 'reshaped did not undershoot off'. Not a strong structural result.",
+    "discriminating_relationship_invariant": false,
+    "discriminating_note": "The off-vs-reshaped CEILING gap (the spec's 2nd invariance gate / only non-trivial content) is NOT cardinality-invariant: dead tie @card-2 (t=0.428) vs significant @card-16 (t=2.84). So member-count DOES modulate the reshaped capacity cost.",
+    "member_count_claim": "member-count does not FLIP liveness (OR-kill + off<=reshaped ordering replicate at cards 2 and 16); it is NOT a clean non-lever -- it modulates the scale-growing capacity cost. Two cardinalities cannot anchor invariance of a relationship that changes between them."
+  },
+  "intrinsic_inflated_split_16": {
+    "off": {
+      "inflated": 1.1263,
+      "irreducible": {
+        "value": 0.0199,
+        "raw": 0.0199,
+        "uncertainty": 0.0559,
+        "fully_recoverable": true
+      }
+    },
+    "reshaped": {
+      "inflated": 1.0234,
+      "irreducible": {
+        "value": 0.1228,
+        "raw": 0.1228,
+        "uncertainty": 0.0422,
+        "fully_recoverable": false
+      }
+    },
+    "deployed": {
+      "inflated": -0.0,
+      "irreducible": {
+        "value": 1.1463,
+        "raw": 1.1463,
+        "uncertainty": 0.034,
+        "fully_recoverable": false
+      }
+    }
+  },
+  "CUE_RECOVERABILITY_SCOPE": "floor~0 (cue diffuseness fully recoverable by content-blind re-organization) is STRUCTURALLY FORCED, not discovered: the re-posing (comp - alpha*mu) is exactly global mean-centering, and the tested diffuse cue puts ~100% of masking energy in a SINGLE cls-independent common-mode (5.831*base) with a tiny differentiating part (0.5*Cd) -> at alpha=1 mean-centering removes the common-mode EXACTLY, so floor~0 follows from the construction independent of training (near tautology). The fully_recoverable=true booleans below MUST be quoted with this scope. Two further limits: (i) common-mode-dominance is itself a PROBE SIMPLIFICATION of the deployed rig (R_coarse is per-coarse-class, r_distractor possibly per-member; a single global mean-centering would NOT remove those) -> the deployed substrate's true floor may be >0, UNVERIFIED; (ii) the spec's stated native substrate is 'diffuse-but-structured' -- the tested cue is the LEAST structured case (a constant offset), so the structured-diffuseness floor (the build-robust part of the two-part cue fix) remains UNMEASURED. The ablation-invariance guard proves 'injects no new signal' (a tautology of constant subtraction), NOT 'recovers diffuseness in general'.",
+  "CONVERGENCE_FLAGS": {
+    "off_card16_plateau": "RESOLVED by converge to 36000 (exp07_converge_off16): 16/off/repose@1.0 PLATEAUS at ~1.126 (flat 30k/33k/36k = 1.133/1.129/1.126; the 24k->30k creep stopped). The +0.103 card-16 ceiling gap is now a CONVERGED number (paired t=2.84, equal-training at 36000), NOT a lower bound. [At the 30000 snapshot off was still creeping -> earlier reported as a lower bound; the converge confirms the plateau and the gap held ~constant 0.108->0.103.]",
+    "reshaped_plateau": "reshaped ceilings flat by ~18-24k, confirmed at 36000 (1.024/1.042/1.023) -> converged.",
+    "equal_convergence": "both off and reshaped now read at 36000, both plateaued -> equal-TRAINING and equal-CONVERGENCE."
+  },
+  "LEGITIMACY": {
+    "verdict": "PRESERVE on the uniformity argument (same machinery as the cortices). Both drop(off) and preserve(reshaped) REVIVE the channel (binary liveness), so liveness does not select. Reshaped carries a ROBUST seed-paired SCALE-GROWING CEILING capacity cost (off-reshaped = +0.103 @card-16, paired t=2.84, 6/4; ~+0.003 @card-2) that drop avoids -- the measured price of the tie, chosen on uniformity grounds. NOT 'validated'. 'Floor-equivalent' is RULER-DEPENDENT (holds own-sharp \u03940.027; FAILS common off-sharp \u03940.103>margin, the ruler this artifact's own CARD16.floors+topology use) and the subtracted sharp-gap is NOT SIGNIFICANT -- so the cost is booked as a ceiling cost, not laundered out of the floor.",
+    "basis": "uniformity argument; both columns revive (liveness does not select); cost booked as CEILING",
+    "both_revive": true,
+    "robust_deliverable": "seed-paired CEILING capacity cost (off-reshaped); floor-equivalence is ruler-dependent",
+    "ceiling_cost_card16": {
+      "delta": 0.1029,
+      "paired": {
+        "mean_diff": 0.1029,
+        "t": 2.84,
+        "n": 10,
+        "sign_split": "6/4",
+        "significant": true
+      },
+      "robust": true
+    },
+    "ceiling_cost_card2": {
+      "delta": 0.0027,
+      "paired": {
+        "mean_diff": 0.0026,
+        "t": 0.428,
+        "n": 10,
+        "sign_split": "2/8",
+        "significant": false
+      }
+    },
+    "scale_growing": true,
+    "sharp_gap_card16": {
+      "delta": 0.0756,
+      "paired": {
+        "mean_diff": 0.0756,
+        "t": 1.478,
+        "n": 10,
+        "sign_split": "6/4",
+        "significant": false
+      },
+      "significant": false,
+      "note": "NOT significant -> cannot be cleanly booked as a separable uniform offset; the robust cost is the ceiling gap"
+    },
+    "floor_equivalence": {
+      "own_sharp_ruler": {
+        "off": 0.0199,
+        "reshaped": 0.0473,
+        "delta": 0.0274,
+        "equivalent": true
+      },
+      "common_offsharp_ruler": {
+        "off": 0.0199,
+        "reshaped": 0.1228,
+        "delta": 0.1029,
+        "equivalent": false
+      },
+      "ruler_dependent": true,
+      "note": "floor-equivalence holds under own-sharp but FAILS under the common off-sharp ruler (the ruler this artifact's CARD16.floors + topology use). The robust deliverable is the ceiling cost. Spec is ambiguous (own-sharp: 'each column carries its own sharp'; common: 'unreachable ruler'); both reported."
+    },
+    "off_C": 1.1263,
+    "reshaped_C": 1.0234,
+    "off_per_seed": [
+      1.0174,
+      1.0357,
+      1.1365,
+      1.2085,
+      1.2654,
+      1.2703,
+      1.0296,
+      1.1398,
+      1.299,
+      0.8608
+    ],
+    "reshaped_per_seed": [
+      1.0147,
+      1.0366,
+      0.9218,
+      1.0162,
+      1.0743,
+      1.0553,
+      1.0517,
+      1.1427,
+      1.059,
+      0.8619
+    ]
+  },
+  "PHASING_RECHECK": {
+    "outcome": "reversal NOT locked \u2014 reshaped recovers to WITHIN MARGIN of off (NOT better) at reshaped@0.9: best C=1.0758 is 0.0505 BELOW off C=1.1263, clearing only the off-margin bar (cushion 0.0495). Onset modulates the ceiling cost but does not erase it; preserve holds as a uniformity choice, not because reshaped matches off.",
+    "per_onset_ceiling": {
+      "reshaped@0.1": 1.0692,
+      "reshaped@0.3": 1.0234,
+      "reshaped@0.5": 1.0747,
+      "reshaped@0.7": 1.0475,
+      "reshaped@0.9": 1.0758
+    },
+    "best_onset": "reshaped@0.9",
+    "best_C": 1.0758,
+    "off_C": 1.1263,
+    "below_off_by": 0.0505,
+    "margin_cushion": 0.0495,
+    "reversal_locked": false,
+    "caveat": "thin cushion vs the off-creep (off@16 still rising); a converged off would widen the gap and could erode this cushion"
+  }
+}

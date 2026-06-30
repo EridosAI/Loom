@@ -502,9 +502,12 @@ neutrality, steelman-the-alternative — unanimous SURVIVES, no overturning alte
 **Verdict (binary at the healthy bar; super-additivity = interaction evidence only).** From the dead
 corner, undoing **any single factor** stays dead (d 0.000); undoing **cue-diffuseness AND pool-penalty
 together** revives (d≈1.1) — **super-additive** (1.005 vs Σ-singles 0, margin 0.477). So the **JOINT LEVER
-= {cue-diffuseness, PAM pool-penalty}**. **Member-count is tolerated-deployed — a ~22% degrader, NOT a
-killer** (manyOnly plateaus d≈1.11 vs clean 1.42, comfortably above the live bar); the **3-way
-irreducible-conjunction alternative is rejected** at convergence. The penalty/diffuseness **kill-texture
+= {cue-diffuseness, PAM pool-penalty}**. **Member-count is tolerated-deployed for LIVENESS — a ~22%
+degrader that does NOT flip whether the channel revives (NOT a killer; manyOnly plateaus d≈1.11 vs clean
+1.42, above the live bar) — but it is a non-lever ONLY for liveness: exp07 (2026-06-30) measured a channel
+exp06 did not and found member-count DOES modulate the reshaped (preserve) tie's capacity cost (seed-paired,
+scale-growing: ~0 @card-2 → +0.103 @card-16, paired t=2.84). The liveness non-lever finding stands; "non-lever"
+without qualification does not.** The **3-way irreducible-conjunction alternative is rejected** at convergence. The penalty/diffuseness **kill-texture
 asymmetry** (penalty = perfect point-collapse proto=0; diffuseness = near-collapse proto>0 + faint seed
 residual) is **characterisation only** — kept out of the lever arithmetic (which used d_diff means).
 
@@ -527,3 +530,67 @@ exp07 must clear the same neutral (d)-gate at the **healthy** bar **in the deplo
 (§8) is re-attempted. **The empty-gap (i)/(ii) fork stays unasked** until exp07 revives the *deployed*
 loop — exp06 revives the *neutral probe* and names the lever; it does not by itself make the deployed
 channel live.
+
+## §10.8 — exp07 (Phase 0): the cue-floor × penalty surface (measured, not built)
+
+**What it is.** The measured opening phase of exp07 (`EXP07_CUE_FLOOR_PENALTY_SURFACE_SPEC.md`;
+`experiments/05_attention_sculpting/exp07_{config,core,step0,surface,ceiling_reconfirm,converge_off16,interior_read}.py`).
+It does **not** build the redesign — it measures the surface the redesign is scoped from, read through the
+committed neutral **(d)-gate** (`dgate.py`), **no new operator, no store**. Cue axis = flat-diffuse →
+content-blind re-posings → sharp-reference; penalty axis = `{off (drop), reshaped (preserve), deployed
+(collapse)}`; member-count held deployed (16) with a card-2 corner/surface probe. All knobs `[RECONCILE]`d
+from the exp06 commit. Step-0 gate (re-posing construction + separability/sanity + corner-gate) was
+**surfaced and signed off before any interior read** (the standing gate).
+
+**The `reshaped` (preserve) regime = the settled cortex StepSchedule applied to PAM's tie** (the spec's
+preserve argument: *architectural uniformity with the cortices*). Groups open at t1, capacity/λ2 at t2,
+strength 10→0. **Two methodological traps were caught and fixed before any verdict** (both would have
+manufactured a wrong-reason dead/penalised reshaped column): (1) a naive single-clock `pool_penalty(lam,lam)`
+that penalised δ1 too → annihilated the group symmetry-breakers → **irreversible collapse trap** (oracle
+test: reshaped-sharp could not revive); fixed to the cortex two-clock that keeps groups alive. (2) a
+**fractional clock-onset** that drifted later when the budget was extended for plateau (3600→9000),
+lengthening the closed phase and making "more training" look *worse*; fixed to an **absolute** two-clock
+onset (900/3600, budget-independent). With the faithful schedule, reshaped revives across **all 10 seeds**
+at both cardinalities — the bimodality seen earlier was the onset-drift artifact, not intrinsic.
+
+**The three measured findings (adversarially verified — 4 named-blind-spot lenses; survives directionally,
+no high-severity / false-PASS; every confirmed error understates the reshaped cost, so no spurious
+"preserve" can be manufactured; two framings that failed *as worded* were corrected in the artifact):**
+
+1. **Cue diffuseness recoverability is STRUCTURALLY FORCED and construction-scoped (not a general result).**
+   The re-posing (`comp − α·μ`) is exactly **global mean-centering**, and the deployed diffuse cue puts ~100%
+   of masking energy in a single cls-independent common-mode (5.831·base) over a tiny differentiating part
+   (0.5·Cd) → at α=1 mean-centering removes the common-mode exactly, so floor≈0 (off cue-floor 0.01–0.05,
+   own-sharp) follows from the construction independent of training (near tautology). **Generalization to
+   structured (non-common-mode) diffuseness — the spec's stated native substrate, i.e. the build-robust half
+   of the two-part cue fix — is UNMEASURED.** Common-mode-dominance is itself a probe simplification of the
+   deployed rig (R_coarse per-coarse-class, r_distractor possibly per-member), so the deployed substrate's
+   true floor may be >0 (unverified).
+
+2. **Penalty legitimacy → PRESERVE on the uniformity argument, at a measured cost — NOT "validated."** Both
+   drop(off) and preserve(reshaped) **revive** the channel (binary liveness does not select). The robust
+   deliverable is a **seed-paired, SCALE-GROWING CEILING capacity cost**: off−reshaped = **+0.103 @card-16
+   (paired t=2.84; off 1.126 vs reshaped 1.023, both converged at 36000), ~0 @card-2 (t=0.43)**. "Floor-
+   equivalent with drop" is **ruler-dependent** (holds under each column's own sharp, Δ0.027; **FAILS** under
+   the common off-sharp ruler that this artifact's own `CARD16.floors`+topology use, Δ0.103 > margin), and the
+   sharp-gap that would license calling the cost a separable "uniform offset" is **NOT significant** (t=1.48).
+   So the cost is booked as a **ceiling/capacity cost**, not laundered out of the floor. Preserve is chosen on
+   uniformity grounds, paying this cost; drop avoids it. Onset modulates but does not erase it (best reshaped
+   recovers to *within margin* of off, ~0.05 below, not better).
+
+3. **Topology: klass-invariant but trivially so; the discriminating relationship is NOT cardinality-invariant.**
+   The "monotonic, invariant 16↔2" klass-match is **deployed-dead-driven** (deployed C=0 pins the floor spread
+   to maximum, making `separable` unreachable). The non-trivial off-vs-reshaped relationship is a **dead tie
+   @card-2 (t=0.43) but significant @card-16 (t=2.84)** → **member-count does NOT flip liveness (the exp06
+   non-lever stands for liveness) but DOES modulate the reshaped tie's capacity cost** (scope-narrowing applied
+   in place to §10.7 / PROJECT_STATE §12.E / memory). Two cardinalities cannot anchor invariance of a
+   relationship that changes between them.
+
+**exp07 design implication (scoped, not built).** Re-pose PAM's completion with **content-blind cue
+re-organization** (the dominant lever for common-mode diffuseness; the structured-diffuseness/build-robust
+floor remains untested) **+ the preserve-style open-and-stay-open tie** (legitimate on uniformity grounds,
+but carrying a real scale-growing capacity cost — weigh it against the uniformity benefit, especially at high
+cardinality; it converges slower than drop). **Still unmeasured / unasked:** the build-robust cue floor under
+structured diffuseness; revival of the *deployed* loop (exp07 Phase-0 revives only the neutral probe surface);
+the empty-gap (i)/(ii) fork. Numbers in `exp07_interior_read.json` (LEGITIMACY / CUE_RECOVERABILITY_SCOPE /
+CONVERGENCE_FLAGS / TOPOLOGY_INVARIANT_16_vs_2); adversarial record in the workflow output.

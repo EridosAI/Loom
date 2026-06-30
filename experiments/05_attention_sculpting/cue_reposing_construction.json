@@ -1,0 +1,118 @@
+{
+  "construction": "content-blind common-mode centering: comp_reposed[m] = comp[m] - alpha*mu, mu = population-mean cue (cls-independent constant). alpha=0 flat-diffuse, alpha=1 fully centered. Sharp = pure unit cue (diffuse=False), alpha=0, labeled alive-reference only.",
+  "alphas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    1.0
+  ],
+  "ablation_invariance": {
+    "rows": [
+      {
+        "alpha": 0.0,
+        "pairwise_diff_deviation": 0.0,
+        "ablated_max_separation": 0.0
+      },
+      {
+        "alpha": 0.25,
+        "pairwise_diff_deviation": 5.960464477539063e-08,
+        "ablated_max_separation": 0.0
+      },
+      {
+        "alpha": 0.5,
+        "pairwise_diff_deviation": 5.960464477539063e-08,
+        "ablated_max_separation": 0.0
+      },
+      {
+        "alpha": 0.75,
+        "pairwise_diff_deviation": 0.0,
+        "ablated_max_separation": 0.0
+      },
+      {
+        "alpha": 0.9,
+        "pairwise_diff_deviation": 0.0,
+        "ablated_max_separation": 0.0
+      },
+      {
+        "alpha": 1.0,
+        "pairwise_diff_deviation": 0.0,
+        "ablated_max_separation": 0.0
+      }
+    ],
+    "pairwise_diff_deviation_max": 6e-08,
+    "ablated_max_separation_max": 0.0,
+    "adds_no_signal": true,
+    "cannot_manufacture_floor": true
+  },
+  "sweep_ill_posed": false,
+  "commit_hash": "43e03c099568db0105055c2592904f73084af0ed",
+  "spec_hash": "2d95199151ef",
+  "READ_from_exp06_commit": {
+    "deployed_pam_lam": 0.01,
+    "m_deployed": 16,
+    "diffuse_shared_mag": 5.831,
+    "diffuse_cue_mag": 0.5,
+    "diffuse_snr": 0.0857,
+    "healthy": 1.4122,
+    "live_bar": 0.8672,
+    "collapse_ceiling": 0.05,
+    "ablation_floor": 0.1,
+    "off_sharp_ref_1106": 1.1064,
+    "off_sharp_ref_source": "exp06_reconfirm [1,0,0] @ bstar=12000, 16 seeds (equal-training)",
+    "deployed_cortex_clock": {
+      "t1": 300,
+      "t2": 1200,
+      "stream_steps": 4000,
+      "t1_fraction": 0.075,
+      "t2_fraction": 0.3,
+      "lam_hi": 10.0,
+      "lam_lo": 0.0
+    },
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "anchor_commit": "1a9e8baf8316e71154e773cffb8092c4160109a2"
+  },
+  "KNOB_choices": {
+    "plateau_budget": 12000,
+    "plateau_checkpoints": [
+      6000,
+      8000,
+      10000,
+      12000
+    ],
+    "reposing_alphas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      0.9,
+      1.0
+    ],
+    "reshaped_clock_fraction": 0.3,
+    "reshaped_t1_fraction": 0.075,
+    "reshaped_lam_hi": 10.0,
+    "reshaped_lam_lo": 0.0,
+    "phasing_fractions": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "corner_cardinality": 2,
+    "cue_plateau_margin": 0.1,
+    "decision_margin": 0.1
+  },
+  "notes": [
+    "SHARP segment = dgate diffuse=False (pure UNIT differentiating cue). The spec's '~5.83' for sharp is the salient-magnitude descriptor; the BINDING reconcile is the Step-0c anchor off-sharp ~= 1.106 = exp06 [1,0,0], which is the unit-cue diffuse=False cell. Implemented to reproduce 1.106, NOT a 5.83-magnitude cue.",
+    "RESHAPED = the settled cortex StepSchedule applied to PAM's tie (the spec's preserve argument: architectural uniformity with the cortices). lam1 (groups) opens at t1/steps=0.075, lam2 (capacity) at t2/steps=0.30 (the swept clock-onset), strength 10->0. The naive single-clock pool_penalty(lam,lam) was REJECTED: penalising delta1 too annihilates the group symmetry-breakers -> irreversible collapse trap -> a manufactured dead reshaped column. The two-clock keeps groups alive; reshaped-sharp REVIVES at plateau (oracle test passes).",
+    "Surface corners reproduce exp06: off-flat=[1,1,0]=0.000, off-sharp=[1,0,0]=1.106, deployed-*=[1,*,1]=0.000. NEW content = the re-posing segment + the reshaped column."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "commit_hash": "43e03c099568db0105055c2592904f73084af0ed",
+  "spec_hash": "2d95199151ef",
+  "corner_cardinality": 2,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "budget": 12000,
+  "grid": {
+    "off": {
+      "flat": {
+        "d_mean": 0.0,
+        "d_max": 0.0001,
+        "ablated_max": 0.0,
+        "alive": false
+      },
+      "sharp": {
+        "d_mean": 1.4237,
+        "d_max": 1.6815,
+        "ablated_max": 0.0,
+        "alive": true
+      }
+    },
+    "reshaped": {
+      "flat": {
+        "d_mean": 0.0,
+        "d_max": 0.0001,
+        "ablated_max": 0.0,
+        "alive": false
+      },
+      "sharp": {
+        "d_mean": 1.0883,
+        "d_max": 1.6828,
+        "ablated_max": 0.0,
+        "alive": true
+      }
+    },
+    "deployed": {
+      "flat": {
+        "d_mean": 0.0,
+        "d_max": 0.0,
+        "ablated_max": 0.0,
+        "alive": false
+      },
+      "sharp": {
+        "d_mean": 0.0,
+        "d_max": 0.0,
+        "ablated_max": 0.0,
+        "alive": false
+      }
+    }
+  },
+  "OR_kill_holds_at_lower_cardinality": true,
+  "note": "Qualitative gate ONLY. Read first in the morning. Match to 16 -> member-count stays a non-lever, topology not a cardinality effect. Qualitative mismatch (penalty-kill is cardinality-dependent, or reshaped helps at one cardinality not the other) -> promote member-count to a third lever (the pre-computed low-cardinality full surface is interpreted)."
+}

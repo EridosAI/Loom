@@ -459,3 +459,44 @@ direction** for the dead channel (the design-table fork from the 2026-06-29 bloc
   ordering**. Must clear the (d)-gate at the healthy bar **in the deployed loop** before Stage-1 (§8). The
   empty-gap **(i)/(ii) fork stays unasked** until exp07 revives the *deployed* loop (exp06 revives the
   *neutral probe* + names the lever). Full record: `FRONTIER` §10.7 / PROJECT_STATE §12.E.
+
+## 2026-06-30 — exp07 Phase 0: cue-floor × penalty surface (MEASURED, not built)  ·  spec_hash in artifacts
+
+`experiments/05_attention_sculpting/exp07_{config,core,step0,surface,ceiling_reconfirm,converge_off16,interior_read}.py`.
+Measures the surface exp07's redesign is scoped from — read through the committed (d)-gate (`dgate.py`),
+**no new operator/store**. Cue axis (flat-diffuse → content-blind re-posings → sharp) × penalty
+`{off=drop, reshaped=preserve, deployed=collapse}`, member-count 16 + a card-2 probe. All knobs
+`[RECONCILE]`d from the exp06 commit. **Step-0 gate (re-posing construction + separability/sanity +
+corner-gate) surfaced and signed off before any interior read** (the standing gate).
+
+- **`reshaped` (preserve) = the settled cortex StepSchedule on PAM's tie** (preserve = cortex-uniform
+  machinery). **Two methodological traps caught + fixed before any verdict** (each would have manufactured
+  a wrong-reason result): (1) single-clock δ1-penalty → irreversible collapse trap (reshaped couldn't
+  revive) → cortex two-clock keeps group symmetry-breakers; (2) fractional clock-onset drifted later when
+  the budget was extended for plateau → **absolute** two-clock onset (900/3600, budget-independent). With
+  the fix reshaped revives across **all 10 seeds** at both cards — the earlier bimodality was the onset
+  artifact, not intrinsic.
+- **Interior read adversarially verified** (4 named-blind-spot lenses + synthesis: construction-dependence,
+  floor-equivalence framing, onset-fix/plateau, topology invariance). Survives **directionally, no
+  high-severity / false-PASS** (every confirmed error understates the reshaped cost, so no spurious
+  "preserve" can be manufactured); **two framings that failed *as worded* were corrected in the artifact**.
+- **FINDING 1 — cue recoverability floor≈0 is STRUCTURALLY FORCED + construction-scoped.** The re-posing is
+  exactly global mean-centering and the deployed cue is ~100% common-mode (5.831·base over 0.5·Cd) → floor≈0
+  follows from the construction, not training (near tautology). The **build-robust half** of the two-part
+  cue fix (structured/native diffuseness) is **UNMEASURED**; common-mode-dominance is itself a probe
+  simplification of the deployed rig (true floor may be >0).
+- **FINDING 2 — penalty legitimacy = PRESERVE on the uniformity argument, at a measured cost (NOT
+  "validated").** Both drop & preserve **revive** (liveness doesn't select). Robust deliverable = a
+  **seed-paired SCALE-GROWING CEILING capacity cost**: off−reshaped **+0.103 @card-16 (paired t=2.84; off
+  1.126 vs reshaped 1.023, both converged @36000), ~0 @card-2**. "Floor-equivalent" is **ruler-dependent**
+  (own-sharp Δ0.027 yes; common off-sharp ruler — the one the artifact's topology uses — Δ0.103 NO) and the
+  sharp-gap is **not significant** (t=1.48) → cost booked as a ceiling cost, not laundered out of the floor.
+- **FINDING 3 — topology klass-invariant but trivially (deployed-dead-driven); discriminating off-vs-reshaped
+  relationship NOT cardinality-invariant** (dead tie @card-2 vs significant @card-16) → **member-count
+  modulates the tie's capacity cost** (exp06 liveness non-lever **scope-narrowed in place**: §10.7 /
+  §12.E / memory — does not flip liveness, does modulate the reshaped tie's capacity cost).
+- **Direction (scoped):** re-pose completion with content-blind cue re-organization (dominant for common-mode
+  diffuseness) + the preserve open-and-stay-open tie (legitimate on uniformity; real scale-growing capacity
+  cost; slower convergence). **Still unmeasured/open:** structured-diffuseness floor; *deployed-loop*
+  revival; empty-gap (i)/(ii). Full record: `FRONTIER` §10.8 / PROJECT_STATE §12.E; numbers in
+  `exp07_interior_read.json`.
