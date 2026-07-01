@@ -647,7 +647,69 @@ dominant for common-mode diffuseness **(structured/build-robust half shelved, §
 open-and-stay-open tie legitimate on uniformity grounds at a measured, scale-growing capacity cost). **The channel carries information; it has NOT been shown to
 teach** — to **sculpt cortex representation via evocation-divergence.**
 
-**Next phase: scope the minimal rig that tests whether evocation sculpts cortex representation.** Open
-instinct (Jason): may need **continual time + a second cortex from the start** — to be posed as the **opening
-fork, not presumed.** [Bar note: exp06/07 cleared the *live* bar (0.867), not the full *healthy* value
-(~1.41); "revives" = above-live-bar, not healthy-restored.]
+**Next phase: scope the minimal rig that tests whether evocation sculpts cortex representation.** The scoping fork (continual time + second cortex from the start, vs
+single-cortex minimal-first) is **RESOLVED → §10.11.** [Bar note: exp06/07 cleared the
+*live* bar (0.867), not the full *healthy* value (~1.41); "revives" = above-live-bar, not
+healthy-restored.]
+
+## §10.11 — Loop-test scoping fork RESOLVED → the anchored-reference minimal rig
+
+**Status.** Design decision, ratified 2026-07-02. Scopes *how the bet is tested*; the bet
+itself — evocation-as-teacher — remains **[PROPOSED] and untested** (§10.10).
+
+**The resolution.** The minimal rig that can pose the question is **one plastic vision
+cortex developing against a FROZEN word anchor, under continual time, both present from
+t=0.** Rejected: (a) **single-cortex minimal-first** — cannot pose the question at all
+(grounds below); (b) **the symmetric co-developing pair** — deferred to release (below).
+Minimal-vs-rich was a false economy: below this configuration there is nothing to measure.
+
+**Load-bearing grounds (three):**
+1. **§7's discriminating signature requires the word cortex to exist.** The signature is
+   occupancy *lagging* PAM's word-association acquisition. Single-stream there is no
+   association to acquire and no lag to read — minimal-first cannot exhibit the thing the
+   rig is built to detect.
+2. **#12 bootstrap-convergence — the anchor IS the stable reference, taken at its frozen
+   limit.** No plastic component without a slower-changing reference; the anchored word
+   supplies the stable co-occurring stream against which association can form from t=0.
+   Single-stream has no reference → the loop doesn't start.
+3. **Echo-chamber (structural, premise-free).** With one cortex, PAM's associative content
+   is wholly vision-derived: evocation mirrors the vision encoder back at itself, so the
+   "teaching signal" is a mirror, not a teacher — **regardless of what vision's own
+   objective wants.** This is what makes the second cortex *constitutive* of the test, not
+   an enrichment.
+
+**Demoted to supporting (do not cite as load-bearing):** the exogeneity form — "vision's
+own predictive objective draws on the same temporal structure as PAM's evocation, so
+single-stream lift is confounded" — holds only under the untested premise that vision's own
+loss would already split the taught distinction. Echo-chamber supersedes it without the
+premise.
+
+**FROZEN means frozen — no relaxation schedule exists in this rig.** The word *encoding* is
+pinned constant for the whole run. Build-full / pin-to-constant / release (HANDOFF): frozen
+is #12's stiff limit — a special case of the real mechanism, not a stand-in — so **no
+debt**. One component supplies both required qualities: **stabilisation** (#12's reference)
+and the **associative structure** the whole loop builds off (the exogenous distinction
+source). Binding scope check: **fixed encoding ≠ fixed association** — PAM must still
+*acquire* vision↔word, so the §7 lag signature is untouched.
+
+**Continual time is constitutive, not enrichment.** Sculpting is a decay-vs-hold
+equilibrium (evocation-divergence holding productive distinctions open against constant
+intrinsic re-pool; inert ones fade) and the §7 lag is itself temporal. Both are invisible
+at a single frame — the same reason Stage-0's static frame could only ever test acquisition
+(§1).
+
+**Deferred → release: the mutual-sculpting pair.** Two co-developing cortices (word plastic
+too) is the richer loop and **will not converge without a designed relaxation schedule**
+(#12: stiff early, loosening as the configuration settles). It enters only after the
+anchored-reference rig gives a verdict on the basic mechanism. Re-entry is a design step
+(the schedule), not a knob.
+
+**Minimality lives inside this regime:** anchor frozen; intrinsic re-pool constant + slow +
+depth-independent (depth-grading deferred, §6); **metric = occupancy-lag LIFT, never
+gradient-share** (the settled §1 lesson — share is non-discriminating).
+
+**Next.** Write the loop-test rig spec from this resolution — **pre-registered failure
+conditions before any run.** The spec-work's opening question: revise
+`STAGE1_ATTENTION_SCULPTING_RIG_SPEC.md` (its "Phase-1 unchanged" bindings are stale
+against the exp06/07 revival configuration — cue re-organization + preserve
+open-and-stay-open tie; continual time is new to it) or start fresh.

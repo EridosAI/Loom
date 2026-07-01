@@ -515,3 +515,22 @@ loop's job. **"Easier later" recorded as a prior, not a fact** (same status as t
 read-only rig analysis banked as the pickup artifact** (structured decomposition, circularity ladder,
 calibrated-synthetic + deployed-direct-validation design — Phase-1 spec scoped, not written; FRONTIER §10.9).
 No code; `ac7ea57` stands as the last build.
+
+## 2026-07-02 — Loop-test scoping fork RESOLVED in design → anchored-reference minimal rig
+
+Design session; no code; `ac7ea57` stands as HEAD. The §10.10 opening fork (continual time
++ second cortex from the start, vs single-cortex minimal-first) is resolved: **one plastic
+vision cortex against a FROZEN word anchor, continual time, both from t=0.** Load-bearing
+grounds: **§7 signature** (occupancy-lag behind word-association acquisition requires the
+word cortex to exist); **#12** (the anchor IS the stable reference, at its frozen limit —
+single-stream has no reference and the loop doesn't start); **echo-chamber** (single-cortex
+PAM's associative content is wholly vision-derived — evocation mirrors the encoder back at
+itself; a mirror, not a teacher; structural, premise-free). Exogeneity **demoted to
+supporting** (rests on the untested premise that vision's own objective would already split
+the taught distinction). **No relaxation schedule in this rig** — frozen = pin-to-constant,
+#12's stiff limit, no debt; relaxation enters only at the deferred mutual-sculpting release
+stage. Binding scope check: **fixed encoding ≠ fixed association** — PAM still acquires
+vision↔word (§7 lag intact). Metric = occupancy-lag **lift**, never share. Full entry:
+`FRONTIER` §10.11 (+ §10.10 tail pointer, + PROJECT_STATE §12.E dated line). **Next:**
+loop-test rig spec, pre-registered failures first; opening question = revise
+`STAGE1_ATTENTION_SCULPTING_RIG_SPEC.md` vs fresh.
