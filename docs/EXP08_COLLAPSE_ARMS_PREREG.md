@@ -218,3 +218,23 @@ the Δ2-only kick surface, the resume length, and the decay-back bands are the r
 knobs). Nothing here is a fix: the kick is a probe of basin geometry, not a repair
 mechanism (drift guard: a noise term that "helps" is NOT a candidate design — that would
 be the counter-force direction entering through the back door, unreviewed).
+
+### Kick-probe checkpoint amendments (Jason, 2026-07-03 — pinned before build/run)
+
+1. **t=0 perturbation assert (the null-kick guard).** The kick surface is valid only if
+   assignment is actually computed through the kicked parameters. Post-kick, PRE-resume,
+   at the largest ε (0.3), per state per kick seed: asg_dist must move ≥ 1.5× pre-kick OR
+   argmax_k must change. If none of the 3 kick seeds moves → verdict **SURFACE-INVALID**,
+   stop — never ABSORBING ("decays back at every ε" must not mean "the kick never touched
+   the routing", e.g. logits dominated by a common offset that swamps Δ2 noise).
+2. **Resume length per-state, clock-matched** (24000 = 5 den-periods in the word regime
+   but only ~1.04 in the no-word regime — too thin to distinguish absorbing from
+   didn't-wait-one-cycle). Pin: resume ≥ 2× the state's own den period → **word 24000,
+   no-word 48000** `[RECONCILE]`.
+3. **Kick-not-a-candidate guard: ratified as written** (the counter-force drift door,
+   bolted).
+4. **ε=0 NULL-RESUME CONTROL rung (CC, instrument necessity, added pre-run):** the
+   no-word state regrows episodically UNKICKED (metastable — den reached 0.69 naturally);
+   "sustained regrow" is therefore judged AGAINST the ε=0 control band (3 unkicked
+   resumes per state, same lengths/seeds/columns). ESCAPABLE = sustained regrow exceeding
+   the control band through the final den period — not the state's own natural flicker.
