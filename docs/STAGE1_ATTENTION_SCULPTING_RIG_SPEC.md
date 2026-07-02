@@ -120,10 +120,20 @@ content-ablation guard. No fresh operator; no neutral-task training inside the l
 **Calibration run (pre-registered, BEFORE the loop run).** The neutral (d)-gate
 (`dgate.py`, `335f36d`) at the rig's EXACT configuration — the rig's member cardinality,
 re-organized cue, preserve tie, absolute onsets, all knobs `[RECONCILE]`d from the run
-commit → **healthy-reference-at-config**. Entry bar = reference − margin (margin
-`[RECONCILE]` from calibration seed spread, fixed before any loop run). Output:
-`liveness_calibration.json` {reference, spread, margin, bar, config knobs, commit_hash,
-spec_hash}. **REVIEW GATE: surface it before the loop run.**
+commit → **healthy-reference-at-config**. Output: `liveness_calibration.json` {reference,
+spread, margin, bar, config knobs, commit_hash, spec_hash}. **REVIEW GATE: surface it
+before the loop run.**
+
+**Margin rule (pinned pre-run — the FORM is fixed before the calibration run, not just its
+source).** bar = calibration **mean − 2·(per-seed std)**, std taken across calibration
+seeds. Entry read = **mean of the first `k` post-acquisition-onset eval windows** (`k`
+`[RECONCILE]`, pinned before the loop run). Calibration **seed count ≥ the register's
+frequency floor** (≥20-style). *Per-seed std, NOT exp06's mean−2·SEM:* the entry gate is a
+**membership** test (does one deployed read belong to the healthy-at-config family), not a
+mean-clears-threshold test — SEM shrinks with seed count, which would make the gate
+*stricter the better the reference is measured* (backwards for membership). Pinning the
+form now is required by the **bars-amendment convention** — leaving it open lets the form
+be chosen after seeing the spread, the quiet-softening the convention exists to forbid.
 
 **Why the bar is calibrated, not the canon literal (recorded supersession).** The exp06
 direction line reads "must clear the (d)-gate at the *healthy* bar in the deployed loop."
@@ -381,7 +391,8 @@ and (4).
 | `repool_rate` (constant Δ2 decay, slow) | rig (wide gap vs occupy rate; oscillation-safe) |
 | `T_run` | ≥1 full distractor decay/re-grow cycle (esp. words-after); from observed Δ2 timescale |
 | seed count | ≥ the frequency floor (Phase-1's 3 was too few; ≥20-style) |
-| §L reference / margin / bar | §L calibration (neutral (d)-gate at rig config) |
+| §L reference / spread / bar | §L calibration (neutral (d)-gate at rig config); bar = mean − 2·(per-seed std), ≥20 cal seeds; FORM pinned pre-run |
+| §L entry-read window count `k` | §L (entry read = mean of first `k` post-acquisition-onset eval windows), pinned before loop run |
 | channel-column eval cadence | rig (every eval window) |
 | Δt_assoc k-range | PAM completion window (§4b) |
 | revival-config knobs — cue re-org form, tie onsets | run commit (base `ac7ea57`) |
