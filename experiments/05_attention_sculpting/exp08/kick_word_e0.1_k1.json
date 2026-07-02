@@ -1,0 +1,582 @@
+{
+  "state": "word",
+  "eps": 0.1,
+  "kseed": 1,
+  "kick_std": 0.03721939027309418,
+  "resume": 24000,
+  "period": 4800,
+  "pre": {
+    "asg_dist": 9.914921974996105e-06,
+    "asg_argmax_k": 1,
+    "den": 9.15739747142652e-06,
+    "num": 2.232177495956421
+  },
+  "t0": {
+    "asg_dist": 2.8595479307114147e-05,
+    "asg_argmax_k": 1,
+    "den": 2.6512563636060804e-05,
+    "num": 2.232177495956421
+  },
+  "cols": [
+    {
+      "i": 300,
+      "asg_dist": 6.5e-05,
+      "asg_argmax_k": 1,
+      "den": 5.9e-05,
+      "num": 2.231728
+    },
+    {
+      "i": 600,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 2.244655
+    },
+    {
+      "i": 900,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.24604
+    },
+    {
+      "i": 1200,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 2.246023
+    },
+    {
+      "i": 1500,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 2.250222
+    },
+    {
+      "i": 1800,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.248453
+    },
+    {
+      "i": 2100,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.245893
+    },
+    {
+      "i": 2400,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.243798
+    },
+    {
+      "i": 2700,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.2507
+    },
+    {
+      "i": 3000,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.248703
+    },
+    {
+      "i": 3300,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 2.258588
+    },
+    {
+      "i": 3600,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.295867
+    },
+    {
+      "i": 3900,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.144754
+    },
+    {
+      "i": 4200,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 2.125719
+    },
+    {
+      "i": 4500,
+      "asg_dist": 8e-06,
+      "asg_argmax_k": 1,
+      "den": 9e-06,
+      "num": 6.459636
+    },
+    {
+      "i": 4800,
+      "asg_dist": 5e-06,
+      "asg_argmax_k": 1,
+      "den": 5e-06,
+      "num": 6.233414
+    },
+    {
+      "i": 5100,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233417
+    },
+    {
+      "i": 5400,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233422
+    },
+    {
+      "i": 5700,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233425
+    },
+    {
+      "i": 6000,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233425
+    },
+    {
+      "i": 6300,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233425
+    },
+    {
+      "i": 6600,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233425
+    },
+    {
+      "i": 6900,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233425
+    },
+    {
+      "i": 7200,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233425
+    },
+    {
+      "i": 7500,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233425
+    },
+    {
+      "i": 7800,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233426
+    },
+    {
+      "i": 8100,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233425
+    },
+    {
+      "i": 8400,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233421
+    },
+    {
+      "i": 8700,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233421
+    },
+    {
+      "i": 9000,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233383
+    },
+    {
+      "i": 9300,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.23349
+    },
+    {
+      "i": 9600,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.23349
+    },
+    {
+      "i": 9900,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.233927
+    },
+    {
+      "i": 10200,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.2355
+    },
+    {
+      "i": 10500,
+      "asg_dist": 5e-06,
+      "asg_argmax_k": 1,
+      "den": 5e-06,
+      "num": 4.418983
+    },
+    {
+      "i": 10800,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.255388
+    },
+    {
+      "i": 11100,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254287
+    },
+    {
+      "i": 11400,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254442
+    },
+    {
+      "i": 11700,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254441
+    },
+    {
+      "i": 12000,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.25432
+    },
+    {
+      "i": 12300,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.25432
+    },
+    {
+      "i": 12600,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254319
+    },
+    {
+      "i": 12900,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254319
+    },
+    {
+      "i": 13200,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.25432
+    },
+    {
+      "i": 13500,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254319
+    },
+    {
+      "i": 13800,
+      "asg_dist": 5e-06,
+      "asg_argmax_k": 1,
+      "den": 5e-06,
+      "num": 3.25432
+    },
+    {
+      "i": 14100,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254303
+    },
+    {
+      "i": 14400,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254282
+    },
+    {
+      "i": 14700,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.254227
+    },
+    {
+      "i": 15000,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.253758
+    },
+    {
+      "i": 15300,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 3.254461
+    },
+    {
+      "i": 15600,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.259226
+    },
+    {
+      "i": 15900,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 3.266132
+    },
+    {
+      "i": 16200,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 3.22982
+    },
+    {
+      "i": 16500,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 6.194557
+    },
+    {
+      "i": 16800,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219829
+    },
+    {
+      "i": 17100,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219731
+    },
+    {
+      "i": 17400,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.21973
+    },
+    {
+      "i": 17700,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219733
+    },
+    {
+      "i": 18000,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219727
+    },
+    {
+      "i": 18300,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219731
+    },
+    {
+      "i": 18600,
+      "asg_dist": 5e-06,
+      "asg_argmax_k": 1,
+      "den": 5e-06,
+      "num": 0.21973
+    },
+    {
+      "i": 18900,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219731
+    },
+    {
+      "i": 19200,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219731
+    },
+    {
+      "i": 19500,
+      "asg_dist": 5e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219731
+    },
+    {
+      "i": 19800,
+      "asg_dist": 6e-06,
+      "asg_argmax_k": 1,
+      "den": 6e-06,
+      "num": 0.219728
+    },
+    {
+      "i": 20100,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.21973
+    },
+    {
+      "i": 20400,
+      "asg_dist": 4e-06,
+      "asg_argmax_k": 1,
+      "den": 4e-06,
+      "num": 0.219731
+    },
+    {
+      "i": 20700,
+      "asg_dist": 2e-06,
+      "asg_argmax_k": 1,
+      "den": 2e-06,
+      "num": 0.219727
+    },
+    {
+      "i": 21000,
+      "asg_dist": 6e-06,
+      "asg_argmax_k": 1,
+      "den": 6e-06,
+      "num": 0.219708
+    },
+    {
+      "i": 21300,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 0.219745
+    },
+    {
+      "i": 21600,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 0.219628
+    },
+    {
+      "i": 21900,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 0.219927
+    },
+    {
+      "i": 22200,
+      "asg_dist": 3e-06,
+      "asg_argmax_k": 1,
+      "den": 3e-06,
+      "num": 0.21949
+    },
+    {
+      "i": 22500,
+      "asg_dist": 0.007976,
+      "asg_argmax_k": 1,
+      "den": 0.007957,
+      "num": 6.129539
+    },
+    {
+      "i": 22800,
+      "asg_dist": 1.10122,
+      "asg_argmax_k": 3,
+      "den": 1.109628,
+      "num": 7.544315
+    },
+    {
+      "i": 23100,
+      "asg_dist": 0.770615,
+      "asg_argmax_k": 2,
+      "den": 0.726643,
+      "num": 7.544235
+    },
+    {
+      "i": 23400,
+      "asg_dist": 0.694982,
+      "asg_argmax_k": 2,
+      "den": 0.632003,
+      "num": 7.544235
+    },
+    {
+      "i": 23700,
+      "asg_dist": 0.394792,
+      "asg_argmax_k": 1,
+      "den": 0.295272,
+      "num": 7.544239
+    },
+    {
+      "i": 24000,
+      "asg_dist": 0.154621,
+      "asg_argmax_k": 1,
+      "den": 0.113285,
+      "num": 7.544236
+    }
+  ]
+}

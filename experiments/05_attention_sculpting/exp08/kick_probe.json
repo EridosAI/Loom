@@ -1,0 +1,250 @@
+{
+  "eps_ladder": [
+    0.0,
+    0.01,
+    0.03,
+    0.1,
+    0.3
+  ],
+  "kick_seeds": [
+    0,
+    1,
+    2
+  ],
+  "t0_move_factor": 1.5,
+  "states": {
+    "word": {
+      "verdict": "ESCAPABLE",
+      "eps_star": 0.01,
+      "t0_moved": [
+        true,
+        true,
+        true
+      ],
+      "control_band": {
+        "asg_max": 2.93125e-05,
+        "den_max": 2.7875e-05,
+        "denmax_max": 4.9e-05
+      },
+      "rungs": {
+        "0.01": {
+          "final": [
+            {
+              "asg": 1.63125e-05,
+              "den": 1.5687500000000002e-05,
+              "den_max": 3.8e-05
+            },
+            {
+              "asg": 0.04218575,
+              "den": 0.0768363125,
+              "den_max": 0.832369
+            },
+            {
+              "asg": 0.0013465625,
+              "den": 0.0007148125000000001,
+              "den_max": 0.0012
+            }
+          ],
+          "escaped": [
+            false,
+            true,
+            true
+          ],
+          "rung_escapable": true
+        },
+        "0.03": {
+          "final": [
+            {
+              "asg": 0.0085083125,
+              "den": 0.0093756875,
+              "den_max": 0.060808
+            },
+            {
+              "asg": 0.0016494374999999999,
+              "den": 0.0008368125,
+              "den_max": 0.00151
+            },
+            {
+              "asg": 6.375e-06,
+              "den": 7.0625e-06,
+              "den_max": 1.6e-05
+            }
+          ],
+          "escaped": [
+            true,
+            true,
+            false
+          ],
+          "rung_escapable": true
+        },
+        "0.1": {
+          "final": [
+            {
+              "asg": 0.0010024375,
+              "den": 0.001225,
+              "den_max": 0.00453
+            },
+            {
+              "asg": 0.1952653125,
+              "den": 0.180301625,
+              "den_max": 1.109628
+            },
+            {
+              "asg": 0.0004341875,
+              "den": 0.0003931875,
+              "den_max": 0.001123
+            }
+          ],
+          "escaped": [
+            true,
+            true,
+            true
+          ],
+          "rung_escapable": true
+        },
+        "0.3": {
+          "final": [
+            {
+              "asg": 0.10705137499999999,
+              "den": 0.0353119375,
+              "den_max": 0.16407
+            },
+            {
+              "asg": 6.58125e-05,
+              "den": 8.8e-05,
+              "den_max": 0.000132
+            },
+            {
+              "asg": 8.75e-07,
+              "den": 1.2499999999999999e-06,
+              "den_max": 2e-06
+            }
+          ],
+          "escaped": [
+            true,
+            true,
+            false
+          ],
+          "rung_escapable": true
+        }
+      }
+    },
+    "noword": {
+      "verdict": "ESCAPABLE",
+      "eps_star": 0.01,
+      "t0_moved": [
+        false,
+        true,
+        true
+      ],
+      "control_band": {
+        "asg_max": 7.2857142857142855e-06,
+        "den_max": 4.935064935064935e-06,
+        "denmax_max": 3.5e-05
+      },
+      "rungs": {
+        "0.01": {
+          "final": [
+            {
+              "asg": 5.0012987012987016e-05,
+              "den": 3.533766233766234e-05,
+              "den_max": 0.000118
+            },
+            {
+              "asg": 0.020528207792207792,
+              "den": 0.012041246753246753,
+              "den_max": 0.411223
+            },
+            {
+              "asg": 0.23191044155844157,
+              "den": 0.019712077922077922,
+              "den_max": 0.139353
+            }
+          ],
+          "escaped": [
+            true,
+            true,
+            true
+          ],
+          "rung_escapable": true
+        },
+        "0.03": {
+          "final": [
+            {
+              "asg": 4.155844155844156e-05,
+              "den": 2.0493506493506494e-05,
+              "den_max": 0.000145
+            },
+            {
+              "asg": 0.0004570519480519481,
+              "den": 0.00026711688311688314,
+              "den_max": 0.001715
+            },
+            {
+              "asg": 0.018651064935064934,
+              "den": 0.007538025974025974,
+              "den_max": 0.37247
+            }
+          ],
+          "escaped": [
+            true,
+            true,
+            true
+          ],
+          "rung_escapable": true
+        },
+        "0.1": {
+          "final": [
+            {
+              "asg": 0.04229510389610389,
+              "den": 0.028310311688311687,
+              "den_max": 1.269533
+            },
+            {
+              "asg": 0.0001318181818181818,
+              "den": 7.65974025974026e-05,
+              "den_max": 0.000456
+            },
+            {
+              "asg": 0.01931731168831169,
+              "den": 0.007575298701298702,
+              "den_max": 0.322133
+            }
+          ],
+          "escaped": [
+            true,
+            true,
+            true
+          ],
+          "rung_escapable": true
+        },
+        "0.3": {
+          "final": [
+            {
+              "asg": 0.002171207792207792,
+              "den": 0.0009576623376623376,
+              "den_max": 0.005763
+            },
+            {
+              "asg": 9.48051948051948e-07,
+              "den": 8.571428571428571e-07,
+              "den_max": 1.9e-05
+            },
+            {
+              "asg": 0.00015396103896103897,
+              "den": 8.844155844155845e-05,
+              "den_max": 0.000607
+            }
+          ],
+          "escaped": [
+            true,
+            false,
+            true
+          ],
+          "rung_escapable": true
+        }
+      }
+    }
+  },
+  "combined": "word=ESCAPABLE noword=ESCAPABLE"
+}
