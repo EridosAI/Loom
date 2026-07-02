@@ -313,10 +313,10 @@ def grad_split(loop, no_word: bool) -> dict:
 
 
 # ------------------------------------------------------------------ the run
-def run_arm(arm_name: str, seed: int, steps_override: int | None = None) -> dict:
+def build_loop(arm_name: str, seed: int):
+    """Construct an arm's loop exactly as run_arm does (ONE code path — the kick probe
+    rebuilds states through this same constructor before loading saved weights)."""
     spec = ARMS[arm_name]
-    steps = steps_override or spec["steps"]
-    no_word = spec.get("no_word", False)
     pin = constants.PinnedConstants(**spec.get("pin", {}))
     cfg = SculptConfig(seed=seed)
     for k, v in spec.get("cfg", {}).items():
@@ -325,6 +325,34 @@ def run_arm(arm_name: str, seed: int, steps_override: int | None = None) -> dict
         loop = VocabLoop(cfg, pin, spec["vocab"])
     else:
         loop = spec["loop"](cfg, pin)
+    return loop, spec, cfg
+
+
+def save_state(loop, path: Path):
+    """Full continuation state (params + Adam moments + RNG + wave counter) so a resume
+    is bit-faithful to having kept running."""
+    torch.save(dict(_t=loop._t, vision=loop.vision.state_dict(), op=loop.op.state_dict(),
+                    word=loop.word.state_dict(), opt=loop.opt.state_dict(),
+                    gen_state=loop.gen.get_state()), path)
+
+
+def load_state(loop, path: Path):
+    st = torch.load(path, weights_only=False)
+    loop.vision.load_state_dict(st["vision"])
+    loop.op.load_state_dict(st["op"])
+    loop.word.load_state_dict(st["word"])
+    loop.opt.load_state_dict(st["opt"])
+    loop.gen.set_state(st["gen_state"])
+    loop._t = st["_t"]
+    return loop
+
+
+def run_arm(arm_name: str, seed: int, steps_override: int | None = None,
+            save_state_at_end: bool = False) -> dict:
+    spec = ARMS[arm_name]
+    steps = steps_override or spec["steps"]
+    no_word = spec.get("no_word", False)
+    loop, spec, cfg = build_loop(arm_name, seed)
 
     OUTDIR.mkdir(exist_ok=True)
     man = build_manifest(loop, arm_name, spec, seed)
@@ -390,6 +418,9 @@ def run_arm(arm_name: str, seed: int, steps_override: int | None = None) -> dict
     )
     if spec.get("extension_read"):
         rec["extension_read"] = extension_read(cols)
+    if save_state_at_end:
+        save_state(loop, OUTDIR / f"state_{arm_name}_s{seed}.pt")
+        rec["state_saved"] = f"state_{arm_name}_s{seed}.pt"
     base.with_suffix(".json").write_text(json.dumps(rec, indent=2))
     print(f"{arm_name} s{seed}: assessable={rec['early_signature']['assessable_fraction']}  "
           f"den_panel={panels['den']}  d2_depth_end={cols[-1]['d2_depth']:.4f}")
@@ -401,9 +432,10 @@ def main():
     ap.add_argument("--arm", required=True, choices=sorted(ARMS))
     ap.add_argument("--seed", type=int, required=True)
     ap.add_argument("--steps", type=int, default=None)
+    ap.add_argument("--save-state", action="store_true")
     args = ap.parse_args()
     torch.set_num_threads(max(1, torch.get_num_threads() or 2))
-    run_arm(args.arm, args.seed, args.steps)
+    run_arm(args.arm, args.seed, args.steps, save_state_at_end=args.save_state)
 
 
 if __name__ == "__main__":
