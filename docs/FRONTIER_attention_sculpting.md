@@ -773,3 +773,69 @@ release eventually relaxes the anchor (§10.11 deferred), the relaxation form ma
 be a slow-reference (EMA-style) rather than a scheduled un-freezing — a reference that
 moves slower than the thing it anchors, everywhere in the space it anchors. A note for
 that design gate, nothing more.
+
+### §10.12.1 — The one review (2026-07-03): verified arm verdicts; NO design revision yet
+
+**Ruling (Jason).** All five arm verdicts ratified AS VERIFIED — including the refuted
+sharpest line (Jason's own), kept on the books with all beats. **No design revision yet:**
+its target hangs on three claims still at deduced/suspected (driver identity,
+dead-dictionary, terminal lock); the converters are each cheaper than the design they'd
+steer. Design gate parked; the #12/EMA note parked with it; gate steps 5–6 blocked.
+
+**The verified table (status-split held).**
+- **DETACH — CONFIRMED, re-anchored: the gap-3 no-detach TARGET-side pull is NECESSARY
+  for the collapse.** Evidence: real word-channel structure in 3/3 seeds (num
+  0.26/0.59/1.35), ratio-positive 28–71%, occupancy, the fixed-α detach-vs-baseline
+  contrast; gW=0.00 validates the amputation.
+- **SPREAD — NOT CONFIRMED AS STATED** (circular readout, the manufacturing class,
+  caught: spread_loss forces the very variance the denominator measures; seed-0
+  counterexample: den 2.72 with zero word-axis structure). Partial 2/3 on independent
+  evidence.
+- **MARATHON — the sharpest-line prediction REFUTED; the pre-registered revision branch
+  fired, narrow form: word-presence ACCELERATES a shared contraction (~4.8× clock — den
+  period 23100 no-word vs 4800 word, same seed). DEMONSTRATED: acceleration. SUSPECTED
+  only: a distinct terminality mechanism (the marathon was caught MID-DECAY — window-max
+  1.16→0.05, troughs to 1.4× floor, tail num-freeze — PRE-terminal, not non-terminal;
+  n=1 vs n=1).** The refuted-prediction record, all beats: prediction (no slower) →
+  result (nowhere near terminal at matched cap; ~5× slower clock) → revision (engine
+  stays self-path-credible; word = accelerant). *The accelerant is the two-word
+  instinct's first measured support — the sparse word adds pull — though density itself
+  stays open pending acquisition-aligned reads.*
+- **TIES — UNINFORMATIVE** (ε=0.1 overshot: Δ2 never crossed the calibrated 0.05
+  capacity-open threshold). Parked; re-dose on-call (ε below threshold), not in the
+  leverage path.
+- **LADDER — statistically flat, relabeled UNINFORMATIVE on anchor density at 30k**
+  (dense anchors under-acquired: num ~4× weaker at v8/16 — curriculum lag). Follow-up
+  pre-named, not launched: **acquisition-aligned per-rung reads** (the time-axis lesson's
+  third appearance). Generalized caution: **any word-dependent 30k read is
+  acquisition-suspect until aligned** (vocab2's own word-axis structure absent in 2/3
+  seeds at 30k).
+
+**Mechanism as it survives.** Target-side pull NECESSARY (demonstrated). To-a-point
+driver credibly the SELF path (the word-path target is 2-valued/floor-protective and
+magnitude-dissociated: the marathon keeps gW/gS≈3.24 without terminal collapse — gradient
+magnitude is not contraction causality when the dominant path pulls toward a floor). The
+engine yields collapse-regrow with or without the word; word sets the timescale.
+**Terminal lock mechanism UNRESOLVED** (zero gradient data at/near terminality;
+"2-points-lockable" struck as under-evidenced). **Localization: capacity-open
+ASSIGNMENT-collapse (dead-dictionary readout)** — Δ2 depth and within-group spread stay
+open in collapsing arms (both substrate metrics non-diagnostic); DEDUCED from
+emit = assign@W with fixed inputs and spread weights; column pending.
+
+**Instrument ruling — den demoted, principle generalized.** The centred-content
+denominator is a VARIANCE statistic: it cannot certify differentiation at the high end
+(the spread term manufactures exactly what it measures; set-point 2.49–3.34 across all
+detach+spread runs). **Demoted rig-wide to a one-sided collapse-floor tripwire.** The
+principle joins the circularity ladder (§10.9's instrument lesson) as its second
+independent instance: **variance statistics cannot certify differentiation — floor
+tripwires only.**
+
+**Authorized converters (composed; then ONE follow-up review; then the design gate):**
+(1) columns first — assignment-entropy/argmax-concentration + input-sensitivity (the
+dead-dictionary measurement) and the gradient split carried to terminality — wired before
+any run (no stored weight checkpoints exist from prior runs; forward-wire only);
+(2) split by question: no-word marathon EXTENDED to cap 500000 [RECONCILE: ~20 no-word
+periods (23100) + headroom] with the pre-registered TERMINAL / ASYMPTOTIC / neither
+reads; +1 word-arm full-horizon seed (terminality arrives ~96k, inside the existing cap)
+carrying the gradient columns — doubles the n=1 terminal observation;
+(3) den demotion as above.

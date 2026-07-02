@@ -799,3 +799,31 @@ masking-mix fraction). Adoption line: no arm is a fix — detach amputates the t
 channel, ties>0 is Tier-2-adjacent, re-weight is a knob; design revision happens after
 verdicts at its own gate. All verdicts return to ONE review; steps 5–6 stay blocked;
 word-arm seed extension staged as compute allows, split pre-registered.
+
+## 2026-07-03 — THE ONE REVIEW: five verdicts ratified as verified; NO design revision yet
+
+EXP08 campaign ran clean (22/22, artifacts @57ce968); verdicts adversarially verified (2
+corrected, 1 instrument demoted) and ratified by Jason — including the refuted sharpest
+line (Jason's own), kept with all beats: prediction (no-word collapses no slower) → result
+(nowhere near terminal at matched cap; ~4.8× slower clock — den period 23100 vs 4800) →
+revision (word-presence = ACCELERANT, demonstrated; distinct terminality mechanism only
+suspected, n=1 vs n=1, marathon caught mid-decay). DETACH confirmed re-anchored (target-
+side pull NECESSARY; num 3/3 seeds, fixed-α contrast; gW=0.00 validates amputation).
+SPREAD not-confirmed-as-stated (circular readout, manufacturing class — spread_loss forces
+the variance den measures; s0 counterexample); partial 2/3 independent. TIES uninformative
+(ε=0.1 overshot; parked, re-dose on-call). LADDER statistically flat but UNINFORMATIVE on
+anchor density at 30k (dense anchors under-acquired, num ~4× weaker at v8/16); follow-up
+pre-named not launched: acquisition-aligned per-rung reads (time-axis lesson #3); any
+word-dependent 30k read is acquisition-suspect until aligned. Localization: capacity-open
+ASSIGNMENT-collapse (dead-dictionary) — deduced, column pending; both Δ2 metrics
+non-diagnostic. **den DEMOTED to a one-sided collapse-floor tripwire; principle joins the
+circularity ladder as its second instance: variance statistics cannot certify
+differentiation — floor tripwires only.** Full verified table: FRONTIER §10.12.1.
+
+**Ruling: design gate PARKED** (three claims still deduced/suspected: driver identity,
+dead-dictionary, terminal lock; converters cheaper than the design they'd steer). All four
+converters authorized, composed (EXP08 prereg extension, pinned pre-run): assignment
+columns + gradient-to-terminality FIRST; Run A = no-word marathon extension to cap 500000
+(TERMINAL / ASYMPTOTIC / neither, pre-registered); Run B = +1 word-arm full-horizon seed
+carrying the gradient columns through the terminal window. Then ONE follow-up review →
+the design gate. Steps 5–6 stay blocked.

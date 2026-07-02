@@ -134,3 +134,40 @@ arms build (new columns first, wired into the shared runner path) → arms run �
 verdicts return to ONE review** — no arm's result is acted on alone; steps 5–6 of the gate
 sequence stay BLOCKED throughout; the design revision (if any) happens after that review,
 at its own gate, in the frontier docs.
+
+---
+
+## Extension pre-registration (the one review's converters, 2026-07-03 — pinned pre-run)
+
+**Columns first (wired before any run; no stored weight checkpoints exist from prior
+runs, so retro-reads are impossible — forward-wire only):**
+- **Assignment columns (the dead-dictionary measurement):** over the 16 clean-centre
+  probes at eval cadence — `asg_dist` (mean pairwise L1 between assignment rows;
+  ~0 = input-INVARIANT assignment = the deduced collapse, measured), `asg_argmax_k`
+  (count of distinct argmax prototypes), `asg_entropy` (mean per-probe assignment
+  entropy). Converts dead-dictionary deduced → demonstrated/refuted.
+- **Gradient split carried to terminality** (the existing block-cadence probes, now in a
+  word-arm run that REACHES the terminal window).
+
+**Run A — no-word marathon extension (terminal-vs-asymptotic):** cap **500000**
+[RECONCILE: ~20 no-word periods (23100) + headroom], seed 0, deterministic replay.
+Pre-registered read, computed in the artifact, no rescue:
+- **TERMINAL** = den floor-pinned (all reads in the final period-window below the 1e-3
+  floor) AND num-freeze (the reference signature);
+- **ASYMPTOTIC** = trough envelope non-shrinking over ≥5 consecutive period-windows
+  (per-window trough t_i ≥ t_{i-1} within 10% tolerance, 23100-wave windows);
+- **NEITHER by cap** → surfaced as a finding.
+
+**Run B — word-arm full-horizon, +1 seed (terminal-lock gradients):** seed 1, cap 112500
+(terminality arrived ~96k at seed 0), full column set including the gradient split and
+assignment columns through the terminal window. Doubles the n=1 terminal observation.
+
+**Bookkeeping from the review:** spread demotion ratified (circular readout, the
+manufacturing class); ties parked, re-dose on-call (ε below the 0.05 capacity-open
+threshold), not in the leverage path; ladder relabel ratified, follow-up pre-named NOT
+launched (acquisition-aligned per-rung reads — the time-axis lesson's third appearance;
+any word-dependent 30k read is acquisition-suspect until aligned); **den demoted to a
+one-sided collapse-floor tripwire, generalized into the circularity ladder: variance
+statistics cannot certify differentiation — floor tripwires only.**
+
+**Sequence:** columns → Run A + Run B → ONE follow-up review → the design gate.
