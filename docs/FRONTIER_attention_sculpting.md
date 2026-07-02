@@ -839,3 +839,46 @@ periods (23100) + headroom] with the pre-registered TERMINAL / ASYMPTOTIC / neit
 reads; +1 word-arm full-horizon seed (terminality arrives ~96k, inside the existing cap)
 carrying the gradient columns — doubles the n=1 terminal observation;
 (3) den demotion as above.
+
+### §10.12.2 — Follow-up verdicts (2026-07-03): dead-dictionary DEMONSTRATED; the DESIGN GATE OPENS
+
+**Run A — no-word marathon to 500000: NEITHER_BY_CAP, earned** (not a criterion artifact:
+the run is authentically neither). The no-word regime is named: **METASTABLE INTERMITTENT
+COLLAPSE** — deep floor episodes (window troughs e-6…e-8 from ~230k; occupancy ~chance
+through ~300–460k) with episodic partial revivals (den regrows to 0.69 at ~470k; occupancy
+back to 0.60–0.67 late; final window still flickering).
+
+**Run B — word arm, seed 1: TERMINALITY REPLICATED (n=2),** arriving earlier than seed 0
+(argmax collapse ~50k; sub-floor 1.00 from ~80k; den pinned ≤4.5e-5 for the final 30k;
+num frozen; occupancy chance; zero regrow).
+
+**Dead-dictionary: DEMONSTRATED** (was deduced). `asg_argmax_k = 1` sustained in BOTH arms
+(word ~50k+; no-word ~162k+) while capacity stays open (Δ2 depth 2.54 / 1.14 at end). The
+collapse is assignment-side: all 16 probes route to one prototype; the weight dictionary
+survives as unused open capacity.
+
+**The pin-depth correlate (measured).** The soft assignment separates the two ends by four
+orders of magnitude: word arm pins `asg_dist` ≈ 1e-5 (locked; no regrow ever follows);
+no-word floats ≈ 0.08 (regrow-capable, and regrows repeatedly). **Word = accelerant (~5×)
++ pin-deepener.** The self-absorption reading (input-invariant assignment strips gradients
+of their input-differential component; the word's 2-target pull then translates the
+collapsed point rather than re-spreading it) is COHERENT-DEDUCED, not demonstrated — the
+kick probe (prereg below) is its direct test.
+
+**Scope line (binding).** On current data the ENGINE is shared (both arms collapse) and
+the LOCK is word-conditional (only word arms reach the hard pin; n=2 vs n=1). **Do not
+extrapolate no-word terminality** — the marathon ended flickering, not pinned. The t=75000
+self-path gradient spike (0.138, ~30×, immediately preceding B's hard pin) is a **named
+observable only** — n=1, no mechanism claim attaches to it.
+
+**DESIGN GATE — OPENED (record).** The constraint the data fixes: **any revision must keep
+the routing/assignment map INPUT-SENSITIVE under the target-side pull** — the failure
+point is neither capacity (open throughout) nor the prototypes (alive throughout) but the
+routing function, and the word as-built pushes routing toward absorption. Directions on
+the table: **routing-side counter-force / denser anchor / revised target path.** Drift
+guards, verbatim: **counter-force = highest risk** (the manufacturing-the-effect class —
+building in the property under test); **confidence-first check** (any candidate must fail
+the wrong-reason screens before its first run is trusted); **detach stays DIAGNOSTIC**
+(it amputates the teaching channel; it is never the fix). The **#12/EMA-as-relaxation-
+reference note is PROMOTED to a design-table input** (the reference-stability requirement
+is quantitative; a slow-reference form is on the table alongside the three directions).

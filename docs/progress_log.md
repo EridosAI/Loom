@@ -827,3 +827,22 @@ columns + gradient-to-terminality FIRST; Run A = no-word marathon extension to c
 (TERMINAL / ASYMPTOTIC / neither, pre-registered); Run B = +1 word-arm full-horizon seed
 carrying the gradient columns through the terminal window. Then ONE follow-up review →
 the design gate. Steps 5–6 stay blocked.
+
+## 2026-07-03 — FOLLOW-UP REVIEW: dead-dictionary DEMONSTRATED; DESIGN GATE OPENED
+
+Converter runs A+B complete (artifacts @a0f318b). **Run A (no-word, 500k):
+NEITHER_BY_CAP, earned — the no-word regime named METASTABLE INTERMITTENT COLLAPSE**
+(floor episodes e-6…e-8 from ~230k with episodic partial revivals; final window still
+flickering: occD 0.60, den 0.048). **Run B (word, seed 1): TERMINALITY REPLICATED n=2**,
+earlier than seed 0 (pin from ~80k; zero regrow). **Dead-dictionary DEDUCED → DEMONSTRATED**
+(argmax_k=1 sustained both arms; capacity open, Δ2 2.54/1.14). **Pin-depth correlate
+measured: word asg_dist ≈1e-5 (locked) vs no-word ≈0.08 (regrow-capable) — 4 orders. Word
+= accelerant + pin-deepener.** Scope line: engine shared, lock word-conditional on current
+data; do NOT extrapolate no-word terminality; the 75k self-spike = named observable only.
+Self-absorption reading coherent-deduced → the KICK PROBE is its direct test (prereg in
+EXP08 doc; construction surfaced for checkpoint read BEFORE any run). **DESIGN GATE
+OPENED:** constraint = keep routing input-sensitive under the target-side pull; on the
+table = routing-side counter-force / denser anchor / revised target path; drift guards
+verbatim (counter-force highest-risk = manufacturing class; confidence-first check;
+detach stays diagnostic); #12/EMA note promoted to design-table input. Steps 5–6 blocked.
+Full record: FRONTIER §10.12.2.
