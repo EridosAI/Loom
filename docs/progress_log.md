@@ -749,3 +749,53 @@ structured-open family) + T_run register input measured (no-word distractor cycl
 waves, amplitude 0.49↔1.00 — regime constants; §6 stable-depth-vs-hunt remains the word-run
 trigger with this diagnostic as comparison evidence). Entry runner + `evoke_vision(null_word=)`
 (the deployed ablation guard) land in the same unit. **This commit is the run commit.**
+
+## 2026-07-02 — GATE 4: windowed a/b/c PASS; entry run NON_CONVERGENCE; VERIFIED collapse finding
+
+**Windowed re-run @ad23fc6: STEP2_AB_OK=True; full CONFLICT_VALIDITY_OK=True.** (a) PASS
+0.749 vs 0.524 (per-seed 0.72–0.78 — the estimator amendment stabilized the instrument as
+the diagnostic predicted). (b) PASS (0.956). (c) PASS — **flagged: carried by seed 2's LIVE
+deployed channel** (cat_div 1.423, dist_div 0, share 1.000 — the first live word→category
+evocation observed in the deployed rig, structure exactly as designed); seeds 0/1 pre-onset
+at 30000 (staggered onsets, as the reference family predicts).
+
+**Entry run (gate step 3, seed 0, cap 112500): NON_CONVERGENCE** — the channel column never
+fired the two-block stability criterion. Pre-registered lane (neither pass nor fail; no
+rescue). Underneath it, a 4-lens adversarially verified finding (three of the initial
+readings corrected in verification):
+- **DEMONSTRATED — total vision-content collapse, word-present arm, long horizon:** all 16
+  member emissions → ONE point (denominator 1.108 → 2.5e-07; final ~20k waves pinned;
+  occupancy both-axes chance from ~96000; healthy through ~72000; failed revival transient
+  @93000). Real, not instrument (all artifact hypotheses ruled out in source). Terminal
+  failure of a standing collapse-and-regrow oscillation (denom period ≈4800; 394/1125
+  windows assessable). Caveat: ratio column + occupancy both read through vision.emit — one
+  collapse read twice.
+- **DEMONSTRATED — evocation channel alive and DECOUPLED from dead content:** numerator
+  declines through discrete plateaus 46→36→10→13→4.97 (prototype-resonance snapping);
+  proto_spread at run-max (0.0317); ratio correctly NOT_ASSESSABLE at tail.
+- **MECHANISM — word-driven homogenization REFUTED** (floors at 2 points ≠ 1; word cannot
+  name the A/distractor axes that died; the word-LESS distractor died — the word path is a
+  failed 2-point ANCHOR). **Surviving suspect, PLAUSIBLE only: the gap-3 no-detach
+  TARGET-side pull via the vision-SELF reconstruction path (a contraction on emissions),
+  permitted by sparse anchor (2 targets/16 members) + spread 10× under-weighted (0.1 vs
+  gain 1.0) + all L2 ties → 0 after t=1200.** No-detach is deliberate design → any fix is a
+  design revision at its own gate. Exonerated: JEPA, re-pool.
+- **Routing (per verification):** NON_CONVERGENCE stands as the gate enum AND a **§10.9
+  trigger ASSESSMENT is owed alongside** (route B textually satisfied; the parenthetical is
+  interpretive — evocations separated while teaching demonstrably did not proceed).
+  Signature is descriptively NEW (content death + live channel + live prototypes ≠ exp06
+  prototype-collapse). Power: n=1 full-horizon; 30k corroboration 2/3 word-arm dead vs 3/3
+  no-word healthy — under-powered vs the ≥20 floor.
+
+**GATE 4 ruling (Jason):** Gate-4 unit committed as surfaced (artifacts honest,
+NON_CONVERGENCE standing). Canon: new FRONTIER §10.12 (finding, status-split, stress-test
+reading, potency held as reading, #12/EMA note flagged for the design gate — decides
+nothing); §L route-B reworded in place (signal-side death with content assessable) + third
+pattern into the entry-fail disambiguation. Diagnostic arms pre-registered BEFORE launch
+(per-arm prediction table under the composed hypothesis; sharpest line = no-word marathon
+collapses no slower than word-arm; arm-5 vocab ladder with monotone-easing prediction);
+new columns everywhere (substrate-side Δ2; word-path vs self-path gradient split +
+masking-mix fraction). Adoption line: no arm is a fix — detach amputates the teaching
+channel, ties>0 is Tier-2-adjacent, re-weight is a knob; design revision happens after
+verdicts at its own gate. All verdicts return to ONE review; steps 5–6 stay blocked;
+word-arm seed extension staged as compute allows, split pre-registered.

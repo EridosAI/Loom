@@ -1,6 +1,6 @@
 {
-  "commit_hash": "345345b99b60b37cb87fc575fbeb162c190de4cf",
-  "spec_hash": "313317775d0e",
+  "commit_hash": "ad23fc69c6406923bbbbbe9d3c99c03bd212360e",
+  "spec_hash": "cfc03250cabe",
   "seeds": [
     0,
     1,
@@ -18,31 +18,28 @@
   },
   "chance_category": 0.5,
   "check_a_salience": {
-    "distractor_track": 0.5520833333333334,
-    "category_track": 0.5052083333333334,
+    "distractor_track": 0.7486979166666667,
+    "category_track": 0.5240885416666666,
     "occupancy_sep": 0.15,
     "distractor_floor": 0.6,
     "per_seed": [
       {
-        "distractor_track": 0.46875,
-        "category_track": 0.47265625,
-        "distractor_chance": 0.5,
-        "category_chance": 0.5
+        "distractor_track": 0.7765625,
+        "category_track": 0.521875,
+        "n_blocks": 10
       },
       {
-        "distractor_track": 0.54296875,
-        "category_track": 0.53125,
-        "distractor_chance": 0.5,
-        "category_chance": 0.5
+        "distractor_track": 0.71640625,
+        "category_track": 0.53359375,
+        "n_blocks": 10
       },
       {
-        "distractor_track": 0.64453125,
-        "category_track": 0.51171875,
-        "distractor_chance": 0.5,
-        "category_chance": 0.5
+        "distractor_track": 0.753125,
+        "category_track": 0.516796875,
+        "n_blocks": 10
       }
     ],
-    "PASS": false
+    "PASS": true
   },
   "check_b_representable": {
     "oracle_category": 0.9557291666666666,
@@ -60,66 +57,243 @@
     "PASS": true
   },
   "check_c_conflict": {
-    "category_divergence": 6.570323426065745e-08,
+    "category_divergence": 0.4744186675066139,
     "distractor_divergence": 0.0,
-    "category_share": 0.9456278002997921,
+    "category_share": 0.9947553953850063,
     "divergence_sep": 0.1,
-    "channel_alive": false,
+    "channel_alive": true,
     "channel_alive_floor": 0.001,
-    "status": "DEFERRED_DEAD_CHANNEL",
+    "status": "assessed",
     "per_seed": [
       {
-        "category_divergence": 6.124817986119524e-09,
+        "category_divergence": 2.749627203257887e-07,
         "distractor_divergence": 0.0,
-        "category_share": 0.8596455373388925,
-        "category_divergence_norm": 9.970472462230201e-09,
-        "distractor_divergence_norm": 0.0,
+        "category_share": 0.9963763221393837,
+        "n_blocks": 10,
         "full_context": {
-          "category_divergence": 1.9006142104593948e-08,
-          "distractor_divergence": 1.8039376770140336e-08,
-          "evoke_scale": 0.6142956624494323,
-          "category_divergence_norm": 3.093973027387036e-08,
-          "distractor_divergence_norm": 2.93659517278869e-08
+          "category_divergence": 2.8190902945368634e-07,
+          "distractor_divergence": 2.701086607714842e-07,
+          "evoke_scale": 2.557870865868164,
+          "category_divergence_norm": 1.1021237749545417e-07,
+          "distractor_divergence_norm": 1.055990215830567e-07
         }
       },
       {
-        "category_divergence": 1.243448650711798e-07,
+        "category_divergence": 8.157546069753607e-08,
         "distractor_divergence": 0.0,
-        "category_share": 0.992022010638951,
-        "category_divergence_norm": 2.408535413537914e-07,
-        "distractor_divergence_norm": 0.0,
+        "category_share": 0.9878898647182499,
+        "n_blocks": 10,
         "full_context": {
-          "category_divergence": 1.3842406332287283e-07,
-          "distractor_divergence": 3.104599011205522e-08,
-          "evoke_scale": 0.5162675390706787,
-          "category_divergence_norm": 2.681246695696708e-07,
-          "distractor_divergence_norm": 6.013546807134223e-08
+          "category_divergence": 6.427487431182044e-08,
+          "distractor_divergence": 2.7387348278118395e-08,
+          "evoke_scale": 0.5690749893651733,
+          "category_divergence_norm": 1.1294622943018761e-07,
+          "distractor_divergence_norm": 4.81260796730324e-08
         }
       },
       {
-        "category_divergence": 6.664001972467304e-08,
+        "category_divergence": 1.4232556459816605,
         "distractor_divergence": 0.0,
-        "category_share": 0.9852158529215327,
-        "category_divergence_norm": 9.252935140492321e-08,
-        "distractor_divergence_norm": 0.0,
+        "category_share": 0.9999999992973855,
+        "n_blocks": 10,
         "full_context": {
-          "category_divergence": 3.3605307869777334e-08,
-          "distractor_divergence": 2.349291872150161e-08,
-          "evoke_scale": 0.7202041159139404,
-          "category_divergence_norm": 4.666081063301358e-08,
-          "distractor_divergence_norm": 3.26198062499116e-08
+          "category_divergence": 1.5638047605752945,
+          "distractor_divergence": 0.09027062827954069,
+          "evoke_scale": 1.8124951134191285,
+          "category_divergence_norm": 0.862791159544315,
+          "distractor_divergence_norm": 0.04980461884349707
         }
       }
     ],
-    "PASS": false
+    "PASS": true
   },
+  "dynamics_panels": [
+    {
+      "seed": 0,
+      "block_steps": [
+        3000,
+        6000,
+        9000,
+        12000,
+        15000,
+        18000,
+        21000,
+        24000,
+        27000,
+        30000
+      ],
+      "distractor_occupancy": {
+        "mean": 0.7766,
+        "amplitude": 0.5547,
+        "envelope": [
+          0.4414,
+          0.9961
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.0053,
+        "n": 10
+      },
+      "category_occupancy": {
+        "mean": 0.5219,
+        "amplitude": 0.1641,
+        "envelope": [
+          0.4531,
+          0.6172
+        ],
+        "dominant_period_steps": 6000,
+        "trend_per_1000": -0.0016,
+        "n": 10
+      },
+      "category_divergence": {
+        "mean": 0.0,
+        "amplitude": 0.0,
+        "envelope": [
+          0.0,
+          0.0
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.0,
+        "n": 10
+      },
+      "distractor_divergence": {
+        "mean": 0.0,
+        "amplitude": 0.0,
+        "envelope": [
+          0.0,
+          0.0
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.0,
+        "n": 10
+      }
+    },
+    {
+      "seed": 1,
+      "block_steps": [
+        3000,
+        6000,
+        9000,
+        12000,
+        15000,
+        18000,
+        21000,
+        24000,
+        27000,
+        30000
+      ],
+      "distractor_occupancy": {
+        "mean": 0.7164,
+        "amplitude": 0.5195,
+        "envelope": [
+          0.4648,
+          0.9844
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": -0.0137,
+        "n": 10
+      },
+      "category_occupancy": {
+        "mean": 0.5336,
+        "amplitude": 0.1133,
+        "envelope": [
+          0.4844,
+          0.5977
+        ],
+        "dominant_period_steps": 9000,
+        "trend_per_1000": -0.0004,
+        "n": 10
+      },
+      "category_divergence": {
+        "mean": 0.0,
+        "amplitude": 0.0,
+        "envelope": [
+          0.0,
+          0.0
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.0,
+        "n": 10
+      },
+      "distractor_divergence": {
+        "mean": 0.0,
+        "amplitude": 0.0,
+        "envelope": [
+          0.0,
+          0.0
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.0,
+        "n": 10
+      }
+    },
+    {
+      "seed": 2,
+      "block_steps": [
+        3000,
+        6000,
+        9000,
+        12000,
+        15000,
+        18000,
+        21000,
+        24000,
+        27000,
+        30000
+      ],
+      "distractor_occupancy": {
+        "mean": 0.7531,
+        "amplitude": 0.5234,
+        "envelope": [
+          0.4609,
+          0.9844
+        ],
+        "dominant_period_steps": 12000,
+        "trend_per_1000": 0.0023,
+        "n": 10
+      },
+      "category_occupancy": {
+        "mean": 0.5168,
+        "amplitude": 0.125,
+        "envelope": [
+          0.4609,
+          0.5859
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.001,
+        "n": 10
+      },
+      "category_divergence": {
+        "mean": 1.4233,
+        "amplitude": 5.9589,
+        "envelope": [
+          0.0,
+          5.9589
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.1049,
+        "n": 10
+      },
+      "distractor_divergence": {
+        "mean": 0.0,
+        "amplitude": 0.0,
+        "envelope": [
+          0.0,
+          0.0
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.0,
+        "n": 10
+      }
+    }
+  ],
   "conflict_params": {
     "seeds": [
       0,
       1,
       2
     ],
-    "run_steps": 4000,
+    "run_steps": 30000,
+    "read_block": 3000,
     "oracle_steps": 600,
     "occupancy_sep": 0.15,
     "distractor_floor": 0.6,
@@ -137,10 +311,7 @@
       "sigma_stim": 0.2
     }
   },
-  "STEP2_AB_OK": false,
-  "problems": [
-    "(a) vision-alone does NOT occupy distractor over category -> word may be redundant (empty-gap repeat); redesign the stimulus.",
-    "(c) DEFERRED \u2014 the PAM evocation channel is DEAD (cat_div+dist_div ~ 0; the revival config is not yet wired into the deployed loop). (c) is assessable only once the entry gate confirms a live channel (gate step 4); the share metric is vacuous (0/0) here and is NOT a pass."
-  ],
-  "CONFLICT_VALIDITY_OK": false
+  "STEP2_AB_OK": true,
+  "problems": [],
+  "CONFLICT_VALIDITY_OK": true
 }
