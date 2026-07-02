@@ -1,0 +1,112 @@
+{
+  "rescore_ruling": "2026-07-03 instrument-validity (the implementation measured final-period MEAN; the prereg word was SUSTAINED \u2014 one flicker satisfied the mean). Pinned corrected form (most literal): asg above the control band for EVERY window of the final den period, ending at resume end. Same data, no new runs. Form-robust: every reasonable 'sustained' reading lands the same verdict.",
+  "control_bands": {
+    "word": {
+      "asg_max": 2.93125e-05,
+      "den_max": 2.7875e-05,
+      "denmax_max": 4.9e-05
+    },
+    "noword": {
+      "asg_max": 7.2857142857142855e-06,
+      "den_max": 4.935064935064935e-06,
+      "denmax_max": 3.5e-05
+    }
+  },
+  "t0_guards": {
+    "word": [
+      true,
+      true,
+      true
+    ],
+    "noword": [
+      false,
+      true,
+      true
+    ]
+  },
+  "states": {
+    "word": {
+      "verdict": "ESCAPABLE",
+      "eps_star": 0.1,
+      "rungs": {
+        "0.01": {
+          "escaped": [
+            false,
+            false,
+            true
+          ],
+          "rung_escapable": false
+        },
+        "0.03": {
+          "escaped": [
+            false,
+            true,
+            false
+          ],
+          "rung_escapable": false
+        },
+        "0.1": {
+          "escaped": [
+            true,
+            false,
+            true
+          ],
+          "rung_escapable": true
+        },
+        "0.3": {
+          "escaped": [
+            true,
+            true,
+            false
+          ],
+          "rung_escapable": true
+        }
+      }
+    },
+    "noword": {
+      "verdict": "ESCAPABLE",
+      "eps_star": 0.01,
+      "rungs": {
+        "0.01": {
+          "escaped": [
+            true,
+            true,
+            true
+          ],
+          "rung_escapable": true
+        },
+        "0.03": {
+          "escaped": [
+            false,
+            true,
+            true
+          ],
+          "rung_escapable": true
+        },
+        "0.1": {
+          "escaped": [
+            false,
+            false,
+            true
+          ],
+          "rung_escapable": false
+        },
+        "0.3": {
+          "escaped": [
+            true,
+            false,
+            true
+          ],
+          "rung_escapable": true
+        }
+      }
+    }
+  },
+  "combined": "word=ESCAPABLE noword=ESCAPABLE",
+  "beats": [
+    "formal ESCAPABLE(eps*=0.01 both) as computed (kick_probe.json, preserved)",
+    "flagged: criterion measured a different quantity than the prereg word",
+    "ruling: re-score on instrument-validity grounds, pinned literal form",
+    "corrected verdict: word=ESCAPABLE noword=ESCAPABLE (episodic flicker noted, not sustained escape)"
+  ]
+}
