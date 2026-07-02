@@ -85,10 +85,52 @@ windowed panel quantities; no point reads.
 
 ---
 
+## Checkpoint ratifications + additions (Jason, 2026-07-02 — pinned pre-launch)
+
+**Table RATIFIED arm-for-arm; ladder RATIFIED in the nested-refinement form** (four
+properties confirmed: deterministic fixed maps identical across seeds, with the word event
+riding its member at Δt_assoc=0 at every rung; proper nested refinement b%2 → b → (a%2,b)
+→ (a,b); geometry untouched — density the only mover; clean density schedule 8→4→2→1
+members-per-word). The coarse-first alternative DECLINED, reason recorded: the ratified
+ladder anchors the observed dead axes in sequence (distractor at 4, coarse across 8→16) —
+per-rung signal exactly where the collapse bit; coarse-first defers the first-implicated
+axis to the weakest rung, and its sole benefit (conflict premise intact longer) is void
+since arm-5 cells are fenced as never-teaching-reads.
+
+**Shape signatures (pinned now — every rung halves members-per-word AND names a new axis
+segment, so "monotone easing" alone cannot separate density from axis-coverage):**
+- **(i) roughly uniform per-rung easing** → density-as-such (the sparsity leg in its
+  general form);
+- **(ii) easing concentrated at the rungs where a dead axis first gets named** — step at 4
+  (distractor), further movement at 8/16 (coarse) — → **localized anchoring**: the anchor
+  matters where collapse bites, not density per se;
+- **(iii) flat in vocab** → anchor irrelevant; the leg falls.
+Ambiguous between (i) and (ii) → the **coarse-first ladder is the pre-named follow-up
+discriminator** — parked now, launched only after the one review.
+
+**Anchor-side geometry — log, don't engineer:** same word-embedding construction rule at
+every rung (2 = the deployed reference; 16 = the Phase-1 word; 4/8 from the same
+generator, `WordCortex(D, vocab, seed=cfg.seed+1)`); pairwise separations logged in every
+artifact. If the generator's pairwise geometry shifts materially across rungs → surface as
+a CAVEAT, never fix mid-arm.
+
+**Stimulus manifest (provenance, logging-only, one code path, written before wave 0;
+derived LIVE from the constructors — never re-typed):** per run — member→word table across
+all rungs + anchor embedding vectors + pairwise matrix; the visual construction as data
+(axis roles, block geometry, magnitudes 5.831/0.5, σ); the staging timeline (t1/t2,
+Δt_offset, Δt_assoc=0 riding its member, sampling rule + seed); and a STREAM-CONSISTENCY
+ASSERT (first 200 sampled waves checked against the manifest's map at runtime — the
+manifest is verified against the live stream, not a parallel claim). JSON + human-readable
+MD + a per-rung assignment picture labeled **ILLUSTRATIVE-ONLY** (generative-coordinate
+grid; a variance projection was rejected — 16 members = 4×4, any PCA overplots 4-into-1).
+
+**Knob choice logged (not tuned):** arm-4 ε = `lam2_lo` 0 → **0.1** (1% of `lam_hi`=10 —
+small enough not to re-close capacity, nonzero to resist drift).
+
 ## Sequence (pinned)
 
-Checkpoint read of THIS table + the arm-5 construction (Jason) → arms build (new columns
-first, wired into the shared runner path) → arms run → **ALL verdicts return to ONE
-review** — no arm's result is acted on alone; steps 5–6 of the gate sequence stay BLOCKED
-throughout; the design revision (if any) happens after that review, at its own gate, in
-the frontier docs.
+Checkpoint read of THIS table + the arm-5 construction (Jason — DONE, ratified above) →
+arms build (new columns first, wired into the shared runner path) → arms run → **ALL
+verdicts return to ONE review** — no arm's result is acted on alone; steps 5–6 of the gate
+sequence stay BLOCKED throughout; the design revision (if any) happens after that review,
+at its own gate, in the frontier docs.

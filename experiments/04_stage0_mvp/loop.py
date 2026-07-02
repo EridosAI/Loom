@@ -93,10 +93,12 @@ class Stage0Loop:
         return make_stream(cfg.T, cfg.n_A, cfg.n_B, W=cfg.W, sigma=cfg.sigma_drift,
                            slope=cfg.slope, dwell_extra=cfg.dwell_extra, seed=cfg.seed + 3)
 
-    def _word_label(self, b):
-        """The word label for member index ``b``. Identity in Phase-1 (word names the member);
-        Stage-1 overrides this to name the CATEGORY component only (word is category-agnostic of
-        the distractor) — the whole reason the distractor is associatively inert."""
+    def _word_label(self, b, a=None):
+        """The word label for member index ``b`` (optionally with coarse index ``a`` — the
+        exp08 vocab-ladder rungs 8/16 name coarse partitions too; ignored by default).
+        Identity in Phase-1 (word names the member); Stage-1 overrides this to name the
+        CATEGORY component only (word is category-agnostic of the distractor) — the whole
+        reason the distractor is associatively inert."""
         return b
 
     def _post_step(self):
@@ -116,6 +118,12 @@ class Stage0Loop:
         revival config). The TARGET is never posed — the gap-3 target path is untouched."""
         return content
 
+    def _pam_target(self, content: torch.Tensor) -> torch.Tensor:
+        """Target-side hook: what the masked-cell reconstruction is scored against. Identity
+        everywhere EXCEPT exp08's detached-target diagnostic arm (which detaches the vision
+        slot to amputate the gap-3 target-side pull — a DIAGNOSTIC, never the deployed rig)."""
+        return content
+
     # ------------------------------------------------------------------ setup
     @torch.no_grad()
     def _build_codebook(self):
@@ -124,24 +132,27 @@ class Stage0Loop:
         b = torch.randint(0, self.cfg.n_B, (256,), generator=g)
         raw = self.stim.raw(a, b, g)
         e_vis = self.vision.emit(raw)
-        e_word = self.word.emit(self._word_label(b))
+        e_word = self.word.emit(self._word_label(b, a))
         content = torch.cat([e_vis, e_word], dim=0)        # (512, D) sample of slices
         return order.make_codebook_from_content(content)
 
     # ------------------------------------------------------------------ window
-    def build_cells(self, t: int, *, no_word: bool, gen, ablate: str = "none"):
+    def build_cells(self, t: int, *, no_word: bool, gen, ablate: str = "none", force_mask=None):
         cfg = self.cfg
         win = self.stream.window(t % (self.stream.T - cfg.W), cfg.W)
         a, b, drift_w, dwell = win["a"], win["b"], win["drift"], win["dwell_id"]
         raw = self.stim.raw(a, b, gen)                     # (W, D)
         e_vis = self.vision.emit(raw)                      # (W, D) plastic, grad
-        wl = self._word_label(b)                            # member -> word label (category in Stage-1)
+        wl = self._word_label(b, a)                         # member -> word label (category in Stage-1)
         tokens = torch.tensor([self.curric.word_token(int(wl[w]), no_word=no_word)
                                for w in range(cfg.W)])
         e_word = self.word.emit(tokens)                    # (W, D) frozen
         content = torch.stack([e_vis, e_word], dim=1)      # (W, n_slots, D), clean targets
 
-        mask, fam = sample_mask_grid(cfg.W, cfg.n_slots, gen)         # True = masked
+        if force_mask is None:
+            mask, fam = sample_mask_grid(cfg.W, cfg.n_slots, gen)     # True = masked
+        else:
+            mask, fam = force_mask, "forced"                          # exp08 gradient-split probes only
         masked = apply_slice_mask(self._pose_pam_input(content), mask, self.op.mask_emb)  # identity -> MASK
 
         if ablate == "zero":
@@ -160,7 +171,8 @@ class Stage0Loop:
         C = cfg.W * cfg.n_slots
         return dict(
             cells=cells_in.reshape(C, cfg.D),
-            target=content.reshape(C, cfg.D),              # clean, grad attached (no detach)
+            target=self._pam_target(content).reshape(C, cfg.D),   # clean, grad attached (no detach;
+                                                                  # identity hook — exp08 detach arm only)
             mask=mask.reshape(C), visible=(~mask).reshape(C),
             fam=fam, raw=raw, drift_w=drift_w, dwell=dwell, e_vis=e_vis,
         )

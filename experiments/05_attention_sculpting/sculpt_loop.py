@@ -115,7 +115,7 @@ class SculptLoop(Stage0Loop):
         return make_stream(cfg.T, cfg.n_A, cfg.n_B, W=cfg.W, sigma=cfg.sigma_drift,
                            slope=cfg.slope, dwell_extra=cfg.dwell_extra, seed=cfg.seed + 3)
 
-    def _word_label(self, b):
+    def _word_label(self, b, a=None):
         return b % self.cfg.n_category                       # member -> category (the named axis)
 
     def _post_step(self):
@@ -172,8 +172,10 @@ class SculptLoop(Stage0Loop):
         e_vis = self.vision.emit(self.stim.raw_clean(a_idx, b_idx))    # (K, D)
         # null_word = the deployed ablation guard's cue (the null token for every probe — the
         # word channel carries no category): evocations must NOT separate (content-dependence).
+        # Tokens follow the rig's own label map (self._word_label) so vocab-ladder rigs probe
+        # with their deployed map; identical to b % n_category for the base rig.
         tokens = (torch.full((K,), self.word.null_token, dtype=torch.long) if null_word
-                  else b_idx % cfg.n_category)
+                  else self._word_label(b_idx, a_idx))
         e_word = self.word.emit(tokens)                               # (K, D) category/null token
         content = torch.zeros(K, W, cfg.n_slots, cfg.D)
         content[:, :, 0, :] = e_vis.unsqueeze(1)
