@@ -186,6 +186,13 @@ read splits by PATTERN, not value:
   **reference-error assessment under the bars-amendment convention**: a RULER question
   (deployed-healthy may sit below neutral-healthy at config), NOT a capacity trigger. Amend
   the bar on recorded reference-error grounds; do not fire §10.9.
+- **Content-collapse** (third pattern, added 2026-07-02 from the observed entry run) —
+  the CONTENT side dies while the evocation channel stays alive and decoupled (numerator
+  alive off ~frozen prototypes; denominator → sub-floor; occupancy → chance; the ratio
+  correctly NOT_ASSESSABLE) → **the §10.12 collapse lane (FRONTIER)**: neither the §10.9
+  structured-floor resumption (the signal side is not the problem) nor a ruler question —
+  a substrate-dynamics finding routed to its own review, with the pre-registered
+  diagnostic arms (`EXP08_COLLAPSE_ARMS_PREREG.md`) as the pickup.
 
 **Continuous channel column.** The deployed (d)-read is logged **every eval window in
 every run** (the logged-oracle-column pattern). The channel is expected to be an ADAPTIVE
@@ -193,10 +200,15 @@ quantity in the full system — responding to environment and behaviour — so t
 includes its TRAJECTORY and covariates (occupancy, acquisition, Δt_offset cell), not a
 scalar pass. Mid-run sag is a logged observable, not a silent kill.
 
-**§10.9 trigger, wired.** Entry bar unreachable at config, or runs stalling with the
-channel column collapsing (evocation cannot carry enough signal to teach) → the cue-floor
+**§10.9 trigger, wired (route B reworded in place, 2026-07-02 — Gate-4 ruling).** Entry
+bar unreachable at config (route A), or runs stalling with the channel column collapsing
+**on the SIGNAL side — evocation separation dies while the content ruler remains
+assessable** (evocation cannot carry enough signal to teach) (route B) → the cue-floor
 build-robust Phase-1 RESUMES with the measured reason (FRONTIER §10.9; CC's banked
-analysis is the pickup). A trigger-fire, not a teaching null.
+analysis is the pickup). A trigger-fire, not a teaching null. Route B is
+signal-side-specific by construction: **content-side death with a live, decoupled
+evocation channel is a DIFFERENT pattern** (the third disambiguation class below → the
+§10.12 collapse lane), and the three-column logging is what tells them apart.
 
 ---
 

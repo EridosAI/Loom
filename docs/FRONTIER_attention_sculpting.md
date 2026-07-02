@@ -713,3 +713,63 @@ conditions before any run.** The spec-work's opening question: revise
 `STAGE1_ATTENTION_SCULPTING_RIG_SPEC.md` (its "Phase-1 unchanged" bindings are stale
 against the exp06/07 revival configuration — cue re-organization + preserve
 open-and-stay-open tie; continual time is new to it) or start fresh.
+
+## §10.12 — Long-horizon vision-content collapse in the deployed loop (entry run, 2026-07-02)
+
+The §L entry gate's first full-horizon deployed run (seed 0, cap 112500 waves, run commit
+`ad23fc6`) returned **NON_CONVERGENCE** — and beneath the non-fire, an adversarially
+verified finding. Status-split held strictly; nothing below upgrades a reading into a
+claim. Artifacts: `stage1_entry_gate.json` (+ dynamics panels), verification record in the
+progress_log Gate-4 entry.
+
+**DEMONSTRATED.** (1) **Total vision-content collapse in the word-present arm at long
+horizon:** all 16 member emissions collapse to ONE point (centred-content denominator
+1.108 → 2.5e-07, seven orders; pinned for the final ~20k waves; occupancy at chance on
+BOTH axes from ~96000; healthy through ~72000; one failed revival transient at 93000).
+Real, not instrument — every artifact hypothesis ruled out in source. It is the terminal
+failure of a standing collapse-and-regrow oscillation (denominator period ≈4800; 394/1125
+windows assessable), not a sudden event. Caveat: the ratio column and the occupancy
+covariate both read through `vision.emit` — one collapse read twice, not two confirmations.
+(2) **The word→category evocation channel stays alive and DECOUPLED from the dead
+content:** numerator declines through discrete plateaus (46→36→10→13→4.97;
+prototype-resonance snapping); proto_spread at its run maximum; the ratio correctly
+NOT_ASSESSABLE at the tail (the denominator floor doing its job). 30k corroboration:
+word-arm channel dead in 2/3 seeds while the no-word arm is healthy in 3/3 — the collapse
+is word-present-arm-specific and modal-leaning at config; **n=1 at full horizon** — every
+routing decision is under-powered against the ≥20-style seed floor.
+
+**PLAUSIBLE (mechanism — suspected, NOT demonstrated).** The composed hypothesis: **engine
+= the gap-3 no-detach TARGET-side pull via the vision-SELF reconstruction path** (a
+contraction on emissions — emission → PAM resonance-averaging → target pulled toward it,
+no stop-grad), **permitted by** three verifiably weakened counter-forces: the anchor names
+only 2 category targets for 16 members (a failed 2-point anchor — REFUTED as the engine:
+a 2-target pull floors at two points, cannot name the A/distractor axes that died, and the
+axis that died is the word-LESS distractor); spread 10× under-weighted (α=0.1 vs gain
+1.0); all L2 ties → 0 after t=1200. The no-detach is deliberate design — the gap-3
+teaching channel itself — so any fix is a **design revision at its own gate**, not a bug
+patch. Exonerated: JEPA (stop-grad, within-member), constant re-pool (rate 0 — no-op).
+Confirmation requires the pre-registered diagnostic arms (`EXP08_COLLAPSE_ARMS_PREREG.md`).
+
+**The §11 stress-test reading (spec §11: "the word does not improve acuity — it teaches
+what is worth distinguishing").** This run stress-tests the line's converse: in a loop
+with a live no-detach evocation channel and weak restoring forces, the substrate does not
+merely fail to learn distinctions — it can UN-distinguish. The line survives only with its
+implicit precondition made explicit: teaching-what-to-distinguish presupposes forces that
+hold everything else open. The word taught nothing here; the loop forgot everything.
+
+**The potency reading — HELD AS A READING, not a claim.** If the self-path contraction is
+confirmed, this run is the first direct observation of evocation *sculpting* the cortex —
+in the destructive direction (a homogenizer, not a teacher). That is the §10.11
+echo-chamber ground made empirical: a single cortex's evocation mirrors the encoder back
+at itself, and the mirror, unopposed, erases. Potency-of-the-channel would be evidence FOR
+the paradigm's premise (evocation moves substrate) while being evidence AGAINST deploying
+it unanchored. Do not cite this section as either until the arms return.
+
+**The #12 / EMA-as-relaxation-reference note — FLAGGED for the design gate; decides
+nothing now.** #12 (§10.11) holds that the anchor is the stable reference at its frozen
+limit. This run suggests the reference-stability requirement is QUANTITATIVE, not just
+qualitative: 2 frozen points did not hold 16 members open. When the mutual-sculpting
+release eventually relaxes the anchor (§10.11 deferred), the relaxation form may need to
+be a slow-reference (EMA-style) rather than a scheduled un-freezing — a reference that
+moves slower than the thing it anchors, everywhere in the space it anchors. A note for
+that design gate, nothing more.
