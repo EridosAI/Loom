@@ -35,6 +35,14 @@ class SculptConfig(constants.Stage0Config):
                                     # oracle-representable but subtle to pooled vision); ladder sweeps this
     # --- constant intrinsic re-pool on occupancy (SPEC §5, G3) ---
     repool_rate: float = 0.0        # per-step Delta2 decay-toward-group-mean fraction (0 = off)
+    # --- revival config (STAGE1 spec PAM-configuration binding; wired 2026-07-02) ---
+    reposing_alpha: float = 1.0     # content-blind global mean-centre on PAM's vision-cue cells
+                                    # (1.0 = the validated common-mode remover; 0.0 = legacy disease)
+    pam_tie: str = "two_clock"      # "two_clock" = cortex StepSchedule applied to PAM (preserve);
+                                    # "constant" = legacy pam_lam disease tie (A/B diagnostics only)
+    pam_t1: int | None = None       # PAM tie onsets on the DEPLOYED wave clock [RECONCILE — the
+    pam_t2: int | None = None       # named mapping]; None -> cfg.t1/cfg.t2 (=300/1200, the cortex's
+                                    # own clock; the 900/3600 neutral-rig literals do NOT transfer)
 
     def __post_init__(self):
         # member space = crossed axes; word vocab = category (set in SculptLoop._make_word).

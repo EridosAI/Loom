@@ -577,9 +577,13 @@ reconfirm on the run commit.
 
 ## 2026-07-02 — §L gate step 2: Step-0 (a)/(b) reconfirmed on the run commit
 
-Ran the STAGE1 conflict-validity Step-0 (`conflict_validity.py`) on commit 34fa8c4. The gate
-had **never executed** (rig blocked at 1a9e8ba on the dead evocation channel), so two harness
-bugs surfaced and were fixed: (1) `category_share` referenced but never computed → KeyError,
+Ran the STAGE1 conflict-validity Step-0 (`conflict_validity.py`) on commit 34fa8c4.
+**Provenance:** this is the **first end-to-end execution of the integrated Step-0 gate** —
+the `category_share` KeyError proves `conflict_validity.py` had never run to completion (the
+rig blocked at 1a9e8ba on the dead evocation channel before the gate was exercised). The old
+(a)/(b) PASS came from the **exp05-era probe path** (the separate ladder/oracle probes), not
+this integrated gate; **this reconfirm supersedes it.** Two harness bugs surfaced and were
+fixed: (1) `category_share` referenced but never computed → KeyError,
 crashed all execution; (2) (c) **vacuously PASSED on a dead channel** (both divergences ~1e-10
 → share 0/0 noise, yet CONFLICT_VALIDITY_OK=True) → added a **channel-alive precondition** so
 (c) reports DEFERRED, never a false pass (a verdict must not rest on a flagged measurement).
@@ -594,3 +598,52 @@ into the deployed loop, so evocation is dead; (c) is assessable only at gate ste
 entry-gate, live channel). Artifact `conflict_validity.json` (full CONFLICT_VALIDITY_OK=False,
 awaiting c). Next (user-directed): wire the revival config into the deployed loop (prerequisite
 for step 3 entry gate).
+
+## 2026-07-02 — Revival config WIRED into the deployed loop; knob register RATIFIED
+
+**Build (this commit = the run commit).** The two Edit-3 bindings enter `SculptLoop` via a new
+shared module `revival.py` (one code path: `exp07_core` now delegates to the same
+`population_mean`/`repose`/`tie_schedule`; **anchor: the 20-seed §L calibration reproduced
+`liveness_calibration.json` bit-for-bit through the refactor**). Two identity-default hooks in
+`Stage0Loop` (`_pam_penalty`, `_pose_pam_input` — Phase-1 verbatim-preserved); `SculptLoop`
+overrides: content-blind global mean-centre on PAM's vision-cue cells (input side; targets never
+posed — gap-3 path untouched) + the two-clock preserve tie; `evoke_vision` presents the same
+posed frame (probe-consistency, flagged); read-only `pam_proto_spread` column. Wiring asserts
+ALL GREEN (`revival_wiring_check.py`): independent-reference step-function equivalence;
+mean-centre exactness (1e-07, re-asserted along live training); ablation analogue (identical
+population poses identical — μ manufactures nothing, max sep 0.0); tie transitions + penalty
+exactly 0 when open; proto-spread live from t=0. Adversarial verify: caveats-only, 0 blocking.
+
+**Register ratification (Jason).**
+1. **Onsets:** PAM tie ≡ the cortex's own StepSchedule (same class, same onsets t1=300/t2=1200,
+   same clock as `self.unpool`) — the uniformity binding made literal; absoluteness holds on
+   each rig's own clock. **Reference-record note: the neutral calibration stays at its own
+   canonical clock (900/3600@12000) — matched fractionally and matched in binding; do NOT
+   re-run neutral at 300/1200 (two things at once).**
+2. **μ:** binding PROPERTIES (future estimators [RECONCILE] against these, not the recipe):
+   content-blind population statistic over all 16, detached, pairwise-diff invariance asserted
+   per wave. Nonstationary = the correct deployed analogue. **Pre-registered expectation:**
+   early-run, vision undifferentiated → μ ≈ everything → channel column weak for
+   DEVELOPMENTAL reasons (the co-development story, not a wiring fault); the asserts separate
+   the two.
+3. **Scope:** vision-slot / input-side / targets-raw (Edit 3 verbatim); `evoke_vision` fix
+   stands (one-code-path applies to reads too).
+4. **Entry run length — criterion-led, capped:** run until the deployed channel column fires
+   the eps-flatness criterion (calibration form, eval cadence); entry read = first k′ windows
+   after; **cap = 48000 waves [RECONCILE]** (headroom above both clock readings). Flatness
+   never fires by cap → stop, surface as a NON-CONVERGENCE FINDING (neither pass nor fail).
+5. **Read construction:** category-partition d (d_diff across category, d_same
+   within-category-across-distractor, d_ablated null-word) + mean-centred denominator —
+   ratified. **This voids the 16-cue bar's transfer** (different statistic on different
+   association geometry; cardinality moving converged d is the settled exp06/07 lesson;
+   direction uncertain → measure, don't argue). **Pre-run addition: MATCHED-BAR calibration**
+   — same 20-seed harness, same emission population, only the associate map changes (16 → 2,
+   8+8), the pinned statistic computed by the SAME code path the entry read will use, same
+   margin form, k′ re-derived by the pinned procedure. **General rule: bar and read must be
+   the same function on matched geometry.** 0.8866 / k=13 stand as the 16-cue instrument's
+   record — SCOPED, not superseded. Surface the matched-bar JSON before the entry read
+   (checkpoint, not a full gate); structurally surprising → STOP (design question, not knob).
+
+**Sequence:** commit build → matched-bar calibration (surface JSON) → (a)/(b) re-run on the
+run commit → entry run → k′-mean vs matched bar → fail: stop + pre-registered disambiguation;
+pass: step 4, all surfacing together at REVIEW GATE 4.

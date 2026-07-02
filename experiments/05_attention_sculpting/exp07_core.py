@@ -43,6 +43,8 @@ sys.path.insert(0, str(_HERE.parents[1] / "experiments" / "04_stage0_mvp"))
 # reuse the committed dgate primitives unchanged
 from dgate import (Factors, make_op, _task_tensors, _companion, _sep,   # noqa: E402
                    W, N_SLOTS, KAPPA, D)
+# the revival primitives are SHARED with the deployed loop (revival.py; Guard 1 — one code path)
+from revival import population_mean, repose, tie_schedule               # noqa: E402
 
 
 # ----------------------------------------------------------------- penalty regime spec
@@ -68,9 +70,14 @@ class PenaltySpec:
     t2_step: int
 
     def lam12_at(self, step: int) -> tuple[float, float]:
-        lam1 = self.lam1_lo if step >= self.t1_step else self.lam1_hi
-        lam2 = self.lam2_lo if step >= self.t2_step else self.lam2_hi
-        return lam1, lam2
+        # delegates to the SHARED cortex StepSchedule (revival.tie_schedule) — identical
+        # >= boundary semantics, so this is bit-exact with the pre-refactor inline form.
+        s = getattr(self, "_sched_cache", None)
+        if s is None:
+            s = tie_schedule(lam1_hi=self.lam1_hi, lam1_lo=self.lam1_lo, t1_step=self.t1_step,
+                             lam2_hi=self.lam2_hi, lam2_lo=self.lam2_lo, t2_step=self.t2_step)
+            self._sched_cache = s
+        return s.lam1(step), s.lam2(step)
 
 
 # ----------------------------------------------------------------- cue spec + re-posing
@@ -91,16 +98,18 @@ def _factors(member_count: int, cue: CueSpec, *, shared_mag: float, cue_mag: flo
 
 
 def _population_mean_cue(f: Factors, Cd, base, *, ablate: bool) -> torch.Tensor:
-    """mu = content-blind population mean of the cue over all M members (cls-independent constant)."""
+    """mu = content-blind population mean of the cue over all M members (cls-independent constant).
+    Shared implementation: revival.population_mean."""
     comps = torch.stack([_companion(f, Cd, base, cls, ablate=ablate) for cls in range(f.member_count)])
-    return comps.mean(dim=0)
+    return population_mean(comps)
 
 
 def reposed_companion(f: Factors, Cd, base, cls: int, alpha: float, mu: torch.Tensor,
                       *, ablate: bool) -> torch.Tensor:
     """comp_reposed[cls] = comp[cls] - alpha*mu. mu is the FIXED (non-ablated) population mean — the
-    deployed transform; the ablation guard applies the SAME mu to the ablated cue."""
-    return _companion(f, Cd, base, cls, ablate=ablate) - alpha * mu
+    deployed transform; the ablation guard applies the SAME mu to the ablated cue.
+    Shared implementation: revival.repose."""
+    return repose(_companion(f, Cd, base, cls, ablate=ablate), mu, alpha)
 
 
 def _reposed_window(f: Factors, V, u, m: int, comp: torch.Tensor, op):

@@ -104,6 +104,18 @@ class Stage0Loop:
         intrinsic Delta2 re-pool here (G3: occupancy decay, envelope untouched)."""
         pass
 
+    def _pam_penalty(self, t: int):
+        """PAM substrate tie for this wave. Phase-1 default = the constant light penalty
+        (lam1=lam2=cfg.pam_lam), verbatim the pre-hook expression. Stage-1 SculptLoop overrides
+        with the two-clock cortex StepSchedule (the revival preserve tie)."""
+        return self.op.pam.pool_penalty(self.cfg.pam_lam, self.cfg.pam_lam)
+
+    def _pose_pam_input(self, content: torch.Tensor) -> torch.Tensor:
+        """Presentation-frame hook: the content PAM sees as INPUT (cue side), before masking.
+        Identity in Phase-1. Stage-1 re-poses the vision slots (content-blind global mean-centre,
+        revival config). The TARGET is never posed — the gap-3 target path is untouched."""
+        return content
+
     # ------------------------------------------------------------------ setup
     @torch.no_grad()
     def _build_codebook(self):
@@ -130,7 +142,7 @@ class Stage0Loop:
         content = torch.stack([e_vis, e_word], dim=1)      # (W, n_slots, D), clean targets
 
         mask, fam = sample_mask_grid(cfg.W, cfg.n_slots, gen)         # True = masked
-        masked = apply_slice_mask(content, mask, self.op.mask_emb)    # identity -> MASK
+        masked = apply_slice_mask(self._pose_pam_input(content), mask, self.op.mask_emb)  # identity -> MASK
 
         if ablate == "zero":
             drift_w = torch.zeros_like(drift_w)
@@ -181,7 +193,7 @@ class Stage0Loop:
         l_jepa = self._l_jepa(bc)
         l_spread = self._l_spread(self.gen)
         vis_pen = self.vision.pool.pool_penalty(self.unpool.lam1(t), self.unpool.lam2(t))
-        pam_pen = self.op.pam.pool_penalty(self.cfg.pam_lam, self.cfg.pam_lam)
+        pam_pen = self._pam_penalty(t)
         gain = self.gain.gain(t)
 
         L = gain * l_pam + self.pin.alpha_spread * l_spread + l_jepa + vis_pen + pam_pen
