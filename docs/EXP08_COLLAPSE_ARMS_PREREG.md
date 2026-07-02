@@ -238,3 +238,23 @@ be the counter-force direction entering through the back door, unreviewed).
    "sustained regrow" is therefore judged AGAINST the ε=0 control band (3 unkicked
    resumes per state, same lengths/seeds/columns). ESCAPABLE = sustained regrow exceeding
    the control band through the final den period — not the state's own natural flicker.
+
+---
+
+## Correlate hunt (2026-07-03, read-only over the 24 kick resumes; pre-registered candidates)
+
+SUSTAINED(6) vs PIN/EMBER(10), FLICKER(8) excluded (2 right-censored, caveat).
+- **The one real correlate is STATE (= trajectory position):** SUSTAINED splits 5 no-word /
+  1 word; PIN/EMBER splits 3 no-word / 7 word. The shallower-position state re-amplifies at
+  ~5× the rate of the hard-pinned state (5/12 vs 1/12 kicked resumes) — the
+  pin-depth-as-position reading showing up as pocket width: **pockets are wider earlier on
+  the trajectory; early intervention ≫ late.**
+- **t=0 kick displacement: weak, non-separating tendency** (rank separation U≈0.80; direct
+  counterexamples both ways — the largest displacement 0.8 washed back to EMBER; the sole
+  word SUSTAINED case moved only 2.9e-5 at t=0).
+- **ε: no structure** (identical medians across classes — confirms non-monotonicity).
+  Early-window trend/level: no separation beyond what state explains. Kick-seed: none.
+**Deliverable: "stochastic" converts to "CONDITIONED BY POSITION, stochastic within
+position."** No candidate turns rescue into a controllable mechanism — consistent with,
+and sharpening, PREVENTION-PRIMARY (the design-table input: whatever widens pockets, apply
+it EARLY; nothing found that makes late rescue reliable).
