@@ -57,6 +57,9 @@ CONFLICT_PARAMS = dict(
     easy_ref="r_category=r_distractor",   # the mild-conflict reference for the oracle ceiling
     # (c) conflict: PAM evokes more divergently across category than distractor
     divergence_sep=0.10,             # category_share = cat/(cat+dist) must exceed 0.5 + this
+    channel_alive_floor=1e-3,        # (c) is VACUOUS on a dead channel (cat_div+dist_div ~ 1e-10 ->
+                                     # share is 0/0 noise); only assess (c) once the evocation channel
+                                     # is live (gate step 4, post entry-gate). Below the floor -> DEFERRED.
     # default deployed conflict cell (the timing sweep's reference cell)
     cell=dict(n_A=4, n_distractor=2, n_category=2,
               R_coarse=5.0, r_distractor=3.0, r_category=0.5, sigma_stim=0.20),
@@ -117,8 +120,10 @@ def _axis_divergence(loop: SculptLoop) -> dict:
     """Step-0 check (c): associative (gate) + full-context (diagnostic) evocation divergence."""
     assoc = _evocation_divergence(loop, associative=True)
     full = _evocation_divergence(loop, associative=False)
-    return dict(category_divergence=assoc["category_divergence"],
-                distractor_divergence=assoc["distractor_divergence"],
+    cat, dist = assoc["category_divergence"], assoc["distractor_divergence"]
+    category_share = cat / (cat + dist + 1e-9)          # (c): category's fraction of total divergence
+    return dict(category_divergence=cat, distractor_divergence=dist,
+                category_share=category_share,
                 category_divergence_norm=assoc["category_divergence_norm"],
                 distractor_divergence_norm=assoc["distractor_divergence_norm"],
                 full_context=full)
@@ -188,7 +193,12 @@ def validate(verbose=True, out_path="conflict_validity.json", quick=False) -> di
     a_pass = bool(distractor_track - category_track_va >= P["occupancy_sep"]
                   and distractor_track >= P["distractor_floor"])
     b_pass = bool(oracle_category >= oracle_threshold and all(abls))
-    c_pass = bool(cat_share >= 0.5 + P["divergence_sep"] and cat_div > dist_div)
+    channel_alive = bool((cat_div + dist_div) > P["channel_alive_floor"])
+    # (c) is only meaningful on a LIVE channel; on a dead channel the share is 0/0 noise -> DEFERRED,
+    # never a vacuous pass (a verdict must not rest on a flagged measurement).
+    c_pass = bool(channel_alive and cat_share >= 0.5 + P["divergence_sep"] and cat_div > dist_div)
+    c_status = "assessed" if channel_alive else "DEFERRED_DEAD_CHANNEL"
+    step2_ab_ok = bool(a_pass and b_pass)
 
     rec = dict(
         commit_hash=_commit_hash(), spec_hash=spec_hash(), seeds=seeds, quick=quick,
@@ -203,8 +213,10 @@ def validate(verbose=True, out_path="conflict_validity.json", quick=False) -> di
                                    PASS=b_pass),
         check_c_conflict=dict(category_divergence=cat_div, distractor_divergence=dist_div,
                               category_share=cat_share, divergence_sep=P["divergence_sep"],
-                              per_seed=div_rows, PASS=c_pass),
+                              channel_alive=channel_alive, channel_alive_floor=P["channel_alive_floor"],
+                              status=c_status, per_seed=div_rows, PASS=c_pass),
         conflict_params=CONFLICT_PARAMS,
+        STEP2_AB_OK=step2_ab_ok,      # gate step 2 target: (a) & (b) reconfirmed on the run commit
     )
 
     problems = []
@@ -215,10 +227,17 @@ def validate(verbose=True, out_path="conflict_validity.json", quick=False) -> di
         problems.append("(b) category NOT representable by the substrate oracle (or ablation guard "
                         "failed) -> words-can't-teach-unrepresentable (F3-analog); stop.")
     if not c_pass:
-        problems.append("(c) PAM does not evoke more divergently across category than distractor -> "
-                        "conflict not clean (distractor not associatively inert).")
+        if not channel_alive:
+            problems.append("(c) DEFERRED — the PAM evocation channel is DEAD (cat_div+dist_div ~ 0; the "
+                            "revival config is not yet wired into the deployed loop). (c) is assessable "
+                            "only once the entry gate confirms a live channel (gate step 4); the share "
+                            "metric is vacuous (0/0) here and is NOT a pass.")
+        else:
+            problems.append("(c) PAM does not evoke more divergently across category than distractor -> "
+                            "conflict not clean (distractor not associatively inert).")
     rec["problems"] = problems
-    rec["CONFLICT_VALIDITY_OK"] = not problems
+    # full gate needs all three; step 2 needs only (a)&(b). Report both, honestly.
+    rec["CONFLICT_VALIDITY_OK"] = bool(a_pass and b_pass and c_pass)
 
     Path(out_path).write_text(json.dumps(rec, indent=2))
     if verbose:
@@ -229,9 +248,12 @@ def validate(verbose=True, out_path="conflict_validity.json", quick=False) -> di
         print(f"  (b) represent : oracle_category={oracle_category:.3f} (>= thr {oracle_threshold:.3f}; "
               f"easy_ceiling={easy_ceiling:.3f}; ablation_ok={all(abls)})  -> {'PASS' if b_pass else 'FAIL'}")
         print(f"      raw bracket: raw_distractor={raw_dist:.3f}  raw_category={raw_cat:.3f}")
-        print(f"  (c) conflict  : category_div={cat_div:.3f} vs distractor_div={dist_div:.3f}  "
-              f"share={cat_share:.3f} (>= {0.5 + P['divergence_sep']:.2f})  -> {'PASS' if c_pass else 'FAIL'}")
-        print(f"  CONFLICT_VALIDITY_OK = {rec['CONFLICT_VALIDITY_OK']}")
+        c_verdict = "PASS" if c_pass else ("DEFERRED (dead channel)" if not channel_alive else "FAIL")
+        print(f"  (c) conflict  : category_div={cat_div:.4g} vs distractor_div={dist_div:.4g}  "
+              f"share={cat_share:.3f} (>= {0.5 + P['divergence_sep']:.2f})  -> {c_verdict}")
+        print(f"  STEP2_AB_OK = {step2_ab_ok}  (gate step 2 target: (a)&(b))")
+        print(f"  CONFLICT_VALIDITY_OK (full a&b&c) = {rec['CONFLICT_VALIDITY_OK']}  "
+              f"[c {c_status}]")
         if problems:
             for p in problems:
                 print("   PROBLEM:", p)

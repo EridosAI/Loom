@@ -574,3 +574,23 @@ sub-bar) → reference-error under the bars convention; (5) **terminology disamb
 "deployed" = disease regime in exp07 sweep labels vs the revived config in this spec.
 Register rows filled (k, plateau-flatness criterion). Next: gate step 2 — Step-0 (a)/(b)
 reconfirm on the run commit.
+
+## 2026-07-02 — §L gate step 2: Step-0 (a)/(b) reconfirmed on the run commit
+
+Ran the STAGE1 conflict-validity Step-0 (`conflict_validity.py`) on commit 34fa8c4. The gate
+had **never executed** (rig blocked at 1a9e8ba on the dead evocation channel), so two harness
+bugs surfaced and were fixed: (1) `category_share` referenced but never computed → KeyError,
+crashed all execution; (2) (c) **vacuously PASSED on a dead channel** (both divergences ~1e-10
+→ share 0/0 noise, yet CONFLICT_VALIDITY_OK=True) → added a **channel-alive precondition** so
+(c) reports DEFERRED, never a false pass (a verdict must not rest on a flagged measurement).
+
+Result **STEP2_AB_OK = True**: **(a) salience→distractor PASS** (distractor_track 0.717 >
+category_track 0.508; sep 0.209 ≥ 0.15; floor 0.717 ≥ 0.60 — the QUICK-mode fail at 1500
+steps was a budget artifact; raw_distractor 1.000 vs raw_category 0.646 confirms the geometry).
+**(b) category-representable PASS** (substrate oracle 0.956 ≥ thr 0.625, ablation-guarded;
+easy-ceiling 1.000). seed 2 marginal on (a) per-seed (sep 0.055) but the pre-registered MEAN
+criterion passes. **(c) conflict DEFERRED_DEAD_CHANNEL** — the revival config is not yet wired
+into the deployed loop, so evocation is dead; (c) is assessable only at gate step 4 (post
+entry-gate, live channel). Artifact `conflict_validity.json` (full CONFLICT_VALIDITY_OK=False,
+awaiting c). Next (user-directed): wire the revival config into the deployed loop (prerequisite
+for step 3 entry gate).

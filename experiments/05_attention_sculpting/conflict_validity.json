@@ -1,0 +1,145 @@
+{
+  "commit_hash": "34fa8c4e393bd2e8fa1d35681e62a770de704958",
+  "spec_hash": "313317775d0e",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "quick": false,
+  "cell": {
+    "n_A": 4,
+    "n_distractor": 2,
+    "n_category": 2,
+    "R_coarse": 5.0,
+    "r_distractor": 3.0,
+    "r_category": 0.5,
+    "sigma_stim": 0.2
+  },
+  "chance_category": 0.5,
+  "check_a_salience": {
+    "distractor_track": 0.7174479166666666,
+    "category_track": 0.5078125,
+    "occupancy_sep": 0.15,
+    "distractor_floor": 0.6,
+    "per_seed": [
+      {
+        "distractor_track": 0.79296875,
+        "category_track": 0.4375,
+        "distractor_chance": 0.5,
+        "category_chance": 0.5
+      },
+      {
+        "distractor_track": 0.7734375,
+        "category_track": 0.5546875,
+        "distractor_chance": 0.5,
+        "category_chance": 0.5
+      },
+      {
+        "distractor_track": 0.5859375,
+        "category_track": 0.53125,
+        "distractor_chance": 0.5,
+        "category_chance": 0.5
+      }
+    ],
+    "PASS": true
+  },
+  "check_b_representable": {
+    "oracle_category": 0.9557291666666666,
+    "easy_ceiling": 1.0,
+    "oracle_threshold": 0.625,
+    "margin_oracle_frac": 0.25,
+    "ablation_collapsed_all": true,
+    "oracle_per_seed": [
+      0.958984375,
+      0.95703125,
+      0.951171875
+    ],
+    "raw_distractor": 1.0,
+    "raw_category": 0.646484375,
+    "PASS": true
+  },
+  "check_c_conflict": {
+    "category_divergence": 2.912222877663832e-08,
+    "distractor_divergence": 0.0,
+    "category_share": 0.9594540354461706,
+    "divergence_sep": 0.1,
+    "channel_alive": false,
+    "channel_alive_floor": 0.001,
+    "status": "DEFERRED_DEAD_CHANNEL",
+    "per_seed": [
+      {
+        "category_divergence": 2.5334713882330107e-08,
+        "distractor_divergence": 0.0,
+        "category_share": 0.9620273072087192,
+        "category_divergence_norm": 4.1639213039664037e-08,
+        "distractor_divergence_norm": 0.0,
+        "full_context": {
+          "category_divergence": 2.59721240070121e-08,
+          "distractor_divergence": 2.0343399187439104e-08,
+          "evoke_scale": 0.6084340224729309,
+          "category_divergence_norm": 4.268683710593714e-08,
+          "distractor_divergence_norm": 3.3435669992212144e-08
+        }
+      },
+      {
+        "category_divergence": 4.713081125373719e-08,
+        "distractor_divergence": 0.0,
+        "category_share": 0.9792232880778141,
+        "category_divergence_norm": 7.469066690477272e-08,
+        "distractor_divergence_norm": 0.0,
+        "full_context": {
+          "category_divergence": 1.9097543546564566e-08,
+          "distractor_divergence": 1.3281435951029152e-08,
+          "evoke_scale": 0.6310133944020996,
+          "category_divergence_norm": 3.026487823552454e-08,
+          "distractor_divergence_norm": 2.1047787683831393e-08
+        }
+      },
+      {
+        "category_divergence": 1.4901161193847656e-08,
+        "distractor_divergence": 0.0,
+        "category_share": 0.9371115110519783,
+        "category_divergence_norm": 2.2169189546576466e-08,
+        "distractor_divergence_norm": 0.0,
+        "full_context": {
+          "category_divergence": 1.0275923445490776e-08,
+          "distractor_divergence": 1.1785174169887114e-08,
+          "evoke_scale": 0.6721563349233398,
+          "category_divergence_norm": 1.528799612766092e-08,
+          "distractor_divergence_norm": 1.753338257420608e-08
+        }
+      }
+    ],
+    "PASS": false
+  },
+  "conflict_params": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "run_steps": 4000,
+    "oracle_steps": 600,
+    "occupancy_sep": 0.15,
+    "distractor_floor": 0.6,
+    "margin_oracle_frac": 0.25,
+    "easy_ref": "r_category=r_distractor",
+    "divergence_sep": 0.1,
+    "channel_alive_floor": 0.001,
+    "cell": {
+      "n_A": 4,
+      "n_distractor": 2,
+      "n_category": 2,
+      "R_coarse": 5.0,
+      "r_distractor": 3.0,
+      "r_category": 0.5,
+      "sigma_stim": 0.2
+    }
+  },
+  "STEP2_AB_OK": true,
+  "problems": [
+    "(c) DEFERRED \u2014 the PAM evocation channel is DEAD (cat_div+dist_div ~ 0; the revival config is not yet wired into the deployed loop). (c) is assessable only once the entry gate confirms a live channel (gate step 4); the share metric is vacuous (0/0) here and is NOT a pass."
+  ],
+  "CONFLICT_VALIDITY_OK": false
+}
