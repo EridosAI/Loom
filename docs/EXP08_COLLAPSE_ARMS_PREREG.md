@@ -171,3 +171,50 @@ one-sided collapse-floor tripwire, generalized into the circularity ladder: vari
 statistics cannot certify differentiation — floor tripwires only.**
 
 **Sequence:** columns → Run A + Run B → ONE follow-up review → the design gate.
+
+---
+
+## KICK-PROBE pre-registration (2026-07-03, pinned pre-run; the self-absorption test)
+
+**Question.** Is the collapsed assignment state ABSORBING (the coherent-deduced lock
+reading: input-invariant routing strips gradients of their input-differential component,
+so perturbations decay back) or ESCAPABLE (a large-enough routing perturbation re-seeds
+input-sensitivity and training regrows it)? Tested at BOTH measured end-states.
+
+**States (deterministic replay; weights SAVED at the pinned reads this time — no stored
+checkpoints exist from prior runs):**
+- **WORD-PINNED state:** word arm, seed 1, replay to 112500 (asg_dist ≈ 1e-5, the hard pin).
+- **NO-WORD FLOATING state:** no-word arm, seed 0, replay to 500000 (asg_dist ≈ 0.08,
+  metastable intermittent collapse).
+
+**The kick (routing/assignment params ONLY — nothing member-informative is injected):**
+zero-mean Gaussian noise added once to `vision.pool.delta2` (the member-routing level;
+base/Δ1 untouched; PAM, word, operator untouched), scaled RELATIVE to the state's own
+Δ2 RMS: **ε ladder `[RECONCILE]` = {0.01, 0.03, 0.1, 0.3} × RMS(Δ2)**. The kick is
+content-blind by construction (isotropic noise carries no member structure — it can
+re-seed input-SENSITIVITY but cannot inject the member MAP; regrowth, if any, must be
+trained, not implanted).
+
+**Resume + seeds (pinned):** resume training in the state's own regime (word arm resumes
+word-on; no-word resumes no-word) for **24000 waves** (~5 word-clock den periods / ~1
+no-word period); **3 kick seeds per ε rung** (noise generator seeds 0/1/2); full column
+set (asg_dist, asg_argmax_k, asg_entropy, den, num, occupancy, dynamics panels).
+
+**Readouts (windowed, panels standing):** asg_dist trajectory (the primary — does the
+kicked input-sensitivity decay back to the pin or grow?), den recovery, argmax_k.
+
+**Pre-registered verdicts (no rescue):**
+- **ABSORBING** — at EVERY ε rung, asg_dist decays back to the state's pre-kick band and
+  den returns sub-floor (word state) / to its floating band (no-word state) within the
+  resume window → the self-absorption lock reading is DEMONSTRATED for that state.
+- **ESCAPABLE** — at SOME ε rung, SUSTAINED regrow (asg_dist and den hold above the
+  pre-kick band through the final den period of the resume window) → the state is a
+  well, not an absorber; depth ε* recorded.
+- **MIXED-BY-STATE** — word-pinned ABSORBING while no-word-floating ESCAPABLE → directly
+  confirms the pin-depth lock reading (the word digs the well past escape).
+
+**CHECKPOINT: this construction surfaces for Jason's read BEFORE any run** (the ε ladder,
+the Δ2-only kick surface, the resume length, and the decay-back bands are the reviewable
+knobs). Nothing here is a fix: the kick is a probe of basin geometry, not a repair
+mechanism (drift guard: a noise term that "helps" is NOT a candidate design — that would
+be the counter-force direction entering through the back door, unreviewed).
