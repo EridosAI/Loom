@@ -866,5 +866,10 @@ mostly-absorbing with stochastic re-amplification windows; design question = wha
 conditions put the system in the re-amplifying regime; picture = a current with eddies;
 regulation = widening the pockets). Kick-not-a-candidate barred, now load-bearing.
 Authorized: the CORRELATE HUNT (read-only, no new runs — SUSTAINED(6) vs PIN/EMBER(10);
-candidates: t=0 magnitude, state, ε, early-window trend). Then design table from canon,
-first deliverable = the force-ledger. Full record: FRONTIER §10.12.3.
+candidates: t=0 magnitude, state, ε, early-window trend). **HUNT RUN: the one real
+correlate is STATE = trajectory position (SUSTAINED 5 no-word / 1 word vs PIN-EMBER 3/7;
+~5× pocket-width gradient — early ≫ late); t0 weak non-separating (U≈0.80,
+counterexamples both ways); ε none. "Stochastic" → "conditioned by position, stochastic
+within position"; no controllable rescue lever — sharpens PREVENTION-PRIMARY.** Then
+design table from canon, first deliverable = the force-ledger. Full record: FRONTIER
+§10.12.3 + the prereg hunt record.

@@ -805,5 +805,14 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   anchor / revised target path; #12/EMA note promoted to design-table input. Parked with
   triggers: acquisition-aligned ladder reads; coarse-first ladder (ambiguity
   discriminator); ties re-dose ε<0.05; cue-floor build-robust half (§10.9, its own
-  trigger). **Next: kick-probe checkpoint read (prereg in EXP08 doc, pinned pre-run) →
-  the design table.**]
+  trigger). **KICK PROBE RUN + RE-SCORED (FRONTIER §10.12.3): ESCAPABLE stands both states
+  (all beats kept; expected ABSORBING falsified on the record); population = 2 PIN / 8
+  EMBER / 8 FLICKER / 6 SUSTAINED-functional; the no-word ε=0 control self-pinned at ~518k
+  → fate shared end-to-end, word = pure accelerant (5.4×/4.8× converging) + pin-deepener
+  (§10.12.2 scope line superseded by measurement). Fork re-ruled: PREVENTION-PRIMARY,
+  RECOVERY-UNRELIABLE — the flow is mostly-absorbing with stochastic re-amplification
+  pockets; regulation = widening the pockets by design. Correlate hunt: conditioned by
+  POSITION, stochastic within position (early ≫ late); no controllable rescue lever found.
+  Next: THE DESIGN TABLE opens from canon — first deliverable = the force-ledger;
+  constraint = input-sensitivity must be SELF-SUSTAINING under the deployed flow; kick-
+  not-a-candidate barred; steps 5–6 blocked.**]

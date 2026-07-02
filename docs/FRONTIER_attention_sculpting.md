@@ -713,9 +713,11 @@ its successor arc has run.)* The revise-vs-fresh question was **RESOLVED → REV
 place** (STAGE1 spec, `eabe08b`) and executed through the §L gate sequence: calibration →
 matched bar (three pre-read instrument fixes) → windowed Step-0 PASS → entry run
 NON_CONVERGENCE → the **§10.12 collapse finding** → EXP08 arms → **§10.12.2: dead-dictionary
-DEMONSTRATED, DESIGN GATE OPEN** (constraint: keep routing input-sensitive under the
-target-side pull). Current state: **kick probe pending its checkpoint read → the design
-table.** Gate steps 5–6 blocked.
+DEMONSTRATED, DESIGN GATE OPEN** → **§10.12.3: kick probe ESCAPABLE stands; fork re-ruled
+PREVENTION-PRIMARY; fate shared end-to-end, word = pure accelerant + pin-deepener;
+correlate = position (early ≫ late).** Current state: **THE DESIGN TABLE opens from canon
+— first deliverable = the force-ledger; constraint = input-sensitivity self-sustaining
+under the deployed flow.** Gate steps 5–6 blocked.
 
 ## §10.12 — Long-horizon vision-content collapse in the deployed loop (entry run, 2026-07-02)
 
