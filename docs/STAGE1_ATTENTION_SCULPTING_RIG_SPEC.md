@@ -207,6 +207,15 @@ directions. The empty-gap rig failed partly because they didn't (the salient axi
 resolvable one → word redundant). Step 0 proves the conflict exists, on the live commit, before the
 timing sweep. Three checks, thresholds `[RECONCILE]`:
 
+**Windowed estimators (amended 2026-07-02, bars convention, reference-error grounds —
+demonstrated pre-re-run).** Occupancy in the deployed regime OSCILLATES intrinsically (no-word
+distractor hunts 0.49↔1.00 at ~1500-wave scale, in the revival AND legacy configs; amplitude ≫
+eval noise; the legacy config also fails point-reads at other draws — the old point PASS was a
+lucky draw). Every Step-0 dynamical read is therefore a **windowed estimator**: mean over ALL
+post-onset block reads (3000-wave block machinery; onset = the capacity clock, mechanical) —
+**no selectable sub-window exists in the code path**. Thresholds untouched; estimator only.
+The same rule covers every later readout (§4, §6): **point reads are barred rig-wide.**
+
 - **(a) Salience → distractor.** No-word arm, capacity-open: vision-alone occupies the **distractor**
   axis (Δ2 grows on distractor), **not** the category axis. *If vision-alone already occupies the
   category, the word is redundant — empty-gap repeat; redesign the stimulus.*
@@ -297,6 +306,12 @@ present + gap-3 active; no-word = matched, word withheld).
   missed and mis-read as permanent failure (the empty-gap run-length finding: cycles ~3× longer than
   first assumed). `[RECONCILE]` from the observed Δ2 decay/re-grow timescale.
 
+**Both readouts are WINDOWED estimators** (the 2026-07-02 sweep: reversed lift and the slow
+convergence read are means over all in-phase eval windows, never point reads; no selectable
+sub-window). **Dynamics panel mandate:** every gate artifact and run deliverable surfaces, per
+logged axis, {mean, amplitude/envelope, dominant period where detectable, trend} ALONGSIDE its
+windowed scalar — **an average never ships alone** (`revival.dynamics_panel`, one code path).
+
 ---
 
 ## 5. The new substrate piece — constant intrinsic re-pool on Δ2
@@ -337,7 +352,16 @@ by the gap-3 gradient's pull-apart. **λ2 (envelope) is NOT touched — clock-le
   work, re-entry trigger fires sooner.
 - **Genuinely open:** scar magnitude. Full recovery → "first impressions last" was wrong, the
   occupancy cycle is stronger than expected (a finding). Heavy scar → Tier 2 earns priority. **Do not
-  pre-commit to either; report the asymptotic gap as the result.**
+  pre-commit to either; report the asymptotic gap as the result.** *(The gap is a WINDOWED
+  estimator over the post-cycle span, dynamics panel attached — 2026-07-02 sweep; no point read.)*
+
+### Differential stability — NAMED EXPECTATION, not a gate (added 2026-07-02)
+Occupancy in the deployed regime intrinsically HUNTS (measured: no-word distractor oscillates
+0.49↔1.00 at ~1500-wave period). Expectation: in the word-run, the **associatively-held category
+axis hunts LESS than the unheld distractor axis in the same run** — association as a stabiliser,
+not just a redirector. **Logged observable = the amplitude ratio (category vs distractor), panel-
+derived; joins the structured-open-question family beside words-after.** Not a gate; report the
+ratio with the surface.
 
 ### Failure / boundary conditions
 - **No conflict (Step 0 fails (a) or (c)):** stop — stimulus invalid, not a result.
@@ -430,7 +454,10 @@ and (4).
 | conflict-strength ladder endpoints + step count | validity probe (top = mild; bottom ≈ category-oracle failure) |
 | `Δt_offset` range/steps | rig (span words-before → words-after) |
 | `repool_rate` (constant Δ2 decay, slow) | rig (wide gap vs occupy rate; oscillation-safe) |
-| `T_run` | ≥1 full distractor decay/re-grow cycle (esp. words-after); from observed Δ2 timescale |
+| `T_run` | ≥1 full distractor decay/re-grow cycle (esp. words-after); from observed Δ2 timescale. **INPUT MEASURED (diag 2026-07-02, seed 0, no-word): cycle ≈ 1500 waves, amplitude 0.49↔1.00 — regime constants, recorded**; §6 stable-depth-vs-hunt stays the word-run trigger, this diagnostic its comparison evidence |
+| Windowed-estimator rule (rig-wide) | all dynamical reads = mean over ALL post-onset 3000-wave block reads; no selectable sub-window in any code path; thresholds untouched (amendment 2026-07-02, reference-error grounds) |
+| Dynamics panel (standing deliverable) | every artifact axis ships {mean, amplitude/envelope, dominant period, trend} beside its windowed scalar (`revival.dynamics_panel`); an average never ships alone |
+| Windowed-(a) run span | 30000 waves (the demonstrated diagnostic span, ~20 cycles), block 3000, onset = capacity clock t2 |
 | seed count | ≥ the frequency floor (Phase-1's 3 was too few; ≥20-style) |
 | §L reference / spread / bar | §L calibration (neutral (d)-gate at rig config); bar = mean − 2·(per-seed std), ≥20 cal seeds; FORM pinned pre-run |
 | §L entry-read window count `k` = **13** eval-windows (1300 steps) | PINNED (Gate 1) from `liveness_calibration.json.k_pin` — smallest sliding-window count clearing the bar at every plateau position, all 20 seeds; read taken once the acquisition curve plateaus |

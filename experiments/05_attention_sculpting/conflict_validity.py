@@ -45,9 +45,17 @@ from sculpt_loop import SculptLoop                           # noqa: E402  (exp0
 from category_oracle import category_oracle_rec, raw_axis_recovery  # noqa: E402  (exp05)
 
 # --- pre-registered Step-0 parameters (hashed into spec_hash) ---------------------------------
+# AMENDED 2026-07-02 (bars convention, reference-error grounds, demonstrated pre-re-run):
+# (a)/(c) point-reads were UNSTABLE against intrinsic occupancy oscillation (no-word distractor
+# hunts 0.49<->1.00 at ~1500-wave scale in BOTH revival and legacy configs; legacy also fails at
+# other draws — the old PASS was a lucky point-draw; amplitude >> eval noise ~0.04). Estimator
+# only; thresholds untouched. Reads are now WINDOWED: mean over ALL post-onset block reads
+# (block = 3000 waves; onset = the capacity clock t2 — mechanical, no selectable sub-window
+# exists in this code path). run_steps = 30000 = the demonstrated diagnostic span (~20 cycles).
 CONFLICT_PARAMS = dict(
     seeds=[0, 1, 2],
-    run_steps=4000,                  # deployed-length arms for (a) occupancy + (c) divergence warmup
+    run_steps=30000,                 # windowed arms: covers ~20 oscillation cycles (diag 2026-07-02)
+    read_block=3000,                 # block machinery: one dc_track/divergence read per boundary
     oracle_steps=600,                # category-oracle training steps (mirrors Stage-0)
     # (a) salience: vision-alone must occupy distractor over category
     occupancy_sep=0.15,              # distractor_track - category_track must exceed this
@@ -129,14 +137,23 @@ def _axis_divergence(loop: SculptLoop) -> dict:
                 full_context=full)
 
 
-def _run_arms(cfg, pin):
-    """Matched intact + no-word SculptLoops (Phase-1 order); step both; return (intact, noword)."""
+def _run_arms(cfg, pin, *, block: int):
+    """Matched intact + no-word SculptLoops (Phase-1 order); step both. WINDOWED reads (the
+    2026-07-02 amendment): at EVERY block boundary past the capacity onset (t2), record the
+    no-word occupancy (dc_track -> (a)) and the intact evocation divergence (-> (c)). Returns
+    (intact, noword, occ_blocks, div_blocks, block_steps). All post-onset boundaries are read;
+    no selectable sub-window exists."""
     intact = SculptLoop(cfg, pin)
     noword = SculptLoop(cfg, pin)
-    for _ in range(cfg.steps):
+    occ_blocks, div_blocks, block_steps = [], [], []
+    for t in range(1, cfg.steps + 1):
         intact.step(no_word=False)
         noword.step(no_word=True)
-    return intact, noword
+        if t % block == 0 and t > cfg.t2:
+            occ_blocks.append(noword.dc_track(cfg.n_eval))
+            div_blocks.append(_evocation_divergence(intact, associative=True))
+            block_steps.append(t)
+    return intact, noword, occ_blocks, div_blocks, block_steps
 
 
 def validate(verbose=True, out_path="conflict_validity.json", quick=False) -> dict:
@@ -145,23 +162,41 @@ def validate(verbose=True, out_path="conflict_validity.json", quick=False) -> di
     seeds = P["seeds"]
     run_steps = 1500 if quick else P["run_steps"]
 
-    # ---- (a) salience + (c) divergence: matched arms per seed -------------------------------
-    occ_rows, div_rows = [], []
+    # ---- (a) salience + (c) divergence: matched arms per seed, WINDOWED reads ----------------
+    from revival import dynamics_panel
+    block = 500 if quick else P["read_block"]              # quick smoke shrinks the block only
+    occ_rows, div_rows, panel_rows = [], [], []
     for s in seeds:
         cfg = _cfg(s, quick=quick, steps=run_steps)
-        intact, noword = _run_arms(cfg, pin)
-        occ = noword.dc_track(cfg.n_eval)                  # vision-alone occupancy (no word)
-        div = _axis_divergence(intact)                     # warmed-operator evocation divergence
+        intact, noword, occ_b, div_b, bsteps = _run_arms(cfg, pin, block=block)
+        # windowed estimators: mean over ALL post-onset block reads (no sub-window)
+        occ = dict(distractor_track=statistics.mean(o["distractor_track"] for o in occ_b),
+                   category_track=statistics.mean(o["category_track"] for o in occ_b),
+                   n_blocks=len(occ_b))
+        cat_b = [d["category_divergence"] for d in div_b]
+        dist_b = [d["distractor_divergence"] for d in div_b]
+        cat_w, dist_w = statistics.mean(cat_b), statistics.mean(dist_b)
+        div = dict(category_divergence=cat_w, distractor_divergence=dist_w,
+                   category_share=cat_w / (cat_w + dist_w + 1e-9), n_blocks=len(div_b),
+                   full_context=_evocation_divergence(intact, associative=False))
         occ_rows.append(occ); div_rows.append(div)
+        # dynamics panel: scalar and panel always travel together
+        panel_rows.append(dict(
+            seed=s, block_steps=bsteps,
+            distractor_occupancy=dynamics_panel(bsteps, [o["distractor_track"] for o in occ_b]),
+            category_occupancy=dynamics_panel(bsteps, [o["category_track"] for o in occ_b]),
+            category_divergence=dynamics_panel(bsteps, cat_b),
+            distractor_divergence=dynamics_panel(bsteps, dist_b)))
         # build-failure guards carried from Phase-1
         wpd = intact.word.param_delta()
         ga = intact.grad_attribution()
         if verbose:
-            print(f"  seed {s}: [a] distractor_track={occ['distractor_track']:.3f} "
-                  f"category_track={occ['category_track']:.3f} | "
-                  f"[c] cat_div={div['category_divergence']:.3f} dist_div={div['distractor_divergence']:.3f} "
+            print(f"  seed {s}: [a windowed/{len(occ_b)}bl] distractor={occ['distractor_track']:.3f} "
+                  f"category={occ['category_track']:.3f} | "
+                  f"[c windowed] cat_div={div['category_divergence']:.4g} dist_div={div['distractor_divergence']:.4g} "
                   f"share={div['category_share']:.3f} | word_delta={wpd:.2g} "
-                  f"gap3(PAM={ga['vision_grad_from_PAM']:.2g},JEPA={ga['vision_grad_from_JEPA']:.2g})")
+                  f"gap3(PAM={ga['vision_grad_from_PAM']:.2g},JEPA={ga['vision_grad_from_JEPA']:.2g})",
+                  flush=True)
 
     distractor_track = statistics.mean(r["distractor_track"] for r in occ_rows)
     category_track_va = statistics.mean(r["category_track"] for r in occ_rows)
@@ -215,6 +250,7 @@ def validate(verbose=True, out_path="conflict_validity.json", quick=False) -> di
                               category_share=cat_share, divergence_sep=P["divergence_sep"],
                               channel_alive=channel_alive, channel_alive_floor=P["channel_alive_floor"],
                               status=c_status, per_seed=div_rows, PASS=c_pass),
+        dynamics_panels=panel_rows,   # scalar and panel always travel together (2026-07-02 mandate)
         conflict_params=CONFLICT_PARAMS,
         STEP2_AB_OK=step2_ab_ok,      # gate step 2 target: (a) & (b) reconfirmed on the run commit
     )

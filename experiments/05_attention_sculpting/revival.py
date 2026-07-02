@@ -37,6 +37,40 @@ sys.path.insert(0, str(_HERE.parents[1] / "src"))
 from loom.pooling import StepSchedule                        # noqa: E402  (the settled machinery)
 
 
+def dynamics_panel(steps, values) -> dict:
+    """The standing dynamics panel (ruled 2026-07-02): every gate artifact / run deliverable
+    surfaces, per logged axis, {mean, amplitude, envelope, dominant period, trend} ALONGSIDE its
+    windowed scalar — an average never ships alone. Pure summary over existing trajectories."""
+    import statistics as _st
+    pairs = [(s, v) for s, v in zip(steps, values) if v is not None]
+    if not pairs:
+        return dict(mean=None, amplitude=None, envelope=None, dominant_period_steps=None,
+                    trend_per_1000=None, n=0)
+    xs, vals = [p[0] for p in pairs], [p[1] for p in pairs]
+    n = len(vals)
+    mean = _st.mean(vals)
+    lo, hi = min(vals), max(vals)
+    trend = 0.0
+    if n > 1:
+        mx = _st.mean(xs)
+        den = sum((x - mx) ** 2 for x in xs)
+        if den:
+            trend = sum((x - mx) * (v - mean) for x, v in zip(xs, vals)) / den * 1000.0
+    period = None
+    if n >= 8 and n > 1:
+        c = [v - mean for v in vals]
+        var = sum(x * x for x in c)
+        if var > 0:
+            ac = [sum(c[i] * c[i + l] for i in range(n - l)) / var for l in range(1, n // 2 + 1)]
+            for l in range(1, len(ac) - 1):
+                if ac[l] > ac[l - 1] and ac[l] >= ac[l + 1] and ac[l] > 0.2:
+                    period = (l + 1) * (xs[1] - xs[0])
+                    break
+    return dict(mean=round(mean, 4), amplitude=round(hi - lo, 4),
+                envelope=[round(lo, 4), round(hi, 4)],
+                dominant_period_steps=period, trend_per_1000=round(trend, 4), n=n)
+
+
 def population_mean(cues: torch.Tensor) -> torch.Tensor:
     """mu = content-blind population mean over the member set: (M, D) -> (D,). A single constant
     vector, independent of which member/association is masked (the content-blindness guard)."""

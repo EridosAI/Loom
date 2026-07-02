@@ -721,3 +721,31 @@ forced μ-side): d_ablated 0.0, d_same struck ≡ 0. Artifact `liveness_matched_
 **Deployed entry gate is now fully specified: fire on the ratio column (same block/eps/alive
 constants) → read = 7-window mean → clear 0.3128; cap 112500 waves; non-convergence =
 finding; fail → the pre-registered dead-pattern vs depressed-but-alive disambiguation.**
+
+## 2026-07-02 — (a) point-read FAIL → WINDOWED estimators ruled (rig-wide sweep) + dynamics panel
+
+**The beats, in order (all three in the record):** (1) **FAIL(point):** (a) re-run on the run
+commit read distractor 0.552 vs category 0.505 (was 0.717/0.508 PASS at fb9a27d) —
+`conflict_validity.pointread_fail.json`. (2) **Ruling (Jason; bars convention,
+reference-error grounds, three demonstrated legs — `diag_a_trajectory.log`):** no-word
+distractor occupancy intrinsically OSCILLATES 0.49↔1.00 at ~1500-wave period in the revival
+AND legacy configs (amplitude ≫ eval noise ≈0.04); the LEGACY config also fails point-reads at
+other draws (dips to 0.488@7500 — the old PASS was a lucky draw; symmetry, no config favored);
+thresholds untouched — estimator only. The criterion measured a point draw of an oscillating
+process where it should have measured the process mean. (3) **Re-run(windowed):** pending on
+the amendment commit.
+
+**The amendment unit:** (a) read = mean over ALL post-onset 3000-wave block reads of the
+no-word trajectory, run span 30000 (~20 cycles), onset = capacity clock — no selectable
+sub-window exists in the code path. **Point-read sweep (pre-result):** (c) windowed the same
+way in `conflict_validity`; (c)-at-entry = mean over the k′ entry-read windows
+(`stage1_entry_gate.py`); reversed-lift + words-after asymptotic gap mandated windowed in the
+spec before their harnesses exist. **Dynamics panel (standing deliverable):** every artifact
+axis ships {mean, amplitude/envelope, dominant period, trend} beside its windowed scalar
+(`revival.dynamics_panel`, one code path) — an average never ships alone. **Pre-registration
+additions:** differential-stability named expectation (category should hunt LESS than
+distractor in the word-run; amplitude ratio, panel-derived; NOT a gate; joins the
+structured-open family) + T_run register input measured (no-word distractor cycle ≈1500
+waves, amplitude 0.49↔1.00 — regime constants; §6 stable-depth-vs-hunt remains the word-run
+trigger with this diagnostic as comparison evidence). Entry runner + `evoke_vision(null_word=)`
+(the deployed ablation guard) land in the same unit. **This commit is the run commit.**

@@ -148,7 +148,8 @@ class SculptLoop(Stage0Loop):
                     category_chance=1.0 / cfg.n_category)
 
     @torch.no_grad()
-    def evoke_vision(self, a_idx, b_idx, *, mask_wave: int = 1, associative: bool = True) -> torch.Tensor:
+    def evoke_vision(self, a_idx, b_idx, *, mask_wave: int = 1, associative: bool = True,
+                     null_word: bool = False) -> torch.Tensor:
         """What PAM evokes for a member's vision slot given co-present context.
 
         Builds a within-dwell window of the SAME member (a, b) across all W waves and returns the
@@ -169,7 +170,11 @@ class SculptLoop(Stage0Loop):
         b_idx = torch.as_tensor(b_idx, dtype=torch.long)
         K = a_idx.shape[0]
         e_vis = self.vision.emit(self.stim.raw_clean(a_idx, b_idx))    # (K, D)
-        e_word = self.word.emit(b_idx % cfg.n_category)               # (K, D) category token
+        # null_word = the deployed ablation guard's cue (the null token for every probe — the
+        # word channel carries no category): evocations must NOT separate (content-dependence).
+        tokens = (torch.full((K,), self.word.null_token, dtype=torch.long) if null_word
+                  else b_idx % cfg.n_category)
+        e_word = self.word.emit(tokens)                               # (K, D) category/null token
         content = torch.zeros(K, W, cfg.n_slots, cfg.D)
         content[:, :, 0, :] = e_vis.unsqueeze(1)
         content[:, :, 1, :] = e_word.unsqueeze(1)
