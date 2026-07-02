@@ -868,11 +868,15 @@ of their input-differential component; the word's 2-target pull then translates 
 collapsed point rather than re-spreading it) is COHERENT-DEDUCED, not demonstrated — the
 kick probe (prereg below) is its direct test.
 
-**Scope line (binding).** On current data the ENGINE is shared (both arms collapse) and
-the LOCK is word-conditional (only word arms reach the hard pin; n=2 vs n=1). **Do not
-extrapolate no-word terminality** — the marathon ended flickering, not pinned. The t=75000
-self-path gradient spike (0.138, ~30×, immediately preceding B's hard pin) is a **named
-observable only** — n=1, no mechanism claim attaches to it.
+**Scope line (SUPERSEDED by measurement, 2026-07-03 — the question it fenced was answered,
+not violated; see §10.12.3).** As written it read: engine shared, lock word-conditional, do
+not extrapolate no-word terminality. The kick probe's ε=0 control then MEASURED the no-word
+terminality it fenced: the 500k state self-pins unkicked within +18k (~518k total). **Fate
+is shared end-to-end** (terminality n=1 no-word, n=2 word); **word = pure accelerant** —
+two independent estimates converging: **5.4×** (terminal clocks 518k/96k) and **4.8×** (den
+periods 23100/4800) — **+ pin-deepener**; the 4-orders pin-depth gap is **position on one
+trajectory, not a word-conditional regime** (the no-word state was the same road, earlier).
+The t=75000 self-path gradient spike remains a **named observable only** — n=1.
 
 **DESIGN GATE — OPENED (record).** The constraint the data fixes: **any revision must keep
 the routing/assignment map INPUT-SENSITIVE under the target-side pull** — the failure
@@ -885,3 +889,49 @@ the wrong-reason screens before its first run is trusted); **detach stays DIAGNO
 (it amputates the teaching channel; it is never the fix). The **#12/EMA-as-relaxation-
 reference note is PROMOTED to a design-table input** (the reference-stability requirement
 is quantitative; a slow-reference form is on the table alongside the three directions).
+
+### §10.12.3 — The kick probe (2026-07-03): ESCAPABLE stands; the fork re-ruled PREVENTION-PRIMARY
+
+**The verdict, with all beats (the falsified-expectation record kept whole):** (1) formal
+scoring (final-period mean) → ESCAPABLE both states, ε*=0.01; (2) flagged — the mean-form
+did not measure the pre-registered word "sustained" (a single terminal-window flicker
+satisfied it); (3) re-score RULED on instrument-validity grounds, pinned literal form (asg
+above the control band for EVERY window of the final den period); (4) **re-score:
+ESCAPABLE STANDS — both states (word ε*=0.1, no-word ε*=0.01), no third scoring pass.**
+Two stated expectations overturned by their own execution, kept on the record: the
+expected ABSORBING-in-substance verdict, and the form-robustness ground (ε* is
+form-sensitive; the two forms fire on different phenomena). CC's interim "decay-back
+universal" trajectory read is also corrected on the record (a 6-of-30-shard downsample
+artifact).
+
+**The population structure (all 24 kicked resumes; t=0 null-kick guards passed; ε=0
+controls near-zero):** **2 PIN** (exact return to zero) / **8 EMBER** (named third
+profile: sustained above-band at 1e-4–3e-3, flat trend — persistent low-grade
+input-sensitivity, neither growing nor dying) / **8 FLICKER** (intermittent; two
+rising-at-cutoff cases logged as RIGHT-CENSORED — caveat only, no extension) / **6
+SUSTAINED at functional scale** (standouts: no-word ε=0.01 k2 — final-period mean 0.232 ≈
+4× the pre-kick floating level, max 0.71, positive trend; word ε=0.3 k0 — mean 0.107 ≈
+10⁴× the hard pin, decaying). Content-blind kicks CAN rescue — **stochastically (~25%
+sustained-functional), non-monotone in ε, seed-dependent.**
+
+**The fork, re-ruled: PREVENTION-PRIMARY, RECOVERY-UNRELIABLE.** Recovery exists but
+cannot be load-bearing — a gambler's mechanism, not a design element. The constraint
+survives refined: **the flow is mostly-absorbing with stochastic re-amplification
+windows**; design still targets making input-sensitivity self-sustaining RELIABLY, and the
+kick data proves the flow HAS a re-amplifying regime — **the design question sharpens to
+what conditions put the system in it.** The corrected picture: **not a pure drain — a
+current with eddies.** Most kicks wash back to the pin; some land in a pocket where
+difference re-amplifies and holds. The balance framing survives intact — stronger:
+differentiation pressure demonstrably CAN win locally. **Regulation = widening those
+pockets by design.**
+
+**Guards (verbatim, now load-bearing):** kick-not-a-candidate stays barred — "noise
+sometimes rescues" is exactly the unreviewed counter-force door, and it matters MORE after
+this data, not less. Occupancy-column gap in the kick reads logged as caveat (asg/den/num
+answered the basin question; no re-run).
+
+**Authorized converter (read-only, no new runs): the CORRELATE HUNT.** The 24 resumes are
+a dataset. Pre-registered pass over existing artifacts: what separates SUSTAINED(6) from
+PIN/EMBER(10)? Candidates: post-kick t=0 magnitude, state, ε, early-window trend. A found
+correlate converts "stochastic" into "conditioned" and feeds the design table directly.
+**Then: the design table opens from canon, first deliverable = the force-ledger.**

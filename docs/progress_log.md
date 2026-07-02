@@ -846,3 +846,25 @@ table = routing-side counter-force / denser anchor / revised target path; drift 
 verbatim (counter-force highest-risk = manufacturing class; confidence-first check;
 detach stays diagnostic); #12/EMA note promoted to design-table input. Steps 5–6 blocked.
 Full record: FRONTIER §10.12.2.
+
+## 2026-07-03 — KICK PROBE: ESCAPABLE stands (re-scored); fork re-ruled PREVENTION-PRIMARY
+
+All beats: mean-form ESCAPABLE(ε*=0.01 both) → flagged (measured a different quantity than
+the prereg word "sustained") → re-score ruled, pinned literal form → **ESCAPABLE STANDS
+(word ε*=0.1, no-word ε*=0.01); no third pass.** Falsified expectations kept on record:
+the expected ABSORBING-in-substance; the form-robustness ground; CC's "decay-back
+universal" interim read (downsample artifact, corrected). Population structure (24 kicked
+resumes): 2 PIN / 8 EMBER (named: sustained 1e-4–3e-3, flat) / 8 FLICKER (2
+right-censored, caveat only) / 6 SUSTAINED functional-scale (no-word ε=.01 k2: mean 0.232
+≈ 4× pre-kick, positive trend; word ε=.3 k0: 10⁴× the pin). **Bonus finding (canon,
+verdict-independent): the no-word ε=0 control self-pins unkicked at ~518k → fate shared
+end-to-end; word = pure accelerant (5.4× terminal / 4.8× period, converging) +
+pin-deepener; pin-depth gap = position on one trajectory. §10.12.2 scope line superseded
+by measurement (amended in place).** Fork re-ruled: **PREVENTION-PRIMARY,
+RECOVERY-UNRELIABLE** (~25% stochastic rescue = gambler's mechanism; the flow is
+mostly-absorbing with stochastic re-amplification windows; design question = what
+conditions put the system in the re-amplifying regime; picture = a current with eddies;
+regulation = widening the pockets). Kick-not-a-candidate barred, now load-bearing.
+Authorized: the CORRELATE HUNT (read-only, no new runs — SUSTAINED(6) vs PIN/EMBER(10);
+candidates: t=0 magnitude, state, ε, early-window trend). Then design table from canon,
+first deliverable = the force-ledger. Full record: FRONTIER §10.12.3.
