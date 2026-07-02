@@ -118,13 +118,15 @@ def _run_seeds(seeds: list[int]) -> list[dict]:
     return recs
 
 
-def _kpin(recs: list[dict], bar: float) -> dict:
+def _kpin(recs: list[dict], bar: float, *, steps=None) -> dict:
     """Pin k = #eval-windows the entry read must average, in TRUE deployed-read units (WINDOW_STEP),
     measured over the converge-confirmed plateau [PLATEAU_ONSET, READ_STEP]. Amendment 2: single
     windows dip below the -2sigma bar (that is what -2sigma means); the k-window mean must clear it.
     Reports two criteria + the binding seed; k is pinned on the CONSERVATIVE sliding one (the entry
-    read may land anywhere in the plateau) when achievable, else on the full-plateau-mean fallback."""
-    steps = CHECKPOINTS
+    read may land anywhere in the plateau) when achievable, else on the full-plateau-mean fallback.
+    ``steps``: the UNIFORM eval-cadence grid to pin over (None = this module's CHECKPOINTS; the
+    matched-bar harness passes its own converged fine tail)."""
+    steps = list(steps) if steps is not None else CHECKPOINTS
     n = len(steps)
     fine = {r["seed"]: [r["d_diff"][str(s)] for s in steps] for r in recs}
     plateau_mean = {s: statistics.mean(v) for s, v in fine.items()}       # each seed's true value (large-k limit)
@@ -136,7 +138,8 @@ def _kpin(recs: list[dict], bar: float) -> dict:
     k_slide = next((k for k in range(1, n + 1) if sliding_min(k) >= bar), None)
     pinned = k_slide if k_slide is not None else k_first
     return dict(
-        window_step=WINDOW_STEP, plateau_span=[PLATEAU_ONSET, READ_STEP], n_windows=n,
+        window_step=(steps[1] - steps[0] if n > 1 else 0),
+        plateau_span=[steps[0], steps[-1]], n_windows=n,
         k_pinned=pinned, k_pinned_span_steps=(pinned * WINDOW_STEP if pinned else None),
         k_pinned_criterion=("sliding-worst-position" if k_slide is not None else "first-k-from-onset"),
         k_firstk=k_first, k_sliding=k_slide,

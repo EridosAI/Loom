@@ -1,0 +1,216 @@
+{
+  "commit_hash": "c3f0e2d8cc4de2e6654f8bee1f060dbbb0691477",
+  "spec_hash": "41d6f0d5e7da",
+  "statistic": "revival.partition_read ruler v2; PER-SEED CRITERION-ALIGNED reads (v3)",
+  "alignment": {
+    "eval_start": 21000,
+    "window": 100,
+    "block": 3000,
+    "flat_eps": 0.05,
+    "alive_split": 0.1,
+    "deriv_tail_windows": 60,
+    "ladder": [
+      90000,
+      120000
+    ],
+    "max_unread": 2,
+    "fire_rule": "first block boundary with two consecutive alive blocks differing <= eps; read-eligible iff fire + tail <= budget"
+  },
+  "provenance_fixed_step": {
+    "reference": 0.5044,
+    "spread": 0.0772,
+    "bar": 0.35,
+    "read_step": 60000,
+    "note": "fixed-step v2 numbers, PROVENANCE ONLY (alignment superseded; see liveness_matched_bar.fixedstep60k.json)"
+  },
+  "assoc_map": "m % 2 (2 associates, 8+8)",
+  "sixteen_cue_record": {
+    "bar": 0.8866,
+    "k": 13,
+    "scope": "scoped, not superseded, not reusable"
+  },
+  "seed_status": {
+    "0": {
+      "status": "READ",
+      "fire": 42000,
+      "budget": 90000
+    },
+    "1": {
+      "status": "READ",
+      "fire": 45000,
+      "budget": 90000
+    },
+    "2": {
+      "status": "READ",
+      "fire": 33000,
+      "budget": 90000
+    },
+    "3": {
+      "status": "READ",
+      "fire": 30000,
+      "budget": 90000
+    },
+    "4": {
+      "status": "READ",
+      "fire": 48000,
+      "budget": 90000
+    },
+    "5": {
+      "status": "READ",
+      "fire": 60000,
+      "budget": 90000
+    },
+    "6": {
+      "status": "READ",
+      "fire": 39000,
+      "budget": 90000
+    },
+    "7": {
+      "status": "READ",
+      "fire": 30000,
+      "budget": 90000
+    },
+    "8": {
+      "status": "READ",
+      "fire": 33000,
+      "budget": 90000
+    },
+    "9": {
+      "status": "READ",
+      "fire": 57000,
+      "budget": 90000
+    },
+    "10": {
+      "status": "READ",
+      "fire": 57000,
+      "budget": 90000
+    },
+    "11": {
+      "status": "READ",
+      "fire": 27000,
+      "budget": 90000
+    },
+    "12": {
+      "status": "READ",
+      "fire": 36000,
+      "budget": 90000
+    },
+    "13": {
+      "status": "READ",
+      "fire": 69000,
+      "budget": 90000
+    },
+    "14": {
+      "status": "READ",
+      "fire": 51000,
+      "budget": 90000
+    },
+    "15": {
+      "status": "READ",
+      "fire": 39000,
+      "budget": 90000
+    },
+    "16": {
+      "status": "READ",
+      "fire": 36000,
+      "budget": 90000
+    },
+    "17": {
+      "status": "READ",
+      "fire": 33000,
+      "budget": 90000
+    },
+    "18": {
+      "status": "READ",
+      "fire": 30000,
+      "budget": 90000
+    },
+    "19": {
+      "status": "READ",
+      "fire": 36000,
+      "budget": 90000
+    }
+  },
+  "n_read": 20,
+  "unfired_seeds": [],
+  "fired_too_late_seeds": [],
+  "stop_reliability": false,
+  "stop_material_fraction": false,
+  "k_prime": 7,
+  "k_prime_span_steps": 700,
+  "per_seed_read": {
+    "0": 0.5437,
+    "1": 0.3944,
+    "2": 0.4785,
+    "3": 0.4182,
+    "4": 0.583,
+    "5": 0.4539,
+    "6": 0.44,
+    "7": 0.5729,
+    "8": 0.4004,
+    "9": 0.4888,
+    "10": 0.3096,
+    "11": 0.6815,
+    "12": 0.514,
+    "13": 0.4572,
+    "14": 0.6101,
+    "15": 0.5627,
+    "16": 0.4559,
+    "17": 0.4734,
+    "18": 0.6017,
+    "19": 0.4186
+  },
+  "per_seed_fire": {
+    "0": 42000,
+    "1": 45000,
+    "2": 33000,
+    "3": 30000,
+    "4": 48000,
+    "5": 60000,
+    "6": 39000,
+    "7": 30000,
+    "8": 33000,
+    "9": 57000,
+    "10": 57000,
+    "11": 27000,
+    "12": 36000,
+    "13": 69000,
+    "14": 51000,
+    "15": 39000,
+    "16": 36000,
+    "17": 33000,
+    "18": 30000,
+    "19": 36000
+  },
+  "per_seed_plateau_mean": {
+    "0": 0.5232,
+    "1": 0.3855,
+    "2": 0.4903,
+    "3": 0.4308,
+    "4": 0.5632,
+    "5": 0.4575,
+    "6": 0.4564,
+    "7": 0.5635,
+    "8": 0.4426,
+    "9": 0.4945,
+    "10": 0.3334,
+    "11": 0.6934,
+    "12": 0.507,
+    "13": 0.4206,
+    "14": 0.5822,
+    "15": 0.5713,
+    "16": 0.4656,
+    "17": 0.4958,
+    "18": 0.5956,
+    "19": 0.3928
+  },
+  "reference": 0.4929,
+  "spread": 0.0901,
+  "margin": 0.1801,
+  "bar": 0.3128,
+  "onset_min": 27000,
+  "onset_max": 69000,
+  "entry_cap_derived": 112500,
+  "cap_rule": "(max_onset + read_tail) x 1.5 [RECONCILE]",
+  "cap_clock_caveat": "onsets in NEUTRAL optimizer steps; step<->wave equivalence for revival dynamics unproven (only tie onsets were mapped); conservative unshrunk mapping \u2014 a ceiling, not a target"
+}

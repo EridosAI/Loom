@@ -647,3 +647,77 @@ exactly 0 when open; proto-spread live from t=0. Adversarial verify: caveats-onl
 **Sequence:** commit build → matched-bar calibration (surface JSON) → (a)/(b) re-run on the
 run commit → entry run → k′-mean vs matched bar → fail: stop + pre-registered disambiguation;
 pass: step 4, all surfacing together at REVIEW GATE 4.
+
+## 2026-07-02 — Matched-bar checkpoint: RULER SUPERSEDED pre-read; schedule re-converged; alignment finding OPEN
+
+Four records (the checkpoint fired twice, correctly, before any gated read consumed a broken
+instrument — instrument-validity supersessions, the bars convention's clean branch):
+
+**1. Degeneracy + ruler supersession.** The pinned v1 statistic (category-partition d,
+mean-centred-EVOCATION denominator) is DEGENERATE on 2-associate geometry: within-class
+evocations are identical by construction → centred evocation set = {±d/2} → d_diff ≡ 2 at ANY
+scale. Demonstrated (matched-bar v1, 20 seeds): raw cross-class separation spanning SIX ORDERS
+of magnitude (8.6e-07 → 0.70) all read 1.995–2.000; the derived bar (1.9961) split dead seeds
+from dead seeds on eps-noise; k′ degenerated. **Ruler v2 (ratified, binding properties not
+recipe):** numerator = cross-class evoked separation (centring-invariant); denominator = mean
+centred-CONTENT norm over the 16-item population (neutral: harness items; deployed: vision's
+live emissions at read time), detached, one shared code path (`revival.partition_read`);
+denominator floor → NOT_ASSESSABLE, never a number; numerator/denominator/ratio logged as
+separate columns; the channel column switches to this ruler. Validated: dead reads 0.0 (v1:
+1.64), healthy ≈ 0.5 (class-mean geometry), graded across seeds. 16-cue record 0.8866/k=13
+stays consistent as the SCOPED instrument — untouched, not reusable.
+
+**2. d_same STRUCK as a discriminator on 2-associate geometry** (≡ 0 for dead and healthy
+alike — never read zero as health; reported for the record only). The ablation guard carries
+content-dependence alone.
+
+**3. Censoring + schedule re-convergence.** v1's 7/20 "dead" seeds at 36000 were
+RIGHT-CENSORED, not dead (healthy seed 0: dead at 33000 → alive at 34000). Mechanistic
+expectation (context, not a gate): 2 distinct cues supply weaker symmetry-breaking pull than
+16 → slower prototype differentiation. Extended to cap 60000: **all 20 seeds alive**
+(bimodality pre-registration does NOT fire; no reliability finding). v2 read @60000:
+reference 0.5044, spread 0.0772, bar 0.3500 (mean − 2·per-seed std).
+
+**4. Cap re-derivation — first attempt EXPOSED an alignment flaw (OPEN design item).** The
+revival-onset distribution is long-right-tailed (onsets 30000→60000, right-censored at cap;
+seed 13 revived in the final ~1000 steps: 52/61 fine-tail windows at 0 → k′ under any window
+count underivable; the family "plateau onset" (33000) was a composition artifact — converged
+seeds are stationary, the family mean climbs as late revivers arrive). A FIXED-STEP reference
+read cannot be aligned against this distribution. **Proposed (awaiting ratification):
+per-seed criterion-aligned reference** — each seed read k′ windows after ITS OWN eps-flatness
+criterion fires (the same alignment the ratified entry procedure already uses: the
+bar-and-read-same-function rule extended to the time axis); non-firing-by-cap seeds reported
+as a non-convergence fraction (material fraction → the reliability stop); k′ derived from
+post-fire windows; entry cap [RECONCILE] from the onset distribution's right tail (~90000-
+scale, vs the superseded 48000 literal and the broken family-onset×1.5). Bar/k′/cap derived
+ONCE, on the aligned reference. HOLDING at the checkpoint.
+
+## 2026-07-02 — Matched bar DERIVED (v3, per-seed criterion-aligned): bar 0.3128, k′=7, cap 112500
+
+**Alignment ratified + five pins** (fixed before the run; Jason): (1) read-eligibility = fire
+AND full derivation tail inside budget (no partial-tail reads); (2) k′ FIRST, bar-independent
+(smallest k with every read seed's k-window post-fire mean within eps of its own long-tail
+plateau mean), THEN bar — anti-circularity; (3) censoring ladder 90000 → extend-once 120000;
+still-unfired → STOP (reliability); >2/20 unread → STOP (material fraction); (4) entry cap =
+(max onset + read tail) × 1.5 [RECONCILE from the artifact], clock caveat named (onsets in
+neutral optimizer steps; step↔wave equivalence for revival dynamics unproven — conservative
+unshrunk mapping, a ceiling not a target); (5) deployed flatness fires on the RATIO column
+with the denominator-floor assert standing; NOT-ASSESSABLE + three-column logging keep a late
+or absent deployed plateau interpretable. **Ownership line (Jason): the family-onset×1.5 rule
+is superseded on demonstrated grounds — it assumed a family-level plateau that doesn't exist
+for a staggered-onset family; the climbing mean was late arrivals (composition artifact,
+correctly caught).** Three pre-read instrument fixes now stand in sequence: degeneracy →
+ruler; censoring → schedule; composition → alignment — all caught before a gated read
+consumed them.
+
+**Outcome (ladder round 1 sufficed): 20/20 seeds READ at 90000** — no unfired, no
+fired-too-late, neither pin-3 stop fires. Fire criterion: consecutive 3000-block means both
+alive (>0.1) and |Δ| ≤ 0.05; fires span 27000–69000 (seed 13 at 69000, the v2 right-tail,
+now cleanly read). **k′ = 7 eval-windows (700 steps)**, bar-independent. **Reference 0.4929,
+spread 0.0901, bar = 0.3128** (mean − 2·per-seed std of aligned k′-reads). Entry cap derived
+**112500** = (69000 + 6000) × 1.5. Fixed-step v2 numbers (0.5044/0.3500 @60000) carried as
+provenance only (`liveness_matched_bar.fixedstep60k.json`). Guards (v1/v2, structurally
+forced μ-side): d_ablated 0.0, d_same struck ≡ 0. Artifact `liveness_matched_bar.json`.
+**Deployed entry gate is now fully specified: fire on the ratio column (same block/eps/alive
+constants) → read = 7-window mean → clear 0.3128; cap 112500 waves; non-convergence =
+finding; fail → the pre-registered dead-pattern vs depressed-but-alive disambiguation.**

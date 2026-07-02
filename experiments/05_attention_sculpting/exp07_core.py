@@ -133,9 +133,11 @@ def _slot_ids():
 
 
 def train_op(member_count: int, cue: CueSpec, pen: PenaltySpec, seed: int, *,
-             shared_mag: float, cue_mag: float, budget: int):
+             shared_mag: float, cue_mag: float, budget: int, assoc=None):
     """Train a fresh op on the re-posed neutral task under the clock-gated penalty. Mirrors
-    dgate.train_neutral_op exactly except (a) re-posed companion, (b) lam follows the regime envelope."""
+    dgate.train_neutral_op exactly except (a) re-posed companion, (b) lam follows the regime envelope.
+    ``assoc`` maps member -> cue class (None = identity, the 16-distinct-associate task; the
+    matched-bar geometry passes m -> m % 2, the deployed 2-associate/8+8 map)."""
     f = _factors(member_count, cue, shared_mag=shared_mag, cue_mag=cue_mag, train_steps=budget)
     op = make_op(seed)
     V, Cd, base, u = _task_tensors(f, seed)
@@ -146,7 +148,8 @@ def train_op(member_count: int, cue: CueSpec, pen: PenaltySpec, seed: int, *,
     M = member_count
     for step in range(budget):
         m = int(torch.randint(0, M, (1,), generator=g))
-        comp = reposed_companion(f, Cd, base, m, cue.alpha, mu, ablate=False)  # assoc-different cls=m
+        cls = m if assoc is None else assoc(m)
+        comp = reposed_companion(f, Cd, base, cls, cue.alpha, mu, ablate=False)  # assoc-different
         target, mask, cells = _reposed_window(f, V, u, m, comp, op)
         pred = op(cells.unsqueeze(0), sid, (~mask))[0]
         loss = F.mse_loss(pred[mask], target[mask])
@@ -160,23 +163,28 @@ def train_op(member_count: int, cue: CueSpec, pen: PenaltySpec, seed: int, *,
 
 
 @torch.no_grad()
-def measure_d(op, ctx, cue: CueSpec) -> dict:
-    """d_diff (assoc-different), d_same (assoc-same), d_ablated (differentiating cue zeroed), proto."""
+def evoke_members(op, ctx, cue: CueSpec, cls_of, *, ablate: bool = False) -> torch.Tensor:
+    """Evoke every member's masked item given its (re-posed) companion cue of class cls_of(m).
+    Extracted verbatim from measure_d's closure (bit-exact; anchor-verified) so the matched-bar
+    harness and the entry-read statistic share this one evocation path."""
     f, V, Cd, base, u, mu = ctx
     sid = _slot_ids()
-    M = f.member_count
+    outs = []
+    for m in range(f.member_count):
+        comp = reposed_companion(f, Cd, base, cls_of(m), cue.alpha, mu, ablate=ablate)
+        _, mask, cells = _reposed_window(f, V, u, m, comp, op)
+        outs.append(op(cells.unsqueeze(0), sid, (~mask))[0][0])
+    return torch.stack(outs)
 
-    def evoke(cls_of, *, ablate=False):
-        outs = []
-        for m in range(M):
-            comp = reposed_companion(f, Cd, base, cls_of(m), cue.alpha, mu, ablate=ablate)
-            _, mask, cells = _reposed_window(f, V, u, m, comp, op)
-            outs.append(op(cells.unsqueeze(0), sid, (~mask))[0][0])
-        return torch.stack(outs)
 
-    e_diff = evoke(lambda m: m)
-    e_same = evoke(lambda m: 0)
-    e_abl = evoke(lambda m: m, ablate=True)
+@torch.no_grad()
+def measure_d(op, ctx, cue: CueSpec, *, assoc=None) -> dict:
+    """d_diff (assoc-different), d_same (assoc-same), d_ablated (differentiating cue zeroed), proto.
+    ``assoc`` maps member -> cue class for the assoc-different read (None = identity)."""
+    cls_of = (lambda m: m) if assoc is None else assoc
+    e_diff = evoke_members(op, ctx, cue, cls_of)
+    e_same = evoke_members(op, ctx, cue, lambda m: 0)
+    e_abl = evoke_members(op, ctx, cue, cls_of, ablate=True)
     Wp = op.pam.weights()
     proto_spread = (Wp - Wp.mean(0)).norm(dim=1).mean().item()
     return dict(d_diff=_sep(e_diff), d_same=_sep(e_same), d_ablated=_sep(e_abl),
@@ -194,9 +202,10 @@ def cell(member_count: int, cue: CueSpec, pen: PenaltySpec, seed: int, *,
 
 
 def cell_trajectory(member_count: int, cue: CueSpec, pen: PenaltySpec, seed: int, checkpoints, *,
-                    shared_mag: float, cue_mag: float) -> list:
+                    shared_mag: float, cue_mag: float, assoc=None, read_fn=None) -> list:
     """As train_op but snapshot d_diff/proto at each checkpoint (plateau spot-check). budget=max(ckpts).
-    Identical optimisation path; only adds read-only measurement."""
+    Identical optimisation path; only adds read-only measurement. ``assoc`` maps member -> cue class
+    (None = identity); ``read_fn(op, ctx, cue)`` overrides the checkpoint read (None = measure_d)."""
     budget = max(checkpoints)
     f = _factors(member_count, cue, shared_mag=shared_mag, cue_mag=cue_mag, train_steps=budget)
     op = make_op(seed)
@@ -210,11 +219,15 @@ def cell_trajectory(member_count: int, cue: CueSpec, pen: PenaltySpec, seed: int
     traj = []
     for step in range(max(cps) + 1):
         if step in cps:
-            traj.append(dict(step=step, **measure_d(op, (f, V, Cd, base, u, mu), cue)))
+            ctx = (f, V, Cd, base, u, mu)
+            rec = (measure_d(op, ctx, cue, assoc=assoc) if read_fn is None
+                   else read_fn(op, ctx, cue))
+            traj.append(dict(step=step, **rec))
         if step == max(cps):
             break
         m = int(torch.randint(0, M, (1,), generator=g))
-        comp = reposed_companion(f, Cd, base, m, cue.alpha, mu, ablate=False)
+        cls = m if assoc is None else assoc(m)
+        comp = reposed_companion(f, Cd, base, cls, cue.alpha, mu, ablate=False)
         target, mask, cells = _reposed_window(f, V, u, m, comp, op)
         pred = op(cells.unsqueeze(0), sid, (~mask))[0]
         loss = F.mse_loss(pred[mask], target[mask])
