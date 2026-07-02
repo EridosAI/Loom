@@ -783,5 +783,27 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   teacher; structural, premise-free; supersedes exogeneity, demoted to supporting). Fixed
   encoding ≠ fixed association — PAM still acquires vision↔word (§7 lag intact).
   Mutual-sculpting pair deferred to release (needs a designed relaxation schedule). Metric
-  = occupancy-lag **lift**, never share. Next: loop-test rig spec, pre-registered failures
-  first; opening question = revise `STAGE1_ATTENTION_SCULPTING_RIG_SPEC.md` vs fresh.]**
+  = occupancy-lag **lift**, never share. The revise-vs-fresh fork **RESOLVED → REVISED in
+  place (eabe08b) and executed through the §L gate sequence — see the 07-03 line below.**]**
+- **[2026-07-03 — DESIGN GATE OPEN (long-horizon vision-content collapse); kick probe
+  pending checkpoint read; gate steps 5–6 BLOCKED.** The §L gate sequence ran: liveness
+  calibration (16-cue bar 0.8866/k=13; then MATCHED bar 0.3128/k′=7 after three pre-read
+  instrument fixes: degeneracy→ruler v2, censoring→schedule, composition→per-seed
+  alignment), windowed Step-0 (a)/(b)/(c) PASS on the run commit, entry run
+  **NON_CONVERGENCE** (cap 112500) with a verified major finding: **total vision-content
+  collapse at long horizon in the word-present arm** — assignment-side (**dead-dictionary
+  DEMONSTRATED**: argmax_k=1 sustained, capacity open), engine = the gap-3 no-detach
+  TARGET-side pull (NECESSARY, by the detach arm), **word = ~5× accelerant +
+  pin-deepener** (asg_dist ~1e-5 locked vs no-word ~0.08 regrow-capable; word terminality
+  n=2; no-word = METASTABLE INTERMITTENT COLLAPSE, NEITHER_BY_CAP at 500k). EXP08 arms +
+  converters pre-registered and adversarially verified throughout (FRONTIER
+  §10.12–§10.12.2; `EXP08_COLLAPSE_ARMS_PREREG.md`). Instrument rulings: den demoted to a
+  one-sided collapse-floor tripwire (variance statistics cannot certify differentiation);
+  windowed estimators rig-wide; dynamics panels standing. **Design-gate constraint: any
+  revision must keep routing/assignment INPUT-SENSITIVE under the target-side pull.** On
+  the table: routing-side counter-force (highest-risk — manufacturing class) / denser
+  anchor / revised target path; #12/EMA note promoted to design-table input. Parked with
+  triggers: acquisition-aligned ladder reads; coarse-first ladder (ambiguity
+  discriminator); ties re-dose ε<0.05; cue-floor build-robust half (§10.9, its own
+  trigger). **Next: kick-probe checkpoint read (prereg in EXP08 doc, pinned pre-run) →
+  the design table.**]

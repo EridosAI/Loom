@@ -708,11 +708,14 @@ anchored-reference rig gives a verdict on the basic mechanism. Re-entry is a des
 depth-independent (depth-grading deferred, §6); **metric = occupancy-lag LIFT, never
 gradient-share** (the settled §1 lesson — share is non-discriminating).
 
-**Next.** Write the loop-test rig spec from this resolution — **pre-registered failure
-conditions before any run.** The spec-work's opening question: revise
-`STAGE1_ATTENTION_SCULPTING_RIG_SPEC.md` (its "Phase-1 unchanged" bindings are stale
-against the exp06/07 revival configuration — cue re-organization + preserve
-open-and-stay-open tie; continual time is new to it) or start fresh.
+**Next.** *(Forward pointer amended in place, 2026-07-03 — the fork below is resolved and
+its successor arc has run.)* The revise-vs-fresh question was **RESOLVED → REVISED in
+place** (STAGE1 spec, `eabe08b`) and executed through the §L gate sequence: calibration →
+matched bar (three pre-read instrument fixes) → windowed Step-0 PASS → entry run
+NON_CONVERGENCE → the **§10.12 collapse finding** → EXP08 arms → **§10.12.2: dead-dictionary
+DEMONSTRATED, DESIGN GATE OPEN** (constraint: keep routing input-sensitive under the
+target-side pull). Current state: **kick probe pending its checkpoint read → the design
+table.** Gate steps 5–6 blocked.
 
 ## §10.12 — Long-horizon vision-content collapse in the deployed loop (entry run, 2026-07-02)
 
