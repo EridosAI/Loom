@@ -545,3 +545,32 @@ adaptive quantity; trajectory + covariates are a deliverable) and §10.9 trigger
 Δt_offset sweep stands (availability-staging; presence from t=0 per §10.11). Δt_assoc
 kernel arm added (piggyback, window-bounded, non-gating). Bars-amendment convention
 recorded. Step-0 (a)/(b) to be re-confirmed on the run commit.
+
+## 2026-07-02 — §L gate step 1: liveness CALIBRATION run; REVIEW GATE 1 = PASS
+
+Built `experiments/05_attention_sculpting/calibrate_stage1_liveness.py` (reuse-only: one
+code path over `exp07_core.cell_trajectory`; no reimplementation). Ran the NEUTRAL (d)-gate
+at the deployed **revived** rig cell `16 / reshaped@(900,3600) / repose@1.0` (content-blind
+global mean-centre cue; preserve two-clock tie; all knobs [RECONCILE]'d from `ac7ea57`),
+20 seeds, read at the CONVERGED budget 36000 (12000 is pre-plateau/bimodal for this
+slow-reviving cell). **bar = 0.8866 = reference 1.0813 − 2·(per-seed std 0.0973)**;
+plateaued; ablated_max 0. Correctness: seeds 0–9 reproduce the exp07 converge cell
+bit-for-bit (max_abs_dev 0.0). Artifact `liveness_calibration.json`. Adversarial verify
+(4-lens refute + synth): caveats-only, 0 blocking — two "blocking" flags were skeptic
+errors (config-match read exp07's disease-terminology 'flat=deployed'; budget-plateau
+cross-checked the wrong `off` cell).
+
+**REVIEW GATE 1 PASS (Jason):** both config calls ratified (repose@1.0 = the revived cue,
+flat@0 gates nothing; budget 36000 on the pre-plateau lesson). Amendments landed in §L:
+(1) **entry-read timing corrected** — the k-window mean is taken once the deployed
+acquisition curve PLATEAUS, not at run start (at onset a healthy PAM reads sub-bar for
+timing reasons = wrong-reason fail in temporal costume); (2) **k pinned = 13 eval-windows**
+(1300 steps) from the calibration's eval-cadence plateau (single windows crash to 0.49, so
+a one-window read false-fails; binding seed-9 plateau-mean 0.907); (3) **neutral-ceiling
+framing recorded as a PRIOR** (deployed read assumed ≤ neutral ceiling at config), not a
+fact — §10.9 bookkeeping; (4) **entry-fail disambiguation** — dead-pattern (d≈0, collapse,
+ablation-flat) → §10.9 trigger vs depressed-but-alive (structured, ablation-sensitive,
+sub-bar) → reference-error under the bars convention; (5) **terminology disambiguation** —
+"deployed" = disease regime in exp07 sweep labels vs the revived config in this spec.
+Register rows filled (k, plateau-flatness criterion). Next: gate step 2 — Step-0 (a)/(b)
+reconfirm on the run commit.

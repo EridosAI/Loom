@@ -122,13 +122,28 @@ content-ablation guard. No fresh operator; no neutral-task training inside the l
 re-organized cue, preserve tie, absolute onsets, all knobs `[RECONCILE]`d from the run
 commit → **healthy-reference-at-config**. Output: `liveness_calibration.json` {reference,
 spread, margin, bar, config knobs, commit_hash, spec_hash}. **REVIEW GATE: surface it
-before the loop run.**
+before the loop run.** *(Gate 1 PASSED 2026-07-02: bar = 0.8866 = 1.0813 − 2·0.0973, 20
+seeds, at `16/reshaped@(900,3600)/repose@1.0`, read at the converged budget 36000; seeds
+0–9 reproduce the exp07 converge cell bit-for-bit. Artifact:
+`experiments/05_attention_sculpting/liveness_calibration.json`.)*
+
+**Terminology (do not re-trip).** "deployed" is **overloaded**: in exp07's cue-sweep labels
+it names the *disease* regime (flat-diffuse cue at α=0 / constant collapsing tie — the
+status quo being fixed); in THIS spec "the deployed rig" is the *revived* config
+(re-organized cue **`repose@1.0`** = content-blind global mean-centre + the **reshaped**
+preserve tie). The §L reference is calibrated on the REVIVED config; flat@0 would gate
+nothing (its bar ≈ 0, a dead channel). Ratified at Gate 1.
 
 **Margin rule (pinned pre-run — the FORM is fixed before the calibration run, not just its
 source).** bar = calibration **mean − 2·(per-seed std)**, std taken across calibration
-seeds. Entry read = **mean of the first `k` post-acquisition-onset eval windows** (`k`
-`[RECONCILE]`, pinned before the loop run). Calibration **seed count ≥ the register's
-frequency floor** (≥20-style). *Per-seed std, NOT exp06's mean−2·SEM:* the entry gate is a
+seeds. Entry read = **`k`-eval-window mean taken once the deployed acquisition curve
+PLATEAUS** (plateau = acquisition-curve flatness, criterion `[RECONCILE]`, reuse the
+calibration eps-form; NOT at run start — see Entry gate, Amendment 1). **`k` = 13
+eval-windows** (`= 1300` steps at eval_every=100; pinned pre-run from the calibration's
+eval-cadence plateau — `liveness_calibration.json.k_pin`: the smallest sliding-window count
+whose mean clears the bar at EVERY plateau position for all 20 seeds; single eval-windows
+crash as low as 0.49, so a one-window read would falsely fail a healthy op; binding seed-9
+plateau-mean 0.907). Calibration **seed count ≥ the register's frequency floor** (≥20-style). *Per-seed std, NOT exp06's mean−2·SEM:* the entry gate is a
 **membership** test (does one deployed read belong to the healthy-at-config family), not a
 mean-clears-threshold test — SEM shrinks with seed count, which would make the gate
 *stricter the better the reference is measured* (backwards for membership). Pinning the
@@ -144,9 +159,33 @@ to fail on RULER grounds, not liveness grounds. Superseded per the §12.C rule (
 on the live commit, never a guessed literal). This paragraph is the record; the
 progress_log entry for this revision carries it.
 
-**Entry gate.** Deployed read ≥ bar at run start (post word-association acquisition
-onset), ablation guard passing. Below bar → the run does NOT proceed to Step-0(c); a
-teaching verdict is never read off a sub-bar channel.
+**Neutral-ceiling framing (a PRIOR, not a fact — §10.9 bookkeeping; accepted at Gate 1).**
+The bar rests on the assumption that the deployed (d)-read **≤ the neutral-probe ceiling at
+config** — the deployed loop, trained on the conflict objective, cannot out-evoke a cleanly
+neutral-trained op at the same tie/cue/cardinality. This is a **recorded bet**, not a
+demonstrated fact for this rig (the neutral task and the deployed conflict task optimise
+different objectives). The direction that bites is NOT deployed-exceeds-ceiling (the gate
+still passes) — it is **deployed-healthy sitting materially below neutral-healthy**, where
+the bar over-prices and wrongly rejects a live channel. That case is a reference error, not
+a liveness failure; it is handled by the entry-fail disambiguation below and the §10.9
+bookkeeping.
+
+**Entry gate (Amendment 1 — timing corrected).** The entry read is the `k`-eval-window mean
+taken **once the deployed acquisition curve PLATEAUS**, NOT at run start: the reference is a
+*converged* quantity, and at acquisition onset even a perfectly healthy PAM has acquired
+nothing and reads sub-bar for **timing** reasons — the wrong-reason fail in temporal costume.
+Entry read ≥ bar (ablation guard passing) → proceed; below bar → the run does NOT proceed to
+Step-0(c); a teaching verdict is never read off a sub-bar channel.
+
+**Entry-fail disambiguation (pre-registered — which sub-bar means what).** A sub-bar entry
+read splits by PATTERN, not value:
+- **Dead-pattern** — d ≈ 0, prototype collapse, ablation-flat (the exp06 death signature) →
+  **§10.9 trigger assessment**: the channel genuinely cannot carry signal; the
+  structured-floor build-robust Phase-1 is the pickup. A capacity trigger.
+- **Depressed-but-alive** — d materially > 0, structured, ablation-sensitive, but sub-bar →
+  **reference-error assessment under the bars-amendment convention**: a RULER question
+  (deployed-healthy may sit below neutral-healthy at config), NOT a capacity trigger. Amend
+  the bar on recorded reference-error grounds; do not fire §10.9.
 
 **Continuous channel column.** The deployed (d)-read is logged **every eval window in
 every run** (the logged-oracle-column pattern). The channel is expected to be an ADAPTIVE
@@ -317,10 +356,12 @@ with the record stating what it should have measured. Never silently; never beca
 result missed it.
 
 **Added failure/boundary condition — entry-liveness fail.** Calibration bar unreachable at
-config, or deployed read < bar at run start: NOT a teaching null (§L exists to prevent
-that wrong-reason read); fires the §10.9 trigger assessment. The real negative remains:
-flat reversed lift at all Δt_offset cells, conflict valid (Step-0), AND channel live (§L
-column above bar throughout) → the gap-3 drive is genuinely inert; report, do not rescue.
+config, or the `k`-window entry read < bar **at the acquisition plateau** (§L timing, NOT
+run start): NOT a teaching null (§L exists to prevent that wrong-reason read); resolves via
+the **§L entry-fail disambiguation** (dead-pattern → §10.9 trigger; depressed-but-alive →
+reference-error under the bars-amendment convention). The real negative remains: flat
+reversed lift at all Δt_offset cells, conflict valid (Step-0), AND channel live (§L column
+above bar throughout) → the gap-3 drive is genuinely inert; report, do not rescue.
 
 ---
 
@@ -392,7 +433,8 @@ and (4).
 | `T_run` | ≥1 full distractor decay/re-grow cycle (esp. words-after); from observed Δ2 timescale |
 | seed count | ≥ the frequency floor (Phase-1's 3 was too few; ≥20-style) |
 | §L reference / spread / bar | §L calibration (neutral (d)-gate at rig config); bar = mean − 2·(per-seed std), ≥20 cal seeds; FORM pinned pre-run |
-| §L entry-read window count `k` | §L (entry read = mean of first `k` post-acquisition-onset eval windows), pinned before loop run |
+| §L entry-read window count `k` = **13** eval-windows (1300 steps) | PINNED (Gate 1) from `liveness_calibration.json.k_pin` — smallest sliding-window count clearing the bar at every plateau position, all 20 seeds; read taken once the acquisition curve plateaus |
+| §L acquisition-plateau flatness criterion | `[RECONCILE]` at the loop run (reuse the calibration eps-form); defines WHEN the entry read is taken |
 | channel-column eval cadence | rig (every eval window) |
 | Δt_assoc k-range | PAM completion window (§4b) |
 | revival-config knobs — cue re-org form, tie onsets | run commit (base `ac7ea57`) |
