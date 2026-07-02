@@ -534,3 +534,14 @@ vision↔word (§7 lag intact). Metric = occupancy-lag **lift**, never share. Fu
 `FRONTIER` §10.11 (+ §10.10 tail pointer, + PROJECT_STATE §12.E dated line). **Next:**
 loop-test rig spec, pre-registered failures first; opening question = revise
 `STAGE1_ATTENTION_SCULPTING_RIG_SPEC.md` vs fresh.
+
+## 2026-07-02 — STAGE1 spec REVISED in place under §10.11 (no code)
+
+Bindings swapped to the exp06/07 revival config ([RECONCILE] from ac7ea57). §L
+deployed-liveness phase added: calibrated entry bar — the exp06 "healthy bar" line
+SUPERSEDED on reference-category grounds (healthy = clean/card-2; deployed gate pinned to
+config-matched calibration) — plus continuous channel column (channel treated as an
+adaptive quantity; trajectory + covariates are a deliverable) and §10.9 trigger wiring.
+Δt_offset sweep stands (availability-staging; presence from t=0 per §10.11). Δt_assoc
+kernel arm added (piggyback, window-bounded, non-gating). Bars-amendment convention
+recorded. Step-0 (a)/(b) to be re-confirmed on the run commit.

@@ -7,12 +7,14 @@ and the words-after open question are pre-registered *here* before any run.
 
 **Status.** `[PROPOSED]` build of a `[PROPOSED]` paradigm mechanism. Extends the Stage-0 Phase-1 core
 (`experiments/04_stage0_mvp/`); does not rebuild it. Separate from — and does not touch — the
-`[SETTLED]` empty-gap result (PROJECT_STATE §9).
+`[SETTLED]` empty-gap result (PROJECT_STATE §9). **Revised 2026-07-02** under FRONTIER §10.11
+(anchored-reference resolution) + the exp06/07 revival configuration; base `517e61c`.
 
 **Goal.** Test whether **the word teaches what to attend to** — whether evocation drives a cortex to
 *occupy* the associatively-productive axis rather than the visually-salient one. Deliverable = a
 two-timescale response surface (fast redirect + slow convergence) across a word-vs-capacity timing
-sweep, not a PASS.
+sweep, not a PASS. Primary signature = occupancy-lag **LIFT**, never gradient-share (§10.11). The
+surface is read only on §L-live runs.
 
 ---
 
@@ -26,20 +28,43 @@ consolidated register is in §11.
 
 ## 0. Scope-lock — what's new, what is Phase-1 unchanged
 
-**New, relative to Phase-1 (exactly four things):**
-1. **Conflict stimulus** (§3) — salient-distractor axis + non-salient-category axis.
-2. **Constant intrinsic re-pool on occupancy (Δ2)** (§6) — the one genuinely-new substrate piece.
-3. **Timing manipulation** (§4) — unpool-onset delay vs word-exposure, swept.
-4. **Two-timescale readout** (§5) — fast reversed-lift + slow convergence.
+**New, relative to Phase-1 (exactly six):**
+1. Conflict stimulus — unchanged.
+2. Constant intrinsic re-pool on Δ2 — unchanged.
+3. Timing manipulation Δt_offset — unchanged in mechanism; availability-staging clarified
+   (Temporal terms block).
+4. Two-timescale readout — unchanged.
+5. **Deployed-loop liveness phase (§L)** — calibration + entry gate + continuous channel column.
+6. **Δt_assoc kernel arm (§4b)** — piggyback characterization; does not gate the verdict.
+The nothing-new guard now covers exactly these six.
 
-**Unchanged from Phase-1 (binding):** the operator (no softmax, prototype-resonance), **no
-stop-grad** on the PAM target path, **non-causal** masking over the six cue-shape families, the
-frozen word anchor, one code path. The gap-3 gradient path (validated alive in Phase-1) **is** the
-occupancy drive (§1) — not re-implemented.
+**PAM configuration (binding — the exp06/07 revival config, superseding "Phase-1
+unchanged"):** completion cue posed via **content-blind cue re-organization** (global
+mean-centre form — the validated common-mode remover; structured half shelved, FRONTIER
+§10.9); PAM prototype tie = **preserve-style open-and-stay-open two-clock StepSchedule,
+ABSOLUTE onsets** (900/3600-pattern; carries the measured scale-growing capacity cost,
+accepted on uniformity grounds — FRONTIER §10.8); operator form unchanged
+(prototype-resonance, no softmax); **no stop-grad**; **non-causal** masking over the six
+cue-shape families; **frozen word anchor** (§10.11 — no relaxation schedule exists in this
+rig); one code path. All revival-config knobs `[RECONCILE]`d from the run commit (base:
+`ac7ea57` values), never re-typed. The gap-3 gradient path **is** the occupancy drive (§1)
+— **not re-implemented**. Its Phase-1 "validated alive" read is scope-narrowed by the exp05
+arc: mechanically alive (gradient reaches the masked target) but content-dead in the old
+regime (§12.E); §L is what certifies it carries information in this rig.
 
 **Nothing-new guard.** Compute buys stimulus-conflict-strength resolution, timing-offset resolution,
-run-length, seed-count. No new operator, no gain sweep, no store. If a change is not one of the four
+run-length, seed-count. No new operator, no gain sweep, no store. If a change is not one of the six
 above, it is out of scope.
+
+### Temporal terms (binding — three distinct notions; do not conflate)
+- **Δt_assoc** (short; waves): offset between a word event and its visual event within the
+  stream — the associative-proximity kernel (§4b). Primary runs pin Δt_assoc = 0 (same bundle).
+- **Δt_offset** (long; developmental): offset between word-content onset and vision capacity
+  opening (unpool onset) — words-before / simultaneous / vision-before. The existing sweep,
+  unchanged in mechanism. Both cortices are PRESENT from t=0 (§10.11); Δt_offset stages
+  *availability*, never component presence.
+- **Readout timescales** (within-run): fast redirect vs slow equilibrium — a readout
+  distinction inside every cell, not a manipulated axis.
 
 ---
 
@@ -82,6 +107,47 @@ untangled. **Constant intrinsic re-pool = Δ2 decay, λ2 untouched. State and as
 masking turns the occupancy gradient into a next-step prediction error → "maintain temporally-
 predictive distinctions," a different and wrong objective. Assert non-causal every eval window (the
 Phase-1 guard carries forward).
+
+---
+
+## §L. Deployed-loop liveness — calibration, entry gate, continuous channel column
+*(gates Step-0(c) and every sweep; the wrong-reason-null protection)*
+
+**Instrument.** The (d)-gate descendant, **read-only on the deployed PAM's evocations**:
+associated-different vs associated-same separation (d_diff, d_same) with the
+content-ablation guard. No fresh operator; no neutral-task training inside the loop.
+
+**Calibration run (pre-registered, BEFORE the loop run).** The neutral (d)-gate
+(`dgate.py`, `335f36d`) at the rig's EXACT configuration — the rig's member cardinality,
+re-organized cue, preserve tie, absolute onsets, all knobs `[RECONCILE]`d from the run
+commit → **healthy-reference-at-config**. Entry bar = reference − margin (margin
+`[RECONCILE]` from calibration seed spread, fixed before any loop run). Output:
+`liveness_calibration.json` {reference, spread, margin, bar, config knobs, commit_hash,
+spec_hash}. **REVIEW GATE: surface it before the loop run.**
+
+**Why the bar is calibrated, not the canon literal (recorded supersession).** The exp06
+direction line reads "must clear the (d)-gate at the *healthy* bar in the deployed loop."
+Healthy ≈1.41 is a **clean-config / card-2 reference-category**; under the revival config
+at deployed cardinality the converged neutral ceiling is ≈1.0–1.1 (exp07), and the
+deployed loop cannot exceed its neutral-probe ceiling — holding 1.41 pre-commits the gate
+to fail on RULER grounds, not liveness grounds. Superseded per the §12.C rule (calibrated
+on the live commit, never a guessed literal). This paragraph is the record; the
+progress_log entry for this revision carries it.
+
+**Entry gate.** Deployed read ≥ bar at run start (post word-association acquisition
+onset), ablation guard passing. Below bar → the run does NOT proceed to Step-0(c); a
+teaching verdict is never read off a sub-bar channel.
+
+**Continuous channel column.** The deployed (d)-read is logged **every eval window in
+every run** (the logged-oracle-column pattern). The channel is expected to be an ADAPTIVE
+quantity in the full system — responding to environment and behaviour — so the deliverable
+includes its TRAJECTORY and covariates (occupancy, acquisition, Δt_offset cell), not a
+scalar pass. Mid-run sag is a logged observable, not a silent kill.
+
+**§10.9 trigger, wired.** Entry bar unreachable at config, or runs stalling with the
+channel column collapsing (evocation cannot carry enough signal to teach) → the cue-floor
+build-robust Phase-1 RESUMES with the measured reason (FRONTIER §10.9; CC's banked
+analysis is the pickup). A trigger-fire, not a teaching null.
 
 ---
 
@@ -152,6 +218,16 @@ scalar:
 Deployment-realism is the **rate-ratio** (association-build-rate vs capacity-open-rate), not a delay.
 Do **not** read a timing result as a developmental-pacing claim (same discipline as §12-B's
 rate-is-a-locator line). The slow-start unpool ramp (§12-B) stays **pinned off** for this rig.
+
+### §4b. Δt_assoc kernel arm  — piggyback, non-gating.
+At the simultaneous Δt_offset cell ONLY, sweep the word event's placement k waves from its
+visual event: k ∈ {0, ±1, ±2, …} (`[RECONCILE]`, bounded by PAM's completion window).
+Read: association strength / evocation-divergence as f(k). Expectation (logged, not a
+gate): peak at k=0, fall-off either side. **Honest scope (pre-registered): the kernel is
+WINDOW-BOUNDED by construction** — events outside the completion window cannot associate
+at all, so the edges are architecture-set; the informative content is the shape INSIDE the
+window (same-bundle vs adjacent-wave). Characterization only; shares no cell with the
+primary verdict.
 
 ---
 
@@ -225,6 +301,17 @@ by the gap-3 gradient's pull-apart. **λ2 (envelope) is NOT touched — clock-le
   Δ2 depth**, or **hunt**? Pre-register stable-depth-vs-oscillation (`FRONTIER` §7). Oscillation →
   the rate gap is too small; widen and re-run (stage-2 is the characterisation).
 
+**Bars-amendment convention (binding).** A pre-registered bar may be superseded after
+results ONLY on recorded reference-error grounds — the bar measured the wrong quantity —
+with the record stating what it should have measured. Never silently; never because a
+result missed it.
+
+**Added failure/boundary condition — entry-liveness fail.** Calibration bar unreachable at
+config, or deployed read < bar at run start: NOT a teaching null (§L exists to prevent
+that wrong-reason read); fires the §10.9 trigger assessment. The real negative remains:
+flat reversed lift at all Δt_offset cells, conflict valid (Step-0), AND channel live (§L
+column above bar throughout) → the gap-3 drive is genuinely inert; report, do not rescue.
+
 ---
 
 ## 7. Controls
@@ -249,6 +336,11 @@ adopting it; char-7 preserved in the deployed rig).
 3. **Release depth-grading** on `repool_rate`, using the surface as the reference for the force law.
 
 Two cortices, **no store**. Stays Stage-0-shaped in components.
+
+**Gate sequence (pinned):** (1) §L calibration → bar; (2) Step-0 (a)/(b) RE-CONFIRMED on
+the run commit (the old PASS predates the revival config); (3) deployed entry gate ≥ bar;
+(4) Step-0 (c); (5) commit stimulus ladder + both sweeps; (6) runs. Review gates at (1)
+and (4).
 
 ---
 
@@ -289,6 +381,10 @@ Two cortices, **no store**. Stays Stage-0-shaped in components.
 | `repool_rate` (constant Δ2 decay, slow) | rig (wide gap vs occupy rate; oscillation-safe) |
 | `T_run` | ≥1 full distractor decay/re-grow cycle (esp. words-after); from observed Δ2 timescale |
 | seed count | ≥ the frequency floor (Phase-1's 3 was too few; ≥20-style) |
+| §L reference / margin / bar | §L calibration (neutral (d)-gate at rig config) |
+| channel-column eval cadence | rig (every eval window) |
+| Δt_assoc k-range | PAM completion window (§4b) |
+| revival-config knobs — cue re-org form, tie onsets | run commit (base `ac7ea57`) |
 
 ---
 
