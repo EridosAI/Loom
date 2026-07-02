@@ -119,8 +119,36 @@ class VocabLoop(EXP08Loop):
         return LADDER[self._vocab](b, a)
 
 
+NOWORD_PERIOD = 23100     # [RECONCILE: marathon_s0 den dominant period — the extension's window]
+
+
+def extension_read(cols, *, floor=1e-3, period=NOWORD_PERIOD) -> dict:
+    """The one-review extension's PRE-REGISTERED terminal-vs-asymptotic read (no rescue):
+    TERMINAL = final period-window den all sub-floor AND num-freeze (the reference
+    signature); ASYMPTOTIC = >=5 consecutive period-windows with non-shrinking troughs
+    (10% tol); neither -> NEITHER_BY_CAP, surfaced as a finding."""
+    ws = {}
+    for c in cols:
+        ws.setdefault((c["t"] - 1) // period, []).append(c)
+    windows = [ws[k] for k in sorted(ws)]
+    troughs = [min(c["den"] for c in w) for w in windows]
+    fin = windows[-1]
+    terminal = (all(c["den"] < floor for c in fin)
+                and (max(c["num"] for c in fin) - min(c["num"] for c in fin)) < 1e-3)
+    asymptotic = any(all(troughs[i + j + 1] >= troughs[i + j] * 0.9 for j in range(4))
+                     for i in range(max(0, len(troughs) - 4)))
+    verdict = "TERMINAL" if terminal else ("ASYMPTOTIC" if asymptotic else "NEITHER_BY_CAP")
+    return dict(period=period, window_troughs=[float(f"{t:.6g}") for t in troughs],
+                terminal_check=bool(terminal), asymptotic_check=bool(asymptotic),
+                verdict=verdict)
+
+
 ARMS = {
     "marathon": dict(loop=EXP08Loop, no_word=True, steps=112500, seeds=[0]),
+    # the one-review converters (prereg extension, 2026-07-03):
+    "marathon_ext": dict(loop=EXP08Loop, no_word=True, steps=500000, seeds=[0],
+                         extension_read=True),
+    "word_terminal": dict(loop=EXP08Loop, no_word=False, steps=112500, seeds=[1]),
     "detach":   dict(loop=DetachLoop, no_word=False, steps=30000, seeds=[0, 1, 2]),
     "spread":   dict(loop=EXP08Loop, no_word=False, steps=30000, seeds=[0, 1, 2],
                      pin=dict(alpha_spread=1.0)),
@@ -320,13 +348,23 @@ def run_arm(arm_name: str, seed: int, steps_override: int | None = None) -> dict
         loop.step(no_word=no_word)
         if t % EVAL == 0:
             with torch.no_grad():
+                raw_c = loop.stim.raw_clean(members_a, members_b)
                 e = loop.evoke_vision(members_a, members_b, associative=True)
-                content = loop.vision.emit(loop.stim.raw_clean(members_a, members_b))
+                content = loop.vision.emit(raw_c)
+                # the dead-dictionary measurement (one-review converter b): assignment
+                # input-sensitivity + argmax concentration + entropy over the 16 probes
+                p = loop.vision.pool.assign(raw_c)
+                off = ~torch.eye(p.shape[0], dtype=torch.bool)
+                asg_dist = float(torch.cdist(p, p, p=1)[off].mean())
+                asg_argmax_k = int(len(set(p.argmax(1).tolist())))
+                asg_entropy = float(-(p * (p + 1e-12).log()).sum(1).mean())
             r = partition_read(e, labels, content)
             cols.append(dict(t=t, num=r["cross_dist_raw"], den=r["content_denom"],
                              ratio=r["d_diff"], proto=loop.pam_proto_spread(),
                              d2_depth=loop.vision.pool.pooling_depth(),
-                             d2_spread=float(poolmetrics.within_group_spread(loop.vision.pool))))
+                             d2_spread=float(poolmetrics.within_group_spread(loop.vision.pool)),
+                             asg_dist=asg_dist, asg_argmax_k=asg_argmax_k,
+                             asg_entropy=asg_entropy))
         if t % BLOCK == 0:
             occ[str(t)] = loop.dc_track(cfg.n_eval)
             gsplit[str(t)] = grad_split(loop, no_word)
@@ -334,7 +372,8 @@ def run_arm(arm_name: str, seed: int, steps_override: int | None = None) -> dict
 
     ts = [c["t"] for c in cols]
     panels = {k: dynamics_panel(ts, [c[k] for c in cols])
-              for k in ("num", "den", "ratio", "proto", "d2_depth", "d2_spread")}
+              for k in ("num", "den", "ratio", "proto", "d2_depth", "d2_spread",
+                        "asg_dist", "asg_argmax_k", "asg_entropy")}
     assessable = sum(1 for c in cols if c["ratio"] is not None)
     rec = dict(
         commit_hash=C.commit_hash(), spec_hash=C.spec_hash(),
@@ -349,6 +388,8 @@ def run_arm(arm_name: str, seed: int, steps_override: int | None = None) -> dict
                  for c in cols],
         occupancy=occ, grad_split=gsplit, masking_mix=mixes,
     )
+    if spec.get("extension_read"):
+        rec["extension_read"] = extension_read(cols)
     base.with_suffix(".json").write_text(json.dumps(rec, indent=2))
     print(f"{arm_name} s{seed}: assessable={rec['early_signature']['assessable_fraction']}  "
           f"den_panel={panels['den']}  d2_depth_end={cols[-1]['d2_depth']:.4f}")
