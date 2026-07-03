@@ -1257,3 +1257,24 @@ re-cal before any verdict arm); σ*=0.04 / K=4 / seed budget as tabled; pin-4
 sharpening ratified (manifest-time realized-pairing asserts carry primary-read
 leakage); execution ledger accepted. **Sequence: build → cal (fallback-guarded) →
 Step-0 re-validation → verdict arms → ONE review. Steps 5–6 blocked.**
+
+## 2026-07-04 — EXP10 campaign harness BUILT + smoked; cal arms + Step-0 launched
+
+Post-GO build (the remaining-ledger items): the ARMS10 runner (`run_exp10_arm` —
+manifest asserts as a HARD pre-run gate → the shared A.run_arm code path with an
+additive `exp10` spec key in build_loop → EXP09 probe set + the shuffle screen at
+block cadence → acquisition-onset + aligned-read fields in the artifact); the BINDING
+manifest-time asserts (realized pairing traced from a 200-step scratch loop — actual
+stream windows vs the actual nuisance keys those waves consume; the DEPLOYED
+`_vary_word` residual vs non-token labels AND vs token; the centroid-only check
+(per-token residual mean bound); the per-arm σ* NC re-check on THIS arm's word
+cortex; all vs live shuffle-null 99th-pct thresholds; hard-fail on breach); the
+read-time shuffle screen on a nuisance-riding read (true vs row-permuted nuisance,
+RNG-isolated); `acquisition_onset` (pinned form: num ≥ 0.01 in ≥2 consecutive
+windows) + `acquisition_aligned_read` (k-window means from the arm's OWN onset);
+`stage_two` (rung-fallback check FIRST, then in-regime constants by the §5
+calibration rule from cal-arm healthy placements); `step0_revalidate` ((a) windowed
+distractor floor 0.60 + (c) evocation divergence with the alive-precondition,
+DEFERRED never false-pass). Runner smoked end-to-end (asserts PASS: realized pairing
+0.093 ≤ 0.138, NC 1.0; probe + shufscreen columns land). Cal arms (seeds 10, 11 @
+160k ×2.0 — the rung-fallback guard live) + Step-0 re-validation LAUNCHED.

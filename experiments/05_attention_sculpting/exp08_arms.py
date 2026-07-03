@@ -324,6 +324,8 @@ def build_loop(arm_name: str, seed: int):
     cfg = SculptConfig(seed=seed)
     for k, v in spec.get("cfg", {}).items():
         setattr(cfg, k, v)
+    if spec.get("exp10"):                                # exp10 varied arms: the variation
+        cfg._exp10 = dict(spec["exp10"])                 # flag must exist BEFORE factories run
     if spec["loop"] is VocabLoop:
         loop = VocabLoop(cfg, pin, spec["vocab"])
     else:
