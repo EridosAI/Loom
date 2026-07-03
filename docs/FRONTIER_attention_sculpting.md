@@ -962,7 +962,9 @@ every number traced to committed artifacts before this write:
    ~4× self magnitude" — was REFUTED in pre-commit verification: the word/self
    grad-split ratio reads the identical ≈4.0 in the word-FREE marathon (probe mask
    geometry: the word-path probe masks all W=3 vision cells, the self-path probe one).
-   Post-death word-pull persistence currently has NO valid observable.)*
+   Post-death word-pull persistence currently has NO valid observable — logged, not
+   chased [checkpoint-ratified strike]. Scope: the pre-named word-ablated-resume
+   discriminator is unaffected — it reads outcomes, not probe ratios.)*
 3. **Constant Δ2 re-pool** | contracts (designed occupancy decay) | occupancy |
    **deployed rate 0 → no-op in every collapse run**; exonerated as engine | settled.
    (Correction from the tabled draft, which read "slow, designed, graceful": the force
@@ -997,6 +999,10 @@ every number traced to committed artifacts before this write:
 **Row property (all rows): timing multiplies** — pocket width early ≫ late (the
 correlate hunt); the prevention budget concentrates early.
 
+**Named ledger observation (LOG, NO CLAIM — checkpoint, 2026-07-03):** word s1 shows
+num = 0.0 in every window through t=45000 while routing collapse is already under way —
+**the word's pull is task-structural, present before measurable association.**
+
 **The structural fact the ledger surfaces: rows 1 and 4 are ONE PATH.** The engine and
 the teaching force are the same gradient, split into a common component (contracts) and
 a differential component (separates). Collapse = the common component winning; the
@@ -1013,12 +1019,16 @@ channel survived to the end.
 (ruling, 2026-07-03). Grounds: (1) repairs the diagnosed violation rather than
 counter-weighting it — the self-path is the one plastic loop through the associative
 operator with no slower reference; (2) no new force, no new objective — the reference
-re-times an existing path; (3) gap-3 intact — the mismatch still flows to the online
-weights; the word path untouched *[as ruled; SHARPENED by pre-commit verification: the
-mismatch reaches the online weights via the completion/cue-side path only — the
-canonical target-side gap-3 pressure is severed at every β (EXP09 §3 honesty block);
-whether lagged-content targets re-supply the teaching function through that path is
-precisely what the EXP09 §6 screen must certify before any PASS is trusted]*; (4)
+re-times an existing path; (3) **RE-WORDED at checkpoint (Jason, 2026-07-03,
+superseding the tabled "gap-3 intact" — his carry, on the record): teaching path
+RE-ROUTED, not intact.** The canonical target-side gap-3 pressure is severed at every β
+(detached target); the mismatch reaches online vision via the cue/completion side only;
+word path untouched. The design is a recorded BET — lagged-content targets re-supply
+the teaching function — certified or refuted by the §6 screen + detach-null comparator,
+never assumed. *The bet has teeth, pre-registered now: (a) ≈ detach-null on outcomes ⇒
+the slow copy is stop-grad in costume — the function test may PASS while the paradigm
+bet FAILS; that routes back to the table as a PARTIAL RESULT, never laundered into
+PASS*; (4)
 SIGReg-class spread stays the row-5 COMPLEMENT, not the fix — the surface mismatch
 (emission variance ≠ routing sensitivity; the seed-0 counterexample) rules it out as
 primary. **Parked with triggers:** (b) re-weight existing differentiation forces (spread

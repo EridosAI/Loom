@@ -943,3 +943,54 @@ verification: 32 agents / 4 lenses / per-finding independent verify; 28 raw → 
 confirmed findings, all applied above; 5 rejected on re-derivation (incl. 3.24 traces
 via the pooled estimator sum/sum = 3.235 in marathon_s0 grad_split).** Checkpoint list
 = EXP09 §10 (8 items). Steps 5–6 stay blocked.
+
+## 2026-07-03 — EXP09 CHECKPOINT RESOLVED (ruling): strikes ratified; ground (3) re-worded; β by rule; taxonomy ratified; build authorized to the final pre-run read
+
+**The ruling, in order.** (1) Row-2 strike RATIFIED (Jason's carry): geometry, not pull
+— dispositive on the word-free identical ratio; row 2 stands on terminal clocks + pin
+depth; the word-ablated-resume discriminator unaffected (reads outcomes, not probe
+ratios); post-death pull logged as no-valid-observable, not chased. (2) Ground (3)
+RE-WORDED, not re-affirmed (Jason's overclaim, his words): **teaching path RE-ROUTED,
+not intact** — canonical target-side gap-3 pressure severed at every β; mismatch via
+cue/completion side only; the design = a recorded BET, certified or refuted by §6 +
+detach-null, never assumed. The bet has teeth, pre-registered: **(a) ≈ detach-null on
+outcomes ⇒ the slow copy is STOP-GRAD IN COSTUME** — function test may PASS while the
+paradigm bet FAILS → partial result back to the table, never laundered into PASS.
+(3) β RULE pinned: period estimator first, then τ = 2× pinned den period; retention
+stated as numbers (caveat, not bound); acquisition-derived bounds STRUCK until
+acquisition is measured. The buried s1 fact canonized as a named ledger observation
+(log, no claim): the word's pull is task-structural, present before measurable
+association. (4) Taxonomy RATIFIED (calibrate-tolerance-from-measured-healthy, third
+instance): constants from healthy placements only, fixed pre-run; PASS tolerance
+constructed so the terminal signature can never sit inside it; cadence-100 series =
+instrument of record (4800 stands); panel estimator recomputed, discrepancy
+resolved-and-recorded before β/K_w consumed it. (5) Gradient-share discriminator strike
+RATIFIED (share-vs-lift, third appearance); discrimination = detach-null comparator +
+outcome-level divergence. (6) Replay upgrade RATIFIED — back-fills the decomposition
+onto the measured collapse baselines BEFORE EXP09 runs. Remaining pins: scope = full
+self-target emission path; birth = bit-copy at t=0 (stiff-early automatic); route =
+identity-default hooks, one code path, always detached; asserts (identity at t0,
+divergence >0, zero grad to copy); pairwise slow-target distinctness = standing column
+with pre-registered floor, COPY-COLLAPSE = named outcome; probe geometry
+equalized-or-recorded, composition logged, asserted at wiring.
+
+**Resolutions EXECUTED (all from committed data, before consumption).** Period: the
+same estimator on word_terminal_s1's full series REPRODUCES the 1500 (segment
+contamination — early ramp + ~70k pinned tail); on the healthy segment (20100–42300)
+it reads 6000, same order as the instrument of record; **4800 STANDS** (entry-run
+cadence-100 full series, n=1125); residual 6000-vs-4800 attributed to seed +
+short-segment quantization. **τ = 2×4800 = 9600** (β ≈ 1.042e-4/wave); retention
+92.8% by 25.2k / 98.8% by 42.6k, mean lag 9600. PASS constants calibrated from the 44
+healthy 32-window placements: **≥27/32 argmax_k>1, no k=1 run >2, den ≥1e-3 in all
+32** — in the STRICT healthy span den is never sub-floor (the earlier "healthy dips"
+came from including the collapse transition), so the every-window den form is
+CALIBRATED, not assumed; terminal signature reads 0/32 + 0/32 + run 32 — can never sit
+inside the tolerance. K_w = 3 (14400); K_c = 8 (184800) with the honest consequence
+recorded: control PIN practically unreachable at 192k → control terminal epochs
+surface as PIN-CENSORED → extension at its own ruling; acceleration cannot hide.
+Single-seed calibration (s1 = the only committed word-arm healthy span with columns)
+noted. Changed-threshold ×1.5, None → pinned constant, healthy-segment-only estimator.
+
+**All eight checkpoint items RESOLVED (EXP09 §10). Sequence: wire → surface resolved
+prereg + wiring asserts + replayed-baseline decomposition panels at ONE final pre-run
+read → arms run. Steps 5–6 blocked.**

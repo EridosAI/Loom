@@ -835,6 +835,13 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   confirmed findings — incl. the tabled row-2 "~4× post-death word pull" REFUTED as
   probe mask geometry; the β fast bound demoted to UNMEASURED; the function-test
   literal forms re-pinned flicker-tolerant/censoring-aware; the gradient-share
-  discriminator struck as circular). **NOTHING BUILDS OR RUNS until the EXP09 §10
-  checkpoint list is ratified. Steps 5–6 stay blocked.** Spec:
+  discriminator struck as circular). **CHECKPOINT RESOLVED (same day, Jason's ruling):
+  strikes ratified; ground (3) RE-WORDED (teaching path re-routed, not intact; the
+  design = a recorded BET; stop-grad-in-costume = pre-registered partial outcome); β by
+  RULE (τ = 2× pinned den period → 9600; 4800 stands as instrument of record, the 1500
+  demonstrated to be segment contamination); taxonomy ratified with constants
+  calibrated from measured healthy placements (27/32, k=1 run ≤2, den all-32; K_w=3,
+  K_c=8 with control-PIN-unreachable consequence recorded); all eight §10 items
+  resolved. BUILD AUTHORIZED to ONE final pre-run read (wire → asserts →
+  replayed-baseline decomposition panels), then arms. Steps 5–6 stay blocked.** Spec:
   `EXP09_SELF_REFERENCE_PREREG.md`.]
