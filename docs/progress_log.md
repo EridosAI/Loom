@@ -1245,3 +1245,15 @@ resume-grade save — run start-to-finish); execution-status honestly re-scoped 
 1,2,6,7,8,9 executed+wired; pin 3 calibrated, binding asserts with the runner; pins
 4–5 ruled, constructions with the runner). Artifact regenerated
 (`exp10_calibration.json` with per-seed jiggle table + seed pins + provenance).
+
+## 2026-07-04 — EXP10 FINAL PRE-RUN READ: GO (rung fallback pinned); campaign launched
+
+Ratifications: σ* correction ratified ("seed-0-only calibration was the exact
+'comfortably inside' failure; 0.04 against the weakest basin is the pin as intended");
+**rung ×2.0 with the RUNG-FALLBACK GUARD pinned pre-run** (no Step-0 observable exists
+for the acquisition-floor risk → the guard moves to runtime: cal arm at ×2.0 first; NO
+acquisition onset in EITHER cal seed where static baselines acquired ⇒ drop to ×1.0 +
+re-cal before any verdict arm); σ*=0.04 / K=4 / seed budget as tabled; pin-4
+sharpening ratified (manifest-time realized-pairing asserts carry primary-read
+leakage); execution ledger accepted. **Sequence: build → cal (fallback-guarded) →
+Step-0 re-validation → verdict arms → ONE review. Steps 5–6 blocked.**

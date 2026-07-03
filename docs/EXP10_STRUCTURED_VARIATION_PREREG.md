@@ -269,9 +269,18 @@ matched-bar fire machinery reused).** Resume caveat, recorded: varied arms have 
 resume-grade save (the nuisance/jiggle counters are not persisted) — they run
 start-to-finish.
 
-**What the final pre-run read ratifies: the ×2.0 operating rung (or higher, ceiling
-re-run), σ* = 0.04 (cross-seed), K = 4, the seed budget, the pin-4 sharpening, and GO
-on the arm set {nodetach_varied, slowref_varied, detachnull_varied,
-nodetach_isotropic, nodetach_varied_cal}. Then: the remaining build above → the
-calibration arm (stage-two constants) → Step-0 (a)/(c) re-validation under variation →
-the verdict arms. Steps 5–6 stay BLOCKED.**
+**RATIFIED AT THE FINAL PRE-RUN READ (Jason, 2026-07-04) — GO.** σ* correction
+ratified ("seed-0-only calibration was the exact 'comfortably inside' failure; 0.04
+against the weakest basin is the pin as intended"). Rung ×2.0 ratified **with the
+RUNG-FALLBACK GUARD, pinned now, not improvised: the acquisition-floor risk has no
+Step-0 observable (evo/num floors don't exist pre-run), so the guard moves to runtime
+— `nodetach_varied_cal` runs at ×2.0 FIRST; if stage two shows NO acquisition onset in
+EITHER cal seed (num floor never crossed) where the static baselines acquired, DROP TO
+×1.0 and re-cal before any verdict arm.** σ*=0.04, K=4, seed budget ratified as
+tabled. Pin-4 sharpening ratified (structural fact correctly located; the
+manifest-time realized-pairing asserts carry primary-read leakage). Execution ledger
+accepted (machinery-demo → deployed-assert distinction = the right discipline;
+no-resume-grade noted as caveat only).
+
+**Sequence: build → cal (with the rung fallback) → Step-0 re-validation → verdict
+arms. ONE review; steps 5–6 stay BLOCKED.**
