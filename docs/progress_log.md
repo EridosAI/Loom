@@ -1278,3 +1278,57 @@ distractor floor 0.60 + (c) evocation divergence with the alive-precondition,
 DEFERRED never false-pass). Runner smoked end-to-end (asserts PASS: realized pairing
 0.093 ≤ 0.138, NC 1.0; probe + shufscreen columns land). Cal arms (seeds 10, 11 @
 160k ×2.0 — the rung-fallback guard live) + Step-0 re-validation LAUNCHED.
+
+## 2026-07-04 — EXP10 RAN → NEGATIVE result set, verified (FRONTIER §10.15); at the one review
+
+Sequence executed: cal seeds {10,11} @160k ×2.0 (RUNG FALLBACK NOT FIRED — both
+acquired, onsets 15k/21k) → Step-0 re-validation under variation ((a) distractor
+0.71/0.62/0.76 ≥0.60 3/3; (b) ceiling unbound; (c) channel LIVE 3/3 share 1.000) →
+12 verdict arms (threads=1; manifest-time asserts PASS every arm: realized pairing ≤
+shuffle-null, deployed jiggle residual ⟂ labels+token, centroid-only bound, per-arm
+σ*=0.04 NC=1.0) → score → adversarial verification (48 agents, 4 lenses; 36 confirmed
+findings, 0 fabrication — every campaign number recomputed exactly).
+
+**THREE OF MY DRAFT VERDICTS FLIPPED IN VERIFICATION (on the record):** (1) direct
+test — my "terminal lock mostly beaten / onsets earlier than every static word arm" →
+NEGATIVE: the no-detach loop is NOT held open (all 3 seeds routing-die, k1-only
+asg-dead tails 69.3k/33.6k/45.3k waves, dead at horizon; word channel decoupled-alive
+= the static signature with extended flicker); occupancy death at/before the static
+word clock; word ACCELERATES routing death (no-word-metastable-earlier alternative
+refuted, entry 9–27k vs marathon ~141k); closure-necessary-too DOES NOT fire,
+pull-necessity via either-way clause; varied onsets beat only the static NO-DETACH
+clock (45.3k n=1), tie the static stop-grad arms. (2) annealing — my "isotropic NEITHER
+×3 = holds routing open equally" was a period-substitution artifact; the pinned route
+STILL fires but A FORTIORI: isotropic (matched power, corrupts identity axes by
+construction) is WORSE on every routing outcome (deeper joint-dead pockets 41.1k/29.7k
+vs ≤18k; one horizon-terminal FULL PIN at matched period, iso s2 3.5 periods — no
+structured seed reached it) → routing-openness NOT structure-specific → structured
+ROUTING claim FALLS; the earlier-onset residue (3/3, 1.3–2.9×, n=3 ns) is CONFOUNDED
+by cue-corruption, named-not-claimed. (3) evocation — "moved off common-dominated in
+5/6" → only 3/6 full-run; the true change = differentiation channel ALIVE-at-horizon
+5/6 (vs static decay), common-domination persists (evo_ratio>1 ≥99.6% windows).
+
+**TEACHING AXIS = STOP-GRAD-IN-COSTUME AGAIN under variation:** no slowref-vs-null
+divergence on any axis (both ROUTING-OPEN, 0 k=1/640, asg 1.6–1.73); all 3 leans
+(live-frac, onset, evo_diff) favor the NULL; churn does NOT fire (acquisition present
+all 12) → teaching bet UNDECIDED via NO-DIVERGENCE. **Fork 1(a) UNRESOLVED-NOT-REFUTED
+on a 2nd independent regime.**
+
+**SCORER BUG CAUGHT+FIXED (verification):** the both-period disclosure read still
+applied substitution — hid iso-s2's terminal PIN; added a `force_period` path
+(genuine pinned-period read); iso-s2 now correctly FAIL_PIN @4800. Stage-two note
+self-contradiction fixed (claimed a terminal-exclusion not implemented; regime finding
+survives exclusion-honoring recompute). Read-time shuffle low-power BY DESIGN
+(nuisance-riding read 0.52–0.55 vs chance 0.50 — primary-read leakage carried by the
+manifest asserts, as pinned). Honest labels in exp10_verdicts.json (static-calibrated
+PASS-form stripped to OUT-OF-REGIME artifact; regime_label + both-period + onsets +
+trajectories). Process note: Step-0 ran concurrent with cal (gate order preserved at
+verdict launch; pin future = fallback-firing triggers Step-0 re-run).
+
+**WHAT EXP10 SETTLES:** structured variation as operationalized does NOT hold the loop
+open; the routing-openness variation does produce is not structure-specific; the
+self-path reference stays undetectable vs its detach-null on a 2nd regime. DOES NOT
+settle: stronger/among-cue variation, longer horizon, or a different teaching-axis
+instrument. "Reality is the teacher" not refuted as a principle; this operationalization
+didn't deliver. AT THE ONE REVIEW; no arm a fix; steps 5–6 blocked; next design move =
+Jason's ruling.

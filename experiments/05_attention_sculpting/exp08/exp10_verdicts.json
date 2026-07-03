@@ -1,0 +1,1042 @@
+{
+  "per_arm": {
+    "nodetach_varied": [
+      {
+        "seed": 0,
+        "horizon": 159900,
+        "regime_label": "EPISODIC (17700w deepest joint-dead run; 364 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "NEITHER",
+          "verdict_at_pinned_period": "NEITHER",
+          "episodes": 2,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": "estimator None -> pinned"
+        },
+        "k1_windows": 364,
+        "k1_frac": 0.6829,
+        "deepest_joint_dead_run_waves": 17700,
+        "deepest_asg_dead_run_waves": 69300,
+        "onset": 21300,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 0.6986,
+          "den_mean": 0.1401,
+          "asg_mean": 0.4623
+        },
+        "final": {
+          "num": 7.794761,
+          "den": 0.000429,
+          "asg_dist": 0.000793,
+          "asg_k": 1
+        },
+        "thirds_median": {
+          "num": [
+            0.049426,
+            0.61922,
+            2.735888
+          ],
+          "den": [
+            0.012354,
+            0.001112,
+            0.003095
+          ],
+          "asg_dist": [
+            0.22362,
+            0.002576,
+            0.007449
+          ],
+          "evo_diff": [
+            0.000611,
+            0.095858,
+            1.87127
+          ],
+          "grad_diff": [
+            0.125749,
+            0.152424,
+            13.48465
+          ],
+          "pairwise_emit": [
+            0.017148,
+            0.001515,
+            0.004433
+          ]
+        },
+        "shufscreen": {
+          "n": 53,
+          "max_abs_delta": 0.0938
+        }
+      },
+      {
+        "seed": 1,
+        "horizon": 159900,
+        "regime_label": "EPISODIC (18000w deepest joint-dead run; 389 k=1 windows; terminal-class @pinned=PIN_CENSORED @measured=PIN_CENSORED)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "PIN_CENSORED",
+          "verdict_at_pinned_period": "PIN_CENSORED",
+          "episodes": 4,
+          "horizon_epoch": {
+            "kind": "PIN_CENSORED",
+            "epoch": {
+              "start": 151500,
+              "end": 159900,
+              "span": 8700,
+              "periods": 1.81,
+              "at_horizon": true
+            }
+          },
+          "period_measured": 4800,
+          "period_note": "estimator None -> pinned"
+        },
+        "k1_windows": 389,
+        "k1_frac": 0.7298,
+        "deepest_joint_dead_run_waves": 18000,
+        "deepest_asg_dead_run_waves": 33600,
+        "onset": 27300,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 2.4286,
+          "den_mean": 0.0167,
+          "asg_mean": 0.2097
+        },
+        "final": {
+          "num": 11.06628,
+          "den": 0.000125,
+          "asg_dist": 0.000224,
+          "asg_k": 1
+        },
+        "thirds_median": {
+          "num": [
+            1e-06,
+            1.885229,
+            0.411952
+          ],
+          "den": [
+            0.009502,
+            0.000189,
+            0.001576
+          ],
+          "asg_dist": [
+            0.169767,
+            0.000271,
+            0.003249
+          ],
+          "evo_diff": [
+            0.0,
+            0.888524,
+            0.042426
+          ],
+          "grad_diff": [
+            2e-06,
+            0.005605,
+            0.005466
+          ],
+          "pairwise_emit": [
+            0.013497,
+            0.000237,
+            0.00229
+          ]
+        },
+        "shufscreen": {
+          "n": 53,
+          "max_abs_delta": 0.1016
+        }
+      },
+      {
+        "seed": 2,
+        "horizon": 159900,
+        "regime_label": "EPISODIC (18000w deepest joint-dead run; 451 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "NEITHER",
+          "verdict_at_pinned_period": "NEITHER",
+          "episodes": 0,
+          "horizon_epoch": null,
+          "period_measured": 23700,
+          "period_note": ""
+        },
+        "k1_windows": 451,
+        "k1_frac": 0.8462,
+        "deepest_joint_dead_run_waves": 18000,
+        "deepest_asg_dead_run_waves": 45300,
+        "onset": 9300,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 0.1355,
+          "den_mean": 0.369,
+          "asg_mean": 0.7006
+        },
+        "final": {
+          "num": 0.02642,
+          "den": 0.000791,
+          "asg_dist": 0.000653,
+          "asg_k": 1
+        },
+        "thirds_median": {
+          "num": [
+            0.135383,
+            0.032496,
+            0.014264
+          ],
+          "den": [
+            0.010426,
+            0.00045,
+            0.000241
+          ],
+          "asg_dist": [
+            0.098936,
+            0.000702,
+            0.000262
+          ],
+          "evo_diff": [
+            0.004582,
+            0.000264,
+            5.1e-05
+          ],
+          "grad_diff": [
+            0.000634,
+            0.0,
+            0.0
+          ],
+          "pairwise_emit": [
+            0.014529,
+            0.000583,
+            0.000284
+          ]
+        },
+        "shufscreen": {
+          "n": 53,
+          "max_abs_delta": 0.1133
+        }
+      }
+    ],
+    "slowref_varied": [
+      {
+        "seed": 0,
+        "horizon": 192000,
+        "regime_label": "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "PASS_PENDING_SCREEN",
+          "verdict_at_pinned_period": "PASS_PENDING_SCREEN",
+          "episodes": 0,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": "substitution GATED: no collapse cycle in run (guard a)"
+        },
+        "k1_windows": 0,
+        "k1_frac": 0.0,
+        "deepest_joint_dead_run_waves": 0,
+        "deepest_asg_dead_run_waves": 0,
+        "onset": 81000,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 0.5321,
+          "den_mean": 3.2388,
+          "asg_mean": 1.6
+        },
+        "final": {
+          "num": 3e-06,
+          "den": 3.458822,
+          "asg_dist": 1.733318,
+          "asg_k": 6
+        },
+        "thirds_median": {
+          "num": [
+            0.0,
+            3e-06,
+            5e-06
+          ],
+          "den": [
+            3.242989,
+            3.346404,
+            3.463441
+          ],
+          "asg_dist": [
+            1.599995,
+            1.666654,
+            1.733323
+          ],
+          "evo_diff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "grad_diff": [
+            0.0,
+            52.0789,
+            17.97135
+          ],
+          "pairwise_emit": [
+            4.23579,
+            4.59743,
+            4.76405
+          ]
+        },
+        "shufscreen": {
+          "n": 64,
+          "max_abs_delta": 0.0273
+        }
+      },
+      {
+        "seed": 1,
+        "horizon": 192000,
+        "regime_label": "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "PASS_PENDING_SCREEN",
+          "verdict_at_pinned_period": "PASS_PENDING_SCREEN",
+          "episodes": 0,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": "substitution GATED: no collapse cycle in run (guard a)"
+        },
+        "k1_windows": 0,
+        "k1_frac": 0.0,
+        "deepest_joint_dead_run_waves": 0,
+        "deepest_asg_dead_run_waves": 0,
+        "onset": 57000,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 4.3251,
+          "den_mean": 3.3753,
+          "asg_mean": 1.6667
+        },
+        "final": {
+          "num": 10.270471,
+          "den": 3.500906,
+          "asg_dist": 1.733333,
+          "asg_k": 6
+        },
+        "thirds_median": {
+          "num": [
+            0.0,
+            6.481819,
+            5.564496
+          ],
+          "den": [
+            3.349755,
+            3.333187,
+            3.462503
+          ],
+          "asg_dist": [
+            1.666666,
+            1.666657,
+            1.733333
+          ],
+          "evo_diff": [
+            0.0,
+            10.5035,
+            7.740905
+          ],
+          "grad_diff": [
+            0.0,
+            5.35987,
+            9.927395
+          ],
+          "pairwise_emit": [
+            4.49933,
+            4.57124,
+            4.764155
+          ]
+        },
+        "shufscreen": {
+          "n": 64,
+          "max_abs_delta": 0.0039
+        }
+      },
+      {
+        "seed": 2,
+        "horizon": 192000,
+        "regime_label": "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "PASS_PENDING_SCREEN",
+          "verdict_at_pinned_period": "PASS_PENDING_SCREEN",
+          "episodes": 0,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": "substitution GATED: no collapse cycle in run (guard a)"
+        },
+        "k1_windows": 0,
+        "k1_frac": 0.0,
+        "deepest_joint_dead_run_waves": 0,
+        "deepest_asg_dead_run_waves": 0,
+        "onset": 15300,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 0.1411,
+          "den_mean": 2.8745,
+          "asg_mean": 1.3393
+        },
+        "final": {
+          "num": 0.243902,
+          "den": 3.275317,
+          "asg_dist": 1.666666,
+          "asg_k": 5
+        },
+        "thirds_median": {
+          "num": [
+            0.031693,
+            0.211944,
+            0.70809
+          ],
+          "den": [
+            3.207157,
+            3.430646,
+            3.468901
+          ],
+          "asg_dist": [
+            1.599931,
+            1.733325,
+            1.73333
+          ],
+          "evo_diff": [
+            0.000251,
+            0.01123,
+            0.125348
+          ],
+          "grad_diff": [
+            0.006823,
+            0.023058,
+            15.74175
+          ],
+          "pairwise_emit": [
+            4.30694,
+            4.71445,
+            4.772045
+          ]
+        },
+        "shufscreen": {
+          "n": 64,
+          "max_abs_delta": 0.0078
+        }
+      }
+    ],
+    "detachnull_varied": [
+      {
+        "seed": 0,
+        "horizon": 192000,
+        "regime_label": "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "PASS_PENDING_SCREEN",
+          "verdict_at_pinned_period": "PASS_PENDING_SCREEN",
+          "episodes": 0,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": "substitution GATED: no collapse cycle in run (guard a)"
+        },
+        "k1_windows": 0,
+        "k1_frac": 0.0,
+        "deepest_joint_dead_run_waves": 0,
+        "deepest_asg_dead_run_waves": 0,
+        "onset": 50700,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 0.3912,
+          "den_mean": 3.293,
+          "asg_mean": 1.6
+        },
+        "final": {
+          "num": 3.594866,
+          "den": 3.158,
+          "asg_dist": 1.533326,
+          "asg_k": 4
+        },
+        "thirds_median": {
+          "num": [
+            1e-06,
+            2.21892,
+            5.209863
+          ],
+          "den": [
+            3.246965,
+            3.159269,
+            3.166328
+          ],
+          "asg_dist": [
+            1.599994,
+            1.533327,
+            1.533327
+          ],
+          "evo_diff": [
+            0.0,
+            1.2309,
+            6.78567
+          ],
+          "grad_diff": [
+            0.000646,
+            8.00562,
+            303.3095
+          ],
+          "pairwise_emit": [
+            4.24173,
+            4.10781,
+            4.12048
+          ]
+        },
+        "shufscreen": {
+          "n": 64,
+          "max_abs_delta": 0.0195
+        }
+      },
+      {
+        "seed": 1,
+        "horizon": 192000,
+        "regime_label": "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "PASS_PENDING_SCREEN",
+          "verdict_at_pinned_period": "PASS_PENDING_SCREEN",
+          "episodes": 0,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": "substitution GATED: no collapse cycle in run (guard a)"
+        },
+        "k1_windows": 0,
+        "k1_frac": 0.0,
+        "deepest_joint_dead_run_waves": 0,
+        "deepest_asg_dead_run_waves": 0,
+        "onset": 9300,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 0.2432,
+          "den_mean": 3.252,
+          "asg_mean": 1.6001
+        },
+        "final": {
+          "num": 1.970099,
+          "den": 3.346972,
+          "asg_dist": 1.666667,
+          "asg_k": 5
+        },
+        "thirds_median": {
+          "num": [
+            1.250368,
+            1.116088,
+            1.151051
+          ],
+          "den": [
+            3.256685,
+            3.362144,
+            3.364584
+          ],
+          "asg_dist": [
+            1.600001,
+            1.666667,
+            1.666667
+          ],
+          "evo_diff": [
+            0.390855,
+            0.311413,
+            0.33123
+          ],
+          "grad_diff": [
+            0.142815,
+            0.08961,
+            0.727464
+          ],
+          "pairwise_emit": [
+            4.2553,
+            4.52714,
+            4.532885
+          ]
+        },
+        "shufscreen": {
+          "n": 64,
+          "max_abs_delta": 0.0078
+        }
+      },
+      {
+        "seed": 2,
+        "horizon": 192000,
+        "regime_label": "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "PASS_PENDING_SCREEN",
+          "verdict_at_pinned_period": "PASS_PENDING_SCREEN",
+          "episodes": 0,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": ""
+        },
+        "k1_windows": 0,
+        "k1_frac": 0.0,
+        "deepest_joint_dead_run_waves": 0,
+        "deepest_asg_dead_run_waves": 0,
+        "onset": 15300,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 0.2995,
+          "den_mean": 2.8844,
+          "asg_mean": 1.3334
+        },
+        "final": {
+          "num": 3.744084,
+          "den": 3.360771,
+          "asg_dist": 1.733312,
+          "asg_k": 6
+        },
+        "thirds_median": {
+          "num": [
+            0.499092,
+            4.357625,
+            3.744083
+          ],
+          "den": [
+            3.244017,
+            3.382678,
+            3.368504
+          ],
+          "asg_dist": [
+            1.600208,
+            1.733289,
+            1.666667
+          ],
+          "evo_diff": [
+            0.062273,
+            4.74722,
+            3.50454
+          ],
+          "grad_diff": [
+            0.325768,
+            23.7446,
+            549.326
+          ],
+          "pairwise_emit": [
+            4.24763,
+            4.60951,
+            4.53829
+          ]
+        },
+        "shufscreen": {
+          "n": 64,
+          "max_abs_delta": 0.0039
+        }
+      }
+    ],
+    "nodetach_isotropic": [
+      {
+        "seed": 0,
+        "horizon": 159900,
+        "regime_label": "EPISODIC (12300w deepest joint-dead run; 260 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "NEITHER",
+          "verdict_at_pinned_period": "NEITHER",
+          "episodes": 3,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": "estimator None -> pinned"
+        },
+        "k1_windows": 260,
+        "k1_frac": 0.4878,
+        "deepest_joint_dead_run_waves": 12300,
+        "deepest_asg_dead_run_waves": 18600,
+        "onset": 27300,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 0.2315,
+          "den_mean": 0.7642,
+          "asg_mean": 1.0863
+        },
+        "final": {
+          "num": 3e-06,
+          "den": 0.019983,
+          "asg_dist": 0.178922,
+          "asg_k": 1
+        },
+        "thirds_median": {
+          "num": [
+            0.0,
+            7e-06,
+            7.303885
+          ],
+          "den": [
+            0.007719,
+            0.007968,
+            0.010924
+          ],
+          "asg_dist": [
+            0.154391,
+            0.118505,
+            0.152082
+          ],
+          "evo_diff": [
+            0.0,
+            0.0,
+            13.3367
+          ],
+          "grad_diff": [
+            0.0,
+            0.0,
+            105.376
+          ],
+          "pairwise_emit": [
+            0.01086,
+            0.011287,
+            0.015662
+          ]
+        },
+        "shufscreen": {
+          "n": 53,
+          "max_abs_delta": 0.0938
+        }
+      },
+      {
+        "seed": 1,
+        "horizon": 159900,
+        "regime_label": "EPISODIC (29700w deepest joint-dead run; 320 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "NEITHER",
+          "verdict_at_pinned_period": "NEITHER",
+          "episodes": 4,
+          "horizon_epoch": null,
+          "period_measured": 4800,
+          "period_note": "estimator None -> pinned"
+        },
+        "k1_windows": 320,
+        "k1_frac": 0.6004,
+        "deepest_joint_dead_run_waves": 29700,
+        "deepest_asg_dead_run_waves": 29700,
+        "onset": 69300,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 2.1104,
+          "den_mean": 0.0395,
+          "asg_mean": 0.2195
+        },
+        "final": {
+          "num": 0.378463,
+          "den": 0.002384,
+          "asg_dist": 0.054378,
+          "asg_k": 1
+        },
+        "thirds_median": {
+          "num": [
+            0.0,
+            1e-06,
+            0.765397
+          ],
+          "den": [
+            0.014581,
+            0.003501,
+            0.00015
+          ],
+          "asg_dist": [
+            0.234961,
+            0.01288,
+            0.000326
+          ],
+          "evo_diff": [
+            0.0,
+            0.0,
+            0.146458
+          ],
+          "grad_diff": [
+            0.0,
+            0.0,
+            0.000103
+          ],
+          "pairwise_emit": [
+            0.019421,
+            0.004901,
+            0.000212
+          ]
+        },
+        "shufscreen": {
+          "n": 53,
+          "max_abs_delta": 0.0664
+        }
+      },
+      {
+        "seed": 2,
+        "horizon": 159900,
+        "regime_label": "EPISODIC (41100w deepest joint-dead run; 391 k=1 windows; terminal-class @pinned=FAIL_PIN @measured=NEITHER)",
+        "epoch_read": {
+          "verdict_static_calibrated_OUT_OF_REGIME": "NEITHER",
+          "verdict_at_pinned_period": "FAIL_PIN",
+          "episodes": 0,
+          "horizon_epoch": null,
+          "period_measured": 60300,
+          "period_note": ""
+        },
+        "k1_windows": 391,
+        "k1_frac": 0.7336,
+        "deepest_joint_dead_run_waves": 41100,
+        "deepest_asg_dead_run_waves": 59700,
+        "onset": 27000,
+        "aligned": {
+          "k": 7,
+          "censored": false,
+          "num_mean": 7.1718,
+          "den_mean": 0.0121,
+          "asg_mean": 0.2185
+        },
+        "final": {
+          "num": 0.140643,
+          "den": 3e-06,
+          "asg_dist": 5e-06,
+          "asg_k": 1
+        },
+        "thirds_median": {
+          "num": [
+            1e-06,
+            0.362496,
+            3.688015
+          ],
+          "den": [
+            0.01079,
+            0.000236,
+            7.3e-05
+          ],
+          "asg_dist": [
+            0.200272,
+            0.000419,
+            0.00012
+          ],
+          "evo_diff": [
+            0.0,
+            0.032851,
+            3.40036
+          ],
+          "grad_diff": [
+            1e-06,
+            0.000173,
+            3.49961
+          ],
+          "pairwise_emit": [
+            0.015536,
+            0.000304,
+            9.3e-05
+          ]
+        },
+        "shufscreen": {
+          "n": 53,
+          "max_abs_delta": 0.0664
+        }
+      }
+    ]
+  },
+  "comparisons": {
+    "direct_test": {
+      "static_death_clocks": {
+        "word_s1_pin_onset": 75300,
+        "word_s0_occ_chance": 96000,
+        "n_static_clock": 2
+      },
+      "nodetach_varied_horizon": 160000,
+      "regime": [
+        "EPISODIC (17700w deepest joint-dead run; 364 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)",
+        "EPISODIC (18000w deepest joint-dead run; 389 k=1 windows; terminal-class @pinned=PIN_CENSORED @measured=PIN_CENSORED)",
+        "EPISODIC (18000w deepest joint-dead run; 451 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)"
+      ],
+      "horizon_epochs": [
+        null,
+        {
+          "kind": "PIN_CENSORED",
+          "epoch": {
+            "start": 151500,
+            "end": 159900,
+            "span": 8700,
+            "periods": 1.81,
+            "at_horizon": true
+          }
+        },
+        null
+      ],
+      "deepest_asg_dead": [
+        69300,
+        33600,
+        45300
+      ],
+      "onsets": [
+        21300,
+        27300,
+        9300
+      ],
+      "note": "DIRECT TEST NEGATIVE: variation does not hold the loop open; word-arm routing dies (asg-dead tails), word-channel decoupled-alive; closure-necessary-too does NOT fire; pull-necessity via either-way clause"
+    },
+    "annealing_discriminator": {
+      "structured": {
+        "regime": [
+          "EPISODIC (17700w deepest joint-dead run; 364 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)",
+          "EPISODIC (18000w deepest joint-dead run; 389 k=1 windows; terminal-class @pinned=PIN_CENSORED @measured=PIN_CENSORED)",
+          "EPISODIC (18000w deepest joint-dead run; 451 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)"
+        ],
+        "onsets": [
+          21300,
+          27300,
+          9300
+        ],
+        "k1_fracs": [
+          0.6829,
+          0.7298,
+          0.8462
+        ],
+        "asg_dead": [
+          69300,
+          33600,
+          45300
+        ]
+      },
+      "isotropic": {
+        "regime": [
+          "EPISODIC (12300w deepest joint-dead run; 260 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)",
+          "EPISODIC (29700w deepest joint-dead run; 320 k=1 windows; terminal-class @pinned=NEITHER @measured=NEITHER)",
+          "EPISODIC (41100w deepest joint-dead run; 391 k=1 windows; terminal-class @pinned=FAIL_PIN @measured=NEITHER)"
+        ],
+        "onsets": [
+          27300,
+          69300,
+          27000
+        ],
+        "k1_fracs": [
+          0.4878,
+          0.6004,
+          0.7336
+        ],
+        "asg_dead": [
+          18600,
+          29700,
+          59700
+        ]
+      },
+      "note": "ROUTE FIRES A FORTIORI: isotropic >= structured on every honest routing outcome (deeper joint-dead pockets + one horizon-terminal PIN@pinned) -> routing-openness is NOT structure-specific; structured-family ROUTING claim FALLS. Onset residue (structured earlier 3/3, 1.3-2.9x, n=3 ns) is CONFOUNDED by cue-corruption (iso corrupts identity axes at matched power)"
+    },
+    "teaching_axis": {
+      "slowref": {
+        "regime": [
+          "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+          "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+          "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)"
+        ],
+        "onsets": [
+          81000,
+          57000,
+          15300
+        ],
+        "thirds_num": [
+          [
+            0.0,
+            3e-06,
+            5e-06
+          ],
+          [
+            0.0,
+            6.481819,
+            5.564496
+          ],
+          [
+            0.031693,
+            0.211944,
+            0.70809
+          ]
+        ],
+        "thirds_evo": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            10.5035,
+            7.740905
+          ],
+          [
+            0.000251,
+            0.01123,
+            0.125348
+          ]
+        ],
+        "thirds_asg": [
+          [
+            1.599995,
+            1.666654,
+            1.733323
+          ],
+          [
+            1.666666,
+            1.666657,
+            1.733333
+          ],
+          [
+            1.599931,
+            1.733325,
+            1.73333
+          ]
+        ]
+      },
+      "detachnull": {
+        "regime": [
+          "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+          "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)",
+          "ROUTING-OPEN (0 k=1 windows in 640; den never sub-floor)"
+        ],
+        "onsets": [
+          50700,
+          9300,
+          15300
+        ],
+        "thirds_num": [
+          [
+            1e-06,
+            2.21892,
+            5.209863
+          ],
+          [
+            1.250368,
+            1.116088,
+            1.151051
+          ],
+          [
+            0.499092,
+            4.357625,
+            3.744083
+          ]
+        ],
+        "thirds_evo": [
+          [
+            0.0,
+            1.2309,
+            6.78567
+          ],
+          [
+            0.390855,
+            0.311413,
+            0.33123
+          ],
+          [
+            0.062273,
+            4.74722,
+            3.50454
+          ]
+        ],
+        "thirds_asg": [
+          [
+            1.599994,
+            1.533327,
+            1.533327
+          ],
+          [
+            1.600001,
+            1.666667,
+            1.666667
+          ],
+          [
+            1.600208,
+            1.733289,
+            1.666667
+          ]
+        ]
+      },
+      "note": "STOP-GRAD-IN-COSTUME AGAIN under variation: no slowref-vs-null divergence on any axis; all 3 leans (live-frac, onset, evo_diff) favor the NULL. Churn screen does NOT fire (acquisition present in all 12). Change from static: differentiation channel alive-at-horizon in 5/6 varied ref/null seeds (vs static decay) BUT common-domination persists (evo_ratio>1 in >=99.6% of windows; moved-off-common only 3/6 full-run)."
+    }
+  },
+  "note": "CORRECTED READING (adversarial verification, 36 findings): the static-calibrated epoch verdict strings are OUT-OF-REGIME/vacuous (kept only as the labeled artifact they are). Honest reads = regime_label + both-period terminal-class + onsets + trajectories. DIRECT TEST NEGATIVE (variation does not hold the no-detach loop open); annealing route fires a fortiori (routing-openness not structure-specific); teaching axis = stop-grad-in-costume AGAIN (null equal-or-ahead). See FRONTIER 10.15."
+}

@@ -1159,3 +1159,98 @@ exhausted by the loop). **Governing line: "Reality is the teacher" — the origi
 Guiding-List entry (`Guiding List.md`), cited, not duplicated.** Prereg:
 `EXP10_STRUCTURED_VARIATION_PREREG.md` — **DRAFT AT CHECKPOINT; nothing builds or runs
 until ratified. Steps 5–6 stay BLOCKED.**
+
+## §10.15 — EXP10 structured variation RAN (2026-07-04): the direct test is NEGATIVE; the teaching axis is STOP-GRAD-IN-COSTUME AGAIN; the structured-family routing claim FALLS to generic-noise
+
+The campaign ran to plan (cal → Step-0 re-validation → 12 verdict arms {no-detach,
+slowref, detachnull, no-detach-isotropic} × 3 seeds, 160k/192k, threads=1; the
+rung-fallback guard did NOT fire — both cal seeds acquired, onsets 15k/21k).
+Manifest-time asserts passed every arm (realized pairing ≤ shuffle-null; deployed jiggle
+residual ⟂ labels and ⟂ token; centroid-only bound; per-arm σ*=0.04 NC = 1.0). **All
+numbers independently reproduced (adversarial verification, 48 agents / 4 lenses / 36
+confirmed findings, 0 fabrication); the readings below are the CORRECTED ones — three of
+my draft verdicts were flipped in verification and are on the record as such.** Honest
+labels throughout (`exp10_verdicts.json` regenerated): the static-calibrated epoch
+verdict strings are OUT-OF-REGIME and kept only as the labeled artifact they are; reads
+are regime-label + both-period terminal-class (a genuine forced-period read, after a
+scorer bug was caught — the substituting path did NOT report at the pinned constant when
+a collapse cycle exists) + onsets + trajectories.
+
+**Step-0 re-validated under variation (the environment is valid):** (a) distractor
+recovery 0.71/0.62/0.76 ≥ 0.60 floor, 3/3; (c) the word→category evocation channel LIVE
+3/3 (share 1.000; cat_div 0.075/1.12/12.3, dist 0). The (b) ceiling never bound (oracle
+0.955 at every rung). So the varied rig teaches a representable, resolvable environment.
+
+**THE DIRECT TEST — NEGATIVE (verdict-flip from my draft).** Does exogenous variation
+alone hold the ORIGINAL (no-detach) loop open? **No.** All three no-detach-varied seeds
+die: routing goes assignment-dead in long tails (k=1-only runs 69.3k/33.6k/45.3k waves;
+every seed dead at horizon), with the word→content channel decoupled-alive on the dead
+routing — the SAME signature as the static collapse, now with extended flicker
+(collapse-regrow interior revivals, 12/12 across arms, deepest joint-dead runs ~18k).
+Occupancy death arrives at/before the static word clock. **The word is doing something —
+accelerating routing death on the static schedule — the no-word-metastable-arriving-
+earlier alternative is refuted** (acquisition entry 9–27k vs the marathon's ~141k). **The
+pre-registered closure-necessary-too inference DOES NOT FIRE; pull-necessity stands via
+the either-way clause only.** Correction on the record: my "terminal lock mostly beaten"
+and "onsets earlier than every static word arm" were both wrong — the loop is not held
+open (dead tails), and varied onsets beat only the static NO-DETACH word clock (45.3k,
+n=1); they tie the static stop-grad arms (detachnull_s1 = 9.3k without any variation).
+
+**THE ANNEALING DISCRIMINATOR — the structured-family ROUTING claim FALLS (route fires
+a fortiori, but NOT the way I first read it).** Isotropic noise at matched total power
+(which corrupts identity axes by construction) reproduces the open-routing phenomenology
+and is WORSE on every honest routing outcome: deeper joint-dead pockets (41.1k/29.7k vs
+≤18k) and one horizon-terminal FULL PIN at the matched period (iso s2, 3.5 periods —
+which no structured seed reached). So the routing-openness effect of variation is **NOT
+structure-specific → the structured-family routing claim falls.** (Correction: my "NEITHER
+×3 = holds routing open equally" was a period-substitution artifact — the a-fortiori
+conclusion survives, the equality reasoning does not.) **The one structured residue —
+earlier acquisition onset (3/3 seeds, 1.3–2.9×, n=3, not significant) — is CONFOUNDED by
+cue-corruption** (isotropic damages the identity axes at matched power, so later iso
+onsets may be corruption, not lower demand) and cannot be claimed as a structured-teaching
+advantage without an off-cue-axes matched-power control. Named, not claimed.
+
+**THE TEACHING AXIS — STOP-GRAD-IN-COSTUME, AGAIN, under variation.** slowref-varied vs
+detachnull-varied: **no outcome-level divergence on any measured axis** (both ROUTING-OPEN,
+0 k=1 windows in 640, den never sub-floor, asg ~1.6–1.73); all three leans — live-fraction,
+acquisition onset, evo_diff — favor the NULL (equal-or-ahead). The churn-in-costume screen
+does NOT fire (acquisition is present in all 12 arms), so the teaching bet is UNDECIDED via
+NO-DIVERGENCE, not churn. What DID change from the static regime: the differentiation
+(evocation) channel is alive-at-horizon in 5/6 varied ref/null seeds (vs static horizon-end
+decay) — but common-domination PERSISTS (evo_ratio > 1 in ≥99.6% of windows; the median
+actually moved off common-dominance in only 3/6 full-run). Variation kept the channel
+firing longer; it did not make the reference detectably teach.
+
+**WHAT EXP10 SETTLES (and does not).** SETTLES: (1) exogenous structured variation, as
+operationalized (K=4 orthogonal recurring axes + frozen-centroid jiggle, ×2.0 demand), does
+NOT hold the deployed no-detach loop open — the collapse is not fixed by giving the
+environment inexhaustible differences; (2) the routing-openness that variation DOES produce
+in the detach-topology arms is not structure-specific (generic noise does it, worse); (3)
+the self-path reference remains undetectable against its detach-null even under variation —
+Fork 1(a) stays UNRESOLVED-NOT-REFUTED, now on a second independent regime. DOES NOT settle:
+whether a stronger/among-cue structured environment, or a longer horizon, or a different
+teaching-axis instrument would separate the reference — the evocation-channel-alive-longer
+change is a thread, not a result. **"Reality is the teacher" is not refuted as a principle;
+the specific operationalization did not deliver a detectable teaching effect here.**
+
+**Instrument + process notes (on the record):** a real scorer bug caught and fixed — the
+"both-period disclosure" read applied period substitution instead of forcing the pinned
+period, hiding iso-s2's terminal PIN (now a `force_period` path); the stage-two constants
+note was self-contradictory (claimed a terminal-signature exclusion that isn't implemented)
+— corrected, the regime finding (no clean healthy band in the varied regime) survives an
+exclusion-honoring recompute; the read-time shuffle screen is low-power BY DESIGN (the
+nuisance-riding read sits at 0.52–0.55 vs chance 0.50) — primary-read leakage is carried by
+the manifest asserts, as pinned; Step-0 ran concurrently with cal (letter-deviation from the
+linear sequence; gate order preserved at verdict launch — process note, pin for future: a
+fallback-firing must trigger Step-0 re-run). Steps 5–6 BLOCKED; no arm was a fix.
+
+**THE DESIGN TABLE, where it stands after EXP10.** Two independent regimes now show the
+same wall: the failure is assignment-side routing collapse under the target-side pull, and
+neither a slow-reference (EXP09) nor an inexhaustible environment (EXP10) makes the
+reference's contribution detectable — because in every case the detach-null does as well or
+better. The live thread EXP10 adds: variation keeps the differentiation channel firing to
+horizon (5/6) where the static regime decays it — the teaching axis stays common-dominated
+but no longer dies. The open directions from §10.13 that EXP10 did not touch remain: the
+routing-side counter-force (highest-risk, manufacturing class) and the denser anchor
+(stimulus-side; its lever still unmeasured at matched acquisition). The next design move is
+Jason's ruling.

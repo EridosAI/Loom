@@ -874,3 +874,21 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   line = "Reality is the teacher" (Guiding List.md, cited). **EXP10 prereg DRAFT AT
   CHECKPOINT (`EXP10_STRUCTURED_VARIATION_PREREG.md`); nothing builds or runs; steps
   5–6 stay blocked.**]
+- **[2026-07-04 — EXP10 RAN → NEGATIVE (FRONTIER §10.15).** Checkpoint pins ruled +
+  resolved + wired + parity-passed; GO with the rung-fallback guard. Cal (fallback not
+  fired) → Step-0 re-validated under variation (a 3/3, c live 3/3) → 12 verdict arms
+  (threads=1, manifest asserts pass every arm) → adversarial verification (48 agents,
+  36 findings, 0 fabrication; 3 draft verdicts flipped on record; a scorer bug
+  caught+fixed = force_period). **DIRECT TEST NEGATIVE: variation does NOT hold the
+  no-detach loop open (all 3 seeds routing-die, asg-dead tails 33–69k, dead at
+  horizon; word channel decoupled-alive); closure-necessary-too does NOT fire;
+  pull-necessity via either-way clause. ANNEALING: structured-family ROUTING claim
+  FALLS — isotropic at matched power is WORSE (deeper pockets + a horizon-terminal PIN;
+  routing-openness not structure-specific; earlier-onset residue cue-corruption-
+  confounded). TEACHING AXIS: STOP-GRAD-IN-COSTUME AGAIN — no slowref-vs-null
+  divergence, all leans favor the null; Fork 1(a) UNRESOLVED-NOT-REFUTED on a 2nd
+  regime.** Live thread: variation keeps the differentiation channel alive-at-horizon
+  5/6 (vs static decay), common-domination persists. "Reality is the teacher" not
+  refuted as a principle; this operationalization didn't deliver a detectable teaching
+  effect. Untouched §10.13 directions remain (routing-side counter-force / denser
+  anchor). No arm a fix; steps 5–6 blocked; next design move = Jason's ruling.]

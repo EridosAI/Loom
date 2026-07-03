@@ -344,18 +344,27 @@ def independence_asserts(coeff_std: float, jiggle_sigma: float, n=2000, n_null=1
 
 
 # ------------------------------------------------------------------ guarded scorer (pin 9b)
-def function_test_read_v2(cols, *, control: bool, pinned_period: int | None = None) -> dict:
+def function_test_read_v2(cols, *, control: bool, pinned_period: int | None = None,
+                          force_period: int | None = None) -> dict:
     """The SS10.14 scorer guards applied: (a) period substitution requires an actual
     collapse cycle (>=1 qualifying window) — else the pinned constant; (b) the PASS
     window scales with the used period (count threshold rescaled; the run-length limit
     stays absolute at the calibrated 2); (c) COPY-COLLAPSE goes mechanical when
-    ref_pairwise is present (any post-crossing window < 3e-4)."""
+    ref_pairwise is present (any post-crossing window < 3e-4).
+
+    force_period: bypass substitution entirely and score at EXACTLY this period (the
+    honest 'both-period disclosure' read — the substituting path does NOT report at the
+    pinned constant when a collapse cycle exists)."""
     pinned = pinned_period or (X9.PERIOD_NOWORD if control else X9.PERIOD_WORD)
     any_qualifying = any(c["asg_argmax_k"] == 1 and c["den"] < X9.FLOOR for c in cols)
-    per = X9._healthy_segment_period(cols, pinned)
-    if per["substituted"] and not any_qualifying:
-        per = dict(per, used=pinned, substituted=False,
-                   note="substitution GATED: no collapse cycle in run (guard a)")
+    if force_period is not None:
+        per = dict(measured=None, used=force_period, substituted=False,
+                   note=f"FORCED period {force_period} (no substitution)")
+    else:
+        per = X9._healthy_segment_period(cols, pinned)
+        if per["substituted"] and not any_qualifying:
+            per = dict(per, used=pinned, substituted=False,
+                       note="substitution GATED: no collapse cycle in run (guard a)")
     period = per["used"]
     K = X9.K_C if control else X9.K_W
     eps = X9._epochs(cols, period)
@@ -710,8 +719,11 @@ def stage_two():
         period=X9.PERIOD_WORD if all(not p["period_res"]["substituted"] for p in per_seed)
         else max(p["period_used_for_cal"] for p in per_seed),
         pass_k_frac=k_min_frac, pass_den_frac=den_frac, pass_run_max=max(run_max, 1),
-        note="calibration RULE: every cal healthy placement passes; terminal signature "
-             "(k>1 frac 0, den frac 0, run=n_win) excluded by construction")
+        note="DEGENERATE: no clean healthy band exists in the varied cal regime "
+             "(s10 ends in a trailing dead run at horizon; s11 has fully-terminal "
+             "placements). Terminal-signature exclusion NOT implemented here; an "
+             "exclusion-honoring recompute stays degenerate. Regime finding, not "
+             "usable constants.")
     (OUTDIR / "exp10_stage2_constants.json").write_text(json.dumps(out, indent=2))
     print("STAGE TWO:", json.dumps(out["constants"]))
     return out

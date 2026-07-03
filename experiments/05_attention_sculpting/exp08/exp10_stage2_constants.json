@@ -1,0 +1,47 @@
+{
+  "cal_seeds": [
+    10,
+    11
+  ],
+  "acquisition_onsets": [
+    15000,
+    21000
+  ],
+  "rung_fallback_fired": false,
+  "per_seed": [
+    {
+      "seed": 10,
+      "period_res": {
+        "measured": 30300,
+        "used": 30300,
+        "substituted": true
+      },
+      "period_used_for_cal": 30300,
+      "n_win": 202,
+      "worst_k_frac": 0.0693,
+      "worst_den_frac": 0.2673,
+      "max_k1_run": 121
+    },
+    {
+      "seed": 11,
+      "period_res": {
+        "measured": null,
+        "used": 4800,
+        "substituted": false,
+        "note": "estimator None -> pinned"
+      },
+      "period_used_for_cal": 4800,
+      "n_win": 32,
+      "worst_k_frac": 0.0,
+      "worst_den_frac": 0.0,
+      "max_k1_run": 32
+    }
+  ],
+  "constants": {
+    "period": 30300,
+    "pass_k_frac": 0.0,
+    "pass_den_frac": 0.0,
+    "pass_run_max": 121,
+    "note": "calibration RULE: every cal healthy placement passes; terminal signature (k>1 frac 0, den frac 0, run=n_win) excluded by construction"
+  }
+}

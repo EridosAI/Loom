@@ -1,0 +1,37 @@
+{
+  "arm": "nodetach_isotropic",
+  "seed": 0,
+  "n_rows": 600,
+  "op": {
+    "coeff_std": 0.5,
+    "k_axes": 4,
+    "jiggle_sigma": 0.04
+  },
+  "realized_pairing": {
+    "obs": 0.0981,
+    "null99": 0.1499,
+    "ok": true
+  },
+  "jiggle_deployed": {
+    "resid_vs_labels": {
+      "obs": 0.1022,
+      "null99": 0.1463,
+      "ok": true
+    },
+    "resid_vs_token": {
+      "obs": 0.0793,
+      "null99": 0.1403,
+      "ok": true
+    },
+    "centroid_only": {
+      "max_per_token_mean_norm": 0.00794,
+      "bound": 0.12,
+      "ok": true
+    }
+  },
+  "sigma_nc_recheck": {
+    "sigma": 0.04,
+    "acc": 1.0,
+    "ok": true
+  }
+}
