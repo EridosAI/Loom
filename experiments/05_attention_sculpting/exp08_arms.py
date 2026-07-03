@@ -121,6 +121,9 @@ class VocabLoop(EXP08Loop):
 
 NOWORD_PERIOD = 23100     # [RECONCILE: marathon_s0 den dominant period — the extension's window]
 
+_STANDING_COLS = ("t", "num", "den", "ratio", "proto", "d2_depth", "d2_spread",
+                  "asg_dist", "asg_argmax_k", "asg_entropy")   # committed rounding contract
+
 
 def extension_read(cols, *, floor=1e-3, period=NOWORD_PERIOD) -> dict:
     """The one-review extension's PRE-REGISTERED terminal-vs-asymptotic read (no rescue):
@@ -348,7 +351,11 @@ def load_state(loop, path: Path):
 
 
 def run_arm(arm_name: str, seed: int, steps_override: int | None = None,
-            save_state_at_end: bool = False) -> dict:
+            save_state_at_end: bool = False, probes=None, out_tag: str | None = None) -> dict:
+    """probes: optional per-EVAL callback loop -> dict of EXTRA columns (exp09; must be
+    RNG-isolated — never draws from loop.gen). out_tag: optional artifact suffix so a
+    replay never overwrites the committed artifact. Both default to the pre-exp09
+    behavior byte-identically."""
     spec = ARMS[arm_name]
     steps = steps_override or spec["steps"]
     no_word = spec.get("no_word", False)
@@ -358,7 +365,7 @@ def run_arm(arm_name: str, seed: int, steps_override: int | None = None,
     man = build_manifest(loop, arm_name, spec, seed)
     n_checked = assert_stream_consistency(loop, man)
     man["stream_consistency_asserted_waves"] = n_checked
-    base = OUTDIR / f"{arm_name}_s{seed}"
+    base = OUTDIR / (f"{arm_name}_s{seed}" + (f"_{out_tag}" if out_tag else ""))
     (base.with_suffix(".manifest.json")).write_text(json.dumps(man, indent=2))
     (base.with_suffix(".manifest.md")).write_text(manifest_md(man))
     try:
@@ -393,6 +400,8 @@ def run_arm(arm_name: str, seed: int, steps_override: int | None = None,
                              d2_spread=float(poolmetrics.within_group_spread(loop.vision.pool)),
                              asg_dist=asg_dist, asg_argmax_k=asg_argmax_k,
                              asg_entropy=asg_entropy))
+            if probes is not None:                             # exp09 extra columns (RNG-isolated)
+                cols[-1].update(probes(loop))
         if t % BLOCK == 0:
             occ[str(t)] = loop.dc_track(cfg.n_eval)
             gsplit[str(t)] = grad_split(loop, no_word)
@@ -407,12 +416,16 @@ def run_arm(arm_name: str, seed: int, steps_override: int | None = None,
         commit_hash=C.commit_hash(), spec_hash=C.spec_hash(),
         arm=arm_name, seed=seed, steps=steps, vocab=int(vocab), no_word=no_word,
         eval_cadence=EVAL, block_cadence=BLOCK,
+        torch_num_threads=torch.get_num_threads(),             # determinism-contract provenance
         early_signature=dict(
             assessable_fraction=round(assessable / max(1, len(cols)), 4),
             denominator_panel=panels["den"], reference_note="reference (entry run): period "
             "~4800, assessable ~35% at cadence 100; envelope trend shrinking to terminal"),
         dynamics_panel=panels,
-        columns=[{k: (round(v, 6) if isinstance(v, float) else v) for k, v in c.items()}
+        # standing keys keep the committed 6-DECIMAL rounding (byte-identical replays);
+        # probe keys use 6 SIGNIFICANT digits (gradient energies live at 1e-9)
+        columns=[{k: ((round(v, 6) if k in _STANDING_COLS else float(f"{v:.6g}"))
+                      if isinstance(v, float) else v) for k, v in c.items()}
                  for c in cols],
         occupancy=occ, grad_split=gsplit, masking_mix=mixes,
     )

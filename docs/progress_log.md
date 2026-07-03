@@ -994,3 +994,51 @@ noted. Changed-threshold ×1.5, None → pinned constant, healthy-segment-only e
 **All eight checkpoint items RESOLVED (EXP09 §10). Sequence: wire → surface resolved
 prereg + wiring asserts + replayed-baseline decomposition panels at ONE final pre-run
 read → arms run. Steps 5–6 blocked.**
+
+## 2026-07-03 — EXP09 WIRED: slow-ref loop + decomposition probes + asserts; THREAD CATCH; both baseline replays BIT-IDENTICAL; panels landed
+
+**Wiring (one code path).** `exp09_arms.py`: SlowRefLoop = EXP08Loop + the slow copy
+(full vision-cortex parameter copy; birth bit-copy stored; post-optimizer-step lag rule,
+τ=9600) — step() inherited unchanged (asserted: no new loss term); the build_cells WRAP
+rewrites only the TARGET's vision rows from the window raw under no_grad (word rows
+untouched — sampled assert); detach-null arm rides the existing DetachLoop. Probes (all
+RNG-isolated, asserted per call): evocation split, per-member gradient split (ONE fixed
+mask geometry — never the asymmetric word/self pair), reference-distinctness ×4 incl.
+pairwise (copy-collapse watch), pairwise_emit baseline analogue. `exp08_arms.py` got two
+ADDITIVE defaults-preserving params (probes callback; out_tag so replays never overwrite
+committed artifacts) + sig-figs formatting for probe columns (gradient energies live at
+1e-9; standing columns keep the committed 6-decimal contract) + `torch_num_threads`
+provenance. Smoke: all wiring asserts green (t=0 identity; divergence>0 by t=1200
+— d_online 3.25 vs d_birth 0.28, the lag visibly working; zero grad to copy; RNG
+untouched).
+
+**THE THREAD CATCH (instrument finding, on the record).** First replay FAILED the
+bit-faithful assert — 93 windows off by the LAST DIGIT of the ratio column only
+(num/den/asg untouched). A/B isolation EXONERATED the probes (none-vs-full: 0
+mismatches / 6000 steps); the cause is torch THREAD COUNT: at 16 threads
+parallel-reduction order perturbs floats ~1e-9 relative (visible only in ratio's coarse
+6-decimal quantization); at 1–2 threads the replay is byte-identical. **The determinism
+contract is seed + construction order + THREADS** — pinned to 1 for every EXP09 run;
+recorded in every artifact. (The committed artifacts came from the kick session's
+thread-limited parallel phase.)
+
+**Replays (SS7 upgrade executed): BOTH baselines BIT-IDENTICAL to committed** —
+word_terminal_s1 (375 windows) and marathon_ext_s0 (1666 windows) — RNG isolation +
+thread contract proven end-to-end; decomposition columns back-filled onto both measured
+collapse baselines. Panels: `exp08/word_terminal_decomp_panels.png`,
+`exp08/marathon_ext_decomp_panels.png`; floor read `exp08/exp09_pairwise_floor_read.json`.
+
+**First trajectory numbers (READ-ONLY observations for the pre-run read — no claims).**
+Word arm: the teaching gradient is ~1.4e4:1 COMMON-dominated through the entire healthy
+phase (grad_diff ~5e-9 vs grad_common ~8e-5) — the differential force starved long
+before terminal events; the ratio touches ~1 only in the collapse transition (exactly
+when the word channel belatedly acquires: evo_diff 1.8e-14 → 1.68); terminal ~28 with
+everything decayed. No-word arm: healthy ~294 (≈50× less common-dominated than the word
+arm's healthy phase — direction consistent with the 5× clock gap; cross-arm n=1 read),
+pinned 2.2e6 (grad_diff 3.4e-10), revival tail ~6.9e3 with pairwise recovering.
+Pairwise floor sources (SS6.1, Jason pins at the read): healthy min 0.00177 (word) /
+0.000907 (no-word) vs terminal 1.1e-5 / pinned-span 3.5e-5 — proposal: floor 3e-4
+(≥3× below the weakest healthy min, ≥8× above the word terminal).
+
+**Status: everything before the final pre-run read is DONE. Steps 5–6 blocked; no arms
+run until the read.**
