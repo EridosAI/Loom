@@ -217,6 +217,15 @@ never only ratios). **Explicitly NOT a §6 certifier** — a trajectory instrume
   the per-member probes use ONE fixed mask geometry across all members (equalized);
   the standing word/self grad-split keeps its asymmetric pair with the ≈4.0 mechanical
   geometry factor RECORDED as an instrument caveat; probe-class composition logged.
+  (3) **THREADS (wiring catch, measured 2026-07-03): the determinism contract is seed +
+  construction order + torch THREAD COUNT.** At 16 threads, parallel-reduction order
+  perturbs floats ~1e-9 relative — visible ONLY in the ratio column's coarse 6-decimal
+  quantization (93 windows off by the last digit; num/den/asg untouched); at 1–2
+  threads the replay is byte-identical to the committed artifacts (which came from the
+  kick session's thread-limited parallel phase). The new probes were EXONERATED by A/B
+  isolation (none-vs-full: 0 mismatches over 6000 steps). **Pinned: every EXP09 run and
+  replay executes at torch threads = 1; the thread count is recorded in every artifact
+  (`torch_num_threads`).**
 - **The deliverable:** the contraction/teaching ratio as a TRAJECTORY — where it sits,
   when it tips, what (a) does to it.
 - **Baseline comparator (RATIFIED, upgraded):** replay BOTH baselines
