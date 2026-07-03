@@ -851,3 +851,26 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   resolved. BUILD AUTHORIZED to ONE final pre-run read (wire → asserts →
   replayed-baseline decomposition panels), then arms. Steps 5–6 stay blocked.** Spec:
   `EXP09_SELF_REFERENCE_PREREG.md`.]
+- **[2026-07-04 — EXP09 RUN + RULED (FRONTIER §10.14): screen fires
+  STOP-GRAD-IN-COSTUME; Fork 1(a) UNRESOLVED-NOT-REFUTED; fork record → EXP10
+  STRUCTURED VARIATION.** Four arms 192k: both slowref word arms PASS_PENDING_SCREEN
+  with maximal margins (zero k=1 windows at 2× the baseline terminal clock), control
+  clean — but detachnull scores PASS_PENDING_SCREEN with IDENTICAL margins and no
+  recorded column separates them.
+  Certified scope NARROWED at ruling: pull-removal prevents the pin; the reference's
+  contribution UNDETECTED. Knob certified separately (no copy-collapse). Regime shift:
+  all four arms at a spread set-point neither baseline inhabited → instrument lesson:
+  verdict constants calibrate IN-REGIME. HOW columns demoted (the flip restates
+  member-distinctness in gradient units — null's probe retains the target term and
+  flips anyway); SURVIVING observation: gradient-diff-dominated yet
+  EVOCATION-common-dominated everywhere — the teaching axis is where the design bet
+  must be decided. Baseline corrections: word_terminal pin onset 75300;
+  marathon_ext(500k) NO pin
+  (three regrown episodes, max 5.92 periods); ~518k = the kick ε=0 resume. Fork
+  record: teaching-axis discriminator under STRUCTURED VARIATION (unpredictability pin,
+  three clauses: stochastic sequence / identity-independent / learnable-as-
+  distribution), static cells = existing baselines; grounds = empty-gap lesson (§12.C)
+  + exogenous differential fuel (the one non-self-consuming ledger force); governing
+  line = "Reality is the teacher" (Guiding List.md, cited). **EXP10 prereg DRAFT AT
+  CHECKPOINT (`EXP10_STRUCTURED_VARIATION_PREREG.md`); nothing builds or runs; steps
+  5–6 stay blocked.**]

@@ -1070,3 +1070,92 @@ epochs up to 5.9 periods); the teaching discriminator's gradient-share candidate
 as circular (member-distinct targets mechanically produce member-dependent probe
 gradients); ground (3) sharpened as above; the baseline-replay cost corrected 3.5h →
 ~4 minutes (measured timestamps). Full spec: `EXP09_SELF_REFERENCE_PREREG.md`.
+
+## §10.14 — EXP09 verdicts RULED (2026-07-04): the screen fires STOP-GRAD-IN-COSTUME; Fork 1(a) UNRESOLVED-NOT-REFUTED; the fork record → EXP10 structured variation
+
+The four arms (192k waves each, threads=1, from committed pins) — verdicts independently
+rescored, all reproduce, no flips: **slowref_word s0 and s1 = PASS_PENDING_SCREEN**
+(32/32 argmax_k>1, ZERO k=1 windows across the entire horizon, zero episodes — at 2×
+the horizon where the word baseline terminally pinned); **slowref_noword s0 control =
+NO_PIN** (no acceleration); **detachnull s1 = PASS_PENDING_SCREEN with IDENTICAL
+margins.** Verification: 35 agents, 4 lenses, 29 confirmed findings — all folded into
+the record below (progress_log 07-03 review entry = the full verification record).
+
+**The certified scope, NARROWED at ruling (superseding the prereg's pinned PASS
+scope, which the null's identical margins made over-broad): PULL-REMOVAL PREVENTS THE
+PIN; the reference's contribution is UNDETECTED.** Both beats kept: the prereg pinned
+"the reference sustains input-sensitivity"; the null showed pull-removal alone
+suffices; the honest certificate is the narrower one.
+
+**The screen: STOP-GRAD-IN-COSTUME — the pre-registered partial outcome FIRED.** No
+recorded column separates slowref from the null in kind (asg / den / pairwise /
+grad-ratio / occupancy all ≈); two of the three ruled screen axes returned no events
+(vacuous — stated, never counted as equal-behavior evidence); the interim "the null's
+word channel dies while slowref holds" was struck in verification as cherry-picked
+endpoints of a block-oscillating column. **The paradigm bet — lagged-content targets
+re-supply the teaching function — is NOT certified. Fork 1(a) is UNRESOLVED-NOT-
+REFUTED:** the reference is not shown useless; the test as built cannot detect its
+contribution in this regime. The knob is certified separately (no COPY-COLLAPSE — the
+3e-4 floor breached only in the birth transient; lag mechanically valid; τ consistent):
+the costume verdict is about the FUNCTION, not a broken reference.
+
+**The regime shift, and its instrument lesson.** All four arms live at a spread
+set-point (den ~3.3 word / ~3.5 control+null; pairwise ~4–5) that NEITHER baseline ever
+inhabited (~200× the word-baseline healthy-span mean den) — produced by cutting the
+target-side pull (the null shares it), not by the reference. The PASS constants,
+calibrated on the baseline regime's healthy spans, are cleared trivially by everything
+including the null. **The lesson, joining the instrument ladder: constants calibrated
+in one regime do not discriminate in another — every future verdict taxonomy calibrates
+IN-REGIME, on the tested loop's own healthy spans.**
+
+**The HOW columns — demoted (confound analysis), with one surviving observation.** The
+dominance flip (baselines common-dominated ~1.4e4/~294 healthy → all four arms
+differential-dominated, medians 0.11–0.17) is real in direction but NOT attributable to
+removal of the target-side term from the probe — the null's probe RETAINS the
+grad-attached target term and flips identically — and its arithmetic co-moves with
+emission distinctness (grad_diff up 5–8 orders alongside ~150–400× pairwise): the
+decomposition largely RESTATES member-distinctness in gradient units (the circularity
+ladder's shadow; no independent support beyond den/pairwise). **What SURVIVES: the two
+decompositions DISSOCIATE — every fresh arm is gradient-diff-dominated yet
+EVOCATION-common-dominated (evo_ratio medians 12–799; recurring near-copy episodes;
+horizon-end decay in three of four arms — slowref s1 the exception, logged no claim).
+The associative evocation channel stays common-dominated everywhere the routing stays
+open — the teaching axis, not the routing axis, is where the design bet must be
+decided.** Trajectory observation, no claim. Rider (verification caveat 4, carried):
+the control's evo/grad columns are OOD (its operator never trained on real tokens) and
+stay EXCLUDED from cross-arm decomposition comparisons — the dissociation is asserted
+on the three token-trained arms; the control's inside-range values are corroborative
+only.
+
+**Baseline corrections (measured under the back-filled columns):** word_terminal_s1's
+terminal pin ONSET = 75300 (7.81 periods; k-collapse 42600; two regrown dead episodes
+before the pin) — not "~80k"; marathon_ext_s0 to 500k has NO pin under the prereg rule
+(three REGROWN episodes, max 5.92 no-word periods — the K_c calibration source; den
+0.048 at horizon); the ~518k no-word self-pin remains the kick ε=0 RESUME's measurement
+(a +48k continuation), not the 500k artifact's. Named observation (logged, no claim):
+the num-continuity difference (slowref s1 continuous-weak post-acquisition vs null
+intermittent-strong; seed-inconsistent, amplitude-reversed; dedicated seeds required).
+
+**Scorer guards (EXP10 build items, from the verification):** period substitution
+requires an actual collapse cycle (the healthy-segment estimator misfires on
+non-collapsing runs — 19× down-substitution on the control, silently rescaling the K_c
+bar; vacuous here, live trap later); the PASS window scales with the used period; the
+COPY-COLLAPSE floor check goes mechanical (the scorer never consulted ref_pairwise).
+
+**THE FORK RECORD (ruled 2026-07-04): the teaching-axis discriminator runs under
+STRUCTURED VARIATION; static cells are the existing baselines.** Grounds: (1) **the
+empty-gap lesson** — a potent signal moves nothing where nothing needs moving (the
+RULED formulation; the citation, stated to what the record licenses: Stage-0 EMPTY-GAP,
+PROJECT_STATE §9/§12.C — lift ≈ 0 at every cell; at easy bands the word was provably
+inert because autonomous resolution did everything, which is the
+where-nothing-needs-moving half; per §12.E the channel was content-dead throughout, so
+Stage-0 never fielded a potent signal — the lesson is the ruling's design bet built on
+that record, not a §12.C-certified fact); the static rig gives the teaching channel
+nothing that needs teaching at long horizon; (2) **exogenous differential fuel is the
+one ledger force that is not self-consuming** (ruled verbatim; clarifier: supplied from
+OUTSIDE the v1 rows — the fuel source for row 4's design target, whose endogenous fuel
+burns up at the pin; an environment that keeps generating differences cannot be
+exhausted by the loop). **Governing line: "Reality is the teacher" — the original
+Guiding-List entry (`Guiding List.md`), cited, not duplicated.** Prereg:
+`EXP10_STRUCTURED_VARIATION_PREREG.md` — **DRAFT AT CHECKPOINT; nothing builds or runs
+until ratified. Steps 5–6 stay BLOCKED.**

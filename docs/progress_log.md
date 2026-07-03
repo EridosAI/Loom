@@ -1125,3 +1125,63 @@ trained on real tokens) — excluded from cross-arm decomposition comparisons; (
 detachnull's grad probe retains the target term (training-faithful; logged).
 
 **AT REVIEW. No canon writes; steps 5–6 blocked; the partial result awaits the ruling.**
+
+## 2026-07-04 — EXP09 RULING LANDED (FRONTIER §10.14) + EXP10 PREREG DRAFTED (at checkpoint)
+
+The one-review ruling, in canon: verdicts + screen as verified; **certified scope
+NARROWED — pull-removal prevents the pin, the reference's contribution UNDETECTED**
+(both beats kept: the prereg's pinned scope, then the null's identical margins);
+**Fork 1(a) UNRESOLVED-NOT-REFUTED**; the regime shift + its instrument lesson
+(verdict constants calibrate IN-REGIME); the HOW demotion with the evo/grad
+DISSOCIATION surviving as the teaching-axis observation; baseline corrections; scorer
+guards as EXP10 build items; the num-continuity named observation. **The fork record
+appended:** the teaching-axis discriminator runs under STRUCTURED VARIATION, static
+cells as baselines — grounds: the empty-gap lesson (a potent signal moves nothing
+where nothing needs moving; §12.C) + exogenous differential fuel, the one ledger force
+that isn't self-consuming. Governing line "Reality is the teacher" CITED to the
+original Guiding-List entry (Guiding List.md), not duplicated.
+
+**EXP10_STRUCTURED_VARIATION_PREREG.md drafted — AT CHECKPOINT, nothing builds.**
+Carries: THE UNPREDICTABILITY PIN verbatim (binding, three clauses: unpredictable as a
+sequence — no cycles/schedules, a deterministic rotation is a larger closed loop;
+uninformative about identity — nuisance ⟂ member ⟂ word ⟂ category asserted
+numerically at Step-0/manifest; learnable as a distribution — fixed recurring family,
+family-predictable never instance-predictable). Harness reconciliation: dedicated
+seeded nuisance stream — unpredictable to the system, deterministic to the harness;
+replay contract (seed + construction order + threads=1) holds. Word jiggle: i.i.d.
+scatter around FROZEN token centroids, token-only dependence, §10.11 reference
+untouched, parent→varied-speaker staged for release — #12 applied to the input
+distribution. Arms {no-detach, slowref, detachnull} × varied; static cells = existing
+artifacts, NO re-runs; **no-detach-varied = the direct test: does exogenous variation
+alone hold the ORIGINAL loop open.** Readouts: §L acquisition quality
+ACQUISITION-ALIGNED (the parked lesson now mandatory); evocation-channel decomposition
+= PRIMARY teaching axis; standing columns/panels; §10.14 scorer guards applied;
+in-regime calibration mandate. Pre-registered confound: NUISANCE LEAKAGE — numeric
+independence asserts + the nuisance-shuffle ablation. Step-0 re-validated under
+variation; manifests re-cut (independence results as data); scatter renders per
+rung/arm. §10.9 NAMED: structured backgrounds are structured-diffuseness territory —
+if the cue-floor fires here it fires BY DESIGN; the banked §10.9 analysis is the
+pickup. Checkpoint list = EXP10 §10 (8 items, incl. a possible two-stage checkpoint
+for in-regime verdict constants). **Steps 5–6 blocked; checkpoint before anything
+runs.**
+
+**Pre-commit verification of the §10.14 unit + EXP10 draft (26 agents, 3 lenses,
+per-finding adjudication): 19 confirmed findings applied.** Load-bearing: the
+empty-gap CITATION corrected (§12.C records lift ≈ 0 at EVERY cell incl. hard bands;
+the where-nothing-needs-moving half traces to the easy-band record only; §12.E scoped
+the channel content-dead throughout — the ruled line stands as the design bet, the
+citation now states what the record licenses); EXP10 §1's pre-pinned inference
+corrected to the licensed form (a varied-arm hold shows CLOSURE was necessary too —
+pull-necessity stays demonstrated; the draft's form would have contradicted
+DETACH-CONFIRMED); the two-stage verdict-constants checkpoint made REQUIRED with a
+calibration-source-distinct pin; the shuffle ablation's inference scoped
+(read-time vs train-time to checkpoint); wrong-reason outcomes DRAFTED (leakage-pass /
+pass-through variance / churn-in-costume, each with route) instead of an empty slot;
+zero-variation replay parity + guarded-scorer re-scoring added as checkpoint item 9;
+the jiggle stream brought inside the independence guards; the OOD rider and the
+three-of-four qualifier carried into canon; PASS_PENDING_SCREEN tags restored in
+§12.E. One finding OVERRULED with grounds the verifier lacked: the pin-block "glosses"
+("gets absorbed"; "creates demand without re-closing the loop") are the ruling's own
+verbatim text, not additions. One wording flagged for Jason rather than changed: "the
+one ledger force that is not self-consuming" kept verbatim as ruled, with the
+clarifier (supplied from outside the v1 rows; rows 5–7 fail for other reasons).
