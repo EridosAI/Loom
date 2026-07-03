@@ -1060,3 +1060,68 @@ story the baselines just undermined.** (4) Cross-arm ratio note (word healthy �
 no-word) logged as-is, n=1 each, nothing more. **GO: four arms at threads=1 —
 slowref_word s{0,1}, slowref_noword s0 (control), detachnull s1 (comparator) — 192000
 waves each. Verdicts to ONE review; steps 5–6 blocked.**
+
+## 2026-07-03 — EXP09 ARMS RUN + VERDICTS VERIFIED — AT ONE REVIEW (no canon until ruling)
+
+Four arms, 192k each, threads=1, from committed pins (93cf264). **Verdicts (independently
+rescored, all reproduce, no flips under period-consistent windows):** slowref_word s0 =
+PASS_PENDING_SCREEN (32/32 k>1, zero k=1 windows in the whole 192k, zero episodes);
+slowref_word s1 = same, maximal margins; slowref_noword s0 control = NO_PIN (zero k=1 in
+640 windows — no acceleration); detachnull s1 = **PASS_PENDING_SCREEN with IDENTICAL
+margins.** Adversarial verification: 35 agents, 4 lenses, per-finding adjudication — 29
+confirmed findings, all folded in below.
+
+**THE SCREEN: STOP-GRAD-IN-COSTUME — the pre-registered partial outcome FIRED.** No
+recorded column separates slowref from the null in kind (asg / den / pairwise /
+grad-ratio / occupancy all ≈); two of the three ruled screen axes returned no events
+(vacuous — stated, not counted as equal-behavior evidence); the draft "null's channel
+dies, slowref holds" was CHERRY-PICKED endpoints of a block-oscillating num column
+(null toggles dead↔strongly-alive, late alive amplitude 8–40× slowref's; horizon landed
+in a dead block) — struck. **Function certified per the pinned scope: the reference
+sustains input-sensitivity. Paradigm bet NOT certified: partial result routes to the
+design table.** Knob CERTIFIED separately (no COPY-COLLAPSE — floor breached only in
+the birth transient; lag mechanically valid; τ consistent): the costume outcome is
+about the FUNCTION, not a broken reference.
+
+**THE REGIME SHIFT (headline, not buried):** all four arms live at a spread set-point
+(den ~3.3 word / ~3.5 control+null; pairwise ~4–5) that NEITHER baseline ever inhabited
+(~200× the word-baseline healthy-span mean den 0.0162) — produced by cutting the
+target-side pull (the null shares it), not by the reference. The PASS constants were
+calibrated out-of-regime and are cleared trivially by everything including the null:
+**PASS was non-discriminating by construction in this regime; the §6 screen decides,
+and it decides costume.**
+
+**THE HOW COLUMNS — DEMOTED by confound analysis (verified):** the dominance flip
+(baselines common-dominated ~1.4e4/~294 healthy → all four arms differential-dominated,
+medians 0.11–0.17) is real in direction BUT (a) NOT attributable to probe term-removal
+— detachnull's probe RETAINS the grad-attached target term and flips identically; (b)
+its arithmetic is carried by grad_diff rising 5–8 orders CO-MOVING with emission
+distinctness (~150–400× pairwise) — the decomposition largely RESTATES member-
+distinctness in gradient units (the circularity ladder's shadow; adds no independent
+support beyond den/pairwise). Separately: the two decompositions DISSOCIATE — every
+fresh arm is gradient-diff-dominated yet EVOCATION-common-dominated (evo_ratio med
+12–799), with recurring near-copy episodes and horizon-end decay in s0/noword/null —
+the associative evocation channel stays common-dominated everywhere. Trajectory
+observations only.
+
+**Named observations (logged, no claims):** num-channel residual divergence (slowref s1
+continuous-weak post-acquisition vs null intermittent-strong; seed-inconsistent,
+amplitude-reversed — dedicated seeds required for any claim). Baseline corrections:
+word_terminal_s1 pin ONSET = 75300 (7.81 periods; k-collapse 42600; two regrown dead
+episodes before the pin), not "~80k"; marathon_ext_s0 (500k) has NO pin under the
+prereg rule — three REGROWN episodes (max 5.92 no-word periods = the K_c calibration
+source), den 0.048 at horizon; the ~518k no-word self-pin remains the KICK ε=0 RESUME's
+measurement (a +48k continuation), not this artifact's.
+
+**Instrument caveats + scorer guards (before any future use):** (1) the healthy-segment
+period estimator MISFIRES on non-collapsing runs (locks onto ambient jitter: control
+23100→1200 = 19× down-substitution, detachnull 4800→1800; silently rescales the K_c
+bar 184800→9600 — vacuous here with zero qualifying windows anywhere, a live trap
+later) — guard: substitution requires an actual collapse cycle; (2) the PASS read is
+hardcoded 32 windows and does not track substituted periods (conservative here); (3)
+COPY-COLLAPSE is procedural, not mechanical — the scorer never consults ref_pairwise
+(this dated read = the record); (4) control's evo/grad columns are OOD (operator never
+trained on real tokens) — excluded from cross-arm decomposition comparisons; (5)
+detachnull's grad probe retains the target term (training-faithful; logged).
+
+**AT REVIEW. No canon writes; steps 5–6 blocked; the partial result awaits the ruling.**
