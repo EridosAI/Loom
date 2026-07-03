@@ -885,3 +885,61 @@ discriminator (design-table input, NOT launched): resume the word-pinned state w
 ablated + kick — pockets widening ⇒ the pull closes them ⇒ anchor design = a direct
 pocket-width lever. Recorded in the EXP08 prereg tail (Position-vs-live-pull confound
 section). No other changes; design table remains open in chat; steps 5–6 blocked.
+
+## 2026-07-03 — THE DESIGN TABLE: force-ledger v1 (FRONTIER §10.13); Fork 1 → self-path #12 reference; EXP09 spec AT CHECKPOINT
+
+The design table opened from canon; first deliverable landed. **Force-ledger v1**
+canonical in §10.13 — 7 forces (3 contraction / 4 differentiation), every number traced
+to committed artifacts before writing. TWO tabled claims corrected on the record: row 3
+(constant Δ2 re-pool) was tabled "slow, designed, graceful" but the deployed rate was 0
+= no-op in every collapse run (exonerated as engine, and OFF); and the tabled row-2
+clause "persists post-death at ~4× self magnitude" was REFUTED in pre-commit
+verification — the word/self grad-split ratio reads the identical ≈4.0 in the word-FREE
+marathon (probe mask geometry: word-path probe masks all W=3 vision cells, self-path
+probe one), so 4.0× is an instrument signature, not word-pull evidence; post-death
+word-pull persistence currently has no valid observable. Structural fact surfaced: rows
+1+4 are ONE PATH (gap-3 common component contracts / differential component separates,
+self-consuming at the pin — coherent-deduced); the self-path is the one plastic loop
+THROUGH THE ASSOCIATIVE OPERATOR with no #12 reference (JEPA's stop-grad loop outside
+#12 scope).
+
+**Fork 1 RESOLVED → (a) the self-path #12 reference** (grounds in §10.13: repairs the
+violation; no new force/objective; gap-3 mismatch still flows to online weights [as
+ruled — SHARPENED by verification: via the completion/cue-side path only; canonical
+target-side gap-3 pressure is severed at every β, the EXP09 §3 honesty-block fact];
+spread stays row-5 complement on the surface mismatch). (b)/(c) parked with triggers.
+Drift guard verbatim: passes on FUNCTION, never on EMA vocabulary.
+
+**EXP09_SELF_REFERENCE_PREREG.md written — SPEC AT CHECKPOINT, nothing built or run.**
+Pins: slow copy of the vision cortex supplies the self-path reconstruction target only
+(detached; forward-only; the `_pam_target` hook point with signature extension
+[RECONCILE at build]; one code path, config-gated); build-full/pin-to-constant, β
+[RECONCILE] — slow bound vs den period; **fast bound UNMEASURED (verification catch: no
+committed acquisition-plateau clock exists; §10.12.1's 30k caution applies; in word s1
+num = 0.0 through 45k — the word association post-dates routing collapse); measured
+collapse clocks used instead (s1 transient 25.2k / sustained 42.6k)**; candidates
+9600/12000/23100 (23100 flagged likely-outside). Function test pre-registered kick-free
+(word {0,1} ≥192k; no-word control rides, pin on it = acceleration = FAIL) with a TOTAL
+outcome taxonomy re-pinned against measured spans: METASTABLE EPISODE / PIN (K_w) /
+PIN-CENSORED (control; regrown epochs to 5.9 periods on the books) / FAIL / PASS
+(flicker-tolerant calibration rule — healthy spans flicker argmax_k=1 in ~11% of
+windows; every-window forms fail 59% of measured HEALTHY placements) / NEITHER
+(pre-registered third outcome). Period-instrument discrepancy logged (entry-run 4800 @
+cadence 100 vs word_terminal_s1 panel 1500 @ cadence 300) — estimator pinned at
+checkpoint. **Honesty block (EXP09 §3):** at every β the target-side gradient into
+online vision is zero — the same topology as the detach diagnostic (β=1 = detach arm
+exactly; β=0 = frozen-at-birth; family never contains the baseline) and the detach arm
+did not pin either → a bare no-pin PASS proves nothing; the detach-null wrong-reason
+screen (EXP09 §6) is load-bearing — and its gradient-share candidate was STRUCK as
+circular in verification (member-distinct targets mechanically produce member-dependent
+probe gradients); discrimination rests on the detach-null comparator arm +
+outcome-level divergence. Decomposition observable spec'd (§7, explicitly NOT a
+certifier): common/differential energy split on the 16-member evocation set + the same
+split on the per-member teaching gradient, with probe hygiene pinned (RNG isolation —
+the grad_split idiom consumes training RNG; fixed mask geometry — the standing
+word/self ratio carries a ≈4.0 mechanical geometry factor). Baseline-replay cost
+corrected 3.5h → ~4 min measured (both baselines proposed). **Pre-commit adversarial
+verification: 32 agents / 4 lenses / per-finding independent verify; 28 raw → 23
+confirmed findings, all applied above; 5 rejected on re-derivation (incl. 3.24 traces
+via the pooled estimator sum/sum = 3.235 in marathon_s0 grad_split).** Checkpoint list
+= EXP09 §10 (8 items). Steps 5–6 stay blocked.

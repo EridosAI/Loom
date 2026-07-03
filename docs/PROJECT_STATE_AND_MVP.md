@@ -816,3 +816,25 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   Next: THE DESIGN TABLE opens from canon — first deliverable = the force-ledger;
   constraint = input-sensitivity must be SELF-SUSTAINING under the deployed flow; kick-
   not-a-candidate barred; steps 5–6 blocked.**]
+- **[2026-07-03 — THE DESIGN TABLE (FRONTIER §10.13): force-ledger v1 DELIVERED; Fork 1
+  RESOLVED → the self-path #12 reference; EXP09 spec AT CHECKPOINT.** The ledger (7
+  forces, every number traced to committed artifacts) surfaces the structural fact: the
+  engine and the teaching force are ONE PATH — the gap-3 gradient's common component
+  (contracts) vs differential component (separates, self-consuming at the pin) — and the
+  self-path is the one plastic loop with no #12 reference. Fork 1 → (a): a slow copy of
+  the vision cortex supplies the self-path reconstruction target (detached reference,
+  not co-developer; build-full/pin-to-constant, single fixed lag β [RECONCILE]; no new
+  force or objective; word path untouched). Function test pre-registered KICK-FREE
+  (word seeds {0,1} ≥192k = 2× the 96k terminal clock; no-word rides as control; FAIL =
+  pin on any arm; PASS literal-form pinned, necessary-not-sufficient). Honesty block on
+  record: the design shares the detach diagnostic's gradient topology — the detach-null
+  wrong-reason screen is load-bearing before any PASS is trusted. Decomposition
+  observable ruled (common/differential split on evocations + gradient — the
+  contraction/teaching ratio as a trajectory). Parked with triggers: (b) spread
+  re-weight; (c) denser anchor. Pre-commit adversarial verification applied (23
+  confirmed findings — incl. the tabled row-2 "~4× post-death word pull" REFUTED as
+  probe mask geometry; the β fast bound demoted to UNMEASURED; the function-test
+  literal forms re-pinned flicker-tolerant/censoring-aware; the gradient-share
+  discriminator struck as circular). **NOTHING BUILDS OR RUNS until the EXP09 §10
+  checkpoint list is ratified. Steps 5–6 stay blocked.** Spec:
+  `EXP09_SELF_REFERENCE_PREREG.md`.]

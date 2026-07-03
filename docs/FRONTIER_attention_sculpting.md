@@ -937,3 +937,126 @@ a dataset. Pre-registered pass over existing artifacts: what separates SUSTAINED
 PIN/EMBER(10)? Candidates: post-kick t=0 magnitude, state, ε, early-window trend. A found
 correlate converts "stochastic" into "conditioned" and feeds the design table directly.
 **Then: the design table opens from canon, first deliverable = the force-ledger.**
+
+## §10.13 — THE DESIGN TABLE (2026-07-03): force-ledger v1; Fork 1 RESOLVED → the self-path #12 reference
+
+Opened from canon (§10.12–§10.12.3 + PROJECT_STATE §12.E 07-03 + the EXP08 prereg tail
+incl. the position-vs-live-pull confound). First deliverable, ratified as tabled with
+every number traced to committed artifacts before this write:
+
+**FORCE-LEDGER v1** — force | direction | surface | measured | status.
+
+*Contraction:*
+1. **Self-path target-side pull** (the gap-3 common component, no-detach) | contracts |
+   routing/assignment | NECESSARY for collapse (detach arm, fixed-α contrast); active
+   from early (the standing collapse-regrow oscillation, den period ≈4800) through
+   terminal lock late (word ~96k s0 / sub-floor ~80k s1; no-word ~518k unkicked) |
+   demonstrated-necessary; driver identity credibly-the-self-path (magnitude
+   dissociation: the marathon holds word/self ≈3.24 with no terminal collapse at
+   matched cap).
+2. **Word-anchor pull** | contracts | routing → 2 category targets | pure accelerant —
+   5.4× (terminal clocks 518k/96k) and 4.8× (den periods 23100/4800) converging — +
+   pin-deepener (asg_dist ~1e-5 locked vs ~0.08 floating) | demonstrated; the
+   live-pull-during-recovery reading OPEN (the position-vs-live-pull confound;
+   discriminator pre-named, unrun). *(A tabled fourth clause — "persists post-death at
+   ~4× self magnitude" — was REFUTED in pre-commit verification: the word/self
+   grad-split ratio reads the identical ≈4.0 in the word-FREE marathon (probe mask
+   geometry: the word-path probe masks all W=3 vision cells, the self-path probe one).
+   Post-death word-pull persistence currently has NO valid observable.)*
+3. **Constant Δ2 re-pool** | contracts (designed occupancy decay) | occupancy |
+   **deployed rate 0 → no-op in every collapse run**; exonerated as engine | settled.
+   (Correction from the tabled draft, which read "slow, designed, graceful": the force
+   is designed-graceful but was OFF in every run on the books.)
+
+*Differentiation:*
+4. **Gap-3 differential component** (intra-group disagreement) | separates | the SAME
+   path as row 1 | path potency demonstrated only in the destructive direction
+   (AGGREGATE target-side — the detach arm severs word-cued and self-cued maskings
+   alike; the self-path/differential attribution is credible-deduced, mirroring row 1's
+   status split, never demonstrated); fuel = existing routing differences →
+   SELF-CONSUMING at the pin (input-invariant assignment strips gradients of their
+   input-differential component — coherent-deduced; the kick data locates the
+   CONSEQUENCE: a mostly-absorbing flow with stochastic, position-conditioned
+   re-amplification pockets — not the mechanism) | **THE DESIGN TARGET.**
+5. **Spread term** | separates | emissions | 10× under-weighted (α=0.1 vs gain 1.0);
+   partial preventer 2/3 on independent evidence; readout circularity caught
+   (manufactures the variance den measures; seed-0 counterexample: den 2.72 with zero
+   word-axis structure) | measured-weak; **surface mismatch: emission variance ≠ routing
+   sensitivity** (the failure is assignment-side; spread acts on emissions).
+6. **λ2 tie schedule** | separates (early) | capacity envelope | holds early, → 0 after
+   t2=1200 by design; ties arm UNINFORMATIVE (ε=0.1 overshot the 0.05 capacity-open
+   threshold) | designed-zero late; re-dose parked on-call (ε<0.05).
+7. **Anchor as #12 reference** (frozen word) | separates (reference) | word channel |
+   channel alive and DECOUPLED from the dead content at full horizon (s0: num declines
+   through plateaus 46→…→4.97); 2 frozen points did not hold 16 members open — the
+   2-target pull floors at one point (translates the collapsed point rather than
+   re-spreading it; coherent-deduced); density lever UNMEASURED at matched acquisition
+   (ladder flat at 30k = uninformative; acquisition-aligned reads parked) |
+   partially-failed-as-deployed / unmeasured-as-lever.
+
+**Row property (all rows): timing multiplies** — pocket width early ≫ late (the
+correlate hunt); the prevention budget concentrates early.
+
+**The structural fact the ledger surfaces: rows 1 and 4 are ONE PATH.** The engine and
+the teaching force are the same gradient, split into a common component (contracts) and
+a differential component (separates). Collapse = the common component winning; the
+differential component burns the very differences it feeds on — self-consuming at the
+pin (coherent-deduced, §10.12.2; what is LOCATED-demonstrated is the assignment-side
+dead-dictionary and, from the kick data, the mostly-absorbing flow — the consequence,
+not the stripping mechanism). And the self-path is the one plastic loop THROUGH THE
+ASSOCIATIVE OPERATOR (the PAM target path) with no #12 reference — vision predicting
+vision, both sides the same weights (JEPA's within-member stop-grad loop sits outside
+#12's scope: exonerated, not reference-bearing). The word path had its reference; its
+channel survived to the end.
+
+**Fork 1 — what supplies self-sustenance: RESOLVED → (a) the self-path #12 reference**
+(ruling, 2026-07-03). Grounds: (1) repairs the diagnosed violation rather than
+counter-weighting it — the self-path is the one plastic loop through the associative
+operator with no slower reference; (2) no new force, no new objective — the reference
+re-times an existing path; (3) gap-3 intact — the mismatch still flows to the online
+weights; the word path untouched *[as ruled; SHARPENED by pre-commit verification: the
+mismatch reaches the online weights via the completion/cue-side path only — the
+canonical target-side gap-3 pressure is severed at every β (EXP09 §3 honesty block);
+whether lagged-content targets re-supply the teaching function through that path is
+precisely what the EXP09 §6 screen must certify before any PASS is trusted]*; (4)
+SIGReg-class spread stays the row-5 COMPLEMENT, not the fix — the surface mismatch
+(emission variance ≠ routing sensitivity; the seed-0 counterexample) rules it out as
+primary. **Parked with triggers:** (b) re-weight existing differentiation forces (spread
+→ parity) — trigger: (a) FAILs its function test; any use passes the circularity guard
+(variance statistics cannot certify differentiation) and the manufacturing-class screen.
+(c) denser anchor — triggers: the acquisition-aligned ladder reads (pre-named,
+§10.12.1), and/or the word-ablated-resume discriminator resolving the live-pull reading
+(if the pull closes pockets, anchor design becomes a direct pocket-width lever). **Drift
+guard verbatim: the most-ML-familiar move on the table — it passes on FUNCTION
+(input-sensitivity self-sustaining under the deployed flow, kick-free), never on the EMA
+vocabulary.**
+
+**The decomposition observable (ruled with the fork): "the common part" becomes a
+number.** A standing read-only column pair: the 16-member evocation set split into
+population-mean (common) vs residual (differential) energy, and the same split on the
+per-member teaching gradient — the contraction/teaching ratio as a TRAJECTORY (where it
+sits, when it tips, what (a) does to it). Spec: EXP09 §7.
+
+**Design pins + the pre-registered function test: `EXP09_SELF_REFERENCE_PREREG.md` —
+SPEC AT CHECKPOINT.** Nothing is built or run until the checkpoint list (EXP09 §10) is
+ratified. The spec's honesty block (EXP09 §3) records the guard interaction faced
+directly: the design shares the detach diagnostic's gradient topology (zero target-side
+flow into online vision at every β; β=1 degenerates to the detach arm, β=0 to a
+frozen-at-birth target; the family never contains the baseline) — so a bare no-pin PASS
+proves nothing by itself, and the detach-null wrong-reason screen (EXP09 §6) is
+load-bearing before any PASS is trusted. Steps 5–6 stay BLOCKED.
+
+**Pre-commit adversarial verification (2026-07-03; 32 agents, 4 lenses, per-finding
+independent verify): 23 confirmed findings applied before this section's first commit.**
+The load-bearing catches, on the record: the row-2 "~4× post-death word pull" clause
+REFUTED (probe mask geometry — the word-free marathon shows the identical ratio; the
+standing word/self grad-split ratio carries that geometry factor as an instrument
+caveat); the EXP09 fast bound DEMOTED to unmeasured (no committed acquisition-plateau
+clock exists; §10.12.1's 30k caution applies; in word s1 the word-channel association
+post-dates routing collapse — num 0.0 through 45k); the function-test literal forms
+re-pinned flicker-tolerant and censoring-aware against measured healthy/terminal spans
+(healthy phases flicker argmax_k=1 in ~11% of windows; the no-word regime regrows from
+epochs up to 5.9 periods); the teaching discriminator's gradient-share candidate STRUCK
+as circular (member-distinct targets mechanically produce member-dependent probe
+gradients); ground (3) sharpened as above; the baseline-replay cost corrected 3.5h →
+~4 minutes (measured timestamps). Full spec: `EXP09_SELF_REFERENCE_PREREG.md`.
