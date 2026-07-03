@@ -124,6 +124,13 @@ class Stage0Loop:
         slot to amputate the gap-3 target-side pull — a DIAGNOSTIC, never the deployed rig)."""
         return content
 
+    def _vary_word(self, e_word: torch.Tensor, tokens: torch.Tensor) -> torch.Tensor:
+        """Presentation-side word hook: the word emission as PRESENTED in the training window.
+        Identity everywhere except exp10's varied arms (frozen-centroid jiggle — #12 applied to
+        the input distribution; the centroid map itself is never touched). Probe/evocation paths
+        call ``word.emit`` directly and stay clean by construction."""
+        return e_word
+
     # ------------------------------------------------------------------ setup
     @torch.no_grad()
     def _build_codebook(self):
@@ -146,7 +153,7 @@ class Stage0Loop:
         wl = self._word_label(b, a)                         # member -> word label (category in Stage-1)
         tokens = torch.tensor([self.curric.word_token(int(wl[w]), no_word=no_word)
                                for w in range(cfg.W)])
-        e_word = self.word.emit(tokens)                    # (W, D) frozen
+        e_word = self._vary_word(self.word.emit(tokens), tokens)   # (W, D) frozen (identity hook)
         content = torch.stack([e_vis, e_word], dim=1)      # (W, n_slots, D), clean targets
 
         if force_mask is None:

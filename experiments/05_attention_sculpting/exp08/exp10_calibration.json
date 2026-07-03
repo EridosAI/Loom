@@ -1,0 +1,165 @@
+{
+  "jiggle": {
+    "per_seed": [
+      {
+        "seed": 0,
+        "word_seed": 1,
+        "d_min": 1.4019,
+        "sigma_100pct": 0.16
+      },
+      {
+        "seed": 1,
+        "word_seed": 2,
+        "d_min": 1.0899,
+        "sigma_100pct": 0.12
+      },
+      {
+        "seed": 2,
+        "word_seed": 3,
+        "d_min": 1.1321,
+        "sigma_100pct": 0.12
+      },
+      {
+        "seed": 10,
+        "word_seed": 11,
+        "d_min": 0.8942,
+        "sigma_100pct": 0.08
+      },
+      {
+        "seed": 11,
+        "word_seed": 12,
+        "d_min": 1.0458,
+        "sigma_100pct": 0.1
+      }
+    ],
+    "sigma_100pct_min": 0.08,
+    "sigma_star": 0.04,
+    "d_min_min": 0.8942,
+    "fraction_of_dmin_min": 0.0447,
+    "n_samples_total_per_seed": 200000,
+    "note": "sigma* = half the MINIMUM cross-seed 100%-NC threshold (all run seeds, 3 tokens incl. null, ~66.7k samples/token per seed); synthetic balanced sample \u2014 re-affirmed per-arm at Step-0/manifest"
+  },
+  "rungs": [
+    {
+      "mult": 0.0,
+      "total_rms": 0.0,
+      "coeff_std": 0.0,
+      "oracle_rec": [
+        0.959,
+        0.957,
+        0.9512
+      ],
+      "oracle_mean": 0.9557,
+      "ablation_collapsed": [
+        true,
+        true,
+        true
+      ],
+      "easy_ceiling": 1.0,
+      "bar": 0.625,
+      "clears": true
+    },
+    {
+      "mult": 0.5,
+      "total_rms": 0.25,
+      "coeff_std": 0.125,
+      "oracle_rec": [
+        0.959,
+        0.957,
+        0.9531
+      ],
+      "oracle_mean": 0.9564,
+      "ablation_collapsed": [
+        true,
+        true,
+        true
+      ],
+      "easy_ceiling": 1.0,
+      "bar": 0.625,
+      "clears": true
+    },
+    {
+      "mult": 1.0,
+      "total_rms": 0.5,
+      "coeff_std": 0.25,
+      "oracle_rec": [
+        0.957,
+        0.959,
+        0.9512
+      ],
+      "oracle_mean": 0.9557,
+      "ablation_collapsed": [
+        true,
+        true,
+        true
+      ],
+      "easy_ceiling": 1.0,
+      "bar": 0.625,
+      "clears": true
+    },
+    {
+      "mult": 2.0,
+      "total_rms": 1.0,
+      "coeff_std": 0.5,
+      "oracle_rec": [
+        0.959,
+        0.9551,
+        0.9512
+      ],
+      "oracle_mean": 0.9551,
+      "ablation_collapsed": [
+        true,
+        true,
+        true
+      ],
+      "easy_ceiling": 1.0,
+      "bar": 0.625,
+      "clears": true
+    }
+  ],
+  "independence": {
+    "n": 2000,
+    "nuis_obs": 0.0274,
+    "nuis_null99": 0.0755,
+    "nuis_ok": true,
+    "jig_obs": 0.0567,
+    "jig_null99": 0.0817,
+    "jig_ok": true,
+    "axes_identity_dot": 6.7e-07
+  },
+  "proposed": {
+    "k_axes": 4,
+    "coeff_std": 0.5,
+    "rung_mult": 2.0,
+    "jiggle_sigma": 0.04,
+    "cal_seeds": [
+      10,
+      11
+    ],
+    "verdict_seeds": [
+      0,
+      1,
+      2
+    ],
+    "horizons": {
+      "nodetach": 160000,
+      "ref": 192000
+    }
+  },
+  "stage_one_provenance": {
+    "jiggle_seeds": [
+      0,
+      1,
+      2,
+      10,
+      11
+    ],
+    "oracle_seeds": [
+      0,
+      1,
+      2
+    ],
+    "nuis_seed_base": 77000,
+    "note": "stage-one calibrations run on synthetic/oracle draws (jiggle now cross-seed incl. cal seeds); the {10,11} dedication is for STAGE-TWO in-regime verdict constants"
+  }
+}

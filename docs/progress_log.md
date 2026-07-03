@@ -1185,3 +1185,63 @@ three-of-four qualifier carried into canon; PASS_PENDING_SCREEN tags restored in
 verbatim text, not additions. One wording flagged for Jason rather than changed: "the
 one ledger force that is not self-consuming" kept verbatim as ruled, with the
 clarifier (supplied from outside the v1 rows; rows 5–7 fail for other reasons).
+
+## 2026-07-04 — EXP10 CHECKPOINT PINS RULED → RESOLVED + WIRED + PARITY PASSED — at the final pre-run read
+
+Ruling flags: empty-gap citation correction RATIFIED; closure-necessary-too inference
+RATIFIED ("good catch — would have collided with DETACH-CONFIRMED"); outside-the-v1-rows
+clarifier CONFIRMED; pin-clause overrule RATIFIED (chat provenance). Nine checkpoint
+pins ruled and EXECUTED (full record: EXP10 prereg §11; `exp10_arms.py`;
+`exp08/exp10_calibration.json`; `exp08/exp10_static_rescore.json`):
+
+**Wired (one code path):** `_vary_word` identity-default hook added to Stage0Loop
+build_cells (the ONLY loop.py change; identity everywhere except varied arms);
+NuisanceStimulus = ConflictStimulus + the structured family (K=4 complement-block axes
+@ Qᵀ — exactly ⟂ identity, measured 6.7e-7) or the isotropic discriminator at matched
+power (1.3% verified); per-wave i.i.d. draws counter-keyed on the DEDICATED stream —
+a varied arm shares BIT-IDENTICAL stim noise + masks with its static counterpart
+(single-variable discipline; probe-shift caveat recorded). Three varied loops by MRO
+mixin (word / slowref / detachnull). Smoke green (orthogonality, frozen anchor under
+jiggle, MROs, power match).
+
+**Calibrated (artifact-derived, never re-typed):** jiggle d_min 1.4019, σ_100% = 0.16
+empirical (200k/token), σ* = 0.08 (5.7% of d_min, parent-voice); rung table ×0/0.5/1/2
+→ (b) oracle 0.9557/0.9564/0.9557/0.9551 vs bar 0.625 — the ⟂ construction leaves the
+ceiling unbound in range; PROPOSED operating rung ×2.0 (coeff_std 0.5 = total RMS 2×
+r_category); independence asserts PASSING at the proposed point (nuis 0.0274 vs null99
+0.0755; jiggle-residual 0.0567 vs 0.0817).
+
+**PARITY GATE PASS (pin 9a, the hard gate):** the varied code path with variation
+zeroed reproduces committed word_terminal_s1 BIT-IDENTICALLY (375 windows; standing
+columns + grad_split + occupancy; the loop.py hook, the mixin MRO, and
+NuisanceStimulus all exercised). **Guarded scorer v2 re-score (pin 9b): all four EXP09
+verdicts UNCHANGED; guard (a) fired correctly on the two non-collapsing cells
+(substitution GATED — the 19×/2.7× down-substitutions neutralized); baselines
+FAIL_PIN (word_terminal) / NO_PIN (marathon_ext, legitimate 57000 substitution — the
+run has collapse cycles).**
+
+**At the read: ratify ×2.0 rung / σ*=0.08 / K=4 / seed budget → GO. Then: calibration
+arm (seeds {10,11}, stage-two in-regime constants) → Step-0 (a)/(c) re-validation
+under variation → verdict arms {nodetach_varied, slowref_varied, detachnull_varied,
+nodetach_isotropic}. Steps 5–6 stay BLOCKED.**
+
+**Pre-read verification of the resolution surface (22 agents, 3 lenses): 15 confirmed
+findings applied — one changed a RATIFICATION NUMBER before the read could consume it:
+the jiggle calibration was seed-0-only and the 100%-NC threshold is seed-dependent
+(0.16 / 0.12 / 0.12 / 0.08 / 0.10 across run seeds; weakest basin d_min 0.894 at cal
+seed 10) — the drafted σ*=0.08 would have sat at 1.0× the weakest seed's threshold.
+RECALIBRATED CROSS-SEED: σ* = 0.04 = min-threshold/2 (4.5% of the weakest d_min), the
+/2 rule preserved.** Also applied: sample-size wording corrected (200k TOTAL per seed,
+~66.7k/token — not per-token); independence asserts RE-SCOPED to a calibration-time
+machinery demonstration (the binding per-arm manifest-time asserts — realized pairing
+of actual stream windows vs actual nuisance keys + the deployed jiggle residual + the
+centroid-only regression check — land with the runner); cal/verdict seeds + stage-one
+provenance now IN the artifact (the ruled "pinned in artifact" was unimplemented);
+pin-4 SHARPENED (primary reads are nuisance-marginalized by construction — the
+read-time shuffle cannot fire on them; it operates on nuisance-riding reads;
+flag for ratification); isotropic match noted scale-exact by construction (verified
+at 0.25); parity zip length assert added; varied-arm resume caveat recorded (no
+resume-grade save — run start-to-finish); execution-status honestly re-scoped (pins
+1,2,6,7,8,9 executed+wired; pin 3 calibrated, binding asserts with the runner; pins
+4–5 ruled, constructions with the runner). Artifact regenerated
+(`exp10_calibration.json` with per-seed jiggle table + seed pins + provenance).
