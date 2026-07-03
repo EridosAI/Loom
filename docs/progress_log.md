@@ -1042,3 +1042,21 @@ Pairwise floor sources (SS6.1, Jason pins at the read): healthy min 0.00177 (wor
 
 **Status: everything before the final pre-run read is DONE. Steps 5–6 blocked; no arms
 run until the read.**
+
+## 2026-07-03 — FINAL PRE-RUN READ: GO. Floor 3e-4 ratified; thread contract generalized; PASS-scope pre-registered; four arms LAUNCHED
+
+The ruling: (1) §6.1 pairwise floor RATIFIED at 3e-4 (≥3× below weakest healthy min,
+≥8× above terminal); COPY-COLLAPSE the named outcome. (2) Thread catch RATIFIED and
+GENERALIZED — the determinism contract (seed + construction order + threads) added to
+the standing build discipline (§"discipline to hold", PROJECT_STATE): every rig
+claiming replay pins and records its thread count; future rigs inherit it. (3)
+PRE-REGISTERED BEFORE WAVE 0, because the read will tempt it: the baselines showed
+healthy phases ~10⁴:1 common-dominated — whatever held routing open, it was NOT
+differential gradient winning a balance; **a slowref PASS certifies "the reference
+sustains input-sensitivity" and nothing more — the HOW (restored differential fuel vs
+changed common geometry vs something else) is a separate finding read off the
+decomposition columns, never assumed. A PASS does not silently validate the balance
+story the baselines just undermined.** (4) Cross-arm ratio note (word healthy ≈50×
+no-word) logged as-is, n=1 each, nothing more. **GO: four arms at threads=1 —
+slowref_word s{0,1}, slowref_noword s0 (control), detachnull s1 (comparator) — 192000
+waves each. Verdicts to ONE review; steps 5–6 blocked.**

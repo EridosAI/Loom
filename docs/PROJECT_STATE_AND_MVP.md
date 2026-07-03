@@ -656,6 +656,12 @@ foundation they require.
 - **Pinned constants are pins, not stand-ins** — build the real mechanism, pin the variable
   part, release later.
 - **Test against the twelve functions, not vocabulary**, as the mechanism hardens.
+- **The determinism contract is seed + construction order + TORCH THREAD COUNT**
+  (measured 2026-07-03, exp09 wiring: 16 threads perturbs floats ~1e-9 via
+  parallel-reduction order — visible only where column quantization is percent-scale;
+  1–2 threads byte-identical). Every rig that claims replay/bit-faithfulness pins the
+  thread count and records it in its artifacts (`torch_num_threads`). General lesson,
+  not an EXP09 footnote — future rigs inherit it.
 
 ---
 

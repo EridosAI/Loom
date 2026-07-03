@@ -175,6 +175,16 @@ substitution is LOGGED**; estimator returns None → pinned constant.
 §6 decides nothing — and the §3.4 partial outcome (stop-grad in costume) is live even
 on PASS.
 
+**WHAT A PASS CERTIFIES — pinned at the final pre-run read (Jason, 2026-07-03), before
+wave 0, because the decomposition read will tempt more:** the replayed baselines showed
+healthy phases running ~10⁴:1 common-dominated — whatever held routing open in the
+healthy regime, it was NOT differential gradient winning a balance. Therefore: **if the
+slowref arms PASS, the certified claim is "the reference sustains input-sensitivity" —
+nothing more. HOW it sustains it (restored differential fuel vs changed common geometry
+vs something else) is read off the decomposition columns as a SEPARATE finding, never
+assumed.** A PASS does not silently validate the balance story the baselines just
+undermined.
+
 ## 6. THE WRONG-REASON SCREEN — the detach-null comparator (load-bearing)
 
 Null model = the exp08 detach arm run at the function-test horizon with the same
@@ -187,10 +197,12 @@ mechanically produce member-dependent probe gradients):
    warm-up), `‖θ_slow − θ_slow(0)‖` (freeze-equivalence watch, against the stored
    birth snapshot), `‖slow_target − online_target‖` (target space, per probe window),
    and **slow-copy target PAIRWISE distinctness across the 16 members = a standing
-   column with a pre-registered floor `[floor set at the final pre-run read from the
-   replayed-baseline healthy-span value]`. COPY-COLLAPSE (pairwise distinctness below
-   floor) = a NAMED OUTCOME — the reference failing at its own level — never silently
-   absorbed.** These certify the KNOB, not the function.
+   column with the floor RESOLVED at the final pre-run read (Jason, 2026-07-03):
+   floor = 3e-4** — geometric placement ≥3× below the weakest replayed-baseline
+   healthy minimum (0.000907, no-word) and ≥8× above the word terminal (1.1e-5).
+   **COPY-COLLAPSE (pairwise distinctness below floor) = a NAMED OUTCOME — the
+   reference failing at its own level — never silently absorbed.** These certify the
+   KNOB, not the function.
 2. **The teaching discriminator (RESOLVED): the detach-null comparator arm +
    OUTCOME-LEVEL divergence** — input-sensitivity trajectories (asg_dist / argmax_k),
    regrow-after-episode behavior, occupancy; differences in what the SYSTEM does, not
