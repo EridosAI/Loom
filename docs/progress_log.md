@@ -873,3 +873,15 @@ counterexamples both ways); ε none. "Stochastic" → "conditioned by position, 
 within position"; no controllable rescue lever — sharpens PREVENTION-PRIMARY.** Then
 design table from canon, first deliverable = the force-ledger. Full record: FRONTIER
 §10.12.3 + the prereg hunt record.
+
+## 2026-07-03 — Position-vs-live-pull confound recorded (flagged at close, landed post-compaction)
+
+Jason's close-ratification flag, ruled after the 7a0db83 close message and landed here:
+the STATE correlate (SUSTAINED 5 no-word / 1 word) is confounded at n=2 states — reading
+(a) position/pocket-width (as recorded) vs reading (b) the word's ongoing pull during
+resume consuming re-seeded sensitivity in real time. Both consistent with shared fate;
+both say intervene early; the anchor's pull is itself a flow term. Pre-named cheap
+discriminator (design-table input, NOT launched): resume the word-pinned state with word
+ablated + kick — pockets widening ⇒ the pull closes them ⇒ anchor design = a direct
+pocket-width lever. Recorded in the EXP08 prereg tail (Position-vs-live-pull confound
+section). No other changes; design table remains open in chat; steps 5–6 blocked.

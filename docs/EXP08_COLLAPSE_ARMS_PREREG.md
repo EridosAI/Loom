@@ -258,3 +258,19 @@ SUSTAINED(6) vs PIN/EMBER(10), FLICKER(8) excluded (2 right-censored, caveat).
 position."** No candidate turns rescue into a controllable mechanism — consistent with,
 and sharpening, PREVENTION-PRIMARY (the design-table input: whatever widens pockets, apply
 it EARLY; nothing found that makes late rescue reliable).
+
+### Position-vs-live-pull confound (Jason, 2026-07-03 — flagged at close, on the record)
+
+The STATE correlate is confounded at n=2 states. The SUSTAINED split (5 no-word / 1 word)
+has two readings:
+- **(a) position** (as recorded above): shallower pin = wider pockets — pocket width is a
+  property of where the state sits on the shared trajectory.
+- **(b) live pull** (the live alternative): the word's ONGOING pull during the resume
+  actively consumes re-seeded sensitivity — the accelerant working against rescue in real
+  time, not just having dug a deeper starting pin.
+
+Both readings are consistent with the shared-fate picture and both point the same way for
+design (intervene early; the anchor's pull is itself a flow term). **Pre-named cheap
+discriminator (a design-table input, NOT launched):** resume the word-pinned state with
+the word ABLATED + kick — if pockets widen, the pull closes them, and anchor design
+becomes a pocket-width lever directly.
