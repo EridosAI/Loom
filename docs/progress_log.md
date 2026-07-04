@@ -1457,3 +1457,37 @@ loose-thread control (perturbed-same-min-sep vs tighter). **DECISION FOR JASON: 
 the anchor vs move to the routing-side counter-force (manufacturing-class last resort).**
 Steps 5–6 blocked; no arm a fix. Artifacts: exp08/cov*_s*.json (40), exp11_verdicts.json
 (HONEST_READ; period-normalized RETRACTED), exp11_preflight.json.
+
+## 2026-07-04 — EXP11 INCONCLUSIVE → static-frame line RETIRED; continual time promoted to primary frontier
+
+EXP11 (anchor-coverage ladder, acquisition-aligned): verified INCONCLUSIVE — the anchor lever is
+UNMEASURED (the matched-separation control was non-uniform: closest-pair rotation perturbs v2
+heavily, v16 barely; its "flatness" was construction artifact, not a null). Natural-ladder rise is
+real (asg_dist 0.033→0.179, v2→v16, 5.4×) but coverage ∥ min-separation ∥ onset — unattributable.
+"Tighter min-sep lever" STRUCK (no within-rung dose-response; collinearity in a mask). v2
+re-perturbation loose thread (~4× survival, unidentified channel) NAMED, not claimed. Scorer catch
+canonized: per-rung den-period estimator fallback-dominated → verdict window retracted for the
+estimator-free full-post-onset window. Third campaign where verification flipped a surprising
+draft verdict (EXP08, EXP10, EXP11).
+
+**RULING — wrap, not redo.** Clean-redo design BANKED as pickup (uniform matched-min-sep or
+D-scaling; fixed common post-onset window; ≥ seed floor; loose-thread disambiguation arm); the
+coverage question re-poses inside EXP12 where the answer is load-bearing. Counter-force stays
+parked (trigger = measured exhaustion; inconclusive-by-flawed-control is not that, and its static
+venue is retired).
+
+**Static-line ledger (canon: FRONTIER wrap unit).** Proved: channel carries end-to-end (first live
+word→category evocation, Gate 4); dead-dictionary localization (assignment-side, capacity open,
+prototypes alive); engine = no-detach target-side pull (necessity demonstrated); word = ~5×
+accelerant + pin-deepener, fate shared end-to-end; prevention-primary / recovery-unreliable;
+stop-grad-in-costume on two regimes (Fork 1(a) UNRESOLVED-NOT-REFUTED); the instrument arsenal +
+determinism contract (seed + construction order + threads=1). Manufactured [COHERENT-DEDUCED, not
+demonstrated — the motivating hypothesis EXP12 tests]: task degeneracy — i.i.d. draws make the
+deck-average nearly optimal, starving member-conditional routing by construction. Gate steps 5–6
+RETIRE with the line; the teaching test re-poses in the continual-time rig at its own gates.
+
+**Next: EXP12 (scene persistence — minimal temporal fabric).** Pre-committed: shuffled-dwell
+discriminator from day one; the unpredictability pin (3 clauses) carries; anchor arm carries the
+banked design; acquisition-aligned reads, in-regime calibration, guarded scorer v2, panels. Opening
+fork for the next session: what within-dwell evolution is, mechanically. Handoff:
+`docs/HANDOFF_next_chat_continual_time.md`.

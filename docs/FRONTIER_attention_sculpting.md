@@ -1370,3 +1370,56 @@ the loose-thread control (perturbed-but-same-min-sep vs tighter) to identify the
 channel. **The decision — clean-redo the anchor lever vs move to the routing-side
 counter-force (the manufacturing-class last resort) — is Jason's ruling.** Steps 5–6 stay
 BLOCKED; no arm was a fix.
+
+## §10.18 — THE STATIC-LINE WRAP (2026-07-04): the static-frame line is RETIRED; continual time is the primary frontier
+
+**Ruling (Jason): WRAP, not redo.** EXP11's inconclusive-by-flawed-control (§10.17) is not the
+"measured exhaustion" that would trigger the routing-side counter-force, and the anchor lever is
+worth measuring — but not in the static frame. The clean-redo design is BANKED as a pickup and the
+coverage question RE-POSES inside the continual-time rig (EXP12) where its answer is load-bearing.
+The counter-force stays PARKED (manufacturing-class last resort). **Gate steps 5–6 RETIRE with the
+static line** (they were static-rig gates; the teaching test re-poses at its own gates in the
+continual-time rig).
+
+**THE STATIC-LINE LEDGER — what the exp05–exp11 static-frame program established.**
+
+*Proved (demonstrated, on the record):*
+- The evocation channel CARRIES end-to-end — the first live word→category evocation in the deployed
+  rig (Step-0(c), seed 2, cat_div 1.423 / dist 0 / share 1.000; §10.12 Gate-4 era).
+- The collapse is LOCALIZED: capacity-open ASSIGNMENT-side dead-dictionary (argmax_k=1 sustained,
+  Δ2 depth open, prototypes alive) — §10.12.2.
+- The ENGINE is the gap-3 no-detach TARGET-side pull (necessity demonstrated by the detach arm) —
+  §10.12.1.
+- The WORD is a ~5× accelerant + pin-deepener; fate shared end-to-end (no-word self-pins ~518k) —
+  §10.12.2/§10.12.3.
+- The basin is PREVENTION-PRIMARY / RECOVERY-UNRELIABLE (mostly-absorbing flow with stochastic
+  position-conditioned re-amplification pockets) — §10.12.3.
+- Two design regimes (EXP09 slow-reference, EXP10 structured variation) both return
+  STOP-GRAD-IN-COSTUME — the intervention is indistinguishable from its detach-null; **Fork 1(a)
+  UNRESOLVED-NOT-REFUTED** on two independent regimes — §10.14/§10.15.
+- The instrument arsenal (windowed estimators; dynamics panels; den = one-sided collapse-floor
+  tripwire; the guarded-v2 scorer with force_period; acquisition-aligned reads; in-regime
+  calibration; the manifest-time independence asserts) + the DETERMINISM CONTRACT (seed +
+  construction order + torch threads=1, recorded).
+
+*Manufactured — the collapse's ROOT, [COHERENT-DEDUCED, NOT DEMONSTRATED — the motivating
+hypothesis EXP12 tests, not a proved result]:* **task degeneracy.** The stimulus draws members
+i.i.d. uniform, so the deck-average (mean over all members) is nearly optimal for the masked-slot
+reconstruction — member-CONDITIONAL routing buys almost nothing against the loss, so it is not
+reinforced and collapses to the dead-dictionary mean. On this reading the whole static-frame
+collapse is a property of the i.i.d. TASK, not of the operator, the anchor, or the reference —
+which is why every target-side / input-side / reference intervention hit the same wall. **Status
+tag binding: this is a deduced synthesis; it is the HYPOTHESIS the continual-time discriminator
+tests (persistence breaks the i.i.d. degeneracy — if member-conditional routing survives with
+dwells but not with shuffled dwells, task degeneracy is confirmed as the root). Do not cite as
+demonstrated.**
+
+**NEXT — EXP12 (scene persistence: the minimal temporal fabric).** The continual-time rig makes the
+task non-i.i.d. by giving members DWELL (persistence across waves). Pre-committed now: the
+**SHUFFLED-DWELL DISCRIMINATOR from day one** (dwelled vs shuffled-dwell i.i.d. control — the direct
+test of the task-degeneracy hypothesis); the UNPREDICTABILITY PIN (three clauses) carries; the
+ANCHOR arm carries the banked clean-redo design (uniform matched-min-sep, fixed common window, seed
+floor, loose-thread disambiguation); acquisition-aligned reads, in-regime calibration, guarded
+scorer v2, dynamics panels all carry. **Opening fork for the next session: what within-dwell
+evolution IS, mechanically.** Handoff: `docs/HANDOFF_next_chat_continual_time.md`. Steps 5–6 retired;
+no arm is a fix.

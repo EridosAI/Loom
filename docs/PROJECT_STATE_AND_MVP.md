@@ -933,3 +933,18 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   (uniform matched-min-sep control + fixed common window + more seeds) vs move to the
   routing-side counter-force (manufacturing-class last resort).** Steps 5–6 blocked; no
   arm a fix.]
+- **[2026-07-04 — STATIC-FRAME LINE RETIRED; continual time = primary frontier (FRONTIER
+  §10.18).** Ruling: WRAP not redo — EXP11's inconclusive-by-flawed-control is not
+  "measured exhaustion" (counter-force stays PARKED); the anchor clean-redo is BANKED and
+  re-poses inside EXP12 where it's load-bearing. **Gate steps 5–6 RETIRE with the static
+  line.** Static-line ledger (§10.18): PROVED = channel carries end-to-end / dead-dictionary
+  localization / engine = no-detach target-side pull / word = ~5× accelerant+pin-deepener,
+  fate shared / prevention-primary-recovery-unreliable / stop-grad-in-costume ×2 regimes
+  (Fork 1(a) unresolved-not-refuted) / instrument arsenal + determinism contract.
+  MANUFACTURED [COHERENT-DEDUCED, not demonstrated — the hypothesis EXP12 tests]: TASK
+  DEGENERACY — i.i.d. draws make the deck-average near-optimal, starving member-conditional
+  routing by construction. **NEXT = EXP12 (scene persistence, minimal temporal fabric):
+  shuffled-dwell discriminator from day one (the direct degeneracy test); unpredictability
+  pin carries; anchor arm carries the banked redo; standard instruments. Opening fork:
+  what within-dwell evolution IS, mechanically.** Handoff:
+  `docs/HANDOFF_next_chat_continual_time.md`. No arm a fix.]
