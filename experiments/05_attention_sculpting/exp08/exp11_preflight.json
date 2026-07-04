@@ -1,0 +1,60 @@
+{
+  "target_min_sep": 0.8963,
+  "rungs": {
+    "2": {
+      "onsets": [
+        15300,
+        15000
+      ],
+      "acquired": 2,
+      "max_onset": 15300,
+      "periods": [
+        4800,
+        12000
+      ],
+      "period": 12000
+    },
+    "4": {
+      "onsets": [
+        9300,
+        15000
+      ],
+      "acquired": 2,
+      "max_onset": 15000,
+      "periods": [
+        5400,
+        4800
+      ],
+      "period": 5400
+    },
+    "8": {
+      "onsets": [
+        9300,
+        45000
+      ],
+      "acquired": 2,
+      "max_onset": 45000,
+      "periods": [
+        15600,
+        30000
+      ],
+      "period": 30000
+    },
+    "16": {
+      "onsets": [
+        15300,
+        45300
+      ],
+      "acquired": 2,
+      "max_onset": 45300,
+      "periods": [
+        4800,
+        2400
+      ],
+      "period": 4800
+    }
+  },
+  "max_onset": 45300,
+  "max_period": 30000,
+  "horizon": 147300
+}

@@ -1396,3 +1396,23 @@ not DEMONSTRATED until it runs); occD +0.095 method-pinned (last-minus-first-blo
 mean-over-seeds; direction robust, magnitude aggregation-sensitive); num finals flagged
 outlier-dominated (medians/acquisition-counts cited). Canon (§10.16), §12.E, and the
 EXP11 prereg all corrected. Checkpoint list = EXP11 §9 (7 items).
+
+## 2026-07-04 — EXP11 §9 pins ratified; harness built; PRE-FLIGHT done; verdict arms launched
+
+§9 pins ratified verbatim (seeds ≥5/rung + ≥3-acquired + one +2 extension then
+ACQUISITION-STARVED, cal seeds distinct; horizon = max onset + W_post + margin; W_post =
+3 collapse periods in the rung's OWN regime + in-regime asg_dist threshold; geometry fork
+tolerance from per-run distribution + matched-separation control RUNS ALONGSIDE;
+Form-2/crutch control parked-until-positive; adoption clause verbatim; probes ride
+read-only zero-marginal-run). Harness `exp11_arms.py`: MatchedSepVocabLoop
+(closest-anchor-pair rotation to a common target min-sep, UNIT NORM preserved exactly —
+smoke: v2/4/8 matched 1.402/1.139/1.047 → 0.896, v16 natural 0.829; anchor frozen);
+build_loop issubclass patch; both-axes-aligned verdict read (matched post-onset window).
+
+**PRE-FLIGHT (8 cal runs, seeds {20,21}, 130k; `exp11_preflight.json`): all 4 rungs
+acquired 2/2.** Per-rung onsets v2 [15300,15000] v4 [9300,15000] v8 [9300,45000] v16
+[15300,45300]; per-rung collapse periods v2 12000 / v4 5400 / v8 30000 / v16 4800 (n=2,
+thin — caveat). **HORIZON = 45300 (max onset) + 3×30000 (max period) + 12000 margin =
+147300.** Verdict arms launched: 20 natural (4 rungs × verdict seeds {0–4}) at 147300,
+matched-separation control to follow. Each rung's verdict reads at 3 periods in ITS OWN
+regime. Steps 5–6 blocked.
