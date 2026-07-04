@@ -326,8 +326,8 @@ def build_loop(arm_name: str, seed: int):
         setattr(cfg, k, v)
     if spec.get("exp10"):                                # exp10 varied arms: the variation
         cfg._exp10 = dict(spec["exp10"])                 # flag must exist BEFORE factories run
-    if spec["loop"] is VocabLoop:
-        loop = VocabLoop(cfg, pin, spec["vocab"])
+    if isinstance(spec["loop"], type) and issubclass(spec["loop"], VocabLoop):
+        loop = spec["loop"](cfg, pin, spec["vocab"])     # VocabLoop + subclasses (exp11 matched-sep)
     else:
         loop = spec["loop"](cfg, pin)
     return loop, spec, cfg

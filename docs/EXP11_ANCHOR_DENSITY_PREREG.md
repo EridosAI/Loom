@@ -188,22 +188,29 @@ directional pointer, not evidence (canon rates the EXP08 ladder statistically fl
 - **Varied-environment ladder** — trigger: coverage holds routing open in static; tests
   whether coverage + variation compose.
 
-## 9. Checkpoint list (what ratification pins before any build)
+## 9. Checkpoint list — ALL RATIFIED (Jason, 2026-07-04)
 
-1. Seed budget (≥5 verdict/rung proposed) + the ≥3-acquired-seeds rule + the dedicated
-   calibration seeds (§1).
-2. The stage-one acquisition-onset pre-flight + HORIZON = max onset + W_post + margin
-   (§2); the infeasible-rung → CENSORED rule.
-3. W_post (matched post-onset verdict window, in collapse-periods) + the asg_dist
-   survival threshold — both in-regime from the calibration seeds (§3/§7).
-4. The §4 geometry-fork tolerance ("min-separation holds within tolerance"), calibrated
-   against the PER-RUN anchor distribution (~26% MIN drop), + the matched-separation
-   control construction if fork (b) fires.
-5. The §6 crutch screen: asg_dist-survival threshold AND whether the Form-2
-   matched-diversity control runs alongside or stays parked-until-positive.
-6. Adoption clause: the ladder measures the lever; a COVERAGE-SCAFFOLD rung's adoption
-   into the deployed rig is a SEPARATE ruling (the deployed word names category only by
-   design — changing that breaks the rig's conflict premise; a design decision).
-7. Whether the EXP09/EXP10 decomposition + reference probes ride along (low-value here —
-   the ladder has no slow copy; the evocation decomposition is available, not a verdict
-   axis).
+1. **Seeds: ≥5 verdict/rung; decisive rungs MUST reach ≥3 ACQUIRED — if a rung can't
+   after ONE +2 extension, it is reported ACQUISITION-STARVED, not extended again. Cal
+   seeds DISTINCT from verdict seeds.** (verdict {0–4}, +2 pool {5,6}; cal {20,21}.)
+2. **Pre-flight + horizon RATIFIED as drafted:** stage-one measures per-rung
+   acquisition-onset (+ collapse period); HORIZON = max measured onset + W_post + margin;
+   infeasible rung → CENSORED, ladder read on the rungs that fit.
+3. **W_post = ≥3 collapse periods in the RUNG'S OWN regime** (per-rung period from
+   stage-two, not a shared constant); the asg_dist survival threshold from IN-REGIME
+   stage-two calibration, NEVER static constants.
+4. **Geometry fork: tolerance from the PER-RUN distribution; the matched-separation
+   control RUNS ALONGSIDE** (cheap, and the confound is live at ~26%). Construction
+   (ratified): match each rung's MIN pairwise separation to a common target (the densest
+   rung's natural min ≈ 0.889) by rotating the closest anchor pair together in its plane
+   — UNIT NORM PRESERVED EXACTLY (no magnitude confound); achieved min-sep + mean logged.
+5. **Crutch/Form-2 (matched-diversity assignment-collapsible) control: PARKED-UNTIL-
+   POSITIVE** — it disambiguates a positive; spending it pre-positive buys nothing. A
+   positive asg_dist result stands as COVERAGE-SCAFFOLD-CONSISTENT until it runs.
+6. **Adoption clause RATIFIED VERBATIM:** a scaffold rung is a FINDING; adoption is a
+   SEPARATE ruling (the deployed word names category only by design).
+7. **Probes: ride along READ-ONLY if zero marginal runs; else DROP.** (The EXP09/EXP10
+   decomposition probes are read-only per-eval on the same run — zero marginal runs — so
+   they ride; the slow-reference columns are dropped, no slow copy here.)
+
+**Sequence: build → pre-flight → arms → one review. Steps 5–6 blocked.**
