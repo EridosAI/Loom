@@ -1533,3 +1533,54 @@ candidate (HELD: "word = moving stability matching the object; environment = sta
 behind it"; promotion trigger = both registered observables landing) + §12.E pointer + this
 entry. Next: CC-verify list → build → stage-one calibration numbers reported to chat BEFORE any
 stage-two constant is set. Banked arms built-when-fired. No arm is a fix.
+
+## 2026-07-05 — EXP12 harness BUILT (canon b2898c8, harness a98b45a) + STAGE-ONE RUN; stage-two WAITS on the chat read
+
+**Build (wave-local rig, one code path):** `exp12_fabric.py` (pre-generated world on 9 dedicated
+substreams; k = 2+Geom(0.1) cap 48; per-axis OU τ=4 with STATIONARY-DERIVED per-step σ
+(0.1654·σf), reflect ±3σf; pin-to-constant background (fixed key 94000, identical across
+seeds/arms) + continuous OU jitter; guaranteed position-1 word-mask exam; mid-dwell 50:50;
+BOTH per-dwell coins drawn every dwell → probe-rate changes leave downstream draws ALIGNED and
+probe sets NESTED; per-lag(0–48)/k/schedule/background ⟂ member asserts vs dwell-permutation
+nulls, all HARD) + `exp12_arms.py` (EXP12Loop: W=1, step() inherited unchanged, A-SHUFFLE =
+identical waves + identical masks order-shuffled, loop.gen bit-parity across arms asserted;
+reads: asg_cat verdict-designate = L1 between category-conditioned mean assignment vectors +
+16-member companions, onset-exam lift/acc, mid-dwell companions, earned-salience divergence
+split (id/nuis/bg), per-position curves split by masked slot, §13.10 probe machinery PRE-update)
++ `exp12_baseline.py` (thermometer, 11,728 params = 1.04× PAM plastic side 11,281; B1/B2; fence
+asserted). Wave-local consequences SURFACED (not silent): L_JEPA inert by construction (also
+idles the deployed loss's one next-wave-prediction term); no u-carrier (within-window order does
+not exist at W=1); EXP10 word jiggle not carried (prereg fabric enumerates nuisance+background
+only).
+
+**Adversarial review BEFORE first run (32 agents; 15 confirmed → 5 distinct, ALL FIXED):**
+(1) MAJOR probe-dwell branch consumed an extra g_mask draw → any stage-two rate change would
+have reshuffled the whole downstream mask schedule (the §13.10 invariant's stated purpose
+defeated) → both coins now drawn every dwell, alignment + nestedness regression-tested;
+(2) MAJOR the §13.10 probe read was POST-update vs the scheduled exam's PRE-update stash —
+re-introducing the recency channel position-matching exists to remove → probe now reads
+pre-update in the runner; (3) MAJOR stage-one period read leaned on the static line's
+4800-pin/1.5×-band/20100-cut estimator (§10.14 ban; §10.17 lesson) → replaced with the
+estimator-free in-regime dynamics-panel read; cycle-present-period-unmeasured now labeled
+exactly that, never folded into the no-cycle fallback; (4) pos_err pooled word-cell and
+vision-cell error scales → split; (5) probe-dwell onsets contaminated the mid-dwell companions
+→ excluded. 13 findings refuted in verification (incl. the asg_cat mean-cancellation concern
+and the per-lag stride worry; stride tightened to 1 anyway).
+
+**STAGE-ONE NUMBERS (cal {20–24}, 120k horizon, threads=1; artifacts exp12_*_s2*.json +
+exp12_stage1.json; NO stage-two constant set):** fabric at scale verified (mean k 11.89,
+cap-hit 0.70% vs 0.785% theory, all asserts green). A-DWELL onsets: {s20 NEVER (censored),
+s21 41.1k, s22 3.3k, s23 31.2k, s24 50.1k} — 4/5 acquired. A-SHUFFLE onsets: {3.3k, 3.0k,
+2.7k, 4.2k, 3.3k} — 5/5, ~10× earlier. Collapse cycles: dwell 3/4 acquired seeds (periods
+44.1k / 28.2k measured; one present-unmeasured; s23 none), shuffle 4/5 (57.9k / 21.6k / 24.9k /
+29.4k; s21 none) — periods are LONG (20–58k), so W_post = 3 own-periods implies ~60–170k
+verdict windows (horizon consequence for §13.9). Onset-exam channel AT CHANCE in BOTH arms
+(acc 0.48–0.51, lift ≈ 0/negative) at 120k — the deck-mean word completion, a regime fact for
+stage-two threshold design. asg_cat post-onset: dwell ends mostly ≈0 (0.0006/0.0006/0.0001;
+s24 0.035) with asg_dist 0.16–0.61; shuffle ends higher on 4/5 (0.051/0.017/0.101/0.050/0.002)
+with asg_dist 0.12–0.25. NOT a table read (cal seeds, no thresholds, unmatched windows).
+**DISCREPANCY SURFACED (not patched): the ratified §13.2 constants (E[k]=12, cap≈0.8%) entail
+Geom support ≥1 → realized dwell support is k∈{3..48}; k_min=2 is unrealizable as built, so the
+prereg's "k=2 tail" language and the law disagree at the margin — Jason's call.** Stage-two
+(survival threshold, W_post, B1/B2, probe rate, verdict horizon) NOT set — waits on the chat
+read per the handoff.
