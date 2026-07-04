@@ -1441,3 +1441,88 @@ floor, loose-thread disambiguation); acquisition-aligned reads, in-regime calibr
 scorer v2, dynamics panels all carry. **Opening fork for the next session: what within-dwell
 evolution IS, mechanically.** Handoff: `docs/HANDOFF_next_chat_continual_time.md`. Steps 5–6 retired;
 no arm is a fix.
+
+## §10.19 — EXP12 SCOPING RESOLVED (2026-07-04, design chat): five forks ruled; prereg RATIFIED FOR BUILD
+
+**Live spec: `docs/EXP12_SCENE_PERSISTENCE_PREREG.md` (ratified 2026-07-04 — checkpoint read
+complete; Amendments A/B + the B1/B2 propagations applied; §13 constants ratified with
+Adjustments 1–2 and the margin guard; arms do not run until the stage-two calibration constants
+are recorded).** This unit records the fork RULINGS; the prereg carries the constants.
+
+**Five forks resolved:**
+- **F1 — the walk law: stochastic OU jitter.** Member nuisance/pose drawn at dwell onset from
+  the family marginal, then bounded per-axis OU steps around the onset pose; one fixed walk law,
+  hyperparameters global across members; increments stochastic. **Struck overclaim, on the
+  record (do not re-import): "cheapest good completion at all lags is knowing the member" is
+  FALSE** — clause 2 (nuisance ⟂ identity) forbids member knowledge improving nuisance
+  completion, and identity-copy from any visible same-dwell neighbor is free under every walk
+  law. **Routing demand lives in mask geometry + dwell-onset rate, not in the walk.**
+- **F1 amendment — background recurrence:** onset poses come from a persistent configuration,
+  not fresh family draws. **v1 = ONE fixed background configuration (pin-to-constant) + OU
+  jitter around it**; the background library is a later rung. Grounds: familiarity must be
+  *earnable*, not just family-robustness; a learned background concentrates completion gradient
+  on the member component. Canon language (correction, carried): the familiar background earns
+  **LOW** prediction error — that is *why* it is ignorable; the new object is the
+  **high-divergence residual**. Binding: background ⟂ member.
+- **F1.5 — completion geometry:** **wave-local completion** (the completer sees only the
+  current wave [vision ; word-anchor slot]; NO trace machinery in v1 — v1 tests
+  persistence-as-GRADIENT-ORDERING only, and **a v1 null is NOT fabric-refutation**) + the
+  **GUARANTEED ONSET EXAM** (every dwell's first wave: word slot masked, vision visible —
+  route-and-recall through the dictionary is the only completion path). **Division of labor,
+  pre-registered: onset waves = ROUTING EXAMS (the verdict axis); mid-dwell vision-masked waves
+  = THE TEACHING CHANNEL; onset completion is never teaching evidence, mid-dwell completion is
+  never routing evidence.** Wrong-reason outcome pre-registered: completion-good/routing-dead =
+  **shortcut-through-recency** — a named finding, never a pass; the onset/mid-dwell split is
+  its discriminating read (the exam wave has no recency channel).
+- **F2 — the dwell law: shifted-capped geometric, k = k_min + Geom(p), capped.** Constant
+  hazard in the bulk = the only clockless law (fixed-k and bounded-uniform EXCLUDED on pin
+  clause 1 extended into the time axis). New binding numeric asserts: **k ⟂ member** (duration
+  must not code identity) and the cap-hit ceiling. Member draw uniform with **no immediate
+  same-member repeat** (else the prior dwell contaminates the onset exam via recency).
+- **F3 — 12b (the no-word comparator), gated with TWO pre-registered openers:** (i) the promote
+  cell — full seeds, the teaching test at its own gates; (ii) the both-die cell — reduced
+  seeds, as the word-culprit discriminator. Construction pin: **absent-word, NOT
+  scrambled-word.** Same arm, two triggers; epistemically closed either way.
+- **F4 — the baseline (conventional trainability control), banked with two openers** (both-die
+  → trainability discriminator | promote cell → generality leg, **context not gate**).
+  **Escalation ladder BINDING: baseline → 12b → visibility rung** (world-untrainable moots
+  word-attribution, which moots escalation). **Thermometer, not donor:** shares stimulus +
+  objective family ONLY — no shared components, no design flowback; **generality read
+  ONE-DIRECTIONAL** (baseline-fails-where-PAM-passed = context, NEVER a PAM-superiority claim;
+  the flattering direction fenced before any result exists).
+
+**The four-cell inference table is pre-registered WHOLE (prereg §7), all cells named before the
+run, including the anomaly cell** (dwell-dies/shuffled-survives → inversion → instrument/leakage
+audit; named finding only). **Construction pin: A-SHUFFLE carries the IDENTICAL waves and the
+IDENTICAL mask schedule, order-shuffled** — destroys dwell contiguity and nothing else; same
+exams, different order; otherwise the table confounds exam rate with persistence.
+
+**Amendment B — THE SURVIVAL-READ GEOMETRY PIN:** the verdict is geometry-matched to what the
+task PAYS at rig topology. At v2, wave-local, vision-masked waves give the completer no member
+cue (word = category only, background ⟂ member, no trace) — category-mean is optimal by
+construction, so no gradient ever pays 16-way routing; onset exams pay exactly the 2-way
+partition. **VERDICT AXIS = category-partition input-sensitivity (category-partition asg_dist);
+16-member asg_dist rides as companion/characterization ONLY; 16-way survival is the coverage
+LADDER's question, never rig-1's.** A 16-member survival bar would demand unpaid structure and
+manufacture a wrong-reason both-die — the matched-bar lesson, surfaced before the run instead of
+after it. Propagated to the baseline's own bars: **(B1) latent CATEGORY-separability** (windowed
+between/within-category separation ratio in its own representation space, in-regime floor);
+**(B2) onset-exam analog lift over the CATEGORY-PRIOR floor** (lift over deck-mean IS
+category-lift at v2), acquisition-aligned. Never scored on PAM's asg machinery.
+
+**REGISTERED PREDICTION (cross-scene contrast, 12b):** word-present differentiates word-tied
+axes FASTER than no-word, on identical fabric/seeds/schedule — measure = acquisition-aligned
+differentiation LIFT on word-tied axes (lift, never share). The registration's edge: the same
+channel that was the ~5× *collapse* accelerant in the degenerate task is predicted to accelerate
+*differentiation* in the live one — same channel, opposite sign, regime-discriminating.
+**Falsifiers pre-named:** (a) word re-accelerates collapse on live fabric (fate-shared,
+recurring); (b) no contrast (channel inert on healthy fabric).
+
+**REGISTERED OBSERVABLE (earned salience, rig-1; expectation, NOT a gate):** PAM divergence on
+background axes FALLS with exposure while member-onset divergence STAYS HIGH.
+
+**Sequence: build → calibration pre-flight (stage-one/two; constants recorded before any
+verdict run) → rig-1 arms (A-DWELL, A-SHUFFLE; verdict seeds {0–4}, +2 pool {5,6} reserved for
+the margin guard) → four-cell read behind the verification pass → margin guard → ladder-ordered
+fires as triggered → one review.** Banked arms (12b, baseline openers, coverage ladder,
+splitting arm, coherence-ablation) are built-when-fired, not speculatively. No arm is a fix.

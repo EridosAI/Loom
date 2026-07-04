@@ -10,3 +10,9 @@
 - Encoder and memory co-evolve — the memory's prediction signal shapes what the encoder learns to notice. _(number preserved)_
 - **Reality is the teacher.** The system isn't built for reality — it's a product of it: environment is the stimulus, experience determines structure, structure determines response. Looped. A world where the common answer suffices starves differentiation. _(promoted with measured grounds; the "looped" candidate and the task-degeneracy lesson fold in)_
 - No plastic component without a slower-changing stable reference — the reference itself on a relaxation schedule (stiff early, loosening as configuration settles); co-development loops without one do not converge. Build variable components from the start, pinned; release slowly. _(number preserved; the elaboration + pin/release candidates fold in)_
+
+---
+
+**CANDIDATES (held, not promoted):**
+
+- **[CANDIDATE, HELD]** Word = moving stability matching the object; environment = standing stability behind it. _(EXP12 canon write, 2026-07-04. Promotion trigger = BOTH registered observables landing: the earned-salience curve — background-axis divergence falls with exposure while member-onset divergence stays high — AND the cross-scene contrast prediction — word-present accelerates word-tied differentiation on live fabric. Ratified from measurement, not from liking it.)_

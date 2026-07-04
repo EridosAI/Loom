@@ -948,3 +948,26 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   pin carries; anchor arm carries the banked redo; standard instruments. Opening fork:
   what within-dwell evolution IS, mechanically.** Handoff:
   `docs/HANDOFF_next_chat_continual_time.md`. No arm a fix.]
+- **[2026-07-04 — EXP12 SCOPED + RATIFIED FOR BUILD (FRONTIER §10.19; live spec =
+  `docs/EXP12_SCENE_PERSISTENCE_PREREG.md`).** Five forks resolved in the design chat: F1
+  walk law (stochastic OU around the dwell-onset pose; struck overclaim — routing demand
+  lives in mask geometry + onset rate, not the walk); F1 amendment (v1 background = ONE
+  fixed configuration, pin-to-constant, + OU jitter; familiarity earnable); F1.5
+  (wave-local completion, no trace in v1 — persistence-as-gradient-ordering ONLY, a v1
+  null is NOT fabric-refutation; guaranteed onset exam; onset = routing exams / mid-dwell
+  vision-masked = teaching channel, never crossed); F2 (k = k_min + Geom(p) capped —
+  constant hazard, the only clockless law; k ⟂ member assert; no-immediate-repeat draw);
+  F3 (12b gated, two openers); F4 (baseline banked, two openers; ladder BINDING baseline
+  → 12b → visibility rung; thermometer-not-donor). Four-cell table pre-registered WHOLE
+  incl. the anomaly cell; A-SHUFFLE = IDENTICAL waves + IDENTICAL mask schedule,
+  order-shuffled. Amendment B geometry pin: VERDICT = category-partition asg_dist
+  (input-sensitivity); 16-way survival is the coverage LADDER's question, never rig-1's;
+  propagated to baseline bars (B1/B2). Registered prediction (cross-scene contrast — the
+  ~5× accelerant channel, opposite sign on live fabric) + registered observable (earned
+  salience) with pre-named falsifiers. §13 constants RATIFIED (τ=4; p=0.1, k∈[2,48], cap
+  ceiling 1%; 50:50 mid-dwell coin; num-floor onset carried; W_post precedence ladder
+  pre-registered; margin guard on 3–2 splits; cal {20–24}, verdict {0–4}, +2 pool {5,6};
+  position-matched boundary-leak monitor). **Sequence: build → stage-one/two calibration
+  (ALL constants recorded pre-run; stage-one numbers to chat first) → A-DWELL/A-SHUFFLE →
+  four-cell read behind the verification pass → ladder fires as triggered → one review.**
+  Banked arms built-when-fired. No arm a fix.]

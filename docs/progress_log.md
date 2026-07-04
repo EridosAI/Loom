@@ -1491,3 +1491,45 @@ discriminator from day one; the unpredictability pin (3 clauses) carries; anchor
 banked design; acquisition-aligned reads, in-regime calibration, guarded scorer v2, panels. Opening
 fork for the next session: what within-dwell evolution is, mechanically. Handoff:
 `docs/HANDOFF_next_chat_continual_time.md`.
+
+*(Hash fill, flagged at session open: the wrap unit above committed as `0f5d971`; the four-cell
+pre-registration follow-up as `8abc338`.)*
+
+## 2026-07-04 — EXP12 SCOPING SESSION (design chat): five forks resolved; prereg RATIFIED FOR BUILD; canon unit §10.19
+
+The continual-time scoping session (Jason + design chat) resolved all five EXP12 forks and
+ratified the prereg for build. **F1** walk law = stochastic OU jitter around the dwell-onset pose
+(one fixed law, global hyperparameters; struck overclaim on record — routing demand lives in mask
+geometry + onset rate, not the walk). **F1 amendment** background recurrence: v1 = ONE fixed
+background configuration (pin-to-constant) + OU jitter; familiarity earnable; familiar background
+earns LOW prediction error, the new object is the high-divergence residual. **F1.5** wave-local
+completion (no trace in v1 — persistence-as-gradient-ordering ONLY; a v1 null is NOT
+fabric-refutation) + guaranteed onset exam (word-masked first wave); division of labor: onset =
+routing exams (verdict axis) / mid-dwell vision-masked = teaching channel; never crossed;
+shortcut-through-recency pre-registered as the wrong-reason outcome. **F2** dwell law k = k_min +
+Geom(p) capped (constant hazard, the only clockless law); k ⟂ member + cap-hit ceiling as binding
+asserts; member draw uniform no-immediate-repeat. **F3** 12b gated with two openers (promote-cell
+full-seeds teaching test | both-die reduced-seeds word-culprit discriminator); absent-word not
+scrambled-word. **F4** baseline banked, two openers; escalation ladder BINDING baseline → 12b →
+visibility rung; thermometer-not-donor fence; generality read one-directional.
+
+Checkpoint ratification: §13 constants (walk = EXP10 pinned nuisance family VERBATIM, τ=4,
+stationary sd = 0.25·family-σ derived not pinned; dwell p=0.1/k_min=2/k_max=48, cap ceiling 1%;
+mask one-slot-per-wave, mid-dwell 50:50; EXP10 num-floor onset carried; W_post ≥ 3 own-regime
+collapse periods with the PRE-REGISTERED fallback ladder (own period → fixed calibrated
+absolute-wave window) — the EXP11 estimator caveat going live on schedule; survival =
+category-partition asg_dist ≥ stage-two threshold, seed majority ≥ 3/5 with the MARGIN GUARD
+(any 3–2 split fires +2 extension BEFORE table interpretation); baseline params within ~2× of
+PAM's plastic side; cal seeds {20–24} n=5, verdict {0–4}, +2 pool {5,6}; boundary-leak monitor =
+position-matched schedule-unmatched read-only probes at suppressed-exam dwell onsets).
+Amendment B (survival-read geometry pin): verdict = category-partition input-sensitivity; 16-way
+survival is the ladder's question, never rig-1's. Registered prediction (cross-scene contrast:
+word accelerates differentiation on live fabric — same channel, opposite sign) + registered
+observable (earned salience) on record with pre-named falsifiers.
+
+Canon writes this commit: prereg `docs/EXP12_SCENE_PERSISTENCE_PREREG.md` (verbatim, ratified) +
+build handoff `docs/HANDOFF_CC_exp12_build.md` + FRONTIER §10.19 (fork rulings) + Guiding List
+candidate (HELD: "word = moving stability matching the object; environment = standing stability
+behind it"; promotion trigger = both registered observables landing) + §12.E pointer + this
+entry. Next: CC-verify list → build → stage-one calibration numbers reported to chat BEFORE any
+stage-two constant is set. Banked arms built-when-fired. No arm is a fix.
