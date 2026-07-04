@@ -1417,7 +1417,25 @@ demonstrated.**
 **NEXT — EXP12 (scene persistence: the minimal temporal fabric).** The continual-time rig makes the
 task non-i.i.d. by giving members DWELL (persistence across waves). Pre-committed now: the
 **SHUFFLED-DWELL DISCRIMINATOR from day one** (dwelled vs shuffled-dwell i.i.d. control — the direct
-test of the task-degeneracy hypothesis); the UNPREDICTABILITY PIN (three clauses) carries; the
+test of the task-degeneracy hypothesis).
+
+**The FOUR-CELL inference table — pre-registered WHOLE (Jason, 2026-07-04; the confirming-cell-only
+reading was incomplete).** Both arms keep per-frame jitter; shuffling kills only the cross-wave
+ORDER (persistence), not the within-frame variation. A both-die result must NOT be misread as "the
+pivot was aimed wrong" when it may be a mis-built fabric:
+- **Dwell SURVIVES / shuffled DIES** → the temporal fabric is load-bearing; **root PROMOTED to
+  demonstrated.**
+- **BOTH DIE** → NOT a clean refutation → **Fork 1.5**: persistence-as-built may fail to create
+  demand (identity copy-free, or the mask/onset geometry wrong). Routes to a **Fork 1.5 audit BEFORE
+  any root re-ruling** — root neither confirmed nor refuted until the fabric is shown to create
+  member-conditional demand.
+- **BOTH SURVIVE** → the EXP10 prior applies (variation alone opens routing; both arms retain
+  per-frame jitter, shuffling removes only order) → **VARIATION-SUFFICES, fabric not needed; root
+  REFINED, not confirmed.**
+- **Dwell DIES / shuffled SURVIVES** → inversion → **instrument / leakage audit** (a
+  wrong-direction result implicates the rig before the hypothesis).
+
+The UNPREDICTABILITY PIN (three clauses) carries; the
 ANCHOR arm carries the banked clean-redo design (uniform matched-min-sep, fixed common window, seed
 floor, loose-thread disambiguation); acquisition-aligned reads, in-regime calibration, guarded
 scorer v2, dynamics panels all carry. **Opening fork for the next session: what within-dwell

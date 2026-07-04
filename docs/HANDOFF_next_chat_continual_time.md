@@ -1,83 +1,186 @@
-# HANDOFF — Continual time (EXP12: scene persistence, the minimal temporal fabric)
+# Handoff — Next Chat: Continual Time (EXP12 scene-persistence scoping)
 
-**Written 2026-07-04. The static-frame line (exp05–exp11) is RETIRED (FRONTIER §10.18);
-continual time is the primary frontier. This is the first-move brief for the next
-session. Steps 5–6 are retired with the static line; the teaching test re-poses at its
-own gates here. No arm is a fix.**
+**What this is.** Orientation for the next session, carrying the reasoning and judgment calls that
+aren't fully in canon — the connective tissue. Read this, then the named canon sections. No prior
+chat needed; everything load-bearing is here or pointed to.
+
+**How this project works (if cold).** Design happens in chat; **CC (Claude Code) implements** in
+`github.com/EridosAI/Loom`; the **docs are canon** (a decision isn't real until written to `docs/`).
+Mode: concise labeled moves, **one fork at a time — surface, recommend, stop** for the read.
+**Pre-register failure conditions before runs.** Every technical ruling gets a **plain-language
+translation** — Jason ratifies from these; maintain the practice. Run the adversarial-verification
+pass before verdicts reach the table: three campaigns running (EXP08/10/11), it flipped a surprising
+draft verdict every time. The recurring failure mode is **drift into familiar ML machinery —
+especially a forward-in-time predictor** — and this phase raises that risk sharply (see the trap
+section).
 
 ---
 
-## Where the program stands (read these first, do not re-derive)
+## The one-line state
 
-- **FRONTIER §10.18** — the static-line WRAP (the ledger below in full, the ruling, the
-  EXP12 pre-commitments).
-- **FRONTIER §10.12–§10.17** — the static-line arc: collapse finding → force-ledger →
-  EXP09 (self-path reference = costume) → EXP10 (structured variation = negative) →
-  EXP11 (anchor coverage = inconclusive-by-flawed-control).
-- **PROJECT_STATE §12.E** — the dated state pointers (07-03 / 07-04 lines).
-- **progress_log.md** — every ruling and campaign, dated.
-- HEAD at handoff: **`<stamp at first commit next session>`** (this session ended
-  pushed + tree clean; confirm with `git status`).
+The static-frame line is **retired with an honest ledger**: it validated the channel (carries
+information end-to-end; first live word→category evocation observed in the deployed loop) and fully
+located the failure (dead-dictionary routing collapse under the target-side pull) — but the task
+itself **manufactures** the pathology (i.i.d. flash-card draws make the deck-average answer nearly
+optimal; member-conditional routing is exactly what dies). **Continual time is now the primary
+frontier.** Next session's job: **scope EXP12 — scene persistence, the minimal temporal fabric.**
 
-## The static-line ledger (what is banked)
+---
 
-**Proved:** channel carries end-to-end (first live word→category evocation, Gate 4);
-dead-dictionary localization (assignment-side, capacity open, prototypes alive); engine =
-no-detach target-side pull (necessity demonstrated); word = ~5× accelerant + pin-deepener,
-fate shared end-to-end; prevention-primary / recovery-unreliable; stop-grad-in-costume on
-two regimes (Fork 1(a) UNRESOLVED-NOT-REFUTED); the instrument arsenal + the determinism
-contract (seed + construction order + threads=1, recorded).
+## Read first (canon, in order)
 
-**Manufactured — the ROOT, `[COHERENT-DEDUCED, NOT DEMONSTRATED]`:** task degeneracy —
-i.i.d. member draws make the deck-average nearly optimal, so member-conditional routing is
-not reinforced and collapses. **This is the hypothesis EXP12 tests, NOT a proved result —
-carry the tag.** If a later read treats it as fact, that is the error to catch.
+- **`FRONTIER_attention_sculpting.md`** — the diagnostic arc end-to-end: §10.11 (anchored-reference
+  resolution), §10.12–.12.3 (collapse finding; shared fate; kick verdict + prevention-primary),
+  §10.13 (force-ledger, Fork 1 → self-path reference), §10.14 (EXP09 stop-grad-in-costume), the
+  §10.15 (EXP10 negative), §10.16 (anchor-ladder ruling), §10.17 (EXP11 close-out), and **§10.18 —
+  the wrap unit: static-line ledger, continual-time promotion, the EXP12 four-cell pre-registration.**
+- **`Guiding List.md`** (filename has a space, not an underscore) — #10 (evocation-as-teacher),
+  #12 (reference-and-relaxation), the "reality is the teacher" entry.
+- **The banked pickup artifacts:** the EXP11 clean-redo anchor design (in the wrap unit) and CC's
+  §10.9 structured-diffuseness analysis.
+- **`PROJECT_STATE_AND_MVP.md` §12.E** — live state. **`progress_log.md`** — the trail.
+  **`HANDOFF.md`** — standing discipline, incl. the determinism contract.
 
-## EXP12 — scene persistence (the minimal temporal fabric)
+---
 
-**The idea:** give members DWELL — persistence across consecutive waves — so the task is no
-longer i.i.d., and member-conditional routing has something to predict that the deck-average
-cannot supply. The minimal temporal fabric: a scene persists for a dwell, then switches.
+## What the static line proved (carry, don't re-derive)
 
-**Pre-committed (ratified 2026-07-04 — carry these into the EXP12 prereg):**
-1. **The SHUFFLED-DWELL DISCRIMINATOR from day one.** The direct test of the
-   task-degeneracy hypothesis: dwelled stream vs a shuffled-dwell control that destroys the
-   persistence while preserving the marginal member distribution. If member-conditional
-   routing (asg_dist input-sensitivity) survives with dwells but collapses under
-   shuffled-dwell, task degeneracy is confirmed as the root and persistence is the lever.
-2. **The UNPREDICTABILITY PIN (three clauses) carries** (EXP10 §2): unpredictable as a
-   sequence (no cycles/schedules), uninformative about identity (asserted numerically at
-   Step-0/manifest), learnable as a distribution (fixed recurring family). Dwell STRUCTURE
-   is predictable at the family level (there are dwells), never at the instance level (when
-   a switch comes).
-3. **The ANCHOR arm carries the banked EXP11 clean-redo:** uniform matched-min-separation
-   control (re-draw every rung to a common min-sep by ONE method — rejection
-   sampling/optimization at unit norm, or the D-scaling control — NOT the non-uniform
-   closest-pair rotation that broke EXP11); a FIXED common post-onset verdict window (the
-   period-normalized "3-periods-own-regime" window is RETRACTED — §10.17); a seed floor
-   above n=5 (EXP11 was underpowered); the loose-thread disambiguation arm
-   (perturbed-same-min-sep vs tighter, to identify the v2 channel).
-4. **Instruments carry:** acquisition-aligned reads (both axes — the EXP10/EXP11 blocker
-   fix); in-regime two-stage calibration (constants from the rig's OWN healthy spans, never
-   static); the guarded scorer v2 (period-substitution gated, `force_period` disclosure,
-   mechanical floor checks); dynamics panels standing; the determinism contract (threads=1,
-   recorded); manifest-time independence asserts for any injected structure.
+- **Channel carries; teaching untested.** Live word→category evocation observed in the deployed
+  loop (Gate 4, n=1, exactly the designed structure). The teaching test itself (old gate steps 5–6)
+  never ran — blocked on collapse throughout; **it re-poses in the continual-time rig at its own
+  gates.** Steps 5–6 retire with the static line.
+- **The collapse, fully characterized.** Assignment-side routing goes input-blind (**dead
+  dictionary**: argmax_k=1 sustained, capacity open, prototypes alive). Engine = the no-detach
+  **target-side pull** (necessity demonstrated by the detach arm). Word = **pure accelerant** (~5×,
+  two independent estimates converging) **+ pin-deepener**; fate is shared end-to-end (no-word
+  self-pins ~518k). **Prevention-primary, recovery-unreliable** (kick probe: ~25% stochastic rescue,
+  position-conditioned, early ≫ late; no controllable lever). Flow-not-basin — a current with
+  eddies.
+- **Two intervention regimes tied the detach-null.** EXP09 (slow self-path reference) and EXP10
+  (inexhaustible varied environment) both returned **STOP-GRAD-IN-COSTUME**: no outcome-level
+  divergence from plain target-side amputation. Certified scope is narrow — *removing the pull
+  prevents the pin; the reference's own contribution is undetected.* **Fork 1(a) is
+  UNRESOLVED-NOT-REFUTED** — the discriminating axis is associative teaching, never exercised.
+- **EXP10's live thread.** Variation keeps the evocation channel firing at horizon (5/6 varied
+  seeds vs static decay) but **common-domination persists** (evo_ratio > 1 in ≥99.6% of windows).
+  Variation kept the voice talking; it didn't make it say different things.
+- **EXP11: the anchor-coverage lever is UNMEASURED** — flawed separating control (non-uniform
+  closest-pair rotation), not a null. Natural-ladder rise (5.4× v2→v16) is real but confounded
+  (coverage ∥ min-separation ∥ onset). The v2 re-perturbation loose thread (~4× survival lift via an
+  unidentified channel) is **named, not claimed**. The clean-redo design is **banked**; the question
+  **re-poses inside EXP12**, where the answer is load-bearing.
 
-**THE OPENING FORK (first design decision next session): what within-dwell evolution IS,
-mechanically.** A dwell is not just "the same member repeated" — the question is what, if
-anything, evolves within a dwell (static hold? a drift/trajectory? an accumulation?). This
-is the mechanism to pin before building, because it determines what member-conditional
-routing would even predict. Open it from canon; do not assume the static-frame's
-frozen-centre stimulus carries over unchanged.
+---
 
-## Process discipline (carries verbatim — earned this session)
+## The diagnosis that forced the wrap (the load-bearing reasoning)
 
-- **Every surprising verdict gets adversarial verification BEFORE canon.** Three campaigns
-  (EXP08, EXP10, EXP11) had a draft verdict flipped by verification. Budget for it.
-- **Pre-register before build; pins pinned pre-run; both axes acquisition-aligned;
-  in-regime calibration; the guarded scorer.**
-- **Status-split discipline:** readings never upgraded to claims; deduced tagged deduced
-  (the task-degeneracy root especially).
-- **ONE review per verdict set; canon in docs, memory = pointers; commit on Jason's word.**
-- No arm is a fix; the counter-force stays parked (manufacturing-class last resort, trigger
-  = measured exhaustion — which EXP11's flawed-control inconclusive is NOT).
+With i.i.d. draws there is **no cross-wave fabric**: non-causal masking has almost nothing to be
+non-causal *over*. The only globally correct completion is member-conditional — and routing is
+exactly what must stay alive to *be* member-conditional. When routing falters, the task degrades to
+"predict the deck average," which is self-reinforcing (less routing → more common gradient → less
+routing). Every target-side fix tied the null because **the task starves member-conditioning by
+construction**. The architecture was conceived for continual experience; the static rig was
+scaffolding, and it began generating pathologies specific to itself. §10.9's deferral rationale
+said this in advance; the measurements now run through it.
+
+Named gap, on the record: **no conventional-baseline trainability control** (e.g. a standard
+V-JEPA on this stimulus) was ever run — candidate baseline arm for EXP12.
+
+---
+
+## The immediate task — EXP12 scoping
+
+**Scene persistence = the minimal fabric:** a member persists k waves (a *dwell*); nuisance/context
+evolves consistently *within* the dwell; draws *across* dwells stay unpredictable. Pre-committed
+pieces (already ruled):
+
+- **Shuffled-dwell discriminator, pre-registered from day one — with the FOUR-CELL inference table
+  pre-registered WHOLE** (not just the confirming cell; a both-die result must route to Fork 1.5,
+  not be misread as "pivot aimed wrong"). Both arms keep per-frame jitter; shuffling kills only the
+  cross-wave ORDER:
+  - *dwell survives / shuffled dies* → fabric load-bearing; **root PROMOTED to demonstrated.**
+  - *both die* → NOT a clean refutation → **Fork 1.5 audit** (persistence-as-built may fail to
+    create demand: identity copy-free, mask/onset geometry wrong) **before any root re-ruling.**
+  - *both survive* → **variation-suffices** (EXP10 prior: variation alone opens routing; shuffling
+    removes only order) → **root REFINED, not confirmed.**
+  - *dwell dies / shuffled survives* → **inversion → instrument/leakage audit.**
+- **The unpredictability pin carries** (three binding clauses): unpredictable as a *sequence*;
+  uninformative about *identity* (numeric independence asserts, now in time as well as space);
+  learnable as a *distribution* (fixed family, stochastic instances).
+- **The anchor arm carries the banked EXP11 design:** uniform matched-min-separation (or D-scaling)
+  control; fixed common post-onset window; ≥ the seed floor; the loose-thread disambiguation arm.
+- **Instrumentation carries whole:** acquisition-aligned reads (mandatory), in-regime two-stage
+  calibration, guarded scorer v2, dynamics panels as standing deliverable, windowed estimators
+  everywhere, the determinism contract (**seed + construction order + threads=1**).
+
+**Open forks to surface (one at a time; the first is the opening move):**
+1. **What "consistent within-dwell evolution" is, mechanically** — the nuisance family acquiring
+   dynamics. Surface, recommend, stop.
+2. Dwell-length distribution (fixed vs drawn; what the draw law is).
+3. Whether the teaching test (reversed lift) enters EXP12's first rig or waits on a
+   healthy-routing verdict.
+4. Whether the conventional-baseline arm rides along.
+
+---
+
+## The discipline trap specific to this phase (the load-bearing one)
+
+**Temporal fabric is the forward-predictor's home turf.** Scene evolution makes "predict the next
+frame" the most natural thing to build — and it is exactly the ~10-restart failure mode. Hold the
+lines: PAM learns by **non-causal masked completion over co-present structure** (within = whole;
+across = trace); dwell evolution is *context for completion*, **never a forecasting target**; the
+moment any component acquires a next-step objective, it is the drift, whatever it's called.
+
+Second trap: **world-building can smuggle the answer.** Persistence structure correlated with
+identity is leakage — the independence asserts and shuffle controls are the guard, extended into
+the time axis.
+
+Third trap: **don't import the static line's conclusions.** The slowref/detach verdicts were
+regime-specific. Carry the **screens** (detach-null comparator, stop-grad-in-costume test, the
+wrong-reason taxonomy, calibrate-in-regime), not the outcomes.
+
+---
+
+## Settled instrument/process lessons (near-canon; cite, don't re-argue)
+
+- **Bar and read must be the same function on matched geometry** — including the time axis
+  (per-seed criterion alignment).
+- **Variance statistics cannot certify differentiation** — floor tripwires only (den demotion;
+  the circularity ladder's second instance).
+- **Lift, never share** (three appearances; gradient-share and share-like quantities restate
+  distinctness, they don't certify teaching).
+- **Point-reads are dead** — windowed estimators with pinned forms; no selectable sub-windows.
+- **Calibrate in-regime, per-rung, acquisition-aligned** — constants from one regime are
+  trivially cleared or unfairly failed in another.
+- **Amendment discipline:** pre-run changes are just deciding; post-result changes require
+  recorded reference-error / instrument-validity grounds; records stand and get superseded,
+  forward pointers get amended in place.
+
+---
+
+## What's parked (with triggers)
+
+- **Routing-side counter-force** (manufacturing-class, highest drift risk): trigger = *measured
+  exhaustion* of alternatives; its static venue is retired.
+- **Coarse-first ladder** (cardinality vs coverage): trigger = a positive coverage result.
+- **Form-2 matched-diversity crutch control:** parked-until-positive.
+- **Cue-floor structured-diffuseness (§10.9):** trigger = the loop test stalls on evocation signal
+  capacity; CC's banked analysis is the pickup.
+- Ties re-dose (ε < 0.05) · word-ablated-resume discriminator (live-pull confound) ·
+  mutual-sculpting pair + relaxation schedule (release stage) · Δt_assoc kernel (re-poses in EXP12
+  if wanted) · conventional-baseline control (fork 4 above).
+
+---
+
+## State / provenance
+
+- **HEAD at wrap:** `0f5d971` (the §10.18 wrap canon unit) + the four-cell pre-registration commit
+  that follows this handoff edit; tree clean, pushed. *(Next session: confirm with `git status`.)*
+- **Instrument arsenal, all committed:** (d)-gate descendant + matched-bar machinery; decomposition
+  columns (grad + evo); asg_dist / argmax_k / pin-depth; kick-probe harness + saved end-states;
+  acquisition-aligned read harness; guarded scorer v2 (force_period + substitution gating);
+  manifests + independence asserts + scatter renders; the verification-pass workflow.
+
+**First move next session:** confirm the frontier from canon (don't re-derive), then surface
+EXP12's opening fork — *what within-dwell evolution is, mechanically* — recommend, stop for
+Jason's read.
