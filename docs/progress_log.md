@@ -1332,3 +1332,67 @@ settle: stronger/among-cue variation, longer horizon, or a different teaching-ax
 instrument. "Reality is the teacher" not refuted as a principle; this operationalization
 didn't deliver. AT THE ONE REVIEW; no arm a fix; steps 5–6 blocked; next design move =
 Jason's ruling.
+
+## 2026-07-04 — EXP10 verdicts RATIFIED + next-move RULED: the denser anchor (EXP11 prereg at checkpoint)
+
+Ratified: §10.15 as stated (EXP10 NEGATIVE; routing-openness not structure-specific;
+costume 2nd regime; Fork 1(a) unresolved-not-refuted; live thread + onset residue
+named-not-claimed; 3 flipped drafts kept as beats; a-fortiori iso + scorer catch = the
+apparatus). "Reality is the teacher" scoped to this-operationalization-undetected,
+principle untouched.
+
+**RULING (FRONTIER §10.16): next move = the DENSER ANCHOR via the parked
+acquisition-aligned ladder, BEFORE any counter-force.** Grounds verified against source:
+every intervention so far acts on targets/inputs, detach-null matches-or-beats all
+because nothing touches ROUTING differentiation; counter-force = manufacturing-class
+drift (last resort, only on measured exhaustion); anchor = stimulus-side, no new
+machinery, lever UNMEASURED — EXP08 ladder fell to CURRICULUM LAG not a null (num final
+verified 2.262/2.297/0.191/0.771 across v2/4/8/16 at fixed 30k — dense under-acquired),
+EXP10 built the aligned-read instrument that removes it; the ns occD-step-at-v4 fragment
+(verified +0.095, largest) points the same way; word channel = sole #12 reference
+surviving every collapse.
+
+**EXP11_ANCHOR_DENSITY_PREREG.md drafted — AT CHECKPOINT, nothing builds.** Nested
+ladder v2/4/8/16 (fixed maps b%2 / b / (a%2)·4+b / a·4+b, geometry untouched), STATIC
+env (EXP08 comparability), ≥3 seeds/rung, horizon 160k [RECONCILE] (collapse regime +
+v16 acquisition headroom). PRIMARY axis = acquisition-aligned reads per rung (EXP10
+harness — read at each rung's own num-onset, removes curriculum lag; never-crossed =
+ACQUISITION-CENSORED, unread not null). VERDICT axis = routing outcomes, asg_dist
+(input-sensitivity) as the PRIMARY quantity NOT argmax_k count. Teaching-fence intact
+(v≥4 never teaching evidence). **CENTRAL CONFOUND pre-registered = anchor-geometry
+degradation:** verified pairwise MIN 1.402→1.139→1.047→0.829 v2→v16 (41% drop, mean
+holds ~1.4) — "denser survives less" = density OR degraded separation; reading fork
+(a) survives-more-despite-degrading = density dominates / (b) survives-less-AND-degrades
+= confounded → matched-separation follow-up parked / (c) survives-more-AND-holds =
+cleanest. **ANCHOR-AS-CRUTCH screen** = asg_dist survival, not argmax_k count (a larger
+target set could mechanically floor collapse-to-one while assignment stays
+input-insensitive). In-regime two-stage calibration + guarded-v2 scorer (EXP10 fixes).
+Varied-ladder + matched-separation control + coarse-first ladder all PARKED with
+triggers. Checkpoint list = EXP11 §9 (7 items incl. the adoption clause: ladder measures
+the lever, adoption = separate ruling). Steps 5–6 blocked; no arm a fix.
+
+**Pre-commit verification of the §10.16 ruling + EXP11 prereg (15 agents, 3 lenses): 9
+confirmed findings; TWO BLOCKERS fixed before commit (real design revision, not
+wording).** BLOCKER 1 — the "dense anchors under-acquired / curriculum lag" gloss is
+REFUTED by the per-seed artifacts: EXP08 acquisition is a SEED LOTTERY (acquired 1/3,
+3/3, 2/3, 2/3 across v2/4/8/16 — the SPARSEST rung v2 is the WORST; means each dominated
+by one spiking seed), and the 160k horizon was justified from the word_terminal PIN
+onset (75.3k, deployed-v2 collapse clock) conflated with a v16 ACQUISITION onset never
+measured. Fixed: reframed as a lottery (stronger support for lever-unmeasured); horizon
+now set from a MEASURED per-rung acquisition-onset PRE-FLIGHT (max onset + W_post +
+margin); seed budget ≥5/rung sized so decisive rungs reach ≥3 ACQUIRED. BLOCKER 2 — the
+VERDICT axis was taken at fixed absolute horizon while the PRIMARY read was
+acquisition-aligned; denser rungs acquire LATER, so at a fixed horizon they've had FEWER
+post-acquisition collapse periods and would look "survives better" as an artifact —
+re-introducing the confound the aligned read removes. Fixed: BOTH axes now
+acquisition-aligned — routing survival read over a MATCHED POST-ONSET WINDOW (in
+collapse-periods), comparing rungs at matched collapse-phase. Also applied: VARIABLE
+renamed density→COVERAGE (cardinality/coverage collinear in the nested ladder →
+coarse-first control parked); geometry MIN drop corrected 41%→~26% (41% was
+seed-1-only; per-run anchor mean 1.208/1.120/1.046/0.889 v2→v16); crutch screen Form-2
+residual NAMED (a mandatory-distinct 16-target reference can mechanically force asg_dist
+high — matched-diversity assignment-collapsible control parked; scaffold = CONSISTENT
+not DEMONSTRATED until it runs); occD +0.095 method-pinned (last-minus-first-block
+mean-over-seeds; direction robust, magnitude aggregation-sensitive); num finals flagged
+outlier-dominated (medians/acquisition-counts cited). Canon (§10.16), §12.E, and the
+EXP11 prereg all corrected. Checkpoint list = EXP11 §9 (7 items).

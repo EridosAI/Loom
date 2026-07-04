@@ -1254,3 +1254,50 @@ but no longer dies. The open directions from §10.13 that EXP10 did not touch re
 routing-side counter-force (highest-risk, manufacturing class) and the denser anchor
 (stimulus-side; its lever still unmeasured at matched acquisition). The next design move is
 Jason's ruling.
+
+## §10.16 — EXP10 verdicts RATIFIED + the next-move ruling (2026-07-04): the denser anchor via the acquisition-aligned ladder, before any counter-force
+
+**Ratified (Jason):** §10.15 as stated — EXP10 NEGATIVE; routing-openness not
+structure-specific; costume on a second regime; Fork 1(a) unresolved-not-refuted; the
+live thread (differentiation channel alive-at-horizon 5/6, common-domination intact) and
+the acquisition-onset residue kept named-not-claimed; the three flipped drafts kept as
+beats; the a-fortiori isotropic result and the scorer catch are the apparatus earning its
+keep. "Reality is the teacher" scoped to *this operationalization undetected* — the
+principle untouched.
+
+**THE RULING — next move = the DENSER ANCHOR, via the parked acquisition-aligned ladder,
+BEFORE any counter-force.** Grounds: two regimes now show the same shape — every
+intervention so far acts on *targets or inputs*, and the detach-null matches or beats all
+of them because nothing yet touches what keeps **routing** differential. The two untouched
+directions split cleanly on risk: the routing-side counter-force is the named
+manufacturing-class drift (a new mechanism with its own objective — LAST RESORT, only on
+measured exhaustion of alternatives); the anchor is stimulus-side, no new machinery, and
+its lever is genuinely UNMEASURED — the EXP08 ladder read it at a fixed 30k budget and got
+only an ACQUISITION SEED LOTTERY (verification-corrected: acquired-seed counts 1/3, 3/3,
+2/3, 2/3 across v2/4/8/16 — the SPARSEST rung v2 is the WORST acquirer, not a monotone
+"dense under-acquired" lag; num medians 0.00/0.63/0.19/0.36, means each dominated by one
+spiking seed), and EXP10 built the instrument that fixes the alignment (the
+acquisition-aligned read). The one ns fragment we have — the occupancy category-step
+largest at v4 (direction robust; magnitude aggregation-sensitive, +0.095 by last-minus-
+first-block mean-over-seeds) — points the same way, as does the standing fact that the
+word channel is the sole #12 reference that survived every collapse. **The question the
+ladder now asks cleanly: does naming more of the space keep routing input-sensitive — the
+anchor shifting from accelerant (2 tokens) to scaffold (COVERAGE of the axes that die
+first).**
+
+**Construction (ratified + verification-hardened):** the nested ladder v2→4→8→16 (fixed
+maps b%2 / b / (a%2)·4+b / a·4+b, geometry untouched), STATIC environment for EXP08
+comparability, **BOTH axes acquisition-aligned** (verification blocker fix — the PRIMARY
+acquisition read AND the routing VERDICT read at each rung's own onset over a matched
+post-onset window; a fixed-absolute-horizon verdict would re-introduce the very
+curriculum confound the aligned read removes, since denser rungs acquire later),
+input-sensitivity **asg_dist** as the verdict quantity (NOT argmax_k count — the crutch
+screen), the teaching-fence intact (v≥4 cells are NEVER teaching evidence). **Variable =
+COVERAGE, not "density"** (verification: cardinality and axis-coverage are collinear in the
+nested ladder — the coarse-first control that separates them is PARKED with a
+positive-result trigger). Horizon set from a MEASURED per-rung acquisition-onset pre-flight
+(not the conflated word-pin clock). Varied-environment ladder PARKED (trigger: coverage
+holds routing open in static). **Prereg at checkpoint before build:
+`EXP11_ANCHOR_DENSITY_PREREG.md` (REVISED post-verification — two blockers fixed: verdict
+alignment + horizon pre-flight). Steps 5–6 stay BLOCKED; the ladder measures the lever —
+adoption of any rung is a separate ruling, no arm is a fix.**

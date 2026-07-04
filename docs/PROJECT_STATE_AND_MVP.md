@@ -892,3 +892,26 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   refuted as a principle; this operationalization didn't deliver a detectable teaching
   effect. Untouched §10.13 directions remain (routing-side counter-force / denser
   anchor). No arm a fix; steps 5–6 blocked; next design move = Jason's ruling.]
+- **[2026-07-04 — EXP10 verdicts RATIFIED; next move RULED = the DENSER ANCHOR before
+  any counter-force (FRONTIER §10.16).** Grounds: two regimes hit the same wall (every
+  intervention acts on targets/inputs; nothing touches what keeps ROUTING differential);
+  the counter-force is manufacturing-class drift (LAST RESORT), the anchor is
+  stimulus-side / no new machinery / lever genuinely UNMEASURED (EXP08 ladder at fixed 30k
+  = an ACQUISITION SEED LOTTERY — acquired 1/3, 3/3, 2/3, 2/3 v2/4/8/16, the SPARSEST rung
+  WORST; not a curriculum lag, not a null; EXP10 built the aligned-read harness that fixes
+  the alignment). The question: does naming more of the space keep routing INPUT-SENSITIVE
+  — anchor from accelerant (2 tokens) to scaffold (COVERAGE of the axes that die first).
+  **EXP11 prereg DRAFT AT CHECKPOINT (`EXP11_ANCHOR_DENSITY_PREREG.md`, REVISED
+  post-verification — 2 blockers fixed):** nested ladder v2/4/8/16 (fixed maps, geometry
+  untouched), STATIC env, **BOTH axes acquisition-aligned** (verdict read over a matched
+  post-onset window, not a fixed horizon — else denser-acquires-later re-introduces the
+  confound); asg_dist (input-sensitivity, NOT argmax_k) = verdict; VARIABLE = COVERAGE
+  (cardinality/coverage collinear — coarse-first control parked); horizon from a MEASURED
+  per-rung onset pre-flight (not the conflated word-pin clock); ≥5 seeds/rung sized against
+  the lottery (≥3 acquired). Teaching-fence intact. CENTRAL CONFOUND = anchor-geometry
+  degradation (pairwise MIN ~26% drop over per-run anchors; fork a/b/c + matched-separation
+  parked); crutch screen = asg_dist survival, with the Form-2 residual named
+  (mandatory-distinct targets can force asg_dist — matched-diversity control parked);
+  ACQUISITION-CENSORED = unread not null; in-regime two-stage calibration + guarded-v2
+  scorer. Varied-ladder parked. Nothing builds/runs pre-ratification; steps 5–6 blocked;
+  ladder measures the lever, adoption = separate ruling.]
