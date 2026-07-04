@@ -1,0 +1,339 @@
+{
+  "arm": "cov4",
+  "seed": 1,
+  "vocab": 4,
+  "no_word": false,
+  "members": [
+    {
+      "member": 0,
+      "a": 0,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 0,
+      "word_v16": 0
+    },
+    {
+      "member": 1,
+      "a": 0,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 1,
+      "word_v16": 1
+    },
+    {
+      "member": 2,
+      "a": 0,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 2,
+      "word_v16": 2
+    },
+    {
+      "member": 3,
+      "a": 0,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 3,
+      "word_v16": 3
+    },
+    {
+      "member": 4,
+      "a": 1,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 4,
+      "word_v16": 4
+    },
+    {
+      "member": 5,
+      "a": 1,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 5,
+      "word_v16": 5
+    },
+    {
+      "member": 6,
+      "a": 1,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 6,
+      "word_v16": 6
+    },
+    {
+      "member": 7,
+      "a": 1,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 7,
+      "word_v16": 7
+    },
+    {
+      "member": 8,
+      "a": 2,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 0,
+      "word_v16": 8
+    },
+    {
+      "member": 9,
+      "a": 2,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 1,
+      "word_v16": 9
+    },
+    {
+      "member": 10,
+      "a": 2,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 2,
+      "word_v16": 10
+    },
+    {
+      "member": 11,
+      "a": 2,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 3,
+      "word_v16": 11
+    },
+    {
+      "member": 12,
+      "a": 3,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 4,
+      "word_v16": 12
+    },
+    {
+      "member": 13,
+      "a": 3,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 5,
+      "word_v16": 13
+    },
+    {
+      "member": 14,
+      "a": 3,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 6,
+      "word_v16": 14
+    },
+    {
+      "member": 15,
+      "a": 3,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 7,
+      "word_v16": 15
+    }
+  ],
+  "visual_side": {
+    "axis_roles": "coarse decoy = a (word-irrelevant); distractor = b//n_category (salient, associatively inert at vocab 2); category = b%n_category (subtle, word-named at every rung)",
+    "n_A": 4,
+    "n_distractor": 2,
+    "n_category": 2,
+    "R_coarse": 5.0,
+    "r_distractor": 3.0,
+    "r_category": 0.5,
+    "shared_mag_reference": 5.830951894845301,
+    "cue_mag_reference": 0.5,
+    "sigma_stim": 0.2,
+    "block_geometry": "disjoint index blocks [a | distractor | category] rotated by Q (seeded by cfg.seed; see conflict_stream.ConflictStimulus)"
+  },
+  "anchor_side": {
+    "construction": "WordCortex(D, vocab, seed=cfg.seed+1) \u2014 same generator rule at every rung (2 = deployed reference; 16 = the Phase-1 word)",
+    "embeddings": [
+      [
+        -0.300684,
+        0.264804,
+        -0.376776,
+        -0.320582,
+        -0.352101,
+        0.337313,
+        -0.305477,
+        -0.034332,
+        -0.262272,
+        0.099734,
+        -0.165056,
+        -0.067922,
+        0.291094,
+        -0.217505,
+        -0.065001,
+        -0.125002
+      ],
+      [
+        -0.355634,
+        -0.108205,
+        -0.200099,
+        0.124261,
+        0.007059,
+        -0.01176,
+        0.251322,
+        0.209074,
+        0.109492,
+        -0.11766,
+        0.030407,
+        0.651989,
+        0.033148,
+        0.26407,
+        0.074384,
+        0.413595
+      ],
+      [
+        -0.217641,
+        0.520624,
+        -0.079208,
+        -0.077372,
+        -0.368275,
+        -0.006917,
+        -0.066963,
+        -0.201636,
+        0.329075,
+        0.122227,
+        -0.337818,
+        -0.212467,
+        -0.26516,
+        -0.244073,
+        -0.274478,
+        -0.028208
+      ],
+      [
+        -0.233962,
+        0.072481,
+        -0.368185,
+        0.424614,
+        0.01027,
+        0.36398,
+        -0.135747,
+        0.259732,
+        0.173629,
+        -0.276051,
+        -0.133939,
+        -0.101183,
+        -0.45442,
+        0.178796,
+        -0.177909,
+        -0.032087
+      ]
+    ],
+    "pairwise_separation": [
+      [
+        0.0,
+        1.5301,
+        1.0899,
+        1.3826
+      ],
+      [
+        1.5301,
+        0.0,
+        1.5917,
+        1.2611
+      ],
+      [
+        1.0899,
+        1.5917,
+        0.0,
+        1.223
+      ],
+      [
+        1.3826,
+        1.2611,
+        1.223,
+        0.0
+      ]
+    ],
+    "pairwise_min": 1.0899466276168823,
+    "pairwise_mean": 1.3464032411575317,
+    "geometry_caveat": "if pairwise geometry shifts materially across rungs, surface as a caveat \u2014 do NOT fix mid-arm (Gate-4 pin)"
+  },
+  "staging": {
+    "capacity_clock": {
+      "t1": 300,
+      "t2": 1200,
+      "lam_hi": 10.0,
+      "lam_lo": 0.0
+    },
+    "pam_tie": {
+      "regime": "two_clock",
+      "t1": 300,
+      "t2": 1200
+    },
+    "reposing_alpha": 1.0,
+    "gain_ramp": 400,
+    "curriculum": {
+      "vocab": 4,
+      "threshold": 0.6,
+      "start_active": 2
+    },
+    "dt_offset": 0,
+    "dt_assoc": "0 \u2014 the word event rides its member (token computed from the SAME wave's (a,b) in build_cells; every rung)",
+    "word_available_from": 0,
+    "stream": {
+      "rule": "uniform (a,b) via make_stream",
+      "seed": 4,
+      "T": 6000,
+      "W": 3,
+      "eval_cadence": 300,
+      "block_cadence": 3000
+    }
+  },
+  "arm_overrides": {
+    "vocab": 4,
+    "no_word": false
+  },
+  "stream_consistency_asserted_waves": 200
+}

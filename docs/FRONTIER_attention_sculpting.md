@@ -1301,3 +1301,72 @@ holds routing open in static). **Prereg at checkpoint before build:
 `EXP11_ANCHOR_DENSITY_PREREG.md` (REVISED post-verification — two blockers fixed: verdict
 alignment + horizon pre-flight). Steps 5–6 stay BLOCKED; the ladder measures the lever —
 adoption of any rung is a separate ruling, no arm is a fix.**
+
+## §10.17 — EXP11 anchor-coverage ladder RAN → INCONCLUSIVE (2026-07-04; my two draft verdicts BOTH refuted in verification)
+
+The ladder ran to plan: pre-flight (all 4 rungs acquired 2/2 on cal seeds; horizon 147300
+= max onset 45300 + 3×30000 period + 12000 margin) → 40 verdict arms (natural + the
+matched-separation control, 5 seeds/rung, all 5/5 acquired — no ACQUISITION-STARVED) →
+adversarial verification (37 agents, 4 lenses, 20 confirmed findings; all artifact
+arithmetic and construction integrity reproduced clean — threads=1, spec_hash consistent,
+teaching fence intact). **My draft claimed a clean COVERAGE-NULL + a new inverse
+"tighter-anchor-helps" lever; verification refuted BOTH. The honest verdict is
+INCONCLUSIVE.**
+
+**What is real (estimator-free full-post-onset window — see the instrument lesson):** the
+NATURAL ladder's routing input-sensitivity (asg_dist survival) rises ~monotonically with
+coverage — v2 0.033 → v4 0.137 → v8 0.158 → v16 0.179 (3/3 up-steps, ~5.4×). **But
+coverage is COLLINEAR with anchor min-separation (denser = tighter: v2 1.205 → v16 0.896)
+AND with acquisition onset**, so the rise cannot be attributed to coverage per se.
+
+**Why COVERAGE-NULL is NOT established — the control is confounded.** The
+matched-separation control (closest-anchor-pair rotation to a common min-sep) is
+NON-UNIFORM: it perturbs the sparse rungs heavily (v2 min-sep 1.205→0.896, mean-sep
+1.379→1.283) and the dense rung ~not at all (v16 0.896→0.863). Its "flatness" is produced
+by lifting ONLY v2 — within-rung, coverage-fixed asg change nat→ms is **v2 +0.130, v4
+−0.001, v8 −0.040, v16 −0.016** — i.e. the construction raises the sparse end and leaves
+the rest, which flattens the ladder as an ARTIFACT, not as evidence that coverage is
+inert. And it is underpowered (n=5; matched-sep pairwise |t|<0.7).
+
+**Why the "tighter min-sep lever" is NOT supported — no within-rung dose.** The apparent
+inverse lever (pooled corr(min_sep, asg) = −0.38 across 40 runs) is the
+coverage/perturbation collinearity wearing a min-sep mask: the within-rung effect
+(coverage held fixed) is entirely v2 (the most-perturbed rung); v4/v8/v16 are
+flat-or-negative. There is no min-sep dose-response with coverage removed. The claim is
+struck.
+
+**What survives — a named LOOSE THREAD, not a mechanism:** heavily re-perturbing the v2
+(category-only) anchor lifts its routing-survival ~4× via an UNIDENTIFIED channel
+(candidates, all co-varying in the closest-pair construction: min-sep, mean-sep,
+acquisition onset, generic anchor re-draw). It is real (persists at matched onset: early-
+window means 0.281 vs 0.057) but un-attributed. A residual hint also noted: terminal
+asg_dist is weakly coverage-positive in BOTH ladders (window-mean buries it; weak).
+
+**THE INSTRUMENT LESSON (a real scorer correction, canonized like EXP10's force_period).**
+The pinned verdict window "W_post = 3 collapse periods in the rung's OWN regime" is
+UNUSABLE here: the per-rung den-period estimator is fallback-dominated (3/5 estimation
+failures on some rungs → the PERIOD_WORD=4800 fallback) and swings 6× (cal 30000 vs
+in-regime 4800), so the window is effectively arbitrary-length and it manufactured the
+draft's non-monotone "v8 peak / 5.0× endpoint" (v8's short fallback window caught only its
+post-onset plateau). **The estimator-free full-post-onset window is the honest read; the
+period-normalized window is RETRACTED** (kept in the artifact for provenance). Pre-registered
+fork note: §4 assumed degrading min-sep HURTS; the data came in orthogonal to that
+assumption — the machine-written `geometry_fork.verdict` string ("coverage dominates
+uphill") is stale/inverted and must not be quoted.
+
+**HONEST ANSWER TO THE RULING'S QUESTION ("does naming more of the space keep routing
+input-sensitive?"): EXP11 cannot answer it cleanly.** The natural rise is inseparable from
+the min-sep and onset confounds; the control built to separate them is itself confounded by
+non-uniform perturbation; the study is underpowered. Neither COVERAGE-SCAFFOLD nor
+COVERAGE-NULL is demonstrated. **The anchor lever remains UNMEASURED — EXP11-v1's execution
+had a flawed control, not a null.**
+
+**WHAT A CLEAN REDO NEEDS (design inputs, for the ruling):** (1) a UNIFORM
+matched-min-separation control — re-draw EVERY rung's anchor to a common min-sep by the
+same method (rejection sampling / optimization at unit norm), or the parked D-scaling
+control — not the non-uniform closest-pair rotation; (2) a FIXED common post-onset verdict
+window (the period-normalized one is retracted); (3) more seeds (n=5 underpowered); (4)
+the loose-thread control (perturbed-but-same-min-sep vs tighter) to identify the v2
+channel. **The decision — clean-redo the anchor lever vs move to the routing-side
+counter-force (the manufacturing-class last resort) — is Jason's ruling.** Steps 5–6 stay
+BLOCKED; no arm was a fix.

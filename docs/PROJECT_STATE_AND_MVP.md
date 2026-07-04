@@ -915,3 +915,21 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   ACQUISITION-CENSORED = unread not null; in-regime two-stage calibration + guarded-v2
   scorer. Varied-ladder parked. Nothing builds/runs pre-ratification; steps 5–6 blocked;
   ladder measures the lever, adoption = separate ruling.]
+- **[2026-07-04 — EXP11 RAN → INCONCLUSIVE (FRONTIER §10.17).** Pre-flight (all rungs
+  acquired 2/2; horizon 147300) → 40 verdict arms (natural + matched-sep control, 5
+  seeds/rung, all 5/5 acquired) → verification (37 agents, 20 findings; arithmetic +
+  construction clean; BOTH my draft verdicts REFUTED). Natural ladder asg_dist survival
+  rises ~monotonically with coverage (estimator-free window: 0.033/0.137/0.158/0.179,
+  5.4×) BUT coverage is collinear with anchor min-sep AND onset. **COVERAGE-NULL NOT
+  established** — the matched-sep control is CONFOUNDED (non-uniform closest-pair
+  perturbation lifts ONLY v2: within-rung nat→ms +0.130/−0.001/−0.040/−0.016; flatness =
+  artifact) + underpowered n=5. **"Tighter min-sep lever" STRUCK** — no within-rung dose
+  (pooled −0.38 corr = collinearity). Loose thread (named, not mechanism): re-perturbing
+  the v2 category-only anchor lifts survival ~4× via an unidentified channel.
+  **INSTRUMENT LESSON: the "3-periods-own-regime" verdict window is UNUSABLE (per-rung
+  den-period fallback-dominated, 3/5 failures, 6× swing) → RETRACTED for the
+  estimator-free full-post-onset window.** The anchor lever remains UNMEASURED —
+  EXP11-v1's control was flawed, not a null. **DECISION FOR JASON: clean-redo the anchor
+  (uniform matched-min-sep control + fixed common window + more seeds) vs move to the
+  routing-side counter-force (manufacturing-class last resort).** Steps 5–6 blocked; no
+  arm a fix.]

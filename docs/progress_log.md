@@ -1416,3 +1416,44 @@ thin — caveat). **HORIZON = 45300 (max onset) + 3×30000 (max period) + 12000 
 147300.** Verdict arms launched: 20 natural (4 rungs × verdict seeds {0–4}) at 147300,
 matched-separation control to follow. Each rung's verdict reads at 3 periods in ITS OWN
 regime. Steps 5–6 blocked.
+
+## 2026-07-04 — EXP11 RAN → INCONCLUSIVE (FRONTIER §10.17); both my draft verdicts refuted in verification
+
+40 verdict arms (natural + matched-sep, 5 seeds/rung, all 5/5 acquired) + adversarial
+verification (37 agents, 4 lenses, 20 confirmed findings; every artifact number + all
+construction integrity reproduced clean — threads=1, spec_hash consistent, teaching
+fence intact). **My draft (clean COVERAGE-NULL + a new inverse "tighter-anchor-helps"
+lever) was WRONG on both counts — honest verdict INCONCLUSIVE.**
+
+Real (estimator-free full-post-onset window): natural ladder asg_dist survival rises
+~monotone with coverage (v2 0.033 → v4 0.137 → v8 0.158 → v16 0.179, 5.4×) — BUT
+coverage collinear with anchor min-sep (v2 1.205 → v16 0.896) AND onset. **COVERAGE-NULL
+NOT established:** the matched-sep control is CONFOUNDED — non-uniform closest-pair
+rotation perturbs v2 heavily / v16 ~zero, so its flatness comes from lifting ONLY v2
+(within-rung nat→ms: v2 +0.130, v4 −0.001, v8 −0.040, v16 −0.016), an artifact not
+evidence coverage is inert; underpowered n=5 (matched-sep pairwise |t|<0.7).
+**"Tighter min-sep lever" STRUCK:** no within-rung dose (coverage-fixed effect is
+entirely v2, the most-perturbed rung); pooled corr(min_sep,asg)=−0.38 is
+coverage/perturbation collinearity wearing a min-sep mask. Loose thread (named, not a
+mechanism): heavily re-perturbing the v2 category-only anchor lifts survival ~4× via an
+UNIDENTIFIED channel (min-sep/mean-sep/onset/generic-redraw all co-vary; persists at
+matched onset — early means 0.281 vs 0.057).
+
+**INSTRUMENT LESSON (scorer correction, canonized like EXP10 force_period):** the pinned
+"W_post = 3 collapse periods in the rung's OWN regime" window is UNUSABLE — the per-rung
+den-period estimator is fallback-dominated (3/5 failures → PERIOD_WORD=4800 fallback),
+swings 6× (cal 30000 vs in-regime 4800), so the window is arbitrary-length and it
+manufactured the draft's non-monotone "v8 peak / 5.0× endpoint" (v8 short fallback
+window caught only its plateau). RETRACTED for the estimator-free full window (kept in
+artifact for provenance). §4 fork's directional assumption (degrading min-sep hurts) was
+wrong; reality came orthogonal; the machine geometry_fork string is stale/inverted, not
+quoted.
+
+**HONEST ANSWER: EXP11 cannot answer the ruling's question cleanly; the anchor lever
+remains UNMEASURED (flawed control, not a null).** Clean redo needs: UNIFORM
+matched-min-sep control (re-draw all rungs to common min-sep by one method, or D-scaling
+— NOT non-uniform closest-pair rotation); fixed common post-onset window; more seeds; the
+loose-thread control (perturbed-same-min-sep vs tighter). **DECISION FOR JASON: clean-redo
+the anchor vs move to the routing-side counter-force (manufacturing-class last resort).**
+Steps 5–6 blocked; no arm a fix. Artifacts: exp08/cov*_s*.json (40), exp11_verdicts.json
+(HONEST_READ; period-normalized RETRACTED), exp11_preflight.json.

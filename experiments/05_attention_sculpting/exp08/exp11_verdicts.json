@@ -1,0 +1,236 @@
+{
+  "HONEST_READ": {
+    "full_window": {
+      "v2": {
+        "nat_mean": 0.0334,
+        "nat_sd": 0.0264,
+        "ms_mean": 0.163,
+        "ms_sd": 0.0831,
+        "min_sep": 1.2047
+      },
+      "v4": {
+        "nat_mean": 0.1372,
+        "nat_sd": 0.0595,
+        "ms_mean": 0.1361,
+        "ms_sd": 0.0588,
+        "min_sep": 1.11
+      },
+      "v8": {
+        "nat_mean": 0.1576,
+        "nat_sd": 0.0591,
+        "ms_mean": 0.1178,
+        "ms_sd": 0.0735,
+        "min_sep": 1.0547
+      },
+      "v16": {
+        "nat_mean": 0.1794,
+        "nat_sd": 0.0664,
+        "ms_mean": 0.1632,
+        "ms_sd": 0.0544,
+        "min_sep": 0.8963
+      }
+    },
+    "within_rung": {
+      "v2": 0.1297,
+      "v4": -0.0011,
+      "v8": -0.0399,
+      "v16": -0.0162
+    },
+    "pooled_minsep_corr": -0.379,
+    "nat_full_trend": {
+      "values": [
+        0.0334,
+        0.1372,
+        0.1576,
+        0.1794
+      ],
+      "up_steps": 3,
+      "of": 3,
+      "spearman_dir": "increasing",
+      "endpoint_ratio": 5.37
+    },
+    "verdict": "INCONCLUSIVE",
+    "reading": "Natural ladder rises ~monotonically with coverage on the estimator-free window (0.0334/0.1372/0.1576/0.1794) BUT coverage is collinear with anchor min-sep AND onset; the matched-sep control meant to separate them is CONFOUNDED (non-uniform closest-pair perturbation \u2014 heavy at v2, ~zero at v16 \u2014 lifts ONLY v2 (within-rung {'v2': 0.1297, 'v4': -0.0011, 'v8': -0.0399, 'v16': -0.0162}), so its flatness is a construction artifact, not clean coverage-null); pooled min-sep corr -0.379 is coverage/perturbation collinearity, NOT a within-rung dose (v4/v8/v16 flat-or-negative). Neither COVERAGE-SCAFFOLD nor COVERAGE-NULL established; underpowered n=5. Loose thread (named, not a mechanism): heavily re-perturbing the v2 category-only anchor lifts survival ~4x via an UNIDENTIFIED channel. Clean redo needs a UNIFORM matched-min-sep control (or D-scaling), a fixed common window, and more seeds."
+  },
+  "period_normalized_RETRACTED": {
+    "natural": {
+      "2": {
+        "acquired": 5,
+        "starved": false,
+        "period": 16800,
+        "min_sep": 1.2047,
+        "mean_sep": 1.3791,
+        "n_read": 5,
+        "asg_mean": 0.042,
+        "asg_mean_sd": 0.0327,
+        "asg_frac_alive": 0.101,
+        "argmax_k_med": 1,
+        "per_seed_asg": [
+          0.0371,
+          0.0021,
+          0.0981,
+          0.0527,
+          0.0201
+        ]
+      },
+      "4": {
+        "acquired": 5,
+        "starved": false,
+        "period": 18000,
+        "min_sep": 1.11,
+        "mean_sep": 1.3962,
+        "n_read": 5,
+        "asg_mean": 0.1572,
+        "asg_mean_sd": 0.0745,
+        "asg_frac_alive": 0.497,
+        "argmax_k_med": 1.4,
+        "per_seed_asg": [
+          0.1912,
+          0.2892,
+          0.101,
+          0.104,
+          0.1008
+        ]
+      },
+      "8": {
+        "acquired": 5,
+        "starved": false,
+        "period": 4800,
+        "min_sep": 1.0547,
+        "mean_sep": 1.4156,
+        "n_read": 5,
+        "asg_mean": 0.3207,
+        "asg_mean_sd": 0.075,
+        "asg_frac_alive": 0.939,
+        "argmax_k_med": 2.4,
+        "per_seed_asg": [
+          0.2798,
+          0.316,
+          0.4637,
+          0.2474,
+          0.2964
+        ]
+      },
+      "16": {
+        "acquired": 5,
+        "starved": false,
+        "period": 17700,
+        "min_sep": 0.8963,
+        "mean_sep": 1.4158,
+        "n_read": 5,
+        "asg_mean": 0.2107,
+        "asg_mean_sd": 0.0685,
+        "asg_frac_alive": 0.591,
+        "argmax_k_med": 1.2,
+        "per_seed_asg": [
+          0.1724,
+          0.3417,
+          0.1922,
+          0.2026,
+          0.1444
+        ]
+      }
+    },
+    "matched_sep": {
+      "2": {
+        "acquired": 5,
+        "starved": false,
+        "period": 12300,
+        "min_sep": 0.8963,
+        "mean_sep": 1.2829,
+        "n_read": 5,
+        "asg_mean": 0.2264,
+        "asg_mean_sd": 0.1187,
+        "asg_frac_alive": 0.689,
+        "argmax_k_med": 1.8,
+        "per_seed_asg": [
+          0.3237,
+          0.1911,
+          0.0085,
+          0.2972,
+          0.3114
+        ]
+      },
+      "4": {
+        "acquired": 5,
+        "starved": false,
+        "period": 4800,
+        "min_sep": 0.8963,
+        "mean_sep": 1.3758,
+        "n_read": 5,
+        "asg_mean": 0.2099,
+        "asg_mean_sd": 0.0744,
+        "asg_frac_alive": 0.722,
+        "argmax_k_med": 1.8,
+        "per_seed_asg": [
+          0.3022,
+          0.2591,
+          0.0919,
+          0.2335,
+          0.1628
+        ]
+      },
+      "8": {
+        "acquired": 5,
+        "starved": false,
+        "period": 12600,
+        "min_sep": 0.8963,
+        "mean_sep": 1.4119,
+        "n_read": 5,
+        "asg_mean": 0.1803,
+        "asg_mean_sd": 0.0911,
+        "asg_frac_alive": 0.545,
+        "argmax_k_med": 1.6,
+        "per_seed_asg": [
+          0.3079,
+          0.2478,
+          0.0482,
+          0.1237,
+          0.1742
+        ]
+      },
+      "16": {
+        "acquired": 5,
+        "starved": false,
+        "period": 14700,
+        "min_sep": 0.8631,
+        "mean_sep": 1.4156,
+        "n_read": 5,
+        "asg_mean": 0.2081,
+        "asg_mean_sd": 0.0658,
+        "asg_frac_alive": 0.582,
+        "argmax_k_med": 1.4,
+        "per_seed_asg": [
+          0.1796,
+          0.3067,
+          0.2309,
+          0.2175,
+          0.1055
+        ]
+      }
+    },
+    "note": "RETRACTED window (period fallback-dominated); kept for provenance only"
+  },
+  "acquisition": {
+    "v2": {
+      "nat": 5,
+      "ms": 5,
+      "starved": false
+    },
+    "v4": {
+      "nat": 5,
+      "ms": 5,
+      "starved": false
+    },
+    "v8": {
+      "nat": 5,
+      "ms": 5,
+      "starved": false
+    },
+    "v16": {
+      "nat": 5,
+      "ms": 5,
+      "starved": false
+    }
+  }
+}
