@@ -989,3 +989,25 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   dwell 4/4 positive deltas, no registered fire); 2 latent scorer defects fixed
   unexercised. Fourth campaign where verification corrected a draft reading. No arm a
   fix.]
+- **[2026-07-05 — SPLIT ARM + 12b ARC COMPLETE (FRONTIER §10.20.1–§10.20.6): the first
+  DEMONSTRATION-GRADE teaching result.** SPLITTING ARM (§14, §10.20.1): SURVIVES 5S/0D
+  (incl. ruled backfill) → variation alone suffices on the registered ruler; exams = a
+  2–3× dose factor + horizon-persistence lever; dwell-ordering buys neither
+  [REGIME-BOUND: non-generative fabric — §10.20.2 rider; lawful-dynamics worlds = named
+  future rung]. 12b (§15, amended trigger): **policy (iii) STRUCK on the §10.20.3 regime
+  finding — the ZERO-PREDICTION-LOAD word is INERT (num ≤ 2.6e-5 over 20 cal runs,
+  present ≡ absent; participation requires prediction load)** → re-posed at the COIN
+  POLICY (present = A-SPLIT policy verbatim; absent = same draws, word-masks →
+  exposure-only; dose IS the mechanism). Composite-S verdicts (§10.20.4): sh S-FIRES
+  5F/0N but composition impure (untied legs contaminated by the comparator's own death —
+  instrument lesson); dw S-NULL. **S re-cut by ruling (§10.20.5) to S_w = word-tied
+  contrast alone; FRESH seeds {5–9}. VERDICT (§10.20.6, verified 18-agent): sh S_w-FIRES
+  4F/0N ROBUST — word-tied SELECTIVITY DEMONSTRATED on the shuffled fabric (the ~5×
+  collapse-accelerant channel, opposite sign, selective on what it names; no untied leg
+  fires its own band); dw 3F/1N FRAGILE (seed-batch not ruler; combined 3F/4N =
+  lottery).** Health: word strongly protective on sh; dw inverts on den while asg_cat
+  favors present. sh s9 fabric REJECTED pre-run by the k⟂member gate (outcome-blind;
+  committed record). **RULINGS OWED: dw-block standing, s10 substitution, Guiding-List
+  candidate promotion touch (contrast leg demonstrated; earned-salience leg unread).
+  Artifacts: exp12_12b_stage2_constants.json, exp12_12b_verdicts.json,
+  exp12_12b_sw_verdicts.json.]**
