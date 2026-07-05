@@ -1526,3 +1526,61 @@ verdict run) → rig-1 arms (A-DWELL, A-SHUFFLE; verdict seeds {0–4}, +2 pool 
 the margin guard) → four-cell read behind the verification pass → margin guard → ladder-ordered
 fires as triggered → one review.** Banked arms (12b, baseline openers, coverage ladder,
 splitting arm, coherence-ablation) are built-when-fired, not speculatively. No arm is a fix.
+
+### §10.19.1 — STAGE-ONE ADDENDUM (2026-07-05): built + reviewed + re-calibrated on the corrected law; THE FIRST MEASURED FABRIC FACT
+
+**Build + pre-run review.** Harness committed `a98b45a` (wave-local W=1 rig; fabric on 9
+dedicated substreams; one code path — step() inherited). The standing verification pass ran
+BEFORE the first run (32 agents; 15 confirmed → 5 distinct, all fixed pre-run): the two §13.10
+majors (an extra conditional mask-stream draw that let a probe-rate change reshuffle the whole
+downstream schedule → both per-dwell coins now drawn every dwell, rate-nestedness
+regression-tested; the probe read taken post-update vs the scheduled exam's pre-update stash →
+probe now reads pre-update) and a §10.14-ban violation in the stage-one period read (static-line
+4800-pin/1.5×-band/20100-cut estimator → replaced with the estimator-free in-regime read;
+cycle-present-period-unmeasured labeled exactly that). Wave-local consequences recorded as CC
+choices, not silent patches: **L_JEPA inert by construction** (the §3(a) RECORDED GUARD — W=1
+idles the deployed loss's one next-wave-prediction term; the anti-forward guard enforced
+structurally); no u-carrier (within-window order does not exist at W=1); the EXP10 word jiggle
+not carried (the fabric enumerates member nuisance + background only).
+
+**Ruling 1 executed (dwell law amended in place):** k = 2 + Geom₀(0.1), support {2..48},
+E[k]=11, cap 0.9⁴⁷ ≈ 0.707% — k_min = 2 realizable (law verified: min k = 2, P(k=2) = 0.100,
+realized cap 0.73%). The stale-law stage-one (support-error law, 120k ceiling; committed
+`45a0121`) is SUPERSEDED by the corrected-law re-cal below (160k ceiling, censoring-aware);
+records stand in history. §13.8 asserts re-ran green on the new support (per-lag 0–48 stride 1;
+k ⟂ member with the k=2 bin populated; schedule; background; dwell-permutation nulls).
+
+**THE FIRST MEASURED FABRIC FACT — the acquisition asymmetry, NAMED so nobody "fixes" it:
+the shuffled arm acquires ~10× faster than the dwelled arm, on every seed.** Corrected-law
+re-cal (cal {20–24}, 160k, threads=1): A-SHUFFLE num-floor onsets {3.6k, 3.0k, 2.4k, 4.2k,
+7.8k} — 5/5, all ≤ 7.8k. A-DWELL onsets {CENSORED, 31.8k, 6.3k, CENSORED, 103.2k} — 3/5
+acquired at 160k. Mechanically coherent: interleaved (i.i.d.-like) gradient ordering reaches
+the word→vision num floor fast; long same-member runs are bursty and slow to cover the deck.
+**The out-of-family baseline REPRODUCES the asymmetry on the identical fabric** (B2 exam acc at
+160k: shuffle 0.93–0.96 on 5/5; dwell 0.95/0.93 on 2 seeds, chance on 3) — a TASK property, not
+a PAM property (the generality leg's one-directional read, pre-armed). This fact is
+ENVIRONMENT-side and is NOT a defect to be tuned away; **the acquisition-aligned machinery is
+what keeps it out of the four-cell table** (verdicts read post-onset per arm/seed; a censored
+seed is UNREAD, never a dies; the +2 extension fires on read-count shortfall — §13.5 amended).
+
+**Sensitivity-without-conversion is already visible at stage-one** (the §10 registered finding
+class doing its job): num-floor acquisition fires while the onset-exam channel sits at chance
+in BOTH arms (post-onset exam acc 0.478–0.513; lift ≈ 0 — the deck-mean word completion), and
+asg_cat moves independently of the exam. Also measured: the draft conversion form (acc ≥ 0.6
+×2 windows) FALSE-FIRES on 60% of chance segments including censored runs — rejected;
+the chance-band-calibrated form went into the stage-two proposal.
+
+**Collapse periods (W_post ladder inputs, per arm):** dwell — one measured cycle (18.6k), one
+present-unmeasured, one no-cycle; shuffle — measured {43.8k, 9.3k}, one present-unmeasured, one
+no-cycle. Period estimates disagree up to 4.7× across seeds within an arm (the §10.17 estimator
+instability, present in-regime as expected).
+
+**Stage-two constants PROPOSED (artifact `exp12_stage2_constants.PROPOSED.json`; NOTHING in
+force until ratified in chat):** onset bound ≥160k (2 censored cal seeds — censoring-aware §13.9
+form); W_post per the precedence ladder (dwell 3×18.6k = 55.8k own-period; shuffle 3×43.8k =
+131.4k; sizing pin satisfied; the fixed-COMMON-window alternative 131.4k for both arms is the
+EXP11-lesson-consistent recommendation); verdict horizon 303.4k; survival θ recommended =
+dead-p95 0.0057 (alternates p90/p99 surfaced; the θ choice is DECISIVE on the cal spans —
+exactly why it is ratified, never read off); probe-dwell rate 0.02; baseline B1 floors + B2
+(floor 0); conversion form = chance-band p99 (acc ≥ 0.704) ×3 windows, measured false-fire 0.
+Verdict arms run only after ratification.

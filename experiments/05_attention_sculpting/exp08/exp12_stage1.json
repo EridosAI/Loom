@@ -6,301 +6,285 @@
     23,
     24
   ],
-  "horizon": 120000,
+  "horizon": 160000,
   "reads": [
     {
       "arm": "exp12_dwell",
       "seed": 20,
       "onset": null,
+      "exam_conversion_onset_PROPOSED_form": 25500,
       "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
     },
     {
       "arm": "exp12_dwell",
       "seed": 21,
-      "onset": 41100,
-      "den_dominant_period": null,
+      "onset": 31800,
+      "exam_conversion_onset_PROPOSED_form": 6000,
+      "den_dominant_period": 18600,
       "den_panel": {
-        "mean": 0.1332,
-        "amplitude": 2.4032,
+        "mean": 0.6612,
+        "amplitude": 2.1568,
         "envelope": [
           0.0,
-          2.4032
+          2.1568
         ],
-        "dominant_period_steps": null,
-        "trend_per_1000": 0.0006,
-        "n": 264
-      },
-      "collapse_cycle_present": true,
-      "w_post_ladder": "COLLAPSE CYCLE PRESENT, PERIOD UNMEASURED \u2014 stage-two must resolve (precedence-ladder input unresolved; do NOT fold into the no-cycle fallback)",
-      "asg_cat_post": {
-        "mean": 0.0041,
-        "end": 0.0006,
-        "min": 0.0
-      },
-      "asg_dist_post_mean": 0.1646,
-      "exam_lift_post": {
-        "mean": -0.0134,
-        "end": -0.1333
-      },
-      "exam_acc_post_mean": 0.4842,
-      "den_end": 0.002424,
-      "argmax_k_end": 1
-    },
-    {
-      "arm": "exp12_dwell",
-      "seed": 22,
-      "onset": 3300,
-      "den_dominant_period": 44100,
-      "den_panel": {
-        "mean": 0.3323,
-        "amplitude": 1.8685,
-        "envelope": [
-          0.0,
-          1.8686
-        ],
-        "dominant_period_steps": 44100,
-        "trend_per_1000": 0.0001,
-        "n": 390
+        "dominant_period_steps": 18600,
+        "trend_per_1000": 0.0082,
+        "n": 428
       },
       "collapse_cycle_present": true,
       "w_post_ladder": "own collapse period (measured in-regime)",
       "asg_cat_post": {
-        "mean": 0.0494,
-        "end": 0.0006,
+        "mean": 0.018,
+        "end": 0.043,
         "min": 0.0
       },
-      "asg_dist_post_mean": 0.5992,
+      "asg_dist_post_mean": 0.6792,
       "exam_lift_post": {
-        "mean": -0.0073,
-        "end": -0.038
+        "mean": -0.0105,
+        "end": 0.0081
       },
-      "exam_acc_post_mean": 0.4919,
-      "den_end": 0.527342,
+      "exam_acc_post_mean": 0.4851,
+      "den_end": 0.207599,
+      "argmax_k_end": 2
+    },
+    {
+      "arm": "exp12_dwell",
+      "seed": 22,
+      "onset": 6300,
+      "exam_conversion_onset_PROPOSED_form": 36000,
+      "den_dominant_period": null,
+      "den_panel": {
+        "mean": 0.3038,
+        "amplitude": 1.7015,
+        "envelope": [
+          0.0017,
+          1.7033
+        ],
+        "dominant_period_steps": null,
+        "trend_per_1000": -0.0003,
+        "n": 513
+      },
+      "collapse_cycle_present": false,
+      "w_post_ladder": "FIXED CALIBRATED ABSOLUTE-WAVE WINDOW (no collapse cycle in-regime \u2014 pre-registered fallback, \u00a713.4)",
+      "asg_cat_post": {
+        "mean": 0.0515,
+        "end": 0.0187,
+        "min": 0.0005
+      },
+      "asg_dist_post_mean": 0.6427,
+      "exam_lift_post": {
+        "mean": -0.0108,
+        "end": -0.0572
+      },
+      "exam_acc_post_mean": 0.4848,
+      "den_end": 0.982373,
       "argmax_k_end": 2
     },
     {
       "arm": "exp12_dwell",
       "seed": 23,
-      "onset": 31200,
-      "den_dominant_period": 5700,
-      "den_panel": {
-        "mean": 0.3223,
-        "amplitude": 1.4343,
-        "envelope": [
-          0.0029,
-          1.4372
-        ],
-        "dominant_period_steps": 5700,
-        "trend_per_1000": 0.0029,
-        "n": 297
-      },
-      "collapse_cycle_present": false,
-      "w_post_ladder": "FIXED CALIBRATED ABSOLUTE-WAVE WINDOW (no collapse cycle in-regime \u2014 pre-registered fallback, \u00a713.4)",
-      "asg_cat_post": {
-        "mean": 0.0173,
-        "end": 0.0001,
-        "min": 0.0001
-      },
-      "asg_dist_post_mean": 0.5602,
-      "exam_lift_post": {
-        "mean": -0.0191,
-        "end": -0.2001
-      },
-      "exam_acc_post_mean": 0.4881,
-      "den_end": 0.975004,
-      "argmax_k_end": 2
+      "onset": null,
+      "exam_conversion_onset_PROPOSED_form": 16500,
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
     },
     {
       "arm": "exp12_dwell",
       "seed": 24,
-      "onset": 50100,
-      "den_dominant_period": 28200,
+      "onset": 103200,
+      "exam_conversion_onset_PROPOSED_form": 51900,
+      "den_dominant_period": null,
       "den_panel": {
-        "mean": 0.4268,
-        "amplitude": 2.6432,
+        "mean": 0.2213,
+        "amplitude": 2.0149,
         "envelope": [
-          0.0001,
-          2.6433
+          0.0002,
+          2.0151
         ],
-        "dominant_period_steps": 28200,
-        "trend_per_1000": 0.0031,
-        "n": 234
+        "dominant_period_steps": null,
+        "trend_per_1000": -0.0032,
+        "n": 190
       },
       "collapse_cycle_present": true,
-      "w_post_ladder": "own collapse period (measured in-regime)",
+      "w_post_ladder": "COLLAPSE CYCLE PRESENT, PERIOD UNMEASURED \u2014 stage-two must resolve (precedence-ladder input unresolved; do NOT fold into the no-cycle fallback)",
       "asg_cat_post": {
-        "mean": 0.0143,
-        "end": 0.0354,
+        "mean": 0.0113,
+        "end": 0.0,
         "min": 0.0
       },
-      "asg_dist_post_mean": 0.6089,
+      "asg_dist_post_mean": 0.2636,
       "exam_lift_post": {
-        "mean": -0.0046,
-        "end": -0.004
+        "mean": -0.0245,
+        "end": -0.1151
       },
-      "exam_acc_post_mean": 0.4932,
-      "den_end": 0.100293,
-      "argmax_k_end": 2
+      "exam_acc_post_mean": 0.478,
+      "den_end": 0.00025,
+      "argmax_k_end": 1
     },
     {
       "arm": "exp12_shuffle",
       "seed": 20,
-      "onset": 3300,
-      "den_dominant_period": 57900,
+      "onset": 3600,
+      "exam_conversion_onset_PROPOSED_form": 4200,
+      "den_dominant_period": null,
       "den_panel": {
-        "mean": 0.1148,
-        "amplitude": 1.4799,
+        "mean": 0.095,
+        "amplitude": 1.0731,
         "envelope": [
-          0.0008,
-          1.4807
+          0.0013,
+          1.0744
         ],
-        "dominant_period_steps": 57900,
-        "trend_per_1000": 0.0018,
-        "n": 390
+        "dominant_period_steps": null,
+        "trend_per_1000": 0.0005,
+        "n": 522
       },
-      "collapse_cycle_present": true,
-      "w_post_ladder": "own collapse period (measured in-regime)",
+      "collapse_cycle_present": false,
+      "w_post_ladder": "FIXED CALIBRATED ABSOLUTE-WAVE WINDOW (no collapse cycle in-regime \u2014 pre-registered fallback, \u00a713.4)",
       "asg_cat_post": {
-        "mean": 0.0337,
-        "end": 0.0513,
-        "min": 0.001
+        "mean": 0.1071,
+        "end": 0.2103,
+        "min": 0.0039
       },
-      "asg_dist_post_mean": 0.2535,
+      "asg_dist_post_mean": 0.4233,
       "exam_lift_post": {
-        "mean": 0.0012,
-        "end": -0.0273
+        "mean": 0.0093,
+        "end": 0.006
       },
-      "exam_acc_post_mean": 0.502,
-      "den_end": 0.241168,
+      "exam_acc_post_mean": 0.5132,
+      "den_end": 0.262926,
       "argmax_k_end": 2
     },
     {
       "arm": "exp12_shuffle",
       "seed": 21,
       "onset": 3000,
+      "exam_conversion_onset_PROPOSED_form": 600,
       "den_dominant_period": null,
       "den_panel": {
-        "mean": 0.0082,
-        "amplitude": 0.4471,
+        "mean": 0.014,
+        "amplitude": 0.6983,
         "envelope": [
-          0.0006,
-          0.4478
+          0.0,
+          0.6983
         ],
         "dominant_period_steps": null,
         "trend_per_1000": 0.0,
-        "n": 391
+        "n": 524
       },
-      "collapse_cycle_present": false,
-      "w_post_ladder": "FIXED CALIBRATED ABSOLUTE-WAVE WINDOW (no collapse cycle in-regime \u2014 pre-registered fallback, \u00a713.4)",
+      "collapse_cycle_present": true,
+      "w_post_ladder": "COLLAPSE CYCLE PRESENT, PERIOD UNMEASURED \u2014 stage-two must resolve (precedence-ladder input unresolved; do NOT fold into the no-cycle fallback)",
       "asg_cat_post": {
-        "mean": 0.0253,
-        "end": 0.0172,
-        "min": 0.005
+        "mean": 0.0205,
+        "end": 0.0044,
+        "min": 0.0
       },
-      "asg_dist_post_mean": 0.1568,
+      "asg_dist_post_mean": 0.1241,
       "exam_lift_post": {
-        "mean": 0.0006,
-        "end": -0.0165
+        "mean": 0.0011,
+        "end": 0.0133
       },
-      "exam_acc_post_mean": 0.4993,
-      "den_end": 0.000663,
-      "argmax_k_end": 3
+      "exam_acc_post_mean": 0.5059,
+      "den_end": 0.000664,
+      "argmax_k_end": 2
     },
     {
       "arm": "exp12_shuffle",
       "seed": 22,
-      "onset": 2700,
-      "den_dominant_period": 21600,
+      "onset": 2400,
+      "exam_conversion_onset_PROPOSED_form": 19200,
+      "den_dominant_period": 43800,
       "den_panel": {
-        "mean": 0.0251,
-        "amplitude": 0.9285,
+        "mean": 0.0087,
+        "amplitude": 0.4976,
         "envelope": [
-          0.0009,
-          0.9294
+          0.0005,
+          0.4981
         ],
-        "dominant_period_steps": 21600,
-        "trend_per_1000": 0.0005,
-        "n": 392
+        "dominant_period_steps": 43800,
+        "trend_per_1000": -0.0,
+        "n": 526
       },
       "collapse_cycle_present": true,
       "w_post_ladder": "own collapse period (measured in-regime)",
       "asg_cat_post": {
-        "mean": 0.0598,
-        "end": 0.101,
-        "min": 0.0061
+        "mean": 0.0214,
+        "end": 0.0098,
+        "min": 0.0034
       },
-      "asg_dist_post_mean": 0.2126,
+      "asg_dist_post_mean": 0.1375,
       "exam_lift_post": {
-        "mean": 0.0001,
-        "end": -0.0086
+        "mean": -0.0002,
+        "end": -0.0195
       },
-      "exam_acc_post_mean": 0.4976,
-      "den_end": 0.007749,
-      "argmax_k_end": 3
+      "exam_acc_post_mean": 0.5035,
+      "den_end": 0.003559,
+      "argmax_k_end": 1
     },
     {
       "arm": "exp12_shuffle",
       "seed": 23,
       "onset": 4200,
-      "den_dominant_period": 24900,
+      "exam_conversion_onset_PROPOSED_form": 24300,
+      "den_dominant_period": 9300,
       "den_panel": {
-        "mean": 0.0094,
-        "amplitude": 1.0332,
+        "mean": 0.0272,
+        "amplitude": 1.3715,
         "envelope": [
-          0.0004,
-          1.0336
+          0.0,
+          1.3715
         ],
-        "dominant_period_steps": 24900,
-        "trend_per_1000": 0.0,
-        "n": 387
+        "dominant_period_steps": 9300,
+        "trend_per_1000": -0.0002,
+        "n": 520
       },
       "collapse_cycle_present": true,
       "w_post_ladder": "own collapse period (measured in-regime)",
       "asg_cat_post": {
-        "mean": 0.0204,
-        "end": 0.0498,
-        "min": 0.0017
+        "mean": 0.0345,
+        "end": 0.0,
+        "min": 0.0
       },
-      "asg_dist_post_mean": 0.1179,
+      "asg_dist_post_mean": 0.1025,
       "exam_lift_post": {
-        "mean": 0.0001,
-        "end": 0.0251
+        "mean": 0.0016,
+        "end": -0.0714
       },
-      "exam_acc_post_mean": 0.4998,
-      "den_end": 0.005438,
+      "exam_acc_post_mean": 0.5058,
+      "den_end": 6.9e-05,
       "argmax_k_end": 1
     },
     {
       "arm": "exp12_shuffle",
       "seed": 24,
-      "onset": 3300,
-      "den_dominant_period": 29400,
+      "onset": 7800,
+      "exam_conversion_onset_PROPOSED_form": 1500,
+      "den_dominant_period": 9300,
       "den_panel": {
-        "mean": 0.0457,
-        "amplitude": 1.2464,
+        "mean": 0.0189,
+        "amplitude": 0.7243,
         "envelope": [
-          0.0009,
-          1.2473
+          0.001,
+          0.7253
         ],
-        "dominant_period_steps": 29400,
-        "trend_per_1000": 0.0005,
-        "n": 390
+        "dominant_period_steps": 9300,
+        "trend_per_1000": 0.0001,
+        "n": 508
       },
-      "collapse_cycle_present": true,
-      "w_post_ladder": "own collapse period (measured in-regime)",
+      "collapse_cycle_present": false,
+      "w_post_ladder": "FIXED CALIBRATED ABSOLUTE-WAVE WINDOW (no collapse cycle in-regime \u2014 pre-registered fallback, \u00a713.4)",
       "asg_cat_post": {
-        "mean": 0.0445,
-        "end": 0.0015,
-        "min": 0.0009
+        "mean": 0.0269,
+        "end": 0.0258,
+        "min": 0.0056
       },
-      "asg_dist_post_mean": 0.1945,
+      "asg_dist_post_mean": 0.199,
       "exam_lift_post": {
-        "mean": 0.0025,
-        "end": -0.0562
+        "mean": -0.002,
+        "end": 0.0363
       },
-      "exam_acc_post_mean": 0.5094,
-      "den_end": 0.005959,
-      "argmax_k_end": 1
+      "exam_acc_post_mean": 0.4914,
+      "den_end": 0.004213,
+      "argmax_k_end": 2
     }
   ],
   "note": "STAGE-ONE ONLY: constants are NOT set here; stage-two (survival threshold, W_post, B1/B2, probe-dwell rate) waits on the chat read of these numbers (handoff \u00a7'report back')."

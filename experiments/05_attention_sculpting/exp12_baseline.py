@@ -165,7 +165,9 @@ def run_baseline_cal(arm: str, seed: int, steps: int):
     out = OUTDIR / f"exp12_baseline_{arm.replace('exp12_', '')}_s{seed}.json"
     out.write_text(json.dumps(rec, indent=2))
     c = rec["columns"][-1]
-    print(f"baseline {arm} s{seed}: b1_ratio_end={c['b1_ratio']:.3f} "
+    r1 = c["b1_ratio"]
+    print(f"baseline {arm} s{seed}: b1_ratio_end={r1 if r1 is None else round(r1, 3)} "
+          f"(between={c['b1_between']:.4f} within={c['b1_within']:.4f}) "
           f"b2_lift_end={c['b2_exam_lift']} b2_acc_end={c['b2_exam_acc']}")
     return rec
 

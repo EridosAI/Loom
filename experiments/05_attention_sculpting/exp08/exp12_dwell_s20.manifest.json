@@ -1,11 +1,13 @@
 {
   "fabric": {
-    "T": 120008,
-    "dwell_law": "k = 2 + Geom(0.1), cap 48",
-    "e_k_target": 12.0,
-    "realized_mean_k": 11.886,
-    "n_dwells": 10099,
-    "cap_hits": 71,
+    "T": 160008,
+    "dwell_law": "k = 2 + Geom0(0.1), cap 48 (Ruling 1)",
+    "e_k_target": 11.0,
+    "k_min_realized_frac_target": 0.1,
+    "k_min_realized_frac": 0.1,
+    "realized_mean_k": 10.95,
+    "n_dwells": 14613,
+    "cap_hits": 103,
     "truncated_last_dwell": true,
     "walk": {
       "tau": 4.0,
@@ -24,28 +26,28 @@
       -0.924558
     ],
     "member_hist": [
-      599,
-      594,
-      656,
-      654,
-      613,
-      641,
-      668,
-      622,
-      607,
-      675,
-      622,
-      621,
-      612,
-      630,
-      611,
-      674
+      879,
+      855,
+      950,
+      933,
+      917,
+      941,
+      958,
+      920,
+      885,
+      968,
+      898,
+      880,
+      863,
+      898,
+      928,
+      940
     ],
     "mask_mix": {
-      "exam": 10099,
+      "exam": 14613,
       "probe_exam": 0,
-      "mid_vis": 54799,
-      "mid_word": 55110
+      "mid_vis": 72419,
+      "mid_word": 72976
     },
     "shuffled": false,
     "substream_keys": {
@@ -64,47 +66,47 @@
     "n_sample": 12000,
     "n_null": 200,
     "cap_hit": {
-      "rate": 0.00703,
-      "rate_theory": 0.00786,
+      "rate": 0.00705,
+      "rate_theory": 0.00707,
       "ceiling": 0.01,
-      "n_dwells": 10099,
-      "count": 71,
-      "count_bound": 115.8,
+      "n_dwells": 14613,
+      "count": 103,
+      "count_bound": 144.8,
       "ok": true
     },
     "immediate_repeats": 0,
     "walk_realized": {
-      "deviation_sd": 0.1171,
-      "onset_sd": 0.4959,
+      "deviation_sd": 0.1172,
+      "onset_sd": 0.5009,
       "target_frac": 0.25,
-      "realized_frac": 0.2362
+      "realized_frac": 0.2341
     },
     "perlag_nuis": {
-      "obs": 0.0852,
-      "null99": 0.126,
+      "obs": 0.0728,
+      "null99": 0.1226,
       "lags": "0..48 stride 1",
       "ok": true
     },
     "k_indep": {
-      "chi2": 33.75,
-      "null99": 68.9,
+      "chi2": 42.88,
+      "null99": 100.06,
       "ok": true
     },
     "schedule_indep": {
-      "chi2": 8.36,
-      "null99": 30.53,
+      "chi2": 23.14,
+      "null99": 29.66,
       "note": "exam@pos1 structural by construction (recorded, not tested)",
       "ok": true
     },
     "bg_indep": {
-      "obs": 0.0523,
-      "null99": 0.0693,
+      "obs": 0.0442,
+      "null99": 0.066,
       "ok": true
     }
   },
   "arm": "exp12_dwell",
   "seed": 20,
-  "steps": 120000,
+  "steps": 160000,
   "vocab": 2,
   "geometry": "wave-local (W=1); no u-carrier; L_JEPA inert by construction",
   "members": [

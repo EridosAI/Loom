@@ -1584,3 +1584,40 @@ Geom support ≥1 → realized dwell support is k∈{3..48}; k_min=2 is unrealiz
 prereg's "k=2 tail" language and the law disagree at the margin — Jason's call.** Stage-two
 (survival threshold, W_post, B1/B2, probe rate, verdict horizon) NOT set — waits on the chat
 read per the handoff.
+
+## 2026-07-05 — Prereg AMENDED IN PLACE (Rulings 1–2 + guards, cross-reviewed); corrected-law RE-CAL; the FIRST MEASURED FABRIC FACT named; stage-two PROPOSED (canon §10.19.1)
+
+Jason's amendments landed in place (forward-pointer rule; commit 6872add): **Ruling 1** dwell
+law = 2 + Geom₀(0.1), support {2..48}, k_min=2 REALIZABLE (E[k]=11, cap ≈0.7%; the as-ratified
+arithmetic embedded a support error — the pin's grounds outrank the constants' letter);
+**Ruling 2** primary VERDICT read = category-partition asg_dist at aligned windows (forced by
+Amendment B), onset-exam completion lift = registered COMPANION never the cell-decider;
+**sensitivity-without-conversion** registered as a pre-verdict finding class (num-floor onset
+vs exam-conversion onset — the dissociation is data); the W=1 anti-forward RECORDED GUARD;
+W_post SIZING PIN; CENSORED-SEED accounting (unread never dies; +2 fires on read-count
+shortfall); censoring-aware §13.9 onset bound. Cascades executed: law re-pinned + verified
+(min k=2, P(k=2)=0.100, cap 0.73% vs 0.707% theory); §13.8 asserts re-run green on the new
+support; the stale-law 120k bound DISCARDED, re-cal at 160k.
+
+**Corrected-law re-cal (cal {20–24}, 160k, both arms + baseline on identical fabrics; canon
+§10.19.1).** THE FIRST MEASURED FABRIC FACT, named so nobody "fixes" it: **shuffle acquires
+~10× faster than dwell on every seed** (shuffle onsets {2.4–7.8k} 5/5; dwell {6.3k, 31.8k,
+103.2k} + 2 CENSORED at 160k) — and the out-of-family baseline REPRODUCES it on the identical
+fabric (B2 acc: shuffle 0.93–0.96 all 5; dwell 2/5 trained, 3/5 chance) → a TASK property; the
+acquisition-aligned machinery is what keeps it out of the four-cell table.
+Sensitivity-without-conversion already visible: num fires while the exam channel sits at
+chance in both arms; the draft conversion form (acc≥0.6 ×2) false-fired on 60% of chance
+segments → rejected for the chance-band form. Periods: dwell {18.6k measured, 1
+present-unmeasured, 1 no-cycle}; shuffle {43.8k, 9.3k measured, 1 present-unmeasured, 1
+no-cycle} — up to 4.7× within-arm estimator spread (§10.17 instability, in-regime as
+expected).
+
+**Stage-two constants PROPOSED, not in force** (`exp12_stage2_constants.PROPOSED.json`): onset
+bound ≥160k (censoring-aware); W_post ladder per arm (dwell 55.8k / shuffle 131.4k own-period;
+recommendation = the fixed COMMON 131.4k window, EXP11-lesson-consistent); verdict horizon
+303.4k; survival θ RECOMMENDED dead-p95 = 0.0057 (alternates p90 0.0004 / p99 0.0267 surfaced;
+the choice is DECISIVE on cal spans — dwell 1/3 + shuffle 2/5 above p99 vs 3/3 + 5/5 above
+p95 — which is why it is ratified, never read off); probe rate 0.02; baseline B1 floors
+(dwell/shuffle from its own pre-differentiation bands) + B2 floor 0; conversion form =
+chance-band p99 (acc ≥ 0.704) ×3, measured false-fire 0. **Verdict arms (seeds {0–4}, +2 pool
+{5,6}) run only after ratification.**
