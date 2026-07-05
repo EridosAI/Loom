@@ -502,6 +502,13 @@ every fabric field ex-word.
   - **FRESH-SEED DISCIPLINE (binding): the re-cut ruler grades verdict seeds {5–9} —
     never the {0–4} seeds whose data motivated the re-cut.** The {0–4} S_w values may
     be REPORTED as companions after the fresh read exists, clearly labeled post-hoc.
+  - **STANDING SUBSTITUTION RULE (§10.20.7 ruling, 2026-07-06):** a seed whose fabric
+    fails a §13.8 manifest gate PRE-RUN (outcome-blind by construction) is substituted
+    by the LOWEST unused seed of the block's continuation pool, in pool order; the
+    substitution covers the whole twin pair; the rejected seed's committed record
+    stands; the consumed pool seed is withdrawn from the margin-guard extension; the
+    substitute is a VERDICT seed, letter-equal. Applied: sh s9→s10 (pool head), sh
+    extension pool → {11}; dw untouched.
   - One review per block, behind the verification pass, as standing.
 - **SELECTIVITY INDEX S (the primary axis, per the re-cut registration):** per seed, per
   aligned window: **S = twin-contrast (present − absent) in B1-form vision-cortex

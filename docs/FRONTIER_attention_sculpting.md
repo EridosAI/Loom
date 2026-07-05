@@ -1909,3 +1909,52 @@ axis anywhere (den-channel inversion on dw noted); falsifier (b) is batch-depend
 Rulings owed: the dw-block standing (letter vs fragility — more seeds / leave as lottery /
 route elsewhere), the s10 substitution, and whether the sh demonstration promotes any
 Guiding-List candidate machinery. No arm is a fix.
+
+### §10.20.7 — RULED (2026-07-06): STANDING SUBSTITUTION RULE (applied: sh s9→s10) + the EARNED-SALIENCE READ registered (the Guiding-List second leg). Recorded BEFORE the substitute runs and before the read produces a number.
+
+**(1) STANDING SUBSTITUTION RULE (a ruling, not an improvisation — closes the §10.20.6
+open item).** When a seed's fabric fails a §13.8 manifest gate PRE-RUN, the seed is
+substituted by the LOWEST unused seed of that block's registered continuation pool, in pool
+order. Conditions and consequences, all binding:
+- **Validity ground:** the gates run before the manifest write and before wave 0 and consume
+  only construction fields (verified outcome-blind in the 18-agent S_w pass) — substitution
+  therefore opens no selection channel on outcomes.
+- **Twin discipline:** the substitution covers the WHOLE twin pair (twins share fabric draws
+  by construction; a split-seed pair is not a twin).
+- **Records:** the rejected seed's committed record STANDS (never deleted, never re-rolled);
+  the substitution is recorded before the substitute runs.
+- **Pool accounting:** the consumed pool seed is no longer available to the margin-guard
+  extension — extension draws the next unused pool seed. If the pool is exhausted, the block
+  reads on what it has under the min-3 letter; further seeds are a ruling.
+- **Standing of the substitute:** a substituted seed is a VERDICT seed under the block's
+  registered criteria, letter-equal with the original set. If the substitute's fabric ALSO
+  gate-rejects, the rule re-applies (next pool seed), each rejection committed.
+**Application recorded now:** sh 12bc twin pair, s9 (committed record
+`exp12_12bc_sh_s9_REJECTED.json`) → **s10** (head of pool {10,11}); sh extension pool becomes
+{11}. Scorer touch registered with this ruling: `SW_SUB = {"sh": {9: 10}}` applied to
+SW_SEEDS in `exp12_score12b.py`; dw untouched (its s9 passed). Recorded before the s10 twins
+run.
+
+**(2) EARNED-SALIENCE READ — form recorded before the read.** The observable is already
+registered (prereg Amendment A = §10.19: "PAM divergence on background axes FALLS with
+exposure while member-onset divergence STAYS HIGH"; a rig-1 readout; **expectation, NOT a
+gate**). The read runs off the EXISTING rig-1 verdict artifacts, seeds {0–4}, BOTH arms
+(A-DWELL, A-SHUFFLE) — no new runs; the columns are the registered ones (the pos-1
+member-onset exam prediction-divergence components `div_bg` / `div_id`, `div_nuis` as
+companion; exposure axis = wave t, the fixed background present from wave 0). Read form
+(reader `exp12_salience_read.py`, committed with this ruling):
+- Per seed: **EARLY** = mean over the first decile of div-bearing columns, **LATE** = mean
+  over the last decile; full-series least-squares slope as the trend companion.
+- **FALLS(bg)** := div_bg LATE/EARLY < 0.7 AND slope < 0. **STAYS-HIGH(id)** := div_id
+  LATE/EARLY > 0.7. The symmetric 0.7 knob is declared here as illustrative strictness —
+  the full ratios/slopes are reported per seed so the letter can be re-cut by ruling without
+  re-measurement; borderline cases are surfaced, never force-lettered.
+- **LANDS per seed** := FALLS(bg) ∧ STAYS-HIGH(id); arm letter = majority of 5.
+**Scope fence:** this read feeds ONLY the second leg of the Guiding-List promotion trigger
+(the first leg — the cross-scene contrast — is the §10.20.6 sh demonstration). Promotion
+itself remains a ruling; landing here licenses nothing else. Expectation-not-a-gate carries:
+a non-landing changes no committed verdict.
+
+**(3) Not in this order:** the dw-block standing ruling remains OPEN (§10.20.6). Results of
+(1)'s substitute read and (2)'s read are appended below after the standing verification
+pass. *(Results pending at ruling time.)*

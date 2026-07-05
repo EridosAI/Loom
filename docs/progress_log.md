@@ -1790,3 +1790,28 @@ the ~5× collapse-accelerant channel, on live fabric, selectively differentiates
 partition it names (fresh seeds, robust null, untied legs quiet). Dwelled: letter-fire,
 not demonstration-grade. Rulings owed: dw standing, s10 substitution, any Guiding-List
 promotion touched by the sh demonstration.**
+
+
+---
+
+## 2026-07-06 — EXP12 §10.20.7 RULED: standing substitution rule (sh s9→s10) + earned-salience read registered; recorded BEFORE the substitute runs / before the read
+
+Jason's order: "record §10.20.7, standing substitution rule, earned-salience read —
+results here." Recorded in canon (FRONTIER §10.20.7) + prereg §15 pin + scorer touch
+(`SW_SUB = {sh: {9: 10}}`, extension pool → {11}) + reader `exp12_salience_read.py`,
+ALL committed before results exist.
+
+**(1) Standing substitution rule:** pre-run §13.8 fabric-gate rejection (outcome-blind
+by construction) → lowest unused continuation-pool seed, whole twin pair, rejected
+record stands, consumed seed withdrawn from extension, substitute = verdict seed
+letter-equal. Applied: sh 12bc s9 (committed REJECTED record) → s10; twins launched
+after this record.
+
+**(2) Earned-salience read form** (Amendment-A observable; EXPECTATION not a gate;
+Guiding-List second leg only): rig-1 {0–4} both arms, existing artifacts, div_bg/div_id
+member-onset exam columns; EARLY/LATE deciles + LS slope; FALLS(bg) := ratio<0.7 ∧
+slope<0; STAYS-HIGH(id) := ratio>0.7 (symmetric knob, declared illustrative, full
+numbers reported); LANDS := both; arm letter = majority of 5.
+
+**(3) dw-block standing remains the open ruling.** Results appended after the standing
+verification pass.

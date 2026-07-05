@@ -141,6 +141,10 @@ def block_outcome(block: str) -> dict:
 
 SW_SEEDS = [5, 6, 7, 8, 9]          # §10.20.5 fresh-seed discipline
 SW_EXT = [10, 11]                   # natural continuation pool (fires only on a guard)
+SW_SUB = {"sh": {9: 10}}            # §10.20.7 standing substitution rule: pre-run
+                                    # fabric-gate rejection -> lowest unused pool seed
+                                    # (sh s9 REJECTED, committed record; pool head 10;
+                                    # consumed seed withdrawn from the extension pool)
 
 
 def seed_read_w(block: str, seed: int) -> dict:
@@ -204,31 +208,36 @@ def seed_read_w(block: str, seed: int) -> dict:
 
 
 def block_outcome_w(block: str) -> dict:
+    sub = SW_SUB.get(block, {})
+    verdict_seeds = [sub.get(s, s) for s in SW_SEEDS]      # §10.20.7 substitution
+    ext_pool = [s for s in SW_EXT if s not in sub.values()]
+
     def tally(seeds):
         reads = [seed_read_w(block, s) for s in seeds]
         reads = [r for r in reads if r["status"] != "NOT RUN"]
         read = [r for r in reads if r["status"] == "READ"]
         f = sum(1 for r in read if r["fired"])
         return reads, read, f, len(read) - f
-    reads, read, fired, nofire = tally(SW_SEEDS)
+    reads, read, fired, nofire = tally(verdict_seeds)
     margin = (fired, nofire) in ((3, 2), (2, 3))
     shortfall = len(read) < 3
     ext = False
     if (margin or shortfall) and any(
-            (OUTDIR / f"{BLOCKS[block]['arms'][0]}_s{s}.json").exists() for s in SW_EXT):
-        reads, read, fired, nofire = tally(SW_SEEDS + SW_EXT)
+            (OUTDIR / f"{BLOCKS[block]['arms'][0]}_s{s}.json").exists() for s in ext_pool):
+        reads, read, fired, nofire = tally(verdict_seeds + ext_pool)
         ext = True
         margin = (fired, nofire) in ((3, 2), (2, 3))
         shortfall = len(read) < 3
     out = dict(block=block, ruler="S_w (§10.20.5)", per_seed=reads, n_read=len(read),
-               fired=fired, nofire=nofire, extension_included=ext)
+               fired=fired, nofire=nofire, extension_included=ext,
+               substitution=sub or None)
     if shortfall:
         out["outcome"] = "READ-COUNT SHORTFALL"
-        out["action"] = ("fire {10,11} continuation" if not ext else
+        out["action"] = (f"fire {ext_pool} continuation" if not ext else
                          "UNREAD-AT-HORIZON (pin ii) — horizon re-pin returns to chat")
     elif margin:
         out["outcome"] = f"MARGIN {fired}-{nofire}"
-        out["action"] = ("fire {10,11} continuation BEFORE interpretation" if not ext
+        out["action"] = (f"fire {ext_pool} continuation BEFORE interpretation" if not ext
                          else "continuation exhausted — outcome stands at majority")
     elif fired == nofire:
         out["outcome"] = f"TIE {fired}-{nofire} (unregistered state)"
