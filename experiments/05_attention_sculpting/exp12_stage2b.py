@@ -188,6 +188,75 @@ def propose12b():
     return out
 
 
+def record_inforce12b():
+    """Record the 12b coin-policy constants IN FORCE (chat ratification 2026-07-05:
+    the widen amendment + two fences + rest-as-proposed). The shuffled band is RE-CUT
+    over the fattened pool (cal {20–29}, 10 twin pairs — grounds recorded before the
+    wider numbers existed: p99 from n=89 is essentially the pool max, unstable as a
+    primary-axis ruler); N re-checked for zero false-fires on the fatter pool. The
+    dwelled band stands from {20–24} (n=1414, not thin). Nothing transported."""
+    out = dict(status="IN FORCE (ratified in chat 2026-07-05; widen amendment + "
+                      "preview fence + dwelled-lottery pre-acknowledgement)",
+               W_common=W_COMMON, margin=MARGIN,
+               fences=dict(
+                   preview="the post-onset S preview is a LOGGED LEAN: cal-only, "
+                           "sustained-ness unchecked, never touches constants (all "
+                           "derive from pre-onset nulls and dead pools — "
+                           "preview-independent grounds); verdict seeds {0–4} are the test",
+                   dwelled_lottery="pre-acknowledged, no improvisation: <3 dwelled reads "
+                                   "post-extension → UNREAD-AT-HORIZON → horizon re-pin "
+                                   "returns to chat as a recorded amendment"))
+    for fkey, (armP, armA) in FABRICS.items():
+        seeds = CAL + ([25, 26, 27, 28, 29] if fkey == "sh" else [])
+        null_S, onsets_p = [], []
+        series = {}
+        for s in seeds:
+            rp, ra = _load(armP, s), _load(armA, s)
+            onset_p = rp["acquisition_onset"]
+            onsets_p.append(onset_p)
+            ser = _s_series(rp, ra)
+            series[s] = (ser, onset_p)
+            null_S += [x["S"] for x in ser
+                       if x["S"] is not None and (onset_p is None or x["t"] < onset_p)]
+        ns = sorted(null_S)
+        band = ns[int(0.99 * len(ns))]
+        n_sust = None
+        for n in range(2, 12):
+            ff = 0
+            for s in seeds:
+                ser, onset_p = series[s]
+                seg = [x["S"] for x in ser if onset_p is None or x["t"] < onset_p]
+                ff += int(_fires(seg, band, n))
+            if ff == 0:
+                n_sust = n
+                break
+        max_on = max((o for o in onsets_p if o is not None), default=None)
+        censored = sum(1 for o in onsets_p if o is None)
+        horizon = 303400 if fkey == "dw" else 152400
+        out[fkey] = dict(
+            arms=[armP, armA], cal_seeds=seeds,
+            band_p99=round(band, 6), band_n_windows=len(ns),
+            sustained_N=n_sust,
+            onsets_present=onsets_p, censored_cal=censored,
+            horizon=horizon, read_cutoff=horizon - W_COMMON,
+            aligned_window="[onset_present, onset_present + W_common]",
+            note=("band RE-CUT over the widened pool per the ratified amendment; "
+                  "replaces the thin-pool 0.0414 whichever direction it moved"
+                  if fkey == "sh" else "band stands from {20–24} (n=1414, not thin)"))
+    # theta companion (ratified as proposed, companion only)
+    out["theta_companion"] = dict(value=0.007751, role="asg_cat routing-health context "
+                                                       "ONLY — never an S-verdict input")
+    (OUTDIR / "exp12_12b_stage2_constants.json").write_text(json.dumps(out, indent=2))
+    print(json.dumps({k: (v if k in ("sh", "dw") else v)
+                      for k, v in out.items() if k in ("sh", "dw")}, indent=1))
+    return out
+
+
 if __name__ == "__main__":
-    argparse.ArgumentParser().parse_args()
-    propose12b()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--record-inforce", action="store_true")
+    args = ap.parse_args()
+    if args.record_inforce:
+        record_inforce12b()
+    else:
+        propose12b()
