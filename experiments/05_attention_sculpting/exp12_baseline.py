@@ -149,6 +149,27 @@ def run_baseline(fab, word_vecs: torch.Tensor, steps: int, seed: int,
                 hidden=HIDDEN, lr=LR, columns=cols)
 
 
+def run_baseline_cal(arm: str, seed: int, steps: int):
+    """Stage-two B1/B2 calibration run (§13.6: constants from the baseline's OWN cal
+    seeds, same two-stage). Builds the rig loop ONLY to hand over the environment data
+    (the fabric + the anchor's embedding vectors); the learner shares no component."""
+    import exp12_arms as X12
+    torch.set_num_threads(1)
+    lp, _, cfg = X12.build_exp12(arm, seed, steps=steps)
+    fab = lp.stream
+    wv = lp.word.emit(torch.arange(cfg.n_category)).detach().clone()
+    del lp                                                    # environment handed over; rig discarded
+    rec = run_baseline(fab, wv, steps=steps, seed=seed, n_category=cfg.n_category)
+    rec.update(arm=arm, seed=seed, steps=steps,
+               torch_num_threads=torch.get_num_threads())
+    out = OUTDIR / f"exp12_baseline_{arm.replace('exp12_', '')}_s{seed}.json"
+    out.write_text(json.dumps(rec, indent=2))
+    c = rec["columns"][-1]
+    print(f"baseline {arm} s{seed}: b1_ratio_end={c['b1_ratio']:.3f} "
+          f"b2_lift_end={c['b2_exam_lift']} b2_acc_end={c['b2_exam_acc']}")
+    return rec
+
+
 def smoke():
     """Build-order item 5 smoke: sizing in band; trains on a real fabric; B1/B2 emit;
     NO component of the rig imported (the fence — asserted by module inspection)."""
@@ -172,6 +193,10 @@ def smoke():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--cal", nargs=2, metavar=("ARM", "SEED"))
+    ap.add_argument("--steps", type=int, default=160000)
     args = ap.parse_args()
     if args.smoke:
         smoke()
+    elif args.cal:
+        run_baseline_cal(args.cal[0], int(args.cal[1]), args.steps)

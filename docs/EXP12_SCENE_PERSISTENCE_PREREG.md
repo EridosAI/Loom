@@ -102,7 +102,10 @@ visibility rung (§8). Do not read past this scope.
   mechanism-map open question #1 (unified vs split) and is not settled by rig
   construction. The dictionary is already the across-experience memory. This also keeps
   the shuffled-dwell discriminator **single-channel**: arms differ only in gradient
-  ordering.
+  ordering. **RECORDED GUARD (from build): W = 1 idles the deployed loss's
+  next-wave-prediction term by construction — the anti-forward guard enforced
+  structurally. Any future W > 1 rung must re-justify that term explicitly against
+  trap #1 before it returns.**
 - **(b) Guaranteed onset exam.** Every dwell's FIRST wave: **associate/word slot masked,
   vision visible.** No recent exposure helps; route-and-recall through the dictionary is
   the only completion path. Onset rate = the routing-gradient dial (set by Fork 2's E[k]).
@@ -256,10 +259,21 @@ the ladder order.**
   as companion/characterization ONLY.** A 16-member survival bar would demand unpaid
   structure and manufacture a wrong-reason both-die — the matched-bar lesson, surfaced
   before the run instead of after it.
-- **Primary routing verdict: onset-exam completion**, acquisition-aligned, per-rung,
-  windowed estimators with pinned forms (no selectable sub-windows). In-regime TWO-STAGE
-  calibration (calibration seeds ≠ verdict seeds; constants from EXP12's own healthy
-  spans — never static-line constants: §10.14 lesson).
+- **Primary VERDICT read: category-partition asg_dist at aligned windows** — AMENDED IN
+  PLACE (Ruling 2, cross-reviewed; forced by Amendment B — the pre-amendment line named
+  onset-exam completion). **Onset-exam completion LIFT = registered COMPANION**, never
+  the cell-decider: a flat exam must not manufacture both-die through the completion
+  side. Both acquisition-aligned, per-rung, windowed estimators with pinned forms (no
+  selectable sub-windows). In-regime TWO-STAGE calibration (calibration seeds ≠ verdict
+  seeds; constants from EXP12's own healthy spans — never static-line constants: §10.14
+  lesson).
+- **REGISTERED FINDING CLASS (pre-verdict): sensitivity-without-conversion** — asg
+  alive, exam at floor. Mechanism: the exam channel is PAID but UNCONVERTED-AT-HORIZON,
+  not unpaid. The dissociation is its own observable: num-floor onset vs
+  exam-conversion onset (the transferred 0.01 floor demonstrably fires without
+  functional conversion — the gap is data); the companion aligns to the exam's own
+  onset if one appears. Named finding, never a survives-downgrade; no loss-reweighting
+  to force conversion (manufacturing-class).
 - **Routing-survival quantity: category-partition asg_dist** (per the pin above),
   matched post-onset windows; 16-member asg_dist / asg_argmax_k / asg_entropy as
   companions; **den = one-sided collapse-floor tripwire ONLY** (variance never certifies
@@ -303,8 +317,11 @@ No arm is a fix.
    = 0.25·family-σ** — per-step σ derived by CC from τ, never pinned directly, else the
    equilibrium wander can exceed the family marginal and clause-3 quietly breaks.
    **τ = 4 waves.** Ordering verified: ~2 < 4 < 12.
-2. **Dwell:** p = 0.1 (E[k] = 12); k_max = 48 (cap-hit ≈ 0.8%, ceiling assert at 1%);
-   k_min = 2.
+2. **Dwell — AMENDED IN PLACE (Ruling 1, cross-reviewed):** k = 2 + Geom₀(p = 0.1),
+   support {2..48} (E[k] = 11; cap-hit ≈ 0.7%, ceiling assert 1%); k_min = 2 realizable.
+   The as-ratified arithmetic embedded a support error making k = 2 unreachable; the
+   pin's grounds (floor-3 = first non-trivial hazard-zero window) outrank the constants'
+   letter. Ordering re-verified: 2 < 4 < 11.
 3. **Mask:** one slot masked per wave; mid-dwell coin 50:50.
 4. **Onset criterion:** EXP10 num-floor onset carried (num ≥ 0.01, 2 consecutive
    windows) [CC verifies transfer]; category-prior floor; W_post ≥ 3 collapse periods in
@@ -314,12 +331,17 @@ No arm is a fix.
    stage-two calibration. Precedence ladder (own collapse period → fixed calibrated
    window) recorded before any verdict, never improvised at estimator fallback.** The
    common-ruler alternative (borrowing the collapsing arm's period) is rejected: it has
-   no answer in the both-survive cell.
+   no answer in the both-survive cell. **SIZING PIN: the fixed fallback window ≥ the max
+   measured in-regime period, so no-cycle / present-unmeasured arms are never
+   under-covered; recorded at stage-two.**
 5. **Survival:** category-partition asg_dist ≥ the stage-two calibrated threshold over
    matched W_post; cell verdict = seed majority ≥ 3/5. **MARGIN GUARD: any arm at a 3–2
    seed split fires its +2 extension BEFORE the table is interpreted** (encodes the
    3/5–3/5 / 3/5–2/5 adjacent-cell rule; prevents a coin-flip table). Threshold + cell
-   boundaries recorded pre-run at stage-two, never at read.
+   boundaries recorded pre-run at stage-two, never at read. **CENSORED-SEED ACCOUNTING:
+   a verdict seed unacquired at horizon = UNREAD (taxonomy), never a dies; the
+   margin-guard +2 extension fires on read-count shortfall BEFORE any table
+   interpretation** (stage-one s20 says this will occur).
 6. **Baseline:** masked-completion learner on identical vector waves + identical
    schedule; params within ~2× of PAM's plastic side [CC counts]; (B1)/(B2) constants
    from its own calibration seeds, same two-stage.
@@ -331,7 +353,8 @@ No arm is a fix.
 9. **Seeds/horizon:** verdict {0–4} per arm, +2 pool {5,6}, **cal {20–24} (n=5, widened
    at final read — a stage-two threshold from two seeds' spans is thin; never verdict)**;
    discriminator fires at 3 seeds; horizon = max measured acquisition onset + W_post +
-   margin (EXP11 §2 form).
+   margin (EXP11 §2 form) — **onset bound from the CORRECTED-LAW re-cal,
+   censoring-aware: a censored cal seed makes the bound a ≥, never a max.**
 10. **Boundary-leak monitor (Adjustment 1 — position-matched, schedule-unmatched):**
     read-only off-schedule word-mask probes at POSITION 1 of dwells whose scheduled exam
     was harness-suppressed. Naive mid-dwell probes would measure anticipation PLUS

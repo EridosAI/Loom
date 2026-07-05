@@ -6,9 +6,11 @@ stimulus noise, mask slot, and the harness-side role flags (dwell id / position 
 that exist for SCORING ONLY — the system sees stimulus + mask, nothing else ("time is
 felt, not coded": no timestamps, no dwell indices, no boundary flags as signal).
 
-Construction (§13, ratified 2026-07-04):
-  * Dwell law: k = K_MIN + Geom(P_GEOM), capped at K_MAX (constant hazard in the bulk —
-    the only clockless law). Cap-hit ceiling ASSERT at 1% (§2 pin 2).
+Construction (§13, ratified 2026-07-04; §13.2 AMENDED IN PLACE per Ruling 1, 2026-07-05):
+  * Dwell law: k = K_MIN + Geom0(P_GEOM) — support-{0,1,...} geometric, so k_min = 2 is
+    REALIZABLE (support {2..48}, E[k] = 11, cap-hit ~0.7%). The as-ratified arithmetic
+    embedded a support error (Geom support >=1 made k=2 unreachable); the pin's grounds
+    outrank the constants' letter. Cap-hit ceiling ASSERT at 1% (§2 pin 2).
   * Member draw: uniform over the 16 members with NO immediate same-member repeat.
   * Walk (§13.1): the EXP10 pinned nuisance family VERBATIM (K=4 complement-block
     orthonormal axes @ Q^T, per-axis coeff_std READ from exp10_calibration.json — never a
@@ -60,10 +62,10 @@ from conflict_stream import ConflictStimulus                  # noqa: E402
 
 OUTDIR = _HERE / "exp08"
 
-# --- §13.2 dwell law (ratified) ---
-P_GEOM = 0.1                     # E[k] = K_MIN + 1/p = 12
+# --- §13.2 dwell law (AMENDED Ruling 1: Geom0 support, k_min realizable) ---
+P_GEOM = 0.1                     # E[k] = K_MIN + (1-p)/p = 11
 K_MIN = 2
-K_MAX = 48                       # cap-hit ~0.785% theoretical; ceiling assert 1%
+K_MAX = 48                       # cap-hit = 0.9^47 ~ 0.707% theoretical; ceiling assert 1%
 CAP_CEILING = 0.01
 # --- §13.1 walk (ratified) ---
 TAU = 4.0                        # OU decorrelation time (waves); ordering ~2 < 4 < E[k]=12
@@ -183,8 +185,10 @@ class Fabric:
 
 
 def _geom_k(gen) -> tuple[int, bool]:
+    """k = K_MIN + Geom0(p): support-{0,1,...} geometric (Ruling 1) — P(k = K_MIN) = p,
+    constant hazard above the floor, E[k] = K_MIN + (1-p)/p."""
     u = torch.rand((), generator=gen).item()
-    g = 1 + int(math.floor(math.log(max(1e-12, 1.0 - u)) / math.log(1.0 - P_GEOM)))
+    g = int(math.floor(math.log(max(1e-12, 1.0 - u)) / math.log(1.0 - P_GEOM)))
     k_raw = K_MIN + g
     return min(k_raw, K_MAX), k_raw > K_MAX
 
@@ -342,7 +346,7 @@ def fabric_asserts(fab: Fabric, cfg, *, n_sample: int = 12000, n_null: int = 200
     # small-sample noise of a short fabric.
     n_dwell = len(fab.dwell_k)
     cap_rate = fab.cap_hits / max(1, n_dwell)
-    p_theory = (1.0 - P_GEOM) ** (K_MAX - K_MIN)              # P(Geom > K_MAX - K_MIN)
+    p_theory = (1.0 - P_GEOM) ** (K_MAX - K_MIN + 1)          # P(Geom0 > K_MAX - K_MIN)
     cap_bound = n_dwell * p_theory + 4.0 * math.sqrt(n_dwell * p_theory * (1 - p_theory)) + 1
     out["cap_hit"] = dict(rate=round(cap_rate, 5), rate_theory=round(p_theory, 5),
                           ceiling=CAP_CEILING, n_dwells=n_dwell, count=fab.cap_hits,
@@ -446,8 +450,10 @@ def fabric_manifest(fab: Fabric, stim: EXP12Stimulus, cfg, asserts: dict) -> dic
     mid = fab.pos > 1
     return dict(
         fabric=dict(
-            T=fab.T, dwell_law=f"k = {K_MIN} + Geom({P_GEOM}), cap {K_MAX}",
-            e_k_target=K_MIN + 1.0 / P_GEOM,
+            T=fab.T, dwell_law=f"k = {K_MIN} + Geom0({P_GEOM}), cap {K_MAX} (Ruling 1)",
+            e_k_target=K_MIN + (1.0 - P_GEOM) / P_GEOM,
+            k_min_realized_frac_target=P_GEOM,
+            k_min_realized_frac=round(float((fab.dwell_k == K_MIN).float().mean()), 4),
             realized_mean_k=round(float(fab.dwell_k.float().mean()), 3),
             n_dwells=len(fab.dwell_k), cap_hits=fab.cap_hits,
             truncated_last_dwell=fab.truncated_last,

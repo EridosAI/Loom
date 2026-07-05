@@ -72,8 +72,11 @@ EVAL, BLOCK = A.EVAL, A.BLOCK
 CAL_SEEDS = [20, 21, 22, 23, 24]     # stage-one/two calibration — never verdict
 VERDICT_SEEDS = [0, 1, 2, 3, 4]
 EXT_POOL = [5, 6]                    # margin-guard +2 extension pool
-CAL_HORIZON = 120000                 # stage-one exploratory ceiling (EXP11 preflight class);
-                                     # the VERDICT horizon comes from stage-one onsets (§13.9)
+CAL_HORIZON = 160000                 # corrected-law re-cal ceiling (Ruling 1 cascade: the
+                                     # stale-law 120k bound is DISCARDED; ~3x the stale max
+                                     # onset, censoring-aware — a censored cal seed makes the
+                                     # §13.9 onset bound a >=, never a max). The VERDICT
+                                     # horizon comes from the re-cal onsets (§13.9)
 PROBE_RATE_STAGE1 = 0.0              # boundary-leak probe-dwell rate is a STAGE-TWO constant;
                                      # machinery smoke-tested at a nonzero rate, run at 0 here
 
@@ -484,6 +487,17 @@ def stage_one_read(rec: dict) -> dict:
     cols = rec["columns"]
     onset = rec["acquisition_onset"]
     out = dict(arm=rec["arm"], seed=rec["seed"], onset=onset)
+    # the §10 sensitivity-without-conversion dissociation observable: num-floor onset vs
+    # exam-CONVERSION onset. Conversion form PROPOSED (surfaced with the stage-two
+    # constants, not yet ratified): exam_acc >= 0.6 in 2 consecutive eval windows.
+    run = 0
+    conv = None
+    for c in cols:
+        run = run + 1 if (c.get("exam_acc") is not None and c["exam_acc"] >= 0.6) else 0
+        if run >= 2:
+            conv = c["t"] - EVAL
+            break
+    out["exam_conversion_onset_PROPOSED_form"] = conv
     if onset is None:
         out["note"] = "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
         return out
