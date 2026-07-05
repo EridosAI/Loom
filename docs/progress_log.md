@@ -1675,3 +1675,28 @@ halved exam density (~4× hot; density-matched band = a constants item for exam-
 arms). §14 guard letter now has a committed producer (exp12_score.py --split). Ledger:
 root stays REFINED — variation sufficient, exams buy margin + horizon persistence,
 dwell-ordering buys neither. Four-cell table untouched. No arm a fix.
+
+## 2026-07-05 — POST-SPLIT RULINGS EXECUTED + 12b CAL: **REGIME FINDING — the zero-prediction-load word is INERT** (canon §10.20.2/§10.20.3); verdict twins DO NOT run pending ruling
+
+Rulings 1–6 recorded (canon §10.20.2; prereg amended in place): 12b trigger →
+routing-alive-arm-wide; registration re-cut (SELECTIVITY primary, speed companion);
+regime-bound rider on §10.20/§10.20.1 (non-generative fabric; lawful-dynamics worlds = named
+future rung; continual motion deferred not demoted); parallel-blocks standing principle; s2
+backfill by ruling after §14 verdict-invariance; density-matched conversion band registered.
+
+**s2 backfill: both READ SURVIVES (0.0663/0.0227 = 11.7×/4.0× θ) → A-SPLIT 5S/0D** — the
+registered read strengthened, s2 stays the floor case.
+
+**12b (prereg §15, amended trigger):** twin harness built + CC-verified (exposure loss-skip
+clean; twin parity torch.equal ex-word; null-token convention; per-partition sep columns);
+one build catch (shuffled-twin checksum rebuilt without word_ref — died at the assert
+pre-training, fixed, relaunched). **Cal twins ({20–24} × 2 × 2, 160k): num max over ALL 20
+runs = 2.6e-5 (vs 0.284 scheduled, same seed); onsets None 20/20; present ≡ absent on every
+panel. The word as pure reference NEVER BINDS — participation appears to require prediction
+load somewhere. Third dose rung measured: zero word-prediction load → channel never forms AND
+the world collapses harder (9/20 dead-dictionary ends, 15/20 den sub-floor; dwelled twins
+fully dead most seeds).** Constants NOT settable (no aligned-window support; S unread + raw
+form unbounded — bounded form proposed for any re-pin; dead regime shifted 1.5×, θ not
+transportable unflagged). The registered S prediction is UNTESTED, not falsified. Ruling
+required; candidate re-poses surfaced in chat (re-pin twins onto the split coin-exam policy |
+rule inertness the block's answer). No verdict twin runs.

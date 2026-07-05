@@ -330,7 +330,8 @@ def run_exp12_arm(arm_name: str, seed: int, steps: int, *,
     if fab.shuffled:
         fab_plain = F.build_fabric(loop.stim, cfg, seed, fab.T, probe_rate=probe_rate,
                                    shuffled=False,
-                                   uniform_mask=spec.get("uniform_mask", False))
+                                   uniform_mask=spec.get("uniform_mask", False),
+                                   word_ref=spec.get("word_ref", False))
         assert torch.equal(fab.raw.sort(0).values, fab_plain.raw.sort(0).values), \
             "A-SHUFFLE waves are not the identical multiset"
         assert int(fab.is_exam.sum()) == int(fab_plain.is_exam.sum()), "exam count differs"

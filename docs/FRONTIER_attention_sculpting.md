@@ -1728,3 +1728,40 @@ complete at discriminator scale; the four-cell table is untouched. No arm is a f
    read cannot flip).
 6. **DENSITY-MATCHED CONVERSION BAND:** form registered (prereg §15); the constant is
    recorded at any exam-rate-changing arm's stage-two.
+
+### §10.20.3 — 12b CAL TWINS RAN (2026-07-05): **REGIME FINDING — the zero-prediction-load word is INERT; constants NOT settable; verdict twins DO NOT run pending ruling**
+
+**s2 backfill first (§14, fired by ruling):** seeds {3,4} both READ SURVIVES (0.0663 at 11.7× θ,
+frac-above 0.886; 0.0227 at 4.0× θ, 0.834) — **A-SPLIT now 5S/0D**; the registered read stands
+per the pre-written verdict invariance and the backfill STRENGTHENED it (the two backfill seeds
+sit above all three original margins; s2's 1.35× remains the arm's floor case).
+
+**The 12b cal outcome (cal twins {20–24} × {present, absent} × {shuffled, dwelled}, 160k, mask
+policy (iii); twin parity verified `torch.equal` ex-word; exposure-wave loss-skip verified
+clean):** **the num channel NEVER forms — max num over ALL 20 runs = 2.6e-5** (vs 0.284 at the
+same seed under the scheduled policy); acquisition onsets None 20/20, present twin and absent
+twin alike; **present and absent twins are indistinguishable on every panel.** The word,
+presented as a pure reference with zero prediction load in either direction, never binds into
+completion at these horizons. Mechanically coherent in hindsight: the strong binding force in
+every prior arm was the word-PREDICTION gradient (unit-separated token targets); the teaching
+direction's own gradient scales with the subtle r_category = 0.5 axis and evidently never
+lifts the channel off the floor by itself. **The dose ladder now has three rungs: scheduled
+exams (strongest routing + channel), coin exams (split: ~2–3× weaker), zero word-prediction
+load (12b-(iii): channel never forms and the world collapses harder — 9/20 runs end
+dead-dictionary, 15/20 end den sub-floor; both dwelled twins fully dead on most seeds).**
+
+**Consequences (why constants cannot be set):** the aligned-window anchor (present-twin num
+onset) has ZERO support; the S index has no post-onset windows to read; the raw S form is
+additionally unbounded (ratio explosion as within→0 — any re-pin should use a bounded form,
+e.g. between/(between+within)); the dead-reference regime SHIFTED (new-policy dead p95 0.0086
+= 1.5× the in-force provenance — θ not transportable unflagged under (iii)). Artifact:
+`exp12_12b_stage2.PROPOSED.json` (the finding + the instrument notes; nothing in force).
+
+**What this is, read plainly: a result about the #12 reference, not a failed experiment.** The
+teaching test's vehicle assumed a reference-only word still participates; measured, it does
+not — **participation appears to require prediction load somewhere.** The registered
+prediction (S-selectivity) is UNTESTED, not falsified: the channel never came alive to test.
+**Ruling required before any verdict twin; candidate re-poses surfaced in chat** (e.g., re-pin
+the twin policy to the SPLIT arm's coin-exam policy — word carries load at coin rate; twins
+{present, absent} on that policy — or rule the inertness finding the block's answer and route
+the teaching test elsewhere). No arm is a fix.

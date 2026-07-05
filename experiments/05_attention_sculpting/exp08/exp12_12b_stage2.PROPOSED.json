@@ -1,0 +1,115 @@
+{
+  "status": "PROPOSED \u2014 surfaces in chat before any verdict twin",
+  "W_common": 131400,
+  "margin": 12000,
+  "sh": {
+    "arms": [
+      "exp12_12b_shp",
+      "exp12_12b_sha"
+    ],
+    "onsets_present": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "onsets_absent": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "null_band": {
+      "n_windows": 2665,
+      "p50": -0.03154,
+      "p99": 3.7219,
+      "max": 1647.22699,
+      "source": "pre-acquisition (present-twin num onset) windows, pooled over cal twin pairs"
+    },
+    "sustained_N": 5,
+    "untied_untied": {
+      "n": 2665,
+      "p50": -0.00372,
+      "p99": 8.41027
+    },
+    "degenerate_windows": 0,
+    "post_onset_S_preview_NOT_A_BAND_INPUT": {
+      "s20": null,
+      "s21": null,
+      "s22": null,
+      "s23": null,
+      "s24": null
+    },
+    "aligned_window": "per seed: [onset_present, onset_present + W_common]; the absent twin anchored to the PRESENT twin's onset",
+    "horizon": {
+      "value": null,
+      "form": "max present-twin cal onset (None \u2014 CENSORED SEED PRESENT, bound is a >=) + W(131400) + margin(12000)"
+    }
+  },
+  "dw": {
+    "arms": [
+      "exp12_12b_dwp",
+      "exp12_12b_dwa"
+    ],
+    "onsets_present": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "onsets_absent": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "null_band": {
+      "n_windows": 2665,
+      "p50": -0.04989,
+      "p99": 79.59798,
+      "max": 141094.01089,
+      "source": "pre-acquisition (present-twin num onset) windows, pooled over cal twin pairs"
+    },
+    "sustained_N": 4,
+    "untied_untied": {
+      "n": 2665,
+      "p50": -0.09708,
+      "p99": 159.40246
+    },
+    "degenerate_windows": 0,
+    "post_onset_S_preview_NOT_A_BAND_INPUT": {
+      "s20": null,
+      "s21": null,
+      "s22": null,
+      "s23": null,
+      "s24": null
+    },
+    "aligned_window": "per seed: [onset_present, onset_present + W_common]; the absent twin anchored to the PRESENT twin's onset",
+    "horizon": {
+      "value": 303400,
+      "form": "dwelled carries the 303,400 form + full UNREAD/truncation machinery"
+    }
+  },
+  "REGIME_FINDING": {
+    "num_max_over_all_20_runs": 2.6e-05,
+    "onsets": "None 20/20 (present AND absent twins, both fabrics)",
+    "s_form_note": "raw ratio-difference S is unbounded (within->0 explosion); any re-pin should use a bounded form, e.g. between/(between+within)",
+    "reading": "the zero-prediction-load word is INERT \u2014 the channel the teaching test needs never comes alive to test under policy (iii)"
+  },
+  "dead_reference_regime_check": {
+    "n_dead_windows": 1444,
+    "gating": "UNGATED whole-run (no onsets exist)",
+    "p50": 7.9e-05,
+    "p95": 0.008609,
+    "p99": 0.019208,
+    "inforce_reference": {
+      "p50": 3.9e-05,
+      "p95": 0.00566
+    },
+    "note": "SHIFTED: new-policy dead p95 0.0086 = 1.5x the in-force provenance \u2014 the asg_cat companion must not be read against theta unflagged under (iii)"
+  }
+}
