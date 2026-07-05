@@ -344,7 +344,14 @@ No arm is a fix.
    interpretation** (stage-one s20 says this will occur).
 6. **Baseline:** masked-completion learner on identical vector waves + identical
    schedule; params within ~2× of PAM's plastic side [CC counts]; (B1)/(B2) constants
-   from its own calibration seeds, same two-stage.
+   from its own calibration seeds, same two-stage. **PINS (ratified at the stage-two
+   read, 2026-07-05): (iii) B1 floor = the COMMON undifferentiated reference (the dwell
+   arm's pre-differentiation band) for BOTH arms — pre-differentiation geometry is
+   arm-independent by construction, and the shuffle arm's own pre-acquisition span is
+   quantile-thin (it acquires almost immediately). (iv) B2 "floor 0" REJECTED as
+   under-specified — symmetric completion: the SAME chance-band form as the rig's
+   exam-conversion read (own chance-band p99, 3 consecutive windows) applied to the
+   baseline's exam acc. One floor form, both learners.**
 7. **Slotted items — ALL RATIFIED at the checkpoint read** (deployed topology; ladder
    on promote; coherence-ablation post-promote; substreams mechanical).
 8. **Asserts:** EXP10 §7.1 numeric machinery extended — per-lag correlation bound over
@@ -354,7 +361,13 @@ No arm is a fix.
    at final read — a stage-two threshold from two seeds' spans is thin; never verdict)**;
    discriminator fires at 3 seeds; horizon = max measured acquisition onset + W_post +
    margin (EXP11 §2 form) — **onset bound from the CORRECTED-LAW re-cal,
-   censoring-aware: a censored cal seed makes the bound a ≥, never a max.**
+   censoring-aware: a censored cal seed makes the bound a ≥, never a max.** **PINS
+   (ratified at the stage-two read, 2026-07-05): (i) TRUNCATION TAXONOMY — a seed whose
+   onset lands at onset > horizon − W_post is UNREAD (window-truncated), a distinct
+   taxon from unacquired; neither is ever a dies. (ii) MINIMUM READ = 3 seeds
+   POST-extension; below that the arm is UNREAD-AT-HORIZON and the escalation is a
+   HORIZON RE-PIN as a recorded amendment — lengthen the race on the record, never
+   interpret a thinner table.**
 10. **Boundary-leak monitor (Adjustment 1 — position-matched, schedule-unmatched):**
     read-only off-schedule word-mask probes at POSITION 1 of dwells whose scheduled exam
     was harness-suppressed. Naive mid-dwell probes would measure anticipation PLUS

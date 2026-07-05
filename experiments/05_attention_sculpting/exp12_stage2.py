@@ -234,6 +234,149 @@ def propose():
     return out
 
 
+def record_inforce():
+    """Write the IN-FORCE stage-two constants (ratified in chat 2026-07-05: Rulings A/B,
+    pins i–iv, the symmetric B2 completion). Theta and every band value is RE-DERIVED
+    here from the committed cal artifacts under the WRITTEN span definitions (Ruling B
+    condition: reproducible, not quoted)."""
+    # --- theta: the dead-reference span DEFINITION (of record) ---
+    # dead window := a post-onset eval window of a CORRECTED-LAW cal run (arms
+    # exp12_dwell/exp12_shuffle, seeds {20..24}, 160k horizon, artifacts committed
+    # e5868bf) with asg_argmax_k == 1 AND den < 1e-3 (the standing one-sided
+    # collapse-floor tripwire). theta = the 0.95 quantile (sorted, index int(0.95*n))
+    # of asg_cat over that set (Ruling B: the p95->p99 tail is boundary-transition
+    # windows; the criterion is a W_post MEAN sitting near dead-p50 when dead).
+    dead = []
+    for a in X12.ARMS12:
+        for s in X12.CAL_SEEDS:
+            rec = _load(a, s)
+            onset = rec["acquisition_onset"]
+            if onset is None:
+                continue
+            dead += [c["asg_cat"] for c in rec["columns"]
+                     if c["t"] >= onset and c["asg_argmax_k"] == 1 and c["den"] < X9.FLOOR]
+    dead_s = sorted(dead)
+    theta = dead_s[int(0.95 * len(dead_s))]
+
+    # --- rig exam-conversion chance band (definition of record) ---
+    # chance window := an eval window with an exam_acc value from a cal run segment
+    # BEFORE that run's num-floor onset (censored runs contribute their whole span).
+    chance = []
+    for a in X12.ARMS12:
+        for s in X12.CAL_SEEDS:
+            rec = _load(a, s)
+            onset = rec["acquisition_onset"]
+            chance += [c["exam_acc"] for c in rec["columns"]
+                       if c.get("exam_acc") is not None
+                       and (onset is None or c["t"] < onset)]
+    ch_s = sorted(chance)
+    conv_thr = ch_s[int(0.99 * len(ch_s))]
+
+    # --- B1 common undifferentiated reference (pin iii) ---
+    # dwell-arm baseline cal runs, first 20 windows (pre-differentiation band), p99.
+    early = []
+    for s in X12.CAL_SEEDS:
+        r = json.loads((OUTDIR / f"exp12_baseline_dwell_s{s}.json").read_text())
+        early += [c["b1_ratio"] for c in r["columns"][:20] if c["b1_ratio"] is not None]
+    e_s = sorted(early)
+    b1_floor = e_s[int(0.99 * len(e_s))]
+
+    # --- B2 chance band (pin iv, symmetric completion: one floor form, both learners) ---
+    # baseline chance window := a b2_exam_acc window BEFORE the run's own
+    # pre-differentiation boundary, defined on the INDEPENDENT axis (mirroring the rig's
+    # pre-onset band): the first sustained (2-consecutive) B1-ratio crossing above the
+    # common B1 floor (a degenerate None ratio counts as above); never-crossing runs
+    # contribute their whole span. (A tail-at-chance run selection was tried first and
+    # REJECTED: dwell baseline runs differentiate TRANSIENTLY then relapse, so their
+    # spans leak acc=1.0 episodes into the band — p99 degenerated to 1.0.)
+    b2_chance = []
+    for arm_short in ("dwell", "shuffle"):
+        for s in X12.CAL_SEEDS:
+            r = json.loads((OUTDIR / f"exp12_baseline_{arm_short}_s{s}.json").read_text())
+            run_len, cross = 0, None
+            for c in r["columns"]:
+                above = (c["b1_ratio"] is None) or (c["b1_ratio"] > b1_floor)
+                run_len = run_len + 1 if above else 0
+                if run_len >= 2:
+                    cross = c["t"] - X12.EVAL
+                    break
+            b2_chance += [c["b2_exam_acc"] for c in r["columns"]
+                          if c["b2_exam_acc"] is not None
+                          and (cross is None or c["t"] < cross)]
+    b2_s = sorted(b2_chance)
+    b2_thr = b2_s[int(0.99 * len(b2_s))] if b2_s else None
+
+    out = dict(
+        status="IN FORCE (ratified in chat 2026-07-05; Rulings A/B + pins i–iv + the "
+               "symmetric B2 completion). Recorded BEFORE any verdict run.",
+        provenance=dict(cal_artifacts_commit="e5868bf", cal_seeds=X12.CAL_SEEDS,
+                        cal_horizon=X12.CAL_HORIZON, law="k = 2 + Geom0(0.1), cap 48"),
+        onset_bound=dict(form=">= 160000 (2 censored cal seeds; censoring-aware §13.9)"),
+        w_post=dict(
+            value=131400,
+            ruling_A="RECORDED LADDER AMENDMENT: the own-period rung is uncertifiable "
+                     "in-regime (4.7x internal disagreement across seeds within an arm; "
+                     "§10.17 instability live), so the precedence ladder falls to the "
+                     "FIXED WINDOW arm-wide. Sizing pin satisfied (131400 = 3 x 43800 = "
+                     "3x the max measured in-regime period; >= every measured period). "
+                     "NOT the rejected common-ruler: this window exists in every cell.",),
+        verdict_horizon=dict(value=303400, form=">=160000 + 131400 + margin 12000"),
+        survival=dict(
+            theta=theta, quantile="dead-p95", n_dead_windows=len(dead_s),
+            dead_span_definition="post-onset eval windows of the corrected-law cal runs "
+                                 "(both arms, seeds 20-24, 160k, commit e5868bf) with "
+                                 "asg_argmax_k==1 AND den < 1e-3 (standing tripwire)",
+            criterion="window MEAN of asg_cat over [onset, onset+131400] >= theta; "
+                      "frac-alive companion logged",
+            ruling_B_grounds="p95->p99 dead tail = boundary-transition windows; a dead "
+                             "arm's W_post mean sits near dead-p50 ~4e-5"),
+        seed_taxonomy=dict(
+            unacquired="onset never fires at horizon -> UNREAD (unacquired), never dies",
+            window_truncated="onset > horizon - W_post (= 172000) -> UNREAD "
+                             "(window-truncated), distinct taxon (pin i)",
+            minimum_read="3 read seeds POST-extension; below -> UNREAD-AT-HORIZON, "
+                         "escalation = horizon re-pin as recorded amendment (pin ii)",
+            margin_guard="3-2 split among read seeds fires the +2 extension {5,6} "
+                         "BEFORE table interpretation"),
+        probe_rate=dict(value=0.02, monitor="§13.10 live in verdict arms; scheduled-vs-"
+                                            "probe divergence at matched acquisition"),
+        exam_conversion=dict(threshold=conv_thr, consec=3,
+                             band_definition="pre-onset (+ censored whole-span) exam_acc "
+                                             "windows pooled over the 10 cal runs; p99",
+                             n_band_windows=len(ch_s), role="COMPANION (Ruling 2), "
+                             "never the cell-decider"),
+        baseline=dict(
+            b1_floor=dict(value=round(b1_floor, 4),
+                          definition="COMMON undifferentiated reference (pin iii): p99 "
+                                     "of the dwell-arm baseline cal runs' first-20-window "
+                                     "between/within ratios",
+                          n_band_windows=len(e_s)),
+            b2_conversion=dict(threshold=(round(b2_thr, 4) if b2_thr is not None else None),
+                               consec=3,
+                               band_definition="pin iv symmetric completion: p99 of "
+                                               "b2_exam_acc over each baseline cal run's "
+                                               "PRE-DIFFERENTIATION span (before its first "
+                                               "sustained 2-consec B1 crossing above the "
+                                               "common B1 floor; independent-axis boundary "
+                                               "— tail-at-chance selection rejected: "
+                                               "transient-differentiation episodes leaked "
+                                               "acc=1.0 into the band)",
+                               n_band_windows=len(b2_s))),
+    )
+    (OUTDIR / "exp12_stage2_constants.json").write_text(json.dumps(out, indent=2))
+    print("IN FORCE:", json.dumps(dict(theta=theta, w_post=131400, horizon=303400,
+                                       conv_thr=conv_thr, b1_floor=round(b1_floor, 4),
+                                       b2_thr=(round(b2_thr, 4) if b2_thr else None)),
+                                  indent=1))
+    return out
+
+
 if __name__ == "__main__":
-    argparse.ArgumentParser().parse_args()
-    propose()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--propose", action="store_true")
+    ap.add_argument("--record-inforce", action="store_true")
+    args = ap.parse_args()
+    if args.record_inforce:
+        record_inforce()
+    else:
+        propose()

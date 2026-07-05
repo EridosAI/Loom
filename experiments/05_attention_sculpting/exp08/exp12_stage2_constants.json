@@ -1,0 +1,64 @@
+{
+  "status": "IN FORCE (ratified in chat 2026-07-05; Rulings A/B + pins i\u2013iv + the symmetric B2 completion). Recorded BEFORE any verdict run.",
+  "provenance": {
+    "cal_artifacts_commit": "e5868bf",
+    "cal_seeds": [
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "cal_horizon": 160000,
+    "law": "k = 2 + Geom0(0.1), cap 48"
+  },
+  "onset_bound": {
+    "form": ">= 160000 (2 censored cal seeds; censoring-aware \u00a713.9)"
+  },
+  "w_post": {
+    "value": 131400,
+    "ruling_A": "RECORDED LADDER AMENDMENT: the own-period rung is uncertifiable in-regime (4.7x internal disagreement across seeds within an arm; \u00a710.17 instability live), so the precedence ladder falls to the FIXED WINDOW arm-wide. Sizing pin satisfied (131400 = 3 x 43800 = 3x the max measured in-regime period; >= every measured period). NOT the rejected common-ruler: this window exists in every cell."
+  },
+  "verdict_horizon": {
+    "value": 303400,
+    "form": ">=160000 + 131400 + margin 12000"
+  },
+  "survival": {
+    "theta": 0.00565724,
+    "quantile": "dead-p95",
+    "n_dead_windows": 385,
+    "dead_span_definition": "post-onset eval windows of the corrected-law cal runs (both arms, seeds 20-24, 160k, commit e5868bf) with asg_argmax_k==1 AND den < 1e-3 (standing tripwire)",
+    "criterion": "window MEAN of asg_cat over [onset, onset+131400] >= theta; frac-alive companion logged",
+    "ruling_B_grounds": "p95->p99 dead tail = boundary-transition windows; a dead arm's W_post mean sits near dead-p50 ~4e-5"
+  },
+  "seed_taxonomy": {
+    "unacquired": "onset never fires at horizon -> UNREAD (unacquired), never dies",
+    "window_truncated": "onset > horizon - W_post (= 172000) -> UNREAD (window-truncated), distinct taxon (pin i)",
+    "minimum_read": "3 read seeds POST-extension; below -> UNREAD-AT-HORIZON, escalation = horizon re-pin as recorded amendment (pin ii)",
+    "margin_guard": "3-2 split among read seeds fires the +2 extension {5,6} BEFORE table interpretation"
+  },
+  "probe_rate": {
+    "value": 0.02,
+    "monitor": "\u00a713.10 live in verdict arms; scheduled-vs-probe divergence at matched acquisition"
+  },
+  "exam_conversion": {
+    "threshold": 0.703704,
+    "consec": 3,
+    "band_definition": "pre-onset (+ censored whole-span) exam_acc windows pooled over the 10 cal runs; p99",
+    "n_band_windows": 1599,
+    "role": "COMPANION (Ruling 2), never the cell-decider"
+  },
+  "baseline": {
+    "b1_floor": {
+      "value": 0.9501,
+      "definition": "COMMON undifferentiated reference (pin iii): p99 of the dwell-arm baseline cal runs' first-20-window between/within ratios",
+      "n_band_windows": 100
+    },
+    "b2_conversion": {
+      "threshold": 0.7037,
+      "consec": 3,
+      "band_definition": "pin iv symmetric completion: p99 of b2_exam_acc over each baseline cal run's PRE-DIFFERENTIATION span (before its first sustained 2-consec B1 crossing above the common B1 floor; independent-axis boundary \u2014 tail-at-chance selection rejected: transient-differentiation episodes leaked acc=1.0 into the band)",
+      "n_band_windows": 190
+    }
+  }
+}
