@@ -1854,3 +1854,58 @@ re-checked; windows/horizons/taxonomy/letters carry in force unchanged. (4) **FR
 DISCIPLINE: verdict seeds {5–9}** — the re-cut ruler never grades the {0–4} seeds whose
 data motivated the re-cut; their S_w values may be reported post-hoc as labeled companions
 after the fresh read exists. One review per block, behind the verification pass.
+
+### §10.20.6 — S_w FRESH-SEED VERDICTS (2026-07-05, verified 18-agent/9-findings, none verdict-changing, mechanics exact): **sh S_w-FIRES 4F/0N ROBUST · dw S_w-FIRES 3F/1N FRAGILE — and the dw flip is a SEED-BATCH effect, not the ruler**
+
+**Constants:** S_w bands from existing cal only — sh 0.006353 (n=348, N=2; null max run 1,
+only 3/348 windows above band), dw 0.019755 (n=1414, N=5; null max run 4, once). One
+pre-run event: **sh seed 9's fabric was REJECTED by the k⟂member manifest gate** (chi2
+85.36 vs null-p99 83.42 — a 2.3% exceedance at a 1% test after ~29 fabrics this session;
+verified OUTCOME-BLIND: the gate runs before the manifest write and before wave 0, and
+consumes only construction fields; dw s9 passed at its longer dwell sequence). Committed
+record `exp12_12bc_sh_s9_REJECTED.json`; the sh block reads on {5–8} (4 ≥ the min-3
+letter); **substitution (s10) not improvised — a ruling if wanted.**
+
+**[sh] S_w-FIRES 4F/0N — ROBUST.** Every fire dwarfs the null: the weakest (s6, the
+duty-cycle regime again — negative window mean, oscillatory) still has 21.6% of windows
+above band (25× the null rate), 24 distinct runs ≥ 2 where the null never produced 2
+consecutive anywhere, max 5.6× the null max; s5 is the showcase (mean 0.0453, frac 0.565,
+run 77). **Dose-visibility passes on the correct normalization: NO untied leg fires its
+own analogous band on any sh seed** (dA +0.010..−0.063, dDist −0.015..+0.003, all quiet
+vs their own nulls). INSTRUMENT NOTE (reading-changing, recorded): the registered
+"Δcat ≫ untied" wording is SCALE-MISMATCHED in raw units — the untied contrast nulls are
+40–60× wider than the S_w null (dA p99 0.38–0.40 vs S_w band 0.006–0.020); the check is
+valid ONLY as each-leg-against-its-own-band. Caveat on record: the sh null pool is 62%
+one cal seed (s26, the slow acquirer that donated the fattest pre-onset span).
+
+**[dw] S_w-FIRES 3F/1N — LETTER-VALID, EVIDENCE FRAGILE.** The three fires are three
+different shapes, none clean: **s5 = persistence-only** (run 59 = 14.8× the null max run,
+but amplitude INSIDE the null tail — run mean 0.0252 vs null p99.5 0.0233); **s7 =
+mirror-oscillatory** (fires run 15 but runs BELOW −band harder: 20; mean −0.005); **s8 =
+band-adjacent AND fails the apples-to-apples check** (exactly-N runs, amplitude never
+leaves the null tail, and its untied dA leg WOULD fire the analogous own-band criterion —
+the one read where selectivity fails like-for-like). s6 clean null; s9 window-truncated
+(onset 281.1k).
+**THE CROSS-RULER DECOMPOSITION (labeled post-hoc companions, never verdicts): the dw
+S-NULL {0–4} → S_w-FIRES {5–9} flip is a SEED-BATCH effect, not the ruler re-cut — each
+batch gives the SAME letter under BOTH rulers** (dw {2,3,4} under S_w: 0F/3N; dw {5–9}
+under composite S: 3F/1N). Combined dw evidence over 7 read seeds: 3F/4N. **The dwelled
+block's selectivity is a seed lottery at current power** — the letter fires on this
+batch; demonstration-grade it is not.
+
+**Health companion, corrected texture:** sh unchanged (absent twins deep in den collapse
+0.686–0.838 vs present 0.0–0.221; word-present clearly healthier). **dw INVERTS on the
+den channel** (present den-subfloor HIGHER in 3/4 reads: 0.239/0.166/0.257 vs
+0.032/0.068/0.159) while asg_cat still favors present everywhere — on the dwelled fabric
+the word buys assignment-side category sensitivity at some content-contraction cost. The
+health story is fabric-dependent, not universal.
+
+**Registered-prediction status after fresh seeds: word-tied SELECTIVITY is DEMONSTRATED on
+the SHUFFLED fabric** (S_w, fresh seeds, robust against a clean null, untied legs quiet on
+their own bands, batch-consistent direction with the {0–4} composite fires). **On the
+DWELLED fabric it is letter-fired but NOT demonstration-grade** (fragile shapes,
+batch-unstable, one like-for-like failure). Falsifier (a) does not fire on the routing
+axis anywhere (den-channel inversion on dw noted); falsifier (b) is batch-dependent on dw.
+Rulings owed: the dw-block standing (letter vs fragility — more seeds / leave as lottery /
+route elsewhere), the s10 substitution, and whether the sh demonstration promotes any
+Guiding-List candidate machinery. No arm is a fix.

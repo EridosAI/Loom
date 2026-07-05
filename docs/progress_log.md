@@ -1760,3 +1760,33 @@ aligned). **Ledger: word on live fabric = health-protective (both fabrics) +
 geometry-reshaping vs no-word collapse (sh, letter-fire) + NOT yet word-tied-selective in the
 registered sense + inert without prediction load (§10.20.3). Rulings owed: sh-fire
 interpretation, any S re-cut, dw follow-ups.**
+
+## 2026-07-05 — S_w FRESH-SEED VERDICTS (canon §10.20.6; verified 18-agent): **sh S_w-FIRES 4F/0N ROBUST — word-tied selectivity DEMONSTRATED on the shuffled fabric · dw 3F/1N FRAGILE (seed-batch, not ruler)**
+
+S_w registered (§10.20.5) → bands from existing cal (sh 0.006353 n=348 N=2; dw 0.019755
+n=1414 N=5) → fresh seeds {5–9} both blocks → verification BEFORE the table (18 agents,
+mechanics exact, none verdict-changing). One pre-run event: sh s9 fabric REJECTED by the
+k⟂member gate (chi2 85.36 vs 83.42; verified OUTCOME-BLIND, pre-wave-0; ~1 marginal breach
+in ~29 fabrics at a 1% gate; committed record exp12_12bc_sh_s9_REJECTED.json; sh reads on
+{5–8}; s10 substitution = a ruling, not improvised).
+
+**[sh] 4F/0N ROBUST:** weakest fire 25× the null rate (null: 3/348 above band, max run 1);
+s5 showcase mean 0.0453/frac 0.565/run 77; duty-cycle regime present (s6 negative mean,
+oscillatory, still 24 runs ≥2 vs zero in null). Dose-visibility passes on the CORRECT
+normalization — no untied leg fires its own band on any sh seed. INSTRUMENT NOTE recorded:
+raw-magnitude "Δcat ≫ untied" is scale-mismatched (untied nulls 40–60× wider); the check
+is each-leg-vs-its-own-band only. Caveat: sh null 62% one seed (s26).
+**[dw] 3F/1N letter-valid, FRAGILE:** s5 persistence-only (run 59 = 14.8× null max run,
+amplitude inside the null tail); s7 mirror-oscillatory (below-band run 20 > fire run 15);
+s8 band-adjacent AND its dA leg would fire its own band (the like-for-like failure); s6
+clean null; s9 truncated. **CROSS-RULER DECOMPOSITION (post-hoc companions): the dw flip
+is SEED-BATCH, not ruler — each batch same letter under both rulers** (dw {2,3,4} S_w
+0F/3N; dw {5–9} composite-S 3F/1N); combined dw 3F/4N over 7 reads = a seed lottery at
+current power. Health: sh unchanged (word-present much healthier); dw INVERTS on den
+(present subfloor higher 3/4) while asg_cat favors present — fabric-dependent.
+
+**STATUS: the registered cross-scene contrast is DEMONSTRATED on the shuffled fabric —
+the ~5× collapse-accelerant channel, on live fabric, selectively differentiates the
+partition it names (fresh seeds, robust null, untied legs quiet). Dwelled: letter-fire,
+not demonstration-grade. Rulings owed: dw standing, s10 substitution, any Guiding-List
+promotion touched by the sh demonstration.**

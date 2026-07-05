@@ -1,0 +1,281 @@
+{
+  "sh": {
+    "block": "sh",
+    "ruler": "S_w (\u00a710.20.5)",
+    "per_seed": [
+      {
+        "block": "sh",
+        "seed": 5,
+        "onset_present": 3300,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 11700,
+        "band": 0.006353,
+        "sustained_N": 2,
+        "Sw_mean": 0.04525,
+        "Sw_max": 0.39734,
+        "Sw_frac_above": 0.5649,
+        "longest_run": 77,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": -0.06273,
+          "d_dist_mean": -0.0086,
+          "composite_S_mean": 0.08091
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.07504,
+            "den_subfloor": 0.048
+          },
+          "absent": {
+            "asg_cat_mean": 0.00621,
+            "den_subfloor": 0.784
+          }
+        }
+      },
+      {
+        "block": "sh",
+        "seed": 6,
+        "onset_present": 4200,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 14700,
+        "band": 0.006353,
+        "sustained_N": 2,
+        "Sw_mean": -0.00594,
+        "Sw_max": 0.06316,
+        "Sw_frac_above": 0.2164,
+        "longest_run": 6,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": 0.0101,
+          "d_dist_mean": -0.00207,
+          "composite_S_mean": -0.00996
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.02138,
+            "den_subfloor": 0.009
+          },
+          "absent": {
+            "asg_cat_mean": 0.0087,
+            "den_subfloor": 0.699
+          }
+        }
+      },
+      {
+        "block": "sh",
+        "seed": 7,
+        "onset_present": 9000,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 11100,
+        "band": 0.006353,
+        "sustained_N": 2,
+        "Sw_mean": 0.0096,
+        "Sw_max": 0.12139,
+        "Sw_frac_above": 0.4692,
+        "longest_run": 14,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": -0.00322,
+          "d_dist_mean": -0.015,
+          "composite_S_mean": 0.01871
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.03683,
+            "den_subfloor": 0.0
+          },
+          "absent": {
+            "asg_cat_mean": 0.00719,
+            "den_subfloor": 0.686
+          }
+        }
+      },
+      {
+        "block": "sh",
+        "seed": 8,
+        "onset_present": 5100,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 21300,
+        "band": 0.006353,
+        "sustained_N": 2,
+        "Sw_mean": 0.00197,
+        "Sw_max": 0.17547,
+        "Sw_frac_above": 0.3394,
+        "longest_run": 22,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": -0.02699,
+          "d_dist_mean": 0.00251,
+          "composite_S_mean": 0.01421
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.01693,
+            "den_subfloor": 0.221
+          },
+          "absent": {
+            "asg_cat_mean": 0.00539,
+            "den_subfloor": 0.838
+          }
+        }
+      }
+    ],
+    "n_read": 4,
+    "fired": 4,
+    "nofire": 0,
+    "extension_included": false,
+    "outcome": "S_w-FIRES",
+    "action": null
+  },
+  "dw": {
+    "block": "dw",
+    "ruler": "S_w (\u00a710.20.5)",
+    "per_seed": [
+      {
+        "block": "dw",
+        "seed": 5,
+        "onset_present": 37200,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 148200,
+        "band": 0.019755,
+        "sustained_N": 5,
+        "Sw_mean": 0.0046,
+        "Sw_max": 0.05299,
+        "Sw_frac_above": 0.1595,
+        "longest_run": 59,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": 0.02866,
+          "d_dist_mean": -0.05108,
+          "composite_S_mean": 0.01582
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.01921,
+            "den_subfloor": 0.239
+          },
+          "absent": {
+            "asg_cat_mean": 0.00666,
+            "den_subfloor": 0.032
+          }
+        }
+      },
+      {
+        "block": "dw",
+        "seed": 6,
+        "onset_present": 22800,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": false,
+        "fire_t": null,
+        "band": 0.019755,
+        "sustained_N": 5,
+        "Sw_mean": -0.00335,
+        "Sw_max": 0.01369,
+        "Sw_frac_above": 0.0,
+        "longest_run": 0,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": 0.00633,
+          "d_dist_mean": -0.00712,
+          "composite_S_mean": -0.00295
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.01301,
+            "den_subfloor": 0.166
+          },
+          "absent": {
+            "asg_cat_mean": 0.01266,
+            "den_subfloor": 0.068
+          }
+        }
+      },
+      {
+        "block": "dw",
+        "seed": 7,
+        "onset_present": 58500,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 158100,
+        "band": 0.019755,
+        "sustained_N": 5,
+        "Sw_mean": -0.00499,
+        "Sw_max": 0.0469,
+        "Sw_frac_above": 0.0456,
+        "longest_run": 15,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": 0.01449,
+          "d_dist_mean": -0.00456,
+          "composite_S_mean": -0.00996
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.01493,
+            "den_subfloor": 0.187
+          },
+          "absent": {
+            "asg_cat_mean": 0.00999,
+            "den_subfloor": 0.255
+          }
+        }
+      },
+      {
+        "block": "dw",
+        "seed": 8,
+        "onset_present": 43200,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 128400,
+        "band": 0.019755,
+        "sustained_N": 5,
+        "Sw_mean": 0.00279,
+        "Sw_max": 0.02821,
+        "Sw_frac_above": 0.0661,
+        "longest_run": 5,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": -0.03424,
+          "d_dist_mean": 0.00089,
+          "composite_S_mean": 0.01946
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.02031,
+            "den_subfloor": 0.257
+          },
+          "absent": {
+            "asg_cat_mean": 0.01271,
+            "den_subfloor": 0.159
+          }
+        }
+      },
+      {
+        "block": "dw",
+        "seed": 9,
+        "onset_present": 281100,
+        "onset_absent": null,
+        "status": "UNREAD (window-truncated: onset 281100 > 172000)"
+      }
+    ],
+    "n_read": 4,
+    "fired": 3,
+    "nofire": 1,
+    "extension_included": false,
+    "outcome": "S_w-FIRES",
+    "action": null
+  }
+}

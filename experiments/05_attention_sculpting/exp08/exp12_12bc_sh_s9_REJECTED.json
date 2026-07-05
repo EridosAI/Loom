@@ -1,0 +1,17 @@
+{
+  "event": "FABRIC REJECTED PRE-RUN (outcome-blind manifest gate)",
+  "arms": [
+    "exp12_12bc_shp",
+    "exp12_12bc_sha"
+  ],
+  "seed": 9,
+  "date": "2026-07-05",
+  "gate": "k-perp-member independence assert (13.8)",
+  "statistic": {
+    "chi2": 85.36357116699219,
+    "null_p99": 83.42374420166016,
+    "exceedance": "2.3% over a 1%-level permutation test"
+  },
+  "outcome_blind": "fabric_asserts runs BEFORE the manifest write and before wave 0 (exp12_arms.py:350 vs training loop ~374); the statistic consumes only fabric construction fields \u2014 verified in the S_w verification pass (18-agent)",
+  "context": "~29 seed-fabrics built this session at a 1% gate; one marginal breach is within the false-positive budget; the construction has no k-member coupling channel (code-verified; dw seed 9 passed at its longer dwell sequence). The sh block reads on {5,6,7,8} (4 reads >= the min-3 letter). SUBSTITUTION NOT IMPROVISED: whether s10 substitutes is a ruling."
+}
