@@ -1621,3 +1621,31 @@ p95 — which is why it is ratified, never read off); probe rate 0.02; baseline 
 (dwell/shuffle from its own pre-differentiation bands) + B2 floor 0; conversion form =
 chance-band p99 (acc ≥ 0.704) ×3, measured false-fire 0. **Verdict arms (seeds {0–4}, +2 pool
 {5,6}) run only after ratification.**
+
+## 2026-07-05 — EXP12 RIG-1 VERDICT: **BOTH-SURVIVE** (verified 28-agent/18-findings; canon §10.20); the splitting arm's trigger fires
+
+Stage-two ratified in chat (Rulings A/B, pins i–iv, symmetric B2) → constants IN-FORCE
+(3120f54) → verdict arms {0–4} × both arms at 303,400 waves, probe 0.02 → scorer → the
+verification pass BEFORE the table. **THE CELL: A-DWELL SURVIVES (read 4: 3S/1D; s0 UNREAD
+window-truncated per pin i) · A-SHUFFLE SURVIVES (5S/0D, θ-robust 4.4–25.5×). Registered
+reading applied as pre-registered: variation + exam-scheduling jointly suffice; root REFINED,
+not confirmed; the splitting arm (shuffled + uniform masking) is the pre-registered trigger
+that now fires (built-when-fired, awaiting GO).**
+
+Verification texture (18 confirmed, none cell-moving; 2 reading-changing): (1) the window-MEAN
+form certifies W_post-mean input-sensitivity, NOT alive-at-horizon — decoupled in this
+oscillatory regime (shuffle s3 passes at 0.0915 yet 98% dead-signature at run end; collapse is
+not abolished on this fabric, it is delayed/reshaped); (2) θ-provenance: the dead reference is
+85% shuffle windows (~32× arm-asymmetric tail) → θ is CONSERVATIVE against dwell survival and
+the p99-ANOMALY alternate is defused as a shuffle-tail artifact; (3) my draft "shuffle converts
+3/5" gloss STRUCK in verification (band-edge flicker; s2 misdated ~219k; s1 de-converts) —
+**sensitivity-without-conversion holds ARM-WIDE** (both arms asg-alive/exam-at-floor at 303k);
+(4) mode asymmetry: shuffle survival sustained (frac-above 0.80–1.00), dwell survival an
+intermittent duty-cycled revival mode (0.34–0.56; s1 = late-revival, alive-at-horizon, the
+suspected wrong-reason shape INVERTED); (5) arm-wide ordering inversion (min shuffle mean >
+max dwell; the §10.19.1 fabric fact continuing into survival); (6) §13.10 monitor has NO
+registered bar (gap on record) — dwell 4/4 positive paired deltas (max t≈+2.3), not a
+registered fire, fallback (c) stays unfired; (7) two latent scorer defects fixed UNEXERCISED
+(margin predicate letter-exact 3–2 only; extensions gated on guard-fire). Fourth campaign
+where verification materially corrected a draft reading (EXP08/10/11/12 — this time a
+companion gloss, not the cell).

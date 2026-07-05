@@ -107,24 +107,45 @@ def seed_read(arm: str, seed: int) -> dict:
     return out
 
 
-def arm_outcome(arm: str, seeds: list[int]) -> dict:
+def _tally(arm: str, seeds: list[int]) -> tuple[list, list, int, int]:
     reads = [seed_read(arm, s) for s in seeds
              if (OUTDIR / f"{arm}_s{s}.json").exists()]
     read = [r for r in reads if r["status"] == "READ"]
     surv = sum(1 for r in read if r["survives"])
-    dies = len(read) - surv
+    return reads, read, surv, len(read) - surv
+
+
+def arm_outcome(arm: str) -> dict:
+    """Guard letters EXACTLY as ratified (verification catch 2026-07-05, two latent
+    defects fixed unexercised): (a) the margin guard fires on a 3–2 split ONLY (not
+    2–1/2–2/ties — those are not registered guard states); (b) extension seeds {5,6}
+    enter the read ONLY when a guard actually fired on the base read (guard-fires-THEN-
+    extension; stray artifacts never contaminate the majority silently)."""
+    reads, read, surv, dies = _tally(arm, X12.VERDICT_SEEDS)
+    shortfall = len(read) < 3
+    margin = (surv, dies) in ((3, 2), (2, 3))
+    ext_used = False
+    if (shortfall or margin) and any(
+            (OUTDIR / f"{arm}_s{s}.json").exists() for s in X12.EXT_POOL):
+        reads, read, surv, dies = _tally(arm, X12.VERDICT_SEEDS + X12.EXT_POOL)
+        ext_used = True
+        shortfall = len(read) < 3
+        margin = (surv, dies) in ((3, 2), (2, 3))
     out = dict(arm=arm, seeds_run=[r["seed"] for r in reads], per_seed=reads,
-               n_read=len(read), survives=surv, dies=dies)
-    if len(read) < 3:
+               n_read=len(read), survives=surv, dies=dies,
+               extension_included=ext_used)
+    if shortfall:
         out["outcome"] = "READ-COUNT SHORTFALL"
-        out["action"] = ("fire +2 extension {5,6}" if not set(X12.EXT_POOL) <=
-                         set(r["seed"] for r in reads) else
+        out["action"] = ("fire +2 extension {5,6}" if not ext_used else
                          "UNREAD-AT-HORIZON (pin ii) — horizon re-pin as recorded amendment")
-    elif min(surv, dies) > 0 and abs(surv - dies) <= 1:
+    elif margin:
         out["outcome"] = f"MARGIN {surv}-{dies}"
         out["action"] = ("fire +2 extension {5,6} BEFORE table interpretation"
-                         if not set(X12.EXT_POOL) <= set(r["seed"] for r in reads)
-                         else "extension exhausted — outcome stands at majority")
+                         if not ext_used else
+                         "extension exhausted — outcome stands at majority")
+    elif surv == dies:
+        out["outcome"] = f"TIE {surv}-{dies} (unregistered state)"
+        out["action"] = "SURFACE — no registered guard covers a tie; ruling required"
     else:
         out["outcome"] = "SURVIVES" if surv > dies else "DIES"
         out["action"] = None
@@ -143,10 +164,8 @@ CELLS = {
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--seeds", type=int, nargs="*", default=X12.VERDICT_SEEDS)
-    args = ap.parse_args()
-    res = {a: arm_outcome(a, args.seeds + X12.EXT_POOL) for a in X12.ARMS12}
+    argparse.ArgumentParser().parse_args()
+    res = {a: arm_outcome(a) for a in X12.ARMS12}
     d, s = res["exp12_dwell"], res["exp12_shuffle"]
     pending = [a for a, r in res.items() if r["action"]]
     table = None

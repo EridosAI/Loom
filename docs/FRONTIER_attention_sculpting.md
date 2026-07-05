@@ -1584,3 +1584,67 @@ dead-p95 0.0057 (alternates p90/p99 surfaced; the θ choice is DECISIVE on the c
 exactly why it is ratified, never read off); probe-dwell rate 0.02; baseline B1 floors + B2
 (floor 0); conversion form = chance-band p99 (acc ≥ 0.704) ×3 windows, measured false-fire 0.
 Verdict arms run only after ratification.
+
+## §10.20 — EXP12 RIG-1 FOUR-CELL VERDICT (2026-07-05, verified 28-agent/18-findings): **BOTH-SURVIVE** at the ratified constants; the splitting arm's trigger fires
+
+**Constants in-force before any verdict run** (`exp12_stage2_constants.json`, commit 3120f54:
+Rulings A/B + pins i–iv + the symmetric B2 completion; θ = dead-p95 0.00566 with the
+dead-reference span definition written in; W_post = fixed COMMON 131,400 as a recorded ladder
+amendment; horizon 303,400; probe rate 0.02 — the §13.10 monitor live).
+
+**THE CELL (verdict seeds {0–4}, both arms, 303,400 waves, threads=1; every read seed
+independently recomputed to 6dp in verification):**
+- **A-DWELL: SURVIVES (read 4: 3S/1D).** s0 UNREAD window-truncated (onset 192,900 > 172,000 —
+  pin i applied correctly); s1 0.00991 S; s2 0.01558 S; s3 0.00315 D; s4 0.01139 S.
+- **A-SHUFFLE: SURVIVES (read 5: 5S/0D).** Means 0.0249–0.1443, θ-robust across the whole
+  surfaced alternate range (4.4×–25.5× θ).
+- No registered guard fires (no 3–2 split; 4 and 5 reads ≥ 3). Two latent scorer defects caught
+  in verification and fixed UNEXERCISED (margin predicate was broader than the 3–2 letter;
+  extension seeds entered on file-existence rather than guard-fire — both now letter-exact).
+
+**REGISTERED READING (prereg §7, applied as pre-registered): variation + exam-scheduling
+jointly suffice; the root is REFINED, not confirmed** (the EXP10 prior applies — both arms
+retain per-frame jitter; shuffling removed only cross-wave order, and routing survived
+anyway at these constants). **The splitting arm (shuffled + uniform masking) is the
+pre-registered trigger that now fires — built-when-fired, awaiting the GO.**
+
+**The verified texture (companions — none of it moves the cell):**
+- **Mode asymmetry.** Shuffle survival is SUSTAINED-in-window (frac-above-θ 0.80–1.00); dwell
+  survival is an INTERMITTENT, duty-cycled revival mode (frac-above 0.34–0.56, window medians
+  mostly below θ, the mean carried by revival episodes). Dwell s1 is a late-REVIVAL seed —
+  dead mass in its FIRST third, alive at horizon (run-end 98% above θ, 0% dead-signature): the
+  suspected wrong-reason survival was the INVERSE shape.
+- **READING-CHANGING instrument fact (to the ledger, no post-hoc re-pin): the ratified
+  window-MEAN form certifies W_post-mean input-sensitivity, NOT alive-at-horizon** — the two
+  are decoupled in this oscillatory regime. Shuffle s3 passes at 0.0915 yet is 98%
+  dead-signature at run end; dwell s2's run-end clears θ by 1.0%; shuffle s1 (the strongest
+  window survivor) is marginal at horizon. Collapse is NOT abolished on this fabric at long
+  horizons — the fabric/ordering changes when and how routing dies, not whether it can.
+- **READING-CHANGING θ-provenance fact (defuses the p99-ANOMALY alternate): the pooled dead
+  reference is 85% shuffle windows with a ~32× arm-asymmetric tail.** θ as applied to the dwell
+  arm is a shuffle-tail statistic ~24× the dwell arm's own dead reference — CONSERVATIVE
+  against dwell survival; dwell cleared a bar dominated by the other arm's transition tail.
+  The p99 alternate (which would read dwell 0S/4D) is even more a shuffle-tail artifact.
+- **Conversion companion CORRECTED in verification (my draft gloss struck):** the "shuffle
+  converts 3/5" read was band-edge flicker (s3's crossing = a 3-window flicker then back to
+  0.458; s2 misdated by ~219k; s1 de-converts before horizon). **Sensitivity-without-conversion
+  holds ARM-WIDE: both arms are asg-alive / exam-at-floor at horizon** — the §10 registered
+  finding class fires for the campaign, not for one arm. The exam channel is paid and
+  unconverted everywhere at 303k.
+- **Arm-wide ordering inversion (recorded; companions never decide cells):** min shuffle
+  window-mean (0.0249) > max dwell (0.0156); onsets 3.3–10.5k vs 16.5–192.9k — the shuffled arm
+  both acquires faster AND holds more input-sensitivity. The BOTH-SURVIVE label under-claims
+  this structure; it is the fabric fact (§10.19.1) continuing into the verdict regime, now with
+  a survival-ordering attached.
+- **§13.10 monitor: NO registered divergence bar exists (gap, on record).** Paired
+  scheduled-minus-probe deltas: dwell 4/4 positive (max t ≈ +2.3 at s3; the two largest in the
+  two weakest seeds), shuffle mixed-negative. Not a registered fire — fallback (c) stays
+  unfired — but the direction is the anticipation direction in the dwell arm and the bar's
+  absence is a named gap for the next campaign's constants.
+- Second acquisition record: verdict-seed onsets replicate the §10.19.1 fabric fact (dwell
+  slow/censored-class, shuffle ≤10.5k).
+
+**Ladder state:** both-survive routes to the SPLITTING ARM (shuffled + uniform masking —
+attributes between variation and exam-scheduling); the §8 escalation ladder does NOT open
+(that is the both-die route); 12b full-seeds does NOT open (that is the promote route). The
+coverage ladder stays banked (promote-cell trigger). No arm is a fix.

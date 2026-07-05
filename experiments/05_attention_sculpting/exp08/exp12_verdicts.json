@@ -1,0 +1,327 @@
+{
+  "constants_in_force": {
+    "theta": 0.00565724,
+    "w_post": 131400,
+    "horizon": 303400,
+    "read_cutoff": 172000,
+    "conv": 0.703704
+  },
+  "arms": {
+    "exp12_dwell": {
+      "arm": "exp12_dwell",
+      "seeds_run": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "per_seed": [
+        {
+          "arm": "exp12_dwell",
+          "seed": 0,
+          "onset": 192900,
+          "exam_conversion_onset": null,
+          "status": "UNREAD (window-truncated: onset 192900 > 172000)"
+        },
+        {
+          "arm": "exp12_dwell",
+          "seed": 1,
+          "onset": 166500,
+          "exam_conversion_onset": null,
+          "status": "READ",
+          "survives": true,
+          "asg_cat_mean": 0.009914,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 0.344,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.3889,
+            "argmax_k_med": 1,
+            "asg_entropy_mean": 0.0792,
+            "den_subfloor_frac": 0.369,
+            "exam_lift_mean": -0.0185,
+            "exam_acc_mean": 0.4876,
+            "mid_word_lift_mean": 0.1145,
+            "monitor_13_10": {
+              "scheduled_lift": -0.0185,
+              "probe_lift": -0.0153
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.1024,
+              "div_bg_last5": 0.126,
+              "div_id_last5": 1.58
+            }
+          }
+        },
+        {
+          "arm": "exp12_dwell",
+          "seed": 2,
+          "onset": 16500,
+          "exam_conversion_onset": null,
+          "status": "READ",
+          "survives": true,
+          "asg_cat_mean": 0.015579,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 0.5558,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.5192,
+            "argmax_k_med": 2,
+            "asg_entropy_mean": 0.1657,
+            "den_subfloor_frac": 0.1162,
+            "exam_lift_mean": -0.0155,
+            "exam_acc_mean": 0.4861,
+            "mid_word_lift_mean": 0.1546,
+            "monitor_13_10": {
+              "scheduled_lift": -0.0155,
+              "probe_lift": -0.0542
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.1436,
+              "div_bg_last5": 0.0772,
+              "div_id_last5": 0.8278
+            }
+          }
+        },
+        {
+          "arm": "exp12_dwell",
+          "seed": 3,
+          "onset": 120600,
+          "exam_conversion_onset": null,
+          "status": "READ",
+          "survives": false,
+          "asg_cat_mean": 0.003146,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 0.1002,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.0848,
+            "argmax_k_med": 1,
+            "asg_entropy_mean": 0.0401,
+            "den_subfloor_frac": 0.6059,
+            "exam_lift_mean": -0.0049,
+            "exam_acc_mean": 0.4984,
+            "mid_word_lift_mean": 0.0581,
+            "monitor_13_10": {
+              "scheduled_lift": -0.0049,
+              "probe_lift": -0.0571
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.0592,
+              "div_bg_last5": 0.0009,
+              "div_id_last5": 0.002
+            }
+          }
+        },
+        {
+          "arm": "exp12_dwell",
+          "seed": 4,
+          "onset": 22200,
+          "exam_conversion_onset": null,
+          "status": "READ",
+          "survives": true,
+          "asg_cat_mean": 0.011392,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 0.4282,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.4335,
+            "argmax_k_med": 2,
+            "asg_entropy_mean": 0.1146,
+            "den_subfloor_frac": 0.2118,
+            "exam_lift_mean": -0.0097,
+            "exam_acc_mean": 0.4939,
+            "mid_word_lift_mean": 0.1566,
+            "monitor_13_10": {
+              "scheduled_lift": -0.0097,
+              "probe_lift": -0.0045
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.1056,
+              "div_bg_last5": 0.0004,
+              "div_id_last5": 0.0012
+            }
+          }
+        }
+      ],
+      "n_read": 4,
+      "survives": 3,
+      "dies": 1,
+      "extension_included": false,
+      "outcome": "SURVIVES",
+      "action": null
+    },
+    "exp12_shuffle": {
+      "arm": "exp12_shuffle",
+      "seeds_run": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "per_seed": [
+        {
+          "arm": "exp12_shuffle",
+          "seed": 0,
+          "onset": 4800,
+          "exam_conversion_onset": null,
+          "status": "READ",
+          "survives": true,
+          "asg_cat_mean": 0.05791,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 0.8998,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.2175,
+            "argmax_k_med": 2,
+            "asg_entropy_mean": 1.6427,
+            "den_subfloor_frac": 0.0592,
+            "exam_lift_mean": 0.003,
+            "exam_acc_mean": 0.5051,
+            "mid_word_lift_mean": -0.0002,
+            "monitor_13_10": {
+              "scheduled_lift": 0.003,
+              "probe_lift": 0.0013
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.0657,
+              "div_bg_last5": 0.0022,
+              "div_id_last5": 0.0014
+            }
+          }
+        },
+        {
+          "arm": "exp12_shuffle",
+          "seed": 1,
+          "onset": 10500,
+          "exam_conversion_onset": 77100,
+          "status": "READ",
+          "survives": true,
+          "asg_cat_mean": 0.144317,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 0.9909,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.4582,
+            "argmax_k_med": 2,
+            "asg_entropy_mean": 0.7914,
+            "den_subfloor_frac": 0.0,
+            "exam_lift_mean": 0.105,
+            "exam_acc_mean": 0.5765,
+            "mid_word_lift_mean": 0.1045,
+            "monitor_13_10": {
+              "scheduled_lift": 0.105,
+              "probe_lift": 0.1439
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.1063,
+              "div_bg_last5": 0.0126,
+              "div_id_last5": 0.14
+            }
+          }
+        },
+        {
+          "arm": "exp12_shuffle",
+          "seed": 2,
+          "onset": 3300,
+          "exam_conversion_onset": 73800,
+          "status": "READ",
+          "survives": true,
+          "asg_cat_mean": 0.024906,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 0.918,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.1032,
+            "argmax_k_med": 2,
+            "asg_entropy_mean": 1.0462,
+            "den_subfloor_frac": 0.1298,
+            "exam_lift_mean": -0.0019,
+            "exam_acc_mean": 0.4993,
+            "mid_word_lift_mean": -0.0002,
+            "monitor_13_10": {
+              "scheduled_lift": -0.0019,
+              "probe_lift": 0.0121
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.1053,
+              "div_bg_last5": 0.0108,
+              "div_id_last5": 0.0489
+            }
+          }
+        },
+        {
+          "arm": "exp12_shuffle",
+          "seed": 3,
+          "onset": 4500,
+          "exam_conversion_onset": 62100,
+          "status": "READ",
+          "survives": true,
+          "asg_cat_mean": 0.091485,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 0.8041,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.2442,
+            "argmax_k_med": 1,
+            "asg_entropy_mean": 0.3832,
+            "den_subfloor_frac": 0.1298,
+            "exam_lift_mean": 0.0253,
+            "exam_acc_mean": 0.5365,
+            "mid_word_lift_mean": 0.0281,
+            "monitor_13_10": {
+              "scheduled_lift": 0.0253,
+              "probe_lift": 0.03
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.0415,
+              "div_bg_last5": 0.0025,
+              "div_id_last5": 0.0033
+            }
+          }
+        },
+        {
+          "arm": "exp12_shuffle",
+          "seed": 4,
+          "onset": 3300,
+          "exam_conversion_onset": null,
+          "status": "READ",
+          "survives": true,
+          "asg_cat_mean": 0.042774,
+          "theta": 0.00565724,
+          "asg_cat_frac_above": 1.0,
+          "n_windows": 439,
+          "companions": {
+            "asg_dist_mean": 0.1634,
+            "argmax_k_med": 3,
+            "asg_entropy_mean": 2.0089,
+            "den_subfloor_frac": 0.0137,
+            "exam_lift_mean": -0.0008,
+            "exam_acc_mean": 0.5012,
+            "mid_word_lift_mean": 0.0001,
+            "monitor_13_10": {
+              "scheduled_lift": -0.0008,
+              "probe_lift": 0.0104
+            },
+            "earned_salience": {
+              "div_bg_first5": 0.0842,
+              "div_bg_last5": 0.0005,
+              "div_id_last5": 0.0017
+            }
+          }
+        }
+      ],
+      "n_read": 5,
+      "survives": 5,
+      "dies": 0,
+      "extension_included": false,
+      "outcome": "SURVIVES",
+      "action": null
+    }
+  },
+  "guards_pending": [],
+  "draft_cell": "BOTH-SURVIVE (variation + exam-scheduling jointly suffice; splitting arm fires)",
+  "note": "DRAFT \u2014 goes behind the verification pass before the table (one review)"
+}

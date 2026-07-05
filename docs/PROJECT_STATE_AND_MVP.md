@@ -971,3 +971,21 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   (ALL constants recorded pre-run; stage-one numbers to chat first) → A-DWELL/A-SHUFFLE →
   four-cell read behind the verification pass → ladder fires as triggered → one review.**
   Banked arms built-when-fired. No arm a fix.]
+- **[2026-07-05 — EXP12 RIG-1 VERDICT: BOTH-SURVIVE (FRONTIER §10.20; verified
+  28-agent/18-findings).** Built (wave-local W=1; A-SHUFFLE = identical waves+masks
+  order-shuffled) → pre-run review fixed 3 majors → corrected-law re-cal (Ruling 1:
+  2+Geom₀(0.1); THE FIRST MEASURED FABRIC FACT: shuffle acquires ~10× faster than dwell on
+  every seed, REPRODUCED by the out-of-family baseline — task property, §10.19.1) →
+  stage-two ratified (Rulings A/B, pins i–iv; θ = dead-p95 0.00566 reproducible; W_post
+  fixed COMMON 131.4k recorded ladder amendment; horizon 303.4k) → verdict {0–4}:
+  **A-DWELL SURVIVES (3S/1D, s0 window-truncated UNREAD) · A-SHUFFLE SURVIVES (5S/0D,
+  θ-robust). Reading as pre-registered: variation + exam-scheduling jointly suffice; root
+  REFINED not confirmed; SPLITTING ARM (shuffled + uniform masking) = the fired trigger,
+  built-when-fired, awaiting GO.** Verified texture: window-MEAN survival ≠
+  alive-at-horizon (collapse delayed/reshaped, not abolished); θ conservative-against-dwell
+  (dead pool 85% shuffle tail — p99-ANOMALY alternate defused); sensitivity-without-
+  conversion ARM-WIDE (draft "shuffle converts 3/5" STRUCK as band-edge flicker); dwell =
+  intermittent revival mode vs shuffle sustained; §13.10 monitor bar-less (gap on record,
+  dwell 4/4 positive deltas, no registered fire); 2 latent scorer defects fixed
+  unexercised. Fourth campaign where verification corrected a draft reading. No arm a
+  fix.]
