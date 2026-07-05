@@ -1649,3 +1649,29 @@ registered fire, fallback (c) stays unfired; (7) two latent scorer defects fixed
 (margin predicate letter-exact 3–2 only; extensions gated on guard-fire). Fourth campaign
 where verification materially corrected a draft reading (EXP08/10/11/12 — this time a
 companion gloss, not the cell).
+
+## 2026-07-05 — SPLITTING ARM: **SURVIVES 3S/0D → VARIATION ALONE SUFFICES on the registered ruler**, bounded by a 2–3× scheduling dose effect + 2/3 horizon deaths (canon §10.20.1; verified 16-agent/12-findings)
+
+Registered block (prereg §14) recorded BEFORE launch; fired on Jason's GO. Construction
+verified BIT-LEVEL: A-SPLIT = A-SHUFFLE fabric verbatim per seed (tensors torch.equal;
+mid-dwell masks bit-identical; all 13,426 mask diffs at position 1; draw parity free — the
+always-drawn onset coin is used instead of ignored). Seeds {0,1,2} at the in-force constants
+verbatim. **READ: 3S/0D (0.0348/0.0469/0.0077 = 6.2×/8.3×/1.35× θ; onsets 3.3–3.6k; no guard
+fires). Pre-named mapping: variation alone suffices for REGISTERED routing survival — the
+guaranteed onset exam is not necessary; EXP10's variation thread confirmed on live fabric.**
+
+Verified bounds (all recomputed, none verdict-changing): scheduling = a 2–3× DOSE factor on
+every paired seed (0.60×/0.32×/0.31× of the scheduled twin; worst margin 4.4×→1.35× θ); at
+HORIZON split dies 2/3 where the twin lives 3/3 (exam scheduling looks load-bearing for
+persistence-to-horizon — the natural next question, not a verdict; window-mean≠end-state cuts
+both ways); s2 dying-in-window (front-loaded margin; estimator-free form reads 0.88× θ;
+adjacent forms → 2S/1D backfill letter — fragility on record, read stands as registered); the
+uniform coin also RAISED teaching density +9.7% (second moved channel, named — exam-loss vs
+teaching-gain not separable in this arm); acquisition unchanged-or-EARLIER (10500→3600 at s1)
+— acquisition rides the teaching channel, not the exams; FIRST REAL exam conversions of the
+campaign in split s0 (late, 16-consec sustained, accs to 1.0, outside the verdict window) —
+sensitivity-without-conversion carries a per-run exception; conversion band mis-calibrated at
+halved exam density (~4× hot; density-matched band = a constants item for exam-rate-changing
+arms). §14 guard letter now has a committed producer (exp12_score.py --split). Ledger:
+root stays REFINED — variation sufficient, exams buy margin + horizon persistence,
+dwell-ordering buys neither. Four-cell table untouched. No arm a fix.

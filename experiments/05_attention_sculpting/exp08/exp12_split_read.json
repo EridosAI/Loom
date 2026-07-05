@@ -1,0 +1,102 @@
+{
+  "arm": "exp12_split",
+  "per_seed": [
+    {
+      "arm": "exp12_split",
+      "seed": 0,
+      "onset": 3300,
+      "exam_conversion_onset": 216600,
+      "status": "READ",
+      "survives": true,
+      "asg_cat_mean": 0.034824,
+      "theta": 0.00565724,
+      "asg_cat_frac_above": 0.7403,
+      "n_windows": 439,
+      "companions": {
+        "asg_dist_mean": 0.147,
+        "argmax_k_med": 1,
+        "asg_entropy_mean": 1.1682,
+        "den_subfloor_frac": 0.0524,
+        "exam_lift_mean": -0.0003,
+        "exam_acc_mean": 0.4997,
+        "mid_word_lift_mean": -0.0007,
+        "monitor_13_10": {
+          "scheduled_lift": -0.0003,
+          "probe_lift": null
+        },
+        "earned_salience": {
+          "div_bg_first5": 0.0607,
+          "div_bg_last5": 0.0028,
+          "div_id_last5": 0.0027
+        }
+      }
+    },
+    {
+      "arm": "exp12_split",
+      "seed": 1,
+      "onset": 3600,
+      "exam_conversion_onset": null,
+      "status": "READ",
+      "survives": true,
+      "asg_cat_mean": 0.046859,
+      "theta": 0.00565724,
+      "asg_cat_frac_above": 0.6743,
+      "n_windows": 439,
+      "companions": {
+        "asg_dist_mean": 0.1796,
+        "argmax_k_med": 1,
+        "asg_entropy_mean": 0.381,
+        "den_subfloor_frac": 0.1549,
+        "exam_lift_mean": 0.0023,
+        "exam_acc_mean": 0.5,
+        "mid_word_lift_mean": 0.0029,
+        "monitor_13_10": {
+          "scheduled_lift": 0.0023,
+          "probe_lift": null
+        },
+        "earned_salience": {
+          "div_bg_first5": 0.0832,
+          "div_bg_last5": 0.0005,
+          "div_id_last5": 0.0015
+        }
+      }
+    },
+    {
+      "arm": "exp12_split",
+      "seed": 2,
+      "onset": 3600,
+      "exam_conversion_onset": null,
+      "status": "READ",
+      "survives": true,
+      "asg_cat_mean": 0.007662,
+      "theta": 0.00565724,
+      "asg_cat_frac_above": 0.4009,
+      "n_windows": 439,
+      "companions": {
+        "asg_dist_mean": 0.0734,
+        "argmax_k_med": 1,
+        "asg_entropy_mean": 0.5514,
+        "den_subfloor_frac": 0.3895,
+        "exam_lift_mean": -0.0011,
+        "exam_acc_mean": 0.4915,
+        "mid_word_lift_mean": 0.0,
+        "monitor_13_10": {
+          "scheduled_lift": -0.0011,
+          "probe_lift": null
+        },
+        "earned_salience": {
+          "div_bg_first5": 0.0848,
+          "div_bg_last5": 0.0014,
+          "div_id_last5": 0.0022
+        }
+      }
+    }
+  ],
+  "n_read": 3,
+  "survives": 3,
+  "dies": 0,
+  "backfilled": false,
+  "outcome": "SURVIVES",
+  "action": null,
+  "registered_mapping": "VARIATION ALONE SUFFICES on the registered ruler (W_post-mean survival)"
+}

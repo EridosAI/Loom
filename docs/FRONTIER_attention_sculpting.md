@@ -1648,3 +1648,58 @@ pre-registered trigger that now fires — built-when-fired, awaiting the GO.**
 attributes between variation and exam-scheduling); the §8 escalation ladder does NOT open
 (that is the both-die route); 12b full-seeds does NOT open (that is the promote route). The
 coverage ladder stays banked (promote-cell trigger). No arm is a fix.
+
+### §10.20.1 — SPLITTING ARM RAN (2026-07-05, verified 16-agent/12-findings, none verdict-changing): **A-SPLIT SURVIVES 3S/0D → variation alone suffices ON THE REGISTERED RULER — bounded hard by a 2–3× scheduling DOSE effect and 2/3 horizon deaths**
+
+**Registered block prereg §14, recorded before launch; construction pins verified BIT-LEVEL in
+verification** (A-SPLIT = the A-SHUFFLE fabric verbatim at each seed — raw/member/nuisance/
+background/dwell/perm tensors torch.equal; mid-dwell masks bit-identical; all 13,426 mask
+diffs at position 1; is_exam ≡ pos-1 ∧ word-coin; manifests differ only in arm + exam/probe
+counts). Constants in-force verbatim; seeds {0,1,2}.
+
+**THE READ (every number independently recomputed): SURVIVES 3S/0D** — window means 0.0348
+(6.2× θ) / 0.0469 (8.3×) / 0.0077 (1.35×); onsets 3.3–3.6k; no registered guard fires
+(3–0 is not the 2–1 letter). **The pre-named mapping fires: VARIATION ALONE SUFFICES — for
+routing survival as registered (W_post-mean input-sensitivity above the dead reference), the
+guaranteed onset exam is not necessary.** EXP10's variation thread confirmed on live fabric;
+the both-survive joint reading collapses to its variation component ON THIS RULER.
+
+**The verified bounds (all confirmed by recomputation; none moves the registered binary):**
+- **Scheduling is a strong DOSE factor: removing the exams cost 40–70% of window-mean
+  input-sensitivity on EVERY paired seed** (0.60× / 0.32× / 0.31× of the scheduled twin on
+  bit-identical fabric; worst-seed margin fell 4.4× → 1.35× θ). "Not load-bearing" would
+  overclaim — the exams are not NECESSARY for registered survival, and they roughly triple it.
+- **At HORIZON the split arm dies 2/3 where its scheduled twin lives 3/3** (final-window
+  [172k–303.4k] means: split 16.5× / 0.12× / 0.56× θ vs twins 7.2× / 23.2× / 9.7×). On the
+  horizon axis — NOT the registered criterion; the §10.20 window-mean≠end-state lesson applies
+  in both directions — **the exam scheduling looks load-bearing for PERSISTENCE-to-horizon.**
+  Recorded as the natural next question, not a verdict.
+- **s2 is DYING-IN-WINDOW** (quartile means 0.0176→0.0089→0.0042→0.00005; the 1.35× margin is
+  front-loaded; the estimator-free full-span form reads 0.88× θ = DIES; adjacent forms would
+  put the arm at 2S/1D = the backfill letter). The registered read stands — adjacent-form
+  fragility is on the record, and the {3,4} backfill fires only on the letter or on a ruling.
+- **A second channel moved by construction (registered, now named):** the uniform coin also
+  RAISES teaching density (vision-masked fraction 0.456 → 0.500, +9.7% relative, including
+  recency-free onset teaching waves the scheduled arm never presents). "Only the mask policy
+  changed" is exact wave-wise; its composition shift has two components (fewer exams AND more
+  teaching), and the attribution between them is not separable in this arm.
+- **Acquisition: unchanged-or-EARLIER** (paired onsets 4800→3300, 10500→3600, 3300→3600) —
+  halving onset word-masks delayed num-floor acquisition nowhere; acquisition rides the
+  mid-dwell teaching channel, not the exams.
+- **Companion corrections:** the FIRST REAL exam-channel conversions of the campaign appear in
+  split s0, LATE and sustained (16-consecutive windows ≥ 0.704 at t≈258–262k, accs to 1.0;
+  five distinct episodes — unambiguously non-chance), OUTSIDE the verdict window; the
+  arm-wide sensitivity-without-conversion statement carries a per-run exception. Instrument
+  note: the conversion chance band was calibrated at scheduled exam density (~27/window); the
+  split arm halves it (~13.7) → the fixed threshold runs ~4× hot here and the 216.6k
+  scorer-reported onset is chance-consistent under the corrected null (the late episodes are
+  real regardless). Density-matched band = a constants item for any arm that changes exam
+  rate.
+- Process: the §14 discriminator guard letter now has a COMMITTED producer
+  (`exp12_score.py --split`; the ad-hoc wrapper is superseded).
+
+**Where this leaves the ledger:** the task-degeneracy root stays REFINED — on this fabric,
+per-frame variation alone is sufficient for registered routing survival, the guaranteed exam
+buys margin (2–3×) and horizon persistence, and dwell-ordering buys neither (the §10.20
+inversion). Characterization of the both-survive cell is complete at discriminator scale;
+the four-cell table is untouched. No arm is a fix.

@@ -152,6 +152,53 @@ def arm_outcome(arm: str) -> dict:
     return out
 
 
+def split_outcome() -> dict:
+    """The SPLITTING-ARM read at the §14 registered letter (committed producer —
+    verification catch 2026-07-05: the discriminator-scale guard letter had no
+    implementation on record). Seeds {0,1,2}; a 2–1 split among read seeds, or <3 read,
+    fires the {3,4} backfill BEFORE interpretation; <3 read post-backfill =
+    UNREAD-AT-HORIZON."""
+    def tally(seeds):
+        reads = [seed_read("exp12_split", s) for s in seeds
+                 if (OUTDIR / f"exp12_split_s{s}.json").exists()]
+        read = [r for r in reads if r["status"] == "READ"]
+        surv = sum(1 for r in read if r["survives"])
+        return reads, read, surv, len(read) - surv
+    reads, read, surv, dies = tally([0, 1, 2])
+    margin = (surv, dies) in ((2, 1), (1, 2))
+    shortfall = len(read) < 3
+    backfilled = False
+    if (margin or shortfall) and any(
+            (OUTDIR / f"exp12_split_s{s}.json").exists() for s in (3, 4)):
+        reads, read, surv, dies = tally([0, 1, 2, 3, 4])
+        backfilled = True
+        margin = (surv, dies) in ((2, 1), (1, 2))
+        shortfall = len(read) < 3
+    out = dict(arm="exp12_split", per_seed=reads, n_read=len(read),
+               survives=surv, dies=dies, backfilled=backfilled)
+    if shortfall:
+        out["outcome"] = "READ-COUNT SHORTFALL"
+        out["action"] = ("fire {3,4} backfill" if not backfilled else
+                         "UNREAD-AT-HORIZON — horizon re-pin as recorded amendment")
+    elif margin:
+        out["outcome"] = f"MARGIN {surv}-{dies}"
+        out["action"] = ("fire {3,4} backfill BEFORE interpretation" if not backfilled
+                         else "backfill exhausted — outcome stands at majority")
+    elif surv == dies:
+        out["outcome"] = f"TIE {surv}-{dies} (unregistered state)"
+        out["action"] = "SURFACE — ruling required"
+    else:
+        out["outcome"] = "SURVIVES" if surv > dies else "DIES"
+        out["action"] = None
+        out["registered_mapping"] = (
+            "VARIATION ALONE SUFFICES on the registered ruler (W_post-mean survival)"
+            if surv > dies else "EXAM SCHEDULING LOAD-BEARING")
+    (OUTDIR / "exp12_split_read.json").write_text(json.dumps(out, indent=2))
+    print(f"A-SPLIT: {out['outcome']} (read {out['n_read']}: {surv}S/{dies}D)"
+          f"{'  ACTION: ' + out['action'] if out['action'] else ''}")
+    return out
+
+
 CELLS = {
     ("SURVIVES", "DIES"): "PROMOTE-THE-ROOT (dwell survives / shuffled dies)",
     ("SURVIVES", "SURVIVES"): "BOTH-SURVIVE (variation + exam-scheduling jointly suffice; "
@@ -164,8 +211,13 @@ CELLS = {
 
 
 def main():
-    argparse.ArgumentParser().parse_args()
-    res = {a: arm_outcome(a) for a in X12.ARMS12}
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--split", action="store_true", help="score the §14 splitting arm")
+    args = ap.parse_args()
+    if args.split:
+        split_outcome()
+        return
+    res = {a: arm_outcome(a) for a in X12.ARMS12 if a != "exp12_split"}
     d, s = res["exp12_dwell"], res["exp12_shuffle"]
     pending = [a for a, r in res.items() if r["action"]]
     table = None
