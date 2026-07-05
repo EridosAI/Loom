@@ -86,7 +86,15 @@ ARMS12 = {
     # the SPLITTING ARM (prereg §14; fired on BOTH-SURVIVE): A-SHUFFLE fabric verbatim,
     # mask POLICY uniform at position 1 (probe machinery N/A — rate must stay 0)
     "exp12_split":   dict(shuffled=True, uniform_mask=True),
+    # the 12b TWIN BLOCKS (prereg §15; amended trigger): word = reference never target;
+    # mask policy (iii) — word-coin waves become EXPOSURE-ONLY (loss skips); twins are
+    # bit-identical ex-word (absent = null token, the static comparator form)
+    "exp12_12b_shp": dict(shuffled=True, word_ref=True, no_word=False),
+    "exp12_12b_sha": dict(shuffled=True, word_ref=True, no_word=True),
+    "exp12_12b_dwp": dict(shuffled=False, word_ref=True, no_word=False),
+    "exp12_12b_dwa": dict(shuffled=False, word_ref=True, no_word=True),
 }
+RIG1_ARMS = ("exp12_dwell", "exp12_shuffle")
 
 POS_BUCKETS = ((1, 1), (2, 2), (3, 3), (4, 6), (7, 12), (13, 48))
 
@@ -109,12 +117,13 @@ class EXP12Loop(A.EXP08Loop):
         cfg = self.cfg
         v = getattr(cfg, "_exp12", None)
         assert v is not None, "EXP12Loop needs cfg._exp12 (fabric params) before factories"
-        if v.get("uniform_mask"):
-            assert v.get("probe_rate", 0.0) == 0.0, "splitting arm: probe machinery N/A"
+        if v.get("uniform_mask") or v.get("word_ref"):
+            assert v.get("probe_rate", 0.0) == 0.0, "uniform/word-ref arm: probe machinery N/A"
         return F.build_fabric(self.stim, cfg, cfg.seed, v["T"],
                               probe_rate=v.get("probe_rate", 0.0),
                               shuffled=v.get("shuffled", False),
-                              uniform_mask=v.get("uniform_mask", False))
+                              uniform_mask=v.get("uniform_mask", False),
+                              word_ref=v.get("word_ref", False))
 
     def _make_stim(self):
         cfg = self.cfg
@@ -135,14 +144,20 @@ class EXP12Loop(A.EXP08Loop):
         tokens = torch.tensor([self.curric.word_token(int(wl[0]), no_word=no_word)])
         e_word = self._vary_word(self.word.emit(tokens), tokens)   # identity hook (no jiggle)
         content = torch.stack([e_vis, e_word], dim=1)         # (1, n_slots, D)
+        word_ref = bool(getattr(cfg, "_exp12", {}).get("word_ref", False))
         if force_mask is None:
             mask = torch.zeros(1, cfg.n_slots, dtype=torch.bool)
-            mask[0, int(fab.mask_slot[t])] = True
-            fam_name = ("exam" if bool(fab.is_exam[t])
-                        else ("mid_word" if int(fab.mask_slot[t]) == 1 else "mid_vis"))
+            slot = int(fab.mask_slot[t])
+            if word_ref and slot == 1:
+                fam_name = "exposure"                         # §15 policy (iii): no cell
+                pass                                          # masked; the loss skips
+            else:
+                mask[0, slot] = True
+                fam_name = ("exam" if bool(fab.is_exam[t])
+                            else ("mid_word" if slot == 1 else "mid_vis"))
             self.mix["n"] += 1
-            self.mix["vis_masked"] += int(int(fab.mask_slot[t]) == 0)
-            self.mix["word_visible"] += int(int(fab.mask_slot[t]) == 0)
+            self.mix["vis_masked"] += int(slot == 0)
+            self.mix["word_visible"] += int(slot == 0)
             self.mix["sib_visible"] += 0                      # no sibling wave at W=1
             self.mix["both"] += 0
         else:
@@ -159,6 +174,15 @@ class EXP12Loop(A.EXP08Loop):
         )
 
     def _l_pam(self, bc):
+        if not bool(bc["mask"].any()):
+            # EXPOSURE-ONLY wave (§15 policy (iii)): the wave is seen and completed-for-
+            # free; the completion loss SKIPS (a constant zero — no empty-tensor NaN, no
+            # gradient through l_pam, no new objective). Spread/penalties run as always.
+            pred = self.op(bc["cells"].unsqueeze(0), self.slot_ids, bc["visible"])[0]
+            if bc["fam"] != "forced":
+                self._stash = dict(pred=pred.detach(), e_vis=bc["e_vis"].detach(),
+                                   mask=bc["mask"].clone(), fam=bc["fam"], raw=bc["raw"])
+            return torch.zeros(()), pred
         l, pred = super()._l_pam(bc)
         if bc["fam"] != "forced":                             # training waves only
             self._stash = dict(pred=pred.detach(), e_vis=bc["e_vis"].detach(),
@@ -231,16 +255,17 @@ def asg_reads(loop) -> dict:
                 asg_within_cat=float(dm[(~cross) & off].mean()))
 
 
-def grad_geometry_split(loop) -> dict:
+def grad_geometry_split(loop, no_word: bool = False) -> dict:
     """BLOCK-cadence gradient split by SCHEDULED geometry at W=1: teaching geometry
     (vision masked, word visible) vs exam geometry (word masked, vision visible) —
-    ||dL_PAM/dDelta2|| each. The wave-local analog of the exp08 word/self split."""
+    ||dL_PAM/dDelta2|| each. The wave-local analog of the exp08 word/self split.
+    no_word follows the ARM (the EXP08/09 convention — absent twins probe with null)."""
     cfg = loop.cfg
     out = {}
     for name, slot in (("teach_geom", 0), ("exam_geom", 1)):
         m = torch.zeros(1, cfg.n_slots, dtype=torch.bool)
         m[0, slot] = True
-        bc = loop.build_cells(loop._t, no_word=False, gen=loop.gen, force_mask=m)
+        bc = loop.build_cells(loop._t, no_word=no_word, gen=loop.gen, force_mask=m)
         l_pam, _ = loop._l_pam(bc)
         g = torch.autograd.grad(l_pam, loop.vision.pool.delta2, retain_graph=False,
                                 allow_unused=True)[0]
@@ -288,7 +313,8 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
     cfg.W = 1                                                 # the wave-local pin (§3)
     cfg.T = steps + 8                                         # continual: no wraparound
     cfg._exp12 = dict(T=cfg.T, shuffled=spec["shuffled"], probe_rate=probe_rate,
-                      uniform_mask=spec.get("uniform_mask", False))
+                      uniform_mask=spec.get("uniform_mask", False),
+                      word_ref=spec.get("word_ref", False))
     loop = EXP12Loop(cfg, pin)
     return loop, spec, cfg
 
@@ -329,19 +355,21 @@ def run_exp12_arm(arm_name: str, seed: int, steps: int, *,
     members_b = torch.arange(cfg.n_B).repeat(cfg.n_A)
     labels = loop._word_label(members_b, members_a)
 
+    no_word = bool(spec.get("no_word", False))
     buf = _fresh_buf()
     cols, occ, gsplit, mixes = [], {}, {}, {}
     for t in range(1, steps + 1):
         # §13.10 probe read PRE-update (matched to the scheduled exam's timing)
         pl = _probe_exam_read(loop, t - 1) if bool(fab.is_probe_exam[t - 1]) else None
-        loop.step(no_word=False)
+        loop.step(no_word=no_word)
         _buffer_wave(loop, t - 1, buf, probe_lift=pl)
         if t % EVAL == 0:
-            cols.append(_eval_column(loop, t, buf, members_a, members_b, labels))
+            cols.append(_eval_column(loop, t, buf, members_a, members_b, labels,
+                                     no_word=no_word))
             buf = _fresh_buf()
         if t % BLOCK == 0:
             occ[str(t)] = loop.dc_track(cfg.n_eval)
-            gsplit[str(t)] = grad_geometry_split(loop)
+            gsplit[str(t)] = grad_geometry_split(loop, no_word)
             mixes[str(t)] = loop.mix_snapshot()
 
     ts = [c["t"] for c in cols]
@@ -355,6 +383,7 @@ def run_exp12_arm(arm_name: str, seed: int, steps: int, *,
         commit_hash=C.commit_hash(), spec_hash=C.spec_hash(),
         arm=arm_name, seed=seed, steps=steps, vocab=int(cfg.n_category),
         shuffled=bool(spec["shuffled"]), probe_rate=probe_rate,
+        word_ref=bool(spec.get("word_ref", False)), no_word=no_word,
         eval_cadence=EVAL, block_cadence=BLOCK,
         torch_num_threads=torch.get_num_threads(),
         acquisition_onset=onset,
@@ -391,7 +420,9 @@ def _buffer_wave(loop, t: int, buf: dict, probe_lift: float | None = None):
     if st is None:
         return
     loop._stash = None
-    fab = loop.stream
+    if not bool(st["mask"].any()):
+        return                                                # exposure-only wave (§15):
+    fab = loop.stream                                         # nothing scored, mix counts it
     cat = int(fab.cat[t])
     pred = st["pred"]                                         # (C=2, D), detached
     masked_word = bool(st["mask"][1])
@@ -437,7 +468,19 @@ def _probe_exam_read(loop, t: int) -> float:
     return lift
 
 
-def _eval_column(loop, t: int, buf: dict, ma, mb, labels) -> dict:
+def _sep_ratio(e: torch.Tensor, labels: torch.Tensor):
+    """B1-form separability on emissions: between/within mean-distance ratio over the 16
+    clean probes for a partition. None when within degenerates to ~0 (maximal clustering
+    — counted, never averaged in). The §15 S-index building block."""
+    dm = torch.cdist(e, e)
+    same = labels.unsqueeze(0) == labels.unsqueeze(1)
+    off = ~torch.eye(e.shape[0], dtype=torch.bool)
+    between = float(dm[(~same) & off].mean())
+    within = float(dm[same & off].mean())
+    return (between / within) if within > 1e-9 else None
+
+
+def _eval_column(loop, t: int, buf: dict, ma, mb, labels, no_word: bool = False) -> dict:
     cfg = loop.cfg
     with torch.no_grad():
         raw_c = loop.stim.raw_clean(ma, mb)
@@ -455,8 +498,13 @@ def _eval_column(loop, t: int, buf: dict, ma, mb, labels) -> dict:
                d2_spread=float(poolmetrics.within_group_spread(loop.vision.pool)),
                asg_dist=asg_dist, asg_argmax_k=asg_argmax_k, asg_entropy=asg_entropy)
     col.update(asg_reads(loop))
+    # §15 S-index building blocks: per-partition vision-cortex separability (word-tied =
+    # category b%2; untied controls = distractor b//2 and the a-partition)
+    col["sep_cat"] = _sep_ratio(content, mb % cfg.n_category)
+    col["sep_dist"] = _sep_ratio(content, mb // cfg.n_category)
+    col["sep_a"] = _sep_ratio(content, ma)
     col.update(X9.evo_decomp(loop))
-    col.update(grad_decomp_local(loop, no_word=False))
+    col.update(grad_decomp_local(loop, no_word=no_word))
     col.update(X9.pairwise_emit(loop))
     def _m(xs):
         return statistics.mean(xs) if xs else None

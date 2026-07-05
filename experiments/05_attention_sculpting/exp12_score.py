@@ -217,7 +217,7 @@ def main():
     if args.split:
         split_outcome()
         return
-    res = {a: arm_outcome(a) for a in X12.ARMS12 if a != "exp12_split"}
+    res = {a: arm_outcome(a) for a in X12.RIG1_ARMS}
     d, s = res["exp12_dwell"], res["exp12_shuffle"]
     pending = [a for a, r in res.items() if r["action"]]
     table = None

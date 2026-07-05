@@ -206,14 +206,20 @@ def _reflect(x: torch.Tensor, bound: float) -> torch.Tensor:
 
 def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
                  probe_rate: float = 0.0, shuffled: bool = False,
-                 uniform_mask: bool = False) -> Fabric:
+                 uniform_mask: bool = False, word_ref: bool = False) -> Fabric:
     """uniform_mask (the SPLITTING ARM, prereg §14): the mask POLICY at position-1 waves
     becomes the same 50:50 coin as mid-dwell — the scheduling structure is removed and
     NOTHING else. Draw parity is free: both per-dwell coins are always drawn; the uniform
     arm USES the onset coin instead of ignoring it, so stimulus streams and mid-dwell
     masks are bit-identical to the scheduled fabric at the same seed. Scoring flag:
     is_exam := (pos 1 AND coin drew word) — recency-free onset word-masks that arrive by
-    coin. Probe machinery is N/A (no schedule to anticipate); probe_rate must be 0."""
+    coin. Probe machinery is N/A (no schedule to anticipate); probe_rate must be 0.
+
+    word_ref (the 12b mask policy (iii), prereg §15): uniform-coin layout with the SAME
+    draws, REINTERPRETED by the loop — a word-coin wave becomes EXPOSURE-ONLY (no cell
+    masked; the loss skips), a vision-coin wave stays a vision-mask teaching wave. NO
+    word-masks anywhere: the word is a reference, never a target. is_exam ≡ False (no
+    exams exist); mask_slot keeps the raw coin (0 = vision-mask, 1 = exposure-only)."""
     fam = dict(coeff_std=stim.coeff_std, k_axes=K_AXES)
     sig = fam["coeff_std"]
     bound = FAMILY_BOUND_SIG * sig
@@ -264,7 +270,9 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
                 c = _reflect(c + THETA * (c0 - c)
                              + s_step * torch.randn(K_AXES, generator=g_nuis), bound)
             if p == 1:
-                if uniform_mask:
+                if word_ref:
+                    slot, exam, probe = onset_coin, False, False   # no exams exist (§15)
+                elif uniform_mask:
                     slot, exam, probe = onset_coin, onset_coin == 1, False
                 elif probe_dwell:
                     slot, exam, probe = onset_coin, False, True
