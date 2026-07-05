@@ -83,6 +83,9 @@ PROBE_RATE_STAGE1 = 0.0              # boundary-leak probe-dwell rate is a STAGE
 ARMS12 = {
     "exp12_dwell":   dict(shuffled=False),
     "exp12_shuffle": dict(shuffled=True),
+    # the SPLITTING ARM (prereg §14; fired on BOTH-SURVIVE): A-SHUFFLE fabric verbatim,
+    # mask POLICY uniform at position 1 (probe machinery N/A — rate must stay 0)
+    "exp12_split":   dict(shuffled=True, uniform_mask=True),
 }
 
 POS_BUCKETS = ((1, 1), (2, 2), (3, 3), (4, 6), (7, 12), (13, 48))
@@ -106,9 +109,12 @@ class EXP12Loop(A.EXP08Loop):
         cfg = self.cfg
         v = getattr(cfg, "_exp12", None)
         assert v is not None, "EXP12Loop needs cfg._exp12 (fabric params) before factories"
+        if v.get("uniform_mask"):
+            assert v.get("probe_rate", 0.0) == 0.0, "splitting arm: probe machinery N/A"
         return F.build_fabric(self.stim, cfg, cfg.seed, v["T"],
                               probe_rate=v.get("probe_rate", 0.0),
-                              shuffled=v.get("shuffled", False))
+                              shuffled=v.get("shuffled", False),
+                              uniform_mask=v.get("uniform_mask", False))
 
     def _make_stim(self):
         cfg = self.cfg
@@ -281,7 +287,8 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
     cfg = SculptConfig(seed=seed)
     cfg.W = 1                                                 # the wave-local pin (§3)
     cfg.T = steps + 8                                         # continual: no wraparound
-    cfg._exp12 = dict(T=cfg.T, shuffled=spec["shuffled"], probe_rate=probe_rate)
+    cfg._exp12 = dict(T=cfg.T, shuffled=spec["shuffled"], probe_rate=probe_rate,
+                      uniform_mask=spec.get("uniform_mask", False))
     loop = EXP12Loop(cfg, pin)
     return loop, spec, cfg
 
@@ -296,7 +303,8 @@ def run_exp12_arm(arm_name: str, seed: int, steps: int, *,
     # twin (identical waves by construction) and checksum the multisets
     if fab.shuffled:
         fab_plain = F.build_fabric(loop.stim, cfg, seed, fab.T, probe_rate=probe_rate,
-                                   shuffled=False)
+                                   shuffled=False,
+                                   uniform_mask=spec.get("uniform_mask", False))
         assert torch.equal(fab.raw.sort(0).values, fab_plain.raw.sort(0).values), \
             "A-SHUFFLE waves are not the identical multiset"
         assert int(fab.is_exam.sum()) == int(fab_plain.is_exam.sum()), "exam count differs"

@@ -379,3 +379,47 @@ No arm is a fix.
 **Sequence: build → calibration pre-flight (stage-one/two; constants recorded) → rig-1
 arms (A-DWELL, A-SHUFFLE) → four-cell read behind the verification pass → margin guard →
 ladder-ordered fires as triggered → one review.**
+
+## 14. SPLITTING ARM — REGISTERED BLOCK (recorded 2026-07-05, on the BOTH-SURVIVE trigger firing; runs recorded BEFORE launch)
+
+**The question, stated once: which component of the joint sufficiency is load-bearing —
+does routing survival on the shuffled fabric need the EXAM SCHEDULING, or does variation
+alone suffice?** (BOTH-SURVIVE attributed to variation + exam-scheduling *jointly*; the
+shuffle removed only persistence. This arm removes the scheduling.)
+
+- **Construction (single-variable, pinned): A-SPLIT = the A-SHUFFLE fabric VERBATIM at
+  each seed — identical waves, identical order, identical MID-DWELL coins — with ONLY the
+  mask POLICY changed at position-1 waves: the guaranteed word-mask onset exam is replaced
+  by the same 50:50 coin as everywhere else (uniform masking).** Draw parity is preserved
+  by construction (both per-dwell coins are already drawn for every dwell; the uniform arm
+  USES the onset coin at position 1 instead of ignoring it), so the two arms' mid-dwell
+  mask sequences are bit-identical at a seed and the stimulus streams are untouched.
+  Consequences, on the record: onset word-masks fall from 100% of dwells to ~50%
+  (the scheduling structure is what is removed — both the guarantee and the rate
+  concentration); routing-exam gradient events thin accordingly.
+- **Scoring flags (harness-side, invisible to the system):** is_exam := (position 1 AND
+  the coin drew word-mask) — these ARE recency-free onset word-masks, they just arrive by
+  coin; exam companions stay comparable. is_probe_exam ≡ False; probe rate 0 — the §13.10
+  monitor is N/A by construction (there is no schedule to anticipate).
+- **Constants: the IN-FORCE set VERBATIM** (θ = dead-p95 0.00566; W_post = fixed common
+  131,400; horizon 303,400; same criterion form, same taxonomy pins i–ii). No new
+  constant, no re-calibration — the arm is read on the same ruler as the cell it splits.
+- **Seeds: {0, 1, 2} (discriminator scale, §13.9 "discriminator fires at 3 seeds");
+  shortfall/margin backfill pool {3, 4}.** Registered margin state at this scale: a 2–1
+  split among read seeds fires the backfill BEFORE interpretation (the 3–2 letter mapped
+  to discriminator scale); < 3 read post-backfill = UNREAD-AT-HORIZON → horizon re-pin on
+  record. Acquisition risk is low (shuffled-fabric onsets ran 2.4–10.5k everywhere).
+- **The two pre-named outcomes (registered before launch):**
+  - **A-SPLIT SURVIVES** → **variation alone suffices**; the exam scheduling is not
+    load-bearing for routing survival — EXP10's variation thread confirmed on live
+    fabric; the joint reading collapses to its variation component.
+  - **A-SPLIT DIES** → **the exam scheduling is LOAD-BEARING** — the guaranteed onset
+    exam (the routing-gradient dial, §3) is what holds input-sensitivity above the dead
+    reference; variation alone does not. Sharperns the both-survive reading to
+    scheduling-necessary.
+  - Wrong-reason screens carried: acquisition-censored = UNREAD never dies; a DIES via
+    never-acquiring is taxonomy, not a result. Companion reads (exam lift on coin-exams,
+    conversion form, mode/duty-cycle texture) recorded; never cell-deciders.
+- **Fences:** this is CHARACTERIZATION of the both-survive cell — it does not touch the
+  four-cell table, open the §8 ladder, or alter any in-force constant. One review after
+  the verification pass. No arm is a fix.

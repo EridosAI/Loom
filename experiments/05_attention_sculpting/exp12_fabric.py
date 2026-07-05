@@ -205,7 +205,15 @@ def _reflect(x: torch.Tensor, bound: float) -> torch.Tensor:
 
 
 def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
-                 probe_rate: float = 0.0, shuffled: bool = False) -> Fabric:
+                 probe_rate: float = 0.0, shuffled: bool = False,
+                 uniform_mask: bool = False) -> Fabric:
+    """uniform_mask (the SPLITTING ARM, prereg §14): the mask POLICY at position-1 waves
+    becomes the same 50:50 coin as mid-dwell — the scheduling structure is removed and
+    NOTHING else. Draw parity is free: both per-dwell coins are always drawn; the uniform
+    arm USES the onset coin instead of ignoring it, so stimulus streams and mid-dwell
+    masks are bit-identical to the scheduled fabric at the same seed. Scoring flag:
+    is_exam := (pos 1 AND coin drew word) — recency-free onset word-masks that arrive by
+    coin. Probe machinery is N/A (no schedule to anticipate); probe_rate must be 0."""
     fam = dict(coeff_std=stim.coeff_std, k_axes=K_AXES)
     sig = fam["coeff_std"]
     bound = FAMILY_BOUND_SIG * sig
@@ -256,7 +264,9 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
                 c = _reflect(c + THETA * (c0 - c)
                              + s_step * torch.randn(K_AXES, generator=g_nuis), bound)
             if p == 1:
-                if probe_dwell:
+                if uniform_mask:
+                    slot, exam, probe = onset_coin, onset_coin == 1, False
+                elif probe_dwell:
                     slot, exam, probe = onset_coin, False, True
                 else:
                     slot, exam, probe = 1, True, False   # the guaranteed onset exam
