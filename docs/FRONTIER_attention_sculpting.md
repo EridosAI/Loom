@@ -1642,7 +1642,8 @@ pre-registered trigger that now fires — built-when-fired, awaiting the GO.**
   unfired — but the direction is the anticipation direction in the dwell arm and the bar's
   absence is a named gap for the next campaign's constants.
 - Second acquisition record: verdict-seed onsets replicate the §10.19.1 fabric fact (dwell
-  slow/censored-class, shuffle ≤10.5k).
+  slow/censored-class, shuffle ≤10.5k). **[The ordering-inversion reading is REGIME-BOUND —
+  §10.20.2 rider: this fabric's order carries no completable structure by construction.]**
 
 **Ladder state:** both-survive routes to the SPLITTING ARM (shuffled + uniform masking —
 attributes between variation and exam-scheduling); the §8 escalation ladder does NOT open
@@ -1701,5 +1702,29 @@ the both-survive joint reading collapses to its variation component ON THIS RULE
 **Where this leaves the ledger:** the task-degeneracy root stays REFINED — on this fabric,
 per-frame variation alone is sufficient for registered routing survival, the guaranteed exam
 buys margin (2–3×) and horizon persistence, and dwell-ordering buys neither (the §10.20
-inversion). Characterization of the both-survive cell is complete at discriminator scale;
-the four-cell table is untouched. No arm is a fix.
+inversion) **[REGIME-BOUND — §10.20.2 rider]**. Characterization of the both-survive cell is
+complete at discriminator scale; the four-cell table is untouched. No arm is a fix.
+
+### §10.20.2 — POST-SPLIT RULINGS (Jason, 2026-07-05, consolidated order; recorded in order)
+
+1. **12b TRIGGER AMENDED (recorded, not silent):** opener (i) promote-cell →
+   **routing-alive-demonstrated-arm-wide**. Grounds quoted from the Fork-3 record: the gate
+   existed to run the teaching test "where routing can live"; BOTH-SURVIVE + the split arm
+   satisfy the reason on every read arm; the letter assumed the shuffle arm dies. Amended in
+   place in prereg §9; the 12b block runs per prereg §15.
+2. **REGISTRATION RE-CUT (pre-run):** the 12b cross-scene-contrast prediction's primary axis
+   = **SELECTIVITY** (word-tied-partition-selective differentiation contrast vs untied
+   controls — the S index), **not speed**. Speed = companion, reported never fired on.
+3. **REGIME-BOUND RIDER on §10.20 / §10.20.1:** "dwell-ordering buys nothing" is bounded to
+   the NON-GENERATIVE fabric — unpredictability clause 1 makes cross-wave order carry no
+   completable structure BY CONSTRUCTION, so the fabric offers ordering nothing to pay for.
+   **Lawful-dynamics worlds (order that carries completable structure) = a NAMED FUTURE
+   RUNG, under maximal trap-#1 (anti-forward) discipline. Continual motion is DEFERRED, not
+   demoted.**
+4. **STANDING PRINCIPLE:** compute is not a constraint → the banked-arm posture favors
+   **parallel registered blocks** over serial minimalism (hence the two 12b blocks).
+5. **s2 BACKFILL FIRED BY RULING:** split seeds {3,4} run as characterization only, AFTER
+   verdict-invariance was written into §14 (worst case 3S/2D still passes; the registered
+   read cannot flip).
+6. **DENSITY-MATCHED CONVERSION BAND:** form registered (prereg §15); the constant is
+   recorded at any exam-rate-changing arm's stage-two.

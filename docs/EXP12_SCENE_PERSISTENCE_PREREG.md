@@ -201,14 +201,23 @@ the ladder order.**
   **(i) the promote cell** — full seeds, the teaching test at its own gates; **(ii) the
   both-die cell** — reduced seeds, as the §8 discriminator. Same arm, same construction,
   two pre-registered triggers; epistemically closed either way.
-  - **REGISTERED PREDICTION (cross-scene contrast):** word-present differentiates
-    word-tied axes FASTER than no-word, on identical fabric/seeds/schedule. Measure =
-    acquisition-aligned differentiation **lift** on word-tied axes (lift, never share).
-    **The registration's edge:** the same channel that was a ~5× *collapse* accelerant in
-    the degenerate task is predicted to accelerate *differentiation* in the live one —
-    same channel, opposite sign, regime-discriminating.
+  **[TRIGGER AMENDED IN PLACE (Ruling, 2026-07-05 — recorded, not silent): opener (i)
+  promote-cell → ROUTING-ALIVE-DEMONSTRATED-ARM-WIDE. Grounds, quoted from this Fork-3
+  record: the gate existed to run the teaching test "where routing can live"; the
+  BOTH-SURVIVE cell + the splitting arm satisfy that reason on every read arm; the
+  letter assumed the shuffle arm dies. The 12b block runs per §15.]**
+  - **REGISTERED PREDICTION (cross-scene contrast) — RE-CUT PRE-RUN (recorded,
+    2026-07-05): primary axis = SELECTIVITY, not speed.** The word's predicted effect is
+    a **word-tied-partition-selective** differentiation contrast (present vs absent twin)
+    against untied-partition controls — the selectivity index S of §15. **Speed
+    (differentiation earlier/faster) = COMPANION**, never the fire criterion. Lift, never
+    share; acquisition-aligned. The registration's edge stands: the same channel that was
+    a ~5× *collapse* accelerant in the degenerate task is predicted to act
+    *selectively on what it names* in the live one — same channel, opposite sign,
+    regime-discriminating.
   - **Falsifiers, pre-named:** (a) word re-accelerates collapse on live fabric
-    (fate-shared, recurring); (b) no contrast (channel inert on healthy fabric).
+    (fate-shared, recurring); (b) S in the null band (channel inert / unselective on
+    healthy fabric).
 - **Baseline — the conventional trainability control (Fork 4, two openers).** Standard
   masked-completion learner, V-JEPA-class `[RECONCILE: family/impl]`; **identical
   manifests + identical mask schedule** (same exams, same order — the shuffled-control
@@ -423,3 +432,65 @@ shuffle removed only persistence. This arm removes the scheduling.)
 - **Fences:** this is CHARACTERIZATION of the both-survive cell — it does not touch the
   four-cell table, open the §8 ladder, or alter any in-force constant. One review after
   the verification pass. No arm is a fix.
+- **BACKFILL FIRED BY RULING (2026-07-05) + VERDICT-INVARIANCE, recorded before the
+  backfill runs:** seeds {3,4} fire as CHARACTERIZATION ONLY (the s2 front-loaded-margin
+  fragility warranted the fuller picture). **Verdict invariance: the registered 3S/0D
+  SURVIVES stands under every backfill outcome — worst case 3S/2D is still the
+  majority.** The backfill can sharpen the texture (duty-cycle spread, horizon
+  mortality); it cannot flip the registered read, and it is recorded as fired by ruling,
+  not by the 2–1 letter (which did not fire).
+
+## 15. THE 12b BLOCK — TWO PARALLEL REGISTERED BLOCKS (recorded 2026-07-05, on the amended trigger; runs recorded BEFORE launch; one review each)
+
+**Standing principle (ruled, 2026-07-05): compute is not a constraint → the banked-arm
+posture favors PARALLEL registered blocks over serial minimalism.** Both fabrics run as
+their own block; each gets its own review.
+
+**The two blocks: shuffled-12b (the A-SHUFFLE fabric) and dwelled-12b (the A-DWELL
+fabric).** Each block = a TWIN PAIR {word-present, word-absent}, verdict seeds {0–4},
+**bit-identical except the word tensor** (absent = the null token, the static line's own
+comparator form; construction pin §9 carried). Twin parity asserted `torch.equal` on
+every fabric field ex-word.
+
+- **Mask policy (iii) — the word is a REFERENCE, never a target: NO word-masks
+  anywhere; zero prediction load on the word slot.** A-SPLIT's uniform coin is
+  REINTERPRETED with the SAME draws (draw parity preserved on both fabrics): a coin that
+  drew "word-mask" becomes an EXPOSURE-ONLY wave (no cell masked — the wave is seen,
+  completed-for-free, never scored; the loss skips; nothing forward-flavored); a coin
+  that drew "vision-mask" stays a vision-mask teaching wave. Position 1 uses the same
+  coin on BOTH fabrics (a guaranteed boundary-correlated no-mask wave would be a clock).
+  The VISION-mask schedule is therefore bit-identical across twins and across the
+  present/absent contrast — the word tensor is the ONLY difference.
+- **SELECTIVITY INDEX S (the primary axis, per the re-cut registration):** per seed, per
+  aligned window: **S = twin-contrast (present − absent) in B1-form vision-cortex
+  separability on the WORD-TIED partition (category, b%2), MINUS the mean twin-contrast
+  on the UNTIED control partitions (the a-partition; the b-within-parity/distractor
+  partition).** Separability = between/within mean-distance ratio of vision emissions
+  over the 16 clean probes (the baseline-B1 form, applied to the vision cortex).
+  Windowed, acquisition-aligned; window form recorded at stage-two. **Fires: S > 0
+  sustained (above the stage-two null band's p99 for N consecutive windows; N at
+  stage-two).** Falsifiers per §9 (re-cut): word re-accelerates collapse; S in the null
+  band. **Companions: speed** (onset/differentiation timing contrasts — the pre-re-cut
+  axis, reported never fired on), **asg_cat routing health** (the §13.5 criterion as
+  context), collapse panels.
+- **Stage-two (cal twins {20–24} per fabric; constants SURFACE IN CHAT before any
+  verdict twin):** per-partition S null bands (form + p99) · sustained-N · per-fabric
+  horizons (shuffled-12b short, from its measured onsets; dwelled-12b carries the
+  303,400 form + the full UNREAD/truncation machinery) · the aligned-window form ·
+  **dead-reference regime check under the new mask policy** (the in-force θ's dead span
+  was derived under the exam-bearing policy; verify the dead regime is unchanged before
+  any asg_cat companion is read against it).
+- **DENSITY-MATCHED CONVERSION BAND (Ruling, registered here as a standing instrument
+  form):** any arm that changes the realized exam density recalibrates the
+  exam-conversion chance band at its OWN density (band-p99 at matched per-window exam
+  count); the constant is recorded at that arm's stage-two. (Grounds: the §10.20.1
+  catch — the fixed band ran ~4× hot at halved density.) In the 12b blocks there are no
+  word-masks, so the exam-conversion companion is N/A by construction.
+- **CC-verify (before build completes):** zero-mask exposure waves are supported cleanly
+  (the completion loss SKIPS — no empty-tensor NaN, no new objective, nothing
+  forward-flavored; spread/penalties unchanged); the word-absent twin presents the null
+  token per the EXP10/static no-word convention (trained with null in the slot; probes
+  evoke with real tokens — the channel read stays the standing instrument).
+- **Fences:** the teaching test runs at its own gates (this IS 12b); the four-cell table
+  is untouched; no §8 escalation is implied by any 12b outcome (the ladder's both-die
+  route never opened). One review PER BLOCK. No arm is a fix.
