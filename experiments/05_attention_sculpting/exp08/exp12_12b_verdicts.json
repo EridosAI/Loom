@@ -1,0 +1,248 @@
+{
+  "sh": {
+    "block": "sh",
+    "per_seed": [
+      {
+        "block": "sh",
+        "seed": 0,
+        "onset_present": 3900,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 7800,
+        "band": 0.049689,
+        "sustained_N": 2,
+        "S_mean": 0.11505,
+        "S_max": 0.58683,
+        "S_frac_above_band": 0.6834,
+        "longest_run": 40,
+        "n_windows": 439,
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.10089,
+            "den_subfloor": 0.0
+          },
+          "absent": {
+            "asg_cat_mean": 0.00464,
+            "den_subfloor": 0.745
+          }
+        }
+      },
+      {
+        "block": "sh",
+        "seed": 1,
+        "onset_present": 5100,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 8400,
+        "band": 0.049689,
+        "sustained_N": 2,
+        "S_mean": 0.00343,
+        "S_max": 0.23189,
+        "S_frac_above_band": 0.221,
+        "longest_run": 17,
+        "n_windows": 439,
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.00718,
+            "den_subfloor": 0.23
+          },
+          "absent": {
+            "asg_cat_mean": 0.00461,
+            "den_subfloor": 0.888
+          }
+        }
+      },
+      {
+        "block": "sh",
+        "seed": 2,
+        "onset_present": 3300,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 20100,
+        "band": 0.049689,
+        "sustained_N": 2,
+        "S_mean": 0.08149,
+        "S_max": 0.62051,
+        "S_frac_above_band": 0.5809,
+        "longest_run": 41,
+        "n_windows": 439,
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.04864,
+            "den_subfloor": 0.009
+          },
+          "absent": {
+            "asg_cat_mean": 0.00547,
+            "den_subfloor": 0.818
+          }
+        }
+      },
+      {
+        "block": "sh",
+        "seed": 3,
+        "onset_present": 3000,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 12300,
+        "band": 0.049689,
+        "sustained_N": 2,
+        "S_mean": 0.17944,
+        "S_max": 0.66042,
+        "S_frac_above_band": 0.6925,
+        "longest_run": 145,
+        "n_windows": 439,
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.12529,
+            "den_subfloor": 0.009
+          },
+          "absent": {
+            "asg_cat_mean": 0.00623,
+            "den_subfloor": 0.827
+          }
+        }
+      },
+      {
+        "block": "sh",
+        "seed": 4,
+        "onset_present": 3900,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 9000,
+        "band": 0.049689,
+        "sustained_N": 2,
+        "S_mean": 0.0117,
+        "S_max": 0.52003,
+        "S_frac_above_band": 0.2096,
+        "longest_run": 19,
+        "n_windows": 439,
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.0137,
+            "den_subfloor": 0.476
+          },
+          "absent": {
+            "asg_cat_mean": 0.00704,
+            "den_subfloor": 0.715
+          }
+        }
+      }
+    ],
+    "n_read": 5,
+    "fired": 5,
+    "nofire": 0,
+    "extension_included": false,
+    "outcome": "S-FIRES",
+    "action": null,
+    "registered_mapping": "word-tied SELECTIVITY demonstrated in this block (the re-cut registration)"
+  },
+  "dw": {
+    "block": "dw",
+    "per_seed": [
+      {
+        "block": "dw",
+        "seed": 0,
+        "onset_present": 187800,
+        "onset_absent": null,
+        "status": "UNREAD (window-truncated: onset 187800 > 172000)"
+      },
+      {
+        "block": "dw",
+        "seed": 1,
+        "onset_present": 274500,
+        "onset_absent": null,
+        "status": "UNREAD (window-truncated: onset 274500 > 172000)"
+      },
+      {
+        "block": "dw",
+        "seed": 2,
+        "onset_present": 22500,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": false,
+        "fire_t": null,
+        "band": 0.125053,
+        "sustained_N": 4,
+        "S_mean": -0.0071,
+        "S_max": 0.16182,
+        "S_frac_above_band": 0.0182,
+        "longest_run": 2,
+        "n_windows": 439,
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.01841,
+            "den_subfloor": 0.153
+          },
+          "absent": {
+            "asg_cat_mean": 0.00731,
+            "den_subfloor": 0.093
+          }
+        }
+      },
+      {
+        "block": "dw",
+        "seed": 3,
+        "onset_present": 65100,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": false,
+        "fire_t": null,
+        "band": 0.125053,
+        "sustained_N": 4,
+        "S_mean": -0.00605,
+        "S_max": 0.15805,
+        "S_frac_above_band": 0.0023,
+        "longest_run": 1,
+        "n_windows": 439,
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.02434,
+            "den_subfloor": 0.114
+          },
+          "absent": {
+            "asg_cat_mean": 0.00759,
+            "den_subfloor": 0.376
+          }
+        }
+      },
+      {
+        "block": "dw",
+        "seed": 4,
+        "onset_present": 24600,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": false,
+        "fire_t": null,
+        "band": 0.125053,
+        "sustained_N": 4,
+        "S_mean": -0.02894,
+        "S_max": 0.14718,
+        "S_frac_above_band": 0.0023,
+        "longest_run": 1,
+        "n_windows": 439,
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.0166,
+            "den_subfloor": 0.062
+          },
+          "absent": {
+            "asg_cat_mean": 0.00373,
+            "den_subfloor": 0.544
+          }
+        }
+      }
+    ],
+    "n_read": 3,
+    "fired": 0,
+    "nofire": 3,
+    "extension_included": false,
+    "outcome": "S-NULL",
+    "action": null,
+    "registered_mapping": "S in the null band \u2014 falsifier (b): channel inert/unselective on this fabric"
+  }
+}

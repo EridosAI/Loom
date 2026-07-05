@@ -44,6 +44,7 @@ BLOCKS = dict(sh=dict(arms=("exp12_12bc_shp", "exp12_12bc_sha")),
 def _s_window(rp, ra, lo, hi):
     out = []
     for cp, ca in zip(rp["columns"], ra["columns"]):
+        assert cp["t"] == ca["t"], "twin columns misaligned"   # hygiene (verification note)
         if not (lo <= cp["t"] <= hi):
             continue
         ok = all(cp.get(k) is not None and ca.get(k) is not None

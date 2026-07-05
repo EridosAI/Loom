@@ -1724,3 +1724,39 @@ reference (companion only): p50 4.8e-5 / p95 0.00775 (θ_companion proposed) / p
 (n=1188). Untied-untied companions p99 0.45/0.55. Artifact
 `exp12_12b_stage2.PROPOSED.json` — **NOTHING IN FORCE; constants surfaced in chat; verdict
 twins {0–4} × 2 twins × 2 blocks run only after ratification.**
+
+## 2026-07-05 — 12b VERDICT TWINS: **sh S-FIRES 5F/0N · dw S-NULL 0F/3N** — verified 14-agent; the fire's composition DECOMPOSED (canon §10.20.4); rulings owed
+
+Ratified (widen + fences) → sh band RE-CUT 0.049689 (n 89→348; widening RAISED the bar; N=2
+re-checked; s26 onset 64.8k surfaced — the sh acquisition tail exists, donated the band's
+fattest null span) → constants IN-FORCE 48f0784 → 20 verdict twins (sh @152.4k, dw @303.4k)
+→ scorer → verification BEFORE the table (14 agents, every number reproduced to the digit,
+none verdict-changing).
+
+**[sh] S-FIRES 5F/0N letter-valid** (runs 17–145 vs N=2; S_max 0.23–0.66) — **but the
+verified composition changes what the fire is: the untied subtraction ADDED instead of
+cancelling** (untied term +0.048..+0.085 in every fire event; Δsep_a NEGATIVE — the dying
+absent twin collapses ONTO the coarse partition, 0.69–0.79 vs present 0.53–0.71); word-tied
+Δcat positive in every fire event (0.023–0.064) but minority share (26–48%). Two regimes:
+s0/s2/s3 sustained positive-S (means 0.08–0.18); s1/s4 duty-cycled net-≈0 (s1 cat signal ≈0,
+artifact-compatible). "Acting selectively on what it names" NOT licensed as-is; licensed: the
+word RESHAPES geometry away from the no-word collapse + is strongly HEALTH-PROTECTIVE
+(falsifier (a) ANTI-fires; absent den-subfloor 0.72–0.89 vs present 0.0–0.48).
+**INSTRUMENT LESSON: the untied control legs are contaminated by the comparator's own death**
+— dose-cancellation assumed a healthy absent twin; a collapsing one turns the control into a
+signal carrier. Any S re-cut = a ruling, not a scorer patch.
+
+**[dw] S-NULL 0F/3N, stronger than drafted** (read-seed S_max 0.147–0.162 = the null pool's
+own tail, p99.5 0.161 max 0.196; null runs reached 3, N=4 doing its job); s0/s1 UNREAD
+window-truncated (187.8k/274.5k — the pre-acknowledged lottery); 3 reads = minimum, no guard.
+Health effect present without selectivity (present asg_cat 0.017–0.024 vs absent
+0.004–0.008). Falsifier (b) fires for the dwelled block.
+
+Corrections on record: falsifier-(a) universal → preponderance (dw s2 den-subfloor worse in
+present, 0.153 vs 0.093; 7/8 clean); s26/horizon internal-consistency note (in-force 152.4k
+= thin-pool form; widened-pool form = 208.2k; ~1/10 sh truncation lottery, did not bite, max
+verdict onset 5.1k; verdict-conservative); scorer t-assert added (all pairs verified
+aligned). **Ledger: word on live fabric = health-protective (both fabrics) +
+geometry-reshaping vs no-word collapse (sh, letter-fire) + NOT yet word-tied-selective in the
+registered sense + inert without prediction load (§10.20.3). Rulings owed: sh-fire
+interpretation, any S re-cut, dw follow-ups.**

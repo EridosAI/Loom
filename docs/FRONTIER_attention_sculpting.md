@@ -1778,3 +1778,61 @@ dose-robust axis, and this is where that earns its keep); **bounded S form ratif
 reference, bands, sustained-N, horizons all fresh-cut at the coin policy's own stage-two —
 the 1.5× dead-reference shift under (iii) proves the point); the S registration carries
 unchanged.
+
+### §10.20.4 — 12b VERDICT TWINS RAN (2026-07-05, verified 14-agent/10-findings, none verdict-changing, every number reproduced to the digit): **sh S-FIRES 5F/0N · dw S-NULL 0F/3N — with the fire's COMPOSITION decomposed in verification**
+
+**Constants in-force before launch** (`exp12_12b_stage2_constants.json`, 48f0784: sh band
+RE-CUT 0.049689 over the widened {20–29} pool per the ratified amendment — the widening
+RAISED the bar from the thin-pool 0.0414 and from 0.0348-without-s26, and sh fired 5/5 over
+the raised bar anyway; dw band 0.125053; N = 2/4; θ_companion 0.00775; fences recorded
+verbatim). Twin parity verified on verdict artifacts; preview fence verified (every constant
+derives from pre-onset/dead pools).
+
+**[sh] S-FIRES 5F/0N (letter-valid; mechanically clean).** Onsets 3.0–5.1k; fires with
+sustained runs 17–145 vs N=2; S_max 0.23–0.66. **BUT the verified composition changes what
+the fire is:** in EVERY fire event the untied term −½(Δdist+Δa) is POSITIVE (+0.048..+0.085)
+— **the subtraction built to cancel generic dose ADDED instead**, because Δsep_a runs
+NEGATIVE: the ABSENT twin's a-partition separability (0.69–0.79) exceeds the present twin's
+(0.53–0.71). **The dying no-word twin collapses ONTO the coarse partition; the word-present
+twin does not.** Word-tied Δcat is genuinely positive in every fire event (0.023–0.064) but
+carries only 26–48% of S there. Two regimes among the five fires: **s0/s2/s3 = sustained
+positive-S** (means 0.115/0.081/0.179; 58–69% of windows above band, <8% below −band);
+**s1/s4 = duty-cycled net-≈0** (≈20% above +band vs 15–20% below −band; s1's cat-axis signal
+≈ 0 — artifact-compatible, its episodes band-adjacent). **The registered sentence "acting
+selectively on what it names" is NOT licensed as-is**; what IS licensed at the verified
+numbers: the word RESHAPES the present twin's geometry away from the comparator's
+collapse-onto-the-coarse-axis, with a real but minority word-tied component — and the word is
+strongly HEALTH-PROTECTIVE (falsifier (a) ANTI-fires: absent twins den-subfloor 0.72–0.89 vs
+present 0.0–0.48).
+**INSTRUMENT LESSON (the S-form's matched-bar moment): the untied "control" legs are
+CONTAMINATED BY THE COMPARATOR'S OWN DEATH** — the dose-cancellation logic assumed a healthy
+absent twin whose untied contrasts reflect generic dose; a collapsing absent twin
+concentrates on the salient coarse axis and turns the control legs into a signal carrier.
+Any S re-cut (Δcat-only companion, per-leg reporting, collapse-conditioned reads) is a
+RULING, not a scorer patch.
+
+**[dw] S-NULL 0F/3N — and STRONGER than the draft stated:** the read seeds' S_max values
+(0.147–0.162) are the dw null pool's own tail behavior (pool p99.5 = 0.161, max 0.196; null
+segments themselves produced runs up to 3 — N=4 is doing exactly its job). s0/s1 UNREAD
+window-truncated (onsets 187.8k/274.5k — the pre-acknowledged dwelled lottery); 3 reads =
+the minimum; no guard fires by the letter. The word-present dw twins are healthier on
+asg_cat everywhere (0.017–0.024 vs 0.004–0.008) — the health effect without word-tied
+selectivity.
+
+**Corrections + records from verification:** falsifier-(a) "present healthier on every read
+seed" corrected — dw s2's den-subfloor runs WORSE in the present twin (0.153 vs 0.093; the
+asg_cat direction still holds there; the (a)-does-not-fire conclusion survives on the
+preponderance, 7/8 seeds clean). s26-tail internal-consistency note ON RECORD: the in-force
+sh horizon (152,400) is the thin-pool form while the band was re-cut on the widened pool
+(the form on the widened pool would read 208,200) — an empirically ~1/10 sh truncation
+lottery existed and did not bite (max verdict onset 5,100 vs cutoff 21,000);
+verdict-conservative direction. Scorer t-alignment assert added (hygiene; no consequence —
+all twin pairs verified aligned).
+
+**Ledger:** the teaching test's first verdict-grade data: the word channel on live fabric is
+(1) health-protective (both fabrics), (2) geometry-reshaping vs the no-word collapse
+(shuffled fabric, letter-fire), (3) NOT yet demonstrated word-tied-selective in the
+registered sense (composition impure on sh; null on dw), (4) inert without prediction load
+(§10.20.3). Registered falsifier (a) does not fire; falsifier (b) fires for the DWELLED
+block only. Rulings owed: the sh-fire interpretation (letter vs composition), any S re-cut,
+and the dw follow-ups. No arm is a fix.
