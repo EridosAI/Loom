@@ -154,29 +154,20 @@ def propose12b():
             aligned_window="per seed: [onset_present, onset_present + W_common]; the "
                            "absent twin anchored to the PRESENT twin's onset",
             horizon=horizon)
-    # THE REGIME FINDING (cal outcome, 2026-07-05): under mask policy (iii) the num
-    # channel NEVER forms — max num over all 20 cal runs = 2.6e-5 (vs 0.284 at the same
-    # seed under the scheduled policy); onsets None 20/20; present and absent twins
-    # indistinguishable on every panel; the (iii)-world also collapses harder (9/20 end
-    # argmax_k=1; 15/20 end den < 1e-3; both dwelled twins fully dead-dictionary on
-    # most seeds). CONSEQUENCE: the aligned-window anchor has ZERO support, the S index
-    # has no post-onset windows to read, and the raw S form is unbounded (ratio
-    # explosion as within->0; null-band max 141094) — CONSTANTS ARE NOT SETTABLE for
-    # the registered machinery. Surfaced for ruling; verdict twins DO NOT run.
-    num_max = 0.0
+    # CHANNEL-ALIVE CHECK (the coin policy's precondition — the (iii) regime finding
+    # that forced the re-pose is the RECORD in git history / §10.20.3, not this block)
+    num_max_p = num_max_a = 0.0
     for arms in FABRICS.values():
-        for a in arms:
-            for s in CAL:
-                rec = _load(a, s)
-                num_max = max(num_max, max(c["num"] for c in rec["columns"]))
-    out["REGIME_FINDING"] = dict(
-        num_max_over_all_20_runs=num_max,
-        onsets="None 20/20 (present AND absent twins, both fabrics)",
-        s_form_note="raw ratio-difference S is unbounded (within->0 explosion); any "
-                    "re-pin should use a bounded form, e.g. between/(between+within)",
-        reading="the zero-prediction-load word is INERT — the channel the teaching "
-                "test needs never comes alive to test under policy (iii)")
-    # dead-reference regime check — UNGATED (onset gating is vacuous here: no onsets)
+        for s in CAL:
+            num_max_p = max(num_max_p, max(c["num"] for c in _load(arms[0], s)["columns"]))
+            num_max_a = max(num_max_a, max(c["num"] for c in _load(arms[1], s)["columns"]))
+    out["channel_alive_check"] = dict(
+        num_max_present=round(num_max_p, 4), num_max_absent=round(num_max_a, 6),
+        note="present twins acquire under the coin policy (the dose carries the "
+             "channel); absent twins never do — BY CONSTRUCTION (no word to bind), "
+             "which is why the aligned window anchors on the PRESENT twin's onset")
+    # fresh dead reference at the coin policy (companion bar only — never the S verdict;
+    # pooled dead-signature windows, whole-run: absent twins have no onsets to gate on)
     dead = []
     for arms in FABRICS.values():
         for a in arms:
@@ -186,12 +177,12 @@ def propose12b():
                          if c["asg_argmax_k"] == 1 and c["den"] < X9.FLOOR]
     ds = sorted(dead)
     q = lambda f: round(ds[int(f * len(ds))], 6) if ds else None
-    out["dead_reference_regime_check"] = dict(
-        n_dead_windows=len(ds), gating="UNGATED whole-run (no onsets exist)",
+    out["dead_reference_coin_policy"] = dict(
+        n_dead_windows=len(ds), gating="whole-run pooled (absent twins have no onset)",
         p50=q(0.50), p95=q(0.95), p99=q(0.99),
-        inforce_reference=dict(p50=3.9e-05, p95=0.00566),
-        note="SHIFTED: new-policy dead p95 0.0086 = 1.5x the in-force provenance — the "
-             "asg_cat companion must not be read against theta unflagged under (iii)")
+        theta_companion_proposed=q(0.95),
+        note="FRESH-CUT at the coin policy per the nothing-transports ruling; companion "
+             "bar for asg_cat routing-health context only — never an S-verdict input")
     (OUTDIR / "exp12_12b_stage2.PROPOSED.json").write_text(json.dumps(out, indent=2))
     print(json.dumps(out, indent=1))
     return out

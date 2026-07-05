@@ -4,15 +4,15 @@
   "margin": 12000,
   "sh": {
     "arms": [
-      "exp12_12b_shp",
-      "exp12_12b_sha"
+      "exp12_12bc_shp",
+      "exp12_12bc_sha"
     ],
     "onsets_present": [
-      null,
-      null,
-      null,
-      null,
-      null
+      3600,
+      3900,
+      9000,
+      5400,
+      6300
     ],
     "onsets_absent": [
       null,
@@ -22,43 +22,43 @@
       null
     ],
     "null_band": {
-      "n_windows": 2665,
-      "p50": -0.03154,
-      "p99": 3.7219,
-      "max": 1647.22699,
+      "n_windows": 89,
+      "p50": -0.04014,
+      "p99": 0.04139,
+      "max": 0.04139,
       "source": "pre-acquisition (present-twin num onset) windows, pooled over cal twin pairs"
     },
-    "sustained_N": 5,
+    "sustained_N": 2,
     "untied_untied": {
       "n": 2665,
-      "p50": -0.00372,
-      "p99": 8.41027
+      "p50": 0.03893,
+      "p99": 0.45204
     },
     "degenerate_windows": 0,
     "post_onset_S_preview_NOT_A_BAND_INPUT": {
-      "s20": null,
-      "s21": null,
-      "s22": null,
-      "s23": null,
-      "s24": null
+      "s20": 0.0622,
+      "s21": 0.0059,
+      "s22": 0.1749,
+      "s23": 0.0233,
+      "s24": 0.0422
     },
     "aligned_window": "per seed: [onset_present, onset_present + W_common]; the absent twin anchored to the PRESENT twin's onset",
     "horizon": {
-      "value": null,
-      "form": "max present-twin cal onset (None \u2014 CENSORED SEED PRESENT, bound is a >=) + W(131400) + margin(12000)"
+      "value": 152400,
+      "form": "max present-twin cal onset (9000) + W(131400) + margin(12000)"
     }
   },
   "dw": {
     "arms": [
-      "exp12_12b_dwp",
-      "exp12_12b_dwa"
+      "exp12_12bc_dwp",
+      "exp12_12bc_dwa"
     ],
     "onsets_present": [
       null,
+      27000,
+      18300,
       null,
-      null,
-      null,
-      null
+      60000
     ],
     "onsets_absent": [
       null,
@@ -68,25 +68,25 @@
       null
     ],
     "null_band": {
-      "n_windows": 2665,
-      "p50": -0.04989,
-      "p99": 79.59798,
-      "max": 141094.01089,
+      "n_windows": 1414,
+      "p50": -0.01036,
+      "p99": 0.12505,
+      "max": 0.19612,
       "source": "pre-acquisition (present-twin num onset) windows, pooled over cal twin pairs"
     },
     "sustained_N": 4,
     "untied_untied": {
       "n": 2665,
-      "p50": -0.09708,
-      "p99": 159.40246
+      "p50": -0.0376,
+      "p99": 0.54721
     },
     "degenerate_windows": 0,
     "post_onset_S_preview_NOT_A_BAND_INPUT": {
       "s20": null,
-      "s21": null,
-      "s22": null,
+      "s21": -0.0261,
+      "s22": 0.004,
       "s23": null,
-      "s24": null
+      "s24": -0.0236
     },
     "aligned_window": "per seed: [onset_present, onset_present + W_common]; the absent twin anchored to the PRESENT twin's onset",
     "horizon": {
@@ -94,22 +94,18 @@
       "form": "dwelled carries the 303,400 form + full UNREAD/truncation machinery"
     }
   },
-  "REGIME_FINDING": {
-    "num_max_over_all_20_runs": 2.6e-05,
-    "onsets": "None 20/20 (present AND absent twins, both fabrics)",
-    "s_form_note": "raw ratio-difference S is unbounded (within->0 explosion); any re-pin should use a bounded form, e.g. between/(between+within)",
-    "reading": "the zero-prediction-load word is INERT \u2014 the channel the teaching test needs never comes alive to test under policy (iii)"
+  "channel_alive_check": {
+    "num_max_present": 1.3805,
+    "num_max_absent": 9e-06,
+    "note": "present twins acquire under the coin policy (the dose carries the channel); absent twins never do \u2014 BY CONSTRUCTION (no word to bind), which is why the aligned window anchors on the PRESENT twin's onset"
   },
-  "dead_reference_regime_check": {
-    "n_dead_windows": 1444,
-    "gating": "UNGATED whole-run (no onsets exist)",
-    "p50": 7.9e-05,
-    "p95": 0.008609,
-    "p99": 0.019208,
-    "inforce_reference": {
-      "p50": 3.9e-05,
-      "p95": 0.00566
-    },
-    "note": "SHIFTED: new-policy dead p95 0.0086 = 1.5x the in-force provenance \u2014 the asg_cat companion must not be read against theta unflagged under (iii)"
+  "dead_reference_coin_policy": {
+    "n_dead_windows": 1188,
+    "gating": "whole-run pooled (absent twins have no onset)",
+    "p50": 4.8e-05,
+    "p95": 0.007751,
+    "p99": 0.014103,
+    "theta_companion_proposed": 0.007751,
+    "note": "FRESH-CUT at the coin policy per the nothing-transports ruling; companion bar for asg_cat routing-health context only \u2014 never an S-verdict input"
   }
 }

@@ -1700,3 +1700,27 @@ form unbounded — bounded form proposed for any re-pin; dead regime shifted 1.5
 transportable unflagged). The registered S prediction is UNTESTED, not falsified. Ruling
 required; candidate re-poses surfaced in chat (re-pin twins onto the split coin-exam policy |
 rule inertness the block's answer). No verdict twin runs.
+
+## 2026-07-05 — 12b RE-POSED at the COIN POLICY (ruled; (iii) STRUCK, finding recorded); coin-policy cal RUN; stage-two SURFACED — verdict twins await ratification
+
+Ruling executed: prereg §15 amended in place ((iii) struck with the finding as the record);
+present twin = A-SPLIT coin policy verbatim; absent twin = same coin same draws, word-mask
+draws → EXPOSURE-ONLY (the original option (ii) — rejected then as a dose confound, correct
+now because THE DOSE IS THE MECHANISM); vision-teaching density matched by construction; dose
+control = S itself (untied subtraction; selectivity = the dose-robust axis, earning its keep);
+BOUNDED S form ratified (between/(between+within); sep columns bounded from 36f0d7f); nothing
+transports — all constants fresh-cut.
+
+**Coin-policy cal ({20–24} × {present, absent} × {sh, dw}, 160k): the channel is ALIVE where
+(iii) was dead** — num_max present 1.38 (vs 2.6e-5 under (iii)); absent 9e-6 = never, by
+construction. **sh block:** present onsets {3.6k, 3.9k, 9.0k, 5.4k, 6.3k} 5/5; null band
+(pre-onset S) p99 = 0.0414 (n=89 — THIN, flagged: fast acquisition leaves little pre-onset
+span); sustained-N = 2; post-onset S preview ALL FIVE POSITIVE {0.062, 0.006, 0.175, 0.023,
+0.042} — preview only, never a band input; horizon 152,400 (= 9,000 + 131,400 + 12,000).
+**dw block:** present onsets {27k, 18.3k, 60k} 3/5 + 2 CENSORED at 160k (the dwell lottery at
+coin policy); null band p99 = 0.1251 (n=1414); sustained-N = 4; preview mixed
+{−0.026, +0.004, −0.024}; horizon 303,400 + full UNREAD/truncation machinery. Fresh dead
+reference (companion only): p50 4.8e-5 / p95 0.00775 (θ_companion proposed) / p99 0.0141
+(n=1188). Untied-untied companions p99 0.45/0.55. Artifact
+`exp12_12b_stage2.PROPOSED.json` — **NOTHING IN FORCE; constants surfaced in chat; verdict
+twins {0–4} × 2 twins × 2 blocks run only after ratification.**
