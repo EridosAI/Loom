@@ -86,13 +86,20 @@ ARMS12 = {
     # the SPLITTING ARM (prereg §14; fired on BOTH-SURVIVE): A-SHUFFLE fabric verbatim,
     # mask POLICY uniform at position 1 (probe machinery N/A — rate must stay 0)
     "exp12_split":   dict(shuffled=True, uniform_mask=True),
-    # the 12b TWIN BLOCKS (prereg §15; amended trigger): word = reference never target;
-    # mask policy (iii) — word-coin waves become EXPOSURE-ONLY (loss skips); twins are
-    # bit-identical ex-word (absent = null token, the static comparator form)
+    # the 12b TWIN BLOCKS at policy (iii) — STRUCK 2026-07-05 (§10.20.3 regime finding:
+    # the zero-prediction-load word never binds); arms retained for the record
     "exp12_12b_shp": dict(shuffled=True, word_ref=True, no_word=False),
     "exp12_12b_sha": dict(shuffled=True, word_ref=True, no_word=True),
     "exp12_12b_dwp": dict(shuffled=False, word_ref=True, no_word=False),
     "exp12_12b_dwa": dict(shuffled=False, word_ref=True, no_word=True),
+    # the 12b TWIN BLOCKS at the COIN POLICY (§15 as amended): present = the A-SPLIT
+    # coin policy verbatim; absent = SAME coin SAME draws, word-mask draws become
+    # EXPOSURE-ONLY (expo_word — a word that does not exist cannot be a target);
+    # vision-teaching density matched across twins by construction
+    "exp12_12bc_shp": dict(shuffled=True, uniform_mask=True, no_word=False),
+    "exp12_12bc_sha": dict(shuffled=True, uniform_mask=True, no_word=True, expo_word=True),
+    "exp12_12bc_dwp": dict(shuffled=False, uniform_mask=True, no_word=False),
+    "exp12_12bc_dwa": dict(shuffled=False, uniform_mask=True, no_word=True, expo_word=True),
 }
 RIG1_ARMS = ("exp12_dwell", "exp12_shuffle")
 
@@ -144,13 +151,17 @@ class EXP12Loop(A.EXP08Loop):
         tokens = torch.tensor([self.curric.word_token(int(wl[0]), no_word=no_word)])
         e_word = self._vary_word(self.word.emit(tokens), tokens)   # identity hook (no jiggle)
         content = torch.stack([e_vis, e_word], dim=1)         # (1, n_slots, D)
-        word_ref = bool(getattr(cfg, "_exp12", {}).get("word_ref", False))
+        v12 = getattr(cfg, "_exp12", {})
+        word_ref = bool(v12.get("word_ref", False))
+        # expo_word (§15 coin policy, ABSENT twin): word-mask draws become exposure-only
+        # — the fabric (incl. is_exam flags) stays IDENTICAL to the present twin; only
+        # the presentation converts (a nonexistent word cannot be a target)
+        expo_word = bool(v12.get("expo_word", False))
         if force_mask is None:
             mask = torch.zeros(1, cfg.n_slots, dtype=torch.bool)
             slot = int(fab.mask_slot[t])
-            if word_ref and slot == 1:
-                fam_name = "exposure"                         # §15 policy (iii): no cell
-                pass                                          # masked; the loss skips
+            if (word_ref or expo_word) and slot == 1:
+                fam_name = "exposure"                         # no cell masked; loss skips
             else:
                 mask[0, slot] = True
                 fam_name = ("exam" if bool(fab.is_exam[t])
@@ -314,7 +325,8 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
     cfg.T = steps + 8                                         # continual: no wraparound
     cfg._exp12 = dict(T=cfg.T, shuffled=spec["shuffled"], probe_rate=probe_rate,
                       uniform_mask=spec.get("uniform_mask", False),
-                      word_ref=spec.get("word_ref", False))
+                      word_ref=spec.get("word_ref", False),
+                      expo_word=spec.get("expo_word", False))
     loop = EXP12Loop(cfg, pin)
     return loop, spec, cfg
 
@@ -470,15 +482,19 @@ def _probe_exam_read(loop, t: int) -> float:
 
 
 def _sep_ratio(e: torch.Tensor, labels: torch.Tensor):
-    """B1-form separability on emissions: between/within mean-distance ratio over the 16
-    clean probes for a partition. None when within degenerates to ~0 (maximal clustering
-    — counted, never averaged in). The §15 S-index building block."""
+    """B1-form separability on emissions over the 16 clean probes — the §15 S-index
+    building block, BOUNDED FORM (ratified 2026-07-05, instrument-validity pre-verdict):
+    between/(between+within) ∈ [0,1]; 0.5 = undifferentiated, →1 = category-clustered.
+    (The raw ratio form is unbounded as within→0 — the §10.20.3 explosion; artifacts
+    committed before 19192fa carry ratio-form sep columns.) None only when both terms
+    degenerate to ~0 (all 16 emissions identical)."""
     dm = torch.cdist(e, e)
     same = labels.unsqueeze(0) == labels.unsqueeze(1)
     off = ~torch.eye(e.shape[0], dtype=torch.bool)
     between = float(dm[(~same) & off].mean())
     within = float(dm[same & off].mean())
-    return (between / within) if within > 1e-9 else None
+    tot = between + within
+    return (between / tot) if tot > 1e-12 else None
 
 
 def _eval_column(loop, t: int, buf: dict, ma, mb, labels, no_word: bool = False) -> dict:

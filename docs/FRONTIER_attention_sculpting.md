@@ -1765,3 +1765,16 @@ prediction (S-selectivity) is UNTESTED, not falsified: the channel never came al
 the twin policy to the SPLIT arm's coin-exam policy — word carries load at coin rate; twins
 {present, absent} on that policy — or rule the inertness finding the block's answer and route
 the teaching test elsewhere). No arm is a fix.
+
+**RULED (same day): finding RECORDED + policy (iii) STRUCK; §15 AMENDED to the COIN POLICY;
+cal re-runs at the new policy; constants back before verdict twins.** The re-pose pins
+(recorded in prereg §15): present twin = the A-SPLIT coin policy verbatim; absent twin = the
+same coin, the same draws, word-mask draws → EXPOSURE-ONLY — **the original option (ii),
+rejected then as a dose confound, correct now because the dose IS the mechanism**;
+vision-teaching density matched across twins by construction; **the dose control is S itself**
+(the untied-partition subtraction cancels generic dose — selectivity was registered as the
+dose-robust axis, and this is where that earns its keep); **bounded S form ratified**
+(between/(between+within); instrument-validity, pre-verdict); **nothing transports** (θ, dead
+reference, bands, sustained-N, horizons all fresh-cut at the coin policy's own stage-two —
+the 1.5× dead-reference shift under (iii) proves the point); the S registration carries
+unchanged.

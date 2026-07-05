@@ -44,7 +44,9 @@ OUTDIR = X12.OUTDIR
 CAL = X12.CAL_SEEDS
 MARGIN = 12000
 W_COMMON = 131400
-FABRICS = dict(sh=("exp12_12b_shp", "exp12_12b_sha"), dw=("exp12_12b_dwp", "exp12_12b_dwa"))
+FABRICS = dict(sh=("exp12_12bc_shp", "exp12_12bc_sha"), dw=("exp12_12bc_dwp", "exp12_12bc_dwa"))
+# (the struck-(iii) arms exp12_12b_* stay on disk for the record; this derivation reads
+# the COIN-POLICY twins per §15 as amended — bounded sep columns, nothing transported)
 
 
 def _load(arm, seed):

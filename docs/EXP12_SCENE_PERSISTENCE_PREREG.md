@@ -452,15 +452,36 @@ fabric).** Each block = a TWIN PAIR {word-present, word-absent}, verdict seeds {
 comparator form; construction pin §9 carried). Twin parity asserted `torch.equal` on
 every fabric field ex-word.
 
-- **Mask policy (iii) — the word is a REFERENCE, never a target: NO word-masks
-  anywhere; zero prediction load on the word slot.** A-SPLIT's uniform coin is
-  REINTERPRETED with the SAME draws (draw parity preserved on both fabrics): a coin that
-  drew "word-mask" becomes an EXPOSURE-ONLY wave (no cell masked — the wave is seen,
-  completed-for-free, never scored; the loss skips; nothing forward-flavored); a coin
-  that drew "vision-mask" stays a vision-mask teaching wave. Position 1 uses the same
-  coin on BOTH fabrics (a guaranteed boundary-correlated no-mask wave would be a clock).
-  The VISION-mask schedule is therefore bit-identical across twins and across the
-  present/absent contrast — the word tensor is the ONLY difference.
+- **Mask policy (iii) — STRUCK (2026-07-05, on the §10.20.3 cal finding; the record
+  stands below, superseded):** ~~the word is a REFERENCE, never a target: NO word-masks
+  anywhere~~. Measured: under (iii) the word NEVER BINDS (num ≤ 2.6e-5 over all 20 cal
+  runs, present ≡ absent on every panel) and the world collapses harder — the channel
+  the teaching test needs never comes alive to test. **The finding is the record:
+  participation requires prediction load somewhere.**
+- **Mask policy AMENDED IN PLACE (ruling, 2026-07-05): THE COIN POLICY.**
+  - **Present twin = the A-SPLIT coin policy VERBATIM** (uniform coin everywhere
+    including position 1; coin-word → word-mask, coin-vision → vision-mask teaching
+    wave).
+  - **Absent twin = the SAME coin, the SAME draws; word-mask draws become
+    EXPOSURE-ONLY** (a word that does not exist cannot be a target). This is the
+    original option (ii) — **rejected then as a dose confound, correct now because the
+    dose IS the mechanism** (§10.20.3: prediction load is what makes the word
+    participate). **Vision-teaching density stays matched across twins** (the
+    vision-coin waves are bit-identical; the twins differ only on the word-coin waves:
+    word-mask vs exposure-only, plus the word tensor itself).
+  - **The dose control is S itself:** the extra word-prediction gradient in the present
+    twin backprops generically; the untied-partition subtraction cancels generic dose.
+    **Selectivity was registered as the dose-robust axis — this is where that earns its
+    keep.**
+  - **BOUNDED S FORM RATIFIED (instrument-validity, pre-verdict):** separability =
+    between/(between+within) ∈ [0,1] (the raw ratio form is unbounded as within→0 —
+    §10.20.3 instrument note). All S machinery reads the bounded form.
+  - **NOTHING TRANSPORTS:** θ, the dead reference, null bands, sustained-N, horizons —
+    ALL cut fresh at the coin policy's own stage-two (the 1.5× dead-reference shift
+    under (iii) proves the point). Cal twins {20–24} per fabric at the coin policy;
+    constants surface in chat before any verdict twin.
+  - **The S registered prediction CARRIES UNCHANGED** (untested-not-falsified under
+    (iii)); both fabric blocks stay parallel; one review each.
 - **SELECTIVITY INDEX S (the primary axis, per the re-cut registration):** per seed, per
   aligned window: **S = twin-contrast (present − absent) in B1-form vision-cortex
   separability on the WORD-TIED partition (category, b%2), MINUS the mean twin-contrast
