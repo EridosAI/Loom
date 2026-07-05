@@ -1,5 +1,5 @@
 {
-  "status": "IN FORCE (ratified in chat 2026-07-05; widen amendment + preview fence + dwelled-lottery pre-acknowledgement)",
+  "status": "IN FORCE (ratified in chat 2026-07-05; widen amendment + preview fence + dwelled-lottery pre-acknowledgement) | S_w REGISTERED 2026-07-05 (\u00a710.20.5): primary = word-tied contrast alone; fresh-seed discipline \u2014 verdict {5\u20139}, never the {0\u20134} that motivated the re-cut",
   "W_common": 131400,
   "margin": 12000,
   "fences": {
@@ -42,7 +42,11 @@
     "horizon": 152400,
     "read_cutoff": 21000,
     "aligned_window": "[onset_present, onset_present + W_common]",
-    "note": "band RE-CUT over the widened pool per the ratified amendment; replaces the thin-pool 0.0414 whichever direction it moved"
+    "note": "band RE-CUT over the widened pool per the ratified amendment; replaces the thin-pool 0.0414 whichever direction it moved",
+    "Sw_band_p99": 0.006353,
+    "Sw_band_n_windows": 348,
+    "Sw_sustained_N": 2,
+    "Sw_note": "S_w = dsep_cat alone (\u00a710.20.5 re-cut; untied legs + composite S demoted to reported companions); band from the SAME pre-onset null source, existing cal only"
   },
   "dw": {
     "arms": [
@@ -70,7 +74,11 @@
     "horizon": 303400,
     "read_cutoff": 172000,
     "aligned_window": "[onset_present, onset_present + W_common]",
-    "note": "band stands from {20\u201324} (n=1414, not thin)"
+    "note": "band stands from {20\u201324} (n=1414, not thin)",
+    "Sw_band_p99": 0.019755,
+    "Sw_band_n_windows": 1414,
+    "Sw_sustained_N": 5,
+    "Sw_note": "S_w = dsep_cat alone (\u00a710.20.5 re-cut; untied legs + composite S demoted to reported companions); band from the SAME pre-onset null source, existing cal only"
   },
   "theta_companion": {
     "value": 0.007751,

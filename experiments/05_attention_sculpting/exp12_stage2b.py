@@ -188,6 +188,59 @@ def propose12b():
     return out
 
 
+def record_sw():
+    """§10.20.5: register the S_w constants from the EXISTING cal twins (no new cal).
+    S_w per window = sep_cat(present) − sep_cat(absent), bounded form. Null band =
+    pre-onset pooled Δsep_cat per fabric (same source/construction as the S band: sh
+    over the widened {20–29} pool, dw over {20–24}); sustained-N re-checked for zero
+    false-fires. Everything else carries in force. Updates the constants artifact in
+    place (the composite-S bands stay recorded as companions-of-record)."""
+    K = json.loads((OUTDIR / "exp12_12b_stage2_constants.json").read_text())
+    for fkey, (armP, armA) in FABRICS.items():
+        seeds = CAL + ([25, 26, 27, 28, 29] if fkey == "sh" else [])
+        null_w = []
+        series = {}
+        for s in seeds:
+            rp, ra = _load(armP, s), _load(armA, s)
+            onset_p = rp["acquisition_onset"]
+            ser = []
+            for cp, ca in zip(rp["columns"], ra["columns"]):
+                assert cp["t"] == ca["t"]
+                v = (cp["sep_cat"] - ca["sep_cat"]
+                     if cp.get("sep_cat") is not None and ca.get("sep_cat") is not None
+                     else None)
+                ser.append(dict(t=cp["t"], Sw=v))
+            series[s] = (ser, onset_p)
+            null_w += [x["Sw"] for x in ser
+                       if x["Sw"] is not None and (onset_p is None or x["t"] < onset_p)]
+        ns = sorted(null_w)
+        band = ns[int(0.99 * len(ns))]
+        n_sust = None
+        for n in range(2, 12):
+            ff = 0
+            for s in seeds:
+                ser, onset_p = series[s]
+                seg = [x["Sw"] for x in ser if onset_p is None or x["t"] < onset_p]
+                ff += int(_fires(seg, band, n))
+            if ff == 0:
+                n_sust = n
+                break
+        K[fkey]["Sw_band_p99"] = round(band, 6)
+        K[fkey]["Sw_band_n_windows"] = len(ns)
+        K[fkey]["Sw_sustained_N"] = n_sust
+        K[fkey]["Sw_note"] = ("S_w = dsep_cat alone (§10.20.5 re-cut; untied legs + "
+                              "composite S demoted to reported companions); band from "
+                              "the SAME pre-onset null source, existing cal only")
+    K["status"] = (K["status"] + " | S_w REGISTERED 2026-07-05 (§10.20.5): primary = "
+                   "word-tied contrast alone; fresh-seed discipline — verdict {5–9}, "
+                   "never the {0–4} that motivated the re-cut")
+    (OUTDIR / "exp12_12b_stage2_constants.json").write_text(json.dumps(K, indent=2))
+    print(json.dumps({f: {k: K[f][k] for k in ("Sw_band_p99", "Sw_band_n_windows",
+                                               "Sw_sustained_N")} for f in FABRICS},
+                     indent=1))
+    return K
+
+
 def record_inforce12b():
     """Record the 12b coin-policy constants IN FORCE (chat ratification 2026-07-05:
     the widen amendment + two fences + rest-as-proposed). The shuffled band is RE-CUT
@@ -255,8 +308,11 @@ def record_inforce12b():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--record-inforce", action="store_true")
+    ap.add_argument("--record-sw", action="store_true")
     args = ap.parse_args()
     if args.record_inforce:
         record_inforce12b()
+    elif args.record_sw:
+        record_sw()
     else:
         propose12b()

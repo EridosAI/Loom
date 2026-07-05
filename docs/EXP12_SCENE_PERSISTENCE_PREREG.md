@@ -482,6 +482,27 @@ every fabric field ex-word.
     constants surface in chat before any verdict twin.
   - **The S registered prediction CARRIES UNCHANGED** (untested-not-falsified under
     (iii)); both fabric blocks stay parallel; one review each.
+- **S RE-CUT BY RULING (2026-07-05, post §10.20.4 verification; recorded before any
+  fresh-seed run): PRIMARY = S_w — the word-tied twin contrast ALONE.**
+  - **S_w per window = sep_cat(present) − sep_cat(absent)** (bounded form). The
+    composite S's untied subtraction is RETIRED FOR THIS REGIME: its dose-cancellation
+    premise (a healthy comparator whose untied contrasts reflect generic dose) FAILS
+    when the comparator itself collapses onto the coarse partition — the control legs
+    became a signal carrier (§10.20.4 instrument lesson). **The untied contrasts
+    (Δsep_a, Δsep_dist) and the old composite S are DEMOTED to reported companions —
+    never subtracted, never fire criteria.** The dose caveat this re-opens is carried
+    honestly: S_w does NOT cancel generic dose; the untied companions are the
+    dose-visibility check (a generic-dose story predicts comparable positive contrasts
+    on untied partitions; word-tied selectivity predicts Δcat ≫ untied).
+  - **Constants from the EXISTING cal twins** (no new cal): per-fabric S_w null bands =
+    pre-onset pooled Δsep_cat (same null source, same construction; sh over the widened
+    {20–29} pool, dw over {20–24}); sustained-N re-checked for zero false-fires per
+    fabric. Everything else (windows, horizons, cutoffs, taxonomy, letters,
+    θ_companion) carries as in force.
+  - **FRESH-SEED DISCIPLINE (binding): the re-cut ruler grades verdict seeds {5–9} —
+    never the {0–4} seeds whose data motivated the re-cut.** The {0–4} S_w values may
+    be REPORTED as companions after the fresh read exists, clearly labeled post-hoc.
+  - One review per block, behind the verification pass, as standing.
 - **SELECTIVITY INDEX S (the primary axis, per the re-cut registration):** per seed, per
   aligned window: **S = twin-contrast (present − absent) in B1-form vision-cortex
   separability on the WORD-TIED partition (category, b%2), MINUS the mean twin-contrast

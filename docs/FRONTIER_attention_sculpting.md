@@ -1836,3 +1836,21 @@ registered sense (composition impure on sh; null on dw), (4) inert without predi
 (§10.20.3). Registered falsifier (a) does not fire; falsifier (b) fires for the DWELLED
 block only. Rulings owed: the sh-fire interpretation (letter vs composition), any S re-cut,
 and the dw follow-ups. No arm is a fix.
+
+### §10.20.5 — RULED (2026-07-05): **S RE-CUT to S_w (word-tied contrast alone); constants from existing cal; the re-cut ruler grades FRESH seeds {5–9}, both blocks**
+
+**The ruling, recorded in order:** (1) the §10.20.4 composition finding is accepted — the
+composite S's untied subtraction is **retired for this regime** (its premise, a healthy
+comparator whose untied contrasts reflect generic dose, fails when the comparator collapses
+onto the coarse partition; the control legs carried signal). (2) **S_w = Δsep_cat (present −
+absent, bounded form) is REGISTERED as the primary axis**; the untied contrasts and the old
+composite S are demoted to reported companions — never subtracted, never fire criteria. The
+re-opened dose caveat is carried honestly: S_w does not cancel generic dose; **the untied
+companions are the dose-visibility check** (generic dose predicts comparable positive
+contrasts on untied partitions; word-tied selectivity predicts Δcat ≫ untied). (3)
+**Constants from the EXISTING cal twins** — per-fabric S_w null bands from the same
+pre-onset null source (sh over the widened {20–29} pool; dw over {20–24}), sustained-N
+re-checked; windows/horizons/taxonomy/letters carry in force unchanged. (4) **FRESH-SEED
+DISCIPLINE: verdict seeds {5–9}** — the re-cut ruler never grades the {0–4} seeds whose
+data motivated the re-cut; their S_w values may be reported post-hoc as labeled companions
+after the fresh read exists. One review per block, behind the verification pass.
