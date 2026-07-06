@@ -1957,4 +1957,64 @@ a non-landing changes no committed verdict.
 
 **(3) Not in this order:** the dw-block standing ruling remains OPEN (§10.20.6). Results of
 (1)'s substitute read and (2)'s read are appended below after the standing verification
-pass. *(Results pending at ruling time.)*
+pass.
+
+**RESULTS (2026-07-06; verified 10-agent — 5 refute-default lenses + 5 per-finding
+adjudications; every number digit-exact, verdict artifact byte-reproduced, NO letter moved;
+2 reading-changing framing corrections recorded below as written, 3 cosmetic):**
+
+**(R1) Substitution applied — the sh block STRENGTHENS to S_w-FIRES 5F/0N.** s10's fabric
+passed all §13.8 gates; twins verified same-fabric; **s10 FIRES, second-strongest in the
+block after s5** (Sw_mean 0.0192, Sw_max 0.32366, 50.3% of windows above band, longest run
+46 vs N=2 where the null's max run anywhere is 1; onset 3000). Scorer tally verified
+[5,6,7,8,10] — s9 never read (its REJECTED record cannot be picked up), dw block invariant
+(3F/1N + s9 window-truncated, substitution=None), sh extension pool = {11}. Dose-visibility
+on own-band normalization: dA −0.03892 / dDist +0.00941, NEITHER fires its own analogous
+band — consistent with the §10.20.6 pattern (no untied leg has ever fired on sh). Health
+companion: word-present healthier (asg_cat_end 0.0274 vs 0.0090; den sub-floor
+present-healthier over the aligned window). **The §10.20.6 sh selectivity demonstration
+carries at 5F/0N on the full substituted verdict set.**
+
+**(R2) Earned-salience read — DOES-NOT-LAND, 0/5 on BOTH arms** (reader vs fresh
+re-implementation: zero mismatches; artifact `exp12_salience_read.json`). Per-seed
+(bg-ratio / id-ratio, late-decile over early-decile): dwell s0 0.6372/0.4088, s1
+1.1106/2.0794, s2 2.3529/2.6451, s3 0.0493/0.0597, s4 0.3201/0.4123; shuffle s0
+1.5381/0.5255, s1 0.1625/0.4338, s2 0.7607/0.4567, s3 0.1648/0.0663, s4 0.0684/0.0550.
+Texture, verification-corrected:
+- **On the DWELL arm the two components are fate-shared** — co-directional on all 5 seeds
+  (id/bg ratio-of-ratios 0.64–1.87): background and member-onset divergence rise and fall
+  TOGETHER; no seed shows the differential signature. **The SHUFFLE arm is not universally
+  co-directional** (the correction): s0 is anti-directional (bg ROSE 1.54× while id fell to
+  0.53 — the wrong direction for the expectation) and s2's div_nuis rose while bg/id fell
+  (the "nuis tracks the same way" gloss is dwell-only). Neither exception approaches the
+  landing signature.
+- **Knob-robustness, exact form:** at the declared 0.7 knob and ANY symmetric knob ≥ 0.5,
+  zero seeds land. The full symmetric-K sweep finds THREE formal landings at pathological
+  knobs — dwell s3 K∈(0.049,0.060) (id fell 94%), dwell s4 K∈(0.32,0.41) (id fell 59%),
+  shuffle s1 K∈(0.16,0.43) (id fell 57%; the widest window and the dataset's largest
+  ratio-of-ratios, 2.67, on the CONTROL arm — which strengthens, not weakens, the
+  no-differential reading). Max landers at any single K = 1/5 per arm; majority is never
+  reached; **both letters are K-invariant.**
+- **Borderline surfaced (both blockers, per adjudication):** dwell s0 — bg ratio 0.6372 <
+  0.7 but POSITIVE LS slope (+0.0042/100k, non-monotone trajectory) fails FALLS(bg) under
+  EVERY threshold choice (the slope-sign conjunct is definitional, not a knob); and its id
+  ratio (0.4088) below its bg ratio independently blocks every symmetric re-cut.
+- **Reader hygiene notes (cosmetic, recorded not silently patched; reader stands as the
+  committed provenance of the artifact):** (i) cuts on rounded values (4dp ratio / 6dp
+  slope) vs the raw-value canon text — flip windows 5e-5/5e-7, margins clear by >3 orders,
+  flags identical both ways on all 10 seeds; (ii) div-row filter keyed on div_bg alone vs
+  "div-bearing columns" — identical row sets on every artifact (all 1011 columns carry all
+  three components); latent-only, noted for any future reuse.
+
+**(R3) Consequence for the Guiding-List trigger (plain reading; the promotion call remains
+a ruling):** leg 1 (cross-scene contrast) now stands at 5F/0N on sh; leg 2 (the
+earned-salience curve) DOES-NOT-LAND — **the registered promotion trigger does NOT fire;
+the candidate stays CANDIDATE-HELD.** The Guiding-List entry is untouched (annotating it is
+Jason's call). Expectation-not-a-gate carries: no committed verdict moves. Mechanical
+texture for any re-pose ruling: the onset-divergence probe's components scale together
+(dominated by global acquisition/collapse dynamics — an echo of the static-line fate-shared
+ledger item), rather than differentially by axis; a background-selective decline is not
+what this fabric produces at this operating point.
+
+**Open after this order: the dw-block standing ruling (§10.20.6) and any
+earned-salience re-pose / Guiding-List annotation.**

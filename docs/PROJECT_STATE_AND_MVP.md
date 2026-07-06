@@ -1011,3 +1011,15 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   candidate promotion touch (contrast leg demonstrated; earned-salience leg unread).
   Artifacts: exp12_12b_stage2_constants.json, exp12_12b_verdicts.json,
   exp12_12b_sw_verdicts.json.]**
+
+- **[2026-07-06 — §10.20.7 RULED + READ (verified 10-agent, no letter moved): STANDING
+  SUBSTITUTION RULE recorded (pre-run gate rejection → lowest unused pool seed, whole
+  twin pair, rejected record stands, pool seed withdrawn from extension) and APPLIED —
+  sh s9→s10, s10 FIRES second-strongest → sh block STRENGTHENS to S_w-FIRES 5F/0N.
+  EARNED-SALIENCE (Amendment-A) READ: DOES-NOT-LAND 0/5 BOTH rig-1 arms, K-invariant
+  (zero landers at any symmetric knob ≥0.5; max 1/5 at any pathological K); dwell arm
+  fate-shared on all seeds, shuffle has non-landing exceptions (s0 anti-directional,
+  s2 nuis-rose). Guiding-List trigger plain reading: leg 1 lands (5F/0N), leg 2 does
+  NOT → candidate stays HELD; entry untouched. Artifacts: exp12_12bc_sh{p,a}_s10.json,
+  exp12_salience_read.json, exp12_12b_sw_verdicts.json (updated). RULINGS STILL OPEN:
+  dw-block standing; earned-salience re-pose / Guiding-List annotation.]**

@@ -1,0 +1,311 @@
+{
+ "read": "earned-salience (Amendment A; \u00a710.20.7 form)",
+ "expectation_not_a_gate": true,
+ "knob": 0.7,
+ "arms": {
+  "dwell": {
+   "per_seed": [
+    {
+     "arm": "dwell",
+     "seed": 0,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.096498,
+      "late": 0.061489,
+      "ratio": 0.6372,
+      "slope_per_100k": 0.004206
+     },
+     "div_id": {
+      "early": 0.372309,
+      "late": 0.152197,
+      "ratio": 0.4088,
+      "slope_per_100k": -0.029721
+     },
+     "div_nuis": {
+      "early": 0.082671,
+      "late": 0.042349,
+      "ratio": 0.5123,
+      "slope_per_100k": -0.007327
+     },
+     "falls_bg": false,
+     "stays_high_id": false,
+     "lands": false
+    },
+    {
+     "arm": "dwell",
+     "seed": 1,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.068913,
+      "late": 0.076537,
+      "ratio": 1.1106,
+      "slope_per_100k": 0.018008
+     },
+     "div_id": {
+      "early": 0.452245,
+      "late": 0.940402,
+      "ratio": 2.0794,
+      "slope_per_100k": 0.197679
+     },
+     "div_nuis": {
+      "early": 0.053037,
+      "late": 0.087847,
+      "ratio": 1.6563,
+      "slope_per_100k": 0.028159
+     },
+     "falls_bg": false,
+     "stays_high_id": true,
+     "lands": false
+    },
+    {
+     "arm": "dwell",
+     "seed": 2,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.105236,
+      "late": 0.247605,
+      "ratio": 2.3529,
+      "slope_per_100k": 0.01289
+     },
+     "div_id": {
+      "early": 0.697402,
+      "late": 1.844704,
+      "ratio": 2.6451,
+      "slope_per_100k": 0.17349
+     },
+     "div_nuis": {
+      "early": 0.058426,
+      "late": 0.150306,
+      "ratio": 2.5726,
+      "slope_per_100k": 0.016926
+     },
+     "falls_bg": false,
+     "stays_high_id": true,
+     "lands": false
+    },
+    {
+     "arm": "dwell",
+     "seed": 3,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.081268,
+      "late": 0.00401,
+      "ratio": 0.0493,
+      "slope_per_100k": -0.029872
+     },
+     "div_id": {
+      "early": 0.317172,
+      "late": 0.018938,
+      "ratio": 0.0597,
+      "slope_per_100k": -0.122247
+     },
+     "div_nuis": {
+      "early": 0.063189,
+      "late": 0.024072,
+      "ratio": 0.3809,
+      "slope_per_100k": -0.019219
+     },
+     "falls_bg": true,
+     "stays_high_id": false,
+     "lands": false
+    },
+    {
+     "arm": "dwell",
+     "seed": 4,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.033234,
+      "late": 0.010639,
+      "ratio": 0.3201,
+      "slope_per_100k": -0.026868
+     },
+     "div_id": {
+      "early": 0.260333,
+      "late": 0.107326,
+      "ratio": 0.4123,
+      "slope_per_100k": -0.126665
+     },
+     "div_nuis": {
+      "early": 0.050364,
+      "late": 0.011515,
+      "ratio": 0.2286,
+      "slope_per_100k": 0.003237
+     },
+     "falls_bg": true,
+     "stays_high_id": false,
+     "lands": false
+    }
+   ],
+   "lands": 0,
+   "n": 5,
+   "letter": "DOES-NOT-LAND"
+  },
+  "shuffle": {
+   "per_seed": [
+    {
+     "arm": "shuffle",
+     "seed": 0,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.006418,
+      "late": 0.009872,
+      "ratio": 1.5381,
+      "slope_per_100k": 0.001796
+     },
+     "div_id": {
+      "early": 0.023678,
+      "late": 0.012442,
+      "ratio": 0.5255,
+      "slope_per_100k": 0.002991
+     },
+     "div_nuis": {
+      "early": 0.003448,
+      "late": 0.00335,
+      "ratio": 0.9716,
+      "slope_per_100k": 0.00091
+     },
+     "falls_bg": false,
+     "stays_high_id": false,
+     "lands": false
+    },
+    {
+     "arm": "shuffle",
+     "seed": 1,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.009959,
+      "late": 0.001618,
+      "ratio": 0.1625,
+      "slope_per_100k": -0.002523
+     },
+     "div_id": {
+      "early": 0.039972,
+      "late": 0.01734,
+      "ratio": 0.4338,
+      "slope_per_100k": -0.001244
+     },
+     "div_nuis": {
+      "early": 0.001569,
+      "late": 0.001104,
+      "ratio": 0.7037,
+      "slope_per_100k": 0.000498
+     },
+     "falls_bg": true,
+     "stays_high_id": false,
+     "lands": false
+    },
+    {
+     "arm": "shuffle",
+     "seed": 2,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.00794,
+      "late": 0.00604,
+      "ratio": 0.7607,
+      "slope_per_100k": -0.00055
+     },
+     "div_id": {
+      "early": 0.032699,
+      "late": 0.014934,
+      "ratio": 0.4567,
+      "slope_per_100k": -0.003956
+     },
+     "div_nuis": {
+      "early": 0.001431,
+      "late": 0.002658,
+      "ratio": 1.8582,
+      "slope_per_100k": 0.000173
+     },
+     "falls_bg": false,
+     "stays_high_id": false,
+     "lands": false
+    },
+    {
+     "arm": "shuffle",
+     "seed": 3,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.009566,
+      "late": 0.001576,
+      "ratio": 0.1648,
+      "slope_per_100k": -0.002069
+     },
+     "div_id": {
+      "early": 0.050558,
+      "late": 0.003352,
+      "ratio": 0.0663,
+      "slope_per_100k": -0.011583
+     },
+     "div_nuis": {
+      "early": 0.006365,
+      "late": 0.000717,
+      "ratio": 0.1126,
+      "slope_per_100k": -0.001196
+     },
+     "falls_bg": true,
+     "stays_high_id": false,
+     "lands": false
+    },
+    {
+     "arm": "shuffle",
+     "seed": 4,
+     "n_div_rows": 1011,
+     "decile": 101,
+     "t_first": 300,
+     "t_last": 303300,
+     "div_bg": {
+      "early": 0.005971,
+      "late": 0.000409,
+      "ratio": 0.0684,
+      "slope_per_100k": -0.001111
+     },
+     "div_id": {
+      "early": 0.027852,
+      "late": 0.001532,
+      "ratio": 0.055,
+      "slope_per_100k": -0.004675
+     },
+     "div_nuis": {
+      "early": 0.003346,
+      "late": 0.001461,
+      "ratio": 0.4366,
+      "slope_per_100k": -0.000337
+     },
+     "falls_bg": true,
+     "stays_high_id": false,
+     "lands": false
+    }
+   ],
+   "lands": 0,
+   "n": 5,
+   "letter": "DOES-NOT-LAND"
+  }
+ }
+}

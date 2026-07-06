@@ -1815,3 +1815,32 @@ numbers reported); LANDS := both; arm letter = majority of 5.
 
 **(3) dw-block standing remains the open ruling.** Results appended after the standing
 verification pass.
+
+
+---
+
+## 2026-07-06 — EXP12 §10.20.7 RESULTS (verified 10-agent, digit-exact, no letter moved): sh → 5F/0N under the substitution; earned-salience DOES-NOT-LAND 0/5 both arms
+
+**(1) s10 substitution read:** fabric gates passed; s10 FIRES second-strongest (mean
+0.0192, max 0.324, frac 0.503, run 46 vs N=2/null-max 1, onset 3000); untied legs quiet
+on own bands; present twin healthier. Scorer tally [5,6,7,8,10] verified, s9 never read,
+dw invariant. **sh selectivity demonstration carries at 5F/0N.**
+
+**(2) Earned-salience (Amendment-A) read:** DOES-NOT-LAND 0/5 BOTH arms, reader vs fresh
+re-implementation zero mismatches. Dwell arm fate-shared on all 5 seeds (id/bg
+ratio-of-ratios 0.64–1.87); shuffle NOT universally co-directional (s0 anti-directional
+bg-rose/id-fell; s2 nuis rose) — neither near the landing signature. K-invariant letters:
+zero landers at any symmetric knob ≥0.5; three pathological-K formal landings (dwell s3,
+dwell s4, shuffle s1 — control-arm, largest ratio-of-ratios 2.67, strengthens the
+no-differential reading); max landers 1/5 per arm at any K. Borderline dwell s0 surfaced
+(positive bg slope blocks all re-cuts; id<bg blocks all symmetric ones). Two cosmetic
+reader-hygiene notes recorded, not patched.
+
+**(3) Guiding-List trigger, plain reading: leg 1 lands (5F/0N sh), leg 2 does NOT —
+trigger does not fire, candidate stays HELD.** Entry untouched; annotation/re-pose =
+Jason's ruling. **Open: dw standing; earned-salience re-pose/annotation.**
+
+Verification: 5 refute-default lenses + 5 adjudications; verdict artifact
+byte-reproduced; 2 reading-changing framing corrections (fate-shared rescoped to dwell;
+three-not-two pathological landings) recorded as written; draft-gloss-corrected pattern
+holds again (no letter has ever flipped in review, glosses regularly do).

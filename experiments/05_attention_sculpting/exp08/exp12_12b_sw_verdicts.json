@@ -126,12 +126,46 @@
             "den_subfloor": 0.838
           }
         }
+      },
+      {
+        "block": "sh",
+        "seed": 10,
+        "onset_present": 3000,
+        "onset_absent": null,
+        "status": "READ",
+        "fired": true,
+        "fire_t": 11400,
+        "band": 0.006353,
+        "sustained_N": 2,
+        "Sw_mean": 0.0192,
+        "Sw_max": 0.32366,
+        "Sw_frac_above": 0.5034,
+        "longest_run": 46,
+        "n_windows": 439,
+        "dose_visibility": {
+          "d_a_mean": -0.03892,
+          "d_dist_mean": 0.00941,
+          "composite_S_mean": 0.03395
+        },
+        "collapse_falsifier": {
+          "present": {
+            "asg_cat_mean": 0.03061,
+            "den_subfloor": 0.169
+          },
+          "absent": {
+            "asg_cat_mean": 0.00796,
+            "den_subfloor": 0.738
+          }
+        }
       }
     ],
-    "n_read": 4,
-    "fired": 4,
+    "n_read": 5,
+    "fired": 5,
     "nofire": 0,
     "extension_included": false,
+    "substitution": {
+      "9": 10
+    },
     "outcome": "S_w-FIRES",
     "action": null
   },
@@ -275,6 +309,7 @@
     "fired": 3,
     "nofire": 1,
     "extension_included": false,
+    "substitution": null,
     "outcome": "S_w-FIRES",
     "action": null
   }
