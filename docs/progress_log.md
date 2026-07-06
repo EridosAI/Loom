@@ -2026,3 +2026,22 @@ reproduced end-states — no .pt saved, so deterministic reproduction): 12b pres
 shp_s23 (num 1.38), split s0 pre/post-conversion, a rig-1 arm. Fork: (a) marginal-until-
 conversion -> conversion-dynamics axis (dose/horizon); (b) EXP12 contextual -> fabric axis.
 Canon 10.21.5.
+
+
+---
+
+## 2026-07-06 — EXP13 retro marginal-map probe → FORK (a): operator marginal-collapse is PROGRAM-WIDE; EXP13 revealed it, didn't break it
+
+OBSTACLE surfaced: committed EXP12 runs NOT reproducible from current code (code drift +
+read-coupling; no .pt saved) -> reproduced-state probes can't certify committed operators.
+But exam_acc columns ARE the operator's completion accuracy (authoritative, no reproduction).
+DIRECT reads (pooled post-onset exams): shp_s23 (num 1.38, healthiest evocation) 0.496 AT
+CHANCE; dwell_s1 (rig-1, num 3.87) 0.488 AT CHANCE; split_s0 0.530 (7.5 SE, 27-window run) =
+REAL but WEAK (+3%) departure = existence proof holds weakly. Reproductions add: operator is a
+near-constant FUNCTION (output spread ~1e-4) = genuine marginal-collapse. FORK -> (a): option
+(b) refuted (EXP12 operators marginal too, even at strongest evocation); EXP13's gate is the
+FIRST instrument that measured completion directly -> revealed a program-wide default, didn't
+break anything. Reframe PROMOTED from hypothesis toward measured: operator marginal-collapse =
+mechanism of sensitivity-without-conversion. Forward axis = CONVERSION DYNAMICS (dose/horizon/
+signal), manufacturing-class trap on loss-engineering stands. Canon 10.21.6. Historical-commit
+certification offered not done (direct reads answer the fork). STOPPED for next ruling.

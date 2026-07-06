@@ -1,0 +1,38 @@
+{
+  "arm": "exp12_12bc_shp",
+  "seed": 23,
+  "no_word": false,
+  "checkpoints": [
+    80000,
+    160000
+  ],
+  "reads": [
+    {
+      "cat_acc": 0.5,
+      "completed_word_spread_members": 0.012871,
+      "completed_word_spread_random": 1.975568,
+      "d_to_marginal": 0.00293,
+      "d_to_correct_token": 0.69818,
+      "word_token_sep": 1.3959,
+      "vision_from_word_shift": 0.002637,
+      "vision_from_word_frac_of_wordsep": 0.00189,
+      "interpretation": "MARGINAL (context-blind: cat_acc~0.5, output~constant, sits at marginal)",
+      "t": 80000,
+      "asg_cat": 0.0355
+    },
+    {
+      "cat_acc": 0.5,
+      "completed_word_spread_members": 0.034713,
+      "completed_word_spread_random": 1.384721,
+      "d_to_marginal": 0.00932,
+      "d_to_correct_token": 0.69929,
+      "word_token_sep": 1.3959,
+      "vision_from_word_shift": 0.005619,
+      "vision_from_word_frac_of_wordsep": 0.00403,
+      "interpretation": "MARGINAL (context-blind: cat_acc~0.5, output~constant, sits at marginal)",
+      "t": 160000,
+      "asg_cat": 0.0548
+    }
+  ],
+  "note": "retro marginal-map probe; deterministic reproduction + dc_track@BLOCK; read-only"
+}

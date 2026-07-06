@@ -1,0 +1,66 @@
+{
+  "arm": "exp12_split",
+  "seed": 0,
+  "no_word": false,
+  "checkpoints": [
+    40000,
+    130000,
+    230000,
+    303000
+  ],
+  "reads": [
+    {
+      "cat_acc": 0.5,
+      "completed_word_spread_members": 0.016816,
+      "completed_word_spread_random": 2.303071,
+      "d_to_marginal": 0.00488,
+      "d_to_correct_token": 0.70133,
+      "word_token_sep": 1.4019,
+      "vision_from_word_shift": 0.004001,
+      "vision_from_word_frac_of_wordsep": 0.00285,
+      "interpretation": "MARGINAL (context-blind: cat_acc~0.5, output~constant, sits at marginal)",
+      "t": 40000,
+      "asg_cat": 0.0212
+    },
+    {
+      "cat_acc": 0.5,
+      "completed_word_spread_members": 0.009951,
+      "completed_word_spread_random": 1.392621,
+      "d_to_marginal": 0.00306,
+      "d_to_correct_token": 0.70139,
+      "word_token_sep": 1.4019,
+      "vision_from_word_shift": 0.00031,
+      "vision_from_word_frac_of_wordsep": 0.00022,
+      "interpretation": "MARGINAL (context-blind: cat_acc~0.5, output~constant, sits at marginal)",
+      "t": 130000,
+      "asg_cat": 0.0012
+    },
+    {
+      "cat_acc": 0.5,
+      "completed_word_spread_members": 0.000436,
+      "completed_word_spread_random": 1.544469,
+      "d_to_marginal": 0.00011,
+      "d_to_correct_token": 0.70098,
+      "word_token_sep": 1.4019,
+      "vision_from_word_shift": 0.000372,
+      "vision_from_word_frac_of_wordsep": 0.00027,
+      "interpretation": "MARGINAL (context-blind: cat_acc~0.5, output~constant, sits at marginal)",
+      "t": 230000,
+      "asg_cat": 0.0
+    },
+    {
+      "cat_acc": 0.5,
+      "completed_word_spread_members": 9e-06,
+      "completed_word_spread_random": 0.771037,
+      "d_to_marginal": 0.0,
+      "d_to_correct_token": 0.70121,
+      "word_token_sep": 1.4019,
+      "vision_from_word_shift": 0.002179,
+      "vision_from_word_frac_of_wordsep": 0.00155,
+      "interpretation": "MARGINAL (context-blind: cat_acc~0.5, output~constant, sits at marginal)",
+      "t": 303000,
+      "asg_cat": 0.0
+    }
+  ],
+  "note": "retro marginal-map probe; deterministic reproduction + dc_track@BLOCK; read-only"
+}

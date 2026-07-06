@@ -1,0 +1,38 @@
+{
+  "arm": "exp12_dwell",
+  "seed": 1,
+  "no_word": false,
+  "checkpoints": [
+    166500,
+    303000
+  ],
+  "reads": [
+    {
+      "cat_acc": 0.5,
+      "completed_word_spread_members": 0.037255,
+      "completed_word_spread_random": 1.444208,
+      "d_to_marginal": 0.00646,
+      "d_to_correct_token": 0.8749,
+      "word_token_sep": 1.5301,
+      "vision_from_word_shift": 0.002234,
+      "vision_from_word_frac_of_wordsep": 0.00146,
+      "interpretation": "MARGINAL (context-blind: cat_acc~0.5, output~constant, sits at marginal)",
+      "t": 166500,
+      "asg_cat": 0.0003
+    },
+    {
+      "cat_acc": 0.5,
+      "completed_word_spread_members": 0.164051,
+      "completed_word_spread_random": 5.268278,
+      "d_to_marginal": 0.03457,
+      "d_to_correct_token": 0.77867,
+      "word_token_sep": 1.5301,
+      "vision_from_word_shift": 0.004006,
+      "vision_from_word_frac_of_wordsep": 0.00262,
+      "interpretation": "MARGINAL (context-blind: cat_acc~0.5, output~constant, sits at marginal)",
+      "t": 303000,
+      "asg_cat": 0.0162
+    }
+  ],
+  "note": "retro marginal-map probe; deterministic reproduction + dc_track@BLOCK; read-only"
+}

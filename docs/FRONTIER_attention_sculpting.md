@@ -2335,3 +2335,47 @@ the move is a READ-ONLY retro probe, on saved/reproduced end-states, NO new trai
   converted LATE, and EXP13 cal was 160k vs the 12b dwelled 303k). (b) EXP12 OPERATORS
   CONTEXTUAL → EXP13's regime (lawful drift / mixed-W dilution) broke something specific; the
   axis is the FABRIC. Nothing verdict-grade; the probe decides the axis before any lever.
+
+### §10.21.6 — RETRO MARGINAL-MAP PROBE → FORK (a): the operator marginal-collapse is the PROGRAM-WIDE default; EXP13 revealed it, didn't break it (2026-07-06)
+
+**Obstacle surfaced first (not papered over):** the committed EXP12 runs are NOT reproducible
+from current code — no `.pt` end-states were saved, and deterministic reproduction FAILS
+because (i) the runs were produced by earlier `exp12_arms.py` versions (CODE DRIFT since the
+split/12b/rig-1 commits) and (ii) the runner's interleaved reads couple into the near-floor
+trajectory (the §10.21.4 dc_track subtlety, program-wide). A faithful runner-replication still
+diverges from committed split_s0 by t≈2100. So the reproduced-state probes cannot CERTIFY the
+committed operators. **But the completion question does not need reproduction:** the committed
+artifacts' own `exam_acc` columns ARE the operator's word-completion accuracy, recorded at run
+time — an authoritative direct read.
+
+**Direct-artifact answer (no reproduction; pooled over all post-onset scheduled exams):**
+- **exp12_12bc_shp_s23** (present twin, num_max **1.38** — the healthiest evocation on record):
+  operator completion **0.496** over 7,012 exams = **AT CHANCE**. Strong word→vision evocation,
+  marginal vision→word completion — sensitivity-without-conversion in a single run.
+- **exp12_dwell_s1** (rig-1, num_max **3.87** — the strongest rig-1 evocation): **0.488** over
+  12,263 exams = **AT CHANCE**.
+- **exp12_split_s0**: **0.530** over 13,746 exams (**7.5 SE** above chance; longest sustained
+  run 27 windows > 0.6) = a REAL but SMALL (+3%) departure — the existence proof HOLDS but is
+  weak. The reproductions (trajectory-divergent by the obstacle above, yet architecturally
+  robust) add that the operator is a near-CONSTANT function (completed-word output spread ~1e-4
+  across inputs spanning 0.1–5.2 in scale) — so the chance accuracy is genuine marginal-collapse,
+  not a contextual-but-wrong map.
+
+**FORK RESOLVED → (a), and it UNIFIES.** Option (b) is refuted: EXP12 operators are NOT
+contextual — they sit at the marginal on completion exactly as EXP13's do, even at the ledger's
+strongest evocations (num 1.38, 3.87). So EXP13's lawful-drift / mixed-W regime did NOT break
+something specific; **EXP13's gate is simply the FIRST instrument that measured the operator's
+completion directly**, and it revealed a program-wide standing default. **This promotes the
+reframe from hypothesis toward measured:** operator marginal-collapse IS the mechanism of
+sensitivity-without-conversion — assignment/content-side sensitivity is alive (num, asg, S_w),
+the completer rides the marginal. The existence proof (split s0, +3% sustained) shows the
+operator CAN leave the marginal, but only weakly and rarely across the whole program — so **the
+forward axis is CONVERSION DYNAMICS** (what regime lets the completer leave the marginal:
+dose / horizon / signal strength), with the standing manufacturing-class trap on loss-engineering.
+
+**Standing:** the answer rests on the committed `exam_acc` columns (authoritative) + the
+reproductions (architectural, trajectory-robust). A belt-and-suspenders CERTIFICATION of the
+exact committed operator states would require checking out each run's HISTORICAL commit and
+reproducing there — offered, not done (the direct reads already answer the fork). Retro probe
+artifacts `retro_marginal_*` committed with the reproduction-divergence caveat. Nothing
+verdict-grade; EXP13 holds; the gate stays UNPOSABLE-AT-CURRENT-COMPLETER.
