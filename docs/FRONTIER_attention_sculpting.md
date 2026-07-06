@@ -2131,3 +2131,35 @@ memory. EXP13 builds the well-formed store; it does not forecast.
 participation-probe band → stage-two proposal) → participation-gate ruling → core arms ∥ twins ∥
 salience leg → cell read behind verification → one review per block. Nothing verdict-grade runs
 before the gate ruling. **Frontier now = EXP13 build.**
+
+### §10.21.1 — RIG BUILT + THE FLANK-INDEPENDENCE FLAG + the pre-registered discriminator (2026-07-06; recorded BEFORE cal)
+
+**Built (`6ec4b94`; canon `7d03d3c`), smoke green end-to-end:** the lawful-drift fabric
+(law-params on a NEW dedicated substream, SEED_LAW=90000; residual-about-law recorded per
+wave) + the W=3 interior-mask loop (EXP13Loop(EXP12Loop); `_l_jepa` overridden to a hard
+zero — the base's within-window pair loop is inert at W=1 but WOULD fire at W=3; the W>1
+forward guard is passed structurally). Smoke: per-lag-on-residuals ⟂ member 0.16 < 0.22;
+law-params ⟂ member 214 < 278; lawful-window 0.844 > 0.75 (theory 0.818); τ residual
+decorrelation at lag-4 = 1/e (matches the τ=4 pin); drift/residual 0.54; interior-only
+masking verified; loop.gen parity across arms.
+
+**THE FLAG (surfaced at build, not patched):** a build-diligence probe found the interior
+completion FLANK-INDEPENDENT at ≤6k steps — participation gap exactly 0, blinded-read
+penalty ~2e-7. Root cause: the operator localizes cells only via `pos_extract` reading the
+content-borne drift (the u-carrier was correctly DROPPED — "time is felt, not coded"), and
+pre-acquisition the operator substrate is near-collapsed while vision emissions are
+near-identical across waves. **Ruled at GO: not patching was right — injecting a position
+code to make the gate fire would MANUFACTURE the very participation the gate exists to
+measure** (the §10.20-era manufacturing-class line, applied to the instrument itself).
+
+**Pre-registered discriminator (ruled at GO, recorded before any cal number exists):** the
+participation-gap-vs-acquisition curve — gap at panel cadence, aligned per seed to the
+num-floor onset. BENIGN → the gap OPENS after onset; STRUCTURAL → flat-at-noise through
+horizon ON ACQUIRED SEEDS. The distinguishing read is **"acquired AND flat"** — never bare
+flatness (pre-acquisition flatness is expected under both readings and licenses nothing).
+**Named confound: MIDPOINT-SHORTCUT contaminates the window-blinded read, not the gate**
+(flanks→midpoint is cheap where drift is locally linear, even in the benign world) — the
+gate's law-breaking decoys are the discriminator; the blinded read is texture; the 2e-7
+alarm never rides on the blinded read. **If the gate stays dead on acquired seeds: STOP —
+the F3 ruling returns to chat; design space = doctrine-compatible position signal
+(content-borne, felt-not-coded) vs W geometry, before any carrier talk.**

@@ -1893,3 +1893,25 @@ midpoint-shortcut wrong-reason class + the pre-registered cell table). §12.E up
 ("dwell-ordering buys nothing") was scoped to a world without physics; EXP13 gives the
 world a law and re-asks. Sequence: canon → build → cal pre-flight → participation gate →
 core arms. Nothing verdict-grade before the gate ruling.
+
+
+---
+
+## 2026-07-06 — EXP13 GO on verify + cal; the flank-independence flag ruled + the discriminator PRE-REGISTERED
+
+Jason's GO with two additions, recorded before any cal run:
+**(1) Discrimination form pre-registered:** participation-gap-vs-acquisition curve (panel
+cadence, aligned to each seed's num onset). Benign = gap opens after onset; structural =
+flat-at-noise through horizon on ACQUIRED seeds. The distinguishing read is "acquired AND
+flat" — pre-acquisition flatness licenses nothing.
+**(2) Confound named in advance:** midpoint-shortcut contaminates the WINDOW-BLINDED read
+(flanks→midpoint cheap on locally-linear spans, even benign) — the PARTICIPATION GATE is
+the discriminator (decoys break the law itself); the blinded read is texture.
+Flag handling ratified: no patch — a position code injected to make the gate fire would
+manufacture the participation the gate measures. If dead on acquired seeds: STOP, F3
+ruling in chat; design space = doctrine-compatible position signal (content-borne,
+felt-not-coded) vs W geometry, before any carrier talk.
+Canon: prereg §4 + FRONTIER §10.21.1. stage_one_read13 extended with the aligned gap
+curve (pre-onset noise reference + post-onset read). Next: verify list (report, don't
+patch) → cal {20–24} × core arms → stage-one numbers + stage-two proposal + gate ruling
+request in chat. Nothing verdict-grade before the gate ruling.

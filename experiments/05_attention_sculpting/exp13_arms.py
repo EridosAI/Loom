@@ -510,6 +510,31 @@ def stage_one_read13(rec: dict) -> dict:
             gap_max=round(max(gaps), 5), n_panels=len(gaps),
             true_err_mean=round(statistics.mean(p["true_err"] for p in part.values()), 5),
             decoy_err_mean=round(statistics.mean(p["decoy_err"] for p in part.values()), 5))
+        # THE PRE-REGISTERED DISCRIMINATOR (§4, ruled at GO 2026-07-06, recorded before
+        # cal): the gap-vs-acquisition curve, aligned to the num-floor onset. Pre-onset
+        # panels = the noise reference; the read is "acquired AND flat" vs "gap opens
+        # post-onset". Band/N are stage-two; stage-one reports raw aligned numbers.
+        curve = sorted(((int(t), p["participation_gap"]) for t, p in part.items()),
+                       key=lambda kv: kv[0])
+        pre = [g for t, g in curve if onset is None or t < onset]
+        post = [g for t, g in curve if onset is not None and t >= onset]
+        pc = dict(panels=curve, onset=onset,
+                  pre_onset=(dict(n=len(pre), mean=round(statistics.mean(pre), 5),
+                                  sd=round(statistics.stdev(pre), 5) if len(pre) > 1 else None,
+                                  max_abs=round(max(abs(g) for g in pre), 5))
+                             if pre else None))
+        if post:
+            pre_max = max(abs(g) for g in pre) if pre else None
+            pc["post_onset"] = dict(
+                n=len(post), mean=round(statistics.mean(post), 5),
+                max=round(max(post), 5), end=round(post[-1], 5),
+                frac_above_pre_max_abs=(round(sum(1 for g in post
+                                                  if pre_max is not None and g > pre_max)
+                                              / len(post), 4) if pre_max is not None else None))
+        pc["discrimination"] = ("PRE-ACQUISITION ONLY — licenses nothing" if not post else
+                                "post-onset read available (benign = opens; structural = "
+                                "acquired-and-flat; band at stage-two)")
+        out["participation_curve"] = pc
     if onset is None:
         out["note"] = "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
         return out

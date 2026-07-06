@@ -82,6 +82,23 @@ built without physics. EXP13 gives the world a law and re-asks.
 - **CLAIM CEILING (written now):** licensed = "order/law PARTICIPATES in completion";
   never "law-family internalized" at v1. Family-internalization (generalization probes)
   is unpayable at this geometry — fenced to a later rung.
+- **STAGE-ONE DISCRIMINATION FORM (pre-registered 2026-07-06, BEFORE any cal run; the
+  build-flag discriminator, ruled at GO):** the participation-gap-vs-acquisition CURVE —
+  gap read at panel cadence, aligned per seed to the num-floor acquisition onset.
+  BENIGN (the operator learns to read the drift as position post-acquisition) predicts
+  the gap OPENS after onset; STRUCTURAL (the carrier-free operator cannot localize
+  waves) predicts flat-at-noise through horizon ON ACQUIRED SEEDS. **The distinguishing
+  read is "ACQUIRED AND FLAT" — not "flat": pre-acquisition flatness is expected under
+  both readings and licenses nothing.**
+- **NAMED CONFOUND (in advance, ruled at GO): MIDPOINT-SHORTCUT contaminates the
+  window-blinded read, not the gate.** Flanks→midpoint is cheap where the drift is
+  locally linear, so a near-zero blinded-read penalty on smooth spans arises even in
+  the benign world. The PARTICIPATION GATE is the discriminator — its decoys break the
+  LAW itself; the window-blinded read is TEXTURE. The build-flag alarm never rides on
+  the blinded read.
+- **If the gate stays dead on acquired seeds: STOP** — the F3 ruling returns to chat;
+  the design space is "doctrine-compatible position signal (content-borne,
+  felt-not-coded)" vs "W geometry", BEFORE any carrier talk.
 
 ## 5. The verdict (core arms + pre-named cells)
 
