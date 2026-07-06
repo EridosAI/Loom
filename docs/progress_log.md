@@ -2007,3 +2007,22 @@ draft-flip pattern). RULING OWED: gate + next-move. The fenced axis (position si
 geometry) is DOWNSTREAM of operator marginal-collapse; developmental widening (escalation A)
 is a W-lever, likely wrong if the collapse is W-independent (it is). Artifact supersession:
 mixed-W exp13 cal artifacts replace the pure-W3 8ffe6f5 ones at those paths.
+
+
+---
+
+## 2026-07-06 — EXP13 RATIFIED + REFRAME (hypothesis) + GATE RULED UNPOSABLE-AT-CURRENT-COMPLETER; retro marginal-map probe launching
+
+Ratified: draft-flip owned/caught; W1-CRUTCH + escalation-A retired (W-knob can't fix
+W-independent collapse); num=operator-mediated; housekeeping noted. REFRAME (named
+hypothesis, not verdict): operator marginal-collapse = the MECHANISM of EXP12's campaign-wide
+sensitivity-without-conversion (assignment/content-side alive, completion at floor); EXP13's
+gate is the first instrument requiring contextual COMPLETION. Existence proof the operator can
+leave the marginal: split s0 late sustained conversions. GATE RULED UNPOSABLE-AT-CURRENT-
+COMPLETER (pause not F3; wall upstream of EXP13 design; cell table untouched; EXP13 holds).
+NEXT = measure not argue; trap named (loss-engineering to leave the marginal is
+manufacturing-class until we know the conversion regime). Retro marginal-map probe (read-only,
+reproduced end-states — no .pt saved, so deterministic reproduction): 12b present twin
+shp_s23 (num 1.38), split s0 pre/post-conversion, a rig-1 arm. Fork: (a) marginal-until-
+conversion -> conversion-dynamics axis (dose/horizon); (b) EXP12 contextual -> fabric axis.
+Canon 10.21.5.

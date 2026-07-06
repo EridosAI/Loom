@@ -2296,3 +2296,42 @@ mixed-W cal artifacts (`exp13_{lawful,lawscram}_s20-24`, w3_rate + participation
 mixed_w present) SUPERSEDE the pure-W=3 §10.21.2 artifacts at those paths; the pure-W=3 wall
 artifacts live at commit 8ffe6f5. Nothing verdict-grade ran; the cell table is untouched; no
 arm is a fix.
+
+### §10.21.5 — RATIFIED + THE REFRAME (named hypothesis) + GATE RULED UNPOSABLE-AT-CURRENT-COMPLETER + the retro marginal-map probe (2026-07-06)
+
+**Ratified (Jason):** the draft-flip owned and caught by the pass (the pattern holds);
+W1-CRUTCH RETIRED on a refuted premise; escalation (A) developmental widening RETIRED with
+it — a W-schedule knob cannot fix a W-INDEPENDENT collapse; num = OPERATOR-MEDIATED evocation
+(acquisition is not a content read) recorded; housekeeping (artifact supersession) noted.
+
+**THE REFRAME — entered as a NAMED HYPOTHESIS, not a verdict.** Check the finding against the
+ledger before ruling: EXP12's campaign-wide result was **sensitivity-without-conversion** —
+assignment alive, exams at floor, everywhere, both arms; 12b showed teaching on CONTENT-side
+separability (S_w) while exams sat at chance. **EXP13's gate is the FIRST instrument that
+requires contextual COMPLETION; every prior verdict axis lived on the assignment / content
+side.** Candidate unification: **operator marginal-collapse is the MECHANISM of
+sensitivity-without-conversion** — completion rides the marginal while sensitivity lives
+assignment/content-side. The ledger holds ONE existence proof that the operator CAN leave the
+marginal: **split s0's late sustained conversions** (§10.20.4).
+
+**GATE RULING: UNPOSABLE-AT-CURRENT-COMPLETER — a PAUSE, not F3-dead.** The wall is UPSTREAM
+of EXP13's design; the cell table is untouched; **EXP13 holds** (the lawful-dynamics rig is
+faithful — it is the completer that has not yet left the marginal, not the fabric that is
+wrong). No F3, because the premise of F3 (the environment cannot represent the target) is not
+what failed — the operator does not complete contextually at all, anywhere prior.
+
+**NEXT MOVE — MEASURE, DON'T ARGUE. Trap named: "pull the completer off the marginal" via
+LOSS ENGINEERING is MANUFACTURING-CLASS until we know what regime conversion lives in.** So
+the move is a READ-ONLY retro probe, on saved/reproduced end-states, NO new training:
+- **Retro marginal-map probe** on: (1) the 12b PRESENT twin `exp12_12bc_shp_s23` (num 1.38 —
+  the healthiest evocation on record); (2) split s0 PRE- and POST-conversion checkpoints
+  (the existence proof); (3) a rig-1 arm. One question: **was the operator marginal there
+  too?** (controlled category-conditioned W=1 completion accuracy + output spread = the
+  EXP13 probe, applied retrospectively). Determinism note: no `.pt` end-states are saved for
+  these runs, so the probe REPRODUCES each committed run deterministically (seed+order+
+  threads, exact) and reads the operator read-only — no new regime, no new training.
+- **Decision fork:** (a) MARGINAL EVERYWHERE UNTIL CONVERSION → operator marginal-collapse is
+  the standing default; the axis is CONVERSION DYNAMICS (dose ladder, horizon — split s0
+  converted LATE, and EXP13 cal was 160k vs the 12b dwelled 303k). (b) EXP12 OPERATORS
+  CONTEXTUAL → EXP13's regime (lawful drift / mixed-W dilution) broke something specific; the
+  axis is the FABRIC. Nothing verdict-grade; the probe decides the axis before any lever.
