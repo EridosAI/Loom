@@ -2052,3 +2052,82 @@ DEMONSTRATED, scope-tagged SHUFFLED FABRIC; leg 2 — the earned-salience curve 
 with out-of-block confirmation at s10 and health-protection at preponderance.
 
 No §10.20.6/§10.20.7 rulings remain open after this amendment.
+
+## §10.21 — EXP13 SCOPING RESOLVED (2026-07-06, checkpoint): four forks ruled + the dose pin; prereg RATIFIED AT CHECKPOINT; frontier → EXP13 build
+
+**The question EXP13 re-asks.** EXP12's regime-bound rider (§10.20/§10.20.1) — "dwell-ordering
+buys nothing for routing" — was scoped, by ruling, to a world built WITHOUT physics: an i.i.d.
+member draw dressed in a nuisance walk that reverts to a fixed onset pose, so cross-wave order
+carried no *logic*. EXP13 gives the world a LAW and re-asks the direct question: **does lawful
+cross-wave structure make order load-bearing?** The Guiding-List candidate's leg-2 venue
+(earned-salience, re-tagged UNPOSABLE-AT-W=1 at §10.20.7-AMEND) opens here, where W=3 spans time.
+Prereg: `docs/EXP13_LAWFUL_DYNAMICS_PREREG.md` (RATIFIED AT CHECKPOINT 2026-07-06; §9.1–.6 ratified
+by CC order, §9.7 stage-two surfaces at cal). Assembly of rulings, not new design; NOTHING numeric
+transports (proven twice in 12b — every θ/band/N/horizon cut fresh at EXP13's own two-stage cal).
+
+**The learner-not-world doctrine (recorded at Fork 1, carried as the governing line).** The
+anti-forward guard lives on the LEARNER, never on the world. v1's illogical world was scaffolding,
+not doctrine — a world can have lawful physics without any component acquiring a next-step
+objective. The deleted next-wave-prediction term STAYS DELETED; the recorded W>1 guard is passed
+STRUCTURALLY by §2's geometry (interior-only masking is two-sided completion, not forecasting), not
+by keeping the window at 1. This is the pivot that lets W grow to 3 without re-admitting a forward loss.
+
+**The four forks (ruled), the dose pin, and the wrong-reason class:**
+- **Fork 1B — lawful drift + OU residual (the fabric).** The nuisance anchor MOVES:
+  constant-velocity drift, velocity drawn per dwell from one fixed family (member-independent),
+  dying at the boundary (the throw belongs to the object's appearance — law tied to perception).
+  The OU residual RIDES the drift so that **two-sided interpolation strictly beats forward
+  extrapolation — sideways-beats-forward BY CONSTRUCTION**: internalizing the law is paid through
+  completion geometry, never forecasting. Rejected on record: pure kinematics (world pays
+  extrapolation — trap #1 as fabric) and event-grammar (the real destination — a later rung, named).
+  Asserts extended: **law-params ⟂ member** (velocity never whispers identity — same coin,
+  elephants and mice, now in motion) and the per-lag machinery runs on **RESIDUALS-ABOUT-LAW**;
+  k ⟂ member, schedule ⟂ member carry; τ-ordering re-derived against drift scale at stage-one.
+- **Clause-1 relocation (recorded, regime-scoped).** "Unpredictable as a sequence" moves from
+  within-dwell increments to **LAW-INSTANCE draws across dwells** (params fresh per dwell). The law
+  FAMILY is fixed and learnable — clause 3 now carries the load; clause 2 (law-params ⟂ member)
+  unchanged and extended. This relocation is *scoped to this regime*: it is what makes order
+  carry logic without the world forecasting itself.
+- **Fork 2b — symmetric window, interior mask (the completer).** W = 3 sliding window (stride 1);
+  masked slots INTERIOR-ONLY, completed from both sides. Terminal-position masking is forward
+  prediction in costume — excluded by construction. Windows slide over the RAW stream with no
+  boundary alignment (clipping at dwell edges would code the boundary); boundary-crossing windows
+  stay in training, honest, and TAGGED. Shortcut-through-trace is now REAL (a mid-dwell mask has a
+  same-dwell neighbor in-window) → the banked WINDOW-BLINDED READ goes live as its discriminator.
+- **Fork 3C — the law-participation probe + the claim ceiling (the gate).** A read-only
+  manipulation check — completion on true windows vs LAW-BROKEN DECOYS (cross-dwell flank-swaps,
+  residual-matched) — that MUST fire before any verdict cell is interpretable. No participation →
+  cells UNINTERPRETABLE by pre-registration (not dead, not alive — unposed).
+- **Named wrong-reason class: MIDPOINT-SHORTCUT** (participation-without-internalization). At
+  W=3 / constant-velocity, a neighbor-midpoint solves the interior anchor without internalizing
+  anything. Therefore the **CLAIM CEILING is written now**: EXP13 licenses only "order/law
+  PARTICIPATES in completion," never "the law family is internalized." Family-internalization
+  (generalization probes) is unpayable at this geometry — fenced to a later rung.
+- **The dose pin (subtractive curriculum).** Manifest-time floor: lawful-window fraction ≥ 0.75
+  (at E[k]=11, W=3, ~82% expected). Breach → raise E[k], recorded, never silent. k=2 dwells
+  contribute zero lawful windows (P=0.1), priced in and monitored. Boundary windows are excluded
+  from the participation probe by construction, ride as companion columns, and are never verdict
+  carriers.
+- **Fork 4 — the arm set (parallel blocks, one review each).** CORE: A-LAWFUL vs A-LAWSCRAM
+  (identical wave multiset + identical mask schedule, full-stream order-shuffled — the arms differ
+  ONLY in whether order carries the law), gated on Fork 3C. 12b TWINS ride along on the lawful
+  fabric (does teaching selectivity strengthen where order has logic?). EARNED-SALIENCE leg 2 is
+  now mechanically posable (W=3 spans time) — the Guiding-List promotion leg's proper venue,
+  expectation-not-gate. Banked (trigger = both-survive): the within-dwell-scramble disambiguation
+  arm (attributes law vs dwell-grouping).
+
+**The pre-registered cell table (gate fires first; seeds {0–4}):** lawful-survives / scram-dies →
+*order-with-logic is load-bearing — the rider confirmed* (opens dwelled-teaching re-pose +
+earned-salience leg 2 as primaries); both-survive → *law participates but is not load-bearing for
+routing at these constants* (named finding, rider unconfirmed; the banked disambiguation arm fires);
+both-die → world/constants, NOT rider-refutation (thermometer + constants audit); lawful-dies /
+scram-survives → ANOMALY (instrument audit, named finding only).
+
+**Future-pointer (canon-explicit, never a training loss here):** forward capability later = reading
+the store FORWARD — cued calling-forth (mechanism-map item 3), a downstream use of well-formed
+memory. EXP13 builds the well-formed store; it does not forecast.
+
+**Sequence:** checkpoint read → build → cal pre-flight (stage-one incl. τ re-derivation +
+participation-probe band → stage-two proposal) → participation-gate ruling → core arms ∥ twins ∥
+salience leg → cell read behind verification → one review per block. Nothing verdict-grade runs
+before the gate ruling. **Frontier now = EXP13 build.**

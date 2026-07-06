@@ -1872,3 +1872,24 @@ re-tagged UNPOSABLE-AT-W=1 → visibility/lawful-dynamics rung; CANDIDATE-HELD.
 out-of-block confirmation at s10 and health-protection at preponderance.**
 
 No §10.20.6/§10.20.7 rulings remain open.
+
+
+---
+
+## 2026-07-06 — EXP13 CHECKPOINT: prereg RATIFIED, scoping unit to canon; frontier → EXP13 build
+
+CC ORDER (post-checkpoint). Prereg docs/EXP13_LAWFUL_DYNAMICS_PREREG.md flipped DRAFT →
+RATIFIED AT CHECKPOINT: §9.1–.6 ratified by the order (velocity family U[0.05,0.2]·σ_f
+random sign + elastic reflection; τ=4 default, residual-about-law decorrelation
+re-derived at stage-one; interior-mask coin carried from 12b incl. rate, one slot/window,
+stride 1; A-LAWSCRAM = full-stream shuffle identical mask schedule + within-dwell-scramble
+banked; decoys = residual-matched flank-swaps from other dwells; lawful-window floor 0.75).
+The three [SLOTTED] items (§2/§5/§6) resolved via §9.3/§9.4. §9.7 stage-two stays CC's to
+surface at cal. FRONTIER §10.21 = the EXP13 scoping unit (four forks + dose pin +
+clause-1 relocation regime-scoped + learner-not-world doctrine + future-pointer +
+midpoint-shortcut wrong-reason class + the pre-registered cell table). §12.E updated.
+
+**The question:** does lawful cross-wave structure make order load-bearing? EXP12's rider
+("dwell-ordering buys nothing") was scoped to a world without physics; EXP13 gives the
+world a law and re-asks. Sequence: canon → build → cal pre-flight → participation gate →
+core arms. Nothing verdict-grade before the gate ruling.

@@ -1033,3 +1033,16 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   CLOSED (lottery-at-current-power; re-poses at lawful-dynamics). HEADLINE: cross-scene
   contrast demonstrated on shuffled fabric, 4F/0N, with out-of-block confirmation at s10
   and health-protection at preponderance. NO RULINGS OPEN.]**
+
+- **[2026-07-06 — EXP13 CHECKPOINT (FRONTIER §10.21): prereg RATIFIED AT CHECKPOINT
+  (docs/EXP13_LAWFUL_DYNAMICS_PREREG.md; §9.1–.6 ratified by CC order, §9.7 stage-two
+  surfaces at cal, three [SLOTTED] resolved). FRONTIER = EXP13 build. The question:
+  does lawful cross-wave structure make order load-bearing? Four forks: lawful drift +
+  OU residual fabric (sideways-beats-forward by construction, law-params ⟂ member,
+  per-lag on residuals-about-law); W=3 interior-mask completer (terminals never masked,
+  W>1 forward guard passed structurally; window-blinded read live); law-participation
+  gate (must fire before any cell is interpretable) + MIDPOINT-SHORTCUT wrong-reason
+  class + claim ceiling ("order PARTICIPATES", never "law internalized"); arm set
+  (A-LAWFUL vs A-LAWSCRAM core + 12b twins + earned-salience leg 2). Dose pin:
+  lawful-window ≥ 0.75. Cell table pre-registered. FRONTIER now = EXP13 build (nothing
+  verdict-grade before the participation-gate ruling).]**
