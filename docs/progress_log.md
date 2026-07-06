@@ -2045,3 +2045,25 @@ break anything. Reframe PROMOTED from hypothesis toward measured: operator margi
 mechanism of sensitivity-without-conversion. Forward axis = CONVERSION DYNAMICS (dose/horizon/
 signal), manufacturing-class trap on loss-engineering stands. Canon 10.21.6. Historical-commit
 certification offered not done (direct reads answer the fork). STOPPED for next ruling.
+
+
+---
+
+## 2026-07-06 — FORK (a) RATIFIED (scoped) + historical certification DECLINED + CHECKPOINT CONTRACT + next move = horizon-extension arm (Jason's ruling)
+
+RATIFIED SCOPED: `completion-rides-the-marginal` = MEASURED program-wide (direct run-time
+exam_acc, cross-ledger — fork -> (a) on that alone); `near-constant-map` = SUPPORTED-NOT-
+CERTIFIED (reproductions divergent, honestly flagged); split s0 = SOLE existence proof of
+departure. Historical certification DECLINED — no saved end-states = UNBUILDABLE, and the direct
+reads already answer. LESSON becomes a STANDING CONTRACT instead: **end-state checkpointing on
+every run from now (.pt at horizon + at any registered event like conversion onset)** — this
+probe was blocked by its absence; never again (PROJECT_STATE §12.E, FRONTIER §10.21.7).
+NEXT MOVE (A) HORIZON-EXTENSION ARM (recommended): the cheapest test of "conversion is slow
+dynamics" — split s0 converted LATE (post-303k-class, coin dose) while EXP13 cal stopped at 160k.
+Extend healthy rig-1/split-class DWELLED runs to long horizon, seeds across the dose ladder's two
+LIVE rungs (scheduled = rig-1 dwell, coin = split; the zero-load rung is STRUCK), read with the
+density-matched conversion band (registered form, now cut for real per-rung). PRE-NAMED cells:
+across-seeds -> slow-dynamics confirmed (horizon axis) / s0-only -> seed lottery / dose-ordered ->
+dose axis promoted. Loss-engineering stays FENCED (manufacturing-class); EXP13 holds PAUSED.
+PRE-REGISTRATION owed before build; knob choices surfaced to Jason (horizon length, seed set,
+fresh-vs-pinned-code, per-rung band constant). STOPPED for the knob ruling + GO.

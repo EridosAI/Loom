@@ -2379,3 +2379,49 @@ exact committed operator states would require checking out each run's HISTORICAL
 reproducing there — offered, not done (the direct reads already answer the fork). Retro probe
 artifacts `retro_marginal_*` committed with the reproduction-divergence caveat. Nothing
 verdict-grade; EXP13 holds; the gate stays UNPOSABLE-AT-CURRENT-COMPLETER.
+
+### §10.21.7 — RATIFIED (scoped) + HISTORICAL CERTIFICATION DECLINED + STANDING CHECKPOINT CONTRACT + next move = horizon-extension arm (2026-07-06)
+
+**Ratified, WITH A SCOPE TAG (Jason):**
+- **MEASURED — `completion-rides-the-marginal`, PROGRAM-WIDE.** The fork resolves to (a) on the
+  direct run-time `exam_acc` columns alone (cross-ledger: shp_s23 0.496, dwell_s1 0.488,
+  split_s0 0.530). This half is promoted to measured and stands.
+- **SUPPORTED-NOT-CERTIFIED — the `near-constant-map` characterization** (output spread ~1e-4).
+  It rests on the reproductions, which are trajectory-DIVERGENT (the §10.21.6 obstacle) and
+  honestly flagged; architecturally robust but not certified. Held at supported, not measured.
+- **Split s0 = the SOLE existence proof of departure** (+3%, 7.5 SE, 27-window sustained) — one
+  run, program-wide, that the operator can leave the marginal at all.
+
+**Historical certification — DECLINED (Jason).** No saved `.pt` end-states means it is
+*unbuildable*, not merely undone; and the direct reads already answer the fork. The lesson is
+retired not by building the probe but by a **standing contract**:
+
+> **CHECKPOINT CONTRACT (binding, all runs from 2026-07-06 forward):** every run saves its
+> end-state — `.pt` at the horizon AND at any pre-REGISTERED event (e.g. conversion onset). This
+> retro probe was blocked by the absence of exactly this; never again. (See PROJECT_STATE §12.E.)
+
+**Next move — (A) HORIZON-EXTENSION ARM, recommended (Jason); the conversion-dynamics axis, the
+cheapest test of "conversion is slow dynamics."** Rationale in-record: split s0 converted LATE
+(post-303k-class, under the coin dose) while the EXP13 cal stopped at 160k — so a conversion the
+program has seen once may simply live past the horizons run so far. Design in Jason's words, to be
+pre-registered before any build:
+- Extend **healthy existing-regime runs** — rig-1 / split-class **dwelled** fabric (NOT the
+  shuffled control, NOT EXP13's lawful-drift fabric) — to **long horizon**.
+- **Seeds across the dose ladder's two LIVE rungs** = **scheduled exams** (rig-1 dwell) and
+  **coin exams** (split); the third rung (zero word-prediction load, 12b-(iii)) is STRUCK
+  (§10.20.3) and excluded.
+- Read with the **density-matched conversion band (the registered form** — §7 EXP13 prereg;
+  the naive band ran ~4× hot at halved exam density, so the two rungs' differing exam rates
+  MUST be density-matched or the cross-rung conversion read is confounded). **"Now needed for
+  real"** = its constant is cut per rung before the verdict read (stage-two discipline).
+- **Result cells PRE-NAMED (Jason):** conversions appear ACROSS SEEDS → slow-dynamics confirmed,
+  **horizon axis** / **s0-only** → seed lottery, named / **dose-ordered** (coin vs scheduled) →
+  **dose axis** promoted.
+
+**Fences carried:** loss-engineering stays **manufacturing-class FENCED** (do not build a loss
+term to pull the completer off the marginal until we know what regime conversion lives in).
+**EXP13 holds PAUSED** (gate UNPOSABLE-AT-CURRENT-COMPLETER). Knob choices owed to Jason before
+build — surfaced in chat, not picked here: horizon length; the seed set; fresh-runs-on-current-code
+vs pinned-to-historical-commit (the runs to be extended have no saved end-states, so an "extension"
+is a fresh long-horizon run in the same regime under the new checkpoint contract, not a literal
+continuation of the committed trajectories); the density-matched band's per-rung constant.

@@ -1046,3 +1046,23 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   (A-LAWFUL vs A-LAWSCRAM core + 12b twins + earned-salience leg 2). Dose pin:
   lawful-window ≥ 0.75. Cell table pre-registered. FRONTIER now = EXP13 build (nothing
   verdict-grade before the participation-gate ruling).]**
+
+- **[2026-07-06 — EXP13 STAGE-ONE CLOSED + FORK (a) RATIFIED (scoped) (FRONTIER §10.21.2–.7).
+  Pure-W=3 acquisition-censored 0/10 → Path B mixed-W partially broke the acquisition wall
+  (lawful 2/5, scram 4/5) but NOT the capability wall: the operator MARGINAL-COLLAPSES at both
+  widths on both arms (verified 12-agent). Gate ruled UNPOSABLE-AT-CURRENT-COMPLETER (pause, not
+  F3-dead). Retro marginal-map probe → FORK (a): operator marginal-collapse is the PROGRAM-WIDE
+  default (EXP12 operators sit at chance on completion too — shp_s23 0.496, dwell_s1 0.488 — even
+  at the strongest evocations); EXP13 revealed it, didn't break it. RATIFIED SCOPED:
+  `completion-rides-the-marginal` = MEASURED program-wide (direct `exam_acc`, cross-ledger);
+  `near-constant-map` = SUPPORTED-NOT-CERTIFIED (reproductions divergent, flagged); split s0 (+3%,
+  7.5 SE) = sole existence proof of departure. Historical certification of committed operator
+  states DECLINED (unbuildable — no saved `.pt`). Forward axis = CONVERSION DYNAMICS
+  (dose/horizon/signal); loss-engineering FENCED (manufacturing-class); EXP13 holds PAUSED.]**
+
+  **§12.E — CHECKPOINT CONTRACT (STANDING, binding all runs from 2026-07-06 forward):** every run
+  saves its end-state — `.pt` at the horizon AND at any PRE-REGISTERED event (e.g. conversion
+  onset). Established because the §10.21.6 retro marginal-map probe was BLOCKED by the absence of
+  saved end-states (no `.pt` → deterministic reproduction diverges via code-drift + read-coupling →
+  committed operator states uncertifiable). Never again: the checkpoint is cheap, its absence cost
+  a whole probe. This is a process rule, not a mechanism change.
