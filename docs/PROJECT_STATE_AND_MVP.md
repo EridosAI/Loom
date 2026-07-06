@@ -1023,3 +1023,13 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   NOT → candidate stays HELD; entry untouched. Artifacts: exp12_12bc_sh{p,a}_s10.json,
   exp12_salience_read.json, exp12_12b_sw_verdicts.json (updated). RULINGS STILL OPEN:
   dw-block standing; earned-salience re-pose / Guiding-List annotation.]**
+
+- **[2026-07-06 — §10.20.7-AMEND QUARANTINE (Path A, ruled): sh letter = 4F/0N on
+  [5,6,7,8]; s10 = OUT-OF-BLOCK CONFIRMATION (labeled, numbers stand); ext pool reverts
+  {10,11}; substitution rule PROSPECTIVE-ONLY (not-yet-reviewed blocks; first eligible =
+  next block); discrepancy record stands (halt crossed with execution, no fault, never
+  smoothed). Guiding-List annotated: leg 1 demonstrated (shuffled, scope-tagged), leg 2
+  UNPOSABLE-AT-W=1 → visibility/lawful-dynamics rung, CANDIDATE-HELD. DWELLED BLOCK
+  CLOSED (lottery-at-current-power; re-poses at lawful-dynamics). HEADLINE: cross-scene
+  contrast demonstrated on shuffled fabric, 4F/0N, with out-of-block confirmation at s10
+  and health-protection at preponderance. NO RULINGS OPEN.]**

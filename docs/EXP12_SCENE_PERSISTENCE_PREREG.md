@@ -508,7 +508,12 @@ every fabric field ex-word.
     substitution covers the whole twin pair; the rejected seed's committed record
     stands; the consumed pool seed is withdrawn from the margin-guard extension; the
     substitute is a VERDICT seed, letter-equal. Applied: sh s9→s10 (pool head), sh
-    extension pool → {11}; dw untouched.
+    extension pool → {11}; dw untouched. **AMENDED (§10.20.7-AMEND, Path A quarantine,
+    2026-07-06): the rule is PROSPECTIVE-ONLY — it applies to any block whose verdict
+    has NOT yet been reviewed (grounds: outcome-blind gate; registered-n restoration).
+    The sh application is QUARANTINED: sh letter = 4F/0N on [5,6,7,8]; s10 = labeled
+    out-of-block confirmation (numbers stand as verified); extension pool reverts to
+    {10, 11}. First eligible application = the next block, not sh.**
   - One review per block, behind the verification pass, as standing.
 - **SELECTIVITY INDEX S (the primary axis, per the re-cut registration):** per seed, per
   aligned window: **S = twin-contrast (present − absent) in B1-form vision-cortex

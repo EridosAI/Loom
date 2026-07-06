@@ -1963,7 +1963,9 @@ pass.
 adjudications; every number digit-exact, verdict artifact byte-reproduced, NO letter moved;
 2 reading-changing framing corrections recorded below as written, 3 cosmetic):**
 
-**(R1) Substitution applied — the sh block STRENGTHENS to S_w-FIRES 5F/0N.** s10's fabric
+**(R1) Substitution applied — the sh block STRENGTHENS to S_w-FIRES 5F/0N.** *[SUPERSEDED
+→ §10.20.7-AMEND below: block letter = 4F/0N on [5,6,7,8]; s10 = out-of-block
+confirmation, numbers stand as verified.]* s10's fabric
 passed all §13.8 gates; twins verified same-fabric; **s10 FIRES, second-strongest in the
 block after s5** (Sw_mean 0.0192, Sw_max 0.32366, 50.3% of windows above band, longest run
 46 vs N=2 where the null's max run anywhere is 1; onset 3000). Scorer tally verified
@@ -2007,7 +2009,8 @@ Texture, verification-corrected:
   three components); latent-only, noted for any future reuse.
 
 **(R3) Consequence for the Guiding-List trigger (plain reading; the promotion call remains
-a ruling):** leg 1 (cross-scene contrast) now stands at 5F/0N on sh; leg 2 (the
+a ruling):** leg 1 (cross-scene contrast) now stands at 5F/0N *[SUPERSEDED →
+§10.20.7-AMEND: 4F/0N + out-of-block confirmation at s10]* on sh; leg 2 (the
 earned-salience curve) DOES-NOT-LAND — **the registered promotion trigger does NOT fire;
 the candidate stays CANDIDATE-HELD.** The Guiding-List entry is untouched (annotating it is
 Jason's call). Expectation-not-a-gate carries: no committed verdict moves. Mechanical
@@ -2017,4 +2020,35 @@ ledger item), rather than differentially by axis; a background-selective decline
 what this fabric produces at this operating point.
 
 **Open after this order: the dw-block standing ruling (§10.20.6) and any
-earned-salience re-pose / Guiding-List annotation.**
+earned-salience re-pose / Guiding-List annotation.** *[Closed by §10.20.7-AMEND below.]*
+
+### §10.20.7-AMEND — QUARANTINE EXECUTION (Path A, RULED 2026-07-06; amended in place under the forward-pointer rule — the R1–R3 text above STANDS as written)
+
+**(A) sh block letter = S_w-FIRES 4F/0N on [5,6,7,8] — the §10.20.6 reviewed verdict
+set.** **s10 is RECLASSIFIED: OUT-OF-BLOCK CONFIRMATION** — labeled,
+never in the tally; its verified numbers stand exactly as recorded in R1 (fire
+second-strongest, mean 0.0192, max 0.324, run 46 vs null-max 1; untied legs quiet on own
+bands; present twin healthier). **Extension pool REVERTS to {10, 11}.** Scorer: `SW_SUB`
+emptied (prospective-only mechanism retained); s10 carried as a labeled
+`out_of_block_confirmation` field; verdict artifact regenerated. **The discrepancy record
+STANDS as written: a halt was crossed with execution — the substitution was applied
+retroactively to a block whose verdict had already been reviewed (§10.20.6). No fault
+assigned; never smoothed.**
+
+**(B) SUBSTITUTION RULE ADOPTED PROSPECTIVELY** — superseding the rescue-only form in (1)
+above; grounds recorded: the gate is outcome-blind, and substitution restores the
+registered n. **Applies to any block whose verdict has NOT yet been reviewed. First
+eligible application = the next block, not sh.**
+
+**(C) GUIDING-LIST ANNOTATED (as ruled):** leg 1 — the cross-scene contrast —
+DEMONSTRATED, scope-tagged SHUFFLED FABRIC; leg 2 — the earned-salience curve — re-tagged
+**UNPOSABLE-AT-W=1**, re-poses at the visibility/lawful-dynamics rung. Entry stays
+**CANDIDATE-HELD**.
+
+**(D) DWELLED BLOCK CLOSED: lottery-at-current-power** (3F/4N combined over 7 reads,
+§10.20.6); re-poses at lawful-dynamics.
+
+**(E) HEADLINE (canon):** cross-scene contrast demonstrated on shuffled fabric, 4F/0N,
+with out-of-block confirmation at s10 and health-protection at preponderance.
+
+No §10.20.6/§10.20.7 rulings remain open after this amendment.

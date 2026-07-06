@@ -126,7 +126,14 @@
             "den_subfloor": 0.838
           }
         }
-      },
+      }
+    ],
+    "n_read": 4,
+    "fired": 4,
+    "nofire": 0,
+    "extension_included": false,
+    "substitution": null,
+    "out_of_block_confirmation": [
       {
         "block": "sh",
         "seed": 10,
@@ -159,13 +166,6 @@
         }
       }
     ],
-    "n_read": 5,
-    "fired": 5,
-    "nofire": 0,
-    "extension_included": false,
-    "substitution": {
-      "9": 10
-    },
     "outcome": "S_w-FIRES",
     "action": null
   },

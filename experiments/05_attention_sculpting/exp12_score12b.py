@@ -141,10 +141,13 @@ def block_outcome(block: str) -> dict:
 
 SW_SEEDS = [5, 6, 7, 8, 9]          # §10.20.5 fresh-seed discipline
 SW_EXT = [10, 11]                   # natural continuation pool (fires only on a guard)
-SW_SUB = {"sh": {9: 10}}            # §10.20.7 standing substitution rule: pre-run
-                                    # fabric-gate rejection -> lowest unused pool seed
-                                    # (sh s9 REJECTED, committed record; pool head 10;
-                                    # consumed seed withdrawn from the extension pool)
+SW_SUB = {}                         # §10.20.7-AMEND (Path A quarantine): the substitution
+                                    # rule is PROSPECTIVE-ONLY — populate only for a block
+                                    # whose verdict has NOT yet been reviewed. The sh
+                                    # application is quarantined: sh letter = 4F/0N on
+                                    # [5,6,7,8]; s10 = out-of-block confirmation (below).
+SW_OOB = {"sh": [10]}               # labeled out-of-block confirmations — reported,
+                                    # NEVER in the tally
 
 
 def seed_read_w(block: str, seed: int) -> dict:
@@ -231,6 +234,9 @@ def block_outcome_w(block: str) -> dict:
     out = dict(block=block, ruler="S_w (§10.20.5)", per_seed=reads, n_read=len(read),
                fired=fired, nofire=nofire, extension_included=ext,
                substitution=sub or None)
+    oob = SW_OOB.get(block, [])
+    if oob:                         # §10.20.7-AMEND: labeled, never in the tally
+        out["out_of_block_confirmation"] = [seed_read_w(block, s) for s in oob]
     if shortfall:
         out["outcome"] = "READ-COUNT SHORTFALL"
         out["action"] = (f"fire {ext_pool} continuation" if not ext else

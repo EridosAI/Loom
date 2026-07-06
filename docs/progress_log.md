@@ -1844,3 +1844,31 @@ Verification: 5 refute-default lenses + 5 adjudications; verdict artifact
 byte-reproduced; 2 reading-changing framing corrections (fate-shared rescoped to dwell;
 three-not-two pathological landings) recorded as written; draft-gloss-corrected pattern
 holds again (no letter has ever flipped in review, glosses regularly do).
+
+
+---
+
+## 2026-07-06 — §10.20.7-AMEND: QUARANTINE EXECUTION (Path A, ruled)
+
+Amended in place under the forward-pointer rule (R1–R3 stand as written). **sh block
+letter = S_w-FIRES 4F/0N on [5,6,7,8]** (the §10.20.6 reviewed verdict set); **s10
+reclassified OUT-OF-BLOCK CONFIRMATION** (labeled, never in the tally; verified numbers
+stand); **extension pool reverts to {10, 11}**; scorer SW_SUB emptied / SW_OOB label
+added; verdict artifact regenerated (sh 4F/0N + labeled oob s10; dw invariant). The
+discrepancy record stands as written: a halt was crossed with execution — the
+substitution was applied retroactively to an already-reviewed block; no fault assigned,
+never smoothed.
+
+**Substitution rule adopted PROSPECTIVELY** (supersedes the rescue-only form; grounds:
+outcome-blind gate, registered-n restoration): applies to any block whose verdict has
+not yet been reviewed; first eligible = the next block, not sh.
+
+**Guiding-List annotated as ruled:** leg 1 demonstrated (shuffled, scope-tagged); leg 2
+re-tagged UNPOSABLE-AT-W=1 → visibility/lawful-dynamics rung; CANDIDATE-HELD.
+
+**Dwelled block CLOSED: lottery-at-current-power; re-poses at lawful-dynamics.**
+
+**HEADLINE (canon): cross-scene contrast demonstrated on shuffled fabric, 4F/0N, with
+out-of-block confirmation at s10 and health-protection at preponderance.**
+
+No §10.20.6/§10.20.7 rulings remain open.

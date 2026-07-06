@@ -16,3 +16,4 @@
 **CANDIDATES (held, not promoted):**
 
 - **[CANDIDATE, HELD]** Word = moving stability matching the object; environment = standing stability behind it. _(EXP12 canon write, 2026-07-04. Promotion trigger = BOTH registered observables landing: the earned-salience curve — background-axis divergence falls with exposure while member-onset divergence stays high — AND the cross-scene contrast prediction — word-present accelerates word-tied differentiation on live fabric. Ratified from measurement, not from liking it.)_
+  _(Annotated 2026-07-06, §10.20.7-AMEND ruling: leg 1 — the cross-scene contrast — DEMONSTRATED, scope-tagged SHUFFLED FABRIC (S_w 4F/0N on the reviewed verdict set, out-of-block confirmation at s10, health-protection at preponderance). Leg 2 — the earned-salience curve — read DOES-NOT-LAND 0/5 both rig-1 arms and re-tagged UNPOSABLE-AT-W=1; it re-poses at the visibility/lawful-dynamics rung. Entry stays CANDIDATE-HELD.)_
