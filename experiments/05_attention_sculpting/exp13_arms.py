@@ -258,24 +258,35 @@ def window_blinded_read(loop, ti: int, mask_slot: int) -> dict:
                 blind_penalty=err_blind - err_full)
 
 
+def participation_candidates(fab) -> torch.Tensor | None:
+    """Precompute the lawful interior-wave candidate pool ONCE (the fabric is fixed for a
+    run) — lets the gate run at EVAL cadence without an O(T) recompute per panel. None on a
+    shuffled arm (decoys need dwell identity)."""
+    if fab.shuffled:
+        return None
+    lawful = F13.lawful_window_mask(fab)
+    cand = torch.nonzero(lawful).flatten()
+    cand = cand[(cand >= INTERIOR) & (cand + 1 < fab.T)]
+    return cand if len(cand) else None
+
+
 @torch.no_grad()
-def participation_probe(loop, *, n: int = 64, panel_seed: int = 0) -> dict | None:
-    """The LAW-PARTICIPATION GATE (Fork 3C, read-only, panel cadence). Completion error on
-    TRUE lawful windows vs LAW-BROKEN DECOYS (a flank swapped for a wave from ANOTHER
-    dwell, |Δt|- and residual-magnitude-matched, §9.5). If completion reads the law,
-    breaking it HURTS: decoy error > true error. The gap is the participation statistic;
-    the band + sustained-N are stage-two. Runs on the UNSHUFFLED (lawful) order only
-    (decoys need dwell identity); returns None on a shuffled arm."""
+def participation_probe(loop, *, n: int = 64, panel_seed: int = 0,
+                        cand: torch.Tensor | None = None) -> dict | None:
+    """The LAW-PARTICIPATION GATE (Fork 3C, read-only). Completion error on TRUE lawful
+    windows vs LAW-BROKEN DECOYS (a flank swapped for a wave from ANOTHER dwell, |Δt|- and
+    residual-magnitude-matched, §9.5). If completion reads the law, breaking it HURTS: decoy
+    error > true error. The gap is the participation statistic; band + sustained-N at
+    stage-two. Runs on the UNSHUFFLED (lawful) order only; None on a shuffled arm. `cand` may
+    be a precomputed candidate pool (participation_candidates) — else computed here."""
     fab = loop.stream
     if fab.shuffled:
         return None
-    st = X9._rng_guard(loop)
-    lawful = F13.lawful_window_mask(fab)                      # interior waves with same-dwell flanks
-    cand = torch.nonzero(lawful).flatten()
-    cand = cand[(cand >= INTERIOR) & (cand + 1 < fab.T)]
-    if len(cand) == 0:
-        X9._rng_check(loop, st, "participation_probe")
+    if cand is None:
+        cand = participation_candidates(fab)
+    if cand is None or len(cand) == 0:
         return None
+    st = X9._rng_guard(loop)
     g = torch.Generator().manual_seed(PROBE_SELECT_BASE + panel_seed)
     sel = cand[torch.randperm(len(cand), generator=g)[:min(n, len(cand))]]
     true_err, decoy_err, n_used = [], [], 0
@@ -404,6 +415,7 @@ def run_exp13_arm(arm_name: str, seed: int, steps: int, *,
     members_b = torch.arange(cfg.n_B).repeat(cfg.n_A)
     labels = loop._word_label(members_b, members_a)
     no_word = bool(spec.get("no_word", False))
+    pcand = participation_candidates(fab)                     # precomputed once (None if shuffled)
     buf = _fresh_buf13()
     cols, occ, gsplit, part = [], {}, {}, {}
     for t in range(1, steps + 1):
@@ -412,12 +424,16 @@ def run_exp13_arm(arm_name: str, seed: int, steps: int, *,
         if t % EVAL == 0:
             cols.append(_eval_column13(loop, t, buf, members_a, members_b, labels, no_word=no_word))
             buf = _fresh_buf13()
+            # THE GATE at EVAL cadence (verify-driven refinement 2026-07-06): a fast W=1
+            # bootstrap can acquire before BLOCK, leaving the pre-onset noise reference empty
+            # — the participation curve must be dense enough to read "opens vs flat" (the
+            # W1-CRUTCH discriminator). Precomputed candidate pool keeps it cheap.
+            pp = participation_probe(loop, panel_seed=t, cand=pcand)
+            if pp is not None:
+                part[str(t)] = pp
         if t % BLOCK == 0:
             occ[str(t)] = loop.dc_track(cfg.n_eval)
             gsplit[str(t)] = grad_geometry_split13(loop, no_word)
-            pp = participation_probe(loop, panel_seed=t)
-            if pp is not None:
-                part[str(t)] = pp
 
     ts = [c["t"] for c in cols]
     panel_keys = ("num", "den", "ratio", "proto", "d2_depth", "d2_spread",
@@ -448,7 +464,13 @@ def run_exp13_arm(arm_name: str, seed: int, steps: int, *,
 
 
 def _fresh_buf13() -> dict:
-    return dict(exam=[], exam_acc=[], mid_vis=[], div=[], blind=[], pos_word={}, pos_vis={})
+    # exam_* pooled companion + the width-SPLIT companions (verify-driven, 2026-07-06):
+    # a W=3 onset exam has a same-category pos-2 flank whose visible word cell == the masked
+    # target (K_MIN=2 => universal), so a W=3 exam_acc rise can be flank-COPYING; the W=1
+    # exam is flank-free. Split so the two mechanisms are separable at stage-one. Neither is
+    # the verdict or the discriminator (blind_penalty + participation gap carry those).
+    return dict(exam=[], exam_acc=[], exam_w1=[], exam_acc_w1=[], exam_w3=[], exam_acc_w3=[],
+                mid_vis=[], div=[], blind=[], pos_word={}, pos_vis={})
 
 
 def _buffer_wave13(loop, buf: dict):
@@ -481,6 +503,9 @@ def _buffer_wave13(loop, buf: dict):
         if bool(fab.is_exam[ti]):
             buf["exam"].append(lift)
             buf["exam_acc"].append(acc)
+            wsfx = "w3" if st["w_win"] == 3 else "w1"        # flank-leaky vs flank-free
+            buf[f"exam_{wsfx}"].append(lift)
+            buf[f"exam_acc_{wsfx}"].append(acc)
             if INTERIOR <= ti < fab.T - INTERIOR:
                 buf["div"].append(onset_divergence13(loop, ti))
                 buf["blind"].append(window_blinded_read(loop, ti, 1)["blind_penalty"])
@@ -516,6 +541,10 @@ def _eval_column13(loop, t, buf, ma, mb, labels, no_word=False) -> dict:
     col["exam_lift"] = _m(buf["exam"])
     col["exam_acc"] = _m(buf["exam_acc"])
     col["exam_n"] = len(buf["exam"])
+    # width-split exam companions (flank-free W=1 vs flank-leaky W=3) — read separately
+    col["exam_lift_w1"] = _m(buf["exam_w1"]); col["exam_acc_w1"] = _m(buf["exam_acc_w1"])
+    col["exam_lift_w3"] = _m(buf["exam_w3"]); col["exam_acc_w3"] = _m(buf["exam_acc_w3"])
+    col["exam_n_w1"] = len(buf["exam_w1"]); col["exam_n_w3"] = len(buf["exam_w3"])
     col["mid_vis_err"] = _m(buf["mid_vis"])
     col["blind_penalty"] = _m(buf["blind"])
     if buf["div"]:
@@ -586,6 +615,15 @@ def stage_one_read13(rec: dict) -> dict:
             mean=round(statistics.mean(c["exam_lift"] for c in post
                                        if c.get("exam_lift") is not None), 4),
             end=round(post[-1]["exam_lift"], 4) if post[-1].get("exam_lift") is not None else None),
+        # W1-CRUTCH texture: exam_acc split by width (W1 flank-free vs W3 flank-leaky). A
+        # W3-only rise = same-category flank-copying, NOT routing (blind_penalty confirms).
+        exam_acc_split_post=dict(
+            w1=(round(statistics.mean(c["exam_acc_w1"] for c in post
+                                      if c.get("exam_acc_w1") is not None), 4)
+                if any(c.get("exam_acc_w1") is not None for c in post) else None),
+            w3=(round(statistics.mean(c["exam_acc_w3"] for c in post
+                                      if c.get("exam_acc_w3") is not None), 4)
+                if any(c.get("exam_acc_w3") is not None for c in post) else None)),
         blind_penalty_post_mean=round(statistics.mean(c["blind_penalty"] for c in post
                                                       if c.get("blind_penalty") is not None), 5),
         den_end=post[-1]["den"], argmax_k_end=post[-1]["asg_argmax_k"])

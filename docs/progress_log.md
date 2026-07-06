@@ -1957,3 +1957,29 @@ Escalation pre-named (B fails to acquire → A developmental widening). Cosmetic
 absent-twin probe words deliberate (evocation-probe); probe seed-base moved out of fabric
 band before cal. Model plan: writes+build Opus 4.8, then PAUSE for switch to Fable at
 verify+cal+stage-two. Build next, then pause.
+
+
+---
+
+## 2026-07-06 — EXP13 mixed-W verify list 6/6 VERIFIED + two verify-driven refinements; cal launching
+
+Verify workflow (6 lenses, refute-default, report-don't-patch; re-run on Opus 4.8 after a
+Fable credit-exhaustion aborted the first attempt with zero code findings): ALL SIX
+VERIFIED, zero blocking, zero reading-changing that alters a verdict. Confirmed: W-coin
+dedicated stream (89000) ⟂ member at full size + draw parity (rate-nested, co-permuted);
+both-width interior-only invariant over 4400 real training windows; W=1 face = EXP12
+bootstrap (masked-cell sibling weight EXACTLY 1.0 = the single-source binding the wall
+lacked); forward guard hard-zero at both widths; LAWSCRAM multiset identity w/ w3
+co-permuted; discriminator faithfully instrumented (synthetic unit-test of the curve
+builder passed).
+
+TWO verify-driven refinements (additive measurement, not mechanism; made before the one
+expensive cal because they can't be recovered post-hoc): (1) the mixed-W onset-exam
+companion pools a FLANK-FREE W=1 exam with a FLANK-LEAKY W=3 exam (K_MIN=2 => every W=3
+onset has a same-category pos-2 flank whose visible word cell == the masked target = copy
+shortcut); exam_acc/exam_lift now SPLIT by width (_w1/_w3) in columns + stage-one read.
+NOT the verdict or discriminator (blind_penalty + participation gap carry flank-reliance).
+(2) the participation gate moved from BLOCK to EVAL cadence (precomputed candidate pool,
++~28s/run) so a fast W=1 bootstrap (onset < 3000) still leaves a non-empty pre-onset noise
+reference for the 'opens vs flat' curve. Smoke re-passes. Prereg §4 reading note + code.
+Cal {20-24} x both core arms launching.

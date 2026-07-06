@@ -126,6 +126,15 @@ built without physics. EXP13 gives the world a law and re-asks.
 - **ESCALATION PRE-NAMED (2026-07-06):** if Path (B) — the mixed-W stationary re-pose —
   FAILS TO ACQUIRE, then Path (A) DEVELOPMENTAL WIDENING fires (a non-stationary schedule:
   W=1-heavy early, widening to W=3 as differentiation lands). Named now; not built now.
+- **EXAM-COMPANION CONFLATION (verify-driven reading note, 2026-07-06):** under mixed-W the
+  onset-exam companion mixes a FLANK-FREE W=1 exam with a FLANK-LEAKY W=3 exam (K_MIN=2 →
+  every W=3 onset has a same-category pos-2 flank whose visible word cell equals the masked
+  target → a copy shortcut). So a W=3-driven `exam_acc` rise can be flank-copying, NOT
+  routing. Mitigation (measurement, recorded): `exam_acc`/`exam_lift` are now SPLIT by width
+  (`_w1`/`_w3`) in the columns and the stage-one read; the exam companion is NOT the verdict
+  or the discriminator — `blind_penalty` (flank-blinding, W=3-only) and the participation
+  gap carry flank-reliance. The gate is also read at EVAL cadence (was BLOCK) so a fast W=1
+  bootstrap leaves a non-empty pre-onset noise reference for the "opens vs flat" curve.
 
 **COSMETIC RULINGS (from the §10.21.1 verify list, ruled 2026-07-06):**
 - **Absent-twin read-only probe words = DELIBERATE (recorded):** `_window_complete` and the
