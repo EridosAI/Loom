@@ -1915,3 +1915,27 @@ Canon: prereg §4 + FRONTIER §10.21.1. stage_one_read13 extended with the align
 curve (pre-onset noise reference + post-onset read). Next: verify list (report, don't
 patch) → cal {20–24} × core arms → stage-one numbers + stage-two proposal + gate ruling
 request in chat. Nothing verdict-grade before the gate ruling.
+
+
+---
+
+## 2026-07-06 — EXP13 verify list 6/6 VERIFIED + cal RAN → STAGE-ONE WALL: acquisition-censored on ALL 10 seeds; STOPPED at the pre-registered stop
+
+**Verify list (workflow, 6 refute-default verifiers, report-don't-patch): ALL SIX VERIFIED,
+zero blocking, zero reading-changing, 9 cosmetic** (recorded in the run output; the two
+that matter later: read-only probes present real word emissions on the absent twin —
+deliberate-choice ruling owed before any twin-block stage-two read; participation-probe
+selection seed base 90007 squats in the fabric-key integer band — harmless, flagged).
+
+**Cal {20–24} × {lawful, lawscram} at 160k: onset=None on ALL TEN.** num_max ≤4.3e-4 vs
+floor 0.01; exam_acc chance (0.48–0.50 over ~14.6k exams/run) — the visible same-dwell
+flank word is NOT copied; mid_vis_err falls ~10× while blind_penalty ≤1.4e-3 through
+horizon = the loss improves flank-blind; capacity opens (d2 2.3–3.0); fabric fully green
+(lawful frac ~0.817, τ decor lag 4, drift/resid 0.56). Discriminator: PRE-ACQUISITION ONLY
+on every seed — licenses nothing. No stage-two constant derivable. Canon §10.21.2.
+
+CC diagnosis (texture): Shepard addressing degenerate pre-differentiation → W=3 context
+mix dilutes the binding signal → substrate never differentiates → context-constant
+completion. The wall sits IN FRONT of the rider question. STOPPED; design ruling owed:
+doctrine-compatible position signal (content-borne, felt-not-coded) vs W geometry, before
+any carrier talk.

@@ -2163,3 +2163,42 @@ gate's law-breaking decoys are the discriminator; the blinded read is texture; t
 alarm never rides on the blinded read. **If the gate stays dead on acquired seeds: STOP —
 the F3 ruling returns to chat; design space = doctrine-compatible position signal
 (content-borne, felt-not-coded) vs W geometry, before any carrier talk.**
+
+### §10.21.2 — STAGE-ONE WALL (2026-07-06, cal {20–24} × both core arms, 160k): **ACQUISITION-CENSORED ON ALL 10 SEEDS — the gate discriminator CANNOT BE READ; stage-two constants CANNOT be cut; STOPPED for the design ruling**
+
+**The letter (pre-registered taxonomy):** all 10 cal runs return onset=None — num_max
+1e-6..4.3e-4 vs the 0.01 floor, both arms alike. UNREAD, never a null. The pre-registered
+discriminator returns "PRE-ACQUISITION ONLY — licenses nothing" on every seed: neither the
+benign nor the structural reading of the flank-flag is licensed, because the "acquired"
+half of "acquired AND flat" never arrives. No stage-two constant is derivable (no onsets →
+no horizons/θ/W_post; a dead reference without a live one grades nothing).
+
+**The texture (verified numbers, all 10 seeds):** exam_acc = CHANCE (0.482–0.503 over
+~14,600 exams per run; exam_lift ~0/negative) — **the visible same-dwell flank word cell is
+NOT being copied** (copy would read ~1.0), so the W=3 exam-integrity worry is moot at this
+operating point: the completer fails to exploit even the trivial shortcut. mid_vis_err
+falls ~10× (1.5 → 0.10–0.22) while **blind_penalty stays ≤1.4e-3 through the full 160k** —
+the training loss improves via a FLANK-BLIND path (an unconditional/prior completion),
+never via context. Capacity is NOT the gate (d2_depth opens to 2.3–3.0); the assignment
+side drifts to collapse (argmax_k 1–3); sep_cat pinned at ~0.47–0.50 throughout. The
+FABRIC is healthy: all independence asserts green at full size, lawful-window 0.815–0.817
+(capped-theory ~0.817), residual decorrelation lag-4 = the τ=4 pin, drift/residual 0.56.
+
+**CC mechanical diagnosis (texture for the ruling, NOT a canon verdict):** an
+operator-architecture × window-geometry interaction. The deployed operator's ONLY
+cross-cell addressing is Shepard distance on content-borne position keys; pre-
+differentiation those keys are DEGENERATE (same-slot cells indistinguishable — measured:
+the masked word cell gathers ~1/3 from EACH of the three vision cells, cross-member at
+dwell boundaries, and ~0.0003 from flank word cells). At W=1 the exam context was
+single-source full-strength; at W=3 the mix averages the binding signal into a
+low-variance mush, the substrate prototypes never differentiate (pa stays uniform), the
+completion stays functionally context-constant, and the chicken-and-egg the build flag
+named is measured TERMINAL at 160k: the lawful drift IS a content-borne position signal
+the operator could in principle feel, but it cannot BOOTSTRAP onto it from the degenerate
+start. Both arms identical → not an order effect; this wall sits in front of the rider
+question, it does not answer it.
+
+**Standing:** STOPPED per the pre-registered stop. The design ruling returns to chat with
+the fenced space — **doctrine-compatible position signal (content-borne, felt-not-coded)
+vs W geometry — before any carrier talk.** Nothing verdict-grade ran; the cell table is
+untouched; no arm is a fix.

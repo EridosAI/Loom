@@ -1,0 +1,1493 @@
+{
+  "cal_seeds": [
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "horizon": 160000,
+  "reads": [
+    {
+      "arm": "exp13_lawful",
+      "seed": 20,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.8174,
+        "n_lawful": 130784,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7405,
+          0.5537,
+          0.4161,
+          0.312,
+          0.2343,
+          0.1758,
+          0.1334,
+          0.1013
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0624,
+        "residual_sd": 0.1116,
+        "drift_over_residual": 0.5594,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "participation": {
+        "gap_mean": 0.0,
+        "gap_min": 0.0,
+        "gap_max": 1e-05,
+        "n_panels": 53,
+        "true_err_mean": 0.57581,
+        "decoy_err_mean": 0.57581
+      },
+      "participation_curve": {
+        "panels": [
+          [
+            3000,
+            0.0
+          ],
+          [
+            6000,
+            0.0
+          ],
+          [
+            9000,
+            -0.0
+          ],
+          [
+            12000,
+            -0.0
+          ],
+          [
+            15000,
+            -0.0
+          ],
+          [
+            18000,
+            0.0
+          ],
+          [
+            21000,
+            -0.0
+          ],
+          [
+            24000,
+            0.0
+          ],
+          [
+            27000,
+            -0.0
+          ],
+          [
+            30000,
+            -0.0
+          ],
+          [
+            33000,
+            -0.0
+          ],
+          [
+            36000,
+            -0.0
+          ],
+          [
+            39000,
+            -0.0
+          ],
+          [
+            42000,
+            -0.0
+          ],
+          [
+            45000,
+            0.0
+          ],
+          [
+            48000,
+            0.0
+          ],
+          [
+            51000,
+            -0.0
+          ],
+          [
+            54000,
+            0.0
+          ],
+          [
+            57000,
+            0.0
+          ],
+          [
+            60000,
+            0.0
+          ],
+          [
+            63000,
+            -0.0
+          ],
+          [
+            66000,
+            0.0
+          ],
+          [
+            69000,
+            0.0
+          ],
+          [
+            72000,
+            0.0
+          ],
+          [
+            75000,
+            0.0
+          ],
+          [
+            78000,
+            -0.0
+          ],
+          [
+            81000,
+            0.0
+          ],
+          [
+            84000,
+            -0.0
+          ],
+          [
+            87000,
+            -0.0
+          ],
+          [
+            90000,
+            -0.0
+          ],
+          [
+            93000,
+            -0.0
+          ],
+          [
+            96000,
+            0.0
+          ],
+          [
+            99000,
+            0.0
+          ],
+          [
+            102000,
+            0.0
+          ],
+          [
+            105000,
+            0.0
+          ],
+          [
+            108000,
+            -0.0
+          ],
+          [
+            111000,
+            -0.0
+          ],
+          [
+            114000,
+            0.0
+          ],
+          [
+            117000,
+            1e-05
+          ],
+          [
+            120000,
+            -0.0
+          ],
+          [
+            123000,
+            -0.0
+          ],
+          [
+            126000,
+            -0.0
+          ],
+          [
+            129000,
+            0.0
+          ],
+          [
+            132000,
+            0.0
+          ],
+          [
+            135000,
+            0.0
+          ],
+          [
+            138000,
+            0.0
+          ],
+          [
+            141000,
+            0.0
+          ],
+          [
+            144000,
+            -0.0
+          ],
+          [
+            147000,
+            -0.0
+          ],
+          [
+            150000,
+            -0.0
+          ],
+          [
+            153000,
+            0.0
+          ],
+          [
+            156000,
+            0.0
+          ],
+          [
+            159000,
+            -0.0
+          ]
+        ],
+        "onset": null,
+        "pre_onset": {
+          "n": 53,
+          "mean": 0.0,
+          "sd": 0.0,
+          "max_abs": 1e-05
+        },
+        "discrimination": "PRE-ACQUISITION ONLY \u2014 licenses nothing"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawful",
+      "seed": 21,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.817,
+        "n_lawful": 130727,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7392,
+          0.5517,
+          0.411,
+          0.3069,
+          0.2287,
+          0.1707,
+          0.1271,
+          0.0944
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0625,
+        "residual_sd": 0.1113,
+        "drift_over_residual": 0.5619,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "participation": {
+        "gap_mean": 0.0,
+        "gap_min": -0.0,
+        "gap_max": -0.0,
+        "n_panels": 53,
+        "true_err_mean": 0.43945,
+        "decoy_err_mean": 0.43945
+      },
+      "participation_curve": {
+        "panels": [
+          [
+            3000,
+            -0.0
+          ],
+          [
+            6000,
+            0.0
+          ],
+          [
+            9000,
+            -0.0
+          ],
+          [
+            12000,
+            0.0
+          ],
+          [
+            15000,
+            -0.0
+          ],
+          [
+            18000,
+            0.0
+          ],
+          [
+            21000,
+            -0.0
+          ],
+          [
+            24000,
+            0.0
+          ],
+          [
+            27000,
+            0.0
+          ],
+          [
+            30000,
+            0.0
+          ],
+          [
+            33000,
+            0.0
+          ],
+          [
+            36000,
+            -0.0
+          ],
+          [
+            39000,
+            -0.0
+          ],
+          [
+            42000,
+            0.0
+          ],
+          [
+            45000,
+            -0.0
+          ],
+          [
+            48000,
+            -0.0
+          ],
+          [
+            51000,
+            -0.0
+          ],
+          [
+            54000,
+            0.0
+          ],
+          [
+            57000,
+            0.0
+          ],
+          [
+            60000,
+            0.0
+          ],
+          [
+            63000,
+            -0.0
+          ],
+          [
+            66000,
+            0.0
+          ],
+          [
+            69000,
+            -0.0
+          ],
+          [
+            72000,
+            0.0
+          ],
+          [
+            75000,
+            0.0
+          ],
+          [
+            78000,
+            -0.0
+          ],
+          [
+            81000,
+            -0.0
+          ],
+          [
+            84000,
+            0.0
+          ],
+          [
+            87000,
+            -0.0
+          ],
+          [
+            90000,
+            -0.0
+          ],
+          [
+            93000,
+            -0.0
+          ],
+          [
+            96000,
+            0.0
+          ],
+          [
+            99000,
+            0.0
+          ],
+          [
+            102000,
+            -0.0
+          ],
+          [
+            105000,
+            -0.0
+          ],
+          [
+            108000,
+            0.0
+          ],
+          [
+            111000,
+            -0.0
+          ],
+          [
+            114000,
+            -0.0
+          ],
+          [
+            117000,
+            0.0
+          ],
+          [
+            120000,
+            0.0
+          ],
+          [
+            123000,
+            -0.0
+          ],
+          [
+            126000,
+            0.0
+          ],
+          [
+            129000,
+            -0.0
+          ],
+          [
+            132000,
+            -0.0
+          ],
+          [
+            135000,
+            -0.0
+          ],
+          [
+            138000,
+            0.0
+          ],
+          [
+            141000,
+            -0.0
+          ],
+          [
+            144000,
+            -0.0
+          ],
+          [
+            147000,
+            0.0
+          ],
+          [
+            150000,
+            0.0
+          ],
+          [
+            153000,
+            0.0
+          ],
+          [
+            156000,
+            0.0
+          ],
+          [
+            159000,
+            0.0
+          ]
+        ],
+        "onset": null,
+        "pre_onset": {
+          "n": 53,
+          "mean": 0.0,
+          "sd": 0.0,
+          "max_abs": 0.0
+        },
+        "discrimination": "PRE-ACQUISITION ONLY \u2014 licenses nothing"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawful",
+      "seed": 22,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.8146,
+        "n_lawful": 130341,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7396,
+          0.5518,
+          0.4122,
+          0.3088,
+          0.2305,
+          0.1732,
+          0.1301,
+          0.0968
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0623,
+        "residual_sd": 0.1113,
+        "drift_over_residual": 0.56,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "participation": {
+        "gap_mean": 0.0,
+        "gap_min": -0.0,
+        "gap_max": -0.0,
+        "n_panels": 53,
+        "true_err_mean": 0.4142,
+        "decoy_err_mean": 0.4142
+      },
+      "participation_curve": {
+        "panels": [
+          [
+            3000,
+            -0.0
+          ],
+          [
+            6000,
+            -0.0
+          ],
+          [
+            9000,
+            -0.0
+          ],
+          [
+            12000,
+            0.0
+          ],
+          [
+            15000,
+            0.0
+          ],
+          [
+            18000,
+            -0.0
+          ],
+          [
+            21000,
+            -0.0
+          ],
+          [
+            24000,
+            0.0
+          ],
+          [
+            27000,
+            0.0
+          ],
+          [
+            30000,
+            -0.0
+          ],
+          [
+            33000,
+            -0.0
+          ],
+          [
+            36000,
+            -0.0
+          ],
+          [
+            39000,
+            0.0
+          ],
+          [
+            42000,
+            0.0
+          ],
+          [
+            45000,
+            0.0
+          ],
+          [
+            48000,
+            0.0
+          ],
+          [
+            51000,
+            -0.0
+          ],
+          [
+            54000,
+            0.0
+          ],
+          [
+            57000,
+            0.0
+          ],
+          [
+            60000,
+            -0.0
+          ],
+          [
+            63000,
+            0.0
+          ],
+          [
+            66000,
+            0.0
+          ],
+          [
+            69000,
+            0.0
+          ],
+          [
+            72000,
+            -0.0
+          ],
+          [
+            75000,
+            0.0
+          ],
+          [
+            78000,
+            0.0
+          ],
+          [
+            81000,
+            0.0
+          ],
+          [
+            84000,
+            -0.0
+          ],
+          [
+            87000,
+            -0.0
+          ],
+          [
+            90000,
+            0.0
+          ],
+          [
+            93000,
+            0.0
+          ],
+          [
+            96000,
+            -0.0
+          ],
+          [
+            99000,
+            0.0
+          ],
+          [
+            102000,
+            -0.0
+          ],
+          [
+            105000,
+            0.0
+          ],
+          [
+            108000,
+            0.0
+          ],
+          [
+            111000,
+            0.0
+          ],
+          [
+            114000,
+            0.0
+          ],
+          [
+            117000,
+            0.0
+          ],
+          [
+            120000,
+            0.0
+          ],
+          [
+            123000,
+            0.0
+          ],
+          [
+            126000,
+            0.0
+          ],
+          [
+            129000,
+            -0.0
+          ],
+          [
+            132000,
+            0.0
+          ],
+          [
+            135000,
+            -0.0
+          ],
+          [
+            138000,
+            0.0
+          ],
+          [
+            141000,
+            -0.0
+          ],
+          [
+            144000,
+            -0.0
+          ],
+          [
+            147000,
+            0.0
+          ],
+          [
+            150000,
+            0.0
+          ],
+          [
+            153000,
+            -0.0
+          ],
+          [
+            156000,
+            0.0
+          ],
+          [
+            159000,
+            -0.0
+          ]
+        ],
+        "onset": null,
+        "pre_onset": {
+          "n": 53,
+          "mean": 0.0,
+          "sd": 0.0,
+          "max_abs": 0.0
+        },
+        "discrimination": "PRE-ACQUISITION ONLY \u2014 licenses nothing"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawful",
+      "seed": 23,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.8171,
+        "n_lawful": 130747,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7395,
+          0.5526,
+          0.412,
+          0.3073,
+          0.2311,
+          0.1737,
+          0.1307,
+          0.1003
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0625,
+        "residual_sd": 0.1113,
+        "drift_over_residual": 0.5613,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "participation": {
+        "gap_mean": 0.0,
+        "gap_min": -0.0,
+        "gap_max": -0.0,
+        "n_panels": 53,
+        "true_err_mean": 0.53075,
+        "decoy_err_mean": 0.53075
+      },
+      "participation_curve": {
+        "panels": [
+          [
+            3000,
+            -0.0
+          ],
+          [
+            6000,
+            0.0
+          ],
+          [
+            9000,
+            0.0
+          ],
+          [
+            12000,
+            0.0
+          ],
+          [
+            15000,
+            -0.0
+          ],
+          [
+            18000,
+            0.0
+          ],
+          [
+            21000,
+            0.0
+          ],
+          [
+            24000,
+            -0.0
+          ],
+          [
+            27000,
+            -0.0
+          ],
+          [
+            30000,
+            -0.0
+          ],
+          [
+            33000,
+            0.0
+          ],
+          [
+            36000,
+            -0.0
+          ],
+          [
+            39000,
+            0.0
+          ],
+          [
+            42000,
+            -0.0
+          ],
+          [
+            45000,
+            0.0
+          ],
+          [
+            48000,
+            -0.0
+          ],
+          [
+            51000,
+            0.0
+          ],
+          [
+            54000,
+            -0.0
+          ],
+          [
+            57000,
+            -0.0
+          ],
+          [
+            60000,
+            -0.0
+          ],
+          [
+            63000,
+            -0.0
+          ],
+          [
+            66000,
+            -0.0
+          ],
+          [
+            69000,
+            -0.0
+          ],
+          [
+            72000,
+            0.0
+          ],
+          [
+            75000,
+            -0.0
+          ],
+          [
+            78000,
+            -0.0
+          ],
+          [
+            81000,
+            0.0
+          ],
+          [
+            84000,
+            -0.0
+          ],
+          [
+            87000,
+            0.0
+          ],
+          [
+            90000,
+            0.0
+          ],
+          [
+            93000,
+            -0.0
+          ],
+          [
+            96000,
+            0.0
+          ],
+          [
+            99000,
+            -0.0
+          ],
+          [
+            102000,
+            0.0
+          ],
+          [
+            105000,
+            0.0
+          ],
+          [
+            108000,
+            0.0
+          ],
+          [
+            111000,
+            -0.0
+          ],
+          [
+            114000,
+            0.0
+          ],
+          [
+            117000,
+            0.0
+          ],
+          [
+            120000,
+            -0.0
+          ],
+          [
+            123000,
+            0.0
+          ],
+          [
+            126000,
+            0.0
+          ],
+          [
+            129000,
+            0.0
+          ],
+          [
+            132000,
+            0.0
+          ],
+          [
+            135000,
+            0.0
+          ],
+          [
+            138000,
+            0.0
+          ],
+          [
+            141000,
+            0.0
+          ],
+          [
+            144000,
+            -0.0
+          ],
+          [
+            147000,
+            -0.0
+          ],
+          [
+            150000,
+            -0.0
+          ],
+          [
+            153000,
+            -0.0
+          ],
+          [
+            156000,
+            -0.0
+          ],
+          [
+            159000,
+            -0.0
+          ]
+        ],
+        "onset": null,
+        "pre_onset": {
+          "n": 53,
+          "mean": 0.0,
+          "sd": 0.0,
+          "max_abs": 0.0
+        },
+        "discrimination": "PRE-ACQUISITION ONLY \u2014 licenses nothing"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawful",
+      "seed": 24,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.8173,
+        "n_lawful": 130774,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7399,
+          0.5523,
+          0.4104,
+          0.3053,
+          0.2269,
+          0.1687,
+          0.1256,
+          0.094
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0624,
+        "residual_sd": 0.1115,
+        "drift_over_residual": 0.5593,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "participation": {
+        "gap_mean": 0.0,
+        "gap_min": -0.0,
+        "gap_max": -0.0,
+        "n_panels": 53,
+        "true_err_mean": 0.54201,
+        "decoy_err_mean": 0.54201
+      },
+      "participation_curve": {
+        "panels": [
+          [
+            3000,
+            -0.0
+          ],
+          [
+            6000,
+            0.0
+          ],
+          [
+            9000,
+            -0.0
+          ],
+          [
+            12000,
+            0.0
+          ],
+          [
+            15000,
+            -0.0
+          ],
+          [
+            18000,
+            0.0
+          ],
+          [
+            21000,
+            0.0
+          ],
+          [
+            24000,
+            -0.0
+          ],
+          [
+            27000,
+            0.0
+          ],
+          [
+            30000,
+            0.0
+          ],
+          [
+            33000,
+            -0.0
+          ],
+          [
+            36000,
+            0.0
+          ],
+          [
+            39000,
+            0.0
+          ],
+          [
+            42000,
+            0.0
+          ],
+          [
+            45000,
+            -0.0
+          ],
+          [
+            48000,
+            -0.0
+          ],
+          [
+            51000,
+            0.0
+          ],
+          [
+            54000,
+            -0.0
+          ],
+          [
+            57000,
+            0.0
+          ],
+          [
+            60000,
+            0.0
+          ],
+          [
+            63000,
+            0.0
+          ],
+          [
+            66000,
+            -0.0
+          ],
+          [
+            69000,
+            -0.0
+          ],
+          [
+            72000,
+            -0.0
+          ],
+          [
+            75000,
+            -0.0
+          ],
+          [
+            78000,
+            -0.0
+          ],
+          [
+            81000,
+            0.0
+          ],
+          [
+            84000,
+            -0.0
+          ],
+          [
+            87000,
+            0.0
+          ],
+          [
+            90000,
+            0.0
+          ],
+          [
+            93000,
+            -0.0
+          ],
+          [
+            96000,
+            -0.0
+          ],
+          [
+            99000,
+            -0.0
+          ],
+          [
+            102000,
+            0.0
+          ],
+          [
+            105000,
+            -0.0
+          ],
+          [
+            108000,
+            0.0
+          ],
+          [
+            111000,
+            -0.0
+          ],
+          [
+            114000,
+            0.0
+          ],
+          [
+            117000,
+            0.0
+          ],
+          [
+            120000,
+            0.0
+          ],
+          [
+            123000,
+            0.0
+          ],
+          [
+            126000,
+            0.0
+          ],
+          [
+            129000,
+            -0.0
+          ],
+          [
+            132000,
+            0.0
+          ],
+          [
+            135000,
+            0.0
+          ],
+          [
+            138000,
+            -0.0
+          ],
+          [
+            141000,
+            0.0
+          ],
+          [
+            144000,
+            0.0
+          ],
+          [
+            147000,
+            -0.0
+          ],
+          [
+            150000,
+            0.0
+          ],
+          [
+            153000,
+            -0.0
+          ],
+          [
+            156000,
+            0.0
+          ],
+          [
+            159000,
+            -0.0
+          ]
+        ],
+        "onset": null,
+        "pre_onset": {
+          "n": 53,
+          "mean": 0.0,
+          "sd": 0.0,
+          "max_abs": 0.0
+        },
+        "discrimination": "PRE-ACQUISITION ONLY \u2014 licenses nothing"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawscram",
+      "seed": 20,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.8174,
+        "n_lawful": 130784,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7405,
+          0.5537,
+          0.4161,
+          0.312,
+          0.2343,
+          0.1758,
+          0.1334,
+          0.1013
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0624,
+        "residual_sd": 0.1116,
+        "drift_over_residual": 0.5594,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawscram",
+      "seed": 21,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.817,
+        "n_lawful": 130727,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7392,
+          0.5517,
+          0.411,
+          0.3069,
+          0.2287,
+          0.1707,
+          0.1271,
+          0.0944
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0625,
+        "residual_sd": 0.1113,
+        "drift_over_residual": 0.5619,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawscram",
+      "seed": 22,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.8146,
+        "n_lawful": 130341,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7396,
+          0.5518,
+          0.4122,
+          0.3088,
+          0.2305,
+          0.1732,
+          0.1301,
+          0.0968
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0623,
+        "residual_sd": 0.1113,
+        "drift_over_residual": 0.56,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawscram",
+      "seed": 23,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.8171,
+        "n_lawful": 130747,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7395,
+          0.5526,
+          0.412,
+          0.3073,
+          0.2311,
+          0.1737,
+          0.1307,
+          0.1003
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0625,
+        "residual_sd": 0.1113,
+        "drift_over_residual": 0.5613,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    },
+    {
+      "arm": "exp13_lawscram",
+      "seed": 24,
+      "onset": null,
+      "lawful_window": {
+        "fraction": 0.8173,
+        "n_lawful": 130774,
+        "n_interior": 160009,
+        "theory": 0.8182,
+        "floor": 0.75,
+        "ok": true
+      },
+      "tau_rederivation": {
+        "residual_acf": [
+          0.7399,
+          0.5523,
+          0.4104,
+          0.3053,
+          0.2269,
+          0.1687,
+          0.1256,
+          0.094
+        ],
+        "decorrelation_lag_1_over_e": 4,
+        "tau_pin": 4.0,
+        "drift_per_wave": 0.0624,
+        "residual_sd": 0.1115,
+        "drift_over_residual": 0.5593,
+        "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+      },
+      "note": "NEVER ACQUIRED at stage-one horizon (acquisition-censored: unread, never a null)"
+    }
+  ],
+  "note": "STAGE-ONE ONLY: constants NOT set here; stage-two (\u03b8, S_w bands, N, horizons, dead reference, participation band+N) + the participation-gate ruling wait on the chat read of these numbers."
+}

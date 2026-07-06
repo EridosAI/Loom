@@ -1,0 +1,347 @@
+{
+  "fabric": {
+    "T": 160011,
+    "dwell_law": "k = 2 + Geom0(0.1), cap 48 (Ruling 1)",
+    "e_k_target": 11.0,
+    "k_min_realized_frac_target": 0.1,
+    "k_min_realized_frac": 0.103,
+    "realized_mean_k": 10.936,
+    "n_dwells": 14632,
+    "cap_hits": 106,
+    "truncated_last_dwell": true,
+    "walk": {
+      "tau": 4.0,
+      "theta": 0.25,
+      "stationary_frac": 0.25,
+      "family_coeff_std": 0.5,
+      "sigma_step_derived": 0.08268,
+      "reflect_bound": 1.5,
+      "k_axes": 4,
+      "bg_axes": 4
+    },
+    "background_const": [
+      -0.187339,
+      -0.431914,
+      0.761901,
+      -0.924558
+    ],
+    "member_hist": [
+      972,
+      873,
+      921,
+      945,
+      934,
+      899,
+      921,
+      910,
+      895,
+      926,
+      904,
+      911,
+      893,
+      939,
+      875,
+      914
+    ],
+    "mask_mix": {
+      "exam": 14632,
+      "probe_exam": 0,
+      "mid_vis": 72884,
+      "mid_word": 72495
+    },
+    "shuffled": false,
+    "substream_keys": {
+      "dwell": 91023,
+      "member": 92023,
+      "nuis": 93023,
+      "bg_const": 94000,
+      "bg_jit": 95023,
+      "mask": 96023,
+      "noise": 97023,
+      "shuffle": 98023,
+      "probe_raw": 99023,
+      "law": 90023
+    },
+    "law": {
+      "kind": "lawful drift + OU residual (Fork 1B)",
+      "velocity_family": "|v| ~ U[0.05,0.2]*sigma_f per axis, random sign, per dwell",
+      "velocity_abs_mean": 0.06245,
+      "drift_reflection": "elastic (bounce) at +/-3 sigma_f",
+      "residual": "OU about the moving law, tau=4, stationary 0.25 sigma_f, reflected +/-3*(0.25 sigma_f)",
+      "law_params_stream": 90000,
+      "w_window": 3
+    },
+    "lawful_window": {
+      "fraction": 0.8171,
+      "n_lawful": 130747,
+      "n_interior": 160009,
+      "theory": 0.8182,
+      "floor": 0.75,
+      "ok": true
+    }
+  },
+  "independence_asserts": {
+    "n_sample": 12000,
+    "n_null": 200,
+    "cap_hit": {
+      "rate": 0.00724,
+      "rate_theory": 0.00707,
+      "ceiling": 0.01,
+      "n_dwells": 14632,
+      "count": 106,
+      "count_bound": 145.0,
+      "ok": true
+    },
+    "immediate_repeats": 0,
+    "law_realized": {
+      "residual_sd": 0.1167,
+      "onset_sd": 0.5083,
+      "target_resid_frac": 0.25,
+      "realized_resid_frac": 0.2295,
+      "velocity_abs_mean": 0.0625,
+      "velocity_frac_of_sigma": 0.1229,
+      "v_range_target": [
+        0.05,
+        0.2
+      ]
+    },
+    "perlag_residual": {
+      "obs": 0.0533,
+      "null99": 0.0804,
+      "on": "residual-about-law (nuis - law_mu)",
+      "lags": "0..48 stride 1",
+      "ok": true
+    },
+    "k_indep": {
+      "chi2": 49.74,
+      "null99": 92.96,
+      "ok": true
+    },
+    "law_params_indep": {
+      "chi2": 204.19,
+      "null99": 275.3,
+      "code": "velocity sign-pattern over K axes",
+      "ok": true
+    },
+    "schedule_indep": {
+      "chi2": 10.53,
+      "null99": 29.9,
+      "note": "exam@pos1 structural by construction (recorded, not tested)",
+      "ok": true
+    },
+    "bg_indep": {
+      "obs": 0.0445,
+      "null99": 0.0691,
+      "ok": true
+    },
+    "lawful_window": {
+      "fraction": 0.8171,
+      "n_lawful": 130747,
+      "n_interior": 160009,
+      "theory": 0.8182,
+      "floor": 0.75,
+      "ok": true
+    }
+  },
+  "arm": "exp13_lawful",
+  "seed": 23,
+  "steps": 160000,
+  "vocab": 2,
+  "geometry": "W=3 interior-mask; L_JEPA deleted (W>1 forward guard); no u-carrier",
+  "tau_rederivation": {
+    "residual_acf": [
+      0.7395,
+      0.5526,
+      0.412,
+      0.3073,
+      0.2311,
+      0.1737,
+      0.1307,
+      0.1003
+    ],
+    "decorrelation_lag_1_over_e": 4,
+    "tau_pin": 4.0,
+    "drift_per_wave": 0.0625,
+    "residual_sd": 0.1113,
+    "drift_over_residual": 0.5613,
+    "note": "residual decorrelates within a few waves; drift is the slow ordering signal \u2014 the tau<E[k] ordering, re-derived on residuals-about-law"
+  },
+  "members": [
+    {
+      "member": 0,
+      "a": 0,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 0,
+      "word_v16": 0
+    },
+    {
+      "member": 1,
+      "a": 0,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 1,
+      "word_v16": 1
+    },
+    {
+      "member": 2,
+      "a": 0,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 2,
+      "word_v16": 2
+    },
+    {
+      "member": 3,
+      "a": 0,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 3,
+      "word_v16": 3
+    },
+    {
+      "member": 4,
+      "a": 1,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 4,
+      "word_v16": 4
+    },
+    {
+      "member": 5,
+      "a": 1,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 5,
+      "word_v16": 5
+    },
+    {
+      "member": 6,
+      "a": 1,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 6,
+      "word_v16": 6
+    },
+    {
+      "member": 7,
+      "a": 1,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 7,
+      "word_v16": 7
+    },
+    {
+      "member": 8,
+      "a": 2,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 0,
+      "word_v16": 8
+    },
+    {
+      "member": 9,
+      "a": 2,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 1,
+      "word_v16": 9
+    },
+    {
+      "member": 10,
+      "a": 2,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 2,
+      "word_v16": 10
+    },
+    {
+      "member": 11,
+      "a": 2,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 3,
+      "word_v16": 11
+    },
+    {
+      "member": 12,
+      "a": 3,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 4,
+      "word_v16": 12
+    },
+    {
+      "member": 13,
+      "a": 3,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 5,
+      "word_v16": 13
+    },
+    {
+      "member": 14,
+      "a": 3,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 6,
+      "word_v16": 14
+    },
+    {
+      "member": 15,
+      "a": 3,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 7,
+      "word_v16": 15
+    }
+  ]
+}
