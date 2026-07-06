@@ -1939,3 +1939,21 @@ mix dilutes the binding signal → substrate never differentiates → context-co
 completion. The wall sits IN FRONT of the rider question. STOPPED; design ruling owed:
 doctrine-compatible position signal (content-borne, felt-not-coded) vs W geometry, before
 any carrier talk.
+
+
+---
+
+## 2026-07-06 — EXP13 re-pose (mixed-W), Path B RULED; canon written (writes+build on Opus 4.8)
+
+Jason ruled Path B after the §10.21.2 wall. Canon unit: FRONTIER §10.21.3 (the wall as a
+NAMED FINDING — W=3 cold-start acquisition-dead; the bootstrap-order fact: differentiation
+requires binding, cross-wave addressing requires differentiation; circular at cold start),
+Path B = mixed-W coin face (per window W=1 EXP12-bootstrap or W=3 interior-mask, default
+50:50, rate stage-two; gate + verdict reads on W=3 exclusively, acquisition rides either),
+curriculum note (first structural appearance, stationary mixed form; full staged curriculum
+PARKED as escalation A). Prereg §2 amended in place. W1-CRUTCH wrong-reason class registered
+(acquired + gate-flat-on-W3 = structural reading licensed; blind_penalty instruments).
+Escalation pre-named (B fails to acquire → A developmental widening). Cosmetic rulings:
+absent-twin probe words deliberate (evocation-probe); probe seed-base moved out of fabric
+band before cal. Model plan: writes+build Opus 4.8, then PAUSE for switch to Fable at
+verify+cal+stage-two. Build next, then pause.

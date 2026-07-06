@@ -46,6 +46,21 @@ built without physics. EXP13 gives the world a law and re-asks.
 
 ## 2. The completer (Fork 2b — symmetric window, interior mask)
 
+> **AMENDED IN PLACE (2026-07-06, Path B re-pose after the §10.21.2 stage-one wall):**
+> the completer is a **MIXED-W COIN FACE**. Per window a coin selects **W=1** (the EXP12
+> single-wave vision↔word completion — the BOOTSTRAP path that differentiates the
+> substrate) or **W=3** (the interior-mask two-sided completion below), **default 50:50**;
+> the W-coin RATE is a stage-two constant, tuned on recorded grounds only. The coin is a
+> fabric-side, member-independent draw on a dedicated substream (asserted ⟂ member), so
+> loop.gen parity across arms is preserved. **The participation gate and ALL verdict reads
+> live on W=3 windows EXCLUSIVELY; acquisition may ride EITHER width.** Grounds: the wall
+> is a bootstrap-order fact — differentiation requires binding (the W=1 single-source exam
+> context supplies it), and cross-wave addressing requires differentiation (the W=3
+> two-sided read consumes it). This is curriculum's first STRUCTURAL appearance, in its
+> stationary mixed form; the full staged curriculum stays PARKED. See FRONTIER §10.21.3.
+> The bullets below describe the W=3 face of the coin; the W=1 face is EXP12 completion
+> verbatim.
+
 - **W = 3 sliding window; masked slots INTERIOR-ONLY, completed from both sides.**
   Terminal-position masking is forward prediction in costume — excluded by
   construction. This passes the recorded W>1 guard structurally.
@@ -98,7 +113,30 @@ built without physics. EXP13 gives the world a law and re-asks.
   the blinded read.
 - **If the gate stays dead on acquired seeds: STOP** — the F3 ruling returns to chat;
   the design space is "doctrine-compatible position signal (content-borne,
-  felt-not-coded)" vs "W geometry", BEFORE any carrier talk.
+  felt-not-coded)" vs "W geometry", BEFORE any carrier talk. *(Resolved 2026-07-06 = the
+  §10.21.2 wall; ruled Path B = the mixed-W re-pose, §2 as amended.)*
+- **WRONG-REASON CLASS REGISTERED — W1-CRUTCH (2026-07-06, Path B):** a seed that
+  ACQUIRES (num-floor onset reached, ride either width) but whose participation gate stays
+  FLAT on W=3 windows learned to complete via the W=1 bootstrap and NEVER onto cross-wave
+  context. `blind_penalty` (the window-blinded read on W=3 windows) instruments it: near-
+  zero blind_penalty on ACQUIRED seeds with a flat gate = W1-CRUTCH. **That outcome
+  LICENSES the structural reading** (the operator cannot address cross-wave even once
+  differentiated). Distinct from the pre-acquisition flatness of §10.21.2 (which licensed
+  nothing) — the "acquired AND flat" bar is now reachable via the bootstrap.
+- **ESCALATION PRE-NAMED (2026-07-06):** if Path (B) — the mixed-W stationary re-pose —
+  FAILS TO ACQUIRE, then Path (A) DEVELOPMENTAL WIDENING fires (a non-stationary schedule:
+  W=1-heavy early, widening to W=3 as differentiation lands). Named now; not built now.
+
+**COSMETIC RULINGS (from the §10.21.1 verify list, ruled 2026-07-06):**
+- **Absent-twin read-only probe words = DELIBERATE (recorded):** `_window_complete` and the
+  gate/blind/salience probes present real word emissions even on the absent-exposure twin.
+  This is the EVOCATION-PROBE purpose — the read measures the channel as an instrument, and
+  the instrument is the standing word-evocation form (EXP12 convention); the absent twin's
+  TRAINING still presents null tokens. Not a leak; the twin contrast stays clean because
+  training is untouched.
+- **Probe selection seed-base MOVED OUT of the fabric-key band (before cal):** the
+  participation-probe's window-selection RNG base is relocated clear of the 61000–99000
+  fabric/assert-null band, so it can never replay a fabric substream's integer sequence.
 
 ## 5. The verdict (core arms + pre-named cells)
 

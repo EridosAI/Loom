@@ -2202,3 +2202,38 @@ question, it does not answer it.
 the fenced space — **doctrine-compatible position signal (content-borne, felt-not-coded)
 vs W geometry — before any carrier talk.** Nothing verdict-grade ran; the cell table is
 untouched; no arm is a fix.
+
+### §10.21.3 — THE WALL AS A NAMED FINDING + PATH B (mixed-W) RULED (2026-07-06)
+
+**NAMED FINDING (canon): W=3 cold-start is acquisition-dead on this operator.** At a pure
+W=3 interior-mask geometry the completer never acquires (10/10 cal seeds censored, both
+arms; §10.21.2) — not for want of capacity or a healthy fabric, but because of a
+**BOOTSTRAP-ORDER fact**: *differentiation requires binding, and cross-wave addressing
+requires differentiation.* The operator's only cross-cell channel is Shepard distance on
+content-borne position keys; those keys are degenerate until the substrate differentiates;
+the substrate differentiates only once a binding signal drives it; and at W=3 the sole
+binding context (the masked cell's completion source) is diluted across three
+indistinguishable same-slot cells — so the drive never starts. The two requirements are
+circular at cold start. This is a property of the operator × window geometry, standing in
+FRONT of the rider question, not an answer to it.
+
+**RULED (Jason): Path B — the mixed-W re-pose (§2 amended in place).** The completer
+becomes a coin face: per window W=1 (the EXP12 single-source vision↔word completion that
+supplies binding and differentiates the substrate — the bootstrap) or W=3 (the interior-
+mask two-sided read that consumes differentiation), default 50:50, rate a stage-two
+constant. The participation gate and all verdict reads live on W=3 windows exclusively;
+acquisition may ride either width. The mixed-W coin breaks the bootstrap circularity by
+letting W=1 windows differentiate the substrate first, so the W=3 windows become readable.
+
+**CURRICULUM NOTE (Jason, recorded): this is curriculum's FIRST STRUCTURAL APPEARANCE** —
+in its stationary mixed form (a fixed 50:50 coin, no schedule over time). The FULL STAGED
+CURRICULUM (non-stationary, W=1-heavy early then widening) stays PARKED as the pre-named
+escalation (A): it fires only if Path (B) itself fails to acquire.
+
+**WRONG-REASON CLASS REGISTERED — W1-CRUTCH:** an ACQUIRED seed whose gate stays FLAT on
+W=3 windows (instrumented by blind_penalty) learned to complete via the W=1 crutch and
+never onto cross-wave context — and THAT outcome licenses the structural reading (the
+"acquired AND flat" bar of §10.21.1, now reachable via the bootstrap). Escalation (B fails
+to acquire → A developmental widening) pre-named. Verify-list cosmetics ruled: absent-twin
+probe words = deliberate (evocation-probe purpose); probe seed-base moved out of the
+fabric-key band before cal. Nothing verdict-grade has run; the cell table is untouched.
