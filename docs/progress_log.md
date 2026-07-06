@@ -1983,3 +1983,27 @@ NOT the verdict or discriminator (blind_penalty + participation gap carry flank-
 +~28s/run) so a fast W=1 bootstrap (onset < 3000) still leaves a non-empty pre-onset noise
 reference for the 'opens vs flat' curve. Smoke re-passes. Prereg §4 reading note + code.
 Cal {20-24} x both core arms launching.
+
+
+---
+
+## 2026-07-06 — EXP13 Path B STAGE-ONE (verified 12-agent): acquisition wall PARTIALLY BROKEN, capability wall INTACT — operator marginal-collapse (NOT W1-CRUTCH); STOPPED for the gate/next-move ruling
+
+Mixed-W cal {20-24} x both core arms, 160k. Path B moved the num-floor (lawful 2/5, scram
+4/5 acquire vs 0/10 at pure W=3; asymmetry 13.8x = EXP12 fabric fact) but NOT the completer:
+the OPERATOR is a near-constant marginal map at BOTH widths on BOTH arms (category acc 0.500,
+output spread ~1e-4 across inputs 0.1-5.2 scale; verified by 2 independent retrains incl. the
+scrambled arm). Gate flat because no contextual completion to break (true~=decoy, blind_pen
+negative). W1-CRUTCH RETIRED for this result (W=1 also blind = the class's premise fails).
+Framing correction (verify-driven): num is OPERATOR-MEDIATED (evoke_vision through op), not a
+pure vision-cortex read; sep_cat lawful ~0.47 (undiff), scram content healthy but operator
+still marginal => content-vs-operator dissociation, collapse is operator-side. Instrument
+caveat: dc_track (BLOCK read) couples into the near-floor trajectory (no param/gen touched);
+artifacts reproduce only via the faithful runner. Stage-two NOT cuttable. Canon 10.21.4.
+
+My FIRST draft ('W1-CRUTCH, structural reading licensed') was WRONG and flipped by the
+controlled test + the 12-agent pass BEFORE reaching the table (the project's recurring
+draft-flip pattern). RULING OWED: gate + next-move. The fenced axis (position signal vs W
+geometry) is DOWNSTREAM of operator marginal-collapse; developmental widening (escalation A)
+is a W-lever, likely wrong if the collapse is W-independent (it is). Artifact supersession:
+mixed-W exp13 cal artifacts replace the pure-W3 8ffe6f5 ones at those paths.

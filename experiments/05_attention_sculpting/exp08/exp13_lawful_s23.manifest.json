@@ -60,7 +60,8 @@
       "noise": 97023,
       "shuffle": 98023,
       "probe_raw": 99023,
-      "law": 90023
+      "law": 90023,
+      "wcoin": 89023
     },
     "law": {
       "kind": "lawful drift + OU residual (Fork 1B)",
@@ -70,6 +71,11 @@
       "residual": "OU about the moving law, tau=4, stationary 0.25 sigma_f, reflected +/-3*(0.25 sigma_f)",
       "law_params_stream": 90000,
       "w_window": 3
+    },
+    "mixed_w": {
+      "w3_realized_frac": 0.4995,
+      "w_coin_stream": 89000,
+      "faces": "per-focus-wave coin: W=1 (EXP12 bootstrap) or W=3 (interior-mask)"
     },
     "lawful_window": {
       "fraction": 0.8171,
@@ -129,6 +135,12 @@
       "note": "exam@pos1 structural by construction (recorded, not tested)",
       "ok": true
     },
+    "wcoin_indep": {
+      "chi2": 16.33,
+      "null99": 28.13,
+      "w3_realized_frac": 0.4995,
+      "ok": true
+    },
     "bg_indep": {
       "obs": 0.0445,
       "null99": 0.0691,
@@ -147,7 +159,8 @@
   "seed": 23,
   "steps": 160000,
   "vocab": 2,
-  "geometry": "W=3 interior-mask; L_JEPA deleted (W>1 forward guard); no u-carrier",
+  "geometry": "MIXED-W (Path B): per-focus coin W=1 bootstrap / W=3 interior-mask; L_JEPA deleted (W>1 forward guard); no u-carrier; gate+verdict reads on W=3",
+  "w3_rate": 0.5,
   "tau_rederivation": {
     "residual_acf": [
       0.7395,

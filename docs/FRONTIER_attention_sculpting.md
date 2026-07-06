@@ -2237,3 +2237,62 @@ never onto cross-wave context — and THAT outcome licenses the structural readi
 to acquire → A developmental widening) pre-named. Verify-list cosmetics ruled: absent-twin
 probe words = deliberate (evocation-probe purpose); probe seed-base moved out of the
 fabric-key band before cal. Nothing verdict-grade has run; the cell table is untouched.
+
+
+### §10.21.4 — PATH B STAGE-ONE: acquisition wall PARTIALLY BROKEN, capability wall INTACT — the OPERATOR marginal-collapses at both widths on both arms (2026-07-06, verified 12-agent: 4 lenses + 8 adjudications, every number digit-exact, 2 independent retrains incl. the scrambled arm; NO letter/verdict — stage-one read for the gate ruling)
+
+**Path B moved the num-floor but not the completer.** Cal {20–24} × both core arms at 160k,
+mixed-W 50:50. Acquisition (num-floor, 2-consec ≥ 0.01) reproduced digit-exact: **lawful
+2/5** {s21 123300, s22 120600}, **lawscram 4/5** {s20 15300, s21 7800, s22 6000, s24 6300},
+s23 censored both — vs **0/10 at the pure-W=3 wall**. The W=1 bootstrap DID cross the floor
+on some seeds. Asymmetry 13.8× (scram mean onset 8850 vs lawful 121950) = the EXP12
+shuffle-fast / order-slow fabric fact, carried.
+
+**But the OPERATOR is a near-CONSTANT MARGINAL map — verified by two independent retrains
+(lawful s22 to 130k, scram s22 to 160k), both arms:** controlled category-conditioned
+completion gives **category accuracy 0.500 (chance)** at both widths; the completed slot
+moves ~1e-4 across inputs spanning 0.1–5.2 in scale (word-token scale 1.08) — a
+near-constant function; the output sits at the marginal (scram dist-to-marginal 0.047 vs
+dist-to-correct 0.543). The participation gate is therefore FLAT not by a crutch but because
+there is **no contextual completion to break**: true_err ≈ decoy_err to 3 decimals,
+frac-above-pre-onset-noise 0.0/0.008, blind_penalty negative on every acquired seed.
+
+**W1-CRUTCH does NOT apply (the pre-registered class is retired for this result).** W1-CRUTCH
+presupposes the W=1 face completes CONTEXTUALLY (within-wave) and merely fails to transfer to
+W=3. The data refute the premise: W=1 is ALSO context-blind (exam_acc_w1 ≈ exam_acc_w3 ≈
+chance; W=1 word→vision cross-category shift 1.6e-4). This is a DISTINCT, deeper finding:
+**operator marginal-collapse**, order-independent (both arms).
+
+**Framing CORRECTION (verify-driven, recorded): num is OPERATOR-MEDIATED.** `evoke_vision`
+(associative) reconstructs vision from the visible word THROUGH the operator, so the num-floor
+"acquisition" is the operator's word→vision evocation weakly/transiently crossing 0.01 (s22
+median num 0.008 — BELOW floor — with a late transient), NOT a pure vision-cortex read. The
+raw vision-emission separability `sep_cat` stays ≈ 0.47–0.50 (undifferentiated) on the lawful
+arm throughout; the SCRAM arm's CONTENT does differentiate early and healthily (den peaks
+0.72, asg_dist 1.5) yet its operator completion is still marginal — so content differentiation
+and operator contextuality are dissociated, and the collapse is on the OPERATOR side.
+
+**INSTRUMENT CAVEAT (recorded, benign): the read schedule couples into the near-floor
+trajectory.** A bare `loop.step` training loop diverges from the cal artifacts after ~t=3000
+unless the BLOCK-cadence `dc_track` diagnostic read is replicated; dc_track touches no
+detectable param / Δ2 / loop.gen yet shifts the near-floor trajectory (within the noise band).
+The cal artifacts reproduce EXACTLY only via the faithful runner. Does not affect the
+marginal-collapse (holds on clean and read-interleaved trajectories); flagged as a
+determinism-contract subtlety (the interleaved reads are part of "order").
+
+**Consequence for the fenced design space.** The wall's earlier axis — "doctrine-compatible
+position signal vs W geometry" — is shown to be DOWNSTREAM: with no contextual completion at
+ANY width on EITHER fabric, neither a position signal nor a wider window is the operative
+lever. The real axis is what pulls the completer OFF the marginal — the contextual-signal
+strength / loss regime / operator capacity — or whether this operator can do contextual
+completion on this fabric at all. **Stage-two constants are NOT cuttable** (no differentiated
+completion regime to calibrate; the gate has no participation to band).
+
+**Standing: STOPPED for the gate ruling + next-move.** The pre-named escalation "(B) fails to
+acquire → (A) developmental widening" has an AMBIGUOUS trigger (B weakly acquired the
+operator-mediated floor but the completer stayed marginal), and developmental widening is a
+W-schedule lever — the wrong axis if the collapse is W-independent (it is). Artifact note: the
+mixed-W cal artifacts (`exp13_{lawful,lawscram}_s20-24`, w3_rate + participation_probe +
+mixed_w present) SUPERSEDE the pure-W=3 §10.21.2 artifacts at those paths; the pure-W=3 wall
+artifacts live at commit 8ffe6f5. Nothing verdict-grade ran; the cell table is untouched; no
+arm is a fix.
