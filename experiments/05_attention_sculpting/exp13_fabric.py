@@ -63,7 +63,9 @@ K_AXES, BG_AXES = F12.K_AXES, F12.BG_AXES
 
 # --- §9.1 the law (velocity family) ---
 SEED_LAW = 90000                 # NEW dedicated law-params substream (disjoint from EXP12)
+SEED_WCOIN = 89000               # NEW dedicated W-coin substream (Path B mixed-W, disjoint)
 V_MIN, V_MAX = 0.05, 0.20        # |velocity| ~ U[V_MIN, V_MAX] * family sigma, per axis/wave
+W3_RATE_DEFAULT = 0.5            # §2 amended (Path B): per-wave P(W=3) vs W=1 bootstrap; stage-two
 # --- §9.6 dose pin ---
 LAWFUL_WINDOW_FLOOR = 0.75       # manifest assert; ~0.818 = 1 - 2/E[k] expected at W=3
 W_WINDOW = 3                     # the completer window (the fabric records tags for it)
@@ -90,12 +92,14 @@ def _bounce(x: torch.Tensor, v: torch.Tensor, bound: float):
 class Fabric13(F12.Fabric):
     law_mu: torch.Tensor | None = None       # (T, K) the LAW position (drift), per wave
     dwell_velocity: torch.Tensor | None = None   # (n_dwell, K) per-dwell velocity (⟂ member)
+    w3: torch.Tensor | None = None           # (T,) bool — Path B mixed-W: this wave, as FOCUS,
+                                             # trains W=3 (True) or W=1 bootstrap (False). ⟂ member.
 
 
 def build_fabric13(stim, cfg, seed: int, T: int, *,
                    probe_rate: float = 0.0, shuffled: bool = False,
                    uniform_mask: bool = False, word_ref: bool = False,
-                   expo_word: bool = False) -> Fabric13:
+                   expo_word: bool = False, w3_rate: float = W3_RATE_DEFAULT) -> Fabric13:
     """EXP12 build_fabric with the lawful-drift nuisance (Fork 1B). The dwell law, member
     draw, mask schedule, background, noise and substream keys are EXP12 VERBATIM; only the
     nuisance trajectory changes (fixed onset-revert OU -> drifting law + OU residual) and a
@@ -108,7 +112,8 @@ def build_fabric13(stim, cfg, seed: int, T: int, *,
                 nuis=F12.SEED_NUIS + seed, bg_const=F12.SEED_BG_CONST,
                 bg_jit=F12.SEED_BG_JIT + seed, mask=F12.SEED_MASK + seed,
                 noise=F12.SEED_NOISE + seed, shuffle=F12.SEED_SHUFFLE + seed,
-                probe_raw=F12.SEED_PROBE_RAW + seed, law=SEED_LAW + seed)
+                probe_raw=F12.SEED_PROBE_RAW + seed, law=SEED_LAW + seed,
+                wcoin=SEED_WCOIN + seed)
     g_dwell = torch.Generator().manual_seed(keys["dwell"])
     g_member = torch.Generator().manual_seed(keys["member"])
     g_nuis = torch.Generator().manual_seed(keys["nuis"])       # OU residual noise
@@ -116,10 +121,11 @@ def build_fabric13(stim, cfg, seed: int, T: int, *,
     g_mask = torch.Generator().manual_seed(keys["mask"])
     g_noise = torch.Generator().manual_seed(keys["noise"])
     g_law = torch.Generator().manual_seed(keys["law"])         # velocity draws
+    g_wcoin = torch.Generator().manual_seed(keys["wcoin"])     # Path B W-coin (⟂ member)
 
     n_members = cfg.n_A * cfg.n_B
     rows = dict(member=[], dwell_id=[], pos=[], mask_slot=[], is_exam=[],
-                is_probe=[], nuis=[], law_mu=[])
+                is_probe=[], nuis=[], law_mu=[], w3=[])
     dwell_member, dwell_k, dwell_velocity = [], [], []
     cap_hits = 0
     prev_m = -1
@@ -167,6 +173,10 @@ def build_fabric13(stim, cfg, seed: int, T: int, *,
             else:
                 slot = int(torch.rand((), generator=g_mask).item() < 0.5)
                 exam, probe = False, False
+            # Path B mixed-W: per-FOCUS-wave coin (dedicated stream, drawn EVERY wave for
+            # draw parity — a rate change only re-thresholds the same uniform draws, never
+            # shifts any other stream; ⟂ member by construction, asserted).
+            w3_coin = bool(torch.rand((), generator=g_wcoin).item() < w3_rate)
             rows["member"].append(m)
             rows["dwell_id"].append(did)
             rows["pos"].append(p)
@@ -175,6 +185,7 @@ def build_fabric13(stim, cfg, seed: int, T: int, *,
             rows["is_probe"].append(probe)
             rows["nuis"].append(c.clone())
             rows["law_mu"].append(mu.clone())
+            rows["w3"].append(w3_coin)
         did += 1
     truncated = len(rows["member"]) > T
 
@@ -205,11 +216,12 @@ def build_fabric13(stim, cfg, seed: int, T: int, *,
         dwell_member=torch.tensor(dwell_member), dwell_k=torch.tensor(dwell_k),
         cap_hits=cap_hits, truncated_last=truncated, shuffled=False, perm=None,
         substreams=keys,
-        law_mu=law_mu, dwell_velocity=torch.stack(dwell_velocity))
+        law_mu=law_mu, dwell_velocity=torch.stack(dwell_velocity),
+        w3=torch.tensor(rows["w3"][:T], dtype=torch.bool))
     if shuffled:
         perm = torch.randperm(T, generator=torch.Generator().manual_seed(keys["shuffle"]))
         for f in ("a", "b", "member", "cat", "dwell_id", "pos", "mask_slot",
-                  "is_exam", "is_probe_exam", "nuis", "bg", "raw", "law_mu"):
+                  "is_exam", "is_probe_exam", "nuis", "bg", "raw", "law_mu", "w3"):
             setattr(fab, f, getattr(fab, f)[perm])
         fab.shuffled, fab.perm = True, perm
     return fab
@@ -364,6 +376,20 @@ def fabric_asserts13(fab: Fabric13, cfg, *, n_sample: int = 12000, n_null: int =
                                  ok=bool(obs_s <= thr_s))
     assert obs_s <= thr_s, f"SCHEDULE CODES IDENTITY: chi2 {obs_s} > {thr_s}"
 
+    # (3b) NEW — Path B W-coin ⟂ member: the mixed-W selection must not whisper identity
+    # (velocity moves, elephants and mice, at BOTH widths — the coin is a dedicated stream).
+    mw3 = fab.w3[:S].long()
+    obs_w = chi2_bin(fab.member[:S], mw3, 2)
+    null_w = []
+    for i in range(n_null):
+        gp = torch.Generator().manual_seed(66000 + i)
+        null_w.append(chi2_bin(fab.member[:S], mw3[torch.randperm(len(mw3), generator=gp)], 2))
+    thr_w = sorted(null_w)[int(0.99 * n_null)]
+    out["wcoin_indep"] = dict(chi2=round(obs_w, 2), null99=round(thr_w, 2),
+                              w3_realized_frac=round(float(fab.w3.float().mean()), 4),
+                              ok=bool(obs_w <= thr_w))
+    assert obs_w <= thr_w, f"W-COIN CODES IDENTITY: chi2 {obs_w} > {thr_w}"
+
     # (4) background ⟂ member (EXP12 verbatim)
     obs_b = F12._max_abs_corr(fab.bg[:S], labels)
     null_b = []
@@ -392,5 +418,9 @@ def fabric_manifest13(fab: Fabric13, stim, cfg, asserts: dict) -> dict:
         residual="OU about the moving law, tau=4, stationary 0.25 sigma_f, reflected +/-3*(0.25 sigma_f)",
         law_params_stream=SEED_LAW,
         w_window=W_WINDOW)
+    man["fabric"]["mixed_w"] = dict(               # Path B (§2 amended)
+        w3_realized_frac=round(float(fab.w3.float().mean()), 4),
+        w_coin_stream=SEED_WCOIN,
+        faces="per-focus-wave coin: W=1 (EXP12 bootstrap) or W=3 (interior-mask)")
     man["fabric"]["lawful_window"] = asserts.get("lawful_window")
     return man

@@ -62,6 +62,10 @@ CAL_HORIZON = 160000
 PROBE_RATE_STAGE1 = 0.0
 W = 3                                # the interior-mask window (Fork 2b)
 INTERIOR = 1                         # window-local index of the masked wave
+PROBE_SELECT_BASE = 40_000_000       # participation-probe window-selection RNG base — moved
+                                     # CLEAR of the 61000-99000 fabric/assert-null band
+                                     # (verify-list cosmetic ruling, 2026-07-06) so it can
+                                     # never replay a fabric substream's integer sequence
 
 ARMS13 = {
     "exp13_lawful":   dict(shuffled=False),
@@ -91,7 +95,8 @@ class EXP13Loop(X12.EXP12Loop):
                                   shuffled=v.get("shuffled", False),
                                   uniform_mask=v.get("uniform_mask", False),
                                   word_ref=v.get("word_ref", False),
-                                  expo_word=v.get("expo_word", False))
+                                  expo_word=v.get("expo_word", False),
+                                  w3_rate=v.get("w3_rate", F13.W3_RATE_DEFAULT))
 
     def _l_jepa(self, bc):
         # THE W>1 FORWARD GUARD (§0/§2): the next-wave-prediction term stays DELETED at
@@ -99,67 +104,83 @@ class EXP13Loop(X12.EXP12Loop):
         return torch.zeros(())
 
     def build_cells(self, t, *, no_word, gen, ablate="none", force_mask=None):
-        """t = the window's LEFT edge; window = waves [t, t+1, t+2]; INTERIOR = wave t+1.
-        Only the interior wave is masked (one slot); the flanks are fully visible."""
+        """MIXED-W (Path B, §2 amended). FOCUS wave = ti = t+1 (always). The fabric's
+        per-focus W-coin selects the width around ti:
+          * W=3 (fab.w3[ti] True): window [ti-1, ti, ti+1], interior=ti (local 1), flanks
+            visible — the two-sided interior-mask read (terminals never masked).
+          * W=1 (fab.w3[ti] False): window [ti], the EXP12 single-wave vision<->word
+            completion — the BOOTSTRAP that differentiates the substrate.
+        force_mask (grad-split diagnostic) fixes the width from its own shape."""
         cfg = self.cfg
         fab = self.stream
-        ti = t + INTERIOR                                     # the interior (masked) wave
-        assert ti + 1 < fab.T, f"window right edge past fabric (t={t}, T={fab.T})"
-        idx = torch.arange(t, t + cfg.W)                     # (W,)
-        raw = fab.raw[idx]                                   # (W, D) precomputed waves
-        e_vis = self.vision.emit(raw)                        # (W, D) plastic, grad
-        wl = fab.cat[idx]
-        tokens = torch.tensor([self.curric.word_token(int(wl[w]), no_word=no_word)
-                               for w in range(cfg.W)])
+        ti = t + INTERIOR                                    # the FOCUS (masked) wave
+        if force_mask is not None:
+            w_win = int(force_mask.shape[0])
+        else:
+            w_win = cfg.W if bool(fab.w3[ti]) else 1
+        interior = INTERIOR if w_win == cfg.W else 0         # local index of the focus wave
+        left = ti - interior
+        assert left >= 0 and left + w_win <= fab.T, f"window out of fabric (ti={ti}, w={w_win})"
+        idx = torch.arange(left, left + w_win)               # (w_win,)
+        raw = fab.raw[idx]
+        e_vis = self.vision.emit(raw)
+        tokens = torch.tensor([self.curric.word_token(int(fab.cat[i]), no_word=no_word)
+                               for i in idx.tolist()])
         e_word = self._vary_word(self.word.emit(tokens), tokens)
-        content = torch.stack([e_vis, e_word], dim=1)        # (W, n_slots, D)
+        content = torch.stack([e_vis, e_word], dim=1)        # (w_win, n_slots, D)
         v13 = getattr(cfg, "_exp13", {})
         word_ref = bool(v13.get("word_ref", False))
         expo_word = bool(v13.get("expo_word", False))
         if force_mask is None:
-            mask = torch.zeros(cfg.W, cfg.n_slots, dtype=torch.bool)
-            slot = int(fab.mask_slot[ti])                    # interior wave's assigned slot
+            mask = torch.zeros(w_win, cfg.n_slots, dtype=torch.bool)
+            slot = int(fab.mask_slot[ti])                    # focus wave's assigned slot
             if (word_ref or expo_word) and slot == 1:
                 fam_name = "exposure"                        # no cell masked; loss skips
             else:
-                mask[INTERIOR, slot] = True
+                mask[interior, slot] = True
                 fam_name = ("exam" if bool(fab.is_exam[ti])
                             else ("mid_word" if slot == 1 else "mid_vis"))
             self.mix["n"] += 1
             self.mix["vis_masked"] += int(slot == 0 and fam_name != "exposure")
             self.mix["word_visible"] += int(slot == 0 and fam_name != "exposure")
-            self.mix["sib_visible"] += 1                     # interior has same-window flanks
+            self.mix["sib_visible"] += int(w_win == cfg.W)   # flanks only exist at W=3
             self.mix["both"] += 0
         else:
             mask, fam_name = force_mask, "forced"
         masked = apply_slice_mask(self._pose_pam_input(content), mask, self.op.mask_emb)
         # NO u-carrier (order enters via the fabric's lawful dynamics only, §2)
-        Ccells = cfg.W * cfg.n_slots
+        Ccells = w_win * cfg.n_slots
         return dict(
             cells=masked.reshape(Ccells, cfg.D),
             target=self._pam_target(content).reshape(Ccells, cfg.D),
             mask=mask.reshape(Ccells), visible=(~mask).reshape(Ccells),
-            fam=fam_name, raw=raw, drift_w=torch.zeros(cfg.W),
-            dwell=fab.dwell_id[idx], e_vis=e_vis[INTERIOR:INTERIOR + 1],
-            t_int=ti,
+            fam=fam_name, raw=raw, drift_w=torch.zeros(w_win),
+            dwell=fab.dwell_id[idx], e_vis=e_vis[interior:interior + 1],
+            t_int=ti, w_win=w_win, interior=interior,
         )
 
     def _l_pam(self, bc):
+        # slot_ids sized to the ACTUAL window (W=1 -> [:2]; W=3 -> [:6]); the operator
+        # handles variable cell counts (Shepard kernel over C cells, non-fixed C).
+        sl = self.slot_ids[:bc["w_win"] * self.cfg.n_slots]
+        w, n = bc["w_win"], self.cfg.n_slots
         if not bool(bc["mask"].any()):
             # EXPOSURE-ONLY (coin policy absent twin): completion loss SKIPS (constant 0)
-            pred = self.op(bc["cells"].unsqueeze(0), self.slot_ids, bc["visible"])[0]
+            pred = self.op(bc["cells"].unsqueeze(0), sl, bc["visible"])[0]
             if bc["fam"] != "forced":
-                self._stash = dict(pred=pred.reshape(self.cfg.W, self.cfg.n_slots, -1).detach(),
+                self._stash = dict(pred=pred.reshape(w, n, -1).detach(),
                                    e_vis=bc["e_vis"].detach(), mask=bc["mask"].clone(),
-                                   fam=bc["fam"], raw=bc["raw"], t_int=bc["t_int"])
+                                   fam=bc["fam"], raw=bc["raw"], t_int=bc["t_int"],
+                                   interior=bc["interior"], w_win=w)
             return torch.zeros(()), pred
-        pred = self.op(bc["cells"].unsqueeze(0), self.slot_ids, bc["visible"])[0]
+        pred = self.op(bc["cells"].unsqueeze(0), sl, bc["visible"])[0]
         m = bc["mask"]
         l = torch.nn.functional.mse_loss(pred[m], bc["target"][m])
         if bc["fam"] != "forced":
-            self._stash = dict(pred=pred.reshape(self.cfg.W, self.cfg.n_slots, -1).detach(),
+            self._stash = dict(pred=pred.reshape(w, n, -1).detach(),
                                e_vis=bc["e_vis"].detach(), mask=bc["mask"].clone(),
-                               fam=bc["fam"], raw=bc["raw"], t_int=bc["t_int"])
+                               fam=bc["fam"], raw=bc["raw"], t_int=bc["t_int"],
+                               interior=bc["interior"], w_win=w)
         return l, pred
 
 
@@ -183,6 +204,10 @@ def _window_complete(loop, ti: int, mask_slot: int, *, blind_flanks: bool = Fals
     idx = torch.tensor(idx)
     raw = fab.raw[idx]
     e_vis = loop.vision.emit(raw)
+    # RULED cosmetic (2026-07-06): the probe presents REAL word emissions even on the
+    # absent-exposure twin — DELIBERATE (evocation-probe purpose; the read is the standing
+    # word-evocation instrument, EXP12 convention). Training on the absent twin still
+    # presents null tokens; this read never touches training, so the twin contrast is clean.
     e_word = loop.word.emit(fab.cat[idx])
     content = torch.stack([e_vis, e_word], dim=1)
     mask = torch.zeros(cfg.W, cfg.n_slots, dtype=torch.bool)
@@ -251,7 +276,7 @@ def participation_probe(loop, *, n: int = 64, panel_seed: int = 0) -> dict | Non
     if len(cand) == 0:
         X9._rng_check(loop, st, "participation_probe")
         return None
-    g = torch.Generator().manual_seed(90007 + panel_seed)
+    g = torch.Generator().manual_seed(PROBE_SELECT_BASE + panel_seed)
     sel = cand[torch.randperm(len(cand), generator=g)[:min(n, len(cand))]]
     true_err, decoy_err, n_used = [], [], 0
     resid = (fab.nuis - fab.law_mu)
@@ -331,16 +356,17 @@ def tau_rederivation(fab: F13.Fabric13, *, max_lag: int = 8) -> dict:
 
 
 # ------------------------------------------------------------------ the runner
-def build_exp13(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_RATE_STAGE1):
+def build_exp13(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_RATE_STAGE1,
+                w3_rate: float = F13.W3_RATE_DEFAULT):
     spec = ARMS13[arm_name]
     pin = constants.PinnedConstants()
     cfg = SculptConfig(seed=seed)
-    cfg.W = W                                                # the interior-mask window (Fork 2b)
+    cfg.W = W                                                # max window (Fork 2b); mixed-W per coin
     cfg.T = steps + W + 8                                    # continual: window needs t+2 < T
     cfg._exp13 = dict(T=cfg.T, shuffled=spec["shuffled"], probe_rate=probe_rate,
                       uniform_mask=spec.get("uniform_mask", False),
                       word_ref=spec.get("word_ref", False),
-                      expo_word=spec.get("expo_word", False))
+                      expo_word=spec.get("expo_word", False), w3_rate=w3_rate)
     loop = EXP13Loop(cfg, pin)
     return loop, spec, cfg
 
@@ -355,7 +381,8 @@ def run_exp13_arm(arm_name: str, seed: int, steps: int, *,
                                        shuffled=False,
                                        uniform_mask=spec.get("uniform_mask", False),
                                        word_ref=spec.get("word_ref", False),
-                                       expo_word=spec.get("expo_word", False))
+                                       expo_word=spec.get("expo_word", False),
+                                       w3_rate=cfg._exp13.get("w3_rate", F13.W3_RATE_DEFAULT))
         assert torch.equal(fab.raw.sort(0).values, fab_plain.raw.sort(0).values), \
             "A-LAWSCRAM waves are not the identical multiset"
         assert int(fab.is_exam.sum()) == int(fab_plain.is_exam.sum()), "exam count differs"
@@ -366,7 +393,9 @@ def run_exp13_arm(arm_name: str, seed: int, steps: int, *,
         tau = tau_rederivation(fab)
     man = F13.fabric_manifest13(fab, loop.stim, cfg, asserts)
     man.update(arm=arm_name, seed=seed, steps=steps, vocab=cfg.n_category,
-               geometry="W=3 interior-mask; L_JEPA deleted (W>1 forward guard); no u-carrier",
+               geometry=("MIXED-W (Path B): per-focus coin W=1 bootstrap / W=3 interior-mask; "
+                         "L_JEPA deleted (W>1 forward guard); no u-carrier; gate+verdict reads on W=3"),
+               w3_rate=cfg._exp13.get("w3_rate", F13.W3_RATE_DEFAULT),
                tau_rederivation=tau, members=A._members(cfg))
     base = OUTDIR / (f"{arm_name}_s{seed}" + (f"_{out_tag}" if out_tag else ""))
     base.with_suffix(".manifest.json").write_text(json.dumps(man, indent=2, default=str))
@@ -434,26 +463,31 @@ def _buffer_wave13(loop, buf: dict):
         return                                               # exposure-only wave
     fab = loop.stream
     ti = st["t_int"]
+    ic = st["interior"]                                      # local index of the focus wave
     cat = int(fab.cat[ti])
-    pred = st["pred"]                                        # (W, n_slots, D)
-    mask = st["mask"].reshape(loop.cfg.W, loop.cfg.n_slots)
-    masked_word = bool(mask[INTERIOR, 1])
-    pslot = pred[INTERIOR, 1] if masked_word else pred[INTERIOR, 0]
+    pred = st["pred"]                                        # (w_win, n_slots, D)
+    mask = st["mask"].reshape(st["w_win"], loop.cfg.n_slots)
+    masked_word = bool(mask[ic, 1])
+    pslot = pred[ic, 1] if masked_word else pred[ic, 0]
     tgt = loop.word.emit(torch.tensor([cat]))[0] if masked_word else st["e_vis"][0]
     err = float((pslot - tgt).norm())
     pb = X12._pos_bucket(int(fab.pos[ti]))
     buf["pos_word" if masked_word else "pos_vis"].setdefault(pb, []).append(err)
     mid = int(fab.pos[ti]) > 1
+    # blind_penalty / earned-salience reads always probe a W=3 window around ti (read-only,
+    # the gate lives on W=3 exclusively — instruments W1-CRUTCH regardless of training width).
     if masked_word:
         lift, acc = X12.exam_lift(loop, pslot, cat)
         if bool(fab.is_exam[ti]):
             buf["exam"].append(lift)
             buf["exam_acc"].append(acc)
-            buf["div"].append(onset_divergence13(loop, ti))
-            buf["blind"].append(window_blinded_read(loop, ti, 1)["blind_penalty"])
+            if INTERIOR <= ti < fab.T - INTERIOR:
+                buf["div"].append(onset_divergence13(loop, ti))
+                buf["blind"].append(window_blinded_read(loop, ti, 1)["blind_penalty"])
     elif mid:
         buf["mid_vis"].append(err)
-        buf["blind"].append(window_blinded_read(loop, ti, 0)["blind_penalty"])
+        if INTERIOR <= ti < fab.T - INTERIOR:
+            buf["blind"].append(window_blinded_read(loop, ti, 0)["blind_penalty"])
 
 
 def _eval_column13(loop, t, buf, ma, mb, labels, no_word=False) -> dict:
@@ -585,6 +619,8 @@ def smoke():
     fab = loop.stream
     assert fab.T >= 1211 and int(fab.pos.min()) == 1
     assert fab.law_mu is not None and fab.dwell_velocity is not None
+    # Path B mixed-W: both widths occur; the W-coin is a real ~50:50 split
+    assert fab.w3 is not None and 0.3 < float(fab.w3.float().mean()) < 0.7, "W-coin not ~50:50"
     # the guaranteed onset exam (core arm, rate 0): pos-1 waves are word-masked exams
     onset_rows = fab.pos == 1
     assert bool((fab.mask_slot[onset_rows] == 1).all()) and bool(fab.is_exam[onset_rows].all())
@@ -600,12 +636,25 @@ def smoke():
     # THE W>1 FORWARD GUARD: L_JEPA is a hard zero at W=3 (the base would fire here)
     g0 = loop.gen.get_state()
     out = loop.step(no_word=False)
-    assert out["l_jepa"] == 0.0, "L_JEPA not deleted at W=3 — forward guard breached"
-    # interior-only masking: only the interior wave is ever masked (terminals never)
-    bc = loop.build_cells(loop._t, no_word=False, gen=loop.gen)
-    mgrid = bc["mask"].reshape(cfg.W, cfg.n_slots)
-    assert not bool(mgrid[0].any()) and not bool(mgrid[2].any()), "a flank was masked (forward-in-costume)"
-    assert int(mgrid[INTERIOR].sum()) == 1, "interior must have exactly one masked slot"
+    assert out["l_jepa"] == 0.0, "L_JEPA not deleted — forward guard breached"
+    # mixed-W interior-only masking: sample many build_cells, assert BOTH widths appear and
+    # a flank is NEVER masked at W=3; W=1 windows are single-wave (2 cells, interior 0)
+    seen_w1 = seen_w3 = False
+    for tt in range(1, 400):
+        bc = loop.build_cells(tt, no_word=False, gen=loop.gen)
+        w, ic = bc["w_win"], bc["interior"]
+        mgrid = bc["mask"].reshape(w, cfg.n_slots)
+        assert int(mgrid.sum()) <= 1, "more than one masked slot"
+        if int(mgrid.sum()) == 1:
+            assert bool(mgrid[ic].any()), "masked slot not on the focus wave"
+        if w == 3:
+            seen_w3 = True
+            assert not bool(mgrid[0].any()) and not bool(mgrid[2].any()), "flank masked at W=3"
+            assert ic == INTERIOR
+        else:
+            seen_w1 = True
+            assert w == 1 and ic == 0, "W=1 window must be single-wave, interior 0"
+    assert seen_w1 and seen_w3, "mixed-W must produce BOTH widths"
     for _ in range(2, 301):
         loop.step(no_word=False)
     assert loop.word.param_delta() == 0.0, "anchor not frozen"
@@ -641,8 +690,10 @@ def smoke():
     print("SMOKE OK:", json.dumps(dict(
         cap=a["cap_hit"]["ok"], perlag_resid=a["perlag_residual"],
         law_params=a["law_params_indep"], k=a["k_indep"]["ok"], sched=a["schedule_indep"]["ok"],
-        bg=a["bg_indep"]["ok"], lawful_window=lw, law_realized=a["law_realized"],
-        participation=pp, tau=tau, col_keys=sorted(col.keys()))))
+        wcoin=a["wcoin_indep"], bg=a["bg_indep"]["ok"], lawful_window=lw,
+        law_realized=a["law_realized"], participation=pp, tau=tau,
+        mixed_w=dict(seen_w1=seen_w1, seen_w3=seen_w3, w3_frac=round(float(fab.w3.float().mean()), 3)),
+        col_keys=sorted(col.keys()))))
 
 
 def _main13():
