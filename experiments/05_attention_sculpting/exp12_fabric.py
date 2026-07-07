@@ -341,9 +341,21 @@ def _max_abs_corr(x, y):
 
 def _dwell_perm_labels(fab: Fabric, gen, n_category: int, upto: int) -> torch.Tensor:
     """The exchangeability null: permute the dwell->member ASSIGNMENT (dwell lengths and
-    the nuisance/bg series stay put), rebuild the per-wave label triple."""
-    perm = torch.randperm(len(fab.dwell_member), generator=gen)
-    pm = fab.dwell_member[perm]
+    the nuisance/bg series stay put), rebuild the per-wave label triple.
+
+    T-INDEPENDENT NULL (instrument-validity re-pin, Jason's ruling 2026-07-07): the
+    permutation universe is the dwells WITHIN the sampled window `[:upto]` — the same fixed
+    window on which `obs` is computed — NOT the full `len(fab.dwell_member)` array (which grows
+    with the run length T). The old full-array form made randperm(N) T-dependent, so the null's
+    99th-pct moved with horizon and the SAME observed correlation flipped PASS->FAIL at longer T
+    (a leak guard whose bar moves with run length fails its own matched-bar principle). With the
+    window-local permutation the null is byte-identical at every horizon (K, dwell_member[:K],
+    dwell_id[:upto] and randperm(K,seed) are all prefix-stable). Recorded, not a threshold-skip:
+    at a fixed horizon this is a MORE-matched exchangeability test (null universe == obs universe);
+    EXP12/EXP13 are closed and are not re-run, so their committed results are unaffected."""
+    K = int(fab.dwell_id[upto - 1]) + 1                      # dwells inside the sampled window
+    perm = torch.randperm(K, generator=gen)                 # T-independent (window-local)
+    pm = fab.dwell_member[:K][perm]
     m = pm[fab.dwell_id[:upto]]
     a, b = m // 4, m % 4
     return _labels_of(a, b, n_category)
