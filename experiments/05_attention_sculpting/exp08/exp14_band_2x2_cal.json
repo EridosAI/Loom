@@ -1,0 +1,245 @@
+{
+  "cells": {
+    "A_dwell": {
+      "arm": "exp12_dwell",
+      "fabric": "dwelled",
+      "dose": "scheduled",
+      "reused": true,
+      "cal_tag": "cal",
+      "cal_h_max": [
+        500000
+      ],
+      "method": "provisional \u00a710.22 honest-null",
+      "conv_band": 0.6111,
+      "conv_consec": 4,
+      "provisional_self_cut": {
+        "band": 0.6111,
+        "N": 4
+      },
+      "n_null": 6837,
+      "null_p99": 0.7083,
+      "null_mean": 0.4899,
+      "false_rate_at_cut": 0.000439,
+      "false_rate_referent": "clean dwelled/coin marginal (\u00a710.22 honest-null; this cell does NOT convert at cal) -> a conversion means 'leaves the dwelled marginal'",
+      "s0_admitted": true,
+      "widen_needed": false,
+      "acquisition_onsets": {
+        "20": 200100,
+        "21": 31800,
+        "22": 6300,
+        "24": 103200,
+        "25": 108000
+      },
+      "n_acquired": 5,
+      "n_cal": 5,
+      "per_cal_seed_converters": {
+        "20": true,
+        "21": true,
+        "22": false,
+        "24": true,
+        "25": false
+      }
+    },
+    "B_12bc_dwp": {
+      "arm": "exp12_12bc_dwp",
+      "fabric": "dwelled",
+      "dose": "coin",
+      "reused": false,
+      "cal_tag": "cal2",
+      "cal_h_max": [
+        1000000
+      ],
+      "method": "provisional \u00a710.22 honest-null",
+      "conv_band": 0.6667,
+      "conv_consec": 3,
+      "provisional_self_cut": {
+        "band": 0.6667,
+        "N": 3
+      },
+      "n_null": 6532,
+      "null_p99": 0.8182,
+      "null_mean": 0.4939,
+      "false_rate_at_cut": 0.000613,
+      "false_rate_referent": "clean dwelled/coin marginal (\u00a710.22 honest-null; this cell does NOT convert at cal) -> a conversion means 'leaves the dwelled marginal'",
+      "s0_admitted": true,
+      "widen_needed": false,
+      "acquisition_onsets": {
+        "20": 354600,
+        "21": 27000,
+        "22": 18300,
+        "24": 60000,
+        "25": 81000
+      },
+      "n_acquired": 5,
+      "n_cal": 5,
+      "per_cal_seed_converters": {
+        "20": false,
+        "21": true,
+        "22": true,
+        "24": false,
+        "25": true
+      },
+      "liveness": {
+        "n_acquired": 5,
+        "n_cal": 5,
+        "n_min": 3,
+        "live": true,
+        "s20_converter": false,
+        "status": "LIVE"
+      }
+    },
+    "C_shuffle": {
+      "arm": "exp12_shuffle",
+      "fabric": "shuffled",
+      "dose": "scheduled",
+      "reused": false,
+      "cal_tag": "cal2",
+      "cal_h_max": [
+        1000000
+      ],
+      "method": "OWN between-episode null (borrow-gate SHIFTED)",
+      "conv_band": 0.64,
+      "conv_consec": 5,
+      "provisional_self_cut": {
+        "band": 0.6522,
+        "N": 10
+      },
+      "n_null": 7706,
+      "null_p99": 0.7667,
+      "null_mean": 0.5102,
+      "false_rate_at_cut": 0.000909,
+      "false_rate_referent": "C's OWN between-episode floor, which CONTAINS the +0.0203 shifted baseline (borrow-gate SHIFTED; C has NO clean marginal). fr controls false-alarms relative to C's ELEVATED floor -> a C conversion means 'leaves C's SHIFTED baseline', a DIFFERENT referent than A/B/D. SAME alpha, DIFFERENT null: do NOT read C's fr as marginal-honest or as equal-guarantee to A/B/D. This referent asymmetry IS the fabric finding.",
+      "s0_admitted": true,
+      "widen_needed": false,
+      "acquisition_onsets": {
+        "20": 10200,
+        "21": 3000,
+        "22": 3000,
+        "24": 4200,
+        "25": 4800
+      },
+      "n_acquired": 5,
+      "n_cal": 5,
+      "per_cal_seed_converters": {
+        "20": true,
+        "21": true,
+        "22": true,
+        "24": true,
+        "25": true
+      }
+    },
+    "D_split": {
+      "arm": "exp12_split",
+      "fabric": "shuffled",
+      "dose": "coin",
+      "reused": true,
+      "cal_tag": "cal",
+      "cal_h_max": [
+        500000
+      ],
+      "method": "provisional \u00a710.22 honest-null (committed, F7-preserved)",
+      "conv_band": 0.6875,
+      "conv_consec": 5,
+      "provisional_self_cut": {
+        "band": 0.6875,
+        "N": 5
+      },
+      "n_null": 8173,
+      "null_p99": 0.8462,
+      "null_mean": 0.5054,
+      "false_rate_at_cut": 0.000612,
+      "false_rate_referent": "clean dwelled/coin marginal (\u00a710.22 honest-null; this cell does NOT convert at cal) -> a conversion means 'leaves the dwelled marginal'",
+      "s0_admitted": true,
+      "widen_needed": false,
+      "acquisition_onsets": {
+        "20": 6000,
+        "21": 5700,
+        "22": 5700,
+        "24": 3900,
+        "25": 3600
+      },
+      "n_acquired": 5,
+      "n_cal": 5,
+      "per_cal_seed_converters": {
+        "20": true,
+        "21": false,
+        "22": true,
+        "24": false,
+        "25": false
+      }
+    }
+  },
+  "cal_seeds": [
+    20,
+    21,
+    22,
+    24,
+    25
+  ],
+  "alpha": 0.001,
+  "count_cuts": {
+    "across_seeds": 5,
+    "lottery": [
+      1,
+      2
+    ],
+    "none": 0,
+    "ambiguous": [
+      3,
+      4
+    ]
+  },
+  "n_min_read": 3,
+  "s0_anchor": {
+    "level": 0.704,
+    "n": 16
+  },
+  "episode_min": 8,
+  "episode_band": 0.704,
+  "n_null_min": 200,
+  "conv_low": 0.6,
+  "conv_min": 8,
+  "ruling": {
+    "A": "two-pass DROPPED -> provisional \u00a710.22 honest-null (A/B/D; D committed, F7-preserved)",
+    "B": "C_shuffle borrows A_dwell marginal iff borrow-gate passes, else own between-episode null"
+  },
+  "borrow_gate": {
+    "donor": "A_dwell",
+    "cell": "C_shuffle",
+    "donor_band": {
+      "band": 0.6111,
+      "N": 4
+    },
+    "donor_mean": 0.4899,
+    "donor_p99": 0.7083,
+    "cell_between_mean": 0.5102,
+    "cell_between_p99": 0.7667,
+    "cell_between_n": 7706,
+    "mean_shift": 0.0203,
+    "fr_donorband_on_cell": 0.00467,
+    "alpha": 0.001,
+    "alpha_mult": 2.0,
+    "borrow_ok": false,
+    "decision": "SHIFTED \u2014 fabric moves the baseline (weaker finding); C uses OWN between-episode null"
+  },
+  "spec_hash_parity": {
+    "per_cell": {
+      "A_dwell": [
+        "41d6f0d5e7da"
+      ],
+      "B_12bc_dwp": [
+        "41d6f0d5e7da"
+      ],
+      "C_shuffle": [
+        "41d6f0d5e7da"
+      ],
+      "D_split": [
+        "41d6f0d5e7da"
+      ]
+    },
+    "unique": [
+      "41d6f0d5e7da"
+    ],
+    "ok": true
+  }
+}

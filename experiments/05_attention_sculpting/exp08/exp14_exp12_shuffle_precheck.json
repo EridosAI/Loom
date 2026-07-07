@@ -1,0 +1,326 @@
+{
+  "arm": "exp12_shuffle",
+  "T": 15000,
+  "seeds_requested": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "seeds_accepted": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "n_pass": 8,
+  "n_total": 8,
+  "swaps": [],
+  "spec_hash": "41d6f0d5e7da",
+  "per_seed": {
+    "0": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 0,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0765,
+        "null99": 0.1329,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 63.85,
+        "null99": 88.85,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 11.15,
+        "null99": 27.21,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0354,
+        "null99": 0.0687,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00905,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1326,
+        "count": 12,
+        "count_bound": 22.6,
+        "ok": true
+      }
+    },
+    "1": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 1,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0789,
+        "null99": 0.1292,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 61.97,
+        "null99": 86.78,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 11.88,
+        "null99": 29.87,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0344,
+        "null99": 0.0889,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00985,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1320,
+        "count": 13,
+        "count_bound": 22.5,
+        "ok": true
+      }
+    },
+    "2": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 2,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.1006,
+        "null99": 0.1206,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 48.03,
+        "null99": 89.19,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 12.23,
+        "null99": 35.34,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0261,
+        "null99": 0.0772,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00354,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1412,
+        "count": 5,
+        "count_bound": 23.6,
+        "ok": true
+      }
+    },
+    "3": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 3,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0835,
+        "null99": 0.1305,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 54.82,
+        "null99": 80.9,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 19.27,
+        "null99": 33.85,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0442,
+        "null99": 0.072,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00707,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1414,
+        "count": 10,
+        "count_bound": 23.6,
+        "ok": true
+      }
+    },
+    "4": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 4,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0948,
+        "null99": 0.1268,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 64.77,
+        "null99": 89.14,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 16.44,
+        "null99": 31.86,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0242,
+        "null99": 0.0603,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00508,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1379,
+        "count": 7,
+        "count_bound": 23.2,
+        "ok": true
+      }
+    },
+    "5": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 5,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0733,
+        "null99": 0.1493,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 61.82,
+        "null99": 86.04,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 5.92,
+        "null99": 31.22,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0285,
+        "null99": 0.0723,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00952,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1366,
+        "count": 13,
+        "count_bound": 23.0,
+        "ok": true
+      }
+    },
+    "6": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 6,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.1154,
+        "null99": 0.1415,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 49.51,
+        "null99": 96.41,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 12.93,
+        "null99": 26.68,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0392,
+        "null99": 0.0642,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.01117,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1343,
+        "count": 15,
+        "count_bound": 22.8,
+        "ok": true
+      }
+    },
+    "7": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 7,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0836,
+        "null99": 0.1228,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 61.02,
+        "null99": 88.44,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 16.5,
+        "null99": 29.02,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0327,
+        "null99": 0.066,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00863,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1391,
+        "count": 12,
+        "count_bound": 23.3,
+        "ok": true
+      }
+    }
+  }
+}

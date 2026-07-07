@@ -1083,3 +1083,20 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   founding capability is reachable. Every conversion ever seen is coin/shuffled. NEXT = the clean
   2×2 deconfound ({dwelled,shuffled}×{scheduled,coin}) → dose vs fabric vs interaction. EXP13 PAUSED;
   loss-engineering FENCED.]**
+- **[2026-07-08 — EXP14 2×2 DECONFOUND, STAGE-ONE CAL GATE (steps 1→2; VERDICT WITHHELD; canon §10.23).**
+  Pre-check 8/8 both new arms (0 swaps); cal 2 new arms × {20,21,22,24,25} @ 500k clean; **`12bc_dwp`
+  LIVE 5/5** (dose-only cell readable). **RULING A: the F1 two-pass fixpoint null DROPPED** — literal
+  form ratcheted N on the self-thinned null and violated α on the true marginal (A/C/D 1.3–6.8×α;
+  circular `false_rate@cut`=0.0); reverted to the provisional §10.22 honest-null (`_twopass_cut` kept
+  SUPERSEDED). **RULING B: only C_shuffle is broken** (its cal seeds convert → no clean marginal);
+  A/B/D self-calibrate on provisional (D keeps committed 0.6875×5 → **F7 preserved**). C borrows the
+  density-matched A marginal iff a borrow-gate passes — **gate SHIFTED** (mean +0.020 ~5σ; A-band fr
+  0.00467 on C's floor >2α) → **C uses its OWN between-episode null 0.64×5**. Honest bands (fr≤α): A
+  0.6111×4, B 0.6667×3, **C 0.64×5**, D 0.6875×5 — but **C's fr has a DIFFERENT referent** (its own
+  elevated floor; SAME α, different null; a C conversion = "leaves C's shifted baseline," A/B/D =
+  "leaves the dwelled marginal"). **CAL-GRADE FABRIC PREVIEW** (s0-class @cal: A0/5 B0/5 C4/5 D1/5):
+  (1) shuffled moves the baseline +0.020; (2) C fires beyond it 5/5; **GUARD — C>D cuts against the
+  screen prior ("coin converts, scheduled doesn't"): on shuffled, coin REDUCED conversion → dose may
+  run backwards / coin×shuffled interact — held OPEN, not collapsed to "fabric main effect."** spec_hash
+  parity OK. `score_2x2` built-not-run. NEXT = verdict (Jason's word): 2 new arms × {0–7}, dwell/split
+  reuse committed, then adversarial panel → attribution. EXP13 PAUSED; loss-engineering FENCED.]**

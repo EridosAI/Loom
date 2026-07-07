@@ -2443,4 +2443,36 @@ continuation of the committed trajectories); the density-matched band's per-rung
 
 **REFRAME UPDATE (ratified, scoped):** the §10.21.5 reframe "operator marginal-collapse = mechanism of sensitivity-without-conversion" was promoted MEASURED program-wide — **now scoped: sensitivity-without-conversion is REGIME-SPECIFIC, not universal.** The completer CAN leave the marginal (verified, 5 coin seeds). **Every conversion the program has ever seen is on the coin/shuffled rung** (s0 originally; now cal-s20 + verdict {0,1,3,6}); never on dwelled/scheduled.
 
+## §10.23 — EXP14 2×2 DECONFOUND, STAGE-ONE CAL GATE (steps 1→2; **VERDICT WITHHELD**): honest per-cell bands under Rulings A+B; **a cal-grade FABRIC preview with a C>D dose-inversion flag** (2026-07-08)
+
+**Scope.** Prereg `EXP14_2x2_DECONFOUND_PREREG.md`; the 2×2 = {dwelled,shuffled}×{scheduled,coin} = A `exp12_dwell` / B `exp12_12bc_dwp` (NEW) / C `exp12_shuffle` (NEW) / D `exp12_split`. This gate ran **steps 1→2 ONLY** (pre-check + stage-one cal + band cut); the 4-cell scorer (`score_2x2`) is **built but NOT run** — verdict releases from Jason after this read. Cal seeds {20,21,22,24,25} ≠ verdict {0–7}.
+
+**Execution (clean).** Step 1 fabric pre-check (T-independent asserts, T=15k, outcome-blind): **8/8 both new arms, 0 swaps**, verdict {0–7} accepted. Step 2 cal (2 new arms × 5 cal seeds @ 500k, h_max=1M, checkpoints, threads=1): **10/10 clean, no crashes**. **`12bc_dwp` LIVENESS: LIVE — acquires 5/5** (the dose-only cell is readable; the factorial will not be partial; s20 acquires late at 355k, budget 145k>130k). **spec_hash parity OK — single `41d6f0d5e7da`** across all four cells (F2 preserved: constants-payload hash, stable across the reused/fresh diagonal).
+
+**RULING A (Jason 2026-07-08) — the F1 two-pass fixpoint null is DROPPED; revert to the provisional (§10.22 honest-null) cut.** As-built (literal, "implement exactly"), the two-pass ratcheted N to the floor on the *self-thinned* null and **violated α on the true marginal** — honest false-rates (measured on the un-thinned null, the non-circular rate) were **A 0.00132 (1.3×α), C 0.00684 (6.8×), D 0.00379 (3.8×)** while its `false_rate@cut` reported 0.0 (circular). D fired **5/5** cal seeds where only s20 truly converts. The protective scenario F1 guarded (a hidden dampened sub-s0 conversion inflating a band → under-detection) did NOT materialize where it mattered: **B, the dose-only cell, is clean at provisional.** `_twopass_cut` is retained SUPERSEDED (the deflation-mechanism record + the per-cal / between-episode helpers); it is no longer the band method. **Lesson: re-cutting on a self-thinned null degrades the α guarantee — a false-rate must be measured against the marginal that includes its own chance runs.**
+
+**RULING B (Jason 2026-07-08) — a cell whose OWN cal seeds convert has no clean marginal; only C is broken.** A (0/5 s0-class), B (0/5), D (1/5 — the known s20) each self-calibrate on provisional (D keeps its committed **0.6875×5** → **F7's D-reproduces check preserved**). **C_shuffle's cal seeds CONVERT (4/5 s0-class, s24 a 108-window sustained episode)** — no marginal to calibrate. C borrows the density-matched A marginal (both scheduled, exam_n median 27) **iff a borrow-validity gate passes**: A's provisional band must control the false-rate on C's between-episode (non-converting) windows within 2×α. **Gate = SHIFTED** — mean_shift **+0.0203** (A 0.4899 → C-between 0.5102, ~5σ; even C's non-converting s20 sits elevated), and A's band has fr **0.00467** on C's own floor (>2α). So **C uses its OWN between-episode null → 0.64×5** (the Binomial option under-cut, ignoring C's cross-window serial correlation).
+
+**HONEST BANDS (all fr ≤ α; but read the REFERENT column — this is load-bearing):**
+
+| cell | fabric×dose | FINAL band | method | honest fr | **fr referent (SAME α, DIFFERENT null)** |
+|---|---|---|---|---|---|
+| A_dwell | dwelled×scheduled | 0.6111×4 | provisional §10.22 (=committed) | 0.00044 | clean dwelled marginal → conversion = "leaves the marginal" |
+| B_12bc_dwp | dwelled×coin | 0.6667×3 | provisional §10.22 | 0.00061 | clean marginal (B does not convert at cal) → "leaves the marginal" |
+| C_shuffle | shuffled×scheduled | **0.64×5** | OWN between-ep (gate SHIFTED) | 0.00091 | **C's own between-ep floor, which CONTAINS the +0.020 shifted baseline — conversion = "leaves C's SHIFTED baseline," NOT the dwelled marginal. Do not read as equal-guarantee to A/B/D.** |
+| D_split | shuffled×coin | 0.6875×5 | provisional §10.22 (committed, F7) | 0.00061 | clean marginal (only s20 converts) → "leaves the marginal" |
+
+The referent asymmetry **is** the fabric finding: A/B/D control false-alarms against a genuine chance floor; C's α is relative to an elevated floor. A shared fr column would flatten exactly the distinction the whole C saga hangs on.
+
+**CAL-GRADE FABRIC PREVIEW (verdict WITHHELD — cal seeds {20–25}, behind the adversarial pass at verdict).** s0-class conversions (≥0.704×8) land on the **shuffled row only, dose held fixed**:
+
+| | scheduled | coin |
+|---|---|---|
+| **dwelled** | A **0/5** | B **0/5** |
+| **shuffled** | C **4/5** | D **1/5** |
+
+Two measured effects, both named, both cal-grade: **(1)** shuffled fabric **moves the baseline up +0.020** (the weaker, borrow-gate-SHIFTED finding); **(2)** C fires its own band on **5/5** — conversion *beyond* even the shifted baseline. **GUARD (do not collapse to a tidy "fabric main effect"):** **C > D at cal cuts against the screen's own prior** ("coin converts, scheduled doesn't"). On the shuffled fabric, adding coin dose *reduced* conversion (C 4/5 > D 1/5) — a hint the **dose axis may run backwards on shuffled, or coin×shuffled interact non-additively.** The clean fabric-main-effect reading is ONE hypothesis; the **C>D dose-inversion/interaction** is visible in the same table and is held **open**. The verdict's job is to separate them — canon records both, collapses neither. Screen prior was INTERACTION; this preview neither confirms nor overturns it.
+
+**Held for verdict (Jason's word):** the 2 new arms × {0–7} @ 500k (dwell/split reuse committed screen runs — F7), per-cell conversion (sustained-episode) + stability, then `score_2x2` DRAFT → adversarial refute-default panel → attribution. Nothing verdict-grade run here. Artifacts: `exp14_band_2x2_cal.json` (per-cell band + method + fr referent + borrow-gate + liveness + spec_hash), precheck + cal2 JSONs. Harness: `exp14_arms.py` (CELLS, `precheck_fabric`, `_provisional_cut`/`_between_episode_null`/`_borrow_gate`, `score_2x2` built-not-run, smoke 7/7 incl. borrow-gate unit).
+
 **FORK (i) DISCHARGED → 2×2 GO.** The screen answered "does conversion happen at all beyond s0" = YES, across seeds. dose-ordered (coin»scheduled) stays SCREEN-GRADE (fabric-confounded: coin=shuffled, scheduled=dwelled), license = fire the 2×2 only. **Next: the clean deconfounding 2×2** — {dwelled, shuffled} × {scheduled, coin} — to attribute conversion to **dose, fabric, or their interaction.** Prereg owed for Jason's read before build; conversion = sustained-episode, stability = companion. Loss-engineering stays FENCED; EXP13 holds PAUSED.

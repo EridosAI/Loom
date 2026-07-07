@@ -46,6 +46,22 @@ EVAL, BLOCK = X12.EVAL, X12.BLOCK
 
 # --- fork (i) screen rungs (prereg §3) ---
 RUNGS = {"scheduled": "exp12_dwell", "coin": "exp12_split"}
+
+# --- 2x2 conversion-deconfound CELLS (EXP14_2x2_DECONFOUND_PREREG §2) -----------------------
+# The FABRIC x DOSE factorial. A,D reuse the screen's committed cal/verdict runs; B,C are new.
+# Per-cell cal_tag: reused cells read the screen cal ("cal"); new cells cut fresh ("cal2").
+CELLS = {
+    "A_dwell":    dict(arm="exp12_dwell",    fabric="dwelled",  dose="scheduled",
+                       cal_tag="cal",  reused=True),   # double-negative baseline (screen 0/8)
+    "B_12bc_dwp": dict(arm="exp12_12bc_dwp", fabric="dwelled",  dose="coin",
+                       cal_tag="cal2", reused=False),  # DOSE-only carrier (NEW; liveness-gated)
+    "C_shuffle":  dict(arm="exp12_shuffle",  fabric="shuffled", dose="scheduled",
+                       cal_tag="cal2", reused=False),  # FABRIC-only carrier (NEW)
+    "D_split":    dict(arm="exp12_split",    fabric="shuffled", dose="coin",
+                       cal_tag="cal",  reused=True),   # the corner (screen 4/8 +cal s20)
+}
+NEW_ARMS = ["exp12_shuffle", "exp12_12bc_dwp"]   # step-1 pre-check + step-2 fresh cal
+
 CAL_SEEDS = [20, 21, 22, 24, 25]   # s23 -> s25 swap (Jason 2026-07-07): under the T-independent
 #                                    fabric-independence bar (instrument re-pin), s23 GENUINELY
 #                                    exceeds (per-lag nuisance 0.1346 > 0.1344 at every horizon) =
@@ -64,8 +80,23 @@ PROPOSED_BAND, PROPOSED_CONSEC = 0.6, 2
 ALPHA = 1e-3                       # target pre-conversion false-conversion rate
 N_NULL_MIN = 200                   # min pooled post-acq pre-conversion windows (panel F3)
 S0_LEVEL, S0_N = 0.704, 16         # committed s0 anchor (FRONTIER §10.20.1); band must admit it
+EPISODE_BAND, EPISODE_MIN = S0_LEVEL, 8    # honest-null episode-exclusion (band re-pin, Jason 2026-07-07)
 COUNT_CUTS = dict(across_seeds=5, lottery=(1, 2), none=0, ambiguous=(3, 4))  # per 8 (panel F4)
 N_MIN_READ = 3                     # READ-floor (panel F5; EXP12 §13.9 pin ii)
+MIN_CONV_BUDGET = 130_000          # F6 budget gate: min post-acq conversion-onset budget on the
+#                                    reference converter (split, ~130k). A READ seed with
+#                                    (READ_AT - acquisition_onset) < this = UNREAD(budget-truncated)
+#                                    — re-derived from D's reused split verdict runs at verdict.
+
+# --- Ruling B (Jason 2026-07-08): a cell whose OWN cal seeds convert has no clean marginal null.
+# Only C_shuffle is broken (A/B/D self-calibrate: A 5/5, B 5/5, D 4/5 clean cal seeds). C borrows
+# the density-matched A_dwell marginal (both scheduled) IFF the borrow-validity gate passes; else
+# it uses its OWN between-episode null. Gate: A's provisional band must control the false-rate on
+# C's between-episode (non-converting) windows within BORROW_ALPHA_MULT x ALPHA — else the fabric
+# has MOVED the baseline (a weaker finding than "enables conversion") and A is not C's null. ---
+CONV_LOW, CONV_MIN = PROPOSED_BAND, EPISODE_MIN   # between-episode exclusion: sustained >=0.6 x >=8
+BORROW_ALPHA_MULT = 2.0            # borrow valid iff fr(A_band on C_between) <= 2*ALPHA (density-matched)
+BORROW_CELL, BORROW_FROM = "C_shuffle", "A_dwell"
 
 PANEL_KEYS = ("num", "den", "ratio", "proto", "d2_depth", "d2_spread",
               "asg_dist", "asg_argmax_k", "asg_entropy", "asg_cat",
@@ -198,6 +229,79 @@ def _proposed_conversion_onset(cols):
     return None
 
 
+# ------------------------------------------------------------------ step-1 fabric pre-check (§7.1)
+def _assert_one(arm: str, seed: int, T: int) -> dict:
+    """Build the fabric at T and run the T-independent fabric-asserts (the §10.22 re-pin) —
+    OUTCOME-BLIND: pure fabric construction + independence asserts, NO loop step, NO dynamics,
+    NO exam/conversion read. Runs the assert on the UNSHUFFLED wave order (for a shuffled arm,
+    rebuild the unshuffled twin and checksum the multiset — the exact path in run_exp14_arm).
+    T>=15k so the fixed n_sample=12000 window is fully populated (the assert reads min(T,12000),
+    so T=15k == the 500k run's assert bit-for-bit)."""
+    try:
+        loop, spec, cfg = X12.build_exp12(arm, seed, T)          # fabric -> T+8; no stepping
+        fab = loop.stream
+        if fab.shuffled:
+            fab_plain = F.build_fabric(loop.stim, cfg, seed, fab.T,
+                                       probe_rate=X12.PROBE_RATE_STAGE1, shuffled=False,
+                                       uniform_mask=spec.get("uniform_mask", False),
+                                       word_ref=spec.get("word_ref", False))
+            assert torch.equal(fab.raw.sort(0).values, fab_plain.raw.sort(0).values), \
+                "A-SHUFFLE waves are not the identical multiset"
+            assert int(fab.is_exam.sum()) == int(fab_plain.is_exam.sum()), "exam count differs"
+            asr = F.fabric_asserts(fab_plain, cfg)
+        else:
+            asr = F.fabric_asserts(fab, cfg)
+        return dict(ok=True, arm=arm, seed=seed, spec_hash=C.spec_hash(),
+                    perlag_nuis=asr["perlag_nuis"], k_indep=asr["k_indep"],
+                    schedule_indep=asr["schedule_indep"], bg_indep=asr["bg_indep"],
+                    cap_hit=asr["cap_hit"])
+    except AssertionError as e:
+        return dict(ok=False, arm=arm, seed=seed, spec_hash=C.spec_hash(), err=str(e))
+
+
+def precheck_fabric(arm: str, seeds=None, T: int = 15_000, out_tag: str = "precheck") -> dict:
+    """STEP 1 (§7.1): fabric-assert the verdict seeds OUTCOME-BLIND; swap any defective from the
+    EXT_POOL-then-higher pool (the ruled cal-s23->s25 substitution rule), recording each swap."""
+    seeds = list(seeds if seeds is not None else VERDICT_SEEDS)
+    swap_pool = [s for s in (EXT_POOL + list(range(10, 40))) if s not in seeds]
+    results = {s: _assert_one(arm, s, T) for s in seeds}
+    accepted, swaps, used = [], [], set()
+    for s in seeds:
+        if results[s]["ok"]:
+            accepted.append(s)
+            continue
+        repl = None                                              # find a clean replacement
+        for cand in swap_pool:
+            if cand in used or cand in accepted:
+                continue
+            used.add(cand)
+            r = _assert_one(arm, cand, T)
+            results[cand] = r
+            if r["ok"]:
+                repl = cand
+                accepted.append(cand)
+                break
+        swaps.append(dict(defective=s, err=results[s].get("err"), replacement=repl))
+    out = dict(arm=arm, T=T, seeds_requested=seeds, seeds_accepted=sorted(accepted),
+               n_pass=sum(1 for s in seeds if results[s]["ok"]), n_total=len(seeds),
+               swaps=swaps, spec_hash=C.spec_hash(),
+               per_seed={str(s): results[s] for s in results})
+    (OUTDIR / f"exp14_{arm}_{out_tag}.json").write_text(json.dumps(out, indent=2))
+    tag = "ALL PASS" if not swaps else f"{len(swaps)} SWAP(S)"
+    print(f"[precheck {arm}] {out['n_pass']}/{out['n_total']} pass ({tag}); "
+          f"accepted={out['seeds_accepted']}")
+    for s in seeds:
+        r = results[s]
+        if r["ok"]:
+            print(f"    s{s}: OK  perlag obs={r['perlag_nuis']['obs']}/n99={r['perlag_nuis']['null99']}"
+                  f"  k chi2={r['k_indep']['chi2']}/n99={r['k_indep']['null99']}")
+        else:
+            print(f"    s{s}: FAIL -> {r.get('err')}")
+    for sw in swaps:
+        print(f"    SWAP: s{sw['defective']} defective ({sw['err']}) -> s{sw['replacement']}")
+    return out
+
+
 # ------------------------------------------------------------------ stage-two band cut (§4)
 def _acc_series(rec) -> list[tuple[int, float, int]]:
     """(t, exam_acc, exam_n) for windows that HAVE an exam_acc, post-acquisition-onset."""
@@ -209,9 +313,6 @@ def _acc_series(rec) -> list[tuple[int, float, int]]:
         if c["t"] >= onset and c.get("exam_acc") is not None:
             out.append((c["t"], float(c["exam_acc"]), int(c.get("exam_n", 0))))
     return out
-
-
-EPISODE_BAND, EPISODE_MIN = S0_LEVEL, 8    # honest-null episode-exclusion (band re-pin, Jason 2026-07-07)
 
 
 def _honest_null(series: list[tuple[int, float, int]]) -> list[float]:
@@ -314,6 +415,263 @@ def cut_conv_band(cal_seeds=None, out_tag: str = "cal") -> dict:
     return out
 
 
+# ------------------------------------------------------------------ two-pass fixpoint null (§4 F1)
+# SUPERSEDED (Ruling A, Jason 2026-07-08): the literal two-pass ratchets N on the self-thinned null
+# and VIOLATES alpha on the honest (un-thinned) marginal (A/C/D fixpoints measured 1.3x-6.8x alpha;
+# D fired 5/5 cal seeds where only s20 truly converts). Its protective scenario (a hidden dampened
+# sub-s0 conversion inflating a band -> under-detection) did NOT materialize where it mattered (B,
+# the dose-only cell, is clean at provisional). Reverted to the provisional (§10.22 honest-null) cut
+# (`_provisional_cut`). `_twopass_cut` + `_episode_mask` are RETAINED (record + still used by the
+# per-cal-seed converter diagnostic and the between-episode null); `_twopass_cut` is NO LONGER the
+# band method. See smoke (5) for the deflation-mechanism demonstration that motivated F1.
+def _episode_mask(accs: list[float], band: float, N: int) -> list[bool]:
+    """Windows inside a RUN of >= N consecutive `accs` >= band (what the (band,N) detector would
+    call a conversion episode). Only sustained runs are marked — isolated high blips STAY (so the
+    marginal texture / honest false-rate is preserved; this is the guard against the over-stripping
+    the blanket >=0.6 exclusion caused, §4)."""
+    n = len(accs)
+    m = [False] * n
+    i = 0
+    while i < n:
+        if accs[i] >= band:
+            j = i
+            while j < n and accs[j] >= band:
+                j += 1
+            if j - i >= N:
+                for k in range(i, j):
+                    m[k] = True
+            i = j
+        else:
+            i += 1
+    return m
+
+
+def _null_excluding(per_seed_accs: dict, provisional) -> tuple[list[float], dict]:
+    """Pool the post-acq null across cal seeds, excluding (a) s0-class episodes
+    (EPISODE_MIN=8 consec >= EPISODE_BAND=0.704 — the honest-null base) AND (b), if `provisional`
+    = (band,N) is given, any run the PROVISIONAL detector would fire. Returns (pooled, per_seed_kept)."""
+    pooled, kept = [], {}
+    for s, accs in per_seed_accs.items():
+        excl = _episode_mask(accs, EPISODE_BAND, EPISODE_MIN)     # s0-class base exclusion
+        if provisional is not None:
+            band, N = provisional
+            pm = _episode_mask(accs, band, N)
+            excl = [a or b for a, b in zip(excl, pm)]
+        keep = [a for a, e in zip(accs, excl) if not e]
+        pooled += keep
+        kept[s] = len(keep)
+    return pooled, kept
+
+
+def _twopass_cut(per_seed_accs: dict, max_iters: int = 12) -> dict:
+    """TWO-PASS ITERATIVE FIXPOINT NULL (panel F1). Pass 0: provisional (band,N) on the
+    s0-class-excluded null. Then iterate: exclude the cal episodes the CURRENT provisional detector
+    would fire, re-cut, until (band,N) is a fixpoint. Exclusion tracks the DETECTION band (not the
+    fixed 0.704x8 anchor) so a sub-s0-class conversion in a cal seed (e.g. a dwelled-coin dampened
+    s20) is removed from the null before it inflates the band and makes a true DOSE read as
+    INTERACTION. Contractive in practice (removing high tail lowers the quantiles -> band drops or
+    holds; once no new episode fires it is stable). A non-converging cycle is SURFACED, never
+    silently accepted."""
+    if not any(per_seed_accs.values()):
+        return dict(provisional=(S0_LEVEL, 3), fixpoint=(S0_LEVEL, 3), converged=True, iters=0,
+                    trace=[], final_null=[], final_kept={s: 0 for s in per_seed_accs},
+                    prov_null=[], prov_kept={s: 0 for s in per_seed_accs})
+    null0, kept0 = _null_excluding(per_seed_accs, None)
+    prov = _joint_band_cut(null0)
+    trace = [dict(iter=0, band=round(prov[0], 4), N=prov[1], n_null=len(null0), excl="s0-class")]
+    cur, seen = prov, {prov}
+    for it in range(1, max_iters + 1):
+        nulli, kepti = _null_excluding(per_seed_accs, cur)
+        nxt = _joint_band_cut(nulli)
+        trace.append(dict(iter=it, band=round(nxt[0], 4), N=nxt[1], n_null=len(nulli),
+                          excl=f"s0-class + provisional {round(cur[0], 4)}x{cur[1]}"))
+        if nxt == cur:                                           # FIXPOINT
+            return dict(provisional=prov, fixpoint=nxt, converged=True, iters=it, trace=trace,
+                        final_null=nulli, final_kept=kepti, prov_null=null0, prov_kept=kept0)
+        if nxt in seen:                                         # CYCLE -> surface, don't accept
+            conservative = max([cur, nxt], key=lambda bn: (bn[0], bn[1]))
+            ncons, kcons = _null_excluding(per_seed_accs, conservative)
+            return dict(provisional=prov, fixpoint=conservative, converged=False, cycle=True,
+                        iters=it, trace=trace, final_null=ncons, final_kept=kcons,
+                        prov_null=null0, prov_kept=kept0)
+        seen.add(nxt)
+        cur = nxt
+    ncons, kcons = _null_excluding(per_seed_accs, cur)          # ran out of iters -> surface
+    return dict(provisional=prov, fixpoint=cur, converged=False, iters=max_iters, trace=trace,
+                final_null=ncons, final_kept=kcons, prov_null=null0, prov_kept=kept0)
+
+
+# ------------------------------------------------------- provisional cut + borrow gate (Rulings A/B)
+def _provisional_cut(per_seed_accs: dict):
+    """RULING A band method — the §10.22 honest-null cut: pool the post-acq windows across cal
+    seeds, exclude ONLY s0-class episodes (>= EPISODE_MIN consec >= EPISODE_BAND), joint (band,N).
+    Returns (band, N, pooled_null). Honest false-rate <= ALPHA on the true marginal (unlike the
+    dropped two-pass, which ratcheted below alpha on the self-thinned null)."""
+    pooled = []
+    for accs in per_seed_accs.values():
+        m = _episode_mask(accs, EPISODE_BAND, EPISODE_MIN)
+        pooled += [a for a, e in zip(accs, m) if not e]
+    (band, N) = _joint_band_cut(pooled)
+    return band, N, pooled
+
+
+def _between_episode_null(per_seed_accs: dict) -> list[float]:
+    """RULING B — a cell's NON-CONVERTING baseline: pool post-acq windows, exclude sustained
+    conversions + shoulders (>= CONV_MIN consec >= CONV_LOW). For a cell whose OWN cal seeds convert
+    (C_shuffle) this is the residual marginal after removing its conversions."""
+    pooled = []
+    for accs in per_seed_accs.values():
+        m = _episode_mask(accs, CONV_LOW, CONV_MIN)
+        pooled += [a for a, e in zip(accs, m) if not e]
+    return pooled
+
+
+def _borrow_gate(donor_band, donor_null: list[float], cell_between: list[float]) -> dict:
+    """RULING B borrow-validity gate. Is the density-matched donor (A_dwell) marginal a valid null
+    for the broken cell (C_shuffle)? PASS iff the donor's provisional band controls the false-rate
+    on the cell's between-episode (non-converting) windows within BORROW_ALPHA_MULT x ALPHA (the
+    operational meaning of "A's marginal == C's baseline"). Reports the mean/p99 shift too.
+      same  -> BORROW (dataset marginal order-invariant; C leaving A's marginal = genuine fabric conversion)
+      shift -> fabric MOVED the baseline (weaker finding); C uses its own between-episode null."""
+    db, dN = donor_band
+    fr = _consec_rate(cell_between, db, dN)
+    ok = fr <= BORROW_ALPHA_MULT * ALPHA
+    dm = statistics.mean(donor_null) if donor_null else None
+    cm = statistics.mean(cell_between) if cell_between else None
+    return dict(
+        donor=BORROW_FROM, cell=BORROW_CELL, donor_band=dict(band=round(db, 4), N=dN),
+        donor_mean=round(dm, 4) if dm is not None else None,
+        donor_p99=round(_quantile(sorted(donor_null), 0.99), 4) if donor_null else None,
+        cell_between_mean=round(cm, 4) if cm is not None else None,
+        cell_between_p99=round(_quantile(sorted(cell_between), 0.99), 4) if cell_between else None,
+        cell_between_n=len(cell_between),
+        mean_shift=round(cm - dm, 4) if (cm is not None and dm is not None) else None,
+        fr_donorband_on_cell=round(fr, 5), alpha=ALPHA, alpha_mult=BORROW_ALPHA_MULT, borrow_ok=bool(ok),
+        decision=("BORROW — marginal order-invariant; C leaving A's marginal = genuine fabric conversion"
+                  if ok else
+                  "SHIFTED — fabric moves the baseline (weaker finding); C uses OWN between-episode null"))
+
+
+def cut_conv_band_2x2(cal_seeds=None, out_tag: str = "2x2_cal") -> dict:
+    """STEP 2 band cut under RULINGS A + B (Jason 2026-07-08):
+      * RULING A — band method = the PROVISIONAL (§10.22 honest-null) cut for A/B/D (the two-pass is
+        DROPPED: it ratcheted N on the self-thinned null and violated alpha on the true marginal).
+        D keeps its committed 0.6875x5 -> F7's D-reproduces check preserved.
+      * RULING B — C_shuffle's OWN cal seeds convert (4/5 s0-class) so it has no clean marginal;
+        it BORROWS the density-matched A_dwell marginal (both scheduled) IFF the borrow-gate passes,
+        else uses its OWN between-episode null (fabric-moves-baseline = the weaker finding).
+    Records per cell: final (band,N) + method + honest false-rate + per-cal converters (s20 explicit)
+    + acquisition/liveness (B) + spec_hash parity (F2). score_2x2 NOT run (verdict withheld)."""
+    cal_seeds = cal_seeds or CAL_SEEDS
+    out = dict(cells={}, cal_seeds=cal_seeds, alpha=ALPHA, count_cuts=COUNT_CUTS,
+               n_min_read=N_MIN_READ, s0_anchor=dict(level=S0_LEVEL, n=S0_N),
+               episode_min=EPISODE_MIN, episode_band=EPISODE_BAND, n_null_min=N_NULL_MIN,
+               conv_low=CONV_LOW, conv_min=CONV_MIN,
+               ruling=dict(A="two-pass DROPPED -> provisional §10.22 honest-null (A/B/D; D committed, F7-preserved)",
+                           B=f"{BORROW_CELL} borrows {BORROW_FROM} marginal iff borrow-gate passes, else own between-episode null"))
+    # --- gather per-cell cal traces ---
+    data, spec_by_cell = {}, {}
+    for cell, meta in CELLS.items():
+        arm, ctag = meta["arm"], meta["cal_tag"]
+        per_seed_accs, onsets, acquired, h_maxes, specs = {}, {}, {}, set(), []
+        for s in cal_seeds:
+            p = OUTDIR / f"exp14_{arm}_s{s}_{ctag}.json"
+            if not p.exists():
+                onsets[s], acquired[s] = "MISSING", False
+                continue
+            rec = json.loads(p.read_text())
+            specs.append(rec.get("spec_hash"))
+            h_maxes.add(rec.get("h_max"))
+            onsets[s] = rec["acquisition_onset"]
+            acquired[s] = rec["acquisition_onset"] is not None
+            per_seed_accs[s] = [a for (_, a, _) in _acc_series(rec)]
+        spec_by_cell[cell] = sorted(set(x for x in specs if x is not None))
+        data[cell] = dict(meta=meta, per_seed_accs=per_seed_accs, onsets=onsets,
+                          acquired=acquired, h_maxes=sorted(h_maxes))
+    # --- provisional (§10.22) cut for every cell; also the donor + broken cell's between-episode ---
+    prov = {cell: _provisional_cut(d["per_seed_accs"]) for cell, d in data.items()}   # (band,N,null)
+    donor_band = (prov[BORROW_FROM][0], prov[BORROW_FROM][1])
+    c_between = _between_episode_null(data[BORROW_CELL]["per_seed_accs"])
+    gate = _borrow_gate(donor_band, prov[BORROW_FROM][2], c_between)
+    out["borrow_gate"] = gate
+    # --- assign each cell's FINAL band ---
+    for cell, d in data.items():
+        pb, pN, pnull = prov[cell]
+        if cell == BORROW_CELL and gate["borrow_ok"]:
+            band, N, cell_null = donor_band[0], donor_band[1], prov[BORROW_FROM][2]
+            method = f"BORROW {BORROW_FROM} marginal (borrow-gate PASS)"
+            referent = (f"borrowed {BORROW_FROM} dwelled marginal -> a conversion means 'leaves the SHARED "
+                        "dwelled marginal' (SAME referent as A/B/D)")
+        elif cell == BORROW_CELL:
+            band, N = _joint_band_cut(c_between)
+            cell_null = c_between
+            method = "OWN between-episode null (borrow-gate SHIFTED)"
+            referent = (f"C's OWN between-episode floor, which CONTAINS the +{gate['mean_shift']} shifted "
+                        "baseline (borrow-gate SHIFTED; C has NO clean marginal). fr controls false-alarms "
+                        "relative to C's ELEVATED floor -> a C conversion means 'leaves C's SHIFTED baseline', "
+                        "a DIFFERENT referent than A/B/D. SAME alpha, DIFFERENT null: do NOT read C's fr as "
+                        "marginal-honest or as equal-guarantee to A/B/D. This referent asymmetry IS the fabric finding.")
+        else:
+            band, N, cell_null = pb, pN, pnull
+            method = "provisional §10.22 honest-null" + (" (committed, F7-preserved)" if cell == "D_split" else "")
+            referent = ("clean dwelled/coin marginal (§10.22 honest-null; this cell does NOT convert at cal) "
+                        "-> a conversion means 'leaves the dwelled marginal'")
+        converters = {s: bool(any(_episode_mask(accs, band, N))) for s, accs in d["per_seed_accs"].items()}
+        out["cells"][cell] = dict(
+            arm=d["meta"]["arm"], fabric=d["meta"]["fabric"], dose=d["meta"]["dose"],
+            reused=d["meta"]["reused"], cal_tag=d["meta"]["cal_tag"], cal_h_max=d["h_maxes"],
+            method=method, conv_band=round(band, 4), conv_consec=N,
+            provisional_self_cut=dict(band=round(pb, 4), N=pN),   # what the cell WOULD self-cut
+            n_null=len(cell_null),
+            null_p99=round(_quantile(sorted(cell_null), 0.99), 4) if cell_null else None,
+            null_mean=round(statistics.mean(cell_null), 4) if cell_null else None,
+            false_rate_at_cut=round(_consec_rate(cell_null, band, N), 6) if cell_null else None,
+            false_rate_referent=referent,                         # canon-precision (Jason 2026-07-08): SAME alpha, DIFFERENT null for C
+            s0_admitted=bool(band <= S0_LEVEL and N <= S0_N), widen_needed=bool(len(cell_null) < N_NULL_MIN),
+            acquisition_onsets=d["onsets"], n_acquired=sum(d["acquired"].values()), n_cal=len(cal_seeds),
+            per_cal_seed_converters=converters)
+    # --- 12bc_dwp acquisition-liveness (pin 2; UNREAD-never-none) ---
+    b = out["cells"]["B_12bc_dwp"]
+    live = b["n_acquired"] >= N_MIN_READ
+    b["liveness"] = dict(n_acquired=b["n_acquired"], n_cal=b["n_cal"], n_min=N_MIN_READ, live=bool(live),
+                         s20_converter=b["per_cal_seed_converters"].get(20, "MISSING"),
+                         status="LIVE" if live else "UNREAD-AT-HORIZON (dose/fabric partial)")
+    # --- spec_hash parity (F2) ---
+    all_specs = sorted({h for hs in spec_by_cell.values() for h in hs})
+    out["spec_hash_parity"] = dict(per_cell=spec_by_cell, unique=all_specs, ok=bool(len(all_specs) == 1))
+    (OUTDIR / f"exp14_band_{out_tag}.json").write_text(json.dumps(out, indent=2))
+    if len(all_specs) != 1:                                      # FAIL LOUD, name the divergent cell(s)
+        div = {c: hs for c, hs in spec_by_cell.items() if hs and hs != [all_specs[0]]}
+        raise AssertionError(f"F2 SPEC_HASH PARITY BREACH across cells: {all_specs}; divergent cells={div}")
+    _print_band_2x2(out)
+    return out
+
+
+def _print_band_2x2(out: dict) -> None:
+    print(f"\n=== 2x2 BAND CUT (Rulings A+B) — spec_hash parity "
+          f"{'OK ' + out['spec_hash_parity']['unique'][0] if out['spec_hash_parity']['ok'] else 'BREACH'} ===")
+    for cell, c in out["cells"].items():
+        conv = [s for s, v in c["per_cal_seed_converters"].items() if v]
+        print(f"\n{cell} [{c['fabric']}x{c['dose']}] {c['arm']} ({'REUSED' if c['reused'] else 'NEW'}, "
+              f"tag={c['cal_tag']}, cal_h_max={c['cal_h_max']})")
+        print(f"    FINAL band {c['conv_band']}x{c['conv_consec']}  [{c['method']}]  "
+              f"(self-cut would be {c['provisional_self_cut']['band']}x{c['provisional_self_cut']['N']})")
+        print(f"    n_null {c['n_null']}  p99={c['null_p99']}  mean={c['null_mean']}  "
+              f"honest_false_rate@cut={c['false_rate_at_cut']}  s0_admitted={c['s0_admitted']}  widen={c['widen_needed']}")
+        print(f"    acq_onsets={c['acquisition_onsets']}  n_acq={c['n_acquired']}/{c['n_cal']}")
+        print(f"    per-cal-seed converters (final band): "
+              f"{ {s: v for s, v in c['per_cal_seed_converters'].items()} }  -> fired: {conv}")
+    g = out["borrow_gate"]
+    print(f"\nBORROW-GATE ({g['cell']} <- {g['donor']}): {g['decision']}")
+    print(f"    donor {g['donor']} mean {g['donor_mean']} p99 {g['donor_p99']} band {g['donor_band']['band']}x{g['donor_band']['N']}"
+          f"  |  {g['cell']} between-ep mean {g['cell_between_mean']} p99 {g['cell_between_p99']} (n={g['cell_between_n']})")
+    print(f"    mean_shift +{g['mean_shift']}  fr(donor-band on cell-between) {g['fr_donorband_on_cell']} "
+          f"vs {g['alpha_mult']}xalpha={g['alpha_mult']*g['alpha']}  -> borrow_ok={g['borrow_ok']}")
+    lv = out["cells"]["B_12bc_dwp"]["liveness"]
+    print(f"\nB_12bc_dwp LIVENESS: {lv['status']}  (acquired {lv['n_acquired']}/{lv['n_cal']}, "
+          f"n_min={lv['n_min']}); s20 converter = {lv['s20_converter']}")
+
+
 # ------------------------------------------------------------------ verdict scoring (§7)
 def _density_conversion_onset(rec: dict, band: float, consec: int):
     """First t where exam_acc >= band for `consec` consecutive POST-acquisition windows
@@ -413,6 +771,113 @@ def score_exp14(cal_tag: str = "cal", verdict_tag: str = "verdict", seeds=None) 
     return out
 
 
+# ------------------------------------------------------------------ 2x2 attribution scorer (§5)
+# BUILT, NOT EXERCISED until verdict release (brief scope: steps 1->2 only). The 4-cell scorer
+# reads verdict runs; it is guarded in _main behind --release-verdict.
+def _attribution_from_convertset(cv: set) -> dict:
+    """The exhaustive + exclusive §5 table, structured on the corner D then B/C. `cv` = the set of
+    converting cell letters among {A,B,C,D} (post READ/budget/liveness gates)."""
+    A_, B_, C_, D_ = ("A" in cv), ("B" in cv), ("C" in cv), ("D" in cv)
+    if A_:
+        return dict(attribution="ANOMALY",
+                    note="double-negative A converted; baseline (screen dwell 0/8) contradicted "
+                         "-> Fork-1.5-style audit, do NOT force an attribution")
+    if not D_:
+        return dict(attribution="INSTRUMENT_REGRESSION",
+                    note="D (reused committed split) MUST reproduce {0,1,3,6}; D-silent => the "
+                         "generalized scorer/band diverged from the screen -> fix pipeline, NOT a "
+                         "regime finding (F7)")
+    if not B_ and not C_:
+        return dict(attribution="INTERACTION",
+                    note="corner-only (screen prior); needs BOTH coin dose AND shuffled fabric")
+    if B_ and not C_:
+        return dict(attribution="DOSE_MAIN_EFFECT",
+                    note="coin enables on either fabric; shuffled-scheduled (C) alone insufficient")
+    if C_ and not B_:
+        return dict(attribution="FABRIC_MAIN_EFFECT",
+                    note="shuffled enables at either dose; dwelled-coin (B) alone insufficient")
+    return dict(attribution="BOTH_MAIN_EFFECTS_ADDITIVE",
+                note="dose AND fabric each independently enable; double-negative A silent; no "
+                     "interaction (F3)")
+
+
+def score_2x2(cal_tag: str = "2x2_cal", verdict_tag: str = "verdict") -> dict:
+    """DRAFT 4-cell attribution (§5) — VERDICT-STAGE. pre-gate A (READ=acquired) -> pre-gate B
+    (F6 budget) -> conversion (per-cell fixpoint band, sustained-episode) -> F5 power gate ->
+    attribution + factorial. DRAFT: routes behind the adversarial pass before the table reaches
+    Jason. NOT run in the cal phase (verdict withheld)."""
+    band = json.loads((OUTDIR / f"exp14_band_{cal_tag}.json").read_text())
+    if not band["spec_hash_parity"]["ok"]:
+        raise AssertionError(f"F2 spec_hash parity breach in {cal_tag}; refusing to score")
+    out = dict(cal_tag=cal_tag, verdict_tag=verdict_tag, cells={}, min_conv_budget=MIN_CONV_BUDGET)
+    letter = {"A_dwell": "A", "B_12bc_dwp": "B", "C_shuffle": "C", "D_split": "D"}
+    converts, ext_needed = set(), []
+    for cell, meta in CELLS.items():
+        c = band["cells"][cell]
+        b, N = c["conv_band"], c["conv_consec"]                 # final band (provisional / C own-null)
+        vtag = "verdict"                                        # A,D reuse committed screen verdict
+        per_seed = []
+        for s in VERDICT_SEEDS:
+            p = OUTDIR / f"exp14_{meta['arm']}_s{s}_{vtag}.json"
+            if not p.exists():
+                per_seed.append(dict(seed=s, status="MISSING"))
+                continue
+            rec = json.loads(p.read_text())
+            onset = rec["acquisition_onset"]
+            if onset is None:
+                st, conv = "UNREAD(unacquired)", None
+            elif (READ_AT - onset) < MIN_CONV_BUDGET:
+                st, conv = "UNREAD(budget-truncated)", None      # F6
+            else:
+                st = "READ"
+                conv = _density_conversion_onset(rec, b, N)
+            per_seed.append(dict(seed=s, status=st, acquisition_onset=onset,
+                                 conversion_onset=conv, converted=bool(conv is not None)))
+        read = [x for x in per_seed if x["status"] == "READ"]
+        conv = [x for x in read if x["converted"]]
+        # pin-2 liveness (B only): a non-acquiring 12bc_dwp cell is UNREAD, never "no conversion"
+        liveness_ok = True
+        if cell == "B_12bc_dwp":
+            liveness_ok = band["cells"][cell]["liveness"]["live"] and len(read) >= N_MIN_READ
+        kcls = _classify_count(len(conv))
+        if cell in ("B_12bc_dwp", "C_shuffle") and kcls in ("s0-class-lottery", "AMBIGUOUS"):
+            ext_needed.append(cell)                              # F5 power gate -> EXT_POOL
+        cell_converts = (len(conv) >= COUNT_CUTS["across_seeds"])
+        if cell == "B_12bc_dwp" and not liveness_ok:
+            cell_status = "UNREAD-AT-HORIZON"
+        elif len(read) < N_MIN_READ:
+            cell_status = "UNREAD(<N_MIN READ)"
+        else:
+            cell_status = "converts" if cell_converts else ("ambiguous/lottery" if kcls in
+                          ("s0-class-lottery", "AMBIGUOUS") else "silent")
+        if cell_converts and cell_status == "converts":
+            converts.add(letter[cell])
+        out["cells"][cell] = dict(arm=meta["arm"], fabric=meta["fabric"], dose=meta["dose"],
+                                  conv_band=b, conv_consec=N, n_read=len(read), n_converted=len(conv),
+                                  converter_seeds=[x["seed"] for x in conv], count_class=kcls,
+                                  cell_status=cell_status, liveness_ok=liveness_ok, per_seed=per_seed)
+    attrib = _attribution_from_convertset(converts)
+    # factorial companion (PARTIAL if any cell UNREAD)
+    def rate(cell):
+        cc = out["cells"][cell]
+        return None if cc["cell_status"].startswith("UNREAD") else cc["n_converted"] / max(1, cc["n_read"])
+    rA, rB, rC, rD = (rate(k) for k in ("A_dwell", "B_12bc_dwp", "C_shuffle", "D_split"))
+    partial = any(r is None for r in (rA, rB, rC, rD))
+    out["converts"] = sorted(converts)
+    out["ext_pool_needed"] = ext_needed                         # F5: extend these before finalizing
+    out["attribution_DRAFT"] = attrib
+    out["factorial"] = (dict(status="PARTIAL — a cell is UNREAD; interaction undefined")
+                        if partial else dict(
+                        dose=round((rB + rD) / 2 - (rA + rC) / 2, 4),
+                        fabric=round((rC + rD) / 2 - (rA + rB) / 2, 4),
+                        interaction=round((rD - rB) - (rC - rA), 4)))
+    out["DRAFT_note"] = ("DRAFT — behind the adversarial refute-default pass before the table; "
+                         "counts NOT claimed robust at n=8 (F5); pattern is the verdict")
+    (OUTDIR / f"exp14_2x2_verdict_{verdict_tag}.json").write_text(json.dumps(out, indent=2))
+    print(json.dumps({k: v for k, v in out.items() if k != "cells"}, indent=2))
+    return out
+
+
 # ------------------------------------------------------------------ smoke (faithfulness proof)
 def smoke():
     torch.set_num_threads(1)
@@ -458,7 +923,61 @@ def smoke():
         lc.step(no_word=False)
     assert lc._t == t_before + 150, "coin rung could not step past read_at on the h_max fabric"
     print("SMOKE (4): coin (shuffled) rung steps past read_at on the pre-built h_max perm")
-    # (5) band cut runs on a tiny synthetic (schema only; not a real cut)
+    # (5) TWO-PASS FIXPOINT NULL (F1) — SUPERSEDED by Ruling A (kept as the mechanism record):
+    # 3 clean marginal seeds ~U(0.30,0.62) + 1 seed carrying ONE sub-s0-class conversion (0.66 x 15:
+    # value 0.66 in (band, 0.704) and length 15 < ... but ABOVE 0.704x8 in NEITHER value NOR the
+    # s0-class run test, so the honest-null BASE misses it). Small-fraction contamination (15/~4000
+    # < 1%) so the provisional lands BELOW 0.66 and inflates its N; the fixpoint fires the detector on
+    # the episode, excludes it, and TIGHTENS the cut back to the clean marginal. Isolated blips stay.
+    import random as _r
+    _rng = _r.Random(0)
+    def _marg(n):
+        return [round(0.30 + 0.32 * _rng.random(), 3) for _ in range(n)]   # U(0.30,0.62)
+    per_seed = {i: _marg(1200) for i in range(3)}                          # 3600 clean marginal
+    contam = _marg(600)
+    contam = contam[:300] + [0.66] * 15 + contam[300:]                     # sub-s0 conversion 0.66x15
+    per_seed[3] = contam
+    res = _twopass_cut(per_seed)
+    assert res["converged"], f"two-pass did not converge: {res['trace']}"
+    pb, pN = res["provisional"]; fb, fN = res["fixpoint"]
+    # the episode fires the FIXPOINT detector (contamination made legible) ...
+    assert any(_episode_mask(contam, fb, fN)), "fixpoint detector fails to fire on the planted episode"
+    # ... and the fixpoint null DROPPED it (the honest-null base did not) — strict shrink
+    assert len(res["final_null"]) < len(res["prov_null"]), "fixpoint null did not shrink"
+    # ... and the fixpoint is no LOOSER than the provisional (deflation/hold, never inflation)
+    assert fb <= pb and fN <= pN, f"two-pass loosened the cut: {(pb, pN)} -> {(fb, fN)}"
+    clean = _twopass_cut({0: _marg(1200)})                                 # pure marginal control
+    assert clean["converged"], "two-pass diverged on a clean marginal null"
+    print(f"SMOKE (5): two-pass fixpoint null [SUPERSEDED] — provisional {pb}x{pN} -> fixpoint {fb}x{fN} "
+          f"(null {len(res['prov_null'])}->{len(res['final_null'])}); planted 0.66x15 caught + deflated")
+    # (5b) RULING B borrow-gate: donor marginal ~U(0.30,0.62); a MATCHED cell (same law) borrows;
+    # a SHIFTED cell (law bumped +0.05) does not. The band is a high-tail statistic, so a small
+    # baseline shift trips the gate (fr of donor band on the shifted cell's between-episode > 2*alpha).
+    donor = {i: _marg(1200) for i in range(3)}
+    _, _, donor_null = _provisional_cut(donor)
+    donor_band = _joint_band_cut(donor_null)
+    matched_between = _marg(1600)                                         # same law -> should borrow
+    shifted_between = [round(a + 0.05, 3) for a in _marg(1600)]           # baseline bumped -> should not
+    g_match = _borrow_gate(donor_band, donor_null, matched_between)
+    g_shift = _borrow_gate(donor_band, donor_null, shifted_between)
+    assert g_match["borrow_ok"], f"borrow-gate rejected a matched cell: {g_match}"
+    assert not g_shift["borrow_ok"], f"borrow-gate accepted a shifted cell: {g_shift}"
+    print(f"SMOKE (5b): borrow-gate — matched cell borrow_ok={g_match['borrow_ok']} (shift {g_match['mean_shift']}), "
+          f"shifted cell borrow_ok={g_shift['borrow_ok']} (shift {g_shift['mean_shift']})")
+    # (6) attribution table is exhaustive + exclusive over all 16 convert-subsets (pure fn)
+    seen_attr = {}
+    for mask in range(16):
+        cv = {L for i, L in enumerate("ABCD") if mask & (1 << i)}
+        a = _attribution_from_convertset(cv)["attribution"]
+        seen_attr[frozenset(cv)] = a
+    assert seen_attr[frozenset()] == "INSTRUMENT_REGRESSION"
+    assert seen_attr[frozenset({"D"})] == "INTERACTION"
+    assert seen_attr[frozenset({"D", "B"})] == "DOSE_MAIN_EFFECT"
+    assert seen_attr[frozenset({"D", "C"})] == "FABRIC_MAIN_EFFECT"
+    assert seen_attr[frozenset({"D", "B", "C"})] == "BOTH_MAIN_EFFECTS_ADDITIVE"
+    assert all(seen_attr[k] == "ANOMALY" for k in seen_attr if "A" in k)
+    assert len(seen_attr) == 16 and all(v for v in seen_attr.values())
+    print("SMOKE (6): 2x2 attribution table exhaustive+exclusive over 16 subsets (scorer NOT run)")
     print("SMOKE OK")
 
 
@@ -473,17 +992,34 @@ def _main():
     ap.add_argument("--cal-tag", type=str, default="cal")
     ap.add_argument("--score", action="store_true")
     ap.add_argument("--verdict-tag", type=str, default="verdict")
+    # --- 2x2 deconfound (steps 1->2) ---
+    ap.add_argument("--precheck", type=str, metavar="ARM", help="step 1: fabric pre-check an arm")
+    ap.add_argument("--precheck-t", type=int, default=15_000)
+    ap.add_argument("--cut-band-2x2", action="store_true", help="step 2: two-pass 4-cell band cut")
+    ap.add_argument("--band-2x2-tag", type=str, default="2x2_cal")
+    ap.add_argument("--score-2x2", action="store_true", help="VERDICT-STAGE (guarded; withheld)")
+    ap.add_argument("--release-verdict", action="store_true", help="override the verdict-withhold")
     args = ap.parse_args()
     torch.set_num_threads(1)                                  # the determinism contract
     if args.smoke:
         smoke()
+    elif args.precheck:
+        precheck_fabric(args.precheck, T=args.precheck_t)
     elif args.run:
         run_exp14_arm(args.run[0], int(args.run[1]),
                       read_at=args.read_at, h_max=args.h_max, out_tag=args.out_tag)
     elif args.cut_band:
         cut_conv_band(out_tag=args.cal_tag)
+    elif args.cut_band_2x2:
+        cut_conv_band_2x2(out_tag=args.band_2x2_tag)
     elif args.score:
         score_exp14(cal_tag=args.cal_tag, verdict_tag=args.verdict_tag)
+    elif args.score_2x2:
+        if not args.release_verdict:                          # brief scope: steps 1->2 ONLY
+            print("VERDICT WITHHELD (brief scope: steps 1->2). score_2x2 is BUILT but not exercised "
+                  "until Jason releases the verdict. Pass --release-verdict to override.")
+        else:
+            score_2x2(cal_tag=args.band_2x2_tag, verdict_tag=args.verdict_tag)
 
 
 if __name__ == "__main__":
