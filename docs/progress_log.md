@@ -2067,3 +2067,32 @@ across-seeds -> slow-dynamics confirmed (horizon axis) / s0-only -> seed lottery
 dose axis promoted. Loss-engineering stays FENCED (manufacturing-class); EXP13 holds PAUSED.
 PRE-REGISTRATION owed before build; knob choices surfaced to Jason (horizon length, seed set,
 fresh-vs-pinned-code, per-rung band constant). STOPPED for the knob ruling + GO.
+
+
+---
+
+## 2026-07-07 — EXP14 CONVERSION-DYNAMICS SCREEN CLOSED → **CONVERSION IS REACHABLE** (5 coin seeds); sensitivity-without-conversion is REGIME-SPECIFIC; 2×2 deconfound GO (canon §10.22)
+
+**Sharpest program result to date: the operator LEAVES THE MARGINAL on the coin rung.** Fork (i)
+screen (fresh {0-7} x {scheduled=exp12_dwell dwelled, coin=exp12_split shuffled} @ 500k,
+checkpoints on; build exp14_arms.py, one code path proven digit-identical to run_exp12_arm).
+VERDICT (verified, honest band): COIN {0,1,3,6}=4/8 convert (s0 reproduces + DWARFS the sole prior
+proof: 63 windows >=0.704 vs committed 16) + cal s20 also converted (36-window episode) = **5 coin
+seeds**; SCHEDULED 0/8 (all marginal). Cell: coin 4/8 = AMBIGUOUS, sched none; resolved by pin 2
+(any-conversion-either-rung fires the 2×2 — count not load-bearing, no seed-grinding).
+
+DRAFT-FLIP CAUGHT AT THE GATE: the cal band 0.5625x4 flagged 15/16 (false positives) — caught by
+sustain check (scheduled mean stays at chance; blips revert) + adversarial panel (wf_9677edf3, 4
+lenses all read_holds, INDEPENDENTLY re-cut on honest null -> same {0,1,3,6}). Root: cut_conv_band
+excluded every >=0.6 window from the null (stripped marginal high tail) -> false_rate=0.0 artifact,
+N=4 too low (honest false-rate 2.9% coin). BAND RE-PIN (ratified, instrument-validity): honest null
+= full marginal minus s0-class episodes only (EPISODE_MIN=8) -> also caught cal s20 contaminated the
+panel's full null -> cleaned band COIN 0.6875x5 / SCHED 0.6111x4; verdict IDENTICAL (robust).
+
+STABILITY sub-finding (companion, rides into 2×2): only s0 sustains to horizon; s1/s3/s6 convert
+mid-run (within-episode mean 0.88-0.92) then DECAY. Conversion = sustained-EPISODE (EPISODE_MIN),
+not endpoint; stability logged separately. REFRAME UPDATE (ratified, scoped): sensitivity-without-
+conversion is REGIME-SPECIFIC not universal; completer CAN leave the marginal (5 coin seeds); every
+conversion the program has ever seen is coin/shuffled, never dwelled/scheduled. Screen-close gate to
+commit; then 2×2 prereg ({dwelled,shuffled}x{scheduled,coin}) for Jason's read -> attribute
+conversion to dose / fabric / interaction. Loss-engineering FENCED; EXP13 PAUSED.

@@ -2,13 +2,13 @@
   "rungs": {
     "scheduled": {
       "arm": "exp12_dwell",
-      "n_null": 5955,
+      "n_null": 6837,
       "n_null_per_seed": {
-        "20": 871,
-        "21": 1358,
-        "22": 1454,
-        "24": 1145,
-        "25": 1127
+        "20": 1000,
+        "21": 1561,
+        "22": 1646,
+        "24": 1323,
+        "25": 1307
       },
       "acquisition_onsets": {
         "20": 200100,
@@ -17,23 +17,23 @@
         "24": 103200,
         "25": 108000
       },
-      "conv_band": 0.5625,
+      "conv_band": 0.6111,
       "conv_consec": 4,
-      "null_p99": 0.5926,
-      "null_mean": 0.4673,
+      "null_p99": 0.7083,
+      "null_mean": 0.4899,
       "widen_needed": false,
       "s0_admitted": true,
-      "false_rate_at_cut": 0.0
+      "false_rate_at_cut": 0.000439
     },
     "coin": {
       "arm": "exp12_split",
-      "n_null": 5978,
+      "n_null": 8173,
       "n_null_per_seed": {
-        "20": 1086,
-        "21": 1235,
-        "22": 1192,
-        "24": 1232,
-        "25": 1233
+        "20": 1568,
+        "21": 1648,
+        "22": 1648,
+        "24": 1654,
+        "25": 1655
       },
       "acquisition_onsets": {
         "20": 6000,
@@ -42,13 +42,13 @@
         "24": 3900,
         "25": 3600
       },
-      "conv_band": 0.5625,
-      "conv_consec": 4,
-      "null_p99": 0.5882,
-      "null_mean": 0.4408,
+      "conv_band": 0.6875,
+      "conv_consec": 5,
+      "null_p99": 0.8462,
+      "null_mean": 0.5054,
       "widen_needed": false,
       "s0_admitted": true,
-      "false_rate_at_cut": 0.0
+      "false_rate_at_cut": 0.000612
     }
   },
   "count_cuts": {

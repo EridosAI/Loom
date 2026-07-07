@@ -211,6 +211,36 @@ def _acc_series(rec) -> list[tuple[int, float, int]]:
     return out
 
 
+EPISODE_BAND, EPISODE_MIN = S0_LEVEL, 8    # honest-null episode-exclusion (band re-pin, Jason 2026-07-07)
+
+
+def _honest_null(series: list[tuple[int, float, int]]) -> list[float]:
+    """HONEST NULL (band re-pin, Jason's ruling 2026-07-07): keep the FULL post-acquisition
+    marginal — INCLUDING its high tail — as the null, excluding ONLY windows inside a SUSTAINED
+    conversion episode (>= EPISODE_MIN consecutive windows >= EPISODE_BAND = s0-class). The prior
+    form excluded EVERY window >= 0.6, stripping the marginal high tail, so false_rate came out
+    0.0 (artifact) and the sustained-N was cut too low (0.5625x4 -> honest false-rate 2.9% on the
+    coin rung). Panel-validated (wf_9677edf3): full-null n = 6837/8252, honest band coin 0.704x16
+    / sched 0.611x4, verdict coin {0,1,3,6} / sched 0/8. For the ~marginal cal seeds the
+    episode-exclusion removes ~nothing; it guards against a cal seed that genuinely converts."""
+    accs = [a for (_, a, _) in series]
+    n = len(accs)
+    in_ep = [False] * n
+    i = 0
+    while i < n:
+        if accs[i] >= EPISODE_BAND:
+            j = i
+            while j < n and accs[j] >= EPISODE_BAND:
+                j += 1
+            if j - i >= EPISODE_MIN:                # a sustained s0-class run -> exclude
+                for k in range(i, j):
+                    in_ep[k] = True
+            i = j
+        else:
+            i += 1
+    return [a for a, ie in zip(accs, in_ep) if not ie]
+
+
 def _joint_band_cut(null_accs: list[float]) -> tuple[float, int]:
     """Joint (band, N) cut over the post-acq pre-conversion null span (§4). Choose the LOWEST
     band that admits s0 (band <= S0_LEVEL) and the SMALLEST N (>=3) whose empirical rate of
@@ -263,8 +293,7 @@ def cut_conv_band(cal_seeds=None, out_tag: str = "cal") -> dict:
             rec = json.loads(p.read_text())
             onsets[s] = rec["acquisition_onset"]
             series = _acc_series(rec)
-            # exclude any candidate conversion episode (PROPOSED-band windows) from the null
-            accs = [a for (_, a, _) in series if a < PROPOSED_BAND]
+            accs = _honest_null(series)              # full marginal high tail; drop s0-class episodes only
             null_accs += accs
             n_seed_null[s] = len(accs)
         n_null = len(null_accs)
@@ -282,6 +311,105 @@ def cut_conv_band(cal_seeds=None, out_tag: str = "cal") -> dict:
         )
     (OUTDIR / f"exp14_band_{out_tag}.json").write_text(json.dumps(out, indent=2))
     print(json.dumps(out, indent=2))
+    return out
+
+
+# ------------------------------------------------------------------ verdict scoring (§7)
+def _density_conversion_onset(rec: dict, band: float, consec: int):
+    """First t where exam_acc >= band for `consec` consecutive POST-acquisition windows
+    (the density-matched detector). None = acquired-but-no-conversion. Requires acquisition
+    (the operator-at-chance marginal is only readable post-onset)."""
+    onset = rec["acquisition_onset"]
+    if onset is None:
+        return None
+    run = 0
+    for c in rec["columns"]:
+        if c["t"] < onset:
+            continue
+        ea = c.get("exam_acc")
+        run = run + 1 if (ea is not None and ea >= band) else 0
+        if run >= consec:
+            return c["t"] - (consec - 1) * EVAL
+    return None
+
+
+def _classify_count(k: int) -> str:
+    lo, hi = COUNT_CUTS["lottery"]
+    alo, ahi = COUNT_CUTS["ambiguous"]
+    if k >= COUNT_CUTS["across_seeds"]:
+        return "across-seeds"
+    if alo <= k <= ahi:
+        return "AMBIGUOUS"
+    if lo <= k <= hi:
+        return "s0-class-lottery"
+    if k == COUNT_CUTS["none"]:
+        return "none"
+    return "UNMAPPED"
+
+
+def score_exp14(cal_tag: str = "cal", verdict_tag: str = "verdict", seeds=None) -> dict:
+    """The DRAFT four-cell read (§7) — pre-gate A (READ-floor: acquired) -> pre-gate B (count
+    partition) -> cell. DRAFT: any conversion goes behind the adversarial verification pass
+    before the cell reaches the table. Screen-grade: dose-ordered is NAMED, never CLAIMED;
+    ANY conversion in EITHER rung fires the 2x2 (§3.1 pins)."""
+    seeds = seeds or VERDICT_SEEDS
+    band = json.loads((OUTDIR / f"exp14_band_{cal_tag}.json").read_text())
+    out = dict(cal_tag=cal_tag, verdict_tag=verdict_tag, seeds=seeds, rungs={})
+    for rung, arm in RUNGS.items():
+        b = band["rungs"][rung]["conv_band"]
+        N = band["rungs"][rung]["conv_consec"]
+        read_cutoff = READ_AT - N * EVAL          # onset past this -> window-truncated (pin i)
+        per_seed = []
+        for s in seeds:
+            p = OUTDIR / f"exp14_{arm}_s{s}_{verdict_tag}.json"
+            if not p.exists():
+                per_seed.append(dict(seed=s, status="MISSING"))
+                continue
+            rec = json.loads(p.read_text())
+            onset = rec["acquisition_onset"]
+            if onset is None:
+                status, conv = "UNREAD(unacquired)", None
+            elif onset > read_cutoff:
+                status, conv = "UNREAD(window-truncated)", None
+            else:
+                status = "READ"
+                conv = _density_conversion_onset(rec, b, N)
+            per_seed.append(dict(
+                seed=s, status=status, acquisition_onset=onset,
+                conversion_onset=conv, converted=bool(conv is not None),
+                exam_acc_end=(rec["columns"][-1].get("exam_acc") if rec["columns"] else None)))
+        read = [x for x in per_seed if x["status"] == "READ"]
+        conv = [x for x in read if x["converted"]]
+        if len(read) < N_MIN_READ:
+            cell = f"UNREAD-AT-HORIZON (<{N_MIN_READ} READ) — horizon re-pin, NOT none"
+        else:
+            cell = _classify_count(len(conv))
+        out["rungs"][rung] = dict(
+            arm=arm, conv_band=b, conv_consec=N, band_gt_s0_admitted=bool(b <= S0_LEVEL),
+            n_read=len(read), n_converted=len(conv),
+            converter_seeds=[x["seed"] for x in conv], draft_cell=cell, per_seed=per_seed)
+    sc, co = out["rungs"]["scheduled"], out["rungs"]["coin"]
+    any_conv = (sc["n_converted"] + co["n_converted"]) > 0
+    out["any_conversion"] = any_conv
+    out["fires_2x2"] = any_conv                    # §3.1 pin 2: ANY conversion, either rung
+    out["dose_ordered_SCREEN_GRADE"] = dict(
+        scheduled_converts=sc["n_converted"], coin_converts=co["n_converted"],
+        note="SCREEN-GRADE — NAMED not CLAIMED (fabric-confounded); license = fire the 2x2 only")
+    out["headline"] = (
+        "NO CONVERSION at 500k on either rung -> cell 'none' pending READ-floor + adversarial pass"
+        if not any_conv else
+        f"CONVERSION SEEN (sched {sc['n_converted']}/{sc['n_read']}, coin {co['n_converted']}/"
+        f"{co['n_read']}) -> DRAFT behind the adversarial pass; fires 2x2")
+    (OUTDIR / f"exp14_verdict_{verdict_tag}.json").write_text(json.dumps(out, indent=2))
+    print(json.dumps({k: v for k, v in out.items() if k != "rungs"}, indent=2))
+    for rung, r in out["rungs"].items():
+        print(f"\n{rung} ({r['arm']}): band {r['conv_band']}x{r['conv_consec']}  "
+              f"READ {r['n_read']}/{len(seeds)}  CONVERTED {r['n_converted']} "
+              f"{r['converter_seeds']}  -> DRAFT CELL: {r['draft_cell']}")
+        for x in r["per_seed"]:
+            print(f"    s{x['seed']}: {x['status']}"
+                  + (f"  onset={x.get('acquisition_onset')}  conv={x.get('conversion_onset')}"
+                     f"  acc_end={x.get('exam_acc_end')}" if x['status'] != 'MISSING' else ""))
     return out
 
 
@@ -343,6 +471,8 @@ def _main():
     ap.add_argument("--out-tag", type=str, default=None)
     ap.add_argument("--cut-band", action="store_true")
     ap.add_argument("--cal-tag", type=str, default="cal")
+    ap.add_argument("--score", action="store_true")
+    ap.add_argument("--verdict-tag", type=str, default="verdict")
     args = ap.parse_args()
     torch.set_num_threads(1)                                  # the determinism contract
     if args.smoke:
@@ -352,6 +482,8 @@ def _main():
                       read_at=args.read_at, h_max=args.h_max, out_tag=args.out_tag)
     elif args.cut_band:
         cut_conv_band(out_tag=args.cal_tag)
+    elif args.score:
+        score_exp14(cal_tag=args.cal_tag, verdict_tag=args.verdict_tag)
 
 
 if __name__ == "__main__":

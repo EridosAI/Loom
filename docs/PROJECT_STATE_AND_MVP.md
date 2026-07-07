@@ -1066,3 +1066,20 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   saved end-states (no `.pt` → deterministic reproduction diverges via code-drift + read-coupling →
   committed operator states uncertifiable). Never again: the checkpoint is cheap, its absence cost
   a whole probe. This is a process rule, not a mechanism change.
+
+- **[2026-07-07 — EXP14 CONVERSION-DYNAMICS SCREEN CLOSED → CONVERSION IS REACHABLE (canon §10.22).
+  THE SHARPEST PROGRAM RESULT TO DATE.** The horizon-extension screen (fork (i): fresh {0-7} ×
+  {scheduled=exp12_dwell dwelled, coin=exp12_split shuffled} @ 500k, checkpoints on; build
+  exp14_arms.py = one code path, digit-identical to run_exp12_arm) shows the operator **LEAVES THE
+  MARGINAL** on the coin rung: **COIN {0,1,3,6}=4/8 convert + cal s20 = 5 coin seeds** (s0
+  reproduces & DWARFS the sole prior proof, 63 windows ≥0.704 vs committed 16); **SCHEDULED 0/8**
+  (all marginal). Cell coin=AMBIGUOUS(4/8)/sched=none, resolved by pin 2 (any-conversion fires the
+  2×2). Draft band 0.5625×4 flagged 15/16 = FALSE POSITIVES, caught at the gate (sustain check +
+  adversarial panel wf_9677edf3 independently re-cut → same {0,1,3,6}); band re-pin (instrument-
+  validity): honest null (full marginal minus s0-class episodes, EPISODE_MIN=8; also caught cal s20
+  contaminated the null) → COIN 0.6875×5 / SCHED 0.6111×4, verdict robust. STABILITY companion: only
+  s0 sustains to horizon, s1/s3/s6 convert-then-decay; conversion = sustained-EPISODE not endpoint.
+  **REFRAME UPDATE (scoped): sensitivity-without-conversion is REGIME-SPECIFIC, not universal** — the
+  founding capability is reachable. Every conversion ever seen is coin/shuffled. NEXT = the clean
+  2×2 deconfound ({dwelled,shuffled}×{scheduled,coin}) → dose vs fabric vs interaction. EXP13 PAUSED;
+  loss-engineering FENCED.]**
