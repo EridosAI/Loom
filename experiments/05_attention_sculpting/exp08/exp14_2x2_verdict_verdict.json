@@ -1,0 +1,455 @@
+{
+  "cal_tag": "2x2_cal",
+  "verdict_tag": "verdict",
+  "cells": {
+    "A_dwell": {
+      "arm": "exp12_dwell",
+      "fabric": "dwelled",
+      "dose": "scheduled",
+      "conv_band": 0.6111,
+      "conv_consec": 4,
+      "n_read": 8,
+      "n_converted": 0,
+      "converter_seeds": [],
+      "count_class": "none",
+      "cell_status": "silent",
+      "liveness_ok": true,
+      "false_rate_referent": "clean dwelled/coin marginal (\u00a710.22 honest-null; this cell does NOT convert at cal) -> a conversion means 'leaves the dwelled marginal'",
+      "stability": {
+        "n_convert": 0,
+        "n_sustain_to_horizon": 0,
+        "sustainer_seeds": [],
+        "longest_episode": 0,
+        "within_episode_mean": null
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "status": "READ",
+          "acquisition_onset": 123900,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 1,
+          "status": "READ",
+          "acquisition_onset": 138900,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 2,
+          "status": "READ",
+          "acquisition_onset": 14400,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 3,
+          "status": "READ",
+          "acquisition_onset": 63300,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 4,
+          "status": "READ",
+          "acquisition_onset": 78300,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 5,
+          "status": "READ",
+          "acquisition_onset": 62100,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 6,
+          "status": "READ",
+          "acquisition_onset": 76200,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 7,
+          "status": "READ",
+          "acquisition_onset": 300300,
+          "conversion_onset": null,
+          "converted": false
+        }
+      ]
+    },
+    "B_12bc_dwp": {
+      "arm": "exp12_12bc_dwp",
+      "fabric": "dwelled",
+      "dose": "coin",
+      "conv_band": 0.6667,
+      "conv_consec": 3,
+      "n_read": 8,
+      "n_converted": 5,
+      "converter_seeds": [
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "count_class": "across-seeds",
+      "cell_status": "converts",
+      "liveness_ok": true,
+      "false_rate_referent": "clean dwelled/coin marginal (\u00a710.22 honest-null; this cell does NOT convert at cal) -> a conversion means 'leaves the dwelled marginal'",
+      "stability": {
+        "n_convert": 5,
+        "n_sustain_to_horizon": 1,
+        "sustainer_seeds": [
+          6
+        ],
+        "longest_episode": 3,
+        "within_episode_mean": 0.7364
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "status": "READ",
+          "acquisition_onset": 187800,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 1,
+          "status": "READ",
+          "acquisition_onset": 274500,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 2,
+          "status": "READ",
+          "acquisition_onset": 22500,
+          "conversion_onset": 297300,
+          "converted": true,
+          "stability": {
+            "longest_episode": 3,
+            "within_episode_mean": 0.7096,
+            "endpoint_acc": 0.3333,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 3,
+          "status": "READ",
+          "acquisition_onset": 65100,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 4,
+          "status": "READ",
+          "acquisition_onset": 24600,
+          "conversion_onset": 279600,
+          "converted": true,
+          "stability": {
+            "longest_episode": 3,
+            "within_episode_mean": 0.7548,
+            "endpoint_acc": 0.4545,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 5,
+          "status": "READ",
+          "acquisition_onset": 37200,
+          "conversion_onset": 360300,
+          "converted": true,
+          "stability": {
+            "longest_episode": 3,
+            "within_episode_mean": 0.7951,
+            "endpoint_acc": 0.4,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 6,
+          "status": "READ",
+          "acquisition_onset": 22800,
+          "conversion_onset": 172200,
+          "converted": true,
+          "stability": {
+            "longest_episode": 3,
+            "within_episode_mean": 0.7111,
+            "endpoint_acc": 0.7857,
+            "sustains_to_horizon": true
+          }
+        },
+        {
+          "seed": 7,
+          "status": "READ",
+          "acquisition_onset": 58500,
+          "conversion_onset": 68400,
+          "converted": true,
+          "stability": {
+            "longest_episode": 3,
+            "within_episode_mean": 0.7113,
+            "endpoint_acc": 0.375,
+            "sustains_to_horizon": false
+          }
+        }
+      ]
+    },
+    "C_shuffle": {
+      "arm": "exp12_shuffle",
+      "fabric": "shuffled",
+      "dose": "scheduled",
+      "conv_band": 0.64,
+      "conv_consec": 5,
+      "n_read": 8,
+      "n_converted": 5,
+      "converter_seeds": [
+        0,
+        2,
+        4,
+        5,
+        6
+      ],
+      "count_class": "across-seeds",
+      "cell_status": "converts",
+      "liveness_ok": true,
+      "false_rate_referent": "C's OWN between-episode floor, which CONTAINS the +0.0203 shifted baseline (borrow-gate SHIFTED; C has NO clean marginal). fr controls false-alarms relative to C's ELEVATED floor -> a C conversion means 'leaves C's SHIFTED baseline', a DIFFERENT referent than A/B/D. SAME alpha, DIFFERENT null: do NOT read C's fr as marginal-honest or as equal-guarantee to A/B/D. This referent asymmetry IS the fabric finding.",
+      "stability": {
+        "n_convert": 5,
+        "n_sustain_to_horizon": 0,
+        "sustainer_seeds": [],
+        "longest_episode": 90,
+        "within_episode_mean": 0.8865
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "status": "READ",
+          "acquisition_onset": 3600,
+          "conversion_onset": 72300,
+          "converted": true,
+          "stability": {
+            "longest_episode": 85,
+            "within_episode_mean": 0.8787,
+            "endpoint_acc": 0.5143,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 1,
+          "status": "READ",
+          "acquisition_onset": 4800,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 2,
+          "status": "READ",
+          "acquisition_onset": 3300,
+          "conversion_onset": 91800,
+          "converted": true,
+          "stability": {
+            "longest_episode": 60,
+            "within_episode_mean": 0.8693,
+            "endpoint_acc": 0.5714,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 3,
+          "status": "READ",
+          "acquisition_onset": 5700,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 4,
+          "status": "READ",
+          "acquisition_onset": 4200,
+          "conversion_onset": 19200,
+          "converted": true,
+          "stability": {
+            "longest_episode": 36,
+            "within_episode_mean": 0.8677,
+            "endpoint_acc": 0.6087,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 5,
+          "status": "READ",
+          "acquisition_onset": 3600,
+          "conversion_onset": 106200,
+          "converted": true,
+          "stability": {
+            "longest_episode": 77,
+            "within_episode_mean": 0.9066,
+            "endpoint_acc": 0.381,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 6,
+          "status": "READ",
+          "acquisition_onset": 3000,
+          "conversion_onset": 427500,
+          "converted": true,
+          "stability": {
+            "longest_episode": 90,
+            "within_episode_mean": 0.9102,
+            "endpoint_acc": 0.4348,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 7,
+          "status": "READ",
+          "acquisition_onset": 3000,
+          "conversion_onset": null,
+          "converted": false
+        }
+      ]
+    },
+    "D_split": {
+      "arm": "exp12_split",
+      "fabric": "shuffled",
+      "dose": "coin",
+      "conv_band": 0.6875,
+      "conv_consec": 5,
+      "n_read": 8,
+      "n_converted": 4,
+      "converter_seeds": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "count_class": "AMBIGUOUS",
+      "cell_status": "ambiguous/lottery",
+      "liveness_ok": true,
+      "false_rate_referent": "clean dwelled/coin marginal (\u00a710.22 honest-null; this cell does NOT convert at cal) -> a conversion means 'leaves the dwelled marginal'",
+      "stability": {
+        "n_convert": 4,
+        "n_sustain_to_horizon": 2,
+        "sustainer_seeds": [
+          0,
+          3
+        ],
+        "longest_episode": 63,
+        "within_episode_mean": 0.8997
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "status": "READ",
+          "acquisition_onset": 4200,
+          "conversion_onset": 150300,
+          "converted": true,
+          "stability": {
+            "longest_episode": 63,
+            "within_episode_mean": 0.9079,
+            "endpoint_acc": 0.9412,
+            "sustains_to_horizon": true
+          }
+        },
+        {
+          "seed": 1,
+          "status": "READ",
+          "acquisition_onset": 3000,
+          "conversion_onset": 206700,
+          "converted": true,
+          "stability": {
+            "longest_episode": 46,
+            "within_episode_mean": 0.9074,
+            "endpoint_acc": 0.6667,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 2,
+          "status": "READ",
+          "acquisition_onset": 3600,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 3,
+          "status": "READ",
+          "acquisition_onset": 3000,
+          "conversion_onset": 217800,
+          "converted": true,
+          "stability": {
+            "longest_episode": 38,
+            "within_episode_mean": 0.8877,
+            "endpoint_acc": 0.7857,
+            "sustains_to_horizon": true
+          }
+        },
+        {
+          "seed": 4,
+          "status": "READ",
+          "acquisition_onset": 4200,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 5,
+          "status": "READ",
+          "acquisition_onset": 6000,
+          "conversion_onset": null,
+          "converted": false
+        },
+        {
+          "seed": 6,
+          "status": "READ",
+          "acquisition_onset": 4200,
+          "conversion_onset": 135600,
+          "converted": true,
+          "stability": {
+            "longest_episode": 36,
+            "within_episode_mean": 0.8956,
+            "endpoint_acc": 0.5,
+            "sustains_to_horizon": false
+          }
+        },
+        {
+          "seed": 7,
+          "status": "READ",
+          "acquisition_onset": 3600,
+          "conversion_onset": null,
+          "converted": false
+        }
+      ]
+    }
+  },
+  "min_conv_budget": 130000,
+  "c_gt_d": {
+    "n_convert_C": 5,
+    "n_convert_D": 4,
+    "fired": true
+  },
+  "converts": [
+    "B",
+    "C"
+  ],
+  "ext_pool_needed": [],
+  "attribution_DRAFT": {
+    "attribution": "OPEN_ATTRIBUTION \u2014 C>D dose-inversion/interaction (Pin 3)",
+    "note": "scheduled-shuffled C converts MORE than coin-shuffled D (5>4): on the shuffled fabric adding coin REDUCED conversion. This is NOT the tidy fabric-main-effect / both-main-effects row \u2014 the dose-inverted / coin\u00d7shuffled-interacting reading is held OPEN alongside the convert-set reading. The panel separates them; do NOT collapse to a clean row.",
+    "convert_set_reading": {
+      "attribution": "INSTRUMENT_REGRESSION",
+      "note": "D (reused committed split) MUST reproduce {0,1,3,6}; D-silent => the generalized scorer/band diverged from the screen -> fix pipeline, NOT a regime finding (F7)"
+    }
+  },
+  "factorial": {
+    "dose": 0.25,
+    "fabric": 0.25,
+    "interaction": -0.75
+  },
+  "DRAFT_note": "DRAFT \u2014 behind the adversarial refute-default pass before the table; counts NOT claimed robust at n=8 (F5); pattern is the verdict",
+  "pin2_panel_posture": "REFUTE-DEFAULT. Cal previewed fabric-on + C>D; the verdict TESTS it, does NOT inherit it. The adversarial panel's job is to REFUTE these conversions on their own bands+gates; any lens that assumes 'we expect fabric' is DISQUALIFIED. Attribution routes to Jason AFTER the panel.",
+  "referent_reminder": "SAME alpha, DIFFERENT null: a C conversion means 'leaves C's SHIFTED baseline' (own between-episode null 0.64x5); A/B/D mean 'leaves the dwelled marginal'. Do not read the fr's as one equal-guarantee column."
+}

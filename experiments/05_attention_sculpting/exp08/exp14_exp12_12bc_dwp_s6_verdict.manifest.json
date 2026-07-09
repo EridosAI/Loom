@@ -1,0 +1,333 @@
+{
+  "fabric": {
+    "T": 1000008,
+    "dwell_law": "k = 2 + Geom0(0.1), cap 48 (Ruling 1)",
+    "e_k_target": 11.0,
+    "k_min_realized_frac_target": 0.1,
+    "k_min_realized_frac": 0.1002,
+    "realized_mean_k": 10.89,
+    "n_dwells": 91828,
+    "cap_hits": 624,
+    "truncated_last_dwell": true,
+    "walk": {
+      "tau": 4.0,
+      "theta": 0.25,
+      "stationary_frac": 0.25,
+      "family_coeff_std": 0.5,
+      "sigma_step_derived": 0.08268,
+      "reflect_bound": 1.5,
+      "k_axes": 4,
+      "bg_axes": 4
+    },
+    "background_const": [
+      -0.187339,
+      -0.431914,
+      0.761901,
+      -0.924558
+    ],
+    "member_hist": [
+      5701,
+      5738,
+      5794,
+      5815,
+      5786,
+      5633,
+      5647,
+      5848,
+      5796,
+      5687,
+      5837,
+      5709,
+      5795,
+      5688,
+      5710,
+      5644
+    ],
+    "mask_mix": {
+      "exam": 46096,
+      "probe_exam": 0,
+      "mid_vis": 453980,
+      "mid_word": 454200
+    },
+    "shuffled": false,
+    "substream_keys": {
+      "dwell": 91006,
+      "member": 92006,
+      "nuis": 93006,
+      "bg_const": 94000,
+      "bg_jit": 95006,
+      "mask": 96006,
+      "noise": 97006,
+      "shuffle": 98006,
+      "probe_raw": 99006
+    }
+  },
+  "independence_asserts": {
+    "n_sample": 12000,
+    "n_null": 200,
+    "cap_hit": {
+      "rate": 0.0068,
+      "rate_theory": 0.00707,
+      "ceiling": 0.01,
+      "n_dwells": 91828,
+      "count": 624,
+      "count_bound": 751.7,
+      "ok": true
+    },
+    "immediate_repeats": 0,
+    "walk_realized": {
+      "deviation_sd": 0.1183,
+      "onset_sd": 0.5048,
+      "target_frac": 0.25,
+      "realized_frac": 0.2344
+    },
+    "perlag_nuis": {
+      "obs": 0.1154,
+      "null99": 0.1415,
+      "lags": "0..48 stride 1",
+      "ok": true
+    },
+    "k_indep": {
+      "chi2": 70.03,
+      "null99": 86.94,
+      "ok": true
+    },
+    "schedule_indep": {
+      "chi2": 12.93,
+      "null99": 26.68,
+      "note": "exam@pos1 structural by construction (recorded, not tested)",
+      "ok": true
+    },
+    "bg_indep": {
+      "obs": 0.0392,
+      "null99": 0.0642,
+      "ok": true
+    }
+  },
+  "arm": "exp12_12bc_dwp",
+  "seed": 6,
+  "read_at": 500000,
+  "h_max": 1000000,
+  "vocab": 2,
+  "exp": "exp14_conversion_dynamics",
+  "geometry": "wave-local (W=1); no u-carrier; L_JEPA inert by construction",
+  "members": [
+    {
+      "member": 0,
+      "a": 0,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 0,
+      "word_v16": 0
+    },
+    {
+      "member": 1,
+      "a": 0,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 1,
+      "word_v16": 1
+    },
+    {
+      "member": 2,
+      "a": 0,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 2,
+      "word_v16": 2
+    },
+    {
+      "member": 3,
+      "a": 0,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 3,
+      "word_v16": 3
+    },
+    {
+      "member": 4,
+      "a": 1,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 4,
+      "word_v16": 4
+    },
+    {
+      "member": 5,
+      "a": 1,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 5,
+      "word_v16": 5
+    },
+    {
+      "member": 6,
+      "a": 1,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 6,
+      "word_v16": 6
+    },
+    {
+      "member": 7,
+      "a": 1,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 7,
+      "word_v16": 7
+    },
+    {
+      "member": 8,
+      "a": 2,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 0,
+      "word_v16": 8
+    },
+    {
+      "member": 9,
+      "a": 2,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 1,
+      "word_v16": 9
+    },
+    {
+      "member": 10,
+      "a": 2,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 2,
+      "word_v16": 10
+    },
+    {
+      "member": 11,
+      "a": 2,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 3,
+      "word_v16": 11
+    },
+    {
+      "member": 12,
+      "a": 3,
+      "b": 0,
+      "distractor": 0,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 0,
+      "word_v8": 4,
+      "word_v16": 12
+    },
+    {
+      "member": 13,
+      "a": 3,
+      "b": 1,
+      "distractor": 0,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 1,
+      "word_v8": 5,
+      "word_v16": 13
+    },
+    {
+      "member": 14,
+      "a": 3,
+      "b": 2,
+      "distractor": 1,
+      "category": 0,
+      "word_v2": 0,
+      "word_v4": 2,
+      "word_v8": 6,
+      "word_v16": 14
+    },
+    {
+      "member": 15,
+      "a": 3,
+      "b": 3,
+      "distractor": 1,
+      "category": 1,
+      "word_v2": 1,
+      "word_v4": 3,
+      "word_v8": 7,
+      "word_v16": 15
+    }
+  ],
+  "anchor": {
+    "embeddings": [
+      [
+        -0.254867,
+        0.122947,
+        0.279347,
+        -0.431463,
+        -0.051896,
+        0.088614,
+        -0.199227,
+        -0.277714,
+        0.287934,
+        -0.166417,
+        -0.360397,
+        -0.142999,
+        0.220187,
+        0.314726,
+        0.071599,
+        0.338782
+      ],
+      [
+        -0.349584,
+        -0.071691,
+        0.425503,
+        -0.072894,
+        0.043833,
+        0.172747,
+        0.229522,
+        -0.160032,
+        -0.04624,
+        -0.047565,
+        -0.401064,
+        -0.076258,
+        -0.455346,
+        0.148898,
+        -0.292305,
+        -0.30035
+      ]
+    ],
+    "construction": "WordCortex(D, n_category, seed=seed+1) \u2014 deployed v2"
+  }
+}

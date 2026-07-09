@@ -2139,3 +2139,45 @@ per-cell conversion + stability, score_2x2 DRAFT -> adversarial refute-default p
 score_2x2 built-not-run this gate. Harness exp14_arms.py (CELLS, precheck_fabric, provisional cut +
 between-episode null + borrow-gate, two-pass SUPERSEDED, smoke 7/7 incl. borrow-gate unit). EXP13
 PAUSED; loss-engineering FENCED.
+
+## 2026-07-09 — EXP14 2×2 VERDICT: **FABRIC MAIN EFFECT ON ONSET** (fabric necessary, dose-alone insufficient, dose-inversion REFUTED); canon §10.24
+
+Ran 2 new arms × {0–7} @ 500k (h_max 1M, checkpoints, threads=1); dwell/split REUSE committed screen
+verdict runs (F7, not re-run); all four cells READ 8/8. DRAFT (per-cell honest bands, sustained-episode):
+A_dwell 0.6111×4 → 0/8; B_12bc_dwp 0.6667×3 → 5/8 [2,4,5,6,7]; C_shuffle 0.64×5 (own shifted null) →
+5/8 [0,2,4,5,6]; D_split 0.6875×5 (committed) → 4/8 [0,1,3,6]. Pin 3 fired (C5>D4) → OPEN; draft
+factorial dose+.25/fabric+.25/interaction−.75. DRAFT halted; adversarial refute-default panel ran.
+
+Panel (wf_1df4cc96, 6 agents, Pin-2 compliant — fabric-assuming lens disqualified) BROKE it; 2 load-bearing
+claims CC-verified independently: (1) B → REFUTED 5→0 = calibrated false-alarm artifact: every B conv is
+longest-episode EXACTLY 3 (bare N); under B's own per-window fr over the ~1400-window mean span, EXPECTED phantom-converters
+= 4.50, OBSERVED 5 (null mode); firing seeds = the 5 highest window-count seeds → tracks EXPOSURE not dose.
+DOSE row dead (A=0, B=0 real). (2) C>D → REFUTED (Pin 3 CLOSED — the PIN WORKED): observed C5-vs-D4 gap
+z≈0.51 = coin-flip; matched-band D≥C (D6 C5 at 0.64; C>D only ≥0.6667, ≤1 seed); durability inverts (D 2/4 vs C 0/5).
+C>D was a referent-parity artifact (C at own 0.64 vs D at committed 0.6875). C → GENUINE but NON-LOADABLE
+(deep+long episodes +0.36–0.40 above its floor, clear refute-default; BUT own SHIFTED null, 0/5 durable →
+corroborates fabric direction, cannot carry magnitude/interaction). D → {0,1,3,6} EXACTLY, F7 PASS (single
+spec_hash; pipeline validated → licenses believing the new cells).
+
+VERDICT (Jason, ratified): FABRIC main effect ON ONSET (§5 FABRIC row: D+C convert, A+B silent), on the
+ENABLING question. Referent-clean CORE does NOT rest on C = B↔D (both coin, both honest marginal: flip
+fabric → B floor-empty, D deep+durable+reproduces screen) + dwelled-emptiness (A 0/8, B floor-empty).
+Referent SCOPE: enabling claim dose-general on the dwelled-empty side (A scheduled + B coin both empty),
+referent-cleanest on the B↔D coin diagonal; scheduled-shuffled = C = own-referent corroborating-not-loadable.
+FACTORIAL PARTIAL — report the pattern, not the coefficients (draft +.25/+.25/−.75 sit on unrefuted counts:
+B artifact, C wrong referent).
+
+BAND LESSON (report-don't-patch; B NOT re-cut): N=3 at 500k → per-seed false-conversion ~0.56 even at
+calibrated per-window α; the floor-check (obs vs false-alarm expectation) rescued the read; carry-forward =
+loose-N cells verified against false-alarm EXPECTATION, not crossing-count [[feedback_loose_N_false_alarm]].
+
+COMPANION held OPEN (do NOT attribute): durability may split by dose within shuffled (D coin 2/4 sustain vs
+C sched 0/5; direction referent-robust, consistent with screen s0 sole durable). Fabric gates ONSET; dose
+MAY gate DURABILITY. NOT POWERED (n = D 2/4 + C 0/5). Promotion bar = a powered durability read (its own
+gate, disqualification-style); a warm restatement does not promote it.
+
+Refines/retires: screen "coin converts, scheduled doesn't" → the shuffled confound, fabric is the gate ON
+ONSET; sensitivity-without-conversion → permitting regime is the shuffled fabric (dwelled stays in it at
+both doses); Pin 3 → REFUTED; fabric-moves-baseline (+0.0203, §10.23) → STANDS (= why C needs its own null).
+Canon §10.24 + §10.22 REFINED pointers (ONSET-qualified); prereg §5 Pin-3-RESOLVED-REFUTED (mechanism).
+EXP13 PAUSED; loss-engineering FENCED.

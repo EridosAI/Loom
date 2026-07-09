@@ -801,6 +801,31 @@ def _attribution_from_convertset(cv: set) -> dict:
                      "interaction (F3)")
 
 
+def _stability_of_seed(rec: dict, band: float, N: int) -> dict:
+    """STABILITY COMPANION (prereg §3): for a converting seed, the LONGEST sustained-episode length
+    (>= N consec >= band), its within-episode mean, the endpoint exam_acc, and whether the episode
+    SUSTAINS TO THE HORIZON (endpoint window >= band) vs decays. Post-acquisition windows only."""
+    onset = rec["acquisition_onset"]
+    vals = [c["exam_acc"] for c in rec["columns"]
+            if onset is not None and c["t"] >= onset and c.get("exam_acc") is not None]
+    n, i, longest, longest_mean = len(vals), 0, 0, None
+    while i < n:
+        if vals[i] >= band:
+            j = i
+            while j < n and vals[j] >= band:
+                j += 1
+            if j - i >= N and (j - i) > longest:
+                longest, longest_mean = j - i, sum(vals[i:j]) / (j - i)
+            i = j
+        else:
+            i += 1
+    endpoint = vals[-1] if vals else None
+    return dict(longest_episode=longest,
+                within_episode_mean=round(longest_mean, 4) if longest_mean is not None else None,
+                endpoint_acc=round(endpoint, 4) if endpoint is not None else None,
+                sustains_to_horizon=bool(endpoint is not None and endpoint >= band))
+
+
 def score_2x2(cal_tag: str = "2x2_cal", verdict_tag: str = "verdict") -> dict:
     """DRAFT 4-cell attribution (§5) — VERDICT-STAGE. pre-gate A (READ=acquired) -> pre-gate B
     (F6 budget) -> conversion (per-cell fixpoint band, sustained-episode) -> F5 power gate ->
@@ -831,10 +856,22 @@ def score_2x2(cal_tag: str = "2x2_cal", verdict_tag: str = "verdict") -> dict:
             else:
                 st = "READ"
                 conv = _density_conversion_onset(rec, b, N)
-            per_seed.append(dict(seed=s, status=st, acquisition_onset=onset,
-                                 conversion_onset=conv, converted=bool(conv is not None)))
+            entry = dict(seed=s, status=st, acquisition_onset=onset,
+                         conversion_onset=conv, converted=bool(conv is not None))
+            if conv is not None:
+                entry["stability"] = _stability_of_seed(rec, b, N)   # §3 companion
+            per_seed.append(entry)
         read = [x for x in per_seed if x["status"] == "READ"]
         conv = [x for x in read if x["converted"]]
+        # STABILITY COMPANION (prereg §3): sustain-to-horizon vs decay, per cell
+        stab = [x["stability"] for x in conv]
+        wem = [st["within_episode_mean"] for st in stab if st["within_episode_mean"] is not None]
+        stability = dict(
+            n_convert=len(conv),
+            n_sustain_to_horizon=sum(1 for st in stab if st["sustains_to_horizon"]),
+            sustainer_seeds=[x["seed"] for x in conv if x["stability"]["sustains_to_horizon"]],
+            longest_episode=max([st["longest_episode"] for st in stab], default=0),
+            within_episode_mean=round(sum(wem) / len(wem), 4) if wem else None)
         # pin-2 liveness (B only): a non-acquiring 12bc_dwp cell is UNREAD, never "no conversion"
         liveness_ok = True
         if cell == "B_12bc_dwp":
@@ -855,8 +892,27 @@ def score_2x2(cal_tag: str = "2x2_cal", verdict_tag: str = "verdict") -> dict:
         out["cells"][cell] = dict(arm=meta["arm"], fabric=meta["fabric"], dose=meta["dose"],
                                   conv_band=b, conv_consec=N, n_read=len(read), n_converted=len(conv),
                                   converter_seeds=[x["seed"] for x in conv], count_class=kcls,
-                                  cell_status=cell_status, liveness_ok=liveness_ok, per_seed=per_seed)
+                                  cell_status=cell_status, liveness_ok=liveness_ok,
+                                  false_rate_referent=band["cells"][cell].get("false_rate_referent"),
+                                  stability=stability, per_seed=per_seed)
     attrib = _attribution_from_convertset(converts)
+    # PIN 3 (Jason 2026-07-08) — C>D routes to OPEN-ATTRIBUTION, NOT the tidy row. If scheduled-
+    # shuffled (C) converts MORE than coin-shuffled (D), on the shuffled fabric adding coin REDUCED
+    # conversion = dose-inverted / coin×shuffled-interacting; held OPEN, do NOT collapse to a row.
+    cc, dd = out["cells"]["C_shuffle"], out["cells"]["D_split"]
+    c_readable = not cc["cell_status"].startswith("UNREAD")
+    d_readable = not dd["cell_status"].startswith("UNREAD")
+    c_gt_d = bool(c_readable and d_readable and cc["n_converted"] > dd["n_converted"])
+    out["c_gt_d"] = dict(n_convert_C=cc["n_converted"], n_convert_D=dd["n_converted"], fired=c_gt_d)
+    if c_gt_d:
+        attrib = dict(
+            attribution="OPEN_ATTRIBUTION — C>D dose-inversion/interaction (Pin 3)",
+            note=(f"scheduled-shuffled C converts MORE than coin-shuffled D ({cc['n_converted']}>"
+                  f"{dd['n_converted']}): on the shuffled fabric adding coin REDUCED conversion. This is "
+                  "NOT the tidy fabric-main-effect / both-main-effects row — the dose-inverted / "
+                  "coin×shuffled-interacting reading is held OPEN alongside the convert-set reading. The "
+                  "panel separates them; do NOT collapse to a clean row."),
+            convert_set_reading=attrib)
     # factorial companion (PARTIAL if any cell UNREAD)
     def rate(cell):
         cc = out["cells"][cell]
@@ -873,8 +929,21 @@ def score_2x2(cal_tag: str = "2x2_cal", verdict_tag: str = "verdict") -> dict:
                         interaction=round((rD - rB) - (rC - rA), 4)))
     out["DRAFT_note"] = ("DRAFT — behind the adversarial refute-default pass before the table; "
                          "counts NOT claimed robust at n=8 (F5); pattern is the verdict")
+    out["pin2_panel_posture"] = (                               # Pin 2 — cal is NOT a prior
+        "REFUTE-DEFAULT. Cal previewed fabric-on + C>D; the verdict TESTS it, does NOT inherit it. "
+        "The adversarial panel's job is to REFUTE these conversions on their own bands+gates; any lens "
+        "that assumes 'we expect fabric' is DISQUALIFIED. Attribution routes to Jason AFTER the panel.")
+    out["referent_reminder"] = ("SAME alpha, DIFFERENT null: a C conversion means 'leaves C's SHIFTED "
+                                "baseline' (own between-episode null 0.64x5); A/B/D mean 'leaves the "
+                                "dwelled marginal'. Do not read the fr's as one equal-guarantee column.")
     (OUTDIR / f"exp14_2x2_verdict_{verdict_tag}.json").write_text(json.dumps(out, indent=2))
     print(json.dumps({k: v for k, v in out.items() if k != "cells"}, indent=2))
+    for cell, c in out["cells"].items():
+        st = c["stability"]
+        print(f"\n{cell} [{c['fabric']}x{c['dose']}] {c['arm']}: band {c['conv_band']}x{c['conv_consec']}  "
+              f"READ {c['n_read']}/8  CONVERTED {c['n_converted']} {c['converter_seeds']}  [{c['cell_status']}]")
+        print(f"    stability: n_sustain-to-horizon {st['n_sustain_to_horizon']}/{st['n_convert']} "
+              f"{st['sustainer_seeds']}  longest_episode {st['longest_episode']}  within-ep mean {st['within_episode_mean']}")
     return out
 
 

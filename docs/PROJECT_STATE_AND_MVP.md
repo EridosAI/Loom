@@ -1100,3 +1100,21 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   run backwards / coin×shuffled interact — held OPEN, not collapsed to "fabric main effect."** spec_hash
   parity OK. `score_2x2` built-not-run. NEXT = verdict (Jason's word): 2 new arms × {0–7}, dwell/split
   reuse committed, then adversarial panel → attribution. EXP13 PAUSED; loss-engineering FENCED.]**
+- **[2026-07-09 — EXP14 2×2 VERDICT: FABRIC MAIN EFFECT ON ONSET (canon §10.24).** 16 verdict runs clean;
+  dwell/split reused (F7); all cells READ 8/8. DRAFT: A 0/8, B 5/8, C 5/8, D 4/8=[0,1,3,6]; Pin-3 fired →
+  OPEN. **Refute-default panel (`wf_1df4cc96`, 6 agents, Pin-2) broke it, CC-verified:** **B → REFUTED 5→0**
+  (false-alarm artifact — all bare-N=3; floor expected 4.50 vs obs 5; firings track window-count, not dose
+  → DOSE row dead); **C → GENUINE but NON-LOADABLE** (deep+long, but own SHIFTED null, 0/5 durable →
+  corroborates, can't carry magnitude); **C>D → REFUTED (Pin 3 CLOSED, the pin WORKED)** — observed
+  C5-vs-D4 gap z≈0.51 (coin-flip), matched-band D≥C, durability inverts (D 2/4 vs C 0/5) = referent-parity
+  artifact; **D → {0,1,3,6} exactly,
+  F7 PASS** (pipeline validated → licenses new cells). **VERDICT = FABRIC main effect ON ONSET** (fabric
+  necessary, dose-alone insufficient, dose-inversion refuted); referent-clean CORE = **B↔D (both coin,
+  honest marginal) + dwelled-emptiness** (does NOT rest on C); enabling claim dose-general on dwelled-empty
+  side, referent-cleanest on B↔D coin diagonal. **Factorial PARTIAL** (report pattern not coefficients).
+  **BAND LESSON** [[feedback_loose_N_false_alarm]]: loose-N verified vs false-alarm expectation not
+  crossing-count; B NOT re-cut. **COMPANION held OPEN (do NOT attribute):** durability may split by dose
+  within shuffled (D coin 2/4 vs C sched 0/5); NOT POWERED — promotion bar = its own powered durability
+  gate. Refines: screen "coin converts"→shuffled confound, fabric is the gate ON ONSET; sensitivity-without-conversion
+  →permitting regime is shuffled; Pin 3 REFUTED; fabric-moves-baseline +0.020 STANDS. EXP13 PAUSED;
+  loss-engineering FENCED.]**
