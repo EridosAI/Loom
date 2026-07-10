@@ -199,6 +199,12 @@ def run_exp14_arm(arm_name: str, seed: int, *, read_at: int = READ_AT, h_max: in
         f"mid_ckpt_at {mid_ckpt_at} must lie in (0, read_at={read_at}]"
     loop, spec, cfg = X12.build_exp12(arm_name, seed, h_max, probe_rate)   # fabric -> h_max+8
     fab = loop.stream
+    # EXP16 §6: the mid-dwell probe predicate ("slot 1, NOT is_exam") equals "the mid-dwell word-coin
+    # wave" ONLY at probe_rate=0 (a probe-dwell onset is also slot 1 AND NOT is_exam). The
+    # probe_rate==0 guard is CONSTRUCTION-level in EXP12Loop._make_stream (fired above, in
+    # build_exp12) — mirroring the standing uniform/word-ref precedent so every entry point is
+    # protected. `expo_midword` here only drives the read-only mid-dwell probe hook below.
+    expo_midword = bool(spec.get("expo_midword", False))
 
     OUTDIR.mkdir(exist_ok=True)
     # asserts on the UNSHUFFLED wave order (identical multiset by construction)
@@ -237,10 +243,16 @@ def run_exp14_arm(arm_name: str, seed: int, *, read_at: int = READ_AT, h_max: in
     cols, occ, gsplit, mixes = [], {}, {}, {}
     onset_saved = False
     for t in range(1, read_at + 1):
+        prev = t - 1
         # §13.10 probe read PRE-update (matched to the scheduled exam's timing)
-        pl = X12._probe_exam_read(loop, t - 1) if bool(fab.is_probe_exam[t - 1]) else None
+        pl = X12._probe_exam_read(loop, prev) if bool(fab.is_probe_exam[prev]) else None
+        # EXP16 §5: read-only mid-dwell word probe PRE-update, at exactly the mid-dwell word-coin
+        # waves expo_midword converted to exposure (slot 1, NOT an onset exam). None otherwise.
+        pmw = (X12._probe_midword_read(loop, prev)
+               if (expo_midword and int(fab.mask_slot[prev]) == 1 and not bool(fab.is_exam[prev]))
+               else None)
         loop.step(no_word=no_word)
-        X12._buffer_wave(loop, t - 1, buf, probe_lift=pl)
+        X12._buffer_wave(loop, prev, buf, probe_lift=pl, probe_midword=pmw)
         if t % EVAL == 0:
             cols.append(X12._eval_column(loop, t, buf, members_a, members_b, labels,
                                          no_word=no_word))
@@ -306,12 +318,17 @@ def _proposed_conversion_onset(cols):
 
 # ------------------------------------------------------------------ step-1 fabric pre-check (§7.1)
 def _assert_one(arm: str, seed: int, T: int) -> dict:
-    """Build the fabric at T and run the T-independent fabric-asserts (the §10.22 re-pin) —
-    OUTCOME-BLIND: pure fabric construction + independence asserts, NO loop step, NO dynamics,
-    NO exam/conversion read. Runs the assert on the UNSHUFFLED wave order (for a shuffled arm,
-    rebuild the unshuffled twin and checksum the multiset — the exact path in run_exp14_arm).
-    T>=15k so the fixed n_sample=12000 window is fully populated (the assert reads min(T,12000),
-    so T=15k == the 500k run's assert bit-for-bit)."""
+    """Build the fabric at T and run the fabric-asserts (the §10.22 re-pin) — OUTCOME-BLIND: pure
+    fabric construction + independence asserts, NO loop step, NO dynamics, NO exam/conversion read.
+    Runs the assert on the UNSHUFFLED wave order (for a shuffled arm, rebuild the unshuffled twin
+    and checksum the multiset — the exact path in run_exp14_arm).
+
+    EXP16 rider (zero-semantic docstring fix; ruled §10.25, cross-ref FRONTIER §10.25.1/.2): the
+    prior claim "T=15k == the 500k run's assert bit-for-bit" is FALSE and was falsified at the EXP15
+    closure — the perlag/schedule/bg asserts window to min(T,12000), but the k-independence AND
+    cap-hit asserts read the FULL fabric and are T-DEPENDENT (the s10/s36 finding: 500k-pass /
+    1M-fail). This is why pre-checks run at the DEPLOYED horizon (AMD-1), not 15k. No code change;
+    the assert body is unchanged."""
     try:
         loop, spec, cfg = X12.build_exp12(arm, seed, T)          # fabric -> T+8; no stepping
         fab = loop.stream
@@ -335,13 +352,21 @@ def _assert_one(arm: str, seed: int, T: int) -> dict:
 
 
 def precheck_fabric(arm: str, seeds=None, T: int = 15_000, out_tag: str = "precheck",
-                    swap_pool=None) -> dict:
+                    swap_pool=None, reused_seeds=None) -> dict:
     """STEP 1 (§7.1): fabric-assert the verdict seeds OUTCOME-BLIND; swap any defective from the
     EXT_POOL-then-higher pool (the ruled cal-s23->s25 substitution rule), recording each swap.
 
     `swap_pool` pins the substitution pool explicitly (EXP15 §3: {28-39}, lowest-unused-first,
-    disjoint from the reserve {40-47}). Default preserves the EXP14 behaviour."""
+    disjoint from the reserve {40-47}). Default preserves the EXP14 behaviour.
+
+    `reused_seeds` (EXP16 AMD-10, canon FRONTIER §10.25.2 — pre-check failure CLASS): seeds carrying
+    a committed same-(deployed-fabric, seed, h_max) assert pass, so a failure here is a deterministic
+    REPLAY DIVERGENCE = instrument regression, NOT a seed defect. Such a failure HALTS-AND-AUDITS
+    (raises; mirrors reproduction_check) and is NEVER substituted — substitution would mask a broken
+    assert and break twin-fabric pairing. Every other (FRESH) seed substitutes per rule. Default
+    None => no reused class (EXP14/EXP15 behaviour unchanged)."""
     seeds = list(seeds if seeds is not None else VERDICT_SEEDS)
+    reused = set(reused_seeds or ())
     if swap_pool is None:
         swap_pool = [s for s in (EXT_POOL + list(range(10, 40))) if s not in seeds]
     else:
@@ -352,7 +377,14 @@ def precheck_fabric(arm: str, seeds=None, T: int = 15_000, out_tag: str = "prech
         if results[s]["ok"]:
             accepted.append(s)
             continue
-        repl = None                                              # find a clean replacement
+        if s in reused:                                          # REUSED class: replay divergence
+            _write_precheck(arm, out_tag, seeds, accepted, swaps, results, halted=s, T=T)
+            raise AssertionError(
+                f"EXP16 PRE-CHECK HALT-AND-AUDIT: REUSED seed s{s} failed the deployed-horizon "
+                f"assert ({results[s].get('err')}). A committed same-horizon assert exists for this "
+                f"seed, so this is a deterministic REPLAY DIVERGENCE = instrument regression, not a "
+                f"seed defect. Fix the pipeline; do NOT substitute. (FRONTIER §10.25.2.)")
+        repl = None                                              # FRESH class: substitute per rule
         for cand in swap_pool:
             if cand in used or cand in accepted:
                 continue
@@ -363,17 +395,26 @@ def precheck_fabric(arm: str, seeds=None, T: int = 15_000, out_tag: str = "prech
                 repl = cand
                 accepted.append(cand)
                 break
-        swaps.append(dict(defective=s, err=results[s].get("err"), replacement=repl))
-    out = dict(arm=arm, T=T, seeds_requested=seeds, seeds_accepted=sorted(accepted),
-               n_pass=sum(1 for s in seeds if results[s]["ok"]), n_total=len(seeds),
+        swaps.append(dict(defective=s, err=results[s].get("err"), replacement=repl,
+                          seed_class="FRESH"))
+    return _write_precheck(arm, out_tag, seeds, accepted, swaps, results, T=T)
+
+
+def _write_precheck(arm, out_tag, seeds, accepted, swaps, results, halted=None, T=None) -> dict:
+    out = dict(arm=arm, T=T, seeds_requested=list(seeds), seeds_accepted=sorted(accepted),
+               n_pass=sum(1 for s in seeds if results.get(s, {}).get("ok")), n_total=len(seeds),
                swaps=swaps, spec_hash=C.spec_hash(),
+               halted_reused_seed=halted,
                per_seed={str(s): results[s] for s in results})
     (OUTDIR / f"exp14_{arm}_{out_tag}.json").write_text(json.dumps(out, indent=2))
-    tag = "ALL PASS" if not swaps else f"{len(swaps)} SWAP(S)"
+    tag = ("HALT-AND-AUDIT (REUSED s%d)" % halted) if halted is not None else \
+          ("ALL PASS" if not swaps else f"{len(swaps)} SWAP(S)")
     print(f"[precheck {arm}] {out['n_pass']}/{out['n_total']} pass ({tag}); "
           f"accepted={out['seeds_accepted']}")
     for s in seeds:
-        r = results[s]
+        r = results.get(s)
+        if r is None:
+            continue
         if r["ok"]:
             print(f"    s{s}: OK  perlag obs={r['perlag_nuis']['obs']}/n99={r['perlag_nuis']['null99']}"
                   f"  k chi2={r['k_indep']['chi2']}/n99={r['k_indep']['null99']}")
@@ -1441,9 +1482,12 @@ def phantom_floor_gate(cell: str, seeds, tag_of, band: float, N: int, cal_seeds=
         census_note=("max_run per seed at the ruler. A bimodal census (noise ceiling << N << "
                      "converter floor) is what protects a loose-N rule; a populated [N, 2N] band "
                      "means phantoms have arrived."),
-        null_caveat=("This floor is an inflated UPPER BOUND where the cal pool itself converted "
-                     "(C: 4/5 cal seeds are s0-class converters, so residual shoulders survive the "
-                     "CONV_MIN=8 exclusion). Under-, not over-, state the risk."))
+        null_caveat=("This floor is an inflated UPPER BOUND FOR ANY CELL whose cal pool itself "
+                     "converted — residual shoulders survive the CONV_MIN=8 exclusion and inflate "
+                     "the null episode rate; it UNDER-, not over-, states the risk. Cell-specific "
+                     "(EXP16 rider — zero-semantic fix of a string previously hard-coded to C on "
+                     "every cell): the SHUFFLED cal pool carries s0-class converters (C 4/5), so C "
+                     "is the inflated case; the coin/dwell cal pools are far cleaner."))
 
 
 def _poisson_binomial_ge(ps: list[float], k: int) -> float:
@@ -1591,8 +1635,10 @@ def score_durability(verdict_tag: str = "verdict", new_tag: str = "exp15",
         cellname = "UNDERPOWERED"
         note = (f"eligible converters D {D['n_eligible']} / C {C['n_eligible']} vs floor "
                 f"{X15_CONV_FLOOR}. TOP-UP RULE: pairs from reserve {X15_RESERVE_POOL} "
-                f"(lowest-first, BOTH cells, cap +{X15_RESERVE_CAP}/cell). Floor still unmet after "
-                f"the capped top-up -> routes to Jason, named.")
+                f"(lowest-first, BOTH cells, cap +{X15_RESERVE_CAP}/cell) — UNLESS already consumed "
+                f"(EXP16 rider, zero-semantic: at n=28 the reserve is spent, so the floor is "
+                f"unreachable by ruled top-up). Floor still unmet after the capped top-up -> routes "
+                f"to Jason, named.")
     elif p_cgtd <= X15_ALPHA_P:
         cellname = "INVERTED"
         note = ("C > D significant — ANOMALY-CLASS. Surface, audit, NEVER force.")
@@ -2195,6 +2241,116 @@ def smoke():
           f"{gates['C_shuffle']['expected_phantom_converters_EPISODE_UNIT']} AT-FLOOR (flagged); "
           f"census bimodal, [5,8) empty")
     print("SMOKE OK (12/12)")
+    smoke16()
+
+
+# ================= EXP16 capture-feed build smoke (13)-(17) =================
+def smoke16():
+    """EXP16 §6: the expo_midword delta + the read-only mid-dwell probe. Digit-identity on ALL
+    pre-delta arms (the delta is inert on them); stream bit-identity of the new arm to exp12_dwell;
+    and BD-7 POSITIVE-DELTA asserts (§10.25.1) — each FAILS on a no-op flag, so invariance-only
+    smoke cannot certify silence."""
+    torch.set_num_threads(1)
+    MID = {"p2", "p3", "p4-6", "p7-12", "p13-48"}
+    refs = json.loads((OUTDIR / "exp16_predelta_refs.json").read_text())
+    N, s = refs["N"], refs["seed"]
+    # (13) DIGIT-IDENTITY: every pre-delta arm reproduces its pinned columns — expo_midword inert.
+    for arm, ref in refs["arms"].items():
+        torch.manual_seed(0)
+        rec = X12.run_exp12_arm(arm, s, N, out_tag="exp16_smoke_regress")
+        assert len(rec["columns"]) == ref["n_cols"], f"{arm}: column count moved ({ref['n_cols']})"
+        for cr, cg in zip(ref["columns"], rec["columns"]):
+            for k, v in cr.items():                              # ref keys only -> new col keys ignored
+                assert cg.get(k) == v, f"{arm} DIVERGENCE t={cr['t']} key={k}: {cg.get(k)} != {v}"
+    print(f"SMOKE16 (13): all {len(refs['arms'])} pre-delta arms DIGIT-IDENTICAL (expo_midword inert)")
+    # (14) STREAM bit-identity: the new arm's fabric == exp12_dwell (loop-side flag; zero draw change).
+    torch.manual_seed(0); la, _, _ = X12.build_exp12("exp12_dwell_expomid", s, N)
+    torch.manual_seed(0); lb, _, _ = X12.build_exp12("exp12_dwell", s, N)
+    assert torch.equal(la.stream.raw, lb.stream.raw) and \
+        torch.equal(la.stream.mask_slot, lb.stream.mask_slot) and \
+        torch.equal(la.stream.is_exam, lb.stream.is_exam), "expo_midword perturbed the fabric build"
+    print("SMOKE16 (14): exp12_dwell_expomid fabric BIT-IDENTICAL to exp12_dwell")
+    # ---- BD-7 POSITIVE-DELTA asserts on a real new-arm run (exams + mid-dwell both exercised) ----
+    Nr = 4000
+    X = run_exp14_arm("exp12_dwell_expomid", s, read_at=Nr, h_max=Nr,
+                      out_tag="exp16_smoke", checkpoint=False)
+    torch.manual_seed(0); lx, _, _ = X12.build_exp12("exp12_dwell_expomid", s, Nr)
+    fx = lx.stream
+    n_expo = int(((fx.mask_slot == 1) & (~fx.is_exam)).sum())
+    n_exam = int(((fx.mask_slot == 1) & (fx.is_exam)).sum())
+    # (15-i) the delta is LIVE: mid-dwell word-coin waves exist and become exposure (loss deleted).
+    assert n_expo > 0 and n_exam > 0, f"no mid-dwell/exam waves to exercise (expo {n_expo}, exam {n_exam})"
+    # (15-ii) X DIVERGES from exp12_dwell (deleting mid-dwell word-losses changes the trajectory) —
+    #         would be IDENTICAL under a no-op flag.
+    base = run_exp14_arm("exp12_dwell", s, read_at=Nr, h_max=Nr, out_tag="exp16_smoke_base",
+                         checkpoint=False)
+    assert any(cx["num"] != cb["num"] or cx["asg_cat"] != cb["asg_cat"]
+               for cx, cb in zip(X["columns"], base["columns"])), \
+        "expo_midword produced a trajectory IDENTICAL to exp12_dwell — flag is a NO-OP"
+    # (15-iii) pos_err_word is EMPTY at mid-dwell on X (those waves scored nothing) while onset exams
+    #          are KEPT: p1 present, exam_acc non-None. (Under a no-op, mid-dwell p2..p48 would fill.)
+    pw_keys = set().union(*[set(c.get("pos_err_word", {})) for c in X["columns"]])
+    assert not (pw_keys & MID), f"X pos_err_word populated at mid-dwell {pw_keys & MID} — exposure not applied"
+    assert "p1" in pw_keys, "X pos_err_word missing p1 — onset exams stopped filling the word-error curve"
+    assert any(c.get("exam_acc") is not None for c in X["columns"]), "X onset exams were not kept (exam_acc all None)"
+    # (15-iv) probe_pos_err_word is POPULATED at mid-dwell on X — the read-only probe is ALIVE.
+    prb_keys = set().union(*[set(c.get("probe_pos_err_word", {})) for c in X["columns"]])
+    assert prb_keys & MID, f"probe_pos_err_word EMPTY at mid-dwell {prb_keys} — the §5 probe is dead"
+    print(f"SMOKE16 (15): BD-7 positive-delta — expo {n_expo}/exam {n_exam}; X!=dwell; "
+          f"pos_err_word mid-dwell EMPTY + exams kept; probe_pos_err_word ALIVE {sorted(prb_keys & MID)}")
+    # (16) PROBE INERTNESS: X via run_exp14 (probe ON) == X via run_exp12 (probe absent) on every
+    #      shared TRAINING key -> the read-only probe does not perturb the trajectory (asserted, not
+    #      assumed; ruling 2). probe_pos_err_word differs by construction (only run_exp14 has it).
+    torch.manual_seed(0)
+    Xoff = X12.run_exp12_arm("exp12_dwell_expomid", s, Nr, out_tag="exp16_smoke_probeoff")
+    for cx, co in zip(X["columns"], Xoff["columns"]):
+        for k, v in co.items():
+            if k == "probe_pos_err_word":
+                continue
+            assert cx.get(k) == v, f"PROBE PERTURBED trajectory at t={co['t']} key={k}: {cx.get(k)} != {v}"
+    print("SMOKE16 (16): mid-dwell probe is INERT (X probe-on trajectory == probe-off, all training keys)")
+    # (17) probe_rate==0 guard is CONSTRUCTION-level — fires at EVERY entry point (mirrors the
+    #      uniform/word-ref precedent, prereg §6). Assert it via BOTH build_exp12 and run_exp14_arm.
+    for label, fn in (("build_exp12", lambda: X12.build_exp12("exp12_dwell_expomid", s, 64, probe_rate=0.3)),
+                      ("run_exp14_arm", lambda: run_exp14_arm("exp12_dwell_expomid", s, read_at=64,
+                                                              h_max=64, probe_rate=0.3,
+                                                              out_tag="exp16_smoke_guard", checkpoint=False))):
+        try:
+            fn()
+            raise SystemExit(f"SMOKE16 (17) FAILED: {label} accepted expo_midword + probe_rate>0")
+        except AssertionError:
+            pass
+    print("SMOKE16 (17): probe_rate==0 guard fires at CONSTRUCTION (build_exp12 + run_exp14_arm)")
+    # (18) class-aware precheck_fabric (AMD-10): a REUSED failure HALTS-AND-RAISES (never substitutes);
+    #      a FRESH failure SUBSTITUTES. Exercise both via a monkeypatched _assert_one (synthetic).
+    G = globals()                                                # patch THIS module (may be __main__)
+    real_assert = G["_assert_one"]
+    bad = {3}                                                     # seed 3 "fails" the assert
+    def fake_assert(arm, seed, T):
+        return (dict(ok=False, arm=arm, seed=seed, spec_hash=C.spec_hash(), err="synthetic")
+                if seed in bad else
+                dict(ok=True, arm=arm, seed=seed, spec_hash=C.spec_hash(),
+                     perlag_nuis={"obs": 0, "null99": 1}, k_indep={"chi2": 0, "null99": 1},
+                     schedule_indep={}, bg_indep={}, cap_hit={}))
+    try:
+        G["_assert_one"] = fake_assert
+        # FRESH: s3 fails, substitutes from {10,11} -> accepted set swaps s3 out
+        fr = precheck_fabric("exp12_dwell_expomid", seeds=[1, 2, 3], T=64,
+                             out_tag="exp16_smoke_pcfresh", swap_pool=[10, 11], reused_seeds=set())
+        assert 3 not in fr["seeds_accepted"] and fr["swaps"] and fr["swaps"][0]["replacement"] in (10, 11), \
+            f"FRESH substitution did not fire: {fr['swaps']}"
+        # REUSED: s3 in reused -> must HALT-AND-RAISE, never substitute
+        halted = False
+        try:
+            precheck_fabric("exp12_dwell_expomid", seeds=[1, 2, 3], T=64,
+                            out_tag="exp16_smoke_pcreused", swap_pool=[10, 11], reused_seeds={3})
+        except AssertionError as e:
+            halted = "HALT-AND-AUDIT" in str(e)
+        assert halted, "REUSED failure did NOT halt-and-audit"
+    finally:
+        G["_assert_one"] = real_assert
+    print("SMOKE16 (18): precheck class — FRESH substitutes, REUSED halts-and-audits")
+    print("SMOKE16 OK (13-18)")
 
 
 def _main():

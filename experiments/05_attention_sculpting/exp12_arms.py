@@ -100,6 +100,11 @@ ARMS12 = {
     "exp12_12bc_sha": dict(shuffled=True, uniform_mask=True, no_word=True, expo_word=True),
     "exp12_12bc_dwp": dict(shuffled=False, uniform_mask=True, no_word=False),
     "exp12_12bc_dwa": dict(shuffled=False, uniform_mask=True, no_word=True, expo_word=True),
+    # EXP16 CAPTURE-FEED (prereg 3a26fef): dwelled fabric + scheduled onset exam KEPT, the
+    # mid-dwell word-COIN waves reinterpreted exposure-only (expo_midword). exp12_dwell's fabric
+    # per seed (loop-side flag, zero draw change); expo_word semantics UNTOUCHED (the 12bc twins'
+    # pos-1 behaviour must not move). §6 delta 1.
+    "exp12_dwell_expomid": dict(shuffled=False, expo_midword=True),
 }
 RIG1_ARMS = ("exp12_dwell", "exp12_shuffle")
 
@@ -124,8 +129,13 @@ class EXP12Loop(A.EXP08Loop):
         cfg = self.cfg
         v = getattr(cfg, "_exp12", None)
         assert v is not None, "EXP12Loop needs cfg._exp12 (fabric params) before factories"
-        if v.get("uniform_mask") or v.get("word_ref"):
-            assert v.get("probe_rate", 0.0) == 0.0, "uniform/word-ref arm: probe machinery N/A"
+        if v.get("uniform_mask") or v.get("word_ref") or v.get("expo_midword"):
+            # EXP16 §6: expo_midword joins this CONSTRUCTION-level guard (mirrors the standing
+            # uniform/word-ref precedent) so EVERY entry point — build_exp12, run_exp12_arm,
+            # run_exp14_arm — is protected: the mid-dwell predicate (slot 1, NOT is_exam) collides
+            # with probe-dwell onsets at any nonzero probe_rate.
+            assert v.get("probe_rate", 0.0) == 0.0, \
+                "uniform/word-ref/expo_midword arm: probe machinery N/A (probe_rate must be 0)"
         return F.build_fabric(self.stim, cfg, cfg.seed, v["T"],
                               probe_rate=v.get("probe_rate", 0.0),
                               shuffled=v.get("shuffled", False),
@@ -157,14 +167,23 @@ class EXP12Loop(A.EXP08Loop):
         # — the fabric (incl. is_exam flags) stays IDENTICAL to the present twin; only
         # the presentation converts (a nonexistent word cannot be a target)
         expo_word = bool(v12.get("expo_word", False))
+        # expo_midword (§6 delta 1, EXP16): the mid-dwell word-COIN wave (slot 1, NOT an onset
+        # exam) becomes exposure-only — same "exposure" family as expo_word, so it reuses the
+        # validated loss-skip path (§10.20.3), on a STRICT SUBSET of expo_word's waves: onset
+        # exams (is_exam) stay word-masked and scored (the verdict channel is untouched), only
+        # mid-dwell word-losses are deleted. Zero draw-consumption change (mask is precomputed).
+        expo_midword = bool(v12.get("expo_midword", False))
         if force_mask is None:
             mask = torch.zeros(1, cfg.n_slots, dtype=torch.bool)
             slot = int(fab.mask_slot[t])
+            is_exam_wave = bool(fab.is_exam[t])
             if (word_ref or expo_word) and slot == 1:
                 fam_name = "exposure"                         # no cell masked; loss skips
+            elif expo_midword and slot == 1 and not is_exam_wave:
+                fam_name = "exposure"                         # mid-dwell word-loss deleted; exam KEPT
             else:
                 mask[0, slot] = True
-                fam_name = ("exam" if bool(fab.is_exam[t])
+                fam_name = ("exam" if is_exam_wave
                             else ("mid_word" if slot == 1 else "mid_vis"))
             self.mix["n"] += 1
             self.mix["vis_masked"] += int(slot == 0)
@@ -326,7 +345,8 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
     cfg._exp12 = dict(T=cfg.T, shuffled=spec["shuffled"], probe_rate=probe_rate,
                       uniform_mask=spec.get("uniform_mask", False),
                       word_ref=spec.get("word_ref", False),
-                      expo_word=spec.get("expo_word", False))
+                      expo_word=spec.get("expo_word", False),
+                      expo_midword=spec.get("expo_midword", False))   # EXP16 §6 delta 1
     loop = EXP12Loop(cfg, pin)
     return loop, spec, cfg
 
@@ -414,15 +434,22 @@ def run_exp12_arm(arm_name: str, seed: int, steps: int, *,
 
 def _fresh_buf() -> dict:
     return dict(exam=[], exam_acc=[], probe_exam=[], mid_word=[], mid_vis=[],
-                div=[], pos_word={}, pos_vis={})
+                div=[], pos_word={}, pos_vis={}, probe_word={})
 
 
-def _buffer_wave(loop, t: int, buf: dict, probe_lift: float | None = None):
+def _buffer_wave(loop, t: int, buf: dict, probe_lift: float | None = None,
+                 probe_midword: float | None = None):
     """Consume the stashed training forward for wave t (called IMMEDIATELY after
     step(), before any probe overwrites the stash). `probe_lift` is the §13.10
     read-only probe result, computed PRE-update in the runner (matched to the
     scheduled exam's stash timing — review catch 2026-07-05: a post-update probe
     read re-introduces the recency channel the monitor exists to remove).
+
+    `probe_midword` (EXP16 §5/§6 delta 2) is the read-only mid-dwell word-mask probe
+    err, computed PRE-update in the runner at a wave whose word-loss expo_midword deleted;
+    it fills the `probe_word` per-position buffer so X's recency gradient is recoverable
+    though the training wave scored nothing. Bucketed BEFORE the exposure early-return
+    (the wave carries no stash mask, but the probe read is independent of the stash).
 
     Division-of-labor routing (§3): scheduled exams -> exam buffers; MID-DWELL
     (pos > 1) waves -> the recency companions; probe-dwell POSITION-1 waves are
@@ -433,9 +460,12 @@ def _buffer_wave(loop, t: int, buf: dict, probe_lift: float | None = None):
     if st is None:
         return
     loop._stash = None
+    fab = loop.stream
+    if probe_midword is not None:                             # EXP16 read-only mid-dwell word probe
+        buf["probe_word"].setdefault(_pos_bucket(int(fab.pos[t])), []).append(probe_midword)
     if not bool(st["mask"].any()):
         return                                                # exposure-only wave (§15):
-    fab = loop.stream                                         # nothing scored, mix counts it
+    #                                                         # nothing scored, mix counts it
     cat = int(fab.cat[t])
     pred = st["pred"]                                         # (C=2, D), detached
     masked_word = bool(st["mask"][1])
@@ -479,6 +509,36 @@ def _probe_exam_read(loop, t: int) -> float:
     lift, _ = exam_lift(loop, pred[1], cat)
     X9._rng_check(loop, st, "probe_exam_read")
     return lift
+
+
+@torch.no_grad()
+def _probe_midword_read(loop, t: int) -> float:
+    """EXP16 §5/§6 delta 2 — read-only mid-dwell word-mask probe. At a mid-dwell wave whose
+    word-loss `expo_midword` deleted (slot 1, NOT an onset exam), force the word cell masked and
+    read the word-prediction error the deleted loss WOULD have seen — so X's recency gradient
+    (`probe_pos_err_word` p2..p48) is recoverable though the training wave scored nothing.
+
+    Identical read path to `_probe_exam_read` (the §13.10 precedent): pre-update, `@torch.no_grad`,
+    RNG-guarded — no gradient, no draw, no state touch. Returns the SAME word-error norm the
+    training stash would have produced for a word-masked wave (see `_buffer_wave`:
+    ||pred[1] - word.emit(cat)||), so probe and training pos_err_word are comparable by construction.
+    Inertness is ASSERTED in smoke (probe-on/off digit-identity of the full trajectory)."""
+    st = X9._rng_guard(loop)
+    cfg = loop.cfg
+    fab = loop.stream
+    raw = fab.raw[t:t + 1]
+    e_vis = loop.vision.emit(raw)
+    cat = int(fab.cat[t])
+    e_word = loop.word.emit(torch.tensor([cat]))
+    content = torch.stack([e_vis, e_word], dim=1)
+    mask = torch.zeros(1, cfg.n_slots, dtype=torch.bool)
+    mask[0, 1] = True
+    masked = apply_slice_mask(loop._pose_pam_input(content), mask, loop.op.mask_emb)
+    pred = loop.op(masked.reshape(cfg.n_slots, cfg.D).unsqueeze(0), loop.slot_ids,
+                   (~mask).reshape(-1))[0]
+    err = float((pred[1] - e_word).norm())
+    X9._rng_check(loop, st, "probe_midword_read")
+    return err
 
 
 def _sep_ratio(e: torch.Tensor, labels: torch.Tensor):
@@ -540,6 +600,13 @@ def _eval_column(loop, t: int, buf: dict, ma, mb, labels, no_word: bool = False)
                            for k, v in sorted(buf["pos_word"].items())}
     col["pos_err_vis"] = {k: round(statistics.mean(v), 5)
                           for k, v in sorted(buf["pos_vis"].items())}
+    # EXP16 §5: read-only mid-dwell word probe. Emitted ONLY when the probe fired (expo_midword
+    # arms) — so pre-delta arm records gain NO new field (byte-unchanged), the same discipline that
+    # kept the masking_mix exposure counter OUT (§0). pos_err_word keeps its training-stash meaning
+    # (structurally empty at p2..p48 on X); probe_pos_err_word carries X's recovered recency gradient.
+    if buf["probe_word"]:
+        col["probe_pos_err_word"] = {k: round(statistics.mean(v), 5)
+                                     for k, v in sorted(buf["probe_word"].items())}
     return col
 
 
