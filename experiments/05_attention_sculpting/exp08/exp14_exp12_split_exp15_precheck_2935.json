@@ -1,0 +1,287 @@
+{
+  "arm": "exp12_split",
+  "T": 15000,
+  "seeds_requested": [
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "seeds_accepted": [
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "n_pass": 7,
+  "n_total": 7,
+  "swaps": [],
+  "spec_hash": "41d6f0d5e7da",
+  "per_seed": {
+    "29": {
+      "ok": true,
+      "arm": "exp12_split",
+      "seed": 29,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0869,
+        "null99": 0.1226,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 61.95,
+        "null99": 94.71,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 25.57,
+        "null99": 31.43,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0395,
+        "null99": 0.0637,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00718,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1392,
+        "count": 10,
+        "count_bound": 23.3,
+        "ok": true
+      }
+    },
+    "30": {
+      "ok": true,
+      "arm": "exp12_split",
+      "seed": 30,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0794,
+        "null99": 0.1355,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 67.53,
+        "null99": 95.87,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 19.65,
+        "null99": 32.65,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0307,
+        "null99": 0.072,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00661,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1362,
+        "count": 9,
+        "count_bound": 23.0,
+        "ok": true
+      }
+    },
+    "31": {
+      "ok": true,
+      "arm": "exp12_split",
+      "seed": 31,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.1255,
+        "null99": 0.1414,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 68.1,
+        "null99": 86.38,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 17.13,
+        "null99": 28.99,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0404,
+        "null99": 0.0644,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00597,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1341,
+        "count": 8,
+        "count_bound": 22.8,
+        "ok": true
+      }
+    },
+    "32": {
+      "ok": true,
+      "arm": "exp12_split",
+      "seed": 32,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0742,
+        "null99": 0.1249,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 59.6,
+        "null99": 88.46,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 9.96,
+        "null99": 29.52,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0369,
+        "null99": 0.0733,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.01503,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1331,
+        "count": 20,
+        "count_bound": 22.6,
+        "ok": true
+      }
+    },
+    "33": {
+      "ok": true,
+      "arm": "exp12_split",
+      "seed": 33,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0912,
+        "null99": 0.1287,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 67.41,
+        "null99": 86.64,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 17.33,
+        "null99": 34.75,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0523,
+        "null99": 0.0746,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00917,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1309,
+        "count": 12,
+        "count_bound": 22.4,
+        "ok": true
+      }
+    },
+    "34": {
+      "ok": true,
+      "arm": "exp12_split",
+      "seed": 34,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0691,
+        "null99": 0.1465,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 64.79,
+        "null99": 88.59,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 15.23,
+        "null99": 31.72,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0267,
+        "null99": 0.0657,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00817,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1346,
+        "count": 11,
+        "count_bound": 22.8,
+        "ok": true
+      }
+    },
+    "35": {
+      "ok": true,
+      "arm": "exp12_split",
+      "seed": 35,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0818,
+        "null99": 0.1361,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 51.04,
+        "null99": 88.94,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 20.44,
+        "null99": 32.16,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0541,
+        "null99": 0.0683,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00665,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1354,
+        "count": 9,
+        "count_bound": 22.9,
+        "ok": true
+      }
+    }
+  }
+}

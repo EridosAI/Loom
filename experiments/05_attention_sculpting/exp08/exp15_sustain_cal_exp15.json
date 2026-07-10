@@ -1,0 +1,189 @@
+{
+  "band": 0.6875,
+  "k_last": 10,
+  "alpha": 0.001,
+  "cal_seeds": [
+    20,
+    21,
+    22,
+    24,
+    25
+  ],
+  "nulls": {
+    "D_null(s0-class excl)": {
+      "n_positions": 8092,
+      "n_hits": 35,
+      "false_rate": 0.004325259515570935,
+      "cell": "D_split",
+      "n_segments": 10,
+      "n_null_windows": 8173,
+      "within_alpha": false,
+      "exclusion": ">= 0.704 for >= 8 consec"
+    },
+    "C_between(conv+shoulder excl)": {
+      "n_positions": 7480,
+      "n_hits": 13,
+      "false_rate": 0.0017379679144385028,
+      "cell": "C_shuffle",
+      "n_segments": 30,
+      "n_null_windows": 7706,
+      "within_alpha": false,
+      "exclusion": ">= 0.6 for >= 8 consec"
+    }
+  },
+  "committed": {
+    "C_shuffle": {
+      "exp14_band": {
+        "band": 0.64,
+        "N": 5
+      },
+      "rows": [
+        {
+          "seed": 0,
+          "conversion_onset_at_ruler": 72300,
+          "runway": 427700,
+          "censored": false,
+          "last_k_mean": 0.4457,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.5143,
+          "sustains_endpoint": false,
+          "longest_episode": 55,
+          "max_run": 55,
+          "bare_ruler": false,
+          "frac_q4": 0.069712
+        },
+        {
+          "seed": 2,
+          "conversion_onset_at_ruler": 94200,
+          "runway": 405800,
+          "censored": false,
+          "last_k_mean": 0.5686,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.5714,
+          "sustains_endpoint": false,
+          "longest_episode": 22,
+          "max_run": 22,
+          "bare_ruler": false,
+          "frac_q4": 0.050481
+        },
+        {
+          "seed": 4,
+          "conversion_onset_at_ruler": 20400,
+          "runway": 479600,
+          "censored": false,
+          "last_k_mean": 0.5552,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.6087,
+          "sustains_endpoint": false,
+          "longest_episode": 21,
+          "max_run": 21,
+          "bare_ruler": false,
+          "frac_q4": 0.081731
+        },
+        {
+          "seed": 5,
+          "conversion_onset_at_ruler": 106500,
+          "runway": 393500,
+          "censored": false,
+          "last_k_mean": 0.4708,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.381,
+          "sustains_endpoint": false,
+          "longest_episode": 51,
+          "max_run": 51,
+          "bare_ruler": false,
+          "frac_q4": 0.024038
+        },
+        {
+          "seed": 6,
+          "conversion_onset_at_ruler": 427500,
+          "runway": 72500,
+          "censored": true,
+          "last_k_mean": 0.6873,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.4348,
+          "sustains_endpoint": false,
+          "longest_episode": 90,
+          "max_run": 90,
+          "bare_ruler": false,
+          "frac_q4": 0.46875
+        }
+      ],
+      "n_converters": 5,
+      "n_censored": 1,
+      "n_sustain_lastK": 0,
+      "n_sustain_endpoint": 0,
+      "detectors_agree": "5/5"
+    },
+    "D_split": {
+      "exp14_band": {
+        "band": 0.6875,
+        "N": 5
+      },
+      "rows": [
+        {
+          "seed": 0,
+          "conversion_onset_at_ruler": 150300,
+          "runway": 349700,
+          "censored": false,
+          "last_k_mean": 0.6712,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.9412,
+          "sustains_endpoint": true,
+          "longest_episode": 63,
+          "max_run": 63,
+          "bare_ruler": false,
+          "frac_q4": 0.8125
+        },
+        {
+          "seed": 1,
+          "conversion_onset_at_ruler": 206700,
+          "runway": 293300,
+          "censored": false,
+          "last_k_mean": 0.5031,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.6667,
+          "sustains_endpoint": false,
+          "longest_episode": 46,
+          "max_run": 46,
+          "bare_ruler": false,
+          "frac_q4": 0.072115
+        },
+        {
+          "seed": 3,
+          "conversion_onset_at_ruler": 217800,
+          "runway": 282200,
+          "censored": false,
+          "last_k_mean": 0.5729,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.7857,
+          "sustains_endpoint": true,
+          "longest_episode": 38,
+          "max_run": 38,
+          "bare_ruler": false,
+          "frac_q4": 0.115385
+        },
+        {
+          "seed": 6,
+          "conversion_onset_at_ruler": 135600,
+          "runway": 364400,
+          "censored": false,
+          "last_k_mean": 0.6398,
+          "sustains_lastK": false,
+          "endpoint_acc": 0.5,
+          "sustains_endpoint": false,
+          "longest_episode": 36,
+          "max_run": 36,
+          "bare_ruler": false,
+          "frac_q4": 0.408654
+        }
+      ],
+      "n_converters": 4,
+      "n_censored": 0,
+      "n_sustain_lastK": 0,
+      "n_sustain_endpoint": 2,
+      "detectors_agree": "2/4"
+    }
+  },
+  "locked_state_finding": "RULING 1 (Jason 2026-07-10): the locked-state sustain detector is RETIRED as primary. It returns 0/16 on the committed verdict seeds, and NO bar both controls alpha and produces sustainers (the alpha-calibrated K=10 bar is 0.79, ABOVE the ruler). That is itself the finding: LOCKED-STATE SUSTAIN DOES NOT EXIST AT 500k IN THIS REGIME. Conversion is EPISODIC, so 'held above band at horizon' measures a state the phenomenon does not occupy. Retained below as a SENSITIVITY level only."
+}

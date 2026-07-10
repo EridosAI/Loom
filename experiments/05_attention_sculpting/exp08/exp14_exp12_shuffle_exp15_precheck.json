@@ -1,0 +1,807 @@
+{
+  "arm": "exp12_shuffle",
+  "T": 15000,
+  "seeds_requested": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "seeds_accepted": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "n_pass": 19,
+  "n_total": 20,
+  "swaps": [
+    {
+      "defective": 23,
+      "err": "PER-LAG NUISANCE LEAK: 0.13464194536209106 > 0.13435383141040802",
+      "replacement": 28
+    }
+  ],
+  "spec_hash": "41d6f0d5e7da",
+  "per_seed": {
+    "8": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 8,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0821,
+        "null99": 0.1285,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 56.86,
+        "null99": 92.53,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 11.87,
+        "null99": 30.95,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0372,
+        "null99": 0.0694,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00355,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1407,
+        "count": 5,
+        "count_bound": 23.5,
+        "ok": true
+      }
+    },
+    "9": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 9,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.1019,
+        "null99": 0.1233,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 68.97,
+        "null99": 84.2,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 9.86,
+        "null99": 32.35,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0269,
+        "null99": 0.0739,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00775,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1420,
+        "count": 11,
+        "count_bound": 23.7,
+        "ok": true
+      }
+    },
+    "10": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 10,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0842,
+        "null99": 0.1406,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 59.23,
+        "null99": 90.37,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 17.23,
+        "null99": 33.24,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0492,
+        "null99": 0.074,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00655,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1373,
+        "count": 9,
+        "count_bound": 23.1,
+        "ok": true
+      }
+    },
+    "11": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 11,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0933,
+        "null99": 0.13,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 73.95,
+        "null99": 87.6,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 12.84,
+        "null99": 33.6,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0467,
+        "null99": 0.07,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.01298,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1310,
+        "count": 17,
+        "count_bound": 22.4,
+        "ok": true
+      }
+    },
+    "12": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 12,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0801,
+        "null99": 0.1375,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 43.86,
+        "null99": 90.54,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 16.48,
+        "null99": 29.63,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0229,
+        "null99": 0.0706,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00717,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1395,
+        "count": 10,
+        "count_bound": 23.4,
+        "ok": true
+      }
+    },
+    "13": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 13,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0634,
+        "null99": 0.1278,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 56.4,
+        "null99": 91.58,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 5.36,
+        "null99": 32.24,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0294,
+        "null99": 0.0712,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00509,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1375,
+        "count": 7,
+        "count_bound": 23.1,
+        "ok": true
+      }
+    },
+    "14": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 14,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0577,
+        "null99": 0.1255,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 52.73,
+        "null99": 88.9,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 8.1,
+        "null99": 35.95,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0483,
+        "null99": 0.0706,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.005,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1400,
+        "count": 7,
+        "count_bound": 23.4,
+        "ok": true
+      }
+    },
+    "15": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 15,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.078,
+        "null99": 0.1348,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 56.78,
+        "null99": 84.67,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 16.77,
+        "null99": 28.66,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0584,
+        "null99": 0.0663,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.01136,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1320,
+        "count": 15,
+        "count_bound": 22.5,
+        "ok": true
+      }
+    },
+    "16": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 16,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0948,
+        "null99": 0.1346,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 63.07,
+        "null99": 86.88,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 18.95,
+        "null99": 32.03,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0334,
+        "null99": 0.0658,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00751,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1332,
+        "count": 10,
+        "count_bound": 22.6,
+        "ok": true
+      }
+    },
+    "17": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 17,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0822,
+        "null99": 0.1338,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 42.1,
+        "null99": 89.02,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 21.52,
+        "null99": 32.98,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.043,
+        "null99": 0.0711,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00888,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1351,
+        "count": 12,
+        "count_bound": 22.9,
+        "ok": true
+      }
+    },
+    "18": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 18,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0905,
+        "null99": 0.1265,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 57.26,
+        "null99": 84.96,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 23.29,
+        "null99": 35.88,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0349,
+        "null99": 0.0674,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00858,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1399,
+        "count": 12,
+        "count_bound": 23.4,
+        "ok": true
+      }
+    },
+    "19": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 19,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0796,
+        "null99": 0.1218,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 57.46,
+        "null99": 82.73,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 16.97,
+        "null99": 34.22,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0373,
+        "null99": 0.0675,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00429,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1397,
+        "count": 6,
+        "count_bound": 23.4,
+        "ok": true
+      }
+    },
+    "20": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 20,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0728,
+        "null99": 0.1161,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 57.2,
+        "null99": 88.5,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 23.14,
+        "null99": 29.66,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0442,
+        "null99": 0.0702,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00487,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1438,
+        "count": 7,
+        "count_bound": 23.9,
+        "ok": true
+      }
+    },
+    "21": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 21,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0979,
+        "null99": 0.1339,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 67.16,
+        "null99": 89.4,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 5.95,
+        "null99": 32.87,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.04,
+        "null99": 0.0641,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.0122,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1394,
+        "count": 17,
+        "count_bound": 23.4,
+        "ok": true
+      }
+    },
+    "22": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 22,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0755,
+        "null99": 0.1382,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 55.32,
+        "null99": 87.12,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 14.23,
+        "null99": 33.67,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0658,
+        "null99": 0.0734,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00723,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1383,
+        "count": 10,
+        "count_bound": 23.2,
+        "ok": true
+      }
+    },
+    "23": {
+      "ok": false,
+      "arm": "exp12_shuffle",
+      "seed": 23,
+      "spec_hash": "41d6f0d5e7da",
+      "err": "PER-LAG NUISANCE LEAK: 0.13464194536209106 > 0.13435383141040802"
+    },
+    "24": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 24,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0748,
+        "null99": 0.1394,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 67.06,
+        "null99": 86.69,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 12.36,
+        "null99": 36.83,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0265,
+        "null99": 0.0701,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00953,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1364,
+        "count": 13,
+        "count_bound": 23.0,
+        "ok": true
+      }
+    },
+    "25": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 25,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0646,
+        "null99": 0.1356,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 64.54,
+        "null99": 91.85,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 18.77,
+        "null99": 28.96,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0338,
+        "null99": 0.0726,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00712,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1405,
+        "count": 10,
+        "count_bound": 23.5,
+        "ok": true
+      }
+    },
+    "26": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 26,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0671,
+        "null99": 0.1379,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 51.0,
+        "null99": 85.54,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 21.03,
+        "null99": 32.07,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0354,
+        "null99": 0.0752,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00784,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1403,
+        "count": 11,
+        "count_bound": 23.5,
+        "ok": true
+      }
+    },
+    "27": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 27,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.0771,
+        "null99": 0.1227,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 36.83,
+        "null99": 83.6,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 18.4,
+        "null99": 31.34,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0492,
+        "null99": 0.0754,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00515,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1360,
+        "count": 7,
+        "count_bound": 23.0,
+        "ok": true
+      }
+    },
+    "28": {
+      "ok": true,
+      "arm": "exp12_shuffle",
+      "seed": 28,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0.074,
+        "null99": 0.1349,
+        "lags": "0..48 stride 1",
+        "ok": true
+      },
+      "k_indep": {
+        "chi2": 60.03,
+        "null99": 84.48,
+        "ok": true
+      },
+      "schedule_indep": {
+        "chi2": 22.23,
+        "null99": 28.95,
+        "note": "exam@pos1 structural by construction (recorded, not tested)",
+        "ok": true
+      },
+      "bg_indep": {
+        "obs": 0.0265,
+        "null99": 0.0674,
+        "ok": true
+      },
+      "cap_hit": {
+        "rate": 0.00594,
+        "rate_theory": 0.00707,
+        "ceiling": 0.01,
+        "n_dwells": 1347,
+        "count": 8,
+        "count_bound": 22.8,
+        "ok": true
+      }
+    }
+  }
+}

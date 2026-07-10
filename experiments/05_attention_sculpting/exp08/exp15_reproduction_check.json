@@ -1,0 +1,172 @@
+{
+  "verdict_tag": "verdict",
+  "cells": {
+    "C_shuffle": {
+      "arm": "exp12_shuffle",
+      "own_band": {
+        "band": 0.64,
+        "N": 5
+      },
+      "expected": [
+        0,
+        2,
+        4,
+        5,
+        6
+      ],
+      "own_band_converters": [
+        0,
+        2,
+        4,
+        5,
+        6
+      ],
+      "reproduces": true,
+      "ruler_converters": [
+        0,
+        2,
+        4,
+        5,
+        6
+      ],
+      "ruler_set_preserving": true,
+      "ruler_check_tautological": false,
+      "ruler_note": "NON-TRIVIAL \u2014 ruler raises the band 0.64 -> 0.6875 at fixed N=5; converters could have been LOST",
+      "per_seed": [
+        {
+          "seed": 0,
+          "status": "READ",
+          "own_band_onset": 72300,
+          "ruler_onset": 72300
+        },
+        {
+          "seed": 1,
+          "status": "READ",
+          "own_band_onset": null,
+          "ruler_onset": null
+        },
+        {
+          "seed": 2,
+          "status": "READ",
+          "own_band_onset": 91800,
+          "ruler_onset": 94200
+        },
+        {
+          "seed": 3,
+          "status": "READ",
+          "own_band_onset": null,
+          "ruler_onset": null
+        },
+        {
+          "seed": 4,
+          "status": "READ",
+          "own_band_onset": 19200,
+          "ruler_onset": 20400
+        },
+        {
+          "seed": 5,
+          "status": "READ",
+          "own_band_onset": 106200,
+          "ruler_onset": 106500
+        },
+        {
+          "seed": 6,
+          "status": "READ",
+          "own_band_onset": 427500,
+          "ruler_onset": 427500
+        },
+        {
+          "seed": 7,
+          "status": "READ",
+          "own_band_onset": null,
+          "ruler_onset": null
+        }
+      ]
+    },
+    "D_split": {
+      "arm": "exp12_split",
+      "own_band": {
+        "band": 0.6875,
+        "N": 5
+      },
+      "expected": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "own_band_converters": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "reproduces": true,
+      "ruler_converters": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "ruler_set_preserving": true,
+      "ruler_check_tautological": true,
+      "ruler_note": "TAUTOLOGICAL \u2014 the common ruler IS this cell's committed band",
+      "per_seed": [
+        {
+          "seed": 0,
+          "status": "READ",
+          "own_band_onset": 150300,
+          "ruler_onset": 150300
+        },
+        {
+          "seed": 1,
+          "status": "READ",
+          "own_band_onset": 206700,
+          "ruler_onset": 206700
+        },
+        {
+          "seed": 2,
+          "status": "READ",
+          "own_band_onset": null,
+          "ruler_onset": null
+        },
+        {
+          "seed": 3,
+          "status": "READ",
+          "own_band_onset": 217800,
+          "ruler_onset": 217800
+        },
+        {
+          "seed": 4,
+          "status": "READ",
+          "own_band_onset": null,
+          "ruler_onset": null
+        },
+        {
+          "seed": 5,
+          "status": "READ",
+          "own_band_onset": null,
+          "ruler_onset": null
+        },
+        {
+          "seed": 6,
+          "status": "READ",
+          "own_band_onset": 135600,
+          "ruler_onset": 135600
+        },
+        {
+          "seed": 7,
+          "status": "READ",
+          "own_band_onset": null,
+          "ruler_onset": null
+        }
+      ]
+    }
+  },
+  "ok": true,
+  "ruler": {
+    "band": 0.6875,
+    "N": 5
+  },
+  "headline": "REPRODUCTION OK \u2014 pipeline validated"
+}
