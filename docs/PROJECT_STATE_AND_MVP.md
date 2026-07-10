@@ -1118,3 +1118,22 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   gate. Refines: screen "coin converts"→shuffled confound, fabric is the gate ON ONSET; sensitivity-without-conversion
   →permitting regime is shuffled; Pin 3 REFUTED; fabric-moves-baseline +0.020 STANDS. EXP13 PAUSED;
   loss-engineering FENCED.]**
+- **[2026-07-10 — EXP15 DURABILITY-BY-DOSE: UNDERPOWERED (canon §10.25); no durability claim either
+  way; BANKED.** Powered gate for §10.24's companion ran clean end-to-end (40 + 16 top-up runs @ 1M,
+  s10→s37 ruled swap, {40–47} pre-checked at the DEPLOYED horizon per closure Ruling 2 — zero
+  run-time rejections downstream). Primary (exact MW, D>C, final-quartile TAB, eligible converters,
+  new seeds only): **p = 0.096846 at n=28/cell; eligible D 9 / C 15 vs floor 12 → UNDERPOWERED per
+  the letter; floor structurally unreachable for D under this design** (design-seat collision: floor
+  ratified before Ruling-3's eligibility gate — STANDING RULE: re-derive downstream constants when a
+  gate changes). D>C direction (ruled at ratification — the panel's refute-default label ADOPTED, provisional
+  "suggestive" dropped): **weak unresolved lean, weaker than n=20 on every measure** (carried by
+  2/9 eligibles; top-up increment mean-reversed; drop the two carriers → order flips); not
+  characterizable, not a prior. Peek-quarantine conservative (committed-16
+  inclusion would CREATE p=0.0096, the sole DEFINITION-SENSITIVE flip). C decays genuinely (early
+  converters, episodes end pre-quartile). C-45 censoring boundary (31 windows short of T_DUR)
+  visible: its exclusion currently favors the D-direction (diagnostic inclusion p→0.1378). PRE-CHECK
+  RE-PIN standing: deployed horizon decides, 15k advisory (s10/s36 instrument finding; state the
+  assert's false-alarm expectation with every rejection). Durability re-poses only on a mechanism
+  trigger (candidate: C's ~2× exam-traffic erosion — EXP16-successors). Panels wf_80ee0e95 (n=20) +
+  wf_5ec81437 (n=28 addendum) reproduced every number from raw records. EXP13 PAUSED;
+  loss-engineering FENCED.]**

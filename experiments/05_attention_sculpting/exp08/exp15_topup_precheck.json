@@ -1,0 +1,1471 @@
+{
+  "exp": "exp15_topup_precheck",
+  "standard": "Ruling 2 (Jason, 2026-07-10): pre-check at the DEPLOYED horizon (T=1M, the fabric the run uses) DECIDES; the T=15k screen is ADVISORY ONLY (recorded, never rejects). Paired rule: a seed enters the top-up iff BOTH arms pass at 1M. Substitution: lowest unused from {36,38,39} then upward from 48, same standard. Provenance: the s10/s36 instrument finding (exp15_seed_substitution.json) \u2014 the 15k screen tests a different object than the deployed fabric.",
+  "reserve_requested": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "swap_pool": [
+    36,
+    38,
+    39,
+    48,
+    49,
+    50
+  ],
+  "topup_seed_set": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "swaps": [],
+  "advisory_15k": {
+    "40": {
+      "exp12_shuffle": {
+        "ok": true,
+        "err": null
+      },
+      "exp12_split": {
+        "ok": true,
+        "err": null
+      }
+    },
+    "41": {
+      "exp12_shuffle": {
+        "ok": true,
+        "err": null
+      },
+      "exp12_split": {
+        "ok": true,
+        "err": null
+      }
+    },
+    "42": {
+      "exp12_shuffle": {
+        "ok": true,
+        "err": null
+      },
+      "exp12_split": {
+        "ok": true,
+        "err": null
+      }
+    },
+    "43": {
+      "exp12_shuffle": {
+        "ok": true,
+        "err": null
+      },
+      "exp12_split": {
+        "ok": true,
+        "err": null
+      }
+    },
+    "44": {
+      "exp12_shuffle": {
+        "ok": true,
+        "err": null
+      },
+      "exp12_split": {
+        "ok": true,
+        "err": null
+      }
+    },
+    "45": {
+      "exp12_shuffle": {
+        "ok": true,
+        "err": null
+      },
+      "exp12_split": {
+        "ok": true,
+        "err": null
+      }
+    },
+    "46": {
+      "exp12_shuffle": {
+        "ok": true,
+        "err": null
+      },
+      "exp12_split": {
+        "ok": true,
+        "err": null
+      }
+    },
+    "47": {
+      "exp12_shuffle": {
+        "ok": true,
+        "err": null
+      },
+      "exp12_split": {
+        "ok": true,
+        "err": null
+      }
+    }
+  },
+  "advisory_vs_deployed_disagreements": [],
+  "spec_hash": "41d6f0d5e7da",
+  "per_seed": {
+    "40": {
+      "seed": 40,
+      "spec_hash": "41d6f0d5e7da",
+      "horizons": {
+        "1000000": {
+          "role": "DECIDES",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 40,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0646,
+                "null99": 0.1321,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 61.45,
+                "null99": 82.47,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 9.7,
+                "null99": 36.21,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.057,
+                "null99": 0.0693,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00668,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91578,
+                "count": 612,
+                "count_bound": 749.8,
+                "ok": true
+              },
+              "wall_s": 188.7
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 40,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0646,
+                "null99": 0.1321,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 61.45,
+                "null99": 82.47,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 9.7,
+                "null99": 36.21,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.057,
+                "null99": 0.0693,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00668,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91578,
+                "count": 612,
+                "count_bound": 749.8,
+                "ok": true
+              },
+              "wall_s": 184.2
+            }
+          }
+        },
+        "15000": {
+          "role": "ADVISORY",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 40,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0646,
+                "null99": 0.1321,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 58.73,
+                "null99": 85.36,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 9.7,
+                "null99": 36.21,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.057,
+                "null99": 0.0693,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00422,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1423,
+                "count": 6,
+                "count_bound": 23.7,
+                "ok": true
+              },
+              "wall_s": 18.0
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 40,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0646,
+                "null99": 0.1321,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 58.73,
+                "null99": 85.36,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 9.7,
+                "null99": 36.21,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.057,
+                "null99": 0.0693,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00422,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1423,
+                "count": 6,
+                "count_bound": 23.7,
+                "ok": true
+              },
+              "wall_s": 17.3
+            }
+          }
+        }
+      },
+      "accepted_1M_both_arms": true
+    },
+    "41": {
+      "seed": 41,
+      "spec_hash": "41d6f0d5e7da",
+      "horizons": {
+        "1000000": {
+          "role": "DECIDES",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 41,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0781,
+                "null99": 0.1376,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 75.22,
+                "null99": 93.92,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 10.91,
+                "null99": 29.8,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0284,
+                "null99": 0.0642,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00746,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91413,
+                "count": 682,
+                "count_bound": 748.6,
+                "ok": true
+              },
+              "wall_s": 189.0
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 41,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0781,
+                "null99": 0.1376,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 75.22,
+                "null99": 93.92,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 10.91,
+                "null99": 29.8,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0284,
+                "null99": 0.0642,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00746,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91413,
+                "count": 682,
+                "count_bound": 748.6,
+                "ok": true
+              },
+              "wall_s": 184.8
+            }
+          }
+        },
+        "15000": {
+          "role": "ADVISORY",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 41,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0781,
+                "null99": 0.1376,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 64.22,
+                "null99": 81.6,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 10.91,
+                "null99": 29.8,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0284,
+                "null99": 0.0642,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00554,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1445,
+                "count": 8,
+                "count_bound": 24.0,
+                "ok": true
+              },
+              "wall_s": 17.7
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 41,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0781,
+                "null99": 0.1376,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 64.22,
+                "null99": 81.6,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 10.91,
+                "null99": 29.8,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0284,
+                "null99": 0.0642,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00554,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1445,
+                "count": 8,
+                "count_bound": 24.0,
+                "ok": true
+              },
+              "wall_s": 17.5
+            }
+          }
+        }
+      },
+      "accepted_1M_both_arms": true
+    },
+    "42": {
+      "seed": 42,
+      "spec_hash": "41d6f0d5e7da",
+      "horizons": {
+        "1000000": {
+          "role": "DECIDES",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 42,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.1248,
+                "null99": 0.1299,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 73.32,
+                "null99": 102.52,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 7.46,
+                "null99": 30.95,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.025,
+                "null99": 0.0679,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00687,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91688,
+                "count": 630,
+                "count_bound": 750.7,
+                "ok": true
+              },
+              "wall_s": 187.3
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 42,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.1248,
+                "null99": 0.1299,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 73.32,
+                "null99": 102.52,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 7.46,
+                "null99": 30.95,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.025,
+                "null99": 0.0679,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00687,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91688,
+                "count": 630,
+                "count_bound": 750.7,
+                "ok": true
+              },
+              "wall_s": 182.4
+            }
+          }
+        },
+        "15000": {
+          "role": "ADVISORY",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 42,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.1248,
+                "null99": 0.1299,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 40.35,
+                "null99": 91.33,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 7.46,
+                "null99": 30.95,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.025,
+                "null99": 0.0679,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.01085,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1383,
+                "count": 15,
+                "count_bound": 23.2,
+                "ok": true
+              },
+              "wall_s": 17.8
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 42,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.1248,
+                "null99": 0.1299,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 40.35,
+                "null99": 91.33,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 7.46,
+                "null99": 30.95,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.025,
+                "null99": 0.0679,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.01085,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1383,
+                "count": 15,
+                "count_bound": 23.2,
+                "ok": true
+              },
+              "wall_s": 17.7
+            }
+          }
+        }
+      },
+      "accepted_1M_both_arms": true
+    },
+    "43": {
+      "seed": 43,
+      "spec_hash": "41d6f0d5e7da",
+      "horizons": {
+        "1000000": {
+          "role": "DECIDES",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 43,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0686,
+                "null99": 0.123,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 59.45,
+                "null99": 88.06,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 13.52,
+                "null99": 34.42,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0362,
+                "null99": 0.0692,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00717,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91500,
+                "count": 656,
+                "count_bound": 749.2,
+                "ok": true
+              },
+              "wall_s": 189.4
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 43,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0686,
+                "null99": 0.123,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 59.45,
+                "null99": 88.06,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 13.52,
+                "null99": 34.42,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0362,
+                "null99": 0.0692,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00717,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91500,
+                "count": 656,
+                "count_bound": 749.2,
+                "ok": true
+              },
+              "wall_s": 185.6
+            }
+          }
+        },
+        "15000": {
+          "role": "ADVISORY",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 43,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0686,
+                "null99": 0.123,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 83.8,
+                "null99": 87.01,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 13.52,
+                "null99": 34.42,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0362,
+                "null99": 0.0692,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00884,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1357,
+                "count": 12,
+                "count_bound": 22.9,
+                "ok": true
+              },
+              "wall_s": 18.2
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 43,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0686,
+                "null99": 0.123,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 83.8,
+                "null99": 87.01,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 13.52,
+                "null99": 34.42,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0362,
+                "null99": 0.0692,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00884,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1357,
+                "count": 12,
+                "count_bound": 22.9,
+                "ok": true
+              },
+              "wall_s": 17.4
+            }
+          }
+        }
+      },
+      "accepted_1M_both_arms": true
+    },
+    "44": {
+      "seed": 44,
+      "spec_hash": "41d6f0d5e7da",
+      "horizons": {
+        "1000000": {
+          "role": "DECIDES",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 44,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0746,
+                "null99": 0.1292,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 50.97,
+                "null99": 87.72,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 12.49,
+                "null99": 31.76,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0445,
+                "null99": 0.0769,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00728,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91302,
+                "count": 665,
+                "count_bound": 747.7,
+                "ok": true
+              },
+              "wall_s": 187.3
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 44,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0746,
+                "null99": 0.1292,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 50.97,
+                "null99": 87.72,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 12.49,
+                "null99": 31.76,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0445,
+                "null99": 0.0769,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00728,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91302,
+                "count": 665,
+                "count_bound": 747.7,
+                "ok": true
+              },
+              "wall_s": 182.6
+            }
+          }
+        },
+        "15000": {
+          "role": "ADVISORY",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 44,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0746,
+                "null99": 0.1292,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 73.76,
+                "null99": 93.66,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 12.49,
+                "null99": 31.76,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0445,
+                "null99": 0.0769,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00283,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1411,
+                "count": 4,
+                "count_bound": 23.6,
+                "ok": true
+              },
+              "wall_s": 18.0
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 44,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0746,
+                "null99": 0.1292,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 73.76,
+                "null99": 93.66,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 12.49,
+                "null99": 31.76,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0445,
+                "null99": 0.0769,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00283,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1411,
+                "count": 4,
+                "count_bound": 23.6,
+                "ok": true
+              },
+              "wall_s": 17.7
+            }
+          }
+        }
+      },
+      "accepted_1M_both_arms": true
+    },
+    "45": {
+      "seed": 45,
+      "spec_hash": "41d6f0d5e7da",
+      "horizons": {
+        "1000000": {
+          "role": "DECIDES",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 45,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0947,
+                "null99": 0.1162,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 47.5,
+                "null99": 93.76,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 23.32,
+                "null99": 28.52,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0291,
+                "null99": 0.0824,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00676,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91515,
+                "count": 619,
+                "count_bound": 749.4,
+                "ok": true
+              },
+              "wall_s": 187.9
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 45,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0947,
+                "null99": 0.1162,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 47.5,
+                "null99": 93.76,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 23.32,
+                "null99": 28.52,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0291,
+                "null99": 0.0824,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00676,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91515,
+                "count": 619,
+                "count_bound": 749.4,
+                "ok": true
+              },
+              "wall_s": 183.2
+            }
+          }
+        },
+        "15000": {
+          "role": "ADVISORY",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 45,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0947,
+                "null99": 0.1162,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 45.41,
+                "null99": 93.32,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 23.32,
+                "null99": 28.52,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0291,
+                "null99": 0.0824,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.0043,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1394,
+                "count": 6,
+                "count_bound": 23.4,
+                "ok": true
+              },
+              "wall_s": 17.9
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 45,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0947,
+                "null99": 0.1162,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 45.41,
+                "null99": 93.32,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 23.32,
+                "null99": 28.52,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0291,
+                "null99": 0.0824,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.0043,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1394,
+                "count": 6,
+                "count_bound": 23.4,
+                "ok": true
+              },
+              "wall_s": 17.6
+            }
+          }
+        }
+      },
+      "accepted_1M_both_arms": true
+    },
+    "46": {
+      "seed": 46,
+      "spec_hash": "41d6f0d5e7da",
+      "horizons": {
+        "1000000": {
+          "role": "DECIDES",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 46,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0703,
+                "null99": 0.1369,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 46.21,
+                "null99": 84.64,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 13.33,
+                "null99": 29.83,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0386,
+                "null99": 0.0732,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00704,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 90915,
+                "count": 640,
+                "count_bound": 744.8,
+                "ok": true
+              },
+              "wall_s": 188.2
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 46,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0703,
+                "null99": 0.1369,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 46.21,
+                "null99": 84.64,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 13.33,
+                "null99": 29.83,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0386,
+                "null99": 0.0732,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00704,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 90915,
+                "count": 640,
+                "count_bound": 744.8,
+                "ok": true
+              },
+              "wall_s": 184.4
+            }
+          }
+        },
+        "15000": {
+          "role": "ADVISORY",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 46,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0703,
+                "null99": 0.1369,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 39.97,
+                "null99": 92.19,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 13.33,
+                "null99": 29.83,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0386,
+                "null99": 0.0732,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.0089,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1349,
+                "count": 12,
+                "count_bound": 22.8,
+                "ok": true
+              },
+              "wall_s": 18.0
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 46,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0703,
+                "null99": 0.1369,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 39.97,
+                "null99": 92.19,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 13.33,
+                "null99": 29.83,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0386,
+                "null99": 0.0732,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.0089,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1349,
+                "count": 12,
+                "count_bound": 22.8,
+                "ok": true
+              },
+              "wall_s": 17.5
+            }
+          }
+        }
+      },
+      "accepted_1M_both_arms": true
+    },
+    "47": {
+      "seed": 47,
+      "spec_hash": "41d6f0d5e7da",
+      "horizons": {
+        "1000000": {
+          "role": "DECIDES",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 47,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0692,
+                "null99": 0.1387,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 57.79,
+                "null99": 83.78,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 11.63,
+                "null99": 29.17,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0284,
+                "null99": 0.0668,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00718,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91470,
+                "count": 657,
+                "count_bound": 749.0,
+                "ok": true
+              },
+              "wall_s": 188.0
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 47,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0692,
+                "null99": 0.1387,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 57.79,
+                "null99": 83.78,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 11.63,
+                "null99": 29.17,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0284,
+                "null99": 0.0668,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00718,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 91470,
+                "count": 657,
+                "count_bound": 749.0,
+                "ok": true
+              },
+              "wall_s": 183.3
+            }
+          }
+        },
+        "15000": {
+          "role": "ADVISORY",
+          "arms": {
+            "exp12_shuffle": {
+              "ok": true,
+              "arm": "exp12_shuffle",
+              "seed": 47,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0692,
+                "null99": 0.1387,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 52.39,
+                "null99": 90.86,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 11.63,
+                "null99": 29.17,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0284,
+                "null99": 0.0668,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00938,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1386,
+                "count": 13,
+                "count_bound": 23.3,
+                "ok": true
+              },
+              "wall_s": 17.8
+            },
+            "exp12_split": {
+              "ok": true,
+              "arm": "exp12_split",
+              "seed": 47,
+              "spec_hash": "41d6f0d5e7da",
+              "perlag_nuis": {
+                "obs": 0.0692,
+                "null99": 0.1387,
+                "lags": "0..48 stride 1",
+                "ok": true
+              },
+              "k_indep": {
+                "chi2": 52.39,
+                "null99": 90.86,
+                "ok": true
+              },
+              "schedule_indep": {
+                "chi2": 11.63,
+                "null99": 29.17,
+                "note": "exam@pos1 structural by construction (recorded, not tested)",
+                "ok": true
+              },
+              "bg_indep": {
+                "obs": 0.0284,
+                "null99": 0.0668,
+                "ok": true
+              },
+              "cap_hit": {
+                "rate": 0.00938,
+                "rate_theory": 0.00707,
+                "ceiling": 0.01,
+                "n_dwells": 1386,
+                "count": 13,
+                "count_bound": 23.3,
+                "ok": true
+              },
+              "wall_s": 17.5
+            }
+          }
+        }
+      },
+      "accepted_1M_both_arms": true
+    }
+  }
+}

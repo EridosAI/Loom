@@ -1,0 +1,1766 @@
+{
+  "exp": "exp15_durability_by_dose",
+  "verdict_tag": "verdict",
+  "new_tag": "exp15",
+  "ruler": {
+    "band": 0.6875,
+    "N": 5
+  },
+  "t_dur": 200000,
+  "dur_min_run": 8,
+  "primary_at": 500000,
+  "final_quartile": [
+    375000,
+    500000
+  ],
+  "primary_scope": "new_seeds_only",
+  "seeds": {
+    "committed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "new": [
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37
+    ]
+  },
+  "reproduction_check": {
+    "ok": true,
+    "cells": {
+      "C_shuffle": true,
+      "D_split": true
+    }
+  },
+  "cells": {
+    "C_shuffle": {
+      "cell": "C_shuffle",
+      "arm": "exp12_shuffle",
+      "fabric": "shuffled",
+      "dose": "scheduled",
+      "n_seeds": 20,
+      "n_missing": 0,
+      "missing": [],
+      "n_read": 20,
+      "n_converted": 12,
+      "converter_seeds": [
+        9,
+        12,
+        13,
+        14,
+        16,
+        18,
+        19,
+        28,
+        29,
+        30,
+        31,
+        37
+      ],
+      "n_censored": 1,
+      "censored_seeds": [
+        29
+      ],
+      "n_bare_N": 1,
+      "bare_N_seeds": [
+        13
+      ],
+      "n_eligible": 10,
+      "eligible_seeds": [
+        9,
+        12,
+        14,
+        16,
+        18,
+        19,
+        28,
+        30,
+        31,
+        37
+      ],
+      "final_quartile_frac": [
+        0.257212,
+        0.264423,
+        0.644231,
+        0.040865,
+        0.038462,
+        0.283654,
+        0.03125,
+        0.233173,
+        0.021635,
+        0.014423
+      ],
+      "final_quartile_frac_mean": 0.182933,
+      "n_sustain_lockedstate": 1,
+      "n_sustain_endpoint": 2,
+      "last_k_means": [
+        0.6037,
+        0.6496,
+        0.6322,
+        0.5141,
+        0.4935,
+        0.7511,
+        0.5587,
+        0.4874,
+        0.4442,
+        0.5211
+      ],
+      "max_run_census": [
+        {
+          "seed": 8,
+          "max_run": 3
+        },
+        {
+          "seed": 9,
+          "max_run": 44
+        },
+        {
+          "seed": 11,
+          "max_run": 1
+        },
+        {
+          "seed": 12,
+          "max_run": 32
+        },
+        {
+          "seed": 13,
+          "max_run": 7
+        },
+        {
+          "seed": 14,
+          "max_run": 74
+        },
+        {
+          "seed": 15,
+          "max_run": 4
+        },
+        {
+          "seed": 16,
+          "max_run": 30
+        },
+        {
+          "seed": 17,
+          "max_run": 1
+        },
+        {
+          "seed": 18,
+          "max_run": 56
+        },
+        {
+          "seed": 19,
+          "max_run": 19
+        },
+        {
+          "seed": 28,
+          "max_run": 88
+        },
+        {
+          "seed": 29,
+          "max_run": 21
+        },
+        {
+          "seed": 30,
+          "max_run": 70
+        },
+        {
+          "seed": 31,
+          "max_run": 37
+        },
+        {
+          "seed": 32,
+          "max_run": 2
+        },
+        {
+          "seed": 33,
+          "max_run": 2
+        },
+        {
+          "seed": 34,
+          "max_run": 1
+        },
+        {
+          "seed": 35,
+          "max_run": 2
+        },
+        {
+          "seed": 37,
+          "max_run": 30
+        }
+      ],
+      "per_seed": [
+        {
+          "seed": 8,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 3900,
+          "max_run": 3
+        },
+        {
+          "seed": 9,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 4500,
+          "conversion_onset": 53400,
+          "runway": 446600,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.257212,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 44,
+          "max_run": 44,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.6037,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.7222,
+          "sustains_endpoint": true,
+          "episode_recurrence": 14,
+          "last_episode_end_t": 488700
+        },
+        {
+          "seed": 11,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 3300,
+          "max_run": 1
+        },
+        {
+          "seed": 12,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3900,
+          "conversion_onset": 72900,
+          "runway": 427100,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.264423,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 32,
+          "max_run": 32,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.6496,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.65,
+          "sustains_endpoint": false,
+          "episode_recurrence": 27,
+          "last_episode_end_t": 475200
+        },
+        {
+          "seed": 13,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 4500,
+          "conversion_onset": 50400,
+          "runway": 449600,
+          "censored": false,
+          "eligibility": "BARE-N (longest episode 7 < 8)",
+          "frac_above_band_final_quartile": 0.014423,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 7,
+          "max_run": 7,
+          "dur_pool_ok": false,
+          "bare_ruler": true,
+          "last_k_mean": 0.5091,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.4348,
+          "sustains_endpoint": false,
+          "episode_recurrence": 2,
+          "last_episode_end_t": 116100
+        },
+        {
+          "seed": 14,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 2700,
+          "conversion_onset": 216900,
+          "runway": 283100,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.644231,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 74,
+          "max_run": 74,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.6322,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.8,
+          "sustains_endpoint": true,
+          "episode_recurrence": 17,
+          "last_episode_end_t": 483600
+        },
+        {
+          "seed": 15,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 5400,
+          "max_run": 4
+        },
+        {
+          "seed": 16,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3900,
+          "conversion_onset": 138900,
+          "runway": 361100,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.040865,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 30,
+          "max_run": 30,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.5141,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.3784,
+          "sustains_endpoint": false,
+          "episode_recurrence": 10,
+          "last_episode_end_t": 205200
+        },
+        {
+          "seed": 17,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 19800,
+          "max_run": 1
+        },
+        {
+          "seed": 18,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3900,
+          "conversion_onset": 123000,
+          "runway": 377000,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.038462,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 56,
+          "max_run": 56,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.4935,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.4706,
+          "sustains_endpoint": false,
+          "episode_recurrence": 7,
+          "last_episode_end_t": 230100
+        },
+        {
+          "seed": 19,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 7200,
+          "conversion_onset": 132300,
+          "runway": 367700,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.283654,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 19,
+          "max_run": 19,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.7511,
+          "sustains_lockedstate": true,
+          "endpoint_acc": 0.6562,
+          "sustains_endpoint": false,
+          "episode_recurrence": 11,
+          "last_episode_end_t": 499200
+        },
+        {
+          "seed": 28,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 4800,
+          "conversion_onset": 70200,
+          "runway": 429800,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.03125,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 88,
+          "max_run": 88,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.5587,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.5714,
+          "sustains_endpoint": false,
+          "episode_recurrence": 12,
+          "last_episode_end_t": 233400
+        },
+        {
+          "seed": 29,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 2700,
+          "conversion_onset": 493800,
+          "runway": 6200,
+          "censored": true,
+          "eligibility": "DUR-CENSORED",
+          "frac_above_band_final_quartile": 0.091346,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 21,
+          "max_run": 21,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.8886,
+          "sustains_lockedstate": true,
+          "endpoint_acc": 0.7143,
+          "sustains_endpoint": true,
+          "episode_recurrence": 1,
+          "last_episode_end_t": 499800
+        },
+        {
+          "seed": 30,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3300,
+          "conversion_onset": 160500,
+          "runway": 339500,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.233173,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 70,
+          "max_run": 70,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.4874,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.5152,
+          "sustains_endpoint": false,
+          "episode_recurrence": 9,
+          "last_episode_end_t": 403500
+        },
+        {
+          "seed": 31,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 2700,
+          "conversion_onset": 54300,
+          "runway": 445700,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.021635,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 37,
+          "max_run": 37,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.4442,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.4615,
+          "sustains_endpoint": false,
+          "episode_recurrence": 2,
+          "last_episode_end_t": 162000
+        },
+        {
+          "seed": 32,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 7500,
+          "max_run": 2
+        },
+        {
+          "seed": 33,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 2400,
+          "max_run": 2
+        },
+        {
+          "seed": 34,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 3000,
+          "max_run": 1
+        },
+        {
+          "seed": 35,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 5700,
+          "max_run": 2
+        },
+        {
+          "seed": 37,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3600,
+          "conversion_onset": 116700,
+          "runway": 383300,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.014423,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 30,
+          "max_run": 30,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.5211,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.5938,
+          "sustains_endpoint": false,
+          "episode_recurrence": 2,
+          "last_episode_end_t": 133500
+        }
+      ]
+    },
+    "D_split": {
+      "cell": "D_split",
+      "arm": "exp12_split",
+      "fabric": "shuffled",
+      "dose": "coin",
+      "n_seeds": 20,
+      "n_missing": 0,
+      "missing": [],
+      "n_read": 20,
+      "n_converted": 10,
+      "converter_seeds": [
+        8,
+        11,
+        12,
+        15,
+        16,
+        17,
+        30,
+        31,
+        33,
+        35
+      ],
+      "n_censored": 2,
+      "censored_seeds": [
+        11,
+        35
+      ],
+      "n_bare_N": 2,
+      "bare_N_seeds": [
+        15,
+        30
+      ],
+      "n_eligible": 6,
+      "eligible_seeds": [
+        8,
+        12,
+        16,
+        17,
+        31,
+        33
+      ],
+      "final_quartile_frac": [
+        0.09375,
+        0.372596,
+        0.658654,
+        0.074519,
+        0.605769,
+        0.098558
+      ],
+      "final_quartile_frac_mean": 0.317308,
+      "n_sustain_lockedstate": 2,
+      "n_sustain_endpoint": 3,
+      "last_k_means": [
+        0.5085,
+        0.8864,
+        0.5715,
+        0.4264,
+        0.9201,
+        0.5089
+      ],
+      "max_run_census": [
+        {
+          "seed": 8,
+          "max_run": 58
+        },
+        {
+          "seed": 9,
+          "max_run": 3
+        },
+        {
+          "seed": 11,
+          "max_run": 5
+        },
+        {
+          "seed": 12,
+          "max_run": 41
+        },
+        {
+          "seed": 13,
+          "max_run": 2
+        },
+        {
+          "seed": 14,
+          "max_run": 3
+        },
+        {
+          "seed": 15,
+          "max_run": 6
+        },
+        {
+          "seed": 16,
+          "max_run": 65
+        },
+        {
+          "seed": 17,
+          "max_run": 22
+        },
+        {
+          "seed": 18,
+          "max_run": 3
+        },
+        {
+          "seed": 19,
+          "max_run": 4
+        },
+        {
+          "seed": 28,
+          "max_run": 3
+        },
+        {
+          "seed": 29,
+          "max_run": 3
+        },
+        {
+          "seed": 30,
+          "max_run": 7
+        },
+        {
+          "seed": 31,
+          "max_run": 91
+        },
+        {
+          "seed": 32,
+          "max_run": 3
+        },
+        {
+          "seed": 33,
+          "max_run": 58
+        },
+        {
+          "seed": 34,
+          "max_run": 3
+        },
+        {
+          "seed": 35,
+          "max_run": 22
+        },
+        {
+          "seed": 37,
+          "max_run": 2
+        }
+      ],
+      "per_seed": [
+        {
+          "seed": 8,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3600,
+          "conversion_onset": 106500,
+          "runway": 393500,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.09375,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 58,
+          "max_run": 58,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.5085,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.3846,
+          "sustains_endpoint": false,
+          "episode_recurrence": 14,
+          "last_episode_end_t": 229800
+        },
+        {
+          "seed": 9,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 3900,
+          "max_run": 3
+        },
+        {
+          "seed": 11,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3000,
+          "conversion_onset": 417300,
+          "runway": 82700,
+          "censored": true,
+          "eligibility": "DUR-CENSORED",
+          "frac_above_band_final_quartile": 0.139423,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 5,
+          "max_run": 5,
+          "dur_pool_ok": false,
+          "bare_ruler": true,
+          "last_k_mean": 0.499,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.3636,
+          "sustains_endpoint": false,
+          "episode_recurrence": 2,
+          "last_episode_end_t": 423900
+        },
+        {
+          "seed": 12,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 4200,
+          "conversion_onset": 93900,
+          "runway": 406100,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.372596,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 41,
+          "max_run": 41,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.8864,
+          "sustains_lockedstate": true,
+          "endpoint_acc": 1.0,
+          "sustains_endpoint": true,
+          "episode_recurrence": 21,
+          "last_episode_end_t": 499800
+        },
+        {
+          "seed": 13,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 5700,
+          "max_run": 2
+        },
+        {
+          "seed": 14,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 3300,
+          "max_run": 3
+        },
+        {
+          "seed": 15,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 5400,
+          "conversion_onset": 120600,
+          "runway": 379400,
+          "censored": false,
+          "eligibility": "BARE-N (longest episode 6 < 8)",
+          "frac_above_band_final_quartile": 0.09375,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 6,
+          "max_run": 6,
+          "dur_pool_ok": false,
+          "bare_ruler": true,
+          "last_k_mean": 0.4305,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.5333,
+          "sustains_endpoint": false,
+          "episode_recurrence": 2,
+          "last_episode_end_t": 126000
+        },
+        {
+          "seed": 16,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3900,
+          "conversion_onset": 129600,
+          "runway": 370400,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.658654,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 65,
+          "max_run": 65,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.5715,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.6667,
+          "sustains_endpoint": false,
+          "episode_recurrence": 45,
+          "last_episode_end_t": 487200
+        },
+        {
+          "seed": 17,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 2700,
+          "conversion_onset": 101700,
+          "runway": 398300,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.074519,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 22,
+          "max_run": 22,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.4264,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.3333,
+          "sustains_endpoint": false,
+          "episode_recurrence": 5,
+          "last_episode_end_t": 189600
+        },
+        {
+          "seed": 18,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 10800,
+          "max_run": 3
+        },
+        {
+          "seed": 19,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 5700,
+          "max_run": 4
+        },
+        {
+          "seed": 28,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 3900,
+          "max_run": 3
+        },
+        {
+          "seed": 29,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 4200,
+          "max_run": 3
+        },
+        {
+          "seed": 30,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 2700,
+          "conversion_onset": 101100,
+          "runway": 398900,
+          "censored": false,
+          "eligibility": "BARE-N (longest episode 7 < 8)",
+          "frac_above_band_final_quartile": 0.103365,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 7,
+          "max_run": 7,
+          "dur_pool_ok": false,
+          "bare_ruler": true,
+          "last_k_mean": 0.5179,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.6667,
+          "sustains_endpoint": false,
+          "episode_recurrence": 3,
+          "last_episode_end_t": 135300
+        },
+        {
+          "seed": 31,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 2700,
+          "conversion_onset": 102300,
+          "runway": 397700,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.605769,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 91,
+          "max_run": 91,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.9201,
+          "sustains_lockedstate": true,
+          "endpoint_acc": 0.9286,
+          "sustains_endpoint": true,
+          "episode_recurrence": 22,
+          "last_episode_end_t": 499800
+        },
+        {
+          "seed": 32,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 6000,
+          "max_run": 3
+        },
+        {
+          "seed": 33,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3600,
+          "conversion_onset": 97500,
+          "runway": 402500,
+          "censored": false,
+          "eligibility": "ELIGIBLE",
+          "frac_above_band_final_quartile": 0.098558,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 58,
+          "max_run": 58,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.5089,
+          "sustains_lockedstate": false,
+          "endpoint_acc": 0.7895,
+          "sustains_endpoint": true,
+          "episode_recurrence": 12,
+          "last_episode_end_t": 218100
+        },
+        {
+          "seed": 34,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 3300,
+          "max_run": 3
+        },
+        {
+          "seed": 35,
+          "status": "READ",
+          "converted": true,
+          "acquisition_onset": 3900,
+          "conversion_onset": 461700,
+          "runway": 38300,
+          "censored": true,
+          "eligibility": "DUR-CENSORED",
+          "frac_above_band_final_quartile": 0.346154,
+          "final_quartile_windows": 416,
+          "final_quartile": [
+            375000,
+            500000
+          ],
+          "longest_episode": 22,
+          "max_run": 22,
+          "dur_pool_ok": true,
+          "bare_ruler": false,
+          "last_k_mean": 0.9476,
+          "sustains_lockedstate": true,
+          "endpoint_acc": 1.0,
+          "sustains_endpoint": true,
+          "episode_recurrence": 7,
+          "last_episode_end_t": 499800
+        },
+        {
+          "seed": 37,
+          "status": "READ",
+          "converted": false,
+          "acquisition_onset": 4200,
+          "max_run": 2
+        }
+      ]
+    }
+  },
+  "context_committed": {
+    "C_shuffle": {
+      "n_converted": 5,
+      "n_censored": 1,
+      "n_bare_N": 0,
+      "n_eligible": 4,
+      "final_quartile_frac": [
+        0.069712,
+        0.050481,
+        0.081731,
+        0.024038
+      ],
+      "n_sustain_lockedstate": 0,
+      "n_sustain_endpoint": 0
+    },
+    "D_split": {
+      "n_converted": 4,
+      "n_censored": 0,
+      "n_bare_N": 0,
+      "n_eligible": 4,
+      "final_quartile_frac": [
+        0.8125,
+        0.072115,
+        0.115385,
+        0.408654
+      ],
+      "n_sustain_lockedstate": 0,
+      "n_sustain_endpoint": 2
+    }
+  },
+  "phantom_floor_gate": {
+    "C_shuffle": {
+      "cell": "C_shuffle",
+      "band": 0.6875,
+      "N": 5,
+      "null": "between-episode (conversions + shoulders excluded)",
+      "n_null_positions": 7596,
+      "n_null_episodes": 3,
+      "null_episode_lengths": [
+        6,
+        5,
+        5
+      ],
+      "mean_cluster_size": 1.333,
+      "episode_rate": 0.00039494,
+      "position_rate": 0.00052659,
+      "expected_phantom_converters_EPISODE_UNIT": 9.563,
+      "expected_phantom_converters_position_unit": 11.598,
+      "observed_converters": 12,
+      "converter_seeds": [
+        9,
+        12,
+        13,
+        14,
+        16,
+        18,
+        19,
+        28,
+        29,
+        30,
+        31,
+        37
+      ],
+      "P_observed_or_more_under_floor": 0.19307,
+      "at_floor": true,
+      "verdict": "AT-FLOOR \u2014 the crossing count carries NO signal; the cell must be carried by episode QUALITY (run length), not by n/N converted",
+      "bare_N_census": [
+        {
+          "seed": 8,
+          "max_run": 3,
+          "longest_episode": 0
+        },
+        {
+          "seed": 9,
+          "max_run": 44,
+          "longest_episode": 44
+        },
+        {
+          "seed": 11,
+          "max_run": 1,
+          "longest_episode": 0
+        },
+        {
+          "seed": 12,
+          "max_run": 32,
+          "longest_episode": 32
+        },
+        {
+          "seed": 13,
+          "max_run": 7,
+          "longest_episode": 7
+        },
+        {
+          "seed": 14,
+          "max_run": 74,
+          "longest_episode": 74
+        },
+        {
+          "seed": 15,
+          "max_run": 4,
+          "longest_episode": 0
+        },
+        {
+          "seed": 16,
+          "max_run": 30,
+          "longest_episode": 30
+        },
+        {
+          "seed": 17,
+          "max_run": 1,
+          "longest_episode": 0
+        },
+        {
+          "seed": 18,
+          "max_run": 56,
+          "longest_episode": 56
+        },
+        {
+          "seed": 19,
+          "max_run": 19,
+          "longest_episode": 19
+        },
+        {
+          "seed": 28,
+          "max_run": 88,
+          "longest_episode": 88
+        },
+        {
+          "seed": 29,
+          "max_run": 21,
+          "longest_episode": 21
+        },
+        {
+          "seed": 30,
+          "max_run": 70,
+          "longest_episode": 70
+        },
+        {
+          "seed": 31,
+          "max_run": 37,
+          "longest_episode": 37
+        },
+        {
+          "seed": 32,
+          "max_run": 2,
+          "longest_episode": 0
+        },
+        {
+          "seed": 33,
+          "max_run": 2,
+          "longest_episode": 0
+        },
+        {
+          "seed": 34,
+          "max_run": 1,
+          "longest_episode": 0
+        },
+        {
+          "seed": 35,
+          "max_run": 2,
+          "longest_episode": 0
+        },
+        {
+          "seed": 37,
+          "max_run": 30,
+          "longest_episode": 30
+        }
+      ],
+      "census_note": "max_run per seed at the ruler. A bimodal census (noise ceiling << N << converter floor) is what protects a loose-N rule; a populated [N, 2N] band means phantoms have arrived.",
+      "null_caveat": "This floor is an inflated UPPER BOUND where the cal pool itself converted (C: 4/5 cal seeds are s0-class converters, so residual shoulders survive the CONV_MIN=8 exclusion). Under-, not over-, state the risk."
+    },
+    "D_split": {
+      "cell": "D_split",
+      "band": 0.6875,
+      "N": 5,
+      "null": "between-episode (conversions + shoulders excluded)",
+      "n_null_positions": 8095,
+      "n_null_episodes": 1,
+      "null_episode_lengths": [
+        5
+      ],
+      "mean_cluster_size": 1.0,
+      "episode_rate": 0.00012353,
+      "position_rate": 0.00012353,
+      "expected_phantom_converters_EPISODE_UNIT": 3.685,
+      "expected_phantom_converters_position_unit": 3.685,
+      "observed_converters": 10,
+      "converter_seeds": [
+        8,
+        11,
+        12,
+        15,
+        16,
+        17,
+        30,
+        31,
+        33,
+        35
+      ],
+      "P_observed_or_more_under_floor": 0.00135,
+      "at_floor": false,
+      "verdict": "ABOVE-FLOOR \u2014 the crossing count exceeds the false-alarm expectation",
+      "bare_N_census": [
+        {
+          "seed": 8,
+          "max_run": 58,
+          "longest_episode": 58
+        },
+        {
+          "seed": 9,
+          "max_run": 3,
+          "longest_episode": 0
+        },
+        {
+          "seed": 11,
+          "max_run": 5,
+          "longest_episode": 5
+        },
+        {
+          "seed": 12,
+          "max_run": 41,
+          "longest_episode": 41
+        },
+        {
+          "seed": 13,
+          "max_run": 2,
+          "longest_episode": 0
+        },
+        {
+          "seed": 14,
+          "max_run": 3,
+          "longest_episode": 0
+        },
+        {
+          "seed": 15,
+          "max_run": 6,
+          "longest_episode": 6
+        },
+        {
+          "seed": 16,
+          "max_run": 65,
+          "longest_episode": 65
+        },
+        {
+          "seed": 17,
+          "max_run": 22,
+          "longest_episode": 22
+        },
+        {
+          "seed": 18,
+          "max_run": 3,
+          "longest_episode": 0
+        },
+        {
+          "seed": 19,
+          "max_run": 4,
+          "longest_episode": 0
+        },
+        {
+          "seed": 28,
+          "max_run": 3,
+          "longest_episode": 0
+        },
+        {
+          "seed": 29,
+          "max_run": 3,
+          "longest_episode": 0
+        },
+        {
+          "seed": 30,
+          "max_run": 7,
+          "longest_episode": 7
+        },
+        {
+          "seed": 31,
+          "max_run": 91,
+          "longest_episode": 91
+        },
+        {
+          "seed": 32,
+          "max_run": 3,
+          "longest_episode": 0
+        },
+        {
+          "seed": 33,
+          "max_run": 58,
+          "longest_episode": 58
+        },
+        {
+          "seed": 34,
+          "max_run": 3,
+          "longest_episode": 0
+        },
+        {
+          "seed": 35,
+          "max_run": 22,
+          "longest_episode": 22
+        },
+        {
+          "seed": 37,
+          "max_run": 2,
+          "longest_episode": 0
+        }
+      ],
+      "census_note": "max_run per seed at the ruler. A bimodal census (noise ceiling << N << converter floor) is what protects a loose-N rule; a populated [N, 2N] band means phantoms have arrived.",
+      "null_caveat": "This floor is an inflated UPPER BOUND where the cal pool itself converted (C: 4/5 cal seeds are s0-class converters, so residual shoulders survive the CONV_MIN=8 exclusion). Under-, not over-, state the risk."
+    }
+  },
+  "primary": {
+    "test": "EXACT Mann-Whitney / rank-sum, one-sided (D > C), tie-aware, deterministic",
+    "statistic": "final-quartile time-above-band = frac windows in (375k,500k] with exam_acc >= ruler",
+    "null": "between-cell exchangeability of the eligible-converter values",
+    "scope": "NEW SEEDS ONLY (peek quarantine)",
+    "D": {
+      "n_eligible": 6,
+      "values": [
+        0.09375,
+        0.372596,
+        0.658654,
+        0.074519,
+        0.605769,
+        0.098558
+      ],
+      "mean": 0.317308
+    },
+    "C": {
+      "n_eligible": 10,
+      "values": [
+        0.257212,
+        0.264423,
+        0.644231,
+        0.040865,
+        0.038462,
+        0.283654,
+        0.03125,
+        0.233173,
+        0.021635,
+        0.014423
+      ],
+      "mean": 0.182933
+    },
+    "p_one_sided_D_gt_C": 0.090285,
+    "p_one_sided_C_gt_D": 0.926449,
+    "alpha": 0.05,
+    "converter_floor": 12,
+    "floor_met": false
+  },
+  "outcome_cell": {
+    "cell": "UNDERPOWERED",
+    "note": "eligible converters D 6 / C 10 vs floor 12. TOP-UP RULE: pairs from reserve [40, 41, 42, 43, 44, 45, 46, 47] (lowest-first, BOTH cells, cap +8/cell). Floor still unmet after the capped top-up -> routes to Jason, named.",
+    "floor_flag": "CELL(S) AT FLOOR: ['C_shuffle']. Their converter COUNT carries no signal (observed ~ false-alarm expectation). The durability pool is protected by the longest-run>=8 gate, but any statement about how MANY seeds converted in a flagged cell must not be made."
+  },
+  "sensitivities": {
+    "last_k_mean_LEVEL_peeked": {
+      "D": [
+        0.5085,
+        0.8864,
+        0.5715,
+        0.4264,
+        0.9201,
+        0.5089
+      ],
+      "C": [
+        0.6037,
+        0.6496,
+        0.6322,
+        0.5141,
+        0.4935,
+        0.7511,
+        0.5587,
+        0.4874,
+        0.4442,
+        0.5211
+      ],
+      "p_one_sided_D_gt_C": 0.437438,
+      "note": "THE PEEKED STATISTIC (CC's MW; Jason's verification). SENSITIVITY ONLY, never primary."
+    },
+    "ruler_0.64_variant": {
+      "D": [
+        0.168269,
+        0.425481,
+        0.725962,
+        0.149038,
+        0.170673,
+        0.673077,
+        0.149038
+      ],
+      "C": [
+        0.331731,
+        0.387019,
+        0.742788,
+        0.091346,
+        0.079327,
+        0.379808,
+        0.084135,
+        0.28125,
+        0.050481,
+        0.060096
+      ],
+      "p_one_sided_D_gt_C": 0.129679
+    },
+    "committed_16_included": {
+      "D": [
+        0.8125,
+        0.072115,
+        0.115385,
+        0.408654,
+        0.09375,
+        0.372596,
+        0.658654,
+        0.074519,
+        0.605769,
+        0.098558
+      ],
+      "C": [
+        0.069712,
+        0.050481,
+        0.081731,
+        0.024038,
+        0.257212,
+        0.264423,
+        0.644231,
+        0.040865,
+        0.038462,
+        0.283654,
+        0.03125,
+        0.233173,
+        0.021635,
+        0.014423
+      ],
+      "n_eligible": {
+        "D": 10,
+        "C": 14
+      },
+      "p_one_sided_D_gt_C": 0.009273,
+      "note": "CONTEXT. The committed 16 are peek-contaminated; never primary."
+    }
+  },
+  "censoring_dependency": {
+    "censored_new": {
+      "C_shuffle": [
+        {
+          "seed": 29,
+          "conversion_onset": 493800,
+          "runway": 6200,
+          "frac_if_included": 0.091346
+        }
+      ],
+      "D_split": [
+        {
+          "seed": 11,
+          "conversion_onset": 417300,
+          "runway": 82700,
+          "frac_if_included": 0.139423
+        },
+        {
+          "seed": 35,
+          "conversion_onset": 461700,
+          "runway": 38300,
+          "frac_if_included": 0.346154
+        }
+      ]
+    },
+    "censored_committed": {
+      "C_shuffle": [
+        {
+          "seed": 6,
+          "conversion_onset": 427500,
+          "runway": 72500,
+          "frac_if_included": 0.46875
+        }
+      ],
+      "D_split": []
+    },
+    "note": "DIAGNOSTIC ONLY. A censored converter has too little runway for the final-quartile fraction to mean durability -- it measures RECENCY. Do NOT re-score with censored seeds included; that reinstates the exact confound T_DUR excludes. Reported so that a result which depends on a single censoring decision is VISIBLE, not so that the decision can be reversed after seeing the outcome.",
+    "committed_context_warning": "On the COMMITTED 16 the sole censored seed is C-s6 (onset 427500, runway 72500, frac 0.4688 if included). Censoring it is what makes the committed context significant (p 0.028571 -> 0.095238 if included). The committed 16 are CONTEXT, never primary; this is exactly why the primary is quarantined to the new seeds."
+  },
+  "definition_sensitive": true,
+  "sensitivity_note": "DEFINITION-SENSITIVE \u2014 a sensitivity flips significance: ['committed_16_included']. The PRIMARY still decides; promotion (if any) carries this caveat VISIBLY.",
+  "locked_state_finding": "LOCKED-STATE SUSTAIN DOES NOT EXIST AT 500k IN THIS REGIME (recorded, prereg \u00a76). mean(last 10) >= ruler returns 0/16 on the committed verdict seeds; no bar both controls alpha and produces sustainers (the alpha-calibrated K=10 bar is 0.79 > the ruler). Conversion is EPISODIC (2-27 recurring episodes per committed converter at the ruler, median 9), so a locked-state read measures a state the phenomenon does not occupy. Hence the re-posed continuous primary.",
+  "companions": {
+    "C_shuffle": {
+      "episode_recurrence": [
+        14,
+        27,
+        2,
+        17,
+        10,
+        7,
+        11,
+        12,
+        1,
+        9,
+        2,
+        2
+      ],
+      "last_episode_end_t": [
+        488700,
+        475200,
+        116100,
+        483600,
+        205200,
+        230100,
+        499200,
+        233400,
+        499800,
+        403500,
+        162000,
+        133500
+      ],
+      "max_run_census": [
+        {
+          "seed": 8,
+          "max_run": 3
+        },
+        {
+          "seed": 9,
+          "max_run": 44
+        },
+        {
+          "seed": 11,
+          "max_run": 1
+        },
+        {
+          "seed": 12,
+          "max_run": 32
+        },
+        {
+          "seed": 13,
+          "max_run": 7
+        },
+        {
+          "seed": 14,
+          "max_run": 74
+        },
+        {
+          "seed": 15,
+          "max_run": 4
+        },
+        {
+          "seed": 16,
+          "max_run": 30
+        },
+        {
+          "seed": 17,
+          "max_run": 1
+        },
+        {
+          "seed": 18,
+          "max_run": 56
+        },
+        {
+          "seed": 19,
+          "max_run": 19
+        },
+        {
+          "seed": 28,
+          "max_run": 88
+        },
+        {
+          "seed": 29,
+          "max_run": 21
+        },
+        {
+          "seed": 30,
+          "max_run": 70
+        },
+        {
+          "seed": 31,
+          "max_run": 37
+        },
+        {
+          "seed": 32,
+          "max_run": 2
+        },
+        {
+          "seed": 33,
+          "max_run": 2
+        },
+        {
+          "seed": 34,
+          "max_run": 1
+        },
+        {
+          "seed": 35,
+          "max_run": 2
+        },
+        {
+          "seed": 37,
+          "max_run": 30
+        }
+      ],
+      "note": "READ-ONLY. No claims. The 500k->1M tail is scored separately (descriptive)."
+    },
+    "D_split": {
+      "episode_recurrence": [
+        14,
+        2,
+        21,
+        2,
+        45,
+        5,
+        3,
+        22,
+        12,
+        7
+      ],
+      "last_episode_end_t": [
+        229800,
+        423900,
+        499800,
+        126000,
+        487200,
+        189600,
+        135300,
+        499800,
+        218100,
+        499800
+      ],
+      "max_run_census": [
+        {
+          "seed": 8,
+          "max_run": 58
+        },
+        {
+          "seed": 9,
+          "max_run": 3
+        },
+        {
+          "seed": 11,
+          "max_run": 5
+        },
+        {
+          "seed": 12,
+          "max_run": 41
+        },
+        {
+          "seed": 13,
+          "max_run": 2
+        },
+        {
+          "seed": 14,
+          "max_run": 3
+        },
+        {
+          "seed": 15,
+          "max_run": 6
+        },
+        {
+          "seed": 16,
+          "max_run": 65
+        },
+        {
+          "seed": 17,
+          "max_run": 22
+        },
+        {
+          "seed": 18,
+          "max_run": 3
+        },
+        {
+          "seed": 19,
+          "max_run": 4
+        },
+        {
+          "seed": 28,
+          "max_run": 3
+        },
+        {
+          "seed": 29,
+          "max_run": 3
+        },
+        {
+          "seed": 30,
+          "max_run": 7
+        },
+        {
+          "seed": 31,
+          "max_run": 91
+        },
+        {
+          "seed": 32,
+          "max_run": 3
+        },
+        {
+          "seed": 33,
+          "max_run": 58
+        },
+        {
+          "seed": 34,
+          "max_run": 3
+        },
+        {
+          "seed": 35,
+          "max_run": 22
+        },
+        {
+          "seed": 37,
+          "max_run": 2
+        }
+      ],
+      "note": "READ-ONLY. No claims. The 500k->1M tail is scored separately (descriptive)."
+    }
+  },
+  "DRAFT_note": "DRAFT \u2014 halts here. Routes behind the adversarial refute-default pass; NO LENS ASSUMES D>C. Attribution routes to Jason after the panel.",
+  "scope_fence": "No onset re-litigation (EXP14 \u00a710.24 stands regardless). No claim beyond durability-by-dose WITHIN the shuffled fabric, at this power and horizon."
+}

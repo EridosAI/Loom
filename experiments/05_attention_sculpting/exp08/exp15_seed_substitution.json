@@ -1,0 +1,131 @@
+{
+  "event": "EXP15 fabric-assert rejection + ruled substitution",
+  "date": "2026-07-10",
+  "rejected": {
+    "seed": 10,
+    "arms": [
+      "exp12_shuffle",
+      "exp12_split"
+    ],
+    "where": "deployed-horizon assert inside run_exp14_arm (line ~213), BEFORE any training step",
+    "outcome_blind": true,
+    "assert": "k CODES IDENTITY (chi2 vs 99th pct of its permutation null)",
+    "profile_by_T": {
+      "15000": {
+        "chi2": 59.23,
+        "thr": 90.37,
+        "verdict": "PASS"
+      },
+      "100000": {
+        "chi2": 47.32,
+        "thr": 88.36,
+        "verdict": "PASS"
+      },
+      "500000": {
+        "chi2": 56.43,
+        "thr": 91.54,
+        "verdict": "PASS"
+      },
+      "1000000": {
+        "chi2": 92.02,
+        "thr": 89.31,
+        "verdict": "FAIL"
+      }
+    },
+    "reading": "NOT s23. s23 exceeded its bar at EVERY horizon (stable, real defect). s10 passes at 15k/100k/500k and fails only at 1M by +3.0%. The assert is a level-alpha(0.01) test, so screening 20 seeds at the deployed horizon yields E=0.20 false failures and P(>=1)=0.182. ONE failure in 20 is dead on the false-alarm expectation."
+  },
+  "substitution": {
+    "rule": "lowest unused seed from the substitution pool {36-39}, decided at rejection, recorded",
+    "candidates": {
+      "36": {
+        "T15000": {
+          "chi2": 88.71,
+          "thr": 83.91,
+          "verdict": "FAIL"
+        },
+        "T1000000": {
+          "chi2": 61.04,
+          "thr": 86.16,
+          "verdict": "PASS"
+        },
+        "action": "REJECTED by the prereg's named T=15k pre-check (\u00a76). Skipped."
+      },
+      "37": {
+        "T15000": {
+          "chi2": 66.74,
+          "thr": 86.37,
+          "verdict": "PASS"
+        },
+        "T1000000": {
+          "chi2": 65.39,
+          "thr": 91.79,
+          "verdict": "PASS"
+        },
+        "action": "ACCEPTED \u2014 passes BOTH the named pre-check and the deployed assert."
+      },
+      "38": {
+        "T15000": {
+          "chi2": 74.49,
+          "thr": 89.76,
+          "verdict": "PASS"
+        },
+        "T1000000": {
+          "chi2": 60.88,
+          "thr": 90.98,
+          "verdict": "PASS"
+        }
+      },
+      "39": {
+        "T15000": {
+          "chi2": 60.68,
+          "thr": 86.78,
+          "verdict": "PASS"
+        },
+        "T1000000": {
+          "chi2": 63.42,
+          "thr": 85.38,
+          "verdict": "PASS"
+        }
+      }
+    },
+    "chosen": 37,
+    "note": "s36 is skipped on the prereg's named screen even though its DEPLOYED fabric is clean. Honoring the ratified rule literally rather than overriding it (report-don't-patch). Both s36 and s37 are outcome-blind choices; s37 satisfies every screen the prereg names."
+  },
+  "instrument_finding": {
+    "headline": "The T=15k outcome-blind pre-check does NOT screen the deployed fabric. It tests a DIFFERENT object: obs chi2 is a fresh noisy draw per (seed, T), sitting near a ~1%-level threshold. s10 passes at 15k and fails at 1M; s36 fails at 15k and passes at 1M -- exact mirrors.",
+    "consequences": [
+      "A pre-check pass carries NO guarantee at the deployed horizon (s10).",
+      "A pre-check failure is NOT evidence of a defective deployed fabric (s36).",
+      "The BINDING gate is the assert inside run_exp14_arm at h_max -- which every one of the 38 successful runs passed. The delivered sample is therefore clean at the horizon that matters.",
+      "Screening N seeds at a level-alpha assert produces ~alpha*N rejections BY CONSTRUCTION. A rejection is evidence of a defect only if it is HORIZON-STABLE (s23 was; s10 and s36 are not)."
+    ],
+    "recommendation_routes_to_jason": "Run the outcome-blind pre-check at the DEPLOYED horizon, or declare the T=15k screen advisory and name the run-time assert as the gate. Do NOT relax any threshold. This is the band lesson applied to the instrument: verify a rejection against the assert's own false-alarm expectation.",
+    "cross_ref": "feedback_loose_N_false_alarm.md"
+  },
+  "final_seed_set": [
+    8,
+    9,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    37
+  ],
+  "runs_delivered": {
+    "before_swap": 38,
+    "target": 40
+  }
+}

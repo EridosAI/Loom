@@ -1,0 +1,522 @@
+{
+  "exp": "exp15_tail_descriptive",
+  "window": [
+    500000,
+    1000000
+  ],
+  "ruler": {
+    "band": 0.6875,
+    "N": 5
+  },
+  "note": "DESCRIPTIVE ONLY (prereg companions). The primary is frozen at 500k; nothing here bears on the outcome cell.",
+  "cells": {
+    "C_shuffle": [
+      {
+        "seed": 8,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.022795,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.6
+      },
+      {
+        "seed": 9,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.412717,
+        "tail_episode_recurrence": 21,
+        "longest_tail_episode": 96,
+        "last_episode_end_t": 835800,
+        "endpoint_1M": 0.482759
+      },
+      {
+        "seed": 11,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.026395,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.472222
+      },
+      {
+        "seed": 12,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.072585,
+        "tail_episode_recurrence": 2,
+        "longest_tail_episode": 28,
+        "last_episode_end_t": 548700,
+        "endpoint_1M": 0.441176
+      },
+      {
+        "seed": 13,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.205759,
+        "tail_episode_recurrence": 9,
+        "longest_tail_episode": 70,
+        "last_episode_end_t": 759600,
+        "endpoint_1M": 0.62963
+      },
+      {
+        "seed": 14,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.586683,
+        "tail_episode_recurrence": 54,
+        "longest_tail_episode": 65,
+        "last_episode_end_t": 999900,
+        "endpoint_1M": 0.931034
+      },
+      {
+        "seed": 15,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.026395,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.5
+      },
+      {
+        "seed": 16,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.378524,
+        "tail_episode_recurrence": 18,
+        "longest_tail_episode": 93,
+        "last_episode_end_t": 997800,
+        "endpoint_1M": 0.576923
+      },
+      {
+        "seed": 17,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.026995,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.333333
+      },
+      {
+        "seed": 18,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.023995,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.681818
+      },
+      {
+        "seed": 19,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.036593,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.625
+      },
+      {
+        "seed": 28,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.023995,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.517241
+      },
+      {
+        "seed": 29,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.226755,
+        "tail_episode_recurrence": 12,
+        "longest_tail_episode": 74,
+        "last_episode_end_t": 621000,
+        "endpoint_1M": 0.466667
+      },
+      {
+        "seed": 30,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.056989,
+        "tail_episode_recurrence": 2,
+        "longest_tail_episode": 11,
+        "last_episode_end_t": 657300,
+        "endpoint_1M": 0.645161
+      },
+      {
+        "seed": 31,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.026395,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.583333
+      },
+      {
+        "seed": 32,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.035993,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.566667
+      },
+      {
+        "seed": 33,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.041992,
+        "tail_episode_recurrence": 1,
+        "longest_tail_episode": 7,
+        "last_episode_end_t": 853200,
+        "endpoint_1M": 0.371429
+      },
+      {
+        "seed": 34,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.022196,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.619048
+      },
+      {
+        "seed": 35,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.032993,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.407407
+      },
+      {
+        "seed": 37,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.14817,
+        "tail_episode_recurrence": 5,
+        "longest_tail_episode": 100,
+        "last_episode_end_t": 715200,
+        "endpoint_1M": 0.555556
+      },
+      {
+        "seed": 40,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.026995,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.59375
+      },
+      {
+        "seed": 41,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.107978,
+        "tail_episode_recurrence": 4,
+        "longest_tail_episode": 49,
+        "last_episode_end_t": 966300,
+        "endpoint_1M": 0.88
+      },
+      {
+        "seed": 42,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.106179,
+        "tail_episode_recurrence": 8,
+        "longest_tail_episode": 9,
+        "last_episode_end_t": 962100,
+        "endpoint_1M": 0.625
+      },
+      {
+        "seed": 43,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.032394,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.5
+      },
+      {
+        "seed": 44,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.167966,
+        "tail_episode_recurrence": 14,
+        "longest_tail_episode": 25,
+        "last_episode_end_t": 979500,
+        "endpoint_1M": 0.4375
+      },
+      {
+        "seed": 45,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.374925,
+        "tail_episode_recurrence": 22,
+        "longest_tail_episode": 71,
+        "last_episode_end_t": 971400,
+        "endpoint_1M": 0.758621
+      },
+      {
+        "seed": 46,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.023395,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.421053
+      },
+      {
+        "seed": 47,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.033593,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.454545
+      }
+    ],
+    "D_split": [
+      {
+        "seed": 8,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.091782,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.368421
+      },
+      {
+        "seed": 9,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.089382,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.461538
+      },
+      {
+        "seed": 11,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.104379,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.411765
+      },
+      {
+        "seed": 12,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.619076,
+        "tail_episode_recurrence": 50,
+        "longest_tail_episode": 68,
+        "last_episode_end_t": 939000,
+        "endpoint_1M": 0.466667
+      },
+      {
+        "seed": 13,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.09778,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.636364
+      },
+      {
+        "seed": 14,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.083983,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.352941
+      },
+      {
+        "seed": 15,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.105579,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.375
+      },
+      {
+        "seed": 16,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.491302,
+        "tail_episode_recurrence": 34,
+        "longest_tail_episode": 79,
+        "last_episode_end_t": 998100,
+        "endpoint_1M": 0.8125
+      },
+      {
+        "seed": 17,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.092382,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.375
+      },
+      {
+        "seed": 18,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.095981,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.714286
+      },
+      {
+        "seed": 19,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.092981,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.461538
+      },
+      {
+        "seed": 28,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.094181,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.714286
+      },
+      {
+        "seed": 29,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.097181,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.384615
+      },
+      {
+        "seed": 30,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.090582,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.578947
+      },
+      {
+        "seed": 31,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.607079,
+        "tail_episode_recurrence": 47,
+        "longest_tail_episode": 50,
+        "last_episode_end_t": 914700,
+        "endpoint_1M": 0.6
+      },
+      {
+        "seed": 32,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.105579,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.578947
+      },
+      {
+        "seed": 33,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.107978,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.588235
+      },
+      {
+        "seed": 34,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.089982,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.5
+      },
+      {
+        "seed": 35,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.190162,
+        "tail_episode_recurrence": 8,
+        "longest_tail_episode": 40,
+        "last_episode_end_t": 953700,
+        "endpoint_1M": 0.384615
+      },
+      {
+        "seed": 37,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.088182,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.461538
+      },
+      {
+        "seed": 40,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.30114,
+        "tail_episode_recurrence": 16,
+        "longest_tail_episode": 149,
+        "last_episode_end_t": 945900,
+        "endpoint_1M": 0.666667
+      },
+      {
+        "seed": 41,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.104379,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.5625
+      },
+      {
+        "seed": 42,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.107978,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.4375
+      },
+      {
+        "seed": 43,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.095381,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.4
+      },
+      {
+        "seed": 44,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.091782,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.411765
+      },
+      {
+        "seed": 45,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.094181,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.666667
+      },
+      {
+        "seed": 46,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.089382,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.47619
+      },
+      {
+        "seed": 47,
+        "n_tail_windows": 1667,
+        "frac_above_ruler_tail": 0.105579,
+        "tail_episode_recurrence": 0,
+        "longest_tail_episode": 0,
+        "last_episode_end_t": null,
+        "endpoint_1M": 0.5625
+      }
+    ]
+  }
+}

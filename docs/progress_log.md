@@ -2181,3 +2181,56 @@ ONSET; sensitivity-without-conversion → permitting regime is the shuffled fabr
 both doses); Pin 3 → REFUTED; fabric-moves-baseline (+0.0203, §10.23) → STANDS (= why C needs its own null).
 Canon §10.24 + §10.22 REFINED pointers (ONSET-qualified); prereg §5 Pin-3-RESOLVED-REFUTED (mechanism).
 EXP13 PAUSED; loss-engineering FENCED.
+
+---
+
+## 2026-07-10 — EXP15 CLOSED: **UNDERPOWERED** (canon §10.25) — no durability claim either way; BANKED behind the mechanism campaign
+
+The powered durability gate ran end-to-end under the closure rulings (top-up per the letter, option
+i): {40–47} pre-checked at the DEPLOYED horizon (8/8 both arms at T=1M; 15k advisory 16/16, zero
+disagreements; the s10/s36 instrument finding is why the horizon moved), 16 top-up runs clean (zero
+run-time assert rejections — the deployed-horizon pre-check is deterministic against the run gate),
+n=28 primary p(D>C) = 0.096846, eligible D 9 / C 15 vs floor 12 (both cells required). No durability
+claim in either direction.
+
+Direction D>C (ruled at ratification 2026-07-10: the addendum panel's refute-default label ADOPTED,
+the provisional "suggestive" dropped — the ruled wording was provisional on the n=28 fill, and the
+fill moved the picture): WEAK UNRESOLVED LEAN, weaker than n=20 on every measure — carried by the
+same 2 of now-9 eligibles (drop D-s16/D-s31 → the mean order flips, p 0.2907), mean gap −44%
+(0.134→0.076), CLES 0.717→0.667, and the top-up increment itself mean-reversed (new-eligibles-only
+p 0.393). Not characterizable, not a prior. Futility call borne out (D gained 3 of 8; predicted E
+2.4; the audited conditional prediction was P = 0.0113 — distinct from the marginal P ≈ 0.10,
+framings named).
+
+Ratification rulings (2026-07-10, all folded into §10.25): (1) direction label = the panel's, as
+above. (2) C-45: the registered censoring rule stands as applied, the diagnostic rides — and it
+independently supports "unresolved" (the largest single mover cuts AGAINST the lean); the banked
+fork gains a PRE-PIN: any re-pose pre-registers a censoring-boundary sensitivity (T_DUR ± one
+window-block, reported-never-deciding). (3) Commit scope: both CC briefs enter the closure commit
+(docs-are-canon — §10.25 cites their rulings); Guiding-List rename and smoke scratch stay out.
+(4) The two zero-semantic cosmetic harness defects fold into the EXP16 build commit,
+cross-referenced. Fold: the 15k-advisory baseline (0/16 disagreements) is named in the re-pin as
+the rate future disagreements are read against. Fold: the 0.009273/0.008929 sensitivity delta was
+transcript-traced — 0.008929 has NO computational source (an unverified scratchpad recollection,
+= 1/112 exactly; the n=20 panel reproduced 0.009273 exactly, U=110 at 10v14; no tie convention
+yields 0.008929: inclusive-≥ 0.009273, mid-p 0.008520, strict-> 0.007768) — the fact-check gate,
+not a convention difference, was the resolution; provenance note in §10.25.
+
+Floor structurally unreachable for D at feasible n (reserve consumed) → design-seat ownership
+recorded + STANDING RULE: when an eligibility gate changes, re-derive every downstream constant
+before GO. PRE-CHECK RE-PIN standing: deployed horizon decides; 15k advisory; state the assert's
+false-alarm expectation with every rejection. Ruling-3 gate caught the arriving loose-N signature
+(phantom-shaped converters at runs 5–7, all excluded; the 8–18 census gap stays empty; raw converter
+counts carry the run≥8 discount: D 10 / C 17). C's floor flag released at n=28 but single-converter
+fragile (P=0.059 vs the 0.10 rule; P(≥17)=0.118) — C's count still carries little signal. C-45
+censoring boundary (31 windows short of T_DUR) visible: its registered exclusion currently favors
+the D-direction (diagnostic inclusion p→0.1378, against D>C); pre-declared, correctly applied, never
+reversible post-hoc.
+
+Banked fork: re-pose durability only if the mechanism campaign makes it predictable (candidate: C's
+~2× exam traffic as post-conversion erosion — EXP16-successors). Panels: wf_80ee0e95 (n=20) +
+wf_5ec81437 (n=28 addendum), both refute-default, no lens assumed D>C, every load-bearing number
+reproduced from raw records (the addendum's primary lens by brute-force enumeration of all
+C(24,9)=1,307,504 rank subsets). Records: 56 runs + 2 scores + 2 panels + substitution + pre-check +
+tail JSONs commit together on Jason's ratification. EXP13 PAUSED; loss-engineering FENCED. EXP16
+(capture-feed discrimination) STAGED behind this surface.
