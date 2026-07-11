@@ -72,6 +72,16 @@ X16_BORROW_DONOR    = "exp12_dwell"
 X16_A_BAND_PREREG   = (0.6111, 4)                  # prereg §4 stated A_dwell band; asserted vs recompute
 X16_BASELINE_A_0OF8 = 8                            # A's committed 0/8 (Fisher companion 2x2 [[k,n-k],[0,8]])
 
+# --- floor-audit signature census (AMD-13, Jason ruling 1): the DECISIVE discriminator. The EXP15
+#     phantom_floor_gate exclusion (>=0.6 x >=8) was INHERITED into EXP16's bare-N (band x 4) regime
+#     where it excludes NOTHING — the §10.25 constant-inheritance rule recurring on the AUDITING
+#     machinery (the auditor needed auditing). Fix: exclusion matched to the audit band; both nulls
+#     bracketed; a crossing is a conversion-signature iff DEEP (longest episode >= X16_SIG_DEPTH) OR
+#     RECURRING (>= X16_SIG_RECUR episodes) — else bare-N-isolated (phantom-signature). Constants
+#     RE-DERIVED from the s0-class house geometry against EXP16's own band, not inherited.
+X16_SIG_DEPTH = XA.EPISODE_MIN     # =8; "deep/long" (s0-class run length; the X15_DUR_MIN_RUN precedent)
+X16_SIG_RECUR = 2                  # "recurring" (the C/D conversion signature is 2-27 episodes)
+
 
 # --------------------------------------------------------------------------- record IO (disk)
 def _rec_path(seed: int, tag: str, arm: str = X16_ARM) -> Path:
@@ -164,36 +174,95 @@ def _score_one(rec, band: float, N: int, primary_at: int = X16_PRIMARY_AT) -> di
 
 
 def _floor_audit(verdict_recs: dict, band: float, N: int, cal_per_seed_accs: dict) -> dict:
-    """Floor-audit (§4 "floor-clean"), the [[feedback_loose_N_false_alarm]] carry as a coded gate
-    (mirrors phantom_floor_gate — EPISODE unit, contiguity-respected, upper-bound null). The null is
-    X's OWN cal between-episode pool. at_floor = P(observed-or-more | floor) > 0.10 -> NOT-CERTIFIABLE.
+    """Floor-audit (§4), REWORKED under AMD-13 (Jason ruling 1). The EXP15 phantom_floor_gate exclusion
+    (>=0.6 x >=8) had been INHERITED into EXP16's bare-N (band x N=4) regime where it excludes NOTHING —
+    the §10.25 constant-inheritance rule recurring on the auditing machinery itself. Fix:
+      * exclusion MATCHED to the audit band (band x N) — an audit whose null contains what it audits is
+        circular; BUT a self-excluded null UNDER-states fr (the EXP14 two-pass mirror: bare-N
+        self-exclusion launders phantoms into 'above-floor real'). So BOTH nulls are BRACKETED
+        (self-excluded [lower] .. contaminated >=0.6x8 [upper]); the truth lives between.
+      * the DECISIVE discriminator is the SIGNATURE CENSUS, not the floor arithmetic: an isolated bare-N
+        crossing (phantom-signature) vs a C/D conversion-signature (DEEP: longest>=X16_SIG_DEPTH, or
+        RECURRING: >=X16_SIG_RECUR episodes).
     verdict_recs: {seed: truncated record} for the READ seeds being counted."""
-    segs = XA._null_segments(cal_per_seed_accs, XA.CONV_LOW, XA.CONV_MIN)
-    n_pos = sum(max(0, len(sg) - N + 1) for sg in segs)
-    ep_lens = [L for sg in segs for L in XA._episodes_ge(sg, band, N)]
-    n_ep = len(ep_lens)
-    ep_rate = (n_ep / n_pos) if n_pos else 0.0
-    ps_ep, observed = [], []
+    def _null(excl_band, excl_N):
+        segs = XA._null_segments(cal_per_seed_accs, excl_band, excl_N)
+        n_pos = sum(max(0, len(sg) - N + 1) for sg in segs)
+        ep = [L for sg in segs for L in XA._episodes_ge(sg, band, N)]
+        rate = (len(ep) / n_pos) if n_pos else 0.0
+        ps = [1 - (1 - rate) ** max(0, len(XA._post_acq(r)) - N + 1) for r in verdict_recs.values()]
+        return dict(exclusion=f"{round(excl_band, 4)}x{excl_N}", n_null_positions=n_pos,
+                    n_null_episodes=len(ep), episode_rate=round(rate, 8),
+                    expected_phantom=round(sum(ps), 3), _ps=ps)
+    contaminated = _null(XA.CONV_LOW, XA.CONV_MIN)     # >=0.6x8 (EXP15 inherited) -> OVER-states fr
+    self_excl = _null(band, N)                         # matched to the audit band -> UNDER-states fr
+    # --- SIGNATURE CENSUS over the observed crossings (DECISIVE) ---
+    census, observed = [], []
     for s, rec in verdict_recs.items():
         vals = XA._post_acq(rec)
-        m = max(0, len(vals) - N + 1)
-        ps_ep.append(1 - (1 - ep_rate) ** m)
-        # `observed` uses _longest_episode (gap-collapsed) while the count k uses
-        # _density_conversion_onset (a run resets on a None-exam gap), so observed ⊇ density-converters
-        # — this only makes the floor MORE lenient (smaller P(X>=observed)), never manufactures a
-        # headline (WORD-SIDE is driven by k); identical to the ratified EXP15 phantom_floor_gate.
-        if XA._longest_episode(vals, band, N) > 0:
-            observed.append(s)
-    # A cell with ZERO observed crossings has no phantom to flag -> vacuously floor-clean. Else
-    # _poisson_binomial_ge(ps, 0) == 1.0 would force at_floor=True and make VISION-SIDE MASSING /
-    # DOSE-STARVATION-CONFOUNDED unreachable — the review's blocking catch; k=0 is the headline case.
-    p_ge = XA._poisson_binomial_ge(ps_ep, len(observed)) if (ps_ep and observed) else None
-    at_floor = bool(p_ge is not None and p_ge > 0.10)
-    return dict(band=round(band, 4), N=N, null="X cal between-episode (conversions+shoulders excluded)",
-                n_null_positions=n_pos, n_null_episodes=n_ep, episode_rate=round(ep_rate, 8),
-                expected_phantom_EPISODE=round(sum(ps_ep), 3), observed_converters=len(observed),
-                observed_seeds=observed, P_observed_or_more_under_floor=round(p_ge, 5) if p_ge is not None else None,
-                at_floor=at_floor, floor_clean=not at_floor)
+        le = XA._longest_episode(vals, band, N)
+        if le <= 0:
+            continue
+        observed.append(s)
+        ne = len(XA._episodes_ge(vals, band, N))
+        sig = "conversion" if (le >= X16_SIG_DEPTH or ne >= X16_SIG_RECUR) else "bare-N-isolated"
+        census.append(dict(seed=s, longest_episode=le, n_episodes=ne,
+                           max_run=XA._max_run(vals, band), signature=sig))
+    certified = [c["seed"] for c in census if c["signature"] == "conversion"]
+    P_self = XA._poisson_binomial_ge(self_excl["_ps"], len(observed)) if (self_excl["_ps"] and observed) else None
+    P_cont = XA._poisson_binomial_ge(contaminated["_ps"], len(observed)) if (contaminated["_ps"] and observed) else None
+    self_excl.pop("_ps"); contaminated.pop("_ps")
+    # formal floor_clean uses the honest (self-excluded) null so the PRIMARY reads UNDERPOWERED, not the
+    # contaminated-null artifact NOT-CERTIFIABLE — but the SIGNATURE CENSUS (certified_count) is decisive.
+    floor_clean = not bool(P_self is not None and P_self > 0.10)
+    return dict(band=round(band, 4), N=N,
+                expected_phantom_bracket=[self_excl["expected_phantom"], contaminated["expected_phantom"]],
+                self_excluded_null=self_excl, contaminated_null=contaminated,
+                P_self_excluded=round(P_self, 5) if P_self is not None else None,
+                P_contaminated=round(P_cont, 5) if P_cont is not None else None,
+                observed_converters=len(observed), observed_seeds=observed,
+                signature_census=census, certified_converters=certified, certified_count=len(certified),
+                floor_clean=floor_clean,
+                decisive=(f"SIGNATURE CENSUS (bare-N-isolated vs conversion-signature: longest>={X16_SIG_DEPTH} "
+                          f"OR recurring>={X16_SIG_RECUR}), NOT the floor arithmetic"),
+                null_caveat=("AMD-13: exclusion MATCHED to the audit band (band x N) — an audit whose null "
+                             "contains what it audits is circular. But the self-excluded null UNDER-states fr "
+                             "(EXP14 two-pass mirror: bare-N self-exclusion launders phantoms into "
+                             "'above-floor real'); the contaminated >=0.6x8 null OVER-states (leaves the "
+                             "audit-band bare-N converters IN the null). BOTH bracketed; signature decisive."))
+
+
+def _tail_of(rec, band: float, N: int, tail_from: int = X16_PRIMARY_AT) -> dict:
+    """Per-seed 1M descriptive tail (AMD-13, Jason ruling 4). Reads the FULL (untruncated) record.
+    first_converts_in_tail = the seed's FIRST density-conversion onset falls in (tail_from, 1M]."""
+    conv_full = XA._density_conversion_onset(rec, band, N)
+    tail_vals = [c["exam_acc"] for c in rec["columns"]
+                 if c["t"] > tail_from and c.get("exam_acc") is not None]
+    le_tail = XA._longest_episode(tail_vals, band, N)
+    return dict(conv_onset_full=conv_full,
+                first_converts_in_tail=bool(conv_full is not None and conv_full > tail_from),
+                tail_longest_episode=le_tail,
+                tail_signature=("conversion" if le_tail >= X16_SIG_DEPTH else ("bare-N" if le_tail > 0 else "none")))
+
+
+def _tail_read(verdict_tag: str, ext_tag: str, band: float, N: int) -> dict:
+    """1M tail (Jason ruling 4): participation measured LIVENESS, not learning RATE — X's word-loss
+    occasions are ~6x sparser by design, so consolidation could simply be SLOWER than 500k. Does any
+    seed FIRST convert in (500k, 1M] ('reward-deletion enables, slowly'), or is the tail flat
+    (VISION-SIDE lean firms)? Reads FULL records; DESCRIPTIVE, not gated."""
+    per = {}
+    for s in X16_VERDICT_SEEDS + X16_EXT_POOL:
+        p = _rec_path(s, ext_tag if s in X16_EXT_POOL else verdict_tag)
+        if p.exists():
+            per[s] = _tail_of(json.loads(p.read_text()), band, N)   # FULL, no truncate
+    n_new = sum(1 for v in per.values() if v["first_converts_in_tail"])
+    n_new_sig = sum(1 for v in per.values() if v["first_converts_in_tail"] and v["tail_signature"] == "conversion")
+    return dict(window=f"({X16_PRIMARY_AT}, 1000000]", band=round(band, 4), N=N, per_seed=per,
+                n_first_convert_in_tail=n_new, n_conversion_signature_in_tail=n_new_sig,
+                read=("FLAT — no seed first-converts in the tail; the VISION-SIDE lean firms"
+                      if n_new == 0 else
+                      f"{n_new} seed(s) first-convert in the tail ({n_new_sig} conversion-signature) — "
+                      "shifts toward 'reward-deletion enables, SLOWLY' (the sparsity confound)"))
 
 
 def _donor_band(cal_seeds=None):
@@ -377,18 +446,33 @@ def score_exp16(cal_read_tag: str = "exp16_cal_read", verdict_tag: str = "exp16v
         floor_clean=True, note="cal null unavailable — floor-audit skipped (records absent)")
     particip_status = cal["participation"]["status"]
 
-    partition = _partition(k, n_read, floor.get("floor_clean", True), particip_status, loadable)
+    partition = _partition(k, n_read, floor.get("floor_clean", True), particip_status, loadable)  # FORMAL (raw k)
+    certified = floor.get("certified_count", k)          # AMD-13 (ruling 1): signature-decisive count
+    certified_partition = _partition(certified, n_read, floor.get("floor_clean", True), particip_status, loadable)
+    # AMD-13 reverify hardening (micro-reverify EDGE-5): floor_clean is structurally always-True (the
+    # self-excluded null has rate 0), so the FORMAL (raw-k) partition has NO phantom protection — a
+    # future raw k>=5 that is all bare-N-isolated would read WORD-SIDE with routes=False while the
+    # CERTIFIED (signature-decisive) read says VISION-SIDE. When the two terminals DISAGREE, force
+    # routing to Jason (strictly conservative — only ADDS routing, never certifies phantoms; both
+    # terminals stay visible). Formal stays primary (the ruled by-the-letter read), not replaced.
+    terminals_disagree = bool(partition["terminal"] != certified_partition["terminal"])
+    routes = bool(partition["routes"] or terminals_disagree)
     fisher = XA._fisher_one_sided(k, max(0, n_read - k), 0, X16_BASELINE_A_0OF8) if n_read else None
 
     gm = cal["gradient"]["median_delta"]
     companion_2x2 = dict(
         gradient_median_delta_X=gm, referent_A=X16_GRAD_REF_A["delta"],
-        convert_status=("convert" if k > 0 else "dead"), participation=particip_status,
+        # AMD-13 (Jason ruling 2): the convert axis inherits the §4-CERTIFIED (signature-filtered) read,
+        # NEVER raw k — a companion that free-lances raw counts can contradict its own partition (which is
+        # exactly how the DRAFT nearly pointed WORD-SIDE). Raw k rides as a caveat.
+        convert_status=("convert" if certified > 0 else "dead"), certified_count=certified, raw_k_caveat=k,
+        participation=particip_status,
         rows="collapse+convert=full causal chain; collapse+dead=VISION-SIDE(if participation ALIVE) "
              "else DOSE-STARVATION-CONFOUNDED; no-collapse+convert=MECHANISM ANOMALY; "
              "no-collapse+dead=probe contradicts the drift premise — routes",
-        note="§5 companion REPORTED, not gated (instrument-sanity only). The collapse call vs the "
-             f"A referent (+{X16_GRAD_REF_A['delta']}) routes to Jason at attribution.")
+        note="§5 companion REPORTED, not gated. Convert axis = §4-certified (signature) read; raw k is a "
+             f"caveat. The collapse call vs A (+{X16_GRAD_REF_A['delta']}) routes to Jason at attribution.")
+    tail = _tail_read(verdict_tag, ext_tag, band, N)
 
     out = dict(
         exp="exp16_capture_feed", arm=X16_ARM, cal_read_tag=cal_read_tag, verdict_tag=verdict_tag,
@@ -397,10 +481,15 @@ def score_exp16(cal_read_tag: str = "exp16_cal_read", verdict_tag: str = "exp16v
         n_read=n_read, n_converted=k, converter_seeds=[s for s in res["read_seeds"]
                                                        if (base.get(s) or ext.get(s, {})).get("converted")],
         floor_audit=floor, participation=cal["participation"],
-        TERMINAL=partition["terminal"], routes_to_jason=partition["routes"], terminal_why=partition["why"],
+        TERMINAL=partition["terminal"], routes_to_jason=routes, terminal_why=partition["why"],
+        formal_vs_certified_disagree=terminals_disagree,
+        certified_read=dict(certified_count=certified, terminal=certified_partition["terminal"],
+                            why=certified_partition["why"], raw_k=k,
+                            note="AMD-13 signature-decisive HONEST read (phantom-signature crossings discounted); "
+                                 "the raw-k formal TERMINAL is above. Attribution weighs both (Jason)."),
         fisher_vs_A_0of8=dict(k=k, n=n_read, one_sided_p=round(fisher, 5) if fisher is not None else None,
                               note=f"exact Fisher [[{k},{n_read - k}],[0,8]] vs A's committed 0/8"),
-        mechanism_companion_2x2=companion_2x2,
+        mechanism_companion_2x2=companion_2x2, one_M_tail=tail,
         per_seed_base=base, per_seed_ext=ext,
         DRAFT_note="DRAFT — routes behind the §7.1 refute-default panel (no lens assumes conversion or "
                    "the recency story) before any attribution reaches Jason. A clean panel is necessary, "
@@ -409,9 +498,12 @@ def score_exp16(cal_read_tag: str = "exp16_cal_read", verdict_tag: str = "exp16v
     if write:
         (OUTDIR / f"exp14_exp16_verdict_{verdict_tag}.json").write_text(json.dumps(out, indent=2))
     print(json.dumps({k2: v for k2, v in out.items() if k2 not in ("per_seed_base", "per_seed_ext")}, indent=2))
-    print(f"\n[score_exp16] band {band}x{N} loadable={loadable}  READ {n_read}  CONVERTED {k} "
-          f"{out['converter_seeds']}  floor_clean={floor.get('floor_clean')}  participation={particip_status}"
-          f"\n  -> TERMINAL: {partition['terminal']}  ({partition['why']})  [routes={partition['routes']}]")
+    print(f"\n[score_exp16] band {band}x{N} loadable={loadable}  READ {n_read}  raw-k {k} "
+          f"{out['converter_seeds']}  CERTIFIED {certified}  floor_clean={floor.get('floor_clean')}  "
+          f"participation={particip_status}"
+          f"\n  -> FORMAL TERMINAL: {partition['terminal']}  ({partition['why']})"
+          f"\n  -> CERTIFIED (signature-decisive) read: {certified_partition['terminal']}"
+          f"\n  -> 1M tail: {tail['read']}")
     return out
 
 
@@ -552,27 +644,53 @@ def smoke() -> None:
     assert (not nf["fired"]) and 8 not in nf["read_seeds"] and 9 not in nf["read_seeds"] and nf["n_read"] == 8, f"sc-G6-ext no-fire {nf}"
     print("SMOKE sc-G6-ext: D1 substitution-first, n>=8 floor->UNDERPOWERED, extend->WORD-SIDE, no-fire excludes EXT"); ok += 1
 
-    # sc-G6-flooraudit: the REAL _floor_audit (not a literal) — the coverage gap the review flagged.
-    # (a) k=0 READ set + benign null -> floor_clean=True -> VISION-SIDE. THE positive-delta that FAILS
-    #     under the pre-fix bug (observed=[] gave _poisson_binomial_ge(ps,0)=1.0 -> NOT-CERTIFIABLE).
+    # sc-G6-flooraudit (AMD-13): dual-null BRACKET + the SIGNATURE CENSUS is decisive; the companion
+    # inherits the CERTIFIED (signature) read, never raw k.
     cal_benign = {s: [0.30] * 300 for s in range(5)}
+    # (a) k=0 -> certified 0, floor_clean -> VISION-SIDE (the k=0 headline stays reachable)
     zero_read = {s: _plant(onset=EVAL, conv_run=None, base_acc=0.30, n_cols=60) for s in range(8)}
     fa0 = _floor_audit(zero_read, B, N, cal_benign)
-    assert fa0["floor_clean"] is True and fa0["observed_converters"] == 0, f"sc-G6-flooraudit k0 {fa0}"
-    assert _partition(0, 8, fa0["floor_clean"], "ALIVE", True)["terminal"] == "VISION-SIDE MASSING", "sc-G6-flooraudit k0->VISION"
-    assert _partition(0, 8, fa0["floor_clean"], "DEAD", True)["terminal"] == "DOSE-STARVATION-CONFOUNDED", "sc-G6-flooraudit k0 DEAD"
-    # (b) phantom converters (bare-N runs) vs a crossing-rich null -> floor_clean=False (FAILS return-True no-op)
-    cal_phantom = {0: ([0.70] * 5 + [0.30] * 5) * 25}
-    phantom = {s: _plant(onset=EVAL, conv_run=(2, 5), band=B, N=N, base_acc=0.30, n_cols=60) for s in range(5)}
-    fa1 = _floor_audit(phantom, B, N, cal_phantom)
-    assert fa1["observed_converters"] == 5 and fa1["floor_clean"] is False, f"sc-G6-flooraudit phantom {fa1}"
-    assert _partition(5, 8, fa1["floor_clean"], "ALIVE", True)["terminal"] == "NOT-CERTIFIABLE", "sc-G6-flooraudit phantom->NOT-CERT"
-    # (c) strong long-episode converters vs benign null -> above floor -> WORD-SIDE
-    strong = {s: _plant(onset=EVAL, conv_run=(2, 40), band=B, N=N, base_acc=0.30, n_cols=60) for s in range(5)}
-    fa2 = _floor_audit(strong, B, N, cal_benign)
-    assert fa2["observed_converters"] == 5 and fa2["floor_clean"] is True, f"sc-G6-flooraudit strong {fa2}"
-    assert _partition(5, 8, fa2["floor_clean"], "ALIVE", True)["terminal"] == "WORD-SIDE CAPTURE", "sc-G6-flooraudit strong->WORD-SIDE"
-    print("SMOKE sc-G6-flooraudit: REAL _floor_audit — k0->clean->VISION, phantom->AT-FLOOR->NOT-CERT, strong->clean->WORD-SIDE"); ok += 1
+    assert fa0["floor_clean"] is True and fa0["observed_converters"] == 0 and fa0["certified_count"] == 0, f"sc-flooraudit k0 {fa0}"
+    assert _partition(fa0["certified_count"], 8, fa0["floor_clean"], "ALIVE", True)["terminal"] == "VISION-SIDE MASSING", "sc-flooraudit k0->VISION"
+    assert _partition(fa0["certified_count"], 8, fa0["floor_clean"], "DEAD", True)["terminal"] == "DOSE-STARVATION-CONFOUNDED", "sc-flooraudit k0 DEAD"
+    # (b) bare-N-isolated crossings (length exactly N, 1 episode) -> CERTIFIED 0. POSITIVE-DELTA (ruling 2):
+    #     the companion convert axis MUST read "dead" (certified), NOT "convert" (raw k). A no-op that
+    #     free-lances raw k says "convert" and selects the WRONG 2x2 row — this is the DRAFT's near-miss.
+    bareN = {s: _plant(onset=EVAL, conv_run=(2, N), band=B, N=N, base_acc=0.30, n_cols=60) for s in range(5)}
+    fa1 = _floor_audit(bareN, B, N, cal_benign)
+    assert fa1["observed_converters"] == 5 and fa1["certified_count"] == 0, f"sc-flooraudit bareN {fa1}"
+    assert all(c["signature"] == "bare-N-isolated" for c in fa1["signature_census"]), "sc-flooraudit bareN signature"
+    cs_raw = "convert" if 5 > 0 else "dead"; cs_cert = "convert" if fa1["certified_count"] > 0 else "dead"
+    assert cs_raw == "convert" and cs_cert == "dead", "sc-flooraudit companion inherits certified (dead) not raw k (convert)"
+    # (c) DEEP converters (length >= X16_SIG_DEPTH) -> conversion-signature -> CERTIFIED -> WORD-SIDE reachable
+    deep = {s: _plant(onset=EVAL, conv_run=(2, X16_SIG_DEPTH + 4), band=B, N=N, base_acc=0.30, n_cols=60) for s in range(5)}
+    fa2 = _floor_audit(deep, B, N, cal_benign)
+    assert fa2["certified_count"] == 5 and all(c["signature"] == "conversion" for c in fa2["signature_census"]), f"sc-flooraudit deep {fa2}"
+    assert _partition(fa2["certified_count"], 8, fa2["floor_clean"], "ALIVE", True)["terminal"] == "WORD-SIDE CAPTURE", "sc-flooraudit deep->WORD-SIDE"
+    # (d) dual-null BRACKET: self-excluded (matched band) UNDER-states < contaminated (>=0.6x8) OVER-states
+    fa3 = _floor_audit(bareN, B, N, {0: ([0.70] * 5 + [0.30] * 5) * 25})
+    br = fa3["expected_phantom_bracket"]
+    assert br[0] < br[1], f"sc-flooraudit bracket self({br[0]}) < contaminated({br[1]})"
+    print("SMOKE sc-G6-flooraudit(AMD-13): dual-null bracket + signature census decisive; bare-N->certified 0->'dead'; deep->certified->WORD-SIDE"); ok += 1
+
+    # sc-G6-tail (AMD-13): the 1M descriptive tail catches a seed FIRST-converting PAST the primary.
+    tp = _tail_of(_plant(onset=EVAL, conv_run=(2, 10), band=B, N=N, n_cols=60), B, N, tail_from=EVAL * 30)
+    tt = _tail_of(_plant(onset=EVAL, conv_run=(40, 12), band=B, N=N, n_cols=60), B, N, tail_from=EVAL * 30)
+    tf = _tail_of(_plant(onset=EVAL, conv_run=None, base_acc=0.30, n_cols=60), B, N, tail_from=EVAL * 30)
+    assert tp["first_converts_in_tail"] is False, f"sc-tail primary converter not in tail {tp}"
+    assert tt["first_converts_in_tail"] is True and tt["tail_signature"] == "conversion", f"sc-tail late converter {tt}"
+    assert tf["first_converts_in_tail"] is False and tf["tail_signature"] == "none", f"sc-tail flat {tf}"
+    print("SMOKE sc-G6-tail: 1M tail catches a seed FIRST-converting past the primary (vs primary / flat)"); ok += 1
+
+    # sc-G6-divergence (AMD-13 reverify hardening, EDGE-5): raw k>=5 all-phantom (certified 0) -> FORMAL
+    # WORD-SIDE (routes=False) while CERTIFIED -> VISION-SIDE; the disagreement MUST force routes=True.
+    # POSITIVE-DELTA: without the guard (routes=formal["routes"]) a phantom WORD-SIDE escapes review.
+    formal_ph = _partition(5, 8, True, "ALIVE", True)          # raw k=5 -> WORD-SIDE CAPTURE, routes=False
+    cert_ph = _partition(0, 8, True, "ALIVE", True)            # certified 0 -> VISION-SIDE MASSING
+    disagree = formal_ph["terminal"] != cert_ph["terminal"]
+    assert formal_ph["routes"] is False and disagree, f"sc-divergence setup {formal_ph} {cert_ph}"
+    assert (formal_ph["routes"] or disagree) is True, "sc-divergence guard must force routing on disagreement"
+    print("SMOKE sc-G6-divergence: formal/certified disagreement forces routes_to_jason=True (phantom WORD-SIDE can't escape)"); ok += 1
 
     # sc-G6-fisher: Fisher companion reproduces the prereg values vs A's 0/8
     fish = {(5, 8): 0.0128, (5, 9): 0.0204, (5, 10): 0.0294, (3, 8): 0.100, (4, 9): 0.0529, (4, 10): 0.0686}

@@ -1,0 +1,288 @@
+{
+  "exp": "exp16_capture_feed",
+  "arm": "exp12_dwell_expomid",
+  "cal_read_tag": "exp16_cal_read",
+  "verdict_tag": "exp16verdict",
+  "conv_band": 0.6111,
+  "conv_consec": 4,
+  "loadable": true,
+  "primary_at": 500000,
+  "base_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "ext_seeds": [
+    8,
+    9
+  ],
+  "ext": {
+    "fired": true,
+    "n_read": 10,
+    "k": 2,
+    "read_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "substituted": 0,
+    "extended": 2,
+    "ext_used": [
+      8,
+      9
+    ],
+    "note": "EXT fired: 0 to substitution (cover UNREAD base), 2 to count-extension"
+  },
+  "n_read": 10,
+  "n_converted": 2,
+  "converter_seeds": [
+    6,
+    7
+  ],
+  "floor_audit": {
+    "band": 0.6111,
+    "N": 4,
+    "expected_phantom_bracket": [
+      0.0,
+      4.748
+    ],
+    "self_excluded_null": {
+      "exclusion": "0.6111x4",
+      "n_null_positions": 7541,
+      "n_null_episodes": 0,
+      "episode_rate": 0.0,
+      "expected_phantom": 0.0
+    },
+    "contaminated_null": {
+      "exclusion": "0.6x8",
+      "n_null_positions": 7562,
+      "n_null_episodes": 3,
+      "episode_rate": 0.00039672,
+      "expected_phantom": 4.748
+    },
+    "P_self_excluded": 0.0,
+    "P_contaminated": 0.98398,
+    "observed_converters": 2,
+    "observed_seeds": [
+      6,
+      7
+    ],
+    "signature_census": [
+      {
+        "seed": 6,
+        "longest_episode": 4,
+        "n_episodes": 1,
+        "max_run": 4,
+        "signature": "bare-N-isolated"
+      },
+      {
+        "seed": 7,
+        "longest_episode": 4,
+        "n_episodes": 1,
+        "max_run": 4,
+        "signature": "bare-N-isolated"
+      }
+    ],
+    "certified_converters": [],
+    "certified_count": 0,
+    "floor_clean": true,
+    "decisive": "SIGNATURE CENSUS (bare-N-isolated vs conversion-signature: longest>=8 OR recurring>=2), NOT the floor arithmetic",
+    "null_caveat": "AMD-13: exclusion MATCHED to the audit band (band x N) \u2014 an audit whose null contains what it audits is circular. But the self-excluded null UNDER-states fr (EXP14 two-pass mirror: bare-N self-exclusion launders phantoms into 'above-floor real'); the contaminated >=0.6x8 null OVER-states (leaves the audit-band bare-N converters IN the null). BOTH bracketed; signature decisive."
+  },
+  "participation": {
+    "gate1_not_inert": true,
+    "per_seed_acquired": {
+      "20": true,
+      "21": true,
+      "22": true,
+      "24": true,
+      "25": true
+    },
+    "per_seed_activity": {
+      "20": 0.72957,
+      "21": 0.68424,
+      "22": 0.61468,
+      "24": 0.69849,
+      "25": 0.69616
+    },
+    "gate2_median_activity": 0.69616,
+    "bar": 0.065133,
+    "gate2_pass": true,
+    "status": "ALIVE"
+  },
+  "TERMINAL": "UNDERPOWERED",
+  "routes_to_jason": true,
+  "terminal_why": "count 2 in {1..4} after extension at READ n=10 \u2014 below the >=5 bar",
+  "formal_vs_certified_disagree": true,
+  "certified_read": {
+    "certified_count": 0,
+    "terminal": "VISION-SIDE MASSING",
+    "why": "count 0, floor-clean, READ n>=8, participation ALIVE (both gates)",
+    "raw_k": 2,
+    "note": "AMD-13 signature-decisive HONEST read (phantom-signature crossings discounted); the raw-k formal TERMINAL is above. Attribution weighs both (Jason)."
+  },
+  "fisher_vs_A_0of8": {
+    "k": 2,
+    "n": 10,
+    "one_sided_p": 0.29412,
+    "note": "exact Fisher [[2,8],[0,8]] vs A's committed 0/8"
+  },
+  "mechanism_companion_2x2": {
+    "gradient_median_delta_X": 0.0307,
+    "referent_A": 0.1416,
+    "convert_status": "dead",
+    "certified_count": 0,
+    "raw_k_caveat": 2,
+    "participation": "ALIVE",
+    "rows": "collapse+convert=full causal chain; collapse+dead=VISION-SIDE(if participation ALIVE) else DOSE-STARVATION-CONFOUNDED; no-collapse+convert=MECHANISM ANOMALY; no-collapse+dead=probe contradicts the drift premise \u2014 routes",
+    "note": "\u00a75 companion REPORTED, not gated. Convert axis = \u00a74-certified (signature) read; raw k is a caveat. The collapse call vs A (+0.1416) routes to Jason at attribution."
+  },
+  "one_M_tail": {
+    "window": "(500000, 1000000]",
+    "band": 0.6111,
+    "N": 4,
+    "per_seed": {
+      "0": {
+        "conv_onset_full": null,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "1": {
+        "conv_onset_full": null,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "2": {
+        "conv_onset_full": null,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "3": {
+        "conv_onset_full": null,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "4": {
+        "conv_onset_full": null,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "5": {
+        "conv_onset_full": null,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "6": {
+        "conv_onset_full": 318000,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "7": {
+        "conv_onset_full": 350700,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "8": {
+        "conv_onset_full": null,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      },
+      "9": {
+        "conv_onset_full": null,
+        "first_converts_in_tail": false,
+        "tail_longest_episode": 0,
+        "tail_signature": "none"
+      }
+    },
+    "n_first_convert_in_tail": 0,
+    "n_conversion_signature_in_tail": 0,
+    "read": "FLAT \u2014 no seed first-converts in the tail; the VISION-SIDE lean firms"
+  },
+  "per_seed_base": {
+    "0": {
+      "status": "READ",
+      "acquisition_onset": 26400,
+      "conversion_onset": null,
+      "converted": false
+    },
+    "1": {
+      "status": "READ",
+      "acquisition_onset": 6600,
+      "conversion_onset": null,
+      "converted": false
+    },
+    "2": {
+      "status": "READ",
+      "acquisition_onset": 5100,
+      "conversion_onset": null,
+      "converted": false
+    },
+    "3": {
+      "status": "READ",
+      "acquisition_onset": 12600,
+      "conversion_onset": null,
+      "converted": false
+    },
+    "4": {
+      "status": "READ",
+      "acquisition_onset": 4500,
+      "conversion_onset": null,
+      "converted": false
+    },
+    "5": {
+      "status": "READ",
+      "acquisition_onset": 12300,
+      "conversion_onset": null,
+      "converted": false
+    },
+    "6": {
+      "status": "READ",
+      "acquisition_onset": 8700,
+      "conversion_onset": 318000,
+      "converted": true
+    },
+    "7": {
+      "status": "READ",
+      "acquisition_onset": 10500,
+      "conversion_onset": 350700,
+      "converted": true
+    }
+  },
+  "per_seed_ext": {
+    "8": {
+      "status": "READ",
+      "acquisition_onset": 9600,
+      "conversion_onset": null,
+      "converted": false
+    },
+    "9": {
+      "status": "READ",
+      "acquisition_onset": 26400,
+      "conversion_onset": null,
+      "converted": false
+    }
+  },
+  "DRAFT_note": "DRAFT \u2014 routes behind the \u00a77.1 refute-default panel (no lens assumes conversion or the recency story) before any attribution reaches Jason. A clean panel is necessary, never sufficient.",
+  "spec_hash": "41d6f0d5e7da"
+}

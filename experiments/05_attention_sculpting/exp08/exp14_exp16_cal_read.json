@@ -1,0 +1,154 @@
+{
+  "exp": "exp16_cal_read",
+  "arm": "exp12_dwell_expomid",
+  "cal_seeds": [
+    20,
+    21,
+    22,
+    24,
+    25
+  ],
+  "primary_at": 500000,
+  "provisional_own": {
+    "band": 0.6154,
+    "N": 4,
+    "n_null": 7577
+  },
+  "liveness": {
+    "n_acquired": 5,
+    "n_cal": 5,
+    "n_min": 3,
+    "live": true
+  },
+  "cal_converters": {
+    "20": false,
+    "21": true,
+    "22": false,
+    "24": false,
+    "25": false
+  },
+  "n_cal_converters": 1,
+  "participation": {
+    "gate1_not_inert": true,
+    "per_seed_acquired": {
+      "20": true,
+      "21": true,
+      "22": true,
+      "24": true,
+      "25": true
+    },
+    "per_seed_activity": {
+      "20": 0.72957,
+      "21": 0.68424,
+      "22": 0.61468,
+      "24": 0.69849,
+      "25": 0.69616
+    },
+    "gate2_median_activity": 0.69616,
+    "bar": 0.065133,
+    "gate2_pass": true,
+    "status": "ALIVE"
+  },
+  "gradient": {
+    "per_seed": {
+      "20": {
+        "p1": 0.86517,
+        "p13_48": 0.83447,
+        "delta": 0.0307,
+        "p1_n": 1383,
+        "tail_n": 1383,
+        "tail_from_probe": true
+      },
+      "21": {
+        "p1": 0.65205,
+        "p13_48": 0.63552,
+        "delta": 0.01652,
+        "p1_n": 1650,
+        "tail_n": 1650,
+        "tail_from_probe": true
+      },
+      "22": {
+        "p1": 0.587,
+        "p13_48": 0.56424,
+        "delta": 0.02276,
+        "p1_n": 1648,
+        "tail_n": 1648,
+        "tail_from_probe": true
+      },
+      "24": {
+        "p1": 0.68543,
+        "p13_48": 0.65303,
+        "delta": 0.0324,
+        "p1_n": 1257,
+        "tail_n": 1257,
+        "tail_from_probe": true
+      },
+      "25": {
+        "p1": 0.76666,
+        "p13_48": 0.73596,
+        "delta": 0.0307,
+        "p1_n": 1639,
+        "tail_n": 1639,
+        "tail_from_probe": true
+      }
+    },
+    "median_delta": 0.0307,
+    "referent_A": {
+      "p1": 0.6915,
+      "p13_48": 0.5499,
+      "delta": 0.1416
+    },
+    "note": "cross-seed-set: X cal seeds vs A verdict-pool referent (AMD-2); REPORTED, not gated"
+  },
+  "cal_converts_branch": {
+    "kind": "CAL-CONVERTS / NOT-SHIFTED",
+    "loadable": true,
+    "band": 0.6111,
+    "N": 4,
+    "method": "BORROW A_dwell marginal (borrow-gate PASS); counts loadable",
+    "donor_band_drift": {
+      "recomputed": [
+        0.6111,
+        4
+      ],
+      "prereg": [
+        0.6111,
+        4
+      ],
+      "drift": false
+    },
+    "borrow_gate": {
+      "donor": "A_dwell",
+      "cell": "C_shuffle",
+      "donor_band": {
+        "band": 0.6111,
+        "N": 4
+      },
+      "donor_mean": 0.4899,
+      "donor_p99": 0.7083,
+      "cell_between_mean": 0.4949,
+      "cell_between_p99": 0.7097,
+      "cell_between_n": 7577,
+      "mean_shift": 0.005,
+      "fr_donorband_on_cell": 0.0004,
+      "alpha": 0.001,
+      "alpha_mult": 2.0,
+      "borrow_ok": true,
+      "decision": "BORROW \u2014 marginal order-invariant; C leaving A's marginal = genuine fabric conversion"
+    }
+  },
+  "verdict_band": {
+    "band": 0.6111,
+    "N": 4,
+    "loadable": true
+  },
+  "participation_bar": {
+    "bar": 0.065133,
+    "rho": 0.167869,
+    "anchor": 0.776,
+    "formula": "0.5 * 0.776 * rho",
+    "provenance": "corridor G2 / AMD-11 (X-blind); exp08/exp16_rho_bar.json"
+  },
+  "alpha": 0.001,
+  "spec_hash": "41d6f0d5e7da"
+}
