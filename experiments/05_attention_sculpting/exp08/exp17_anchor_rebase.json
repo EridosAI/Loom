@@ -1,0 +1,289 @@
+{
+ "ruling": "F4-A (Jason, 2026-07-12; ratification-class): anchors re-based on exp17_score.py's own outputs as the executable recipe definition; frozen digit-exact; NO tolerance anywhere \u2014 future measurer drift breaks the bind. Original forensic values retained as documented cross-check with residuals stated. Rider: an anchor is only as exact as its provenance \u2014 digit-exact binds require committed-code provenance.",
+ "recipe": {
+  "arm": "exp12_dwell",
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "build_steps": 1000000,
+  "window": 500000,
+  "conventions": "contained dwells = onset+k <= W incl. the final in-window dwell; per-dwell net/path FLOAT64; radii FLOAT32; stat3 = LOWER-median sorted[(m-1)//2] of the flattened radius pool /3.0 in f64 (method-named per F4-A); stat1 = per-frame pools over [0,n) incl. straddler frames, f64 norms, per-seed median; pooled = mean over seeds"
+ },
+ "frozen": {
+  "stat1": 0.15955481071937405,
+  "stat2": 0.07887529612359336,
+  "stat3": 0.05558072403073311,
+  "per_seed": {
+   "0": {
+    "stat1": 0.15930578005965962,
+    "stat2": 0.07904402449994596,
+    "stat3": 0.05572535594304403
+   },
+   "1": {
+    "stat1": 0.15954454430387444,
+    "stat2": 0.0788993980429001,
+    "stat3": 0.05565356214841207
+   },
+   "2": {
+    "stat1": 0.1595250687269561,
+    "stat2": 0.07905599358104744,
+    "stat3": 0.055496275424957275
+   },
+   "3": {
+    "stat1": 0.15970196880069867,
+    "stat2": 0.07810709248928294,
+    "stat3": 0.055296738942464195
+   },
+   "4": {
+    "stat1": 0.1597016545911439,
+    "stat2": 0.07920626779158792,
+    "stat3": 0.0557171106338501
+   },
+   "5": {
+    "stat1": 0.15950857728074794,
+    "stat2": 0.07836941889563542,
+    "stat3": 0.055647035439809166
+   },
+   "6": {
+    "stat1": 0.1595963519654063,
+    "stat2": 0.0788734067162985,
+    "stat3": 0.05551367998123169
+   },
+   "7": {
+    "stat1": 0.15955454002650554,
+    "stat2": 0.07944676697204861,
+    "stat3": 0.05559603373209635
+   }
+  }
+ },
+ "forensic_cross_check": {
+  "pooled": {
+   "stat1": {
+    "mine": 0.15955481071937405,
+    "forensic": 0.15955464218495066,
+    "diff": 1.6853442338926605e-07,
+    "ulp": 6072092531.0,
+    "exact": false
+   },
+   "stat2": {
+    "mine": 0.07887529612359336,
+    "forensic": 0.07887529612359337,
+    "diff": -1.3877787807814457e-17,
+    "ulp": 1.0,
+    "exact": false
+   },
+   "stat3": {
+    "mine": 0.05558072403073311,
+    "forensic": 0.05558072434117397,
+    "diff": -3.1044086051812414e-10,
+    "ulp": 44739243.0,
+    "exact": false
+   }
+  },
+  "per_seed": {
+   "0": {
+    "stat1": {
+     "mine": 0.15930578005965962,
+     "forensic": 0.15930520937099557,
+     "diff": 5.706886640477471e-07,
+     "ulp": 20561226038.0,
+     "exact": false
+    },
+    "stat2": {
+     "mine": 0.07904402449994596,
+     "forensic": 0.07904402449994595,
+     "diff": 1.3877787807814457e-17,
+     "ulp": 1.0,
+     "exact": false
+    },
+    "stat3": {
+     "mine": 0.05572535594304403,
+     "forensic": 0.05572535594304403,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    }
+   },
+   "1": {
+    "stat1": {
+     "mine": 0.15954454430387444,
+     "forensic": 0.15954408528070493,
+     "diff": 4.5902316950230393e-07,
+     "ulp": 16538052601.0,
+     "exact": false
+    },
+    "stat2": {
+     "mine": 0.0788993980429001,
+     "forensic": 0.07889939804290011,
+     "diff": -1.3877787807814457e-17,
+     "ulp": 1.0,
+     "exact": false
+    },
+    "stat3": {
+     "mine": 0.05565356214841207,
+     "forensic": 0.05565356214841207,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    }
+   },
+   "2": {
+    "stat1": {
+     "mine": 0.1595250687269561,
+     "forensic": 0.15952501366740887,
+     "diff": 5.505954722706541e-08,
+     "ulp": 1983729251.0,
+     "exact": false
+    },
+    "stat2": {
+     "mine": 0.07905599358104744,
+     "forensic": 0.07905599358104745,
+     "diff": -1.3877787807814457e-17,
+     "ulp": 1.0,
+     "exact": false
+    },
+    "stat3": {
+     "mine": 0.055496275424957275,
+     "forensic": 0.05549627790848414,
+     "diff": -2.4835268633283114e-09,
+     "ulp": 357913941.0,
+     "exact": false
+    }
+   },
+   "3": {
+    "stat1": {
+     "mine": 0.15970196880069867,
+     "forensic": 0.15970196880069867,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    },
+    "stat2": {
+     "mine": 0.07810709248928294,
+     "forensic": 0.07810709248928294,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    },
+    "stat3": {
+     "mine": 0.055296738942464195,
+     "forensic": 0.055296738942464195,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    }
+   },
+   "4": {
+    "stat1": {
+     "mine": 0.1597016545911439,
+     "forensic": 0.1597016545911439,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    },
+    "stat2": {
+     "mine": 0.07920626779158792,
+     "forensic": 0.07920626779158792,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    },
+    "stat3": {
+     "mine": 0.0557171106338501,
+     "forensic": 0.0557171106338501,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    }
+   },
+   "5": {
+    "stat1": {
+     "mine": 0.15950857728074794,
+     "forensic": 0.15950857728074794,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    },
+    "stat2": {
+     "mine": 0.07836941889563542,
+     "forensic": 0.07836941889563542,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    },
+    "stat3": {
+     "mine": 0.055647035439809166,
+     "forensic": 0.055647035439809166,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    }
+   },
+   "6": {
+    "stat1": {
+     "mine": 0.1595963519654063,
+     "forensic": 0.15959608846139978,
+     "diff": 2.63504006531301e-07,
+     "ulp": 9493732365.0,
+     "exact": false
+    },
+    "stat2": {
+     "mine": 0.0788734067162985,
+     "forensic": 0.07887340671629851,
+     "diff": -1.3877787807814457e-17,
+     "ulp": 1.0,
+     "exact": false
+    },
+    "stat3": {
+     "mine": 0.05551367998123169,
+     "forensic": 0.05551367998123169,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    }
+   },
+   "7": {
+    "stat1": {
+     "mine": 0.15955454002650554,
+     "forensic": 0.15955454002650554,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    },
+    "stat2": {
+     "mine": 0.07944676697204861,
+     "forensic": 0.0794467669720486,
+     "diff": 1.3877787807814457e-17,
+     "ulp": 1.0,
+     "exact": false
+    },
+    "stat3": {
+     "mine": 0.05559603373209635,
+     "forensic": 0.05559603373209635,
+     "diff": 0.0,
+     "ulp": 0.0,
+     "exact": true
+    }
+   }
+  },
+  "n_within": {
+   "0": 454298,
+   "1": 454374,
+   "2": 454224,
+   "3": 453939,
+   "4": 454309,
+   "5": 454359,
+   "6": 454210,
+   "7": 454209
+  },
+  "residual_classes": "stat2: summation-order (<=1 ULP all 8 seeds; 3 exact); stat3: 7/8 exact, s2 = MIDPOINT-vs-LOWER-element (mutually inconsistent with s0 on identical pools); stat1: BIT-EXACT on all four odd-n_within seeds (single-element medians \u2014 frame-set and element identity proven), even-n seeds off <=5.71e-7 at the two-middle averaging step",
+  "provenance": "original measure script untracked (design-chat side), environment reset; the history records validation 'from-scratch numpy, matched to 6 decimals' \u2014 the anchors were never ULP-validated (F4-A grounds). Design-seat catch NINE rides the amendment record."
+ }
+}

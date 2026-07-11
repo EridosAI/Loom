@@ -1,0 +1,49 @@
+{
+ "review": "EXP17 build delta (generator + scorer + smoke17) \u2014 adversarial refute-default, 4 reviewers + per-finding adversarial verification (31 agents)",
+ "date": "2026-07-11",
+ "workflow": "wf_32091e1b-071",
+ "counts": {
+  "raw": 55,
+  "confirmed_or_downgraded": 26,
+  "minors_nits": 28
+ },
+ "confirmed_fixed": [
+  "C16 BLOCKING + C1/C6/C13: ceiling floors gated on raw per-dwell/per-step maxima instead of the ratified per-seed-statistic worst -> _cell_feasible now gates tr on max-over-seeds of per-seed tr11 MEAN and per-step on max-over-seeds of per-seed MEDIAN; raw maxima demoted to reported companions (tr_dwell_max/perstep_step_max)",
+  "C5: floor audit/census failed OPEN on missing cal records at score time -> loud asserts (all cal seeds load; n_null_prefix > 0)",
+  "C2/C25: sm-G2-feas added \u2014 _cell_feasible COMPUTED on planted per-seed dicts (pooled-only-clearing rejected; per-seed-statistic ceilings; raw maxima ungated; arc + anchor_over reject)",
+  "C4/C9/C24: sm-G6-trunc added \u2014 the F13 500k-prefix positive-delta (full-record pool differs; the failing falsifier)",
+  "C10/C23: sm-G4-halts added \u2014 liveness HALT + cal-converts Ruling-B recut through the REAL cal_read path",
+  "C17: sm-G2-noop added \u2014 the omega=0 no-op falsifier on the real generator (static anchor reads tremble-like; live orbit separates)",
+  "C3/C7/C19: X17_ANCHOR_STAT1 (within-step 0.15955464218495066) pinned + asserted in anchor_assert alongside stat2/stat3 (joins the pending anchor ruling)",
+  "C12: stat1 pools corrected to the per-frame recipe over [0,n) incl. the straddler's in-window frames (within = pos>1 steps; cross = pos==1 steps, t>0; float64 norms)",
+  "C8/C14/C18: g2_verify() executor added \u2014 deterministic selection replay assert, ALL floors + zero-anchor-reflection on all 15 deployed 1M fabrics @[0,500k), writes exp17_orbit_freeze.json (frozen pair + all FOUR baselines + recipes + per-seed deployed kinematics + the W1 rider); CLI --g2-verify",
+  "C20: onset_marginal_delta() \u2014 mean per-axis W1 (quantile coupling), p=1 poses, seeds {0-7}, [0,500k); rides the freeze artifact (RB-2 rider a)",
+  "C21/C11: driven-vs-undriven per-axis extents companion \u2014 fab.orbit_planes stashed per dwell (orbit-only); measurer projects excursions onto the driven 2-plane vs complement; in the freeze artifact per-seed",
+  "C26/m1: provenance \u2014 fabric manifest gains a conditional orbit block (r, w_deg, anchor_over, pose_clips); pre-orbit manifests byte-unchanged (verified)",
+  "C22 (downgraded): orbit PROBE arms blocked from run_exp14_arm (fabric-only guard)",
+  "m7/m12/m24: SWEEP-DEAD certified-0 ASSERTED in _partition17",
+  "m9/m25: F10 gradient alarm now on the POOLED delta (per-seed median stays reported)",
+  "m15: freeze-drift guard clean-asserts on a geometry-HALT artifact (selected=null)",
+  "m16: census self-audit bar compares UNROUNDED expectations (display value separate)",
+  "m19: sm-G6-selfaudit-refuse \u2014 the F12 refusal branch through the REAL audit (2 reads, bar~2 > certified 1 -> NOT-CERTIFIABLE-by-census)",
+  "m20: exclusivity guard gains no_word; probe_rate==0 asserted for orbit arms at construction",
+  "m8/m14/m23: cal-converts recut reports ITS OWN band diagnostics (fr/alpha on the between-episode pool)",
+  "m22: EXT-fired-but-absent surfaces ext_missing + note (never a silent UNDERPOWERED)",
+  "m13: confusion population PINNED = cross-boundary (documented in the baseline recipe; surfaced at pre-flight)",
+  "m28: stale containment predicate cleaned"
+ ],
+ "documented_not_coded": [
+  "m2/m21: freeze-drift firing falsifier post-freeze (add to smoke17 when constants pin \u2014 noted for the freeze step)",
+  "m3: smoke17 coeff_std literals (cosmetic; family() read preferred)",
+  "m4: shuffled-twin rebuild sites do not forward orbit kwargs (unreachable for orbit arms \u2014 shuffled excluded by guard)",
+  "m5: SEED_PROBE_RAW+seed reaches 100000 at seed=1000 (out of any planned range; recorded)",
+  "m17: anchor_over counting starts at p=2 (p=1 phase point is in-box by construction |center|+r <= bound-3sd; recorded)",
+  "m18: sm-G2-lex degrees-vs-radians tie-break equivalence (monotonic transform \u2014 no discriminating case exists); no-tie-break stable-sort blind spot accepted (decoy covers the objective)",
+  "m26: nested borrow-diagnostic strings still carry exp14_arms' C_shuffle labels (top-level corrected; nested noted)",
+  "m27: _orbit_test_uncentered is a production-signature test hook (house precedent: monkeypatch preferred; kept for the R6 falsifier, documented)",
+  "m11: null-pool advisory referent naming (honest-null pool used at cal read; documented)"
+ ],
+ "verification": "exp17_score smoke 13/13 after all folds; full exp14 1-22 suite re-run post-fold (result appended at build commit); parity/planes/manifest/guards verified live",
+ "pending": "F4 anchor bind routes to Jason (stat2 summation-order + stat3 seed-2 midpoint irreducible from committed artifacts; script design-chat-side)",
+ "pending_resolution": "F4-A RULED (Jason, 2026-07-12; ratification-class): anchors re-based on the committed measurer as the executable recipe definition \u2014 digit-exact, no tolerance; forensic values = documented cross-check with residual table (exp08/exp17_anchor_rebase.json; prereg F4-A block). --anchor GREEN digit-exact x3; design-seat catch NINE + committed-code-provenance rider ride the amendment record."
+}

@@ -197,6 +197,8 @@ def run_exp14_arm(arm_name: str, seed: int, *, read_at: int = READ_AT, h_max: in
     assert read_at <= h_max, "read_at must be <= h_max (fabric is pre-built to h_max)"
     assert mid_ckpt_at is None or 0 < mid_ckpt_at <= read_at, \
         f"mid_ckpt_at {mid_ckpt_at} must lie in (0, read_at={read_at}]"
+    assert not X12.ARMS12.get(arm_name, {}).get("orbit_probe"), \
+        f"{arm_name} is a fabric-only G2 PROBE arm (prereg 9) - never run as an experiment"
     loop, spec, cfg = X12.build_exp12(arm_name, seed, h_max, probe_rate)   # fabric -> h_max+8
     fab = loop.stream
     # EXP16 §6: the mid-dwell probe predicate ("slot 1, NOT is_exam") equals "the mid-dwell word-coin
@@ -2351,6 +2353,92 @@ def smoke16():
         G["_assert_one"] = real_assert
     print("SMOKE16 (18): precheck class — FRESH substitutes, REUSED halts-and-audits")
     print("SMOKE16 OK (13-18)")
+    smoke17()
+
+
+def smoke17():
+    """EXP17 §9 R2/R6 (prereg 52a4d7a): the ORBITAL-anchor generator delta. Draw-parity is the
+    single-change invariant (the validity foundation of the tremble-vs-sweep contrast) — every
+    check here is a POSITIVE delta per §10.25.1: (19) fails on any non-kinematic stream drift or
+    a dead delta; (20) fails if e1/e2/phase are drawn from g_nuis OR the onset draw is skipped
+    (stream desync — the center-repurposing byte-check); (21) the zero-anchor-reflection assert
+    FIRES under the uncentered falsifier; (22) illegal flag combinations + the frozen-constants
+    guard raise; (23) post-freeze, the drift assert FIRES on a perturbed (r, omega) pin (review
+    m2/m21 — the amend-path fence proven live). Digit-identity of ALL pre-orbit arms rides
+    smoke (1)-(2) + smoke16 (13), which run before this on every --smoke invocation."""
+    torch.set_num_threads(1)
+    N17 = 12_000
+    ORB = X12.orbit_arm(0.85, 18)                       # a grid PROBE arm (selection instrument)
+    la, _, cfga = X12.build_exp12("exp12_dwell", 3, N17)
+    lo, _, cfgo = X12.build_exp12(ORB, 3, N17)
+    fa, fo = la.stream, lo.stream
+    # (19) draw-parity: 12 non-kinematic streams byte-identical; nuis DIFFERS (delta live)
+    for f in ("dwell_id", "pos", "member", "cat", "mask_slot", "is_exam", "is_probe_exam",
+              "dwell_k", "dwell_member", "bg", "a", "b"):
+        assert torch.equal(getattr(fa, f), getattr(fo, f)), f"orbit stream {f} diverged from A"
+    assert not torch.equal(fa.nuis, fo.nuis), "orbit nuis == A nuis (delta DEAD)"
+    print("SMOKE17 (19): draw-parity — 12 non-kinematic streams byte-identical to exp12_dwell; "
+          "nuis differs (delta live)")
+    # (20) center repurposing: clip(A's per-dwell g_nuis onset draw) == orbit_centers, byte-exact.
+    # FAILS if the heading/phase consume g_nuis (centers shift) or the onset draw is skipped.
+    cl = F.FAMILY_BOUND_SIG * 0.5 - 0.85 - 3 * F.STATIONARY_FRAC * 0.5
+    starts = [i for i in range(int(fa.nuis.shape[0])) if int(fo.pos[i]) == 1]
+    want = torch.stack([fa.nuis[i].clamp(-cl, cl) for i in starts])
+    n = min(want.shape[0], fo.orbit_centers.shape[0])
+    assert n > 500 and torch.equal(want[:n], fo.orbit_centers[:n]), \
+        "orbit centers != clip(A onset draws) — g_nuis stream desync"
+    assert fo.orbit_anchor_over == 0, "anchor left the box on a centered orbit"
+    print(f"SMOKE17 (20): center repurposing byte-exact over {n} dwells; anchor_over=0 "
+          f"(pose_clips={fo.orbit_pose_clips}, reported)")
+    # (21) the R6 firing falsifier: an UNCENTERED orbit must TRIP the zero-anchor assert
+    try:
+        F.build_fabric(lo.stim, cfgo, 3, 4_000, dwell_orbit=True, orbit_r=0.85, orbit_w_deg=18,
+                       _orbit_test_uncentered=True)
+        raise RuntimeError("uncentered orbit did NOT trip the zero-anchor-reflection assert")
+    except AssertionError as e:
+        assert "zero-anchor-reflection" in str(e)
+    print("SMOKE17 (21): zero-anchor-reflection assert FIRES under the uncentered falsifier "
+          "(anchor path, never the pose-clip counter)")
+    # (22) guards: illegal combos + the frozen-constants/amend-path gate
+    X12.ARMS12["_smoke17_bad"] = dict(shuffled=True, dwell_orbit=True, orbit_r=0.85,
+                                      orbit_w_deg=18)
+    try:
+        X12.build_exp12("_smoke17_bad", 0, 200)
+        raise RuntimeError("dwell_orbit x shuffled guard did not fire")
+    except AssertionError:
+        pass
+    finally:
+        X12.ARMS12.pop("_smoke17_bad", None)
+    if X12.X17_ORBIT_R is None:
+        try:
+            X12.build_exp12("exp12_dwell_orbit", 0, 200)
+            raise RuntimeError("canonical orbit arm built without frozen (r, omega)")
+        except AssertionError:
+            pass
+    print("SMOKE17 (22): exclusivity guard fires" +
+          ("; canonical arm refuses before the (r, omega)-freeze (amend-path)"
+           if X12.X17_ORBIT_R is None else
+           " (refusal branch not applicable in the pinned regime — the live fence is (23))"))
+    # (23) freeze-drift FIRING falsifier (review m2/m21): with (r, omega) PINNED, a constant
+    # that disagrees with the select artifact must fail LOUDLY at canonical-arm build; the
+    # restored constants must then build clean (the drift assert is proven live, not vacuous).
+    if X12.X17_ORBIT_R is not None:
+        _r_true = X12.X17_ORBIT_R
+        X12.X17_ORBIT_R = _r_true + 0.05
+        try:
+            X12.build_exp12("exp12_dwell_orbit", 0, 200)
+            raise RuntimeError("freeze-drift assert did NOT fire on a perturbed constant")
+        except AssertionError as e:
+            assert "drifted" in str(e), f"wrong failure class under drift: {e}"
+        finally:
+            X12.X17_ORBIT_R = _r_true
+        X12.build_exp12("exp12_dwell_orbit", 0, 200)
+        print("SMOKE17 (23): freeze-drift assert FIRES on a perturbed (r, omega) pin; "
+              "restored constants build the canonical arm clean")
+    else:
+        print("SMOKE17 (23): pre-freeze (constants None) — refusal covered by (22); the "
+              "drift falsifier arms itself at the pin")
+    print("SMOKE17 OK (19-23)")
 
 
 def _main():

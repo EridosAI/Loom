@@ -105,7 +105,28 @@ ARMS12 = {
     # per seed (loop-side flag, zero draw change); expo_word semantics UNTOUCHED (the 12bc twins'
     # pos-1 behaviour must not move). §6 delta 1.
     "exp12_dwell_expomid": dict(shuffled=False, expo_midword=True),
+    # EXP17 TREMBLE-vs-SWEEP (prereg 52a4d7a §9 R2): the ORBITAL anchor arm. Fabric-visible
+    # delta (nuis changes); every non-kinematic stream byte-identical to exp12_dwell (draw-parity
+    # smoke). The CANONICAL arm resolves (r, omega) from the frozen constants below + the G2
+    # freeze artifact (loud drift assert — the amend-path rule); grid PROBE arms are registered
+    # by orbit_arm() and are fabric-only selection instruments, never experiment arms.
+    "exp12_dwell_orbit": dict(shuffled=False, dwell_orbit=True, orbit_frozen=True),
 }
+
+# EXP17 (r, omega): FROZEN by the G2 lexicographic selection 2026-07-12 (exp17_score.py
+# select_orbit -> exp08/exp17_orbit_select.json: sole feasible r=0.85 cell, clip +/-0.275) and
+# drift-asserted against the artifact at every canonical-arm build. NEVER set these by hand —
+# the amend-path rule: a re-selection re-writes the artifact and re-pins through this comment.
+X17_ORBIT_R: float | None = 0.85
+X17_ORBIT_W_DEG: int | None = 18
+
+
+def orbit_arm(r: float, w_deg: int) -> str:
+    """Register + return a fabric-only PROBE arm for the G2 grid (never run as an experiment)."""
+    name = f"exp12_dwell_orbit_r{int(round(r * 100)):03d}w{int(w_deg):02d}"
+    ARMS12.setdefault(name, dict(shuffled=False, dwell_orbit=True, orbit_probe=True,
+                                 orbit_r=float(r), orbit_w_deg=int(w_deg)))
+    return name
 RIG1_ARMS = ("exp12_dwell", "exp12_shuffle")
 
 POS_BUCKETS = ((1, 1), (2, 2), (3, 3), (4, 6), (7, 12), (13, 48))
@@ -140,7 +161,10 @@ class EXP12Loop(A.EXP08Loop):
                               probe_rate=v.get("probe_rate", 0.0),
                               shuffled=v.get("shuffled", False),
                               uniform_mask=v.get("uniform_mask", False),
-                              word_ref=v.get("word_ref", False))
+                              word_ref=v.get("word_ref", False),
+                              dwell_orbit=v.get("dwell_orbit", False),
+                              orbit_r=v.get("orbit_r"),
+                              orbit_w_deg=v.get("orbit_w_deg"))
 
     def _make_stim(self):
         cfg = self.cfg
@@ -338,6 +362,22 @@ def grad_decomp_local(loop, no_word: bool) -> dict:
 # ------------------------------------------------------------------ the runner
 def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_RATE_STAGE1):
     spec = ARMS12[arm_name]
+    if spec.get("dwell_orbit"):
+        # EXP17 §6 guards: the orbit flag is exclusive of every other fabric/mask flag
+        assert not (spec.get("shuffled") or spec.get("uniform_mask") or spec.get("word_ref")
+                    or spec.get("expo_word") or spec.get("expo_midword")
+                    or spec.get("no_word")), \
+            "dwell_orbit is exclusive (kinematics is the ONLY change — prereg §9 R2)"
+        assert probe_rate == 0.0, "orbit arm: probe machinery N/A (probe_rate must be 0)"
+        if spec.get("orbit_frozen"):
+            assert X17_ORBIT_R is not None and X17_ORBIT_W_DEG is not None, \
+                "(r, omega) not frozen — run the G2 selection (exp17_score --select) first"
+            _sel = json.loads((OUTDIR / "exp17_orbit_select.json").read_text())["selected"]
+            assert _sel is not None, \
+                "freeze artifact records a geometry-conflict HALT (selected=null) — no frozen pair"
+            assert (float(_sel["r"]), int(_sel["w_deg"])) == (X17_ORBIT_R, X17_ORBIT_W_DEG), \
+                (f"orbit constants ({X17_ORBIT_R},{X17_ORBIT_W_DEG}) drifted from the freeze "
+                 f"artifact ({_sel['r']},{_sel['w_deg']}) — amend-path: fail loudly")
     pin = constants.PinnedConstants()
     cfg = SculptConfig(seed=seed)
     cfg.W = 1                                                 # the wave-local pin (§3)
@@ -346,7 +386,12 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
                       uniform_mask=spec.get("uniform_mask", False),
                       word_ref=spec.get("word_ref", False),
                       expo_word=spec.get("expo_word", False),
-                      expo_midword=spec.get("expo_midword", False))   # EXP16 §6 delta 1
+                      expo_midword=spec.get("expo_midword", False),   # EXP16 §6 delta 1
+                      dwell_orbit=spec.get("dwell_orbit", False),     # EXP17 §9 R2
+                      orbit_r=(X17_ORBIT_R if spec.get("orbit_frozen")
+                               else spec.get("orbit_r")),
+                      orbit_w_deg=(X17_ORBIT_W_DEG if spec.get("orbit_frozen")
+                                   else spec.get("orbit_w_deg")))
     loop = EXP12Loop(cfg, pin)
     return loop, spec, cfg
 

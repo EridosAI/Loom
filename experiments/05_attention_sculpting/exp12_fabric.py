@@ -84,6 +84,11 @@ SEED_MASK = 96000
 SEED_NOISE = 97000
 SEED_SHUFFLE = 98000
 SEED_PROBE_RAW = 99000           # EXP12Stimulus.raw() marginal draws (probes/spread only)
+SEED_SWEEP = 100000              # EXP17 orbit heading/phase (dedicated; collision-audited vs
+                                 # 61000-64199 assert-null lattices, 91000-99047 fabric keys,
+                                 # loop-side cfg.seed(+1/+2/+3), and the eval-time ephemeral
+                                 # lattices at cadence 300 — prereg §8 F14). Registered in
+                                 # `keys` CONDITIONALLY so pre-orbit manifests stay byte-identical.
 
 
 def family() -> dict:
@@ -206,7 +211,10 @@ def _reflect(x: torch.Tensor, bound: float) -> torch.Tensor:
 
 def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
                  probe_rate: float = 0.0, shuffled: bool = False,
-                 uniform_mask: bool = False, word_ref: bool = False) -> Fabric:
+                 uniform_mask: bool = False, word_ref: bool = False,
+                 dwell_orbit: bool = False, orbit_r: float | None = None,
+                 orbit_w_deg: int | None = None,
+                 _orbit_test_uncentered: bool = False) -> Fabric:
     """uniform_mask (the SPLITTING ARM, prereg §14): the mask POLICY at position-1 waves
     becomes the same 50:50 coin as mid-dwell — the scheduling structure is removed and
     NOTHING else. Draw parity is free: both per-dwell coins are always drawn; the uniform
@@ -235,11 +243,20 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
     g_bgj = torch.Generator().manual_seed(keys["bg_jit"])
     g_mask = torch.Generator().manual_seed(keys["mask"])
     g_noise = torch.Generator().manual_seed(keys["noise"])
+    g_sweep = None
+    if dwell_orbit:
+        # EXP17 §9 R2 — the ONLY consumer of SEED_SWEEP; conditional registration keeps every
+        # pre-orbit manifest's substream_keys byte-identical (house byte-unchanged standard).
+        assert orbit_r is not None and orbit_w_deg is not None, "orbit arm needs (r, omega)"
+        keys["sweep"] = SEED_SWEEP + seed
+        g_sweep = torch.Generator().manual_seed(keys["sweep"])
 
     n_members = cfg.n_A * cfg.n_B
     rows = dict(member=[], dwell_id=[], pos=[], mask_slot=[], is_exam=[],
                 is_probe=[], nuis=[])
     dwell_member, dwell_k = [], []
+    orbit_centers, orbit_anchor_over, orbit_pose_clips = [], 0, 0
+    orbit_planes = []                      # per-dwell (e1, e2) — the driven 2-plane (R5 companion)
     cap_hits = 0
     prev_m = -1
     did = 0
@@ -264,11 +281,41 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
         onset_coin = int(torch.rand((), generator=g_mask).item() < 0.5)
         # onset pose from the family marginal, clamped to the family bounds
         c = (sig * torch.randn(K_AXES, generator=g_nuis)).clamp(-bound, bound)
-        c0 = c.clone()
+        if dwell_orbit:
+            # EXP17 §9 R2 (draw-parity ARCHITECTURE, pinned): this dwell's g_nuis onset draw is
+            # REPURPOSED as the orbit-center source (clipped by the centering rule); the p=1
+            # pose becomes the deterministic phase point ON the orbit. g_nuis consumption stays
+            # exactly 1 onset + (k-1) step draws = A_dwell's, byte-for-byte.
+            cl = bound - orbit_r - 3.0 * STATIONARY_FRAC * sig
+            assert cl > 0, f"orbit_r {orbit_r} incompatible with the centering rule (clip <= 0)"
+            center = c.clone() if _orbit_test_uncentered else c.clamp(-cl, cl)
+            e1 = torch.randn(K_AXES, generator=g_sweep)
+            e1 = e1 / e1.norm()
+            e2 = torch.randn(K_AXES, generator=g_sweep)
+            e2 = e2 - (e2 @ e1) * e1
+            assert float(e2.norm()) > 1e-9, "degenerate 2-plane draw (Gram-Schmidt residual ~ 0)"
+            e2 = e2 / e2.norm()
+            phase = float(torch.rand((), generator=g_sweep)) * 2.0 * math.pi
+            w_rad = math.radians(float(orbit_w_deg))
+            orbit_centers.append(center.clone())
+            orbit_planes.append(torch.stack((e1, e2)))
+            c = center + orbit_r * (math.cos(phase) * e1 + math.sin(phase) * e2)
+            c0 = None                                   # unused in orbit mode
+        else:
+            c0 = c.clone()
         for p in range(1, k + 1):
             if p > 1:
-                c = _reflect(c + THETA * (c0 - c)
-                             + s_step * torch.randn(K_AXES, generator=g_nuis), bound)
+                if dwell_orbit:
+                    ang = phase + w_rad * (p - 1)
+                    anch = center + orbit_r * (math.cos(ang) * e1 + math.sin(ang) * e2)
+                    orbit_anchor_over += int(bool((anch.abs() > bound).any()))
+                    step = (c + THETA * (anch - c)
+                            + s_step * torch.randn(K_AXES, generator=g_nuis))
+                    orbit_pose_clips += int(bool((step.abs() > bound).any()))
+                    c = _reflect(step, bound)
+                else:
+                    c = _reflect(c + THETA * (c0 - c)
+                                 + s_step * torch.randn(K_AXES, generator=g_nuis), bound)
             if p == 1:
                 if word_ref:
                     slot, exam, probe = onset_coin, False, False   # no exams exist (§15)
@@ -317,6 +364,20 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
         dwell_member=torch.tensor(dwell_member), dwell_k=torch.tensor(dwell_k),
         cap_hits=cap_hits, truncated_last=truncated, shuffled=False, perm=None,
         substreams=keys)
+    if dwell_orbit:
+        # §9 R6: the zero-reflection assert is computed on the ANCHOR path (never the pose-clip
+        # counter — pose OU tails may clip ~1e-5/dwell, REPORTED via orbit_pose_clips); the
+        # smoke's firing falsifier drives _orbit_test_uncentered=True and must see this raise.
+        assert torch.isfinite(nuis).all(), "orbit fabric non-finite (§9 R6 finiteness assert)"
+        fab.orbit_centers = torch.stack(orbit_centers) if orbit_centers else nuis.new_zeros((0, K_AXES))
+        fab.orbit_planes = (torch.stack(orbit_planes) if orbit_planes
+                            else nuis.new_zeros((0, 2, K_AXES)))
+        fab.orbit_anchor_over = orbit_anchor_over
+        fab.orbit_pose_clips = orbit_pose_clips
+        fab.orbit_r, fab.orbit_w_deg = float(orbit_r), float(orbit_w_deg)
+        assert orbit_anchor_over == 0, (
+            f"orbit anchor left the family box {orbit_anchor_over}x — zero-anchor-reflection "
+            "assert (§9 R6; by construction |center|inf + r <= bound - 3*stat_sd)")
     if shuffled:
         perm = torch.randperm(T, generator=torch.Generator().manual_seed(keys["shuffle"]))
         for f in ("a", "b", "member", "cat", "dwell_id", "pos", "mask_slot",
@@ -499,6 +560,10 @@ def fabric_manifest(fab: Fabric, stim: EXP12Stimulus, cfg, asserts: dict) -> dic
                           mid_vis=int(((~fab.is_exam) & mid & (fab.mask_slot == 0)).sum()),
                           mid_word=int(((~fab.is_exam) & mid & (fab.mask_slot == 1)).sum())),
             shuffled=fab.shuffled,
-            substream_keys=fab.substreams),
+            substream_keys=fab.substreams,
+            **({"orbit": dict(r=fab.orbit_r, w_deg=fab.orbit_w_deg,
+                              anchor_over=int(fab.orbit_anchor_over),
+                              pose_clips=int(fab.orbit_pose_clips))}
+               if hasattr(fab, "orbit_anchor_over") else {})),
         independence_asserts=asserts,
     )
