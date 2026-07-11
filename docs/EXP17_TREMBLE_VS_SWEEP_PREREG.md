@@ -1,6 +1,6 @@
 # EXP17 — TREMBLE vs SWEEP (ANCHORED-DRIFT DWELL) — PRE-REGISTRATION
 
-**Status: RATIFIED (Jason, 2026-07-11 — touch 1 of 3, via the CC execution-plan review + THREE refute-default panels + the RB-1/RB-2 rulings). Ratification folds F1–F14 in §8; §9 carries the ORBIT RE-POSE (R1–R7) with the orbit-panel folds and the RB-1/RB-2 rulings marked in place. One substantive census correction: F7 DEPTH-decisive. The live arm is `exp12_dwell_orbit` (§9); §1's `exp12_dwell_sweep` and F4's v-grid are superseded. Selection = lexicographic (RB-2). Sequence: confirmation panel on the ruled folds → ratification commit (prereg + forensic pair + panel records + the three sims + the rulings relay) → build → corridor per CORRIDOR_PROTOCOL.md with the gate-executor audit at pre-flight. Nothing builds or runs before the panel and the commit.**
+**Status: RATIFIED (Jason, 2026-07-11 — touch 1 of 3, via the CC execution-plan review + THREE refute-default panels + the RB-1/RB-2 rulings). Ratification folds F1–F14 in §8; §9 carries the ORBIT RE-POSE (R1–R7) with the orbit-panel folds and the RB-1/RB-2 rulings marked in place. One substantive census correction: F7 DEPTH-decisive. The live arm is `exp12_dwell_orbit` (§9); §1's `exp12_dwell_sweep` and F4's v-grid are superseded. Selection = lexicographic (RB-2). Sequence: confirmation panel on the ruled folds → ratification commit (prereg + forensic pair + panel records + the three sims + the rulings relay) → build → corridor per CORRIDOR_PROTOCOL.md with the gate-executor audit at pre-flight. Nothing builds or runs before the panel and the commit. **F4-A AMENDED (Jason, 2026-07-12, ratification-class): the F4/R4 digit-exact anchor-assert FIRED at build — anchors RE-BASED on the committed measurer's own outputs as the executable recipe definition; forensic values = documented cross-check with residuals (block after RB-1/RB-2). Design-seat catch count: NINE.**
 
 **Lineage.** EXP14: fabric gates conversion onset (order-only permutation ⇒ pure gradient-ordering effect). EXP16: the word-side shortcut is reward-caused but is NOT the gate — drift deleted, content still unlearned over 1M (§10.26); certified VISION-SIDE MASSING. The dwell-kinematics forensic (rides with this commit) quantified the vision-side regime: **a dwell is ~11 near-duplicate views trembling around one point — per-step novelty 12% of a random look, net/path collapsing to 0.079 at k≥13, visiting 5.6% of the per-axis pose range.** Shuffling delivers two properties at once: per-frame novelty AND identity-interleaving. EXP16 killed the shortcut account; **EXP17 separates the remaining two: does conversion require interleaving, or does per-frame novelty within a persistent identity suffice?**
 
@@ -122,7 +122,10 @@ CORRIDOR_PROTOCOL.md governs. Pre-flight (touch 2): gate-executor table, frozen 
     mean over seeds of per-seed **pooled MEDIAN** over contained-dwell×axis per-axis excursion
     fractions (/3.0) = 0.05558072434117397 — at the forensic recipe windows (BUILD_T=1,000,008,
     measure [0,500k), seeds {0–7}). **The measurer code rides the build commit** so "digit-exact" is
-    executable, not prose (resolves the underdetermined-estimator judgment item).
+    executable, not prose (resolves the underdetermined-estimator judgment item). **[→ F4-A
+    (2026-07-12): the assert FIRED at build as designed; anchors RE-BASED on the committed
+    measurer's own outputs — these forensic values become the documented cross-check with
+    residuals stated; see the F4-A block after RB-1/RB-2.]**
   - v lives in the ARMS12 entry (`sweep_v=X17_SWEEP_V`), loud-fail drift assert vs
     `exp08/exp17_vselect.json`; `exp08/exp17_vfreeze.json` appended at G2.
 - **F5 — §4 partition, formal/certified mapping (pins the SWEEP-DEAD trigger).** Precedence =
@@ -319,7 +322,8 @@ This section re-poses the arm to an orbital anchor that fits the box with zero r
   presupposes the self-audit cleared); the formal/certified divergence guard extends to force routing
   on a census-vs-count terminal split. **F11 correspondence window = a hard selection floor** (R3
   floor 3), out-of-window → HALT (its "must sit strictly inside" is a floor, not a report; the stat1
-  reference — within-step 0.1596 — gets the same measurer digit-exact anchor-assert as stat2/stat3).
+  reference — within-step 0.1596 — gets the same measurer digit-exact anchor-assert as stat2/stat3
+  **[→ F4-A: re-based with stat2/stat3]**).
   **F14's 6,532 null-pool floor = cross-regime ADVISORY tripwire only** (routes to a human, never
   gates/certifies; the regime-native α-uncuttable fallback is the sole decisive HALT-equivalent — §0
   "nothing transports" exemption made explicit). Minors: forensic correction pointer §F14→**§F1**;
@@ -387,6 +391,55 @@ tie-break min r·ω) on the pinned grid r∈[0.85,1.10]×0.05, ω∈[12°,22°]�
 riders: onset-marginal delta = required touch-2 read; interior-concentration control pre-named on
 SWEEP-CONVERTS (§4, marked). Expected landing ≈ (0.85, 18°); the real generator's (r,ω)-freeze
 decides whether the Pareto survives contact.
+
+**F4-A RULED (Jason, 2026-07-12; ratification-class) — anchor provenance re-base.** The F4/R4
+digit-exact anchor-assert FIRED at build G2, as designed; NO tolerance was minted at any point (the
+amend-path rule held). Archaeology from committed artifacts recovered the recipe to **10/16
+per-seed stat2/stat3 values digit-exact** (contained-dwell set = onset+k ≤ W including the final
+in-window dwell; per-dwell net/path FLOAT64; radii FLOAT32; **stat3 = LOWER-median**, found
+element-exact at rank 91,401/182,804 on seed 0; **stat1 = per-frame pools including straddler
+frames**). The residuals are characterized as **non-recipe-class**: stat2 within 1 ULP on all 8
+seeds (3 exact, 5 off by exactly ±1 ULP — stored values scatter around the correctly-rounded means;
+summation-order class); stat3 exact on 7/8 (seed 2's stored value = the MIDPOINT of its two middle
+elements where seed 0's is the LOWER element, on pools verified float32-identical — **mutually
+inconsistent median conventions inside the stored artifact itself**); stat1 (joined to the ruling
+at build) **bit-exact on all four odd-count seeds** — single-element medians, proving frame-set and
+element identity through 454k-frame pools — with the four even-count seeds off ≤5.71e-7 at exactly
+the two-middle averaging step (stored-norm-precision class; the "6 decimals" provenance made
+visible). **Every residual localizes to an averaging or summation step of the unported script; none
+to element selection, frame membership, or dwell containment.** Jason's design-chat search (the side of the fence
+only that seat can see): the original measure script is NOT in the history — it lived untracked,
+scratchpad-class, in an environment since reset; what the history does contain is decisive
+differently — **the original validation pass was "from-scratch numpy, matched to 6 decimals." The
+anchors were never provenance-validated at ULP precision; the digit-exact bind as ratified demanded
+exactness the anchors never had.** Option 1 (recover the script) is therefore dead twice over:
+*unrecoverable* (committed artifacts exhausted by CC, chat history exhausted by Jason) and
+*structurally incapable even if recovered* (no single reduction order reproduces both s0 and s2's
+stat3; recovery could only pick a side — the amendment wearing Option 1's name). The bind's
+discriminative work is already done and banked — it caught real recipe divergence (the
+lower-median; per-frame stat1), archaeology closed 10/16 exact, and the residuals are
+characterized. What remains for F4 is the freeze function, which attaches to the committed,
+reviewed, smoke-tested measurer. **The amendment:**
+
+1. **Anchors re-base on `exp17_score.py` outputs** (`measure_kinematics` → `anchor_assert`) **as
+   the executable recipe definition**, frozen digit-exact into the anchor artifact
+   `exp08/exp17_anchor_rebase.json`. **No tolerance anywhere; future measurer drift breaks the
+   bind.**
+2. **Original forensic values retained as documented cross-check with residuals stated** (10/16
+   per-seed exact; stat2 ≤1 ULP all seeds; stat3 one median element, the stored-value inconsistency
+   named as the cause), and the measurer's convention pinned **by name** per the
+   method-named-figures rule: **lower-median = sorted[(m−1)//2]** of the flattened float32 radius
+   pool, /3.0 in float64.
+3. **Gate-change→re-derive fires:** the floor RATIOS stand as ratified (≥4×, ≥2.5×, ≤0.50
+   ceiling); the baseline references are re-measured by the committed measurer under the re-based
+   definition **before `--select` runs** — the selector consumes the re-measured values, never the
+   chat literals (the 0.145/0.096 class). Expected movement ≤1 ULP / one element — **expected, not
+   assumed**; measured movement reported at pre-flight.
+4. **Incident logged as design-seat catch NINE**, same species as its predecessors: in-session
+   numbers insufficiently externalized (untracked script; 6-decimal provenance under a digit-exact
+   bind; internal convention inconsistency). Report-don't-patch — it rides this amendment record.
+   **Standing rule (rider): an anchor is only as exact as its provenance — digit-exact binds
+   require committed-code provenance.**
 
 ---
 

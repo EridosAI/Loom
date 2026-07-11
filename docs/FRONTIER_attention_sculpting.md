@@ -2582,7 +2582,7 @@ Two measured effects, both named, both cal-grade: **(1)** shuffled fabric **move
 
 **BANKED (queue behind this verdict):** the **dose-matched discriminator arm** (dead-cell trigger — X's word-target *rate* at mid-dwell recency-satisfiable *placement*, separating dose from placement) and **Fork-next: scene-massing dose-response via dwell-length titration** (the natural next probe of the VISION-SIDE mechanism).
 
-## §10.27 — EXP17 TREMBLE vs SWEEP: **POSED** — straight-line sweep INFEASIBLE in the family box (ratified finding, R1) → ORBIT RE-POSE; **pre-commit status; RB-1/RB-2 RULED same day (amendment in-section)** (2026-07-11)
+## §10.27 — EXP17 TREMBLE vs SWEEP: **POSED** — straight-line sweep INFEASIBLE in the family box (ratified finding, R1) → ORBIT RE-POSE; **pre-commit status; RB-1/RB-2 RULED same day (amendment in-section); F4-A anchor re-base RULED 2026-07-12 (amendment in-section)** (2026-07-11)
 
 **Status marker: this section records ratified PRE-COMMIT findings, not a verdict. No fabric has
 run; RB-1/RB-2 were ruled 2026-07-11 (amendment below closes the OPEN block). It commits with the
@@ -2649,3 +2649,26 @@ sketch, the teleportation sentence; CC seat: propagating 0.096 unverified, the s
 every correction is marked in the prereg §8/§9, and the three sims ride the commit as the
 divergence-and-resolution exhibit. Next: confirmation panel → ratification commit → build →
 corridor.
+
+**F4-A RULED (Jason, 2026-07-12; ratification-class — anchor provenance re-base; marked amendment
+in the prereg after RB-1/RB-2).** The build landed post-ratification (draw-parity generator delta +
+measurer/selector/guarded scorer; 26 adversarial-review findings folded; full suite green), and at
+build G2 the F4/R4 digit-exact anchor-assert **FIRED as designed** — no tolerance was minted at any
+point. Archaeology from committed artifacts recovered the recipe (contained-dwell set; f64
+net/path; f32 radii; **stat3 = LOWER-median**; **stat1 = per-frame pools incl. straddler**): 10/16
+per-seed stat2/stat3 values digit-exact; stat1 **bit-exact on all four odd-count seeds**
+(single-element medians — frame-set and element identity proven); every residual localizes to an
+averaging or summation step of the unported design-chat script. The chat history records that
+script's validation as "from-scratch numpy, matched to 6 decimals" — **the anchors were never
+ULP-validated; the digit-exact bind as ratified demanded exactness the anchors never had.** Option
+1 (recover the script) was dead twice over: unrecoverable (untracked, environment reset) and
+structurally incapable (s0/s2 embed mutually inconsistent median conventions on identical pools —
+recovery could only pick a side). Amendment: anchors **RE-BASE on the committed measurer's own
+outputs as the executable recipe definition** (frozen digit-exact in
+`exp08/exp17_anchor_rebase.json`; no tolerance; future measurer drift breaks the bind); forensic
+values = documented cross-check with residuals stated; the floor RATIOS stand and the baselines are
+re-measured by the committed measurer before selection runs. Incident = **design-seat catch NINE**
+(in-session numbers insufficiently externalized), with the standing rider: **an anchor is only as
+exact as its provenance — digit-exact binds require committed-code provenance.** Next: lexicographic
+(r,ω) selection → pin+freeze → G2 deployed-1M verification → build commit → G1a/G1b → pre-flight
+(touch 2).

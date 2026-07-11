@@ -2329,3 +2329,36 @@ at clip ±0.275** = Jason's expected landing; the real generator's (r,ω)-freeze
 Both rulings folded as marked amendments (§9 R3, §4 rider, §10.27 amendment); catch ledger
 committed at EIGHT (rider in the rulings relay). Next: confirmation panel → ratification commit
 (prereg + forensic pair + panel records + three sims + rulings relay + doc updates) → build.
+
+## 2026-07-12 — EXP17 F4-A RULED (anchor provenance re-base) → (r,ω) FROZEN (0.85, 18°); G2 CLOSED; build committed
+
+The post-ratification build (orbital generator delta with draw-parity proven both directions +
+`exp17_score.py` measurer/selector/guarded scorer; 26 adversarial-review findings folded, 23
+code-fixed + 9 documented) tripped the F4/R4 digit-exact anchor-assert at G2 **as designed** — no
+tolerance minted; the HALT routed to Jason with the archaeology: recipe recovered from committed
+artifacts (contained-dwell set incl. the final in-window dwell; f64 net/path; f32 radii; **stat3 =
+LOWER-median**, element-exact at rank 91,401/182,804 on s0; **stat1 = per-frame pools incl.
+straddler**). Residual table (mechanical, in `exp08/exp17_anchor_rebase.json`): stat2 ≤1 ULP on all
+8 seeds (3 exact); stat3 7/8 exact (s2 stored = MIDPOINT where s0 = LOWER element on identical
+pools — the stored artifact is internally inconsistent); stat1 **bit-exact on all four odd-count
+seeds** (single-element medians), even-count seeds off ≤5.7e-7 at the two-middle averaging step.
+Jason's chat search: the original script is unrecoverable (untracked, environment reset) and was
+validated "from-scratch numpy, matched to 6 decimals" — **the anchors were never ULP-validated; the
+bind as ratified demanded exactness the anchors never had**. F4-A (ratification-class, marked in
+the prereg): anchors **re-base on the committed measurer as the executable recipe definition**
+(frozen digit-exact; future drift breaks the bind); forensic values = documented cross-check; floor
+RATIOS stand, baselines re-measured by the committed measurer before selection; **design-seat catch
+NINE** + standing rider: *an anchor is only as exact as its provenance — digit-exact binds require
+committed-code provenance*. `--anchor` GREEN digit-exact ×3.
+
+Selection (lexicographic RB-2; measured baselines np11 0.14399 / tr11 0.09060 @100k): **(r,ω) =
+(0.85, 18°) at clip ±0.275 — the sim's expected landing, real-generator-confirmed**; 24/36 cells
+feasible; (0.85,18°) the sole feasible r=0.85 cell (ω≤16 fails the traverse floor, ω≥20 fails
+net/path — the predicted Pareto shape). Pinned in `exp12_arms` with the drift assert proven live
+(smoke17 (23): FIRES on a perturbed pin, clean on restore). **G2 VERIFY CLOSED**: deterministic
+replay == the frozen pair; all three floors + zero-anchor-reflection on ALL 15 deployed 1M fabrics
+at [0,500k) — np11 0.5853–0.5889 vs the 4× bar 0.5796 (baselines_1M np11 0.14489; sim said
+0.1448), tr11 0.2373–0.2391, pose_clips 0 across 15×1M, driven/undriven extents ≈0.31/0.075;
+onset-marginal W1 = 0.0228 (the REQUIRED touch-2 read; reported trade, never a fence). Full suite
+1–23 + scorer 13/13 green. Next: G1a (REUSED A {0–7} halt-and-audit) → G1b (FRESH 15 @1M, subst
+{10–19}) → pre-flight package (a)–(e) → **HARD STOP touch 2**.
