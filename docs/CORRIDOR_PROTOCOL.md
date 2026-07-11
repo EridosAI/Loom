@@ -1,0 +1,111 @@
+# CORRIDOR PROTOCOL — standing execution practice
+
+**Status:** STANDING. · **Authority:** Jason (design chat, 2026-07-11), ratified as canon practice at the
+opening of the EXP16 corridor. · **First instance:** EXP16 capture-feed discrimination
+(`docs/EXP16_CORRIDOR_BRIEF.md` = the EXP16 gate table, halt fences, and envelopes as instantiated).
+
+This document is the **experiment-agnostic form**. A corridor brief instantiates it per experiment by
+filling the gate table, the halt list, and the envelope/constant set — nothing in the mechanics below
+is experiment-specific.
+
+---
+
+## The one principle
+
+**Pre-named decisions execute; judgment halts.** Every gate carries its condition and its action,
+both written *before its data exists*. If the honest next sentence is "I recommend…", that is a HALT
+by definition — surface and stop. **Repeat-compute is authorized; improvisation is not.**
+
+## The standing cadence — three human touches per experiment
+
+1. **Ratify the design** — the prereg, its outcome cells, its routes (the existing design gate).
+2. **Read the pre-flight** — one package, one sitting, *before* the terminal opens (§ Pre-flight below).
+3. **Rule on the verified result** — attribution + canon, the only decision the corridor can never contain.
+
+Everything between touch 2 and touch 3 is **corridor**: pre-named conditions, halt fences, append-only
+commits, auto-push, terminal verification. A clean corridor is **necessary, never sufficient**.
+
+## The gate table (form)
+
+A corridor is a linear sequence of gates. Each gate is a row:
+
+| field | meaning |
+|---|---|
+| **Gate** | the check being run |
+| **Pre-named condition** | the pass/fail test, fixed before the gate's data exists |
+| **Pass action** | what executes automatically on pass (proceed / launch next / record) |
+| **Fail action** | the pre-named response — either a **named recovery** (e.g. substitute-from-pool, record) or **HALT** |
+
+Every fail action is either a *named, mechanical recovery* or a *halt*. A gate with a fail mode that
+routes to neither is not corridor-ready — it must be resolved at design or pre-flight, never in-corridor.
+
+**Auto-push at every closed gate.** Commits are append-only; committed records are never regenerated.
+
+## Halt fences (the exhaustive list is written per instance; the standing members)
+
+Halt = **stop, surface, wait**. Standing fences present in every corridor:
+
+- any **REUSED-class** pre-check failure (a committed same-conditions assert now diverging = instrument
+  regression, deterministic replay — never substitute);
+- any run-time fabric-assert / smoke / spec-hash / parity / checkpoint / contract failure;
+- any measured value **outside its pre-named envelope**;
+- any outcome landing in **no named route**;
+- a verification/refute panel returning a **MUST-FIX or judgment-class** finding;
+- a **contradiction discovered between two rules**;
+- **substitution-pool exhaustion**;
+- anything for which the honest next sentence is "I recommend…";
+- **anything not covered by a written rule.**
+
+## Envelopes & constants
+
+Every constant, definition, route, and envelope is **fixed before its data exists**. A value that lands
+inside its envelope is *recorded and the corridor continues*; a value outside it *halts*. No constant,
+definition, or route may be modified in-corridor **for any reason**.
+
+## Conduct in the corridor
+
+- **Report-don't-patch.** A surprising-but-in-envelope value is recorded and the corridor continues; an
+  out-of-envelope value halts. Surfacing replaces fixing.
+- **Mechanical folds only.** A typo-class change, cited, with record, is permitted. Anything touching a
+  **number, a route, or a definition is judgment-class** → halt.
+- **Canon amendments route to ratification, always.** Writing code for an already-ratified route is
+  mechanical and may be corridor-prep. But amending a *committed document* — a prereg's build scope, an
+  outcome route, a constant — is a canon change even when the code it enables is uncontroversial. The
+  code being uncontroversial does not make the scope change silently yours: surface it, route it to
+  ratification, then build. (EXP16 AMD-12 is the standing instance — the scorer code was uncontroversial;
+  adding it to the committed prereg's build scope was not.)
+- **The wrong-reason taxonomy applies to the corridor itself.** A gate passed for an *unverifiable*
+  reason is a halt, not a pass. (E.g. an invariance-only smoke that would also pass a dead no-op does not
+  certify the delta — a positive-delta assert that fails under the no-op is required.)
+
+## The pre-flight package (touch 2)
+
+Assembled once, read once, before the terminal opens. Contents:
+
+- **(a)** the verbatim texts of every operational definition the corridor will apply *where it bites*
+  (the gate wordings, probe/field choices, outcome-row wordings) — read now, not reconstructed later;
+- **(b)** every constant fixed at this gate — **formula, measured inputs, resulting value, and its
+  provenance statement** (for a blinded constant: the statement that it was fixed before the treatment
+  data existed, and how);
+- **(c)** the pre-check outcome, with any substitutions and their rule citations;
+- **(d)** the gate table + halt list + envelopes for this instance;
+- **(e)** this protocol (or its instance brief).
+
+**Mandatory gate-executor audit (added after the EXP16 corridor was found code-incomplete at open — the AMD-12 instance).** Every gate row in (d) MUST name its **executing function** and its **positive-delta smoke ID**. A gate whose executor does not yet exist — or exists without a smoke-tested positive-delta assert — is a **pre-flight blocker**: the corridor does not open. This is the generalized fix for the motivating failure — EXP16's §4-partition scorer and its cal-read gates were never built (the prereg's build scope enumerated only the arm flag + the probe), and the gap survived five review layers because each verified *what exists against its spec*, never *the gate table against its executors*. It was exposed only when writing the gate table made "executable by what?" a checkable question. A corridor cannot open with an unexecutable gate.
+
+**On ratification of the package:** commit the protocol + the constant record + the pre-flight surface,
+push, and the corridor OPENS. From that moment the next human touch is the terminal surface — unless a
+fence trips.
+
+## The terminal surface (touch 3)
+
+One package: the DRAFT result + the verification/refute panel record + the **full gate log** (every gate,
+its condition, its measured outcome, its action) + companions + sensitivities + any flags riding
+(not-certifiable, borrow-branch, participation route) + the bare-N census. It routes **first** to an
+independent **terminal verification pass** (re-derived from pushed artifacts, at full review depth),
+**then** to the human for **attribution + canon** — the one decision the corridor never contains.
+
+---
+
+**Invariant.** A clean corridor is necessary, never sufficient. Pre-named conditions, halt fences, and
+append-only auto-pushed commits carry the mechanical work; **attribution and canon remain human.**
