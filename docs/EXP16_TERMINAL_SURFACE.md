@@ -68,3 +68,22 @@ attribution call.
 pre-check records, prereg AMD-13, canon §10.25.3, this surface). Then: **design-chat terminal
 verification** (independent, EXP14-depth, re-derived from the pushed artifacts) → **Jason: attribution
 + canon.**
+
+---
+
+## RESOLVED (2026-07-11)
+
+**Verification pass: PASS.** Every load-bearing number reproduced from the pushed artifacts under an
+independent detector (converters {6,7} bare-N, all other seeds zero episodes, budgets clear, Fisher
+0.2941, the bracket, the flat 1M tail; `spec_hash 41d6f0d5e7da` across all 15 X records — identical to
+EXP14/15, one code path across three experiments). Two method-naming corrections folded into canon
+(AMD-2 class, conclusion-neutral): the participation 0.696 is **median-of-per-seed** (not pooled-windows
+= 0.682); the gradient carries both the cal-stage-median 0.031 and the verdict-pooled-mean 0.0247, both
+« +0.1416. One texture fact recorded not attributed: X acquires faster/tighter than A (onsets 4.5k–26.4k
+vs 14k–300k).
+
+**Attribution ratified → canon [§10.26](FRONTIER_attention_sculpting.md).** Formal terminal UNDERPOWERED
+by the letter; certified read **VISION-SIDE MASSING**. The experiment's yield = two mechanism
+coordinates: (1) the recency drift is reward-caused, not exposure-caused; (2) the shortcut is not the
+gate. Banked: the dose-matched discriminator arm + Fork-next (scene-massing dose-response). **EXP16
+closed.**
