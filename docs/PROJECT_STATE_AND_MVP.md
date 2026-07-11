@@ -1137,3 +1137,41 @@ Building the Stage-1 attention-sculpting rig (`STAGE1_ATTENTION_SCULPTING_RIG_SP
   trigger (candidate: C's ~2× exam-traffic erosion — EXP16-successors). Panels wf_80ee0e95 (n=20) +
   wf_5ec81437 (n=28 addendum) reproduced every number from raw records. EXP13 PAUSED;
   loss-engineering FENCED.]**
+
+- **[2026-07-11 — EXP16 CAPTURE-FEED: NO WORD-SIDE CAPTURE — VISION-SIDE lean (canon §10.26).**
+  Deleting the mid-dwell word-target loss (word visibility held 100%) did NOT free content
+  conversion: formal terminal UNDERPOWERED by the letter (raw k=2/10 bare-N, Fisher vs A 0/8
+  p=0.2941 NS); certified signature-decisive read VISION-SIDE MASSING (both crossings
+  bare-N-isolated → 0 real). Two mechanism coordinates ratified as the yield: (1) the recency
+  drift is REWARD-caused, not exposure-caused (gradient collapses 0.025/0.031 vs A's +0.1416 at
+  full visibility); (2) the shortcut is NOT the gate (content unlearned across a doubled horizon;
+  1M tail FLAT — sparsity confound EXCLUDED, not caveated). Participation decisively alive
+  (0.696 = 10.7× the X-blind bar). First CORRIDOR execution (three human touches, G1–G8
+  unattended); the corridor audited itself twice — the gate-executor audit caught an unbuilt
+  scorer (AMD-12), the G7 refute-default panel caught the floor-audit inheriting EXP15 constants
+  into a bare-N regime (AMD-13 → canon §10.25.3: audit constants re-derived per-experiment;
+  signature census decisive; borrow-imports-N). spec_hash 41d6f0d5e7da spans EXP14/15/16 — one
+  code path, three experiments. Texture (recorded, not attributed): X acquires faster/tighter
+  than A (onsets 4.5–26.4k vs 14.4–300.3k). BANKED: dose-matched discriminator arm; scene-massing
+  dose-response via dwell-length titration.]**
+
+- **[2026-07-11 — EXP17 TREMBLE vs SWEEP: POSED (pre-commit; canon §10.27); straight-line sweep
+  INFEASIBLE in the family box (ratified finding R1) → ORBITAL re-pose; two rulings open.**
+  The EXP16 fork made testable: does conversion need identity-INTERLEAVING, or does per-frame
+  NOVELTY within a persistent identity suffice? A directed LINEAR anchor sweep proved jointly
+  infeasible with wide coverage in the ±1.5 box at mean dwell 11 (billiard reflection pinned from
+  the prereg's own words; both faithful sims agree; walls turn fast lines into oscillations) —
+  the HALT was accepted as a finding, and the arm re-posed to a per-dwell ORBITAL anchor
+  (`exp12_dwell_orbit`: random 2-plane, radius r, angular speed ω, clipped center → zero anchor
+  reflections by construction; draw-parity byte-identical to A on every non-kinematic stream).
+  Selection is contrast-form (≥4× / ≥2.5× the MEASURED tremble baselines — absolute sim-derived
+  targets retired after two validated sims diverged; the real generator adjudicates at G2).
+  Census hardened vs EXP16: DEPTH-decisive certification + a census self-audit (observed
+  certified must exceed the dual-null ≥SIG_DEPTH expectation bracket). Three refute-default
+  panels ran pre-commit; both seats caught and owned errors; feasibility of the orbital region
+  verified by sim (r∈[0.85,1.10], ω∈[12°,22°]). **[Ruled amendment, same day: RB-1/RB-2 RULED
+  2026-07-11 — traverse floor re-grounded on measured physics (the "teleportation-only" sentence
+  retired, the eighth design-seat catch); selection = LEXICOGRAPHIC on the pinned grid (feasible
+  all floors → max clip half-width → tie-break min r·ω); riders: onset-marginal delta = required
+  touch-2 read; interior-concentration control pre-named on SWEEP-CONVERTS. Sim expectation
+  (0.85, 18°) clip ±0.275; commit-ready pending the confirmation panel.]** Nothing run.]**

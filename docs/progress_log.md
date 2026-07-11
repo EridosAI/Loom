@@ -2234,3 +2234,98 @@ reproduced from raw records (the addendum's primary lens by brute-force enumerat
 C(24,9)=1,307,504 rank subsets). Records: 56 runs + 2 scores + 2 panels + substitution + pre-check +
 tail JSONs commit together on Jason's ratification. EXP13 PAUSED; loss-engineering FENCED. EXP16
 (capture-feed discrimination) STAGED behind this surface.
+
+## 2026-07-11 — EXP16 CAPTURE-FEED CLOSED: **no word-side capture — VISION-SIDE lean** (canon §10.26); first CORRIDOR execution
+
+The arm (`exp12_dwell_expomid`) deleted the mid-dwell word-target loss at 100% word visibility.
+RESULT: formal terminal **UNDERPOWERED** by the letter (raw k=2/10 at the borrowed 0.6111×4 band,
+Fisher vs A 0/8 p=0.2941 NS); certified (signature-decisive) read **VISION-SIDE MASSING** — both
+crossings (s6, s7) bare-N-isolated (longest episode exactly 4, one episode each) → 0 real
+conversions. Two mechanism coordinates ratified as the yield: (1) the recency drift is
+**REWARD-caused, not exposure-caused** — gradient collapses to 0.0247 (verdict-pooled) / 0.031
+(cal-stage median) vs A's +0.1416 at full word visibility; (2) **the shortcut is NOT the gate** —
+content stays unlearned across a doubled horizon; the 1M tail is FLAT (0 first-converts in
+(500k,1M]), EXCLUDING the sparsity confound. Participation ALIVE (median-of-per-seed 0.696 =
+10.7× the X-blind bar 0.065133 = ½×0.776×ρ, ρ=0.167869, AMD-11). Texture (report-don't-attribute):
+X acquires faster/tighter than A (onsets 4.5–26.4k vs 14.4–300.3k).
+
+First experiment run under CORRIDOR EXECUTION (docs/CORRIDOR_PROTOCOL.md; relay-gating retired):
+three human touches, gates G1–G8 unattended between them. The corridor audited itself twice:
+(a) the gate-executor audit (born here, AMD-12) caught that the SCORER was never built — prereg §6
+had scoped only flag+probe; `exp16_score.py` built under ratification with adversarial review
+catching a BLOCKING floor-audit k=0 trap (`_poisson_binomial_ge(ps,0)=1` → VISION-SIDE unreachable);
+(b) the G7 refute-default panel HALTED on the floor-audit inheriting EXP15's ≥0.6×8 exclusion into
+the bare-N (0.6111×4) regime where it excludes nothing — the §10.25 constant-inheritance rule
+recurring on the AUDITING machinery (AMD-13: exclusion matched to the audit band; dual-null BRACKET
+[self-excl 0.00 / contaminated 4.748]; SIGNATURE CENSUS decisive; companion inherits the CERTIFIED
+read; band stands; borrow-imports-N banks forward → canon §10.25.3). Design-chat terminal
+verification PASS (every load-bearing number re-derived from pushed artifacts; spec_hash
+41d6f0d5e7da across all 15 X records = EXP14/15's — one code path, three experiments). Commits:
+`efc819b` (corridor open) → `175e01e` (G8) → `0f18e10` (closed, attribution ratified). BANKED:
+dose-matched discriminator arm; Fork-next scene-massing dose-response.
+
+## 2026-07-11 — EXP17 TREMBLE vs SWEEP: POSED + RATIFIED (touch 1) through THREE refute-default panels; **straight-line sweep INFEASIBLE (ratified finding R1) → ORBIT RE-POSE**; TWO RULINGS OPEN; nothing committed, nothing run
+
+The question EXP16 left: does conversion require identity-INTERLEAVING, or does per-frame NOVELTY
+within a persistent identity suffice? Arm: the OU anchor MOVES (dwell kinematics the only change;
+mid-dwell grading kept intact as an internal control — gradient-persistence ≈ +0.1416 expected).
+The dwell-kinematics forensic rides (a dwell = ~11 near-duplicate views; net/path 0.079 at k≥13;
+5.6% per-axis range; verified digit-exact from its machine-readable companion, pooled keys pinned).
+
+The pose→panel arc (design seat + CC both caught and both owned errors; the instruments held):
+(1) CC execution plan ratified with one Jason correction — F7 census DEPTH-decisive,
+RECUR-corroborative (a conjunctive rule would certify-fake a lone long-episode sustainer; EXP16's
+OR-rule rejected in the other direction); Jason's s0 rationale later WITHDREW as an unverified
+recollection contradicting §10.20.1 (rule stands on structural grounds: all nine committed C/D
+converters longest ≥36). (2) Panel 1 (5 MUST-FIX): the ratified kinematic targets were JOINTLY
+UNREACHABLE — the ≥0.8 net/path came from a never-computed tight-tracking assumption; θ pinned from
+code (0.25, exp12_fabric.py:71-72); target re-posed to CONTRAST form (≥4× measured tremble
+baseline). Cal-marginal horizon pinned to the [0,500k] prefix everywhere (band, borrow diagnostic,
+all null pools). Census self-audit added (AMD-13 bracket applied to the census itself: observed
+certified must EXCEED the dual-null ≥SIG_DEPTH expectation bracket). (3) Panel 2 forced the
+anchor-reflection rule to be pinned on physics: §1's "fixed speed v, reflecting" = BILLIARD; under
+it the two faithful sims AGREE (0.628→0.525 / 0.611→0.515 falling) and **NO v clears both floors —
+the straight-line experiment HALTs by construction** (walls turn fast lines into oscillations;
+CC's rising-curve sim used a stalled-anchor model that violates "fixed speed v" — out). Jason
+ACCEPTED the HALT as a finding (R1) and retired the pose-unfold argument (a bounce IS partial
+revisiting; folded pose is the honest statistic). (4) ORBIT RE-POSE (R2–R7, ratified): per-dwell
+random 2-plane orbit (radius r, angular speed ω), center = clipped onset pose → ZERO anchor
+reflections by construction; draw-parity architecture pinned (onset g_nuis draw repurposed as the
+center source; e1/e2/phase only from g_sweep; g_nuis consumption byte-identical to A). Selection =
+minimal r·ω clearing net/path ≥4×, traverse ≥2.5× (both vs MEASURED tremble baselines), arc ≥
+tremble path, per-step ≤ confusion bound; pooled AND per-seed-min. (5) Orbit panel: all prior
+findings RESOLVED; feasibility CONFIRMED (region r∈[0.85,1.10], ω∈[12°,22°], zero anchor
+reflections); TRB=0.096 in the relay didn't reproduce (CC propagated it unverified — owned; both
+sims say 0.0902; sim v2 computes baselines in-sim); draw-parity smoke + anchor-path
+zero-reflection falsifier + selector smoke named (gate-executor audit discipline).
+
+**OPEN (route to Jason; the prereg CANNOT COMMIT past them):** RB-1 — the traverse-floor
+re-grounding (the ratified "satisfiable only by teleportation" was REFUTED: the orbit reaches the
+old absolute band coherently in a thin heavy-clip band; the defensible grounds are OU-lag cap +
+2-of-4-axes dilution). RB-2 — the selection objective (min-r·ω actively seeks the heavy-clip
+corner: (1.05,12°)→clip ±0.075, drifting to ±0.025 unpinned — near-total centering = the largest
+onset-marginal confound; Pareto: (0.95,14°)±0.175 at +5% r·ω, (0.90,16°)±0.225 at +14%). Docs
+staged uncommitted: prereg (§8 folds F1–F14 + §9 R1–R7 + OPEN items), forensic pair (moved to
+docs/, cortex ratios corrected 7.00×/1.77×), sim-divergence exhibit, three sims. Sequence on
+rulings: fold → confirmation panel → ratification commit → build (orbital generator delta,
+(r,ω)-freeze) → pre-flight (touch 2) → corridor.
+
+## 2026-07-11 — EXP17 RB-1/RB-2 RULED → prereg COMMIT-READY (pending confirmation panel)
+
+RB-1: traverse floor **re-grounded on measured physics** (OU-lag cap + 2-of-4-axes dilution); the
+"satisfiable only by teleportation" sentence RETIRES as the **eighth design-seat catch** — the
+panel's refutation rides with it (the absolute [0.30,0.50] form rejected not as unreachable but as
+reachable ONLY where it's confounded — its sole feasible band is the maximal-centering corner).
+Floor = 2.5× the self-computed tremble baseline; ceiling 0.50 stands; per-axis-extents REQUIRED
+keeps the undiluted ~0.38 driven-plane contrast visible for any SWEEP-DEAD read. RB-2: selection =
+**lexicographic** on the pinned grid (r∈[0.85,1.10]×0.05, ω∈[12°,22°]×2°) — feasible all floors
+(pooled AND per-seed-min) → **max clip half-width** → tie-break min r·ω; clip-margin outranks
+"gentlest rotation" (attribution stakes vs none). Riders: onset-marginal delta = REQUIRED touch-2
+read (reported trade, not a fence); **interior-concentration control PRE-NAMED** — SWEEP-CONVERTS
+triggers a tremble arm at the sweep arm's realized center distribution BEFORE any paradigm-positive
+certifies (EXP16's dose-matched move applied forward; the residual confound is a pre-named
+follow-up, not an attribution hole). Sim (lexicographic, corrected baselines) lands **(0.85, 18°)
+at clip ±0.275** = Jason's expected landing; the real generator's (r,ω)-freeze decides at G2.
+Both rulings folded as marked amendments (§9 R3, §4 rider, §10.27 amendment); catch ledger
+committed at EIGHT (rider in the rulings relay). Next: confirmation panel → ratification commit
+(prereg + forensic pair + panel records + three sims + rulings relay + doc updates) → build.

@@ -2581,3 +2581,71 @@ Two measured effects, both named, both cal-grade: **(1)** shuffled fabric **move
 **Provenance / instrument.** The G7 refute-default panel caught the floor-audit inheriting EXP15's ≥0.6×8 exclusion into EXP16's bare-N (0.6111×4) regime — the §10.25 constant-inheritance rule recurring on the auditing machinery (**§10.25.3**, "the auditor needed auditing"). AMD-13 (prereg): exclusion matched to the audit band, dual-null bracket, signature census decisive, companion inherits the certified read, 1M tail added, band stands. The borrow-imports-N lesson banks forward (§10.25.3). Commit `175e01e` (corridor G8); ratified after the verification pass.
 
 **BANKED (queue behind this verdict):** the **dose-matched discriminator arm** (dead-cell trigger — X's word-target *rate* at mid-dwell recency-satisfiable *placement*, separating dose from placement) and **Fork-next: scene-massing dose-response via dwell-length titration** (the natural next probe of the VISION-SIDE mechanism).
+
+## §10.27 — EXP17 TREMBLE vs SWEEP: **POSED** — straight-line sweep INFEASIBLE in the family box (ratified finding, R1) → ORBIT RE-POSE; **pre-commit status; RB-1/RB-2 RULED same day (amendment in-section)** (2026-07-11)
+
+**Status marker: this section records ratified PRE-COMMIT findings, not a verdict. No fabric has
+run; RB-1/RB-2 were ruled 2026-07-11 (amendment below closes the OPEN block). It commits with the
+ratification commit pending the confirmation panel.**
+
+**The question** (the fork EXP16's VISION-SIDE lean opens): shuffling delivers two properties at
+once — per-frame NOVELTY and identity-INTERLEAVING. Does conversion require interleaving, or does
+novelty within a persistent identity suffice? Arm class: the OU anchor MOVES (kinematics the only
+change vs A_dwell; mid-dwell grading kept — EXP16 proved it isn't the gate — so its gradient
+becomes an internal control, persistence ≈ +0.1416 expected). The dwell-kinematics forensic
+(docs/EXP17_DWELL_KINEMATICS_FORENSIC.{md,json}) quantifies the tremble regime: ~11 near-duplicate
+views/dwell, per-step novelty 12% of a random look, net/path 0.079 at k≥13, 5.6% per-axis range.
+
+**FINDING (R1, ratified): a directed LINEAR sweep and wide coverage are jointly impossible in the
+±1.5 family box at mean dwell 11.** Pinning §1's anchor-reflection rule on its own words ("moves at
+fixed speed v, reflecting") = BILLIARD; under it both faithful sims agree (net/path falls
+0.628→0.525 / 0.611→0.515 over v 0.30→0.50) and no v clears the directedness and coverage floors
+jointly — 10·v anchor travel folds against the 3.0-wide box while OU jitter (sd 0.125) sets the
+path floor. Walls turn fast lines into oscillations. Retired with the finding: (a) the pose-level
+unfold argument — a bounce IS partial revisiting in the delivered experience; the FOLDED pose is
+the honest statistic; (b) the stalled-anchor model (position-reflect, fixed heading) — violates
+"fixed speed v". Method note for the record: the ≥0.8 net/path target and a claimed 0.97-at-v0.4
+both traced to an implicit tight-tracking assumption (pose ≈ anchor) that was never computed — at
+θ=0.25 (pinned from code, exp12_fabric.py:71-72) the confined pose lags v/θ and cannot follow.
+Absolute sim-derived targets were retired for CONTRAST forms (≥ multiples of the MEASURED tremble
+baseline) after two validated sims diverged on absolute levels; the real generator adjudicates.
+
+**The re-pose (R2–R7, ratified): ORBITAL anchor, `exp12_dwell_orbit`.** Per dwell from a dedicated
+substream: random 2-plane, radius r, angular speed ω, random phase; center = onset pose clipped so
+|center|∞ + r + 3·stationary_sd ≤ 1.5 → **zero anchor reflections by construction**. Draw-parity
+architecture pinned: the onset g_nuis draw is repurposed as the center source; e1/e2/phase come
+only from g_sweep; g_nuis consumption stays byte-identical to A (the single-change invariant now
+carries its own positive-delta smoke with a stream-desync falsifier). Selection = minimal r·ω **[superseded — RB-2 amendment below: lexicographic]**
+clearing ALL floors (net/path@11 ≥ 4× measured tremble ≈0.58; traverse@11 ≥ 2.5× ≈0.226 — grounds
+under RB-1; arc ≥ tremble path 1.636; per-step ≤ confusion bound), pooled AND per-seed-WORST
+(MIN floors / MAX ceilings — RB-2 completion), T=100k
+seeds {0–7}; (r,ω) frozen; G2 re-verifies at deployed 1M on all 15 fabrics. Feasibility VERIFIED
+by sim (r∈[0.85,1.10], ω∈[12°,22°]; region empty on the real fabric → geometry-conflict HALT,
+honestly). Census delta from EXP16 (F7, ratified): certification is **DEPTH-decisive** (longest
+episode ≥ 8), episode count corroborative only — a conjunctive rule would certify-fake a lone
+long-episode sustainer; EXP16's OR-rule let recurrence alone certify; grounds are structural (all
+nine committed C/D converters longest ≥36), the s0 example withdrawn (§10.20.1 records five
+episodes). Census self-audit added: observed certified count must EXCEED the dual-null ≥SIG_DEPTH
+expectation bracket (the AMD-13 logic applied to the census itself; covers the own-band N∈{6,7}
+zone). One referent everywhere: band cut, borrow diagnostic, and every null pool on the [0,500k]
+column prefix.
+
+**RB-1/RB-2 RULED (Jason, 2026-07-11; marked amendment — the OPEN block above is closed).**
+RB-1: the 2.5×-contrast traverse floor is RE-GROUNDED on measured physics (OU-lag caps delivered
+traverse ~0.30–0.35 regardless of anchor speed; the 2-plane drives 2 of 4 axes, ~0.38 driven →
+~0.24 average); the "teleportation-only" sentence RETIRES as the **eighth design-seat catch**, with
+the panel's refutation riding: the absolute form was rejected not as unreachable but as **reachable
+only where it's confounded** (the thin feasible band = the maximal-centering corner). RB-2:
+selection = **lexicographic** on the pinned grid (r∈[0.85,1.10]×0.05, ω∈[12°,22°]×2°): feasible on
+all floors pooled AND per-seed-WORST (MIN floors / MAX ceilings) → maximize clip half-width → tie-break min r·ω; clip-margin
+outranks rotation rate because the onset-marginal confound has attribution stakes. Riders: the
+onset-marginal delta is a REQUIRED touch-2 read (reported trade, not a fence), and the
+**interior-concentration control is pre-named** — SWEEP-CONVERTS triggers a tremble arm at the
+sweep arm's realized center distribution BEFORE any paradigm-positive certifies (the EXP16
+dose-matched move applied forward). Sim expectation: (0.85, 18°) at clip ±0.275; the real
+generator's (r,ω)-freeze decides. Process record: three refute-default panels; both seats caught
+and owned errors (design seat: the never-computed 0.97, the s0 recollection, the 0.096 baseline
+sketch, the teleportation sentence; CC seat: propagating 0.096 unverified, the stalled-anchor sim);
+every correction is marked in the prereg §8/§9, and the three sims ride the commit as the
+divergence-and-resolution exhibit. Next: confirmation panel → ratification commit → build →
+corridor.
