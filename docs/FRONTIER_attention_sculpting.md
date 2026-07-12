@@ -2591,8 +2591,17 @@ orbit corridor ran clean G1→G8 (commits `93b22b4` F4-A / `0fb3e4c` build / `e3
 sweep (net/path 4.05× tremble, σ>0 and non-degeneracy verified: deployed np11 0.587, driven/undriven
 0.307/0.075, zero anchor reflections) produced **no sustained episode** (max run 4 vs a converter
 reference ≥36) and **no matched-bar excess** over tremble. The **SWEEP-DEAD cell stays UNCLAIMED**
-(raw k≠0), but its pivot **fires**: the banked **dwell-length titration** is the triggered next knob
-(next prereg). Reading-frame (`MECHANISM_MAP_v1_2_RECONCILED.md` §2): the "ORBIT-DEAD
+(raw k≠0). **[Forward-pointer amendment, 2026-07-12 — corrected in place per the forward-pointer
+rule (a pointer is operational, not a verdict):** the triggered next arm is **SCATTER-DWELL**
+(`MECHANISM_MAP_v1_2_RECONCILED.md` §3 — the bracketing ruling); the ~~banked dwell-length titration
+is the triggered next knob (next prereg)~~ **dwell-length titration is repositioned to ride
+SCATTER's DEAD branch**. Grounds on the record: the titration-first pointer inherited pre-ladder
+language that presumed *interleaving-is-the-gate* — the very attribution this close DECLINED to make;
+F6-A made ORBIT-DEAD fully three-way *symmetric* (A self-converts at its own bar exactly as the orbit
+does), removing the interleaving presumption and **strengthening the bracketing arm** — scatter
+resolves dose+predictability vs interleaving *jointly*, whereas titration only measures the
+interleaving dose once scatter has confirmed interleaving is the gate.]** Reading-frame
+(`MECHANISM_MAP_v1_2_RECONCILED.md` §2): the "ORBIT-DEAD
 three-way-ambiguous" ambiguity **collapses toward orbit ≈ tremble at a common bar** — no matched-bar
 signal to attribute to dose or predictability; what remains open is the disambiguation ladder
 (SCATTER-DWELL first).
@@ -2617,7 +2626,9 @@ COMPUTED from the data they describe, never asserted in a branch** (same family 
 reachable-falsifier rule). **Process fact:** five CLEAN in-corridor panel lenses missed the
 bar-matching error (each checked the orbit's numbers against themselves); the outside design-seat
 verification pass found it — the two-wall verification (inside panel + outside independent pass) is
-exactly why rule (i) exists. Design-seat catch **TEN** = the unlike-bar comparison.
+exactly why rule (i) exists. Design-seat catch ~~**TEN**~~ **16** (catch-ledger, `progress_log.md`
+2026-07-12 — ratified numbering supersedes the "TEN" label in place; never rewritten) = the
+unlike-bar comparison.
 
 ---
 

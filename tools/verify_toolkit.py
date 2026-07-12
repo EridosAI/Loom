@@ -134,6 +134,37 @@ def fisher_one_sided(k1, n1, k2, n2):
     K, Ntot = k1 + k2, n1 + n2
     return sum(comb(n1, k) * comb(n2, K - k) for k in range(k1, min(n1, K) + 1)) / comb(Ntot, K)
 
+def matched_bar_tab(paths_a, paths_b, det_a, det_b, window=None):
+    """Matched-bar cross-arm table (EXP17 F6-A; canon §10.27; catch-ledger 16).
+    Reads BOTH arms through BOTH detectors so every count is like-for-like — the
+    UNLIKE-BAR comparison (arm-A read at A's detector vs arm-B at B's, with different
+    false rates) is exactly the error this exists to make impossible. A cross-arm count
+    is evidence only at a fixed (band, N); an unlike-bar count is context-only.
+    det = dict(band, N, fr, owner); `fr` is the detector's OWN between-episode false
+    rate (a cal property — passed in and REPORTED, never inferred from the verdict
+    series). window = kwargs forwarded to load_series (t_min/t_max/field/post_acq);
+    default = the committed verdict window [0, 500k) post-acq. Group-1 of the one-sided
+    Fisher is paths_a: each row reports P(a_k >= b_k | margins). The per-seed `*_longest`
+    columns are true longest runs (N=1), band-gated only. Returns {both_bars, fr_ratio}."""
+    kw = window or {}
+    na, nb = len(paths_a), len(paths_b)
+    rows = []
+    for d in (det_a, det_b):
+        b, N = d["band"], d["N"]
+        a_conv = [i for i, p in enumerate(paths_a) if convert_read(p, b, N, **kw)["converted"]]
+        b_conv = [i for i, p in enumerate(paths_b) if convert_read(p, b, N, **kw)["converted"]]
+        rows.append(dict(
+            detector=f"{b}x{N}", owner=d.get("owner"), fr=d.get("fr"),
+            a_k=len(a_conv), a_conv=a_conv,
+            a_longest=[convert_read(p, b, 1, **kw)["longest"] for p in paths_a],
+            b_k=len(b_conv), b_conv=b_conv,
+            b_longest=[convert_read(p, b, 1, **kw)["longest"] for p in paths_b],
+            fisher_a_ge_b=fisher_one_sided(len(a_conv), na, len(b_conv), nb)))
+    fr_ratio = None
+    if det_a.get("fr") and det_b.get("fr"):
+        fr_ratio = max(det_a["fr"], det_b["fr"]) / min(det_a["fr"], det_b["fr"])
+    return dict(both_bars=rows, fr_ratio=fr_ratio)
+
 def mw_exact(a, b):
     """Exact tie-aware one-sided Mann-Whitney, P(U >= U_obs) by full enumeration
     (mid-ranks via 0.5 credit for ties). Feasible to ~C(24,10). Returns (U, p)."""
@@ -197,12 +228,48 @@ def net_path_traverse(pose_seq, bound=1.5):
 
 # ---------------------------------------------------------------- self-test
 
+def _f6a_anchor_and_smoke():
+    """Record anchor: matched_bar_tab reproduces exp17_f6a_matched_bar.json digit-exact.
+    Positive-delta smoke: a PERTURBED detector must change the tab — the reachable
+    falsifier the F6-A catch earned (a tab insensitive to its own (band, N) would be a
+    silent unlike-bar hazard). Skips cleanly if the committed records are not present."""
+    from pathlib import Path
+    exp08 = Path(__file__).resolve().parent.parent / "experiments" / "05_attention_sculpting" / "exp08"
+    ref = exp08 / "exp17_f6a_matched_bar.json"
+    orbit = [exp08 / f"exp14_exp12_dwell_orbit_s{s}_exp17verdict.json" for s in range(8)]
+    adwell = [exp08 / f"exp14_exp12_dwell_s{s}_verdict.json" for s in range(8)]
+    if not (ref.exists() and all(p.exists() for p in orbit + adwell)):
+        print("verify_toolkit F6-A anchor: SKIP (records not present)")
+        return
+    j = json.load(open(ref))
+    det_a = dict(band=0.6111, N=4, fr=0.000439, owner="A_dwell")   # A_dwell's own detector
+    det_b = dict(band=0.6129, N=3, fr=0.000964, owner="orbit")     # the orbit's own detector
+    op = [str(p) for p in orbit]; ap = [str(p) for p in adwell]
+    tab = matched_bar_tab(op, ap, det_a, det_b)                    # group-1 = orbit (= json 'orbit_*')
+    for row, jr in zip(tab["both_bars"], j["both_bars"]):
+        assert row["a_k"] == jr["orbit_k"] and row["a_conv"] == jr["orbit_conv"]
+        assert row["a_longest"] == jr["orbit_longest"]
+        assert row["b_k"] == jr["a_k"] and row["b_conv"] == jr["a_conv"]
+        assert row["b_longest"] == jr["a_longest"]
+        assert round(row["fisher_a_ge_b"], 4) == jr["fisher_orbit_ge_a"]
+    assert round(tab["fr_ratio"], 3) == j["fr_ratio"]
+    # reachable falsifier: perturb the orbit detector (band AND N); the tab MUST move.
+    pert = matched_bar_tab(op, ap, det_a, dict(det_b, band=0.62, N=8))
+    base_row, pert_row = tab["both_bars"][1], pert["both_bars"][1]
+    assert (base_row["a_k"], base_row["a_longest"]) != (pert_row["a_k"], pert_row["a_longest"]), \
+        "perturbed detector did not change the tab — the falsifier is unreachable"
+    print("verify_toolkit F6-A anchor: PASS (matched-bar digit-exact; perturbation moves the tab)")
+
 if __name__ == "__main__":
     # Anchors that must hold forever (analytic, record-free):
     assert abs(fisher_one_sided(4, 8, 0, 8) - 0.0385) < 5e-4      # EXP14 clean leg
     assert abs(fisher_one_sided(2, 10, 0, 8) - 0.2941) < 5e-4     # EXP16 raw k
+    assert abs(fisher_one_sided(1, 8, 0, 8) - 0.5) < 1e-9         # F6-A A-bar row (0.6111x4)
+    assert abs(fisher_one_sided(5, 8, 3, 8) - 0.3096) < 5e-4      # F6-A orbit-bar row (0.6129x3)
     _, p = mw_exact([0.812, 0.072, 0.115, 0.409], [0.070, 0.050, 0.082, 0.024])
     assert abs(p - 0.0286) < 1e-3                                  # EXP15 committed-context
     fr, n = 0.000613, [1041, 752, 1592, 1450, 1585, 1543, 1591, 1472]
     assert abs(floor_expectation(fr, n, 3) - 4.50) < 0.06          # B floor
-    print("verify_toolkit self-test: PASS (4 analytic anchors)")
+    print("verify_toolkit self-test: PASS (6 analytic anchors)")
+    # Record-backed matched-bar anchor + reachable-falsifier smoke (skips if records absent):
+    _f6a_anchor_and_smoke()

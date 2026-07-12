@@ -2362,3 +2362,42 @@ at [0,500k) — np11 0.5853–0.5889 vs the 4× bar 0.5796 (baselines_1M np11 0.
 onset-marginal W1 = 0.0228 (the REQUIRED touch-2 read; reported trade, never a fence). Full suite
 1–23 + scorer 13/13 green. Next: G1a (REUSED A {0–7} halt-and-audit) → G1b (FRESH 15 @1M, subst
 {10–19}) → pre-flight package (a)–(e) → **HARD STOP touch 2**.
+
+## 2026-07-12 — EXP17 CLOSED (touch 3, F6-A folded) + canon hygiene + CANONICAL CATCH LEDGER
+
+EXP17 corridor closed at `af9d91c` (canon §10.27): ORBIT = **DIRECTION-ONLY**; per-frame novelty
+within a persistent identity did NOT convert as tested (no sustained episode, **no matched-bar
+excess**). Touch-3 verification found the load-bearing miss — the G8 DRAFT's "orbit 5/8 vs A 0/8
+p=0.013" was an **UNLIKE-BAR** comparison; the matched-bar table (both detectors × both arms,
+`exp08/exp17_f6a_matched_bar.json`) shows no excess and A self-converts 3/5 at its own bar exactly as
+the orbit does. Two standing rules born: matched-bar companions; provenance strings computed, not
+asserted. Hygiene commit this date: §10.27 forward-pointer amended in place (next arm = SCATTER-DWELL
+per v1.2 §3; dwell-length titration repositioned to scatter's DEAD branch — the titration-first
+pointer had inherited interleaving-is-the-gate language F6-A dissolved); `PATHWAY_FORWARD.md`
+committed with status markers (Steps 0–1 COMPLETE, Step 2 SUPERSEDED by F6-A, Step 3 LIVE);
+`tools/verify_toolkit.py` gains `matched_bar_tab` (record anchor digit-exact vs the F6-A record +
+perturbation reachable-falsifier smoke).
+
+### §ledger — CANONICAL CATCH LEDGER (single source of truth)
+
+**Standing rule (Jason, 2026-07-12): the design-seat catch count lives in ONE pointer — here. Every
+doc referring to it cites "catch-ledger (progress_log 2026-07-12 §ledger)" and never hardcodes a
+prose integer.** Ratified numbering:
+
+| # | catch | source / where recorded |
+|---|-------|--------------------------|
+| 1–8 | the in-line session catches (a snapped fraction; the s0 parenthetical; the never-computed net/path 0.97 via tight-tracking; the 8–23 census; the 56% unit-confusion; the all-axes traverse spec error; the cal-class ground vs its own §10.25 citation; **#8 = EXP17 RB-1's "satisfiable only by teleportation" traverse-floor sentence**) | HANDOFF:40 (species list); ORBIT_RULINGS_RELAY:47 + progress_log 2026-07-11 ("the eighth design-seat catch") |
+| 9 | anchor-provenance / scripts-are-deliverables process gap at the F4 ruling | §10.27 F4-A; EXP17 prereg:3 ("NINE") |
+| 10 | RED_TEAM **F1** — EXP18 assert-(i) unsatisfiable as written | RED_TEAM_banked_shelf.md |
+| 11 | RED_TEAM **F2** — L2 APU estimator underspecified / "L1 APU ≈ 0 exactly" overclaim | RED_TEAM_banked_shelf.md |
+| 12 | RED_TEAM **F3** — v1.2 §5.1 boundary-surprise spike stated as established | RED_TEAM_banked_shelf.md |
+| 13 | RED_TEAM **F5** — scatter floor vacuum (net/path imposed where it doesn't apply) | RED_TEAM_banked_shelf.md |
+| 14 | RED_TEAM **F6** — pretrained-encoder decision table glib | RED_TEAM_banked_shelf.md |
+| 15 | **lens-1 withdrawal** — the G7 refute-panel's statistical-validity lens returned CLEAN but never cross-checked A at the orbit's own bar; its CLEAN verdict is withdrawn | G7 panel (`exp08/exp17_g7_panel.json`); prior informal "catch TEN" label lived in the **rulings relay / chat only** — superseded here, no in-repo prose to strike |
+| 16 | **unlike-bar comparison** — the G8 DRAFT's "orbit 5/8 vs A 0/8 p=0.013" compared different detectors (fr 2.2× apart); F6-A matched-bar correction | §10.27 close (its "catch TEN" annotated → **16** in place, strikethrough); origin = `PATHWAY_FORWARD.md` Step-2 texture instruction; caught by the **outside** verification pass; Jason-ruled |
+
+RED_TEAM **F4** (supersession mark) and **F7** (hygiene) are folds, NOT counted as catches (the pass
+paying for itself). **Two prior "TEN" labels reconciled** (never rewritten): the §10.27 close's "catch
+TEN" → **16** (strikethrough-annotated in place); the rulings-relay's "TEN-for-lens-1" → **15**
+(chat-side — nothing in-repo carried that label to annotate). This ledger absorbs every earlier prose
+count (EIGHT / NINE / "10–14"); those remain correct as-of-their-commit and now point here.
