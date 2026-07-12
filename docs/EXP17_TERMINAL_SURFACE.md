@@ -8,11 +8,56 @@ spec_hash `41d6f0d5e7da` across all 20 scored records.
 
 ---
 
+## ⚠ SUPERSEDED IN PART BY F6-A (Jason ratified, 2026-07-12) — matched-bar correction
+
+The formal cell (DIRECTION-ONLY) is **unchanged**. But the "excess over A" framing below was an
+**unlike-bar comparison** and is corrected here (supersede-don't-overwrite; the original text is
+struck in place with a `[→F6-A]` pointer, retained not deleted).
+
+**The error.** The Fisher row (k=5/8 vs A 0/8, p=0.013) compared the orbit at *its* detector
+(0.6129, N=3) against A at *A's* detector (0.6111, N=4) — a **detector mismatch** (N=3 vs N=4; false
+rates 0.000964 vs 0.000439, a 2.2× difference). Counts at different detectors are not comparable.
+The Fisher row is **SUPERSEDED** and replaced by:
+
+**Both detectors × both arms** (verdict {0–7}, post-acq, [0,500k); fresh-code reproduction,
+fact-check clean — the harness was not ported):
+
+| detector (band × N) | false rate | ORBIT | A_dwell | Fisher (orbit ≥ A) |
+|---|---|---|---|---|
+| A-bar 0.6111 × 4 | 0.000439 | 1/8 [1] | 0/8 | p = 0.50 |
+| orbit-bar 0.6129 × 3 | 0.000964 | 5/8 [1,2,5,6,7] | **3/8 [3,5,6]** | p = 0.31 |
+
+Longest runs (identical at both bars): orbit [2,4,3,2,2,3,3,3], A [2,2,2,3,2,3,3,2].
+
+**What survives, what does not.** The **unshifted onset marginal survives** (Δ0.0011, borrow-diag —
+lens-4 was right about that). The **"genuine excess over A" does NOT survive bar-matching**: at a
+common bar the orbit is statistically indistinguishable from tremble in brief-excursion rate
+(p=0.50 / 0.31), and A_dwell itself crosses 3/8 at the orbit bar. **Every "well above A's 0/8"
+phrase in this document is struck.**
+
+**Neutral summary** (replaces the "not a null" framing): *at a common bar the orbit is
+indistinguishable from tremble in brief-excursion rate, and neither arm sustains anything — max run
+4 vs 3 against a converter reference of ≥36.*
+
+**Reading-frame reconciliation (v1.2 §2).** The "ORBIT-DEAD three-way-ambiguous" ambiguity
+**collapses toward orbit ≈ tremble at a common bar** — there is no matched-bar signal to attribute
+to dose or to predictability. What remains open is the pre-registered question itself: per-frame
+novelty within a persistent identity did not convert *as tested*; whether a different regime would
+is the banked next step (dwell-length titration; the disambiguation ladder).
+
+**Asymmetry (to canon §10.27).** A_dwell self-converts **3/5 at its own detector [20,21,24]**
+(committed `per_cal_seed_converters`), exactly as the orbit self-converts 3/5 at its own. Under
+EXP17's symmetric cal-converts rule A would be non-loadable too — so **DIRECTION-ONLY is a property
+of low-N band geometry + the rule, not of the orbit.**
+
+---
+
 ## The result — DIRECTION-ONLY (routes)
 
-The moving-anchor orbit produced **alpha-significant brief band-crossings well above A, at an
+The moving-anchor orbit produced ~~**alpha-significant brief band-crossings well above A**~~
+`[→F6-A: struck — no matched-bar excess; orbit ≈ tremble at a common bar]`, at an
 essentially unshifted onset marginal, with ZERO sustained/certified conversions — under
-self-converting calibration that blocks a clean count vs A.** In the pre-registered cells this is
+self-converting calibration that blocks a clean count vs A. In the pre-registered cells this is
 the **ORBIT-DEAD direction** (0 certified after the signature census), delivered **direction-only**
 because the calibration seeds themselves cross (Ruling-B → non-loadable).
 
@@ -21,8 +66,8 @@ because the calibration seeds themselves cross (Ruling-B → non-loadable).
 | terminal | **DIRECTION-ONLY**, routes | `loadable=False` (cal-converts Ruling-B) dominates F5 precedence |
 | raw band-crossers | **5 / 8** verdict seeds [1,2,5,6,7] | own recut band 0.6129, N=3, [0,500k); all 8 READ |
 | **certified conversions** | **0 / 8** | signature census: longest post-acq episode ≥ SIG_DEPTH=8; observed longest {s1:4, s2:3, s5:3, s6:3, s7:3} — all bare-N-isolated |
-| Fisher vs A (0/8) | k=5/8, **p=0.01282** | one-sided, `label=design-fixed`, **companion — never gated** |
-| onset marginal shift | band 0.6129 vs A's 0.6111, **mean-shift 0.0011** | crossings are excess at a MATCHED marginal, not a band-shift artifact |
+| ~~Fisher vs A (0/8)~~ `[→F6-A: SUPERSEDED, detector mismatch]` | ~~k=5/8, p=0.01282~~ → matched-bar 0.6129×3: orbit 5/8 vs **A 3/8**, p=0.31 | see the F6-A both-bars table above |
+| onset marginal shift | band 0.6129 vs A's 0.6111, **mean-shift 0.0011** | marginal did NOT shift up (not a band-shift artifact); this survives F6-A. The crossing COUNT is not matched-bar excess — see the F6-A block |
 | calibration | **3 / 5 converters** [20,21,25] | brief N=3 crossings (none sustained s0-class) → Ruling-B recut, non-loadable |
 | α-uncuttable | fr **0.000964** ≤ α 1e-3 | on the recut band; cleared (see caveat 2) |
 | floor-clean | TRUE | structural (see caveat 3); census is the decisive guard |
@@ -47,11 +92,12 @@ is THREE-WAY AMBIGUOUS** and the interleaving reading is provisional pending the
   extrapolable, rung 3′);
 - **(c) identity-interleaving required** — the M3-pair reading.
 
-This terminal adds texture the clean "DEAD" cell does not carry: the orbit is **not a null** — it
+~~This terminal adds texture the clean "DEAD" cell does not carry: the orbit is **not a null** — it
 raises brief crossings to alpha-significance over A (5/8 vs 0/8, p=0.013) at an unshifted marginal —
-but **nothing sustains**. Which of (a)/(b)/(c) — or the "transient association that never
-consolidates" reading the brief-crossing texture suggests — is **Jason's attribution at touch 3**,
-not asserted here. The pre-named disambiguator is **SCATTER-DWELL first** (v1.2 §3: brackets the gate
+but **nothing sustains**.~~ `[→F6-A: struck. At a common bar there is NO excess over A (p=0.50/0.31;
+A crosses 3/8 at the orbit bar); the ambiguity collapses toward orbit ≈ tremble. What survives:
+unshifted marginal, and nothing sustains in either arm.]` Which reading the (unchanged) formal cell
+supports is **Jason's attribution at touch 3**, ratified below, not asserted by the corridor. The pre-named disambiguator is **SCATTER-DWELL first** (v1.2 §3: brackets the gate
 — maximal per-frame novelty, zero path, zero interleaving), with the interior-concentration control
 pre-named on any positive (RB-2 rider b).
 
@@ -125,9 +171,11 @@ seed's longest episode reaches 8 — far into alpha-catastrophic territory.
    ≥N run ≥band by construction). The **census** (depth ≥8), not the floor arithmetic, is the
    decisive phantom guard here; the honest pessimistic read is P_contaminated=0.752 (the 5 crossings
    are fully consistent with phantoms) **plus** the census certifying nothing.
-4. **The substance:** the crossings are genuine excess over A at a matched marginal, but transient.
-   Direction-only is the honest, non-suppressive routing of "excess brief-crossing signal, no
-   sustained conversion, under self-converting calibration."
+4. **The substance** `[→F6-A corrected]`: the **unshifted marginal survives** (Δ0.0011,
+   borrow-diag), but ~~the crossings are genuine excess over A~~ **the "excess over A" does NOT
+   survive bar-matching** — at a common bar the orbit matches tremble (p=0.50/0.31) and A crosses
+   3/8 at the orbit bar. Direction-only is the honest routing of "no matched-bar excess, no
+   sustained conversion, under self-converting calibration that is symmetric with A."
 
 ---
 

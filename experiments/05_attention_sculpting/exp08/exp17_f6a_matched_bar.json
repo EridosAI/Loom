@@ -1,0 +1,97 @@
+{
+ "finding": "F6-A matched-bar correction (EXP17 close): no matched-bar excess; DIRECTION-ONLY is a property of low-N band geometry + the symmetric cal-converts rule, not the orbit",
+ "window": "verdict {0-7}, post-acquisition, [0,500k)",
+ "fr_ratio": 2.196,
+ "both_bars": [
+  {
+   "detector": "0.6111x4",
+   "owner": "A_dwell",
+   "fr": 0.000439,
+   "orbit_k": 1,
+   "orbit_conv": [
+    1
+   ],
+   "orbit_longest": [
+    2,
+    4,
+    3,
+    2,
+    2,
+    3,
+    3,
+    3
+   ],
+   "a_k": 0,
+   "a_conv": [],
+   "a_longest": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    3,
+    3,
+    2
+   ],
+   "fisher_orbit_ge_a": 0.5
+  },
+  {
+   "detector": "0.6129x3",
+   "owner": "orbit",
+   "fr": 0.000964,
+   "orbit_k": 5,
+   "orbit_conv": [
+    1,
+    2,
+    5,
+    6,
+    7
+   ],
+   "orbit_longest": [
+    2,
+    4,
+    3,
+    2,
+    2,
+    3,
+    3,
+    3
+   ],
+   "a_k": 3,
+   "a_conv": [
+    3,
+    5,
+    6
+   ],
+   "a_longest": [
+    2,
+    2,
+    2,
+    3,
+    2,
+    3,
+    3,
+    2
+   ],
+   "fisher_orbit_ge_a": 0.3096
+  }
+ ],
+ "a_cal_self_converts": {
+  "band": 0.6111,
+  "N": 4,
+  "converters": [
+   20,
+   21,
+   24
+  ],
+  "k": 3,
+  "committed_per_cal_seed_converters": {
+   "20": true,
+   "21": true,
+   "22": false,
+   "24": true,
+   "25": false
+  }
+ },
+ "note": "fresh-code reproduction; imports nothing from the harness or the seat toolkit"
+}

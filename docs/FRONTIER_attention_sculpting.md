@@ -2582,11 +2582,48 @@ Two measured effects, both named, both cal-grade: **(1)** shuffled fabric **move
 
 **BANKED (queue behind this verdict):** the **dose-matched discriminator arm** (dead-cell trigger — X's word-target *rate* at mid-dwell recency-satisfiable *placement*, separating dose from placement) and **Fork-next: scene-massing dose-response via dwell-length titration** (the natural next probe of the VISION-SIDE mechanism).
 
-## §10.27 — EXP17 TREMBLE vs SWEEP: **POSED** — straight-line sweep INFEASIBLE in the family box (ratified finding, R1) → ORBIT RE-POSE; **pre-commit status; RB-1/RB-2 RULED same day (amendment in-section); F4-A anchor re-base RULED 2026-07-12 (amendment in-section)** (2026-07-11)
+## §10.27 — EXP17 TREMBLE vs SWEEP: **CLOSED 2026-07-12 — ORBIT = DIRECTION-ONLY; per-frame novelty within a persistent identity did NOT convert as tested; no matched-bar excess, no sustained episode (F6-A folded)** (posed 2026-07-11 → closed 2026-07-12)
 
-**Status marker: this section records ratified PRE-COMMIT findings, not a verdict. No fabric has
-run; RB-1/RB-2 were ruled 2026-07-11 (amendment below closes the OPEN block). It commits with the
-ratification commit pending the confirmation panel.**
+**CLOSE (Jason ratified, 2026-07-12, touch 3; F6-A folded; supersedes the POSED marker).** The
+orbit corridor ran clean G1→G8 (commits `93b22b4` F4-A / `0fb3e4c` build / `e32f005` pre-flight /
+`c1a3df5` G8 terminal / this CLOSE). Formal cell: **DIRECTION-ONLY** (unchanged). Attribution reading
+(ratified): **per-frame novelty within a persistent identity did NOT convert *as tested*** — a real
+sweep (net/path 4.05× tremble, σ>0 and non-degeneracy verified: deployed np11 0.587, driven/undriven
+0.307/0.075, zero anchor reflections) produced **no sustained episode** (max run 4 vs a converter
+reference ≥36) and **no matched-bar excess** over tremble. The **SWEEP-DEAD cell stays UNCLAIMED**
+(raw k≠0), but its pivot **fires**: the banked **dwell-length titration** is the triggered next knob
+(next prereg). Reading-frame (`MECHANISM_MAP_v1_2_RECONCILED.md` §2): the "ORBIT-DEAD
+three-way-ambiguous" ambiguity **collapses toward orbit ≈ tremble at a common bar** — no matched-bar
+signal to attribute to dose or predictability; what remains open is the disambiguation ladder
+(SCATTER-DWELL first).
+
+**F6-A — the matched-bar correction (the load-bearing close finding).** The G8 DRAFT's "orbit 5/8
+brief crossings *well above* A's 0/8, Fisher p=0.013" was an **UNLIKE-BAR comparison** (orbit at its
+detector 0.6129×N3 vs A at A's detector 0.6111×N4 — false rates 0.000964 vs 0.000439, 2.2× apart).
+**At a MATCHED bar the excess vanishes** (fresh-code reproduction, both detectors × both arms,
+verdict {0–7}, [0,500k)): A-bar 0.6111×4 → orbit 1/8, A 0/8, p=0.50; orbit-bar 0.6129×3 → orbit 5/8,
+**A 3/8**, p=0.31. Longest runs orbit [2,4,3,2,2,3,3,3], A [2,2,2,3,2,3,3,2]. The unshifted marginal
+survives (Δ0.0011); the "excess over A" does not. **ASYMMETRY FINDING:** A_dwell self-converts
+**3/5 at its own committed detector [20,21,24]** (`per_cal_seed_converters`), exactly as the orbit
+self-converts 3/5 at its own — so under EXP17's symmetric cal-converts rule A would be non-loadable
+too. **DIRECTION-ONLY is a property of low-N band geometry + the rule, not of the orbit.**
+
+**Instrument note (report-don't-patch; EXP14 artifacts untouched).** `exp14_arms.py:743`'s
+`false_rate_referent` string is **asserted-in-branch** ("this cell does NOT convert at cal") and is
+**contradicted by the same cell's own committed `per_cal_seed_converters`** (A_dwell 3/5 DO convert).
+Logged, not patched. Standing rules born this close: **(i) cross-arm companions and context rows must
+be MATCHED-BAR — unlike-bar counts are context-only, never evidence; (ii) provenance strings are
+COMPUTED from the data they describe, never asserted in a branch** (same family as the
+reachable-falsifier rule). **Process fact:** five CLEAN in-corridor panel lenses missed the
+bar-matching error (each checked the orbit's numbers against themselves); the outside design-seat
+verification pass found it — the two-wall verification (inside panel + outside independent pass) is
+exactly why rule (i) exists. Design-seat catch **TEN** = the unlike-bar comparison.
+
+---
+
+**[HISTORICAL — pre-commit POSED findings, retained below.] Status marker: this section recorded
+ratified PRE-COMMIT findings, not a verdict. RB-1/RB-2 ruled 2026-07-11; F4-A 2026-07-12; the CLOSE
+above supersedes the POSED status.**
 
 **The question** (the fork EXP16's VISION-SIDE lean opens): shuffling delivers two properties at
 once — per-frame NOVELTY and identity-INTERLEAVING. Does conversion require interleaving, or does
