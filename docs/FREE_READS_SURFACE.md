@@ -8,9 +8,22 @@ writing one JSON; each JSON was regenerated and BYTE-COMPARED (determinism doubl
 No mid-stream halt condition fired (no recipe-cannot-execute, no determinism mismatch, no
 record-integrity failure).
 
+> **SEAT VERIFICATION: PASS (single pass, 2026-07-13).** Scope/authorship/fence verified; all four
+> sha256 recomputed and matched; read (ii) reproduced independently (22 profile numbers exact); read
+> (i) confirmed a structural isometry (nuis_axes ← `basis @ Q.t()`, Q QR-orthogonal, `conflict_stream.py:59`
+> — the 1.0000004 is f32 noise on a theorem); reads (iii)/(iv) confirmed to reuse committed machinery
+> verbatim. **Rulings:** (i) no gain floor; (ii) premise-consistent, kill not fired; (iii) latent; (iv)
+> kinematic-indicated, bridge holds. Two method notes logged below as riders (verdicts unchanged).
+
 ---
 
-## ⚠ Entry-15 correction — COULD NOT APPLY (report-don't-patch; routed)
+## ✔ Entry-15 correction — RESOLVED 2026-07-13 (seat supplied the text; applied in place)
+
+> **RESOLVED (2026-07-13):** the seat confirmed the miss was theirs (text existed only in chat) and
+> relayed the corrected row; `progress_log.md` ledger row 15 is now updated in place, correction marked.
+> The batch-time note below is retained as provenance.
+
+**[Batch-time state, superseded:]**
 
 The relay directed: *"apply the corrected row text from the seat's last report in place."* **No seat
 report is present in any accessible artifact** — no commit since `23fb8c7`, nothing in `docs/`,
@@ -66,6 +79,11 @@ decaying to a low plateau) — the boundary-spike + within-dwell-decay shape CWP
 kill condition ("within-dwell updates NOT low-surprise massed") is therefore **not indicated** by these
 numbers; the ruling on whether this *is* "low-surprise massed" routes to the seat.
 
+> **[Seat rider, 2026-07-13 — method note, verdict UNCHANGED.]** This read pools the FULL record while
+> citing the `_recency_gradient` pooling, so the arm windows are unequal (orbit ~1M vs A ~500k).
+> Recomputed under a matched **[0,500k)**: word boundary-drops **0.1412** (orbit) / **0.1382** (A); vis
+> within-slopes **−0.0859** / **−0.0765** — shape identical, premise-consistent read stands.
+
 ### (iii) Rung-3.5 background member-information — `exp08/freeread_3_bg_member_info.json`
 **Method:** (a) committed assert-(4) statistic `F12._max_abs_corr(bg[:S], label-triple)` vs
 exchangeability null99 (`F12._dwell_perm_labels`, keys 64000+i, N_NULL=200, S=12000); (b) nearest-centroid
@@ -75,6 +93,11 @@ null99 (0.069/0.089/0.077/0.072/0.060/0.072/0.064/0.066); member-decode 0.0697/0
 0.0680/0.0684/0.0691/0.0694 (chance 0.0625). Background decodability sits at chance; correlation sits
 within the independence null on all 8 seeds. Whether this reads as "no member information" (rung 3.5
 latent → L3 a generalization arm) routes to the seat.
+
+> **[Seat rider, 2026-07-13 — method note, verdict UNCHANGED.]** The nearest-centroid decode is
+> **in-sample** (centroids fit and scored on the same window); the **+0.006** over chance is in-sample
+> centroid bias, mechanically expected, **not** member information — do not read 0.0685 > 0.0625 as a
+> leak. The calibrated corr-vs-null99 (**8/8 within null**) is the decisive statistic; **latent** stands.
 
 ### (iv) EXP13 kinematics — `exp08/freeread_4_exp13_kinematics.json`
 **Method:** committed `exp17_score.measure_kinematics` run UNCHANGED, fabric source redirected to

@@ -1,0 +1,50 @@
+{
+ "gate": "SCATTER prereg — refute-default panel",
+ "date": "2026-07-13",
+ "target": "docs/EXP_SCATTER_DWELL_PREREG.md (DRAFT)",
+ "mandate": "4 independent lenses, DEFAULT-refute; no lens assumes conversion or the scatter story; MUST-FIX = would corrupt canon/corridor",
+ "synthesis": {
+  "must_fix_found": 3,
+  "concern_found": 9,
+  "resolution": "ALL folded in place (draft edited); no MUST-FIX left open; re-panel not spawned (fixes are structural prereg corrections grounded in EXP17 precedent, and touch-1 ratification is the next gate) — folded per the EXP17 '26 findings folded' pattern",
+  "verdict": "DRAFT PASSES after folds; surfaces to Jason as touch 1"
+ },
+ "lenses": {
+  "A_fences": {
+   "must_fix": 0, "concern": 2, "verdict": "CONCERNS-ONLY",
+   "clean": ["anti-forward (iid resample, no t+1)", "sigma>0 order-as-content", "nothing-transports (own band/ceiling)"],
+   "folded": [
+    "CONCERN: kappa/coverage multiplier was pinned AT THE GATE (feasibility-pressure risk) -> FOLDED: multipliers PRE-NAMED (2.0x/2.0x), only baselines measured (EXP17 4x/2.5x pattern) [§2]",
+    "CONCERN: ceiling 'acquisition read' vs '§2 fabric-only X-blind' tension -> FOLDED: lower walls fabric-only; ceiling uses a SEPARATE identity-recoverability read, acquisition != conversion, stated [§2.3]"
+   ]
+  },
+  "B_outcome_F6A": {
+   "must_fix": 2, "concern": 2, "verdict": "REFUTED -> folded",
+   "folded": [
+    "MUST-FIX: CONVERTS gated on raw>=5 -> unreachable under expected cal-converts non-loadable (catch-15); paradigm-positive homeless -> FOLDED: §4 restructured — decision runs on Axis-1 matched-bar excess + Axis-2 census; CONVERTS rides Axes 1-2, NOT the raw count [§4]",
+    "MUST-FIX: no SIGNATURE-DIVERGENT cell for raw>=5 & certified in {1..4} -> FOLDED: cell added, routes [§4]",
+    "CONCERN: double-cover raw{1..4}&certified-0 (UNDERPOWERED vs EXT) -> FOLDED: certified-0 route restricted to raw>=5 post-EXT [§4]",
+    "CONCERN: 'never gated or attributed on ALONE' reopened the loophole -> FOLDED: dropped 'alone'; now 'matched-bar or nothing, never gated or attributed on' [§4]"
+   ],
+   "clean": ["provenance-computed (ii)", "bracketing logic vs v1.2 §3", "matched-bar PRIMARY structure"]
+  },
+  "C_executor_determinism": {
+   "must_fix": 1, "concern": 2, "verdict": "1 MUST-FIX -> folded",
+   "folded": [
+    "MUST-FIX: no pinned R grid nor ball-sampling method -> '==R*' G2 bind non-deterministic -> FOLDED: R grid {0.20,0.30,0.40,0.50} + uniform-in-ball method (dir randn/norm, mag R*U^(1/K)) PINNED [§2]",
+    "CONCERN: gate table lacked positive-delta smoke IDs (CORRIDOR_PROTOCOL:94) -> FOLDED: sm-select-R0/sm-parity/sm-ceiling/sm-G1/sm-G2-lex/sm-G3G5/sm-G4-cal/sm-G6-*/sm-G7/sm-G8 added [§6]",
+    "CONCERN: §7 pre-flight omitted items (c),(e) -> FOLDED: (a)-(e) enumerated [§7]"
+   ],
+   "clean": ["G-select R=0 falsifier genuinely reachable (not the EXP17 tautology)", "draw-parity byte-identity architecturally consistent with exp12_fabric.py orbit branch (:246-318)", "score_scatter guard matches score_exp17", "spec_hash config-only so existing arms digit-identical achievable"]
+  },
+  "D_factcheck_F5": {
+   "must_fix": 0, "concern": 3, "verdict": "SOUND; every load-bearing number verified",
+   "folded": [
+    "CONCERN(substantive): §2.3 cited RED_TEAM F5 for the ceiling-derivation instruction -> actually MECHANISM_MAP_v1_2 §4 line 57 -> FOLDED: pointer corrected [§2.3]",
+    "CONCERN(minor): §2 header tagged 'NO gain floor' as F5 (F5 silent on render-gain) -> FOLDED: sourced to read (i)/seat, not F5 [§2.4]",
+    "CONCERN(minor): §5.6(iv) framing past the seat ('parsimoniously same gate','priced in') -> FOLDED: marked as CC inference, non-gating, not a seat ruling [§5.6]"
+   ],
+   "verified_clean": ["render-gain anisotropy 1.0000003520 / gains [0.99999979,1.00000013] (freeread_1)", "EXP13 np11 0.624254 vs lawscram 0.087266 (freeread_4)", "A_dwell 0/8 (§10.27)", "+0.1416 gradient (verify_toolkit anchor; not conflated with read-ii window-sensitive 0.1382)", "SIG_DEPTH=8/SIG_RECUR=2", "conflict_stream.py:59 Q QR-orthogonal", "read-ii window + read-iii in-sample caveats respected"]
+  }
+ }
+}
