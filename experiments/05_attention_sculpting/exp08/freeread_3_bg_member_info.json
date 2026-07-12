@@ -1,0 +1,133 @@
+{
+ "consequence": {
+  "measured": {
+   "all_seeds_bg_independent": true,
+   "chance": 0.0625,
+   "member_decode_acc_max": 0.069734,
+   "member_decode_acc_mean": 0.068515
+  },
+  "memo_condition": "background does NOT carry member information -> rung 3.5 latent -> L3 is a generalization-pressure arm, not a shortcut-removal arm",
+  "triggered": "ROUTES (judgment): numbers reported; the seat rules whether decodability at/near chance + corr within null == 'no member information' (latent)."
+ },
+ "inputs": {
+  "arm": "exp12_dwell",
+  "code_modules": [
+   "exp12_arms.py",
+   "exp12_fabric.py"
+  ],
+  "note": "bg is arm-independent (per-seed OU around member-independent bg_const)",
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "window": 100000
+ },
+ "memo_section": "docs/FREE_READS_MEMO.md \u00a7(iii)",
+ "method": "bg (T,BG=4) vs member. (a) committed assert-(4) statistic: F12._max_abs_corr(bg[:S], label-triple) vs exchangeability null99 (F12._dwell_perm_labels, keys 64000+i, N_NULL=200, S=12000). (b) nearest-centroid member(16)-from-bg accuracy over the full window vs chance 1/16.",
+ "per_seed": [
+  {
+   "S_corr": 12000,
+   "bg_corr_independent": true,
+   "bg_corr_null99": 0.068661,
+   "bg_corr_obs": 0.035429,
+   "chance": 0.0625,
+   "decode_over_chance": 0.007234,
+   "member_decode_acc": 0.069734,
+   "n": 100008,
+   "seed": 0
+  },
+  {
+   "S_corr": 12000,
+   "bg_corr_independent": true,
+   "bg_corr_null99": 0.088871,
+   "bg_corr_obs": 0.034404,
+   "chance": 0.0625,
+   "decode_over_chance": 0.003345,
+   "member_decode_acc": 0.065845,
+   "n": 100008,
+   "seed": 1
+  },
+  {
+   "S_corr": 12000,
+   "bg_corr_independent": true,
+   "bg_corr_null99": 0.077206,
+   "bg_corr_obs": 0.026131,
+   "chance": 0.0625,
+   "decode_over_chance": 0.005715,
+   "member_decode_acc": 0.068215,
+   "n": 100008,
+   "seed": 2
+  },
+  {
+   "S_corr": 12000,
+   "bg_corr_independent": true,
+   "bg_corr_null99": 0.071974,
+   "bg_corr_obs": 0.044164,
+   "chance": 0.0625,
+   "decode_over_chance": 0.006984,
+   "member_decode_acc": 0.069484,
+   "n": 100008,
+   "seed": 3
+  },
+  {
+   "S_corr": 12000,
+   "bg_corr_independent": true,
+   "bg_corr_null99": 0.060265,
+   "bg_corr_obs": 0.024203,
+   "chance": 0.0625,
+   "decode_over_chance": 0.005475,
+   "member_decode_acc": 0.067975,
+   "n": 100008,
+   "seed": 4
+  },
+  {
+   "S_corr": 12000,
+   "bg_corr_independent": true,
+   "bg_corr_null99": 0.072296,
+   "bg_corr_obs": 0.028485,
+   "chance": 0.0625,
+   "decode_over_chance": 0.005855,
+   "member_decode_acc": 0.068355,
+   "n": 100008,
+   "seed": 5
+  },
+  {
+   "S_corr": 12000,
+   "bg_corr_independent": true,
+   "bg_corr_null99": 0.064212,
+   "bg_corr_obs": 0.039186,
+   "chance": 0.0625,
+   "decode_over_chance": 0.006584,
+   "member_decode_acc": 0.069084,
+   "n": 100008,
+   "seed": 6
+  },
+  {
+   "S_corr": 12000,
+   "bg_corr_independent": true,
+   "bg_corr_null99": 0.065963,
+   "bg_corr_obs": 0.032657,
+   "chance": 0.0625,
+   "decode_over_chance": 0.006924,
+   "member_decode_acc": 0.069424,
+   "n": 100008,
+   "seed": 7
+  }
+ ],
+ "pooled": {
+  "all_independent": true,
+  "bg_corr_null99_mean": 0.071181,
+  "bg_corr_obs_mean": 0.033082,
+  "chance": 0.0625,
+  "member_decode_acc_max": 0.069734,
+  "member_decode_acc_mean": 0.068515
+ },
+ "read": "(iii) rung-3.5 \u2014 background member-information",
+ "recipe": "MECHANISM_MAP_v1_2_RECONCILED.md \u00a71"
+}

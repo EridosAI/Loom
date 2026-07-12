@@ -1,0 +1,206 @@
+{
+ "consequence": {
+  "measured_anisotropy_ratio_max": 1.0000003520113747,
+  "memo_condition": "severe anisotropy -> ratification-class gain floor in SCATTER's F5 ball sampling; and it qualifies \u00a710.27's 'as tested'",
+  "per_axis_gain_range": [
+   0.999999792477,
+   1.000000131773
+  ],
+  "triggered": "N (routes: 'severe' threshold is unpinned in the memo -> seat rules; the map is isotropic to float precision by orthonormal construction, so no gain floor is indicated and 'as tested' is NOT qualified on perceptual-weakness grounds)"
+ },
+ "inputs": {
+  "arm": "exp12_dwell_orbit",
+  "built_by": "exp12_arms.build_exp12 (committed); axes from loop.stim.nuis_axes",
+  "code_modules": [
+   "exp12_arms.py",
+   "exp12_fabric.py",
+   "exp17_score.py"
+  ],
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "window": 100000
+ },
+ "memo_section": "docs/FREE_READS_MEMO.md \u00a7(i)",
+ "method": "pose = K=4 nuisance coeffs; render(pose) = pose @ nuis_axes (exp12_fabric.py:139,353). per_axis_gain = ||axes_k||; cross_axis_leakage = max_{i!=j}|axes_i.axes_j|; anisotropy_ratio = max/min of ||u@axes|| over 20000 random unit u in R^K; realized_ratio = ||d_render||/||d_pose|| over within-dwell consecutive frames; randompair_ratio = same over 20000 random family-marginal pose pairs. float64.",
+ "per_seed": [
+  {
+   "anisotropy_ratio": 1.000000149044244,
+   "cross_axis_leakage_max": 1.0385406551405296e-07,
+   "directional_gain_max": 1.0000000585489874,
+   "directional_gain_min": 0.9999999095047569,
+   "n_within_steps": 90985,
+   "per_axis_gain": [
+    0.999999945333,
+    1.000000006585,
+    1.000000004706,
+    0.999999949773
+   ],
+   "randompair_ratio_mean": 0.9999999764035167,
+   "randompair_ratio_sd": 3.202434470370055e-08,
+   "realized_ratio_max": 1.0000000585630646,
+   "realized_ratio_mean": 0.9999999763705757,
+   "realized_ratio_min": 0.999999909330279,
+   "realized_ratio_sd": 3.220879084005976e-08,
+   "seed": 0
+  },
+  {
+   "anisotropy_ratio": 1.0000002777642791,
+   "cross_axis_leakage_max": 1.9978346868509966e-07,
+   "directional_gain_max": 1.0000000277786745,
+   "directional_gain_min": 0.9999997500144648,
+   "n_within_steps": 91017,
+   "per_axis_gain": [
+    0.999999972892,
+    0.999999864078,
+    0.999999972826,
+    0.999999858349
+   ],
+   "randompair_ratio_mean": 0.9999999169326684,
+   "randompair_ratio_sd": 6.034304284946694e-08,
+   "realized_ratio_max": 1.0000000278982515,
+   "realized_ratio_mean": 0.9999999169508907,
+   "realized_ratio_min": 0.9999997503514142,
+   "realized_ratio_sd": 6.048260002049303e-08,
+   "seed": 1
+  },
+  {
+   "anisotropy_ratio": 1.0000001781453873,
+   "cross_axis_leakage_max": 1.1520939743880909e-07,
+   "directional_gain_max": 1.0000000669818554,
+   "directional_gain_min": 0.9999998888364878,
+   "n_within_steps": 90788,
+   "per_axis_gain": [
+    1.000000049297,
+    0.999999919495,
+    0.999999970924,
+    0.999999971061
+   ],
+   "randompair_ratio_mean": 0.999999977777734,
+   "randompair_ratio_sd": 3.9587660661041315e-08,
+   "realized_ratio_max": 1.0000000675137803,
+   "realized_ratio_mean": 0.9999999779048796,
+   "realized_ratio_min": 0.9999998888111983,
+   "realized_ratio_sd": 3.965455669376836e-08,
+   "seed": 2
+  },
+  {
+   "anisotropy_ratio": 1.0000003392537813,
+   "cross_axis_leakage_max": 1.6736336537481744e-07,
+   "directional_gain_max": 1.0000001413803505,
+   "directional_gain_min": 0.9999998021266364,
+   "n_within_steps": 90776,
+   "per_axis_gain": [
+    0.999999849881,
+    1.000000032388,
+    1.000000024533,
+    1.000000089756
+   ],
+   "randompair_ratio_mean": 0.9999999999226209,
+   "randompair_ratio_sd": 7.095603556553196e-08,
+   "realized_ratio_max": 1.0000001415443407,
+   "realized_ratio_mean": 0.9999999988889392,
+   "realized_ratio_min": 0.9999998018350221,
+   "realized_ratio_sd": 7.131893882380751e-08,
+   "seed": 3
+  },
+  {
+   "anisotropy_ratio": 1.0000001664234934,
+   "cross_axis_leakage_max": 5.7360401636841196e-08,
+   "directional_gain_max": 1.0000001328750983,
+   "directional_gain_min": 0.9999999664516105,
+   "n_within_steps": 90859,
+   "per_axis_gain": [
+    1.000000131773,
+    1.000000076439,
+    1.000000015108,
+    0.99999997942
+   ],
+   "randompair_ratio_mean": 1.0000000508720854,
+   "randompair_ratio_sd": 3.732717664106695e-08,
+   "realized_ratio_max": 1.0000001331110804,
+   "realized_ratio_mean": 1.0000000508703812,
+   "realized_ratio_min": 0.9999999662262674,
+   "realized_ratio_sd": 3.7336004186928464e-08,
+   "seed": 4
+  },
+  {
+   "anisotropy_ratio": 1.0000003520113747,
+   "cross_axis_leakage_max": 7.817506159774057e-08,
+   "directional_gain_max": 1.0000001394357876,
+   "directional_gain_min": 0.9999997874244876,
+   "n_within_steps": 90867,
+   "per_axis_gain": [
+    1.000000131362,
+    0.999999792477,
+    1.00000006356,
+    1.000000105413
+   ],
+   "randompair_ratio_mean": 1.0000000228919896,
+   "randompair_ratio_sd": 8.103285750923928e-08,
+   "realized_ratio_max": 1.0000001395488545,
+   "realized_ratio_mean": 1.000000023404468,
+   "realized_ratio_min": 0.999999786054758,
+   "realized_ratio_sd": 8.098150850725881e-08,
+   "seed": 5
+  },
+  {
+   "anisotropy_ratio": 1.0000001472333848,
+   "cross_axis_leakage_max": 8.194358552815473e-08,
+   "directional_gain_max": 1.0000000695932183,
+   "directional_gain_min": 0.9999999223598448,
+   "n_within_steps": 90957,
+   "per_axis_gain": [
+    1.000000042479,
+    0.999999931185,
+    1.000000002348,
+    0.999999966962
+   ],
+   "randompair_ratio_mean": 0.9999999862898115,
+   "randompair_ratio_sd": 3.3654309223485945e-08,
+   "realized_ratio_max": 1.00000006959988,
+   "realized_ratio_mean": 0.9999999857056767,
+   "realized_ratio_min": 0.9999999222319422,
+   "realized_ratio_sd": 3.3592051703659115e-08,
+   "seed": 6
+  },
+  {
+   "anisotropy_ratio": 1.00000020756687,
+   "cross_axis_leakage_max": 1.4763503194958894e-07,
+   "directional_gain_max": 1.0000000740875117,
+   "directional_gain_min": 0.9999998665206695,
+   "n_within_steps": 90759,
+   "per_axis_gain": [
+    0.999999906219,
+    1.000000030225,
+    0.999999962968,
+    0.999999934436
+   ],
+   "randompair_ratio_mean": 0.9999999583982284,
+   "randompair_ratio_sd": 4.325384786139871e-08,
+   "realized_ratio_max": 1.0000000743511093,
+   "realized_ratio_mean": 0.9999999582388228,
+   "realized_ratio_min": 0.999999866468431,
+   "realized_ratio_sd": 4.313423831461261e-08,
+   "seed": 7
+  }
+ ],
+ "pooled": {
+  "anisotropy_ratio_max": 1.0000003520113747,
+  "anisotropy_ratio_mean": 1.0000002271803519,
+  "cross_axis_leakage_max": 1.9978346868509966e-07,
+  "per_axis_gain_max": 1.000000131773,
+  "per_axis_gain_min": 0.999999792477,
+  "randompair_ratio_mean": 0.9999999861860819,
+  "realized_ratio_mean": 0.9999999860418293
+ },
+ "read": "(i) render-gain audit",
+ "recipe": "MECHANISM_MAP_v1_2_RECONCILED.md \u00a74 (verbatim)"
+}
