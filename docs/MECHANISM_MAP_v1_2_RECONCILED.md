@@ -1,0 +1,75 @@
+# MECHANISM MAP — v1.2 ADDENDUM (RECONCILED)
+
+**Status: BANKED SYNTHESIS (design seat + Jason, 2026-07-12). Reads WITH `MECHANISM_MAP_conversion_gating.md` (v1.0). SUPERSEDES both v1.1 drafts — `MECHANISM_MAP_v1_1_addendum.md` and `MECHANISM_MAP_ADDENDUM_v1_1_reality_ladder.md` — which are retained, not deleted. Provenance note: the two v1.1s are forks of the same design-seat turn (a safeguard pause split the session; both drafts survived); this document is their reconciliation plus the CWP design memo the fork left truncated, plus Jason's room/asymmetry note which postdates both. Process pin adopted: work products carry a seat/session identifier in their status line, and one seat owns reconciliation before anything rides to CC. [F7 sim rider, 2026-07-12: all sim-derived figures herein (e.g. §1's ~1.4× noise-floor dose) are estimates; the freeze artifact **confirms** them (deployed per-step median 0.2261 = 1.42× floor) and real-fabric measurements supersede.]**
+
+---
+
+## §1 Rung 3, refined: a continuum with two axes, plus a latent rung the map missed
+
+Rung 3 (local visual satisfiability) does not die at the orbit — it degrades gracefully, along **two separable axes**:
+
+- **Dose** — per-frame displacement. The orbit moves per-step novelty to only ~1.4× the noise floor; a learner exploiting slowly-varying targets through weight drift (the mechanism family already measured, coord. 3) may remain fed at that dose. [INFERRED]
+- **Kind** — predictability. A constant-ω orbit is a *linear recurrence*: exactly extrapolable. **Rung 3′ — extrapolative satisfiability**: the vision losses satisfied by short-horizon extrapolation, no identity required. The orbit kills copying and maximally enables extrapolation. [INFERRED]
+
+**Rung 3.5 — context-as-proxy** [new]: predicting the word from background/context statistics rather than the object. **CHECKABLE before any context arm is designed:** does the current background (OU toward `bg_const`) carry member information at all? If not — likely — rung 3.5 is *latent*, and the context rung (L3) is a generalization-pressure arm, not a shortcut-removal arm. The check is owed either way.
+
+## §2 EXP17 outcome table, amended (supersedes v1.0 §4's split and both v1.1 tables)
+
+- **ORBIT CONVERTS — the strongest possible positive:** a conversion at *low novelty dose* AND *maximal predictability* exonerates both axes at once. Identity persistence exonerated. Best case for the EXP13 bridge (lawful motion is predictable by definition). The correspondence-window position at frozen (r, ω) — already a pre-flight deliverable — is the quantitative record of how mild the sufficient regime was.
+- **ORBIT DEAD — three-way ambiguous**, and the map's earlier "interleaving is the gate" reading is provisional pending §3: (a) dose insufficient (rung 3 still fed at orbit speeds); (b) predictability protective (rung 3′); (c) identity-interleaving required (M3-pair).
+
+## §3 The disambiguation sequence (the merged ladder — one arm, one axis, per step)
+
+**Sequencing ruling (reconciled): scatter FIRST — it brackets.**
+
+1. **L1 — orbit** (EXP17, in flight): novel, smooth, predictable.
+2. **SCATTER-DWELL** (the fork's design; Jason's mug formalized at the axis's far end): **per-frame pose resampling within a dwell-local ball** — ball center per dwell, radius pinned under the confusion bound so identity-correspondence survives; dedicated substream; dwell law, member, word channel, mask policy all held. Maximal per-frame novelty · zero path structure · zero interleaving. *Bracketing logic: if scatter converts, the gate lives between orbit and scatter; if scatter dies, interleaving is confirmed with input novelty maximal, and the intermediate arm is skipped entirely.*
+   - **Scatter CONVERTS (orbit having died):** *smoothness/predictability was protective* — and the correspondence window becomes **two-sided in function**: frame-to-frame change bounded *below* for learning (must defeat local satisfiability) and *above* for identity (must preserve correspondence) — the hawk/sheep principle sharpened into a two-wall design law [MEASURED-conditional on this outcome]. Interleaving exonerated. → **HAND-HELD interpolates** (below) to localize which property mattered.
+   - **Scatter DEAD:** M3-pair confirmed hard → the **dwell-length titration** measures the interleaving dose; the hand-held is skipped.
+3. **HAND-HELD** (`exp12_dwell_hand`, prereg banked): the *conditional interpolator* — stochastic ω_t on a strictly-monotone phase + bounded plane wobble; keeps novelty, coherence, and net/path while breaking exact extrapolability. Its instrument: **APU** (anchor-path unpredictability ratio — RMSE of the optimal linear m-lag predictor over mean anchor step; L1's APU ≈ 0 exactly [F2-pending, 2026-07-12: "exactly" holds only under the per-dwell best-fit-rotation estimator; under a single global predictor across random planes L1's APU > 0 (~0.14/step) — estimator pinned at the L2 prereg, see RED_TEAM F2], the falsifier is exact). Discriminates rung 3′ (extrapolability) from smoothness-dose within the bracket scatter opened.
+4. **L3 — CONTEXTS (enriched by Jason's note):** background fixed per dwell, **slaved to orbital phase within the dwell** (the parallax analog — lawful, so it adds render gain, not unpredictability), **different across dwells** ("the mug in two kitchens") — context decorrelation forcing identity to bind to the object. The EXP17 background pin lifts exactly here, one moving thing at a time. Rung-3.5 checkable runs first (§1).
+5. **L4 — APPEARANCE:** lighting/render-axis variation within identity; a second novelty channel orthogonal to pose; costliest; last.
+
+**Axes framing retained** (the fork's): N = novelty-within-identity (rungs 1–3 of this ladder), C = cue isolation across dwells (L3), A = appearance (L4). Every arm is fabric structure — shuffle-class regime probes; the anti-forward audit applies at full strength on all of them, doubly on the unpredictable ones.
+
+## §4 The render-gain audit (Jason's room/asymmetry note; required from L2 onward, retroactive on L1)
+
+The kinematic floors live in pose space; the learner lives in render space. If pose-axis appearance gains are anisotropic, a random orbit plane can be kinematically compliant yet perceptually weak. **Audit (fabric-only, deterministic, computable from the frozen fabric + committed renderer at any time — no EXP17 amendment needed):** per-dwell mean render-step / pose-step ratio along the realized trajectory vs the same ratio over random pose pairs. Rides as a pre-flight read for every ladder arm AND retroactively characterizes L1. Conditional pin: severe anisotropy on L1's audit → a ratification-class amendment MAY add a render-gain floor to plane sampling. The literal room-and-asymmetry content (3D parallax, object asymmetry) is not available in this substrate; its functional content is this audit plus L3's coupling.
+
+## §5 CWP & bootstrap (reconciled C-sections + the fork's B-memo, truncation completed)
+
+**5.1 The fit** [INFERRED, untested in-substrate]: CWP's control law run against coordinates 3–6 — within a dwell, rung-3 predictions succeed → low surprise → plasticity damps *exactly the massed low-information updates that constitute the block*; a dwell boundary is a 99% *pose* jump → **IF losses spike at boundaries (the step-0 diagnostic checks this)** → surprise spikes → plasticity opens → learning concentrates at transitions. **The gradient stream is effectively interleaved without touching the fabric.** This is the standing candidate resolution to v1.0 §6's middle outcome: reality does not shuffle — *brains gate*. And CWP's documented failure mode (cannot distinguish "wrong representations" from "being pushed around") is this program's measured phenomenon — the reward-caused drift — making Loom, with its independent grounded prediction streams (vision, word, assignment) and fabric-side ground truth, the first substrate where that ambiguity is empirically probeable.
+
+**[CWP-family fold, 2026-07-12:]** The map slot belongs to *surprise-gated plasticity as a family*; CWP is the **house implementation** — with named advantages (Loom natively satisfies its three architectural requirements; the wrong-representations-vs-being-pushed-around ambiguity is, for the first time, empirically probeable here) — but the claim stands on **fit, not provenance** (cross-referenced to FUTURES §4, which carries the same language). **[Replay cross-reference fold, 2026-07-12:]** a second, dumber house arm rides the same slot — the **replay diagnostic** (`PROJECT_OPS_POSITIONING.md` §3): a uniform replay buffer, behind the reality ladder under the **same sequencing fence as CWP**, whose buffer-size titration directly measures the effective window — and it sets **CWP's honest bar**: the elegant gate must beat or match dumb uniform replay to justify itself.
+
+**5.2 Step 0 — the free diagnostic, pre-registerable NOW (read-only, no fence issues):** from existing checkpoints/records, estimate **per-dwell-position update pressure** (loss/surprise by position — `pos_err_*` is already partially logged) to verify CWP's premise that within-dwell updates are low-surprise massed. If the premise fails in-substrate, the CWP program dies cleanly before any mechanism is built. Cheap, decisive, and it sharpens the map regardless.
+
+**5.3 Sequencing fence [RULING-CLASS]:** CWP enters only AFTER the reality ladder locates the minimal converting regime — added earlier, it confounds every regime finding. The ladder's dead rungs then become CWP's test suite (its prediction: rescue conversion on rungs the plain learner fails).
+
+**5.4 Is the block a startup cost? Two stories, one arm family.** Representations are not the missing piece — acquisition succeeds in every regime *of the EXP14–17 fabric family* (known exceptions cited: the pure-W=3 cold-start acquisition wall; lawful-fabric `sep_cat` undifferentiated) and the content information is present upstream in the converting regimes while the completer rides the marginal [MEASURED — regime-scoped; the dissociation survives scoped, as everything here does]. *(Universal narrowed per fact-check 2026-07-12 B5.)* But the **race-dynamics variant** survives: early in training, rung 4 is expensive while rungs 1–3 pay immediately — the shortcut basin is occupied first and is measured to be reward-maintained; a learner meeting *mature* features at t=0 runs a different race. [SPECULATIVE, discriminators:] the **pretrained-encoder arm family** (non-paradigm scaffolds, clearly labeled, removed after use): *frozen* variant = the **M1-eliminator** (representations that cannot knead: dead-under-massing kills M1 outright); *trainable-mature* variant = the **race probe** (conversion in dwelled fabric with mature features → the block was race dynamics; still dead → the regime story stands alone and massing is not a startup cost). Wholesale pretraining as a fix remains rejected: it may *deepen* rung 3 (better encoder → cheaper local completion) and it deletes the paradigm's testable content.
+
+**5.5 Bootstrap-as-CONTROL — the founding claim's first operational test form** [DESIGN, banked]: the teaching bet ("PAM's convergence error teaches the encoder distinctions it would not acquire autonomously") is, with an untrained encoder, confounded with basic feature formation. Matched-compute contrast: (i) V-JEPA continued self-supervised alone vs (ii) V-JEPA + PAM coupling, same steps; the claim = distinctions present under (ii), absent under (i), **read on held-out discrimination probes, never on PAM's own loss.** Cost ledger stated: this weakens "PAM grows its own cortex from scratch" as a headline — but the load-bearing claim was always the teaching, and this is its cleanest test.
+
+## §6 Falsification additions (merged; extends v1.0 §5)
+
+- Orbit DEAD + scatter CONVERTS → smoothness-protective; the two-wall window law enters as [MEASURED-conditional]; M2-as-duplication is refuted in its "displacement is what matters" form.
+- Orbit DEAD + scatter DEAD + titration flat → the ladder below rung 4 is mischaracterized → representation-level probes (v1.0 §5, with the novelty branch now properly excluded first).
+- **Any Axis-N arm degrading acquisition** → the acquisition/conversion dissociation is dose-limited; the confusion bound was set too loose — **re-derive the window's upper wall from the acquisition read, not the rendering distance.**
+- CWP step-0 diagnostic shows within-dwell updates are NOT low-surprise massed → 5.1's premise fails in-substrate; the CWP program closes before it opens.
+- Ictrl-class distribution controls (EXP18 Part A) converting → distribution accounts revive; ladder attributions reopen.
+
+## §7 Open questions, re-ranked (supersedes both v1.1 rankings)
+
+1. EXP17 / L1 outcome (in flight).
+2. CWP step-0 diagnostic + the optimizer pin (both read-only, both cheap, both load-bearing for §5).
+3. Rung-3.5 checkable (background↔member information; gates L3's framing).
+4. Post-L1: scatter (DEAD) or interior-concentration control (CONVERTS) — both pre-named.
+5. Hand-held (conditional interpolator, prereg banked) · dwell-length titration (scatter-dead route).
+6. L3 contexts (enriched) → L4 appearance.
+7. Render-gain audit (with the next pre-flight; retroactive on L1).
+8. CWP program (behind the ladder) · pretrained-encoder arm family (triggers named) · bootstrap-as-control (design-level, Jason's call on timing).
+9. Durability/erosion · acquisition-speedup anomaly (unchanged).
+
+---
+
+**Plain language.** One document now instead of two half-siblings. The plan it encodes: if the smoothly-moving world fails to teach, don't guess why — bracket it. First try the *opposite extreme*: same object, but shown in random jumps within arm's reach (maximum newness, no path at all). If THAT works, something about smooth predictable motion was protecting the lazy solution, and the jerky hand-held world tells us exactly which part. If even random jumps fail, the learner truly needs rapid alternation between *different* things, and we measure how rapid. In parallel, three cheap reads sharpen everything: check whether the learner's mid-scene experience really is the low-surprise mush our brain-like plasticity rule assumes (if not, that idea dies young and cheap); check whether motion in our world actually *looks* like motion to the learner; check whether backgrounds currently leak answers. And the two big architectural ideas — pretrained vision and surprise-gated plasticity — are held at the door with their tests written: they enter as controls and mechanisms with named triggers, never as rescues.
