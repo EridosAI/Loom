@@ -1,0 +1,49 @@
+{
+ "gate": "G7",
+ "kind": "refute-default panel",
+ "date": "2026-07-12",
+ "mandate": "no lens assumes conversion or the orbit story; DEFAULT is to refute; MUST-FIX/judgment-class -> HALT to Jason",
+ "target": "the G6 DRAFT (DIRECTION-ONLY; raw crossers 5/8 [1,2,5,6,7]; certified 0/8; band 0.6129 non-loadable via cal-converts Ruling-B)",
+ "synthesis": {
+  "verdict": "DRAFT SURVIVES — no MUST-FIX, no halt-requiring judgment-class defect",
+  "clean_lenses": 4,
+  "concern_lenses": 1,
+  "must_fix": 0,
+  "implementation_independence": "verify_toolkit (design-seat stdlib, prereg-defined, never imports the harness) reproduces raw [1,2,5,6,7]/k=5, certified 0, cal [20,21,25], Fisher p=0.01282 DIGIT-EXACT",
+  "carry_to_terminal_surface": [
+   "formal_vs_certified_disagree=FALSE is VACUOUS under non-loadable (both _partition17 calls short-circuit before reading counts) — surface the real 5-raw vs 0-certified split explicitly so touch-3 is not misled",
+   "alpha CLEARED (fr 0.000964 <= 1e-3) is one-hit-fragile at the SELECTED (band,N); robustness lives in the _joint_band_cut fallback ladder (next band clears at 1.6e-4), not in the thin 3.58% margin; it feeds only the non-loadable direction-only counts",
+   "floor_clean=TRUE is a disclosed STRUCTURAL TAUTOLOGY (self-excluded null cannot host a >=N run >=band by construction); the census (depth>=8) is the decisive phantom guard and independently returns certified 0; honest read = pessimistic phantom bound P_contaminated=0.752 + census certifies nothing",
+   "substantive (anti-forward lens): the 5/8 raw crossings are alpha-significant EXCESS over A's 0/8 at an UNSHIFTED marginal (band 0.6129 vs A 0.6111, mean-shift 0.0011), but NONE sustain; direction-only is the honest, non-suppressive routing"
+  ]
+ },
+ "lenses": [
+  {
+   "lens": "terminal-classification",
+   "verdict": "CLEAN",
+   "findings": "DIRECTION-ONLY is the uniquely-correct terminal under F5+R4 precedence (loadable checked first, above SIGNATURE-DIVERGENT); cal-converts trigger [20,21,25] independently reproduced (20/21/25 carry sustained N=3 runs; 22/24 top at run-length 2); routes correctly, certifies nothing.",
+   "concern": "formal_vs_certified_disagree=FALSE vacuous under non-loadable (presentational, non-blocking)"
+  },
+  {
+   "lens": "census-certification",
+   "verdict": "CLEAN",
+   "findings": "From-scratch run-length recompute (no scorer import) reproduces per-seed longest episodes EXACTLY (s1:4, s2:3, s5:3, s6:3, s7:3; others below crossing length); 0/8 certified. Band would have to collapse from 0.6129 to 0.52 before any seed reaches longest>=8 — far into alpha-catastrophic territory. SIG_DEPTH=8 correctly pinned; no missed crosser; onset-truncation refuted."
+  },
+  {
+   "lens": "floor-audit-alpha",
+   "verdict": "CONCERN",
+   "findings": "Every statistic reproduces byte-for-byte from raw records via verbatim pure-function reimplementation. F13 DECISIVELY CLEAN and NOT cherry-picked: [0,500k) is the MORE adversarial window (alpha-margin 3.58% vs 10.70% on full-1M) and is the one used; full-1M would add s22 to cal-converters and n_null 14560. Ruling-B cannot manufacture a positive.",
+   "concerns": ["alpha one-hit-fragile at selected band (inert: fallback ladder + non-loadable)", "floor_clean=TRUE structural tautology (disclosed; census decisive)"]
+  },
+  {
+   "lens": "anti-forward-manufacturing",
+   "verdict": "CLEAN",
+   "findings": "No forward import (L_JEPA inert at W=1, zero next-frame draws); no channel-gating (word-shortcut left intact, conversion read on independent exam_acc channel — correct rule application); sigma>0 genuinely realized (deployed np11 0.587 = 4.05x tremble, driven/undriven 0.307/0.075, zero reflections); oracle test PASSES (planted 12-window run at band 0.6129 -> certified True, so certification was reachable; 0/8 is a real data property); gradient control measured, non-gating, empirically decoupled from conversion; marginal NOT shifted up (mean-shift 0.0011) so the band is not absorbing conversions."
+  },
+  {
+   "lens": "record-integrity-reads",
+   "verdict": "CLEAN",
+   "findings": "Real committed _score_one/_ext_resolve re-run on-disk reproduce the DRAFT byte-for-byte. All 8 verdict seeds READ (worst s7 onset 285900, 84100 clear of the 370000 cutoff); spec_hash parity 41d6f0d5e7da across all 20 records (10 verdict + 5 cal + 5 reused A-donor); EXT correctly not fired (k=5>=5, 0 substituted/extended); determinism enforced by the runner's own replay-assert; primary@500k, 1M tail descriptive."
+  }
+ ]
+}

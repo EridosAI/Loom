@@ -1,0 +1,129 @@
+{
+ "exp": "exp17_cal_read",
+ "gate": "G4",
+ "arm": "exp12_dwell_orbit",
+ "cal_seeds": [
+  20,
+  21,
+  22,
+  24,
+  25
+ ],
+ "primary_at": 500000,
+ "verdict_band": {
+  "band": 0.6129,
+  "N": 3,
+  "loadable": false,
+  "method": "OWN between-episode null (cal-converts, Ruling-B); counts NON-loadable -> primary DIRECTION-ONLY; attribution routes",
+  "false_rate": 0.000964,
+  "alpha": 0.001,
+  "alpha_ok": true,
+  "n_null": 6225,
+  "prefix": "[0,500k] (F13)"
+ },
+ "liveness": {
+  "n_acquired": 5,
+  "n_cal": 5,
+  "n_min": 3,
+  "live": true,
+  "onsets": {
+   "20": 399300,
+   "21": 14400,
+   "22": 10500,
+   "24": 118500,
+   "25": 90300
+  }
+ },
+ "cal_converters": [
+  20,
+  21,
+  25
+ ],
+ "band_geometry": {
+  "N": 3,
+  "sig_depth": 8,
+  "bare_N": true,
+  "note": "N >= SIG_DEPTH -> judgment-class HALT (F7: the census must discriminate above the crossing length)"
+ },
+ "null_pool": {
+  "n_null": 6225,
+  "advisory_floor": 6532,
+  "advisory_flag": true,
+  "note": "ADVISORY tripwire only (F14); the alpha-uncuttable fallback is the decisive HALT-equivalent"
+ },
+ "gradient": {
+  "per_seed": {
+   "20": {
+    "p1": 0.93664,
+    "p13_48": 0.65179,
+    "delta": 0.28485,
+    "p1_n": 336,
+    "tail_n": 336,
+    "tail_from_probe": false
+   },
+   "21": {
+    "p1": 0.60475,
+    "p13_48": 0.48893,
+    "delta": 0.11582,
+    "p1_n": 1619,
+    "tail_n": 1619,
+    "tail_from_probe": false
+   },
+   "22": {
+    "p1": 0.56325,
+    "p13_48": 0.40908,
+    "delta": 0.15417,
+    "p1_n": 1632,
+    "tail_n": 1632,
+    "tail_from_probe": false
+   },
+   "24": {
+    "p1": 0.69224,
+    "p13_48": 0.52939,
+    "delta": 0.16286,
+    "p1_n": 1272,
+    "tail_n": 1272,
+    "tail_from_probe": false
+   },
+   "25": {
+    "p1": 0.76728,
+    "p13_48": 0.61843,
+    "delta": 0.14886,
+    "p1_n": 1366,
+    "tail_n": 1366,
+    "tail_from_probe": false
+   }
+  },
+  "median_delta": 0.15417,
+  "pooled_delta": 0.15186,
+  "referent_A": {
+   "p1": 0.6915,
+   "p13_48": 0.5499,
+   "delta": 0.1416
+  },
+  "alarm_threshold": 0.0708,
+  "alarm": false,
+  "note": "persistence EXPECTED (~+0.1416); collapse = instrument alarm \u2014 flagged, never gated (\u00a75.1/F10)"
+ },
+ "borrow_diag": {
+  "donor": "exp12_dwell",
+  "cell": "exp12_dwell_orbit",
+  "donor_band": {
+   "band": 0.6111,
+   "N": 4
+  },
+  "donor_mean": 0.4899,
+  "donor_p99": 0.7083,
+  "cell_between_mean": 0.491,
+  "cell_between_p99": 0.7143,
+  "cell_between_n": 6225,
+  "mean_shift": 0.0011,
+  "fr_donorband_on_cell": 0.00016,
+  "alpha": 0.001,
+  "alpha_mult": 2.0,
+  "borrow_ok": true,
+  "decision": "BORROW \u2014 marginal order-invariant; C leaving A's marginal = genuine fabric conversion",
+  "note": "DIAGNOSTIC ONLY (prereg \u00a72: the baseline-shift question; the band is NEVER borrowed; F8 labels corrected \u2014 exp14_arms stamps C_shuffle)"
+ },
+ "spec_hash": "41d6f0d5e7da"
+}

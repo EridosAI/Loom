@@ -119,3 +119,24 @@ Step-0 prefix-identity lever). `np11`/`tr11` are `measure_kinematics` called unc
 +0.0017 — but that is one degree *above* the pin (the pin's own np margin is +0.0073), and the np
 wall (ω=19.40) is farther from the pin than at 100k (ω≈18.9). The advisory sweep corroborates the
 (0.85, 18°) freeze and surfaces no reason to re-select.
+
+---
+
+## SUPERSEDE ANNOTATION (G8, 2026-07-12 — Jason ruling; supersede-don't-overwrite)
+
+Requirement-1 documentation defect, **minor class, conclusion-robust** (the halt-class ruling is
+unaffected — it rests on the recipe-free direct probes np@19=0.5813≥0.5796 and tr@17=0.2320≥0.2255,
+not on any reconstructed window). Two corrections to the wall reconstruction above:
+
+1. **The "100k window [16.0, 18.9]" is a REGIME-MIXED HYBRID** — 100k kinematics crossed against the
+   *deployed* bars via grid secants — which the annex did not name. Restated **in-regime** (each
+   horizon's kinematics against its OWN bars): **100k [16.16, 19.42] vs deployed [15.81, 19.40]** —
+   the conclusion is unchanged (deployed still wider on the low side, essentially equal on the high
+   side; walls not tighter). Verified: 100k tr wall 16 + 0.001006/0.0124 = 16.16; 100k np wall
+   18 + 0.009853/0.0139 = 19.42.
+2. **Linear-extrapolation-optimism caveat** (omitted above): the np wall 19.40 is the *linear*
+   crossing; the np surface is **concave in ω** (100k beyond-pin secant 18→20 = −0.00695/deg vs the
+   probe's central −0.00426), so a curvature-bounded np wall is nearer: 19 + 0.00174/0.00695 =
+   **≥19.25**, giving pin margin **≥1.25°** (down from the 1.40° the linear read implied) — unchanged
+   in kind. Standing lesson: a cross-regime comparison must be recipe-consistent or name the mix;
+   extrapolated walls carry the curvature/optimism caveat.

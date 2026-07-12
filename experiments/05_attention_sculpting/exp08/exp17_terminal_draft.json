@@ -1,0 +1,287 @@
+{
+ "exp": "exp17_verdict_DRAFT",
+ "gate": "G6",
+ "arm": "exp12_dwell_orbit",
+ "verdict_band": {
+  "band": 0.6129,
+  "N": 3,
+  "loadable": false,
+  "method": "OWN between-episode null (cal-converts, Ruling-B); counts NON-loadable -> primary DIRECTION-ONLY; attribution routes",
+  "false_rate": 0.000964,
+  "alpha": 0.001,
+  "alpha_ok": true,
+  "n_null": 6225,
+  "prefix": "[0,500k] (F13)"
+ },
+ "ext": {
+  "fired": false,
+  "n_read": 8,
+  "k": 5,
+  "read_seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "substituted": 0,
+  "extended": 0,
+  "ext_used": []
+ },
+ "floor_audit": {
+  "band": 0.6129,
+  "N": 3,
+  "sig_depth": 8,
+  "sig_recur": 2,
+  "expected_phantom_bracket": [
+   0.0,
+   5.359542525540619
+  ],
+  "self_excluded_null": {
+   "exclusion": "0.6129x3",
+   "run_len": 3,
+   "n_null_positions": 6189,
+   "n_null_episodes": 0,
+   "episode_rate": 0.0,
+   "expected": 0.0,
+   "expected_display": 0.0
+  },
+  "contaminated_null": {
+   "exclusion": "0.6x8",
+   "run_len": 3,
+   "n_null_positions": 6215,
+   "n_null_episodes": 5,
+   "episode_rate": 0.00080451,
+   "expected": 5.359542525540619,
+   "expected_display": 5.3595
+  },
+  "P_self_excluded": 0.0,
+  "P_contaminated": 0.75246,
+  "floor_clean": true,
+  "observed_converters": 5,
+  "observed_seeds": [
+   1,
+   2,
+   5,
+   6,
+   7
+  ],
+  "signature_census": [
+   {
+    "seed": 1,
+    "longest_episode": 4,
+    "n_episodes": 1,
+    "max_run": 4,
+    "signature": "bare-N-isolated",
+    "certified": false
+   },
+   {
+    "seed": 2,
+    "longest_episode": 3,
+    "n_episodes": 1,
+    "max_run": 3,
+    "signature": "bare-N-isolated",
+    "certified": false
+   },
+   {
+    "seed": 5,
+    "longest_episode": 3,
+    "n_episodes": 1,
+    "max_run": 3,
+    "signature": "bare-N-isolated",
+    "certified": false
+   },
+   {
+    "seed": 6,
+    "longest_episode": 3,
+    "n_episodes": 1,
+    "max_run": 3,
+    "signature": "bare-N-isolated",
+    "certified": false
+   },
+   {
+    "seed": 7,
+    "longest_episode": 3,
+    "n_episodes": 1,
+    "max_run": 3,
+    "signature": "bare-N-isolated",
+    "certified": false
+   }
+  ],
+  "certified_converters": [],
+  "certified_count": 0,
+  "census_selfaudit": {
+   "expected_depth_runs_bracket": [
+    0.0,
+    0.0
+   ],
+   "bar": 0.0,
+   "certified_exceeds_bar": false,
+   "census_ok": true,
+   "rule": "F12: a POSITIVE certified count must EXCEED the dual-null >=SIG_DEPTH expectation bracket high end, else NOT-CERTIFIABLE-by-census (the AMD-13 observed-must-clear-expectation logic applied to the census itself)"
+  },
+  "n_null_prefix": 6209,
+  "null_pool_advisory": true,
+  "null_caveat": "AMD-13: self-excluded UNDER-states / contaminated (>=0.6x8) OVER-states the phantom rate; truth between; the census (F7 DEPTH-decisive + F12 self-audit) is decisive, never the floor arithmetic. Pools = [0,500k] prefix (F13)."
+ },
+ "TERMINAL": {
+  "terminal": "DIRECTION-ONLY",
+  "routes": true,
+  "why": "cal-converts Ruling-B recut \u2014 counts non-loadable vs A"
+ },
+ "certified_read": {
+  "terminal": "DIRECTION-ONLY",
+  "routes": true,
+  "why": "cal-converts Ruling-B recut \u2014 counts non-loadable vs A"
+ },
+ "formal_vs_certified_disagree": false,
+ "routes_to_jason": true,
+ "fisher_vs_A_0of8": {
+  "k": 5,
+  "n": 8,
+  "p": 0.01282,
+  "label": "design-fixed",
+  "gated": false
+ },
+ "c_shuffle_context": "C_shuffle 5/8 {0,2,4,5,6} @ 0.64x5 (own shifted null; descriptive context)",
+ "companions": {
+  "gradient_persistence": {
+   "0": {
+    "p1": 0.72316,
+    "p13_48": 0.58216,
+    "delta": 0.141,
+    "p1_n": 1381,
+    "tail_n": 1381,
+    "tail_from_probe": false
+   },
+   "1": {
+    "p1": 0.8049,
+    "p13_48": 0.71602,
+    "delta": 0.08888,
+    "p1_n": 1319,
+    "tail_n": 1319,
+    "tail_from_probe": false
+   },
+   "2": {
+    "p1": 0.64205,
+    "p13_48": 0.51487,
+    "delta": 0.12718,
+    "p1_n": 1610,
+    "tail_n": 1610,
+    "tail_from_probe": false
+   },
+   "3": {
+    "p1": 0.7755,
+    "p13_48": 0.61243,
+    "delta": 0.16307,
+    "p1_n": 1634,
+    "tail_n": 1634,
+    "tail_from_probe": false
+   },
+   "4": {
+    "p1": 0.55127,
+    "p13_48": 0.43152,
+    "delta": 0.11975,
+    "p1_n": 1566,
+    "tail_n": 1566,
+    "tail_from_probe": false
+   },
+   "5": {
+    "p1": 0.68219,
+    "p13_48": 0.44617,
+    "delta": 0.23602,
+    "p1_n": 1542,
+    "tail_n": 1542,
+    "tail_from_probe": false
+   },
+   "6": {
+    "p1": 0.66946,
+    "p13_48": 0.49541,
+    "delta": 0.17405,
+    "p1_n": 1566,
+    "tail_n": 1566,
+    "tail_from_probe": false
+   },
+   "7": {
+    "p1": 0.7488,
+    "p13_48": 0.66982,
+    "delta": 0.07898,
+    "p1_n": 714,
+    "tail_n": 714,
+    "tail_from_probe": false
+   }
+  },
+  "tail_1M": {
+   "window": "(500000, 1000000]",
+   "per_seed": {
+    "0": {
+     "conv_onset_full": 539100,
+     "first_converts_in_tail": true,
+     "tail_longest_episode": 3,
+     "tail_signature": "bare-N"
+    },
+    "1": {
+     "conv_onset_full": 440100,
+     "first_converts_in_tail": false,
+     "tail_longest_episode": 3,
+     "tail_signature": "bare-N"
+    },
+    "2": {
+     "conv_onset_full": 45900,
+     "first_converts_in_tail": false,
+     "tail_longest_episode": 3,
+     "tail_signature": "bare-N"
+    },
+    "3": {
+     "conv_onset_full": 741900,
+     "first_converts_in_tail": true,
+     "tail_longest_episode": 3,
+     "tail_signature": "bare-N"
+    },
+    "4": {
+     "conv_onset_full": null,
+     "first_converts_in_tail": false,
+     "tail_longest_episode": 0,
+     "tail_signature": "none"
+    },
+    "5": {
+     "conv_onset_full": 495300,
+     "first_converts_in_tail": false,
+     "tail_longest_episode": 3,
+     "tail_signature": "bare-N"
+    },
+    "6": {
+     "conv_onset_full": 318000,
+     "first_converts_in_tail": false,
+     "tail_longest_episode": 3,
+     "tail_signature": "bare-N"
+    },
+    "7": {
+     "conv_onset_full": 311700,
+     "first_converts_in_tail": false,
+     "tail_longest_episode": 3,
+     "tail_signature": "bare-N"
+    },
+    "8": {
+     "conv_onset_full": 280200,
+     "first_converts_in_tail": false,
+     "tail_longest_episode": 0,
+     "tail_signature": "none"
+    },
+    "9": {
+     "conv_onset_full": 234300,
+     "first_converts_in_tail": false,
+     "tail_longest_episode": 3,
+     "tail_signature": "bare-N"
+    }
+   },
+   "n_first_convert_in_tail": 2,
+   "read": "2 first-convert in the tail"
+  }
+ },
+ "DRAFT_note": "G7 refute-default panel next: no lens assumes conversion or the orbit story; attribution is Jason's (touch 3)",
+ "spec_hash": "41d6f0d5e7da"
+}
