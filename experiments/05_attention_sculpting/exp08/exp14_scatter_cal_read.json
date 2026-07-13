@@ -1,0 +1,61 @@
+{
+ "exp": "scatter_cal_read",
+ "gate": "G4",
+ "arm": "exp12_dwell_scatter",
+ "cal_seeds": [
+  20,
+  21,
+  22,
+  24,
+  25
+ ],
+ "primary_at": 500000,
+ "verdict_band": {
+  "band": 0.6129,
+  "N": 4,
+  "loadable": false,
+  "method": "OWN between-episode null (cal-converts EXPECTED, Ruling-B); counts NON-loadable -> DIRECTION-ONLY is the expected formal LABEL; the finding is the matched-bar excess + census, not this label",
+  "false_rate": 0.000287,
+  "alpha": 0.001,
+  "alpha_ok": true,
+  "n_null": 6975,
+  "prefix": "[0,500k] (F13)"
+ },
+ "liveness": {
+  "n_acquired": 5,
+  "n_cal": 5,
+  "n_min": 3,
+  "live": true
+ },
+ "cal_converters": [
+  20,
+  21
+ ],
+ "cal_converts_expected": true,
+ "band_geometry": {
+  "N": 4,
+  "sig_depth": 8,
+  "bare_N": true
+ },
+ "borrow_diag": {
+  "donor": "exp12_dwell",
+  "cell": "exp12_dwell_scatter",
+  "donor_band": {
+   "band": 0.6111,
+   "N": 4
+  },
+  "donor_mean": 0.4899,
+  "donor_p99": 0.7083,
+  "cell_between_mean": 0.4897,
+  "cell_between_p99": 0.7083,
+  "cell_between_n": 6975,
+  "mean_shift": -0.0002,
+  "fr_donorband_on_cell": 0.00043,
+  "alpha": 0.001,
+  "alpha_mult": 2.0,
+  "borrow_ok": true,
+  "decision": "BORROW \u2014 marginal order-invariant; C leaving A's marginal = genuine fabric conversion",
+  "note": "DIAGNOSTIC ONLY (\u00a72: baseline-shift; the band is NEVER borrowed)"
+ },
+ "spec_hash": "41d6f0d5e7da"
+}
