@@ -2771,3 +2771,14 @@ the replay bar** (v1.2 §5). Only there does "interleaving is the gate" get its 
 this arm: [[feedback_matched_bar_companions]] (prose included), the F4-A code-over-prose precedence, and
 calibrate-in-regime (nothing transports). Related: §10.27 (orbit, the smooth end), `MECHANISM_MAP_v1_2_RECONCILED.md`
 §2 (ambiguity collapsed), `EXP_SCATTER_TERMINAL_SURFACE.md` (the corridor record).
+
+> **PIVOT SUPERSEDED → REPLAY-FIRST (Jason ratified, 2026-07-13; the paragraph above is preserved, not
+> rewritten).** The pivot order (titration → replay → CWP) is superseded: **replay-first.** Grounds: replay
+> tests the *why* — §10.28's own firewall names the replay arm as what tests the mechanism — and it is the
+> load-bearing question (whether interleaving can be *manufactured* from coherent, dwelled experience, the
+> architecture's only path to reality), on which everything downstream waits; titration is cheap and does not
+> expire, so it loses nothing riding behind. The replay-first arm is **EXP19 — ORDERING WINDOW (W-PERM)**
+> (`EXP19_ORDERING_WINDOW_PREREG.md`, ratified touch-1 2026-07-13): a block-permutation ladder measuring the
+> ordering window B\* on the held `exp12_dwell` fabric, with dwell-length titration re-banked behind it
+> (RE-PRICED — v1.2 §12.1). Cross-refs: `MECHANISM_MAP_v1_2_RECONCILED.md` §5.3 (SATISFIED, isolated-diagnostic
+> rider), `PROJECT_OPS_POSITIONING.md` §3 (U-BUF→W-PERM re-spec).
