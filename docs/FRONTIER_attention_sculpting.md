@@ -2720,3 +2720,54 @@ re-measured by the committed measurer before selection runs. Incident = **design
 exact as its provenance — digit-exact binds require committed-code provenance.** Next: lexicographic
 (r,ω) selection → pin+freeze → G2 deployed-1M verification → build commit → G1a/G1b → pre-flight
 (touch 2).
+
+## §10.28 — SCATTER-DWELL: **CLOSED 2026-07-13 — THE NOVELTY AXIS IS INERT END TO END; ORDERING (NOT CONTENT) MOVES CONVERSION → INTERLEAVING IS THE GATE** (mechanism [PROPOSED]) (posed as the bracketing arm 2026-07-12 → closed 2026-07-13)
+
+**CLOSE (Jason ratified, touch 3, 2026-07-13).** The bracketing arm `exp12_dwell_scatter` (per-frame
+uniform-in-ball pose resample at R\*=0.50 — maximal per-frame novelty · zero path · zero predictability ·
+identity held) ran the corridor clean G1→G8. Commits: build `24dd0e3` / pre-flight `b443a6e` / G3-G4
+`3b9627f` / §3 horizon amendment `ec8121a` / G5-G6 `9b08558` / G8 terminal `ceef0d8` / this CLOSE.
+
+**What is measured.** Across the entire novelty axis — **tremble** (minimal per-frame change), **orbit**
+(smooth, directed, predictable), **scatter** (maximal, pathless, unpredictable) — conversion is
+**uniformly absent** (certified **0/8** each), and **at matched bars the three arms are
+indistinguishable**: scatter / orbit / A_dwell = **2/1/0** (0.6129×4), **2/1/0** (0.6111×4), **6/5/3**
+(0.6129×3); all certified 0; max episode **4 / 4 / 3** vs **≥36** for a real converter; **no matched-bar
+excess at any common detector**. Not "more novelty is worse," not "less is worse" — **INERT.** Meanwhile
+the **shuffled** fabric (`C_shuffle` — the **IDENTICAL wave multiset** as A_dwell, checksum-verified,
+merely **reordered**) converts AND certifies **5/8 (62.5%)** with longest episodes 36–90; the pooled
+converting-fabric regimes (EXP14 B/C/D) at **58%/seed** (14/24) give **p(scatter certified 0/8) = 0.0009**.
+**The variable that moves conversion is ORDERING, not content.**
+
+**What that licenses.** v1.2 §2's three-way ambiguity — **dose / predictability / interleaving** —
+**collapses:** scatter maximizes within-dwell dose AND destroys predictability, and **neither moved the
+needle.** **INTERLEAVING IS THE GATE.** This is the strongest claim the campaign has earned, and this arm
+earned it. The novelty axis (rungs 1–3 of the reality ladder) is closed **NEGATIVE end to end**.
+
+**Where the line holds ([PROPOSED] — do not smuggle the mechanism through the strength of the negative).**
+"Interleaving is the gate" is a claim about **this completer under this fabric**. It does **not yet say
+WHY** — whether interleaving denies the local-satisfiability shortcut (the mechanism map's prediction) or
+does something else. That mechanism claim remains **[PROPOSED]**; the **replay arm** is what tests it
+(the dumb uniform buffer, which also measures the effective window and sets CWP's honest bar). The
+powered negative earns "interleaving is the gate," not "interleaving is the gate *because* X."
+
+**Corridor texture + rulings.** G4 cal-converts {20,21} → Ruling-B non-loadable → DIRECTION-ONLY formal
+(expected). G6 DEAD on the two-axes spine (no surviving matched-bar excess ∧ certified census 0), raw
+SECONDARY. **G7 refute-panel** (stats+fact-check CLEAN; f6a MUST-FIX refuted) surfaced ONE judgment-class
+— DEAD vs UNDERPOWERED for the raw=2/10 bare-N signature — **ruled DEAD** (F4-A: committed scorer + smoke
+sc4 decide DEAD raw-agnostically pre-data, code governs the conflicting §4 prose; raw=2 inside the
+floor-audit phantom bracket [0,3.13], so raw≥5 is a floor on noise; EXP16's UNDERPOWERED is a **count-rung**
+terminal that does **not transport** to a two-axis regime — nothing transports). The **raw≥5 restriction
+STRUCK** (ledger catch 18, catch-15-species raw-gating). **Ledger catch 17:** the terminal's "deader than
+the orbit" was an unlike-bar prose gloss (scatter@N4 vs orbit@N3), caught by the **seat pre-panel**
+(earlier than §10.27's outside-pass catch) — standing rule reinforced: audit cross-arm PROSE for
+bar-matching. Acq-guard PASSED (identity recoverable — the negative is a real non-conversion, not a
+confusion-ceiling artifact). Gradient persisted (0.1112 ≈ A's 0.1416 — valid regime probe).
+
+**Pivot fires.** SCATTER-DEAD triggers the **dwell-length titration** (onset-rate is the knob) to measure
+the interleaving **dose** (the §10.27 forward-pointer, now realized); then the mechanism-class arms unlock
+in order — **replay diagnostic first** (measures the effective window; sets the honest bar), then **CWP vs
+the replay bar** (v1.2 §5). Only there does "interleaving is the gate" get its *why*. Standing rules from
+this arm: [[feedback_matched_bar_companions]] (prose included), the F4-A code-over-prose precedence, and
+calibrate-in-regime (nothing transports). Related: §10.27 (orbit, the smooth end), `MECHANISM_MAP_v1_2_RECONCILED.md`
+§2 (ambiguity collapsed), `EXP_SCATTER_TERMINAL_SURFACE.md` (the corridor record).
