@@ -88,6 +88,14 @@ definition, or route may be modified in-corridor **for any reason**.
   *(Motivating instances: EXP17 F4 stat3 two-middle average; the converter-onset median — two middles
   **150,300 / 172,200 → 161,250 exact** — the third of three incidents, with the seat's upper-median slip
   and canon's round-half-even display of the exact .25.)*
+- **Raw counts never gate a finding.** Raw counts scale with the detector's false rate and sit inside the
+  floor-audit phantom bracket; a raw-count power floor is a floor on *noise*. **Certified counts only.**
+  *(Ledger 18, a catch-15-species regression. The instance was recorded; the forward-binding rule was not.)*
+- **Prose figures carry the same recipe-naming burden as canon figures — from any chair.** Every number in
+  relay text, chat, a handoff, **or a launch brief** names the recipe that produced it and is **computed
+  in-session or read from a committed artifact** — never restated from recollection. Binds the design seat,
+  **CC**, and the **design authority**. **The weak point is not the seat. It is prose, and prose is written by
+  everyone.**
 
 ## The pre-flight package (touch 2)
 
@@ -105,6 +113,8 @@ Assembled once, read once, before the terminal opens. Contents:
 **Mandatory gate-executor audit (added after the EXP16 corridor was found code-incomplete at open — the AMD-12 instance).** Every gate row in (d) MUST name its **executing function** and its **positive-delta smoke ID**. A gate whose executor does not yet exist — or exists without a smoke-tested positive-delta assert — is a **pre-flight blocker**: the corridor does not open. This is the generalized fix for the motivating failure — EXP16's §4-partition scorer and its cal-read gates were never built (the prereg's build scope enumerated only the arm flag + the probe), and the gap survived five review layers because each verified *what exists against its spec*, never *the gate table against its executors*. It was exposed only when writing the gate table made "executable by what?" a checkable question. A corridor cannot open with an unexecutable gate.
 
 **Reachable-falsifier requirement (extends the gate-executor audit; a pre-flight blocker).** Every gate names not only its executing function and positive-delta smoke, but a **falsifier reachable from the real data path**. A branch that cannot fire on any admissible input is dead code, and a gate whose only failing input is hand-fed to the smoke is **not certified**. *Motivating instance: SCATTER/EXP17 `floor_clean` — the self-excluded null excludes (band,N) episodes then counts (band,N) episodes, so `floor_clean ≡ TRUE` identically and the NOT-CERTIFIABLE-by-count branch is unreachable from the audit; it was exercised only by passing `floor_clean=False` by hand. Five refute-default lenses read it as a pass.*
+
+**Arms are priced when they open, not when they are banked.** A banked arm's cost, instrument, and dose range are **[ESTIMATE]** until its prereg is written against committed code and constants. **Pre-registration fixes bars against post-hoc movement; it does not certify an arm nobody has opened.** Every banked arm gets an **instrument audit at prereg** — its knob's reachable range, its confounds, **and its endpoints re-derived from code, on the lineage the certified records actually live in** — before it is scheduled or costed. *(Motivating instance: EXP19 v3, spec'd against `exp13_fabric` where its certified endpoints do not exist — ledger 26. The audit is the standing guard.)*
 
 **On ratification of the package:** commit the protocol + the constant record + the pre-flight surface,
 push, and the corridor OPENS. From that moment the next human touch is the terminal surface — unless a
