@@ -121,9 +121,43 @@ Envelope: no R clears the walls under the ceiling → **HALT** (geometry conflic
 
 ## §3 Seeds / horizon (verbatim)
 
-Cal {20,21,22,24,25}; verdict {0–7}; EXT {8,9}; substitution {10–19}. All runs @ 1M, mid-ckpt 500k.
-**Single referent everywhere: the [0,500k) column prefix** (F13) — primary frozen at 500k; 1M tail
+Cal {20,21,22,24,25}; verdict {0–7}; EXT {8,9}; substitution {10–19}. `h_max=1M` (fabric build, probe
+windows [0, stream.T−W], G1a/G1b) for **every** run — unchanged. mid-ckpt 500k.
+**Single referent everywhere: the [0,500k) column prefix** (F13) — primary frozen at 500k; the tail is
 descriptive only. Determinism: `torch.set_num_threads(1)`.
+
+**HORIZON AMENDMENT (Jason ratified, 2026-07-13, ratification-class, pre-data; F13-primary UNTOUCHED).**
+The 1M *training* horizon is not load-bearing: F13 already freezes the primary at [0,500k), and the 14
+committed EXP14 B/C/D converters all converted well before 500k. Only the **training** horizon moves,
+via the existing `read_at` parameter (no new flag/code/smoke — smoke (9) already proves the
+run-to-2N/read-at-N prefix digit-exact). **Intended training horizons:** cal {20,21,22,24,25} · verdict
+{4,5,6,7} · EXT {8,9} → **`read_at=500k`**; the pre-named **blind tail** seeds verdict {0,1,2,3} →
+`read_at=1M`. Full runs from the start; **no checkpoint-resume anywhere** (so the resume-exactness
+question is moot and drops). **Escalation (pre-named, outcome-blind):** if any tail band-touch fires at
+the committed detector in (500k,1M] on {0,1,2,3}, the remaining eleven re-run at `read_at=1M` before the
+terminal.
+
+**Tail hazard pin (F6-A species — §4/terminal template):** the tail (500k,1M] is **descriptive-only and
+NEVER enters a cross-arm comparison**; scatter's tail n differs from A's / the orbit's (n=8–10 at 1M).
+**Every cross-arm read is [0,500k) for every arm** (matched-bar, census, Fisher) — the tail is reported
+per-arm, never like-barred across arms.
+
+**Grounds (fact-checked 2026-07-13 by CC from `exp08/exp14_2x2_verdict_verdict.json`):** 14 converters
+(B 2,4,5,6,7 · C 0,2,4,5,6 · D 0,1,3,6; A 0/8) with conversion-onset **min 19.2k / median 161.2k /
+max 427.5k — 14/14 < 500k**. *[Fact-check note: the relay's median "172.2k" is the UPPER median
+(sorted[7]); the proper even-n median (avg of the two middle) is **161.2k** — a convention near-miss,
+conclusion-robust; min/max/n/all-<500k reproduce exactly.]* Horizon-independence of the step path
+confirmed at code level AND empirically (h_max=N vs 2N → bit-identical params + Adam optimizer state +
+trajectory): gain(t), lam1/lam2(t), `_pam_penalty`, and the Adam LR all key on the **absolute step index**
+with fixed breakpoints — none on total horizon.
+
+**Execution reconciliation (corridor, 2026-07-13):** this amendment landed while cal (G3) had already
+completed at 1M and G5 (verdict/EXT) was ~60% into its 1M runs. By prefix-invariance the [0,500k) content
+is identical at any `read_at`, and **restarting the in-flight runs at 500k would cost MORE compute than
+finishing** (≈7M vs ≈4M remaining steps) — defeating the amendment's own savings. So the in-flight runs
+were allowed to **finish at 1M**; the **finding uses [0,500k) for every cross-arm read** (fully
+amendment-compliant), all seeds carry a descriptive tail (the blind-on-4 + escalation is thereby moot),
+and the primary is untouched. The `read_at` split stands as the ratified design for any re-run.
 
 ## §4 Outcome cells — matched-bar excess + certified census DECIDE; counts are context; cal-self-converts EXPECTED
 
