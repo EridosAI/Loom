@@ -143,6 +143,18 @@ def scatter_arm(r: float) -> str:
     ARMS12.setdefault(name, dict(shuffled=False, dwell_scatter=True, scatter_probe=True,
                                  scatter_r=float(r)))
     return name
+
+
+def exp19_wperm(B: int) -> str:
+    """Register + return the EXP19 W-PERM arm at block window B (a PAID ladder point, B > 1).
+    exp12_dwell's fabric, reordered by a block permutation of window B (F.block_perm); shuffled=True
+    triggers the committed twin-rebuild + multiset checksum-assert (= wp-multiset). B=1 is NOT
+    registered here — it is REUSED == exp12_dwell (no perm constructed); B=T is REUSED ==
+    exp12_shuffle (a single block == torch.randperm)."""
+    assert B > 1, "exp19_wperm is for paid B>1 (B=1 REUSED==exp12_dwell; B=T REUSED==exp12_shuffle)"
+    name = f"exp19_wperm_B{int(B)}"
+    ARMS12.setdefault(name, dict(shuffled=True, wperm_B=int(B)))
+    return name
 RIG1_ARMS = ("exp12_dwell", "exp12_shuffle")
 
 POS_BUCKETS = ((1, 1), (2, 2), (3, 3), (4, 6), (7, 12), (13, 48))
@@ -182,7 +194,8 @@ class EXP12Loop(A.EXP08Loop):
                               orbit_r=v.get("orbit_r"),
                               orbit_w_deg=v.get("orbit_w_deg"),
                               dwell_scatter=v.get("dwell_scatter", False),
-                              scatter_r=v.get("scatter_r"))
+                              scatter_r=v.get("scatter_r"),
+                              wperm_B=v.get("wperm_B"))
 
     def _make_stim(self):
         cfg = self.cfg
@@ -428,7 +441,8 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
                                    else spec.get("orbit_w_deg")),
                       dwell_scatter=spec.get("dwell_scatter", False),         # SCATTER §1
                       scatter_r=(X_SCATTER_R if spec.get("scatter_frozen")
-                                 else spec.get("scatter_r")))
+                                 else spec.get("scatter_r")),
+                      wperm_B=spec.get("wperm_B"))                            # EXP19 W-PERM
     loop = EXP12Loop(cfg, pin)
     return loop, spec, cfg
 

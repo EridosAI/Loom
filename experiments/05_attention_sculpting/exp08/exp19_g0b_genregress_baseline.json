@@ -1,0 +1,50 @@
+{
+  "gate": "G0b generator regression (REUSED-class, deterministic replay)",
+  "tag": "baseline",
+  "spec_hash": "41d6f0d5e7da",
+  "cells": [
+    {
+      "arm": "exp12_dwell",
+      "seed": 0,
+      "T": 1000008,
+      "fabric_match": true,
+      "asserts_match": true,
+      "ok": true
+    },
+    {
+      "arm": "exp12_shuffle",
+      "seed": 0,
+      "T": 1000008,
+      "fabric_match": true,
+      "asserts_match": true,
+      "ok": true
+    },
+    {
+      "arm": "exp12_dwell_scatter",
+      "seed": 0,
+      "T": 1000008,
+      "fabric_match": true,
+      "asserts_match": true,
+      "ok": true
+    },
+    {
+      "arm": "exp12_dwell_orbit",
+      "seed": 0,
+      "T": 1000008,
+      "fabric_match": true,
+      "asserts_match": true,
+      "ok": true
+    },
+    {
+      "arm": "exp12_dwell_expomid",
+      "seed": 0,
+      "T": 1000008,
+      "fabric_match": true,
+      "asserts_match": true,
+      "ok": true
+    }
+  ],
+  "all_pass": true,
+  "divergence": false,
+  "setup_error": false
+}

@@ -219,12 +219,29 @@ def _ball_sample(r: float, gen: torch.Generator, K: int) -> torch.Tensor:
     return mag * u
 
 
+def block_perm(T: int, B: int, g: torch.Generator) -> torch.Tensor:
+    """EXP19 W-PERM (ledger 26/29). Block permutation of range(T), window B: blocks tile from
+    index 0, each permuted independently by ONE generator consumed left to right; the final short
+    block (when T % B != 0) is permuted at its actual size. At B == T this is a single block at
+    offset 0 => bit-exactly torch.randperm(T, generator=g), so the B=T ceiling reduces to
+    exp12_shuffle (wpT). Fabric-index reorder only; the wave multiset is preserved by construction
+    (the committed twin-rebuild + checksum-assert = wp-multiset)."""
+    assert 1 <= B <= T, f"block_perm window B={B} out of range [1, {T}]"
+    parts, off = [], 0
+    while off < T:
+        b = min(B, T - off)
+        parts.append(torch.randperm(b, generator=g) + off)
+        off += b
+    return torch.cat(parts)
+
+
 def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
                  probe_rate: float = 0.0, shuffled: bool = False,
                  uniform_mask: bool = False, word_ref: bool = False,
                  dwell_orbit: bool = False, orbit_r: float | None = None,
                  orbit_w_deg: int | None = None,
                  dwell_scatter: bool = False, scatter_r: float | None = None,
+                 wperm_B: int | None = None,
                  _orbit_test_uncentered: bool = False,
                  _scatter_test_uncentered: bool = False) -> Fabric:
     """uniform_mask (the SPLITTING ARM, prereg §14): the mask POLICY at position-1 waves
@@ -259,6 +276,10 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
     assert not (dwell_orbit and dwell_scatter), "dwell_orbit and dwell_scatter are exclusive"
     assert not (dwell_scatter and (shuffled or uniform_mask or word_ref)), \
         "dwell_scatter is exclusive of shuffled/uniform_mask/word_ref (SCATTER §1; build_fabric-level)"
+    assert wperm_B is None or shuffled, \
+        "wperm_B (EXP19 W-PERM) requires shuffled — it replaces the shuffle-path perm constructor"
+    assert wperm_B is None or not (dwell_orbit or dwell_scatter or uniform_mask or word_ref), \
+        "wperm_B is exclusive of orbit/scatter/uniform_mask/word_ref (order-only on the dwelled fabric)"
     if dwell_orbit or dwell_scatter:
         # EXP17 §9 R2 (orbit) / SCATTER §1 — the ONLY consumers of SEED_SWEEP; conditional
         # registration keeps every pre-sweep manifest's substream_keys byte-identical (house
@@ -428,7 +449,9 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
             f"scatter pose left the family box {scatter_anchor_over}x — zero-reflection assert "
             "(by construction |center|inf + r <= bound - 3*stat_sd)")
     if shuffled:
-        perm = torch.randperm(T, generator=torch.Generator().manual_seed(keys["shuffle"]))
+        _gsh = torch.Generator().manual_seed(keys["shuffle"])
+        perm = (block_perm(T, wperm_B, _gsh) if wperm_B is not None
+                else torch.randperm(T, generator=_gsh))
         for f in ("a", "b", "member", "cat", "dwell_id", "pos", "mask_slot",
                   "is_exam", "is_probe_exam", "nuis", "bg", "raw"):
             setattr(fab, f, getattr(fab, f)[perm])
