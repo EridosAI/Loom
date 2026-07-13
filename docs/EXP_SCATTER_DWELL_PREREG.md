@@ -142,11 +142,14 @@ NEVER enters a cross-arm comparison**; scatter's tail n differs from A's / the o
 **Every cross-arm read is [0,500k) for every arm** (matched-bar, census, Fisher) — the tail is reported
 per-arm, never like-barred across arms.
 
-**Grounds (fact-checked 2026-07-13 by CC from `exp08/exp14_2x2_verdict_verdict.json`):** 14 converters
-(B 2,4,5,6,7 · C 0,2,4,5,6 · D 0,1,3,6; A 0/8) with conversion-onset **min 19.2k / median 161.2k /
-max 427.5k — 14/14 < 500k**. *[Fact-check note: the relay's median "172.2k" is the UPPER median
-(sorted[7]); the proper even-n median (avg of the two middle) is **161.2k** — a convention near-miss,
-conclusion-robust; min/max/n/all-<500k reproduce exactly.]* Horizon-independence of the step path
+**Grounds (fact-checked 2026-07-13 by CC from `exp08/exp14_2x2_verdict_verdict.json`, field
+`cells[B_12bc_dwp,C_shuffle,D_split].per_seed[].conversion_onset`, non-null):** 14 converters
+(B 2,4,5,6,7 · C 0,2,4,5,6 · D 0,1,3,6; A 0/8) with conversion-onset **min 19,200 / median 161,250 /
+max 427,500 — 14/14 < 500k**. *[Method-named median (provenance ratified by Jason 2026-07-13): the two
+middle sorted onsets are **150,300** and **172,200**, so the even-n median is **161,250 exactly** — an
+exact half-step, because onsets sit on the 300-step eval grid. Prior canon "161.2k" was NOT an error but
+an UNDER-display: `f"{161.25:.1f}"` → `161.2` (round-half-even on the exact .25). The relay's earlier
+"172.2k" was the UPPER median (sorted[7]), a distinct statistic. min/max/n/all-<500k reproduce exactly.]* Horizon-independence of the step path
 confirmed at code level AND empirically (h_max=N vs 2N → bit-identical params + Adam optimizer state +
 trajectory): gain(t), lam1/lam2(t), `_pam_penalty`, and the Adam LR all key on the **absolute step index**
 with fixed breakpoints — none on total horizon.
