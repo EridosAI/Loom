@@ -1,50 +1,75 @@
 {
-  "gate": "G0b generator regression (REUSED-class, deterministic replay)",
+  "gate": "G0b generator regression v2 (content-digest GATE + manifest companion, fail-closed)",
   "tag": "edited",
   "spec_hash": "41d6f0d5e7da",
+  "gen_source_sha": "2c8b52326419716f14f3367227f84d7d300adf07826ebf37e146b5f419b79f63",
+  "git_head": "15c1765dfe512e80cfd64a75dbe700e4a8398a93",
+  "reference": {
+    "gen_source_sha": "5dd1ac4f5e86d5f2df107e12fdb84fec365713e2eec6a84b6add4d417277dd75",
+    "git_head": "9429792ed28dfee57f7b21c059e07573c7fcf3c9",
+    "tag": "baseline"
+  },
+  "reference_used": true,
+  "supersedes": "v1 manifest-only comparator (VOID, ledger 31 \u2014 permutation-invariant)",
   "cells": [
     {
       "arm": "exp12_dwell",
       "seed": 0,
       "T": 1000008,
-      "fabric_match": true,
-      "asserts_match": true,
-      "ok": true
+      "content_digest": "77e8015436de7fc2bde89b2b65d3abfbf8e28012496ea0b2c820b982403982ae",
+      "manifest_fabric_match": true,
+      "manifest_asserts_match": true,
+      "companion_ok": true,
+      "shuffled": false,
+      "digest_match": true
     },
     {
       "arm": "exp12_shuffle",
       "seed": 0,
       "T": 1000008,
-      "fabric_match": true,
-      "asserts_match": true,
-      "ok": true
+      "content_digest": "4fd2e29239afef56c2eac14878194f54148e5416916a11396f1d90695791156f",
+      "manifest_fabric_match": true,
+      "manifest_asserts_match": true,
+      "companion_ok": true,
+      "shuffled": true,
+      "digest_match": true
     },
     {
       "arm": "exp12_dwell_scatter",
       "seed": 0,
       "T": 1000008,
-      "fabric_match": true,
-      "asserts_match": true,
-      "ok": true
+      "content_digest": "b85e3906173bbaaa756f2ac5a7686b7d8bf7388993a8f2c0db94549641967388",
+      "manifest_fabric_match": true,
+      "manifest_asserts_match": true,
+      "companion_ok": true,
+      "shuffled": false,
+      "digest_match": true
     },
     {
       "arm": "exp12_dwell_orbit",
       "seed": 0,
       "T": 1000008,
-      "fabric_match": true,
-      "asserts_match": true,
-      "ok": true
+      "content_digest": "952f2f4cdbda716429770c3d48325ebff92299bfc2456b38edff3dd2ac159291",
+      "manifest_fabric_match": true,
+      "manifest_asserts_match": true,
+      "companion_ok": true,
+      "shuffled": false,
+      "digest_match": true
     },
     {
       "arm": "exp12_dwell_expomid",
       "seed": 0,
       "T": 1000008,
-      "fabric_match": true,
-      "asserts_match": true,
-      "ok": true
+      "content_digest": "77e8015436de7fc2bde89b2b65d3abfbf8e28012496ea0b2c820b982403982ae",
+      "manifest_fabric_match": true,
+      "manifest_asserts_match": true,
+      "companion_ok": true,
+      "shuffled": false,
+      "digest_match": true
     }
   ],
   "all_pass": true,
-  "divergence": false,
+  "gate_divergence": false,
+  "companion_divergence": false,
   "setup_error": false
 }
