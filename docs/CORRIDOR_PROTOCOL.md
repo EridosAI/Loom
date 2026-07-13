@@ -77,6 +77,17 @@ definition, or route may be modified in-corridor **for any reason**.
 - **The wrong-reason taxonomy applies to the corridor itself.** A gate passed for an *unverifiable*
   reason is a halt, not a pass. (E.g. an invariance-only smoke that would also pass a dead no-op does not
   certify the delta — a positive-delta assert that fails under the no-op is required.)
+- **Provenance-computed, never asserted.** Every provenance, referent, and status string is **computed
+  from the data it describes, at the point it is written**. A string asserted in a branch is a claim
+  without a measurement, and is treated as a **MUST-FIX at panel**. *(Motivating instance:
+  `exp14_arms.py:743` — `false_rate_referent` asserted "this cell does NOT convert at cal" while the same
+  cell's committed `per_cal_seed_converters` field showed 3/5. Report-don't-patch: the EXP14 artifacts
+  stand; the rule is the fix.)*
+- **Even-count medians state their convention.** Any median over an even-count pool **names the
+  convention** (lower / upper / two-middle mean) and **reports the two middle values alongside it**.
+  *(Motivating instances: EXP17 F4 stat3 two-middle average; the converter-onset median — two middles
+  **150,300 / 172,200 → 161,250 exact** — the third of three incidents, with the seat's upper-median slip
+  and canon's round-half-even display of the exact .25.)*
 
 ## The pre-flight package (touch 2)
 
@@ -92,6 +103,8 @@ Assembled once, read once, before the terminal opens. Contents:
 - **(e)** this protocol (or its instance brief).
 
 **Mandatory gate-executor audit (added after the EXP16 corridor was found code-incomplete at open — the AMD-12 instance).** Every gate row in (d) MUST name its **executing function** and its **positive-delta smoke ID**. A gate whose executor does not yet exist — or exists without a smoke-tested positive-delta assert — is a **pre-flight blocker**: the corridor does not open. This is the generalized fix for the motivating failure — EXP16's §4-partition scorer and its cal-read gates were never built (the prereg's build scope enumerated only the arm flag + the probe), and the gap survived five review layers because each verified *what exists against its spec*, never *the gate table against its executors*. It was exposed only when writing the gate table made "executable by what?" a checkable question. A corridor cannot open with an unexecutable gate.
+
+**Reachable-falsifier requirement (extends the gate-executor audit; a pre-flight blocker).** Every gate names not only its executing function and positive-delta smoke, but a **falsifier reachable from the real data path**. A branch that cannot fire on any admissible input is dead code, and a gate whose only failing input is hand-fed to the smoke is **not certified**. *Motivating instance: SCATTER/EXP17 `floor_clean` — the self-excluded null excludes (band,N) episodes then counts (band,N) episodes, so `floor_clean ≡ TRUE` identically and the NOT-CERTIFIABLE-by-count branch is unreachable from the audit; it was exercised only by passing `floor_clean=False` by hand. Five refute-default lenses read it as a pass.*
 
 **On ratification of the package:** commit the protocol + the constant record + the pre-flight surface,
 push, and the corridor OPENS. From that moment the next human touch is the terminal surface — unless a
