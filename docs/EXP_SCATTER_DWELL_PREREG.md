@@ -203,8 +203,17 @@ referent COMPUTED from the record, never asserted). Raw crossing counts / Fisher
 - **DIRECTION-ONLY (expected formal label)** — cal-converts → non-loadable formal cell; the FINDING is
   decided by Axes 1–2, not this label. Direction-only + §5 companions.
 - **Raw {1..4}/8 (context)** → EXT {8,9} fires first (D1: UNREAD substitution first; certifiable cells
-  need READ n≥8); post-EXT the two axes re-decide. The certified-0 route (→ DEAD / SIGNATURE-DIVERGENT)
-  is restricted to **raw ≥5 post-EXT**, so it never collides with the EXT route.
+  need READ n≥8); post-EXT **the two axes re-decide.** ~~The certified-0 route (→ DEAD /
+  SIGNATURE-DIVERGENT) is restricted to raw ≥5 post-EXT, so it never collides with the EXT route.~~
+  **[STRUCK — marked amendment, Jason ruled 2026-07-13 (G7 judgment-class), ledger catch 18.** The
+  "raw ≥5 post-EXT" restriction **contradicts §4's ratified two-axes spine** (DEAD = no surviving
+  matched-bar excess ∧ census 0, which carries NO raw condition) and **reintroduces raw-gating — a
+  catch-15 species.** Grounds: the committed scorer (`_primary_finding`) decides DEAD raw-agnostically
+  and smoke **sc4 asserts it pre-data** (F4-A: committed code is the executable recipe, it governs over
+  conflicting prose); **raw sits inside the floor-audit's own phantom bracket [0, 3.13]**, so a raw≥5
+  gate is a floor on noise, not signal; and EXP16's UNDERPOWERED is a count-rung terminal that does not
+  transport to a two-axis regime (nothing transports). The two axes govern at every raw; raw is SECONDARY
+  context only.]**
 - **Liveness < 3/5** → HALT (unposed). **Floor-flagged** → bracket + census ride to terminal,
   NOT-CERTIFIABLE-by-count.
 

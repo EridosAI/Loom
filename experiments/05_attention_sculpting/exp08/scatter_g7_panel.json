@@ -1,0 +1,23 @@
+{
+ "gate": "G7 — SCATTER refute-default panel",
+ "date": "2026-07-13",
+ "target": "the G6 score_scatter DRAFT (SCATTER DEAD)",
+ "mandate": "4 refute-default lenses (no lens assumes conversion OR the DEAD story) -> each MUST-FIX/JUDGMENT-CLASS adversarially verified. G7 judgment-class -> HALT to Jason (CORRIDOR_PROTOCOL).",
+ "outcome": "HALT — 1 verified JUDGMENT-CLASS routed to Jason; no computational error (all numbers digit-exact).",
+ "lens_verdicts": {
+  "derivation": "CONCERNS-ONLY (1 JUDGMENT-CLASS, verified isReal)",
+  "stats_census": "CLEAN",
+  "f6a_frame": "MUST-FIX flagged -> REFUTED on verify (the missing scatter-vs-orbit leg was already added to the terminal when Jason's unlike-bar catch was folded; the three-arm tab is present)",
+  "factcheck_noassume": "CLEAN (10 onsets, crossers {1,6}, census [2,4,3,3,2,3,4,3,3,3], A 0/8, Fisher 0.2333, sep_cat 0.4733/0.4732, band 0.6129/fr 0.000287, cal-converters {20,21} all reproduce)"
+ },
+ "confirmed_judgment_class": {
+  "question": "Terminal label SCATTER DEAD vs UNDERPOWERED / NOT-CERTIFIABLE-negative (direction consistent with DEAD) for the realized raw=2/10 bare-N signature.",
+  "facts_all_reproduce": "raw_k=2 (crossers {1,6}, both longest_episode=4=N, bare-N-isolated, certified=false); n_read=10; certified census=0 (max 4 < SIG_DEPTH 8); matched-bar no surviving excess (scatter 2/8 vs A 0/8, Fisher p=0.2333 at 0.6129x4 AND 0.6111x4).",
+  "prereg_internal_conflict": "docs/EXP_SCATTER_DWELL_PREREG.md §4: (a) the DEAD cell = 'no surviving matched-bar excess AND census 0' (NO raw condition) -> MET -> DEAD defensible; (b) the 'Raw {1..4}/8' bullet = 'the certified-0 route (-> DEAD / SIGNATURE-DIVERGENT) is restricted to raw >=5 post-EXT' -> raw=2<5 VIOLATES it -> the DEAD route is textually NOT available. The two rules conflict for raw<5 post-EXT; the prereg does not resolve it.",
+  "house_precedent": "EXP16 closed the IDENTICAL signature (raw k=2/10 bare-N at 0.6111x4) as 'formal terminal UNDERPOWERED by the letter' (progress_log 2241); EXP15 likewise 'UNDERPOWERED per the letter'; verify_toolkit anchors fisher(2,10,0,8)=0.2941 as '# EXP16 raw k'. The panel that MINTED restriction (b) (scatter_build_review_panel.json) intended raw{1..4}&certified-0 -> UNDERPOWERED, not a certified terminal.",
+  "material_impact": "SCATTER DEAD -> '§4: INTERLEAVING IS THE GATE, hard' (already propagating into forward-pointers: dwell-length titration on scatter's DEAD branch) vs UNDERPOWERED -> 'consistent with interleaving-as-the-gate, NOT powered to confirm.'",
+  "why_not_MUST_FIX": "no number is wrong; the two-axes spine gives a defensible (not unambiguously wrong) DEAD route; the label is caught in the DRAFT before canon (no attribution; touch-3 pending).",
+  "cc_recommendation": "Lean UNDERPOWERED / NOT-CERTIFIABLE-negative (direction consistent with DEAD): the raw>=5 power floor CC minted at the build review + the EXP16/EXP15 house precedent both say a raw=2 bare-N certified-0 is UNDERPOWERED, not a certified DEAD. This resolves the §4 conflict (restriction (b) governs the certified-0 route) and weakens the bracketing to 'consistent-with' — but it is Jason's ruling."
+ },
+ "halt": "CORRIDOR HALTED at G7. No G8 commit. Awaiting Jason's ruling: (DEAD) or (UNDERPOWERED/NOT-CERTIFIABLE-negative) + resolve the §4 raw<5-post-EXT conflict. Terminal label + bracketing strength + the §10.27 forward-pointer follow the ruling."
+}
