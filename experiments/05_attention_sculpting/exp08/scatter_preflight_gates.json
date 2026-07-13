@@ -1,0 +1,242 @@
+{
+ "gate": "scatter pre-flight (G1a/G1b/G2)",
+ "deploy": 1000000,
+ "window": 500000,
+ "g1b_scatter": [
+  {
+   "seed": 20,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 21,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 22,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 24,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 25,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 0,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 1,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 2,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 3,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 4,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 5,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 6,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 7,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 8,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 9,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  }
+ ],
+ "g1a_reused_A": [
+  {
+   "seed": 0,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 1,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 2,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 3,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 4,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 5,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 6,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  },
+  {
+   "seed": 7,
+   "ok": true,
+   "perlag": true,
+   "k": true,
+   "sched": true,
+   "bg": true,
+   "cap": true
+  }
+ ],
+ "g2": {
+  "deployed_window": 500000,
+  "baselines": {
+   "perstep": 0.15955481071937405,
+   "tr11": 0.09019132544393788,
+   "confusion": 1.3112458121085346
+  },
+  "cell": {
+   "r": 0.5,
+   "perstep_pool": 0.5573,
+   "perstep_min": 0.557,
+   "perstep_max": 0.5578,
+   "coverage_pool": 0.2085,
+   "coverage_min": 0.2081,
+   "confusion_margin": 0.7534,
+   "floor1_contrast": true,
+   "floor2_coverage": true,
+   "floor3_ceiling": true,
+   "feasible": true
+  },
+  "r_frozen": 0.5,
+  "r_matches": true,
+  "floors_hold": true
+ },
+ "spec_hash": "41d6f0d5e7da",
+ "all_pass": true
+}
