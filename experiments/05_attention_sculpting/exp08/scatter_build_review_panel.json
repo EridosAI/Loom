@@ -1,0 +1,38 @@
+{
+ "gate": "SCATTER build — adversarial refute-default code review",
+ "date": "2026-07-13",
+ "method": "5 refute-default lenses (draw-parity / selector / scorer / smoke-adequacy / fences-regression) -> each MUST-FIX adversarially VERIFIED before it counts (review->verify workflow)",
+ "target": "the SCATTER build delta (exp12_fabric, exp12_arms, exp14_arms.smoke_scatter, exp_scatter_score, exp_scatter_smoke, scatter_select.json)",
+ "synthesis": {
+  "lens_verdicts": {"draw_parity": "CLEAN", "selector": "CONCERNS-ONLY", "scorer": "MUST-FIX-PRESENT",
+                    "smoke_adequacy": "CONCERNS-ONLY", "fences_regress": "CONCERNS-ONLY"},
+  "confirmed_must_fix": 1,
+  "resolution": "MUST-FIX FIXED; 8 concerns folded as code fixes; 3 low-risk concerns noted (not fixed)",
+  "verdict": "delta PASSES after folds; all smokes green post-fix; existing arms digit-identical; spec_hash 41d6f0d5e7da unchanged"
+ },
+ "must_fix_confirmed": [
+  {
+   "where": "exp_scatter_score.py score_scatter `finding` ternary",
+   "defect": "SCATTER CONVERTS fired on (excess_survives AND certified>=5) with NO READ n>=8 power floor; under the EXPECTED non-loadable regime _partition17 short-circuits to DIRECTION-ONLY before its own n_read<READ_FLOOR rung, so NOTHING enforced the pre-registered n>=8 floor for the PRIMARY finding -> the paradigm-positive could certify on n_read in {5,6,7} (< 8, unreachable post-EXT). Contradicts prereg §4 ('census certifies >=5 of READ n>=8').",
+   "reachable": "cal-converts (loadable=False), all 8 verdict records present (guards pass), 3 of {0-7} unacquired -> n_read=5, certified=5, matched-bar excess survives -> false SCATTER CONVERTS.",
+   "verified": "isReal=true (verify agent constructed the concrete reachable input; confirmed no upstream invariant prevents it and the smoke never exercised the ternary with n_read<8).",
+   "fix": "extracted _primary_finding(excess, certified, n_read, raw_k); CONVERTS now requires n_read >= READ_FLOOR (=8); planted smoke sc4 asserts F(True,5,7,6) != CONVERTS."
+  }
+ ],
+ "concerns_folded": [
+  "scorer: SCATTER DEAD gated on raw_k==0 (stricter than §4); FIXED in _primary_finding — DEAD = no excess AND census 0, raw_k is SECONDARY context (the orbit texture: brief crossings, nothing sustains).",
+  "scorer/F6-A: matched_bar detectors built without fr; FIXED — det_scatter carries the cal false_rate, det_a READ from exp14_band_2x2_cal.json (fr 0.000439), both REPORTED (matched_bar_tab contract).",
+  "fences/F6-A(ii): A_DETECTOR was a hardcoded literal; FIXED — _a_detector() READS band/N/fr from the committed A_dwell cal cell (provenance computed, not asserted).",
+  "selector: confusion ceiling re-implemented inline (VERBATIM by coincidence); FIXED — scatter_baselines binds confusion + coverage to S17.measure_tremble_baselines (the committed recipe).",
+  "fences: acq-guard (sep_cat) defined but unimplemented; FIXED — acq_guard() computes scatter vs A_dwell post-acq sep_cat (matched seeds/window) with the 10% margin (§4 l.57 deployment falsifier), reported in score_scatter.",
+  "fences: sm-box firing test absent; FIXED — smoke_scatter (27b) builds scatter_arm(1.20) and asserts the cl>0 box wall fires (the binding upper wall).",
+  "smoke: sc2 re-implemented the pick inline (tautology); FIXED — extracted SS._pick, sc2 tests the REAL selector; empty->None covered.",
+  "smoke: sc1 used 8 identical per-seed dicts (couldn't falsify per-seed-worst) + sc3 didn't falsify the a_k>b_k clause; FIXED — sc1 adds a per-seed-worst falsifier (pool passes, one seed below -> gated), sc3 adds an a_k<=b_k@p<=0.05 row that must NOT survive."
+ ],
+ "concerns_noted_not_fixed": [
+  "smoke (25): `assert fs.scatter_anchor_over == 0` is redundant with build_fabric's own assert — harmless, documents the invariant; kept.",
+  "smoke (27): the R=0 no-op is split across the raw-nuis check (27) and the selector floor1 (sc1) — both exist; acceptable.",
+  "smoke (28): guard test exercises the `shuffled` combo; the other flags share one OR-assert (covered) + the dwell_orbit x dwell_scatter mutual exclusion is asserted in build_fabric (untested in smoke) — low risk, noted.",
+  "scorer: census_ok re-derived as certified > census_selfaudit.expected_depth_runs_bracket[1] — CORRECT (the audit exposes the bracket, not an observed-count census_ok; verified no such key exists)."
+ ]
+}

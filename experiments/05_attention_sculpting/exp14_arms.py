@@ -2439,6 +2439,102 @@ def smoke17():
         print("SMOKE17 (23): pre-freeze (constants None) — refusal covered by (22); the "
               "drift falsifier arms itself at the pin")
     print("SMOKE17 OK (19-23)")
+    smoke_scatter()
+
+
+def smoke_scatter():
+    """SCATTER §1/§6: the per-frame uniform-in-ball generator delta. Draw-parity is the
+    single-change invariant. Every check is a POSITIVE delta: (24) fails on a dead/desynced
+    delta; (25) the center-repurposing byte-check fails if the ball draw consumes g_nuis or the
+    onset draw is skipped; (26) the zero-box-exit assert FIRES under the uncentered falsifier;
+    (27) R=0 is the no-op falsifier — every within-dwell step collapses to 0 (the contrast floor
+    would reject it), while R>0 separates; (28) illegal combos + the frozen-R guard raise;
+    (29) post-freeze, the drift assert FIRES on a perturbed R pin (amend-path proven live)."""
+    torch.set_num_threads(1)
+    NS = 12_000
+    SC = X12.scatter_arm(0.30)                          # a fabric-only PROBE arm (R=0.30)
+    la, _, _ = X12.build_exp12("exp12_dwell", 3, NS)
+    ls, _, cfgs = X12.build_exp12(SC, 3, NS)
+    fa, fs = la.stream, ls.stream
+    # (24) draw-parity: 12 non-kinematic streams byte-identical; nuis DIFFERS (delta live)
+    for f in ("dwell_id", "pos", "member", "cat", "mask_slot", "is_exam", "is_probe_exam",
+              "dwell_k", "dwell_member", "bg", "a", "b"):
+        assert torch.equal(getattr(fa, f), getattr(fs, f)), f"scatter stream {f} diverged from A"
+    assert not torch.equal(fa.nuis, fs.nuis), "scatter nuis == A nuis (delta DEAD)"
+    print("SMOKE_SCATTER (24): draw-parity — 12 non-kinematic streams byte-identical; nuis differs")
+    # (25) center repurposing byte-exact: clip(A's per-dwell g_nuis onset draw) == scatter_centers
+    sig = 0.5
+    cl = F.FAMILY_BOUND_SIG * sig - 0.30 - 3 * F.STATIONARY_FRAC * sig
+    starts = [i for i in range(int(fa.nuis.shape[0])) if int(fs.pos[i]) == 1]
+    want = torch.stack([fa.nuis[i].clamp(-cl, cl) for i in starts])
+    n = min(want.shape[0], fs.scatter_centers.shape[0])
+    assert n > 500 and torch.equal(want[:n], fs.scatter_centers[:n]), \
+        "scatter centers != clip(A onset draws) — g_nuis stream desync"
+    assert fs.scatter_anchor_over == 0, "scatter pose left the box on a centered ball"
+    print(f"SMOKE_SCATTER (25): center repurposing byte-exact over {n} dwells; anchor_over=0")
+    # (26) the firing falsifier: an UNCENTERED ball must TRIP the zero-box-exit assert
+    try:
+        F.build_fabric(ls.stim, cfgs, 3, 4_000, dwell_scatter=True, scatter_r=0.30,
+                       _scatter_test_uncentered=True)
+        raise RuntimeError("uncentered scatter did NOT trip the zero-reflection assert")
+    except AssertionError as e:
+        assert "zero-reflection" in str(e)
+    print("SMOKE_SCATTER (26): zero-reflection assert FIRES under the uncentered falsifier")
+    # (27) R=0 no-op falsifier: every within-dwell step collapses to 0; R>0 separates
+    import statistics as _st
+    l0, _, _ = X12.build_exp12(X12.scatter_arm(0.0), 3, NS)
+    f0 = l0.stream
+    pos0 = f0.pos.tolist(); d0 = (f0.nuis[1:] - f0.nuis[:-1]).norm(dim=1)
+    within0 = [float(d0[t - 1]) for t in range(1, len(pos0)) if pos0[t] > 1]
+    posS = fs.pos.tolist(); dS = (fs.nuis[1:] - fs.nuis[:-1]).norm(dim=1)
+    withinS = [float(dS[t - 1]) for t in range(1, len(posS)) if posS[t] > 1]
+    assert max(within0) == 0.0, "R=0 produced nonzero within-dwell steps (no-op falsifier dead)"
+    assert _st.median(withinS) > 0.0, "R>0 within-dwell steps collapsed (delta dead)"
+    print(f"SMOKE_SCATTER (27): R=0 within-step max={max(within0):.4f} (0); "
+          f"R=0.30 within-step median={_st.median(withinS):.4f} (>0)")
+    # (27b) box upper-wall (sm-box): R >= 1.125 -> cl <= 0 -> build refuses (the binding upper wall)
+    try:
+        X12.build_exp12(X12.scatter_arm(1.20), 0, 200)
+        raise RuntimeError("R=1.20 (cl<0) did NOT trip the box centering assert")
+    except AssertionError as e:
+        assert "clip <= 0" in str(e)
+    print("SMOKE_SCATTER (27b): box wall — R>=1.125 (cl<=0) refuses to build (the binding upper wall)")
+    # (28) guards: illegal combos + the frozen-R/amend-path gate
+    X12.ARMS12["_smoke_scatter_bad"] = dict(shuffled=True, dwell_scatter=True, scatter_r=0.30)
+    try:
+        X12.build_exp12("_smoke_scatter_bad", 0, 200)
+        raise RuntimeError("dwell_scatter x shuffled guard did not fire")
+    except AssertionError:
+        pass
+    finally:
+        X12.ARMS12.pop("_smoke_scatter_bad", None)
+    if X12.X_SCATTER_R is None:
+        try:
+            X12.build_exp12("exp12_dwell_scatter", 0, 200)
+            raise RuntimeError("canonical scatter arm built without a frozen R")
+        except (AssertionError, FileNotFoundError):
+            pass
+    print("SMOKE_SCATTER (28): exclusivity guard fires" +
+          ("; canonical arm refuses before the R-freeze (amend-path)"
+           if X12.X_SCATTER_R is None else
+           " (refusal branch not applicable in the pinned regime — the live fence is (29))"))
+    # (29) freeze-drift FIRING falsifier: with R PINNED, a disagreeing constant fails LOUDLY at
+    # canonical-arm build; the restored constant then builds clean (drift assert proven live).
+    if X12.X_SCATTER_R is not None:
+        _r_true = X12.X_SCATTER_R
+        X12.X_SCATTER_R = _r_true + 0.05
+        try:
+            X12.build_exp12("exp12_dwell_scatter", 0, 200)
+            raise RuntimeError("freeze-drift assert did NOT fire on a perturbed R")
+        except AssertionError as e:
+            assert "drifted" in str(e), f"wrong failure class under drift: {e}"
+        finally:
+            X12.X_SCATTER_R = _r_true
+        X12.build_exp12("exp12_dwell_scatter", 0, 200)
+        print("SMOKE_SCATTER (29): freeze-drift assert FIRES on a perturbed R pin; restored builds clean")
+    else:
+        print("SMOKE_SCATTER (29): pre-freeze (R None) — refusal covered by (28); drift arms at the pin")
+    print("SMOKE_SCATTER OK (24-29)")
 
 
 def _main():

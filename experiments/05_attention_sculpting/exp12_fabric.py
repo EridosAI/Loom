@@ -209,12 +209,24 @@ def _reflect(x: torch.Tensor, bound: float) -> torch.Tensor:
     return x.clamp(-bound, bound)
 
 
+def _ball_sample(r: float, gen: torch.Generator, K: int) -> torch.Tensor:
+    """One uniform draw inside the K-ball of radius r (SCATTER, prereg §1/§2): direction
+    randn(K)/||.|| , magnitude r * U^(1/K) with U ~ Uniform(0,1) (the exact volume-uniform
+    radial law). g_sweep consumption per frame is fixed = 1 randn(K) + 1 rand()."""
+    u = torch.randn(K, generator=gen)
+    u = u / u.norm()
+    mag = r * float(torch.rand((), generator=gen)) ** (1.0 / K)
+    return mag * u
+
+
 def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
                  probe_rate: float = 0.0, shuffled: bool = False,
                  uniform_mask: bool = False, word_ref: bool = False,
                  dwell_orbit: bool = False, orbit_r: float | None = None,
                  orbit_w_deg: int | None = None,
-                 _orbit_test_uncentered: bool = False) -> Fabric:
+                 dwell_scatter: bool = False, scatter_r: float | None = None,
+                 _orbit_test_uncentered: bool = False,
+                 _scatter_test_uncentered: bool = False) -> Fabric:
     """uniform_mask (the SPLITTING ARM, prereg §14): the mask POLICY at position-1 waves
     becomes the same 50:50 coin as mid-dwell — the scheduling structure is removed and
     NOTHING else. Draw parity is free: both per-dwell coins are always drawn; the uniform
@@ -244,10 +256,17 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
     g_mask = torch.Generator().manual_seed(keys["mask"])
     g_noise = torch.Generator().manual_seed(keys["noise"])
     g_sweep = None
-    if dwell_orbit:
-        # EXP17 §9 R2 — the ONLY consumer of SEED_SWEEP; conditional registration keeps every
-        # pre-orbit manifest's substream_keys byte-identical (house byte-unchanged standard).
-        assert orbit_r is not None and orbit_w_deg is not None, "orbit arm needs (r, omega)"
+    assert not (dwell_orbit and dwell_scatter), "dwell_orbit and dwell_scatter are exclusive"
+    assert not (dwell_scatter and (shuffled or uniform_mask or word_ref)), \
+        "dwell_scatter is exclusive of shuffled/uniform_mask/word_ref (SCATTER §1; build_fabric-level)"
+    if dwell_orbit or dwell_scatter:
+        # EXP17 §9 R2 (orbit) / SCATTER §1 — the ONLY consumers of SEED_SWEEP; conditional
+        # registration keeps every pre-sweep manifest's substream_keys byte-identical (house
+        # byte-unchanged standard).
+        if dwell_orbit:
+            assert orbit_r is not None and orbit_w_deg is not None, "orbit arm needs (r, omega)"
+        else:
+            assert scatter_r is not None, "scatter arm needs a ball radius R"
         keys["sweep"] = SEED_SWEEP + seed
         g_sweep = torch.Generator().manual_seed(keys["sweep"])
 
@@ -257,6 +276,7 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
     dwell_member, dwell_k = [], []
     orbit_centers, orbit_anchor_over, orbit_pose_clips = [], 0, 0
     orbit_planes = []                      # per-dwell (e1, e2) — the driven 2-plane (R5 companion)
+    scatter_centers, scatter_anchor_over = [], 0   # SCATTER: per-dwell ball centers + box-exit count
     cap_hits = 0
     prev_m = -1
     did = 0
@@ -301,6 +321,17 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
             orbit_planes.append(torch.stack((e1, e2)))
             c = center + orbit_r * (math.cos(phase) * e1 + math.sin(phase) * e2)
             c0 = None                                   # unused in orbit mode
+        elif dwell_scatter:
+            # SCATTER §1 (draw-parity): the onset g_nuis draw is repurposed as the BALL CENTER,
+            # clipped by the SAME centering rule as the orbit (-> zero box-exit by construction);
+            # the p=1 pose is an INDEPENDENT uniform-in-ball draw from g_sweep. g_nuis is untouched.
+            cl = bound - scatter_r - 3.0 * STATIONARY_FRAC * sig
+            assert cl > 0, f"scatter_r {scatter_r} incompatible with the centering rule (clip <= 0)"
+            center = c.clone() if _scatter_test_uncentered else c.clamp(-cl, cl)
+            scatter_centers.append(center.clone())
+            c = center + _ball_sample(scatter_r, g_sweep, K_AXES)
+            scatter_anchor_over += int(bool((c.abs() > bound).any()))
+            c0 = None                                   # unused in scatter mode
         else:
             c0 = c.clone()
         for p in range(1, k + 1):
@@ -313,6 +344,13 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
                             + s_step * torch.randn(K_AXES, generator=g_nuis))
                     orbit_pose_clips += int(bool((step.abs() > bound).any()))
                     c = _reflect(step, bound)
+                elif dwell_scatter:
+                    # draw-parity: CONSUME the g_nuis OU step (byte-identical to A_dwell) then
+                    # DISCARD it; the realized pose is an INDEPENDENT uniform-in-ball g_sweep draw
+                    # (zero path structure, zero interleaving).
+                    _ = s_step * torch.randn(K_AXES, generator=g_nuis)
+                    c = center + _ball_sample(scatter_r, g_sweep, K_AXES)
+                    scatter_anchor_over += int(bool((c.abs() > bound).any()))
                 else:
                     c = _reflect(c + THETA * (c0 - c)
                                  + s_step * torch.randn(K_AXES, generator=g_nuis), bound)
@@ -378,6 +416,17 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
         assert orbit_anchor_over == 0, (
             f"orbit anchor left the family box {orbit_anchor_over}x — zero-anchor-reflection "
             "assert (§9 R6; by construction |center|inf + r <= bound - 3*stat_sd)")
+    if dwell_scatter:
+        # SCATTER zero-reflection: every ball pose stays in the box by construction (the firing
+        # falsifier drives _scatter_test_uncentered=True and must see this raise).
+        assert torch.isfinite(nuis).all(), "scatter fabric non-finite (finiteness assert)"
+        fab.scatter_centers = (torch.stack(scatter_centers) if scatter_centers
+                               else nuis.new_zeros((0, K_AXES)))
+        fab.scatter_anchor_over = scatter_anchor_over
+        fab.scatter_r = float(scatter_r)
+        assert scatter_anchor_over == 0, (
+            f"scatter pose left the family box {scatter_anchor_over}x — zero-reflection assert "
+            "(by construction |center|inf + r <= bound - 3*stat_sd)")
     if shuffled:
         perm = torch.randperm(T, generator=torch.Generator().manual_seed(keys["shuffle"]))
         for f in ("a", "b", "member", "cat", "dwell_id", "pos", "mask_slot",
@@ -564,6 +613,8 @@ def fabric_manifest(fab: Fabric, stim: EXP12Stimulus, cfg, asserts: dict) -> dic
             **({"orbit": dict(r=fab.orbit_r, w_deg=fab.orbit_w_deg,
                               anchor_over=int(fab.orbit_anchor_over),
                               pose_clips=int(fab.orbit_pose_clips))}
-               if hasattr(fab, "orbit_anchor_over") else {})),
+               if hasattr(fab, "orbit_anchor_over") else {}),
+            **({"scatter": dict(r=fab.scatter_r, anchor_over=int(fab.scatter_anchor_over))}
+               if hasattr(fab, "scatter_anchor_over") else {})),
         independence_asserts=asserts,
     )

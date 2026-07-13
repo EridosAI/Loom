@@ -111,6 +111,8 @@ ARMS12 = {
     # freeze artifact (loud drift assert — the amend-path rule); grid PROBE arms are registered
     # by orbit_arm() and are fabric-only selection instruments, never experiment arms.
     "exp12_dwell_orbit": dict(shuffled=False, dwell_orbit=True, orbit_frozen=True),
+    # SCATTER-DWELL (the bracketing arm): per-frame uniform-in-ball pose resample, draw-parity.
+    "exp12_dwell_scatter": dict(shuffled=False, dwell_scatter=True, scatter_frozen=True),
 }
 
 # EXP17 (r, omega): FROZEN by the G2 lexicographic selection 2026-07-12 (exp17_score.py
@@ -120,12 +122,26 @@ ARMS12 = {
 X17_ORBIT_R: float | None = 0.85
 X17_ORBIT_W_DEG: int | None = 18
 
+# SCATTER-DWELL ball radius R: FROZEN by the G-select lexicographic selection 2026-07-13
+# (exp_scatter_score.select_scatter -> exp08/scatter_select.json: sole feasible cell R=0.50, the
+# coverage floor 2x tremble tr11=0.181 binds; clip +/-0.625, confusion margin 0.75) and drift-asserted
+# against the artifact at every canonical-arm build. NEVER set this by hand — the amend-path rule.
+X_SCATTER_R: float | None = 0.50
+
 
 def orbit_arm(r: float, w_deg: int) -> str:
     """Register + return a fabric-only PROBE arm for the G2 grid (never run as an experiment)."""
     name = f"exp12_dwell_orbit_r{int(round(r * 100)):03d}w{int(w_deg):02d}"
     ARMS12.setdefault(name, dict(shuffled=False, dwell_orbit=True, orbit_probe=True,
                                  orbit_r=float(r), orbit_w_deg=int(w_deg)))
+    return name
+
+
+def scatter_arm(r: float) -> str:
+    """Register + return a fabric-only PROBE arm for the G-select R grid (never run as experiment)."""
+    name = f"exp12_dwell_scatter_r{int(round(r * 100)):03d}"
+    ARMS12.setdefault(name, dict(shuffled=False, dwell_scatter=True, scatter_probe=True,
+                                 scatter_r=float(r)))
     return name
 RIG1_ARMS = ("exp12_dwell", "exp12_shuffle")
 
@@ -164,7 +180,9 @@ class EXP12Loop(A.EXP08Loop):
                               word_ref=v.get("word_ref", False),
                               dwell_orbit=v.get("dwell_orbit", False),
                               orbit_r=v.get("orbit_r"),
-                              orbit_w_deg=v.get("orbit_w_deg"))
+                              orbit_w_deg=v.get("orbit_w_deg"),
+                              dwell_scatter=v.get("dwell_scatter", False),
+                              scatter_r=v.get("scatter_r"))
 
     def _make_stim(self):
         cfg = self.cfg
@@ -378,6 +396,22 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
             assert (float(_sel["r"]), int(_sel["w_deg"])) == (X17_ORBIT_R, X17_ORBIT_W_DEG), \
                 (f"orbit constants ({X17_ORBIT_R},{X17_ORBIT_W_DEG}) drifted from the freeze "
                  f"artifact ({_sel['r']},{_sel['w_deg']}) — amend-path: fail loudly")
+    if spec.get("dwell_scatter"):
+        # SCATTER §1 guards: the scatter flag is exclusive of every other fabric/mask flag
+        assert not (spec.get("shuffled") or spec.get("uniform_mask") or spec.get("word_ref")
+                    or spec.get("expo_word") or spec.get("expo_midword")
+                    or spec.get("no_word") or spec.get("dwell_orbit")), \
+            "dwell_scatter is exclusive (kinematics is the ONLY change — SCATTER §1)"
+        assert probe_rate == 0.0, "scatter arm: probe machinery N/A (probe_rate must be 0)"
+        if spec.get("scatter_frozen"):
+            assert X_SCATTER_R is not None, \
+                "scatter R not frozen — run the G-select selection (exp_scatter_score --select) first"
+            _sels = json.loads((OUTDIR / "scatter_select.json").read_text())["selected"]
+            assert _sels is not None, \
+                "freeze artifact records a geometry-conflict HALT (selected=null) — no frozen R"
+            assert float(_sels["r"]) == X_SCATTER_R, \
+                (f"scatter R {X_SCATTER_R} drifted from the freeze artifact ({_sels['r']}) — "
+                 "amend-path: fail loudly")
     pin = constants.PinnedConstants()
     cfg = SculptConfig(seed=seed)
     cfg.W = 1                                                 # the wave-local pin (§3)
@@ -391,7 +425,10 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
                       orbit_r=(X17_ORBIT_R if spec.get("orbit_frozen")
                                else spec.get("orbit_r")),
                       orbit_w_deg=(X17_ORBIT_W_DEG if spec.get("orbit_frozen")
-                                   else spec.get("orbit_w_deg")))
+                                   else spec.get("orbit_w_deg")),
+                      dwell_scatter=spec.get("dwell_scatter", False),         # SCATTER §1
+                      scatter_r=(X_SCATTER_R if spec.get("scatter_frozen")
+                                 else spec.get("scatter_r")))
     loop = EXP12Loop(cfg, pin)
     return loop, spec, cfg
 

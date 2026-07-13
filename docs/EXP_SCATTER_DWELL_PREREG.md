@@ -59,9 +59,11 @@ Scatter has no path; net/path is a path-only anti-revisit statistic, **explicitl
 **F5**, the floor-vacuum it flagged, filled here). Selection is on scatter's own statistics.
 **Manufacturing-fence discipline (panel fix): the multipliers are PRE-NAMED here; only the baselines are
 measured** — a gate-picked stringency would be a target adjustment under feasibility pressure (§0) and is
-forbidden (the EXP17 pattern: pre-named 4×/2.5× contrast floors, measured baselines only). Lower walls are
-**fabric-only, X-blind, T=100k**; the upper ceiling uses a **separate identity-recoverability read**
-(distinct from the conversion channel — the fence holds because acquisition ≠ conversion).
+forbidden (the EXP17 pattern: pre-named 4×/2.5× contrast floors, measured baselines only). Lower walls AND
+the confusion ceiling are **fabric-only, X-blind, T=100k** (the ceiling reuses the committed `cross_med`
+different-object-jump bound, §2.3); the acquisition read enters ONLY as a deployment-time GUARD on the
+geometric ceiling (§2.3 / §6 `acq-guard`), never a selection-time input — the fence holds because
+acquisition ≠ conversion.
 
 **Pinned candidate grid + sampling method (touch-1 ratification pins; deterministic G-select/G2 require
 them, per the committed `X17_R_GRID` precedent, [[feedback_anchor_provenance]]):**
@@ -78,11 +80,30 @@ them, per the committed `X17_R_GRID` precedent, [[feedback_anchor_provenance]]):
 2. **Distinct-pose coverage per dwell** — per-dwell realized pose spread (per-axis extent / support)
    **≥ 2.0× the tremble traverse baseline**; the read the orbit's traverse played for a path arm.
    *(2.0× pre-named; touch-1 ratifiable.)*
-3. **Confusion-bound ceiling** — per-step displacement ≤ the ceiling above which identity-correspondence
-   breaks. **The upper wall is derived from an identity-recoverability / acquisition read, NOT the
-   rendering distance** (`MECHANISM_MAP_v1_2_RECONCILED.md` §4, line 57). This read is DISTINCT from the
-   conversion channel under test — it is the only non-fabric-only input to selection and touches identity
-   recovery, never conversion.
+3. **Confusion-bound ceiling — DETERMINISTIC, committed recipe (the build gate Jason named).** The
+   within-dwell per-step displacement (`perstep_med`, pooled AND per-seed-worst = max over seeds) must be
+   **≤ `base["confusion"]` = the tremble cross-boundary "different-object" jump norm** (mean of per-seed
+   median `cross_med` on A_dwell) — the **committed EXP17 floor-3 / R4 confusion bound**
+   (`exp17_score.measure_kinematics.cross_med` → `measure_tremble_baselines["confusion"]`, reused
+   VERBATIM: fabric-only, X-blind, deterministic, threads=1). Rationale: a within-dwell step as large as
+   a between-object jump lets a frame be confused with a different member → correspondence breaks.
+   Feasibility: at the ratified grid `perstep ≈ 0.2–0.45 ≪ cross_med ≈ 1.65`, so the ceiling is
+   identity-safe across the whole grid (non-binding but PINNED). **Acquisition contingency
+   (`MECHANISM_MAP_v1_2_RECONCILED.md` §4 line 57 — the §6 `acq-guard`):** the geometric ceiling is a
+   rendering-distance bound; §4 requires that IF the DEPLOYED arm degrades member acquisition, the wall
+   was too loose → re-derive from the acquisition read. So the deployed-horizon pre-check / G2 carries an
+   acquisition-degradation guard: if scatter's member acquisition falls below the tremble baseline by
+   more than a **pre-named 10% margin**, HALT + re-derive the ceiling from the acquisition read. The
+   acquisition read is thus the FALSIFIER of the geometric ceiling, not a selection-time input — exactly
+   as §4 specifies. **Reachability (recon fix):** the ceiling is non-binding because the box-containment
+   rule `cl = bound − R − 3·stat_sd > 0` (⇒ R < 1.125) already caps in-box per-step below `C_ceil`; that
+   `cl>0` assert (generator, fires at R ≥ 1.125) is the actual binding upper wall. The confusion-ceiling
+   predicate (`perstep_med ≤ C_ceil`) is kept as the identity-correspondence check, and its reachable,
+   non-tautological falsifier is a **planted `perstep > C_ceil`** driven through `_cell_feasible_scatter`
+   (scorer smoke; a smaller planted value passes). The `acq-guard` metric is **`sep_cat`**
+   (member-category separation) COMPUTED from the deployed verdict columns, read on the SAME seeds/window
+   as the tremble baseline (matched-bar companion — F6-A rule (i)); scatter `sep_cat` < 0.90 × A_dwell
+   `sep_cat` → HALT + re-derive.
 4. **NO render-gain floor.** Free-read **(i)** measured the pose→render map an isometry (isotropic to f32
    precision; `nuis_axes ← basis @ Q.t()`, Q QR-orthogonal, `conflict_stream.py:59`) — a random ball
    direction is not perceptually weak, so ball sampling carries **no** gain floor. *(Source: read (i) /
@@ -182,7 +203,9 @@ for the pre-flight gate-executor audit; the EXP17 `sm-G2-lex`/`sm-G4-*`/`sm-G6-*
 |------|----------|------------------------------------------------------|
 | G-select (R freeze) | R-selector (fabric-only, T=100k) | **sm-select-R0**: F5 floors cleared at frozen R; **FAIL under R=0** (uniform-ball(0) → pose≡center → zero within-dwell displacement → floor-1 fails) |
 | build invariants | generator delta | **sm-parity**: scatter vs A same seed — dwell_id/pos/member/mask IDENTICAL, `nuis` DIFFERS; `g_nuis` byte-identical (**FAIL on stream-desync**, incl. "optimizing away" the discarded tremble draw); existing arms digit-identical; guards fire on illegal combos |
-| ceiling | selector assert | **sm-ceiling**: per-step displacement ≤ confusion ceiling (**FAIL if R too large** — identity correspondence breaks) |
+| box (upper wall) | generator `cl>0` assert | **sm-box**: `cl = bound − R − 3·stat_sd > 0` (R < 1.125) — the binding upper wall; **FIRES** on a canonical R ≥ 1.125 |
+| ceiling | `_cell_feasible_scatter` (reuses `measure_tremble_baselines["confusion"]` = committed `cross_med`) | **sm-ceiling**: `perstep_med` (pooled + per-seed-max) ≤ `C_ceil`; reachable falsifier = a **planted `perstep > C_ceil` → cell infeasible** (a smaller planted value passes; non-tautological); at grid R perstep ≈0.3–0.55 ≪ C_ceil ≈1.3 (non-binding, identity-safe) |
+| acq-guard | deployed-horizon pre-check / G2 | **sm-acqguard**: deployed scatter `sep_cat` ≥ 0.90 × A_dwell `sep_cat` (matched seeds/window); **FAIL → HALT + re-derive the ceiling from the acquisition read** (MECHANISM_MAP §4 l.57) — the geometric ceiling's contingent falsifier |
 | G1a/G1b | `run_exp14_arm` (class-aware pre-check @1M) | **sm-G1**: REUSED A {0–7} = replay divergence HALT; FRESH scatter cal/verdict/EXT, subst {10–19} |
 | G2 | R-verify | **sm-G2-lex**: re-derive R over the pinned grid, assert `==R*` (digit-exact, committed-code provenance), F5 targets hold on deployed 1M all seeds |
 | G3/G5 | `run_exp14_arm` | **sm-G3G5**: cal ×5, verdict ×8 + EXT ×2 @1M, mid-ckpt 500k; spec_hash parity |
