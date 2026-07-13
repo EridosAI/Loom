@@ -1,0 +1,210 @@
+{
+ "exp": "scatter_score",
+ "gate": "G6",
+ "arm": "exp12_dwell_scatter",
+ "decision_axes": {
+  "axis1_matched_bar_excess": false,
+  "axis2_certified_census": 0,
+  "primary_finding": "SCATTER DEAD"
+ },
+ "formal_partition_SECONDARY": {
+  "terminal": "DIRECTION-ONLY",
+  "routes": true,
+  "why": "cal-converts Ruling-B recut \u2014 counts non-loadable vs A"
+ },
+ "raw_k": 2,
+ "certified": 0,
+ "n_read": 10,
+ "loadable": false,
+ "floor_audit": {
+  "band": 0.6129,
+  "N": 4,
+  "sig_depth": 8,
+  "sig_recur": 2,
+  "expected_phantom_bracket": [
+   0.0,
+   3.1326129010401025
+  ],
+  "self_excluded_null": {
+   "exclusion": "0.6129x4",
+   "run_len": 4,
+   "n_null_positions": 6946,
+   "n_null_episodes": 0,
+   "episode_rate": 0.0,
+   "expected": 0.0,
+   "expected_display": 0.0
+  },
+  "contaminated_null": {
+   "exclusion": "0.6x8",
+   "run_len": 4,
+   "n_null_positions": 6960,
+   "n_null_episodes": 2,
+   "episode_rate": 0.00028736,
+   "expected": 3.1326129010401025,
+   "expected_display": 3.1326
+  },
+  "P_self_excluded": 0.0,
+  "P_contaminated": 0.87153,
+  "floor_clean": true,
+  "observed_converters": 2,
+  "observed_seeds": [
+   1,
+   6
+  ],
+  "signature_census": [
+   {
+    "seed": 1,
+    "longest_episode": 4,
+    "n_episodes": 1,
+    "max_run": 4,
+    "signature": "bare-N-isolated",
+    "certified": false
+   },
+   {
+    "seed": 6,
+    "longest_episode": 4,
+    "n_episodes": 1,
+    "max_run": 4,
+    "signature": "bare-N-isolated",
+    "certified": false
+   }
+  ],
+  "certified_converters": [],
+  "certified_count": 0,
+  "census_selfaudit": {
+   "expected_depth_runs_bracket": [
+    0.0,
+    0.0
+   ],
+   "bar": 0.0,
+   "certified_exceeds_bar": false,
+   "census_ok": true,
+   "rule": "F12: a POSITIVE certified count must EXCEED the dual-null >=SIG_DEPTH expectation bracket high end, else NOT-CERTIFIABLE-by-census (the AMD-13 observed-must-clear-expectation logic applied to the census itself)"
+  },
+  "n_null_prefix": 6967,
+  "null_pool_advisory": false,
+  "null_caveat": "AMD-13: self-excluded UNDER-states / contaminated (>=0.6x8) OVER-states the phantom rate; truth between; the census (F7 DEPTH-decisive + F12 self-audit) is decisive, never the floor arithmetic. Pools = [0,500k] prefix (F13)."
+ },
+ "matched_bar": {
+  "both_bars": [
+   {
+    "detector": "0.6129x4",
+    "owner": "scatter",
+    "fr": 0.000287,
+    "a_k": 2,
+    "a_conv": [
+     1,
+     6
+    ],
+    "a_longest": [
+     2,
+     4,
+     3,
+     3,
+     2,
+     3,
+     4,
+     3
+    ],
+    "b_k": 0,
+    "b_conv": [],
+    "b_longest": [
+     2,
+     2,
+     2,
+     3,
+     2,
+     3,
+     3,
+     2
+    ],
+    "fisher_a_ge_b": 0.23333333333333334
+   },
+   {
+    "detector": "0.6111x4",
+    "owner": "A_dwell",
+    "fr": 0.000439,
+    "a_k": 2,
+    "a_conv": [
+     1,
+     6
+    ],
+    "a_longest": [
+     2,
+     4,
+     3,
+     3,
+     2,
+     3,
+     4,
+     3
+    ],
+    "b_k": 0,
+    "b_conv": [],
+    "b_longest": [
+     2,
+     2,
+     2,
+     3,
+     2,
+     3,
+     3,
+     2
+    ],
+    "fisher_a_ge_b": 0.23333333333333334
+   }
+  ],
+  "excess_survives": false,
+  "det_scatter": {
+   "band": 0.6129,
+   "N": 4,
+   "fr": 0.000287,
+   "owner": "scatter"
+  },
+  "det_a": {
+   "band": 0.6111,
+   "N": 4,
+   "fr": 0.000439,
+   "owner": "A_dwell"
+  },
+  "note": "unlike-bar counts are context-only (catch-16); the surviving-at-a-common-detector excess is the load-bearing read"
+ },
+ "acq_guard": {
+  "scatter_sep_cat": 0.4732971688161694,
+  "a_dwell_sep_cat": 0.47317373427507875,
+  "margin": 0.1,
+  "floor": 0.425856,
+  "passes": true,
+  "halt": null
+ },
+ "ext": {
+  "fired": true,
+  "n_read": 10,
+  "k": 2,
+  "read_seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "substituted": 0,
+  "extended": 2,
+  "ext_used": [
+   8,
+   9
+  ],
+  "ext_missing": [],
+  "ext_missing_note": null
+ },
+ "cal_converts_expected": true,
+ "band": 0.6129,
+ "N": 4,
+ "spec_hash": "41d6f0d5e7da",
+ "note": "DRAFT \u2014 no attribution (touch 3). Matched-bar excess + census DECIDE; the count partition is SECONDARY (cal-converts EXPECTED -> DIRECTION-ONLY formal label)."
+}
