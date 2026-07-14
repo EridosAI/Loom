@@ -62,7 +62,15 @@ def wp1():
     assert not torch.equal(fab_wp.raw, fab_A.raw), "wp1 falsifier dead: B=128 raw == exp12_dwell (no reorder)"
     assert torch.equal(fab_wp.raw.sort(0).values, fab_A.raw.sort(0).values), \
         "wp1: W-PERM multiset != exp12_dwell — not order-only"
-    print("  wp1  OK — B=1 == exp12_dwell (perm-free); exp19_wperm(1) rejected; B=128 reorders, multiset held")
+    # RED-TEAM (red-team rule): the wp1 condition "B=1 is perm-free" MUST go red on a B=1 built as a
+    # shuffle (fab.shuffled set wrongly — the prereg §2.1 falsifier). Reachable: a registrar/threading
+    # bug that routes B=1 through the shuffle path. block_perm(T,1) is an identity perm, so the VALUES
+    # match exp12_dwell — the only tell is shuffled=True / perm!=None, which is exactly what wp1 checks.
+    wrong_B1 = F.build_fabric(loop_A.stim, cfg_A, cfg_A.seed, fab_A.T, shuffled=True, wperm_B=1)
+    perm_free = (not wrong_B1.shuffled) and (wrong_B1.perm is None)
+    assert not perm_free, "wp1 falsifier DEAD: a shuffle-built B=1 still reads perm-free — wp1 cannot fail"
+    print("  wp1  OK — B=1==exp12_dwell (perm-free); exp19_wperm(1) rejected; falsifier LIVE (a shuffle-built "
+          "B=1 reads shuffled=True/perm!=None -> the wp1 perm-free condition goes red)")
 
 
 def wp_multiset():
@@ -71,7 +79,18 @@ def wp_multiset():
     arm = X12.exp19_wperm(128)
     r = XA._assert_one(arm, SEED, T)
     assert r["ok"], f"wp-multiset: committed checksum FAILED on W-PERM ({r.get('err')})"
-    print(f"  wp-multiset  OK — committed twin-rebuild+checksum fires and passes on {arm}")
+    # RED-TEAM (red-team rule): the committed multiset checksum MUST go red on a broken multiset — a
+    # wave-VALUE change, not a reorder. Reachable: a generator bug that alters raw values (which the
+    # order-only W-PERM must never do). Replicate the exact committed compare (exp12_arms:449).
+    loop, spec, cfg = X12.build_exp12(arm, SEED, T)
+    fab = loop.stream
+    twin = F.build_fabric(loop.stim, cfg, cfg.seed, fab.T, shuffled=False)
+    assert torch.equal(fab.raw.sort(0).values, twin.raw.sort(0).values), "wp-multiset: real W-PERM breaks the multiset?!"
+    broken = fab.raw.clone(); broken.view(-1)[0] += 1.0
+    assert not torch.equal(broken.sort(0).values, twin.raw.sort(0).values), \
+        "wp-multiset falsifier DEAD: a wave-value change still matches the twin multiset — checksum cannot fail"
+    print(f"  wp-multiset  OK — committed twin-rebuild+checksum fires and passes on {arm}; falsifier LIVE "
+          "(a wave-value change breaks the sorted-multiset compare)")
 
 
 def main():
