@@ -210,11 +210,15 @@ same-dwell waves** — EXP16's own committed operational definition.
 
 > *[Amendment 2026-07-14, ledger 33 — the interior row read "minus straddle"; the SIGN was backwards. The onset is `pos==1`, so on a straddling dwell it sits in the **earlier** block and its mates pushed into the next block **cannot precede it** ⇒ fewer local competitors ⇒ P(emitted-first) = 1/k₁ ≥ 1/k. Straddle **RAISES** the interior stratum, monotone from above toward the block-level asymptote E[1/k]=17.3% (B=32→2048: 22.7 → 18.4 → 17.7 → 17.5%). Interior blocks fit within the read window, so no slicing. Caught by CC from the exact index-list computation; the smoke-horizon (T=4000) figures first reported (23.8/20.2/16.7%) were small-sample noise (SE≈2pp).]*
 >
-> *[Amendment 2026-07-14, ledger 34 — the B=T figure was ALSO wrong: first written 17.29% from a 500k-**build** (`randperm(500k)`, no slicing), not the deployed `randperm(1M)` **read at [0,500k)**. Deployed B=T stratum = **30.75%** — the giant block (the whole 1M fabric) is halved by the 500k read window, competitors halve, stratum ≈ 2×E[1/k]. So B=T's stratum is **LARGER** than the treatment (17.7%), **not matched** — §4.3's "exactly matched" is retired. Consequence for **wp-strat** (Jason's #3): the positive control (C_shuffle) certifies on a 30.75% stratum, larger than the treatment's 17.7% — FAVORABLE (more power for the control); §8 calibrates each stratum in-regime (per-stratum cut, not a shared detector), so the size difference is accommodated, and the treatment retains ample onsets (8097 at B=512). Flagged for Jason's G8 read. Caught by CC from the deployed pre-flight measure.]*
+> *[Amendment 2026-07-14, ledger 34 — the B=T figure was ALSO wrong: first written 17.29% from a 500k-**build** (`randperm(500k)`, no slicing), not the deployed `randperm(1M)` **read at [0,500k)**. Deployed B=T stratum = **30.75%** — the giant block (the whole 1M fabric) is halved by the 500k read window, competitors halve, stratum ≈ 2×E[1/k]. So B=T's stratum is **LARGER** than the treatment (17.7%), **not matched** — §4.3's "exactly matched" is retired. Consequence for **wp-strat** (Jason's #3): the positive control (C_shuffle) certifies on a 30.75% stratum, larger than the treatment's 17.7% — FAVORABLE (more power for the control); §8 calibrates each stratum in-regime (per-stratum cut, not a shared detector), so the size difference is accommodated, and the treatment retains ample onsets (8097 at B=512). Flagged for Jason's G8 read. Caught by CC from the deployed pre-flight measure. **SUPERSEDED IN PART by ledger 35 (Jason 2026-07-14): the "FAVORABLE / §8-accommodated / ample onsets" reasoning here was WRONG — certification at 14,156 is NOT evidence about 8,097. wp-strat is now MATCHED-N: subsample C_shuffle to N=8,097 (the smallest paid stratum) over draws, report the distribution; if the subsampled control fails, HALT → Jason.**]*
 
-> **`wp-strat` — pre-flight gate, ZERO runs.** Re-score **`exp12_shuffle`'s committed records** on the
-> zero-preceding stratum. **It must still certify.** If not, the stratified detector has no power, the arm's
-> recency defence is decorative, and this is a **HALT → Jason, not a finding.**
+> **`wp-strat` — pre-flight gate, ZERO training runs. MATCHED-N (Jason 2026-07-14, ledger 35).** Re-score
+> **`exp12_shuffle`'s committed records** on its zero-preceding stratum **SUBSAMPLED to the smallest paid
+> stratum — B=512, N=8,097 onsets** — because certification at C_shuffle's own 30.75% stratum (14,156) is
+> **NOT evidence about the treatment's 8,097**. Draw many random N=8,097 subsamples; **report the DISTRIBUTION
+> of certification, never a single subsample. It must still certify at N=8,097.** If the subsampled control
+> fails, the stratified detector is **underpowered at the ladder point that needs it most (B=512, the ρ≤0.05
+> anchor)** — a **HALT → Jason, not a finding.**
 
 ### 4.4 Two independent recency instruments — neither invents a constant
 1. **Structural** — the realized recency companion per B, **from the permuted index list alone**: no training,
@@ -266,7 +270,7 @@ step, or re-using a wave is a DIFFERENT arm, out of scope.**
 | **wp-parity** | `n_optimizer_steps == T`, identical across all B | inequality ⇒ compute confound |
 | **~~wp-multiset~~** | **ALREADY BUILT** — the committed twin-rebuild + checksum-assert (`exp12_arms:444`, `exp14_arms:213`). W-PERM passes it by construction. | *(no new smoke)* |
 | **wp-strat-label** | `pos==1` mask and `zero_preceding_mask` **DIVERGE at every B>1**, **COINCIDE at B=1** | coincidence at B>1 ⇒ **the scorer would certify its own confound** |
-| **wp-strat** | **`exp12_shuffle`'s committed records still certify on the zero-preceding stratum** | failure ⇒ stratified read **underpowered** ⇒ HALT → Jason |
+| **wp-strat** | **`exp12_shuffle`'s committed records still certify on the zero-preceding stratum SUBSAMPLED to the smallest paid N=8,097 (matched-N), over draws — report the distribution** | failure ⇒ stratified read **underpowered at B=512** ⇒ HALT → Jason |
 | **wp-recency** | structural recency companion computed per B **before any run** | absent ⇒ §4 unenforceable |
 | **wp-posassert** | `exp14_arms:1969`'s positive `assert fc.shuffled` does **not** fire for W-PERM | fires ⇒ HALT |
 | **wp-delta** | **fails under a no-op**: B=1 ≠ B=T; ρ(B) strictly decreasing in B | guards against an invariance-only smoke |
