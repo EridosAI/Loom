@@ -212,13 +212,37 @@ same-dwell waves** — EXP16's own committed operational definition.
 >
 > *[Amendment 2026-07-14, ledger 34 — the B=T figure was ALSO wrong: first written 17.29% from a 500k-**build** (`randperm(500k)`, no slicing), not the deployed `randperm(1M)` **read at [0,500k)**. Deployed B=T stratum = **30.75%** — the giant block (the whole 1M fabric) is halved by the 500k read window, competitors halve, stratum ≈ 2×E[1/k]. So B=T's stratum is **LARGER** than the treatment (17.7%), **not matched** — §4.3's "exactly matched" is retired. Consequence for **wp-strat** (Jason's #3): the positive control (C_shuffle) certifies on a 30.75% stratum, larger than the treatment's 17.7% — FAVORABLE (more power for the control); §8 calibrates each stratum in-regime (per-stratum cut, not a shared detector), so the size difference is accommodated, and the treatment retains ample onsets (8097 at B=512). Flagged for Jason's G8 read. Caught by CC from the deployed pre-flight measure. **SUPERSEDED IN PART by ledger 35 (Jason 2026-07-14): the "FAVORABLE / §8-accommodated / ample onsets" reasoning here was WRONG — certification at 14,156 is NOT evidence about 8,097. wp-strat is now MATCHED-N: subsample C_shuffle to N=8,097 (the smallest paid stratum) over draws, report the distribution; if the subsampled control fails, HALT → Jason.**]*
 
-> **`wp-strat` — pre-flight gate, ZERO training runs. MATCHED-N (Jason 2026-07-14, ledger 35).** Re-score
-> **`exp12_shuffle`'s committed records** on its zero-preceding stratum **SUBSAMPLED to the smallest paid
-> stratum — B=512, N=8,097 onsets** — because certification at C_shuffle's own 30.75% stratum (14,156) is
-> **NOT evidence about the treatment's 8,097**. Draw many random N=8,097 subsamples; **report the DISTRIBUTION
-> of certification, never a single subsample. It must still certify at N=8,097.** If the subsampled control
-> fails, the stratified detector is **underpowered at the ladder point that needs it most (B=512, the ρ≤0.05
-> anchor)** — a **HALT → Jason, not a finding.**
+> **`wp-strat` — SPLIT into G5a + G5b (Jason 2026-07-14, ledger 36). Pre-flight, ZERO training runs.** The
+> detector is **RE-CUT on the stratum** — calibrate-in-regime transports the PROCEDURE, never the constant:
+> cut **(band, N) JOINTLY, fresh, at the house α on the stratum null** (`_provisional_cut`), because a run of
+> the committed `consec=5` spans ~28 original onsets — the timescale changed, so N cannot be inherited. The
+> committed full-READ 5/8 (conv `0.64×5` over ALL onsets) is **NOT a stratum baseline and does not transport.**
+>
+> - **G5a — STRATUM VIABILITY (full N).** Does `exp12_shuffle` certify on its own zero-preceding stratum at
+>   **full stratum N (~14,156)**, with the re-cut (band, N) detector? **This is the baseline.** If **NO →
+>   HALT → Jason**: the stratified detector has no baseline, wp-strat is unaskable, and the arm's entire
+>   recency defence is decorative. *(The shattering risk is STRUCTURAL, not statistical: a 36-onset episode
+>   yields ~6 in-stratum onsets — the detector may be incapable of forming runs at ANY N. G5a costs one
+>   re-score and answers it. **Nothing else runs first.**)*
+> - **G5b — MATCHED-N POWER.** Given G5a, subsample each seed's stratum to **N = 7,915** (the worst per-seed
+>   paid stratum, seed 4 — the control must be at least as hard as the hardest treatment cell) by **AMONG-KEPT
+>   uniform thinning** (a faithful model of the treatment: same [0,500k) window, sparser stratum — the
+>   treatment's own detector also sees only stratum onsets and asks for consecutive ones among them). K draws,
+>   pinned **`SUBSAMPLE_SEED`**. **PASS iff each of the 5 committed converters certifies in ≥ 90 % of draws**
+>   (derived, outcome-independent: the read is k/8; a per-seed false-negative rate q distorts a true k=5 by
+>   q·k; require q·k < 0.5 ⇒ q < 0.10 ⇒ retention ≥ 90 %). **MARGINAL — any converter < 90 % while others are
+>   above → Jason, not into the package** (heterogeneous retention ⇒ a seed-dependent detector, which cannot
+>   report a null). Full distribution reported regardless.
+> - **NEGATIVE CONTROL — gates the subsampling METHOD.** Run the identical G5b procedure on the 3 committed
+>   **non-converters {1,3,7}**; they must certify in **≤ 1 % of draws** (the detector's own α regime, with
+>   slack). If they don't, among-kept thinning is **manufacturing conversions via run-merging** ⇒ the method
+>   is **void → HALT.** **Contiguous-block** subsampling rides only as a **reported sensitivity** (window-
+>   placement confounds power: a random-start block of 7,915/14,156 spans ~56 % of the run, so a late converter
+>   — onsets to 427.5k — fails for the WRONG reason) — never primary.
+> - **Why not a 50 % bar:** it certifies a coin-flip detector as healthy (STRATUM-UNDERPOWER wearing a PASS),
+>   and the failure it lets through is **spurious RECENCY-CARRIED** — a weak stratified detector manufactures
+>   the unflattering cell, which we'd believe *because* it's unflattering. The mirror of the trap that bit
+>   twice this cycle.
 
 ### 4.4 Two independent recency instruments — neither invents a constant
 1. **Structural** — the realized recency companion per B, **from the permuted index list alone**: no training,
@@ -270,7 +294,8 @@ step, or re-using a wave is a DIFFERENT arm, out of scope.**
 | **wp-parity** | `n_optimizer_steps == T`, identical across all B | inequality ⇒ compute confound |
 | **~~wp-multiset~~** | **ALREADY BUILT** — the committed twin-rebuild + checksum-assert (`exp12_arms:444`, `exp14_arms:213`). W-PERM passes it by construction. | *(no new smoke)* |
 | **wp-strat-label** | `pos==1` mask and `zero_preceding_mask` **DIVERGE at every B>1**, **COINCIDE at B=1** | coincidence at B>1 ⇒ **the scorer would certify its own confound** |
-| **wp-strat** | **`exp12_shuffle`'s committed records still certify on the zero-preceding stratum SUBSAMPLED to the smallest paid N=8,097 (matched-N), over draws — report the distribution** | failure ⇒ stratified read **underpowered at B=512** ⇒ HALT → Jason |
+| **wp-strat-viability (G5a)** | **`exp12_shuffle` certifies on its zero-preceding stratum at FULL N (~14,156) with the re-cut (band,N) detector — the baseline** | NO ⇒ no stratum baseline ⇒ recency defence decorative ⇒ **HALT → Jason** (nothing else runs first) |
+| **wp-strat-power (G5b)** | **given G5a: each of the 5 committed converters {0,2,4,5,6} certifies in ≥90% of K draws, among-kept-subsampled to N=7,915 (pinned SUBSAMPLE_SEED); the 3 non-converters {1,3,7} ≤1%** | converter <90% ⇒ underpowered/seed-dependent ⇒ HALT → Jason; non-converter >1% ⇒ method void ⇒ HALT |
 | **wp-recency** | structural recency companion computed per B **before any run** | absent ⇒ §4 unenforceable |
 | **wp-posassert** | `exp14_arms:1969`'s positive `assert fc.shuffled` does **not** fire for W-PERM | fires ⇒ HALT |
 | **wp-delta** | **fails under a no-op**: B=1 ≠ B=T; ρ(B) strictly decreasing in B | guards against an invariance-only smoke |
