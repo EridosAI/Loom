@@ -1,0 +1,251 @@
+{
+  "gate": "G5a \u2014 STRATUM VIABILITY (full N)",
+  "arm": "exp12_shuffle",
+  "committed_converters": [
+    0,
+    2,
+    4,
+    5,
+    6
+  ],
+  "committed_nonconverters": [
+    1,
+    3,
+    7
+  ],
+  "stratum_sizes": {
+    "0": {
+      "n_stratum": 14152,
+      "n_onset": 46034,
+      "frac": 0.30742,
+      "n_none_postacq": 14,
+      "n_postacq_windows": 1655
+    },
+    "1": {
+      "n_stratum": 14171,
+      "n_onset": 45681,
+      "frac": 0.31022,
+      "n_none_postacq": 18,
+      "n_postacq_windows": 1651
+    },
+    "2": {
+      "n_stratum": 14121,
+      "n_onset": 45505,
+      "frac": 0.31032,
+      "n_none_postacq": 22,
+      "n_postacq_windows": 1656
+    },
+    "3": {
+      "n_stratum": 14121,
+      "n_onset": 45965,
+      "frac": 0.30721,
+      "n_none_postacq": 10,
+      "n_postacq_windows": 1648
+    },
+    "4": {
+      "n_stratum": 14281,
+      "n_onset": 45734,
+      "frac": 0.31226,
+      "n_none_postacq": 17,
+      "n_postacq_windows": 1653
+    },
+    "5": {
+      "n_stratum": 14191,
+      "n_onset": 45732,
+      "frac": 0.31031,
+      "n_none_postacq": 31,
+      "n_postacq_windows": 1655
+    },
+    "6": {
+      "n_stratum": 14197,
+      "n_onset": 45671,
+      "frac": 0.31085,
+      "n_none_postacq": 19,
+      "n_postacq_windows": 1657
+    },
+    "7": {
+      "n_stratum": 14060,
+      "n_onset": 45512,
+      "frac": 0.30893,
+      "n_none_postacq": 19,
+      "n_postacq_windows": 1657
+    }
+  },
+  "recut_PRIMARY_provisional": {
+    "band": 0.704,
+    "N": 7,
+    "n_null": 12633
+  },
+  "recut_SENSITIVITY_rulingB": {
+    "band": 0.704,
+    "N": 5,
+    "n_null": 12210
+  },
+  "census_PRIMARY_provisional": {
+    "band": 0.704,
+    "N": 7,
+    "per_seed": {
+      "0": {
+        "longest_run": 37,
+        "certifies": true
+      },
+      "1": {
+        "longest_run": 4,
+        "certifies": false
+      },
+      "2": {
+        "longest_run": 20,
+        "certifies": true
+      },
+      "3": {
+        "longest_run": 5,
+        "certifies": false
+      },
+      "4": {
+        "longest_run": 17,
+        "certifies": true
+      },
+      "5": {
+        "longest_run": 71,
+        "certifies": true
+      },
+      "6": {
+        "longest_run": 12,
+        "certifies": true
+      },
+      "7": {
+        "longest_run": 6,
+        "certifies": false
+      }
+    },
+    "certified_seeds": [
+      0,
+      2,
+      4,
+      5,
+      6
+    ],
+    "n_certified": 5,
+    "converters_certified": [
+      0,
+      2,
+      4,
+      5,
+      6
+    ],
+    "nonconverters_certified": []
+  },
+  "census_SENSITIVITY_rulingB": {
+    "band": 0.704,
+    "N": 5,
+    "per_seed": {
+      "0": {
+        "longest_run": 37,
+        "certifies": true
+      },
+      "1": {
+        "longest_run": 4,
+        "certifies": false
+      },
+      "2": {
+        "longest_run": 20,
+        "certifies": true
+      },
+      "3": {
+        "longest_run": 5,
+        "certifies": true
+      },
+      "4": {
+        "longest_run": 17,
+        "certifies": true
+      },
+      "5": {
+        "longest_run": 71,
+        "certifies": true
+      },
+      "6": {
+        "longest_run": 12,
+        "certifies": true
+      },
+      "7": {
+        "longest_run": 6,
+        "certifies": true
+      }
+    },
+    "certified_seeds": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "n_certified": 7,
+    "converters_certified": [
+      0,
+      2,
+      4,
+      5,
+      6
+    ],
+    "nonconverters_certified": [
+      3,
+      7
+    ]
+  },
+  "fullread_reproduction_CONTEXT_ONLY": {
+    "0": {
+      "longest_run_064": 85,
+      "certifies_064x5": true
+    },
+    "1": {
+      "longest_run_064": 3,
+      "certifies_064x5": false
+    },
+    "2": {
+      "longest_run_064": 60,
+      "certifies_064x5": true
+    },
+    "3": {
+      "longest_run_064": 3,
+      "certifies_064x5": false
+    },
+    "4": {
+      "longest_run_064": 36,
+      "certifies_064x5": true
+    },
+    "5": {
+      "longest_run_064": 77,
+      "certifies_064x5": true
+    },
+    "6": {
+      "longest_run_064": 90,
+      "certifies_064x5": true
+    },
+    "7": {
+      "longest_run_064": 3,
+      "certifies_064x5": false
+    }
+  },
+  "converters_certified_on_stratum": {
+    "provisional": [
+      0,
+      2,
+      4,
+      5,
+      6
+    ],
+    "rulingB": [
+      0,
+      2,
+      4,
+      5,
+      6
+    ],
+    "agree": true
+  },
+  "VERDICT": "VIABLE \u2014 a committed converter still certifies on the recency-free stratum under both null sources",
+  "viable": true,
+  "ok": true
+}

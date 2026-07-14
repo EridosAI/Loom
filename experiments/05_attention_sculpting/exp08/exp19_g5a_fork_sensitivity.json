@@ -1,0 +1,33 @@
+{
+  "gate": "G5a re-cut sensitivities (band=0.704=EPISODE_BAND, N=7 vs exclusion 8)",
+  "n_null": 12633,
+  "cut_band": 0.704,
+  "cut_N": 7,
+  "alpha_house": 0.001,
+  "null_quantiles": {
+    "0.9": 0.8333,
+    "0.95": 1.0,
+    "0.975": 1.0,
+    "0.99": 1.0
+  },
+  "band_is_EPISODE_BAND_forced": true,
+  "false_rate_at_0704": {
+    "5": 0.004355055823897379,
+    "6": 0.0020589166930630345,
+    "7": 0.0007127583749109052,
+    "8": 0.0
+  },
+  "alpha_to_smallest_N": {
+    "3.00e-04": 8,
+    "5.00e-04": 8,
+    "7.13e-04": 7,
+    "1.00e-03": 7,
+    "1.50e-03": 7,
+    "2.06e-03": 6,
+    "2.50e-03": 6,
+    "3.00e-03": 6,
+    "5.00e-03": 5
+  },
+  "note": "band=0.704 is forced: every null quantile exceeds the S0_LEVEL cap, so _joint_band_cut can only return the cap. N=7 is the smallest N with false-rate<=ALPHA=1e-3; N=6 fails, N=8 is the exclusion length. The margin: fr(N=6) vs ALPHA.",
+  "ok": true
+}

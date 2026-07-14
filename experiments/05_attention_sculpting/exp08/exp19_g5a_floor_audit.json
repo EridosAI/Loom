@@ -1,0 +1,106 @@
+{
+  "gate": "G5a certification \u2014 FLOOR AUDIT (excess over measured floor, in-regime, blind)",
+  "floor_band": 0.704,
+  "sim_seed": 20260714,
+  "n_sims": 5000,
+  "empirical_floor": {
+    "nonconverter_runs": {
+      "1": 4,
+      "3": 5,
+      "7": 6
+    },
+    "ceiling": 6
+  },
+  "converter_runs": {
+    "0": 37,
+    "2": 20,
+    "4": 17,
+    "5": 71,
+    "6": 12
+  },
+  "nearest_converter": 12,
+  "margin_ratio": 2.0,
+  "simulated_floor_per_seed": {
+    "0": {
+      "observed_run": 37,
+      "p_hat": 0.621,
+      "null_max": 16,
+      "null_q999": 14,
+      "p_value": 0.0,
+      "exceeds_null_max": true
+    },
+    "1": {
+      "observed_run": 4,
+      "p_hat": 0.5027,
+      "null_max": 10,
+      "null_q999": 9,
+      "p_value": 0.8058000206947327,
+      "exceeds_null_max": false
+    },
+    "2": {
+      "observed_run": 20,
+      "p_hat": 0.5346,
+      "null_max": 10,
+      "null_q999": 9,
+      "p_value": 0.0,
+      "exceeds_null_max": true
+    },
+    "3": {
+      "observed_run": 5,
+      "p_hat": 0.4997,
+      "null_max": 9,
+      "null_q999": 9,
+      "p_value": 0.3328000009059906,
+      "exceeds_null_max": false
+    },
+    "4": {
+      "observed_run": 17,
+      "p_hat": 0.5306,
+      "null_max": 11,
+      "null_q999": 10,
+      "p_value": 0.0,
+      "exceeds_null_max": true
+    },
+    "5": {
+      "observed_run": 71,
+      "p_hat": 0.5528,
+      "null_max": 10,
+      "null_q999": 10,
+      "p_value": 0.0,
+      "exceeds_null_max": true
+    },
+    "6": {
+      "observed_run": 12,
+      "p_hat": 0.5529,
+      "null_max": 10,
+      "null_q999": 10,
+      "p_value": 0.0,
+      "exceeds_null_max": true
+    },
+    "7": {
+      "observed_run": 6,
+      "p_hat": 0.5035,
+      "null_max": 10,
+      "null_q999": 9,
+      "p_value": 0.10740000009536743,
+      "exceeds_null_max": false
+    }
+  },
+  "simulated_certified_converters": [
+    0,
+    2,
+    4,
+    5,
+    6
+  ],
+  "alpha_transport_audit": {
+    "alpha_nominal": 0.001,
+    "alpha_cut_N": 5,
+    "actual_false_rate": "2/3",
+    "miss_factor": 666.7,
+    "reason": "i.i.d. false-rate model (_consec_rate, the target of ALPHA) breaks on the granular (5-13 onsets/window) autocorrelated stratum; the alpha-cut controls a false rate that does not describe the regime. ALPHA does not transport."
+  },
+  "VERDICT": "PASS \u2014 every converter clears the measured phantom floor: nearest converter 12 > floor ceiling 6 (x2.0), and all 5 converters exceed their in-regime simulated null max (p<0.0002). Non-converters ARE the floor, as expected. The alpha-cut binary is retired: ALPHA does not transport (nominal 1e-3 vs actual 2/3 false rate).",
+  "certified": true,
+  "ok": true
+}

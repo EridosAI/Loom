@@ -244,6 +244,25 @@ same-dwell waves** — EXP16's own committed operational definition.
 >   the unflattering cell, which we'd believe *because* it's unflattering. The mirror of the trap that bit
 >   twice this cycle.
 
+> **[Amendment 2026-07-14, ledger 37–38 — G5a EXECUTED and PASSED; the detector question resolved by a
+> TEST, and the α-cut retired.** Per-onset signal recovered by deterministic replay (`exp19_replay.py`; the
+> read-checkpoint at 500k is a REVERTED-to-chance model, so a frozen eval is wrong — decay companion), all 13
+> anchors bit-exact incl. cross-commit. **Fork (which null?) resolved as a computable trigger, not a choice
+> (ledger 37):** C_shuffle's CAL seeds convert **4/5** on the zero-preceding stratum (= full-read 4/5) ⇒
+> Ruling-B regime; provisional's null contaminated. **But the deeper finding retired the whole α-cut (ledger
+> 38): ALPHA=1e-3 does NOT transport** — cut against an i.i.d. false-rate model, applied to a granular
+> (5–13 onsets/window) autocorrelated stratum, it delivered an ACTUAL 2/3 false rate (~667× miss). **G5a is
+> certified by a FLOOR AUDIT, not an α-cut binary** (canon ledger-18: raw counts sit inside the phantom
+> floor): the non-converter runs {4,5,6} ARE the measured floor; converters {12,17,20,37,71} clear it
+> (nearest 12 = 2× the ceiling 6; each exceeds its in-regime 5000-sim null, p<1/5000). **G5a = PASS**
+> (`docs/EXP19_G5A_RESULT.md`, `exp19_floor.py`). **G5b RE-SPECIFIED (supersedes the N=7,915 "≥90% certifies"
+> wording above):** the question is not "does a converter certify at 7,915?" but **"what is the PHANTOM FLOOR
+> at 7,915, and does the converter signal still clear it?"** The floor RISES as the stratum thins (sparser ⇒
+> granular ⇒ longer chance runs); s6 (run 12) is the marginal converter and the floor may reach it.
+> Measured by subsampling the ACTUAL non-converters (autocorrelation-carrying) to the treatment's density —
+> pre-training. **Standing (ruling 4): nothing transports into the stratum regime unshown-red — band, N, α,
+> cadence all suspect.]**
+
 ### 4.4 Two independent recency instruments — neither invents a constant
 1. **Structural** — the realized recency companion per B, **from the permuted index list alone**: no training,
    no model, blinded, before treatment data.
@@ -294,8 +313,8 @@ step, or re-using a wave is a DIFFERENT arm, out of scope.**
 | **wp-parity** | `n_optimizer_steps == T`, identical across all B | inequality ⇒ compute confound |
 | **~~wp-multiset~~** | **ALREADY BUILT** — the committed twin-rebuild + checksum-assert (`exp12_arms:444`, `exp14_arms:213`). W-PERM passes it by construction. | *(no new smoke)* |
 | **wp-strat-label** | `pos==1` mask and `zero_preceding_mask` **DIVERGE at every B>1**, **COINCIDE at B=1** | coincidence at B>1 ⇒ **the scorer would certify its own confound** |
-| **wp-strat-viability (G5a)** | **`exp12_shuffle` certifies on its zero-preceding stratum at FULL N (~14,156) with the re-cut (band,N) detector — the baseline** | NO ⇒ no stratum baseline ⇒ recency defence decorative ⇒ **HALT → Jason** (nothing else runs first) |
-| **wp-strat-power (G5b)** | **given G5a: each of the 5 committed converters {0,2,4,5,6} certifies in ≥90% of K draws, among-kept-subsampled to N=7,915 (pinned SUBSAMPLE_SEED); the 3 non-converters {1,3,7} ≤1%** | converter <90% ⇒ underpowered/seed-dependent ⇒ HALT → Jason; non-converter >1% ⇒ method void ⇒ HALT |
+| **wp-strat-viability (G5a)** | **[amended 2026-07-14, ledger 37–38 — PASS]** `exp12_shuffle` clears the measured phantom floor on its zero-preceding stratum at FULL N — **FLOOR AUDIT, not an α-cut** (α doesn't transport): non-converter runs {4,5,6} = the floor, converters {12,17,20,37,71} exceed it (nearest 12 = 2× ceiling; each p<1/5000 vs its in-regime sim null) | NO ⇒ recency defence decorative ⇒ HALT. **Observed: PASS** (`exp19_g5a_floor_audit.json`) |
+| **wp-strat-power (G5b)** | **[re-specified 2026-07-14, ledger 38]** measure the **phantom floor at 7,915** (subsample the actual non-converters to the treatment's density, K draws, pinned SUBSAMPLE_SEED — the floor RISES as the stratum thins) and ask whether the converter signal still clears it (s6=12 the marginal) | floor reaches/exceeds the converter signal ⇒ STRATUM-UNDERPOWER at ρ≤0.05 anchor B=512 ⇒ HALT → Jason; among-kept must not merge runs (method check) |
 | **wp-recency** | structural recency companion computed per B **before any run** | absent ⇒ §4 unenforceable |
 | **wp-posassert** | `exp14_arms:1969`'s positive `assert fc.shuffled` does **not** fire for W-PERM | fires ⇒ HALT |
 | **wp-delta** | **fails under a no-op**: B=1 ≠ B=T; ρ(B) strictly decreasing in B | guards against an invariance-only smoke |

@@ -1,0 +1,70 @@
+{
+  "note": "sha256 of each per-onset capture (regenerable via exp19_g5a.py --replay / exp19_g5a_fork.py --replay-cal; deterministic torch.set_num_threads(1)). Verify a regenerated capture by matching its digest here \u2014 provenance computed, not asserted.",
+  "captures": {
+    "exp14_exp12_shuffle_s0_g5a_replay_peronset.json": {
+      "sha256": "c067ca09f76b09f9ca440733037e2a408591dde3ed407004478ee2ad3c583cd4",
+      "n_onset": 46034,
+      "bytes": 1963799
+    },
+    "exp14_exp12_shuffle_s1_g5a_replay_peronset.json": {
+      "sha256": "71d9b25419d34c32646dd4dfab4119ab5a6f4a6cb0eca440d996d2d57b80fc54",
+      "n_onset": 45681,
+      "bytes": 1948725
+    },
+    "exp14_exp12_shuffle_s2_g5a_replay_peronset.json": {
+      "sha256": "fafdaaa2a5a3b6a8f08c42648c65ce33fc6c52379ec3765d1cb92fb10abb4c8a",
+      "n_onset": 45505,
+      "bytes": 1941169
+    },
+    "exp14_exp12_shuffle_s3_g5a_replay_peronset.json": {
+      "sha256": "ff25b94455ac9b37dccf0a17a87ce64e50b453fb5c1e5d24107e9735fcf13db6",
+      "n_onset": 45965,
+      "bytes": 1961154
+    },
+    "exp14_exp12_shuffle_s4_g5a_replay_peronset.json": {
+      "sha256": "6bd322c288679969dd97944e8caa3d1c767a2774acab932a4d6e316adbf4ea71",
+      "n_onset": 45734,
+      "bytes": 1951041
+    },
+    "exp14_exp12_shuffle_s5_g5a_replay_peronset.json": {
+      "sha256": "e444549aa2369e4ae0e4f340c773dc09985ac1c48850bbdfcd9d72faadb23355",
+      "n_onset": 45732,
+      "bytes": 1950917
+    },
+    "exp14_exp12_shuffle_s6_g5a_replay_peronset.json": {
+      "sha256": "37536115129bf67753c83dc0deac162ef897ad6ba23c6c4303e417f84641778b",
+      "n_onset": 45671,
+      "bytes": 1948321
+    },
+    "exp14_exp12_shuffle_s7_g5a_replay_peronset.json": {
+      "sha256": "43827a03d28dfc36608893ea41157d76d55c6fdff6fd87ceebd7b3a847a4389e",
+      "n_onset": 45512,
+      "bytes": 1941494
+    },
+    "exp14_exp12_shuffle_s20_g5a_cal_replay_peronset.json": {
+      "sha256": "585dadf0774fdc3d228c6af466296db6c14a8d70a8a89dc3f1028c891193e6fc",
+      "n_onset": 45819,
+      "bytes": 1954464
+    },
+    "exp14_exp12_shuffle_s21_g5a_cal_replay_peronset.json": {
+      "sha256": "2db13561e9c2930ee093046a5697bffc8133b09855f5c5e0281b506607f7a712",
+      "n_onset": 45582,
+      "bytes": 1944501
+    },
+    "exp14_exp12_shuffle_s22_g5a_cal_replay_peronset.json": {
+      "sha256": "59fe5c75f1ecb49a1906e1625c747da15584417fb06058317824ee7f754e4469",
+      "n_onset": 46216,
+      "bytes": 1971553
+    },
+    "exp14_exp12_shuffle_s24_g5a_cal_replay_peronset.json": {
+      "sha256": "b40f67c9d6c49f30f88d0b8579db91e82437f3230c1c3c84c1b265296501f41b",
+      "n_onset": 45735,
+      "bytes": 1950958
+    },
+    "exp14_exp12_shuffle_s25_g5a_cal_replay_peronset.json": {
+      "sha256": "3263db96fc6f726ceadd5111f5c4efb0902b9c62284a79eb671483002065a6cd",
+      "n_onset": 45876,
+      "bytes": 1957126
+    }
+  }
+}
