@@ -32,9 +32,11 @@ generator (the baseline is a worktree at the pre-B1 commit; digest(baseline)==di
 NOT re-anchor the shuffled arm's realized ORDER to the original certification commit (no committed
 content_digest exists there; the committed manifest is order-blind). It fingerprints the FABRIC; the
 eval-path (EXP12Stimulus.raw_clean / self.centre) and spread-loss raw() generator behaviour are NOT
-fingerprinted — this edit is verified byte-identical there (worktree diff), so out of blast radius; a
-REUSED-class hardening flagged to Jason (extend the digest with an eval-path probe, or a source
-diff-scope), not silently expanded here.
+fingerprinted by the digest — their integrity is carried STRUCTURALLY by the generator diff-scope
+(`exp19_diffscope.py`, Jason ruling 1b): every generator symbol outside the wperm_B blast radius must
+be byte-identical to the pre-edit baseline. DIGEST = fabric; DIFF-SCOPE = generator-source confinement
+(a sampled behavioural probe would catch only what it sampled — G0b v1's species). Both stand at every
+generator edit.
 
 PASSES.
   baseline (UNEDITED generator, git worktree at the pre-B1 commit) — reference digests + companion.
