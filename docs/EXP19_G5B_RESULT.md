@@ -1,11 +1,11 @@
 # EXP19 W-PERM — G5b MATCHED-N POWER: **PASS** — the phantom floor was a binning artifact (2026-07-14)
 
-**Gate (re-specified, ledger 38→39):** not "does a converter certify at N=7,915?" but **"what is the phantom
+**Gate (re-specified ledger 38; resolved ledger 40):** not "does a converter certify at N=7,915?" but **"what is the phantom
 floor at 7,915, and does the converter signal still clear it?"** **Result: PASS.** The stratum's recency-free
 detector powers the treatment cell at B=512 — including the marginal converter s6 — **once the WINDOW is
 audited.** The apparent underpower (G5b v1) was the **third un-transported constant**: the 300-step bin.
 
-## The artifact and its cause (ledger 39, both chairs)
+## The artifact and its cause (ledger 40, both chairs)
 G5b v1 (`exp19_g5b.py`, band 0.704, EVAL=300 bin) found s6 swallowed at N=7,915 (its run overlapped the
 floor). But the detector bins at **300 steps** — a full-read constant. Full read: ~27 onsets/window. Thinned
 zero-preceding stratum: **~5**. Accuracy over ~5 samples is coarse and lumpy; lumpy produces long chance runs;

@@ -241,7 +241,7 @@
     }
   },
   "FALSIFIER": "s6 STILL fails to clear the measured floor at the restored density \u21d2 genuine underpower, fork returns",
-  "VERDICT": "FLOOR WAS A BINNING ARTIFACT \u2014 s6 is swallowed ONLY at the inherited 300-step window (s6_q10 9 <= floor_q99 10); at the restored full-read density (width 1706, 26.5 onsets/win) s6 clears the floor 3.6x (s6_q10 18 vs floor_q99 5); 5/5 converters clear. The 300-step window was the THIRD un-transported constant (ledger 39). G5b PASSES.",
+  "VERDICT": "FLOOR WAS A BINNING ARTIFACT \u2014 s6 is swallowed ONLY at the inherited 300-step window (s6_q10 9 <= floor_q99 10); at the restored full-read density (width 1706, 26.5 onsets/win) s6 clears the floor 3.6x (s6_q10 18 vs floor_q99 5); 5/5 converters clear. The 300-step window was the THIRD un-transported constant (ledger 40). G5b PASSES.",
   "window_was_artifact": true,
   "s6_clears_at_op": true,
   "ok": true

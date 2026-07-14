@@ -1,4 +1,4 @@
-"""exp19_g5b_rebin.py — the WINDOW re-cut: G5b's phantom floor was a BINNING artifact (Jason, ledger 39).
+"""exp19_g5b_rebin.py — the WINDOW re-cut: G5b's phantom floor was a BINNING artifact (Jason, ledger 40).
 
 THE THIRD UN-TRANSPORTED CONSTANT. The detector bins at EVAL=300 steps — a FULL-READ constant. Full read: a
 300-step window holds ~27 onsets. Thinned stratum (N=7,915): ~5. Accuracy over ~5 samples is coarse and
@@ -156,7 +156,7 @@ def sweep() -> dict:
                  f"restored full-read density (width {op['width']}, {op['onsets_per_window']} onsets/win) s6 "
                  f"clears the floor {op['sep_ratio']}x (s6_q10 {op['s6_run_q10']} vs floor_q99 "
                  f"{op['floor_run_q99']}); {op['n_converters_clear']}/5 converters clear. The 300-step window "
-                 "was the THIRD un-transported constant (ledger 39). G5b PASSES." if s6_ok else
+                 "was the THIRD un-transported constant (ledger 40). G5b PASSES." if s6_ok else
                  "FALSIFIER TRIGGERED — s6 STILL fails to clear the measured floor at the restored density "
                  "⇒ genuine underpower; the fork returns → Jason."),
         window_was_artifact=window_was_artifact, s6_clears_at_op=s6_ok, ok=True)
