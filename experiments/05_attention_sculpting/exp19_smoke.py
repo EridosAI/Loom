@@ -111,15 +111,49 @@ def wp_strat_label():
     print("  wp-strat-label  OK — pos==1 and zero_preceding DIVERGE at B>1, COINCIDE at B=1")
 
 
+def wp_recency():
+    """B5 — the recency companion is computable per B before any run; B=1 shows ZERO contamination
+    (structural), B>1 shows contamination (peaks in the interior). Falsifier: a companion computed from
+    DWELL order (the unshuffled twin) instead of EMITTED order reads B>1 as clean and misses the confound."""
+    _, _, fab1 = _fab("exp12_dwell")
+    r1 = SC.recency_companion(fab1)
+    assert r1["frac_contaminated"] == 0.0, f"wp-recency: B=1 contaminated {r1['frac_contaminated']} (must be 0)"
+    loop, spec, cfg = X12.build_exp12(X12.exp19_wperm(32), SEED, T)
+    fab = loop.stream
+    r32 = SC.recency_companion(fab)
+    assert r32["frac_contaminated"] > 0.0, "wp-recency: B=32 shows no contamination (the confound must be present)"
+    twin = F.build_fabric(loop.stim, cfg, cfg.seed, fab.T, shuffled=False)        # dwell-order (wrong)
+    r_wrong = SC.recency_companion(twin)
+    assert r_wrong["frac_contaminated"] == 0.0 and r_wrong["frac_contaminated"] != r32["frac_contaminated"], \
+        "wp-recency falsifier DEAD: dwell-order companion agrees with emitted-order"
+    print(f"  wp-recency  OK — B=1 clean (0); B=32 contaminated ({r32['frac_contaminated']:.3f}, immediate "
+          f"{r32['frac_immediate']:.3f}); falsifier LIVE (dwell-order companion reads 0)")
+
+
+def wp_delta():
+    """B6 — ρ(B) strictly DECREASING in B and ρ(1) != ρ(T). Fails under a no-op (constant ρ)."""
+    seq = []
+    for B, arm in [(1, "exp12_dwell"), (32, X12.exp19_wperm(32)), (512, X12.exp19_wperm(512)),
+                   ("T", "exp12_shuffle")]:
+        loop, spec, cfg = X12.build_exp12(arm, SEED, T)
+        seq.append(SC.rho(loop.stream))
+    assert all(seq[i] > seq[i + 1] for i in range(len(seq) - 1)), f"wp-delta: rho(B) not strictly decreasing: {seq}"
+    assert seq[0] != seq[-1], "wp-delta: rho(B=1) == rho(B=T) — no-op"
+    const = [seq[0]] * 4                                                          # a no-op sequence
+    assert not all(const[i] > const[i + 1] for i in range(3)), "wp-delta falsifier DEAD: constant rho passes strict-decreasing"
+    print(f"  wp-delta  OK — rho(B) strictly decreasing {[round(x, 3) for x in seq]}; falsifier LIVE "
+          "(a constant/no-op sequence is not strictly decreasing)")
+
+
 def main():
-    print("EXP19 W-PERM smokes (tranche 1: wpT / wp1 / wp-multiset / wp-strat-label)")
-    for fn in (wpT, wp1, wp_multiset, wp_strat_label):
+    print("EXP19 W-PERM smokes: wpT / wp1 / wp-multiset / wp-strat-label / wp-recency / wp-delta")
+    for fn in (wpT, wp1, wp_multiset, wp_strat_label, wp_recency, wp_delta):
         try:
             fn()
         except AssertionError as e:
             print(f"  FAIL: {e}")
             sys.exit(1)
-    print("EXP19 smokes tranche 1: ALL PASS")
+    print("EXP19 W-PERM smokes: ALL PASS")
 
 
 if __name__ == "__main__":

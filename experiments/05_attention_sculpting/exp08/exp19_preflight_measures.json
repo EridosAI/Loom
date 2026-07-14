@@ -1,0 +1,69 @@
+{
+  "measure": "EXP19 pre-flight (index-list, no training)",
+  "seed": 0,
+  "h_max": 1000008,
+  "read_window": 500000,
+  "n_dwell_full": 91401,
+  "by_B": {
+    "1": {
+      "n_onset": 45702,
+      "n_contaminated": 0,
+      "frac_contaminated": 0.0,
+      "frac_immediate": 0.0,
+      "n_zero_preceding": 45702,
+      "frac_zero_preceding": 1.0,
+      "median_dist": null,
+      "rho": 0.908598
+    },
+    "32": {
+      "n_onset": 45702,
+      "n_contaminated": 35344,
+      "frac_contaminated": 0.77336,
+      "frac_immediate": 0.21966,
+      "n_zero_preceding": 10358,
+      "frac_zero_preceding": 0.22664,
+      "median_dist": 3,
+      "rho": 0.394443
+    },
+    "128": {
+      "n_onset": 45702,
+      "n_contaminated": 37297,
+      "frac_contaminated": 0.81609,
+      "frac_immediate": 0.07096,
+      "n_zero_preceding": 8405,
+      "frac_zero_preceding": 0.18391,
+      "median_dist": 10,
+      "rho": 0.127234
+    },
+    "512": {
+      "n_onset": 45703,
+      "n_contaminated": 37606,
+      "frac_contaminated": 0.82283,
+      "frac_immediate": 0.01829,
+      "n_zero_preceding": 8097,
+      "frac_zero_preceding": 0.17717,
+      "median_dist": 36,
+      "rho": 0.033702
+    },
+    "2048": {
+      "n_onset": 45696,
+      "n_contaminated": 37681,
+      "frac_contaminated": 0.8246,
+      "frac_immediate": 0.00473,
+      "n_zero_preceding": 8015,
+      "frac_zero_preceding": 0.1754,
+      "median_dist": 141,
+      "rho": 0.008566
+    },
+    "T": {
+      "n_onset": 46034,
+      "n_contaminated": 31878,
+      "frac_contaminated": 0.69249,
+      "frac_immediate": 0.0,
+      "n_zero_preceding": 14156,
+      "frac_zero_preceding": 0.30751,
+      "median_dist": 53386,
+      "rho": 1.4e-05
+    }
+  }
+}
