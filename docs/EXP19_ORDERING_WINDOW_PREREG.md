@@ -205,8 +205,10 @@ same-dwell waves** — EXP16's own committed operational definition.
 | B | zero-preceding stratum | note |
 |---|---|---|
 | **1** (A_dwell) | **100%** — structural | the stratified read **is** the full read ⇒ **A's certified 0/8 carries**, free |
-| interior | ~**17.3%** (E[1/k]) minus straddle (~31% of dwells straddle at B=32; 8% at 128; 2% at 512) | exact count from the index list, pre-flight |
-| **T** (C_shuffle) | ~**17.3%** — **exactly matched to the treatment stratum** | **records committed → re-score them** |
+| interior | **E[1/k]=17.3% + a straddle BOOST, approached FROM ABOVE, monotone** — measured (500k, index-list exact): B=32 **22.7%** · B=128 **18.4%** · B=512 **17.7%** · B=2048 17.5% | exact count from the index list, pre-flight |
+| **T** (C_shuffle) | **17.3%** — **exactly matched to the treatment stratum** (explicit B=T count, 500k: **17.29%**, z=+0.4σ vs E[1/k]) | **records committed → re-score them** |
+
+> *[Amendment 2026-07-14, ledger 33 — the interior row read "minus straddle"; the SIGN was backwards. The onset is `pos==1`, so on a straddling dwell it sits in the **earlier** block and its mates pushed into the next block **cannot precede it** ⇒ fewer local competitors ⇒ P(emitted-first) = 1/k₁ ≥ 1/k. Straddle **RAISES** the stratum; the effect is strictly positive and decays as B grows, so the stratum approaches E[1/k] from ABOVE, monotonically (22.7 → 18.4 → 17.7 → 17.5 → 17.29% at B=T). E[1/k]=17.3% is the correct asymptote (magnitude right, only the sign wrong). Caught by CC from the exact index-list computation; the smoke-horizon (T=4000) figures first reported (23.8/20.2/16.7%) were small-sample noise (SE≈2pp). Favorable direction — a bigger stratum = MORE power for the stratified read, including the ρ≤0.05 anchor B=512.]*
 
 > **`wp-strat` — pre-flight gate, ZERO runs.** Re-score **`exp12_shuffle`'s committed records** on the
 > zero-preceding stratum. **It must still certify.** If not, the stratified detector has no power, the arm's
