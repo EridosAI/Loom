@@ -2761,8 +2761,13 @@ terminal that does **not transport** to a two-axis regime — nothing transports
 STRUCK** (ledger catch 18, catch-15-species raw-gating). **Ledger catch 17:** the terminal's "deader than
 the orbit" was an unlike-bar prose gloss (scatter@N4 vs orbit@N3), caught by the **seat pre-panel**
 (earlier than §10.27's outside-pass catch) — standing rule reinforced: audit cross-arm PROSE for
-bar-matching. Acq-guard PASSED (identity recoverable — the negative is a real non-conversion, not a
-confusion-ceiling artifact). Gradient persisted (0.1112 ≈ A's 0.1416 — valid regime probe).
+bar-matching. Acq-guard PASSED (**capacity exists — re-anchored [catch 19] to the converter arms' sep_cat
+max 0.86–0.96 / asg_cat max 0.66–0.95 on the same 608-param cortex, NOT the dead-arm sep_cat 0.4733≈A's
+0.4732 which is the undifferentiated floor**; the negative is a real non-conversion, not a confusion-ceiling
+artifact). Gradient persisted (0.1112 ≈ A's 0.1416 — valid regime probe). **Ledger catch 19 (CC):** the
+acq-guard originally read the undifferentiated-floor sep_cat 0.4733≈0.4732 as "identity recoverable" — but
+sep_cat ≈ 0.5 is category-blindness, so the rule proved the OPPOSITE of its claim; re-anchored to the
+converter-arm max, conclusion (not capacity-limited) unchanged.
 
 **Pivot fires.** SCATTER-DEAD triggers the **dwell-length titration** (onset-rate is the knob) to measure
 the interleaving **dose** (the §10.27 forward-pointer, now realized); then the mechanism-class arms unlock

@@ -88,8 +88,13 @@ The two crossers {1,6} reach exactly N=4 and go no further — bare-N, nothing a
 
 - **Gradient-persistence** Δ(p1−p13-48) = **0.1112** (A referent +0.1416; alarm threshold 0.0708) — the
   recency shortcut **persists**, no instrument alarm: kinematics was the only change (valid regime probe).
-- **acq-guard (§4 l.57)**: scatter sep_cat **0.4733** ≥ 0.90 × A_dwell **0.4732** = 0.4259 → **PASSES**;
-  identity is recoverable, so DEAD is a real non-conversion, not a confusion-ceiling artifact.
+- **acq-guard (capacity check) — RE-ANCHORED (§10.28 catch 19, CC 2026-07-14):** the original rule
+  (scatter sep_cat **0.4733** ≥ 0.90 × A_dwell **0.4732**) compared two values at the **undifferentiated
+  floor** — sep_cat ≈ 0.5 is category-**blindness** (`_sep_ratio` docstring; FRONTIER "≈0.47–0.50
+  (undifferentiated)"), so passing it shows scatter is as undifferentiated as A, **not** that identity is
+  recoverable. **Correct evidence:** the same 608-param cortex reaches **sep_cat max 0.86–0.96 / asg_cat
+  max 0.66–0.95** in the shuffle converters ⇒ the capacity to represent the category exists. **Conclusion
+  UNCHANGED:** DEAD is a real non-conversion, not a confusion-ceiling/capacity artifact.
 - **Acquisition-onset** (n=10): min 3k / median 130.2k / max 183k — all ≪ 500k.
 - **Tail (500k,1M], DESCRIPTIVE-ONLY — never cross-arm, F6-A tail-hazard pin §3):** one band-touch (s9,
   an EXT seed, longest 4, does not sustain); **blind-tail {0,1,2,3}: none touch → no escalation trigger.**
