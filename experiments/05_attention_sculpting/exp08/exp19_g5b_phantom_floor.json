@@ -1,0 +1,99 @@
+{
+  "gate": "G5b \u2014 PHANTOM FLOOR at N=7,915 (does the converter signal still clear it?)",
+  "method": "among-kept thinning to density r=0.5591 (N_target=7915/N_full=14156), K=2000 draws, SUBSAMPLE_SEED=719150",
+  "floor_band": 0.704,
+  "keeps_per_seed": {
+    "0": 7742,
+    "1": 7703,
+    "2": 7751,
+    "3": 7613,
+    "4": 7792,
+    "5": 7766,
+    "6": 7817,
+    "7": 7734
+  },
+  "phantom_floor_7915": {
+    "median": 5,
+    "q90": 6,
+    "q99": 8,
+    "max": 10,
+    "per_seed": {
+      "1": {
+        "median": 5,
+        "q99": 8,
+        "max": 10
+      },
+      "3": {
+        "median": 5,
+        "q99": 8,
+        "max": 9
+      },
+      "7": {
+        "median": 5,
+        "q99": 8,
+        "max": 10
+      }
+    }
+  },
+  "floor_ceiling_q99": 8,
+  "converter_signal_7915": {
+    "0": {
+      "median": 34,
+      "q10": 25,
+      "min": 17,
+      "full_N_run": 37,
+      "frac_clears_q99_bracket": 1.0,
+      "frac_exceeds_perdraw_floor_max": 1.0
+    },
+    "2": {
+      "median": 20,
+      "q10": 15,
+      "min": 9,
+      "full_N_run": 20,
+      "frac_clears_q99_bracket": 1.0,
+      "frac_exceeds_perdraw_floor_max": 1.0
+    },
+    "4": {
+      "median": 18,
+      "q10": 17,
+      "min": 10,
+      "full_N_run": 17,
+      "frac_clears_q99_bracket": 1.0,
+      "frac_exceeds_perdraw_floor_max": 1.0
+    },
+    "5": {
+      "median": 32,
+      "q10": 23,
+      "min": 12,
+      "full_N_run": 71,
+      "frac_clears_q99_bracket": 1.0,
+      "frac_exceeds_perdraw_floor_max": 1.0
+    },
+    "6": {
+      "median": 11,
+      "q10": 8,
+      "min": 6,
+      "full_N_run": 12,
+      "frac_clears_q99_bracket": 0.844,
+      "frac_exceeds_perdraw_floor_max": 0.9825
+    }
+  },
+  "marginal_converter": 6,
+  "swallowed_converters": [
+    6
+  ],
+  "cleanly_separated_converters": [
+    0,
+    5
+  ],
+  "floor_at_full_N": {
+    "nonconverter_runs": {
+      "1": 4,
+      "3": 5,
+      "7": 6
+    }
+  },
+  "VERDICT": "STRATUM-UNDERPOWER at rho<=0.05 (B=512): converter(s) [6] fall INSIDE the phantom floor bracket [0,8] at N=7,915 (their lower tail overlaps the granularity floor) \u2014 the signal is swallowed by thinning. HALT -> Jason.",
+  "underpowered": true,
+  "ok": true
+}

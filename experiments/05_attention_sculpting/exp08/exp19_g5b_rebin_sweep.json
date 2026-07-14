@@ -1,0 +1,248 @@
+{
+  "gate": "G5b re-cut \u2014 WINDOW audited; phantom floor vs window width at N=7,915 (outcome-blind)",
+  "band": 0.64,
+  "evidence_onsets": 135,
+  "full_read_onsets_per_window": 27,
+  "subsample_seed": 719150,
+  "k_draws": 2000,
+  "thin_ratio": 0.5591,
+  "sweep": [
+    {
+      "width": 300,
+      "onsets_per_window": 4.7,
+      "N_w": 29,
+      "floor_run_q99": 10,
+      "floor_run_max": 14,
+      "floor_onsets_q99": 46.7,
+      "s6_run_median": 12,
+      "s6_run_q10": 9,
+      "s6_run_min": 6,
+      "s6_clears_floor": false,
+      "sep_ratio": 0.9,
+      "n_converters_clear": 4,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": false
+      }
+    },
+    {
+      "width": 450,
+      "onsets_per_window": 7.0,
+      "N_w": 19,
+      "floor_run_q99": 9,
+      "floor_run_max": 13,
+      "floor_onsets_q99": 63.1,
+      "s6_run_median": 16,
+      "s6_run_q10": 11,
+      "s6_run_min": 8,
+      "s6_clears_floor": true,
+      "sep_ratio": 1.22,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 600,
+      "onsets_per_window": 9.3,
+      "N_w": 14,
+      "floor_run_q99": 8,
+      "floor_run_max": 12,
+      "floor_onsets_q99": 74.7,
+      "s6_run_median": 19,
+      "s6_run_q10": 13,
+      "s6_run_min": 7,
+      "s6_clears_floor": true,
+      "sep_ratio": 1.62,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 900,
+      "onsets_per_window": 14.0,
+      "N_w": 10,
+      "floor_run_q99": 7,
+      "floor_run_max": 10,
+      "floor_onsets_q99": 98.0,
+      "s6_run_median": 22,
+      "s6_run_q10": 14,
+      "s6_run_min": 8,
+      "s6_clears_floor": true,
+      "sep_ratio": 2.0,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 1200,
+      "onsets_per_window": 18.7,
+      "N_w": 7,
+      "floor_run_q99": 6,
+      "floor_run_max": 10,
+      "floor_onsets_q99": 112.0,
+      "s6_run_median": 26,
+      "s6_run_q10": 15,
+      "s6_run_min": 9,
+      "s6_clears_floor": true,
+      "sep_ratio": 2.5,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 1500,
+      "onsets_per_window": 23.3,
+      "N_w": 6,
+      "floor_run_q99": 5,
+      "floor_run_max": 8,
+      "floor_onsets_q99": 116.5,
+      "s6_run_median": 23,
+      "s6_run_q10": 18,
+      "s6_run_min": 9,
+      "s6_clears_floor": true,
+      "sep_ratio": 3.6,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 1706,
+      "onsets_per_window": 26.5,
+      "N_w": 5,
+      "floor_run_q99": 5,
+      "floor_run_max": 7,
+      "floor_onsets_q99": 132.4,
+      "s6_run_median": 22,
+      "s6_run_q10": 18,
+      "s6_run_min": 8,
+      "s6_clears_floor": true,
+      "sep_ratio": 3.6,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 2100,
+      "onsets_per_window": 32.6,
+      "N_w": 4,
+      "floor_run_q99": 4,
+      "floor_run_max": 6,
+      "floor_onsets_q99": 130.3,
+      "s6_run_median": 18,
+      "s6_run_q10": 16,
+      "s6_run_min": 8,
+      "s6_clears_floor": true,
+      "sep_ratio": 4.0,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 3000,
+      "onsets_per_window": 46.6,
+      "N_w": 3,
+      "floor_run_q99": 4,
+      "floor_run_max": 6,
+      "floor_onsets_q99": 186.2,
+      "s6_run_median": 14,
+      "s6_run_q10": 12,
+      "s6_run_min": 8,
+      "s6_clears_floor": true,
+      "sep_ratio": 3.0,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    }
+  ],
+  "operating_point_width": 1706,
+  "operating_point": {
+    "width": 1706,
+    "onsets_per_window": 26.5,
+    "N_w": 5,
+    "floor_run_q99": 5,
+    "floor_run_max": 7,
+    "floor_onsets_q99": 132.4,
+    "s6_run_median": 22,
+    "s6_run_q10": 18,
+    "s6_run_min": 8,
+    "s6_clears_floor": true,
+    "sep_ratio": 3.6,
+    "n_converters_clear": 5,
+    "conv_clears": {
+      "0": true,
+      "2": true,
+      "4": true,
+      "5": true,
+      "6": true
+    }
+  },
+  "inherited_300": {
+    "width": 300,
+    "onsets_per_window": 4.7,
+    "N_w": 29,
+    "floor_run_q99": 10,
+    "floor_run_max": 14,
+    "floor_onsets_q99": 46.7,
+    "s6_run_median": 12,
+    "s6_run_q10": 9,
+    "s6_run_min": 6,
+    "s6_clears_floor": false,
+    "sep_ratio": 0.9,
+    "n_converters_clear": 4,
+    "conv_clears": {
+      "0": true,
+      "2": true,
+      "4": true,
+      "5": true,
+      "6": false
+    }
+  },
+  "FALSIFIER": "s6 STILL fails to clear the measured floor at the restored density \u21d2 genuine underpower, fork returns",
+  "VERDICT": "FLOOR WAS A BINNING ARTIFACT \u2014 s6 is swallowed ONLY at the inherited 300-step window (s6_q10 9 <= floor_q99 10); at the restored full-read density (width 1706, 26.5 onsets/win) s6 clears the floor 3.6x (s6_q10 18 vs floor_q99 5); 5/5 converters clear. The 300-step window was the THIRD un-transported constant (ledger 39). G5b PASSES.",
+  "window_was_artifact": true,
+  "s6_clears_at_op": true,
+  "ok": true
+}
