@@ -23,6 +23,7 @@ torch.set_num_threads(1)
 import exp12_fabric as F
 import exp12_arms as X12
 import exp14_arms as XA
+import exp19_score as SC
 
 SEED = 0
 T = 4000                                              # multiple blocks at B=32/128; ragged tail
@@ -93,9 +94,26 @@ def wp_multiset():
           "(a wave-value change breaks the sorted-multiset compare)")
 
 
+def wp_strat_label():
+    """G4 — the `pos==1` mask and `zero_preceding_mask` DIVERGE at every B>1 and COINCIDE at B=1.
+    Coincidence at B>1 => the stratifier is on the LABEL (pos==1), not the PROPERTY (zero same-dwell
+    waves preceding the exam in emitted order) => it would score contaminated exams as recency-free and
+    certify the arm's own confound. THIS IS THE FALSIFIER: with a naive pos==1 stratifier it goes red."""
+    loop1, cfg1, fab1 = _fab("exp12_dwell")
+    assert torch.equal((fab1.pos == 1), SC.zero_preceding_mask(fab1)), \
+        "wp-strat-label: masks DIVERGE at B=1 (exp12_dwell) — they must coincide"
+    for B in (32, 128):
+        loop, spec, cfg = X12.build_exp12(X12.exp19_wperm(B), SEED, T)
+        fab = loop.stream
+        assert not torch.equal((fab.pos == 1), SC.zero_preceding_mask(fab)), (
+            f"wp-strat-label: masks COINCIDE at B={B} — the stratifier is on the LABEL (pos==1), not the "
+            f"property (zero preceding same-dwell wave in emitted order); it would certify its own confound")
+    print("  wp-strat-label  OK — pos==1 and zero_preceding DIVERGE at B>1, COINCIDE at B=1")
+
+
 def main():
-    print("EXP19 W-PERM smokes (tranche 1: wp1 / wpT / wp-multiset)")
-    for fn in (wpT, wp1, wp_multiset):
+    print("EXP19 W-PERM smokes (tranche 1: wpT / wp1 / wp-multiset / wp-strat-label)")
+    for fn in (wpT, wp1, wp_multiset, wp_strat_label):
         try:
             fn()
         except AssertionError as e:
