@@ -653,6 +653,33 @@ def _sep_ratio(e: torch.Tensor, labels: torch.Tensor):
     return (between / tot) if tot > 1e-12 else None
 
 
+def _dec_cat(e: torch.Tensor, labels: torch.Tensor) -> float:
+    """Leave-one-out nearest-centroid CATEGORY decode on the 16 clean-probe emissions (EXP19 free
+    scorer field, col-only: no grad/RNG/loss/optimizer/gen_state — a read next to sep_cat on the SAME
+    `content` tensor). For each probe the nearest category centroid is computed WITHOUT that probe;
+    dec_cat = fraction whose nearest LOO centroid is its own category. 0.5 = chance at n_category=2.
+    DECCAT-REGIME-BOUND (§10, pre-named): rising at short B means category consolidates under frequent
+    contrast in THIS 2-category fabric at THESE constants — regime-specific, NOT a warrant that
+    coherent-experience rescue generalizes. It is the rescue cells' mechanistic falsifier: a rescue
+    with dec_cat FLAT is RECENCY-CARRIED/artifact; a rescue with dec_cat climbing onto the category
+    axis is real."""
+    n = e.shape[0]
+    cats = labels.unique().tolist()
+    correct = 0
+    for i in range(n):
+        best_c, best_d = None, None
+        for c in cats:
+            m = (labels == c).clone()
+            m[i] = False                                     # leave-one-out: exclude the probe itself
+            if not bool(m.any()):
+                continue
+            d = float((e[i] - e[m].mean(0)).norm())
+            if best_d is None or d < best_d:
+                best_d, best_c = d, c
+        correct += int(best_c == int(labels[i]))
+    return correct / n
+
+
 def _eval_column(loop, t: int, buf: dict, ma, mb, labels, no_word: bool = False) -> dict:
     cfg = loop.cfg
     with torch.no_grad():
@@ -676,6 +703,7 @@ def _eval_column(loop, t: int, buf: dict, ma, mb, labels, no_word: bool = False)
     col["sep_cat"] = _sep_ratio(content, mb % cfg.n_category)
     col["sep_dist"] = _sep_ratio(content, mb // cfg.n_category)
     col["sep_a"] = _sep_ratio(content, ma)
+    col["dec_cat"] = _dec_cat(content, mb % cfg.n_category)   # EXP19 free scorer field (col-only; §10 DECCAT-REGIME-BOUND)
     col.update(X9.evo_decomp(loop))
     col.update(grad_decomp_local(loop, no_word=no_word))
     col.update(X9.pairwise_emit(loop))

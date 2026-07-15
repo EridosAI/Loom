@@ -29,7 +29,12 @@ BASELINE_COMMIT = "9429792"          # pre-B1: the unedited generator this edit 
 # Symbols the W-PERM edit is ALLOWED to add or change. EVERYTHING ELSE must be byte-identical.
 WHITELIST = {
     "exp12_fabric.py": dict(added={"block_perm"}, changed={"build_fabric"}),
-    "exp12_arms.py":   dict(added={"exp19_wperm"}, changed={"build_exp12", "EXP12Loop._make_stream"}),
+    # `_dec_cat` (added) + `_eval_column` (changed) = the ratified EXP19 free SCORER field `dec_cat`
+    # (Jason 2026-07-15): a col-only nearest-centroid category decode — NO generator/learner touch, no
+    # RNG/loss/optimizer/gen_state (anchor re-verified: .ckpt_read.pt bit-identical). Learner integrity
+    # is separately fenced by the symbol-scoped EXP12Loop.step check.
+    "exp12_arms.py":   dict(added={"exp19_wperm", "_dec_cat"},
+                            changed={"build_exp12", "EXP12Loop._make_stream", "_eval_column"}),
 }
 
 

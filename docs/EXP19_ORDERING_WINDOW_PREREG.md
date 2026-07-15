@@ -382,7 +382,13 @@ written rule** · anything whose honest next sentence is *"I recommend…"*.
 (absent by construction; returns under U-BUF) · **CEILING-BORROW** (C's band was cut against a SHIFTED floor;
 every cross-B claim from a matched-bar tab, **prose included** — ledger 17) · **RAW-GATING** (ledger 18) ·
 **WRONG-FABRIC** *(new — ledger 26: an arm spec'd against a parallel-looking but uncertified fabric lineage.
-The instrument audit of §12.1 is the standing guard.)*
+The instrument audit of §12.1 is the standing guard.)* · **DECCAT-REGIME-BOUND** *(new — Jason 2026-07-15,
+pre-named before the ladder runs. `dec_cat` (LOO nearest-centroid category decode, a free scorer field)
+rising at shorter B shows category **consolidates when contrast is frequent** in THIS 2-category fabric at
+THESE constants — **regime-specific; it does NOT establish that coherent-experience rescue generalizes.** A
+post-hoc "dwell solved" read is **forbidden**. dec_cat is instead the rescue cells' **mechanistic
+falsifier**: a rescue with **dec_cat FLAT is RECENCY-CARRIED/artifact**; a rescue with **dec_cat climbing
+onto the category axis is real**.)*
 
 ---
 
