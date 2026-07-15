@@ -1,8 +1,6 @@
 {
-  "gate": "G5b re-cut \u2014 WINDOW audited; phantom floor vs window width at N=7,915 (outcome-blind)",
+  "gate": "G5b re-cut \u2014 WINDOW audited; operating point cut in the STRATUM regime (ledger 41), outcome-blind",
   "band": 0.64,
-  "evidence_onsets": 135,
-  "full_read_onsets_per_window": 27,
   "subsample_seed": 719150,
   "k_draws": 2000,
   "thin_ratio": 0.5591,
@@ -18,6 +16,7 @@
       "s6_run_q10": 9,
       "s6_run_min": 6,
       "s6_clears_floor": false,
+      "s6_clears_robust": false,
       "sep_ratio": 0.9,
       "n_converters_clear": 4,
       "conv_clears": {
@@ -26,6 +25,50 @@
         "4": true,
         "5": true,
         "6": false
+      }
+    },
+    {
+      "width": 350,
+      "onsets_per_window": 5.5,
+      "N_w": 25,
+      "floor_run_q99": 10,
+      "floor_run_max": 13,
+      "floor_onsets_q99": 54.5,
+      "s6_run_median": 13,
+      "s6_run_q10": 10,
+      "s6_run_min": 7,
+      "s6_clears_floor": false,
+      "s6_clears_robust": false,
+      "sep_ratio": 1.0,
+      "n_converters_clear": 4,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": false
+      }
+    },
+    {
+      "width": 400,
+      "onsets_per_window": 6.2,
+      "N_w": 22,
+      "floor_run_q99": 9,
+      "floor_run_max": 13,
+      "floor_onsets_q99": 56.1,
+      "s6_run_median": 15,
+      "s6_run_q10": 11,
+      "s6_run_min": 7,
+      "s6_clears_floor": true,
+      "s6_clears_robust": false,
+      "sep_ratio": 1.22,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
       }
     },
     {
@@ -39,7 +82,52 @@
       "s6_run_q10": 11,
       "s6_run_min": 8,
       "s6_clears_floor": true,
+      "s6_clears_robust": false,
       "sep_ratio": 1.22,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 500,
+      "onsets_per_window": 7.8,
+      "N_w": 17,
+      "floor_run_q99": 9,
+      "floor_run_max": 12,
+      "floor_onsets_q99": 70.1,
+      "s6_run_median": 17,
+      "s6_run_q10": 11,
+      "s6_run_min": 7,
+      "s6_clears_floor": true,
+      "s6_clears_robust": false,
+      "sep_ratio": 1.22,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 550,
+      "onsets_per_window": 8.6,
+      "N_w": 16,
+      "floor_run_q99": 8,
+      "floor_run_max": 13,
+      "floor_onsets_q99": 68.5,
+      "s6_run_median": 17,
+      "s6_run_q10": 12,
+      "s6_run_min": 6,
+      "s6_clears_floor": true,
+      "s6_clears_robust": false,
+      "sep_ratio": 1.5,
       "n_converters_clear": 5,
       "conv_clears": {
         "0": true,
@@ -60,7 +148,52 @@
       "s6_run_q10": 13,
       "s6_run_min": 7,
       "s6_clears_floor": true,
+      "s6_clears_robust": false,
       "sep_ratio": 1.62,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 700,
+      "onsets_per_window": 10.9,
+      "N_w": 12,
+      "floor_run_q99": 8,
+      "floor_run_max": 13,
+      "floor_onsets_q99": 87.1,
+      "s6_run_median": 22,
+      "s6_run_q10": 15,
+      "s6_run_min": 8,
+      "s6_clears_floor": true,
+      "s6_clears_robust": false,
+      "sep_ratio": 1.88,
+      "n_converters_clear": 5,
+      "conv_clears": {
+        "0": true,
+        "2": true,
+        "4": true,
+        "5": true,
+        "6": true
+      }
+    },
+    {
+      "width": 800,
+      "onsets_per_window": 12.5,
+      "N_w": 11,
+      "floor_run_q99": 7,
+      "floor_run_max": 10,
+      "floor_onsets_q99": 87.2,
+      "s6_run_median": 23,
+      "s6_run_q10": 15,
+      "s6_run_min": 9,
+      "s6_clears_floor": true,
+      "s6_clears_robust": false,
+      "sep_ratio": 2.14,
       "n_converters_clear": 5,
       "conv_clears": {
         "0": true,
@@ -81,6 +214,7 @@
       "s6_run_q10": 14,
       "s6_run_min": 8,
       "s6_clears_floor": true,
+      "s6_clears_robust": false,
       "sep_ratio": 2.0,
       "n_converters_clear": 5,
       "conv_clears": {
@@ -102,6 +236,7 @@
       "s6_run_q10": 15,
       "s6_run_min": 9,
       "s6_clears_floor": true,
+      "s6_clears_robust": false,
       "sep_ratio": 2.5,
       "n_converters_clear": 5,
       "conv_clears": {
@@ -123,6 +258,7 @@
       "s6_run_q10": 18,
       "s6_run_min": 9,
       "s6_clears_floor": true,
+      "s6_clears_robust": true,
       "sep_ratio": 3.6,
       "n_converters_clear": 5,
       "conv_clears": {
@@ -144,6 +280,7 @@
       "s6_run_q10": 18,
       "s6_run_min": 8,
       "s6_clears_floor": true,
+      "s6_clears_robust": true,
       "sep_ratio": 3.6,
       "n_converters_clear": 5,
       "conv_clears": {
@@ -165,6 +302,7 @@
       "s6_run_q10": 16,
       "s6_run_min": 8,
       "s6_clears_floor": true,
+      "s6_clears_robust": true,
       "sep_ratio": 4.0,
       "n_converters_clear": 5,
       "conv_clears": {
@@ -186,6 +324,7 @@
       "s6_run_q10": 12,
       "s6_run_min": 8,
       "s6_clears_floor": true,
+      "s6_clears_robust": true,
       "sep_ratio": 3.0,
       "n_converters_clear": 5,
       "conv_clears": {
@@ -197,28 +336,6 @@
       }
     }
   ],
-  "operating_point_width": 1706,
-  "operating_point": {
-    "width": 1706,
-    "onsets_per_window": 26.5,
-    "N_w": 5,
-    "floor_run_q99": 5,
-    "floor_run_max": 7,
-    "floor_onsets_q99": 132.4,
-    "s6_run_median": 22,
-    "s6_run_q10": 18,
-    "s6_run_min": 8,
-    "s6_clears_floor": true,
-    "sep_ratio": 3.6,
-    "n_converters_clear": 5,
-    "conv_clears": {
-      "0": true,
-      "2": true,
-      "4": true,
-      "5": true,
-      "6": true
-    }
-  },
   "inherited_300": {
     "width": 300,
     "onsets_per_window": 4.7,
@@ -230,6 +347,7 @@
     "s6_run_q10": 9,
     "s6_run_min": 6,
     "s6_clears_floor": false,
+    "s6_clears_robust": false,
     "sep_ratio": 0.9,
     "n_converters_clear": 4,
     "conv_clears": {
@@ -240,8 +358,43 @@
       "6": false
     }
   },
-  "FALSIFIER": "s6 STILL fails to clear the measured floor at the restored density \u21d2 genuine underpower, fork returns",
-  "VERDICT": "FLOOR WAS A BINNING ARTIFACT \u2014 s6 is swallowed ONLY at the inherited 300-step window (s6_q10 9 <= floor_q99 10); at the restored full-read density (width 1706, 26.5 onsets/win) s6 clears the floor 3.6x (s6_q10 18 vs floor_q99 5); 5/5 converters clear. The 300-step window was the THIRD un-transported constant (ledger 40). G5b PASSES.",
+  "preflight_width_floor": {
+    "w_power_floor": 400,
+    "w_robust": 1500,
+    "grounds": "min width where the weakest labeled converter s6 clears the phantom floor (power_floor: s6_q10>floor_q99; robust: s6_min>floor_max) \u2014 a computed pre-flight constant beside \u03c1(B) and the stratum counts"
+  },
+  "stratum_native_onsets_per_window": 8.5,
+  "operating_point": {
+    "width": 550,
+    "onsets_per_window": 8.6,
+    "N_w": 16,
+    "floor_run_q99": 8,
+    "floor_run_max": 13,
+    "floor_onsets_q99": 68.5,
+    "s6_run_median": 17,
+    "s6_run_q10": 12,
+    "s6_run_min": 6,
+    "s6_clears_floor": true,
+    "s6_clears_robust": false,
+    "sep_ratio": 1.5,
+    "n_converters_clear": 5,
+    "conv_clears": {
+      "0": true,
+      "2": true,
+      "4": true,
+      "5": true,
+      "6": true
+    }
+  },
+  "operating_point_width": 550,
+  "retracted_population_target": {
+    "width": 1706,
+    "onsets_per_window": 26.5,
+    "sep": 3.6,
+    "note": "the 27-onset (all-population) density \u2014 over-correction, ledger 41"
+  },
+  "FALSIFIER": "s6 fails to clear the floor at ANY width in the stratum regime \u21d2 genuine underpower, fork returns",
+  "VERDICT": "PASS, cut in the stratum regime (ledger 41). s6 swallowed ONLY at the inherited 300-bin (s6_q10 9 \u2264 floor_q99 10); \u2265 width floor = 400 (robust \u2265 1500). Operating point width 550 (8.6 onsets/win, stratum regime): s6 margin 1.5\u00d7 (q10 12 vs floor_q99 8), 5/5 clear. The 3.6\u00d7 headline at width 1706 was the population-regime over-correction, RETRACTED. G5b PASSES (target-invariant); the margin is the stratum-regime value.",
   "window_was_artifact": true,
   "s6_clears_at_op": true,
   "ok": true

@@ -13,52 +13,57 @@ long chance runs **are** the phantom floor. v1 measured a detector binned for a 
 one it runs in. We had audited α (ledger 38) and the forced band; **neither chair audited the window.**
 
 ## The re-cut — preserve the granularity the detector was cut for, re-derive the bins (outcome-blind)
-The full-read C_shuffle detector (X15_REPRO: band **0.64**, N=5) is calibrated for ~27-onset-window
-granularity. Re-bin the stratum to restore that density (sweep of window widths), **operating point chosen on
-the null** (the width restoring ~27 onsets/window = 1706 steps), never on s6. **The gate is the FLOOR AUDIT**
-— a within-width separation `s6_q10 > floor_q99` (m_w cancels ⇒ the separation ratio is unit-invariant). No
-training; among-kept thinning to the treatment's density, K=2000 draws, pinned `SUBSAMPLE_SEED=719150`.
+The full-read C_shuffle detector (X15_REPRO: band **0.64**, N=5) bins at EVAL=300 steps. The re-cut sweeps
+window width and cuts the operating point **in the STRATUM's own regime — NOT the population's** (ledger 41:
+the treatment detector only ever sees the stratum, so widening until the sparse stratum fakes the dense
+population's ~27-onset granularity is a regime the detector never runs in — the retracted over-correction).
+**The gate is the FLOOR AUDIT** — a within-width separation `s6_q10 > floor_q99` (m_w cancels ⇒ unit-invariant).
+Among-kept thinning to N=7,915, K=2000 draws, pinned `SUBSAMPLE_SEED=719150`; no training.
 
-| width | onsets/win | floor q99 | s6 q10 | sep | s6 clears? | #conv clear |
-|---|---|---|---|---|---|---|
-| **300** (inherited) | 4.7 | **10** | **9** | **0.9** | **NO — swallowed** | 4/5 |
-| 450 | 7.0 | 9 | 11 | 1.22 | yes | 5/5 |
-| 600 (~stratum-native) | 9.3 | 8 | 13 | 1.62 | yes | 5/5 |
-| 900 | 14.0 | 7 | 14 | 2.0 | yes | 5/5 |
-| 1200 | 18.7 | 6 | 15 | 2.5 | yes | 5/5 |
-| 1500 | 23.3 | 5 | 18 | 3.6 | yes | 5/5 |
-| **1706** (restores 27) | 26.5 | **5** | **18** | **3.6** | **YES** | 5/5 |
-| 2100 | 32.6 | 4 | 16 | 4.0 | yes | 5/5 |
-| 3000 | 46.6 | 4 | 12 | 3.0 | yes | 5/5 |
+| width | onsets/win | floor q99 | s6 q10 | s6 min | sep | s6 clears? | #conv |
+|---|---|---|---|---|---|---|---|
+| **300** (inherited) | 4.7 | **10** | **9** | 6 | **0.9** | **NO — swallowed** | 4/5 |
+| 400 (**≥ power floor**) | 6.2 | 9 | 11 | 7 | 1.22 | yes | 5/5 |
+| **550** (**operating point** — stratum native ~8.5/win) | 8.6 | **8** | **12** | 6 | **1.5** | **yes** | 5/5 |
+| 600 | 9.3 | 8 | 13 | 7 | 1.62 | yes | 5/5 |
+| 800 | 12.5 | 7 | 15 | 9 | 2.14 | yes | 5/5 |
+| 1200 | 18.7 | 6 | 15 | 9 | 2.5 | yes | 5/5 |
+| ~~1706~~ (restores 27 — **retracted**) | 26.5 | 5 | 18 | 8 | ~~3.6~~ | yes | 5/5 |
+| 2100 | 32.6 | 4 | 16 | 8 | 4.0 | yes | 5/5 |
 
-- **s6 is swallowed ONLY at the inherited 300-step window.** At **every** width ≥ 450, s6 clears and all 5
-  converters clear — a 6.7× range; the operating-point choice is non-pivotal.
-- At the operating point (1706), s6 clears **3.6×** (q10 18 vs floor q99 5); **even s6's minimum draw (8–11)
-  exceeds the floor's max (7–8)**. Robust across 4 subsample seeds (719150/1/42/2026).
-- **The divergence is real signal, not a re-binning trick:** as windows widen the floor *shrinks* (q99 10→4
-  in window units) while s6 *grows* (q10 9→18). s6 carries a genuine contiguous late episode (windows
-  248–270, per-window means 0.69–1.00); the floor seeds {1,3,7} have **no** episode (longest full-data run =
-  2 windows). Wide binning averages chance toward the sub-band truth while bridging s6's real super-band
-  stretch — the signature of a finite-extent episode.
-- **The pre-named falsifier did NOT trigger** (floor doesn't collapse AND s6 fails ⇒ genuine underpower). s6
-  clears; the underpower was the binning.
+- **s6 is swallowed ONLY at the inherited 300-step window** (sep 0.9, 4/5 clear). At **every** width ≥ 400 all
+  5 converters clear — the pre-named falsifier did NOT trigger; the underpower was the binning.
+- **Pre-flight constant — the ≥ WIDTH FLOOR = 400** (computed, outcome-blind): the narrowest window at which the
+  weakest labeled converter (s6) clears the phantom floor; below it the granularity floor swamps the signal.
+  It sits in the G8 package beside ρ(B) and the stratum counts. (Strict form — s6's worst draw beats the
+  floor's best — holds only ≥ 1500, reported as context, not the operating point.)
+- **Operating point = width 550** (~8.5 onsets/win = the stratum's own full-N density, the regime it was
+  characterized at), s6 margin **1.5×** (q10 12 vs floor q99 8), 5/5 clear. **The margin is what G5b reports,
+  and 1.5× at the anchor on the marginal converter is thin but real** (ledger 41: the earlier 3.6× headline at
+  width 1706 was the population regime, retracted). Finest resolution consistent with power (flag 3).
+- **The divergence is real signal, not a re-binning trick:** as windows widen the floor *shrinks* (q99 10→4)
+  while s6 *grows* (q10 9→18). s6 carries a genuine contiguous late episode (windows 248–270, means 0.69–1.00);
+  floor seeds {1,3,7} have **no** episode (longest full-data run = 2). Robust across 4 subsample seeds.
 
 ## Adversarial verification (6-lens refute panel + synthesis) — FLAG-ONLY, 0 MUST-FIX
 Independent recomputes confirmed: operating-point blindness (min |onsets/win − 27|, s6 absent from
 selection); band-invariance (**re-ran the entire sweep at 0.704 → s6 still clears, sep 5.0**; the 0.64
 recompute bit-matched all 9 rows); cache faithfulness (n_full s0 = 14,156 exactly); the divergence mechanism.
-Three flags ride alongside, **all non-blocking**, carried honestly:
+The panel's three flags, and their disposition:
 
-1. **The "135-onset evidence" is decorative.** `N_w` is reported but does not gate — the gate is the
-   floor-separation. (This is *correct*: an absolute 135/N_w threshold would misfire, since at the restored
-   density N_w≈5 ≤ the floor's own max.) The framing, not the computation.
-2. **The 3.6× magnitude is target-dependent.** 27 onsets/window is the *all-onset* full-read density; the
-   audited stratum is zero-preceding (native full-N density ~8.5/win → width ~600), where s6 clears **~1.6×**,
-   not 3.6×. **The binary PASS is target-invariant (s6 clears at every width ≥450); only the margin is not.**
-3. **Wide-window run-length measures block-contiguity, not conversion strength** (it reorders the converters),
-   and s6's clearance rides a **late plateau still rising at the 500k read boundary** (s6 is a late converter,
-   not a decayed transient — this also refutes the "widening merges a decayed episode" worry). A caveat for
-   eventual **B\*** estimation: the temporal resolution at the restored density is ~293 windows.
+1. **The "135-onset evidence" was decorative — RESOLVED.** `N_w` was reported but never gated; the gate is the
+   floor-separation (correct — an absolute 135/N_w threshold would misfire). Framing fixed.
+2. **The margin was target-dependent — RESOLVED, ledger 41 (Jason's self-correction).** The original 3.6× used
+   the *population's* 27-onset density; the treatment detector only sees the stratum, so the operating point is
+   now cut in the **stratum's own regime** (native ~8.5/win, width 550) → **s6 margin 1.5×**, with the **≥400
+   width floor** named as a computed pre-flight constant. The binary PASS is target-invariant; the 3.6× is
+   retracted.
+3. **The horizon may truncate a converter mid-rise — OPEN ITEM → G8 (live finding, not a caveat).** s6 clears
+   on a **late plateau still rising at read_at=500k** — it is a *late* converter, not a decayed transient. So
+   the §3 horizon (read_at=500,000), grounded on *onset* (all converted by 427.5k), may **undercount** a
+   converter whose plateau is still climbing at the read. **If W-PERM's rescue converters also plateau late, a
+   500k read undercounts rescue — biasing toward DEAD, the unflattering direction.** Carried into G8 as an open
+   item against the horizon; may force the descriptive 1M tail to be read on this arm.
 
 ## What it means
 The recency-free stratified detector, once the window is audited in-regime, powers all 5 converters at the

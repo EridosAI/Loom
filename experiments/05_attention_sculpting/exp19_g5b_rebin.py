@@ -42,6 +42,7 @@ import exp19_score as S19
 
 READ_AT = 500_000
 H_MAX = 1_000_000
+EVAL_INHERITED = 300          # the committed detector's bin width (the un-transported constant, ledger 40/41)
 ARM = "exp12_shuffle"
 VERDICT_SEEDS = list(range(8))
 CONVERTERS = [0, 2, 4, 5, 6]
@@ -59,7 +60,10 @@ R_THIN = N_TARGET / N_FULL
 SUBSAMPLE_SEED = 719_150
 K_DRAWS = 2000
 WAVECACHE = XA.OUTDIR / "exp19_g5a_strat_cache_wave.json"
-WIDTHS = [300, 450, 600, 900, 1200, 1500, 1706, 2100, 3000]   # 1706 ≈ restores 27 onsets/win at 7,915
+# Finer grid (ledger 41): the operating point is cut in the STRATUM's own regime, NOT the population's.
+# The 27-onset target (width ~1706) was the population density — an over-correction. Sweep to find the
+# ≥ width floor (below which the granularity floor swamps the signal) as a computed pre-flight constant.
+WIDTHS = [300, 350, 400, 450, 500, 550, 600, 700, 800, 900, 1200, 1500, 1706, 2100, 3000]
 
 
 def _cache_wave():
@@ -137,28 +141,52 @@ def sweep() -> dict:
                          floor_run_q99=floor_q99, floor_run_max=floor_max,
                          floor_onsets_q99=round(floor_q99 * m_w, 1),
                          s6_run_median=s6_med, s6_run_q10=s6_q10, s6_run_min=s6_min,
-                         s6_clears_floor=s6_clears_floor, sep_ratio=round(s6_q10 / max(1, floor_q99), 2),
+                         s6_clears_floor=s6_clears_floor, s6_clears_robust=bool(s6_min > floor_max),
+                         sep_ratio=round(s6_q10 / max(1, floor_q99), 2),
                          n_converters_clear=sum(conv_clears.values()), conv_clears=conv_clears))
 
-    # operating point = the width restoring full-read onsets/window (chosen ON THE NULL, not on s6)
-    op = min(rows, key=lambda r: abs(r["onsets_per_window"] - FULL_READ_ONSETS_PER_WIN))
     inherited = next(r for r in rows if r["width"] == 300)
-    s6_ok = op["s6_clears_floor"]
+    # PRE-FLIGHT CONSTANT (ledger 41): the ≥ WIDTH FLOOR — the narrowest window at which the treatment
+    # detector has power = the min width where the weakest labeled converter (s6) clears the phantom floor.
+    # Below it, the granularity floor swamps the signal. Computed on the null + the labeled positive controls,
+    # NOT fit to s6. Standard clearance (s6_q10>floor_q99) and the strict form (s6_min>floor_max) both reported.
+    below = [r for r in rows if r["s6_clears_floor"]]
+    w_power_floor = min((r["width"] for r in below), default=None)
+    robust = [r for r in rows if r["s6_clears_robust"]]
+    w_robust = min((r["width"] for r in robust), default=None)
+    # OPERATING POINT — cut in the STRATUM's OWN regime (ledger 41: NOT the population's 27-onset target).
+    # The stratum's characteristic density = its full-N (14,156) onsets/window at the native EVAL=300 bin
+    # (~8.5), the density G5a characterized it at. Restore THAT on the thinned 7,915 arm (width ~550), so the
+    # detector runs in the regime it will actually see — above the ≥ power floor, finest resolution consistent
+    # with the stratum regime (flag 3). s6's margin is MEASURED here, not chosen; NOT widened to the population.
+    STRATUM_NATIVE_ONSETS_PER_WIN = round(N_FULL / (READ_AT / EVAL_INHERITED), 1)   # ~8.5
+    op = min(rows, key=lambda r: abs(r["onsets_per_window"] - STRATUM_NATIVE_ONSETS_PER_WIN))
+    pop_target = min(rows, key=lambda r: abs(r["onsets_per_window"] - FULL_READ_ONSETS_PER_WIN))  # the retracted 27-target
+    s6_ok = bool(op) and op["s6_clears_floor"]
     window_was_artifact = bool(s6_ok and not inherited["s6_clears_floor"])
     out = dict(
-        gate="G5b re-cut — WINDOW audited; phantom floor vs window width at N=7,915 (outcome-blind)",
-        band=BAND, evidence_onsets=EVIDENCE_ONSETS, full_read_onsets_per_window=FULL_READ_ONSETS_PER_WIN,
-        subsample_seed=SUBSAMPLE_SEED, k_draws=K_DRAWS, thin_ratio=round(R_THIN, 4),
-        sweep=rows, operating_point_width=op["width"], operating_point=op, inherited_300=inherited,
-        FALSIFIER="s6 STILL fails to clear the measured floor at the restored density ⇒ genuine underpower, fork returns",
-        VERDICT=(f"FLOOR WAS A BINNING ARTIFACT — s6 is swallowed ONLY at the inherited 300-step window "
-                 f"(s6_q10 {inherited['s6_run_q10']} <= floor_q99 {inherited['floor_run_q99']}); at the "
-                 f"restored full-read density (width {op['width']}, {op['onsets_per_window']} onsets/win) s6 "
-                 f"clears the floor {op['sep_ratio']}x (s6_q10 {op['s6_run_q10']} vs floor_q99 "
-                 f"{op['floor_run_q99']}); {op['n_converters_clear']}/5 converters clear. The 300-step window "
-                 "was the THIRD un-transported constant (ledger 40). G5b PASSES." if s6_ok else
-                 "FALSIFIER TRIGGERED — s6 STILL fails to clear the measured floor at the restored density "
-                 "⇒ genuine underpower; the fork returns → Jason."),
+        gate="G5b re-cut — WINDOW audited; operating point cut in the STRATUM regime (ledger 41), outcome-blind",
+        band=BAND, subsample_seed=SUBSAMPLE_SEED, k_draws=K_DRAWS, thin_ratio=round(R_THIN, 4),
+        sweep=rows, inherited_300=inherited,
+        preflight_width_floor=dict(w_power_floor=w_power_floor, w_robust=w_robust,
+            grounds="min width where the weakest labeled converter s6 clears the phantom floor "
+                    "(power_floor: s6_q10>floor_q99; robust: s6_min>floor_max) — a computed pre-flight "
+                    "constant beside ρ(B) and the stratum counts"),
+        stratum_native_onsets_per_window=STRATUM_NATIVE_ONSETS_PER_WIN,
+        operating_point=op, operating_point_width=(op["width"] if op else None),
+        retracted_population_target=dict(width=pop_target["width"], onsets_per_window=pop_target["onsets_per_window"],
+            sep=pop_target["sep_ratio"], note="the 27-onset (all-population) density — over-correction, ledger 41"),
+        FALSIFIER="s6 fails to clear the floor at ANY width in the stratum regime ⇒ genuine underpower, fork returns",
+        VERDICT=(f"PASS, cut in the stratum regime (ledger 41). s6 swallowed ONLY at the inherited 300-bin "
+                 f"(s6_q10 {inherited['s6_run_q10']} ≤ floor_q99 {inherited['floor_run_q99']}); ≥ width floor "
+                 f"= {w_power_floor} (robust ≥ {w_robust}). Operating point width {op['width'] if op else None} "
+                 f"({op['onsets_per_window'] if op else '-'} onsets/win, stratum regime): s6 margin "
+                 f"{op['sep_ratio'] if op else '-'}× (q10 {op['s6_run_q10'] if op else '-'} vs floor_q99 "
+                 f"{op['floor_run_q99'] if op else '-'}), {op['n_converters_clear'] if op else '-'}/5 clear. "
+                 f"The 3.6× headline at width {pop_target['width']} was the population-regime over-correction, "
+                 f"RETRACTED. G5b PASSES (target-invariant); the margin is the stratum-regime value." if s6_ok else
+                 "FALSIFIER TRIGGERED — s6 fails to clear the floor across the stratum regime ⇒ genuine "
+                 "underpower; the fork returns → Jason."),
         window_was_artifact=window_was_artifact, s6_clears_at_op=s6_ok, ok=True)
     (XA.OUTDIR / "exp19_g5b_rebin_sweep.json").write_text(json.dumps(out, indent=2))
     return out
@@ -166,17 +194,18 @@ def sweep() -> dict:
 
 def _print(o):
     print("\n===== G5b RE-BIN — phantom floor vs window width (N=7,915, band 0.64, outcome-blind) =====")
-    print(f"  evidence requirement = {o['evidence_onsets']} onsets sustained ≥{o['band']} "
-          f"(full-read {o['full_read_onsets_per_window']} onsets/window)")
-    print(f"  {'width':>5} {'ons/win':>7} {'N_w':>4} {'floorq99':>8} {'floormax':>8} "
-          f"{'s6_med':>6} {'s6_q10':>6} {'s6_min':>6} {'sep':>5} {'s6>floor':>8} {'#conv':>5}")
+    print(f"  {'width':>5} {'ons/win':>7} {'floorq99':>8} {'floormax':>8} {'s6_med':>6} {'s6_q10':>6} "
+          f"{'s6_min':>6} {'sep':>5} {'clr':>5} {'robust':>6} {'#conv':>5}")
     for r in o["sweep"]:
-        print(f"  {r['width']:>5} {r['onsets_per_window']:>7} {r['N_w']:>4} {r['floor_run_q99']:>8} "
-              f"{r['floor_run_max']:>8} {r['s6_run_median']:>6} {r['s6_run_q10']:>6} {r['s6_run_min']:>6} "
-              f"{r['sep_ratio']:>5} {str(r['s6_clears_floor']):>8} {r['n_converters_clear']:>5}")
-    print(f"\n  operating point (restores ~{o['full_read_onsets_per_window']} onsets/win, chosen on null): "
-          f"width={o['operating_point_width']}  window_was_artifact={o['window_was_artifact']}  "
-          f"s6_clears_floor={o['s6_clears_at_op']}")
+        print(f"  {r['width']:>5} {r['onsets_per_window']:>7} {r['floor_run_q99']:>8} {r['floor_run_max']:>8} "
+              f"{r['s6_run_median']:>6} {r['s6_run_q10']:>6} {r['s6_run_min']:>6} {r['sep_ratio']:>5} "
+              f"{str(r['s6_clears_floor']):>5} {str(r['s6_clears_robust']):>6} {r['n_converters_clear']:>5}")
+    pf = o["preflight_width_floor"]; rt = o["retracted_population_target"]
+    print(f"\n  PRE-FLIGHT WIDTH FLOOR (computed): power_floor ≥ {pf['w_power_floor']} · robust ≥ {pf['w_robust']}")
+    print(f"  operating point (STRATUM regime, ledger 41): width={o['operating_point_width']}  "
+          f"window_was_artifact={o['window_was_artifact']}")
+    print(f"  retracted population target: width {rt['width']} ({rt['onsets_per_window']} onsets/win, "
+          f"sep {rt['sep']}×) — the over-correction")
     print(f"\n  VERDICT: {o['VERDICT']}\n")
 
 
