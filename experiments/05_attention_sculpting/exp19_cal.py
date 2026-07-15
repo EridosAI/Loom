@@ -36,13 +36,14 @@ import exp19_g5b_rebin as RB
 BAND = RB.BAND                          # 0.64 — the committed X15_REPRO C_shuffle detector band
 READ_AT, H_MAX, EVAL = RB.READ_AT, RB.H_MAX, RB.EVAL_INHERITED
 REPLAY_TAG = "g5a_replay"
-FULL_READ_NATIVE = 27.0                 # full-read onsets/window at EVAL=300 (~46034/1666, ~B-independent)
-# The stratified CHARACTERIZATION density (ledger 41): C_shuffle's full-N zero-preceding stratum density
-# (14156 onsets / 1666 windows at EVAL=300 ≈ 8.5). It is UNIVERSAL across the ladder — "one detector family"
-# (Jason): every B's stratified window is cut to RESTORE this density on that B's stratum (so a smaller
-# stratum ⇒ a wider window; B=512's 8097 restores 8.5 at ~width 540, matching the G5b proxy's 550). NOT each
-# arm's own sparse density (that was the width-300 granularity artifact).
-STRATUM_NATIVE_DENSITY = round(14156 / (READ_AT / EVAL), 1)   # ≈ 8.5
+# NO target density (ledger 42, Jason's correction of CC). The operating point is cut PER-B, on that B's OWN
+# phantom null, by MAXIMIZING converter/floor separation across the swept widths — never by matching any
+# density, and specifically NOT by restoring B=T's 8.5 everywhere. The width-300 artifact (G5b) was a window
+# cut for the POPULATION (~27 onsets) being far too narrow for the stratum — the per-B SWEEP fixes that by
+# finding the right width for each B. It does NOT follow that all B share one density: B=512's stratum and
+# B=T's are different regimes; forcing B=512 to 8.5 (widening to ~540) would transport B=T's density onto a
+# 44%-thinner stratum — a fourth un-transported constant disguised as "consistency." One detector FAMILY =
+# ONE RULE (sweep, select on the null, per B), not one density: the same law applied in each regime.
 
 
 def _onsets(arm: str, seed: int, read: str) -> tuple[int, list]:
@@ -72,7 +73,6 @@ def cal_floor_audit(arm: str, read: str, conv: list, nonconv: list, widths=None,
     widths = widths or RB.WIDTHS
     if data is None:
         data = {s: _onsets(arm, s, read) for s in conv + nonconv}
-    native = FULL_READ_NATIVE if read == "full" else STRATUM_NATIVE_DENSITY   # UNIVERSAL (ledger 41), not arm-own
     rows = []
     for w in widths:
         runs = {}
@@ -85,23 +85,28 @@ def cal_floor_audit(arm: str, read: str, conv: list, nonconv: list, widths=None,
         fq99, fmax = RB._q(floor, 0.99), max(floor)
         conv_runs = {s: runs[s] for s in conv}
         clears = {s: bool(runs[s] > fq99) for s in conv}
+        nearest = min(conv_runs.values())
         rows.append(dict(width=w, onsets_per_window=round(m_w, 1), floor_q99=fq99, floor_max=fmax,
                          conv_runs=conv_runs, nonconv_runs={s: runs[s] for s in nonconv},
-                         n_clear=sum(clears.values()), nearest_conv=min(conv_runs.values()),
+                         n_clear=sum(clears.values()), nearest_conv=nearest,
+                         separation=nearest - fq99,                # weakest-converter gap over that B's null
                          all_clear=bool(sum(clears.values()) == len(conv))))
-    op = min(rows, key=lambda r: abs(r["onsets_per_window"] - native))
-    w_floor = min((r["width"] for r in rows if r["all_clear"]), default=None)
-    underpowered = w_floor is None
-    out = dict(gate="B7 exp19_cal — floor-audit law", arm=arm, read=read, band=BAND,
-               converters=conv, nonconverters=nonconv, native_density=native,
-               sweep=rows, operating_point=op, operating_point_width=op["width"],
+    # OPERATING POINT (ledger 42): argmax converter/floor SEPARATION on THIS B's own null — no density target.
+    # Cut among widths where the detector is usable (every converter clears); underpowered if none.
+    usable = [r for r in rows if r["all_clear"]]
+    op = max(usable, key=lambda r: r["separation"]) if usable else None
+    w_floor = min((r["width"] for r in rows if r["all_clear"]), default=None)   # ≥ width floor — unchanged, per B
+    underpowered = op is None
+    out = dict(gate="B7 exp19_cal — floor-audit law (op = argmax separation on this B's null, ledger 42)",
+               arm=arm, read=read, band=BAND, converters=conv, nonconverters=nonconv,
+               sweep=rows, operating_point=op, operating_point_width=(op["width"] if op else None),
                w_width_floor=w_floor, underpowered=underpowered,
                VERDICT=(f"STRATUM-UNDERPOWER ({arm}/{read}) — no window width lets all converters clear the "
                         "phantom floor ⇒ null uninterpretable ⇒ HALT → Jason" if underpowered else
                         f"powered ({arm}/{read}): ≥ width floor = {w_floor}; operating point width "
-                        f"{op['width']} ({op['onsets_per_window']} onsets/win, native {native}); "
-                        f"{op['n_clear']}/{len(conv)} converters clear (nearest run {op['nearest_conv']} vs "
-                        f"floor q99 {op['floor_q99']})"), ok=True)
+                        f"{op['width']} ({op['onsets_per_window']} onsets/win, separation {op['separation']} = "
+                        f"nearest run {op['nearest_conv']} − floor q99 {op['floor_q99']}); "
+                        f"{op['n_clear']}/{len(conv)} converters clear"), ok=True)
     return out
 
 
@@ -112,12 +117,13 @@ def _validate_BT():
     for read in ("stratified", "full"):
         o = cal_floor_audit("exp12_shuffle", read, conv, nonconv)
         print(f"\n=== exp19_cal  exp12_shuffle / {read} ===")
-        print(f"  native density {o['native_density']} onsets/win · ≥ width floor {o['w_width_floor']} · "
-              f"operating point width {o['operating_point_width']}")
-        print(f"  {'width':>5} {'ons/win':>7} {'floorq99':>8} {'nearest_conv':>12} {'n_clear':>7} {'all':>4}")
+        print(f"  ≥ width floor {o['w_width_floor']} · operating point width {o['operating_point_width']} "
+              f"(argmax separation on this arm's null)")
+        print(f"  {'width':>5} {'ons/win':>7} {'floorq99':>8} {'nearest':>7} {'sep':>4} {'clear':>5} {'all':>4}")
         for r in o["sweep"]:
+            mark = " <-- op" if r["width"] == o["operating_point_width"] else ""
             print(f"  {r['width']:>5} {r['onsets_per_window']:>7} {r['floor_q99']:>8} "
-                  f"{r['nearest_conv']:>12} {r['n_clear']:>7} {str(r['all_clear']):>4}")
+                  f"{r['nearest_conv']:>7} {r['separation']:>4} {r['n_clear']:>5} {str(r['all_clear']):>4}{mark}")
         print(f"  VERDICT: {o['VERDICT']}")
         (XA.OUTDIR / f"exp19_cal_exp12_shuffle_{read}.json").write_text(json.dumps(o, indent=2))
 
@@ -153,11 +159,45 @@ def _smoke():
     print("SMOKE PASS: the underpower gate observed RED on a known-underpowered plant, GREEN on a real signal.")
 
 
+def _redteam():
+    """Ledger-42 red-team (Jason): (1) the selected operating point must DIFFER across regimes — if it still
+    lands at the same width for a 44%-thinner stratum, a density is still leaking in; (2) the underpower gate
+    still fires red on chance converters / green on real ones at each regime's newly-selected width."""
+    print("exp19_cal RED-TEAM (ledger 42):")
+    conv, nonconv = [0, 2, 4, 5, 6], [1, 3, 7]
+    full = {s: _onsets("exp12_shuffle", s, "stratified") for s in conv + nonconv}
+    gen = torch.Generator().manual_seed(719150)
+    r = 7915 / 14156                                          # thin B=T's stratum to B=512's size (proxy)
+    thin = {}
+    for s, (acq, ons) in full.items():
+        idx = torch.randperm(len(ons), generator=gen)[:round(r * len(ons))].tolist()
+        thin[s] = (acq, [ons[i] for i in idx])
+    op_full = cal_floor_audit("exp12_shuffle", "stratified", conv, nonconv, data=full)
+    op_thin = cal_floor_audit("exp12_shuffle", "stratified", conv, nonconv, data=thin)
+    wf, wt = op_full["operating_point_width"], op_thin["operating_point_width"]
+    print(f"  (1) op(B=T full 14156) = {wf} (sep {op_full['operating_point']['separation']}, "
+          f"{op_full['operating_point']['onsets_per_window']}/win)  vs  op(thinned 7915 = B=512 proxy) = {wt} "
+          f"(sep {op_thin['operating_point']['separation']}, {op_thin['operating_point']['onsets_per_window']}/win)")
+    assert wf != wt, f"RED-TEAM FAIL: operating point did not differ across regimes ({wf}={wt}) — density is leaking in"
+    print(f"      -> DIFFER — regime-specific, no density leak  [required]")
+    # (2) underpower gate at each regime's selected width — chance red, real green (reuses the plant)
+    for tag, base in (("full", full), ("thin", thin)):
+        real = cal_floor_audit("PLANT", "stratified", [0, 2, 4], [1, 3, 7],
+                               data={**{s: _plant(True) for s in (0, 2, 4)}, 1: _plant(False), 3: _plant(False), 7: _plant(False)})
+        chance = cal_floor_audit("PLANT", "stratified", [0, 2, 4], [1, 3, 7],
+                                 data={s: _plant(False) for s in (0, 2, 4, 1, 3, 7)})
+        assert not real["underpowered"] and chance["underpowered"], f"RED-TEAM FAIL: gate at {tag} regime"
+    print(f"  (2) underpower gate: real converters GREEN, chance 'converters' RED (STRATUM-UNDERPOWER)  [required]")
+    print("RED-TEAM PASS: operating point is regime-specific (no density leak) and the gate is a reachable falsifier.")
+
+
 if __name__ == "__main__":
     torch.set_num_threads(1)
     if "--validate" in sys.argv:
         _validate_BT()
     elif "--smoke" in sys.argv:
         _smoke()
+    elif "--redteam" in sys.argv:
+        _redteam()
     else:
-        print("usage: --validate | --smoke   (B=T reproduction / gate red-test; per-B runs in the corridor)")
+        print("usage: --validate | --smoke | --redteam   (B=T reproduction / gate red-test / ledger-42 red-team)")

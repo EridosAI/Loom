@@ -1,5 +1,5 @@
 {
-  "gate": "B7 exp19_cal \u2014 floor-audit law",
+  "gate": "B7 exp19_cal \u2014 floor-audit law (op = argmax separation on this B's null, ledger 42)",
   "arm": "exp12_shuffle",
   "read": "full",
   "band": 0.64,
@@ -15,7 +15,6 @@
     3,
     7
   ],
-  "native_density": 27.0,
   "sweep": [
     {
       "width": 300,
@@ -36,6 +35,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 36,
+      "separation": 33,
       "all_clear": true
     },
     {
@@ -57,6 +57,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 31,
+      "separation": 27,
       "all_clear": true
     },
     {
@@ -78,6 +79,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 27,
+      "separation": 24,
       "all_clear": true
     },
     {
@@ -99,6 +101,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 23,
+      "separation": 18,
       "all_clear": true
     },
     {
@@ -120,6 +123,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 21,
+      "separation": 18,
       "all_clear": true
     },
     {
@@ -141,6 +145,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 19,
+      "separation": 16,
       "all_clear": true
     },
     {
@@ -162,6 +167,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 26,
+      "separation": 23,
       "all_clear": true
     },
     {
@@ -183,6 +189,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 20,
+      "separation": 16,
       "all_clear": true
     },
     {
@@ -204,6 +211,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 13,
+      "separation": 10,
       "all_clear": true
     },
     {
@@ -225,6 +233,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 15,
+      "separation": 13,
       "all_clear": true
     },
     {
@@ -246,6 +255,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 23,
+      "separation": 21,
       "all_clear": true
     },
     {
@@ -267,6 +277,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 10,
+      "separation": 8,
       "all_clear": true
     },
     {
@@ -288,6 +299,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 16,
+      "separation": 14,
       "all_clear": true
     },
     {
@@ -309,6 +321,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 13,
+      "separation": 12,
       "all_clear": true
     },
     {
@@ -330,6 +343,7 @@
       },
       "n_clear": 5,
       "nearest_conv": 10,
+      "separation": 9,
       "all_clear": true
     }
   ],
@@ -352,11 +366,12 @@
     },
     "n_clear": 5,
     "nearest_conv": 36,
+    "separation": 33,
     "all_clear": true
   },
   "operating_point_width": 300,
   "w_width_floor": 300,
   "underpowered": false,
-  "VERDICT": "powered (exp12_shuffle/full): \u2265 width floor = 300; operating point width 300 (27.4 onsets/win, native 27.0); 5/5 converters clear (nearest run 36 vs floor q99 3)",
+  "VERDICT": "powered (exp12_shuffle/full): \u2265 width floor = 300; operating point width 300 (27.4 onsets/win, separation 33 = nearest run 36 \u2212 floor q99 3); 5/5 converters clear",
   "ok": true
 }
