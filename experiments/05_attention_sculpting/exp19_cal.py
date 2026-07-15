@@ -3,8 +3,20 @@
 The α-cut is DROPPED entirely. The floor audit is the certification at every B, both reads (full-read AND
 stratified) — it makes no i.i.d. assumption, agrees with α where α is valid, and is right where α fails
 (α transported once and was wrong by 667×). One detector family across the arm ⇒ every cross-B / cross-read
-comparison uses the same instrument. Borrow-gate SURVIVES (C_shuffle's shifted-floor referent, orthogonal to
-α-vs-floor-audit; it rides the full-read floor audit unchanged).
+comparison uses the same instrument.
+
+The BORROW-GATE does NOT port here (Jason 2026-07-15). It was a NULL-SELECTION rule for the α-cut — "cut
+C_shuffle's α against C's own elevated null instead of the clean donor marginal." Every term (fr, alpha,
+false-alarms) is an α-cut construct; the committed referent (exp14_band_2x2_cal.json borrow_gate) recorded
+borrow_ok=FALSE / "SHIFTED — C uses OWN between-episode null." The α-cut is gone, so there is nothing for it
+to adjust. The floor audit SUBSUMES it by construction: every arm is judged against its OWN phantom null,
+measured from its OWN data — so C_shuffle's elevated floor is reproduced as its measured phantom null
+automatically. The referent asymmetry — C's floor elevated vs its density-matched donor A_dwell by +0.0203
+(borrow_ok:false in the committed 2×2 cal) — is a MEASURED quantity, not a gate that carries it, and is scoped
+to the C←A borrow relationship ONLY (both scheduled/density-matched). B_12bc_dwp (committed floor 0.8182) and
+D_split (0.8462) sit ABOVE C (0.7667) — separate cells with their own higher floors, NEVER part of the borrow
+(ledger 43). Kept in the READ, dropped from the MACHINERY: cross-arm floor ordering under one common
+floor-audit instrument is B9's matched-bar tab, not here. NO code path branches on a "borrow" flag.
 
 PER-B, cut on the NULL, outcome-blind (ledger 41): each B gets its own width SWEEP, its own operating point at
 that B/read's native density, and its own ≥ WIDTH FLOOR (min width where a known converter clears the phantom
@@ -44,6 +56,15 @@ REPLAY_TAG = "g5a_replay"
 # B=T's are different regimes; forcing B=512 to 8.5 (widening to ~540) would transport B=T's density onto a
 # 44%-thinner stratum — a fourth un-transported constant disguised as "consistency." One detector FAMILY =
 # ONE RULE (sweep, select on the null, per B), not one density: the same law applied in each regime.
+
+# Committed 2×2 cal (exp14_band_2x2_cal.json) — the borrow referent, CITED not re-measured (Jason ruling a,
+# ledger 43). The borrow relationship was C_shuffle ← donor A_dwell ONLY (both scheduled/density-matched);
+# recorded borrow_ok:false, mean_shift +0.0203. Donor A's marginal is the FIXED committed referent; C's side
+# is measured fresh under the floor audit. B/D are separate cells with their own HIGHER floors, never in the
+# borrow — cross-arm same-instrument ordering is B9's job (see the borrow-subsumption red-team below).
+DONOR_A_MEAN = 0.4899          # A_dwell marginal — the fixed borrow referent (committed)
+C_BETWEEN_MEAN = 0.5102        # C_shuffle's own between-episode mean (committed); shift = +0.0203, borrow_ok:false
+COMMITTED_FLOOR_P99 = {"A_dwell": 0.7083, "C_shuffle": 0.7667, "B_12bc_dwp": 0.8182, "D_split": 0.8462}
 
 
 def _onsets(arm: str, seed: int, read: str) -> tuple[int, list]:
@@ -191,13 +212,67 @@ def _redteam():
     print("RED-TEAM PASS: operating point is regime-specific (no density leak) and the gate is a reachable falsifier.")
 
 
+def _floor_baseline(arm: str, seeds: list, read: str = "full") -> tuple[float, int]:
+    """Mean POST-ACQUISITION onset accuracy over `seeds` under the floor-audit instrument (the marginal the
+    floor audit bins). For an arm's NON-converters this is its floor baseline — a MEASURED quantity from the
+    arm's OWN data, no cross-arm capture needed. Instrument-consistent with `_longest_run_binned` (post-acq)."""
+    accs = []
+    for s in seeds:
+        acq, ons = _onsets(arm, s, read)
+        accs += [a for (w, a) in ons if w >= acq]
+    return statistics.mean(accs), len(accs)
+
+
+def _redteam_borrow():
+    """Borrow-subsumption red-team (Jason ruling a, ledger 43): the floor audit SUBSUMES the borrow-gate.
+    Confirm C_shuffle's FULL-READ floor audit (i) self-calibrates on C's OWN non-converter null (converters
+    clear it), and (ii) reproduces the committed C-vs-donor-A asymmetry (+0.0203, borrow_ok:false) as a
+    MEASURED quantity on C's side under the floor-audit instrument. Scoped to donor A ONLY — B/D are separate
+    cells with their OWN higher committed floors (0.8182, 0.8462 > C 0.7667); NOT part of the borrow, cross-arm
+    same-instrument ordering deferred to B9. NO ordering vs B/D asserted here."""
+    print("exp19_cal BORROW-SUBSUMPTION RED-TEAM (ledger 43, C-vs-donor-A only):")
+    conv, nonconv = [0, 2, 4, 5, 6], [1, 3, 7]
+    # (i) C's full-read floor audit self-calibrates on C's OWN null — every arm judged on its own data.
+    o = cal_floor_audit("exp12_shuffle", "full", conv, nonconv)
+    assert not o["underpowered"], "RED-TEAM FAIL: C_shuffle full-read floor audit reads underpowered"
+    op = o["operating_point"]
+    print(f"  (i) C full-read floor audit self-calibrates on C's OWN {nonconv} null: op width {op['width']}, "
+          f"floor q99 {op['floor_q99']}, nearest converter {op['nearest_conv']} (sep {op['separation']}) -> "
+          f"{op['n_clear']}/{len(conv)} converters clear  [self-calibrated on C's own data — measured]")
+    # (ii) C's floor-audit non-converter baseline is ELEVATED vs the committed donor-A marginal (+0.0203 dir.).
+    c_base, n = _floor_baseline("exp12_shuffle", nonconv, "full")
+    shift = c_base - DONOR_A_MEAN
+    print(f"  (ii) C floor-audit non-converter baseline (seeds {nonconv}) = {c_base:.4f} (n={n}) vs committed "
+          f"donor-A marginal {DONOR_A_MEAN} -> elevation +{shift:.4f}, SAME direction as the committed "
+          f"whole-cell shift +0.0203 (borrow_ok:false).")
+    print(f"       magnitude differs by construction: this is the {nonconv}-only floor-audit marginal; the "
+          f"committed +0.0203 is the whole-cell α-cut between-episode shift (C_between {C_BETWEEN_MEAN}). The "
+          f"same-instrument exact-magnitude cross-arm comparison (A under the floor audit) is B9, not here.")
+    assert shift > 0, f"RED-TEAM FAIL: C baseline {c_base:.4f} NOT elevated vs donor A {DONOR_A_MEAN}"
+    print(f"      -> DIRECTION confirmed: C's floor is elevated vs the density-matched donor A, MEASURED under "
+          f"the floor audit  [required]")
+    # SCOPE GUARD (ledger 43): NO ordering vs B/D — they sit ABOVE C; asserting 'A/B/D lower' inverts the risk.
+    assert (COMMITTED_FLOOR_P99["B_12bc_dwp"] > COMMITTED_FLOOR_P99["C_shuffle"]
+            and COMMITTED_FLOOR_P99["D_split"] > COMMITTED_FLOOR_P99["C_shuffle"]), "committed floors changed"
+    print(f"  scope: committed B {COMMITTED_FLOOR_P99['B_12bc_dwp']} and D {COMMITTED_FLOOR_P99['D_split']} sit "
+          f"ABOVE C {COMMITTED_FLOOR_P99['C_shuffle']} — separate cells, NOT the borrow; cross-arm floor-audit "
+          f"ordering deferred to B9 (not asserted here).")
+    print("RED-TEAM PASS: the floor audit self-calibrates C on its own null and preserves the committed "
+          "C-vs-donor-A asymmetry (+0.0203) as a measured quantity; borrow-gate SUBSUMED, no borrow branch.")
+
+
 if __name__ == "__main__":
     torch.set_num_threads(1)
     if "--validate" in sys.argv:
         _validate_BT()
     elif "--smoke" in sys.argv:
         _smoke()
+    elif "--redteam-borrow" in sys.argv:
+        _redteam_borrow()
     elif "--redteam" in sys.argv:
-        _redteam()
+        _redteam()          # ledger-42: op differs across regimes (no density leak) + gate reachable
+        print()
+        _redteam_borrow()   # ledger-43: floor audit subsumes the borrow-gate (C-vs-donor-A, measured)
     else:
-        print("usage: --validate | --smoke | --redteam   (B=T reproduction / gate red-test / ledger-42 red-team)")
+        print("usage: --validate | --smoke | --redteam | --redteam-borrow   "
+              "(B=T reproduction / gate red-test / ledger-42 regime + ledger-43 borrow-subsumption)")
