@@ -49,6 +49,14 @@ companion vs the post-episode tail; per-column dec_cat vs exam_acc; REPORTED, ne
 - **INSTRUMENT-NULL (control, pre-named):** on the 3 non-converters (no episode), dec_cat through the same
   windows must show NO episode-locked structure — if it does, the read is picking up something other than
   the episode and the mechanism cells are uninterpretable (report → Jason).
+- **NO-TAIL route (Jason-ratified amendment, 2026-07-17 — text crossed the relay in transit; the cell read
+  was GATED on this landing):** A converter whose episode extends to the read boundary (no post-episode
+  windows inside [0, 500k)) is reported as NO-TAIL and excluded from the cell tally — never defaulted into
+  MIXED/AMBIGUOUS. Absence of a tail is absence of data, not ambiguity of data. (Motivated by committed
+  flag 3: s6's late plateau still rising at the 500k boundary — the longest-episode converter is the one
+  most likely to lack a tail.) A NO-TAIL seed's full trajectory still rides as a reported companion, and
+  NO-TAIL on the majority of converters is itself a finding: the decay window sits outside the read horizon,
+  and the micro-arm returns UNDERPOWERED-BY-HORIZON rather than a mechanism cell.
 Direction words only — no thresholds invented here; every number in the eventual read is computed from the
 replayed columns with its noise band stated. DECCAT-REGIME-BOUND stands: whatever the cell, no
 "dwell solved" / generalization sentence — mechanism attribution within THIS regime only.

@@ -657,7 +657,9 @@ def _dec_cat(e: torch.Tensor, labels: torch.Tensor) -> float:
     """Leave-one-out nearest-centroid CATEGORY decode on the 16 clean-probe emissions (EXP19 free
     scorer field, col-only: no grad/RNG/loss/optimizer/gen_state — a read next to sep_cat on the SAME
     `content` tensor). For each probe the nearest category centroid is computed WITHOUT that probe;
-    dec_cat = fraction whose nearest LOO centroid is its own category. 0.5 = chance at n_category=2.
+    dec_cat = fraction whose nearest LOO centroid is its own category. 0.5 = chance at n_category=2 — nominal only; the governing null for all reads is the
+    Phase-A empirical band (docs/EXP19_DECAY_MICROARM.md §Noise-band; dead-arm pooled mean 0.2383,
+    p95 0.5625).
     DECCAT-REGIME-BOUND (§10, pre-named): rising at short B means category consolidates under frequent
     contrast in THIS 2-category fabric at THESE constants — regime-specific, NOT a warrant that
     coherent-experience rescue generalizes. It is the rescue cells' mechanistic falsifier: a rescue
