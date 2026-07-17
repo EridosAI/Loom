@@ -1,0 +1,59 @@
+{
+  "read": "B=1 endpoint under the floor audit (v5 Am.5; stratum structurally 100% => stratified==full)",
+  "band": 0.64,
+  "width": 300,
+  "width_grounds": "EVAL-native record cadence; no converter exists to select a width on (outcome-blind fixed)",
+  "per_seed": {
+    "0": {
+      "observed_run": 2,
+      "p_hat": 0.4934,
+      "null_max": 6,
+      "certified": false
+    },
+    "1": {
+      "observed_run": 2,
+      "p_hat": 0.4932,
+      "null_max": 6,
+      "certified": false
+    },
+    "2": {
+      "observed_run": 2,
+      "p_hat": 0.4872,
+      "null_max": 5,
+      "certified": false
+    },
+    "3": {
+      "observed_run": 2,
+      "p_hat": 0.4866,
+      "null_max": 5,
+      "certified": false
+    },
+    "4": {
+      "observed_run": 2,
+      "p_hat": 0.4902,
+      "null_max": 5,
+      "certified": false
+    },
+    "5": {
+      "observed_run": 3,
+      "p_hat": 0.4934,
+      "null_max": 5,
+      "certified": false
+    },
+    "6": {
+      "observed_run": 3,
+      "p_hat": 0.4857,
+      "null_max": 5,
+      "certified": false
+    },
+    "7": {
+      "observed_run": 2,
+      "p_hat": 0.4871,
+      "null_max": 5,
+      "certified": false
+    }
+  },
+  "k": 0,
+  "n": 8,
+  "VERDICT": "B=1 (A_dwell) floor-audit endpoint: 0/8 certified"
+}
