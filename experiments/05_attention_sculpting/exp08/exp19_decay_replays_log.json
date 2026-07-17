@@ -2,108 +2,95 @@
   "microarm": "EXP19 decay + dec_cat endpoints (docs/EXP19_DECAY_MICROARM.md)",
   "rows": [
     {
-      "arm": "exp12_dwell",
-      "seed": 0,
-      "committed_tag": "verdict",
-      "read_at": 500000,
-      "h_max": 1000000,
-      "anchor_ok": true,
-      "anchor_msg": "columns digit-exact (pre-existing fields) + acquisition_onset",
-      "wall_s": 1088.5,
-      "dec_cat_cols": 1666,
-      "dec_cat_mean": 0.2296,
-      "peronset_sha256": "b0f145f559a9bf5e7263b1bbac81556370de36ddbbdcd2cbb59e3f31a57f70b0"
-    },
-    {
-      "arm": "exp12_dwell",
+      "arm": "exp12_shuffle",
       "seed": 1,
       "committed_tag": "verdict",
       "read_at": 500000,
       "h_max": 1000000,
       "anchor_ok": true,
       "anchor_msg": "columns digit-exact (pre-existing fields) + acquisition_onset",
-      "wall_s": 1083.3,
+      "wall_s": 1128.9,
       "dec_cat_cols": 1666,
-      "dec_cat_mean": 0.1738,
-      "peronset_sha256": "bc36525cfed1db45fcdf342471858f29294770ecdb12148395ac28ddd1b78162"
+      "dec_cat_mean": 0.4503,
+      "peronset_sha256": "03368240f1d3d505824f452b43ebc598592eb04fd1481d60928ba3141b6d0148"
     },
     {
-      "arm": "exp12_dwell",
+      "arm": "exp12_shuffle",
       "seed": 2,
       "committed_tag": "verdict",
       "read_at": 500000,
       "h_max": 1000000,
       "anchor_ok": true,
       "anchor_msg": "columns digit-exact (pre-existing fields) + acquisition_onset",
-      "wall_s": 1105.7,
+      "wall_s": 1128.3,
       "dec_cat_cols": 1666,
-      "dec_cat_mean": 0.2515,
-      "peronset_sha256": "4c1208142cfde164cdde60a283c9261897c613eed10193c39dff33fd818dcded"
+      "dec_cat_mean": 0.4822,
+      "peronset_sha256": "06f5329e93645230a43172a63aaabf7c131b8b9b0f69ac3c581a49c8256f0916"
     },
     {
-      "arm": "exp12_dwell",
+      "arm": "exp12_shuffle",
       "seed": 3,
       "committed_tag": "verdict",
       "read_at": 500000,
       "h_max": 1000000,
       "anchor_ok": true,
       "anchor_msg": "columns digit-exact (pre-existing fields) + acquisition_onset",
-      "wall_s": 1094.5,
+      "wall_s": 1129.4,
       "dec_cat_cols": 1666,
-      "dec_cat_mean": 0.218,
-      "peronset_sha256": "4eed1bd63f00ca344ceb112cb254fcef0b804098ab9abdacdff0accfdc76d6b3"
+      "dec_cat_mean": 0.2887,
+      "peronset_sha256": "bee63411b1ba9c1ac82f14906a8272d0da04e142471d27351974726ce1988d56"
     },
     {
-      "arm": "exp12_dwell",
+      "arm": "exp12_shuffle",
       "seed": 4,
       "committed_tag": "verdict",
       "read_at": 500000,
       "h_max": 1000000,
       "anchor_ok": true,
       "anchor_msg": "columns digit-exact (pre-existing fields) + acquisition_onset",
-      "wall_s": 1104.4,
+      "wall_s": 1152.0,
       "dec_cat_cols": 1666,
-      "dec_cat_mean": 0.2007,
-      "peronset_sha256": "37ed5231c643c5f7b510ae1b94638505a6caff14b50cee0f4db552e3f48474b5"
+      "dec_cat_mean": 0.6257,
+      "peronset_sha256": "2b5056e0c619c9a30098eef89498ff652443dad95d0c88af16a78a3dd8a98522"
     },
     {
-      "arm": "exp12_dwell",
+      "arm": "exp12_shuffle",
       "seed": 5,
       "committed_tag": "verdict",
       "read_at": 500000,
       "h_max": 1000000,
       "anchor_ok": true,
       "anchor_msg": "columns digit-exact (pre-existing fields) + acquisition_onset",
-      "wall_s": 1104.7,
+      "wall_s": 1183.0,
       "dec_cat_cols": 1666,
-      "dec_cat_mean": 0.2663,
-      "peronset_sha256": "822065ad195564cd563f2c2609528bc3a9b07b84646d70785a99b7d992108f37"
+      "dec_cat_mean": 0.5556,
+      "peronset_sha256": "9336352e0087a013f69db3c16094e1360b2be526e8d8dc7c61b2870294414b16"
     },
     {
-      "arm": "exp12_dwell",
+      "arm": "exp12_shuffle",
       "seed": 6,
       "committed_tag": "verdict",
       "read_at": 500000,
       "h_max": 1000000,
       "anchor_ok": true,
       "anchor_msg": "columns digit-exact (pre-existing fields) + acquisition_onset",
-      "wall_s": 1102.8,
+      "wall_s": 1147.5,
       "dec_cat_cols": 1666,
-      "dec_cat_mean": 0.239,
-      "peronset_sha256": "89292c7cecc7228b3f26c3e78e1074fa264be1b2b32f0c7788612d8bf406de49"
+      "dec_cat_mean": 0.5227,
+      "peronset_sha256": "439a3cdc6b8bce6b5133edc643319ce45f36333d9398804b880dcf238549f88c"
     },
     {
-      "arm": "exp12_dwell",
+      "arm": "exp12_shuffle",
       "seed": 7,
       "committed_tag": "verdict",
       "read_at": 500000,
       "h_max": 1000000,
       "anchor_ok": true,
       "anchor_msg": "columns digit-exact (pre-existing fields) + acquisition_onset",
-      "wall_s": 1201.0,
+      "wall_s": 1151.8,
       "dec_cat_cols": 1666,
-      "dec_cat_mean": 0.2124,
-      "peronset_sha256": "5e40df8b49f5dd53ae9702d770fc9cd14b85d681424977b65faedebd6e32b125"
+      "dec_cat_mean": 0.4788,
+      "peronset_sha256": "c3695c7745310a74e7310fcc8ebad1222108d14b41b985ec293bd8443b88d305"
     }
   ]
 }
