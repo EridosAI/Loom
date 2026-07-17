@@ -133,7 +133,11 @@ def _companions(arm: str, seeds: list, read_at: int = READ_AT) -> dict:
     is a mechanistic falsifier read at attribution, NOT a gate; a post-hoc 'dwell solved' read is forbidden."""
     per = {}
     for s in seeds:
-        rec = XA._truncate(json.loads((OUTDIR / f"exp14_{arm}_s{s}_{REPLAY_TAG}.json").read_text()), read_at)
+        # dec_cat endpoint replays (tag "dcy", ledger 48 / decay micro-arm) supersede the g5a records for
+        # companions when present — same committed trajectory, anchor-proven digit-exact, dec_cat-bearing.
+        p_dcy = OUTDIR / f"exp14_{arm}_s{s}_dcy.json"
+        p = p_dcy if p_dcy.exists() else (OUTDIR / f"exp14_{arm}_s{s}_{REPLAY_TAG}.json")
+        rec = XA._truncate(json.loads(p.read_text()), read_at)
         g = X16._recency_gradient(rec)
         onset = rec.get("acquisition_onset")        # POST-ONSET only, matching the gradient sibling (X16 skips t<onset)
         dc = [c["dec_cat"] for c in rec["columns"]
@@ -233,14 +237,14 @@ def _validate_BT():
     # dec_cat coverage tripwire (ledger 48): at HEAD only s0 carries the field (1/8 — the anchor re-replay);
     # the median must be WITHHELD at this coverage and s0's value guards the reference band. When the C1/D1
     # replays land, coverage rises and this assert is updated WITH them (a coverage change is a data change).
-    assert c["dec_cat_covered"] == 1 and c["dec_cat_median"] is None, \
+    assert c["dec_cat_covered"] == 8 and c["dec_cat_median"] is not None, \
         f"dec_cat coverage changed ({c['dec_cat_covered']}/{c['dec_cat_total']}, median {c['dec_cat_median']})" \
-        " — update this tripwire WITH the replays that changed it (ledger 48)"
+        " — update this tripwire WITH the replays that changed it (ledger 48; 8/8 since the Phase-C batch afeeb71)"
     assert abs(c["dec_cat_values"][0] - 0.662) < 0.02, \
         f"s0 dec_cat drifted: {c['dec_cat_values'].get(0)} (want ~0.662)"
     print("  [invariants OK] full & stratified both reproduce the committed converters (all survive the "
-          "stratum); STRAT⊆FULL; recency-carried empty; gradient≈0; dec_cat coverage-honest (1/8, median "
-          "withheld, s0≈0.662)")
+          "stratum); STRAT⊆FULL; recency-carried empty; gradient≈0; dec_cat coverage-honest (8/8 since "
+          "the Phase-C batch, median reported, s0≈0.662)")
 
 
 # ---------------------------------------------------------------- smoke (positive-delta falsifiers)
