@@ -8,9 +8,16 @@ MUST be byte-identical to the pre-edit baseline. This catches ANY out-of-blast-r
 ones nobody enumerated — where a sampled behavioural probe (G0b v1's species) catches only what it
 looked at. Construction, not judgment.
 
-Sibling of B11: B11 asserts the LEARNER is untouched (inspect.getsource(EXP12Loop.step)); this asserts
-the GENERATOR edit is confined to (block_perm / wperm_B) and nothing else. Both stand, symbol-scoped,
-at every future generator edit (ledger 32).
+B11 LIVES HERE (ledger 32; prereg §6 item 1) — the LEARNER fence, two layers:
+  REPO layer: the learner chain (loop.py / sculpt_loop.py / exp08_arms.py) enters the WHITELIST with EMPTY
+    added/changed sets = the W-PERM blast radius touches NOTHING there; every symbol must be byte-identical
+    to baseline. (§6 names sculpt_loop.py / EXP08Loop / EXP12Loop.step; the effective `step` actually
+    resolves through the MRO to Stage0Loop.step in exp04's loop.py — a file-hash on the three NAMED files
+    would fence the wrong file, which is exactly why ledger 32 demanded symbol-scoped.)
+  RUNTIME layer: learner_fence() asserts inspect.getsource(EXP12Loop.step) on the LIVE class equals the
+    BASELINE_COMMIT source of Stage0Loop.step, and that no class below Stage0Loop in the MRO grew its own
+    `step` override. Catches loaded-module drift / monkeypatching that a repo diff cannot see.
+  Red-teamed like the generator scope: a planted runtime `step` override must FIRE the fence.
 
 Red-teamed (the red-team rule, CORRIDOR Conduct): a synthetic out-of-scope change — the review panel's
 own self.centre eval-path perturbation — is shown to trip a CHANGED violation. A diff-scope that has
@@ -19,6 +26,7 @@ never flagged an out-of-scope change is asserted, not tested.
 Per-edit config: BASELINE_COMMIT (the last committed generator before this edit) + WHITELIST.
 """
 import ast
+import inspect
 import subprocess
 import sys
 from pathlib import Path
@@ -35,6 +43,13 @@ WHITELIST = {
     # is separately fenced by the symbol-scoped EXP12Loop.step check.
     "exp12_arms.py":   dict(added={"exp19_wperm", "_dec_cat"},
                             changed={"build_exp12", "EXP12Loop._make_stream", "_eval_column"}),
+    # B11 REPO layer — the learner chain is OUTSIDE the W-PERM blast radius entirely: zero additions, zero
+    # changes; every symbol byte-identical to baseline. loop.py is exp04's foundation (Stage0Loop.step = the
+    # effective optimizer step of every arm); a legitimate future edit there updates this whitelist AT that
+    # edit, per the per-edit-config rule.
+    "sculpt_loop.py":  dict(added=set(), changed=set()),
+    "exp08_arms.py":   dict(added=set(), changed=set()),
+    "../04_stage0_mvp/loop.py": dict(added=set(), changed=set()),
 }
 
 
@@ -105,6 +120,41 @@ def run(perturb=None):
     return results
 
 
+def learner_fence(planted_override=None) -> list:
+    """B11 RUNTIME layer (ledger 32): the LIVE learner step must be the baseline's, byte-for-byte, resolved
+    through the MRO. Returns a list of violations (empty = fence holds). `planted_override` (red-team only):
+    a function planted as EXP12Loop.step before the check — the fence must FIRE on it."""
+    import torch
+    torch.set_num_threads(1)
+    import exp12_arms as X12
+    cls = X12.EXP12Loop
+    violations = []
+    if planted_override is not None:
+        cls.step = planted_override                     # red-team plant (caller restores)
+    try:
+        # (a) no class below Stage0Loop in the MRO may own a `step` override
+        base = [c for c in cls.__mro__ if c.__name__ == "Stage0Loop"]
+        if not base:
+            violations.append(("MRO", "Stage0Loop missing from EXP12Loop.__mro__ — learner chain rewired"))
+        else:
+            for c in cls.__mro__:
+                if c is base[0]:
+                    break
+                if "step" in vars(c):
+                    violations.append(("OVERRIDE", f"{c.__name__} defines its own step — the learner is "
+                                                   "no longer Stage0Loop.step"))
+        # (b) the effective live source must equal the BASELINE Stage0Loop.step source, byte-for-byte
+        live = inspect.getsource(cls.step)
+        want = symbols(_baseline_src("../04_stage0_mvp/loop.py"), "loop.py")["Stage0Loop.step"] + "\n"
+        if live != want:
+            violations.append(("CHANGED", "live EXP12Loop.step source != baseline Stage0Loop.step "
+                                          f"({BASELINE_COMMIT})"))
+    finally:
+        if planted_override is not None:
+            del cls.step                                # restore inheritance (the plant lived on the subclass)
+    return violations
+
+
 def main():
     print(f"generator diff-scope vs baseline {BASELINE_COMMIT} (whitelist = the W-PERM blast radius)")
     any_viol = False
@@ -128,6 +178,29 @@ def main():
         sys.exit(1)
     print("RED-TEAM PASS — the diff-scope flags the eval-path perturbation (self.centre) that G0b's fabric "
           "digest is blind to. It has failed on a planted out-of-scope change — construction, not sampling.")
+
+    print("\nB11 LEARNER FENCE (runtime, ledger 32) — live EXP12Loop.step vs baseline Stage0Loop.step:")
+    v = learner_fence()
+    if v:
+        for kind, msg in v:
+            print(f"    VIOLATION {kind}: {msg}")
+        print("HALT — the LIVE learner is not the baseline learner.")
+        sys.exit(1)
+    print("    PASS — the live step IS the baseline Stage0Loop.step (byte-for-byte, MRO clean).")
+    print("  RED-TEAM — plant a runtime step override on EXP12Loop; the fence must FIRE:")
+
+    def _planted(self, *a, **k):                       # a wrapped/no-op learner — the anti-forward nightmare
+        return None
+    rtv = learner_fence(planted_override=_planted)
+    print(f"    violations now: {[k for k, _ in rtv]}")
+    if not rtv:
+        print("RED-TEAM FAILED — the learner fence did NOT flag a planted runtime step override. Dead code.")
+        sys.exit(1)
+    post = learner_fence()
+    if post:
+        print(f"RED-TEAM RESTORE FAILED — fence still firing after plant removal: {post}")
+        sys.exit(1)
+    print("  RED-TEAM PASS — the fence fires on a planted live override and is clean after restore.")
 
 
 if __name__ == "__main__":
