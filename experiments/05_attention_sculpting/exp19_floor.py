@@ -97,17 +97,19 @@ def _series_from_win(win_accs: dict, post_acq_windows: list) -> list:
              for t in post_acq_windows ]
 
 
-def _sim_null_runs(onset_counts: list, p: float, n_sims: int, gen) -> torch.Tensor:
+def _sim_null_runs(onset_counts: list, p: float, n_sims: int, gen, band: float = FLOOR_BAND) -> torch.Tensor:
     """Longest-run distribution of a granularity null: per window i with n_i in-stratum onsets, draw
-    successes ~ Binomial(n_i, p), acc_i = successes/n_i; window clears iff acc_i >= FLOOR_BAND; empty
-    windows (n_i=0) never clear (break runs). Returns [n_sims] longest runs."""
+    successes ~ Binomial(n_i, p), acc_i = successes/n_i; window clears iff acc_i >= band; empty
+    windows (n_i=0) never clear (break runs). Returns [n_sims] longest runs. `band` defaults to
+    FLOOR_BAND (G5a's forced 0.704, unchanged for the committed --audit path); B8 passes the CALIBRATION
+    band CAL.BAND=0.64 so the deployed detector certifies at the band its op width was cut on (ledger 44)."""
     n_win = len(onset_counts)
     clears = torch.zeros(n_sims, n_win, dtype=torch.bool)
     for i, ni in enumerate(onset_counts):
         if ni <= 0:
             continue
         succ = (torch.rand(n_sims, ni, generator=gen) < p).sum(dim=1).float()
-        clears[:, i] = (succ / ni) >= FLOOR_BAND
+        clears[:, i] = (succ / ni) >= band
     # longest run of True per row
     best = torch.zeros(n_sims, dtype=torch.long)
     cur = torch.zeros(n_sims, dtype=torch.long)
