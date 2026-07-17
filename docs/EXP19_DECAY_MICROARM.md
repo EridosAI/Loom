@@ -84,3 +84,11 @@ distance from the band.
 Per replay: the standard record (+ manifest), per-onset capture + digest, and the derived per-window
 stratified series per seed (the v5 item-(e) standard, committed like `a72ea3c`). Endpoint dec_cat coverage
 updates B8's ledger-48 tripwire WITH the data (the assert names this obligation).
+
+
+## Sensitivity companion (row 51 remedy — appended with the cell read, Jason 2026-07-17)
+The ratified "within-band move" under-specified the statistic. PRIMARY = Δ-vs-band-sd (as read). Three
+readings ride in `exp19_decay_cellread.json`: Δ-vs-sd · tail-vs-p95 dead envelope · Δ/SE. Honest headline:
+**co-decay in 5/5 under significance; material (band-scale) in 4/5; complete-to-dead-band in 1/5 (s2); s6
+the only reading-dependent label. Erosion is horizon-truncated — 4/5 tails remain above the dead envelope
+at 500k.** No reinterpretation; a robustness disclosure.

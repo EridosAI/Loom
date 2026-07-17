@@ -96,5 +96,48 @@
       "note": "no episodes exist -> no episode-locked structure possible; post-acq mean consistent with the committed dead-arm band (0.238 +/- 0.211) \u2014 control clean"
     }
   ],
-  "verdict": "4/5 converters LOCKSTEP-EROSION (dec_cat falls WITH exam_acc through the tail; drops 0.245-0.466, all exceed the committed band sd 0.211) \u00b7 s6 MIXED/AMBIGUOUS (within-band move, short tail, flag 3) \u00b7 INSTRUMENT-NULL clean on {1,3,7} \u00b7 NO-TAIL: none (every episode leaves post-episode windows in [0,500k)). READ: the majority cell is LOCKSTEP-EROSION -> mechanism pair (i) interference / (ii) axis rotation (NOT separable by this read, per the ratified cell); READOUT-DRIFT disfavored \u2014 the category representation itself erodes, un-conversion is not instrumental. DECCAT-REGIME-BOUND: regime-bound mechanism attribution only; no generalization sentence."
+  "verdict": "4/5 converters LOCKSTEP-EROSION (dec_cat falls WITH exam_acc through the tail; drops 0.245-0.466, all exceed the committed band sd 0.211) \u00b7 s6 MIXED/AMBIGUOUS (within-band move, short tail, flag 3) \u00b7 INSTRUMENT-NULL clean on {1,3,7} \u00b7 NO-TAIL: none (every episode leaves post-episode windows in [0,500k)). READ: the majority cell is LOCKSTEP-EROSION -> mechanism pair (i) interference / (ii) axis rotation (NOT separable by this read, per the ratified cell); READOUT-DRIFT disfavored \u2014 the category representation itself erodes, un-conversion is not instrumental. DECCAT-REGIME-BOUND: regime-bound mechanism attribution only; no generalization sentence.",
+  "sensitivity_companion": {
+    "note": "Row-51 remedy: the ratified \"within-band move\" under-specified the statistic. PRIMARY stays delta-vs-sd. Three readings, computed from the committed rows \u2014 a robustness disclosure, not a reinterpretation.",
+    "band_sd": 0.211,
+    "dead_envelope_p95": 0.5625,
+    "table": [
+      {
+        "seed": 0,
+        "d_dec_cat": 0.2452,
+        "reading_dvs_sd": "material",
+        "reading_tail_vs_p95": "above dead envelope",
+        "reading_d_over_se": 41.2
+      },
+      {
+        "seed": 2,
+        "d_dec_cat": 0.4664,
+        "reading_dvs_sd": "material",
+        "reading_tail_vs_p95": "inside dead envelope",
+        "reading_d_over_se": 78.7
+      },
+      {
+        "seed": 4,
+        "d_dec_cat": 0.2883,
+        "reading_dvs_sd": "material",
+        "reading_tail_vs_p95": "above dead envelope",
+        "reading_d_over_se": 52.6
+      },
+      {
+        "seed": 5,
+        "d_dec_cat": 0.375,
+        "reading_dvs_sd": "material",
+        "reading_tail_vs_p95": "above dead envelope",
+        "reading_d_over_se": 61.3
+      },
+      {
+        "seed": 6,
+        "d_dec_cat": 0.196,
+        "reading_dvs_sd": "within-band",
+        "reading_tail_vs_p95": "above dead envelope",
+        "reading_d_over_se": 11.2
+      }
+    ],
+    "headline": "co-decay in 5/5 under significance (all delta/SE >> 2); material (band-scale) in 4/5; complete-to-dead-band in 1/5 (s2); s6 the only reading-dependent label. Erosion is horizon-truncated \u2014 4/5 tails remain above the dead envelope at 500k."
+  }
 }
