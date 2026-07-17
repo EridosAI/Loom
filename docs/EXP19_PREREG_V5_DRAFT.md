@@ -1,6 +1,6 @@
-# EXP19 PREREG v5 — reconciliation amendment DRAFT (pending ratification)
+# EXP19 PREREG v5 — reconciliation amendments (RATIFIED, Jason 2026-07-17)
 
-**Status:** DRAFT / PENDING RATIFICATION — committed to the record on the seat's instruction (2026-07-17:
+**Status:** RATIFIED (Jason 2026-07-17, conditional folds A8–A10 included; applied to the prereg proper same commit). Formerly: DRAFT / PENDING RATIFICATION — committed to the record on the seat's instruction (2026-07-17:
 "untracked-on-Equinox means the seat cannot clone-verify; after audit row 46 nothing goes to Jason on my
 read of a report"). The seat verifies from the push; Jason ratifies; only then are the amendments applied to
 `EXP19_ORDERING_WINDOW_PREREG.md` proper. Scope per Jason's 2026-07-17 ruling: the four narrowed stale spots
@@ -85,7 +85,26 @@ tie at the max — no ε constant needed. If any B's curve has a **non-unique ar
 Jason rules the tie-break before the corridor proceeds.** Pre-named condition, judgment routes to the human,
 no constant invented.]*
 
+## Amendment 8 — the B* estimator (audit B3; Jason's ratification fold, text supplied). BRACKET RULE, primary:
+c(B) = certified count at B under the floor audit. B*_lo = largest tested B with c = 0; B*_hi = smallest with
+c ≥ 1; report B* ∈ (B*_lo, B*_hi] with the full c(B) curve always. No point estimate; a descriptive
+isotonic/logistic fit may be REPORTED, never gates. Degenerate routes: all paid B ≥ 1 → "B* ≤ 32, below
+ladder floor"; all paid B = 0 → NO-KNEE-IN-LADDER as pre-named; non-monotone → existing NON-MONOTONE routing.
+Grounds: certified counts only (L18); a bracket refuses false precision from 3 interior points; endpoints pin
+the extremes; committed before any G9 data exists.
+
+## Amendment 9 — STRATUM-POWER-SHAPE (audit C3), wrong-reason cell (§10): the stratum fraction is
+non-monotone in B (22.7% → 17.7% → 30.75%), so stratified sensitivity is lowest at the anchor and higher at
+both ends; any stratified-read non-monotone routes through the per-B power numbers before any mechanism read.
+
+## Amendment 10 — LATE-RESCUE-IN-TAIL (audit C5), descriptive cell (§7): the latest committed onset is 427.5k
+of a 500k read; if interleaving slows onset, converters shift right. Tail-only (§3's 4 blind seeds), never
+enters the B* estimator, named before data so a late rescue is reportable rather than invisible.
+
+*(A8–A10 fold note, Jason: the earlier deferral followed the audit's action list — the conflict between the
+two documents was the seat's; v5-now governs because chat-side content has been this session's loss surface.)*
+
 ---
 
-**Deferred to G8 assembly (blind, per the audit action list — NOT in this draft):** the B\* estimator (B3);
+**Superseded by A8–A10 above (v5-now governs):** the B\* estimator and C3/C5 cells are no longer deferred. Still at close: (blind, per the audit action list — NOT in this draft):** the B\* estimator (B3);
 STRATUM-POWER-SHAPE and LATE-RESCUE-IN-TAIL taxonomy cells (C3, C5); the D2 canon sentence at close.

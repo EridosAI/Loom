@@ -1,6 +1,6 @@
 # EXP19 decay-mechanism micro-arm + dec_cat endpoints — doc-with-cells (D1 + C1, shared compute)
 
-**Status:** DRAFT / PENDING RATIFICATION — committed to the record on the seat's instruction (2026-07-17):
+**Status:** RATIFIED (Jason 2026-07-17; cells as written + the two ratification sentences below). Phase C GREEN (launched under the cleared gate). Formerly: DRAFT / PENDING RATIFICATION — committed to the record on the seat's instruction (2026-07-17):
 pre-registration is only provably pre-registration once committed; the cells must be canon BEFORE the
 C-decay data they route exists. **Phase C is GATED on (i) this doc committed and (ii) the Phase-A noise
 band cut and recorded, blind, per §Noise-band below.** Phase A running against the uncommitted draft was
@@ -52,6 +52,16 @@ companion vs the post-episode tail; per-column dec_cat vs exam_acc; REPORTED, ne
 Direction words only — no thresholds invented here; every number in the eventual read is computed from the
 replayed columns with its noise band stated. DECCAT-REGIME-BOUND stands: whatever the cell, no
 "dwell solved" / generalization sentence — mechanism attribution within THIS regime only.
+
+## Ratification sentences (Jason 2026-07-17, text supplied)
+(i) **The null statement:** No analytic chance level is used or cited. The Phase-A empirical band is the
+null: LOO nearest-centroid carries small-sample bias (dead-arm pooled mean 0.238, p95 0.563 — well below
+nominal 1/n_category = 0.5), so citing 0.5 as "chance" would overstate the null and misread moderate dec_cat
+values as below-chance.
+(ii) **The self-containment statement (CONFIRMED at HEAD before stating — `exp12_arms._dec_cat`):** dec_cat
+is within-window self-contained (LOO centroids from that window's 16 probes only; no cross-window centroid
+pooling), so encoder drift between windows cannot contaminate a single window's decode; trajectory
+comparisons compare self-contained reads.
 
 ## Noise band (the Phase-C gate's second condition — cut BLIND, before any C-decay data exists)
 The **blind instrument-noise band for dec_cat** is cut from **Phase A's replayed series** (A_dwell is the

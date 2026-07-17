@@ -436,3 +436,21 @@ companion shows contamination.
 Plus the standing package: DRAFT · verification/refute panel record · full gate log · companions ·
 sensitivities · riding flags · bare-N census · **independent terminal verification pass before the result
 reaches Jason** for attribution + canon.
+
+
+---
+
+# v5 RECONCILIATION AMENDMENTS — RATIFIED (Jason 2026-07-17), annotate-in-place by reference
+The ten amendments of `EXP19_PREREG_V5_DRAFT.md` (RATIFIED same date) are CANON and govern wherever they
+touch this document; the superseded sentences above stand as record. Targets: (1) §8 "zero additional runs"
+→ L37 pricing (13 replays); (2) §8 "borrow-gate applies" → deleted, L38+43, floor audit subsumes,
+C-vs-donor-A only; (3) §8 per-B *band* rows → per-B WIDTH at family band 0.64, argmax separation on each
+B's own null, per-B ≥width floor + underpower gate w/ robustness field (L38/41/42/44); (4) §7 G5b row →
+L42 argmax rule + the B4 flag verbatim (s6 matched-N @op550: q10 12 vs floor q99 8 = 1.5×,
+s6_clears_robust false — never summarized away); (5) single-instrument ladder (endpoints under the floor
+audit, zero replays; B=1 column-based read pre-registered blind); (6) §12(e) recomputability standard
+(derived per-window stratified series committed per arm); (7) G7 separation-curve reporting pre-flag
+(full curve per B per read, REPORTED; integer flat-top tie = non-unique argmax = HALT → Jason);
+(8) the B* ESTIMATOR — bracket rule on certified counts, no point estimate, degenerate routes pre-named;
+(9) STRATUM-POWER-SHAPE wrong-reason cell (§10); (10) LATE-RESCUE-IN-TAIL descriptive cell (§7, tail-only,
+never in the estimator). Full text of every amendment: EXP19_PREREG_V5_DRAFT.md.
