@@ -36,7 +36,9 @@
       "n_clear": 5,
       "nearest_conv": 25,
       "separation": 18,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 18
     },
     {
       "width": 350,
@@ -58,7 +60,9 @@
       "n_clear": 5,
       "nearest_conv": 21,
       "separation": 15,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 15
     },
     {
       "width": 400,
@@ -80,7 +84,9 @@
       "n_clear": 5,
       "nearest_conv": 22,
       "separation": 14,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 14
     },
     {
       "width": 450,
@@ -102,7 +108,9 @@
       "n_clear": 5,
       "nearest_conv": 24,
       "separation": 19,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 19
     },
     {
       "width": 500,
@@ -124,7 +132,9 @@
       "n_clear": 5,
       "nearest_conv": 21,
       "separation": 15,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 15
     },
     {
       "width": 550,
@@ -146,7 +156,9 @@
       "n_clear": 5,
       "nearest_conv": 25,
       "separation": 20,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 20
     },
     {
       "width": 600,
@@ -168,7 +180,9 @@
       "n_clear": 5,
       "nearest_conv": 25,
       "separation": 20,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 20
     },
     {
       "width": 700,
@@ -190,7 +204,9 @@
       "n_clear": 5,
       "nearest_conv": 15,
       "separation": 11,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 11
     },
     {
       "width": 800,
@@ -212,7 +228,9 @@
       "n_clear": 5,
       "nearest_conv": 17,
       "separation": 13,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 13
     },
     {
       "width": 900,
@@ -234,7 +252,9 @@
       "n_clear": 5,
       "nearest_conv": 15,
       "separation": 12,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 12
     },
     {
       "width": 1200,
@@ -256,7 +276,9 @@
       "n_clear": 5,
       "nearest_conv": 13,
       "separation": 10,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 10
     },
     {
       "width": 1500,
@@ -278,7 +300,9 @@
       "n_clear": 5,
       "nearest_conv": 10,
       "separation": 8,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 8
     },
     {
       "width": 1706,
@@ -300,7 +324,9 @@
       "n_clear": 5,
       "nearest_conv": 17,
       "separation": 15,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 15
     },
     {
       "width": 2100,
@@ -322,7 +348,9 @@
       "n_clear": 5,
       "nearest_conv": 7,
       "separation": 5,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 5
     },
     {
       "width": 3000,
@@ -344,7 +372,9 @@
       "n_clear": 5,
       "nearest_conv": 10,
       "separation": 8,
-      "all_clear": true
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 8
     }
   ],
   "operating_point": {
@@ -367,11 +397,13 @@
     "n_clear": 5,
     "nearest_conv": 25,
     "separation": 20,
-    "all_clear": true
+    "all_clear": true,
+    "all_clear_robust": true,
+    "separation_vs_floor_max": 20
   },
   "operating_point_width": 550,
   "w_width_floor": 300,
   "underpowered": false,
-  "VERDICT": "powered (exp12_shuffle/stratified): \u2265 width floor = 300; operating point width 550 (15.6 onsets/win, separation 20 = nearest run 25 \u2212 floor q99 5); 5/5 converters clear",
+  "VERDICT": "powered (exp12_shuffle/stratified): \u2265 width floor = 300; operating point width 550 (15.6 onsets/win, separation 20 = nearest run 25 \u2212 floor q99 5); 5/5 converters clear; robust-vs-floor-max True (nearest \u2212 floor max = 20)",
   "ok": true
 }

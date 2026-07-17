@@ -111,7 +111,13 @@ def cal_floor_audit(arm: str, read: str, conv: list, nonconv: list, widths=None,
                          conv_runs=conv_runs, nonconv_runs={s: runs[s] for s in nonconv},
                          n_clear=sum(clears.values()), nearest_conv=nearest,
                          separation=nearest - fq99,                # weakest-converter gap over that B's null
-                         all_clear=bool(sum(clears.values()) == len(conv))))
+                         all_clear=bool(sum(clears.values()) == len(conv)),
+                         # ROBUSTNESS (Jason 2026-07-17, the B4 ruling — "never summarized away"): does the
+                         # weakest converter clear the floor MAX, not just q99? The G5b species: s6 at op 550
+                         # cleared q99 (1.5×) but its draw-tail min dipped under (s6_clears_robust false).
+                         # REPORTED beside every count; never gates (the gate stays q99, ledger 38/41).
+                         all_clear_robust=bool(nearest > fmax),
+                         separation_vs_floor_max=nearest - fmax))
     # OPERATING POINT (ledger 42): argmax converter/floor SEPARATION on THIS B's own null — no density target.
     # Cut among widths where the detector is usable (every converter clears); underpowered if none.
     usable = [r for r in rows if r["all_clear"]]
@@ -127,7 +133,9 @@ def cal_floor_audit(arm: str, read: str, conv: list, nonconv: list, widths=None,
                         f"powered ({arm}/{read}): ≥ width floor = {w_floor}; operating point width "
                         f"{op['width']} ({op['onsets_per_window']} onsets/win, separation {op['separation']} = "
                         f"nearest run {op['nearest_conv']} − floor q99 {op['floor_q99']}); "
-                        f"{op['n_clear']}/{len(conv)} converters clear"), ok=True)
+                        f"{op['n_clear']}/{len(conv)} converters clear; "
+                        f"robust-vs-floor-max {op['all_clear_robust']} "
+                        f"(nearest − floor max = {op['separation_vs_floor_max']})"), ok=True)
     return out
 
 

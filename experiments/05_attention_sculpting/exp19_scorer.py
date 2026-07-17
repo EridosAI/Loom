@@ -141,11 +141,17 @@ def _companions(arm: str, seeds: list, read_at: int = READ_AT) -> dict:
         per[s] = dict(gradient_delta=g["delta"], p1=g["p1"], p13_48=g["p13_48"],
                       dec_cat_mean=round(statistics.mean(dc), 4) if dc else None, dec_cat_n=len(dc))
     deltas = [per[s]["gradient_delta"] for s in seeds if per[s]["gradient_delta"] is not None]
-    dcs = [per[s]["dec_cat_mean"] for s in seeds if per[s]["dec_cat_mean"] is not None]
+    dcs = {s: per[s]["dec_cat_mean"] for s in seeds if per[s]["dec_cat_n"] > 0}
+    # COVERAGE-HONEST dec_cat (ledger 48, N1 — Jason 2026-07-17): only records replayed AFTER the dec_cat
+    # rider carry the field (at B=T that is s0, the anchor-verification re-replay; 1/8). NO bare "median"
+    # over n=1 — the summary states its coverage or withholds itself; the per-seed dec_cat_n is the truth.
     return dict(per_seed=per, referent_A_gradient_delta=X16.X16_GRAD_REF_A["delta"],
                 gradient_median_delta=round(statistics.median(deltas), 5) if deltas else None,
-                dec_cat_median=round(statistics.median(dcs), 4) if dcs else None,
-                note="REPORTED not gated; dec_cat is DECCAT-REGIME-BOUND (attribution-only falsifier)")
+                dec_cat_covered=len(dcs), dec_cat_total=len(seeds),
+                dec_cat_values={s: dcs[s] for s in sorted(dcs)},
+                dec_cat_median=(round(statistics.median(dcs.values()), 4) if len(dcs) >= 2 else None),
+                note="REPORTED not gated; dec_cat is DECCAT-REGIME-BOUND (attribution-only falsifier); "
+                     "dec_cat_median withheld below 2-seed coverage — read dec_cat_values with dec_cat_covered")
 
 
 def score_dual(arm: str, seeds: list, conv: list, nonconv: list, data: dict | None = None) -> dict:
@@ -173,7 +179,10 @@ def score_dual(arm: str, seeds: list, conv: list, nonconv: list, data: dict | No
                    f"§7 cell ⇒ HALT → Jason. [{verdict}]")
     elif comp is not None:
         verdict += (f"; gradient median Δ {comp['gradient_median_delta']} vs A "
-                    f"+{comp['referent_A_gradient_delta']}; dec_cat median {comp['dec_cat_median']}")
+                    f"+{comp['referent_A_gradient_delta']}; dec_cat coverage "
+                    f"{comp['dec_cat_covered']}/{comp['dec_cat_total']} "
+                    f"(values {comp['dec_cat_values']}; median "
+                    f"{comp['dec_cat_median'] if comp['dec_cat_median'] is not None else 'withheld <2 seeds'})")
     return dict(
         gate="B8 exp19_scorer — dual-detector floor-audit (inherited op per read, outcome-blind sim floor)",
         arm=arm, seeds=seeds, underpowered=False,
@@ -202,7 +211,8 @@ def _validate_BT():
     print(f"  survives-stratified: {out['survives_stratified']}")
     c = out["companions"]
     print(f"  companions: gradient median Δ={c['gradient_median_delta']} vs A +{c['referent_A_gradient_delta']} "
-          f"(shuffled ⇒ recency removed ⇒ Δ→0); dec_cat median={c['dec_cat_median']}")
+          f"(shuffled ⇒ recency removed ⇒ Δ→0); dec_cat coverage {c['dec_cat_covered']}/{c['dec_cat_total']} "
+          f"values={c['dec_cat_values']} (median {'withheld — <2 seeds carry the field (ledger 48)' if c['dec_cat_median'] is None else c['dec_cat_median']})")
     print(f"  VERDICT: {out['VERDICT']}")
     (OUTDIR / "exp19_scorer_exp12_shuffle_dual.json").write_text(json.dumps(out, indent=2))
     # invariants (self-testing contracts — the B=T coincidence full==strat==CONVERTERS makes each falsifiable):
@@ -220,10 +230,17 @@ def _validate_BT():
     assert c["gradient_median_delta"] is not None and abs(c["gradient_median_delta"]) < 0.05, \
         f"B=T gradient companion drifted: median Δ={c['gradient_median_delta']} (want ~0, far below A "\
         f"+{c['referent_A_gradient_delta']})"
-    assert c["dec_cat_median"] is not None and abs(c["dec_cat_median"] - 0.662) < 0.02, \
-        f"B=T dec_cat companion drifted: median={c['dec_cat_median']} (want ~0.662)"
+    # dec_cat coverage tripwire (ledger 48): at HEAD only s0 carries the field (1/8 — the anchor re-replay);
+    # the median must be WITHHELD at this coverage and s0's value guards the reference band. When the C1/D1
+    # replays land, coverage rises and this assert is updated WITH them (a coverage change is a data change).
+    assert c["dec_cat_covered"] == 1 and c["dec_cat_median"] is None, \
+        f"dec_cat coverage changed ({c['dec_cat_covered']}/{c['dec_cat_total']}, median {c['dec_cat_median']})" \
+        " — update this tripwire WITH the replays that changed it (ledger 48)"
+    assert abs(c["dec_cat_values"][0] - 0.662) < 0.02, \
+        f"s0 dec_cat drifted: {c['dec_cat_values'].get(0)} (want ~0.662)"
     print("  [invariants OK] full & stratified both reproduce the committed converters (all survive the "
-          "stratum); STRAT⊆FULL; recency-carried empty; gradient≈0 & dec_cat≈0.662 in reference band")
+          "stratum); STRAT⊆FULL; recency-carried empty; gradient≈0; dec_cat coverage-honest (1/8, median "
+          "withheld, s0≈0.662)")
 
 
 # ---------------------------------------------------------------- smoke (positive-delta falsifiers)
