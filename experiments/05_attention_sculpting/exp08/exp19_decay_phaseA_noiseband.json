@@ -1,0 +1,69 @@
+{
+  "spec": "docs/EXP19_DECAY_MICROARM.md \u00a7Noise-band \u2014 BLIND dec_cat instrument-noise band from Phase A (dead arm, no category signal by hypothesis); cut BEFORE Phase C launched",
+  "per_seed": {
+    "0": {
+      "n_windows": 1254,
+      "mean": 0.2407,
+      "sd": 0.201,
+      "p05": 0.0,
+      "p95": 0.5625
+    },
+    "1": {
+      "n_windows": 1204,
+      "mean": 0.1688,
+      "sd": 0.1996,
+      "p05": 0.0,
+      "p95": 0.5
+    },
+    "2": {
+      "n_windows": 1619,
+      "mean": 0.2577,
+      "sd": 0.2043,
+      "p05": 0.0,
+      "p95": 0.5
+    },
+    "3": {
+      "n_windows": 1456,
+      "mean": 0.2345,
+      "sd": 0.207,
+      "p05": 0.0,
+      "p95": 0.5625
+    },
+    "4": {
+      "n_windows": 1406,
+      "mean": 0.2203,
+      "sd": 0.2161,
+      "p05": 0.0,
+      "p95": 0.5625
+    },
+    "5": {
+      "n_windows": 1460,
+      "mean": 0.2786,
+      "sd": 0.2134,
+      "p05": 0.0,
+      "p95": 0.5625
+    },
+    "6": {
+      "n_windows": 1413,
+      "mean": 0.2711,
+      "sd": 0.2118,
+      "p05": 0.0,
+      "p95": 0.5625
+    },
+    "7": {
+      "n_windows": 666,
+      "mean": 0.2005,
+      "sd": 0.215,
+      "p05": 0.0,
+      "p95": 0.5625
+    }
+  },
+  "pooled": {
+    "n": 10478,
+    "mean": 0.2383,
+    "sd": 0.211,
+    "p05": 0.0,
+    "p95": 0.5625
+  },
+  "anchors": "8/8 columns digit-exact + acquisition_onset (exp19_decay_replays_log.json)"
+}
