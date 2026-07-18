@@ -55,6 +55,19 @@ run; auto-push at every closed gate; all halt fences live.** Recorded per Jason'
 clearance ("G8 ratified. Go.") was received BEFORE the package existed and was correctly NOT honored under
 the contradiction fence — the ratification attaches to THIS object.
 
+## CORRIDOR LOG (running)
+- **2026-07-18, FENCE EVENT (recorded as the package requires):** the corridor stopped at a pre-named edge —
+  `exp19_wperm_B32: NO cal converter at width 300` — and routed the arm-dead-vs-instrument-blind question to
+  the human rather than answering it itself. CAL phase (15/15) closed and pushed before the stop.
+- **HALT ruled: SPLIT (Jason).** B=512 resumes under the ratified law unchanged. B=32/128 held pending a
+  detector-power certification at their stratum densities (C_shuffle committed converters thinned via the
+  G5b machinery, width 300, committed ≥90% bar): certifies ⇒ both arms run verdicts at width 300 (the
+  instrument's committed width; conservative for null-showing arms — cannot manufacture a positive),
+  separation curves reported descriptively; fails ⇒ HALT → Jason (the small-B design in question).
+- **FLAG (verify at terminal):** B=512 cal s25's per-seed null max **127** is an order larger than its
+  siblings (6–13) — informative or anomalous, it gets this line and a terminal check, not silence.
+- The cal table enters no prose anywhere until verdict — dose-response-shaped is not dose-response-certified.
+
 ## HARD STOP — the corridor-open word (historical; resolved above)
 The ratified protocol places Jason's G8 read HERE, on this assembled package. His 2026-07-17 word
 "G8 ratified. Go." arrived BEFORE assembly (sequence: …pre-flight → G8) — under the standing rule "a
