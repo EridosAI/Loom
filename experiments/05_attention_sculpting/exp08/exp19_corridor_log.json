@@ -220,6 +220,56 @@
           "dec_cat": 0.4684
         }
       }
+    },
+    "exp19_wperm_B32": {
+      "arm": "exp19_wperm_B32",
+      "full": {
+        "k": 0,
+        "certified": [],
+        "op": 300
+      },
+      "stratified": {
+        "k": 0,
+        "certified": [],
+        "op": 300
+      },
+      "recency_carried": [],
+      "survives_stratified": [],
+      "companions": {
+        "0": {
+          "grad": 0.14519,
+          "dec_cat": 0.3334
+        },
+        "1": {
+          "grad": 0.11563,
+          "dec_cat": 0.2256
+        },
+        "2": {
+          "grad": 0.0971,
+          "dec_cat": 0.2793
+        },
+        "3": {
+          "grad": 0.11134,
+          "dec_cat": 0.2102
+        },
+        "4": {
+          "grad": 0.08792,
+          "dec_cat": 0.3041
+        },
+        "5": {
+          "grad": 0.08845,
+          "dec_cat": 0.3054
+        },
+        "6": {
+          "grad": 0.10012,
+          "dec_cat": 0.1882
+        },
+        "7": {
+          "grad": 0.11538,
+          "dec_cat": 0.2357
+        }
+      },
+      "width_grounds": "width 300 per SPLIT ruling (committed instrument width; powercert PASS)"
     }
   },
   "halts": [

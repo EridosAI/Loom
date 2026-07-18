@@ -1,0 +1,166 @@
+{
+  "arm": "exp19_wperm_B32",
+  "full": {
+    "k": 0,
+    "certified": [],
+    "op": 300
+  },
+  "stratified": {
+    "k": 0,
+    "certified": [],
+    "op": 300
+  },
+  "recency_carried": [],
+  "survives_stratified": [],
+  "companions": {
+    "0": {
+      "grad": 0.14519,
+      "dec_cat": 0.3334
+    },
+    "1": {
+      "grad": 0.11563,
+      "dec_cat": 0.2256
+    },
+    "2": {
+      "grad": 0.0971,
+      "dec_cat": 0.2793
+    },
+    "3": {
+      "grad": 0.11134,
+      "dec_cat": 0.2102
+    },
+    "4": {
+      "grad": 0.08792,
+      "dec_cat": 0.3041
+    },
+    "5": {
+      "grad": 0.08845,
+      "dec_cat": 0.3054
+    },
+    "6": {
+      "grad": 0.10012,
+      "dec_cat": 0.1882
+    },
+    "7": {
+      "grad": 0.11538,
+      "dec_cat": 0.2357
+    }
+  },
+  "width_grounds": "width 300 per SPLIT ruling (committed instrument width; powercert PASS)",
+  "full_per_seed": {
+    "0": {
+      "observed_run": 4,
+      "p_hat": 0.5593,
+      "null_max": 9,
+      "p_value": 0.8498,
+      "certified": false
+    },
+    "1": {
+      "observed_run": 3,
+      "p_hat": 0.5556,
+      "null_max": 11,
+      "p_value": 0.9994,
+      "certified": false
+    },
+    "2": {
+      "observed_run": 4,
+      "p_hat": 0.5547,
+      "null_max": 9,
+      "p_value": 0.837,
+      "certified": false
+    },
+    "3": {
+      "observed_run": 5,
+      "p_hat": 0.5535,
+      "null_max": 9,
+      "p_value": 0.2642,
+      "certified": false
+    },
+    "4": {
+      "observed_run": 5,
+      "p_hat": 0.559,
+      "null_max": 10,
+      "p_value": 0.3776,
+      "certified": false
+    },
+    "5": {
+      "observed_run": 4,
+      "p_hat": 0.5507,
+      "null_max": 9,
+      "p_value": 0.7598,
+      "certified": false
+    },
+    "6": {
+      "observed_run": 4,
+      "p_hat": 0.5524,
+      "null_max": 9,
+      "p_value": 0.747,
+      "certified": false
+    },
+    "7": {
+      "observed_run": 4,
+      "p_hat": 0.553,
+      "null_max": 9,
+      "p_value": 0.7578,
+      "certified": false
+    }
+  },
+  "strat_per_seed": {
+    "0": {
+      "observed_run": 4,
+      "p_hat": 0.485,
+      "null_max": 10,
+      "p_value": 0.952,
+      "certified": false
+    },
+    "1": {
+      "observed_run": 5,
+      "p_hat": 0.4876,
+      "null_max": 12,
+      "p_value": 0.5816,
+      "certified": false
+    },
+    "2": {
+      "observed_run": 4,
+      "p_hat": 0.4919,
+      "null_max": 11,
+      "p_value": 0.9894,
+      "certified": false
+    },
+    "3": {
+      "observed_run": 5,
+      "p_hat": 0.4919,
+      "null_max": 12,
+      "p_value": 0.6422,
+      "certified": false
+    },
+    "4": {
+      "observed_run": 5,
+      "p_hat": 0.4899,
+      "null_max": 11,
+      "p_value": 0.7052,
+      "certified": false
+    },
+    "5": {
+      "observed_run": 5,
+      "p_hat": 0.5022,
+      "null_max": 12,
+      "p_value": 0.761,
+      "certified": false
+    },
+    "6": {
+      "observed_run": 5,
+      "p_hat": 0.4884,
+      "null_max": 12,
+      "p_value": 0.6022,
+      "certified": false
+    },
+    "7": {
+      "observed_run": 4,
+      "p_hat": 0.4878,
+      "null_max": 13,
+      "p_value": 0.9826,
+      "certified": false
+    }
+  }
+}
