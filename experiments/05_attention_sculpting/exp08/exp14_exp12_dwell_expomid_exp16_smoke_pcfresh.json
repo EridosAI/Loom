@@ -1,0 +1,86 @@
+{
+  "arm": "exp12_dwell_expomid",
+  "T": 64,
+  "seeds_requested": [
+    1,
+    2,
+    3
+  ],
+  "seeds_accepted": [
+    1,
+    2,
+    10
+  ],
+  "n_pass": 2,
+  "n_total": 3,
+  "swaps": [
+    {
+      "defective": 3,
+      "err": "synthetic",
+      "replacement": 10,
+      "seed_class": "FRESH"
+    }
+  ],
+  "spec_hash": "41d6f0d5e7da",
+  "halted_reused_seed": null,
+  "per_seed": {
+    "1": {
+      "ok": true,
+      "arm": "exp12_dwell_expomid",
+      "seed": 1,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0,
+        "null99": 1
+      },
+      "k_indep": {
+        "chi2": 0,
+        "null99": 1
+      },
+      "schedule_indep": {},
+      "bg_indep": {},
+      "cap_hit": {}
+    },
+    "2": {
+      "ok": true,
+      "arm": "exp12_dwell_expomid",
+      "seed": 2,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0,
+        "null99": 1
+      },
+      "k_indep": {
+        "chi2": 0,
+        "null99": 1
+      },
+      "schedule_indep": {},
+      "bg_indep": {},
+      "cap_hit": {}
+    },
+    "3": {
+      "ok": false,
+      "arm": "exp12_dwell_expomid",
+      "seed": 3,
+      "spec_hash": "41d6f0d5e7da",
+      "err": "synthetic"
+    },
+    "10": {
+      "ok": true,
+      "arm": "exp12_dwell_expomid",
+      "seed": 10,
+      "spec_hash": "41d6f0d5e7da",
+      "perlag_nuis": {
+        "obs": 0,
+        "null99": 1
+      },
+      "k_indep": {
+        "chi2": 0,
+        "null99": 1
+      },
+      "schedule_indep": {},
+      "bg_indep": {},
+      "cap_hit": {}
+    }
+  }
+}

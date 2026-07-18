@@ -1,0 +1,247 @@
+{
+  "gate": "B8 exp19_scorer \u2014 dual-detector floor-audit (inherited op per read, outcome-blind sim floor)",
+  "arm": "exp12_shuffle",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "underpowered": false,
+  "full": {
+    "arm": "exp12_shuffle",
+    "read": "full",
+    "op_width": 300,
+    "per_seed": {
+      "0": {
+        "observed_run": 85,
+        "p_hat": 0.6276,
+        "null_max": 21,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "1": {
+        "observed_run": 3,
+        "p_hat": 0.5069,
+        "null_max": 6,
+        "p_value": 0.6192,
+        "certified": false
+      },
+      "2": {
+        "observed_run": 60,
+        "p_hat": 0.5251,
+        "null_max": 8,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "3": {
+        "observed_run": 3,
+        "p_hat": 0.5005,
+        "null_max": 6,
+        "p_value": 0.5146,
+        "certified": false
+      },
+      "4": {
+        "observed_run": 36,
+        "p_hat": 0.5332,
+        "null_max": 7,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "5": {
+        "observed_run": 77,
+        "p_hat": 0.541,
+        "null_max": 8,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "6": {
+        "observed_run": 90,
+        "p_hat": 0.55,
+        "null_max": 10,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "7": {
+        "observed_run": 3,
+        "p_hat": 0.4975,
+        "null_max": 6,
+        "p_value": 0.4502,
+        "certified": false
+      }
+    },
+    "certified_seeds": [
+      0,
+      2,
+      4,
+      5,
+      6
+    ],
+    "k": 5,
+    "n": 8
+  },
+  "stratified": {
+    "arm": "exp12_shuffle",
+    "read": "stratified",
+    "op_width": 550,
+    "per_seed": {
+      "0": {
+        "observed_run": 45,
+        "p_hat": 0.6228,
+        "null_max": 18,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "1": {
+        "observed_run": 3,
+        "p_hat": 0.5011,
+        "null_max": 10,
+        "p_value": 0.997,
+        "certified": false
+      },
+      "2": {
+        "observed_run": 37,
+        "p_hat": 0.533,
+        "null_max": 13,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "3": {
+        "observed_run": 5,
+        "p_hat": 0.4971,
+        "null_max": 9,
+        "p_value": 0.2778,
+        "certified": false
+      },
+      "4": {
+        "observed_run": 25,
+        "p_hat": 0.5307,
+        "null_max": 12,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "5": {
+        "observed_run": 50,
+        "p_hat": 0.5515,
+        "null_max": 12,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "6": {
+        "observed_run": 32,
+        "p_hat": 0.5526,
+        "null_max": 16,
+        "p_value": 0.0,
+        "certified": true
+      },
+      "7": {
+        "observed_run": 5,
+        "p_hat": 0.505,
+        "null_max": 11,
+        "p_value": 0.315,
+        "certified": false
+      }
+    },
+    "certified_seeds": [
+      0,
+      2,
+      4,
+      5,
+      6
+    ],
+    "k": 5,
+    "n": 8
+  },
+  "recency_carried_seeds": [],
+  "survives_stratified": [
+    0,
+    2,
+    4,
+    5,
+    6
+  ],
+  "stratified_only_seeds": [],
+  "anomaly_stratified_only": false,
+  "companions": {
+    "per_seed": {
+      "0": {
+        "gradient_delta": 0.00029,
+        "p1": 0.60552,
+        "p13_48": 0.60523,
+        "dec_cat_mean": 0.6637,
+        "dec_cat_n": 1655
+      },
+      "1": {
+        "gradient_delta": -0.00043,
+        "p1": 0.76492,
+        "p13_48": 0.76535,
+        "dec_cat_mean": 0.453,
+        "dec_cat_n": 1651
+      },
+      "2": {
+        "gradient_delta": -2e-05,
+        "p1": 0.6076,
+        "p13_48": 0.60761,
+        "dec_cat_mean": 0.4836,
+        "dec_cat_n": 1656
+      },
+      "3": {
+        "gradient_delta": -0.00019,
+        "p1": 0.7406,
+        "p13_48": 0.74079,
+        "dec_cat_mean": 0.2899,
+        "dec_cat_n": 1648
+      },
+      "4": {
+        "gradient_delta": 0.00037,
+        "p1": 0.52036,
+        "p13_48": 0.51999,
+        "dec_cat_mean": 0.6291,
+        "dec_cat_n": 1653
+      },
+      "5": {
+        "gradient_delta": 0.00135,
+        "p1": 0.62768,
+        "p13_48": 0.62633,
+        "dec_cat_mean": 0.5583,
+        "dec_cat_n": 1655
+      },
+      "6": {
+        "gradient_delta": -0.00014,
+        "p1": 0.59597,
+        "p13_48": 0.59611,
+        "dec_cat_mean": 0.5248,
+        "dec_cat_n": 1657
+      },
+      "7": {
+        "gradient_delta": -0.00046,
+        "p1": 0.74,
+        "p13_48": 0.74046,
+        "dec_cat_mean": 0.4804,
+        "dec_cat_n": 1657
+      }
+    },
+    "referent_A_gradient_delta": 0.1416,
+    "gradient_median_delta": -8e-05,
+    "dec_cat_covered": 8,
+    "dec_cat_total": 8,
+    "dec_cat_values": {
+      "0": 0.6637,
+      "1": 0.453,
+      "2": 0.4836,
+      "3": 0.2899,
+      "4": 0.6291,
+      "5": 0.5583,
+      "6": 0.5248,
+      "7": 0.4804
+    },
+    "dec_cat_median": 0.5042,
+    "note": "REPORTED not gated; dec_cat is DECCAT-REGIME-BOUND (attribution-only falsifier); dec_cat_median withheld below 2-seed coverage \u2014 read dec_cat_values with dec_cat_covered"
+  },
+  "VERDICT": "exp12_shuffle: full 5/8 (op 300), stratified 5/8 (op 550); recency-carried []; survives-stratified [0, 2, 4, 5, 6]; gradient median \u0394 -8e-05 vs A +0.1416; dec_cat coverage 8/8 (values {0: 0.6637, 1: 0.453, 2: 0.4836, 3: 0.2899, 4: 0.6291, 5: 0.5583, 6: 0.5248, 7: 0.4804}; median 0.5042)",
+  "ok": true
+}

@@ -121,7 +121,36 @@
       "wall_s": 1182.6
     }
   ],
-  "ops": {},
+  "ops": {
+    "exp19_wperm_B512": {
+      "full": {
+        "op": 450,
+        "w_floor": 300,
+        "conv": [
+          21,
+          22,
+          24,
+          25
+        ],
+        "nonconv": [
+          20
+        ]
+      },
+      "stratified": {
+        "op": 300,
+        "w_floor": 300,
+        "conv": [
+          21,
+          22,
+          24,
+          25
+        ],
+        "nonconv": [
+          20
+        ]
+      }
+    }
+  },
   "verdicts": {},
   "halts": [
     "exp19_wperm_B32: NO cal converter at width 300 \u2014 no known signal; underpower gate unevaluable -> Jason"

@@ -1,0 +1,438 @@
+{
+  "commit_hash": "13e01794de4bd5c8bb5f23004c18e2b0a2dd7b04",
+  "spec_hash": "41d6f0d5e7da",
+  "arm": "exp12_12b_shp",
+  "seed": 0,
+  "steps": 2000,
+  "vocab": 2,
+  "shuffled": true,
+  "probe_rate": 0.0,
+  "word_ref": true,
+  "no_word": false,
+  "eval_cadence": 300,
+  "block_cadence": 3000,
+  "torch_num_threads": 1,
+  "acquisition_onset": null,
+  "dynamics_panel": {
+    "num": {
+      "mean": 0.0,
+      "amplitude": 0.0,
+      "envelope": [
+        0.0,
+        0.0
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": -0.0,
+      "n": 6
+    },
+    "den": {
+      "mean": 0.0016,
+      "amplitude": 0.0022,
+      "envelope": [
+        0.0,
+        0.0022
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": 0.0011,
+      "n": 6
+    },
+    "ratio": {
+      "mean": 0.0,
+      "amplitude": 0.0,
+      "envelope": [
+        0.0,
+        0.0
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": 0.0,
+      "n": 5
+    },
+    "proto": {
+      "mean": 0.0031,
+      "amplitude": 0.0042,
+      "envelope": [
+        0.0,
+        0.0042
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": 0.0025,
+      "n": 6
+    },
+    "d2_depth": {
+      "mean": 0.0004,
+      "amplitude": 0.0013,
+      "envelope": [
+        0.0,
+        0.0013
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": 0.0009,
+      "n": 6
+    },
+    "d2_spread": {
+      "mean": 0.0003,
+      "amplitude": 0.0007,
+      "envelope": [
+        0.0,
+        0.0007
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": 0.0005,
+      "n": 6
+    },
+    "asg_dist": {
+      "mean": 0.0791,
+      "amplitude": 0.1019,
+      "envelope": [
+        0.0006,
+        0.1025
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": 0.0481,
+      "n": 6
+    },
+    "asg_argmax_k": {
+      "mean": 5.8333,
+      "amplitude": 2,
+      "envelope": [
+        5,
+        7
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": -0.4762,
+      "n": 6
+    },
+    "asg_entropy": {
+      "mean": 2.7691,
+      "amplitude": 0.005,
+      "envelope": [
+        2.7676,
+        2.7726
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": -0.0025,
+      "n": 6
+    },
+    "asg_cat": {
+      "mean": 0.0092,
+      "amplitude": 0.0115,
+      "envelope": [
+        0.0001,
+        0.0116
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": 0.006,
+      "n": 6
+    },
+    "exam_lift": {
+      "mean": null,
+      "amplitude": null,
+      "envelope": null,
+      "dominant_period_steps": null,
+      "trend_per_1000": null,
+      "n": 0
+    },
+    "exam_acc": {
+      "mean": null,
+      "amplitude": null,
+      "envelope": null,
+      "dominant_period_steps": null,
+      "trend_per_1000": null,
+      "n": 0
+    },
+    "mid_word_lift": {
+      "mean": null,
+      "amplitude": null,
+      "envelope": null,
+      "dominant_period_steps": null,
+      "trend_per_1000": null,
+      "n": 0
+    },
+    "mid_vis_err": {
+      "mean": 0.1087,
+      "amplitude": 0.6238,
+      "envelope": [
+        0.0021,
+        0.6259
+      ],
+      "dominant_period_steps": null,
+      "trend_per_1000": -0.3007,
+      "n": 6
+    },
+    "div_bg": {
+      "mean": null,
+      "amplitude": null,
+      "envelope": null,
+      "dominant_period_steps": null,
+      "trend_per_1000": null,
+      "n": 0
+    },
+    "div_id": {
+      "mean": null,
+      "amplitude": null,
+      "envelope": null,
+      "dominant_period_steps": null,
+      "trend_per_1000": null,
+      "n": 0
+    },
+    "div_nuis": {
+      "mean": null,
+      "amplitude": null,
+      "envelope": null,
+      "dominant_period_steps": null,
+      "trend_per_1000": null,
+      "n": 0
+    }
+  },
+  "columns": [
+    {
+      "t": 300,
+      "num": 0.0,
+      "den": 0.0,
+      "ratio": null,
+      "proto": 2.4e-05,
+      "d2_depth": 0.000105,
+      "d2_spread": 8.8e-05,
+      "asg_dist": 0.000612,
+      "asg_argmax_k": 7,
+      "asg_entropy": 2.772589,
+      "asg_cat": 8.53203e-05,
+      "asg_cross_cat": 0.000580184,
+      "asg_within_cat": 0.000647547,
+      "sep_cat": 0.495749,
+      "sep_dist": 0.505105,
+      "sep_a": 0.547324,
+      "evo_common": 2.73068,
+      "evo_diff": 7.53043e-15,
+      "evo_ratio": 362619000000000.0,
+      "grad_common": 1.68919e-08,
+      "grad_diff": 1.5045e-18,
+      "grad_ratio": 11227600000.0,
+      "pairwise_emit": 1.91052e-07,
+      "exam_lift": null,
+      "exam_acc": null,
+      "exam_n": 0,
+      "probe_exam_lift": null,
+      "probe_exam_n": 0,
+      "mid_word_lift": null,
+      "mid_vis_err": 0.62594,
+      "pos_err_word": {},
+      "pos_err_vis": {
+        "p1": 0.77191,
+        "p13-48": 0.599,
+        "p2": 0.29139,
+        "p3": 1.27427,
+        "p4-6": 0.57531,
+        "p7-12": 0.64257
+      }
+    },
+    {
+      "t": 600,
+      "num": 0.0,
+      "den": 0.001286,
+      "ratio": 3.7e-05,
+      "proto": 0.002587,
+      "d2_depth": 4e-05,
+      "d2_spread": 4e-05,
+      "asg_dist": 0.08072,
+      "asg_argmax_k": 5,
+      "asg_entropy": 2.769884,
+      "asg_cat": 0.0094197,
+      "asg_cross_cat": 0.0765194,
+      "asg_within_cat": 0.0855202,
+      "sep_cat": 0.471302,
+      "sep_dist": 0.546576,
+      "sep_a": 0.695399,
+      "evo_common": 0.161419,
+      "evo_diff": 8.29211e-16,
+      "evo_ratio": 194665000000000.0,
+      "grad_common": 9.28192e-09,
+      "grad_diff": 1.1548e-10,
+      "grad_ratio": 80.3766,
+      "pairwise_emit": 0.00178506,
+      "exam_lift": null,
+      "exam_acc": null,
+      "exam_n": 0,
+      "probe_exam_lift": null,
+      "probe_exam_n": 0,
+      "mid_word_lift": null,
+      "mid_vis_err": 0.0141953,
+      "pos_err_word": {},
+      "pos_err_vis": {
+        "p1": 0.01303,
+        "p13-48": 0.01422,
+        "p2": 0.01136,
+        "p3": 0.01731,
+        "p4-6": 0.01306,
+        "p7-12": 0.01429
+      }
+    },
+    {
+      "t": 900,
+      "num": 0.0,
+      "den": 0.002117,
+      "ratio": 3.3e-05,
+      "proto": 0.003661,
+      "d2_depth": 1e-05,
+      "d2_spread": 1e-05,
+      "asg_dist": 0.101817,
+      "asg_argmax_k": 6,
+      "asg_entropy": 2.767935,
+      "asg_cat": 0.0113835,
+      "asg_cross_cat": 0.0963452,
+      "asg_within_cat": 0.10807,
+      "sep_cat": 0.470452,
+      "sep_dist": 0.556655,
+      "sep_a": 0.66999,
+      "evo_common": 0.00533582,
+      "evo_diff": 1.21776e-15,
+      "evo_ratio": 4381680000000.0,
+      "grad_common": 1.0756e-09,
+      "grad_diff": 3.36881e-10,
+      "grad_ratio": 3.19281,
+      "pairwise_emit": 0.00300231,
+      "exam_lift": null,
+      "exam_acc": null,
+      "exam_n": 0,
+      "probe_exam_lift": null,
+      "probe_exam_n": 0,
+      "mid_word_lift": null,
+      "mid_vis_err": 0.00485344,
+      "pos_err_word": {},
+      "pos_err_vis": {
+        "p1": 0.00614,
+        "p13-48": 0.00504,
+        "p2": 0.00425,
+        "p3": 0.00372,
+        "p4-6": 0.00516,
+        "p7-12": 0.00483
+      }
+    },
+    {
+      "t": 1200,
+      "num": 0.0,
+      "den": 0.002196,
+      "ratio": 3.5e-05,
+      "proto": 0.003856,
+      "d2_depth": 2.2e-05,
+      "d2_spread": 3.3e-05,
+      "asg_dist": 0.102512,
+      "asg_argmax_k": 6,
+      "asg_entropy": 2.767632,
+      "asg_cat": 0.0115906,
+      "asg_cross_cat": 0.096953,
+      "asg_within_cat": 0.108864,
+      "sep_cat": 0.470412,
+      "sep_dist": 0.566166,
+      "sep_a": 0.655055,
+      "evo_common": 7.36193e-05,
+      "evo_diff": 1.5033e-15,
+      "evo_ratio": 48971900000.0,
+      "grad_common": 4.42626e-11,
+      "grad_diff": 3.69326e-10,
+      "grad_ratio": 0.119847,
+      "pairwise_emit": 0.0031288,
+      "exam_lift": null,
+      "exam_acc": null,
+      "exam_n": 0,
+      "probe_exam_lift": null,
+      "probe_exam_n": 0,
+      "mid_word_lift": null,
+      "mid_vis_err": 0.00263506,
+      "pos_err_word": {},
+      "pos_err_vis": {
+        "p1": 0.00255,
+        "p13-48": 0.00259,
+        "p2": 0.00265,
+        "p3": 0.00238,
+        "p4-6": 0.00257,
+        "p7-12": 0.00281
+      }
+    },
+    {
+      "t": 1500,
+      "num": 0.0,
+      "den": 0.002019,
+      "ratio": 3.9e-05,
+      "proto": 0.004178,
+      "d2_depth": 0.001152,
+      "d2_spread": 0.000693,
+      "asg_dist": 0.097037,
+      "asg_argmax_k": 5,
+      "asg_entropy": 2.768038,
+      "asg_cat": 0.0115064,
+      "asg_cross_cat": 0.0918299,
+      "asg_within_cat": 0.102988,
+      "sep_cat": 0.470682,
+      "sep_dist": 0.570167,
+      "sep_a": 0.650509,
+      "evo_common": 9.23755e-07,
+      "evo_diff": 1.55093e-15,
+      "evo_ratio": 595613000.0,
+      "grad_common": 1.6324e-10,
+      "grad_diff": 3.12331e-10,
+      "grad_ratio": 0.522651,
+      "pairwise_emit": 0.00287923,
+      "exam_lift": null,
+      "exam_acc": null,
+      "exam_n": 0,
+      "probe_exam_lift": null,
+      "probe_exam_n": 0,
+      "mid_word_lift": null,
+      "mid_vis_err": 0.00223617,
+      "pos_err_word": {},
+      "pos_err_vis": {
+        "p1": 0.00189,
+        "p13-48": 0.00216,
+        "p2": 0.00237,
+        "p3": 0.00213,
+        "p4-6": 0.00233,
+        "p7-12": 0.00225
+      }
+    },
+    {
+      "t": 1800,
+      "num": 0.0,
+      "den": 0.001836,
+      "ratio": 4.9e-05,
+      "proto": 0.00418,
+      "d2_depth": 0.001309,
+      "d2_spread": 0.000717,
+      "asg_dist": 0.091728,
+      "asg_argmax_k": 6,
+      "asg_entropy": 2.768476,
+      "asg_cat": 0.0114563,
+      "asg_cross_cat": 0.0869135,
+      "asg_within_cat": 0.0972296,
+      "sep_cat": 0.471085,
+      "sep_dist": 0.574808,
+      "sep_a": 0.645417,
+      "evo_common": 1.11592e-06,
+      "evo_diff": 2.04899e-15,
+      "evo_ratio": 544619000.0,
+      "grad_common": 6.31695e-11,
+      "grad_diff": 2.58178e-10,
+      "grad_ratio": 0.244674,
+      "pairwise_emit": 0.00262157,
+      "exam_lift": null,
+      "exam_acc": null,
+      "exam_n": 0,
+      "probe_exam_lift": null,
+      "probe_exam_n": 0,
+      "mid_word_lift": null,
+      "mid_vis_err": 0.00210644,
+      "pos_err_word": {},
+      "pos_err_vis": {
+        "p1": 0.00219,
+        "p13-48": 0.00191,
+        "p2": 0.00222,
+        "p3": 0.0017,
+        "p4-6": 0.00221,
+        "p7-12": 0.00234
+      }
+    }
+  ],
+  "occupancy": {},
+  "grad_split": {},
+  "masking_mix": {}
+}

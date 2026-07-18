@@ -1,0 +1,728 @@
+{
+  "arm": "exp19_wperm_B512",
+  "conv": [
+    21,
+    22,
+    24,
+    25
+  ],
+  "nonconv": [
+    20
+  ],
+  "full": {
+    "gate": "B7 exp19_cal \u2014 floor-audit law (op = argmax separation on this B's null, ledger 42)",
+    "arm": "exp19_wperm_B512",
+    "read": "full",
+    "band": 0.64,
+    "converters": [
+      21,
+      22,
+      24,
+      25
+    ],
+    "nonconverters": [
+      20
+    ],
+    "sweep": [
+      {
+        "width": 300,
+        "onsets_per_window": 27.5,
+        "floor_q99": 4,
+        "floor_max": 4,
+        "conv_runs": {
+          "21": 12,
+          "22": 41,
+          "24": 95,
+          "25": 349
+        },
+        "nonconv_runs": {
+          "20": 4
+        },
+        "n_clear": 4,
+        "nearest_conv": 12,
+        "separation": 8,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 8
+      },
+      {
+        "width": 350,
+        "onsets_per_window": 32.1,
+        "floor_q99": 3,
+        "floor_max": 3,
+        "conv_runs": {
+          "21": 10,
+          "22": 48,
+          "24": 121,
+          "25": 202
+        },
+        "nonconv_runs": {
+          "20": 3
+        },
+        "n_clear": 4,
+        "nearest_conv": 10,
+        "separation": 7,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 7
+      },
+      {
+        "width": 400,
+        "onsets_per_window": 36.7,
+        "floor_q99": 3,
+        "floor_max": 3,
+        "conv_runs": {
+          "21": 10,
+          "22": 42,
+          "24": 108,
+          "25": 262
+        },
+        "nonconv_runs": {
+          "20": 3
+        },
+        "n_clear": 4,
+        "nearest_conv": 10,
+        "separation": 7,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 7
+      },
+      {
+        "width": 450,
+        "onsets_per_window": 41.2,
+        "floor_q99": 2,
+        "floor_max": 2,
+        "conv_runs": {
+          "21": 15,
+          "22": 37,
+          "24": 123,
+          "25": 232
+        },
+        "nonconv_runs": {
+          "20": 2
+        },
+        "n_clear": 4,
+        "nearest_conv": 15,
+        "separation": 13,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 13
+      },
+      {
+        "width": 500,
+        "onsets_per_window": 45.8,
+        "floor_q99": 2,
+        "floor_max": 2,
+        "conv_runs": {
+          "21": 7,
+          "22": 33,
+          "24": 111,
+          "25": 250
+        },
+        "nonconv_runs": {
+          "20": 2
+        },
+        "n_clear": 4,
+        "nearest_conv": 7,
+        "separation": 5,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 5
+      },
+      {
+        "width": 550,
+        "onsets_per_window": 50.4,
+        "floor_q99": 2,
+        "floor_max": 2,
+        "conv_runs": {
+          "21": 6,
+          "22": 30,
+          "24": 104,
+          "25": 227
+        },
+        "nonconv_runs": {
+          "20": 2
+        },
+        "n_clear": 4,
+        "nearest_conv": 6,
+        "separation": 4,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 4
+      },
+      {
+        "width": 600,
+        "onsets_per_window": 55.0,
+        "floor_q99": 3,
+        "floor_max": 3,
+        "conv_runs": {
+          "21": 6,
+          "22": 28,
+          "24": 95,
+          "25": 174
+        },
+        "nonconv_runs": {
+          "20": 3
+        },
+        "n_clear": 4,
+        "nearest_conv": 6,
+        "separation": 3,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 3
+      },
+      {
+        "width": 700,
+        "onsets_per_window": 64.2,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 5,
+          "22": 24,
+          "24": 81,
+          "25": 179
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 5,
+        "separation": 4,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 4
+      },
+      {
+        "width": 800,
+        "onsets_per_window": 73.3,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 8,
+          "22": 21,
+          "24": 72,
+          "25": 156
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 8,
+        "separation": 7,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 7
+      },
+      {
+        "width": 900,
+        "onsets_per_window": 82.5,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 7,
+          "22": 19,
+          "24": 64,
+          "25": 204
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 7,
+        "separation": 6,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 6
+      },
+      {
+        "width": 1200,
+        "onsets_per_window": 110.0,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 5,
+          "22": 14,
+          "24": 48,
+          "25": 154
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 5,
+        "separation": 4,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 4
+      },
+      {
+        "width": 1500,
+        "onsets_per_window": 137.5,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 4,
+          "22": 12,
+          "24": 38,
+          "25": 122
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 4,
+        "separation": 3,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 3
+      },
+      {
+        "width": 1706,
+        "onsets_per_window": 156.4,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 4,
+          "22": 10,
+          "24": 34,
+          "25": 108
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 4,
+        "separation": 3,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 3
+      },
+      {
+        "width": 2100,
+        "onsets_per_window": 192.5,
+        "floor_q99": 0,
+        "floor_max": 0,
+        "conv_runs": {
+          "21": 3,
+          "22": 9,
+          "24": 27,
+          "25": 87
+        },
+        "nonconv_runs": {
+          "20": 0
+        },
+        "n_clear": 4,
+        "nearest_conv": 3,
+        "separation": 3,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 3
+      },
+      {
+        "width": 3000,
+        "onsets_per_window": 275.0,
+        "floor_q99": 0,
+        "floor_max": 0,
+        "conv_runs": {
+          "21": 2,
+          "22": 6,
+          "24": 22,
+          "25": 99
+        },
+        "nonconv_runs": {
+          "20": 0
+        },
+        "n_clear": 4,
+        "nearest_conv": 2,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      }
+    ],
+    "operating_point": {
+      "width": 450,
+      "onsets_per_window": 41.2,
+      "floor_q99": 2,
+      "floor_max": 2,
+      "conv_runs": {
+        "21": 15,
+        "22": 37,
+        "24": 123,
+        "25": 232
+      },
+      "nonconv_runs": {
+        "20": 2
+      },
+      "n_clear": 4,
+      "nearest_conv": 15,
+      "separation": 13,
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 13
+    },
+    "operating_point_width": 450,
+    "w_width_floor": 300,
+    "underpowered": false,
+    "VERDICT": "powered (exp19_wperm_B512/full): \u2265 width floor = 300; operating point width 450 (41.2 onsets/win, separation 13 = nearest run 15 \u2212 floor q99 2); 4/4 converters clear; robust-vs-floor-max True (nearest \u2212 floor max = 13)",
+    "ok": true
+  },
+  "stratified": {
+    "gate": "B7 exp19_cal \u2014 floor-audit law (op = argmax separation on this B's null, ledger 42)",
+    "arm": "exp19_wperm_B512",
+    "read": "stratified",
+    "band": 0.64,
+    "converters": [
+      21,
+      22,
+      24,
+      25
+    ],
+    "nonconverters": [
+      20
+    ],
+    "sweep": [
+      {
+        "width": 300,
+        "onsets_per_window": 4.9,
+        "floor_q99": 6,
+        "floor_max": 6,
+        "conv_runs": {
+          "21": 10,
+          "22": 14,
+          "24": 21,
+          "25": 45
+        },
+        "nonconv_runs": {
+          "20": 6
+        },
+        "n_clear": 4,
+        "nearest_conv": 10,
+        "separation": 4,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 4
+      },
+      {
+        "width": 350,
+        "onsets_per_window": 5.7,
+        "floor_q99": 5,
+        "floor_max": 5,
+        "conv_runs": {
+          "21": 8,
+          "22": 24,
+          "24": 41,
+          "25": 65
+        },
+        "nonconv_runs": {
+          "20": 5
+        },
+        "n_clear": 4,
+        "nearest_conv": 8,
+        "separation": 3,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 3
+      },
+      {
+        "width": 400,
+        "onsets_per_window": 6.5,
+        "floor_q99": 4,
+        "floor_max": 4,
+        "conv_runs": {
+          "21": 7,
+          "22": 21,
+          "24": 61,
+          "25": 58
+        },
+        "nonconv_runs": {
+          "20": 4
+        },
+        "n_clear": 4,
+        "nearest_conv": 7,
+        "separation": 3,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 3
+      },
+      {
+        "width": 450,
+        "onsets_per_window": 7.3,
+        "floor_q99": 4,
+        "floor_max": 4,
+        "conv_runs": {
+          "21": 6,
+          "22": 19,
+          "24": 62,
+          "25": 100
+        },
+        "nonconv_runs": {
+          "20": 4
+        },
+        "n_clear": 4,
+        "nearest_conv": 6,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      },
+      {
+        "width": 500,
+        "onsets_per_window": 8.1,
+        "floor_q99": 4,
+        "floor_max": 4,
+        "conv_runs": {
+          "21": 6,
+          "22": 16,
+          "24": 55,
+          "25": 74
+        },
+        "nonconv_runs": {
+          "20": 4
+        },
+        "n_clear": 4,
+        "nearest_conv": 6,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      },
+      {
+        "width": 550,
+        "onsets_per_window": 8.9,
+        "floor_q99": 4,
+        "floor_max": 4,
+        "conv_runs": {
+          "21": 7,
+          "22": 15,
+          "24": 99,
+          "25": 53
+        },
+        "nonconv_runs": {
+          "20": 4
+        },
+        "n_clear": 4,
+        "nearest_conv": 7,
+        "separation": 3,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 3
+      },
+      {
+        "width": 600,
+        "onsets_per_window": 9.7,
+        "floor_q99": 3,
+        "floor_max": 3,
+        "conv_runs": {
+          "21": 5,
+          "22": 13,
+          "24": 91,
+          "25": 93
+        },
+        "nonconv_runs": {
+          "20": 3
+        },
+        "n_clear": 4,
+        "nearest_conv": 5,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      },
+      {
+        "width": 700,
+        "onsets_per_window": 11.3,
+        "floor_q99": 3,
+        "floor_max": 3,
+        "conv_runs": {
+          "21": 6,
+          "22": 12,
+          "24": 83,
+          "25": 104
+        },
+        "nonconv_runs": {
+          "20": 3
+        },
+        "n_clear": 4,
+        "nearest_conv": 6,
+        "separation": 3,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 3
+      },
+      {
+        "width": 800,
+        "onsets_per_window": 12.9,
+        "floor_q99": 3,
+        "floor_max": 3,
+        "conv_runs": {
+          "21": 4,
+          "22": 10,
+          "24": 71,
+          "25": 100
+        },
+        "nonconv_runs": {
+          "20": 3
+        },
+        "n_clear": 4,
+        "nearest_conv": 4,
+        "separation": 1,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 1
+      },
+      {
+        "width": 900,
+        "onsets_per_window": 14.6,
+        "floor_q99": 3,
+        "floor_max": 3,
+        "conv_runs": {
+          "21": 4,
+          "22": 9,
+          "24": 63,
+          "25": 66
+        },
+        "nonconv_runs": {
+          "20": 3
+        },
+        "n_clear": 4,
+        "nearest_conv": 4,
+        "separation": 1,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 1
+      },
+      {
+        "width": 1200,
+        "onsets_per_window": 19.4,
+        "floor_q99": 2,
+        "floor_max": 2,
+        "conv_runs": {
+          "21": 4,
+          "22": 15,
+          "24": 48,
+          "25": 60
+        },
+        "nonconv_runs": {
+          "20": 2
+        },
+        "n_clear": 4,
+        "nearest_conv": 4,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      },
+      {
+        "width": 1500,
+        "onsets_per_window": 24.3,
+        "floor_q99": 2,
+        "floor_max": 2,
+        "conv_runs": {
+          "21": 4,
+          "22": 12,
+          "24": 39,
+          "25": 56
+        },
+        "nonconv_runs": {
+          "20": 2
+        },
+        "n_clear": 4,
+        "nearest_conv": 4,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      },
+      {
+        "width": 1706,
+        "onsets_per_window": 27.6,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 3,
+          "22": 10,
+          "24": 34,
+          "25": 73
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 3,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      },
+      {
+        "width": 2100,
+        "onsets_per_window": 34.0,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 3,
+          "22": 9,
+          "24": 27,
+          "25": 59
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 3,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      },
+      {
+        "width": 3000,
+        "onsets_per_window": 48.5,
+        "floor_q99": 1,
+        "floor_max": 1,
+        "conv_runs": {
+          "21": 3,
+          "22": 6,
+          "24": 19,
+          "25": 41
+        },
+        "nonconv_runs": {
+          "20": 1
+        },
+        "n_clear": 4,
+        "nearest_conv": 3,
+        "separation": 2,
+        "all_clear": true,
+        "all_clear_robust": true,
+        "separation_vs_floor_max": 2
+      }
+    ],
+    "operating_point": {
+      "width": 300,
+      "onsets_per_window": 4.9,
+      "floor_q99": 6,
+      "floor_max": 6,
+      "conv_runs": {
+        "21": 10,
+        "22": 14,
+        "24": 21,
+        "25": 45
+      },
+      "nonconv_runs": {
+        "20": 6
+      },
+      "n_clear": 4,
+      "nearest_conv": 10,
+      "separation": 4,
+      "all_clear": true,
+      "all_clear_robust": true,
+      "separation_vs_floor_max": 4
+    },
+    "operating_point_width": 300,
+    "w_width_floor": 300,
+    "underpowered": false,
+    "VERDICT": "powered (exp19_wperm_B512/stratified): \u2265 width floor = 300; operating point width 300 (4.9 onsets/win, separation 4 = nearest run 10 \u2212 floor q99 6); 4/4 converters clear; robust-vs-floor-max True (nearest \u2212 floor max = 4)",
+    "ok": true
+  }
+}
