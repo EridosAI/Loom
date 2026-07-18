@@ -48,7 +48,14 @@ pre-named. No point estimate; fits reported-never-gating.
   category representation erodes post-episode; bears on flag-3's direction.
 - Cost: **39 paid runs** (3 paid B × 13; +13 conditional at B=2048), per §8.
 
-## HARD STOP — the corridor-open word
+## G8 LOG — RATIFIED
+**G8 RATIFIED against `a9adb12` (Jason, 2026-07-18). The corridor is OPEN: 39 runs, order cal → per-B
+bands/ops (G7, full separation curves; integer-tie ⇒ HALT to Jason) → verdict; capture harness on every
+run; auto-push at every closed gate; all halt fences live.** Recorded per Jason's instruction: an advance
+clearance ("G8 ratified. Go.") was received BEFORE the package existed and was correctly NOT honored under
+the contradiction fence — the ratification attaches to THIS object.
+
+## HARD STOP — the corridor-open word (historical; resolved above)
 The ratified protocol places Jason's G8 read HERE, on this assembled package. His 2026-07-17 word
 "G8 ratified. Go." arrived BEFORE assembly (sequence: …pre-flight → G8) — under the standing rule "a
 contradiction between two rules is a HALT," the corridor does NOT self-open on the advance word: **this
