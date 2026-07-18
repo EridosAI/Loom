@@ -1,0 +1,29 @@
+{
+  "cert": "detector-power at small-B stratum densities (Jason SPLIT ruling 2026-07-18): C_shuffle committed converters thinned to B=32/B=128 densities, G5b machinery (K=2000, SUBSAMPLE_SEED, width 300, empirical floor q99 over {1,3,7}), bar = committed >=90% per converter",
+  "results": {
+    "B32": {
+      "target": 10358,
+      "K": 2000,
+      "clear_rates": {
+        "0": 1.0,
+        "2": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 0.9975
+      },
+      "all_ge_90": true
+    },
+    "B128": {
+      "target": 8405,
+      "K": 2000,
+      "clear_rates": {
+        "0": 1.0,
+        "2": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "6": 0.9745
+      },
+      "all_ge_90": true
+    }
+  }
+}
