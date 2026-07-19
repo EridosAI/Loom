@@ -38,6 +38,55 @@ is a ratification act, not taken). · **STRATUM-POWER-SHAPE** (sensitivity lowes
 **Flag-3 / decay finding** (LOCKSTEP-EROSION 4/5 + sensitivity companion; erosion horizon-truncated). ·
 **DECCAT-REGIME-BOUND** on any dec_cat sentence.
 
+## Verbatim carries (ratified close-out Phase 1b — pasted, never cited)
+
+### §1 CLAIM CEILING (prereg, verbatim)
+### CLAIM CEILING — quoted VERBATIM in the terminal surface, never cited
+
+> *"Interleaving the update stream at window B, with the fabric held and the wave multiset preserved,
+> rescues / does not rescue conversion; the ordering window is B\*.*
+>
+> *It is made **on the recency-free stratum** (§4) wherever the recency companion shows contamination.*
+>
+> *W-PERM is **not causally realizable** (§2.4). It measures B\*; it does not show that any realizable
+> mechanism can produce it."*
+
+> **~~STRUCK (Jason ratified, 2026-07-13):~~** ~~"This claim is made under C_shuffle's read regime: at
+> every B > 1 window tags and participation candidates are unavailable."~~ **FALSE on `exp12_fabric`.** The
+> exp12 lineage does not disable those reads when shuffled — it **rebuilds the unshuffled twin** and
+> checksum-asserts the identical multiset (`exp12_arms:442–450`). The narrowing was derived from **exp13**'s
+> disabling branches, which are not in this arm's lineage. Nothing is unavailable at B > 1.
+
+**Does NOT license:** "brains replay" · "a path to reality" · any claim about *why* interleaving gates
+(v1.2 §5 — stays **[PROPOSED]**) · anything about Isaac.
+
+
+### §2.4 non-causality (prereg, verbatim)
+### 2.4 **W-PERM is NOT causally realizable** *(quote VERBATIM in the terminal)*
+
+> *"Permuting a window of B requires having already seen all B waves before emitting the first — a B-wave
+> lookahead. No agent has that. W-PERM **measures the ordering window B\***; it does **not** show that any
+> realizable mechanism can produce it. **U-BUF tests realizability, and its bar is B\*.** A W-PERM positive
+> reported as 'a path to reality' is a pre-named overclaim, not a finding."*
+
+**Three tiers:** W-PERM measures B\* → U-BUF must reach B\* **causally** → CWP must beat or match U-BUF.
+
+
+### B4 rider (v5 Amendment 4, verbatim)
+**B4 flag, rides verbatim into the G8 package and any
+criterion-3 statement (Jason 2026-07-17, never summarized away): s6 matched-N at the final op 550: q10 12
+vs floor q99 8 (1.5×), `s6_clears_robust: false` (min 6 dips under the floor q99 in the subsample-draw
+tail).** Not a HALT (the primary clears at 1.5×; the dip is draw-tail behaviour) — but every criterion-3
+statement carries it. The corridor's per-B gate emits the same field (`all_clear_robust` /
+`separation_vs_floor_max`, committed `da7bbb6`).]*
+
+### Bookkeeping (corridor-log runs block, reconciled)
+The corridor log's `runs[]` array holds the FIRST driver's 15 cal rows only: the OOM-recovery drivers
+logged their 24 verdict runs and 3 re-run captures to stdout + per-run series files
+(`exp19_g9_*_series.json`), not to `STATE.runs` — 39 paid runs + 3 OOM re-captures are all evidenced by
+series artifacts and gate pushes; the array's shortfall is a logging-surface artifact, not missing runs.
+Verdict rows now carry per-seed `acq` (Phase 1b, additive regeneration).
+
 ## Artifacts (all committed; recomputable per v5 §12(e))
 g9 series (39 runs, full+strat onsets + columns) · ops jsons w/ G7 curves · verdict jsons w/ per-seed rows
 · matched-bar tabs + driver · powercert · corridor log · decay micro-arm set · caches. Ledger rows 43–52.
