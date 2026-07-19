@@ -1,0 +1,276 @@
+{
+  "tab": "B9 matched-bar tab (EXP19 floor-audit family: band 0.64 \u00d7 width \u00d7 sim-floor certification)",
+  "read": "full",
+  "cells": [
+    "B512",
+    "BT"
+  ],
+  "bars": [
+    {
+      "bar": {
+        "band": 0.64,
+        "width": 450,
+        "owner": "B512"
+      },
+      "a": {
+        "name": "B512",
+        "k": 6,
+        "n": 8,
+        "certified": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "runs": {
+          "0": 7,
+          "1": 2,
+          "2": 3,
+          "3": 6,
+          "4": 118,
+          "5": 65,
+          "6": 60,
+          "7": 21
+        },
+        "floor_heights": {
+          "0": 5,
+          "1": 6,
+          "2": 5,
+          "3": 5,
+          "4": 35,
+          "5": 15,
+          "6": 41,
+          "7": 7
+        },
+        "p_hats": {
+          "0": 0.5323,
+          "1": 0.521,
+          "2": 0.5326,
+          "3": 0.533,
+          "4": 0.6728,
+          "5": 0.6095,
+          "6": 0.6789,
+          "7": 0.5392
+        },
+        "floor_median": 6.5,
+        "floor_ceiling": 41,
+        "ceiling_carrier": 6,
+        "separations": {
+          "0": 2,
+          "1": -4,
+          "2": -2,
+          "3": 1,
+          "4": 83,
+          "5": 50,
+          "6": 19,
+          "7": 14
+        }
+      },
+      "b": {
+        "name": "BT",
+        "k": 6,
+        "n": 8,
+        "certified": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "runs": {
+          "0": 57,
+          "1": 5,
+          "2": 61,
+          "3": 2,
+          "4": 23,
+          "5": 61,
+          "6": 60,
+          "7": 2
+        },
+        "floor_heights": {
+          "0": 19,
+          "1": 4,
+          "2": 5,
+          "3": 4,
+          "4": 6,
+          "5": 7,
+          "6": 6,
+          "7": 5
+        },
+        "p_hats": {
+          "0": 0.6273,
+          "1": 0.5068,
+          "2": 0.5247,
+          "3": 0.5003,
+          "4": 0.5336,
+          "5": 0.541,
+          "6": 0.5497,
+          "7": 0.4973
+        },
+        "floor_median": 5.5,
+        "floor_ceiling": 19,
+        "ceiling_carrier": 0,
+        "separations": {
+          "0": 38,
+          "1": 1,
+          "2": 56,
+          "3": -2,
+          "4": 17,
+          "5": 54,
+          "6": 54,
+          "7": -3
+        }
+      },
+      "fisher_a_ge_b": 0.7153846153846154,
+      "fisher_model": "independent-groups exact (hypergeometric margins); CONTEXT-ONLY \u2014 cells share seeds, paired column is evidence-grade",
+      "seed_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "paired_exact_a_ge_b": 0.6875
+    },
+    {
+      "bar": {
+        "band": 0.64,
+        "width": 300,
+        "owner": "BT"
+      },
+      "a": {
+        "name": "B512",
+        "k": 6,
+        "n": 8,
+        "certified": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "runs": {
+          "0": 11,
+          "1": 4,
+          "2": 3,
+          "3": 9,
+          "4": 151,
+          "5": 98,
+          "6": 75,
+          "7": 32
+        },
+        "floor_heights": {
+          "0": 8,
+          "1": 6,
+          "2": 7,
+          "3": 8,
+          "4": 36,
+          "5": 15,
+          "6": 38,
+          "7": 8
+        },
+        "p_hats": {
+          "0": 0.5327,
+          "1": 0.5208,
+          "2": 0.5327,
+          "3": 0.5327,
+          "4": 0.6733,
+          "5": 0.609,
+          "6": 0.6788,
+          "7": 0.5395
+        },
+        "floor_median": 8.0,
+        "floor_ceiling": 38,
+        "ceiling_carrier": 6,
+        "separations": {
+          "0": 3,
+          "1": -2,
+          "2": -4,
+          "3": 1,
+          "4": 115,
+          "5": 83,
+          "6": 37,
+          "7": 24
+        }
+      },
+      "b": {
+        "name": "BT",
+        "k": 5,
+        "n": 8,
+        "certified": [
+          0,
+          2,
+          4,
+          5,
+          6
+        ],
+        "runs": {
+          "0": 85,
+          "1": 3,
+          "2": 60,
+          "3": 3,
+          "4": 36,
+          "5": 77,
+          "6": 90,
+          "7": 3
+        },
+        "floor_heights": {
+          "0": 21,
+          "1": 6,
+          "2": 8,
+          "3": 6,
+          "4": 7,
+          "5": 8,
+          "6": 10,
+          "7": 6
+        },
+        "p_hats": {
+          "0": 0.6276,
+          "1": 0.5069,
+          "2": 0.5251,
+          "3": 0.5005,
+          "4": 0.5332,
+          "5": 0.541,
+          "6": 0.55,
+          "7": 0.4975
+        },
+        "floor_median": 7.5,
+        "floor_ceiling": 21,
+        "ceiling_carrier": 0,
+        "separations": {
+          "0": 64,
+          "1": -3,
+          "2": 52,
+          "3": -3,
+          "4": 29,
+          "5": 69,
+          "6": 80,
+          "7": -3
+        }
+      },
+      "fisher_a_ge_b": 0.5,
+      "fisher_model": "independent-groups exact (hypergeometric margins); CONTEXT-ONLY \u2014 cells share seeds, paired column is evidence-grade",
+      "seed_overlap": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "paired_exact_a_ge_b": 0.5
+    }
+  ],
+  "bars_coincide": false,
+  "evidence_rule": "cross-cell counts are evidence ONLY inside a matched row (one bar, both cells); own-bar counts across DIFFERENT bars are context-only and carry no statistic \u2014 unlike-bar comparison is the F6-A error and is structurally absent here. For cells with a nonempty seed_overlap the PAIRED exact column is the evidence-grade p and the independent-groups Fisher is context-only. bars_coincide=True means ONE detector \u2014 never quote it as two-bar robustness.",
+  "floor_rule": "separations are per-seed observed_run \u2212 OWN sim null max at that bar; each seed's null is simulated at ITS OWN p_hat, which an episode INFLATES \u2014 floor_ceiling (max, with ceiling_carrier named) is a certification ENVELOPE, not the phantom floor; cross-cell floor ordering reads on floor_median / per-seed heights with p_hats visible, and the evidence-grade phantom-floor ordering (non-converter-labeled) is computed downstream where labels are lawful. Never read one cell's separation against another cell's floor (ledger 43)."
+}
