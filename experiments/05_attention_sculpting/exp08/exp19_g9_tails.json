@@ -1,0 +1,77 @@
+{
+  "cell": "LATE-RESCUE-IN-TAIL (descriptive-only; v5 A10; enters no bracket/estimator/cross-arm sentence)",
+  "designation": "\u00a73 blind tail seeds {0,1,2,3} (ec8121a rule)",
+  "waiver": "B=32 WAIVED (Jason 2026-07-20, with record): three certified-dead decades below the knee (c=0 at 32/128 both reads; B* > 128), lowest information per run.",
+  "band": 0.64,
+  "mechanics": "from-scratch read_at=1M per ec8121a (resume failed its fidelity smoke; prefix-anchored to the committed g9 records)",
+  "per_arm": {
+    "exp19_wperm_B128": {
+      "0": {
+        "n_tail_cols": 1667,
+        "longest_band_run": 10,
+        "band_touch_cols": 278,
+        "exam_acc_tail_mean": 0.5516,
+        "dec_cat_tail_mean": 0.4027,
+        "prefix_anchor": "digit-exact vs committed g9 record"
+      },
+      "1": {
+        "n_tail_cols": 1667,
+        "longest_band_run": 3,
+        "band_touch_cols": 210,
+        "exam_acc_tail_mean": 0.5385,
+        "dec_cat_tail_mean": 0.3223,
+        "prefix_anchor": "digit-exact vs committed g9 record"
+      },
+      "2": {
+        "n_tail_cols": 1667,
+        "longest_band_run": 3,
+        "band_touch_cols": 218,
+        "exam_acc_tail_mean": 0.5443,
+        "dec_cat_tail_mean": 0.3623,
+        "prefix_anchor": "digit-exact vs committed g9 record"
+      },
+      "3": {
+        "n_tail_cols": 1667,
+        "longest_band_run": 3,
+        "band_touch_cols": 186,
+        "exam_acc_tail_mean": 0.5374,
+        "dec_cat_tail_mean": 0.2969,
+        "prefix_anchor": "digit-exact vs committed g9 record"
+      }
+    },
+    "exp19_wperm_B512": {
+      "0": {
+        "n_tail_cols": 1667,
+        "longest_band_run": 97,
+        "band_touch_cols": 1176,
+        "exam_acc_tail_mean": 0.7595,
+        "dec_cat_tail_mean": 0.7886,
+        "prefix_anchor": "digit-exact vs committed g9 record"
+      },
+      "1": {
+        "n_tail_cols": 1667,
+        "longest_band_run": 3,
+        "band_touch_cols": 192,
+        "exam_acc_tail_mean": 0.5249,
+        "dec_cat_tail_mean": 0.3091,
+        "prefix_anchor": "digit-exact vs committed g9 record"
+      },
+      "2": {
+        "n_tail_cols": 1667,
+        "longest_band_run": 3,
+        "band_touch_cols": 174,
+        "exam_acc_tail_mean": 0.5246,
+        "dec_cat_tail_mean": 0.5008,
+        "prefix_anchor": "digit-exact vs committed g9 record"
+      },
+      "3": {
+        "n_tail_cols": 1667,
+        "longest_band_run": 128,
+        "band_touch_cols": 499,
+        "exam_acc_tail_mean": 0.6013,
+        "dec_cat_tail_mean": 0.5559,
+        "prefix_anchor": "digit-exact vs committed g9 record"
+      }
+    }
+  }
+}
