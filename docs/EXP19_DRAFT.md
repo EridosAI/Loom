@@ -9,7 +9,7 @@ c(B), floor-audit certified counts, single instrument end to end:
 
 | read | B=1 | B=32 | B=128 | B=512 | B=T |
 |---|---|---|---|---|---|
-| full | 0 | 0 | 0 | 6/8 {0,3,4,5,6,7} | 5 |
+| full | 0 | 0 | 0 | 6/8 {0,3,4,5,6,7} — **s3 QUALIFIED, s0 flagged (see panel)** | 5 |
 | stratified | 0 | 0 | 0 | 4/8 {4,5,6,7} | 5 |
 
 **B\* ∈ (128, 512], BOTH reads.** Small-B zeros are instrument-certified arm-truthful (powercert PASS at
@@ -26,7 +26,7 @@ knife-edge pair IS the recency-carried pair: recency-free they read 7 v 15 and 5
 monotone 0, 0, 0, 4, 5.
 
 ## Cross-arm: EMBARGO RESOLVED BY THE TAB (no unlike-bar sentence survives)
-"6 > 5" was an unlike-bar artifact. The B9 matched-bar tabs (B512↔B=T, both reads, both bars each,
+The tab licenses "no EVIDENCE-GRADE excess at any matched bar" (paired-exact column governing) — NOT that the count difference was bar-manufactured: the 6v5 count recurs like-for-like at the matched 300 bar (paired 0.5), and dissolves at the matched 450 bar (6 v 6). The B9 matched-bar tabs (B512↔B=T, both reads, both bars each,
 `exp19_g9_tab_B512_vs_BT_*.json`):
 - **full @450 (B512's bar): 6 v 6** (B=T gains s1 like-for-like) — fisher 0.715, paired-exact 0.6875;
   @300: 6 v 5, fisher 0.500, paired 0.5. **No excess at any matched bar.**
@@ -46,5 +46,10 @@ anchor) · LATE-RESCUE-IN-TAIL (tail-only; latest onsets at small B run late —
 · fence event + SPLIT ruling + OOM recovery (deterministic; anchor recheck in flight) · no-prose rule held
 until this DRAFT.
 
-## Panel targets (ruled): (1) null-draw sensitivity of s0/s3's 1–2-window margins; (2) the matched-bar tab
-audit before any comparative phrasing; (3) the OOM-run anchors (recheck running).
+## Panel results (refute-default, 3 ruled targets; 1 MUST-FIX + 3 FLAG confirmed, all folded above)
+(1) Null-draw sensitivity: s3 0.110 / s0 0.860 / emphatic four 200-for-200 — folded into the decomposition;
+s3's law-bound violation = ledger 52. THE BRACKET IS STREAM-STABLE (200/200). (2) Tab audit: construction
+reproduced bit-for-bit by the panel from raw artifacts; phrasing corrected ("evidence-grade" not
+"artifact"); the one-shot tab driver now committed (provenance rule). (3) OOM anchors: structural audit
+CLEAN (no confirmed findings); deterministic bit-identity recapture of B32 s0–s2 = the last open check
+before the terminal surface.
