@@ -25,6 +25,14 @@ knife-edge pair IS the recency-carried pair: recency-free they read 7 v 15 and 5
 (§4's predicted failure surface). Strip the channel: the anchor reads 4, and the stratified curve is
 monotone 0, 0, 0, 4, 5.
 
+**Panel stream-stability (the MUST-FIX, folded): s3's certification is a MINORITY-DRAW event — 22/200 =
+0.110 independent simulator streams (modal null_max 6 = its observed run), and its true per-draw tail
+4.2e-4 VIOLATES the law's advertised p<1/5000 bound (ledger 52). s0 certifies in 172/200 = 0.860
+(law-compliant, tail 2.9e-5; modal margin ONE window). The headline "6/8" reproduces in 9.5% of stream
+families; the modal full count is 5. The emphatic four are unflippable (200/200 each; s6 closest, flip
+≤1.5%). THE BRACKET SURVIVES ALL 200 STREAMS (B512 full ≥ 4 in every stream; small-B zeros untouched).
+s3 therefore rides QUALIFIED, never as an unqualified certified seed.**
+
 ## Cross-arm: EMBARGO RESOLVED BY THE TAB (no unlike-bar sentence survives)
 The tab licenses "no EVIDENCE-GRADE excess at any matched bar" (paired-exact column governing) — NOT that the count difference was bar-manufactured: the 6v5 count recurs like-for-like at the matched 300 bar (paired 0.5), and dissolves at the matched 450 bar (6 v 6). The B9 matched-bar tabs (B512↔B=T, both reads, both bars each,
 `exp19_g9_tab_B512_vs_BT_*.json`):
