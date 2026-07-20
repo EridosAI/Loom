@@ -2787,3 +2787,45 @@ calibrate-in-regime (nothing transports). Related: §10.27 (orbit, the smooth en
 > ordering window B\* on the held `exp12_dwell` fabric, with dwell-length titration re-banked behind it
 > (RE-PRICED — v1.2 §12.1). Cross-refs: `MECHANISM_MAP_v1_2_RECONCILED.md` §5.3 (SATISFIED, isolated-diagnostic
 > rider), `PROJECT_OPS_POSITIONING.md` §3 (U-BUF→W-PERM re-spec).
+
+## §10.29 — EXP19 W-PERM (ordering window): **CLOSED 2026-07-20 — THE ORDERING WINDOW IS BRACKETED: B\* ∈ (128, 512], ON THE RECENCY-FREE STRATUM, STREAM-STABLE** (ratified touch 3; Jason)
+
+**HEADLINE (the stratified bracket — grounds ruled: the claim ceiling's stratum clause + RESCUE-MONOTONE's
+own condition + the stable core):** c_strat(B) = 0, 0, 0, **4/8**, 5 across B ∈ {1, 32, 128, 512, T};
+**B\* ∈ (128, 512]** (ratified A8 bracket rule; no point estimate), **stream-stable in 200/200 independent
+simulator families** (`exp19_stream_stability.json`). Single instrument end to end (floor audit, band 0.64;
+per-B widths argmax-cut on each B's own null; per-B underpower gate). Small-B zeros are **arm-truthful on
+the PASS-certified instrument** (powercert: C's converters clear at both small-B densities, ≥90% bar).
+
+**Full read, qualified companion:** c_full = 0, 0, 0, 6/8, 5 — **s3 QUALIFIED** (certification = a 0.110
+minority-draw event whose stream-marginal tail 4.2e-4 exceeds the law's advertised 2e-4 — ledger 52),
+s0 0.860 (modal margin one window); modal family count **5**. The knife-edge pair {0,3} IS the
+recency-carried pair (RECENCY-CARRIED fires per-seed on {0,3}); the emphatic four are the stratified core.
+
+**Cross-arm (the matched-bar sentence, tab-governed):** **no evidence-grade excess at any matched bar**
+(full @450: 6 v 6, paired-exact 0.6875; @300: 6 v 5, 0.5; stratified: B=T ≥ B512 at every matched bar).
+
+**CELL MAPPING (ratified):** **RESCUE-MONOTONE fires on the stratified primary → U-BUF UNLOCKED, bar =
+B\* ∈ (128, 512].**
+
+**THE FIREWALL (verbatim carries in the terminal surface; §1 claim ceiling + §2.4):** W-PERM measures the
+window and is **non-causal** — *why* interleaving gates stays **[PROPOSED]**; U-BUF tests realizability and
+its bar is B\*. **B4 flag (wherever criterion-3 is stated, never summarized away):** s6 matched-N at the
+final op 550: q10 12 vs floor q99 8 (1.5×), `s6_clears_robust: false`.
+
+**Tail record (descriptive; LATE-RESCUE-IN-TAIL its only cell; B=32 WAIVED with record):** in (500k, 1M]
+the two 500k knife-edge seeds become sustained late episodes — B512 s0 run 97 (dec_cat 0.789), s3 run 128
+(0.556); B512 s1/s2 + all B128 tails at noise. Enters no bracket, no estimator, no cross-arm sentence.
+
+**D2 CANON LINE:** *Recency is neither necessary (G5a: conversion survives on the zero-preceding stratum)
+nor sufficient (EXP16: removing the shortcut does not free content learning) for conversion.*
+
+**LEDGER-52 STANDING AMENDMENT (ratified):** *The floor-audit certification law's advertised tail bound is
+computed marginally over simulator streams, not conditionally on the pinned stream. A certification whose
+stream-marginal tail exceeds the law's own advertised bound rides QUALIFIED and never enters a headline
+count unqualified.*
+
+**ATTRIBUTION (Jason's wording direction, touch 3):** the finding belongs to **the campaign** — the
+corridor, its fences, and both chairs; the **s3 qualification to CC's panel**; the catches **as rowed**
+(ledgers 37–53). **BANK ORDER:** U-BUF first (the §5.3 rider ruled at its prereg — pre-flagged) → bracket
+refinement (informed by the B=128 tail) → decay follow-on (axis-tracking) → D3/D4.
