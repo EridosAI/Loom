@@ -2813,6 +2813,16 @@ window and is **non-causal** — *why* interleaving gates stays **[PROPOSED]**; 
 its bar is B\*. **B4 flag (wherever criterion-3 is stated, never summarized away):** s6 matched-N at the
 final op 550: q10 12 vs floor q99 8 (1.5×), `s6_clears_robust: false`.
 
+**§2.4 NON-CAUSALITY, PASTED VERBATIM** *(post-close patch, 2026-07-25 — the seat's post-close
+verification pass caught this section carrying §2.4 by citation only, against the prereg's own rule
+("carry verbatim, not by citation", `EXP19_ORDERING_WINDOW_PREREG.md:432`); ledger row 54; text =
+prereg §2.4, byte-exact)*:
+
+> *"Permuting a window of B requires having already seen all B waves before emitting the first — a B-wave
+> lookahead. No agent has that. W-PERM **measures the ordering window B\***; it does **not** show that any
+> realizable mechanism can produce it. **U-BUF tests realizability, and its bar is B\*.** A W-PERM positive
+> reported as 'a path to reality' is a pre-named overclaim, not a finding."*
+
 **Tail record (descriptive; LATE-RESCUE-IN-TAIL its only cell; B=32 WAIVED with record):** in (500k, 1M]
 the two 500k knife-edge seeds become sustained late episodes — B512 s0 run 97 (dec_cat 0.789), s3 run 128
 (0.556); B512 s1/s2 + all B128 tails at noise. Enters no bracket, no estimator, no cross-arm sentence.

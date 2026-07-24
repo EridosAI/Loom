@@ -71,6 +71,11 @@ is a ratification act, not taken). · **STRATUM-POWER-SHAPE** (sensitivity lowes
 
 **Three tiers:** W-PERM measures B\* → U-BUF must reach B\* **causally** → CWP must beat or match U-BUF.
 
+*[Post-close annotation, 2026-07-25 — the seat's post-close verification pass: this verbatim carry was
+present HERE at close (HEAD `0d6b102`); the omission was canon-side — §10.29 carried §2.4 by citation
+only, against the prereg's carry rule. Canon patched byte-exact in this commit (no duplicate paste here);
+ledger row 54.]*
+
 
 ### B4 rider (v5 Amendment 4, verbatim)
 **B4 flag, rides verbatim into the G8 package and any
