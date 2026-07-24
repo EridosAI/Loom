@@ -2837,5 +2837,5 @@ count unqualified.*
 
 **ATTRIBUTION (Jason's wording direction, touch 3):** the finding belongs to **the campaign** — the
 corridor, its fences, and both chairs; the **s3 qualification to CC's panel**; the catches **as rowed**
-(ledgers 37–53). **BANK ORDER:** U-BUF first (the §5.3 rider ruled at its prereg — pre-flagged) → bracket
+(ledgers 37–53). **BANK ORDER:** U-BUF first (the §5.3 rider ruled at its prereg — pre-flagged *[ruled 2026-07-24 → v1.2 §5.3-SAT-2]*) → bracket
 refinement (informed by the B=128 tail) → decay follow-on (axis-tracking) → D3/D4.
