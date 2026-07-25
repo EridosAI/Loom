@@ -241,6 +241,8 @@ def run_exp14_arm(arm_name: str, seed: int, *, read_at: int = READ_AT, h_max: in
     labels = loop._word_label(members_b, members_a)
 
     no_word = bool(spec.get("no_word", False))
+    ubuf_eb = spec.get("ubuf_K") is not None                  # EXP20 §3: E-B, this arm ONLY
+    eb_onsets = []
     buf = X12._fresh_buf()
     cols, occ, gsplit, mixes = [], {}, {}, {}
     onset_saved = False
@@ -248,6 +250,12 @@ def run_exp14_arm(arm_name: str, seed: int, *, read_at: int = READ_AT, h_max: in
         prev = t - 1
         # §13.10 probe read PRE-update (matched to the scheduled exam's timing)
         pl = X12._probe_exam_read(loop, prev) if bool(fab.is_probe_exam[prev]) else None
+        # EXP20 §3 E-B: at EVERY fabric onset exam, an eval-only forward on wave prev — the
+        # _probe_exam_read precedent (read-only, no-grad, RNG-guarded: zero draws, so K=1 REUSED
+        # stays bit-identical). PRE-update, matched to the scheduled exam's timing. The
+        # training-stash exam channel (E-A) rides untouched as the continuity companion.
+        if ubuf_eb and bool(fab.is_exam[prev]):
+            eb_onsets.append([prev, round(X12._probe_exam_read(loop, prev), 6)])
         # EXP16 §5: read-only mid-dwell word probe PRE-update, at exactly the mid-dwell word-coin
         # waves expo_midword converted to exposure (slot 1, NOT an onset exam). None otherwise.
         pmw = (X12._probe_midword_read(loop, prev)
@@ -294,6 +302,7 @@ def run_exp14_arm(arm_name: str, seed: int, *, read_at: int = READ_AT, h_max: in
                       if isinstance(v, float) else v) for k, v in c.items()}
                  for c in cols],
         occupancy=occ, grad_split=gsplit, masking_mix=mixes,
+        **({"eb_onsets": eb_onsets} if ubuf_eb else {}),      # EXP20 §3 (additive; ubuf arms only)
     )
     base.with_suffix(".json").write_text(json.dumps(rec, indent=2))
     print(f"exp14 {arm_name} s{seed}: onset={onset}  conv_PROPOSED={rec['conversion_onset_PROPOSED']}  "

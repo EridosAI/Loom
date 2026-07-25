@@ -155,6 +155,21 @@ def exp19_wperm(B: int) -> str:
     name = f"exp19_wperm_B{int(B)}"
     ARMS12.setdefault(name, dict(shuffled=True, wperm_B=int(B)))
     return name
+
+
+def exp20_ubuf(K: int) -> str:
+    """Register + return the EXP20 U-BUF arm at capacity K (prereg §2/§4). The certified-dead
+    exp12_dwell fabric HELD byte-identical (5.3-SAT-2: fabric-hash assert at G0); the ONLY change
+    is delivery — EXP12Loop.build_cells reads wave CONTENT (raw, cat) at fab.deliver[t]; exam and
+    scoring fields stay on the fabric timeline t. K=1 short-circuits (no deliver map, zero RNG) —
+    the REUSED anchor, bit-identity to exp12_dwell asserted at G0. K=2048 is the CONDITIONAL
+    escalation arm (prereg §4): registered here but DORMANT — build_exp12 refuses to build it
+    until the committed G5 ALL-PAID-DEAD escalation artifact exists (launch is the gate's pass
+    action, not a new ruling)."""
+    assert K >= 1, f"ubuf capacity K={K} out of range"
+    name = f"exp20_ubuf_K{int(K)}"
+    ARMS12.setdefault(name, dict(shuffled=False, ubuf_K=int(K)))
+    return name
 RIG1_ARMS = ("exp12_dwell", "exp12_shuffle")
 
 POS_BUCKETS = ((1, 1), (2, 2), (3, 3), (4, 6), (7, 12), (13, 48))
@@ -195,7 +210,8 @@ class EXP12Loop(A.EXP08Loop):
                               orbit_w_deg=v.get("orbit_w_deg"),
                               dwell_scatter=v.get("dwell_scatter", False),
                               scatter_r=v.get("scatter_r"),
-                              wperm_B=v.get("wperm_B"))
+                              wperm_B=v.get("wperm_B"),
+                              ubuf_K=v.get("ubuf_K"))
 
     def _make_stim(self):
         cfg = self.cfg
@@ -210,9 +226,15 @@ class EXP12Loop(A.EXP08Loop):
         cfg = self.cfg
         fab = self.stream
         assert t < fab.T, f"fabric exhausted at t={t} (T={fab.T}) — no wraparound in continual time"
-        raw = fab.raw[t:t + 1]                                # (1, D) precomputed wave
+        dt = t
+        if getattr(fab, "deliver", None) is not None:
+            # EXP20 U-BUF (prereg §2): wave CONTENT is delivered from the causal buffer;
+            # exam/scoring fields (mask_slot, is_exam, dwell_id) stay on the fabric timeline t.
+            # deliver exists ONLY on ubuf K>=2 fabrics (K=1 = identity short-circuit, no map).
+            dt = int(fab.deliver[t])
+        raw = fab.raw[dt:dt + 1]                              # (1, D) precomputed wave
         e_vis = self.vision.emit(raw)                         # (1, D) plastic, grad
-        wl = fab.cat[t:t + 1]
+        wl = fab.cat[dt:dt + 1]
         tokens = torch.tensor([self.curric.word_token(int(wl[0]), no_word=no_word)])
         e_word = self._vary_word(self.word.emit(tokens), tokens)   # identity hook (no jiggle)
         content = torch.stack([e_vis, e_word], dim=1)         # (1, n_slots, D)
@@ -425,6 +447,20 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
             assert float(_sels["r"]) == X_SCATTER_R, \
                 (f"scatter R {X_SCATTER_R} drifted from the freeze artifact ({_sels['r']}) — "
                  "amend-path: fail loudly")
+    if spec.get("ubuf_K") is not None:
+        # EXP20 §2 guards: U-BUF holds the certified-dead dwelled regime (5.3-SAT-2) — the flag
+        # is exclusive of every fabric/mask/order flag; probe machinery rides at the certified
+        # arm's rate (the K=1 REUSED anchor demands identical probe_rate to exp12_dwell records)
+        assert not (spec.get("shuffled") or spec.get("uniform_mask") or spec.get("word_ref")
+                    or spec.get("expo_word") or spec.get("expo_midword") or spec.get("no_word")
+                    or spec.get("dwell_orbit") or spec.get("dwell_scatter")
+                    or spec.get("wperm_B")), \
+            "ubuf arm holds the certified-dead dwelled regime (5.3-SAT-2) — exclusive"
+        if int(spec["ubuf_K"]) >= 2048:
+            _esc = OUTDIR / "exp20_escalation.json"
+            assert _esc.exists() and json.loads(_esc.read_text()).get("fired") is True, \
+                ("K=2048 is DORMANT (prereg §4): it builds only on the committed G5 "
+                 "ALL-PAID-DEAD escalation artifact (exp08/exp20_escalation.json, fired=true)")
     pin = constants.PinnedConstants()
     cfg = SculptConfig(seed=seed)
     cfg.W = 1                                                 # the wave-local pin (§3)
@@ -442,7 +478,8 @@ def build_exp12(arm_name: str, seed: int, steps: int, probe_rate: float = PROBE_
                       dwell_scatter=spec.get("dwell_scatter", False),         # SCATTER §1
                       scatter_r=(X_SCATTER_R if spec.get("scatter_frozen")
                                  else spec.get("scatter_r")),
-                      wperm_B=spec.get("wperm_B"))                            # EXP19 W-PERM
+                      wperm_B=spec.get("wperm_B"),                            # EXP19 W-PERM
+                      ubuf_K=spec.get("ubuf_K"))                              # EXP20 U-BUF
     loop = EXP12Loop(cfg, pin)
     return loop, spec, cfg
 

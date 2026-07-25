@@ -89,6 +89,12 @@ SEED_SWEEP = 100000              # EXP17 orbit heading/phase (dedicated; collisi
                                  # loop-side cfg.seed(+1/+2/+3), and the eval-time ephemeral
                                  # lattices at cadence 300 — prereg §8 F14). Registered in
                                  # `keys` CONDITIONALLY so pre-orbit manifests stay byte-identical.
+SEED_UBUF = 101000               # EXP20 U-BUF delivery map (dedicated; collision-audited vs the
+                                 # same lattices as SEED_SWEEP plus SEED_SWEEP itself at
+                                 # 100000-100025 — tree grep for 101000 clean at the build commit).
+                                 # Registered in `keys` CONDITIONALLY (K >= 2 only) so every
+                                 # pre-U-BUF manifest stays byte-identical; K=1 registers NOTHING
+                                 # (identity short-circuit, zero RNG consumption).
 
 
 def family() -> dict:
@@ -235,13 +241,27 @@ def block_perm(T: int, B: int, g: torch.Generator) -> torch.Tensor:
     return torch.cat(parts)
 
 
+def ubuf_map(T: int, K: int, g: torch.Generator) -> torch.Tensor:
+    """EXP20 U-BUF (prereg §2). Push-then-draw sliding FIFO, capacity K: at wave t (0-based),
+    deliver[t] ~ Uniform{max(0, t-K+1) .. t} — warm-up = sample from the current fill. CAUSAL by
+    construction (deliver[t] <= t); length T; exactly ONE rand per wave (fixed consumption). K=1
+    is NOT drawn here — build_fabric short-circuits it (deliver=None ≡ identity, zero RNG), so
+    the K=1 arm is bit-identical to exp12_dwell (the REUSED anchor, prereg §6 G0)."""
+    assert K >= 2, "K=1 short-circuits at build_fabric (identity, zero RNG consumption)"
+    idx = torch.arange(T)
+    lo = (idx - (K - 1)).clamp_min(0)
+    width = (idx - lo + 1).to(torch.float64)
+    u = torch.rand(T, generator=g, dtype=torch.float64)
+    return lo + (u * width).long()
+
+
 def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
                  probe_rate: float = 0.0, shuffled: bool = False,
                  uniform_mask: bool = False, word_ref: bool = False,
                  dwell_orbit: bool = False, orbit_r: float | None = None,
                  orbit_w_deg: int | None = None,
                  dwell_scatter: bool = False, scatter_r: float | None = None,
-                 wperm_B: int | None = None,
+                 wperm_B: int | None = None, ubuf_K: int | None = None,
                  _orbit_test_uncentered: bool = False,
                  _scatter_test_uncentered: bool = False) -> Fabric:
     """uniform_mask (the SPLITTING ARM, prereg §14): the mask POLICY at position-1 waves
@@ -280,6 +300,11 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
         "wperm_B (EXP19 W-PERM) requires shuffled — it replaces the shuffle-path perm constructor"
     assert wperm_B is None or not (dwell_orbit or dwell_scatter or uniform_mask or word_ref), \
         "wperm_B is exclusive of orbit/scatter/uniform_mask/word_ref (order-only on the dwelled fabric)"
+    assert ubuf_K is None or not (shuffled or dwell_orbit or dwell_scatter or uniform_mask
+                                  or word_ref or wperm_B is not None), \
+        "ubuf_K (EXP20 U-BUF) HOLDS the certified-dead dwelled fabric (5.3-SAT-2) — exclusive of " \
+        "every fabric/mask/order flag"
+    assert ubuf_K is None or ubuf_K >= 1, f"ubuf_K={ubuf_K} out of range"
     if dwell_orbit or dwell_scatter:
         # EXP17 §9 R2 (orbit) / SCATTER §1 — the ONLY consumers of SEED_SWEEP; conditional
         # registration keeps every pre-sweep manifest's substream_keys byte-identical (house
@@ -290,6 +315,12 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
             assert scatter_r is not None, "scatter arm needs a ball radius R"
         keys["sweep"] = SEED_SWEEP + seed
         g_sweep = torch.Generator().manual_seed(keys["sweep"])
+    deliver = None
+    if ubuf_K is not None and ubuf_K >= 2:
+        # EXP20 §2: conditional registration (the SEED_SWEEP precedent) — pre-generated at fabric
+        # attach; K=1 never reaches this branch (deliver stays None ≡ identity, zero RNG, no key).
+        keys["ubuf"] = SEED_UBUF + seed
+        deliver = ubuf_map(T, int(ubuf_K), torch.Generator().manual_seed(keys["ubuf"]))
 
     n_members = cfg.n_A * cfg.n_B
     rows = dict(member=[], dwell_id=[], pos=[], mask_slot=[], is_exam=[],
@@ -423,6 +454,10 @@ def build_fabric(stim: EXP12Stimulus, cfg, seed: int, T: int, *,
         dwell_member=torch.tensor(dwell_member), dwell_k=torch.tensor(dwell_k),
         cap_hits=cap_hits, truncated_last=truncated, shuffled=False, perm=None,
         substreams=keys)
+    if deliver is not None:
+        # EXP20 U-BUF: post-construction attach (the orbit-fields precedent) — content delivery
+        # index map; consumed ONLY by EXP12Loop.build_cells (exam/scoring fields stay on t)
+        fab.deliver = deliver
     if dwell_orbit:
         # §9 R6: the zero-reflection assert is computed on the ANCHOR path (never the pose-clip
         # counter — pose OU tails may clip ~1e-5/dwell, REPORTED via orbit_pose_clips); the

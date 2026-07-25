@@ -1,0 +1,25 @@
+{
+  "fixtures_observed_red": {
+    "causality_planted_t_plus_1": "CAUSALITY VIOLATION: deliver[41] = 42 > t \u2014 HALT",
+    "length_plant": "deliver length 99 != T 100 \u2014 HALT",
+    "cutter_hand_fixture": "W=1 clean / W=3 contaminated / W=inf contaminated \u2014 all as computed",
+    "empty_support_flagged": "support 0/3 at W=K flagged empty (the rider's red)",
+    "result": "ALL RED OBSERVED"
+  },
+  "G0": {
+    "fabric_hold": "all 10 fabric fields torch.equal at T=20000 (2.1s); substreams differ ONLY by 'ubuf'",
+    "manifest_anchor": "substream keys == committed verdict manifest s0 (fabric block)",
+    "k1_broken_observed_red": "one consumed draw from loop.gen -> record fields diverge: ['dynamics_panel', 'columns']",
+    "k1_reused": "K=1 == exp12_dwell digit-exact on every shared record field at N=2000 (6 columns); E-B additive (166 onset reads, zero draws)",
+    "committed_anchor": "pre-delta ref config differs (read_at=None, probe_rate=0.0) \u2014 dwell-vs-dwell anchor rides on the manifest key check in (b)",
+    "result": "PASS (red observed first)"
+  },
+  "G2": {
+    "seeds": [
+      0
+    ],
+    "halt_surfaces": [],
+    "result": "PASS",
+    "artifact": "exp08/exp20_g2_maps.json"
+  }
+}
