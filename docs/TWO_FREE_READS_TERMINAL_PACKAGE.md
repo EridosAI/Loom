@@ -97,8 +97,12 @@ Every seed ≤ 0.50 (the FAILS bar); none within reach of 0.90. **The licensed s
 only sentence this buys):** *"5.1's premise fails in-substrate; the CWP program closes before it opens"*
 — **on the word channel.**
 
-**Descriptive companions (no cells):** the MEAN word curve is monotone decreasing p1 → p13-48 in both
-quartiles (late s0: 0.711 → 0.627) — an average onset gradient exists, but the per-column strict spike
+**Descriptive companions (no cells):** the MEAN word curve is ~~monotone decreasing p1 → p13-48 in both
+quartiles~~ **[CORRECTED 2026-07-25 — CC's own catch at the canon gate, the clause had generalized from
+s0 (the comfortable-case species): measured 14/16 seed×quartile curves are strictly monotone (all 8
+early; 6/8 late) — exceptions both late-quartile: s7 (p2 above p1 by 0.00077) and s1 (p13-48 REBOUNDS
+to 1.05756, above every earlier bucket); 15/16 curves keep p1 > p13-48]** (late s0: 0.711 → 0.627) —
+an average onset gradient exists in 15 of 16 curves, but the per-column strict spike
 the premise requires fires in only 13–30% of late columns; the gap between "average gradient" and
 "reliable per-column spike" is what the estimator prices. Vis (recovery-shape only): p2 → p13-48 gently
 decreasing (late s0: 0.163 → 0.145). Shuffle contrast (flagged, context only): word dominance
