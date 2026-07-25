@@ -238,7 +238,9 @@ def g2(seeds=None):
     torch.set_num_threads(1)
     seeds = seeds if seeds is not None else VERDICT_SEEDS
     T = READ_AT_1M + 8
-    out = {"T": T, "read_at": READ_AT_1M, "per_seed": {}}
+    prior = OUTDIR / "exp20_g2_maps.json"
+    out = (json.loads(prior.read_text()) if prior.exists()
+           else {"T": T, "read_at": READ_AT_1M, "per_seed": {}})   # MERGE across invocations
     for s in seeds:
         t0 = time.time()
         loop, _sp, _c = X12.build_exp12("exp12_dwell", s, READ_AT_1M)

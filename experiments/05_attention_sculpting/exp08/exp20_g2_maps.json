@@ -1,0 +1,1287 @@
+{
+  "T": 1000008,
+  "read_at": 1000000,
+  "per_seed": {
+    "1": {
+      "K32": {
+        "multiplicity": {
+          "p_never": 0.36207,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            362074,
+            373741,
+            186974,
+            60084,
+            14097,
+            2581,
+            386,
+            55,
+            7,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91495,
+          "windows": {
+            "W=K": {
+              "support": 66778,
+              "frac": 0.72985,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 55044,
+              "frac": 0.60161,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K128": {
+        "multiplicity": {
+          "p_never": 0.36655,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            366546,
+            369055,
+            184768,
+            61123,
+            15127,
+            2831,
+            480,
+            63,
+            7,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91495,
+          "windows": {
+            "W=K": {
+              "support": 24773,
+              "frac": 0.27076,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 11374,
+              "frac": 0.12431,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 17,
+              "frac": 0.00019,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K512": {
+        "multiplicity": {
+          "p_never": 0.36799,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            367985,
+            367809,
+            183909,
+            61205,
+            15414,
+            3083,
+            502,
+            74,
+            14,
+            5,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91495,
+          "windows": {
+            "W=K": {
+              "support": 511,
+              "frac": 0.00559,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 47,
+              "frac": 0.00051,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K1": {
+        "multiplicity": {
+          "p_never": 0.0,
+          "mean": 1.0,
+          "max": 1,
+          "note": "identity \u2014 every wave delivered exactly once"
+        },
+        "support": {
+          "n_onsets": 91495,
+          "windows": {
+            "W=K": {
+              "support": 91495,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 91495,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      }
+    },
+    "2": {
+      "K32": {
+        "multiplicity": {
+          "p_never": 0.36144,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            361437,
+            375124,
+            185836,
+            60535,
+            14229,
+            2402,
+            389,
+            45,
+            3,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91382,
+          "windows": {
+            "W=K": {
+              "support": 66710,
+              "frac": 0.73001,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 55084,
+              "frac": 0.60279,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00018,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K128": {
+        "multiplicity": {
+          "p_never": 0.36631,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            366313,
+            369399,
+            184871,
+            60916,
+            15053,
+            2882,
+            485,
+            70,
+            10,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91382,
+          "windows": {
+            "W=K": {
+              "support": 24811,
+              "frac": 0.27151,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 11415,
+              "frac": 0.12492,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 17,
+              "frac": 0.00019,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K512": {
+        "multiplicity": {
+          "p_never": 0.36777,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            367770,
+            367995,
+            183905,
+            61494,
+            15178,
+            3053,
+            513,
+            80,
+            10,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91382,
+          "windows": {
+            "W=K": {
+              "support": 527,
+              "frac": 0.00577,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 41,
+              "frac": 0.00045,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 19,
+              "frac": 0.00021,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K1": {
+        "multiplicity": {
+          "p_never": 0.0,
+          "mean": 1.0,
+          "max": 1,
+          "note": "identity \u2014 every wave delivered exactly once"
+        },
+        "support": {
+          "n_onsets": 91382,
+          "windows": {
+            "W=K": {
+              "support": 91382,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 91382,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00018,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      }
+    },
+    "3": {
+      "K32": {
+        "multiplicity": {
+          "p_never": 0.36217,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            362166,
+            373512,
+            186926,
+            60375,
+            14055,
+            2566,
+            348,
+            44,
+            7,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91851,
+          "windows": {
+            "W=K": {
+              "support": 67174,
+              "frac": 0.73134,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 55256,
+              "frac": 0.60158,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K128": {
+        "multiplicity": {
+          "p_never": 0.36648,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            366480,
+            369524,
+            184153,
+            61313,
+            15042,
+            2952,
+            460,
+            66,
+            9,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91851,
+          "windows": {
+            "W=K": {
+              "support": 24615,
+              "frac": 0.26799,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 11441,
+              "frac": 0.12456,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 17,
+              "frac": 0.00019,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K512": {
+        "multiplicity": {
+          "p_never": 0.36738,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            367378,
+            368320,
+            184287,
+            61336,
+            14985,
+            3095,
+            523,
+            66,
+            7,
+            3,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91851,
+          "windows": {
+            "W=K": {
+              "support": 486,
+              "frac": 0.00529,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 46,
+              "frac": 0.0005,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 18,
+              "frac": 0.0002,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K1": {
+        "multiplicity": {
+          "p_never": 0.0,
+          "mean": 1.0,
+          "max": 1,
+          "note": "identity \u2014 every wave delivered exactly once"
+        },
+        "support": {
+          "n_onsets": 91851,
+          "windows": {
+            "W=K": {
+              "support": 91851,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 91851,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      }
+    },
+    "4": {
+      "K32": {
+        "multiplicity": {
+          "p_never": 0.36251,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            362506,
+            373009,
+            186992,
+            60390,
+            14135,
+            2558,
+            368,
+            37,
+            5,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91684,
+          "windows": {
+            "W=K": {
+              "support": 66956,
+              "frac": 0.73029,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 55079,
+              "frac": 0.60075,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 18,
+              "frac": 0.0002,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K128": {
+        "multiplicity": {
+          "p_never": 0.3662,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            366198,
+            369775,
+            184366,
+            61249,
+            14910,
+            2967,
+            480,
+            49,
+            6,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91684,
+          "windows": {
+            "W=K": {
+              "support": 24887,
+              "frac": 0.27144,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 11380,
+              "frac": 0.12412,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K512": {
+        "multiplicity": {
+          "p_never": 0.36714,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            367142,
+            368627,
+            184344,
+            61042,
+            15331,
+            2937,
+            499,
+            68,
+            10,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91684,
+          "windows": {
+            "W=K": {
+              "support": 504,
+              "frac": 0.0055,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 40,
+              "frac": 0.00044,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K1": {
+        "multiplicity": {
+          "p_never": 0.0,
+          "mean": 1.0,
+          "max": 1,
+          "note": "identity \u2014 every wave delivered exactly once"
+        },
+        "support": {
+          "n_onsets": 91684,
+          "windows": {
+            "W=K": {
+              "support": 91684,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 91684,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      }
+    },
+    "5": {
+      "K32": {
+        "multiplicity": {
+          "p_never": 0.36202,
+          "mean": 1.0,
+          "max": 10,
+          "count_hist_0_to_12": [
+            362016,
+            373945,
+            186701,
+            60263,
+            14003,
+            2644,
+            376,
+            43,
+            7,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91448,
+          "windows": {
+            "W=K": {
+              "support": 66828,
+              "frac": 0.73078,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 55162,
+              "frac": 0.60321,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K128": {
+        "multiplicity": {
+          "p_never": 0.36632,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            366317,
+            369472,
+            184589,
+            61248,
+            14890,
+            2944,
+            460,
+            74,
+            6,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91448,
+          "windows": {
+            "W=K": {
+              "support": 24721,
+              "frac": 0.27033,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 11459,
+              "frac": 0.12531,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 17,
+              "frac": 0.00019,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K512": {
+        "multiplicity": {
+          "p_never": 0.3675,
+          "mean": 1.0,
+          "max": 11,
+          "count_hist_0_to_12": [
+            367500,
+            368309,
+            184003,
+            61363,
+            15222,
+            3022,
+            493,
+            71,
+            12,
+            4,
+            0,
+            1,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91448,
+          "windows": {
+            "W=K": {
+              "support": 515,
+              "frac": 0.00563,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 48,
+              "frac": 0.00052,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 18,
+              "frac": 0.0002,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K1": {
+        "multiplicity": {
+          "p_never": 0.0,
+          "mean": 1.0,
+          "max": 1,
+          "note": "identity \u2014 every wave delivered exactly once"
+        },
+        "support": {
+          "n_onsets": 91448,
+          "windows": {
+            "W=K": {
+              "support": 91448,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 91448,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      }
+    },
+    "6": {
+      "K32": {
+        "multiplicity": {
+          "p_never": 0.36225,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            362250,
+            373543,
+            186804,
+            60205,
+            14251,
+            2506,
+            392,
+            45,
+            3,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91826,
+          "windows": {
+            "W=K": {
+              "support": 67028,
+              "frac": 0.72995,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 55306,
+              "frac": 0.60229,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K128": {
+        "multiplicity": {
+          "p_never": 0.36601,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            366010,
+            370282,
+            184153,
+            60932,
+            15129,
+            2944,
+            478,
+            65,
+            6,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91826,
+          "windows": {
+            "W=K": {
+              "support": 24768,
+              "frac": 0.26973,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 11387,
+              "frac": 0.12401,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 17,
+              "frac": 0.00019,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K512": {
+        "multiplicity": {
+          "p_never": 0.36763,
+          "mean": 1.0,
+          "max": 10,
+          "count_hist_0_to_12": [
+            367628,
+            368140,
+            183927,
+            61433,
+            15319,
+            2976,
+            500,
+            69,
+            5,
+            2,
+            1,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91826,
+          "windows": {
+            "W=K": {
+              "support": 519,
+              "frac": 0.00565,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 38,
+              "frac": 0.00041,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 20,
+              "frac": 0.00022,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K1": {
+        "multiplicity": {
+          "p_never": 0.0,
+          "mean": 1.0,
+          "max": 1,
+          "note": "identity \u2014 every wave delivered exactly once"
+        },
+        "support": {
+          "n_onsets": 91826,
+          "windows": {
+            "W=K": {
+              "support": 91826,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 91826,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00017,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      }
+    },
+    "7": {
+      "K32": {
+        "multiplicity": {
+          "p_never": 0.3619,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            361898,
+            373959,
+            186748,
+            60409,
+            14083,
+            2491,
+            360,
+            45,
+            7,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91077,
+          "windows": {
+            "W=K": {
+              "support": 66576,
+              "frac": 0.73099,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 54880,
+              "frac": 0.60257,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00018,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K128": {
+        "multiplicity": {
+          "p_never": 0.36666,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            366660,
+            368978,
+            184809,
+            61046,
+            14908,
+            3046,
+            474,
+            72,
+            7,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91077,
+          "windows": {
+            "W=K": {
+              "support": 24719,
+              "frac": 0.27141,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 11570,
+              "frac": 0.12704,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00018,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K512": {
+        "multiplicity": {
+          "p_never": 0.36787,
+          "mean": 1.0,
+          "max": 11,
+          "count_hist_0_to_12": [
+            367872,
+            367541,
+            184416,
+            61336,
+            15254,
+            2985,
+            508,
+            77,
+            10,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91077,
+          "windows": {
+            "W=K": {
+              "support": 508,
+              "frac": 0.00558,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 41,
+              "frac": 0.00045,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 19,
+              "frac": 0.00021,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K1": {
+        "multiplicity": {
+          "p_never": 0.0,
+          "mean": 1.0,
+          "max": 1,
+          "note": "identity \u2014 every wave delivered exactly once"
+        },
+        "support": {
+          "n_onsets": 91077,
+          "windows": {
+            "W=K": {
+              "support": 91077,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 91077,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00018,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      }
+    },
+    "0": {
+      "K32": {
+        "multiplicity": {
+          "p_never": 0.36197,
+          "mean": 1.0,
+          "max": 8,
+          "count_hist_0_to_12": [
+            361974,
+            373627,
+            187117,
+            60355,
+            14002,
+            2532,
+            351,
+            36,
+            6,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91401,
+          "windows": {
+            "W=K": {
+              "support": 66774,
+              "frac": 0.73056,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 55013,
+              "frac": 0.60189,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 17,
+              "frac": 0.00019,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K128": {
+        "multiplicity": {
+          "p_never": 0.36616,
+          "mean": 1.0,
+          "max": 9,
+          "count_hist_0_to_12": [
+            366162,
+            369813,
+            184382,
+            61174,
+            15069,
+            2849,
+            484,
+            61,
+            5,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        "support": {
+          "n_onsets": 91401,
+          "windows": {
+            "W=K": {
+              "support": 24742,
+              "frac": 0.2707,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 11547,
+              "frac": 0.12633,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00018,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K512": {
+        "multiplicity": {
+          "p_never": 0.36807,
+          "mean": 1.0,
+          "max": 12,
+          "count_hist_0_to_12": [
+            368071,
+            367525,
+            184109,
+            61332,
+            15255,
+            3102,
+            530,
+            64,
+            10,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        "support": {
+          "n_onsets": 91401,
+          "windows": {
+            "W=K": {
+              "support": 470,
+              "frac": 0.00514,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 32,
+              "frac": 0.00035,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 17,
+              "frac": 0.00019,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      },
+      "K1": {
+        "multiplicity": {
+          "p_never": 0.0,
+          "mean": 1.0,
+          "max": 1,
+          "note": "identity \u2014 every wave delivered exactly once"
+        },
+        "support": {
+          "n_onsets": 91401,
+          "windows": {
+            "W=K": {
+              "support": 91401,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=2K": {
+              "support": 91401,
+              "frac": 1.0,
+              "empty": false
+            },
+            "W=inf": {
+              "support": 16,
+              "frac": 0.00018,
+              "empty": false
+            }
+          },
+          "support_ok_primary": true
+        }
+      }
+    }
+  },
+  "halt_surfaces": []
+}
