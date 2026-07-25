@@ -1,0 +1,1326 @@
+{
+  "doc": "STEP0_CWP_PREMISE_READ_PREREG.md",
+  "rules": [
+    "committed = git-tracked in OUTDIR (exp08)",
+    "arm-exact: filename token exp12_dwell (variants expomid/orbit/scatter excluded); record's own arm field must equal exp12_dwell (provenance computed, not asserted)",
+    "the certified-dead cell = the verdict set: exp14_exp12_dwell_s<seed>_verdict.json",
+    "field rule (\u00a72): every column must carry pos_err_word and pos_err_vis as dicts; a record failing this is excluded and reported, never patched",
+    "bucket-key coverage per channel is RECORDED (feeds \u00a74 columns_dropped); an empty late-quartile denominator for any admissible record/channel is a HALT surface (no cell defined)"
+  ],
+  "candidates": [
+    {
+      "name": "exp12_dwell_expomid_s0_exp16_smoke_probeoff.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp12_dwell_s0.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s0_exp14smoke_ref.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp12_dwell_s0_exp16_predelta_ref.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp12_dwell_s0_exp16_smoke_regress.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp12_dwell_s1.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s2.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s20.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s21.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s22.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s23.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s24.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s3.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp12_dwell_s4.json",
+      "admitted": false,
+      "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+    },
+    {
+      "name": "exp14_exp12_dwell_exp17_g1a.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_exp16_precheck.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_exp16_smoke_pcfresh.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_exp16_smoke_pcreused.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s0_exp16_smoke.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s0_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s1_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s20_exp16cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s21_exp16cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s22_exp16cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s24_exp16cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s25_exp16cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s2_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s3_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s4_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s5_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s6_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s7_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s8_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_expomid_s9_exp16verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_exp17_g1b.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s0_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s1_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s20_exp17cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s21_exp17cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s22_exp17cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s24_exp17cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s25_exp17cal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s2_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s3_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s4_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s5_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s6_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s7_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s8_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_orbit_s9_exp17verdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s0_dcy.json",
+      "admitted": false,
+      "reason": "decay micro-arm companion record"
+    },
+    {
+      "name": "exp14_exp12_dwell_s0_exp14smoke.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s0_exp15smoke_a2.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s0_exp15smoke_short.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s0_exp16_smoke_base.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s0_rev_base.json",
+      "admitted": false,
+      "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s0_verdict.json",
+      "admitted": true,
+      "reason": "verdict record, fields complete"
+    },
+    {
+      "name": "exp14_exp12_dwell_s1_dcy.json",
+      "admitted": false,
+      "reason": "decay micro-arm companion record"
+    },
+    {
+      "name": "exp14_exp12_dwell_s1_verdict.json",
+      "admitted": true,
+      "reason": "verdict record, fields complete"
+    },
+    {
+      "name": "exp14_exp12_dwell_s20_cal.json",
+      "admitted": false,
+      "reason": "cal-seed record (calibration role, not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s21_cal.json",
+      "admitted": false,
+      "reason": "cal-seed record (calibration role, not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s22_cal.json",
+      "admitted": false,
+      "reason": "cal-seed record (calibration role, not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s24_cal.json",
+      "admitted": false,
+      "reason": "cal-seed record (calibration role, not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s25_cal.json",
+      "admitted": false,
+      "reason": "cal-seed record (calibration role, not the verdict cell)"
+    },
+    {
+      "name": "exp14_exp12_dwell_s2_dcy.json",
+      "admitted": false,
+      "reason": "decay micro-arm companion record"
+    },
+    {
+      "name": "exp14_exp12_dwell_s2_verdict.json",
+      "admitted": true,
+      "reason": "verdict record, fields complete"
+    },
+    {
+      "name": "exp14_exp12_dwell_s3_dcy.json",
+      "admitted": false,
+      "reason": "decay micro-arm companion record"
+    },
+    {
+      "name": "exp14_exp12_dwell_s3_verdict.json",
+      "admitted": true,
+      "reason": "verdict record, fields complete"
+    },
+    {
+      "name": "exp14_exp12_dwell_s4_dcy.json",
+      "admitted": false,
+      "reason": "decay micro-arm companion record"
+    },
+    {
+      "name": "exp14_exp12_dwell_s4_verdict.json",
+      "admitted": true,
+      "reason": "verdict record, fields complete"
+    },
+    {
+      "name": "exp14_exp12_dwell_s5_dcy.json",
+      "admitted": false,
+      "reason": "decay micro-arm companion record"
+    },
+    {
+      "name": "exp14_exp12_dwell_s5_verdict.json",
+      "admitted": true,
+      "reason": "verdict record, fields complete"
+    },
+    {
+      "name": "exp14_exp12_dwell_s6_dcy.json",
+      "admitted": false,
+      "reason": "decay micro-arm companion record"
+    },
+    {
+      "name": "exp14_exp12_dwell_s6_verdict.json",
+      "admitted": true,
+      "reason": "verdict record, fields complete"
+    },
+    {
+      "name": "exp14_exp12_dwell_s7_dcy.json",
+      "admitted": false,
+      "reason": "decay micro-arm companion record"
+    },
+    {
+      "name": "exp14_exp12_dwell_s7_verdict.json",
+      "admitted": true,
+      "reason": "verdict record, fields complete"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s0_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s1_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s20_scattercal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s21_scattercal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s22_scattercal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s24_scattercal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s25_scattercal.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s2_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s3_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s4_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s5_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s6_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s7_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s8_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp14_exp12_dwell_scatter_s9_scatterverdict.json",
+      "admitted": false,
+      "reason": "variant arm (not the certified-dead cell's arm)"
+    },
+    {
+      "name": "exp_isobal_exp12_dwell_a0p1_s0_stage1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    },
+    {
+      "name": "exp_isobal_exp12_dwell_a0p1_s1_stage1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    },
+    {
+      "name": "exp_isobal_exp12_dwell_a0p1_s2_stage1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    },
+    {
+      "name": "exp_isobal_exp12_dwell_a0p1_s3_stage1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    },
+    {
+      "name": "exp_isobal_exp12_dwell_a0p1_s4_stage1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    },
+    {
+      "name": "exp_isobal_exp12_dwell_a0p1_s5_stage1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    },
+    {
+      "name": "exp_isobal_exp12_dwell_a0p1_s6_stage1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    },
+    {
+      "name": "exp_isobal_exp12_dwell_a0p1_s7_stage1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    },
+    {
+      "name": "retro_marginal_exp12_dwell_s1.json",
+      "admitted": false,
+      "reason": "instrument/retro-read record, not a run record of the cell"
+    }
+  ],
+  "admissible": [
+    {
+      "name": "exp14_exp12_dwell_s0_verdict.json",
+      "seed": 0,
+      "n_columns": 1666,
+      "coverage": {
+        "pos_err_word": {
+          "n_columns": 1666,
+          "all6": 1666,
+          "missing_by_key": {}
+        },
+        "pos_err_vis": {
+          "n_columns": 1666,
+          "all6": 0,
+          "missing_by_key": {
+            "p1": 1666
+          }
+        }
+      },
+      "late_quartile_denominator": {
+        "pos_err_word": 417,
+        "pos_err_vis": 0
+      }
+    },
+    {
+      "name": "exp14_exp12_dwell_s1_verdict.json",
+      "seed": 1,
+      "n_columns": 1666,
+      "coverage": {
+        "pos_err_word": {
+          "n_columns": 1666,
+          "all6": 1666,
+          "missing_by_key": {}
+        },
+        "pos_err_vis": {
+          "n_columns": 1666,
+          "all6": 0,
+          "missing_by_key": {
+            "p1": 1666
+          }
+        }
+      },
+      "late_quartile_denominator": {
+        "pos_err_word": 417,
+        "pos_err_vis": 0
+      }
+    },
+    {
+      "name": "exp14_exp12_dwell_s2_verdict.json",
+      "seed": 2,
+      "n_columns": 1666,
+      "coverage": {
+        "pos_err_word": {
+          "n_columns": 1666,
+          "all6": 1666,
+          "missing_by_key": {}
+        },
+        "pos_err_vis": {
+          "n_columns": 1666,
+          "all6": 0,
+          "missing_by_key": {
+            "p1": 1666
+          }
+        }
+      },
+      "late_quartile_denominator": {
+        "pos_err_word": 417,
+        "pos_err_vis": 0
+      }
+    },
+    {
+      "name": "exp14_exp12_dwell_s3_verdict.json",
+      "seed": 3,
+      "n_columns": 1666,
+      "coverage": {
+        "pos_err_word": {
+          "n_columns": 1666,
+          "all6": 1666,
+          "missing_by_key": {}
+        },
+        "pos_err_vis": {
+          "n_columns": 1666,
+          "all6": 0,
+          "missing_by_key": {
+            "p1": 1666
+          }
+        }
+      },
+      "late_quartile_denominator": {
+        "pos_err_word": 417,
+        "pos_err_vis": 0
+      }
+    },
+    {
+      "name": "exp14_exp12_dwell_s4_verdict.json",
+      "seed": 4,
+      "n_columns": 1666,
+      "coverage": {
+        "pos_err_word": {
+          "n_columns": 1666,
+          "all6": 1666,
+          "missing_by_key": {}
+        },
+        "pos_err_vis": {
+          "n_columns": 1666,
+          "all6": 0,
+          "missing_by_key": {
+            "p1": 1666
+          }
+        }
+      },
+      "late_quartile_denominator": {
+        "pos_err_word": 417,
+        "pos_err_vis": 0
+      }
+    },
+    {
+      "name": "exp14_exp12_dwell_s5_verdict.json",
+      "seed": 5,
+      "n_columns": 1666,
+      "coverage": {
+        "pos_err_word": {
+          "n_columns": 1666,
+          "all6": 1666,
+          "missing_by_key": {}
+        },
+        "pos_err_vis": {
+          "n_columns": 1666,
+          "all6": 0,
+          "missing_by_key": {
+            "p1": 1666
+          }
+        }
+      },
+      "late_quartile_denominator": {
+        "pos_err_word": 417,
+        "pos_err_vis": 0
+      }
+    },
+    {
+      "name": "exp14_exp12_dwell_s6_verdict.json",
+      "seed": 6,
+      "n_columns": 1666,
+      "coverage": {
+        "pos_err_word": {
+          "n_columns": 1666,
+          "all6": 1666,
+          "missing_by_key": {}
+        },
+        "pos_err_vis": {
+          "n_columns": 1666,
+          "all6": 0,
+          "missing_by_key": {
+            "p1": 1666
+          }
+        }
+      },
+      "late_quartile_denominator": {
+        "pos_err_word": 417,
+        "pos_err_vis": 0
+      }
+    },
+    {
+      "name": "exp14_exp12_dwell_s7_verdict.json",
+      "seed": 7,
+      "n_columns": 1666,
+      "coverage": {
+        "pos_err_word": {
+          "n_columns": 1666,
+          "all6": 1666,
+          "missing_by_key": {}
+        },
+        "pos_err_vis": {
+          "n_columns": 1666,
+          "all6": 0,
+          "missing_by_key": {
+            "p1": 1666
+          }
+        }
+      },
+      "late_quartile_denominator": {
+        "pos_err_word": 417,
+        "pos_err_vis": 0
+      }
+    }
+  ],
+  "companion": {
+    "candidates": [
+      {
+        "name": "exp12_shuffle_s0.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s0_exp16_predelta_ref.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp12_shuffle_s0_exp16_smoke_regress.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp12_shuffle_s1.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s2.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s20.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s21.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s22.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s23.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s24.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s3.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp12_shuffle_s4.json",
+        "admitted": false,
+        "reason": "EXP12-era Stage-1 record (pre-exp14 harness)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_exp15_precheck.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_exp15_precheck_2935.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_precheck.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s0_g5a_replay_anchors.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s0_verdict.json",
+        "admitted": true,
+        "reason": "verdict record, fields complete"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s11_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s12_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s13_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s14_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s15_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s16_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s17_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s18_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s19_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s1_dcy.json",
+        "admitted": false,
+        "reason": "decay micro-arm companion record"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s1_g5a_replay_anchors.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s1_verdict.json",
+        "admitted": true,
+        "reason": "verdict record, fields complete"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s20_cal2.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s20_g5a_cal_replay_anchors.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s21_cal2.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s21_g5a_cal_replay_anchors.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s22_cal2.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s22_g5a_cal_replay_anchors.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s24_cal2.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s24_g5a_cal_replay_anchors.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s25_cal2.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s25_g5a_cal_replay_anchors.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s28_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s29_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s2_dcy.json",
+        "admitted": false,
+        "reason": "decay micro-arm companion record"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s2_g5a_replay_anchors.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s2_verdict.json",
+        "admitted": true,
+        "reason": "verdict record, fields complete"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s30_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s31_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s32_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s33_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s34_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s35_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s37_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s3_dcy.json",
+        "admitted": false,
+        "reason": "decay micro-arm companion record"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s3_g5a_replay_anchors.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s3_verdict.json",
+        "admitted": true,
+        "reason": "verdict record, fields complete"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s40_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s41_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s42_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s43_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s44_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s45_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s46_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s47_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s4_dcy.json",
+        "admitted": false,
+        "reason": "decay micro-arm companion record"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s4_g5a_replay_anchors.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s4_verdict.json",
+        "admitted": true,
+        "reason": "verdict record, fields complete"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s5_dcy.json",
+        "admitted": false,
+        "reason": "decay micro-arm companion record"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s5_g5a_replay_anchors.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s5_verdict.json",
+        "admitted": true,
+        "reason": "verdict record, fields complete"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s6_dcy.json",
+        "admitted": false,
+        "reason": "decay micro-arm companion record"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s6_g5a_replay_anchors.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s6_verdict.json",
+        "admitted": true,
+        "reason": "verdict record, fields complete"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s7_dcy.json",
+        "admitted": false,
+        "reason": "decay micro-arm companion record"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s7_g5a_replay_anchors.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s7_verdict.json",
+        "admitted": true,
+        "reason": "verdict record, fields complete"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s8_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp14_exp12_shuffle_s9_exp15.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp19_cal_exp12_shuffle_full.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp19_cal_exp12_shuffle_stratified.json",
+        "admitted": false,
+        "reason": "cal-seed record (calibration role, not the verdict cell)"
+      },
+      {
+        "name": "exp19_scorer_exp12_shuffle_dual.json",
+        "admitted": false,
+        "reason": "smoke/reference/pre-check instrument record (not the verdict cell)"
+      },
+      {
+        "name": "exp_isobal_exp12_shuffle_a0p1_s0_stage1.json",
+        "admitted": false,
+        "reason": "instrument/retro-read record, not a run record of the cell"
+      },
+      {
+        "name": "exp_isobal_exp12_shuffle_a0p1_s1_stage1.json",
+        "admitted": false,
+        "reason": "instrument/retro-read record, not a run record of the cell"
+      },
+      {
+        "name": "exp_isobal_exp12_shuffle_a0p1_s2_stage1.json",
+        "admitted": false,
+        "reason": "instrument/retro-read record, not a run record of the cell"
+      },
+      {
+        "name": "exp_isobal_exp12_shuffle_a0p1_s3_stage1.json",
+        "admitted": false,
+        "reason": "instrument/retro-read record, not a run record of the cell"
+      },
+      {
+        "name": "exp_isobal_exp12_shuffle_a0p1_s4_stage1.json",
+        "admitted": false,
+        "reason": "instrument/retro-read record, not a run record of the cell"
+      },
+      {
+        "name": "exp_isobal_exp12_shuffle_a0p1_s5_stage1.json",
+        "admitted": false,
+        "reason": "instrument/retro-read record, not a run record of the cell"
+      },
+      {
+        "name": "exp_isobal_exp12_shuffle_a0p1_s6_stage1.json",
+        "admitted": false,
+        "reason": "instrument/retro-read record, not a run record of the cell"
+      },
+      {
+        "name": "exp_isobal_exp12_shuffle_a0p1_s7_stage1.json",
+        "admitted": false,
+        "reason": "instrument/retro-read record, not a run record of the cell"
+      }
+    ],
+    "admissible": [
+      {
+        "name": "exp14_exp12_shuffle_s0_verdict.json",
+        "seed": 0,
+        "n_columns": 1666,
+        "coverage": {
+          "pos_err_word": {
+            "n_columns": 1666,
+            "all6": 1666,
+            "missing_by_key": {}
+          },
+          "pos_err_vis": {
+            "n_columns": 1666,
+            "all6": 0,
+            "missing_by_key": {
+              "p1": 1666
+            }
+          }
+        },
+        "late_quartile_denominator": {
+          "pos_err_word": 417,
+          "pos_err_vis": 0
+        }
+      },
+      {
+        "name": "exp14_exp12_shuffle_s1_verdict.json",
+        "seed": 1,
+        "n_columns": 1666,
+        "coverage": {
+          "pos_err_word": {
+            "n_columns": 1666,
+            "all6": 1666,
+            "missing_by_key": {}
+          },
+          "pos_err_vis": {
+            "n_columns": 1666,
+            "all6": 0,
+            "missing_by_key": {
+              "p1": 1666
+            }
+          }
+        },
+        "late_quartile_denominator": {
+          "pos_err_word": 417,
+          "pos_err_vis": 0
+        }
+      },
+      {
+        "name": "exp14_exp12_shuffle_s2_verdict.json",
+        "seed": 2,
+        "n_columns": 1666,
+        "coverage": {
+          "pos_err_word": {
+            "n_columns": 1666,
+            "all6": 1666,
+            "missing_by_key": {}
+          },
+          "pos_err_vis": {
+            "n_columns": 1666,
+            "all6": 0,
+            "missing_by_key": {
+              "p1": 1666
+            }
+          }
+        },
+        "late_quartile_denominator": {
+          "pos_err_word": 417,
+          "pos_err_vis": 0
+        }
+      },
+      {
+        "name": "exp14_exp12_shuffle_s3_verdict.json",
+        "seed": 3,
+        "n_columns": 1666,
+        "coverage": {
+          "pos_err_word": {
+            "n_columns": 1666,
+            "all6": 1666,
+            "missing_by_key": {}
+          },
+          "pos_err_vis": {
+            "n_columns": 1666,
+            "all6": 0,
+            "missing_by_key": {
+              "p1": 1666
+            }
+          }
+        },
+        "late_quartile_denominator": {
+          "pos_err_word": 417,
+          "pos_err_vis": 0
+        }
+      },
+      {
+        "name": "exp14_exp12_shuffle_s4_verdict.json",
+        "seed": 4,
+        "n_columns": 1666,
+        "coverage": {
+          "pos_err_word": {
+            "n_columns": 1666,
+            "all6": 1666,
+            "missing_by_key": {}
+          },
+          "pos_err_vis": {
+            "n_columns": 1666,
+            "all6": 0,
+            "missing_by_key": {
+              "p1": 1666
+            }
+          }
+        },
+        "late_quartile_denominator": {
+          "pos_err_word": 417,
+          "pos_err_vis": 0
+        }
+      },
+      {
+        "name": "exp14_exp12_shuffle_s5_verdict.json",
+        "seed": 5,
+        "n_columns": 1666,
+        "coverage": {
+          "pos_err_word": {
+            "n_columns": 1666,
+            "all6": 1666,
+            "missing_by_key": {}
+          },
+          "pos_err_vis": {
+            "n_columns": 1666,
+            "all6": 0,
+            "missing_by_key": {
+              "p1": 1666
+            }
+          }
+        },
+        "late_quartile_denominator": {
+          "pos_err_word": 417,
+          "pos_err_vis": 0
+        }
+      },
+      {
+        "name": "exp14_exp12_shuffle_s6_verdict.json",
+        "seed": 6,
+        "n_columns": 1666,
+        "coverage": {
+          "pos_err_word": {
+            "n_columns": 1666,
+            "all6": 1666,
+            "missing_by_key": {}
+          },
+          "pos_err_vis": {
+            "n_columns": 1666,
+            "all6": 0,
+            "missing_by_key": {
+              "p1": 1666
+            }
+          }
+        },
+        "late_quartile_denominator": {
+          "pos_err_word": 417,
+          "pos_err_vis": 0
+        }
+      },
+      {
+        "name": "exp14_exp12_shuffle_s7_verdict.json",
+        "seed": 7,
+        "n_columns": 1666,
+        "coverage": {
+          "pos_err_word": {
+            "n_columns": 1666,
+            "all6": 1666,
+            "missing_by_key": {}
+          },
+          "pos_err_vis": {
+            "n_columns": 1666,
+            "all6": 0,
+            "missing_by_key": {
+              "p1": 1666
+            }
+          }
+        },
+        "late_quartile_denominator": {
+          "pos_err_word": 417,
+          "pos_err_vis": 0
+        }
+      }
+    ]
+  },
+  "halt_surfaces": [
+    "STRUCTURAL: pos_err_vis lacks the p1 bucket in every column of every admissible record (measured 0/1666 x 8 seeds; the _buffer_wave training-stash routing stashes no vision-side error at onset \u2014 exp12_arms.py:725-727, assembly; :536 _buffer_wave). The \u00a74 vis-channel onset-dominance denominator is EMPTY for the whole cell; \u00a75 defines no cell for an undefined dominance. HALT \u2014 G2 HELD, surfaced to Jason. The word channel is complete (all six buckets in 1666/1666 columns, every seed)."
+  ]
+}

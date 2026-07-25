@@ -1,0 +1,29 @@
+{
+  "G1": {
+    "fails_synthetic": "PREMISE-FAILS ok",
+    "confirmed_synthetic": "PREMISE-CONFIRMED ok",
+    "broken_variant_observed_red": "tie fixture: >=-variant labeled PREMISE-CONFIRMED (WRONG, red observed) vs strict PREMISE-FAILS",
+    "empty_denominator_fixture": "HALT surfaced, no judgment",
+    "result": "PASS"
+  },
+  "G0": {
+    "admissible": 8,
+    "excluded": 92,
+    "companion_admissible": 8,
+    "halt_surfaces": [
+      "STRUCTURAL: pos_err_vis lacks the p1 bucket in every column of every admissible record (measured 0/1666 x 8 seeds; the _buffer_wave training-stash routing stashes no vision-side error at onset \u2014 exp12_arms.py:725-727, assembly; :536 _buffer_wave). The \u00a74 vis-channel onset-dominance denominator is EMPTY for the whole cell; \u00a75 defines no cell for an undefined dominance. HALT \u2014 G2 HELD, surfaced to Jason. The word channel is complete (all six buckets in 1666/1666 columns, every seed)."
+    ],
+    "result": "PASS"
+  },
+  "G0_fixture": {
+    "dir": "session scratchpad step0fx (one good + one field-missing record)",
+    "result": "admissible=1, excluded=1 \u2014 exactly one exclusion reported (PASS)"
+  },
+  "G2": {
+    "status": "HELD",
+    "grounds": [
+      "STRUCTURAL: pos_err_vis lacks the p1 bucket in every column of every admissible record (measured 0/1666 x 8 seeds; the _buffer_wave training-stash routing stashes no vision-side error at onset \u2014 exp12_arms.py:725-727, assembly; :536 _buffer_wave). The \u00a74 vis-channel onset-dominance denominator is EMPTY for the whole cell; \u00a75 defines no cell for an undefined dominance. HALT \u2014 G2 HELD, surfaced to Jason. The word channel is complete (all six buckets in 1666/1666 columns, every seed)."
+    ],
+    "note": "any HALT condition in the docs = stop and surface, no workaround (order, 2026-07-25); no partial/word-only read taken \u2014 that would be a judgment the prereg does not license"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "fixtures_observed_red": {
+    "P0_edited_line": "P0 DRIFT \u2014 experiments/04_stage0_mvp/loop.py:68 lacks 'torch.optim.Adam(params, lr=cfg.lr)' (line: 'self.opt = torch.optim.Adam(params, lr=1e-4)') \u2014 HALT",
+    "P1_betas_kwarg": "P1 HALT:",
+    "P2_field_drop": "field-drop fixture: completeness check reports missing {'tau2'} (red observed)",
+    "result": "ALL RED OBSERVED"
+  },
+  "P0": {
+    "cites": [
+      {
+        "cite": "experiments/04_stage0_mvp/loop.py:68",
+        "line": "self.opt = torch.optim.Adam(params, lr=cfg.lr)",
+        "verified": [
+          "torch.optim.Adam(params, lr=cfg.lr)"
+        ]
+      },
+      {
+        "cite": "experiments/04_stage0_mvp/constants.py:87",
+        "line": "lr: float = 3e-3",
+        "verified": [
+          "lr",
+          "3e-3"
+        ]
+      },
+      {
+        "cite": "experiments/04_stage0_mvp/loop.py:8",
+        "line": "frozen (lr=0, excluded from the optimiser) so its target-side gradient is computed-but-not",
+        "verified": [
+          "lr=0",
+          "frozen"
+        ]
+      }
+    ],
+    "result": "PASS"
+  },
+  "P1": {
+    "optim_calls": 14,
+    "param_groups_lines": 1,
+    "scheduler_hits": 0,
+    "detail": {
+      "optim_constructor_calls": [
+        {
+          "at": "experiments/01_pooling_substrate/harness.py:108",
+          "line": "opt = torch.optim.Adam(params, lr=lr)"
+        },
+        {
+          "at": "experiments/02_masked_completion/harness.py:29",
+          "line": "opt = torch.optim.Adam(model.parameters(), lr=lr)"
+        },
+        {
+          "at": "experiments/03_order_as_content/harness.py:96",
+          "line": "opt = torch.optim.Adam(model.parameters(), lr=lr)"
+        },
+        {
+          "at": "experiments/03_order_as_content/harness.py:172",
+          "line": "opt = torch.optim.Adam(probe.parameters(), lr=lr)"
+        },
+        {
+          "at": "experiments/04_stage0_mvp/loop.py:68",
+          "line": "self.opt = torch.optim.Adam(params, lr=cfg.lr)"
+        },
+        {
+          "at": "experiments/04_stage0_mvp/oracle_probe.py:99",
+          "line": "opt = torch.optim.Adam(enc.pool.parameters(), lr=lr)"
+        },
+        {
+          "at": "experiments/04_stage0_mvp/validity_probe.py:44",
+          "line": "opt = torch.optim.Adam(params, lr=lr)"
+        },
+        {
+          "at": "experiments/05_attention_sculpting/category_oracle.py:59",
+          "line": "opt = torch.optim.Adam(enc.pool.parameters(), lr=lr)    # capacity forced open: lam1=lam2=0"
+        },
+        {
+          "at": "experiments/05_attention_sculpting/dgate.py:130",
+          "line": "opt = torch.optim.Adam(op.parameters(), lr=f.lr)"
+        },
+        {
+          "at": "experiments/05_attention_sculpting/exp06_gate_validation.py:41",
+          "line": "opt = torch.optim.Adam(op.parameters(), lr=f.lr)"
+        },
+        {
+          "at": "experiments/05_attention_sculpting/exp07_core.py:146",
+          "line": "opt = torch.optim.Adam(op.parameters(), lr=f.lr)"
+        },
+        {
+          "at": "experiments/05_attention_sculpting/exp07_core.py:215",
+          "line": "opt = torch.optim.Adam(op.parameters(), lr=f.lr)"
+        },
+        {
+          "at": "experiments/05_attention_sculpting/exp12_baseline.py:93",
+          "line": "opt = torch.optim.Adam(net.parameters(), lr=LR)"
+        },
+        {
+          "at": "src/loom/order.py:193",
+          "line": "opt = torch.optim.Adam(probe.parameters(), lr=lr)"
+        }
+      ],
+      "param_groups_lines": [
+        {
+          "at": "experiments/04_stage0_mvp/run_stage0.py:53",
+          "line": "id(p) not in {id(q) for q in lp.opt.param_groups[0][\"params\"]}"
+        }
+      ],
+      "scheduler_hits": 0,
+      "violations": []
+    },
+    "result": "PASS"
+  }
+}
