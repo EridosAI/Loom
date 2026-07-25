@@ -68,7 +68,7 @@ All three are compatible with coordinates 1–10 today; they diverge on named pr
 ## 7. Open questions, ranked
 
 1. EXP17's outcome (in flight) — splits the rung-3 candidates.
-2. The optimizer pin (code-read, cheap) — M2/M3's timescale constant.
+2. The optimizer pin (code-read, cheap) — M2/M3's timescale constant. [PINNED 2026-07-24 → optimizer_pin.json: τ₁=10, τ₂=1000]
 3. Post-branch: interior-concentration control (CONVERTS) or dwell-length titration (DEAD) — both pre-named, both banked.
 4. Partial-shuffle threshold — the effective-window measurement; also the natural home of Jason's correspondence-window theory (the hawk/sheep bound as the titration's upper knob).
 5. Durability: does exam-traffic erosion explain decay (the ~2.0× verified traffic asymmetry), and does the recency drift *maintain* as well as block?

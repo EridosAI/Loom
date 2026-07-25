@@ -61,7 +61,9 @@ def p1_defaults(py_files: list[Path] | None = None) -> dict:
     if py_files is None:
         tracked = subprocess.run(["git", "-C", str(REPO), "ls-files", "*.py"],
                                  capture_output=True, text=True, check=True).stdout.split()
-        py_files = [REPO / t for t in tracked]
+        # the instrument scans the tree, not itself: its own detector strings and red-fixture
+        # literal (betas=(0.5, 0.9)) are not the optimizer path
+        py_files = [REPO / t for t in tracked if Path(t).name != "exp_opt_pin.py"]
     optim_calls, pg_lines, violations = [], [], []
     for f in py_files:
         for i, line in enumerate(f.read_text().split("\n"), 1):

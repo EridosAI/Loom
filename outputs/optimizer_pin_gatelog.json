@@ -106,5 +106,13 @@
       "violations": []
     },
     "result": "PASS"
+  },
+  "P2": {
+    "tau1": 10.000000000000002,
+    "tau2": 999.9999999999991,
+    "torch_version": "2.10.0+cu128",
+    "held": 20,
+    "excluded": 1,
+    "result": "PASS"
   }
 }

@@ -65,7 +65,7 @@ The kinematic floors live in pose space; the learner lives in render space. If p
 ## §7 Open questions, re-ranked (supersedes both v1.1 rankings)
 
 1. EXP17 / L1 outcome (in flight).
-2. CWP step-0 diagnostic + the optimizer pin (both read-only, both cheap, both load-bearing for §5).
+2. CWP step-0 diagnostic + the optimizer pin (both read-only, both cheap, both load-bearing for §5). [PINNED 2026-07-24 → optimizer_pin.json: τ₁=10, τ₂=1000]
 3. Rung-3.5 checkable (background↔member information; gates L3's framing).
 4. Post-L1: scatter (DEAD) or interior-concentration control (CONVERTS) — both pre-named.
 5. Hand-held (conditional interpolator, prereg banked) · dwell-length titration (scatter-dead route).

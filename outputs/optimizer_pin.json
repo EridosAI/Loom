@@ -1,0 +1,187 @@
+{
+  "optimizer_class": "torch.optim.adam.Adam",
+  "lr": 0.003,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "eps": 1e-08,
+  "weight_decay": 0,
+  "scheduler": null,
+  "torch_version": "2.10.0+cu128",
+  "param_groups": {
+    "group_lr": 0.003,
+    "held": [
+      {
+        "param": "vision.pool.base_root",
+        "shape": [
+          16
+        ]
+      },
+      {
+        "param": "vision.pool.delta1",
+        "shape": [
+          4,
+          16
+        ]
+      },
+      {
+        "param": "vision.pool.delta2",
+        "shape": [
+          16,
+          16
+        ]
+      },
+      {
+        "param": "vision.jepa_pred.weight",
+        "shape": [
+          16,
+          16
+        ]
+      },
+      {
+        "param": "vision.jepa_pred.bias",
+        "shape": [
+          16
+        ]
+      },
+      {
+        "param": "op.mask_emb",
+        "shape": [
+          16
+        ]
+      },
+      {
+        "param": "op.pos_extract.weight",
+        "shape": [
+          1,
+          16
+        ]
+      },
+      {
+        "param": "op.pos_extract.bias",
+        "shape": [
+          1
+        ]
+      },
+      {
+        "param": "op.pos_proj.weight",
+        "shape": [
+          64,
+          24
+        ]
+      },
+      {
+        "param": "op.pos_proj.bias",
+        "shape": [
+          64
+        ]
+      },
+      {
+        "param": "op.in_proj.weight",
+        "shape": [
+          64,
+          16
+        ]
+      },
+      {
+        "param": "op.in_proj.bias",
+        "shape": [
+          64
+        ]
+      },
+      {
+        "param": "op.value_proj.weight",
+        "shape": [
+          64,
+          64
+        ]
+      },
+      {
+        "param": "op.value_proj.bias",
+        "shape": [
+          64
+        ]
+      },
+      {
+        "param": "op.slot_type.weight",
+        "shape": [
+          2,
+          64
+        ]
+      },
+      {
+        "param": "op.pam.base_root",
+        "shape": [
+          64
+        ]
+      },
+      {
+        "param": "op.pam.delta1",
+        "shape": [
+          8,
+          64
+        ]
+      },
+      {
+        "param": "op.pam.delta2",
+        "shape": [
+          32,
+          64
+        ]
+      },
+      {
+        "param": "op.out.weight",
+        "shape": [
+          16,
+          64
+        ]
+      },
+      {
+        "param": "op.out.bias",
+        "shape": [
+          16
+        ]
+      }
+    ],
+    "excluded": [
+      {
+        "param": "word.embed.weight",
+        "shape": [
+          3,
+          16
+        ]
+      }
+    ]
+  },
+  "tau1": 10.000000000000002,
+  "tau2": 999.9999999999991,
+  "source_lines": [
+    {
+      "cite": "experiments/04_stage0_mvp/loop.py:68",
+      "line": "self.opt = torch.optim.Adam(params, lr=cfg.lr)",
+      "verified": [
+        "torch.optim.Adam(params, lr=cfg.lr)"
+      ]
+    },
+    {
+      "cite": "experiments/04_stage0_mvp/constants.py:87",
+      "line": "lr: float = 3e-3",
+      "verified": [
+        "lr",
+        "3e-3"
+      ]
+    },
+    {
+      "cite": "experiments/04_stage0_mvp/loop.py:8",
+      "line": "frozen (lr=0, excluded from the optimiser) so its target-side gradient is computed-but-not",
+      "verified": [
+        "lr=0",
+        "frozen"
+      ]
+    }
+  ],
+  "read_date": "2026-07-25",
+  "head_commit": "c2fc3f5b2964daca6eae59e5a2073728792e7ad9",
+  "mechanics": "param census via constructor-only instantiation (exp12_dwell s0, T=2000, zero optimizer steps); betas/eps/wd read from the live param group (by-omission defaults) and cross-checked against the installed-torch signature; tau computed from the read betas"
+}
