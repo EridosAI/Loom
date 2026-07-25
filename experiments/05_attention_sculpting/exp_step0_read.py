@@ -258,20 +258,96 @@ def smoke():
 
 # ---------------------------------------------------------------- compute (G2)
 
+AMD1 = ("AMD-1 (ratification-class, 2026-07-25): §4/§5 cells word-channel ONLY (CHANNEL-SPLIT void); "
+        "vis = descriptive companion, p2->p13-48 curve, recovery-shape sentences only, no premise "
+        "verdict; every cell sentence scoped 'on the word channel'")
+_RESOLVED_SIG = "STRUCTURAL: pos_err_vis lacks the p1 bucket"
+RESULTS_PATH = OUTDIR / "step0_read.json"
+
+
+def _curve(cols: list, channel: str, keys: list) -> dict:
+    """Mean per-bucket over the columns carrying that key (descriptive companion; per-key n recorded)."""
+    out = {}
+    for k in keys:
+        vals = [c[channel][k] for c in cols if k in c.get(channel, {})]
+        out[k] = {"mean": round(sum(vals) / len(vals), 5), "n": len(vals)} if vals else None
+    return out
+
+
+def _read_one(name: str) -> dict:
+    rec = json.loads((OUTDIR / name).read_text())
+    late, early = _quartiles(rec["columns"])
+    n, d, drop = _dominance(late, "pos_err_word")
+    en, ed, edrop = _dominance(early, "pos_err_word")
+    return {"seed": rec.get("seed"),
+            "cell": _cell(n, d), "dominance": round(n / d, 5) if d else None,
+            "num": n, "den": d, "columns_dropped": drop,
+            "early_dominance": round(en / ed, 5) if ed else None,
+            "early_columns_dropped": edrop,
+            "curves": {"word_late": _curve(late, "pos_err_word", KEYS),
+                       "word_early": _curve(early, "pos_err_word", KEYS),
+                       "vis_late_p2on": _curve(late, "pos_err_vis", MIDS),
+                       "vis_early_p2on": _curve(early, "pos_err_vis", MIDS)}}
+
+
 def compute():
+    """G2 under AMD-1. The census's structural vis-p1 surface is RESOLVED by AMD-1 (word-only cells);
+    any OTHER halt surface still holds the gate. PREMISE-WEAK and cross-seed disagreement remain
+    HALT-class surfaces, never auto-routed."""
     assert CENSUS_PATH.exists(), "G2 refuses: no census artifact (run --census first) — HALT"
     cen = json.loads(CENSUS_PATH.read_text())
-    if cen["halt_surfaces"]:
-        _gatelog_update("G2", {"status": "HELD", "grounds": cen["halt_surfaces"],
-                               "note": "any HALT condition in the docs = stop and surface, no "
-                                       "workaround (order, 2026-07-25); no partial/word-only read "
-                                       "taken — that would be a judgment the prereg does not license"})
-        print("G2 HELD — HALT surfaced at census; routed to Jason:", flush=True)
-        for h in cen["halt_surfaces"]:
-            print("  *", h, flush=True)
+    open_halts = [h for h in cen["halt_surfaces"] if not h.startswith(_RESOLVED_SIG)]
+    if open_halts:
+        _gatelog_update("G2", {"status": "HELD", "grounds": open_halts})
+        print("G2 HELD — unresolved HALT surface(s):", *open_halts, sep="\n  * ", flush=True)
         sys.exit(3)
-    raise SystemExit("G2 full compute path unreached this corridor (census carried HALT surfaces); "
-                     "implementing the cell/companion emission is gated on Jason's ruling.")
+
+    results = {"doc": "STEP0_CWP_PREMISE_READ_PREREG.md + AMD-1", "amendment": AMD1,
+               "census_halt_resolution": "the structural vis-p1 surface is resolved by AMD-1 "
+                                         "(grounds: exp12_fabric.py:27 position-1 word-mask "
+                                         "GUARANTEED); vis carries as descriptive companion only",
+               "per_seed": [], "companion_shuffle": [], "halt_surfaces": []}
+    for entry in cen["admissible"]:
+        row = _read_one(entry["name"])
+        row["name"] = entry["name"]
+        results["per_seed"].append(row)
+        if row["cell"].startswith("HALT"):
+            results["halt_surfaces"].append(f"{entry['name']} (word): {row['cell']} "
+                                            f"dominance={row['dominance']}")
+    cells = {r["cell"] for r in results["per_seed"]}
+    if not results["halt_surfaces"] and len(cells) > 1:
+        results["halt_surfaces"].append(
+            "CROSS-SEED DISAGREEMENT on cell (§5): " +
+            ", ".join(f"s{r['seed']}={r['cell']}" for r in results["per_seed"]) +
+            " — the disagreement IS the surfaced result (HALT-class, Jason rules attribution)")
+
+    for entry in cen["companion"]["admissible"]:
+        row = _read_one(entry["name"])
+        row["name"] = entry["name"]
+        row["flag"] = ("shuffle contrast (§6): pos labels ride the permutation — bucket membership no "
+                       "longer implies delivery adjacency; licensed for no sentence beyond 'the "
+                       "label-conditioned curve differs/does not differ'; the cell field here is "
+                       "context, NEVER a verdict")
+        results["companion_shuffle"].append(row)
+
+    if results["halt_surfaces"]:
+        results["verdict"] = "HALT — surfaced to Jason (no auto-route)"
+        RESULTS_PATH.write_text(json.dumps(results, indent=2))
+        _gatelog_update("G2", {"status": "HALT-SURFACED", "grounds": results["halt_surfaces"],
+                               "amendment": AMD1})
+        print("G2 HALT-SURFACED:", *results["halt_surfaces"], sep="\n  * ", flush=True)
+        sys.exit(3)
+
+    cell = cells.pop()
+    results["verdict"] = f"{cell} on the word channel, all {len(results['per_seed'])} seeds agree"
+    RESULTS_PATH.write_text(json.dumps(results, indent=2))
+    _gatelog_update("G2", {"status": "PASS", "verdict": results["verdict"], "amendment": AMD1,
+                           "per_seed_dominance": {f"s{r['seed']}": r["dominance"]
+                                                  for r in results["per_seed"]}})
+    for r in results["per_seed"]:
+        print(f"  s{r['seed']}: word dominance {r['dominance']} ({r['num']}/{r['den']}, dropped "
+              f"{r['columns_dropped']}) early {r['early_dominance']} -> {r['cell']}", flush=True)
+    print(f"G2: {results['verdict']} -> {RESULTS_PATH.name}", flush=True)
 
 
 if __name__ == "__main__":

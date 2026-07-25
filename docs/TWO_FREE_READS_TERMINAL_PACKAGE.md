@@ -70,3 +70,41 @@ why it routes rather than executes.
 
 **Scope fence honored:** nothing else was built; U-BUF stands ratified-but-unopened; no learner-adjacent
 code was touched.
+
+---
+
+## ADDENDUM — AMD-1 resolution and the step-0 read (2026-07-25)
+
+**AMD-1 folded** (`2c33bf0`), grounds byte-verified at fold: `exp12_fabric.py:27` — "position-1
+word-mask GUARANTEED (the onset exam)"; the 0/13,328 vs 13,328/13,328 counts are the census's own
+measurements. G1 re-run green after the compute-path build (broken ≥-variant red observed again); G2 run
+under AMD-1 with the census's structural surface recorded as resolved-by-AMD-1.
+
+**RESULT — PREMISE-FAILS on the word channel, all 8 seeds agree** (`exp08/step0_read.json`):
+
+| seed | late dominance (417 cols, 0 dropped) | early |
+|---|---|---|
+| s0 | 0.16547 | 0.29808 |
+| s1 | 0.23501 | 0.30048 |
+| s2 | 0.14868 | 0.35817 |
+| s3 | 0.30456 | 0.30288 |
+| s4 | 0.15108 | 0.34135 |
+| s5 | 0.12950 | 0.32212 |
+| s6 | 0.19664 | 0.30048 |
+| s7 | 0.15827 | 0.33413 |
+
+Every seed ≤ 0.50 (the FAILS bar); none within reach of 0.90. **The licensed sentence (§8 + AMD-1, the
+only sentence this buys):** *"5.1's premise fails in-substrate; the CWP program closes before it opens"*
+— **on the word channel.**
+
+**Descriptive companions (no cells):** the MEAN word curve is monotone decreasing p1 → p13-48 in both
+quartiles (late s0: 0.711 → 0.627) — an average onset gradient exists, but the per-column strict spike
+the premise requires fires in only 13–30% of late columns; the gap between "average gradient" and
+"reliable per-column spike" is what the estimator prices. Vis (recovery-shape only): p2 → p13-48 gently
+decreasing (late s0: 0.163 → 0.145). Shuffle contrast (flagged, context only): word dominance
+0.137–0.173 — the label-conditioned curve does not differ materially from the dwell cell's late read.
+
+**HELD FOR THE RULE (after seat verification):** the §5 FAILS route's map annotation (the v1.2 §6
+falsifier) is a canon act — not fired by CC. No rescue drafting, per the route. **OPEN on Jason's word:**
+the seat's offered protocol rider ("estimator-support check at pre-flight"), and any ledger row for the
+seat-owned miss — both ratification acts, neither applied.
