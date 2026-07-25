@@ -112,3 +112,10 @@ decreasing (late s0: 0.163 → 0.145). Shuffle contrast (flagged, context only):
 falsifier) is a canon act — not fired by CC. No rescue drafting, per the route. **OPEN on Jason's word:**
 the seat's offered protocol rider ("estimator-support check at pre-flight"), and any ledger row for the
 seat-owned miss — both ratification acts, neither applied.
+
+**RULE LANDED (2026-07-25):** map annotation FIRED at v1.2 §5.2/:45, §6 falsifier bullet/:62, §7 rank
+2/:68 with Jason's corrected text (recipe-named curve clause; verified against the artifacts before
+fire); conversion-gating map: zero step-0 mentions, vacuously done. Protocol rider + row 55 landed
+`93b03d7`; package erratum `ea18168`. Both chairs' shares of the false clause owned on the record —
+CC's overgeneralization from s0, the seat's pooled-recipe laundering (recipe-naming binds every chair).
+The two free reads are CLOSED.
