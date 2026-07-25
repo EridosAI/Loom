@@ -16,8 +16,11 @@ FORMULAS, re-cut CONSTANTS, nothing transported unshown-red:
                               is REPORTED, never silently bridged)
 
 E-B channel: per-onset acc = (lift > 0), the exam_acc semantics. K=1 REUSED rides the committed
-E-A instrument; measured E-B/E-A agreement on the K=1 smoke = 4/6 columns exact (the probe is
-schedule-UNMATCHED by design) — a package flag, not a defect. Cells per seed; delivered-stratum
+E-A instrument; measured E-B/E-A identity on the K=1 smoke = 6/6 columns EXACT under the record's
+own 6-digit rounding (an earlier 4/6 reading was CC's comparison artifact — raw float vs stored
+rounding — corrected here; erratum noted at the G3 commit). On the identity arm the probe read
+reproduces the exam channel exactly; the residual K=1 seam is unlike-HORIZON (500k committed
+certification vs 1M paid reads), matched-bar-scoped. Cells per seed; delivered-stratum
 onsets from exp20_ubuf.delivered_zero_preceding at W = K (the pre-flight derivation; W=2K and
 W=inf support ride in exp20_g2_maps.json).
 
@@ -249,10 +252,11 @@ def cut():
         print(f"K{K}: band {row['band']}xN{row['N']} | conv {conv} | " +
               " | ".join(f"{rd}: {row[rd].get('op', row[rd]['mode'][:20])}"
                          for rd in ("full", "delivered_stratum")), flush=True)
-    out["notes"].append("E-B/E-A agreement anchor (K=1 smoke, N=2000): 4/6 columns exact — the "
-                        "probe is schedule-unmatched by design; K=1 REUSED rides the committed "
-                        "E-A instrument, paid arms ride E-B (unlike-instrument seam: any cross-K "
-                        "sentence is matched-bar-scoped)")
+    out["notes"].append("E-B/E-A identity anchor (K=1 smoke, N=2000): 6/6 columns EXACT under "
+                        "record rounding (the 4/6 first reading was a comparison artifact, "
+                        "corrected). K=1 REUSED rides the committed E-A certification at 500k; "
+                        "paid arms ride E-B at 1M — the seam is unlike-horizon, matched-bar-"
+                        "scoped for any cross-K sentence")
     CAL_OUT.write_text(json.dumps(out, indent=2))
     print(("G3 HALT SURFACES: " + "; ".join(out["halt_surfaces"])) if out["halt_surfaces"]
           else "G3 cut complete, no halt surfaces", flush=True)
