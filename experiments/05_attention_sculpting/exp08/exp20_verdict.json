@@ -1,0 +1,637 @@
+{
+  "width": 300,
+  "bands": {
+    "K32": 0.6154,
+    "K128": 0.619,
+    "K512": 0.6333
+  },
+  "amd1": "K512 stratified = UNDECIDABLE-IN-ARM (recorded, never imputed)",
+  "per_K": {
+    "K32": {
+      "0": {
+        "acq": 84600,
+        "n_full": 91401,
+        "full": {
+          "observed": 2,
+          "null_max": 6,
+          "p_hat": 0.4987,
+          "certified": false
+        },
+        "stratified": {
+          "n": 66774,
+          "observed": 2,
+          "null_max": 6,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.2555,
+          "late_minus_early": 0.203,
+          "n": 3052
+        },
+        "ea_exam_acc_end": 0.52
+      },
+      "1": {
+        "acq": 106200,
+        "n_full": 91495,
+        "full": {
+          "observed": 3,
+          "null_max": 8,
+          "p_hat": 0.4962,
+          "certified": false
+        },
+        "stratified": {
+          "n": 66778,
+          "observed": 2,
+          "null_max": 5,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.2823,
+          "late_minus_early": 0.0834,
+          "n": 2980
+        },
+        "ea_exam_acc_end": 0.538462
+      },
+      "2": {
+        "acq": 3300,
+        "n_full": 91382,
+        "full": {
+          "observed": 2,
+          "null_max": 6,
+          "p_hat": 0.495,
+          "certified": false
+        },
+        "stratified": {
+          "n": 66710,
+          "observed": 2,
+          "null_max": 6,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.3158,
+          "late_minus_early": 0.1985,
+          "n": 3323
+        },
+        "ea_exam_acc_end": 0.6
+      },
+      "3": {
+        "acq": 2700,
+        "n_full": 91851,
+        "full": {
+          "observed": 3,
+          "null_max": 6,
+          "p_hat": 0.4993,
+          "certified": false
+        },
+        "stratified": {
+          "n": 67174,
+          "observed": 2,
+          "null_max": 6,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.1971,
+          "late_minus_early": -0.0399,
+          "n": 3325
+        },
+        "ea_exam_acc_end": 0.5
+      },
+      "4": {
+        "acq": 3900,
+        "n_full": 91684,
+        "full": {
+          "observed": 3,
+          "null_max": 7,
+          "p_hat": 0.4962,
+          "certified": false
+        },
+        "stratified": {
+          "n": 66956,
+          "observed": 2,
+          "null_max": 7,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.282,
+          "late_minus_early": 0.0545,
+          "n": 3321
+        },
+        "ea_exam_acc_end": 0.619048
+      },
+      "5": {
+        "acq": 70200,
+        "n_full": 91448,
+        "full": {
+          "observed": 3,
+          "null_max": 7,
+          "p_hat": 0.5024,
+          "certified": false
+        },
+        "stratified": {
+          "n": 66828,
+          "observed": 2,
+          "null_max": 6,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.3716,
+          "late_minus_early": 0.1891,
+          "n": 3100
+        },
+        "ea_exam_acc_end": 0.633333
+      },
+      "6": {
+        "acq": 6900,
+        "n_full": 91826,
+        "full": {
+          "observed": 3,
+          "null_max": 7,
+          "p_hat": 0.4935,
+          "certified": false
+        },
+        "stratified": {
+          "n": 67028,
+          "observed": 2,
+          "null_max": 6,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.1758,
+          "late_minus_early": 0.0634,
+          "n": 3311
+        },
+        "ea_exam_acc_end": 0.478261
+      },
+      "7": {
+        "acq": 38700,
+        "n_full": 91077,
+        "full": {
+          "observed": 2,
+          "null_max": 7,
+          "p_hat": 0.4998,
+          "certified": false
+        },
+        "stratified": {
+          "n": 66576,
+          "observed": 2,
+          "null_max": 6,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.1796,
+          "late_minus_early": 0.0881,
+          "n": 3205
+        },
+        "ea_exam_acc_end": 0.714286
+      }
+    },
+    "K128": {
+      "0": {
+        "acq": 30000,
+        "n_full": 91401,
+        "full": {
+          "observed": 3,
+          "null_max": 8,
+          "p_hat": 0.5,
+          "certified": false
+        },
+        "stratified": {
+          "n": 24742,
+          "observed": 3,
+          "null_max": 8,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.2492,
+          "late_minus_early": -0.0215,
+          "n": 3234
+        },
+        "ea_exam_acc_end": 0.36
+      },
+      "1": {
+        "acq": 59700,
+        "n_full": 91495,
+        "full": {
+          "observed": 3,
+          "null_max": 7,
+          "p_hat": 0.4969,
+          "certified": false
+        },
+        "stratified": {
+          "n": 24773,
+          "observed": 3,
+          "null_max": 8,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.3124,
+          "late_minus_early": 0.0295,
+          "n": 3135
+        },
+        "ea_exam_acc_end": 0.538462
+      },
+      "2": {
+        "acq": 3600,
+        "n_full": 91382,
+        "full": {
+          "observed": 2,
+          "null_max": 6,
+          "p_hat": 0.4968,
+          "certified": false
+        },
+        "stratified": {
+          "n": 24811,
+          "observed": 4,
+          "null_max": 8,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.3964,
+          "late_minus_early": -0.0007,
+          "n": 3322
+        },
+        "ea_exam_acc_end": 0.457143
+      },
+      "3": {
+        "acq": 3900,
+        "n_full": 91851,
+        "full": {
+          "observed": 2,
+          "null_max": 7,
+          "p_hat": 0.5005,
+          "certified": false
+        },
+        "stratified": {
+          "n": 24615,
+          "observed": 3,
+          "null_max": 9,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.312,
+          "late_minus_early": -0.056,
+          "n": 3321
+        },
+        "ea_exam_acc_end": 0.458333
+      },
+      "4": {
+        "acq": 4500,
+        "n_full": 91684,
+        "full": {
+          "observed": 3,
+          "null_max": 8,
+          "p_hat": 0.4998,
+          "certified": false
+        },
+        "stratified": {
+          "n": 24887,
+          "observed": 4,
+          "null_max": 9,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.2898,
+          "late_minus_early": 0.0105,
+          "n": 3319
+        },
+        "ea_exam_acc_end": 0.619048
+      },
+      "5": {
+        "acq": 6900,
+        "n_full": 91448,
+        "full": {
+          "observed": 3,
+          "null_max": 8,
+          "p_hat": 0.5029,
+          "certified": false
+        },
+        "stratified": {
+          "n": 24721,
+          "observed": 3,
+          "null_max": 8,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.3536,
+          "late_minus_early": 0.0421,
+          "n": 3311
+        },
+        "ea_exam_acc_end": 0.533333
+      },
+      "6": {
+        "acq": 3900,
+        "n_full": 91826,
+        "full": {
+          "observed": 4,
+          "null_max": 7,
+          "p_hat": 0.4974,
+          "certified": false
+        },
+        "stratified": {
+          "n": 24768,
+          "observed": 3,
+          "null_max": 7,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.2531,
+          "late_minus_early": 0.0771,
+          "n": 3321
+        },
+        "ea_exam_acc_end": 0.478261
+      },
+      "7": {
+        "acq": 14400,
+        "n_full": 91077,
+        "full": {
+          "observed": 3,
+          "null_max": 7,
+          "p_hat": 0.5014,
+          "certified": false
+        },
+        "stratified": {
+          "n": 24719,
+          "observed": 3,
+          "null_max": 7,
+          "certified": false
+        },
+        "dec_cat": {
+          "mean": 0.303,
+          "late_minus_early": -0.0329,
+          "n": 3286
+        },
+        "ea_exam_acc_end": 0.714286
+      }
+    },
+    "K512": {
+      "0": {
+        "acq": 4500,
+        "n_full": 91401,
+        "full": {
+          "observed": 40,
+          "null_max": 12,
+          "p_hat": 0.5737,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          },
+          "episode_span": [
+            271500,
+            283500
+          ]
+        },
+        "stratified": {
+          "state": "UNDECIDABLE-IN-ARM (AMD-1)",
+          "n_recorded": 470
+        },
+        "dec_cat": {
+          "mean": 0.4972,
+          "late_minus_early": -0.1753,
+          "n": 3319
+        },
+        "ea_exam_acc_end": 0.36
+      },
+      "1": {
+        "acq": 20100,
+        "n_full": 91495,
+        "full": {
+          "observed": 36,
+          "null_max": 7,
+          "p_hat": 0.5156,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          },
+          "episode_span": [
+            418500,
+            429300
+          ]
+        },
+        "stratified": {
+          "state": "UNDECIDABLE-IN-ARM (AMD-1)",
+          "n_recorded": 511
+        },
+        "dec_cat": {
+          "mean": 0.493,
+          "late_minus_early": 0.0049,
+          "n": 3267
+        },
+        "ea_exam_acc_end": 0.576923
+      },
+      "2": {
+        "acq": 3900,
+        "n_full": 91382,
+        "full": {
+          "observed": 45,
+          "null_max": 7,
+          "p_hat": 0.5315,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          },
+          "episode_span": [
+            152700,
+            166200
+          ]
+        },
+        "stratified": {
+          "state": "UNDECIDABLE-IN-ARM (AMD-1)",
+          "n_recorded": 527
+        },
+        "dec_cat": {
+          "mean": 0.5003,
+          "late_minus_early": 0.0065,
+          "n": 3321
+        },
+        "ea_exam_acc_end": 0.485714
+      },
+      "3": {
+        "acq": 2400,
+        "n_full": 91851,
+        "full": {
+          "observed": 4,
+          "null_max": 6,
+          "p_hat": 0.5016,
+          "certified": false
+        },
+        "stratified": {
+          "state": "UNDECIDABLE-IN-ARM (AMD-1)",
+          "n_recorded": 486
+        },
+        "dec_cat": {
+          "mean": 0.6325,
+          "late_minus_early": 0.5077,
+          "n": 3326
+        },
+        "ea_exam_acc_end": 0.541667
+      },
+      "4": {
+        "acq": 4500,
+        "n_full": 91684,
+        "full": {
+          "observed": 49,
+          "null_max": 8,
+          "p_hat": 0.5319,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          },
+          "episode_span": [
+            58500,
+            73200
+          ]
+        },
+        "stratified": {
+          "state": "UNDECIDABLE-IN-ARM (AMD-1)",
+          "n_recorded": 504
+        },
+        "dec_cat": {
+          "mean": 0.5178,
+          "late_minus_early": -0.0785,
+          "n": 3319
+        },
+        "ea_exam_acc_end": 0.619048
+      },
+      "5": {
+        "acq": 6600,
+        "n_full": 91448,
+        "full": {
+          "observed": 71,
+          "null_max": 7,
+          "p_hat": 0.5201,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          },
+          "episode_span": [
+            112800,
+            134100
+          ]
+        },
+        "stratified": {
+          "state": "UNDECIDABLE-IN-ARM (AMD-1)",
+          "n_recorded": 515
+        },
+        "dec_cat": {
+          "mean": 0.4954,
+          "late_minus_early": -0.0231,
+          "n": 3312
+        },
+        "ea_exam_acc_end": 0.366667
+      },
+      "6": {
+        "acq": 3900,
+        "n_full": 91826,
+        "full": {
+          "observed": 58,
+          "null_max": 12,
+          "p_hat": 0.5746,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          },
+          "episode_span": [
+            169800,
+            187200
+          ]
+        },
+        "stratified": {
+          "state": "UNDECIDABLE-IN-ARM (AMD-1)",
+          "n_recorded": 519
+        },
+        "dec_cat": {
+          "mean": 0.5075,
+          "late_minus_early": -0.0895,
+          "n": 3321
+        },
+        "ea_exam_acc_end": 0.521739
+      },
+      "7": {
+        "acq": 6900,
+        "n_full": 91077,
+        "full": {
+          "observed": 3,
+          "null_max": 6,
+          "p_hat": 0.4977,
+          "certified": false
+        },
+        "stratified": {
+          "state": "UNDECIDABLE-IN-ARM (AMD-1)",
+          "n_recorded": 508
+        },
+        "dec_cat": {
+          "mean": 0.3359,
+          "late_minus_early": -0.0092,
+          "n": 3311
+        },
+        "ea_exam_acc_end": 0.685714
+      },
+      "multiplicity_envelope": {
+        "certified_mean": 0.36768,
+        "noncert_mean": 0.36762,
+        "gap": 6e-05,
+        "full_spread": 0.00093
+      }
+    }
+  },
+  "halts": [],
+  "flags": [],
+  "correspondence": {
+    "K32": {
+      "same_member_delivered_adjacency": 0.45129,
+      "mean_displacement": 15.4,
+      "prefix": 20000
+    },
+    "K128": {
+      "same_member_delivered_adjacency": 0.18269,
+      "mean_displacement": 63.1,
+      "prefix": 20000
+    },
+    "K512": {
+      "same_member_delivered_adjacency": 0.09877,
+      "mean_displacement": 251.4,
+      "prefix": 20000
+    }
+  },
+  "cells": {
+    "halts": [],
+    "flags": [],
+    "recency_carried": {
+      "32": [],
+      "128": []
+    },
+    "rescue_full_only_K512": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6
+    ],
+    "rescue_full_only_K512_sentence": "certified on the full read at K512; the recency-free confirmation is structurally unpowered at this K \u2014 RECENCY-CARRIED cannot be excluded in-arm",
+    "powered_strat_counts": {
+      "K32": 0,
+      "K128": 0
+    },
+    "rescue_monotone_powered": false,
+    "all_paid_dead": false
+  }
+}
