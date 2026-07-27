@@ -194,3 +194,26 @@ the exact contamination the committed exclusion exists to prevent; the exclusion
 K512, not vacuous). Per the pre-named condition this is a HALT, not a fold: **item 5 (G4 launch) is
 HELD; the census answer re-routes to the seat.** The committed artifact's bands are unchanged and
 correct per the committed recipe; no value in §(b) is touched by this record.
+
+---
+
+## TOUCH-2 RATIFIED (2026-07-28) — the corridor is OPEN; G4 launches
+
+**Census HALT resolved (the seat's word, verbatim):** *"Committed recipe correct — fold, launch."*
+Grounds as ruled: the filter is the §10.22 recipe's own pre-committed, previously-ratified episode
+exclusion, applied as committed; no committed band value moves under the committed recipe; the
+include-variant's movement (0.6333 → 0.7040 = S0_LEVEL) is the contamination case the exclusion
+exists to prevent — a null dragged to the converters' episode level is the signal grading itself.
+The only genuine defect was provenance (the filter unstated in the artifact); `c201488` closed it.
+Seat verified `c201488`/`dc030da` from its clone: code citations, delta reconciliation, re-anchor
+sites all check.
+
+**Q1 CONFIRMED:** W = K for the delivered-stratum cutter. **Q2 RULED:** verdict width **300** per
+the EXP19-SPLIT precedent. **Q3 RULED:** EXP20 AMD-1 appended verbatim to the prereg —
+UNDECIDABLE-IN-ARM at K512/stratified; RESCUE-FULL-ONLY-K512 cell + licensed sentence; dec_cat =
+companion-grade in-arm discriminator; RESCUE-MONOTONE through powered strata only; halts unchanged.
+**Q4 RATIFIED:** the §(b) constants table and envelopes.
+
+**G4: 24 verdict runs (K ∈ {32,128,512} × seeds {0..7}), read_at 1M, from scratch, checkpoint
+contract on, K=2048 dormant. Corridor runs to terminal per the committed gates — pre-named
+conditions execute, judgment halts. Terminal → refute panel → seat verification → Jason.**
