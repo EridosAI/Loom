@@ -168,3 +168,29 @@ CORRIDOR_PROTOCOL at HEAD governs; the estimator-support rider (row 55) is WIRED
    W = 2K support ≈ 130–160; W = ∞ ≈ 0 — wider windows only thin it further. This is the wp-strat
    species, pre-named by the underpower gate; it needs your text, not a workaround.
 4. Ratification of the G3 constants table (§(b)) and the envelopes above.
+
+---
+
+## Touch-2 item-1 census answer (2026-07-28) — the pre-named HALT condition FIRED
+
+**The filter, named with citation:** the §10.22 recipe's OWN honest-null episode exclusion —
+`XA._provisional_cut` (exp14_arms.py:639) applies `_episode_mask(accs, EPISODE_BAND=0.704,
+EPISODE_MIN=8)` (exp14_arms.py:84 "honest-null episode-exclusion (band re-pin, Jason 2026-07-07)";
+:561) before pooling: windows inside s0-class episodes (≥8 consecutive windows ≥0.704) are excluded
+from the null band's input so converting cal seeds cannot inflate the null. The deltas reproduce
+EXACTLY as the per-seed excluded-window counts: **K32 Δ0 (none) · K128 Δ11 (all s24) · K512 Δ174
+(s24: 80, s25: 94)** — the excluded mass sits precisely on the cal-split converters.
+
+**Band sensitivity, include vs exclude (the committed recipe = exclude):**
+| K | recipe (exclude) | include variant | verdict |
+|---|---|---|---|
+| 32 | 0.6154 × N4 | 0.6154 × N4 | band-invariant |
+| 128 | 0.6190 × N4 | 0.6190 × **N6** | N moves |
+| 512 | 0.6333 × N12 | **0.7040** × N16 | band moves |
+
+**Ruling applied:** "anything that moves a band value → HALT, re-route to the seat." The K512 band
+moves (to 0.704 = S0_LEVEL itself — the include-variant drags the joint cut up to the episode level,
+the exact contamination the committed exclusion exists to prevent; the exclusion is load-bearing at
+K512, not vacuous). Per the pre-named condition this is a HALT, not a fold: **item 5 (G4 launch) is
+HELD; the census answer re-routes to the seat.** The committed artifact's bands are unchanged and
+correct per the committed recipe; no value in §(b) is touched by this record.
