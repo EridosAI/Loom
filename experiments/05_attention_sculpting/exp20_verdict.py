@@ -62,7 +62,8 @@ def _verdict_rec(K: int, s: int) -> dict:
 
 def _certify(ons, acq, band, seed) -> dict:
     with C20._band(band):
-        r = SC._certify_seed(ons, acq, WIDTH, torch.Generator().manual_seed(FL.SIM_SEED + seed))
+        r = SC._certify_seed(ons, acq, WIDTH, torch.Generator().manual_seed(FL.SIM_SEED + seed),
+                             read_at=READ_AT)                 # the ratified 1M grid (ledger row 56)
     return r
 
 
@@ -72,7 +73,7 @@ def _stream_marginal(ons, acq, band, seed, obs) -> dict:
     with C20._band(band):
         for k in range(N_STREAMS):
             g = torch.Generator().manual_seed(FL.SIM_SEED + STRIDE * (k + 1) + seed)
-            r = SC._certify_seed(ons, acq, WIDTH, g)
+            r = SC._certify_seed(ons, acq, WIDTH, g, read_at=READ_AT)
             certs.append(obs > r["null_max"])
             tails.append(r["p_value"])
     marginal = statistics.mean(tails)

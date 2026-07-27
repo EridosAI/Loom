@@ -76,11 +76,16 @@ def _bin(onsets: list, acq: int, width: int, read_at: int = READ_AT) -> tuple[li
     return grid, win
 
 
-def _certify_seed(onsets: list, acq: int, width: int, gen: torch.Generator) -> dict:
+def _certify_seed(onsets: list, acq: int, width: int, gen: torch.Generator,
+                  read_at: int = READ_AT) -> dict:
     """Outcome-blind certification: observed longest run at `width` vs the seed's OWN in-regime simulated
     phantom floor (Binomial-per-window at the seed's post-acq mean; p<1/N_SIMS). Certified at BAND=CAL.BAND
-    (0.64) — the SAME band the op width was cut on (ledger 44), NOT exp19_floor's retracted 0.704 default."""
-    grid, win = _bin(onsets, acq, width)
+    (0.64) — the SAME band the op width was cut on (ledger 44), NOT exp19_floor's retracted 0.704 default.
+    `read_at` (EXP20, ledger row 56): the window-grid horizon. The DEFAULT stays READ_AT=500,000 so every
+    EXP19 result is byte-preserved; a caller whose ratified law reads at another horizon MUST pass it —
+    the def-time default silently truncated EXP20's 1M certification to the first 500k waves (the 6th
+    un-transported constant; caught by the G6 refute panel, 8/8 adversarial confirms)."""
+    grid, win = _bin(onsets, acq, width, read_at)
     series = FL._series_from_win({str(t): v for t, v in win.items()}, grid)
     obs = FL._longest_run(series, band=BAND)
     counts = [len(win.get(t, [])) for t in grid]

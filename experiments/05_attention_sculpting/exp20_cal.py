@@ -136,7 +136,8 @@ def _powercert(band: float, target_counts: list, thin_to: float, width: int,
             sub = [ons[i] for i in idx]
             with _band(band):
                 r = SC._certify_seed(sub, acq, width, torch.Generator().manual_seed(
-                    FL.SIM_SEED + s))
+                    FL.SIM_SEED + s))                          # DEFAULT 500k grid: C's committed
+                # records live there (the reported-never-bridged asymmetry, grid_note below)
             certs.append(r["certified"])
             p_hats.append(r["p_hat"])
         per_conv[s] = dict(kept=keep, of=n, cert_rate=round(sum(certs) / k_draws, 3),
@@ -183,7 +184,8 @@ def cut():
         # (2) conv/nonconv split at the bootstrap width (corridor :86 precedent), in-regime band
         with _band(band):
             certs = {s: SC._certify_seed(data_full[s][1], data_full[s][0], SPLIT_WIDTH,
-                                         torch.Generator().manual_seed(FL.SIM_SEED + s))
+                                         torch.Generator().manual_seed(FL.SIM_SEED + s),
+                                         read_at=READ_AT)     # the ratified 1M grid (row 56)
                      for s in CAL_SEEDS}
         conv = [s for s in CAL_SEEDS if certs[s]["certified"]]
         nonconv = [s for s in CAL_SEEDS if s not in conv]
@@ -240,7 +242,7 @@ def cut():
                 nm = []
                 for k in range(N_STREAMS):
                     g = torch.Generator().manual_seed(FL.SIM_SEED + STRIDE * (k + 1) + s)
-                    r = SC._certify_seed(ons, acq, SPLIT_WIDTH, g)
+                    r = SC._certify_seed(ons, acq, SPLIT_WIDTH, g, read_at=READ_AT)
                     nm.append(r["null_max"])
                 sm[s] = dict(null_max_min=min(nm), null_max_med=int(statistics.median(nm)),
                              null_max_max=max(nm),

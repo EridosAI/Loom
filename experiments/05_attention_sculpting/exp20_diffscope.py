@@ -24,6 +24,9 @@ WHITELIST = {
                             changed={"build_exp12", "EXP12Loop._make_stream",
                                      "EXP12Loop.build_cells"}),
     "exp14_arms.py":   dict(added=set(), changed={"run_exp14_arm"}),
+    # ledger row 56: the read_at horizon parameter threaded through certification (default 500k =
+    # EXP19 byte-preserved; EXP20 passes 1M explicitly — the 6th un-transported constant's fix)
+    "exp19_scorer.py": dict(added=set(), changed={"_certify_seed"}),
     # B11 REPO layer — the learner chain is OUTSIDE the U-BUF blast radius entirely (5.3-SAT-2's
     # enforcement consequence: the buffer lives in the wave-delivery path, never in step)
     "sculpt_loop.py":  dict(added=set(), changed=set()),
