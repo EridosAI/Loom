@@ -2838,4 +2838,6 @@ count unqualified.*
 **ATTRIBUTION (Jason's wording direction, touch 3):** the finding belongs to **the campaign** — the
 corridor, its fences, and both chairs; the **s3 qualification to CC's panel**; the catches **as rowed**
 (ledgers 37–53). **BANK ORDER:** U-BUF first (the §5.3 rider ruled at its prereg — pre-flagged *[ruled 2026-07-24 → v1.2 §5.3-SAT-2]*) → bracket
-refinement (informed by the B=128 tail) → decay follow-on (axis-tracking) → D3/D4.
+refinement (informed by the B=128 tail) → decay follow-on (axis-tracking) → D3/D4. [RE-ANCHORED 2026-07-25 → FRONTIER bench re-anchor: U-BUF = comparator arm]
+
+BENCH RE-ANCHOR (ratified Jason, 2026-07-25). The EXP12–20 apparatus — the certified-dead dwelled regime, the in-regime certification law, and the 5.3-SAT-2 arm-scoped entry fence — constitutes the test bench for the founding bet: §5.5's teaching claim ("PAM's convergence error teaches the encoder distinctions it would not acquire autonomously"), maximally testable in a regime certified to not acquire them autonomously. The bench's headline occupant is the evocation-rescue arm (design opens at the seat next; priced at its prereg per §12.1). U-BUF is demoted from "the open fork" to the comparator arm: it prices the ordering channel's causal reachability so an evocation rescue can be dissociated from dumb replay (the 2×2: evocation × replay). U-BUF's original purpose — the bar CWP had to beat — died with CWP at step-0; this re-anchor records the succession explicitly rather than by momentum. Origin: Jason's drift-check, 2026-07-25.
