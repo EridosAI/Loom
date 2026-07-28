@@ -27,7 +27,7 @@
       },
       "split": {
         "20": {
-          "observed": 2,
+          "observed": 3,
           "null_max": 7,
           "certified": false
         },
@@ -48,7 +48,7 @@
         },
         "25": {
           "observed": 4,
-          "null_max": 6,
+          "null_max": 7,
           "certified": false
         }
       },
@@ -171,15 +171,15 @@
         "width": 300,
         "per_seed": {
           "20": {
-            "null_max_min": 5,
-            "null_max_med": 6,
+            "null_max_min": 6,
+            "null_max_med": 7,
             "null_max_max": 10,
             "pinned": 7
           },
           "21": {
             "null_max_min": 6,
             "null_max_med": 7,
-            "null_max_max": 9,
+            "null_max_max": 10,
             "pinned": 7
           },
           "22": {
@@ -198,7 +198,7 @@
             "null_max_min": 6,
             "null_max_med": 7,
             "null_max_max": 9,
-            "pinned": 6
+            "pinned": 7
           }
         }
       }
@@ -221,40 +221,41 @@
       "split": {
         "20": {
           "observed": 3,
-          "null_max": 6,
-          "certified": false
-        },
-        "21": {
-          "observed": 2,
           "null_max": 8,
           "certified": false
         },
+        "21": {
+          "observed": 3,
+          "null_max": 9,
+          "certified": false
+        },
         "22": {
-          "observed": 2,
+          "observed": 3,
           "null_max": 8,
           "certified": false
         },
         "24": {
-          "observed": 3,
+          "observed": 21,
           "null_max": 7,
-          "certified": false
+          "certified": true
         },
         "25": {
-          "observed": 3,
+          "observed": 5,
           "null_max": 8,
           "certified": false
         }
       },
-      "cal_converters": [],
+      "cal_converters": [
+        24
+      ],
       "cal_nonconverters": [
         20,
         21,
         22,
-        24,
         25
       ],
       "full": {
-        "mode": "NO in-arm cal converter \u2014 EXP19-SPLIT precedent route (powercert; op width = touch-2 question)",
+        "mode": "in-arm floor audit",
         "n_onsets": {
           "20": 91842,
           "21": 91132,
@@ -262,52 +263,90 @@
           "24": 91326,
           "25": 91737
         },
-        "powercert": {
-          "per_converter": {
-            "0": {
-              "kept": 14156,
-              "of": 14156,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.6212
-            },
-            "2": {
-              "kept": 14121,
-              "of": 14121,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.5349
-            },
-            "4": {
-              "kept": 14282,
-              "of": 14282,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.5306
-            },
-            "5": {
-              "kept": 14193,
-              "of": 14193,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.5528
-            },
-            "6": {
-              "kept": 14200,
-              "of": 14200,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.5529
-            }
-          },
-          "mean_cert_rate": 1.0,
-          "bar": 0.9,
-          "passes": true,
-          "grid_note": "committed machinery certifies on C's 500k grid; the target reads at 1M \u2014 the companion below is the same p_hat on the target's REAL 1M counts (null inflation reported, not bridged)",
-          "null_1m_grid": {
-            "p_hat_ref": 0.6212,
-            "null_max": 25,
-            "null_q999": 20
-          }
-        }
+        "op": 300,
+        "w_floor": 300,
+        "underpowered": false,
+        "curve": [
+          [
+            300,
+            16,
+            true
+          ],
+          [
+            350,
+            7,
+            true
+          ],
+          [
+            400,
+            13,
+            true
+          ],
+          [
+            450,
+            11,
+            true
+          ],
+          [
+            500,
+            10,
+            true
+          ],
+          [
+            550,
+            9,
+            true
+          ],
+          [
+            600,
+            9,
+            true
+          ],
+          [
+            700,
+            7,
+            true
+          ],
+          [
+            800,
+            6,
+            true
+          ],
+          [
+            900,
+            6,
+            true
+          ],
+          [
+            1200,
+            5,
+            true
+          ],
+          [
+            1500,
+            4,
+            true
+          ],
+          [
+            1706,
+            3,
+            true
+          ],
+          [
+            2100,
+            3,
+            true
+          ],
+          [
+            3000,
+            3,
+            true
+          ]
+        ],
+        "verdict": "powered (exp20_ubuf_K128/full): \u2265 width floor = 300; operating point width 300 (54.9 onsets/win, separation 16 = nearest run 21 \u2212 floor q99 5); 1/1 converters clear; robust-vs-floor-max True (nearest \u2212 floor max = 16)"
       },
       "delivered_stratum": {
-        "mode": "NO in-arm cal converter \u2014 EXP19-SPLIT precedent route (powercert; op width = touch-2 question)",
+        "mode": "in-arm floor audit",
         "n_onsets": {
           "20": 24637,
           "21": 24981,
@@ -315,49 +354,87 @@
           "24": 24577,
           "25": 24895
         },
-        "powercert": {
-          "per_converter": {
-            "0": {
-              "kept": 12363,
-              "of": 14156,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.6223
-            },
-            "2": {
-              "kept": 12333,
-              "of": 14121,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.5337
-            },
-            "4": {
-              "kept": 12474,
-              "of": 14282,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.5314
-            },
-            "5": {
-              "kept": 12396,
-              "of": 14193,
-              "cert_rate": 1.0,
-              "p_hat_med": 0.5534
-            },
-            "6": {
-              "kept": 12402,
-              "of": 14200,
-              "cert_rate": 0.7,
-              "p_hat_med": 0.5512
-            }
-          },
-          "mean_cert_rate": 0.94,
-          "bar": 0.9,
-          "passes": true,
-          "grid_note": "committed machinery certifies on C's 500k grid; the target reads at 1M \u2014 the companion below is the same p_hat on the target's REAL 1M counts (null inflation reported, not bridged)",
-          "null_1m_grid": {
-            "p_hat_ref": 0.6223,
-            "null_max": 24,
-            "null_q999": 21
-          }
-        }
+        "op": 300,
+        "w_floor": 300,
+        "underpowered": false,
+        "curve": [
+          [
+            300,
+            10,
+            true
+          ],
+          [
+            350,
+            5,
+            true
+          ],
+          [
+            400,
+            7,
+            true
+          ],
+          [
+            450,
+            6,
+            true
+          ],
+          [
+            500,
+            4,
+            true
+          ],
+          [
+            550,
+            3,
+            true
+          ],
+          [
+            600,
+            4,
+            true
+          ],
+          [
+            700,
+            6,
+            true
+          ],
+          [
+            800,
+            5,
+            true
+          ],
+          [
+            900,
+            2,
+            true
+          ],
+          [
+            1200,
+            4,
+            true
+          ],
+          [
+            1500,
+            3,
+            true
+          ],
+          [
+            1706,
+            2,
+            true
+          ],
+          [
+            2100,
+            1,
+            true
+          ],
+          [
+            3000,
+            2,
+            true
+          ]
+        ],
+        "verdict": "powered (exp20_ubuf_K128/delivered_stratum): \u2265 width floor = 300; operating point width 300 (14.9 onsets/win, separation 10 = nearest run 13 \u2212 floor q99 3); 1/1 converters clear; robust-vs-floor-max True (nearest \u2212 floor max = 10)"
       },
       "stream_marginal_nulls": {
         "scheme": "gseed = SIM_SEED + 1000003*(k+1) + seed, k in 0..199 (exp19_stream_stability.py:27)",
@@ -367,13 +444,13 @@
             "null_max_min": 6,
             "null_max_med": 7,
             "null_max_max": 9,
-            "pinned": 6
+            "pinned": 8
           },
           "21": {
             "null_max_min": 6,
             "null_max_med": 7,
             "null_max_max": 10,
-            "pinned": 8
+            "pinned": 9
           },
           "22": {
             "null_max_min": 6,
@@ -384,7 +461,7 @@
           "24": {
             "null_max_min": 6,
             "null_max_med": 7,
-            "null_max_max": 9,
+            "null_max_max": 10,
             "pinned": 7
           },
           "25": {
@@ -414,7 +491,7 @@
       "split": {
         "20": {
           "observed": 3,
-          "null_max": 6,
+          "null_max": 7,
           "certified": false
         },
         "21": {
@@ -433,7 +510,7 @@
           "certified": true
         },
         "25": {
-          "observed": 16,
+          "observed": 46,
           "null_max": 11,
           "certified": true
         }
@@ -637,18 +714,18 @@
             "null_max_min": 5,
             "null_max_med": 6,
             "null_max_max": 11,
-            "pinned": 6
+            "pinned": 7
           },
           "21": {
-            "null_max_min": 5,
-            "null_max_med": 6,
+            "null_max_min": 6,
+            "null_max_med": 7,
             "null_max_max": 9,
             "pinned": 6
           },
           "22": {
-            "null_max_min": 5,
-            "null_max_med": 6,
-            "null_max_max": 8,
+            "null_max_min": 6,
+            "null_max_med": 7,
+            "null_max_max": 9,
             "pinned": 7
           },
           "24": {
@@ -658,9 +735,9 @@
             "pinned": 7
           },
           "25": {
-            "null_max_min": 7,
-            "null_max_med": 8,
-            "null_max_max": 10,
+            "null_max_min": 8,
+            "null_max_med": 10,
+            "null_max_max": 13,
             "pinned": 11
           }
         }

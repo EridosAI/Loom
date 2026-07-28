@@ -12,14 +12,14 @@
         "acq": 84600,
         "n_full": 91401,
         "full": {
-          "observed": 2,
-          "null_max": 6,
-          "p_hat": 0.4987,
+          "observed": 3,
+          "null_max": 7,
+          "p_hat": 0.5007,
           "certified": false
         },
         "stratified": {
           "n": 66774,
-          "observed": 2,
+          "observed": 3,
           "null_max": 6,
           "certified": false
         },
@@ -36,13 +36,13 @@
         "full": {
           "observed": 3,
           "null_max": 8,
-          "p_hat": 0.4962,
+          "p_hat": 0.4979,
           "certified": false
         },
         "stratified": {
           "n": 66778,
-          "observed": 2,
-          "null_max": 5,
+          "observed": 3,
+          "null_max": 6,
           "certified": false
         },
         "dec_cat": {
@@ -56,14 +56,14 @@
         "acq": 3300,
         "n_full": 91382,
         "full": {
-          "observed": 2,
-          "null_max": 6,
-          "p_hat": 0.495,
+          "observed": 3,
+          "null_max": 7,
+          "p_hat": 0.4983,
           "certified": false
         },
         "stratified": {
           "n": 66710,
-          "observed": 2,
+          "observed": 3,
           "null_max": 6,
           "certified": false
         },
@@ -80,7 +80,7 @@
         "full": {
           "observed": 3,
           "null_max": 6,
-          "p_hat": 0.4993,
+          "p_hat": 0.4966,
           "certified": false
         },
         "stratified": {
@@ -102,7 +102,7 @@
         "full": {
           "observed": 3,
           "null_max": 7,
-          "p_hat": 0.4962,
+          "p_hat": 0.4985,
           "certified": false
         },
         "stratified": {
@@ -124,12 +124,12 @@
         "full": {
           "observed": 3,
           "null_max": 7,
-          "p_hat": 0.5024,
+          "p_hat": 0.502,
           "certified": false
         },
         "stratified": {
           "n": 66828,
-          "observed": 2,
+          "observed": 3,
           "null_max": 6,
           "certified": false
         },
@@ -146,12 +146,12 @@
         "full": {
           "observed": 3,
           "null_max": 7,
-          "p_hat": 0.4935,
+          "p_hat": 0.4948,
           "certified": false
         },
         "stratified": {
           "n": 67028,
-          "observed": 2,
+          "observed": 3,
           "null_max": 6,
           "certified": false
         },
@@ -166,14 +166,14 @@
         "acq": 38700,
         "n_full": 91077,
         "full": {
-          "observed": 2,
+          "observed": 3,
           "null_max": 7,
-          "p_hat": 0.4998,
+          "p_hat": 0.4991,
           "certified": false
         },
         "stratified": {
           "n": 66576,
-          "observed": 2,
+          "observed": 3,
           "null_max": 6,
           "certified": false
         },
@@ -192,7 +192,7 @@
         "full": {
           "observed": 3,
           "null_max": 8,
-          "p_hat": 0.5,
+          "p_hat": 0.5003,
           "certified": false
         },
         "stratified": {
@@ -214,7 +214,7 @@
         "full": {
           "observed": 3,
           "null_max": 7,
-          "p_hat": 0.4969,
+          "p_hat": 0.4971,
           "certified": false
         },
         "stratified": {
@@ -234,16 +234,32 @@
         "acq": 3600,
         "n_full": 91382,
         "full": {
-          "observed": 2,
-          "null_max": 6,
-          "p_hat": 0.4968,
-          "certified": false
+          "observed": 39,
+          "null_max": 7,
+          "p_hat": 0.5075,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          },
+          "episode_span": [
+            905400,
+            917100
+          ]
         },
         "stratified": {
           "n": 24811,
-          "observed": 4,
-          "null_max": 8,
-          "certified": false
+          "observed": 13,
+          "null_max": 10,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          }
         },
         "dec_cat": {
           "mean": 0.3964,
@@ -258,7 +274,7 @@
         "full": {
           "observed": 2,
           "null_max": 7,
-          "p_hat": 0.5005,
+          "p_hat": 0.499,
           "certified": false
         },
         "stratified": {
@@ -280,7 +296,7 @@
         "full": {
           "observed": 3,
           "null_max": 8,
-          "p_hat": 0.4998,
+          "p_hat": 0.5004,
           "certified": false
         },
         "stratified": {
@@ -301,8 +317,8 @@
         "n_full": 91448,
         "full": {
           "observed": 3,
-          "null_max": 8,
-          "p_hat": 0.5029,
+          "null_max": 7,
+          "p_hat": 0.5,
           "certified": false
         },
         "stratified": {
@@ -324,13 +340,13 @@
         "full": {
           "observed": 4,
           "null_max": 7,
-          "p_hat": 0.4974,
+          "p_hat": 0.4977,
           "certified": false
         },
         "stratified": {
           "n": 24768,
           "observed": 3,
-          "null_max": 7,
+          "null_max": 9,
           "certified": false
         },
         "dec_cat": {
@@ -346,13 +362,13 @@
         "full": {
           "observed": 3,
           "null_max": 7,
-          "p_hat": 0.5014,
+          "p_hat": 0.5007,
           "certified": false
         },
         "stratified": {
           "n": 24719,
           "observed": 3,
-          "null_max": 7,
+          "null_max": 8,
           "certified": false
         },
         "dec_cat": {
@@ -361,6 +377,12 @@
           "n": 3286
         },
         "ea_exam_acc_end": 0.714286
+      },
+      "multiplicity_envelope": {
+        "certified_mean": 0.36631,
+        "noncert_mean": 0.36634,
+        "gap": 3e-05,
+        "full_spread": 0.00065
       }
     },
     "K512": {
@@ -369,8 +391,8 @@
         "n_full": 91401,
         "full": {
           "observed": 40,
-          "null_max": 12,
-          "p_hat": 0.5737,
+          "null_max": 9,
+          "p_hat": 0.5373,
           "certified": true,
           "stream_marginal": {
             "cert_rate": 1.0,
@@ -400,7 +422,7 @@
         "full": {
           "observed": 36,
           "null_max": 7,
-          "p_hat": 0.5156,
+          "p_hat": 0.5085,
           "certified": true,
           "stream_marginal": {
             "cert_rate": 1.0,
@@ -430,7 +452,7 @@
         "full": {
           "observed": 45,
           "null_max": 7,
-          "p_hat": 0.5315,
+          "p_hat": 0.5142,
           "certified": true,
           "stream_marginal": {
             "cert_rate": 1.0,
@@ -458,10 +480,20 @@
         "acq": 2400,
         "n_full": 91851,
         "full": {
-          "observed": 4,
-          "null_max": 6,
-          "p_hat": 0.5016,
-          "certified": false
+          "observed": 140,
+          "null_max": 45,
+          "p_hat": 0.6781,
+          "certified": true,
+          "stream_marginal": {
+            "cert_rate": 1.0,
+            "marginal_tail": 0.0,
+            "advertised": 0.0002,
+            "qualified": false
+          },
+          "episode_span": [
+            498600,
+            540600
+          ]
         },
         "stratified": {
           "state": "UNDECIDABLE-IN-ARM (AMD-1)",
@@ -480,7 +512,7 @@
         "full": {
           "observed": 49,
           "null_max": 8,
-          "p_hat": 0.5319,
+          "p_hat": 0.5161,
           "certified": true,
           "stream_marginal": {
             "cert_rate": 1.0,
@@ -510,7 +542,7 @@
         "full": {
           "observed": 71,
           "null_max": 7,
-          "p_hat": 0.5201,
+          "p_hat": 0.5104,
           "certified": true,
           "stream_marginal": {
             "cert_rate": 1.0,
@@ -539,8 +571,8 @@
         "n_full": 91826,
         "full": {
           "observed": 58,
-          "null_max": 12,
-          "p_hat": 0.5746,
+          "null_max": 9,
+          "p_hat": 0.5361,
           "certified": true,
           "stream_marginal": {
             "cert_rate": 1.0,
@@ -569,8 +601,8 @@
         "n_full": 91077,
         "full": {
           "observed": 3,
-          "null_max": 6,
-          "p_hat": 0.4977,
+          "null_max": 8,
+          "p_hat": 0.4992,
           "certified": false
         },
         "stratified": {
@@ -585,9 +617,9 @@
         "ea_exam_acc_end": 0.685714
       },
       "multiplicity_envelope": {
-        "certified_mean": 0.36768,
-        "noncert_mean": 0.36762,
-        "gap": 6e-05,
+        "certified_mean": 0.36764,
+        "noncert_mean": 0.36787,
+        "gap": 0.00023,
         "full_spread": 0.00093
       }
     }
@@ -622,6 +654,7 @@
       0,
       1,
       2,
+      3,
       4,
       5,
       6
@@ -629,9 +662,9 @@
     "rescue_full_only_K512_sentence": "certified on the full read at K512; the recency-free confirmation is structurally unpowered at this K \u2014 RECENCY-CARRIED cannot be excluded in-arm",
     "powered_strat_counts": {
       "K32": 0,
-      "K128": 0
+      "K128": 1
     },
-    "rescue_monotone_powered": false,
+    "rescue_monotone_powered": true,
     "all_paid_dead": false
   }
 }
