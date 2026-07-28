@@ -1,6 +1,7 @@
 # EXP20 U-BUF — DRAFT RESULT v2 (G6; no attribution; the corrected 1M-law read)
 
-**v1 → v2:** DRAFT v1 (uncommitted; preserved verbatim inside the panel record) reported the
+**v1 → v2:** DRAFT v1 (uncommitted; superseded in place — its refuted claims are QUOTED inside
+the panel record's findings, not preserved verbatim; panel-v2 FLAG folded) reported the
 500k-truncated read and was REFUTED in full by the G6 panel — ledger row 56, fix `e4d1007`,
 corrected G3/G5 recomputed at the ratified 1M grid. Panel record: `exp08/exp20_panel_v1.json`.
 This v2 is the ratified-law result and faces its own verification pass before terminal.
