@@ -2442,3 +2442,27 @@ paying for itself). **Two prior "TEN" labels reconciled** (never rewritten): the
 TEN" → **16** (strikethrough-annotated in place); the rulings-relay's "TEN-for-lens-1" → **15**
 (chat-side — nothing in-repo carried that label to annotate). This ledger absorbs every earlier prose
 count (EIGHT / NINE / "10–14"); those remain correct as-of-their-commit and now point here.
+
+
+## 2026-08-04 — RULING: §5.5 redefined as the PAM-TEACHING CONTRAST (docs/canon only; no build authorized)
+
+Jason ratified, recorded verbatim-faithful from the order: (1) **`_l_jepa` correction** — in EXP12–20,
+`W=1` makes `_l_jepa` inert (`build_exp12` pins `cfg.W = 1`, exp12_arms.py:466; the base loop over
+`range(cfg.W - 1)` is empty, loop.py:192); in EXP13, the W>1 forward guard overrides it to hard zero
+(exp13_arms.py:101, smoke-asserted :677). No active JEPA copy-pressure explanation applies to either
+lineage. The false attribution existed CHAT-SIDE only — the repo sweep found NO committed operative
+document carrying it (hence a dated record, not a numbered ledger row). (2) **§5.5's named control
+("V-JEPA continued self-supervised alone") is unavailable on the current bench** — amended in
+`MECHANISM_MAP_v1_2_RECONCILED.md` (historical text preserved, superseded-for-bench). (3)
+**"Evocation-rescue" retired prospectively** as the operational name (§10.30 amendment; historical uses
+stand). (4) **The lower-rung PAM-teaching contrast chosen**: teaching ON (deployed baseline) vs a
+structurally verified teaching OFF (all `L_PAM` gradients into vision zero on BOTH cue and target
+sides; PAM still able to learn). (5) **`_pam_target` detachment alone is NOT teaching OFF** (exp08's
+`DetachLoop` detaches the vision target slot only; the cue-side path stays gradient-attached) — a
+pathway companion, never the OFF control. (6) **§10.14 carry**: the OFF arm's different internal
+set-point does not invalidate the comparison; it requires fresh in-regime calibration and explicit
+regime-shift reporting — not same-set-point preservation. (7) **Acquisition vs retention are distinct
+licensed outcomes** (TEACHING-ADDED / PRESERVATION-ONLY / GENERAL-STABILISATION / INTERNAL-ONLY —
+only TEACHING-ADDED licenses the founding teaching sentence). (8) **The full autonomous-objective
+founding test remains banked**; no autonomous objective is minted. Touch-1 design objects (arm delta,
+B11 proof, falsifiers, compute parity, gradient census) are NOT authorized by this record.

@@ -52,7 +52,31 @@ The kinematic floors live in pose space; the learner lives in render space. If p
 
 **5.4 Is the block a startup cost? Two stories, one arm family.** Representations are not the missing piece — acquisition succeeds in every regime *of the EXP14–17 fabric family* (known exceptions cited: the pure-W=3 cold-start acquisition wall; lawful-fabric `sep_cat` undifferentiated) and the content information is present upstream in the converting regimes while the completer rides the marginal [MEASURED — regime-scoped; the dissociation survives scoped, as everything here does]. *(Universal narrowed per fact-check 2026-07-12 B5.)* But the **race-dynamics variant** survives: early in training, rung 4 is expensive while rungs 1–3 pay immediately — the shortcut basin is occupied first and is measured to be reward-maintained; a learner meeting *mature* features at t=0 runs a different race. [SPECULATIVE, discriminators:] the **pretrained-encoder arm family** (non-paradigm scaffolds, clearly labeled, removed after use): *frozen* variant = the **M1-eliminator** (representations that cannot knead: dead-under-massing kills M1 outright); *trainable-mature* variant = the **race probe** (conversion in dwelled fabric with mature features → the block was race dynamics; still dead → the regime story stands alone and massing is not a startup cost). Wholesale pretraining as a fix remains rejected: it may *deepen* rung 3 (better encoder → cheaper local completion) and it deletes the paradigm's testable content.
 
-**5.5 Bootstrap-as-CONTROL — the founding claim's first operational test form** [DESIGN, banked]: the teaching bet ("PAM's convergence error teaches the encoder distinctions it would not acquire autonomously") is, with an untrained encoder, confounded with basic feature formation. Matched-compute contrast: (i) V-JEPA continued self-supervised alone vs (ii) V-JEPA + PAM coupling, same steps; the claim = distinctions present under (ii), absent under (i), **read on held-out discrimination probes, never on PAM's own loss.** Cost ledger stated: this weakens "PAM grows its own cortex from scratch" as a headline — but the load-bearing claim was always the teaching, and this is its cleanest test.
+**5.5 Bootstrap-as-CONTROL — the founding claim's first operational test form** [DESIGN, banked]: the teaching bet ("PAM's convergence error teaches the encoder distinctions it would not acquire autonomously") is, with an untrained encoder, confounded with basic feature formation. Matched-compute contrast: (i) V-JEPA continued self-supervised alone vs (ii) V-JEPA + PAM coupling, same steps; the claim = distinctions present under (ii), absent under (i), **read on held-out discrimination probes, never on PAM's own loss.** Cost ledger stated: this weakens "PAM grows its own cortex from scratch" as a headline — but the load-bearing claim was always the teaching, and this is its cleanest test. *[SUPERSEDED FOR THE CURRENT BENCH by the 2026-08-04 amendment below — historical formulation preserved.]*
+
+**§5.5 AMENDMENT — PAM-TEACHING CONTROL SPLIT (Jason ratified, 2026-08-04).**
+The originally named control—"V-JEPA continued self-supervised alone"—is unavailable on the current certified bench: `L_JEPA` is inert in the EXP12–20 `W=1` lineage (`build_exp12` pins `cfg.W = 1`, exp12_arms.py:466; the base `_l_jepa` loops over `range(cfg.W - 1)` = empty, loop.py:192) and is hard-disabled by the binding, smoke-asserted forward guard in the W>1 EXP13 lineage (`EXP13Loop._l_jepa` → `torch.zeros(())`, exp13_arms.py:101; assert exp13_arms.py:677). The original full-strength founding test is therefore not executable on this substrate as written.
+
+The next bench-level rung is the **PAM-teaching contrast**:
+
+- **Teaching ON:** the deployed coupled baseline.
+- **Teaching OFF:** PAM remains present and able to learn, but all `L_PAM` gradients into the visual cortex must be structurally zero on both the cue side and target side.
+- Target detachment alone is a pathway companion, not the OFF control (exp08's `DetachLoop._pam_target` detaches only the vision TARGET slot, exp08_arms.py:97-100; the cue-side path through the assembled cells remains gradient-attached).
+
+This amendment does not authorize an implementation. The exact arm delta, B11 proof, reachable falsifiers, compute parity, and gradient census are touch-1 design objects.
+
+**Claim ceiling:** this bench can test whether deployed PAM teaching pressure causes or preserves externally useful distinctions relative to the current geometry-only cortex—spread/isotropy plus pooling-state forces. It cannot establish that PAM teaches beyond a functioning autonomous visual-learning objective.
+
+The full founding contrast—a paradigm-legal autonomous visual objective versus that same objective plus PAM teaching—remains banked. No autonomous objective is minted by this amendment.
+
+Held-out probes remain external to PAM's own loss. Acquisition and retention must be separated:
+
+- `TEACHING-ADDED`: ON acquires the target distinction; viable OFF never acquires it.
+- `PRESERVATION-ONLY`: both acquire it; only ON retains it.
+- `GENERAL-STABILISATION / WRONG-REASON`: ON prevents broad collapse or preserves generic geometry without selective target-axis benefit.
+- `INTERNAL-ONLY / SELF-EASING`: PAM/routing metrics improve without held-out perceptual discrimination improving.
+
+Only `TEACHING-ADDED` licenses the founding teaching sentence.
 
 ## §6 Falsification additions (merged; extends v1.0 §5)
 
