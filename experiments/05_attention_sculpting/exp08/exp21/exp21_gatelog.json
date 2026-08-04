@@ -18,6 +18,23 @@
         "probe_inertness_dualbank_offgrid",
         "repeat_determinism"
       ]
+    },
+    {
+      "gate": "G1",
+      "outcome": "PASS",
+      "executor": "exp21_diffscope.main",
+      "reds": [
+        "off_planted_step_override",
+        "on_planted_step_override",
+        "shared_exp12_edit",
+        "shared_loop_edit"
+      ],
+      "checks": [
+        "b11_off",
+        "b11_on",
+        "repo_blast_radius",
+        "shared_chain_byte_identical"
+      ]
     }
   ]
 }

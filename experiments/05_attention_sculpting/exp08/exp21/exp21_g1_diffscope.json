@@ -1,0 +1,116 @@
+{
+  "gate": "G1",
+  "executor": "exp21_diffscope.main",
+  "baseline": "19a8fbf",
+  "observed_red": {
+    "off_planted_step_override": {
+      "red": true,
+      "kinds": [
+        "OVERRIDE",
+        "CHANGED"
+      ],
+      "restored_green": true
+    },
+    "on_planted_step_override": {
+      "red": true,
+      "kinds": [
+        "OVERRIDE",
+        "CHANGED"
+      ],
+      "restored_green": true
+    },
+    "shared_loop_edit": {
+      "red": true,
+      "violations": [
+        [
+          "CHANGED",
+          "Stage0Loop.step"
+        ]
+      ]
+    },
+    "shared_exp12_edit": {
+      "red": true,
+      "violations": [
+        [
+          "CHANGED",
+          "EXP12Loop.build_cells"
+        ]
+      ]
+    }
+  },
+  "checks": {
+    "shared_chain_byte_identical": {
+      "ok": true,
+      "files": {
+        "../04_stage0_mvp/loop.py": {
+          "added": [],
+          "changed": [],
+          "removed": []
+        },
+        "sculpt_loop.py": {
+          "added": [],
+          "changed": [],
+          "removed": []
+        },
+        "exp08_arms.py": {
+          "added": [],
+          "changed": [],
+          "removed": []
+        },
+        "exp12_arms.py": {
+          "added": [],
+          "changed": [],
+          "removed": []
+        },
+        "exp12_fabric.py": {
+          "added": [],
+          "changed": [],
+          "removed": []
+        },
+        "exp14_arms.py": {
+          "added": [],
+          "changed": [],
+          "removed": []
+        }
+      }
+    },
+    "repo_blast_radius": {
+      "changed": [
+        "experiments/05_attention_sculpting/exp08/exp21/exp21_g0_parity.json",
+        "experiments/05_attention_sculpting/exp08/exp21/exp21_gatelog.json",
+        "experiments/05_attention_sculpting/exp21_cal.py",
+        "experiments/05_attention_sculpting/exp21_diffscope.py",
+        "experiments/05_attention_sculpting/exp21_probe.py",
+        "experiments/05_attention_sculpting/exp21_run.py",
+        "experiments/05_attention_sculpting/exp21_score.py",
+        "experiments/05_attention_sculpting/exp21_teaching.py",
+        "experiments/05_attention_sculpting/exp21_verify.py"
+      ],
+      "out_of_scope": [],
+      "ok": true
+    },
+    "b11_on": {
+      "ok": true,
+      "mro": [
+        "EXP12Loop",
+        "EXP08Loop",
+        "SculptLoop",
+        "Stage0Loop",
+        "object"
+      ],
+      "step_owner": "Stage0Loop"
+    },
+    "b11_off": {
+      "ok": true,
+      "mro": [
+        "EXP21TeachingOffLoop",
+        "EXP12Loop",
+        "EXP08Loop",
+        "SculptLoop",
+        "Stage0Loop",
+        "object"
+      ],
+      "step_owner": "Stage0Loop"
+    }
+  }
+}
