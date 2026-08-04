@@ -124,6 +124,11 @@
         "null_threshold_injection",
         "t0_acquisition"
       ]
+    },
+    {
+      "gate": "TOUCH-2 HARD HOLD",
+      "outcome": "PRE-FLIGHT PACKAGE ASSEMBLED",
+      "note": "G4 NOT RUN; VERDICT SEEDS UNTOUCHED; run_verdict refuses without exp21_touch2_ratified.json (Jason-word only)"
     }
   ]
 }

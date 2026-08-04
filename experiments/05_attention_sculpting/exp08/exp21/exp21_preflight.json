@@ -1,0 +1,494 @@
+{
+  "exp": "exp21",
+  "head": "925f62a2a7a23736955dd8602cb818c45166e45d",
+  "prereg_commit": "19a8fbf",
+  "gate_table": [
+    {
+      "gate": "G0",
+      "executor": "exp21_teaching.g0_parity",
+      "reds": [
+        "fabric_bit_flip",
+        "live_stim_probe_call",
+        "probe_gen_consumption",
+        "read_order_swap"
+      ],
+      "checks": [
+        "constructor_parity",
+        "faithful_runner",
+        "probe_inertness",
+        "probe_inertness_dualbank_offgrid",
+        "repeat_determinism"
+      ],
+      "outcome": "PASS"
+    },
+    {
+      "gate": "G1",
+      "executor": "exp21_diffscope.main",
+      "reds": [
+        "off_planted_step_override",
+        "on_planted_step_override",
+        "shared_exp12_edit",
+        "shared_loop_edit"
+      ],
+      "checks": [
+        "b11_off",
+        "b11_on",
+        "repo_blast_radius",
+        "shared_chain_byte_identical"
+      ],
+      "outcome": "PASS"
+    },
+    {
+      "gate": "G2",
+      "executor": "exp21_teaching.g2_gradient_census",
+      "reds": [
+        "baseline_no_detach",
+        "cue_only",
+        "noop_hooks",
+        "pam_dead",
+        "single_mask_path_only",
+        "target_only",
+        "vision_frozen"
+      ],
+      "checks": {
+        "forward_equal_at_init": true,
+        "matched_counts": true,
+        "on_lpam_to_vision_pos": true,
+        "off_lpam_to_vision_zero": true,
+        "off_lpam_to_pam_pos": true,
+        "off_vision_nonpam_grad_pos": true,
+        "off_gain_positive_pam_update": true,
+        "off_vision_nonpam_update_pos": true
+      },
+      "outcome": "PASS"
+    },
+    {
+      "gate": "G3a",
+      "executor": "exp21_probe.g3_probe_audit",
+      "reds": [
+        "bank_hash_mismatch",
+        "empty_class",
+        "label_imbalance",
+        "live_counter_changed",
+        "pam_called_by_probe",
+        "restore_green",
+        "support_overlap"
+      ],
+      "banks": 18,
+      "outcome": "PASS"
+    },
+    {
+      "gate": "G3b",
+      "executor": "exp21_cal.main",
+      "reds": [
+        "ceilinged_on",
+        "chance_converter",
+        "empty_q4",
+        "nonbiting_guard",
+        "null_threshold_injection",
+        "t0_acquisition"
+      ],
+      "theta_cat": 0.5380859375,
+      "route": "BOTH-QUESTIONS-LIVE",
+      "outcome": "PASS"
+    },
+    {
+      "gate": "G4",
+      "executor": "exp21_run.run_verdict",
+      "reds": "fixture-only census committed (unratified_launch, resume_attempt, paired_bank_mismatch, step_count_mismatch, record_overwrite)",
+      "outcome": "NOT RUN \u2014 refuses without exp21_touch2_ratified.json"
+    },
+    {
+      "gate": "G5",
+      "executor": "exp21_score.main",
+      "reds": [
+        "guard_bypass_plant",
+        "seed_pooling_plant",
+        "unrouted_pattern"
+      ],
+      "cells": [
+        "ACQUISITION-SPEEDUP-companion",
+        "CATEGORY-COLLAPSE-IN-COSTUME",
+        "CATEGORY-COLLAPSE-OFF-SIDE",
+        "CONTROL-NONVIABLE",
+        "GENERAL-STABILISATION",
+        "INTERNAL-ONLY",
+        "NO-EFFECT",
+        "OFF-BETTER",
+        "PRESERVATION-ONLY",
+        "RESTRICTION-DISABLES-TEACHING-ADDED",
+        "SEED-SPLIT",
+        "SEED-SPLIT-heterogeneous",
+        "TEACHING-ADDED"
+      ],
+      "outcome": "fixture census only; frozen scorer committed pre-G4"
+    },
+    {
+      "gate": "G6",
+      "executor": "exp21_verify.main",
+      "reds": [
+        "bank_swap",
+        "gradient_record_tamper",
+        "missing_bare_n",
+        "raw_column_mutation",
+        "route_flip"
+      ],
+      "outcome": "fixture census only; executor + deployed comparators built"
+    }
+  ],
+  "constants": {
+    "theta_cat": {
+      "value": 0.5380859375,
+      "formula": "smallest k/2048 with k/2048 >= 0.5 + delta_point_cat AND #(null streams with any 5-read episode across all 10 cal runs) <= 4/4096",
+      "inputs": {
+        "delta_point_cat": 0.03417969,
+        "floor": 0.53417969,
+        "null_exceed_at_theta": 4,
+        "null_M_top8": [
+          0.542969,
+          0.54248,
+          0.539062,
+          0.538086,
+          0.537598,
+          0.537598,
+          0.536621,
+          0.536621
+        ]
+      },
+      "provenance": "cut on the 10 calibration runs' committed primary-bank predictions before any verdict data exists; null seed 410001230000 (offline scorer-side)"
+    },
+    "t_eligible": {
+      "value": 3000,
+      "formula": "first planned read >= cfg.t2 (=1200)",
+      "asserted": true
+    },
+    "n_acq": {
+      "value": 5,
+      "provenance": "EXP21 design constant fixed by ratification"
+    },
+    "q4": {
+      "from_wave": 750000,
+      "upto": 1000000,
+      "n_reads": 84
+    },
+    "fq_null_bound": {
+      "value": 0.14285714285714285,
+      "formula": "smallest k/84 with #(null streams whose max-over-runs Q4 occupancy at theta_cat >= k/84) <= 4/4096",
+      "inputs": {
+        "null_FQ_top8": [
+          0.452381,
+          0.297619,
+          0.214286,
+          0.130952,
+          0.130952,
+          0.119048,
+          0.119048,
+          0.119048
+        ]
+      },
+      "note": "the \u00a74.2 familywise count (<=4/4096) applied identically to \u00a74.3's bound \u2014 the only in-document count referent; surfaced for the Touch-2 read"
+    },
+    "delta_point_cat": 0.0341796875,
+    "delta_acq": 0.0003847656771540642,
+    "delta_ret": 0.0714285708963871,
+    "delta_guard_point": {
+      "coarse_a": 0.10791000000000003,
+      "distractor": 0.09033199999999997,
+      "member": 0.05078199999999994,
+      "participation_ratio": 0.23163899999999993
+    },
+    "delta_guard_q4": {
+      "coarse_a": 0.008980845238095225,
+      "distractor": 0.008149642857142814,
+      "member": 0.011079285714285736,
+      "participation_ratio": 0.011936369047619078
+    },
+    "delta_internal": {
+      "exam_acc": 0.010601899159663863,
+      "asg_cat": 0.07520587830612246
+    },
+    "guard_bars": {
+      "coarse_a": 0.258981,
+      "distractor": 0.50815,
+      "member": 0.073579,
+      "participation_ratio": 1.011936
+    },
+    "repeatability_companions": {
+      "pointwise_cat_max": 0.08935546875,
+      "pointwise_cat_mean": 0.006916394589552239,
+      "pointwise_guard_max": {
+        "coarse_a": 0.278808,
+        "distractor": 0.310547,
+        "member": 0.07568299999999997,
+        "participation_ratio": 0.7196639999999999
+      },
+      "n_pointwise": 3350
+    },
+    "guard_law": {
+      "viability": "guard q FAILS iff Q4-mean <= chance_q + delta_guard_q4(q); PR FAILS iff Q4-mean PR <= 1 + delta_guard_q4(PR); OFF NONVIABLE iff >= 2 broad guards fail among {coarse_a, distractor, member, PR}; category excluded",
+      "selectivity": "category advantage selective iff adv_cat > adv_q + delta_guard_q4(q) for BOTH q in {coarse_a, distractor}; adv = paired ON-OFF Q4-mean margin difference on the axis",
+      "collapse": "the improving arm's category gain is wrong-reason iff that arm's paired Q4-mean on distractor OR member falls beyond delta_guard_q4(q), or its Q4-mean PR <= floor (applied in BOTH directions by the scorer)",
+      "general": "if the improving arm's benefit on any word-unnamed bacc axis {coarse_a, distractor, member} >= its category advantage while that advantage clears repeatability -> GENERAL-STABILISATION (rank rides as a reported companion; scale-mismatched with bacc, surfaced at Touch 2)"
+    },
+    "internal_law": {
+      "metrics": [
+        "exam_acc",
+        "asg_cat"
+      ],
+      "direction": "ON > OFF",
+      "form": "Q4-mean; fires iff ON-OFF > delta_internal(m)"
+    },
+    "familywise_count": 4,
+    "n_null": 4096,
+    "null_seed": 410001230000,
+    "grid": "k/2048 (balanced 1024/class)"
+  },
+  "calibration_summary": {
+    "dynamic_range": {
+      "route": "BOTH-QUESTIONS-LIVE",
+      "on_max_bacc": 0.679688,
+      "floor": 0.53418,
+      "acq_immediate_flags": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ret_ceilinged": false
+    },
+    "off_broad_collapse": [],
+    "probe_cost": {
+      "seconds_per_read_per_bank": 0.0422,
+      "emissions_per_read": 2560,
+      "reads_per_full_run": 335,
+      "projected_seconds_per_run_per_bank": 14.1
+    },
+    "runs": {
+      "on_s20": {
+        "primary_acq_onset": null,
+        "primary_acq_area": 0.002258,
+        "primary_fq": 0.035714,
+        "primary_t0": 0.493164,
+        "guards_q4": {
+          "coarse_a": 0.40580825,
+          "distractor": 0.5734340476190476,
+          "member": 0.15870298809523808
+        },
+        "pr_q4": 0.999023,
+        "internal_q4": {
+          "exam_acc": 0.500382,
+          "asg_cat": 0.007862
+        }
+      },
+      "on_s21": {
+        "primary_acq_onset": 399000,
+        "primary_acq_area": 0.002512,
+        "primary_fq": 0.095238,
+        "primary_t0": 0.503418,
+        "guards_q4": {
+          "coarse_a": 0.4114466666666667,
+          "distractor": 0.6556919642857143,
+          "member": 0.2008579523809524
+        },
+        "pr_q4": 1.000017,
+        "internal_q4": {
+          "exam_acc": 0.491433,
+          "asg_cat": 0.010057
+        }
+      },
+      "on_s22": {
+        "primary_acq_onset": 381000,
+        "primary_acq_area": 0.009289,
+        "primary_fq": 0.297619,
+        "primary_t0": 0.509277,
+        "guards_q4": {
+          "coarse_a": 0.44978839285714284,
+          "distractor": 0.660074869047619,
+          "member": 0.20914133333333335
+        },
+        "pr_q4": 1.000001,
+        "internal_q4": {
+          "exam_acc": 0.496082,
+          "asg_cat": 0.009715
+        }
+      },
+      "on_s24": {
+        "primary_acq_onset": null,
+        "primary_acq_area": 0.001213,
+        "primary_fq": 0.047619,
+        "primary_t0": 0.51123,
+        "guards_q4": {
+          "coarse_a": 0.494687,
+          "distractor": 0.6744152261904762,
+          "member": 0.2648344047619048
+        },
+        "pr_q4": 1.036331,
+        "internal_q4": {
+          "exam_acc": 0.48978,
+          "asg_cat": 0.013217
+        }
+      },
+      "on_s25": {
+        "primary_acq_onset": 210000,
+        "primary_acq_area": 0.001615,
+        "primary_fq": 0.095238,
+        "primary_t0": 0.516113,
+        "guards_q4": {
+          "coarse_a": 0.4447892738095238,
+          "distractor": 0.647397,
+          "member": 0.1962077023809524
+        },
+        "pr_q4": 1.0,
+        "internal_q4": {
+          "exam_acc": 0.495368,
+          "asg_cat": 0.007136
+        }
+      },
+      "off_s20": {
+        "primary_acq_onset": null,
+        "primary_acq_area": 0.0,
+        "primary_fq": 0.0,
+        "primary_t0": 0.493164,
+        "guards_q4": {
+          "coarse_a": 0.912388380952381,
+          "distractor": 0.9704473809523809,
+          "member": 0.4545666071428571
+        },
+        "pr_q4": 5.979874,
+        "internal_q4": {
+          "exam_acc": 0.497405,
+          "asg_cat": 0.050783
+        }
+      },
+      "off_s21": {
+        "primary_acq_onset": null,
+        "primary_acq_area": 0.0,
+        "primary_fq": 0.0,
+        "primary_t0": 0.503418,
+        "guards_q4": {
+          "coarse_a": 0.8877418333333333,
+          "distractor": 0.7719145714285714,
+          "member": 0.3465169285714286
+        },
+        "pr_q4": 3.98955,
+        "internal_q4": {
+          "exam_acc": 0.494925,
+          "asg_cat": 0.104937
+        }
+      },
+      "off_s22": {
+        "primary_acq_onset": 228000,
+        "primary_acq_area": 0.000107,
+        "primary_fq": 0.011905,
+        "primary_t0": 0.509277,
+        "guards_q4": {
+          "coarse_a": 0.8942987619047619,
+          "distractor": 0.7680198809523809,
+          "member": 0.3477783095238095
+        },
+        "pr_q4": 3.985414,
+        "internal_q4": {
+          "exam_acc": 0.500148,
+          "asg_cat": 0.125989
+        }
+      },
+      "off_s24": {
+        "primary_acq_onset": 60000,
+        "primary_acq_area": 0.005398,
+        "primary_fq": 0.0,
+        "primary_t0": 0.51123,
+        "guards_q4": {
+          "coarse_a": 0.9419351428571429,
+          "distractor": 0.9388602142857143,
+          "member": 0.4608502976190476
+        },
+        "pr_q4": 5.980359,
+        "internal_q4": {
+          "exam_acc": 0.498059,
+          "asg_cat": 0.078995
+        }
+      },
+      "off_s25": {
+        "primary_acq_onset": null,
+        "primary_acq_area": 6e-06,
+        "primary_fq": 0.0,
+        "primary_t0": 0.516113,
+        "guards_q4": {
+          "coarse_a": 0.9212937380952381,
+          "distractor": 0.961815261904762,
+          "member": 0.45214845238095236
+        },
+        "pr_q4": 5.98261,
+        "internal_q4": {
+          "exam_acc": 0.50088,
+          "asg_cat": 0.055212
+        }
+      }
+    }
+  },
+  "compute": {
+    "wall_seconds_per_run": {
+      "off_s20": 3022.6,
+      "off_s21": 2894.1,
+      "off_s22": 2951.8,
+      "off_s24": 2913.8,
+      "off_s25": 2915.8,
+      "on_s20": 2926.7,
+      "on_s21": 2931.9,
+      "on_s22": 3073.0,
+      "on_s24": 2917.6,
+      "on_s25": 2957.6
+    },
+    "total_cal_wall_hours": 8.2,
+    "storage_mb": {
+      "records": {
+        "n": 10,
+        "mb": 44.4
+      },
+      "probe_pt": {
+        "n": 20,
+        "mb": 14.1
+      },
+      "probe_json": {
+        "n": 20,
+        "mb": 5.4
+      },
+      "banks": {
+        "n": 19,
+        "mb": 3.6
+      },
+      "checkpoints": {
+        "n": 20,
+        "mb": 3.3
+      }
+    }
+  },
+  "checkpoint_sha256": {
+    "exp21_off_s20_cal.ckpt_onset.pt": "4910833cf97ac72f6149005e587925caf91051155e8edf3be33b44b8e1579185",
+    "exp21_off_s20_cal.ckpt_read.pt": "8724bd459a66a8fbb407022866db243479b0ef03aba52bee1ce3e110b0e30429",
+    "exp21_off_s21_cal.ckpt_onset.pt": "b45bfe4a24bb0cf1f6e2b54c4a333bd9db108566b69d79c064ea584e45618911",
+    "exp21_off_s21_cal.ckpt_read.pt": "ce80bec6a920c546420138858c2b82b381ea9d2bcdb2a39032cc3fdbff34ed1e",
+    "exp21_off_s22_cal.ckpt_onset.pt": "e32ef8707062667d49ae0e27e62478a00f396db1a4114b64cd3a41ef9bb936ea",
+    "exp21_off_s22_cal.ckpt_read.pt": "03ee0eed0a80258464c6f15009bf968b0859010ee425fcc753f8600f596de472",
+    "exp21_off_s24_cal.ckpt_onset.pt": "30ee4cac7dcc1b43dfccb1cd22ddf5c4f9ee10e856375ffa8693d5561bc1f36a",
+    "exp21_off_s24_cal.ckpt_read.pt": "87ba62a63b58c5cd579fd387499dd49b4c2f4570e436e15cb0e5c3be767487bd",
+    "exp21_off_s25_cal.ckpt_onset.pt": "1aa4a07862e4861e35079515ec814540e9908d2e42041dc366aa6f24b556b970",
+    "exp21_off_s25_cal.ckpt_read.pt": "a2298c0848baf5ed7989437b0e591fd4a6dc9748ed7dd5f795671cd1aea3c5b1",
+    "exp21_on_s20_cal.ckpt_onset.pt": "8a93abb846db00493cf9fd195b7f507e7fd9b1777dde0bd9310ef5e35d315c56",
+    "exp21_on_s20_cal.ckpt_read.pt": "453e75302eb789ac7d8ac4e64403afdd6221ebe32e35b6803b6e67b8ae060203",
+    "exp21_on_s21_cal.ckpt_onset.pt": "f9bf607382f9476b51a80cd6e8a1ae686344ca2a113985b0fc58858787150cc1",
+    "exp21_on_s21_cal.ckpt_read.pt": "4f64007b3803d6e985d9e93ea16c91aae4108d5a573ca588a50a59aded3f8acc",
+    "exp21_on_s22_cal.ckpt_onset.pt": "2e0dc7529d480ac6e084f6d41997af67333f96833a2a0bd5bfca3cd960d1f3c4",
+    "exp21_on_s22_cal.ckpt_read.pt": "f87c951524e44615bc3ea97b1fce53b4c7dcfa9a9fd5d30f4f440e96bfa5004e",
+    "exp21_on_s24_cal.ckpt_onset.pt": "4ce7e2cc6cd76a768dc19e31e6d16825450588e0e311a56033f8561ceb7b7ce2",
+    "exp21_on_s24_cal.ckpt_read.pt": "6cb230be7ea57f0fbb5a9bf2a3a61e4eedf536adfb6f2d1f9b0692c3d4d978b9",
+    "exp21_on_s25_cal.ckpt_onset.pt": "1aa3e1cdf5df4c22d0e06176e786815f48d5f50385266e8a0d48e3e752ee5c91",
+    "exp21_on_s25_cal.ckpt_read.pt": "e44214f74982e7794451221bb8828f44ee0755e1939d2dd7b8ab29b0da87bced"
+  },
+  "bank_census": {
+    "primary": 13,
+    "shadow_cal": 5,
+    "note": "one extra shadow bank at s0 exists from G0's dual-bank parity check; deterministic, committed, NEVER read at verdict (the scorer reads primary only)"
+  }
+}
