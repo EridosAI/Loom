@@ -1,0 +1,79 @@
+{
+  "bank": {
+    "exp": "exp21",
+    "kind": "shadow",
+    "seed": 21,
+    "probe_seed": 310021,
+    "n_support": 32,
+    "n_eval": 128,
+    "n_members": 16,
+    "D": 16,
+    "generator_keys": {
+      "raw_substream_support": 310021930063,
+      "raw_substream_eval": 310021930064,
+      "noise_support": 310521930074,
+      "noise_eval": 310521930080
+    },
+    "collision_audit": {
+      "key_range": [
+        310021930063,
+        310521930080
+      ],
+      "families": {
+        "assert_null": {
+          "range": [
+            61000,
+            64199
+          ],
+          "clash": false
+        },
+        "fabric": {
+          "range": [
+            91000,
+            99047
+          ],
+          "clash": false
+        },
+        "sweep": {
+          "range": [
+            100000,
+            100025
+          ],
+          "clash": false
+        },
+        "ubuf": {
+          "range": [
+            101000,
+            101025
+          ],
+          "clash": false
+        },
+        "loop_side": {
+          "range": [
+            0,
+            200
+          ],
+          "clash": false
+        },
+        "eval_ephemeral": {
+          "range": [
+            1,
+            17000009
+          ],
+          "clash": false
+        },
+        "live_raw_substream": {
+          "range": [
+            99000297000,
+            100047297141
+          ],
+          "clash": false
+        }
+      },
+      "ok": true
+    },
+    "min_support_eval_dist": 0.577171,
+    "construction": "EXP12Stimulus.raw() on a probe-only object; member-major balanced; support then eval (counter keys 0,1); world = training seed's"
+  },
+  "sha256": "05176bd1ead13320ebf521ccbf95eb776f39812bf44f39677eaa9aa641566c77"
+}
