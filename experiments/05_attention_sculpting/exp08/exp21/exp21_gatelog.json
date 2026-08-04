@@ -109,6 +109,21 @@
         "raw_column_mutation",
         "route_flip"
       ]
+    },
+    {
+      "gate": "G3b",
+      "outcome": "PASS",
+      "executor": "exp21_cal.main",
+      "theta_cat": 0.5380859375,
+      "route": "BOTH-QUESTIONS-LIVE",
+      "reds": [
+        "ceilinged_on",
+        "chance_converter",
+        "empty_q4",
+        "nonbiting_guard",
+        "null_threshold_injection",
+        "t0_acquisition"
+      ]
     }
   ]
 }

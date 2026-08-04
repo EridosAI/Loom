@@ -1,0 +1,107 @@
+{
+  "theta_cat": {
+    "value": 0.5380859375,
+    "formula": "smallest k/2048 with k/2048 >= 0.5 + delta_point_cat AND #(null streams with any 5-read episode across all 10 cal runs) <= 4/4096",
+    "inputs": {
+      "delta_point_cat": 0.03417969,
+      "floor": 0.53417969,
+      "null_exceed_at_theta": 4,
+      "null_M_top8": [
+        0.542969,
+        0.54248,
+        0.539062,
+        0.538086,
+        0.537598,
+        0.537598,
+        0.536621,
+        0.536621
+      ]
+    },
+    "provenance": "cut on the 10 calibration runs' committed primary-bank predictions before any verdict data exists; null seed 410001230000 (offline scorer-side)"
+  },
+  "t_eligible": {
+    "value": 3000,
+    "formula": "first planned read >= cfg.t2 (=1200)",
+    "asserted": true
+  },
+  "n_acq": {
+    "value": 5,
+    "provenance": "EXP21 design constant fixed by ratification"
+  },
+  "q4": {
+    "from_wave": 750000,
+    "upto": 1000000,
+    "n_reads": 84
+  },
+  "fq_null_bound": {
+    "value": 0.14285714285714285,
+    "formula": "smallest k/84 with #(null streams whose max-over-runs Q4 occupancy at theta_cat >= k/84) <= 4/4096",
+    "inputs": {
+      "null_FQ_top8": [
+        0.452381,
+        0.297619,
+        0.214286,
+        0.130952,
+        0.130952,
+        0.119048,
+        0.119048,
+        0.119048
+      ]
+    },
+    "note": "the \u00a74.2 familywise count (<=4/4096) applied identically to \u00a74.3's bound \u2014 the only in-document count referent; surfaced for the Touch-2 read"
+  },
+  "delta_point_cat": 0.0341796875,
+  "delta_acq": 0.0003847656771540642,
+  "delta_ret": 0.0714285708963871,
+  "delta_guard_point": {
+    "coarse_a": 0.10791000000000003,
+    "distractor": 0.09033199999999997,
+    "member": 0.05078199999999994,
+    "participation_ratio": 0.23163899999999993
+  },
+  "delta_guard_q4": {
+    "coarse_a": 0.008980845238095225,
+    "distractor": 0.008149642857142814,
+    "member": 0.011079285714285736,
+    "participation_ratio": 0.011936369047619078
+  },
+  "delta_internal": {
+    "exam_acc": 0.010601899159663863,
+    "asg_cat": 0.07520587830612246
+  },
+  "guard_bars": {
+    "coarse_a": 0.258981,
+    "distractor": 0.50815,
+    "member": 0.073579,
+    "participation_ratio": 1.011936
+  },
+  "repeatability_companions": {
+    "pointwise_cat_max": 0.08935546875,
+    "pointwise_cat_mean": 0.006916394589552239,
+    "pointwise_guard_max": {
+      "coarse_a": 0.278808,
+      "distractor": 0.310547,
+      "member": 0.07568299999999997,
+      "participation_ratio": 0.7196639999999999
+    },
+    "n_pointwise": 3350
+  },
+  "guard_law": {
+    "viability": "guard q FAILS iff Q4-mean <= chance_q + delta_guard_q4(q); PR FAILS iff Q4-mean PR <= 1 + delta_guard_q4(PR); OFF NONVIABLE iff >= 2 broad guards fail among {coarse_a, distractor, member, PR}; category excluded",
+    "selectivity": "category advantage selective iff adv_cat > adv_q + delta_guard_q4(q) for BOTH q in {coarse_a, distractor}; adv = paired ON-OFF Q4-mean margin difference on the axis",
+    "collapse": "the improving arm's category gain is wrong-reason iff that arm's paired Q4-mean on distractor OR member falls beyond delta_guard_q4(q), or its Q4-mean PR <= floor (applied in BOTH directions by the scorer)",
+    "general": "if the improving arm's benefit on any word-unnamed bacc axis {coarse_a, distractor, member} >= its category advantage while that advantage clears repeatability -> GENERAL-STABILISATION (rank rides as a reported companion; scale-mismatched with bacc, surfaced at Touch 2)"
+  },
+  "internal_law": {
+    "metrics": [
+      "exam_acc",
+      "asg_cat"
+    ],
+    "direction": "ON > OFF",
+    "form": "Q4-mean; fires iff ON-OFF > delta_internal(m)"
+  },
+  "familywise_count": 4,
+  "n_null": 4096,
+  "null_seed": 410001230000,
+  "grid": "k/2048 (balanced 1024/class)"
+}
