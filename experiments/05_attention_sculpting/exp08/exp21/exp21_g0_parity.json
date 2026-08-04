@@ -1,0 +1,85 @@
+{
+  "gate": "G0",
+  "executor": "exp21_teaching.g0_parity",
+  "short": 6000,
+  "observed_red": {
+    "fabric_bit_flip": {
+      "red": true,
+      "fields": [
+        "raw"
+      ]
+    },
+    "live_stim_probe_call": {
+      "red": true,
+      "diverged_fields": [
+        "columns",
+        "occupancy",
+        "grad_split",
+        "dynamics_panel"
+      ]
+    },
+    "probe_gen_consumption": {
+      "red": true,
+      "diverged_fields": [
+        "columns",
+        "occupancy",
+        "grad_split",
+        "dynamics_panel"
+      ]
+    },
+    "read_order_swap": {
+      "red": true,
+      "diverged_fields": [
+        "columns",
+        "occupancy",
+        "grad_split",
+        "masking_mix",
+        "dynamics_panel"
+      ]
+    }
+  },
+  "checks": {
+    "constructor_parity": {
+      "ok": true,
+      "init_digest": "22cb80de945e333277748225adf5d0cd2618f6227b608e5e6f8a2834f8984c02",
+      "off_overrides": [
+        "_pam_target",
+        "_pose_pam_input"
+      ]
+    },
+    "faithful_runner": {
+      "ok": true,
+      "fields": [
+        "columns",
+        "occupancy",
+        "grad_split",
+        "masking_mix",
+        "dynamics_panel",
+        "acquisition_onset",
+        "conversion_onset_PROPOSED",
+        "vocab",
+        "shuffled",
+        "probe_rate",
+        "no_word",
+        "eval_cadence",
+        "block_cadence"
+      ],
+      "checkpoint_state": "tensor-equal (vision/word/op/gen/t vs the designated runner's .ckpt_read)"
+    },
+    "repeat_determinism": {
+      "ok": true
+    },
+    "probe_inertness": {
+      "ok": true,
+      "state_digest": "d928697f7a041afbf822f3474919daf8ac266e618c5f4768d80cca7c6eeaf9f2"
+    },
+    "probe_inertness_dualbank_offgrid": {
+      "ok": true,
+      "ts": [
+        0,
+        3000,
+        4200
+      ]
+    }
+  }
+}

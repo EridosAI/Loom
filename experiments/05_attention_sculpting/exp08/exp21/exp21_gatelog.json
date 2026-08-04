@@ -1,0 +1,23 @@
+{
+  "exp": "exp21",
+  "events": [
+    {
+      "gate": "G0",
+      "outcome": "PASS",
+      "executor": "exp21_teaching.g0_parity",
+      "reds": [
+        "fabric_bit_flip",
+        "live_stim_probe_call",
+        "probe_gen_consumption",
+        "read_order_swap"
+      ],
+      "checks": [
+        "constructor_parity",
+        "faithful_runner",
+        "probe_inertness",
+        "probe_inertness_dualbank_offgrid",
+        "repeat_determinism"
+      ]
+    }
+  ]
+}
