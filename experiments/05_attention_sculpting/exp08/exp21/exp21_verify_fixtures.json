@@ -1,0 +1,22 @@
+{
+  "raw_column_mutation": {
+    "red": true,
+    "message": "probe summary/prediction mismatch at tampered read 0"
+  },
+  "bank_swap": {
+    "red": true,
+    "message": "probe payload bank fb081e4f7cd9 is NOT seed 20's canonical primary bank 6502e13c5803 \u2014 bank swap, HALT"
+  },
+  "route_flip": {
+    "red": true,
+    "message": "route recompute mismatch s3: NO-EFFECT != committed TEACHING-ADDED"
+  },
+  "missing_bare_n": {
+    "red": true,
+    "message": "committed verdict lacks the full 8-row seed table (n=5) \u2014 HALT"
+  },
+  "gradient_record_tamper": {
+    "red": true,
+    "message": "gradient census replay disagrees with the committed record: {'off_lpam_to_vision_zero': (True, False)}"
+  }
+}

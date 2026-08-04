@@ -1,0 +1,33 @@
+{
+  "cells": {
+    "CONTROL-NONVIABLE": "CONTROL-NONVIABLE",
+    "CATEGORY-COLLAPSE-IN-COSTUME": "CATEGORY-COLLAPSE-IN-COSTUME",
+    "CATEGORY-COLLAPSE-OFF-SIDE": "CATEGORY-COLLAPSE-IN-COSTUME",
+    "GENERAL-STABILISATION": "GENERAL-STABILISATION",
+    "OFF-BETTER": "OFF-BETTER",
+    "TEACHING-ADDED": "TEACHING-ADDED",
+    "PRESERVATION-ONLY": "PRESERVATION-ONLY",
+    "INTERNAL-ONLY": "INTERNAL-ONLY",
+    "NO-EFFECT": "NO-EFFECT",
+    "ACQUISITION-SPEEDUP-companion": "NO-EFFECT",
+    "RESTRICTION-DISABLES-TEACHING-ADDED": "NO-EFFECT",
+    "SEED-SPLIT": "SEED-SPLIT",
+    "SEED-SPLIT-heterogeneous": "SEED-SPLIT"
+  },
+  "observed_red": {
+    "unrouted_pattern": {
+      "red": true,
+      "message": "seed summary [on] missing ['guards_q4'] \u2014 HALT"
+    },
+    "seed_pooling_plant": {
+      "red": true,
+      "pooled_single_route": "NO-EFFECT",
+      "real_cohort": "SEED-SPLIT"
+    },
+    "guard_bypass_plant": {
+      "red": true,
+      "bypassed_route": "TEACHING-ADDED",
+      "real_route": "CATEGORY-COLLAPSE-IN-COSTUME"
+    }
+  }
+}

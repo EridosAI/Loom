@@ -59,6 +59,56 @@
         "off_vision_nonpam_update_pos",
         "on_lpam_to_vision_pos"
       ]
+    },
+    {
+      "gate": "G4-fixtures",
+      "outcome": "OBSERVED-RED (fixture-only)",
+      "executor": "exp21_run.g4_fixtures",
+      "reds": [
+        "paired_bank_mismatch",
+        "record_overwrite",
+        "resume_attempt",
+        "step_count_mismatch",
+        "unratified_launch"
+      ],
+      "note": "G4 NOT RUN; VERDICT SEEDS UNTOUCHED"
+    },
+    {
+      "gate": "G5-fixtures",
+      "outcome": "ALL CELLS + OBSERVED-RED (fixture-only)",
+      "executor": "exp21_score.fixtures",
+      "cells": [
+        "ACQUISITION-SPEEDUP-companion",
+        "CATEGORY-COLLAPSE-IN-COSTUME",
+        "CATEGORY-COLLAPSE-OFF-SIDE",
+        "CONTROL-NONVIABLE",
+        "GENERAL-STABILISATION",
+        "INTERNAL-ONLY",
+        "NO-EFFECT",
+        "OFF-BETTER",
+        "PRESERVATION-ONLY",
+        "RESTRICTION-DISABLES-TEACHING-ADDED",
+        "SEED-SPLIT",
+        "SEED-SPLIT-heterogeneous",
+        "TEACHING-ADDED"
+      ],
+      "reds": [
+        "guard_bypass_plant",
+        "seed_pooling_plant",
+        "unrouted_pattern"
+      ]
+    },
+    {
+      "gate": "G6-fixtures",
+      "outcome": "OBSERVED-RED (fixture-only)",
+      "executor": "exp21_verify.fixtures",
+      "reds": [
+        "bank_swap",
+        "gradient_record_tamper",
+        "missing_bare_n",
+        "raw_column_mutation",
+        "route_flip"
+      ]
     }
   ]
 }
