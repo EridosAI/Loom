@@ -35,6 +35,30 @@
         "repo_blast_radius",
         "shared_chain_byte_identical"
       ]
+    },
+    {
+      "gate": "G2",
+      "outcome": "PASS",
+      "executor": "exp21_teaching.g2_gradient_census",
+      "reds": [
+        "baseline_no_detach",
+        "cue_only",
+        "noop_hooks",
+        "pam_dead",
+        "single_mask_path_only",
+        "target_only",
+        "vision_frozen"
+      ],
+      "checks": [
+        "forward_equal_at_init",
+        "matched_counts",
+        "off_gain_positive_pam_update",
+        "off_lpam_to_pam_pos",
+        "off_lpam_to_vision_zero",
+        "off_vision_nonpam_grad_pos",
+        "off_vision_nonpam_update_pos",
+        "on_lpam_to_vision_pos"
+      ]
     }
   ]
 }

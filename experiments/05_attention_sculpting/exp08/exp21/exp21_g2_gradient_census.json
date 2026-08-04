@@ -1,0 +1,247 @@
+{
+  "gate": "G2",
+  "executor": "exp21_teaching.g2_gradient_census",
+  "seed": 20,
+  "steps": 2000,
+  "observed_red": {
+    "baseline_no_detach": {
+      "red": true,
+      "failed_checks": [
+        "off_lpam_to_vision_zero"
+      ]
+    },
+    "target_only": {
+      "red": true,
+      "failed_checks": [
+        "off_lpam_to_vision_zero"
+      ]
+    },
+    "cue_only": {
+      "red": true,
+      "failed_checks": [
+        "off_lpam_to_vision_zero"
+      ]
+    },
+    "noop_hooks": {
+      "red": true,
+      "failed_checks": [
+        "off_lpam_to_vision_zero"
+      ]
+    },
+    "pam_dead": {
+      "red": true,
+      "failed_checks": [
+        "off_lpam_to_pam_pos",
+        "off_gain_positive_pam_update"
+      ]
+    },
+    "vision_frozen": {
+      "red": true,
+      "failed_checks": [
+        "off_vision_nonpam_grad_pos",
+        "off_vision_nonpam_update_pos"
+      ]
+    },
+    "single_mask_path_only": {
+      "red": true,
+      "blind_single_path_passed": true,
+      "full_census_caught": true,
+      "leak_path": "word_masked (cue side)",
+      "leak_norm": 2.9680430557732507e-08
+    }
+  },
+  "real": {
+    "checks": {
+      "forward_equal_at_init": {
+        "ok": true,
+        "detail": {
+          "vision_masked": true,
+          "word_masked": true
+        }
+      },
+      "matched_counts": {
+        "ok": true,
+        "pam_forwards": {
+          "on": 10,
+          "off": 10
+        },
+        "steps": {
+          "on": 10,
+          "off": 10
+        },
+        "params": {
+          "vision": 608,
+          "op": 10673,
+          "optimizer_members": 20
+        }
+      },
+      "on_lpam_to_vision_pos": {
+        "ok": true,
+        "totals": {
+          "vision_masked": 0.7044361904263496,
+          "word_masked": 2.968569079442318e-08
+        }
+      },
+      "off_lpam_to_vision_zero": {
+        "ok": true,
+        "totals": {
+          "vision_masked": 0.0,
+          "word_masked": 0.0
+        }
+      },
+      "off_lpam_to_pam_pos": {
+        "ok": true,
+        "totals": {
+          "vision_masked": 0.8985890207758587,
+          "word_masked": 0.27432614033762437
+        }
+      },
+      "off_vision_nonpam_grad_pos": {
+        "ok": true,
+        "total": 0.544524148106575
+      },
+      "off_gain_positive_pam_update": {
+        "ok": true,
+        "gain": 0.025,
+        "op_delta": 0.11407946975668892
+      },
+      "off_vision_nonpam_update_pos": {
+        "ok": true,
+        "vision_delta": 0.02309705037623644
+      }
+    },
+    "census": {
+      "vision_masked": {
+        "t": 16,
+        "on": {
+          "l_pam": 0.6480970978736877,
+          "vis_norms": [
+            0.402521550655365,
+            0.20127210021018982,
+            0.10064253956079483,
+            0.0,
+            0.0
+          ],
+          "vis_total": 0.7044361904263496,
+          "op_norms": [
+            0.0,
+            4.551397410068603e-07,
+            4.551397410068603e-07,
+            2.6415500542498194e-07,
+            7.625498454899571e-08,
+            7.625498454899571e-08,
+            7.625498454899571e-08,
+            1.1072917232013424e-06,
+            1.471686914555903e-07,
+            7.625498454899571e-08,
+            0.2904873192310333,
+            0.10270281881093979,
+            0.05135142058134079,
+            0.05136734992265701,
+            0.40252238512039185
+          ],
+          "op_total": 0.898434027581203,
+          "vis_all_unused": false
+        },
+        "off": {
+          "l_pam": 0.6483229398727417,
+          "vis_norms": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "vis_total": 0.0,
+          "op_norms": [
+            0.0,
+            4.5108032509233453e-07,
+            4.5108032509233453e-07,
+            2.6486856086194166e-07,
+            7.646097088809256e-08,
+            7.646097088809256e-08,
+            7.646097088809256e-08,
+            1.1087213351856917e-06,
+            1.473616180192039e-07,
+            7.646097088809256e-08,
+            0.29053717851638794,
+            0.10272044688463211,
+            0.05136023461818695,
+            0.051375921815633774,
+            0.4025925099849701
+          ],
+          "op_total": 0.8985890207758587,
+          "vis_all_unused": true
+        }
+      },
+      "word_masked": {
+        "t": 10,
+        "on": {
+          "l_pam": 0.07439564913511276,
+          "vis_norms": [
+            1.696207618806511e-08,
+            8.482279767463297e-09,
+            4.2413348388947725e-09,
+            0.0,
+            0.0
+          ],
+          "vis_total": 2.968569079442318e-08,
+          "op_norms": [
+            0.0,
+            8.889956370876362e-13,
+            3.3879597793884386e-08,
+            2.76922307307359e-08,
+            7.994059636473594e-09,
+            2.0976292534544139e-13,
+            7.994059636473594e-09,
+            1.3534338449971983e-07,
+            1.4991384134077634e-08,
+            7.994059636473594e-09,
+            0.07876879721879959,
+            0.027848977595567703,
+            0.013924489729106426,
+            0.01740359514951706,
+            0.13637782633304596
+          ],
+          "op_total": 0.27432392191591154,
+          "vis_all_unused": false
+        },
+        "off": {
+          "l_pam": 0.07439664751291275,
+          "vis_norms": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "vis_total": 0.0,
+          "op_norms": [
+            0.0,
+            8.889208271377347e-13,
+            3.389574843026821e-08,
+            2.7695676863004337e-08,
+            7.995052619946819e-09,
+            2.0967140512955645e-13,
+            7.995052619946819e-09,
+            1.3533313847347017e-07,
+            1.499039470331809e-08,
+            7.995052619946819e-09,
+            0.07876964658498764,
+            0.02784927934408188,
+            0.013924640603363514,
+            0.017403587698936462,
+            0.13637875020503998
+          ],
+          "op_total": 0.27432614033762437,
+          "vis_all_unused": true
+        }
+      }
+    },
+    "warm": 10,
+    "paths": [
+      "vision_masked",
+      "word_masked"
+    ]
+  }
+}
