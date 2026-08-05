@@ -78,6 +78,13 @@ Held-out probes remain external to PAM's own loss. Acquisition and retention mus
 
 Only `TEACHING-ADDED` licenses the founding teaching sentence.
 
+**§5.5 RESULT — EXP21 CLOSED (Jason, 2026-08-06).**
+The lower-rung PAM-teaching contrast did not establish useful teaching. The paired cohort was SEED-SPLIT: five CATEGORY-COLLAPSE-IN-COSTUME and three NO-EFFECT; zero TEACHING-ADDED and zero PRESERVATION-ONLY. OFF remained viable 8/8 and acquired category 0/8. ON acquired category 5/8, but every acquisition failed the frozen compression guard.
+
+The deployed unrestricted L_PAM→vision path is therefore NOT VALIDATED as the mechanism for the founding co-development claim on this bench. The founding claim itself remains open because the full autonomous-visual-objective contrast has not been built.
+
+**Design consequence [INFERRED, next fork—not a mechanism ruling]:** future work must decide what PAM is permitted to change. A coupling that lets the association objective freely rewrite the whole visual target space admits category-aligned compression as a cheap solution. Candidate resolutions include an independently anchored visual objective/reference and a structurally constrained PAM capacity/attention/maintain-separation channel. None is selected here.
+
 ## §6 Falsification additions (merged; extends v1.0 §5)
 
 - Orbit DEAD + scatter CONVERTS → smoothness-protective; the two-wall window law enters as [MEASURED-conditional]; M2-as-duplication is refuted in its "displacement is what matters" form.

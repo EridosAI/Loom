@@ -136,3 +136,33 @@ independent **terminal verification pass** (re-derived from pushed artifacts, at
 
 **Invariant.** A clean corridor is necessary, never sufficient. Pre-named conditions, halt fences, and
 append-only auto-pushed commits carry the mechanical work; **attribution and canon remain human.**
+
+
+---
+
+## EXP21-derived standing riders (ratified at the EXP21 touch-3 close, Jason, 2026-08-06 — prospective; EXP21's frozen scorer and constants are NOT altered)
+
+**Non-finite law.** Every scalar entering a gate, route, guard, envelope comparison, or reported
+route companion must be explicitly checked finite before use. NaN or infinity is a HALT unless the
+prereg contains a specific UNREAD/unsupported route for that field. Python's default fail-open NaN
+comparison is never an admissible rule. Every scorer must carry an observed-red NaN fixture and an
+infinity fixture. Machine-readable verdict and terminal artifacts must be serialized with strict
+JSON semantics (`allow_nan=False` or equivalent). A non-finite value may be described in prose or
+represented by an explicit tagged/null structure, never a bare JSON NaN token. *(Motivating
+instance: EXP21 ON-s3's one degenerate probe read — route-invariant, but only proven so after the
+fact; ledger row 59.)*
+
+**Ratification freeze completeness.** A Touch-2 freeze surface must hash every law-bearing module
+and every executable named in the gate table — not only constants, scorer, banks, and pre-flight
+prose. An omitted law-bearing module is a pre-flight blocker. *(Motivating instance: EXP21's
+freeze omitted exp21_cal/probe/teaching; no drift occurred, proven by provenance — ledger row 60.)*
+
+**Discrete-grid arithmetic.** When a statistic is a count over a fixed denominator, gate
+comparisons use the integer counts or exact cross-products. They must not be decided by float
+representations of equal rational grid points. *(Motivating instance: EXP21's delta_ret vs the
+exact 6/84 boundary — latent, non-biting, panel-proven.)*
+
+**Quantile convention.** Every percentile or quantile used as a constant names its estimator:
+order-statistic index/interpolation method, indexing convention, and even-count handling. "99th
+percentile" without the estimator is incomplete provenance. *(Motivating instance: EXP21's q99
+order statistic — provably zero effect on theta, but convention-dependent by construction.)*
