@@ -129,6 +129,50 @@
       "gate": "TOUCH-2 HARD HOLD",
       "outcome": "PRE-FLIGHT PACKAGE ASSEMBLED",
       "note": "G4 NOT RUN; VERDICT SEEDS UNTOUCHED; run_verdict refuses without exp21_touch2_ratified.json (Jason-word only)"
+    },
+    {
+      "gate": "G5-fixtures-AMD1",
+      "outcome": "ALL CELLS + AMD-1 FAMILIES + OBSERVED-RED (fixture-only)",
+      "executor": "exp21_score.fixtures_amd1",
+      "amd1": [
+        "coarse_a_breadth_fires",
+        "distractor_breadth_fires",
+        "member_only_preservation",
+        "member_only_teaching_added",
+        "rank_only_not_general_stab"
+      ],
+      "cells": [
+        "ACQUISITION-SPEEDUP-companion",
+        "CATEGORY-COLLAPSE-IN-COSTUME",
+        "CATEGORY-COLLAPSE-OFF-SIDE",
+        "CONTROL-NONVIABLE",
+        "GENERAL-STABILISATION",
+        "INTERNAL-ONLY",
+        "NO-EFFECT",
+        "OFF-BETTER",
+        "PRESERVATION-ONLY",
+        "RESTRICTION-DISABLES-TEACHING-ADDED",
+        "SEED-SPLIT",
+        "SEED-SPLIT-heterogeneous",
+        "TEACHING-ADDED"
+      ],
+      "reds": [
+        "guard_bypass_plant",
+        "seed_pooling_plant",
+        "unrouted_pattern"
+      ]
+    },
+    {
+      "gate": "G6-fixtures",
+      "outcome": "OBSERVED-RED (fixture-only)",
+      "executor": "exp21_verify.fixtures",
+      "reds": [
+        "bank_swap",
+        "gradient_record_tamper",
+        "missing_bare_n",
+        "raw_column_mutation",
+        "route_flip"
+      ]
     }
   ]
 }

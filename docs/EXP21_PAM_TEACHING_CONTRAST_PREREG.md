@@ -587,3 +587,24 @@ Authoritative paths at `d965680cf2cfeb80cc873bdb525525273f18c01f`:
 ---
 
 **Stop line:** This document authorizes no code and no run until ratified. After ratification, the build may proceed only through G3 and must stop at the Touch-2 hard hold.
+
+
+---
+
+## EXP21 TOUCH-2 AMD-1 — appended 2026-08-05 (supersedes the §5 general-stabilisation shorthand; original text above preserved as historical record)
+
+> **EXP21 TOUCH-2 AMD-1 — GENERAL-STABILISATION AXIS CORRECTION (Jason ratified, 2026-08-05).**
+>
+> The detailed §4.7 target-selectivity definition governs over §5's broader shorthand. Member identity partly contains the target category and may improve as a legitimate consequence of useful category differentiation; it is therefore not an independent competing target axis.
+>
+> `GENERAL-STABILISATION / WRONG-REASON` compares category advantage only against the word-unnamed competing axes `coarse_a` and `distractor`.
+>
+> `member` and `participation_ratio` remain:
+>
+> * broad-viability guards;
+> * category-collapse/compression guards;
+> * reported companions.
+>
+> They do not enter the general-stabilisation magnitude comparison.
+>
+> No bank, threshold, envelope, seed, horizon, calibration record, dynamic-range ruling, or other outcome route changes under this amendment.

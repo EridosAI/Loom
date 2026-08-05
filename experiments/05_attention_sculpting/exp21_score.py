@@ -174,7 +174,10 @@ def seed_route(on: dict, off: dict, k: dict, *, restriction: bool = False) -> di
         return dict(route="CONTROL-NONVIABLE", **detail)
     if (cat_improves_on and collapse_on) or (cat_improves_off and collapse_off):
         return dict(route="CATEGORY-COLLAPSE-IN-COSTUME", **detail)
-    if cat_improves_on and max(adv["coarse_a"], adv["distractor"], adv["member"]) >= adv_cat:
+    if cat_improves_on and max(adv["coarse_a"], adv["distractor"]) >= adv_cat:
+        # TOUCH-2 AMD-1 (Jason ratified 2026-08-05): §4.7 governs over the §5 shorthand —
+        # member/rank are viability+compression guards and reported companions, never
+        # competing-axis magnitude terms.
         return dict(route="GENERAL-STABILISATION", **detail)
     if (off_acq_adv or off_ret_adv) and not collapse_off:
         return dict(route="OFF-BETTER", **detail)
@@ -310,10 +313,90 @@ def _pool_summaries(sums: list[dict]) -> dict:
     return out
 
 
-def fixtures() -> dict:
-    """Every §5 cell reached from a synthetic input THROUGH the real scorer + the broken-
-    scorer reds (each executed, never narrated)."""
+def _general_stab_pre_amd1(adv: dict, adv_cat: float) -> bool:
+    """The PRE-AMD-1 three-axis comparison, retained ONLY as the observed-red referent for
+    the AMD-1 fixtures (never deployed; superseded by Touch-2 AMD-1, 2026-08-05)."""
+    return max(adv["coarse_a"], adv["distractor"], adv["member"]) >= adv_cat
+
+
+def fixtures_amd1() -> dict:
+    """TOUCH-2 AMD-1 fixture families (each through the DEPLOYED seed_route) + the full
+    pre-existing suite, written to the SUPERSEDING artifact exp21_score_fixtures_amd1.json
+    (the old committed artifact is never overwritten)."""
     torch.set_num_threads(1)
+    amd = {}
+
+    # --- member-only improvement is allowed (TEACHING-ADDED causal setup) ---
+    on, off = _syn("TEACHING-ADDED")
+    on["guards_q4"]["member"] = off["guards_q4"]["member"] + 0.30   # adv_member 0.30 >= adv_cat 0.25
+    r = seed_route(on, off, FIX_K)
+    adv = {q: on["guards_q4"][q] - off["guards_q4"][q] for q in CAL.GUARD_AXES}
+    adv_cat = on["cat_q4_mean"] - off["cat_q4_mean"]
+    assert _general_stab_pre_amd1(adv, adv_cat), \
+        "planted case does not trip the pre-AMD-1 three-axis comparison — fixture invalid"
+    assert r["route"] == "TEACHING-ADDED", \
+        f"member-boosted TEACHING-ADDED case routed to {r['route']} — AMD-1 not in effect"
+    amd["member_only_teaching_added"] = dict(
+        pre_amd1_would_classify="GENERAL-STABILISATION (observed red)",
+        deployed_route=r["route"], adv_member=round(adv["member"], 6),
+        adv_cat=round(adv_cat, 6))
+
+    # --- member-only improvement, PRESERVATION-ONLY causal setup ---
+    on, off = _syn("PRESERVATION-ONLY")
+    on["guards_q4"]["member"] = off["guards_q4"]["member"] + 0.30   # >= adv_cat 0.17
+    r = seed_route(on, off, FIX_K)
+    adv = {q: on["guards_q4"][q] - off["guards_q4"][q] for q in CAL.GUARD_AXES}
+    adv_cat = on["cat_q4_mean"] - off["cat_q4_mean"]
+    assert _general_stab_pre_amd1(adv, adv_cat)
+    assert r["route"] == "PRESERVATION-ONLY", \
+        f"member-boosted PRESERVATION-ONLY case routed to {r['route']}"
+    amd["member_only_preservation"] = dict(
+        pre_amd1_would_classify="GENERAL-STABILISATION (observed red)",
+        deployed_route=r["route"])
+
+    # --- coarse-A breadth still fires ---
+    on, off = _syn("NO-EFFECT")
+    on.update(cat_q4_mean=0.62)                                # adv_cat 0.12, clears delta
+    on["guards_q4"]["coarse_a"] = off["guards_q4"]["coarse_a"] + 0.20   # >= adv_cat
+    r = seed_route(on, off, FIX_K)
+    assert r["route"] == "GENERAL-STABILISATION", f"coarse-A breadth: {r['route']}"
+    amd["coarse_a_breadth_fires"] = dict(deployed_route=r["route"])
+
+    # --- distractor breadth still fires ---
+    on, off = _syn("NO-EFFECT")
+    on.update(cat_q4_mean=0.62)
+    on["guards_q4"]["distractor"] = off["guards_q4"]["distractor"] + 0.20
+    r = seed_route(on, off, FIX_K)
+    assert r["route"] == "GENERAL-STABILISATION", f"distractor breadth: {r['route']}"
+    amd["distractor_breadth_fires"] = dict(deployed_route=r["route"])
+
+    # --- rank-only movement does NOT fire general stabilisation ---
+    on, off = _syn("TEACHING-ADDED")
+    on["pr_q4"] = 2.0                                          # material PR movement (6 -> 2),
+    #                                                            still above the 1.2 floor
+    r = seed_route(on, off, FIX_K)
+    assert r["route"] == "TEACHING-ADDED", f"rank-only movement re-routed to {r['route']}"
+    assert "adv_pr" in r and abs(r["adv_pr"] - (-4.0)) < 1e-9, "rank companion not reported"
+    amd["rank_only_not_general_stab"] = dict(deployed_route=r["route"], adv_pr=r["adv_pr"],
+                                             pr_floor=FIX_K["guard_bars"]["participation_ratio"])
+
+    # --- existing protection: the full pre-existing suite through the AMD-1 scorer ---
+    got, reds = _fixture_suite()
+    out = dict(amd1=amd, cells=got, observed_red=reds,
+               amendment="TOUCH-2 AMD-1 (Jason ratified 2026-08-05): general-stabilisation "
+                         "axes = {coarse_a, distractor}; member/rank guards+companions only")
+    OUTDIR21.mkdir(parents=True, exist_ok=True)
+    T21.write_gate_artifact(OUTDIR21 / "exp21_score_fixtures_amd1.json", out)
+    T21.gatelog_append(dict(gate="G5-fixtures-AMD1", outcome="ALL CELLS + AMD-1 FAMILIES + "
+                            "OBSERVED-RED (fixture-only)", executor="exp21_score.fixtures_amd1",
+                            amd1=sorted(amd), cells=sorted(got), reds=sorted(reds)))
+    print("AMD-1 fixtures:", sorted(amd), "| suite cells:", sorted(got), "| reds:", sorted(reds))
+    return out
+
+
+def _fixture_suite() -> tuple[dict, dict]:
+    """Every §5 cell reached from a synthetic input THROUGH the real scorer + the broken-
+    scorer reds (each executed, never narrated). Returns (cells, reds) without writing."""
     got = {}
     for cell, expect in (
             ("CONTROL-NONVIABLE", "CONTROL-NONVIABLE"),
@@ -391,22 +474,16 @@ def fixtures() -> dict:
     assert r_real["route"] == "CATEGORY-COLLAPSE-IN-COSTUME"
     reds["guard_bypass_plant"] = dict(red=True, bypassed_route=r_bypass,
                                       real_route=r_real["route"])
-    out = dict(cells=got, observed_red=reds)
-    OUTDIR21.mkdir(parents=True, exist_ok=True)
-    T21.write_gate_artifact(OUTDIR21 / "exp21_score_fixtures.json", out)
-    T21.gatelog_append(dict(gate="G5-fixtures", outcome="ALL CELLS + OBSERVED-RED "
-                            "(fixture-only)", executor="exp21_score.fixtures",
-                            cells=sorted(got), reds=sorted(reds)))
-    print("G5 fixtures:", sorted(got), "reds:", sorted(reds))
-    return out
+    return got, reds
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--fixtures", action="store_true")
+    ap.add_argument("--fixtures", action="store_true",
+                    help="the AMD-1 superseding fixture census (full suite + AMD-1 families)")
     ap.add_argument("--score", action="store_true")
     args = ap.parse_args()
     if args.fixtures:
-        fixtures()
+        fixtures_amd1()
     elif args.score:
         main()
