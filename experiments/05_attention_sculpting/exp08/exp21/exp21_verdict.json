@@ -1,0 +1,275 @@
+{
+  "exp": "exp21",
+  "tag": "verdict",
+  "constants_theta": 0.5380859375,
+  "restriction": false,
+  "seed_table": [
+    {
+      "seed": 0,
+      "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+      "off_viable": true,
+      "off_guard_fails": [
+        "distractor"
+      ],
+      "adv_cat": 0.012759,
+      "adv_guards": {
+        "coarse_a": -0.474656,
+        "distractor": 0.162034,
+        "member": 0.011719
+      },
+      "adv_pr": -1.996627,
+      "acq_adv": true,
+      "ret_adv": false,
+      "selective": false,
+      "collapse_on": true,
+      "collapse_off": true,
+      "restriction": false,
+      "on": {
+        "acq": 207000,
+        "area": 0.00277,
+        "fq": 0.095238,
+        "ret": false
+      },
+      "off": {
+        "acq": null,
+        "area": 0.0,
+        "fq": 0.0,
+        "ret": false
+      }
+    },
+    {
+      "seed": 1,
+      "route": "NO-EFFECT",
+      "acquisition_speedup_companion": false,
+      "off_viable": true,
+      "off_guard_fails": [],
+      "adv_cat": -0.004296,
+      "adv_guards": {
+        "coarse_a": -0.483712,
+        "distractor": -0.21932,
+        "member": -0.213088
+      },
+      "adv_pr": -2.971139,
+      "acq_adv": false,
+      "ret_adv": false,
+      "selective": true,
+      "collapse_on": true,
+      "collapse_off": false,
+      "restriction": false,
+      "on": {
+        "acq": null,
+        "area": 0.002615,
+        "fq": 0.047619,
+        "ret": false
+      },
+      "off": {
+        "acq": null,
+        "area": 0.000383,
+        "fq": 0.0,
+        "ret": false
+      }
+    },
+    {
+      "seed": 2,
+      "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+      "off_viable": true,
+      "off_guard_fails": [],
+      "adv_cat": 0.041184,
+      "adv_guards": {
+        "coarse_a": -0.391799,
+        "distractor": -0.171038,
+        "member": -0.087949
+      },
+      "adv_pr": -2.987288,
+      "acq_adv": true,
+      "ret_adv": false,
+      "selective": true,
+      "collapse_on": true,
+      "collapse_off": false,
+      "restriction": false,
+      "on": {
+        "acq": 663000,
+        "area": 0.002824,
+        "fq": 0.297619,
+        "ret": true
+      },
+      "off": {
+        "acq": null,
+        "area": 0.0,
+        "fq": 0.0,
+        "ret": false
+      }
+    },
+    {
+      "seed": 3,
+      "route": "NO-EFFECT",
+      "acquisition_speedup_companion": false,
+      "off_viable": true,
+      "off_guard_fails": [],
+      "adv_cat": -0.009899,
+      "adv_guards": {
+        "coarse_a": -0.493472,
+        "distractor": -0.295852,
+        "member": -0.236415
+      },
+      "adv_pr": NaN,
+      "acq_adv": false,
+      "ret_adv": false,
+      "selective": true,
+      "collapse_on": true,
+      "collapse_off": false,
+      "restriction": false,
+      "on": {
+        "acq": null,
+        "area": 0.001949,
+        "fq": 0.035714,
+        "ret": false
+      },
+      "off": {
+        "acq": null,
+        "area": 0.0,
+        "fq": 0.0,
+        "ret": false
+      }
+    },
+    {
+      "seed": 4,
+      "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+      "off_viable": true,
+      "off_guard_fails": [],
+      "adv_cat": 0.018072,
+      "adv_guards": {
+        "coarse_a": -0.380987,
+        "distractor": -0.235822,
+        "member": -0.114537
+      },
+      "adv_pr": -3.977611,
+      "acq_adv": true,
+      "ret_adv": false,
+      "selective": true,
+      "collapse_on": true,
+      "collapse_off": false,
+      "restriction": false,
+      "on": {
+        "acq": 390000,
+        "area": 0.003166,
+        "fq": 0.166667,
+        "ret": true
+      },
+      "off": {
+        "acq": null,
+        "area": 5.3e-05,
+        "fq": 0.0,
+        "ret": false
+      }
+    },
+    {
+      "seed": 5,
+      "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+      "off_viable": true,
+      "off_guard_fails": [],
+      "adv_cat": -0.005086,
+      "adv_guards": {
+        "coarse_a": -0.490147,
+        "distractor": -0.319586,
+        "member": -0.272804
+      },
+      "adv_pr": -6.872564,
+      "acq_adv": true,
+      "ret_adv": false,
+      "selective": true,
+      "collapse_on": true,
+      "collapse_off": false,
+      "restriction": false,
+      "on": {
+        "acq": 657000,
+        "area": 0.00391,
+        "fq": 0.083333,
+        "ret": false
+      },
+      "off": {
+        "acq": null,
+        "area": 2.3e-05,
+        "fq": 0.011905,
+        "ret": false
+      }
+    },
+    {
+      "seed": 6,
+      "route": "NO-EFFECT",
+      "acquisition_speedup_companion": false,
+      "off_viable": true,
+      "off_guard_fails": [],
+      "adv_cat": -0.004569,
+      "adv_guards": {
+        "coarse_a": -0.544085,
+        "distractor": -0.411319,
+        "member": -0.333578
+      },
+      "adv_pr": -4.946979,
+      "acq_adv": false,
+      "ret_adv": false,
+      "selective": true,
+      "collapse_on": true,
+      "collapse_off": false,
+      "restriction": false,
+      "on": {
+        "acq": null,
+        "area": 0.000486,
+        "fq": 0.02381,
+        "ret": false
+      },
+      "off": {
+        "acq": null,
+        "area": 0.0,
+        "fq": 0.0,
+        "ret": false
+      }
+    },
+    {
+      "seed": 7,
+      "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+      "off_viable": true,
+      "off_guard_fails": [],
+      "adv_cat": 0.019543,
+      "adv_guards": {
+        "coarse_a": -0.61016,
+        "distractor": -0.323463,
+        "member": -0.345645
+      },
+      "adv_pr": -5.986458,
+      "acq_adv": true,
+      "ret_adv": false,
+      "selective": true,
+      "collapse_on": true,
+      "collapse_off": false,
+      "restriction": false,
+      "on": {
+        "acq": 417000,
+        "area": 0.002338,
+        "fq": 0.238095,
+        "ret": true
+      },
+      "off": {
+        "acq": null,
+        "area": 0.0,
+        "fq": 0.0,
+        "ret": false
+      }
+    }
+  ],
+  "cohort": {
+    "counts": {
+      "CATEGORY-COLLAPSE-IN-COSTUME": 5,
+      "NO-EFFECT": 3
+    },
+    "sign_test": "7/8 minimum (9/256 = 0.03515625 one-sided)",
+    "cohort": "SEED-SPLIT",
+    "split_grounds": {
+      "top_count": 5,
+      "opposite_signed": false,
+      "heterogeneous_causal": false
+    }
+  },
+  "bare_n": 8
+}

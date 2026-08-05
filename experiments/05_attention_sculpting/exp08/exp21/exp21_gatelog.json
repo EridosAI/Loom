@@ -173,6 +173,17 @@
         "raw_column_mutation",
         "route_flip"
       ]
+    },
+    {
+      "gate": "G5",
+      "outcome": "CLOSED (frozen AMD-1 scorer)",
+      "executor": "exp21_score.main",
+      "cohort": "SEED-SPLIT",
+      "counts": {
+        "CATEGORY-COLLAPSE-IN-COSTUME": 5,
+        "NO-EFFECT": 3
+      },
+      "flag": "ON s3 pr_q4 NaN from one degenerate probe read (t=921000, unique across all 36 artifacts; training side finite; route-invariance sensitivity in G6)"
     }
   ]
 }
