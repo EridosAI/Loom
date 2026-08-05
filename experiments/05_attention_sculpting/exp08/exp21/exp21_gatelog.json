@@ -184,6 +184,23 @@
         "NO-EFFECT": 3
       },
       "flag": "ON s3 pr_q4 NaN from one degenerate probe read (t=921000, unique across all 36 artifacts; training side finite; route-invariance sensitivity in G6)"
+    },
+    {
+      "gate": "G3a",
+      "outcome": "CLOSED (retrospective record-completion entry; the panel's record-level MUST-FIX \u2014 the gate itself closed at commit 12f6818)",
+      "executor": "exp21_probe.g3_probe_audit",
+      "evidence": "exp21_probe_audit.json (18 banks, 6 observed reds, restore-green), commit 12f6818"
+    },
+    {
+      "gate": "G4",
+      "outcome": "CLOSED (retrospective record-completion entry; supersedes the earlier 'G4 NOT RUN' notes, which were true when written)",
+      "executor": "exp21_run.run_verdict",
+      "evidence": "16 verdict runs (2 arms x seeds 0-7 x 1M, from scratch, primary bank, ratification-gated) committed at 38ecf64; ratification artifact exp21_touch2_ratified.json (eea3070), verdict_artifacts_absent_before_ratification=true"
+    },
+    {
+      "gate": "G6",
+      "outcome": "CLOSED: core verification green (16/16 from-raw series, 8/8 bank rebuilds, census replay MATCH, routes+cohort recompute exact); refute-default panel NOT REFUTED on substance; 1 record-level MUST-FIX (this gatelog completion, folded) + 12 FLAGs riding the terminal surface",
+      "executor": "exp21_verify.main + exp21_panel.json"
     }
   ]
 }

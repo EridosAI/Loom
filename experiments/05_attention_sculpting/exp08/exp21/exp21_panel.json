@@ -1,0 +1,132 @@
+{
+  "exp": "exp21",
+  "gate": "G6-panel",
+  "mode": "refute-default, full depth, 5 lenses + adversarial verify",
+  "substance": "NOT REFUTED (from-raw bit-exact reproduction of the full verdict; all constants reproduce exactly)",
+  "confirmed_must_fix": [
+    {
+      "title": "Gate log incomplete: no G3a event, no G4 execution event; standing 'G4 NOT RUN' notes contradict the committed verdict record",
+      "severity": "MUST-FIX",
+      "claim": "The required artifact exp21_gatelog.json is not a complete G0..G5 record: it contains no G3a event at all and no G4 execution event, and its two most recent G4-related statements ('G4 NOT RUN; VERDICT SEEDS UNTOUCHED' in the G4-fixtures and TOUCH-2 HARD HOLD entries) are now contradicted by the 16 committed verdict runs the G5 CLOSED entry itself scores. By construction no executor ever appends these events: gatelog_append is called only at exp21_teaching.py:466 (G0), :681 (G2), exp21_diffscope.py:183 (G1), exp21_cal.py:594 (G3b), exp21_run.py:142 (G4-fixtures only), exp21_score.py:390 (G5-fixtures-AMD1); run_verdict (exp21_run.py:49-67) and g3_probe_audit never write to the log.",
+      "evidence": "/mnt/c/Users/Jason/Desktop/Eridos/Loom/experiments/05_attention_sculpting/exp08/exp21/exp21_gatelog.json (events: G0,G1,G2,G4-fixtures,G5-fixtures,G6-fixtures,G3b,TOUCH-2,G5-fixtures-AMD1,G6-fixtures,G5 \u2014 no G3a, no G4). Mitigations verified, so this is record-level only, no verdict consequence: the full G3a record (executor, all 6 observed reds, restore-green) is committed in exp21_probe_audit.json; G4 closure is on record as git commit 38ecf64 with ratification artifact exp21_touch2_ratified.json (ratified=true, verdict_artifacts_absent_before_ratification=true, corroborated by timestamps 19:18 vs first verdict manifest 19:23). Fix = append-only G3a and G4 events to the gatelog referencing those records; no re-run.",
+      "lens": "claim-ceiling",
+      "confirmed": true,
+      "verifier": "CONFIRMED on direct recomputation; refutation attempts failed. (1) The gatelog defect is real: /mnt/c/Users/Jason/Desktop/Eridos/Loom/experiments/05_attention_sculpting/exp08/exp21/exp21_gatelog.json contains events G0, G1, G2, G4-fixtures, G5-fixtures, G6-fixtures, G3b, TOUCH-2, G5-fixtures-AMD1, G6-fixtures, G5-CLOSED \u2014 no G3a event and no G4 execution event; the G4-fixtures and TOUCH-2 entries both state \"G4 NOT RUN; VERDICT SEEDS UNTOUCHED\" while the later G5 CLOSED entry scores the 16 committed verdict runs (5 CCIC + 3 NO-EFFECT), so the required record's most recent G4 statement is falsified by later committed reality with no superseding entry. (2) The by-construction claim verifies: gatelog_append call sites are exp21_teaching.py:466 (G0) and :681 (G2), exp21_diffscope.py:183 (G1), "
+    }
+  ],
+  "flags": [
+    {
+      "title": "Seed 5 CCC rests on the acquisition leg with a NEGATIVE terminal category advantage",
+      "severity": "FLAG",
+      "claim": "s5's CATEGORY-COLLAPSE-IN-COSTUME route is mechanically correct under the frozen arm-neutral law, but its 'category improves' predicate is carried entirely by the mid-run certified episode (onset t=657000, area margin 0.003887 > delta_acq 0.000385) while ON's Q4 category mean is BELOW OFF's (adv_cat = -0.005086). The terminal surface should not gloss '5/8 CCC' as five seeds with terminal category gains; s5's certified distinction had already washed out by Q4.",
+      "evidence": "Independent from-raw recompute of /mnt/c/Users/Jason/Desktop/Eridos/Loom/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s5_verdict.probe_primary.pt: onset 657000, ON area 0.003910 vs OFF 0.000023, ON cat_q4 0.511911 vs OFF 0.516997, collapse_on via adv_distractor -0.319586 < -0.008150. Matches the committed row exactly; the operationalization (acq_adv OR ret_adv OR adv_cat>delta_point_cat) is in the pre-verdict-committed scorer (exp21_score.py:151, commit 520a51d) under Touch-2 ruling 2. Composition note for Touch 3, not a route break.",
+      "lens": "from-raw-routes",
+      "confirmed": null
+    },
+    {
+      "title": "NaN semantics are fail-open in the scorer's PR clauses; committed verdict JSON carries a bare NaN token",
+      "severity": "FLAG",
+      "claim": "ON s3's pr_q4 = NaN (one degenerate read, t=921000) makes the collapse_on PR clause and the adv_pr companion silently unevaluable (NaN comparisons are False = fail-open), and exp21_verdict.json seed-3 'adv_pr': NaN is not RFC-8259 JSON (strict parsers reject the committed verdict artifact). Immaterial to every committed route in this cohort; the pattern deserves a NaN-explicit guard in the next scorer generation.",
+      "evidence": "My census of all 36 probe artifacts confirms exactly one NaN read: ON s3 t=921000 (all 2048 predictions class 0, chance on all four axes, cov_trace/PR NaN; training-side columns finite). Route invariance verified two ways: my recompute (cat_up_on false regardless of PR; collapse_on already true via distractor -0.295852; ON fq 3/84 with acq_pre_q4 false so even a counterfactual +1 read cannot reach the 12/84 bound) and the committed exp21_s3_nan_sensitivity.json (NO-EFFECT under pr substitutes 0/1/10). OFF-side viability/collapse use finite OFF PRs everywhere.",
+      "lens": "from-raw-routes",
+      "confirmed": null
+    },
+    {
+      "title": "Guard-axis reproduction contract is thread-pinned (near-tie argmin flips at >1 thread)",
+      "severity": "FLAG",
+      "claim": "Terminal-checkpoint re-emission reproduces every stored axis bacc, PR, and prediction row exactly ONLY at the recorded torch_num_threads=1; at 2+ threads, reduction-order changes flip 1-2 near-tie nearest-centroid assignments on the 16-class member (and twice coarse_a) axes, moving bacc by 1-2 grid quanta (~0.0005-0.001). No committed number is affected and the guard envelopes (0.008-0.012) are ~10x this quantum, but any future re-verification must pin threads to reproduce the summaries digit-exactly.",
+      "evidence": "Re-emitted all 16 exp21_*_verdict.ckpt_read.pt states through the committed banks: at torch_num_threads=1 (the setting recorded in every run record) all 4 axes + PR + terminal prediction rows match stored values exactly (0 issues); at default threads, 11 member/coarse_a mismatches of exactly 1-2/2048. Category axis and stored int8 predictions were bit-stable in both settings.",
+      "lens": "from-raw-routes",
+      "confirmed": null
+    },
+    {
+      "title": "delta_acq / delta_ret committed values carry float32 arithmetic at the 1e-10 digit",
+      "severity": "FLAG",
+      "claim": "My float64 recompute of the run-level repeatability envelopes gives delta_acq 0.00038476562499999926 vs committed 0.0003847656771540642 (diff 3.2e-11) and delta_ret 0.07142857142857142 vs committed 0.0714285708963871 (diff 5.4e-10) \u2014 the committed pipeline computes areas/FQ through float32 series. Every decision margin in the verdict is >= 4 orders of magnitude above these discrepancies; no route sensitivity exists.",
+      "evidence": "Recomputed from the 10 committed cal probe pairs (primary vs shadow) with own code; all other constants (theta_cat, delta_point_cat, null_M_top8, null exceedance 4, fq_null_bound 12/84, null_FQ_top8, all delta_guard_q4, guard bars) reproduce EXACTLY. Smallest live margin using them: acq_adv margins 0.00234-0.00389 vs delta_acq 0.000385.",
+      "lens": "from-raw-routes",
+      "confirmed": null
+    },
+    {
+      "title": "s0 collapse fire is PR-floor-only and its operative leg is not reconstructible from the verdict artifact alone",
+      "severity": "FLAG",
+      "claim": "Of the five CATEGORY-COLLAPSE-IN-COSTUME fires, s0 fires on the participation-ratio floor leg ONLY (ON pr_q4 = 1.000001393 <= 1.011936, essentially rank-1) while its other two collapse axes moved in ON's favor (adv_distractor +0.162034, adv_member +0.011719, both clear of their -delta_guard_q4 bars by 0.170 and 0.023). The fire is lawful under the frozen any-leg disjunction and the margin (0.011935 below the bar) is decisive, not float-edge \u2014 but the committed exp21_verdict.json records only the boolean collapse_on plus adv_pr (the ON-OFF difference), never the absolute ON pr_q4, so the single operative leg for s0 cannot be derived from exp21_verdict.json + exp21_constants.json; it requires re-opening the raw probe artifacts. s2/s4/s7 fire on all three legs and s5 on distractor+member, so s0 is the one fire qualitatively unlike the others (pure geometric collapse with improving guard baccs), and that heterogeneity is invisible in the committed verdict.",
+      "evidence": "Recomputed from exp08/exp21/exp21_on_s0_verdict.probe_primary.{pt,json} + exp21_off_s0_verdict.probe_primary.{pt,json} against exp21_constants.json: ON pr_q4 mean over the 84 Q4 reads = 1.000001393 vs bar 1.011936 (fires by 0.011935); adv_distractor = +0.162033845 vs fire bar -0.008149643; adv_member = +0.011718821 vs fire bar -0.011079286 (clears by 0.022798). Scorer legs at exp21_score.py lines 156-158; verdict detail dict (lines 162-171) carries collapse_on, adv_guards, adv_pr but not on['pr_q4']. Route itself confirmed lawful: cat_improves_on via acq_adv (onset 207000, OFF None, area diff 0.002770 > delta_acq 0.000385) and OFF viable (single distractor guard fail, 0.500732 <= 0.50815).",
+      "lens": "guard-fires",
+      "confirmed": null
+    },
+    {
+      "title": "delta_ret is a float32 shadow of 6/84 and verdict s5's paired FQ diff lands exactly on that boundary (latent, did not fire)",
+      "severity": "FLAG",
+      "claim": "The committed delta_ret = 0.0714285708963871 is a float32-pipeline artifact sitting below the exact rational 6/84 = 0.07142857142857142 (and below float32(6/84) = 0.0714285746216774), and verdict seed 5's paired ON-OFF FQ difference is EXACTLY 6/84 (7/84 - 1/84), so the strict '(on_fq - off_fq) > d_ret' comparison at exp21_score.py:145 would be decided by float-representation noise (float32-computed diff ~0.07142857369 > committed bar) rather than by the law (exact arithmetic: 6/84 > 6/84 is False, i.e., at-envelope must NOT fire). Verified NON-BITING in this verdict: ret_adv is False on all 8 seeds because off['acq_pre_q4'] is False everywhere (no OFF arm ever certifies acquisition), so the d_ret comparison never entered any route; s5's CATEGORY-COLLAPSE-IN-COSTUME came from acq_adv (area diff 0.003887 vs delta_acq 0.000385, ~10x clear) plus collapse_on. Same exact-grid-point >=/< hazard class the corridor previously flagged; surface before these constants or fq_of are reused (fq_of divides by 84, not a power of two, so FQ values are inexact in float32, unlike the category bacc series which is exact on the /2048 grid).",
+      "evidence": "Recomputed from committed artifacts: cal-run max |primary-shadow| FQ diff reproduces committed 0.0714285708963871 under the float32 pipeline and equals exactly 6/84 under exact rational arithmetic. Verdict Q4 crossing counts (my recompute, matching committed exp21_verdict.json fq fields): on={s0:8, s1:4, s2:25, s3:3, s4:14, s5:7, s6:2, s7:20}/84, off={s5:1, else 0}/84 -> s5 diff = 6/84 exactly. Committed verdict seed table shows ret_adv=False for all 8 seeds (off acq=None everywhere), so exp21_score.py:145 never decided a route. delta_acq (committed 0.0003847656771540642 vs exact 0.000384765625) is the same float32 class; all verdict acq-area diffs clear it by >=0.0001 (min margin seed 6: 0.000102). Files: exp08/exp21/exp21_constants.json, exp08/exp21/exp21_verdict.json, exp21_score.py:144-145, exp21_cal.py:172-176 (fq_of).",
+      "lens": "null-theta",
+      "confirmed": null
+    },
+    {
+      "title": "q99 is the int(0.99*n) order statistic; convention-dependent delta_point_cat, but provably zero effect on theta_cat",
+      "severity": "FLAG",
+      "claim": "The prereg (section 4.4) says '99th-percentile' without pinning an estimator; the frozen implementation (exp21_cal.py:249-251) uses the order statistic sorted[int(0.99*n)] = index 3316 of 3350 (~99.01%), giving delta_point_cat = 0.0341796875, while linear-interpolation (torch.quantile) gives 0.033940429687499885. This cannot have moved theta_cat: the floor clause's smallest candidate is k=1094 under EITHER convention (0.5 + 0.03394 -> ceil = 1094; 0.5 + 0.03418 -> exactly 1094), and theta was driven to k=1102 by the null-exceedance clause, 8 grid steps above the floor. The order-stat choice is also the conservative direction (larger envelope) for the paired-difference law, and was frozen at G3b before any verdict data. No action needed for EXP21; worth pinning the estimator in the prereg template for future experiments.",
+      "evidence": "My independent recompute of the 3350 pointwise |primary-shadow| category-bacc diffs from the 20 committed cal probe .pt files reproduces 0.0341796875 exactly under the committed convention (index 3316; max companion 0.08935546875 also matches committed pointwise_cat_max). Null-clause scan from my own 4096-perm recompute: exceedance counts at k=1094..1102 are 19, 18, 14, 11, 8, 8, 6, 6, 4 -> theta = 1102/2048 = 0.5380859375 regardless of which floor (1093.5-ceil or 1094-exact) the delta convention implies. Files: exp21_cal.py:249-251 (q99), exp21_cal.py:329-338 (theta scan), docs/EXP21_PAM_TEACHING_CONTRAST_PREREG.md section 4.4.",
+      "lens": "null-theta",
+      "confirmed": null
+    },
+    {
+      "title": "Ratified freeze surface omits the law-bearing modules exp21_cal.py / exp21_probe.py / exp21_teaching.py",
+      "severity": "FLAG",
+      "claim": "The Touch-2 ratification hash census (exp21_touch2_ratified.json: constants, scorer=exp21_score.py, bank manifests, preflight; exp21_preflight_amd1.json adds calibration) does not pin exp21_cal.py \u2014 where the actual decision laws live (episode_start:139, acq_area:158, fq_of:172, viability_fails:178, assert_grid_complete:111) \u2014 nor exp21_probe.py (bank binding) nor exp21_teaching.py (N_ACQ/Q4_FROM/H21/planned grid, lines 63-66). The 'scorer frozen before G4' guarantee therefore could not, from the ratified package alone, exclude a post-ratification law change.",
+      "evidence": "No actual drift occurred \u2014 verified by provenance instead: git shows all three files last committed at 199c3dc (2026-08-05 06:34, the pre-calibration build commit), exp21_score.py at 520a51d (AMD-1, 19:18, pre-verdict), and the working tree has zero modified tracked files; my full re-scoring through these modules reproduces exp21_verdict.json bit-exactly. Surface for the next gate: pin the complete law-bearing module set at ratification.",
+      "lens": "claim-ceiling",
+      "confirmed": null
+    },
+    {
+      "title": "Frozen constants artifact carries the superseded pre-AMD-1 general-stabilisation law text",
+      "severity": "FLAG",
+      "claim": "exp21_constants.json guard_law.general still reads 'any word-unnamed bacc axis {coarse_a, distractor, member} >= its category advantage' \u2014 the pre-AMD-1 three-axis comparison (cut at G3b 07:32, before AMD-1 19:16; append-only forbids regeneration). Anyone re-deriving the routing law from the constants artifact's own law strings rebuilds the superseded comparison. The deployed, hash-ratified scorer correctly implements AMD-1 (exp21_score.py:177 uses only coarse_a/distractor; member/PR retained in viability and collapse), and the AMD-1 fixture families (exp21_score_fixtures_amd1.json) prove the pre-AMD-1 expression is the observed-red, not the deployed law.",
+      "evidence": "/mnt/c/Users/Jason/Desktop/Eridos/Loom/experiments/05_attention_sculpting/exp08/exp21/exp21_constants.json (guard_law.general includes member) vs exp21_score.py:177 and exp21_touch2_ratified.json ruling 5. Both hashes match their ratified values. Disposition: the Touch-3 terminal surface should place the AMD-1 pointer beside the constants artifact so the stale string cannot be read as the deployed law (provenance-computed-not-asserted discipline).",
+      "lens": "claim-ceiling",
+      "confirmed": null
+    },
+    {
+      "title": "Scorer has no NaN law: one degenerate probe read (ON s3, t=921000) flows silently through guard comparisons; verdict proven invariant",
+      "severity": "FLAG",
+      "claim": "The scorer's Unrouted halt (exp21_score.py:132-135) checks only missing/None fields, not NaN. The single NaN participation_ratio propagates into pr_q4 where NaN<=floor comparisons (exp21_score.py:158,161; exp21_cal.py:182) silently evaluate False \u2014 in a counterfactual where PR-collapse or PR-viability were decisive, that guard leg would silently not fire rather than halt. It also leaves a bare NaN token in exp21_verdict.json (line 115), which strict RFC-8259 parsers reject. For THIS verdict the defect is proven immaterial, so it does not rise to a route-breaking or judgment-class finding: I verified the NaN is the only non-finite value across all 36 probe artifacts (exp21_on_s3_verdict.probe_primary.json, read 307, t=921000 \u2014 exactly matching the committed gatelog claim), s3's route is NO-EFFECT with collapse never gating (cat_improves_on false; collapse_on already true via the distractor leg), OFF-side viability uses OFF's finite PR, and the committed sensitivity (exp21_s3_nan_sensitivity.json: substitutes 0/1/10, invariant=true) agrees with my from-raw recomputation reproducing the full verdict bit-exactly.",
+      "evidence": "Recomputation: scan of all 36 probe artifacts found exactly one non-finite entry ('exp21_on_s3_verdict.probe_primary.json', read 307, t=921000, pr=NaN); full in-memory re-run of summarize_seed/seed_route/cohort over all 8 seeds reproduced exp21_verdict.json exactly including the NaN position. Close the law hole next gate: a non-finite summary value on a scoring path should raise Unrouted (HALT) unless a pre-registered degenerate-read rule says otherwise, and verdict records should serialize non-finite values explicitly.",
+      "lens": "claim-ceiling",
+      "confirmed": null
+    },
+    {
+      "title": "s3 NaN adjudication: FLAG is the correct class \u2014 all four claimed facts verified, route provably NaN-invariant, no corridor halt trigger fires",
+      "severity": "FLAG",
+      "claim": "The ON s3 read-307 NaN (t=921000) is an instrument-numerics artifact of a genuinely degenerate model state, confined to two descriptive geometry companions; the s3 NO-EFFECT route is invariant under ANY pr_q4 substitution (structural proof, stronger than the committed 3-point sensitivity), and no pre-terminal ruling from Jason is required. Verified facts: (1) read 307 has NaN cov_trace/participation_ratio, all five distances 0.0, all four axes at exact chance, and the raw predictions row is constant class-0 (2048/2048, sha256-matched); (2) it is the only non-finite read across all 36 probe artifacts (2 non-finite floats total; the 5 preflight g0 probes are also clean); (3) the ON s3 training record (3333 rows) is fully finite, with pairwise_emit=0.0 across t=909k-930k confirming the emit collapse is the run's real state (reads 303-310 all exact-chance; only 307's covariance numerics tipped to NaN); (4) the frozen scorer reproduces NO-EFFECT under pr_q4 in {0,1,10} and also under +-1e9 and the exact bar value, because neither cat_improves_on (adv_cat -0.0099 < delta 0.0342) nor cat_improves_off holds, making collapse_on \u2014 the only route-relevant consumer of ON pr_q4 \u2014 unreachable. No halt rule fires: 4.4 envelopes are paired-difference repeatability floors with no pre-named envelope on per-read geometry (3.4 pre-classes it descriptive-only); the outcome landed in a named route via NaN-independent clauses; report-don't-patch was respected (NaN committed as-is, scorer untouched); the 8 operative halt list has no non-finiteness condition.",
+      "evidence": "Recomputed from raw at /mnt/c/Users/Jason/Desktop/Eridos/Loom/experiments/05_attention_sculpting/exp08/exp21/: exp21_on_s3_verdict.probe_primary.{json,pt} (read 307, predictions sha 2ced310c... matches), full 36-artifact non-finite walk (exactly 2 hits, both read 307), exp21_on_s3_verdict.json record walk (zero non-finite), frozen-scorer rerun via exp21_score.summarize_seed/seed_route with pr_q4 substituted at 0/1/10/-1e9/1e9/1.011936 (all NO-EFFECT); full 8-seed table + cohort recomputation matches exp21_verdict.json bit-for-bit including the NaN adv_pr; committed collapse_on=true for s3 carried by finite legs (distractor -0.295852 < -0.008150, member -0.236415 < -0.011079). Prereg: docs/EXP21_PAM_TEACHING_CONTRAST_PREREG.md 3.4 ('Descriptive geometry companions, never standalone proof'), 4.4 (envelopes = paired-difference floors), 8 (halt list).",
+      "lens": "s3-nan",
+      "confirmed": null
+    },
+    {
+      "title": "Committed NaN companion in the terminal verdict artifact (seed_table[3].adv_pr) \u2014 disclosure must ride the terminal surface",
+      "severity": "FLAG",
+      "claim": "The NaN contaminates exactly one committed number outside the probe artifact: exp21_verdict.json seed_table[3].adv_pr is a literal NaN token (strict-JSON invalid; json.loads tolerates it but strict parsers like jq fail, and any downstream companion aggregate such as mean adv_pr across seeds propagates NaN). It contaminates nothing else: no other seed's route or companions, not the cohort (SEED-SPLIT {CATEGORY-COLLAPSE-IN-COSTUME:5, NO-EFFECT:3} recomputed identically), and no constant (all cut from cal seeds s20-25 pre-verdict, scanned clean; exp21_g6_verification.json also clean). adv_pr is a 4.4/AMD-1 reported companion explicitly barred from carrying a route, and the artifact is append-only, so the remedy is a disclosure note at the terminal surface that s3 adv_pr is undefined due to the degenerate read \u2014 not a rewrite.",
+      "evidence": "grep '\"adv_pr\":' /mnt/c/Users/Jason/Desktop/Eridos/Loom/experiments/05_attention_sculpting/exp08/exp21/exp21_verdict.json shows literal 'NaN' for seed 3 only; non-finite walk over every committed top-level exp21_*.json found exactly this one entry ('/seed_table/3/adv_pr'); constants provenance in exp21_constants.json (theta_cat and all deltas cut on the 10 calibration runs, null seed 410001230000); full from-raw route+cohort recomputation matched committed exactly.",
+      "lens": "s3-nan",
+      "confirmed": null
+    },
+    {
+      "title": "Frozen AMD-1 scorer is NaN-blind: NaN <= bar silently PASSES the PR guard legs \u2014 inert in this dataset, queued next-gate fix with fired fixture required",
+      "severity": "FLAG",
+      "claim": "seed_route's Unrouted completeness check (exp21_score.py line 132) catches None but not NaN, and Python NaN-comparison semantics make every PR law leg silently pass: demonstrated live, CAL.viability_fails(chance_guards, pr_q4=NaN, bars) returns ['coarse_a','distractor','member'] (PR fail silently omitted) versus the same call with pr=0.5 which includes 'participation_ratio'. Had the NaN landed in an OFF arm's pr_q4 it would have weakened CONTROL-NONVIABLE detection, and in an improving arm it would have vacated the PR-floor collapse leg \u2014 either could break a route in a future regime. In THIS dataset it is provably inert (the only NaN is ON-side s3; viability is OFF-side and finite; s3's collapse_on is carried by finite legs and is route-irrelevant anyway). The scorer cannot be touched now (8: scorer change after verdict data = HALT); the fix is a finiteness guard raising Unrouted on any non-finite summary field, folded into the next-gate fix set with a fired fixture, plus ratification of a standing rule for non-finite instrument outputs (halt vs report) so future corridors are not governed by NaN-comparison silence.",
+      "evidence": "/mnt/c/Users/Jason/Desktop/Eridos/Loom/experiments/05_attention_sculpting/exp21_score.py lines 129-135 (need-check tests 'd[f] is None' only) and line 158 (collapse_on PR leg 'on[\"pr_q4\"] <= bars[...]' evaluates False under NaN); exp21_cal.py lines 178-184 viability_fails, live demonstration in this session with the frozen guard_bars (participation_ratio bar 1.011936).",
+      "lens": "s3-nan",
+      "confirmed": null
+    },
+    {
+      "title": "exp21_s3_nan_sensitivity.json has ad-hoc provenance: no committed producer code and no gatelog entry",
+      "severity": "FLAG",
+      "claim": "No committed exp21_*.py writes the sensitivity artifact (grep finds no producer) and exp21_gatelog.json's 11 events contain no entry disclosing the s3 NaN or the sensitivity run \u2014 the artifact was produced outside the committed-executor discipline the corridor applies everywhere else. Its content is nonetheless correct: this lens independently reproduced all three substitutions through the frozen scorer and strengthened the result to total structural invariance (any pr_q4 value yields NO-EFFECT). Remedy: the terminal surface should cite the panel's independent reproduction as the load-bearing verification, and the gatelog/terminal package should record the NaN disclosure explicitly.",
+      "evidence": "grep -rn 'nan_sensitivity' over /mnt/c/Users/Jason/Desktop/Eridos/Loom/experiments/05_attention_sculpting/exp21_*.py returns nothing; exp21_gatelog.json events list (G0,G1,G2,G4-fixtures,G5-fixtures,G6-fixtures x2,G3b,TOUCH-2 HOLD,G5-fixtures-AMD1,G5 CLOSED) has no NaN/sensitivity entry; artifact at exp08/exp21/exp21_s3_nan_sensitivity.json claims verified: committed_route NO-EFFECT, invariant under {0,1,10}, uniqueness across 36 artifacts.",
+      "lens": "s3-nan",
+      "confirmed": null
+    }
+  ],
+  "refuted": []
+}

@@ -1,0 +1,357 @@
+{
+  "exp": "exp21",
+  "gate": "G6-terminal",
+  "assembled_at_head": "cc0491ea46df847835323a275cbc2d1699371177",
+  "result": {
+    "cohort": {
+      "counts": {
+        "CATEGORY-COLLAPSE-IN-COSTUME": 5,
+        "NO-EFFECT": 3
+      },
+      "sign_test": "7/8 minimum (9/256 = 0.03515625 one-sided)",
+      "cohort": "SEED-SPLIT",
+      "split_grounds": {
+        "top_count": 5,
+        "opposite_signed": false,
+        "heterogeneous_causal": false
+      }
+    },
+    "seed_table": [
+      {
+        "seed": 0,
+        "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+        "off_viable": true,
+        "off_guard_fails": [
+          "distractor"
+        ],
+        "adv_cat": 0.012759,
+        "adv_guards": {
+          "coarse_a": -0.474656,
+          "distractor": 0.162034,
+          "member": 0.011719
+        },
+        "adv_pr": -1.996627,
+        "acq_adv": true,
+        "ret_adv": false,
+        "selective": false,
+        "collapse_on": true,
+        "collapse_off": true,
+        "restriction": false,
+        "on": {
+          "acq": 207000,
+          "area": 0.00277,
+          "fq": 0.095238,
+          "ret": false
+        },
+        "off": {
+          "acq": null,
+          "area": 0.0,
+          "fq": 0.0,
+          "ret": false
+        }
+      },
+      {
+        "seed": 1,
+        "route": "NO-EFFECT",
+        "acquisition_speedup_companion": false,
+        "off_viable": true,
+        "off_guard_fails": [],
+        "adv_cat": -0.004296,
+        "adv_guards": {
+          "coarse_a": -0.483712,
+          "distractor": -0.21932,
+          "member": -0.213088
+        },
+        "adv_pr": -2.971139,
+        "acq_adv": false,
+        "ret_adv": false,
+        "selective": true,
+        "collapse_on": true,
+        "collapse_off": false,
+        "restriction": false,
+        "on": {
+          "acq": null,
+          "area": 0.002615,
+          "fq": 0.047619,
+          "ret": false
+        },
+        "off": {
+          "acq": null,
+          "area": 0.000383,
+          "fq": 0.0,
+          "ret": false
+        }
+      },
+      {
+        "seed": 2,
+        "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+        "off_viable": true,
+        "off_guard_fails": [],
+        "adv_cat": 0.041184,
+        "adv_guards": {
+          "coarse_a": -0.391799,
+          "distractor": -0.171038,
+          "member": -0.087949
+        },
+        "adv_pr": -2.987288,
+        "acq_adv": true,
+        "ret_adv": false,
+        "selective": true,
+        "collapse_on": true,
+        "collapse_off": false,
+        "restriction": false,
+        "on": {
+          "acq": 663000,
+          "area": 0.002824,
+          "fq": 0.297619,
+          "ret": true
+        },
+        "off": {
+          "acq": null,
+          "area": 0.0,
+          "fq": 0.0,
+          "ret": false
+        }
+      },
+      {
+        "seed": 3,
+        "route": "NO-EFFECT",
+        "acquisition_speedup_companion": false,
+        "off_viable": true,
+        "off_guard_fails": [],
+        "adv_cat": -0.009899,
+        "adv_guards": {
+          "coarse_a": -0.493472,
+          "distractor": -0.295852,
+          "member": -0.236415
+        },
+        "adv_pr": NaN,
+        "acq_adv": false,
+        "ret_adv": false,
+        "selective": true,
+        "collapse_on": true,
+        "collapse_off": false,
+        "restriction": false,
+        "on": {
+          "acq": null,
+          "area": 0.001949,
+          "fq": 0.035714,
+          "ret": false
+        },
+        "off": {
+          "acq": null,
+          "area": 0.0,
+          "fq": 0.0,
+          "ret": false
+        }
+      },
+      {
+        "seed": 4,
+        "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+        "off_viable": true,
+        "off_guard_fails": [],
+        "adv_cat": 0.018072,
+        "adv_guards": {
+          "coarse_a": -0.380987,
+          "distractor": -0.235822,
+          "member": -0.114537
+        },
+        "adv_pr": -3.977611,
+        "acq_adv": true,
+        "ret_adv": false,
+        "selective": true,
+        "collapse_on": true,
+        "collapse_off": false,
+        "restriction": false,
+        "on": {
+          "acq": 390000,
+          "area": 0.003166,
+          "fq": 0.166667,
+          "ret": true
+        },
+        "off": {
+          "acq": null,
+          "area": 5.3e-05,
+          "fq": 0.0,
+          "ret": false
+        }
+      },
+      {
+        "seed": 5,
+        "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+        "off_viable": true,
+        "off_guard_fails": [],
+        "adv_cat": -0.005086,
+        "adv_guards": {
+          "coarse_a": -0.490147,
+          "distractor": -0.319586,
+          "member": -0.272804
+        },
+        "adv_pr": -6.872564,
+        "acq_adv": true,
+        "ret_adv": false,
+        "selective": true,
+        "collapse_on": true,
+        "collapse_off": false,
+        "restriction": false,
+        "on": {
+          "acq": 657000,
+          "area": 0.00391,
+          "fq": 0.083333,
+          "ret": false
+        },
+        "off": {
+          "acq": null,
+          "area": 2.3e-05,
+          "fq": 0.011905,
+          "ret": false
+        }
+      },
+      {
+        "seed": 6,
+        "route": "NO-EFFECT",
+        "acquisition_speedup_companion": false,
+        "off_viable": true,
+        "off_guard_fails": [],
+        "adv_cat": -0.004569,
+        "adv_guards": {
+          "coarse_a": -0.544085,
+          "distractor": -0.411319,
+          "member": -0.333578
+        },
+        "adv_pr": -4.946979,
+        "acq_adv": false,
+        "ret_adv": false,
+        "selective": true,
+        "collapse_on": true,
+        "collapse_off": false,
+        "restriction": false,
+        "on": {
+          "acq": null,
+          "area": 0.000486,
+          "fq": 0.02381,
+          "ret": false
+        },
+        "off": {
+          "acq": null,
+          "area": 0.0,
+          "fq": 0.0,
+          "ret": false
+        }
+      },
+      {
+        "seed": 7,
+        "route": "CATEGORY-COLLAPSE-IN-COSTUME",
+        "off_viable": true,
+        "off_guard_fails": [],
+        "adv_cat": 0.019543,
+        "adv_guards": {
+          "coarse_a": -0.61016,
+          "distractor": -0.323463,
+          "member": -0.345645
+        },
+        "adv_pr": -5.986458,
+        "acq_adv": true,
+        "ret_adv": false,
+        "selective": true,
+        "collapse_on": true,
+        "collapse_off": false,
+        "restriction": false,
+        "on": {
+          "acq": 417000,
+          "area": 0.002338,
+          "fq": 0.238095,
+          "ret": true
+        },
+        "off": {
+          "acq": null,
+          "area": 0.0,
+          "fq": 0.0,
+          "ret": false
+        }
+      }
+    ],
+    "bare_n": 8,
+    "theta": 0.5380859375,
+    "restriction": false
+  },
+  "collapse_leg_census": {
+    "0": {
+      "distractor_leg": false,
+      "member_leg": false,
+      "pr_floor_leg": true,
+      "adv_distractor": 0.162034,
+      "adv_member": 0.011719,
+      "on_pr_q4": 1.000001
+    },
+    "2": {
+      "distractor_leg": true,
+      "member_leg": true,
+      "pr_floor_leg": true,
+      "adv_distractor": -0.171038,
+      "adv_member": -0.087949,
+      "on_pr_q4": 1.0
+    },
+    "4": {
+      "distractor_leg": true,
+      "member_leg": true,
+      "pr_floor_leg": true,
+      "adv_distractor": -0.235822,
+      "adv_member": -0.114537,
+      "on_pr_q4": 1.0
+    },
+    "5": {
+      "distractor_leg": true,
+      "member_leg": true,
+      "pr_floor_leg": false,
+      "adv_distractor": -0.319586,
+      "adv_member": -0.272804,
+      "on_pr_q4": 1.06148
+    },
+    "7": {
+      "distractor_leg": true,
+      "member_leg": true,
+      "pr_floor_leg": true,
+      "adv_distractor": -0.323463,
+      "adv_member": -0.345645,
+      "on_pr_q4": 1.00005
+    }
+  },
+  "g6_core": {
+    "series_ok": 16,
+    "banks_ok": 8,
+    "census_replay": true,
+    "routes": {
+      "seeds": 8,
+      "ok": true
+    }
+  },
+  "panel": {
+    "substance": "NOT REFUTED (from-raw bit-exact reproduction of the full verdict; all constants reproduce exactly)",
+    "confirmed_must_fix": [
+      "Gate log incomplete: no G3a event, no G4 execution event; standing 'G4 NOT RUN' notes contradict the committed verdict record"
+    ],
+    "flags": [
+      "Seed 5 CCC rests on the acquisition leg with a NEGATIVE terminal category advantage",
+      "NaN semantics are fail-open in the scorer's PR clauses; committed verdict JSON carries a bare NaN token",
+      "Guard-axis reproduction contract is thread-pinned (near-tie argmin flips at >1 thread)",
+      "delta_acq / delta_ret committed values carry float32 arithmetic at the 1e-10 digit",
+      "s0 collapse fire is PR-floor-only and its operative leg is not reconstructible from the verdict artifact alone",
+      "delta_ret is a float32 shadow of 6/84 and verdict s5's paired FQ diff lands exactly on that boundary (latent, did not fire)",
+      "q99 is the int(0.99*n) order statistic; convention-dependent delta_point_cat, but provably zero effect on theta_cat",
+      "Ratified freeze surface omits the law-bearing modules exp21_cal.py / exp21_probe.py / exp21_teaching.py",
+      "Frozen constants artifact carries the superseded pre-AMD-1 general-stabilisation law text",
+      "Scorer has no NaN law: one degenerate probe read (ON s3, t=921000) flows silently through guard comparisons; verdict proven invariant",
+      "s3 NaN adjudication: FLAG is the correct class \u2014 all four claimed facts verified, route provably NaN-invariant, no corridor halt trigger fires",
+      "Committed NaN companion in the terminal verdict artifact (seed_table[3].adv_pr) \u2014 disclosure must ride the terminal surface",
+      "Frozen AMD-1 scorer is NaN-blind: NaN <= bar silently PASSES the PR guard legs \u2014 inert in this dataset, queued next-gate fix with fired fixture required",
+      "exp21_s3_nan_sensitivity.json has ad-hoc provenance: no committed producer code and no gatelog entry"
+    ]
+  },
+  "hashes": {
+    "verdict": "4a9cc387d863cd244739bd3bdd2ceb70bde48de49687ec9d1ec217929f95a19d",
+    "constants": "59ede2ff84d6bcc0bb1396f907306f5da45976d0970b097ff461bfc9dbad0a55",
+    "scorer": "f0db8ab63d3ce9d0cd3f2ad5ec9b542a4d305ff055516ca0c6f4b174397c81d1",
+    "panel": "7f33e433fa51e16819fc9ce17ef61cfc76664efede34bc3f811bcb9ee5db4e93"
+  }
+}

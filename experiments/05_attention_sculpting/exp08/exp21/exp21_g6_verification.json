@@ -1,0 +1,172 @@
+{
+  "series": [
+    {
+      "arm": "on",
+      "seed": 0,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "on",
+      "seed": 1,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "on",
+      "seed": 2,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "on",
+      "seed": 3,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "on",
+      "seed": 4,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "on",
+      "seed": 5,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "on",
+      "seed": 6,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "on",
+      "seed": 7,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "off",
+      "seed": 0,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "off",
+      "seed": 1,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "off",
+      "seed": 2,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "off",
+      "seed": 3,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "off",
+      "seed": 4,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "off",
+      "seed": 5,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "off",
+      "seed": 6,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    },
+    {
+      "arm": "off",
+      "seed": 7,
+      "tag": "verdict",
+      "reads": 335,
+      "ok": true
+    }
+  ],
+  "banks": [
+    {
+      "seed": 0,
+      "kind": "primary",
+      "ok": true
+    },
+    {
+      "seed": 1,
+      "kind": "primary",
+      "ok": true
+    },
+    {
+      "seed": 2,
+      "kind": "primary",
+      "ok": true
+    },
+    {
+      "seed": 3,
+      "kind": "primary",
+      "ok": true
+    },
+    {
+      "seed": 4,
+      "kind": "primary",
+      "ok": true
+    },
+    {
+      "seed": 5,
+      "kind": "primary",
+      "ok": true
+    },
+    {
+      "seed": 6,
+      "kind": "primary",
+      "ok": true
+    },
+    {
+      "seed": 7,
+      "kind": "primary",
+      "ok": true
+    }
+  ],
+  "gradient_replay": {
+    "forward_equal_at_init": true,
+    "matched_counts": true,
+    "on_lpam_to_vision_pos": true,
+    "off_lpam_to_vision_zero": true,
+    "off_lpam_to_pam_pos": true,
+    "off_vision_nonpam_grad_pos": true,
+    "off_gain_positive_pam_update": true,
+    "off_vision_nonpam_update_pos": true
+  },
+  "routes": {
+    "seeds": 8,
+    "ok": true
+  }
+}
