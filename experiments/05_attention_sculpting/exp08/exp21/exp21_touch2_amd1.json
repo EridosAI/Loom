@@ -1,0 +1,17 @@
+{
+  "exp": "EXP21",
+  "amendment": "TOUCH-2 AMD-1",
+  "authority": "Jason Dury",
+  "date": "2026-08-05",
+  "preflight_commit": "eae40d57f3525f35c934c46458eebcf7c0492f65",
+  "amd1_commit": "520a51d7da7dc8c9e3766bf5f8cf1ccebb9d8131",
+  "old_scorer_expression": "max(adv[\"coarse_a\"], adv[\"distractor\"], adv[\"member\"]) >= adv_cat",
+  "new_scorer_expression": "max(adv[\"coarse_a\"], adv[\"distractor\"]) >= adv_cat",
+  "affected_route": "GENERAL-STABILISATION only (member/participation_ratio remain viability + compression guards and reported companions)",
+  "unchanged_artifact_hashes": {
+    "exp21_constants_json": "59ede2ff84d6bcc0bb1396f907306f5da45976d0970b097ff461bfc9dbad0a55",
+    "exp21_calibration_json": "974cb495d2abb91f3cdb41e5487386018dcdb5aa0d7a3b5b0ee5552ab2e4644a"
+  },
+  "verdict_records_absent_at_amendment": true,
+  "note": "this record is committed in the ratification commit because it must carry the AMD-1 commit SHA, which exists only after the AMD-1 commit (append-only)"
+}
