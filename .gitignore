@@ -1,0 +1,43 @@
+# Python bytecode and build products
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Local environments
+.venv/
+venv/
+env/
+ENV/
+
+# Notebook state
+.ipynb_checkpoints/
+
+# Generated experiment artifacts
+runs/
+outputs/
+checkpoints/
+logs/
+wandb/
+data/
+figures/
+*.ckpt
+*.pt
+*.pth
+*.log
+*.npy
+*.npz
+*_ckpt.json
+*_peronset.json
+
+# Operating-system and editor state
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
