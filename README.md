@@ -1,44 +1,40 @@
 # Loom
 
-A novel associative-memory architecture (Weft / PAM lineage). The system learns through
-continuous experience rather than discrete training phases: modality-specific **cortices**
-(each with its own representation space) feed a central associative operation (**PAM**) that
-evokes expected experience from partial cues, every "wave," with no train/run distinction.
-Memory is emergent predictive structure in weights, not an archive.
+**Start here:** [00 — Loom Current State](00_LOOM_CURRENT_STATE.md)
 
-## Status
+Loom is a research programme for continuously developing associative systems. This root
+separates the closed historical programme from the active post-EXP21 design line.
 
-Architecture design is well-developed; first **mechanism** commitments made (the pooling
-substrate, PAM-as-masked-completion, JEPA-pattern cortices). Now entering **isolated
-mechanism validation** before integration.
+## Repository structure
 
-## Repository
+### EXP1–21 historical programme
 
-```
-docs/                              Design documents (read in this order)
-  HANDOFF.md                         How to work on this project (anti-drift discipline)
-  PROJECT_STATE_AND_MVP.md           Full architecture, all decisions, status, suggested MVP
-  substrate_description.md           The pooling-substrate spec (detail)
-  association_cortex_operation_spec.md   The twelve characteristics (STABLE — do not re-litigate)
+[`EXP1-21/`](EXP1-21/) preserves the complete repository state through EXP21. Its
+terminal anchor is commit
+`d87218f1162e80015596bcc5f2e6c10f8f050d65`; the historical files and their Git modes
+are unchanged and are nested beneath the programme directory as one exact tree.
 
-experiments/
-  01_pooling_substrate/            First validation rig: does soft-tied weight pooling
-                                   actually pool / unpool / re-pool? (see SPEC.md)
+Run historical commands from inside `EXP1-21/`. See the
+[`EXP1-21` README](EXP1-21/README.md) for the original programme orientation.
 
-src/loom/                          Shared code (grows as experiments are integrated)
-```
+### Developmental Ecology
 
-## Core principles (see HANDOFF.md for the full set)
+[`docs/developmental_ecology/`](docs/developmental_ecology/) contains the reviewed
+Jason-verified accepted working foundation for the post-EXP21 Developmental Ecology
+line:
 
-- **One operation, every wave, never frozen.** No train/run split; development is the only mode.
-- **Test mechanisms against functions, not vocabulary.** The recurring failure mode is drift
-  into a conventional forward-in-time predictor wearing novel terms.
-- **No plastic component without a slower-changing reference** (reference-and-relaxation).
-- **Confidence is the universal currency** (credit-assignment, segmentation, decay, recall
-  looseness — one signal, many roles).
-- **Build the full mechanism, pin its variable part to a constant for v1, release later.**
+- [Developmental Ecology Design Frame v0.2](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md)
+- [Developmental Ecology Fork and Decision Ledger v0.1](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_1.md)
+- [Primitive Organism–World Coupling Specification v0.1](docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md)
 
-## Current work
+These documents do not authorise implementation, an experiment number, or a run, and
+they do not change the EXP21 terminal result. The current next design object is the
+**Base World Completion** packet; preparing and reviewing it does not authorise its
+implementation.
 
-`experiments/01_pooling_substrate/` — validating the growth substrate in isolation, with
-pre-registered failure conditions, before integrating it into the loop.
+## Repository discipline
+
+- Preserve historical programme directories rather than rewriting their contents.
+- Keep generated runs, checkpoints, data, and figures out of version control.
+- Give each future experiment or programme an explicit scope and authorization before
+  adding source code or an experiment directory.

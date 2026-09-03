@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Experiment outputs (keep specs/code, ignore generated artifacts)
+runs/
+outputs/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+wandb/
+logs/
+*.log
+
+# Data (regenerable synthetic data shouldn't be committed)
+data/
+*.npy
+*.npz
+
+# Plots / generated figures (regenerable)
+figures/
+*.png
+*.pdf
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Experiment checkpoints (transient)
+*_ckpt.json
+
+# EXP19 per-onset capture artifacts (regenerable; digests committed instead).
+# The two B=T derived-series caches (strat_cache / strat_cache_wave) are COMMITTED as of the B5
+# recomputability ruling (Jason 2026-07-17): every G8/terminal stratified number must be re-derivable
+# from a clone. Corridor standard forward: each arm commits its derived per-window stratified series
+# per seed (v5 item e); raw per-onset captures stay off-git (digests committed), revisit at G8.
+*_peronset.json
+*_g5a_replay.json
+*_g5a_replay.manifest.json
+*_g5a_cal_replay.json
+*_g5a_cal_replay.manifest.json
