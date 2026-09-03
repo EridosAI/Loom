@@ -2,22 +2,24 @@
 
 **Project:** Loom / PAM  
 **Consolidation date:** 2026-09-03  
-**Status:** **CONSOLIDATED DRAFT FOR JASON VERIFICATION**  
-**Repository status:** **Not committed canon**  
+**Status:** CURRENT ACCEPTED WORKING DECISION RECORD THROUGH FORK 28
+**Authority:** Provenance record for the Developmental Ecology working branch.
+Rows retain their individual epistemic and reversibility status.
+**Repository status:** **Jason-verified accepted working doctrine; no implementation authority.**
 **Purpose:** Preserve the exact working branch, amendments, reversibility, and unresolved questions from the developmental-ecology discussion so later design does not reconstruct them from conversational memory.
 
 ---
 
 ## Status vocabulary
 
-- **ACCEPTED WORKING** — explicitly accepted by Jason in chat; pending repository canon.
+- **ACCEPTED WORKING** — explicitly accepted by Jason and recorded as working doctrine; not experimental evidence.
 - **ACCEPTED AMENDMENT** — later qualification or correction accepted into the working branch.
 - **WORKING DIRECTION** — Jason expressed a clear preferred direction, but no exact numerical/configuration ruling was frozen.
 - **DEFERRED DIAL** — intentionally preserved reduction, expansion, or alternate branch.
 - **OPEN** — load-bearing question not yet decided.
 - **SUPERSEDED WORDING** — earlier phrasing replaced without erasing provenance.
 
-Every row below remains subordinate to current committed repository canon until explicitly landed.
+Repository landing preserves each row's stated epistemic and reversibility status. It does not convert proposals or open questions into accepted decisions.
 
 ---
 
@@ -26,7 +28,7 @@ Every row below remains subordinate to current committed repository canon until 
 | ID | Decision | Status | Reversibility / boundary |
 |---|---|---|---|
 | S0 | Step outward after EXP21 and investigate whether the missing stabilising condition is partly ecological/developmental rather than immediately repairing the isolated PAM→cortex pathway. | ACCEPTED WORKING | Does not overturn EXP21. The interface question is banked, not answered. |
-| D0 | `Developmental Ecology Design Frame v0.1` accepted line by line as the working foundation. | ACCEPTED WORKING | Exact consolidated v0.2 wording still requires review. Not repository canon. |
+| D0 | `Developmental Ecology Design Frame v0.1` accepted line by line as the working foundation. | ACCEPTED WORKING | Consolidated v0.2 wording is Jason-verified and recorded as the accepted working foundation; it remains subject to evidence and amendment. |
 | M0 | Minimal means minimum imposed ontology, not minimum number of interacting variables. | ACCEPTED WORKING | Remains subject to empirical pressure. |
 | M1 | Synthesis before reduction: create a complete minimal ecology, observe a phenomenon, then ablate/reduce. | ACCEPTED WORKING | Reductionist isolation remains essential after a phenomenon exists. |
 | M2 | The world, organism, and their coupling are all hypotheses; a null is not automatically learner failure. | ACCEPTED WORKING | Commissioning law must evolve as the programme learns. |
@@ -172,7 +174,7 @@ These should remain individual high-attention forks rather than being hidden in 
 | Consolidate the design frame, coupling spec, and decision ledger before continuing. | ACCEPTED WORKING | These documents—not selective chat recall—carry the branch forward. |
 | Move from one-fork-per-turn to batched review packets for straightforward world/body decisions. | ACCEPTED WORKING | Jason still reviews every proposed ruling; consequential mechanism/claim forks remain individual. |
 | Begin with a `Base World Completion` review packet after consolidation. | ACCEPTED WORKING | No new mechanism design until the functional world packet is reviewed. |
-| Start a fresh project chat after consolidation if desired. | WORKING PROCESS | New chat should read `00 Loom Current State.md` first, then these three documents. |
+| Start a fresh project chat after consolidation if desired. | WORKING PROCESS | New chat should read `00_LOOM_CURRENT_STATE.md` first, then these three documents. |
 
 ---
 

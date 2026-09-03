@@ -2,21 +2,25 @@
 
 **Project:** Loom / PAM  
 **Consolidation date:** 2026-09-03  
-**Status:** **CONSOLIDATED DRAFT FOR JASON VERIFICATION**  
+**Status:** JASON-VERIFIED — ACCEPTED WORKING FOUNDATION
+**Authority:** Governs the Developmental Ecology design line unless amended by
+Jason or superseded by evidence.
+Implementation authority: None. This document does not authorise code,
+an experiment number, or a run.
 **Underlying direction:** Jason accepted the v0.1 frame line by line on 2026-09-02 and subsequently accepted the working branches and amendments incorporated here.  
-**Repository status:** **Not committed canon.** This document does not amend `EridosAI/Loom`, does not alter the EXP21 result, and authorises no code or experiment.  
-**Current canonical orientation source:** `00 Loom Current State.md`, reconstructed at remote `main@d87218f1162e80015596bcc5f2e6c10f8f050d65`.
+**Repository status:** **Jason-verified accepted working doctrine.** This document does not alter the EXP21 result and authorises no code, experiment number, implementation, or run.
+**Current repository orientation source:** `00_LOOM_CURRENT_STATE.md`.
 
 ---
 
 ## 0. Authority and reading discipline
 
-This document sits below current committed repository canon until Jason deliberately approves its consolidated wording and it is landed through the project’s canon process.
+This document records Jason-verified accepted working doctrine. Its labelled proposals and open questions remain proposals and open questions; committed historical evidence retains authority over historical results.
 
 It separates four epistemic classes:
 
 - **[CANON-INHERITED]** — already present in current Loom canon or a current canonical reconstruction.
-- **[JASON-ACCEPTED WORKING]** — explicitly accepted by Jason in the developmental-ecology design discussion, but not yet committed.
+- **[JASON-ACCEPTED WORKING]** — explicitly accepted by Jason in the developmental-ecology design discussion and recorded as working doctrine.
 - **[PROPOSED]** — a current synthesis that remains open to pressure-testing.
 - **[OPEN]** — intentionally unresolved; no implementation or architectural answer is implied.
 
@@ -24,14 +28,16 @@ Historical retrospectives remain dated snapshots. They do not override later com
 
 **Load-bearing source anchors:**
 
-- `00 Loom Current State.md`
-- `association_cortex_operation_spec.md`
-- `Guiding List(1).md` and the later current `docs/Guiding List.md`
-- `substrate_description.md`
-- `MECHANISM_MAP_v1_2_RECONCILED.md`
-- `CORRIDOR_PROTOCOL.md`
-- `HANDOFF_fable_to_opus_method.md`
-- EXP21’s committed Touch-3 result at `main@d87218f1162e80015596bcc5f2e6c10f8f050d65`
+- `00_LOOM_CURRENT_STATE.md`
+- `EXP1-21/docs/00 Loom Current State.md` (local untracked historical reconstruction; lower-ranked than committed evidence)
+- `EXP1-21/docs/association_cortex_operation_spec.md`
+- `EXP1-21/docs/Guiding List.md`
+- `EXP1-21/docs/substrate_description.md`
+- `EXP1-21/docs/MECHANISM_MAP_v1_2_RECONCILED.md`
+- `EXP1-21/docs/CORRIDOR_PROTOCOL.md`
+- `EXP1-21/docs/HANDOFF_fable_to_opus_method.md`
+- `EXP1-21/docs/FRONTIER_attention_sculpting.md`
+- EXP21’s committed Touch-3 result at `EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_touch3_ratified.json`, preserved from `main@d87218f1162e80015596bcc5f2e6c10f8f050d65`
 
 ---
 
@@ -601,8 +607,8 @@ Companion line:
 
 # 27. Immediate next design object
 
-After this frame is verified, the next functional object is:
+With this frame verified, the next functional object is:
 
 > **What is the smallest complete organism–world coupling in which the developmental hypothesis is genuinely posed?**
 
-The companion document `PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1_CONSOLIDATED_DRAFT.md` records the accepted working answer through Fork 28 without selecting the remaining neural, associative, action-selection, or experimental mechanisms.
+The companion document `docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md` records the accepted working answer through Fork 28 without selecting the remaining neural, associative, action-selection, or experimental mechanisms.

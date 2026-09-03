@@ -1,8 +1,9 @@
 # Loom
 
-Loom is a research programme for continuously developing associative systems. This
-repository root separates completed historical experiment programmes from later design
-foundations and future experiments.
+**Start here:** [00 — Loom Current State](00_LOOM_CURRENT_STATE.md)
+
+Loom is a research programme for continuously developing associative systems. This root
+separates the closed historical programme from the active post-EXP21 design line.
 
 ## Repository structure
 
@@ -19,15 +20,17 @@ Run historical commands from inside `EXP1-21/`. See the
 ### Developmental Ecology
 
 [`docs/developmental_ecology/`](docs/developmental_ecology/) contains the reviewed
-working foundation for the post-EXP21 Developmental Ecology line:
+Jason-verified accepted working foundation for the post-EXP21 Developmental Ecology
+line:
 
-- [Developmental Ecology Design Frame v0.2](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2_CONSOLIDATED_DRAFT.md)
-- [Developmental Ecology Fork and Decision Ledger v0.1](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_1_CONSOLIDATED_DRAFT.md)
-- [Primitive Organism–World Coupling Specification v0.1](docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1_CONSOLIDATED_DRAFT.md)
+- [Developmental Ecology Design Frame v0.2](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md)
+- [Developmental Ecology Fork and Decision Ledger v0.1](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_1.md)
+- [Primitive Organism–World Coupling Specification v0.1](docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md)
 
-These documents establish a documentation-only working foundation. They do not create
-an experiment number, authorize an implementation, or change the EXP21 terminal result.
-Their reviewed internal status and authority wording is preserved verbatim.
+These documents do not authorise implementation, an experiment number, or a run, and
+they do not change the EXP21 terminal result. The current next design object is the
+**Base World Completion** packet; preparing and reviewing it does not authorise its
+implementation.
 
 ## Repository discipline
 

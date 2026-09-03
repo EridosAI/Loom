@@ -2,10 +2,13 @@
 
 **Project:** Loom / PAM — Developmental Ecology line  
 **Consolidation date:** 2026-09-03  
-**Status:** **CONSOLIDATED DRAFT FOR JASON VERIFICATION**  
+**Status:** JASON-VERIFIED — ACCEPTED FUNCTIONAL BRANCH THROUGH FORK 28
+**Authority:** Accepted working organism–world design. Numerical configuration,
+mechanism selection, experiment design, and implementation remain open.
+Implementation authority: None.
 **Scope:** Integrates the Jason-accepted working branches through Fork 28, plus accepted amendments and the density-based inventory note.  
-**Repository status:** **Not committed canon. No implementation authorised.**  
-**Parent doctrine:** `DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2_CONSOLIDATED_DRAFT.md`
+**Repository status:** **Jason-verified accepted working doctrine. No implementation authorised.**
+**Parent doctrine:** `docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md`
 
 ---
 
