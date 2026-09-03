@@ -1,4 +1,4 @@
-# Developmental Ecology Fork and Decision Ledger — v0.1 Consolidated Draft
+# Developmental Ecology Fork and Decision Ledger — v0.1
 
 **Project:** Loom / PAM  
 **Consolidation date:** 2026-09-03  

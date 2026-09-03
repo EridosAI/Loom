@@ -1,4 +1,4 @@
-# Developmental Ecology Design Frame — v0.2 Consolidated Draft
+# Developmental Ecology Design Frame — v0.2
 
 **Project:** Loom / PAM  
 **Consolidation date:** 2026-09-03  
@@ -29,7 +29,6 @@ Historical retrospectives remain dated snapshots. They do not override later com
 **Load-bearing source anchors:**
 
 - `00_LOOM_CURRENT_STATE.md`
-- `EXP1-21/docs/00 Loom Current State.md` (local untracked historical reconstruction; lower-ranked than committed evidence)
 - `EXP1-21/docs/association_cortex_operation_spec.md`
 - `EXP1-21/docs/Guiding List.md`
 - `EXP1-21/docs/substrate_description.md`
@@ -38,6 +37,8 @@ Historical retrospectives remain dated snapshots. They do not override later com
 - `EXP1-21/docs/HANDOFF_fable_to_opus_method.md`
 - `EXP1-21/docs/FRONTIER_attention_sculpting.md`
 - EXP21’s committed Touch-3 result at `EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_touch3_ratified.json`, preserved from `main@d87218f1162e80015596bcc5f2e6c10f8f050d65`
+
+A local untracked historical reconstruction titled `00 Loom Current State.md` was consulted during consolidation. It is not repository authority, is not part of the preserved EXP1–21 tree, and no current claim depends on it as its sole source.
 
 ---
 

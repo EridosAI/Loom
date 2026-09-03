@@ -170,7 +170,4 @@ archived programme remains authoritative for its own historical state.
 and
 [`EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_panel.json`](EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_panel.json).
 
-The historical reconstruction at `EXP1-21/docs/00 Loom Current State.md` is retained as
-an untracked local artifact and is lower in the authority order than committed EXP21
-evidence. It is not part of the preserved historical tree and is not staged by this
-activation.
+A local untracked historical reconstruction titled `00 Loom Current State.md` was consulted during consolidation. It is not repository authority, is not part of the preserved EXP1–21 tree, and no current claim depends on it as its sole source.

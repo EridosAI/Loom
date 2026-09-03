@@ -1,4 +1,4 @@
-# Primitive Organism–World Coupling Specification — v0.1 Consolidated Draft
+# Primitive Organism–World Coupling Specification — v0.1
 
 **Project:** Loom / PAM — Developmental Ecology line  
 **Consolidation date:** 2026-09-03  
