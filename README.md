@@ -19,18 +19,23 @@ Run historical commands from inside `EXP1-21/`. See the
 
 ### Developmental Ecology
 
-[`docs/developmental_ecology/`](docs/developmental_ecology/) contains the reviewed
-Jason-verified accepted working foundation for the post-EXP21 Developmental Ecology
-line:
+[`docs/developmental_ecology/`](docs/developmental_ecology/) contains the Jason-verified
+original foundation and the subsequent Jason-accepted Base World decision continuation
+for the post-EXP21 Developmental Ecology line. Read in this order:
 
 - [Developmental Ecology Design Frame v0.2](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md)
-- [Developmental Ecology Fork and Decision Ledger v0.1](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_1.md)
 - [Primitive Organism–World Coupling Specification v0.1](docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md)
+- [Base World Completion v0.1](docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md)
+- [Developmental Ecology Fork and Decision Ledger v0.2 — current continuation](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md)
 
-These documents do not authorise implementation, an experiment number, or a run, and
-they do not change the EXP21 terminal result. The current next design object is the
-**Base World Completion** packet; preparing and reviewing it does not authorise its
-implementation.
+The [original decision ledger v0.1](docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_1.md)
+remains the unchanged historical foundation record.
+
+Functional Base World review is accepted and documented. The next requested work is
+the deferred organism-mechanism discussion in the design chat. The newly consolidated
+wording has not received separate verbatim verification by Jason. These documents do
+not authorise implementation, an experiment number, or a run, and they do not change
+the EXP21 terminal result.
 
 ## Repository discipline
 
