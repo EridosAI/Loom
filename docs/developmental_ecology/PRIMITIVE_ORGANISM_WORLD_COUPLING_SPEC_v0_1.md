@@ -10,6 +10,32 @@ Implementation authority: None.
 **Repository status:** **Jason-verified accepted working doctrine. No implementation authorised.**
 **Parent doctrine:** `docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md`
 
+
+---
+
+## Base World Completion reading note — prepared 2026-09-05
+
+**Decision status:** later Jason-accepted working completion, consolidated in `BASE_WORLD_COMPLETION_v0_1.md`.  
+**Landing status:** repository continuation recording Jason-accepted Base World decisions; commit identity is available from Git history. No repository write was made by the preparation task on 2026-09-05. The original text below remains the Fork 1–28 foundation; its original verification status does not imply a separate verbatim verification of this new note.
+
+The Base World functional review is complete. Read the original specification together with the later accepted completion, rather than inheriting its earlier “open” and “next packet” statements as the latest state.
+
+| Earlier location | Explicit later disposition |
+|---|---|
+| §3.3, arena shape/area | Square is the starting shape. Exact scale is open. Count area is nominal pre-fixture body-accessible area; distinguish static accessibility, time-dependent mover access and always-clear bypass. |
+| §§8.4 and 9.3, inventory | Area-related source/restorative availability retained; exact coefficients, integer counts, sizes and placement distances remain open. |
+| §§8–9, viability ecology | Reviewed identical-source continuous exponential renewal and transfer accounting; damaged-state integrity restoration and energy-compatible return from repair must be commissioned. |
+| §§9.2–9.3 and Fork 28, restorative placement | Start with wall-only anchored homogeneous surfaces, initially non-depleting. Freestanding and mixed placement are explicit later variations. |
+| §6.4 and §11.1, chemical interaction | Solid bodies affect transport. Exact permeability/absorption/boundary law remains open. |
+| §6.4, field pre-evolution | Field and mover history must be jointly lawful under solid interaction; an independently paired static field snapshot is not a default. |
+| §§15–16, commissioning | Supported finite-horizon measures, actual repair under deficit, non-encounter/cutoff handling and complete-coupling freeze are required. Detailed criteria and configuration are not yet ratified. |
+| §18, mechanisms | Remains unresolved. Jason requested mechanism discussion after this documentation; no answer or new detailed sequence is chosen. |
+| §19, next packet | Original requested scope, now functionally completed by `BASE_WORLD_COMPLETION_v0_1.md`. Numerical commissioning, implementation and evidential opening remain separate. |
+
+The starting baseline is revisable as the coupling becomes understood. Changes retain their reasons and provenance; a frozen evidential configuration is preserved, not retrospectively altered. The new document's §16 records the exact acceptance excerpts; `DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md` records the continuation without renumbering Forks 1–28.
+
+No neural mechanism, code, experiment number, preregistration or run is selected or authorised by this note.
+
 ---
 
 ## 0. What this document is—and is not
