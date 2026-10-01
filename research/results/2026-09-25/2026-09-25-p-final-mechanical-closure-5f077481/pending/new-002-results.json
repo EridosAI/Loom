@@ -1,0 +1,597 @@
+{
+  "mode": "new",
+  "source": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology",
+  "scope": "Existing bounded manufactured apparatus fixtures only; no commissioning, prehistory, source mutation or new geometry cases.",
+  "source_files": {
+    "runner.py": {
+      "bytes": 18123,
+      "sha256": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57"
+    },
+    "pending.py": {
+      "bytes": 6756,
+      "sha256": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8"
+    },
+    "validators.py": {
+      "bytes": 8285,
+      "sha256": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a"
+    },
+    "authority.py": {
+      "bytes": 10790,
+      "sha256": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca"
+    },
+    "controllers.py": {
+      "bytes": 7600,
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e"
+    }
+  },
+  "checks": {
+    "pending_mutations": {
+      "command": {
+        "hold_error": "pending command differs from issued decision",
+        "close_error": "pending command differs from issued decision",
+        "native_calls": 0,
+        "field_calls": 0,
+        "complete_state_and_reserves_unchanged": true,
+        "no_bad_final_restart": true,
+        "before": {
+          "engine_hash": "e8f595e64b1fde5e8971542cdd91a7006b6812e407d41ed771208eaab7b41ed1",
+          "body_hash": "40a89e47a8b740571ba27bb0f4e5415bcf7cc2840ffbb1ad0befac2576ca4eab",
+          "fields_hash": "49eb5bdd59358e745555a7b0c3296b253cf5087dd54254badf70da1e20284985",
+          "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+          "native_index": 7,
+          "time": 0.07,
+          "energy": 0.6998615632228802,
+          "integrity": 0.8
+        },
+        "intact_segment_verification": {
+          "class": "AV",
+          "native_records": 7,
+          "wave_records": 0,
+          "events": 7,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_pause"
+        },
+        "loaded_mutation_error": "loaded pending/session state changed before resume"
+      },
+      "remainder": {
+        "hold_error": "pending remainder differs from issued native progress",
+        "close_error": "pending remainder differs from issued native progress",
+        "native_calls": 0,
+        "field_calls": 0,
+        "complete_state_and_reserves_unchanged": true,
+        "no_bad_final_restart": true,
+        "before": {
+          "engine_hash": "e8f595e64b1fde5e8971542cdd91a7006b6812e407d41ed771208eaab7b41ed1",
+          "body_hash": "40a89e47a8b740571ba27bb0f4e5415bcf7cc2840ffbb1ad0befac2576ca4eab",
+          "fields_hash": "49eb5bdd59358e745555a7b0c3296b253cf5087dd54254badf70da1e20284985",
+          "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+          "native_index": 7,
+          "time": 0.07,
+          "energy": 0.6998615632228802,
+          "integrity": 0.8
+        },
+        "intact_segment_verification": {
+          "class": "AV",
+          "native_records": 7,
+          "wave_records": 0,
+          "events": 7,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_pause"
+        },
+        "loaded_mutation_error": "loaded pending/session state changed before resume"
+      },
+      "both": {
+        "hold_error": "pending remainder differs from issued native progress",
+        "close_error": "pending remainder differs from issued native progress",
+        "native_calls": 0,
+        "field_calls": 0,
+        "complete_state_and_reserves_unchanged": true,
+        "no_bad_final_restart": true,
+        "before": {
+          "engine_hash": "e8f595e64b1fde5e8971542cdd91a7006b6812e407d41ed771208eaab7b41ed1",
+          "body_hash": "40a89e47a8b740571ba27bb0f4e5415bcf7cc2840ffbb1ad0befac2576ca4eab",
+          "fields_hash": "49eb5bdd59358e745555a7b0c3296b253cf5087dd54254badf70da1e20284985",
+          "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+          "native_index": 7,
+          "time": 0.07,
+          "energy": 0.6998615632228802,
+          "integrity": 0.8
+        },
+        "intact_segment_verification": {
+          "class": "AV",
+          "native_records": 7,
+          "wave_records": 0,
+          "events": 7,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_pause"
+        },
+        "loaded_mutation_error": "loaded pending/session state changed before resume"
+      },
+      "decision": {
+        "hold_error": "issued decision changed during segment",
+        "close_error": "issued decision changed during segment",
+        "native_calls": 0,
+        "field_calls": 0,
+        "complete_state_and_reserves_unchanged": true,
+        "no_bad_final_restart": true,
+        "before": {
+          "engine_hash": "e8f595e64b1fde5e8971542cdd91a7006b6812e407d41ed771208eaab7b41ed1",
+          "body_hash": "40a89e47a8b740571ba27bb0f4e5415bcf7cc2840ffbb1ad0befac2576ca4eab",
+          "fields_hash": "49eb5bdd59358e745555a7b0c3296b253cf5087dd54254badf70da1e20284985",
+          "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+          "native_index": 7,
+          "time": 0.07,
+          "energy": 0.6998615632228802,
+          "integrity": 0.8
+        },
+        "intact_segment_verification": {
+          "class": "AV",
+          "native_records": 7,
+          "wave_records": 0,
+          "events": 7,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_pause"
+        },
+        "loaded_mutation_error": "loaded pending/session state changed before resume"
+      }
+    },
+    "legal_seven_plus_three": {
+      "issued_pair": [
+        0.717668244562803,
+        0.237668244562803
+      ],
+      "fresh_stage_pair": [
+        -0.3577907305552408,
+        0.6422092694447592
+      ],
+      "at_native_ten": {
+        "engine_hash": "08e6840f6668cdef4860a7bc01e176720c2303836a9b8dc360df3886cbb83a60",
+        "body_hash": "bb48f068a33d8a813142f67cc50400dcb27480c800e591abbabcf53330fea0db",
+        "fields_hash": "049f1791f1c67bba9801245c9dfde99f1224e450f03b9e6ce7af4f3602d5678a",
+        "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+        "native_index": 10,
+        "time": 0.09999999999999999,
+        "energy": 0.6998022331755431,
+        "integrity": 0.8
+      },
+      "final": {
+        "engine_hash": "a85c65c3a644c595a8a2edccc15a796e21b890b74aff8dcd310632201ac3a7a9",
+        "body_hash": "17ec28c422ee910f62b4dd9f73ff31da85fd93234e5e524eba4e433bc21193b4",
+        "fields_hash": "783f859198c9c9ff2aea56beb54bbe738f66c08a2d96abe7539307c6c82b3146",
+        "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+        "native_index": 20,
+        "time": 0.20000000000000004,
+        "energy": 0.6996022331755429,
+        "integrity": 0.8
+      },
+      "resumed_field_updates": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "stale_pending_retry_errors": [
+        "pending remainder differs from issued native progress",
+        "pending remainder differs from issued native progress",
+        "pending remainder differs from issued native progress"
+      ],
+      "fresh_stage_action": {
+        "time": 0.09999999999999999,
+        "native_index": 10,
+        "actor": "external_controller",
+        "controller": "waypoint",
+        "inputs": {
+          "position": [
+            5.001648928084086,
+            5.000509380889592
+          ],
+          "angle": 0.29774003877886773,
+          "velocity": [
+            0.0295395067024463,
+            0.009114800245673934
+          ],
+          "omega": -0.04012623370662198,
+          "reserves": [
+            0.6998022331755431,
+            0.8
+          ],
+          "commands": [
+            0.717668244562803,
+            0.237668244562803
+          ],
+          "geometry": [
+            {
+              "id": "wall-0",
+              "kind": "wall",
+              "axis": 0,
+              "sign": 1,
+              "boundary": 0,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "wall-1",
+              "kind": "wall",
+              "axis": 0,
+              "sign": -1,
+              "boundary": 20.0,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "wall-2",
+              "kind": "wall",
+              "axis": 1,
+              "sign": 1,
+              "boundary": 0,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "wall-3",
+              "kind": "wall",
+              "axis": 1,
+              "sign": -1,
+              "boundary": 20.0,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "source-0",
+              "kind": "disk",
+              "centre": [
+                3.0,
+                3.0
+              ],
+              "radius": 0.5,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "source-1",
+              "kind": "disk",
+              "centre": [
+                10.0,
+                3.0
+              ],
+              "radius": 0.5,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "source-2",
+              "kind": "disk",
+              "centre": [
+                17.0,
+                3.0
+              ],
+              "radius": 0.5,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "source-3",
+              "kind": "disk",
+              "centre": [
+                3.0,
+                10.0
+              ],
+              "radius": 0.5,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "source-4",
+              "kind": "disk",
+              "centre": [
+                17.0,
+                10.0
+              ],
+              "radius": 0.5,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "source-5",
+              "kind": "disk",
+              "centre": [
+                3.0,
+                17.0
+              ],
+              "radius": 0.5,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "source-6",
+              "kind": "disk",
+              "centre": [
+                10.0,
+                17.0
+              ],
+              "radius": 0.5,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "source-7",
+              "kind": "disk",
+              "centre": [
+                17.0,
+                17.0
+              ],
+              "radius": 0.5,
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "repair-0",
+              "kind": "rect",
+              "rect": [
+                0.0,
+                0.25,
+                8.0,
+                12.0
+              ],
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "repair-1",
+              "kind": "rect",
+              "rect": [
+                19.75,
+                20.0,
+                8.0,
+                12.0
+              ],
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "repair-2",
+              "kind": "rect",
+              "rect": [
+                8.0,
+                12.0,
+                19.75,
+                20.0
+              ],
+              "velocity": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "id": "mover",
+              "kind": "rect",
+              "rect": [
+                9.083769679533427,
+                11.083769679533427,
+                9.5,
+                10.5
+              ],
+              "velocity": [
+                0.8375743067748151,
+                0.0
+              ]
+            }
+          ],
+          "mover_phase": 0.0,
+          "mover_velocity": [
+            0.8375743067748151,
+            0.0
+          ],
+          "stocks": [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ],
+          "contacts": [],
+          "time": 0.09999999999999999
+        },
+        "command": [
+          -0.3577907305552408,
+          0.6422092694447592
+        ],
+        "hold_native_steps": 10,
+        "annotation": "",
+        "execution_sha256": "fea2f1c580712791adfa15a4d02c1092783167c75959d2907891b2d00fa3d7fa",
+        "stage": {
+          "index": 1,
+          "identity": "766a27c6a752fbae22af65e31a2420f8b77bf5bab00e1049635bc287ab673c12",
+          "start_time": 0.1,
+          "deadline": 0.2
+        },
+        "case_deadline": 0.2
+      },
+      "inactive_neural_rng_unchanged": true,
+      "wave_records": 0,
+      "continuous_complete_final_state_equal": true,
+      "full_verifications": [
+        {
+          "class": "AV",
+          "native_records": 7,
+          "wave_records": 0,
+          "events": 7,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_pause"
+        },
+        {
+          "class": "AV",
+          "native_records": 13,
+          "wave_records": 0,
+          "events": 13,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_cutoff"
+        },
+        {
+          "class": "AV",
+          "native_records": 20,
+          "wave_records": 0,
+          "events": 20,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_cutoff"
+        }
+      ]
+    },
+    "delivered_saved_boundary_cases": [
+      {
+        "time": 0.07,
+        "native_index": 7,
+        "remaining": 3,
+        "accepted": true,
+        "error": null,
+        "complete_state_unchanged": true
+      },
+      {
+        "time": 0.09,
+        "native_index": 9,
+        "remaining": 2,
+        "accepted": false,
+        "error": "pending remainder differs from issued native progress",
+        "complete_state_unchanged": true
+      },
+      {
+        "time": 0.1,
+        "native_index": 10,
+        "remaining": 1,
+        "accepted": false,
+        "error": "pending remainder differs from issued native progress",
+        "complete_state_unchanged": true,
+        "zero_remainder_selects_fresh_stage": 1
+      },
+      {
+        "time": 0.09999999995,
+        "native_index": 10,
+        "remaining": 1,
+        "accepted": false,
+        "error": "pending remainder differs from issued native progress",
+        "complete_state_unchanged": true,
+        "zero_remainder_selects_fresh_stage": 1
+      },
+      {
+        "time": 0.10000000000000002,
+        "native_index": 10,
+        "remaining": 1,
+        "accepted": false,
+        "error": "pending remainder differs from issued native progress",
+        "complete_state_unchanged": true,
+        "zero_remainder_selects_fresh_stage": 1
+      }
+    ],
+    "unchanged_global_cap": [
+      {
+        "duration": 0.07,
+        "final": {
+          "engine_hash": "e8f595e64b1fde5e8971542cdd91a7006b6812e407d41ed771208eaab7b41ed1",
+          "body_hash": "40a89e47a8b740571ba27bb0f4e5415bcf7cc2840ffbb1ad0befac2576ca4eab",
+          "fields_hash": "49eb5bdd59358e745555a7b0c3296b253cf5087dd54254badf70da1e20284985",
+          "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+          "native_index": 7,
+          "time": 0.07,
+          "energy": 0.6998615632228802,
+          "integrity": 0.8
+        },
+        "further_hold_error": "closed segment",
+        "full_verification": {
+          "class": "AV",
+          "native_records": 7,
+          "wave_records": 0,
+          "events": 7,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_cutoff"
+        }
+      },
+      {
+        "duration": 0.1,
+        "final": {
+          "engine_hash": "08e6840f6668cdef4860a7bc01e176720c2303836a9b8dc360df3886cbb83a60",
+          "body_hash": "bb48f068a33d8a813142f67cc50400dcb27480c800e591abbabcf53330fea0db",
+          "fields_hash": "049f1791f1c67bba9801245c9dfde99f1224e450f03b9e6ce7af4f3602d5678a",
+          "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+          "native_index": 10,
+          "time": 0.09999999999999999,
+          "energy": 0.6998022331755431,
+          "integrity": 0.8
+        },
+        "further_hold_error": "closed segment",
+        "full_verification": {
+          "class": "AV",
+          "native_records": 10,
+          "wave_records": 0,
+          "events": 10,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_cutoff"
+        }
+      }
+    ],
+    "coherent_changed_journal": {
+      "unmodified_issued_journal_rejects_changed_pending": "pending decision journal continuity mismatch: decision",
+      "resume_error": "pending decision journal continuity mismatch: decision",
+      "recorder_calls": 0,
+      "physical_replay_required": false,
+      "scope": "Only copied new manufactured records changed; checksums honestly recomputed, matching delivered fixture."
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "MC-FS-001-CURRENT",
+      "steps": 9000,
+      "native_fields": 76,
+      "all_native_rows_bit_identical": true,
+      "event_records": 9000,
+      "all_events_bit_identical": true,
+      "waves": 450,
+      "all_waves_bit_identical": true,
+      "chunk_organism_field_rng_digests_identical": true,
+      "checkpoint_roundtrips": 1,
+      "final_causal_state_identical": true,
+      "failure_metadata_normalized_only": false,
+      "seconds": 30.61446149996482
+    },
+    {
+      "case": "MC-FS-001-M1",
+      "steps": 9000,
+      "native_fields": 76,
+      "all_native_rows_bit_identical": true,
+      "event_records": 9000,
+      "all_events_bit_identical": true,
+      "waves": 450,
+      "all_waves_bit_identical": true,
+      "chunk_organism_field_rng_digests_identical": true,
+      "checkpoint_roundtrips": 1,
+      "final_causal_state_identical": true,
+      "failure_metadata_normalized_only": false,
+      "seconds": 33.504299900028855
+    },
+    {
+      "case": "MC-FS-001-M2",
+      "steps": 1025,
+      "native_fields": 76,
+      "all_native_rows_bit_identical": true,
+      "event_records": 1030,
+      "all_events_bit_identical": true,
+      "waves": 51,
+      "all_waves_bit_identical": true,
+      "chunk_organism_field_rng_digests_identical": true,
+      "checkpoint_roundtrips": 0,
+      "final_causal_state_identical": true,
+      "failure_metadata_normalized_only": true,
+      "seconds": 3.950709700002335
+    }
+  ],
+  "engineering_committed_steps": 19027,
+  "corrected_step_repetitions": 2,
+  "new_screen_cases": 0,
+  "old_execution_files_unchanged": 220,
+  "seconds": 70.80349560000468,
+  "physics_sha256": "240981ab76b83954c68229b8eeda676f6099ac14eb0e5611b977fe6a2a5f2909"
+}

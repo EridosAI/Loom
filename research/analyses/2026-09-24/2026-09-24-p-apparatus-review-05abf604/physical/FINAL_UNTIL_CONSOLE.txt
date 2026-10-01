@@ -1,0 +1,24 @@
+{
+  "scope": "detached final-until check; zero additional world steps",
+  "actual_time": 0.09999999999999999,
+  "nominal_native_boundary": 0.1,
+  "actual_command": [
+    0.6958934252903155,
+    0.23474350126270044
+  ],
+  "exact_boundary_command": [
+    0.0,
+    0.0
+  ],
+  "next_hold_native_steps": 10,
+  "single_entry_plan": [
+    {
+      "point": [
+        6.0,
+        5.0
+      ],
+      "until": 0.1,
+      "press_force": 0.0
+    }
+  ]
+}

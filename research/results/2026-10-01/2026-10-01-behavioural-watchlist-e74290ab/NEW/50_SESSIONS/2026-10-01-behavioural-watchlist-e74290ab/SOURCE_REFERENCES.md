@@ -1,0 +1,38 @@
+# Sources and scope for watchlist revision 1
+
+Authority: Jason's [exact instruction](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/authority/Pasted%20text.txt). This is a research-organisation instruction, not a mechanism decision. [Machine-readable source identities](SOURCE_IDENTITIES.json) retain exact paths, sizes, hashes and previous source IDs.
+
+The prior [1 October catch-up](../2026-10-01-developmental-evidence-catchup-7c219ab4/INTEGRATION_REPORT.md) supplies the registered Founder Search, integrity, exploration, birth, motor-screen and non-canonical sandbox evidence. Their source copies and earlier interpretations are unchanged. The watchlist cites their complete reports, not only short wrappers.
+
+The newly registered **priority H/E/I curves** are an existing passive analysis of the same sandbox. [Report copy](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/H_E_I_DEVELOPMENTAL_CURVES_v0_1.md), [same-analyst consistency review](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/CURVE_CONSISTENCY_REVIEW.json), [original manifest](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/CURVE_PACKAGE_MANIFEST.json), and [input provenance](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/INPUT_PROVENANCE.json). It supplies the dynamic H band, changing H-use/q, heterogeneous E development, event-driven I and separate E/I expression observations requested as watchlist seeds. Its broader [analysis protocol](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/ANALYSIS_PROTOCOL.md) is not a completed behavioural result, an accepted watchlist metric or new execution permission. The observed curve cutoff for RS-M1-008 remains earlier than the physical durable prefix.
+
+Byte-identical report copies preserve their original relative references. Figures, full compressed series and supporting tables remain in the complete original package: [original report with assets](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/m1_long_development_full_analysis_20261001_v0_1/H_E_I_DEVELOPMENTAL_CURVES_v0_1.md>) and [complete curve archive](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/H_E_I_DEVELOPMENTAL_CURVES_v0_1_REVIEW.zip>). That archive has 117,431,046 bytes and SHA-256 `d8ff930fa2edf81a17a7df3f00755c3ffe628f4aac5acbd7c835b7a95dbdc613`. It was hashed and its report/manifest bytes compared at intake; other payload members were not revalidated. No complete archive was copied into Obsidian.
+
+Historical [sandbox passive methods](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/sandbox/PASSIVE_METHODS.md) preserve fragment/bout grouping and actual clock/support boundaries. They are source-specific methods, not universal criteria. The workbench does not rewrite older evidence to match a newer observer definition.
+
+## Source inventory
+
+| Source ID | Artifact | SHA-256 |
+|---|---|---|
+| SRC-388 | [SCIENTIFIC_EVIDENCE_INVENTORY.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/runner/SCIENTIFIC_EVIDENCE_INVENTORY.md) | `99b9cbe2cd124283d78ea4087122755c8c3e863925629255e669504c47aa1918` |
+| SRC-457 | [SANDBOX_REPORT.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/sandbox/SANDBOX_REPORT.md) | `4bd2f0e98824d1100b54693f8e511bd87b5e43f8883adb506cb4106c057e96da` |
+| SRC-412 | [IMPACT_INTEGRITY_DEVELOPMENT_ANALYSIS_v0_1.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/integrity/IMPACT_INTEGRITY_DEVELOPMENT_ANALYSIS_v0_1.md) | `a5d0362ea155fd4fd900ec94169337c3e26a0dfcd2abaed4c9955467d8aff612` |
+| SRC-458 | [FINDINGS.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/sandbox/FINDINGS.md) | `b47fae6d164bb3d0d0218effa56f2a06d3998fa13941400a30c42bc6f60865fe` |
+| SRC-402 | [FOUNDER_SEARCH_60_LIFE_FINAL_REPORT.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/founder60/FOUNDER_SEARCH_60_LIFE_FINAL_REPORT.md) | `56be862ea53226bfba70fe810d7b193146c0f40dd76c48b4a9fdced5aea82a63` |
+| SRC-420 | [NEWBORN_EXPLORATION_DYNAMICS_AUDIT_v0_1.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/exploration/NEWBORN_EXPLORATION_DYNAMICS_AUDIT_v0_1.md) | `2bd10a1d4e54986f4904e9052d9534c797d64c0916b489440aaf13a6512b273c` |
+| SRC-429 | [BIRTH_GEOGRAPHY_AUDIT_v0_1.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/birth_motor_design/BIRTH_GEOGRAPHY_AUDIT_v0_1.md) | `777a8493b06f8462410cb5a6e8553baa3f3c8506e486503b1813f03ae0a78227` |
+| SRC-444 | [MOTOR_COMMISSIONING_RESULT_v0_2.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/motor_v02/MOTOR_COMMISSIONING_RESULT_v0_2.md) | `da6c3eca3f40c2385d2b21b131d7f5afe529cc84ed89d72c5b7f835391b12204` |
+| SRC-459 | [DEVELOPMENTAL_QUESTIONS.md](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/sandbox/DEVELOPMENTAL_QUESTIONS.md) | `88a1dc577626678285663249b7cdc6259cc9c9935964abf982beb9649ebfdf98` |
+| SRC-471 | [TEMPORAL_STATE_DELTAS.json](../../90_SOURCES/developmental_catchup_2026-10-01_7c219ab4/sandbox/TEMPORAL_STATE_DELTAS.json) | `a68d56142d079ba5628e0ef17705d3c4ddb4afbc7f904c464e4adf0766fce546` |
+| SRC-494 | [Pasted text.txt](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/authority/Pasted%20text.txt) | `5c92cbc5a66a56fd0f5046cd818f762f053ac487b3ea398d3df912d1da6b0f2e` |
+| SRC-495 | [H_E_I_DEVELOPMENTAL_CURVES_v0_1.md](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/H_E_I_DEVELOPMENTAL_CURVES_v0_1.md) | `3c883758931b9f2a33162d7b100fcfe8041a101e735f258e89b3ed39254abf7d` |
+| SRC-496 | [README_CURVES.md](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/README_CURVES.md) | `0a2ce615dfb2ea3ab223f5a1e29cf61c580118614db5f1a9c93958fc69f2230b` |
+| SRC-497 | [CURVE_PACKAGE_MANIFEST.json](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/CURVE_PACKAGE_MANIFEST.json) | `bc2559fe45d18ec81d2b311340e300865dfb73cf97b26626b5fdf201d53735dd` |
+| SRC-498 | [CURVE_CONSISTENCY_REVIEW.json](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/CURVE_CONSISTENCY_REVIEW.json) | `131a730ce93e4286eb4e13b240c4b584d21aa6d700db805cac558041f143d068` |
+| SRC-499 | [EXTRACTION_VERIFICATION.json](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/EXTRACTION_VERIFICATION.json) | `e4482fe6fead46ecaffe76a5e2c6334c104990c8f914a378ab2e84aa767a1569` |
+| SRC-500 | [SOURCE_IDENTITY_VERIFICATION.json](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/SOURCE_IDENTITY_VERIFICATION.json) | `fcfccc19c239d429240e0bac88124a54cd48d21b8b60369f371c2102cc042000` |
+| SRC-501 | [INPUT_PROVENANCE.json](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/INPUT_PROVENANCE.json) | `015da548e1818c514d2345a980f3e7476aeaaa3501ceab09dd8f038a9b1f3b76` |
+| SRC-502 | [CURVE_ARCHIVE_RECORD.json](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/CURVE_ARCHIVE_RECORD.json) | `44e51d5c85a379cb9eaa0a1594432b6d95d36b5de19d3752d1e8b71a5127c41f` |
+| SRC-503 | [ANALYSIS_PROTOCOL.md](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/curves/ANALYSIS_PROTOCOL.md) | `a6cc0e9be1b26a1468b317a6715b5cc34d582c059bd3e8a855f5a09faa3bcd93` |
+| SRC-504 | [PASSIVE_METHODS.md](../../90_SOURCES/behavioural_watchlist_2026-10-01_e74290ab/sandbox/PASSIVE_METHODS.md) | `9b4778b41dbfc16704544bba09f0874e7947f111955275fac1ae4bbc42f58150` |
+| SRC-505 | [H_E_I_DEVELOPMENTAL_CURVES_v0_1_REVIEW.zip](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/H_E_I_DEVELOPMENTAL_CURVES_v0_1_REVIEW.zip>) | `d8ff930fa2edf81a17a7df3f00755c3ffe628f4aac5acbd7c835b7a95dbdc613` |

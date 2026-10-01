@@ -1,0 +1,24 @@
+{
+  "utc": "2026-09-29T11:18:14.156599+00:00",
+  "checkpoint": "a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad",
+  "git_status": "clean",
+  "original_authority_verified": "394dfc775fc1c6dc93820384a79f4fd63291f06ee03bb28f80e464c989861dbc",
+  "new_authority_sha256": "57386e964ea018050bedc18a397e4611203926626e4363c2c9b04d79c9fc5ba2",
+  "execution_diff_exactly_one_leaf": true,
+  "only_numerical_execution_change": "wall_limit_seconds: 600 -> 900",
+  "prepared_cases": [
+    "B1-MINIMAL-S1-SENSORY-FREE"
+  ],
+  "execution_grants_created": 0,
+  "new_simulated_seconds": 0,
+  "new_native_steps": 0,
+  "new_controller_decisions": 0,
+  "world_or_Engine_instantiations": 0,
+  "new_prehistory_steps": 0,
+  "physical_replays": 0,
+  "method": "Standard-library JSON/gzip inspection, byte copying, scalar estimates, recursive JSON diff and SHA-256 verification only; no Loom runtime import.",
+  "original_initial_state_matches_preserved_FULL": true,
+  "previous_run_file_inventory_unchanged": true,
+  "old_sealed_human_B1_state_accessed": false,
+  "full_runtime_preflight_required_again_before_future_authorized_launch": true
+}

@@ -1,0 +1,845 @@
+{
+  "reviewed_commit": "f7eb6f27c661e3db193a4225b56a825d7e41739d",
+  "configuration_sha256": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+  "scope": "detached one-step physics only; no organism/native or lifetime execution",
+  "original_counterexample": {
+    "initial": {
+      "position": [
+        2.0,
+        3.0
+      ],
+      "angle": 0.0,
+      "energy": 0.7,
+      "integrity": 1.0,
+      "velocity": [
+        -0.001,
+        0.0
+      ],
+      "omega": 0.0,
+      "command": [
+        0.0,
+        0.0
+      ],
+      "force": [
+        0.0,
+        0.0
+      ],
+      "contact_rates": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "final": {
+      "position": [
+        1.9999999999041982,
+        3.0
+      ],
+      "angle": 0.0,
+      "energy": 0.7000670575137329,
+      "integrity": 0.9999119847809174,
+      "velocity": [
+        0.0,
+        0.0
+      ],
+      "omega": 0.0,
+      "command": [
+        1.0,
+        1.0
+      ],
+      "force": [
+        0.37999868517129054,
+        0.37999868517129054
+      ],
+      "contact_rates": [
+        0.6572053776751905,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "events": [
+      {
+        "duration": 0.0,
+        "impact": true,
+        "contacts": [],
+        "energy_before": 0.7,
+        "energy_after": 0.7,
+        "integrity_before": 1.0,
+        "integrity_after": 1.0,
+        "damage": 0.0,
+        "repair": 0.0,
+        "requested": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 0.0,
+        "stock_before": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "event_kind": "release",
+        "colliders": [
+          "source-0"
+        ],
+        "time": 0.0,
+        "body_position": [
+          2.0,
+          3.0
+        ],
+        "body_angle": 0.0
+      },
+      {
+        "duration": 0.0013148287095122722,
+        "impact": false,
+        "contacts": [],
+        "energy_before": 0.7,
+        "energy_after": 0.6999967129282262,
+        "integrity_before": 1.0,
+        "integrity_after": 1.0,
+        "damage": 0.0,
+        "repair": 0.0,
+        "repair_quality": 0.0,
+        "requested": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 3.2870717737806804e-06,
+        "stock_before": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "time": 0.0013148287095122722,
+        "body_position": [
+          1.9999999999041982,
+          3.0
+        ],
+        "body_angle": 0.0
+      },
+      {
+        "duration": 0.0,
+        "impact": true,
+        "contacts": [
+          {
+            "collider": "source-0",
+            "material": 2,
+            "normal": [
+              -1.0,
+              0.0
+            ],
+            "impulse": 0.0,
+            "relative_speed": 7.286256906179935e-08,
+            "source": 0
+          }
+        ],
+        "energy_before": 0.6999967129282262,
+        "energy_after": 0.6999967129282262,
+        "integrity_before": 1.0,
+        "integrity_after": 1.0,
+        "damage": 0.0,
+        "repair": 0.0,
+        "requested": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 0.0,
+        "stock_before": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "event_kind": "recontact_or_first_touch",
+        "time": 0.0013148287095122722,
+        "body_position": [
+          1.9999999999041982,
+          3.0
+        ],
+        "body_angle": 0.0
+      },
+      {
+        "duration": 0.008685171290487728,
+        "impact": false,
+        "contacts": [
+          {
+            "collider": "source-0",
+            "material": 2,
+            "normal": [
+              -1.0,
+              0.0
+            ],
+            "impulse": 0.0065720537767519046,
+            "relative_speed": 0.0,
+            "source": 0,
+            "force": 0.7566982339139153
+          }
+        ],
+        "energy_before": 0.6999967129282262,
+        "energy_after": 0.7000670575137329,
+        "integrity_before": 1.0,
+        "integrity_after": 0.9999119847809174,
+        "damage": 8.801521908259946e-05,
+        "repair": 0.0,
+        "repair_quality": 0.0,
+        "requested": [
+          9.205751373294674e-05,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          9.205751373294674e-05,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          9.994136691247558e-10,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 2.171292822621932e-05,
+        "stock_before": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.19990794348568072,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "time": 0.01,
+        "body_position": [
+          1.9999999999041982,
+          3.0
+        ],
+        "body_angle": 0.0
+      }
+    ],
+    "balances": [
+      {
+        "energy": 0.0,
+        "stock": 0.0,
+        "damage": 0.0,
+        "integrity": 0.0
+      },
+      {
+        "energy": 8.603737161735556e-18,
+        "stock": 0.0,
+        "damage": 0.0,
+        "integrity": 0.0
+      },
+      {
+        "energy": 0.0,
+        "stock": 0.0,
+        "damage": 0.0,
+        "integrity": 0.0
+      },
+      {
+        "energy": -2.8782179547701126e-17,
+        "stock": 1.100465205072787e-17,
+        "damage": 0.0,
+        "integrity": -3.8299441743050444e-17
+      }
+    ],
+    "elapsed": 0.01,
+    "terminal": null,
+    "transfer": 9.205751373294674e-05,
+    "damage": 8.801521908259946e-05
+  },
+  "remaining_oblique_counterexample": {
+    "guard": null,
+    "gap_samples": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0004997501665417116,
+        2.498144358042964e-09
+      ],
+      [
+        0.0009,
+        8.957368180517733e-10
+      ],
+      [
+        0.001,
+        -4.708011758225439e-12
+      ],
+      [
+        0.01,
+        -8.931528465705441e-07
+      ]
+    ],
+    "roots": [
+      {
+        "low": 0.0009995291014071538,
+        "high": 0.000999529101407154,
+        "gap": 0.0,
+        "threshold": 0.0
+      },
+      {
+        "low": 0.0009894214175272895,
+        "high": 0.0009894214175272897,
+        "gap": 9.999978622943217e-11,
+        "threshold": 1e-10
+      }
+    ],
+    "actual": {
+      "initial": {
+        "position": [
+          2.0,
+          3.0
+        ],
+        "angle": 1.557638052356994,
+        "energy": 0.7,
+        "integrity": 1.0,
+        "velocity": [
+          -1e-05,
+          0.0
+        ],
+        "omega": 0.0,
+        "command": [
+          0.0,
+          0.0
+        ],
+        "force": [
+          0.0,
+          0.0
+        ],
+        "contact_rates": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "final": {
+        "position": [
+          2.0,
+          3.000075614717061
+        ],
+        "angle": 1.557638052356994,
+        "energy": 0.699984858939986,
+        "integrity": 1.0,
+        "velocity": [
+          0.0,
+          0.007561471706095658
+        ],
+        "omega": 0.0,
+        "command": [
+          1.0,
+          1.0
+        ],
+        "force": [
+          0.38,
+          0.38
+        ],
+        "contact_rates": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.008810001893894281,
+          0.00015011452318850036
+        ]
+      },
+      "events": [
+        {
+          "duration": 0.01,
+          "impact": false,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -1.0,
+                0.0
+              ],
+              "impulse": 8.960116417082782e-05,
+              "relative_speed": 0.007561471706095658,
+              "source": 0,
+              "force": 0.008960116417082782
+            }
+          ],
+          "energy_before": 0.7,
+          "energy_after": 0.699984858939986,
+          "integrity_before": 1.0,
+          "integrity_after": 1.0,
+          "damage": 0.0,
+          "repair": 0.0,
+          "repair_quality": 0.0,
+          "requested": [
+            9.858939985959484e-06,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            9.858939985959484e-06,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "renewal_first": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "renewal_second": [
+            1.232359795979187e-10,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "expenditure": 2.5e-05,
+          "stock_before": [
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ],
+          "stock_after": [
+            0.19999014118325004,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2,
+            0.2
+          ],
+          "time": 0.01,
+          "body_position": [
+            2.0,
+            3.000075614717061
+          ],
+          "body_angle": 1.557638052356994
+        }
+      ],
+      "balances": [
+        {
+          "energy": 5.044589420667711e-17,
+          "stock": 5.200782296141404e-18,
+          "damage": 0.0,
+          "integrity": 0.0
+        }
+      ],
+      "elapsed": 0.01,
+      "terminal": null,
+      "transfer": 9.858939985959484e-06,
+      "damage": 0.0
+    },
+    "swept_search_with_known_clear_guard": {
+      "error": "ArithmeticError: Swept contact search iteration limit"
+    },
+    "conclusion": "Resolvable separation/recontact is still accounted as full-duration sustained contact"
+  },
+  "pending_endpoint_component": {
+    "locator": "stand-in reporting exact endpoint source touch",
+    "calls": [
+      {
+        "t": 0.0,
+        "dt": 0.01
+      }
+    ],
+    "elapsed": 0.01,
+    "terminal": null,
+    "events": [
+      {
+        "duration": 0.01,
+        "impact": false,
+        "contacts": [],
+        "energy_before": 0.7,
+        "energy_after": 0.699985,
+        "integrity_before": 1.0,
+        "integrity_after": 1.0,
+        "damage": 0.0,
+        "repair": 0.0,
+        "repair_quality": 0.0,
+        "requested": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 1.5e-05,
+        "stock_before": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "time": 0.01,
+        "body_position": [
+          2.0,
+          3.0
+        ],
+        "body_angle": 0.0
+      },
+      {
+        "duration": 0.0,
+        "impact": true,
+        "contacts": [
+          {
+            "collider": "source-0",
+            "material": 2,
+            "normal": [
+              -1.0,
+              0.0
+            ],
+            "impulse": 0.9900498337491681,
+            "relative_speed": 0.0,
+            "source": 0
+          }
+        ],
+        "energy_before": 0.699985,
+        "energy_after": 0.699985,
+        "integrity_before": 1.0,
+        "integrity_after": 0.9801990033250166,
+        "damage": 0.019800996674983362,
+        "repair": 0.0,
+        "requested": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 0.0,
+        "stock_before": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "event_kind": "recontact_or_first_touch",
+        "time": 0.01,
+        "body_position": [
+          2.0,
+          3.0
+        ],
+        "body_angle": 0.0
+      }
+    ]
+  }
+}

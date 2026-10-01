@@ -1,0 +1,61 @@
+{
+  "source_checkpoint": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "source_hashes": {
+    "__init__.py": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+    "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+    "authority.py": "1b120460212497a2a9f4b0701f59f1c45136e6fc2bbb35bd1429016336f1fe7f",
+    "clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+    "contract.py": "e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3",
+    "controllers.py": "d1f04a63101cc8de19281918fbb8d2e9cb1a1536df28f1346bfd680c809ba9a8",
+    "diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+    "evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+    "initialization.py": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+    "pending.py": "32ce8651866ee46aa1bdc62675d5aa929368c9822a48a438bc24db52aaeb4b58",
+    "runner.py": "d952cfe1eb2e2eae356eea22b83c9a32dca12e539b50a565e1c402ac42076929",
+    "sensor.html": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a",
+    "sensor_ui.py": "b5596ad3aff664df951d63ba2311e232ff483de6c7dcc8ac446b0c240868572e",
+    "validators.py": "1b2a910a277c50e806b7b631a941ea680cff7fd4c35c1e2a793eeea28283ec0e"
+  },
+  "locations": {
+    "authority.py": {
+      "unsupported display intervention": [
+        147
+      ],
+      "def validate_execution": [
+        140
+      ]
+    },
+    "sensor.html": {
+      "function render()": [
+        13
+      ],
+      "document.querySelector('#at').oninput": [
+        15
+      ]
+    },
+    "sensor_ui.py": {
+      "class HumanGateway": [
+        18
+      ],
+      "def main": [
+        60
+      ]
+    },
+    "runner.py": {
+      "inputs=self.sensor.display()": [
+        179
+      ],
+      "'inputs':inputs": [
+        182
+      ],
+      "return self.sensor.display()": [
+        247
+      ]
+    }
+  },
+  "chemistry_hidden": "REJECTED by pure validate_execution: unsupported display intervention",
+  "live_status": "STATIC SOURCE FINDING: render uses Paused between decisions for every live payload; click handler does not set in-flight state or disable submit before fetch.",
+  "closed_status": "STATIC SOURCE FINDING: Run.close does not change SensorHistory availability; HumanGateway.display returns Run.display without closed-state translation.",
+  "live_launch": "Existing main() constructs OfflineGateway only. HumanGateway exists but needs a separately authorized, identity-bound live integration.",
+  "no_static_workaround": "No CSS overlay, false zero chemistry, unbound client masking, command macro, altered cadence or controller fallback was prepared."
+}

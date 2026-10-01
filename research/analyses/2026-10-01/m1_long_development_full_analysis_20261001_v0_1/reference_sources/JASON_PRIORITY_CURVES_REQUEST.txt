@@ -1,0 +1,132 @@
+PRIORITY ANALYSIS — H / E / I DEVELOPMENTAL CURVES
+Before the broader long-development analysis, produce the developmental learning curves for every preserved resurrection-sandbox organism.
+PASSIVE ANALYSIS ONLY.
+No simulation.
+No checkpoint continuation.
+No reconstructed alternate history.
+==================================================
+PRIMARY VARIABLES
+For each organism plot against actual developmental age:
+1. ||H|| — combined associative-map Frobenius norm;
+2. ||Theta_E|| / exact implementation equivalent — learned E-regulator bank norm;
+3. ||Theta_I|| / exact implementation equivalent — learned I-regulator bank norm.
+Use the exact stored names from the implementation/report rather than silently renaming fields if their canonical names differ.
+Also provide secondary bodily-state panels:
+4. actual body energy E;
+5. actual body integrity I.
+==================================================
+ORGANISMS
+Produce curves for:
+- RS-M1-001 through RS-M1-007: complete 4500-s histories;
+- RS-M1-008: only through its last valid causal evidence;
+- RS-M1-009 through RS-M1-012: complete 600-s pilot histories.
+Do not extrapolate censored lives.
+==================================================
+SAMPLING
+Use the finest trustworthy stored chronological evidence available without rerunning P.
+Prefer actual per-wave values if available.
+If a quantity exists only at checkpoints, plot checkpoint values and state that explicitly.
+Do not interpolate sparse checkpoint quantities and present them as measured trajectories.
+For dense series, retain the raw trajectory in the data export and plot:
+- a thin raw line;
+- an overlaid 60-s rolling median or mean for visual trend.
+State exactly which smoothing operation is used.
+==================================================
+FIGURE LAYOUT
+Produce one review figure per bug with aligned x-axes:
+Panel A — H norm
+Panel B — E-bank norm
+Panel C — I-bank norm
+Panel D — actual bodily E
+Panel E — actual bodily I
+Use actual age in seconds on the shared x-axis.
+Also produce three population overview figures:
+1. all seven complete 4500-s H curves overlaid;
+2. all seven E-bank curves overlaid;
+3. all seven I-bank curves overlaid.
+Show RS-M1-008 separately as censored rather than pretending it reaches 4500 s.
+Do not pool the 600-s organisms into the 4500-s endpoint comparison as if they had equal exposure.
+==================================================
+EVENT MARKERS
+Mark, without obscuring the curves:
+- external resurrection events;
+- first productive source encounter;
+- subsequent major productive source bouts;
+- damaging integrity events;
+- repair events where meaningful.
+Resurrection markers are especially important so an apparent slope change is not mistakenly attributed to ordinary experience.
+==================================================
+CURVE-SHAPE ANALYSIS
+The purpose is specifically to distinguish:
+- approximately linear continuing accumulation;
+- accelerating growth;
+- decelerating / saturating growth;
+- event-driven stepwise growth;
+- equilibrium around a noisy level;
+- growth followed by decline;
+- qualitatively different phases.
+Do NOT infer shape from endpoints alone.
+For H, E-bank and I-bank independently:
+1. calculate local slope over fixed windows, e.g. 300 or 600 s;
+2. report slope versus developmental age;
+3. compare early, middle and late slopes;
+4. report whether the final 1000 s still has a materially positive trend.
+Use robust regression where appropriate so single event spikes do not dominate.
+==================================================
+SIMPLE MODEL COMPARISON
+For the seven complete 4500-s lives, fit only a small interpretable set of descriptive models where mathematically appropriate:
+- linear:
+  y = a + bt
+- saturating exponential:
+  y = A - B exp(-t/tau)
+- power/sublinear growth:
+  y = a + b t^p
+Do not force monotonic models onto clearly non-monotonic data.
+Use these as descriptive shape comparisons, not mechanistic truths.
+Report:
+- fit quality;
+- residual structure;
+- estimated asymptote/time constant where identifiable;
+- whether the fit remains stable when the first 600 s is excluded;
+- whether the late observed data actually constrain the asymptote.
+Avoid claiming a plateau merely because a saturating fit mathematically has one.
+==================================================
+IMPORTANT INTERPRETATION
+Explicitly distinguish these cases:
+A. Still rising with little slope loss at 4500 s
+Longer developmental time remains a strong candidate explanation.
+B. Concave-down and approaching a stable asymptote
+More time alone is unlikely to generate a qualitatively larger learned state.
+C. Stepwise/event-driven
+Number and type of consequential experiences may matter more than elapsed time.
+D. Bank grows but downstream learned motor effect does not
+Storage/learning may not be the bottleneck; expression could be.
+E. H grows but H-use/q remains flat or tiny
+Association may be accumulating structurally without being functionally read.
+Do not conflate norm growth with useful learning.
+==================================================
+ALSO PLOT FUNCTIONAL READOUTS
+Alongside H norm, create supplementary time-series for:
+- H use;
+- q norm / associative return;
+- learned E motor-current contribution;
+- learned I motor-current contribution;
+- M1 spontaneous RMS.
+This lets us see whether structural growth is accompanied by increasing functional expression.
+A growing H norm with flat H-use is qualitatively different from both growing together.
+==================================================
+DELIVERY
+Produce:
+H_E_I_DEVELOPMENTAL_CURVES_v0_1.md
+plus:
+- one H/E/I/body-state figure per organism;
+- three complete-life overlay plots;
+- late-window slope table;
+- simple shape-model comparison table;
+- raw extracted chronological CSV/Parquet;
+- exact evidence provenance.
+Put the actual figures near the top of the report.
+End with a concise answer to:
+“At the end of the available observation window, do H, learned E, and learned I look still developmental, approximately linear, event-driven, or near saturation?”
+No new experiment.
+Stop after passive analysis.

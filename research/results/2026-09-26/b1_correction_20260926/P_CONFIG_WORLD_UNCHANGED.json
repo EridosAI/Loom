@@ -1,0 +1,39 @@
+{
+  "parent_checkpoint": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "P_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "byte_identical_files": {
+    "loom_p\\__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+    "loom_p\\chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+    "loom_p\\diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+    "loom_p\\engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+    "loom_p\\geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+    "loom_p\\inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+    "loom_p\\neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+    "loom_p\\physics.py": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+    "loom_p\\prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+    "loom_p\\reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+    "loom_p\\records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+    "loom_p\\schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+    "loom_p\\smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b",
+    "configuration.json": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+    "requirements-lock.txt": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6",
+    "loom_commissioning\\clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+    "loom_commissioning\\adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+    "loom_commissioning\\diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+    "loom_commissioning\\evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3"
+  },
+  "controller_functions_AST_identical": [
+    "command_pair",
+    "waypoint_command",
+    "waypoint_stage",
+    "time_due",
+    "validate_plan",
+    "privileged_input",
+    "observe_without_interference"
+  ],
+  "P_config_clock_git_diff_empty": true,
+  "held_packet_files_and_archives_checked": 124,
+  "held_packet_unchanged": true,
+  "no_p_world_sensor_physics_configuration_change": true,
+  "no_existing_evidence_rewritten": true
+}

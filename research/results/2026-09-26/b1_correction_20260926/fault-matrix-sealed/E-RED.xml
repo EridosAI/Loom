@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.066" timestamp="2026-09-26T19:02:40.702804+08:00" hostname="Equinox"><testcase classname="tests_apparatus.test_b1_operator" name="test_paused_inertness[E]" time="0.626"><failure message="AssertionError: PAUSED CLOCK/RNG/EXPENDITURE BREACH E&#10;assert 'd0352bc16bb6...964fa67e3ae6b' == 'ee4332720505...3f4926a043eed'&#10;  &#10;  - ee4332720505c524f5c23725aeb82f17f3179351a274cc47d533f4926a043eed&#10;  + d0352bc16bb64e1e57d5ac98427c55588470c298d0ceeac0b3d964fa67e3ae6b">tmp_path = WindowsPath('C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/b1_correction_20260926/fault-matrix-sealed/E-RED-tmp/test_paused_inertness_E_0')
+mutation = 'E'
+
+    @pytest.mark.parametrize('mutation',['E','F','G'])
+    def test_paused_inertness(tmp_path,mutation):
+        e,r,g=case(tmp_path);before=state_hash(e);old=g.display
+        def display():
+            if fault(mutation):
+                if mutation=='E':e.time+=.01
+                elif mutation=='F':e.organism.rng.draw('injected-paused-consumption',(1,))
+                else:e.body.energy-=.001
+            return old()
+        try:
+            with patch.object(g,'display',display):
+                g.envelope();g.envelope()
+&gt;           assert state_hash(e)==before,'PAUSED CLOCK/RNG/EXPENDITURE BREACH '+mutation
+E           AssertionError: PAUSED CLOCK/RNG/EXPENDITURE BREACH E
+E           assert 'd0352bc16bb6...964fa67e3ae6b' == 'ee4332720505...3f4926a043eed'
+E             
+E             - ee4332720505c524f5c23725aeb82f17f3179351a274cc47d533f4926a043eed
+E             + d0352bc16bb64e1e57d5ac98427c55588470c298d0ceeac0b3d964fa67e3ae6b
+
+tests_apparatus\test_b1_operator.py:106: AssertionError</failure></testcase></testsuite></testsuites>

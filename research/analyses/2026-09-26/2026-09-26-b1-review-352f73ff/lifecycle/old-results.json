@@ -1,0 +1,62 @@
+{
+  "mode": "old",
+  "source": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926\\developmental_ecology",
+  "scope": "Only delivered generic manufactured <=0.2-second fixtures. No held PC/B1 reads, snapshots, runs, replay, grants or authority generation.",
+  "source_identity": {
+    "sensor_ui.py": "b5596ad3aff664df951d63ba2311e232ff483de6c7dcc8ac446b0c240868572e",
+    "runner.py": "d952cfe1eb2e2eae356eea22b83c9a32dca12e539b50a565e1c402ac42076929",
+    "authority.py": "1b120460212497a2a9f4b0701f59f1c45136e6fc2bbb35bd1429016336f1fe7f",
+    "pending.py": "32ce8651866ee46aa1bdc62675d5aa929368c9822a48a438bc24db52aaeb4b58",
+    "clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+    "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+  },
+  "checks": {
+    "actual_old_hidden_rejection": {
+      "error": "unsupported display intervention",
+      "native_before_commands": 0,
+      "scope": "Validation-only modified generic manufactured manifest, no grant."
+    },
+    "actual_old_duplicate": {
+      "after_first": {
+        "engine": "dfd6a0cd62ff2fcaf23426d28985cfeb954799eb6953456a07f53c98cccab254",
+        "physical": "2981091e3d745a23009b40d9d03eab2f3ee8af009e1cccad8527a27da01176b4",
+        "session": "938ecaf713125273f989bba62d07c21574a2721d9536d6961fe91dbed9955bfe",
+        "native_index": 10,
+        "time": 0.09999999999999999,
+        "body": "8b9de506f300759e47678e79ab6963527037068d39af7ad4a6e94376bbfb827d",
+        "fields": "0dee332e0fe7a4fcf64c6e5a54ff263e13ffab69e4e621aff88faaf2797d506e",
+        "neural_rng_wave": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+        "energy": 0.6998399999999998,
+        "integrity": 0.8,
+        "execution_identity": "1352ef100ca0d09ce9987d1b5c93ccca2c4b3b793aa2f67e556d9eaf6e1c1ada",
+        "case_id": "fixture-independent-old-duplicate"
+      },
+      "after_identical_second": {
+        "engine": "59f0207c5693d217758d19bdc5dce154f6de8045a7b58e18175a9a881892e438",
+        "physical": "891a991a2ec0cd75e877b2c25f3b51ea4fb6b8699918ebc4a4c157de80cc8b3a",
+        "session": "b002fd703c887e18aa88663693a8dfe0b1a0b082f0e418a892acb95ce4adfdec",
+        "native_index": 20,
+        "time": 0.20000000000000004,
+        "body": "f20f7abbd252a437039359c2c8bf80269cf771459f76ecadecd8f701b271a026",
+        "fields": "d2f521b93b7de902feb6ae1a92fbf7b100cdb48e55c9705b3f176dd748cb4f28",
+        "neural_rng_wave": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+        "energy": 0.6996799999999996,
+        "integrity": 0.8,
+        "execution_identity": "1352ef100ca0d09ce9987d1b5c93ccca2c4b3b793aa2f67e556d9eaf6e1c1ada",
+        "case_id": "fixture-independent-old-duplicate"
+      },
+      "controller_records": 2,
+      "closed_at_cutoff": true,
+      "full_generic_record_verification": {
+        "class": "AV",
+        "native_records": 20,
+        "wave_records": 0,
+        "events": 20,
+        "replayed": true,
+        "maximum_accounting_residual": 1.5998758307739225e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      }
+    }
+  }
+}

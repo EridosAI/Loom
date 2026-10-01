@@ -1,0 +1,15 @@
+# Retain small saved research figures/tables despite generic root output ignores.
+!**/figures/
+!**/figures/**
+!**/tables/
+!**/tables/**
+# No raw native arrays/checkpoints or application caches in normal research history.
+**/__pycache__/
+*.pyc
+*.pyo
+*.npy
+*.npz
+*.ld
+*.ckpt
+*.pt
+*.pth

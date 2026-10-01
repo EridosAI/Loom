@@ -1,0 +1,38 @@
+[
+  {
+    "test": "one native step",
+    "sample": "native 1 / 9183",
+    "clock": "0.0100000000 s"
+  },
+  {
+    "test": "scrubber end",
+    "clock": "91.8300000000 s"
+  },
+  {
+    "test": "20x playback stops at recorded end",
+    "clock": "91.8300000000 s",
+    "button": "Play records"
+  },
+  {
+    "test": "play advances recorded selection",
+    "clock": "0.2400000000 s"
+  },
+  {
+    "test": "pause",
+    "clock": "0.3200000000 s",
+    "button": "Play records"
+  },
+  {
+    "test": "peak recorded force",
+    "clock": "6.4000000000 s",
+    "force": "0.270747"
+  },
+  {
+    "test": "sensor panel",
+    "rows": 29
+  },
+  {
+    "test": "accounting panel",
+    "text": "Operand scope\tEvent 641 at 6.4000000000 s\nSource-0 debit\t9.080e-5\nBody credit, all sources\t9.080e-5\nSource-0 renewal\t1.931e-8\nCredit − all-source transfer\t-1.247e-18\nTransfer\t9.080e-5\nExpenditure\t1.864e-5"
+  }
+]

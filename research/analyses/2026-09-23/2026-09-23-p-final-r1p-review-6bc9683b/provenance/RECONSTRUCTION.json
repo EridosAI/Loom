@@ -1,0 +1,137 @@
+[
+  {
+    "case": "birth_30s",
+    "path": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\developmental_ecology\\artifacts\\smoke-birth_30s-attempt-004",
+    "complete": true,
+    "native": 3000,
+    "wave": 150,
+    "events": 3000,
+    "time": 30.00000000000189,
+    "status": "administrative_pause",
+    "snapshot_initial_hash": "63a2c9a85c9536b91e672c4e3d737eb0287a9d36ba0357a97cbd6ebd7e99d6de",
+    "snapshot_final_hash": "a00f93dbf36f8dd8b1ceaf107ef33c72d8a002562342966105265554a6a422d2",
+    "reconstruction": {
+      "snapshot_time": 0.0,
+      "time": 30.00000000000189,
+      "records_checked": 3000,
+      "identical": true,
+      "provenance": "Detached reconstruction from initial full snapshot and each saved actual receptor/reserve input; every complete neural-state hash matched. No body/world simulation or live-state change."
+    },
+    "field_reconstruction_bit_identical": true,
+    "max_accounting_error": 5.535190903717402e-17,
+    "final_reserves": [
+      0.651103585929035,
+      1.0
+    ],
+    "record_scalar_widths": {
+      "native": {
+        "min": 2513,
+        "max": 2513
+      },
+      "events": {
+        "min": 62,
+        "max": 62
+      },
+      "wave": {
+        "min": 13685,
+        "max": 13685
+      }
+    },
+    "uncompressed_bytes": 165615915,
+    "stored_bytes": 59125757,
+    "execution_wall_seconds": 140.71417849999852,
+    "verification_wall_seconds": 44.20758630000637,
+    "noise_clock_checked": true,
+    "archive_checksums_checked": true
+  },
+  {
+    "case": "nonzero_resume_1s",
+    "path": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\developmental_ecology\\artifacts\\smoke-nonzero_resume_1s-attempt-004",
+    "complete": true,
+    "native": 100,
+    "wave": 5,
+    "events": 100,
+    "time": 1.0000000000000007,
+    "status": "administrative_pause",
+    "snapshot_initial_hash": "ea1546289cad7861012e01c0b77e4e385667bf20cafca49bebaf63808b769804",
+    "snapshot_final_hash": "ad168f9afffc34612a66e84569efbfa44dc12f97d4aaac811e5250e9c0df58b3",
+    "reconstruction": {
+      "snapshot_time": 0.0,
+      "time": 1.0000000000000007,
+      "records_checked": 100,
+      "identical": true,
+      "provenance": "Detached reconstruction from initial full snapshot and each saved actual receptor/reserve input; every complete neural-state hash matched. No body/world simulation or live-state change."
+    },
+    "field_reconstruction_bit_identical": true,
+    "max_accounting_error": 5.463362509790237e-17,
+    "final_reserves": [
+      0.6983480855280211,
+      1.0
+    ],
+    "record_scalar_widths": {
+      "native": {
+        "min": 2513,
+        "max": 2513
+      },
+      "events": {
+        "min": 62,
+        "max": 62
+      },
+      "wave": {
+        "min": 13685,
+        "max": 13685
+      }
+    },
+    "uncompressed_bytes": 6353341,
+    "stored_bytes": 3463168,
+    "execution_wall_seconds": 16.957399700011592,
+    "verification_wall_seconds": 1.7071085999778006,
+    "noise_clock_checked": true,
+    "archive_checksums_checked": true
+  },
+  {
+    "case": "contact_ui_1s",
+    "path": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\developmental_ecology\\artifacts\\smoke-contact_ui_1s-attempt-004",
+    "complete": true,
+    "native": 100,
+    "wave": 5,
+    "events": 102,
+    "time": 1.0000000000000007,
+    "status": "administrative_pause",
+    "snapshot_initial_hash": "54a10515c2e5a099a0441445cf30fd926af4ccbb040060a9f9928895ea9f22f3",
+    "snapshot_final_hash": "89bcc4e608b539786beb82e60e5e7a339b1e96d9f10a31d5c166496b74de3f94",
+    "reconstruction": {
+      "snapshot_time": 0.0,
+      "time": 1.0000000000000007,
+      "records_checked": 100,
+      "identical": true,
+      "provenance": "Detached reconstruction from initial full snapshot and each saved actual receptor/reserve input; every complete neural-state hash matched. No body/world simulation or live-state change."
+    },
+    "field_reconstruction_bit_identical": true,
+    "max_accounting_error": 5.5162173656989055e-17,
+    "final_reserves": [
+      0.6983471335807035,
+      0.7998000000000001
+    ],
+    "record_scalar_widths": {
+      "native": {
+        "min": 2513,
+        "max": 2513
+      },
+      "events": {
+        "min": 61,
+        "max": 67
+      },
+      "wave": {
+        "min": 13685,
+        "max": 13685
+      }
+    },
+    "uncompressed_bytes": 6222999,
+    "stored_bytes": 3467316,
+    "execution_wall_seconds": 4.35367480001878,
+    "verification_wall_seconds": 1.526233400014462,
+    "noise_clock_checked": true,
+    "archive_checksums_checked": true
+  }
+]

@@ -1,0 +1,16 @@
+# Birth geography and newborn motor structure — review package
+
+**Passive analysis and design only, 2026-09-30. No mechanism or birth-law choice; no implementation or execution authority.**
+
+1. [BIRTH_GEOGRAPHY_AUDIT_v0_1.md](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/BIRTH_GEOGRAPHY_AUDIT_v0_1.md>) — original 60 birth states, safe-support coverage, distances, headings/phases, stored chemistry, descriptive outcome associations and a possible stratified-random law.
+2. [NEWBORN_SPONTANEOUS_MOTOR_DESIGN_REVIEW_v0_1.md](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/NEWBORN_SPONTANEOUS_MOTOR_DESIGN_REVIEW_v0_1.md>) — exact current-generator diagnosis, two unselected candidate families, learned-influence and hidden-competence review, proposed nine-case short comparison, unresolved decisions.
+
+The births were broadly distributed; the main previously observed problem remains poor within-life exploration. The spatial checks do not establish excess clustering. The unusually small number of rejected proposals is retained as a separate exploratory observation, not hidden or converted into a proven sampler defect. No location or process parameter is selected from later outcomes.
+
+- [Arena map](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/BIRTH_ARENA_MAP.png>) and [associations figure](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/BIRTH_GEOGRAPHY_ASSOCIATIONS.png>), also supplied as SVG.
+- [All 60 birth rows](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/BIRTH_GEOGRAPHY_ALL_60.csv>).
+- [Methods](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/BIRTH_AUDIT_METHODS.md>), [numerical results](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/BIRTH_AUDIT_RESULTS.json>), [supplement and numerical checks](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/BIRTH_SUPPLEMENT.json>), [input custody](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/INPUT_CUSTODY.json>) and [final verification](<C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_birth_motor_review_20260930_v0_1/REVIEW_VERIFICATION.json>).
+
+All existing N0-A/N0-B/N0-C values remain unchanged and provisional. Geometry and viability tuning are deferred pending motor review. FS-060 remains APPARATUS_INTERRUPTED_UNCLOSED; its birth is included, its prefix is not a complete outcome.
+
+Scripts in this directory only decode preserved records into data dictionaries, compute passive/static statistics or render review files. They contain no Loom import, candidate motor implementation, launch command, new prepared state, RNG draw or authority object. The original Nursery-0 design delivery and scientific records are preserved. Stop for Jason review.

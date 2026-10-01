@@ -1,0 +1,51 @@
+{
+  "status": "arithmetic estimate only; no research execution",
+  "source": "REFERENCES/developmental_ecology/artifacts/smoke-birth_30s-attempt-004/manifest.json",
+  "recorded_simulated_seconds": 30,
+  "recorded_wall_seconds": 140.71417849999852,
+  "recorded_stored_file_bytes": 59125757,
+  "recorded_uncompressed_record_bytes": 165615915,
+  "rates": {
+    "wall_seconds_per_simulated_second": 4.690472616666617,
+    "stored_bytes_per_simulated_second": 1970858.5666666667,
+    "uncompressed_bytes_per_simulated_second": 5520530.5
+  },
+  "proposed_workloads": {
+    "physical": {
+      "simulated_seconds": 3080,
+      "estimated_machine_hours": 4.0129599053703275,
+      "estimated_stored_GB": 6.070244385333333,
+      "estimated_uncompressed_GB": 17.00323394
+    },
+    "perceptual": {
+      "simulated_seconds": 1080,
+      "estimated_machine_hours": 1.4071417849999852,
+      "estimated_stored_GB": 2.128527252,
+      "estimated_uncompressed_GB": 5.96217294
+    },
+    "intact_P": {
+      "simulated_seconds": 2400,
+      "estimated_machine_hours": 3.1269817444444112,
+      "estimated_stored_GB": 4.73006056,
+      "estimated_uncompressed_GB": 13.2492732
+    },
+    "fixed_structure_if_approved": {
+      "simulated_seconds": 2400,
+      "estimated_machine_hours": 3.1269817444444112,
+      "estimated_stored_GB": 4.73006056,
+      "estimated_uncompressed_GB": 13.2492732
+    },
+    "total": {
+      "simulated_seconds": 8960,
+      "estimated_machine_hours": 11.674065179259136,
+      "estimated_stored_GB": 17.658892757333334,
+      "estimated_uncompressed_GB": 49.46395328
+    }
+  },
+  "limitations": [
+    "Short-run extrapolation, not measured commissioning performance.",
+    "Full-P rate used as planning proxy for external-controller traces.",
+    "Human operator time, apparatus development, preparation and extra diagnostic overhead excluded.",
+    "Twofold machine/bytes allowance and second preserved copy are proposed budget margins, not observations."
+  ]
+}

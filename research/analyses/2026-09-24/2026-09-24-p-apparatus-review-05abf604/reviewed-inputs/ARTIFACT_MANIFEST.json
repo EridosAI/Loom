@@ -1,0 +1,885 @@
+{
+  "files": {
+    "APPARATUS.patch": {
+      "bytes": 160506,
+      "sha256": "d4fdf864080d0ee09c8a5a0fdfbd0fc1272722caf0768bc0e88e972f714f5dab"
+    },
+    "CHECKPOINT.json": {
+      "bytes": 2754,
+      "sha256": "0d6e9c6a457cbb58acf3bae32f6e14379393d7747ca019ec6d2290a68d5e9917"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/audit_preservation.py": {
+      "bytes": 1613,
+      "sha256": "1db3db8cb052d1d96cc0dee70b8f563a4c679b0eb4252bca69d95289fefa3a26"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/DESIGN_ARCHIVE_MANIFEST.json": {
+      "bytes": 13534,
+      "sha256": "89e12d5fd9ff75e2e56e96cdef1fe4988400b110e66b20ca61c757fd8ccb1f00"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/EVENTUAL_ROSTER_NOT_AUTHORIZED.json": {
+      "bytes": 192,
+      "sha256": "bb8d29bb36288c2490bd084027a320de7001079174a08212fc30f65ac1b4aa2b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/discarded-GREEN.log": {
+      "bytes": 100,
+      "sha256": "a998f81fca05f59418864e13634f26320d4b685104bff9b253bc7cdadb8af003"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/discarded-RED.log": {
+      "bytes": 2916,
+      "sha256": "f30613eff11b0ded56b042560f5cba1585c99ab3a1c6a4eb45ae78815145dd01"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/duration-GREEN.log": {
+      "bytes": 100,
+      "sha256": "08054f525f3e262e37d7681e7a64aecffdcc8f95dd2dc3c7c378754b0b40bda7"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/duration-RED.log": {
+      "bytes": 1598,
+      "sha256": "a41ee386d9cf17cc0d8a6e613fe862d63d55c51447f97b23da4a63e88ef9b6f7"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/extra_native-GREEN.log": {
+      "bytes": 100,
+      "sha256": "dfb890ac04eb646abced4bf8b59cab05a041b68410ffa5ff3c8f0a4a4c191f94"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/extra_native-RED.log": {
+      "bytes": 3100,
+      "sha256": "cfcd4f390ee5b378f8761b3e697364a9e35e742d04ceb415e870473b02312f2d"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/extra_random-GREEN.log": {
+      "bytes": 100,
+      "sha256": "cf36a0406e39e8ee4a1c155969f43aca2496e0675006bbe48bcfd4d8e6bb0f8b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/extra_random-RED.log": {
+      "bytes": 2952,
+      "sha256": "30370bb742524aab208448340702a6b20285c1b1d8ec1a19b6b068c331cc8a14"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/extra_updates-GREEN.log": {
+      "bytes": 100,
+      "sha256": "3beae1b942090a0494974f7451cca1fbbe70fab9a001988d5fc21a53b133eeb2"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/extra_updates-RED.log": {
+      "bytes": 2510,
+      "sha256": "d5406a46f061dfaaf9db6949ee0f207a6de161b7abe78cf6c87c0269c7244cbb"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/extra_wave-GREEN.log": {
+      "bytes": 100,
+      "sha256": "7db031e068b71eba4f0c68d627c9b11989225d47205314d4f7a124b1d8246fe3"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/extra_wave-RED.log": {
+      "bytes": 3019,
+      "sha256": "f8d0e188bdae83fe577773e00c30a2961db2fdc7f163c80afb7eddb60b18ca00"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/FAULT_MATRIX.json": {
+      "bytes": 23759,
+      "sha256": "c7d7e317b2939790bbd491060c0c7e41cfb5814d481f1179ef7b8150c87560b5"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/frozen-GREEN.log": {
+      "bytes": 100,
+      "sha256": "d7b724ebd4e87b87755578c33078fbebf63bb1f3c8e99ddc03b4a076760e97d5"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/frozen-RED.log": {
+      "bytes": 1490,
+      "sha256": "f92a13a0308b25b388428e7c095cd9ea8bab369027982548c439fae2c6fa6c89"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/identity-GREEN.log": {
+      "bytes": 100,
+      "sha256": "ac06e9859ec73e81c7b04ccec0f3ddf6cb2bd309a00a256f206f9ab5068a4dca"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/identity-RED.log": {
+      "bytes": 1253,
+      "sha256": "e2d0e5115b480bd11972cc0b223163a9a1ac82ebe053e7ee1e095a3339a3a942"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/input-GREEN.log": {
+      "bytes": 100,
+      "sha256": "d7b724ebd4e87b87755578c33078fbebf63bb1f3c8e99ddc03b4a076760e97d5"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/input-RED.log": {
+      "bytes": 1243,
+      "sha256": "5749913c4b5e448904028e4a22a056db156de62309371772a2be490c6f013f59"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/label-GREEN.log": {
+      "bytes": 100,
+      "sha256": "291b5bc97d346c2bc2d55883a10bd5eb5a8e1f6d386e45ab29998613470592e3"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/label-RED.log": {
+      "bytes": 1326,
+      "sha256": "4b458a4b8afc02107a2a362e795ab49ae81edec0554a7f41b25be86ca908bb48"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/ledger-GREEN.log": {
+      "bytes": 100,
+      "sha256": "0bd96cd6d7d3e36dea7a7c6e054236fc80eec4d3cff0f00701c9b871b790cb1d"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/ledger-RED.log": {
+      "bytes": 1428,
+      "sha256": "3d5a607eb2755980b61d2ddb74392dcdc36885b579487d7b674e1edd3c73d07c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/missing_native-GREEN.log": {
+      "bytes": 100,
+      "sha256": "d7b724ebd4e87b87755578c33078fbebf63bb1f3c8e99ddc03b4a076760e97d5"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/missing_native-RED.log": {
+      "bytes": 1392,
+      "sha256": "5da60171903fa3995eacc3584bc4af2b5592aa60a45623101565f92c89289ffd"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/observer-GREEN.log": {
+      "bytes": 100,
+      "sha256": "9b02778cb61c4d7ef3caacf0ec35ddbaafd17d7639685d1455f4c565adfd0c88"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/observer-RED.log": {
+      "bytes": 1324,
+      "sha256": "362fe39ad30ef3509dd4368ac843c57edc71cfa18c9c34b827dd21f647b820e1"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/phase-GREEN.log": {
+      "bytes": 100,
+      "sha256": "9b02778cb61c4d7ef3caacf0ec35ddbaafd17d7639685d1455f4c565adfd0c88"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/phase-RED.log": {
+      "bytes": 1200,
+      "sha256": "43aff92025a636c0fc59c277854fc69232a44aee5fd193fbea7e2fe404e9823f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/sensor_leak-GREEN.log": {
+      "bytes": 100,
+      "sha256": "9459a7d273f5dc2761dee270a3ace79b1c9eccb1111157c448cdbd69b14743f3"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/sensor_leak-RED.log": {
+      "bytes": 1336,
+      "sha256": "717070bc1626aeb7a504128d726458a07c0c2a763f53934d214a6a41068a502c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/stop-GREEN.log": {
+      "bytes": 100,
+      "sha256": "d7b724ebd4e87b87755578c33078fbebf63bb1f3c8e99ddc03b4a076760e97d5"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/faults-attempt-002/stop-RED.log": {
+      "bytes": 1258,
+      "sha256": "0ce3da5de2b75bc45222a3168e7fcc02758e346781282d23978cda795f547606"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/portable-suite.log": {
+      "bytes": 183,
+      "sha256": "8827d79077809a189311b5e2b0db8baa6fb6249ac2c7070ac441010d7620ace1"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/prepare_apparatus.py": {
+      "bytes": 3801,
+      "sha256": "f3248a48e992fbcddcc7894097792dbe6725e23434c9c9fa43413d864116ed4c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/PRESERVATION_AFTER.json": {
+      "bytes": 398,
+      "sha256": "592eb197efb742c375eba3a5ad32ddd5aa95b5a1f2d970e150744f42ec89a744"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/PRESERVATION_BEFORE.json": {
+      "bytes": 200656,
+      "sha256": "4a2dbb613e5e2675b3f5c8c71e7e7a447edba00892c3f66dee69c01d52b0ef9c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/00_RESEARCH_MAP.md": {
+      "bytes": 8235,
+      "sha256": "e66de14cf6dcb33b238ec91723fc8a07e602e1d1d4c3919bc81032482846481c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/01_WORKSPACE_STATUS.md": {
+      "bytes": 10688,
+      "sha256": "510fcf5e3a161a5fcc8949b07650719d801e2c479502b8813bd96f04226929cd"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/AGENTS.md": {
+      "bytes": 9990,
+      "sha256": "3b2c771598e602472b2c66393d30c987d6ebe705bed8e1f7fd213c2a084142a7"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/APPARATUS_BUILD_REQUEST.txt": {
+      "bytes": 5841,
+      "sha256": "f1abfe2e0c7a321272c86a74ce9df5c1fec2f2e3946d2fe53b19a3068d52cbf0"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/DECISIONS_REQUIRED_BEFORE_EXECUTION.md": {
+      "bytes": 3938,
+      "sha256": "9ecfc5125dd7df00ba0f6d864c6429c475d4e803d393a4dc62eb24a658a27a3b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/Loom_P_Coupling_Commissioning_Design_20260923_2fb3ff84.zip": {
+      "bytes": 407360,
+      "sha256": "018f23d8e1bdb9433d7a50c8e421f09deb70d26febc3a5f14d98fa3b467551d0"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/LOOM_P_FINAL_INDEPENDENT_R1P_FIDELITY_REVIEW.md": {
+      "bytes": 33791,
+      "sha256": "8e9bcddfd19bcd1cc362f93186d6656ed0ee9f75b78fad4c8ef02ec1962e3a25"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/P_COMMISSIONING_CONFIGURATION_CHANGE_RULES_v0_1.md": {
+      "bytes": 16147,
+      "sha256": "b4ebf441a56f4cf08a17fba842a9eae003819cc8d8b7b29b1285fff6de8e6229"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/P_COMMISSIONING_MATRIX_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 11461,
+      "sha256": "c653e378d5413bc95b8056624d6742d6d02298385dccb84b57f9a2d306beca90"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/P_COMMISSIONING_PLAIN_LANGUAGE_WALKTHROUGH_v0_1.md": {
+      "bytes": 14764,
+      "sha256": "b93f5471379e510559c4eaff29d0186664c3f1a25b00a16477a8373f098fea9e"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/references/P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 49871,
+      "sha256": "d25c9829d799fd497f1598ea64afb448a3558fd886105eacf737c1cb8bbae42c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/privileged/evaluation.json": {
+      "bytes": 2154359,
+      "sha256": "f7ca75e496ce0c9f83510d063ddbea111b89ade8d8029ab50dbbc58ed4be6fea"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/privileged/PRIVILEGED_REVIEW.html": {
+      "bytes": 2156889,
+      "sha256": "4868a48b02117443a128c6fb00443be0e488433c434352d1a609acecfe118a01"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/controller.jsonl.gz": {
+      "bytes": 1912,
+      "sha256": "0f251c93bd028bb3b95b01fd0f4c8c3e9237046ba628c5ad6f135b9cfcce5f70"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/diagnostics.jsonl.gz": {
+      "bytes": 4221,
+      "sha256": "4cbfab79a4006d121ca9ec7646a1faa0d7d07905629a674764d66de427353081"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/events.jsonl.gz": {
+      "bytes": 1543,
+      "sha256": "a089de1bc579ec78577a0fea59239ec746ddc9a0729aa2e5b3872a9a9ba56f60"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/final.restart.json.gz": {
+      "bytes": 99391,
+      "sha256": "b3d92915e463c6e7f8daf5f902ed5dd3421727f64cdcf6a89ee7a5ce3e8832b3"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/initial.restart.json.gz": {
+      "bytes": 18789,
+      "sha256": "5afdb0b3c2119c12717d5432e92cda002758637d87072c544283fd33716066c0"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/manifest.json": {
+      "bytes": 5286,
+      "sha256": "d5f36b18eb6c6a2a55b4e299353ce28ef976ff2d6c7d9fe1518aec690fef145e"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/native.jsonl.gz": {
+      "bytes": 9673,
+      "sha256": "45c2821f12889442155a4226a989baafd69d77ef49a60486d71643afd7403d9f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "30bc9add18a6ffc4d3307d0ff17ca0d4b06b8f775a9d573e323c8b9ee6cc9a2f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/sensor-display.json": {
+      "bytes": 11630,
+      "sha256": "5ccad0e5bd53d24b55421a85cd27795d2f468810aa9bc98f7500102114d8000f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/sensor.jsonl.gz": {
+      "bytes": 3849,
+      "sha256": "c00de696a3992ffa3dee050c6467ede1f2424a3eedca19e1fffdc7705ef9081c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/continuous/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "1b495b11eec5f112f33d5c072fc7445cbc5f7888510b7a93856d9980b88a6540"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/controller.jsonl.gz": {
+      "bytes": 422,
+      "sha256": "d43576680610eb44c8a0c4be57c6b17a5a8d54b18898ac32d32b45772ab3f562"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/diagnostics.jsonl.gz": {
+      "bytes": 1640,
+      "sha256": "d12015b446338776522136781f440d072c222e7d33f8642b4d90082e72eea754"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/events.jsonl.gz": {
+      "bytes": 698,
+      "sha256": "c7bfb6df6289ecbb6e1e2e62e2037adb93015b02297d66e6a3d9b9e3f2f0979e"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/final.restart.json.gz": {
+      "bytes": 91476,
+      "sha256": "21db5f4ce75801867e60a941d7bb13753f9f65063477bc02570b555f717a493c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/initial.restart.json.gz": {
+      "bytes": 18789,
+      "sha256": "5afdb0b3c2119c12717d5432e92cda002758637d87072c544283fd33716066c0"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/manifest.json": {
+      "bytes": 5259,
+      "sha256": "de3bfb26c9f5f4c57f7e65de645dc9c7044c37ee55dbf9bd87b9b08817939473"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/native.jsonl.gz": {
+      "bytes": 3734,
+      "sha256": "4a25402c9120ec87534f497b1ef95bdd4200af2da63278f0a71d26c456160c5b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "fc47850b2aa9b418bfd1fd0b037b910e759a24c7bcfa09a3bd562be21fe6c566"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/sensor-display.json": {
+      "bytes": 4540,
+      "sha256": "4d457f7dd5b5eef9a69bf51e9aeaa2777bafd33fecc07eea49c99ad4ddc82a2b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/sensor.jsonl.gz": {
+      "bytes": 1540,
+      "sha256": "3238f0184ec8dd225d51952e62330c4d3df8145ed15cf4dd69e6a514edf1275f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/first/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "dd78268b14d20e44bc3a20018f62886f8a6c37af44cdbffb282e76c2f6660fb3"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/controller.jsonl.gz": {
+      "bytes": 1938,
+      "sha256": "229214025013b474f4440155742708bbf47108d3192a2c1d35242c19d4b1bae8"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/diagnostics.jsonl.gz": {
+      "bytes": 2971,
+      "sha256": "3f1c4a726310c03c10cdedc9e79ba32c1298faf89a341e3f65e172aac47d99c8"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/events.jsonl.gz": {
+      "bytes": 1106,
+      "sha256": "0a5d3218e010e805c2bcba106ef990b15d63b39c7a82b243f00526e258adf700"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/final.restart.json.gz": {
+      "bytes": 99390,
+      "sha256": "5ce6658410dd87eddda3f039d703b24f53f00ea514f2d8bbbb8f956dd0523daa"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/initial.restart.json.gz": {
+      "bytes": 91476,
+      "sha256": "21db5f4ce75801867e60a941d7bb13753f9f65063477bc02570b555f717a493c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/manifest.json": {
+      "bytes": 5369,
+      "sha256": "c04d09f60777204aa8d7d198432c496b4af6eb859e76bfbb34797b17b44d1201"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/native.jsonl.gz": {
+      "bytes": 6518,
+      "sha256": "b3f8fbcbac2a4943a4e1dd1dea8a2a78af09bdc3067cdd91caf5332f07fb6ea0"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "d526eed75f9f4f61ddd9c1fd9774649b107160704408ad64e099b344568c8528"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/sensor-display.json": {
+      "bytes": 11630,
+      "sha256": "5ccad0e5bd53d24b55421a85cd27795d2f468810aa9bc98f7500102114d8000f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/sensor.jsonl.gz": {
+      "bytes": 3718,
+      "sha256": "35e1af9b4b9c7470572f8900ace7237f2cdaa5efb8b4cb8b8e3eb91664cbb18b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/external-manufactured/second/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "5087a2fb5f3e27c0b1269d6f155f6ef4e52954d5813de8989257fa479f9fcf44"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/controller.jsonl.gz": {
+      "bytes": 37,
+      "sha256": "f752877bba84ddad04dd5b4e2e19f89bb356985b2d25cbd64082e63a118cfb39"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/diagnostics.jsonl.gz": {
+      "bytes": 210008,
+      "sha256": "01a65098a45479c7eecae2fceb648651cef5d5fc2cb9d9a1d8a4288db3aa340c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/events.jsonl.gz": {
+      "bytes": 2036,
+      "sha256": "b423ea4dd8f5ca2619f469ece3ca16e614b9a5a6eb90e90fae80af778138c4d6"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/final.restart.json.gz": {
+      "bytes": 156280,
+      "sha256": "65ee888c0923bffce3d63688e3ebb292f3e780a1365b0fe5d84d6f60022b0cbe"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/initial.restart.json.gz": {
+      "bytes": 22880,
+      "sha256": "0c1701c3cd34eaffae905eb77d8ea4eec07c2b48a1dd3c5e668bde77cd2315fe"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/manifest.json": {
+      "bytes": 5347,
+      "sha256": "c06cfbe1ce60f22e939382df371af7ad4b328a32a24c691a67048883469a2226"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/native.jsonl.gz": {
+      "bytes": 172785,
+      "sha256": "f17872ca21dba3d51564caede7ba91386920e4c33310a11bf611907f1cd58a13"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "3d893a6d473cdcfc4a15b82251749c697128b11b4b179a3090cf6b52d8dda0bb"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/sensor-display.json": {
+      "bytes": 12201,
+      "sha256": "f8af9eab3448f64a4188ca3a6302a21285c7761ff914262806bdc85863970336"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/sensor.jsonl.gz": {
+      "bytes": 4216,
+      "sha256": "74f02b80704df10e87e966db3544cc0ceea2201bafffd5dca95416b50fad2d62"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/continuous/wave.jsonl.gz": {
+      "bytes": 13078,
+      "sha256": "a6b4099b3854cd22ee17de9d803279ddf0c726ca8fd12a36ce92209fe7d57b22"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/controller.jsonl.gz": {
+      "bytes": 37,
+      "sha256": "343b233ecc66d8500fb9042abb3bedd28a1eedd25915f0094cf88d9abfafda37"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/diagnostics.jsonl.gz": {
+      "bytes": 61392,
+      "sha256": "ccd17e72c3f38795b475540108250aaa14d92b22ad8455e5086a48f9dbe8b5d3"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/events.jsonl.gz": {
+      "bytes": 874,
+      "sha256": "997ae485ac58670d7bc05c4325072b0721956aa0d70f92da58276241de11f90f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/final.restart.json.gz": {
+      "bytes": 113562,
+      "sha256": "42a25ad57ed6e0351b60e7b657a24d65b448e75bf053f8c69b0469a4efbaf983"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/initial.restart.json.gz": {
+      "bytes": 22880,
+      "sha256": "0c1701c3cd34eaffae905eb77d8ea4eec07c2b48a1dd3c5e668bde77cd2315fe"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/manifest.json": {
+      "bytes": 5273,
+      "sha256": "79ea1fb6563754aad794de6ef9f8fcacf5669cfd82931a30ad4291d626d3da4b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/native.jsonl.gz": {
+      "bytes": 49809,
+      "sha256": "817b30e00fb1784969f31c85d41666ce5ade5ad7da9fc8618c7088ec847c91e0"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "265de9811ec537d56936ae8a7cf1c77518e4ac819f98e3e37b367d448913066f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/sensor-display.json": {
+      "bytes": 4744,
+      "sha256": "3bbcab06e3b95fc456357f320f16151b26bb1f1cbb94f06e11bdaacefe92ce07"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/sensor.jsonl.gz": {
+      "bytes": 1657,
+      "sha256": "026d08d2c90745425a49d5e269620f7faa9b7aa6ddd4d2a2e94799bce0bbf6d6"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/first/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "eec428451730bd61f700c9cd4eeb5bc5ceade691a45ca8729370406f932640eb"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/controller.jsonl.gz": {
+      "bytes": 37,
+      "sha256": "89a842a2f5fdc6bf937bdf1c184cdc3447c6f97deca98f1ff77f92f9fa81ac64"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/diagnostics.jsonl.gz": {
+      "bytes": 149088,
+      "sha256": "d936bdf590db3fb9a5900de6208aa1f5c10a1b5ed144868390ada2d9a275b6ac"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/events.jsonl.gz": {
+      "bytes": 1435,
+      "sha256": "7ea8d5c9cd528c7be3deec8bd78a66ff0c69e5d370737a1cde15e153a21bbe6b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/final.restart.json.gz": {
+      "bytes": 156280,
+      "sha256": "78651fdad57776966dee792681e454c135e74c15d13aeb3ffb61bfa7c3630e38"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/initial.restart.json.gz": {
+      "bytes": 113562,
+      "sha256": "42a25ad57ed6e0351b60e7b657a24d65b448e75bf053f8c69b0469a4efbaf983"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/manifest.json": {
+      "bytes": 5431,
+      "sha256": "73391c03d66e4d946f9990d362b9ba4a6a2c6c37f988761fdc720b76526e1419"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/native.jsonl.gz": {
+      "bytes": 123620,
+      "sha256": "4e76ed8f77d838563e33f899efd00e9c80d0ae1469c88ab18648a0e4a26dd233"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "ca94a41be1c5a62d2c648fc1772471980ce61b71df26cca096b4eeb2b65c381d"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/sensor-display.json": {
+      "bytes": 12201,
+      "sha256": "f8af9eab3448f64a4188ca3a6302a21285c7761ff914262806bdc85863970336"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/sensor.jsonl.gz": {
+      "bytes": 4073,
+      "sha256": "d59a786cc3ba3b4daf9a37ede9e931bf035bb95d66e56ff3cbda15707edf3401"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/fixed-manufactured/second/wave.jsonl.gz": {
+      "bytes": 13078,
+      "sha256": "2de5af3bbffaf722b023578c394051b202ab9cd6313750f2a7b48b2ddd313ccd"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/controller.jsonl.gz": {
+      "bytes": 37,
+      "sha256": "e536566d60cbb804ce72b340dfb3d81aff442e005932f30e42c9a2a21e231d4f"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/diagnostics.jsonl.gz": {
+      "bytes": 271984,
+      "sha256": "afaa82a57b441c474585648b69be20c1c68a9eb33bf9c3f8e6edcae6378cb524"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/events.jsonl.gz": {
+      "bytes": 1980,
+      "sha256": "adaf91b6c6c7a0d06260bf21c6f6690aad1d03681a925c0fe37ead30cf7e7c1e"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/final.restart.json.gz": {
+      "bytes": 415980,
+      "sha256": "c6917552b94a4ac5562816ed62ef976ac4ade91f98e519ec7e1936c4baab7a0a"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/initial.restart.json.gz": {
+      "bytes": 18783,
+      "sha256": "3aee94a43ccc9d49baec09d0130dd4c86014a630cae62c8a96c7ddb06c986167"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/manifest.json": {
+      "bytes": 5262,
+      "sha256": "0c5a17e962a24f97c7e8907c85650d84bda25c2b9fd60b7b6a022e2525ea81d0"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/native.jsonl.gz": {
+      "bytes": 218146,
+      "sha256": "4592e5774b29ca102b5581b15cc5894dead99d70cb26bef57f289ced4a52c4cc"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "802deb31de1a3c2918f76dec0875033fa024c47db344126a6b07a94278b43bbe"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/sensor-display.json": {
+      "bytes": 12201,
+      "sha256": "f8af9eab3448f64a4188ca3a6302a21285c7761ff914262806bdc85863970336"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/sensor.jsonl.gz": {
+      "bytes": 4216,
+      "sha256": "ae44160ce722c8c8e3f90b2f0b4f247a2110e456eeff41b2703c7d84046646a7"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/continuous/wave.jsonl.gz": {
+      "bytes": 11599,
+      "sha256": "011abf517a0b48d7a8cef0b6ee2ca62f39b05f149504fe33f8109869a3da284c"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/controller.jsonl.gz": {
+      "bytes": 37,
+      "sha256": "e566a65d3167b154d63713ee60ca96e5e19bef473fffebc8f296eea9276fa6e3"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/diagnostics.jsonl.gz": {
+      "bytes": 77208,
+      "sha256": "cd7311bc65241cc112d77c96c314412b3b59b4882484a19e75720077756355ac"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/events.jsonl.gz": {
+      "bytes": 824,
+      "sha256": "f89201176d5aa7be555908caf0366e11fc276c4596bf0f27dbe4369cb48bc00b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/final.restart.json.gz": {
+      "bytes": 114954,
+      "sha256": "9a92e93046b50691d1e6599163c18d9a92e968993007e42e7d69d21c0d7d9f00"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/initial.restart.json.gz": {
+      "bytes": 18783,
+      "sha256": "3aee94a43ccc9d49baec09d0130dd4c86014a630cae62c8a96c7ddb06c986167"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/manifest.json": {
+      "bytes": 5190,
+      "sha256": "d84629fe155402d3af526e789a2e567fb39115fa6c0a3522be38b102d91fd56a"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/native.jsonl.gz": {
+      "bytes": 62803,
+      "sha256": "9f3ba02dc700415063d966ddbb9d8656cec32808409a93332534486a16757232"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "60d06ca5bbac1185c45401d69633d1d905e1f3908b6768df69cde891c075244b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/sensor-display.json": {
+      "bytes": 4744,
+      "sha256": "3bbcab06e3b95fc456357f320f16151b26bb1f1cbb94f06e11bdaacefe92ce07"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/sensor.jsonl.gz": {
+      "bytes": 1657,
+      "sha256": "340dc80b311321559fc21ad97d554172f635ea1feefde4274a0368d821096ebe"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/first/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "dda3fcf87a272474688bfff751a51d499434b4811e97c6136f90b59227e7bc85"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/controller.jsonl.gz": {
+      "bytes": 37,
+      "sha256": "0a961125087dfbd362be7f8b5cffb297791b3fcbb16400b4976447221004adf1"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/diagnostics.jsonl.gz": {
+      "bytes": 195381,
+      "sha256": "46fb0c77b5e45069c1a86f46ac1d2711192f85cfc57f1243240eed93b50245db"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/events.jsonl.gz": {
+      "bytes": 1381,
+      "sha256": "222ee05e8249ea836d48c573806b82f2f978ae8de34d18d15c1def2ef062970b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/final.restart.json.gz": {
+      "bytes": 415980,
+      "sha256": "8fac9eb4dc2acadb6b5d02c7a9c2b8ed238dce2c4c16eec20e34cc98188f3ff1"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/initial.restart.json.gz": {
+      "bytes": 114954,
+      "sha256": "9a92e93046b50691d1e6599163c18d9a92e968993007e42e7d69d21c0d7d9f00"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/manifest.json": {
+      "bytes": 5347,
+      "sha256": "b8d5efb97f20f39a3bdc1a19304a116fe522dcf46b2862f347014829467f32e3"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/native.jsonl.gz": {
+      "bytes": 156008,
+      "sha256": "b7922f858c84d3da5ab94175684873180654d2275f0469759526ba764ccba74d"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "a23bd52b0a1f8b440170b6a6470aff7dc56c87406ab67fe7f74d7007e10862b1"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/sensor-display.json": {
+      "bytes": 12201,
+      "sha256": "f8af9eab3448f64a4188ca3a6302a21285c7761ff914262806bdc85863970336"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/sensor.jsonl.gz": {
+      "bytes": 4073,
+      "sha256": "4026637e314145a43c7771835944ee11b30e1bf33c83aebeb8e84550c5f9fe21"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/records/intact-manufactured/second/wave.jsonl.gz": {
+      "bytes": 11599,
+      "sha256": "2106a542e35197df5b98c8a5c778a70162d4b6c54bb829752dea3eed6ad25849"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/sensor-display.json": {
+      "bytes": 11638,
+      "sha256": "de5c2cf451e36c0155dcd4724c975ca3261fd0b6ee97c7b9bef172d4c8f2ee33"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/review-evidence/SENSOR_ONLY_REVIEW.html": {
+      "bytes": 16895,
+      "sha256": "d929c3016f1e925a8c664e984f1f9035476dce4687c7324c6ab19aaffb27adb7"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/RUNTIME_RECORD.json": {
+      "bytes": 3017,
+      "sha256": "aea2f0cae39c7b3154d8a82c41c8167699f8de88c1d24b69ad4c57a9887a7068"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/RUNTIME_STORAGE_ESTIMATE.json": {
+      "bytes": 2178,
+      "sha256": "62264b2fcf541f7ef516abc726459982c98d2f8504f5379a851b134f049e7dcb"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/SOURCE_IDENTITIES.json": {
+      "bytes": 5125,
+      "sha256": "178e08c37ce7a0cbde8f96e016d07fda4dba4def89b8d2469c9899c619353f7b"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/tests-attempt-001.log": {
+      "bytes": 2665,
+      "sha256": "2802a780885f72901dbddf4abfea6eea998bd5aa4f2744fdd651f87d1aebc9a8"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/tests-attempt-002.log": {
+      "bytes": 14765,
+      "sha256": "a8c929c303fdbbed022a406f146d2dfa44535ecea1e9207f83076655dc45e329"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/tests-attempt-003.log": {
+      "bytes": 183,
+      "sha256": "f6d1438028a06006793e1b4e0dd39c736ae3ab700b3641617cee3f26e03b5965"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/ui-server-error.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/ui-server.log": {
+      "bytes": 63,
+      "sha256": "ab12082ba82df1d73ab842c0ad3f5ecc8333d505a068e5e55f2fb51b75c8229e"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/ui-server.pid": {
+      "bytes": 7,
+      "sha256": "3a6d4fec75b2f3435750d7fb5c58195f9ed40f78fc04ff3481fa41e87fbaacd7"
+    },
+    "developmental_ecology/artifacts/apparatus-20260924-01a0c405/UI_REVIEW.json": {
+      "bytes": 461,
+      "sha256": "a908aaa84404b4ea6d0c1c70d6feef68ac65e8e430248db3d3e50c32e7d2738b"
+    },
+    "developmental_ecology/artifacts/prehistory-attempt-001/fields.npz": {
+      "bytes": 94596,
+      "sha256": "f968ed0875d68e3421c5acc9f9a4a218727b9698877b1cc86225d4fec9e6ef7d"
+    },
+    "developmental_ecology/artifacts/prehistory-attempt-001/law-source-at-preparation/chemistry.py": {
+      "bytes": 4565,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    "developmental_ecology/artifacts/prehistory-attempt-001/law-source-at-preparation/geometry.py": {
+      "bytes": 7814,
+      "sha256": "b57861757e051c7a789df0ef31a28632d1e57dae3e0c3c933edf07667c11d877"
+    },
+    "developmental_ecology/artifacts/prehistory-attempt-001/law-source-at-preparation/schema.py": {
+      "bytes": 7050,
+      "sha256": "2df77ee95f708aa755750e214ac9269985d8988760d2c08b5e9c36e477b574bd"
+    },
+    "developmental_ecology/artifacts/prehistory-attempt-001/manifest.json": {
+      "bytes": 2020,
+      "sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3"
+    },
+    "developmental_ecology/configuration.json": {
+      "bytes": 3445,
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9"
+    },
+    "developmental_ecology/loom_commissioning/.gitattributes": {
+      "bytes": 24,
+      "sha256": "fe05512d7cad3c732b2986acfb0fcd47acefb66d7cafb59691292603bedda91f"
+    },
+    "developmental_ecology/loom_commissioning/__init__.py": {
+      "bytes": 81,
+      "sha256": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46"
+    },
+    "developmental_ecology/loom_commissioning/adapter.py": {
+      "bytes": 6032,
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+    },
+    "developmental_ecology/loom_commissioning/contract.py": {
+      "bytes": 6790,
+      "sha256": "7334c4f1391909e0cc25b9f8c861dac1d90f93048852798826f28f5374655f81"
+    },
+    "developmental_ecology/loom_commissioning/controllers.py": {
+      "bytes": 6510,
+      "sha256": "064f27b73903dff7d7793d609e65c574aa21a59bdf1cc32bea039b7591ec34dd"
+    },
+    "developmental_ecology/loom_commissioning/diagnostics.py": {
+      "bytes": 7466,
+      "sha256": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da"
+    },
+    "developmental_ecology/loom_commissioning/evaluation.py": {
+      "bytes": 5907,
+      "sha256": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3"
+    },
+    "developmental_ecology/loom_commissioning/initialization.py": {
+      "bytes": 1299,
+      "sha256": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a"
+    },
+    "developmental_ecology/loom_commissioning/runner.py": {
+      "bytes": 12365,
+      "sha256": "1597ce5689515384c96c37f3e16afabdcfaceecc2cacdb04810fcc77b33d0299"
+    },
+    "developmental_ecology/loom_commissioning/sensor.html": {
+      "bytes": 5297,
+      "sha256": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a"
+    },
+    "developmental_ecology/loom_commissioning/sensor_ui.py": {
+      "bytes": 3645,
+      "sha256": "20ab4d39502a1c262530512c4d0c6b4e41a1c76fb6c792f80d6e7c2098cb76f8"
+    },
+    "developmental_ecology/loom_commissioning/validators.py": {
+      "bytes": 7132,
+      "sha256": "047696a36f08c8d7d631d4fb65444a56fc0f742059ca46d91c9879722ca74c43"
+    },
+    "developmental_ecology/loom_p/__init__.py": {
+      "bytes": 99,
+      "sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a"
+    },
+    "developmental_ecology/loom_p/chemistry.py": {
+      "bytes": 4565,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    "developmental_ecology/loom_p/diagnostics.py": {
+      "bytes": 4887,
+      "sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0"
+    },
+    "developmental_ecology/loom_p/engine.py": {
+      "bytes": 9957,
+      "sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d"
+    },
+    "developmental_ecology/loom_p/geometry.py": {
+      "bytes": 8616,
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3"
+    },
+    "developmental_ecology/loom_p/inspector.py": {
+      "bytes": 20150,
+      "sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83"
+    },
+    "developmental_ecology/loom_p/neural.py": {
+      "bytes": 15195,
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca"
+    },
+    "developmental_ecology/loom_p/physics.py": {
+      "bytes": 19333,
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783"
+    },
+    "developmental_ecology/loom_p/prehistory.py": {
+      "bytes": 6513,
+      "sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588"
+    },
+    "developmental_ecology/loom_p/reconstruction.py": {
+      "bytes": 1879,
+      "sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b"
+    },
+    "developmental_ecology/loom_p/records.py": {
+      "bytes": 7470,
+      "sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e"
+    },
+    "developmental_ecology/loom_p/schema.py": {
+      "bytes": 7190,
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc"
+    },
+    "developmental_ecology/loom_p/smokes.py": {
+      "bytes": 5575,
+      "sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+    },
+    "developmental_ecology/Open Paused Sensor Reference.cmd": {
+      "bytes": 106,
+      "sha256": "e8aec4d3cf3233192eba00effb41737bc979b6856a2d77f6df322817bff76e4f"
+    },
+    "developmental_ecology/Open Privileged Apparatus Review.cmd": {
+      "bytes": 116,
+      "sha256": "76d3650f6fcd85899a88ef4845b5bf86e7749b711c0e7a094f449b559a1d6c15"
+    },
+    "developmental_ecology/package_apparatus.py": {
+      "bytes": 9727,
+      "sha256": "a2175cec9520c4ec127a9ca20cd6b50556e9f7268416cdfee61bbbde5d8c771a"
+    },
+    "developmental_ecology/requirements-lock.txt": {
+      "bytes": 129,
+      "sha256": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6"
+    },
+    "developmental_ecology/tests/test_boundary_and_scheduler.py": {
+      "bytes": 5693,
+      "sha256": "13da7d890ea0b129bc57f14583faf059d9cf7dbd13be163b78ff71041a11a583"
+    },
+    "developmental_ecology/tests/test_corrective_contracts.py": {
+      "bytes": 9902,
+      "sha256": "cea602f87b8ac43258873c4aa38c3214364b5fac6bcd538b79b402a4ad038ae1"
+    },
+    "developmental_ecology/tests/test_neural.py": {
+      "bytes": 13770,
+      "sha256": "197d16476882f509eb812f9f05873b7f25ac877f162b39de92e7772c3f34ce88"
+    },
+    "developmental_ecology/tests/test_physical.py": {
+      "bytes": 7191,
+      "sha256": "9ef647dbd187a10e3f7a5d0d14511c732162eb750b7a7c5f7fd4b17b9162aa3c"
+    },
+    "developmental_ecology/tests/test_r1p_oblique.py": {
+      "bytes": 5422,
+      "sha256": "e597a8a7fe51a233676d8f0ebd59bc6818cc22c7d88580965f31edee4d8b831a"
+    },
+    "developmental_ecology/tests/test_records.py": {
+      "bytes": 4867,
+      "sha256": "7974caeb70006a3c959cd51f053b1a2574e3fde4c973fe0109cd25eb4d67215d"
+    },
+    "developmental_ecology/tests_apparatus/test_apparatus.py": {
+      "bytes": 14909,
+      "sha256": "8cc322b9ad3dc62fa036a351306e66299db94c7c99a51c2b2beb4e8bd35d178e"
+    },
+    "developmental_ecology/verify_apparatus.py": {
+      "bytes": 3235,
+      "sha256": "b4e68f1741aded3d31bf766f9364b662789cce75581c04471b0fbed491bbc265"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/AUTHORITY_AND_INFORMATION_FLOW.md": {
+      "bytes": 3723,
+      "sha256": "d1c40801441b940d56ef806988b142e78c9e0444f411eb7d301e98c98787a491"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/BUILD_REPORT.md": {
+      "bytes": 10933,
+      "sha256": "351c4a421963a0a55f1f1db0b20cf156ede95d7af3655a99e2130dc9f8e63986"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/EXECUTION_LEDGER.md": {
+      "bytes": 3053,
+      "sha256": "d55e283c16bcc0a23232ef3b564aa9235eda4b1ac4f1cbd3225d4b359cf6a2af"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/FAULT_MATRIX.json": {
+      "bytes": 23759,
+      "sha256": "c7d7e317b2939790bbd491060c0c7e41cfb5814d481f1179ef7b8150c87560b5"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/LAW_CODE_TEST_MAP.md": {
+      "bytes": 4576,
+      "sha256": "7b3fa17b9fa152bb0052491cc65730f27a52da44e74eb19c9ec9827561163af2"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/PLAIN_LANGUAGE_WALKTHROUGH.md": {
+      "bytes": 3851,
+      "sha256": "88a86b8fb5b90136f8053a4bcfcc2b9e9c911915b649245d93a2975ea3fe8842"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/RUNTIME_RECORD.json": {
+      "bytes": 3017,
+      "sha256": "aea2f0cae39c7b3154d8a82c41c8167699f8de88c1d24b69ad4c57a9887a7068"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/RUNTIME_STORAGE_ESTIMATE.json": {
+      "bytes": 2178,
+      "sha256": "62264b2fcf541f7ef516abc726459982c98d2f8504f5379a851b134f049e7dcb"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/SOURCE_IDENTITIES.json": {
+      "bytes": 5125,
+      "sha256": "178e08c37ce7a0cbde8f96e016d07fda4dba4def89b8d2469c9899c619353f7b"
+    },
+    "docs/developmental_ecology/p_apparatus_20260924/UI_REVIEW.json": {
+      "bytes": 461,
+      "sha256": "a908aaa84404b4ea6d0c1c70d6feef68ac65e8e430248db3d3e50c32e7d2738b"
+    },
+    "START_HERE.md": {
+      "bytes": 1389,
+      "sha256": "d639474ffc603c1ee2171d90aad2dbb18f3ec2f2b6d7781bdc31614c654b8919"
+    }
+  },
+  "checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b"
+}

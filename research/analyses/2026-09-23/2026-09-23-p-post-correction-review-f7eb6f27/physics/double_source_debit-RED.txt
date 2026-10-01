@@ -1,0 +1,11 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________ test_touch_release_return_duration_and_accounting ______________
+tests\test_corrective_contracts.py:45: in test_touch_release_return_duration_and_accounting
+    assert np.allclose(r['stock_after']-r['stock_before'],r['renewal_first']+r['renewal_second']-r['transfer'],rtol=0,atol=1e-16)
+E   assert False
+E    +  where False = <function allclose at 0x0000020DDFAD6070>((array([0.19981589, 0.2       , 0.2       , 0.2       , 0.2       ,\n       0.2       , 0.2       , 0.2       ]) - array([0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2])), ((array([0., 0., 0., 0., 0., 0., 0., 0.]) + array([9.99413669e-10, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,\n       0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00])) - array([9.20575137e-05, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00,\n       0.00000000e+00, 0.00000000e+00, 0.00000000e+00, 0.00000000e+00])), rtol=0, atol=1e-16)
+E    +    where <function allclose at 0x0000020DDFAD6070> = np.allclose
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting
+1 failed in 0.08s

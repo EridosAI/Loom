@@ -1,0 +1,17 @@
+{
+  "case": "PC-MOTION",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T00:50:21.0736323+00:00",
+  "user_statement_verbatim": "Proprioception 0 and 1 show my commands. \nIts not clear exactly what proprioception 2,3,4 are actually showing. I know they mean forward left and right but its not clear how that relates to my commands.\nI'm not sure what 5 and 6 actually show. Other than your comment above. Its not clear how those numbers relate to motion of th ebug.",
+  "assessment": "Command-coordinate distinction correct. Motion-coordinate interpretation incomplete (3 is lateral motion and 4 is angular motion, not separate left/right readings). Discrepancy interpretation not yet demonstrated.",
+  "outcome": "NOT YET DEMONSTRATED",
+  "next_assistance": "Explain the existing general sensor/body laws from exact immutable source; record any subsequent understanding as following that explanation. No command suggestion, hidden state, world step or interface change.",
+  "source_files": [
+    "loom_p/geometry.py:transduce",
+    "loom_p/physics.py:actuator_forces",
+    "loom_p/physics.py:free_velocity"
+  ],
+  "apparatus": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "B1_state_accessed": false,
+  "assistant_actuator_commands": 0
+}

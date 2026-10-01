@@ -1,0 +1,112 @@
+{
+  "session": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\50_SESSIONS\\2026-09-24-p-apparatus-intake-73c9ad61",
+  "review": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\30_REVIEWS\\REVIEW-P-APPARATUS-05abf604-2026-09-24-73c9ad61.md",
+  "decision": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\40_DECISIONS\\DECISION-P-APPARATUS-SCOPE-2026-09-24-73c9ad61.md",
+  "validation": {
+    "zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24-p-commissioning-apparatus\\Loom_P_Commissioning_Apparatus_Review_20260924.zip",
+    "zip_bytes": 5790938,
+    "zip_sha256": "87f4dbde39a72559caf6045c7ac68a649d9691a000d1569af5d26b090a63b053",
+    "archive_members": 221,
+    "payload_entries_verified": 220,
+    "manifest_member_unlisted_by_design": true,
+    "crc_passed": true,
+    "checkpoint_declared": "05abf60401d08f38750bca589b1c040e10513d7b",
+    "parent_declared": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+    "p_runtime_files_matching_prior": 13,
+    "configuration_matches_prior": true,
+    "apparatus_file_hashes_matching_checkpoint": 11,
+    "patch_sha256_verified": "d4fdf864080d0ee09c8a5a0fdfbd0fc1272722caf0768bc0e88e972f714f5dab",
+    "patch_paths": [
+      "developmental_ecology/Open Paused Sensor Reference.cmd",
+      "developmental_ecology/Open Privileged Apparatus Review.cmd",
+      "developmental_ecology/loom_commissioning/.gitattributes",
+      "developmental_ecology/loom_commissioning/__init__.py",
+      "developmental_ecology/loom_commissioning/adapter.py",
+      "developmental_ecology/loom_commissioning/contract.py",
+      "developmental_ecology/loom_commissioning/controllers.py",
+      "developmental_ecology/loom_commissioning/diagnostics.py",
+      "developmental_ecology/loom_commissioning/evaluation.py",
+      "developmental_ecology/loom_commissioning/initialization.py",
+      "developmental_ecology/loom_commissioning/runner.py",
+      "developmental_ecology/loom_commissioning/sensor.html",
+      "developmental_ecology/loom_commissioning/sensor_ui.py",
+      "developmental_ecology/loom_commissioning/validators.py",
+      "developmental_ecology/package_apparatus.py",
+      "developmental_ecology/tests_apparatus/test_apparatus.py",
+      "developmental_ecology/verify_apparatus.py",
+      "docs/developmental_ecology/p_apparatus_20260924/AUTHORITY_AND_INFORMATION_FLOW.md",
+      "docs/developmental_ecology/p_apparatus_20260924/BUILD_REPORT.md",
+      "docs/developmental_ecology/p_apparatus_20260924/EXECUTION_LEDGER.md",
+      "docs/developmental_ecology/p_apparatus_20260924/FAULT_MATRIX.json",
+      "docs/developmental_ecology/p_apparatus_20260924/LAW_CODE_TEST_MAP.md",
+      "docs/developmental_ecology/p_apparatus_20260924/PLAIN_LANGUAGE_WALKTHROUGH.md",
+      "docs/developmental_ecology/p_apparatus_20260924/RUNTIME_RECORD.json",
+      "docs/developmental_ecology/p_apparatus_20260924/RUNTIME_STORAGE_ESTIMATE.json",
+      "docs/developmental_ecology/p_apparatus_20260924/SOURCE_IDENTITIES.json",
+      "docs/developmental_ecology/p_apparatus_20260924/UI_REVIEW.json"
+    ],
+    "design_documents_matching_prior": 5,
+    "prior_design_zip_matches": true,
+    "fault_matrix_pairs": 16,
+    "fault_log_summaries_consistent": [
+      "identity",
+      "missing_native",
+      "phase",
+      "ledger",
+      "input",
+      "observer",
+      "stop",
+      "sensor_leak",
+      "label",
+      "frozen",
+      "discarded",
+      "duration",
+      "extra_updates",
+      "extra_native",
+      "extra_wave",
+      "extra_random"
+    ],
+    "independent_apparatus_review_performed": false,
+    "packaged_code_executed": false,
+    "git_operations": false,
+    "existing_source_rows_preserved": 61,
+    "protected_files_unchanged": 141,
+    "link_count": 218,
+    "shared_notes": {
+      "AGENTS.md": {
+        "before": "3b2c771598e602472b2c66393d30c987d6ebe705bed8e1f7fd213c2a084142a7",
+        "after": "a2d2d2445b336acb77f19d191b93354e63adef3ecbe026262008d24c704b2a24"
+      },
+      "00_RESEARCH_MAP.md": {
+        "before": "e66de14cf6dcb33b238ec91723fc8a07e602e1d1d4c3919bc81032482846481c",
+        "after": "fc391014d9c255287de8577fc0e9f487589907d8b79579accab2b0137e29d017"
+      },
+      "01_WORKSPACE_STATUS.md": {
+        "before": "510fcf5e3a161a5fcc8949b07650719d801e2c479502b8813bd96f04226929cd",
+        "after": "fd8c4b1abe11317d617291f8d4e03c31aacb77d5520d3afbbe8b624c6507f96a"
+      },
+      "SOURCE_CATALOG.json": {
+        "before": "ba230c5d461362f9919a5299309f343086cf1e52c51477aeeb7ac9474520ec2b",
+        "after": "e0280d93122f1c0dd4b2355f5188892fce67997fa90fddbca6a008c7e8e2b0b0"
+      },
+      "SOURCE_REGISTER.md": {
+        "before": "4d38cc0226888d12b017835bf862cb8408d1a4de6d4e1842687fa567c7041606",
+        "after": "47b3e49c6ec0fded610df61b0a3d25cd8860f624494b75b5872ec1a4212a375c"
+      },
+      "40_DECISIONS/DECISION_INDEX.md": {
+        "before": "b770a77286ecec53e0522925b8aa8ddf2ad690ab837574de26dbe78c4588b315",
+        "after": "5af1d6b309ca6d82fbdbb52045b9384dc8a1bce0f4db2fa8e054289a75c41120"
+      }
+    },
+    "validation_scope": "Archive identities and records only; not independent apparatus approval or new commissioning.",
+    "intake_complete": true
+  },
+  "export": {
+    "export": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\EXPORTS\\2026-09-24-p-apparatus-intake-73c9ad61",
+    "zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\EXPORTS\\2026-09-24-p-apparatus-intake-73c9ad61\\Loom_P_Apparatus_Intake_20260924_73c9ad61.zip",
+    "bytes": 5802877,
+    "sha256": "ef5c7981a55f86c28f9e5a7d19de740bbed618fa69429bfe2c23995dc6a42b90",
+    "payload_files_verified": 21,
+    "portable_links": 25
+  }
+}

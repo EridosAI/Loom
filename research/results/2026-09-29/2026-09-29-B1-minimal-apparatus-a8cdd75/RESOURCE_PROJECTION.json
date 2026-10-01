@@ -1,0 +1,38 @@
+{
+  "caps": {
+    "maximum_attempts_per_case": 1,
+    "total_simulated_seconds": 270,
+    "total_native_steps": 27000,
+    "total_command_holds": 2700,
+    "wall_per_case_seconds": 600,
+    "aggregate_execution_wall_seconds": 5400,
+    "read_only_reporting_seconds": 1800,
+    "stream_cap_per_case_bytes": 1500000000,
+    "combined_new_artifact_cap_bytes": 20000000000,
+    "stop_request_bytes": 19000000000,
+    "flush_reserve_bytes": 1000000000,
+    "minimum_free_bytes": 20000000000
+  },
+  "base_simulation_minutes": {
+    "A2": 52.90081760500585,
+    "A3": 53.70498720858401,
+    "A5": 55.10693940360923
+  },
+  "primary_case_projection_bytes": 8945159211,
+  "with_second_full_copy_bytes": 17890318422,
+  "rate_source": {
+    "A2": 11.755737245556855,
+    "A3": 11.934441601907556,
+    "A5": 12.245986534135385
+  },
+  "overhead_measured": false,
+  "free_disk_bytes_at_preparation": 634334056448,
+  "new_prehistory": 0,
+  "models_or_training": 0,
+  "old_grants_reused": false,
+  "limitations": [
+    "Projection is not throughput verification.",
+    "Existing runner caps count uncompressed streams; all-file aggregate guard required at execution.",
+    "Native-step/flush wall overshoot possible."
+  ]
+}

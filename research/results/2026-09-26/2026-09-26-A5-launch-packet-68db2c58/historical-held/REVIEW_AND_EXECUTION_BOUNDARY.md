@@ -1,0 +1,11 @@
+# Review boundary
+
+This is a **held, unauthorised proposal**. The canonical object is the apparatus's normal execution object (the complete manifest with only `execution_authority` excluded), binding the one A5 case, original snapshot, route, phase, controller, code/runtime, horizon, ceilings, observation contract and clock issue. It is supplied for exact review, not as a fit-to-launch claim. `execution_authority` is null, and the unchanged authorization gate is checked to reject it.
+
+The bound protocol sets `launch_disposition` to `HOLD_CLOCK_INCOMPATIBILITY`. Neither the existence of a digest nor historical A1–A4 approvals grants A5 execution. This hold is a workflow instruction; the pinned apparatus does not automatically interpret the protocol's descriptive hold label. A caller must not synthesize a grant and launch anyway. No launch command, grant, live inspector or executable runner is supplied.
+
+Jason's next review can address the proposed physical question, schedule, costs and the new clock finding. A separate clock-compatibility ruling is needed before any apparatus correction. If that changes the instrument, prepare a new exact packet under the new verified identity and obtain a distinct genuine execution authorization. No pre-approval of such changes is implied here. The held object's hash is not permission to ignore its own hold.
+
+The prospective case is one fresh continuous trajectory only. No retry, resume, extension, route/phase/source replacement, early-success selection, gain change, physical-law/P change, extra case, scientific lifetime, cohort, sweep or useful-learning gate is part of it. Body, source, field, mover and controller history remain continuous between contacts. Ordinary failure and terminal evidence must be preserved. After any future authorized first stop, report from saved evidence and stop.
+
+Preparation is limited to local source/identity reads, exact copies, harmless scoped access verification, static geometry/renewal/resource/scalar-clock arithmetic, declarative schema/dispatch/denial checks, canonical hashing and packaging. No world or controller call is permitted. All source and prior evidence files remain immutable. There are no Git writes, commits, pushes, PRs, merges or workbench navigation edits in this task.

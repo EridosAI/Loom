@@ -1,0 +1,737 @@
+{
+  "scope": "Read-only checks of historical R1-P events; not a new regression run or A1 witness. Contact/transfer outcomes were not used to select this A1.",
+  "cases": {
+    "review-exact": {
+      "maximum_ledger_residual": 2.8152410551417553e-17,
+      "existing_arithmetic_tolerance": 1e-12,
+      "rows": [
+        {
+          "event_index": 0,
+          "time": 0.0,
+          "duration": 0.0,
+          "contacts": [],
+          "event_kind": "release",
+          "body_position": [
+            2.0,
+            3.0
+          ],
+          "body_angle": 1.557638052356994,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 0.0,
+          "energy_delta": 0.0,
+          "expenditure": 0.0,
+          "energy_residual": 0.0,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 1,
+          "time": 0.00099450757408153,
+          "duration": 0.00099450757408153,
+          "contacts": [],
+          "event_kind": null,
+          "body_position": [
+            1.9999999999503466,
+            3.000000751235751
+          ],
+          "body_angle": 1.557638052356994,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 2.8152410551417553e-17,
+          "energy_delta": -2.486268935175673e-06,
+          "expenditure": 2.4862689352038252e-06,
+          "energy_residual": 2.8152410551417553e-17,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 2,
+          "time": 0.00099450757408153,
+          "duration": 0.0,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -0.9999999999997178,
+                7.512357509023137e-07
+              ],
+              "impulse": 0.0,
+              "relative_speed": 0.0007553846468553158,
+              "source": 0
+            }
+          ],
+          "event_kind": "recontact_or_first_touch",
+          "body_position": [
+            1.9999999999503466,
+            3.000000751235751
+          ],
+          "body_angle": 1.557638052356994,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 0.0,
+          "energy_delta": 0.0,
+          "expenditure": 0.0,
+          "energy_residual": 0.0,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 3,
+          "time": 0.010000000000000002,
+          "duration": 0.009005492425918471,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -0.9999999999997178,
+                7.512357509023137e-07
+              ],
+              "impulse": 8.959524910936223e-05,
+              "relative_speed": 0.007561453943299659,
+              "source": 0,
+              "force": 0.009948956133870092
+            }
+          ],
+          "event_kind": null,
+          "body_position": [
+            2.000000000001502,
+            3.0000688458519664
+          ],
+          "body_angle": 1.557638052356994,
+          "source_debit": [
+            9.769708392975973e-06,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            9.769708392980491e-06,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 9.769708392978331e-06,
+          "energy_delta": -1.2744022671817845e-05,
+          "expenditure": 2.2513731064796176e-05,
+          "energy_residual": -2.159934015498466e-18,
+          "damage": 0.0,
+          "restoration": 0.0
+        }
+      ]
+    },
+    "different-normal-force": {
+      "maximum_ledger_residual": 3.81130944946545e-17,
+      "existing_arithmetic_tolerance": 1e-12,
+      "rows": [
+        {
+          "event_index": 0,
+          "time": 0.0,
+          "duration": 0.0,
+          "contacts": [],
+          "event_kind": "release",
+          "body_position": [
+            2.0,
+            3.0
+          ],
+          "body_angle": 1.5444774990024497,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 0.0,
+          "energy_delta": 0.0,
+          "expenditure": 0.0,
+          "energy_residual": 0.0,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 1,
+          "time": 0.0004952031080175746,
+          "duration": 0.0004952031080175746,
+          "contacts": [],
+          "event_kind": null,
+          "body_position": [
+            1.9999999999537288,
+            3.000000186261183
+          ],
+          "body_angle": 1.5444774990024497,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": -3.293984076929886e-17,
+          "energy_delta": -1.2380077700768766e-06,
+          "expenditure": 1.2380077700439367e-06,
+          "energy_residual": -3.293984076929886e-17,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 2,
+          "time": 0.0004952031080175746,
+          "duration": 0.0,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -0.9999999999999827,
+                1.8626118291313244e-07
+              ],
+              "impulse": 0.0,
+              "relative_speed": 0.0003761308962445562,
+              "source": 0
+            }
+          ],
+          "event_kind": "recontact_or_first_touch",
+          "body_position": [
+            1.9999999999537288,
+            3.000000186261183
+          ],
+          "body_angle": 1.5444774990024497,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 0.0,
+          "energy_delta": 0.0,
+          "expenditure": 0.0,
+          "energy_residual": 0.0,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 3,
+          "time": 0.01,
+          "duration": 0.009504796891982425,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -0.9999999999999827,
+                1.8626118291313244e-07
+              ],
+              "impulse": 0.0001891011720850896,
+              "relative_speed": 0.007559498101789986,
+              "source": 0,
+              "force": 0.0198953406615771
+            }
+          ],
+          "event_kind": null,
+          "body_position": [
+            1.9999999999671119,
+            3.000072037755246
+          ],
+          "body_angle": 1.5444774990024497,
+          "source_debit": [
+            1.8909412818957083e-05,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            1.8909412818954664e-05,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 1.8909412818992777e-05,
+          "energy_delta": -4.852579410963287e-06,
+          "expenditure": 2.3761992229956064e-05,
+          "energy_residual": 3.81130944946545e-17,
+          "damage": 0.0,
+          "restoration": 0.0
+        }
+      ]
+    },
+    "reflected-longer-flight": {
+      "maximum_ledger_residual": 6.710195008148567e-18,
+      "existing_arithmetic_tolerance": 1e-12,
+      "rows": [
+        {
+          "event_index": 0,
+          "time": 0.0,
+          "duration": 0.0,
+          "contacts": [],
+          "event_kind": "release",
+          "body_position": [
+            2.0,
+            3.0
+          ],
+          "body_angle": -1.557638052356994,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 0.0,
+          "energy_delta": 0.0,
+          "expenditure": 0.0,
+          "energy_residual": 0.0,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 1,
+          "time": 0.001994727945572963,
+          "duration": 0.001994727945572963,
+          "contacts": [],
+          "event_kind": null,
+          "body_position": [
+            1.9999999999346783,
+            2.999996979281463
+          ],
+          "body_angle": -1.557638052356994,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": -6.710195008148567e-18,
+          "energy_delta": -4.986819863939118e-06,
+          "expenditure": 4.986819863932408e-06,
+          "energy_residual": -6.710195008148567e-18,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 2,
+          "time": 0.001994727945572963,
+          "duration": 0.0,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -0.9999999999954376,
+                -3.020718536872311e-06
+              ],
+              "impulse": 0.0,
+              "relative_speed": 0.0015143511398127065,
+              "source": 0
+            }
+          ],
+          "event_kind": "recontact_or_first_touch",
+          "body_position": [
+            1.9999999999346783,
+            2.999996979281463
+          ],
+          "body_angle": -1.557638052356994,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 0.0,
+          "energy_delta": 0.0,
+          "expenditure": 0.0,
+          "energy_residual": 0.0,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 3,
+          "time": 0.01,
+          "duration": 0.008005272054427037,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -0.9999999999954376,
+                -3.020718536872311e-06
+              ],
+              "impulse": 7.967740630933798e-05,
+              "relative_speed": 0.0075614401403775785,
+              "source": 0,
+              "force": 0.009953116617101748
+            }
+          ],
+          "event_kind": null,
+          "body_position": [
+            2.0000000001175264,
+            2.999936447896016
+          ],
+          "body_angle": -1.557638052356994,
+          "source_debit": [
+            8.687983669874999e-06,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            8.68798366988469e-06,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 8.687983669884462e-06,
+          "energy_delta": -1.132519646618313e-05,
+          "expenditure": 2.001318013606759e-05,
+          "energy_residual": -2.286988957586611e-19,
+          "damage": 0.0,
+          "restoration": 0.0
+        }
+      ]
+    },
+    "radial-original": {
+      "maximum_ledger_residual": 3.7052609244692114e-17,
+      "existing_arithmetic_tolerance": 1e-12,
+      "rows": [
+        {
+          "event_index": 0,
+          "time": 0.0,
+          "duration": 0.0,
+          "contacts": [],
+          "event_kind": "release",
+          "body_position": [
+            2.0,
+            3.0
+          ],
+          "body_angle": 0.0,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 0.0,
+          "energy_delta": 0.0,
+          "expenditure": 0.0,
+          "energy_residual": 0.0,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 1,
+          "time": 0.001314902274074009,
+          "duration": 0.001314902274074009,
+          "contacts": [],
+          "event_kind": null,
+          "body_position": [
+            1.9999999999777078,
+            3.0
+          ],
+          "body_angle": 0.0,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": -2.868519427524051e-17,
+          "energy_delta": -3.287255685213708e-06,
+          "expenditure": 3.287255685185023e-06,
+          "energy_residual": -2.868519427524051e-17,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 2,
+          "time": 0.001314902274074009,
+          "duration": 0.0,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -1.0,
+                0.0
+              ],
+              "impulse": 0.0,
+              "relative_speed": 1.6953498837863484e-08,
+              "source": 0
+            }
+          ],
+          "event_kind": "recontact_or_first_touch",
+          "body_position": [
+            1.9999999999777078,
+            3.0
+          ],
+          "body_angle": 0.0,
+          "source_debit": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 0.0,
+          "energy_delta": 0.0,
+          "expenditure": 0.0,
+          "energy_residual": 0.0,
+          "damage": 0.0,
+          "restoration": 0.0
+        },
+        {
+          "event_index": 3,
+          "time": 0.01,
+          "duration": 0.00868509772592599,
+          "contacts": [
+            {
+              "collider": "source-0",
+              "material": 2,
+              "normal": [
+                -1.0,
+                0.0
+              ],
+              "impulse": 0.006572053775671383,
+              "relative_speed": 0.0,
+              "source": 0,
+              "force": 0.7567046431789783
+            }
+          ],
+          "event_kind": null,
+          "body_position": [
+            1.9999999999777078,
+            3.0
+          ],
+          "body_angle": 0.0,
+          "source_debit": [
+            9.205682506430168e-05,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "transfer": [
+            9.205682506430159e-05,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "body_credit": 9.205682506427761e-05,
+          "energy_delta": 7.034408074946263e-05,
+          "expenditure": 2.1712744314814977e-05,
+          "energy_residual": -2.3974420539085717e-17,
+          "damage": 8.801558688379771e-05,
+          "restoration": 0.0
+        }
+      ]
+    }
+  }
+}

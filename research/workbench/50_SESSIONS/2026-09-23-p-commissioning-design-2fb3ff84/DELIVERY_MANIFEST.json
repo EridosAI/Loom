@@ -1,0 +1,281 @@
+{
+  "package": "P coupling commissioning design v0.1 review draft",
+  "session": "50_SESSIONS/2026-09-23-p-commissioning-design-2fb3ff84",
+  "checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "scope": "Portable reading documents and unchanged selected references; no executable commissioning apparatus.",
+  "files": {
+    "COMPLETION_REPORT.md": {
+      "bytes": 3522,
+      "sha256": "cb7fc2f886b82493e9bf22c013f995b754536ce50617d1af96a13bdadd300fd6"
+    },
+    "COMPUTE_ESTIMATE.json": {
+      "bytes": 1978,
+      "sha256": "c7e2615ae533057dd1c56608f378f37f6b3f44bb005688a2408946c05538eb0d"
+    },
+    "DECISIONS_REQUIRED_BEFORE_EXECUTION.md": {
+      "bytes": 3938,
+      "sha256": "9ecfc5125dd7df00ba0f6d864c6429c475d4e803d393a4dc62eb24a658a27a3b"
+    },
+    "P_COMMISSIONING_CONFIGURATION_CHANGE_RULES_v0_1.md": {
+      "bytes": 16147,
+      "sha256": "b4ebf441a56f4cf08a17fba842a9eae003819cc8d8b7b29b1285fff6de8e6229"
+    },
+    "P_COMMISSIONING_MATRIX_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 11461,
+      "sha256": "c653e378d5413bc95b8056624d6742d6d02298385dccb84b57f9a2d306beca90"
+    },
+    "P_COMMISSIONING_PLAIN_LANGUAGE_WALKTHROUGH_v0_1.md": {
+      "bytes": 14764,
+      "sha256": "b93f5471379e510559c4eaff29d0186664c3f1a25b00a16477a8373f098fea9e"
+    },
+    "P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 49871,
+      "sha256": "d25c9829d799fd497f1598ea64afb448a3558fd886105eacf737c1cb8bbae42c"
+    },
+    "READING_COPY_IDENTITIES.json": {
+      "bytes": 11732,
+      "sha256": "37f7b42ab24dacfecd2da9144f0ec93de7166cd2769b40d12ba2f685834902fb"
+    },
+    "REFERENCES/ARTIFACT_MANIFEST.json": {
+      "bytes": 29567,
+      "sha256": "89cd6074f8deb5dccd6dfc2c11fddbebdecad9b135340215e9f964cefb56cfd2"
+    },
+    "REFERENCES/COMMISSIONING_DESIGN_REQUEST.txt": {
+      "bytes": 11181,
+      "sha256": "e9517c0b62e2ab9fbd3ff2de46a4d18bd4577fabd0ddf3549ad567f9451f060a"
+    },
+    "REFERENCES/developmental_ecology/artifacts/prehistory-attempt-001/manifest.json": {
+      "bytes": 2020,
+      "sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3"
+    },
+    "REFERENCES/developmental_ecology/artifacts/smoke-birth_30s-attempt-004/manifest.json": {
+      "bytes": 6078,
+      "sha256": "c58c6a07b4cfe289fd46f14750829c9b3cb5701c48e90515f26214d5299ce6e3"
+    },
+    "REFERENCES/developmental_ecology/artifacts/smoke-contact_ui_1s-attempt-004/manifest.json": {
+      "bytes": 5699,
+      "sha256": "a9af8d381cf05b2674951ca4e198db49d681dea3aca4173b37b53620194e3435"
+    },
+    "REFERENCES/developmental_ecology/artifacts/smoke-nonzero_resume_1s-attempt-004/manifest.json": {
+      "bytes": 5887,
+      "sha256": "20afcb688be72153313edf157012e26619cf7604d8139ce47c4e5384e3c16947"
+    },
+    "REFERENCES/developmental_ecology/configuration.json": {
+      "bytes": 3445,
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9"
+    },
+    "REFERENCES/developmental_ecology/loom_p/__init__.py": {
+      "bytes": 99,
+      "sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a"
+    },
+    "REFERENCES/developmental_ecology/loom_p/chemistry.py": {
+      "bytes": 4565,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    "REFERENCES/developmental_ecology/loom_p/diagnostics.py": {
+      "bytes": 4887,
+      "sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0"
+    },
+    "REFERENCES/developmental_ecology/loom_p/engine.py": {
+      "bytes": 9957,
+      "sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d"
+    },
+    "REFERENCES/developmental_ecology/loom_p/geometry.py": {
+      "bytes": 8616,
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3"
+    },
+    "REFERENCES/developmental_ecology/loom_p/inspector.py": {
+      "bytes": 20150,
+      "sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83"
+    },
+    "REFERENCES/developmental_ecology/loom_p/neural.py": {
+      "bytes": 15195,
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca"
+    },
+    "REFERENCES/developmental_ecology/loom_p/physics.py": {
+      "bytes": 19333,
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783"
+    },
+    "REFERENCES/developmental_ecology/loom_p/prehistory.py": {
+      "bytes": 6513,
+      "sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588"
+    },
+    "REFERENCES/developmental_ecology/loom_p/reconstruction.py": {
+      "bytes": 1879,
+      "sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b"
+    },
+    "REFERENCES/developmental_ecology/loom_p/records.py": {
+      "bytes": 7470,
+      "sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e"
+    },
+    "REFERENCES/developmental_ecology/loom_p/schema.py": {
+      "bytes": 7190,
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc"
+    },
+    "REFERENCES/developmental_ecology/loom_p/smokes.py": {
+      "bytes": 5575,
+      "sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+    },
+    "REFERENCES/docs/developmental_ecology/p_correction_20260923/BUILD_REPORT.md": {
+      "bytes": 14357,
+      "sha256": "3094e7525233707fea5d6d8e73df5029e4b6011a30804302741e96f169a6f00f"
+    },
+    "REFERENCES/docs/developmental_ecology/p_correction_20260923/CORRECTION_EQUATION_TEST_MAP.md": {
+      "bytes": 2379,
+      "sha256": "f57783fff90d88f150cdc803be01dbf0a521f33261cc212d818ee29251cb1d17"
+    },
+    "REFERENCES/docs/developmental_ecology/p_correction_20260923/EXECUTION_LEDGER.md": {
+      "bytes": 2646,
+      "sha256": "00d3c239327360b8efc78a0d27ece415134ea01fa83ae31bb9d839564261bf64"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/BUILD_REPORT.md": {
+      "bytes": 13552,
+      "sha256": "4903b3b8aadaaa1d3b8a7105d03502594a8f11287a80d7a466591fa1bb93b65d"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/EQUATION_TO_CODE_AND_TEST_MAP.md": {
+      "bytes": 6565,
+      "sha256": "91f28597f5f03829ac074014f1b2d297a120499816e9d4fde66674cd4347be9d"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/EXECUTION_LEDGER.md": {
+      "bytes": 3111,
+      "sha256": "36f12b7a3174461f22af2cdb785a58381192e70d104daae4ec93b35368c47616"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/IMPLEMENTATION_ANNEX.md": {
+      "bytes": 6277,
+      "sha256": "f2185a0e1f29d3da2659119140193485b7873a29841f274e4391011b184e7279"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/IMPLEMENTED_P_DATA_FLOW.md": {
+      "bytes": 8880,
+      "sha256": "306ebdfbb1c26cce2fa9e450be1eb715f7fb4715731c7059d2c1e89238f65a48"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/JASON_RULING_2026-09-22.md": {
+      "bytes": 2406,
+      "sha256": "fb367ae5738051f0047bb5cd44d8e1fe516dfe1b376d63b903c54ff383348a44"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/LIMITATIONS_AND_FOLLOWUP.md": {
+      "bytes": 3105,
+      "sha256": "d2eec29f245fd5b196698a70b33d2634f949e76a987ebef1dd56c5fad4cd90eb"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/OPEN_ISSUE_LIGHT_BOUNDARY.md": {
+      "bytes": 4559,
+      "sha256": "066e3ad1415454e7dab354c2ce617e81b0285fd41de0fed3120cf02ad9a5c2b6"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/PRIOR_CHECKPOINT_REPORT.md": {
+      "bytes": 8568,
+      "sha256": "7325e144f271d426cbc1851e8ed9909a3533dfd2b1d8af5581add3dc72b0aafc"
+    },
+    "REFERENCES/docs/developmental_ecology/p_engineering_20260921/PROPOSED_WORKBENCH_STATUS_UPDATE.md": {
+      "bytes": 1556,
+      "sha256": "0f272fbc98a846cfe81a2910ee123c07bf8b703253f7d9db8e43f0fabf656b94"
+    },
+    "REFERENCES/docs/developmental_ecology/p_r1p_correction_20260923/BUILD_REPORT.md": {
+      "bytes": 14820,
+      "sha256": "b3383de971c71a48d3153c67df276543a56329cbaa71332300b0d7b4ddfd11a0"
+    },
+    "REFERENCES/docs/developmental_ecology/p_r1p_correction_20260923/EXECUTION_LEDGER.md": {
+      "bytes": 2188,
+      "sha256": "3291aa41512ab708b317dde13dea65652ede140993bd8e2e820fbdf7e68b4af2"
+    },
+    "REFERENCES/LOOM_P_FINAL_INDEPENDENT_R1P_FIDELITY_REVIEW.md": {
+      "bytes": 33791,
+      "sha256": "8e9bcddfd19bcd1cc362f93186d6656ed0ee9f75b78fad4c8ef02ec1962e3a25"
+    },
+    "REFERENCES/review_inputs/pinned_git_blobs/00_LOOM_CURRENT_STATE.md": {
+      "bytes": 13757,
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b"
+    },
+    "REFERENCES/review_inputs/pinned_git_blobs/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md": {
+      "bytes": 59939,
+      "sha256": "97756677a5c7d659198cb49a4771de43741bb4b05c17de017cd94973a05a67ab"
+    },
+    "REFERENCES/review_inputs/pinned_git_blobs/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md": {
+      "bytes": 29585,
+      "sha256": "80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef"
+    },
+    "REFERENCES/review_inputs/pinned_git_blobs/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md": {
+      "bytes": 25684,
+      "sha256": "729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab"
+    },
+    "REFERENCES/review_inputs/pinned_git_blobs/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md": {
+      "bytes": 31840,
+      "sha256": "9cb58ab268acb7a6023c0a7ab80fa2f1a816de69dabf1df2b48fe7d4c597edbc"
+    },
+    "REFERENCES/review_inputs/sources/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md": {
+      "bytes": 38379,
+      "sha256": "34bd519bb01253f783521204c9e6358b11703282ec322f4707e5ece1bb6a4da4"
+    },
+    "REFERENCES/review_inputs/sources/LOOM_P_SPECIFICATION_HANDOFF_2026-09-20.md": {
+      "bytes": 21878,
+      "sha256": "c133f2114a1b41254c5965f61ae202c9b198733173bdc9e9d8193164be12be33"
+    },
+    "REFERENCES/review_inputs/sources/P_IMPLEMENTATION_AND_OBSERVATION_SPEC_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 68773,
+      "sha256": "f1af7cf234e15c0215848c5775d7f84c2d8edbeea389dce53b889b1cfa9c64ba"
+    },
+    "REFERENCES/review_inputs/sources/P_PLAIN_LANGUAGE_DATA_FLOW_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 32906,
+      "sha256": "c31218c3f65bb4e5d35d02a9030978c25504f3d93a7a95682e2255d701d8294b"
+    },
+    "REFERENCES/review_inputs/sources/P_SPECIFICATION_DESIGN_REVIEW.md": {
+      "bytes": 19317,
+      "sha256": "f490e9c91ad62fc34a26c81de914dfeff6ffa22c2a11436179b888ca84fe7d62"
+    },
+    "REFERENCES/review_inputs/workbench/00_RESEARCH_MAP.md": {
+      "bytes": 5685,
+      "sha256": "3c41c9fbad74fd5efbf59eb405a18f9bb1ff49df5076dbeef9f4323bc5e7491d"
+    },
+    "REFERENCES/review_inputs/workbench/01_WORKSPACE_STATUS.md": {
+      "bytes": 7462,
+      "sha256": "87dd151c48bfbb73b1cee0d1751434ea959d2760cfcc3dba1eed14184d9cf410"
+    },
+    "REFERENCES/review_inputs/workbench/40_DECISIONS/DECISION-P-SPECIFICATION-2026-09-20-83a00674.md": {
+      "bytes": 6635,
+      "sha256": "93075ad480ccead93ac70a4134b55b298aef763f1fc205f020f1c6a2f345996c"
+    },
+    "REFERENCES/review_inputs/workbench/90_SOURCES/reference_7ada2b300fa1/00_LOOM_CURRENT_STATE.md": {
+      "bytes": 13757,
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b"
+    },
+    "REFERENCES/review_inputs/workbench/90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md": {
+      "bytes": 59939,
+      "sha256": "b647f4e7f61deb09eea83272be9a2f3229f838de753a835447f64e91977e0d45"
+    },
+    "REFERENCES/review_inputs/workbench/90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md": {
+      "bytes": 29585,
+      "sha256": "80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef"
+    },
+    "REFERENCES/review_inputs/workbench/90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md": {
+      "bytes": 25684,
+      "sha256": "729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab"
+    },
+    "REFERENCES/review_inputs/workbench/90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md": {
+      "bytes": 31840,
+      "sha256": "3ecb0bc5627003ee3f8e464d677e175692ac0a0ac94fa9a22d2c45e1496ac5b6"
+    },
+    "REFERENCES/review_inputs/workbench/AGENTS.md": {
+      "bytes": 8812,
+      "sha256": "4a6d5a5fe00a956aff1661d8fbffeeede026863bb9c0ed818013a12eacc40a56"
+    },
+    "REFERENCES/review_inputs/workbench/INBOX/2026-09-21-p-engineering-build/LOOM_P_ENGINEERING_BUILD_HANDOFF_2026-09-21.md": {
+      "bytes": 30746,
+      "sha256": "0227310e66cc32e254dee20ff97858163f5667d9274d2198c4171332061786eb"
+    },
+    "REFERENCES/review_inputs/workbench/INBOX/2026-09-21-p-engineering-build/SOURCE_MANIFEST.json": {
+      "bytes": 2100,
+      "sha256": "760e7eb338232715f1f04ba8d36284c4b485a9f60ac6e266e17f6d1f01c3bc58"
+    },
+    "SOURCE_GUIDE.md": {
+      "bytes": 9002,
+      "sha256": "92db9b3e98267aaf5ae5da58d744d69d561175d6b70069dc021e198faec9c91d"
+    },
+    "SOURCE_IDENTITIES.json": {
+      "bytes": 2544,
+      "sha256": "0536bb35b095cd02d5ab132989a36f990584ae197fb3d46195b5538fdf8067bc"
+    },
+    "VALIDATION.json": {
+      "bytes": 2003,
+      "sha256": "c368cd107a006f70f12404c37da47e720b15e4615abf3cf90ceaf66111ea2489"
+    }
+  },
+  "exclusions": "This manifest, the containing ZIP and its checksum receipt are excluded to avoid self-reference."
+}

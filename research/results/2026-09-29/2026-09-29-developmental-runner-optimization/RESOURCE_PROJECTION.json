@@ -1,0 +1,80 @@
+{
+  "status": "engineering estimate and proposed reserves; no scientific execution authority",
+  "basis": {
+    "execution_wall_seconds_per_simulated_second": 0.33969948916657206,
+    "measured_long_seconds": 600,
+    "fixed_final_setup_seconds": 0.5166010999819264,
+    "proposed_wall_rate": 0.55,
+    "MB_unit": "decimal 1000000",
+    "same_fixture_only": true,
+    "runtime_worker_count": 1
+  },
+  "stages": {
+    "initial": {
+      "simulated_seconds": 7200,
+      "segments": 12,
+      "expected_execution_seconds": 2452.035535199102,
+      "proposed_execution_cap_seconds": 3984.0000000000005,
+      "expected_primary_bytes": 627168792,
+      "expected_archive_bytes": 630304636,
+      "expected_full_verification_seconds": 103.83167759981006,
+      "proposed_primary_cap_bytes": 1000000000,
+      "proposed_archive_cap_bytes": 1000000000,
+      "temporary_workspace_allowance_bytes": 250000000
+    },
+    "continuation_1": {
+      "simulated_seconds": 1200,
+      "segments": 4,
+      "expected_execution_seconds": 409.7057913998142,
+      "proposed_execution_cap_seconds": 668.0,
+      "expected_primary_bytes": 108207017,
+      "expected_archive_bytes": 108748052,
+      "expected_full_verification_seconds": 17.305279599968344,
+      "proposed_primary_cap_bytes": 173131228,
+      "proposed_archive_cap_bytes": 173131228,
+      "temporary_workspace_allowance_bytes": 250000000
+    },
+    "continuation_2": {
+      "simulated_seconds": 1800,
+      "segments": 2,
+      "expected_execution_seconds": 612.4922826997936,
+      "proposed_execution_cap_seconds": 994.0000000000001,
+      "expected_primary_bytes": 158631641,
+      "expected_archive_bytes": 159424799,
+      "expected_full_verification_seconds": 25.957919399952516,
+      "proposed_primary_cap_bytes": 253810625,
+      "proposed_archive_cap_bytes": 253810625,
+      "temporary_workspace_allowance_bytes": 250000000
+    },
+    "maximum_total": {
+      "simulated_seconds": 10200,
+      "segments": 18,
+      "expected_execution_seconds": 3474.23360929871,
+      "proposed_execution_cap_seconds": 5646.0,
+      "expected_primary_bytes": 894007450,
+      "expected_archive_bytes": 898477487,
+      "expected_full_verification_seconds": 147.09487659973092,
+      "proposed_primary_cap_bytes": 1500000000,
+      "proposed_archive_cap_bytes": 1500000000,
+      "temporary_workspace_allowance_bytes": 250000000
+    }
+  },
+  "possible_twelve_missing_prehistories": {
+    "new_preparation_occurred": false,
+    "historical_per_phase_seconds": 65.17840160000014,
+    "projected_seconds": 782.1408192000017,
+    "proposed_separate_reserve_seconds": 1200
+  },
+  "analysis_proposal": {
+    "up_to_four_selected_60_second_deep_intervals": true,
+    "wall_reserve_seconds": 900,
+    "output_reserve_bytes": 500000000
+  },
+  "verification_cap_seconds": {
+    "initial": 180,
+    "maximum_total": 300
+  },
+  "archive_wall_allowance_seconds": 120,
+  "RAM_working_set_allowance_bytes": 500000000,
+  "RAM_commit_allowance_bytes": 2500000000
+}

@@ -1,0 +1,98 @@
+{
+  "mode": "old-b",
+  "source": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology",
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "held_A5_sha256": "88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6",
+  "held_manifest_sha256": "bb4c8584e368583b81a3916ee12944fd807ee12fbf0d3ab803bfa9bd51fd445a",
+  "scope": "Native/scalar scheduling only. No A5 commands/world/trajectory or new authority.",
+  "independent_oracle": "80-digit Decimal admission, Python integer range and bisect_right ownership; no production deadline predicate used to construct expected results.",
+  "expected_stage_ends": [
+    9000,
+    12000,
+    27000,
+    30000,
+    45000,
+    48000,
+    63000
+  ],
+  "source_identity": {
+    "controllers.py": {
+      "bytes": 7600,
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e"
+    },
+    "pending.py": {
+      "bytes": 6756,
+      "sha256": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8"
+    },
+    "runner.py": {
+      "bytes": 18123,
+      "sha256": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57"
+    },
+    "authority.py": {
+      "bytes": 10790,
+      "sha256": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca"
+    },
+    "validators.py": {
+      "bytes": 8285,
+      "sha256": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a"
+    },
+    "adapter.py": {
+      "bytes": 6032,
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+    }
+  },
+  "exact_crossing_expression": {
+    "file": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\runner.py",
+    "line": 174,
+    "code": "require(end <= until or dispatch['time_due'](until, end), 'command hold would cross prescribed stage boundary')"
+  },
+  "old_B": {
+    "native_index": 27000,
+    "physical_time": 269.99999999989944,
+    "nominal": 270.0,
+    "selected_stage": 2,
+    "expected_stage": 3,
+    "until": 270.0,
+    "prospective_hold_end": 270.09999999989947,
+    "stage_loop_line": 76,
+    "result": {
+      "accepted": false,
+      "message": "command hold would cross prescribed stage boundary",
+      "frames": [
+        {
+          "file": "check_schedule.py",
+          "line": 50,
+          "function": "outcome"
+        },
+        {
+          "file": "check_schedule.py",
+          "line": 144,
+          "function": "<lambda>"
+        },
+        {
+          "file": "runner.py",
+          "line": 174,
+          "function": "<module>"
+        },
+        {
+          "file": "contract.py",
+          "line": 29,
+          "function": "require"
+        }
+      ]
+    },
+    "earlier_clock_guard_invoked": false
+  },
+  "physical_scalar_timestamps_unchanged": true,
+  "held_files_unchanged": true,
+  "fence": {
+    "blocked_calls": [],
+    "waypoint_command_calls": 0,
+    "world_constructors": 0,
+    "world_steps": 0,
+    "field_steps": 0,
+    "neural_steps": 0,
+    "random_draws": 0,
+    "Run_constructors": 0
+  }
+}

@@ -1,0 +1,396 @@
+{
+  "case": "PC-HOLD",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T02:56:44.177161+00:00",
+  "authority_sha256": "ac1c5615c2c99ebe2524e3648b81003d7eeb42f1b54493212afd8d3cb83d719f",
+  "apparatus": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "outcome": "NOT DEMONSTRATED — PREDECLARED 1.0 s TARGET NOT OBTAINED",
+  "physical_gentle_hold_target_met": false,
+  "target_seconds": 1.0,
+  "stress_threshold": 0.25,
+  "support_intervals": [
+    {
+      "start": 0.23365622892364132,
+      "end": 1.1000000000000008,
+      "force_min": 0.03766612096688215,
+      "force_max": 0.7560498757636226,
+      "event_count": 87,
+      "stress_damage": 0.0006696064479052632,
+      "duration": 0.8663437710763594
+    },
+    {
+      "start": 1.9146073223481745,
+      "end": 2.199999999999997,
+      "force_min": 0.5804999308455787,
+      "force_max": 0.6681832061534344,
+      "event_count": 29,
+      "stress_damage": 0.00212712987666323,
+      "duration": 0.2853926776518225
+    },
+    {
+      "start": 2.927208744200232,
+      "end": 3.2099999999999755,
+      "force_min": 0.003096833522541859,
+      "force_max": 0.17207412098742889,
+      "event_count": 29,
+      "stress_damage": 0.0,
+      "duration": 0.2827912557997436
+    }
+  ],
+  "qualifying_gentle_intervals": [
+    {
+      "start": 0.3000000000000001,
+      "end": 1.1000000000000008,
+      "force_min": 0.03766612096688215,
+      "force_max": 0.1508622698329131,
+      "event_count": 80,
+      "stress_damage": 0.0,
+      "duration": 0.8000000000000007
+    },
+    {
+      "start": 2.927208744200232,
+      "end": 3.2099999999999755,
+      "force_min": 0.003096833522541859,
+      "force_max": 0.17207412098742889,
+      "event_count": 29,
+      "stress_damage": 0.0,
+      "duration": 0.2827912557997436
+    }
+  ],
+  "longest_qualifying_gentle_interval": {
+    "start": 0.3000000000000001,
+    "end": 1.1000000000000008,
+    "force_min": 0.03766612096688215,
+    "force_max": 0.1508622698329131,
+    "event_count": 80,
+    "stress_damage": 0.0,
+    "duration": 0.8000000000000007
+  },
+  "first_positive_contact_event": 0.23365622892364132,
+  "first_native_contact_sample": 0.24000000000000007,
+  "impact_event_times": [
+    0.23365622892364132,
+    1.9146073223481745,
+    2.927208744200232
+  ],
+  "impact_damage": 0.0034533802327234996,
+  "sustained_stress_damage": 0.002796736324568494,
+  "total_damage": 0.006250116557291993,
+  "expenditure": 0.00901,
+  "repair": 0.0,
+  "starting_EI": [
+    0.7,
+    1.0
+  ],
+  "final_EI": [
+    0.6909899999999866,
+    0.993749883442708
+  ],
+  "final_position": [
+    0.5177705612584503,
+    6.38066764626715
+  ],
+  "final_orientation": 1.296101428769165,
+  "actual_stop_cause": "operator_withdrawal",
+  "actual_runtime_status": "administrative_pause",
+  "simulated_seconds": 3.899999999999961,
+  "wall_seconds": 1043.4021172000212,
+  "native_steps": 390,
+  "commands": 39,
+  "record_counts": {
+    "sensor": 391,
+    "operator": 81,
+    "controller": 39,
+    "native": 390,
+    "events": 399,
+    "diagnostics": 390
+  },
+  "command_history": [
+    {
+      "time": 0.0,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 0.09999999999999999,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 0.20000000000000004,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 0.3000000000000001,
+      "pair": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "time": 0.4000000000000002,
+      "pair": [
+        0.1,
+        0.1
+      ]
+    },
+    {
+      "time": 0.5000000000000002,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.6000000000000003,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.7000000000000004,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.8000000000000005,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.9000000000000006,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 1.0000000000000007,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 1.1000000000000008,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 1.2000000000000008,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 1.300000000000001,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 1.400000000000001,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 1.500000000000001,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 1.6000000000000012,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 1.7000000000000013,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 1.8000000000000014,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 1.9000000000000015,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 2.0000000000000013,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 2.099999999999999,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 2.199999999999997,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 2.299999999999995,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 2.399999999999993,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 2.4999999999999907,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 2.5999999999999885,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 2.6999999999999864,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 2.7999999999999843,
+      "pair": [
+        1.0,
+        -1.0
+      ]
+    },
+    {
+      "time": 2.899999999999982,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 2.99999999999998,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 3.099999999999978,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 3.1999999999999758,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 3.2999999999999736,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 3.3999999999999715,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 3.4999999999999694,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 3.5999999999999672,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 3.699999999999965,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 3.799999999999963,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "operator_assessment": "Jason detected contact, reduced both commands and identified a persistent lower signal. Later he explored other commands and ended the case. This conceptual observation is distinct from the physical duration target.",
+  "assistance": "General sensor explanations, prior PC-CONTACT post-case replay, and public timing clarification at 1.1 s were supplied. No live privileged force feedback or assistant motor commands.",
+  "method": "Read closed event records; positive impulse over positive duration denotes support. Every active contact force must be strictly below 0.25 and recorded sustained damage zero. Contiguous intervals joined only within existing event_time_tol. Initial impact damage retained separately.",
+  "event_time_tolerance": 1e-10,
+  "force_and_stress_arithmetic_verified": true,
+  "all_recorded_artifact_hashes_and_lengths_verified": true,
+  "runtime_receipt_sha256": "bd0db1053809c6c88d84814682385b9a2beb0e963fe164a6f0a4758cfcf9dd18",
+  "additional_simulation_steps": 0,
+  "controller_calls_during_review": 0,
+  "production_code_changes": 0,
+  "assistant_motor_commands": 0,
+  "B1_state_accessed": false,
+  "interpretation": "Disclosed human operator practice only. No P neural/learning test, biological failure, B1 performance inference or retry."
+}

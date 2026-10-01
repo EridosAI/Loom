@@ -1,0 +1,44 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________ test_touch_release_return_duration_and_accounting ______________
+
+    def test_touch_release_return_duration_and_accounting():
+        c,b,stocks=touching_counterexample(); initial=copy.deepcopy(b)
+        force=actuator_forces(c,b,np.ones(2)); vinf=force.sum()/c.linear_drag
+        tr=np.log((vinf-b.velocity[0])/vinf)*c.body_mass/c.linear_drag
+        v,_=free_velocity(c,b,force,tr/2)
+        source=next(f for f in fixtures(c,0,0) if f['id']=='source-0')
+        gap,_=gap_normal(b.position+tr/2*v,c.body_radius,source)
+        assert gap>3000*c.geometry_tol
+        events,elapsed,terminal=advance(c,b,stocks,0.,0.,np.ones(2),.01)
+        releases=[r for r in events if r.get('event_kind')=='release']
+        assert releases and releases[0]['time']==0., 'Touching body must release at the start'
+        flights=[r for r in events if r['duration']>0 and not r['contacts']]
+        assert len(flights)==1, 'A finite free-flight interval must precede recontact'
+        # Swept search stops at geometry_tol, not at an exact zero-gap root. At this
+        # root |gap derivative| is about .001; 2e-7 s covers 1e-10 spatial resolution.
+        assert abs(flights[0]['duration']-tr)<2e-7
+        touches=[r for r in events if r.get('event_kind')=='recontact_or_first_touch']
+        assert len(touches)==1 and touches[0]['time']==flights[0]['time']
+        assert any(x['collider']=='source-0' for x in touches[0]['contacts'])
+        sustained=[r for r in events if r['duration']>0 and r['contacts']]
+        assert len(sustained)==1 and sustained[0]['duration']<.008686
+        assert elapsed==.01 and terminal is None
+        assert sum(r['duration'] for r in events)==pytest.approx(.01,abs=1e-16)
+        assert b.position[0]==pytest.approx(2.,abs=c.geometry_tol*2)
+        for r in events:
+            assert r['energy_after']-r['energy_before']==pytest.approx(r['transfer'].sum()-r['expenditure'],abs=1e-16)
+            assert np.allclose(r['stock_after']-r['stock_before'],r['renewal_first']+r['renewal_second']-r['transfer'],rtol=0,atol=1e-16)
+            expected=c.damage_per_impulse*sum(x['impulse'] if r['impact'] else max(x['impulse']-c.stress_threshold*r['duration'],0) for x in r['contacts'])
+            assert r['damage']==pytest.approx(expected,abs=1e-16)
+>           assert r['integrity_after']-r['integrity_before']==pytest.approx(r['repair']-expected,abs=1e-16)
+E           assert np.float64(0.0) == -8.8015586883...e-05 ± 1.0e-16
+E             
+E             comparison failed
+E             Obtained: 0.0
+E             Expected: -8.801558688379771e-05 ± 1.0e-16
+
+tests\test_corrective_contracts.py:48: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting
+1 failed in 0.07s

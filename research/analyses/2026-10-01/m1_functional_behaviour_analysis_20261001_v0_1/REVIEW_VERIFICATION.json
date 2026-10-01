@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "life": "RS-M1-001",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 22494,
+      "context_pairs_checked": 145,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-002",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 22495,
+      "context_pairs_checked": 84,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-003",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 22496,
+      "context_pairs_checked": 137,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-004",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 22496,
+      "context_pairs_checked": 173,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-005",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 22494,
+      "context_pairs_checked": 134,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-006",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 22494,
+      "context_pairs_checked": 228,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-007",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 22495,
+      "context_pairs_checked": 231,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-008",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 14696,
+      "context_pairs_checked": 248,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-009",
+      "independent_receiver_max_error": 6.938893903907228e-18,
+      "waves": 2999,
+      "context_pairs_checked": 43,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-010",
+      "independent_receiver_max_error": 4.252105395216588e-18,
+      "waves": 2999,
+      "context_pairs_checked": 21,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-011",
+      "independent_receiver_max_error": 4.2945629216977095e-18,
+      "waves": 2999,
+      "context_pairs_checked": 23,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    },
+    {
+      "life": "RS-M1-012",
+      "independent_receiver_max_error": 6.071532165918825e-18,
+      "waves": 2999,
+      "context_pairs_checked": 22,
+      "ledger_age_interval_conservation": true,
+      "bout_sensitivity_preserves_totals": true,
+      "feature_allowlist": true
+    }
+  ],
+  "execution_files_rehashed": 37909,
+  "execution_files_changed": [],
+  "source_files_changed": [],
+  "original_archive_sha256": "a165c5c48e4b9ed6a84a8ba02b7b1bc23ca57f43f38bfe6d0058694969e7e651",
+  "analysis_contact_allocation_max_corrected_seconds": 0.7146120107882119,
+  "methods": "same analyst; independently rearranged bankwise equations, ledger and custody checks; no independent human review",
+  "world_steps": 0,
+  "RNG_draws": 0,
+  "alternate_trajectories": 0,
+  "production_edits": 0
+}

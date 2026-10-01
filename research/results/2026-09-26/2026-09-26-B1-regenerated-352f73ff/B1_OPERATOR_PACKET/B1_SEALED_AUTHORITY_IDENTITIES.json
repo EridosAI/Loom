@@ -1,0 +1,44 @@
+{
+  "authorization_scope": "NOT covered by any positive-control authorization; separately sealed independent authorities.",
+  "order": [
+    "B1-FULL-RAW",
+    "B1-CHEMISTRY-HIDDEN"
+  ],
+  "cases": [
+    {
+      "case": "B1-FULL-RAW",
+      "duration_seconds": 30,
+      "native_ceiling": 3000,
+      "maximum_command_holds": 300,
+      "operator_coordinates": 29,
+      "initial_state_sha256": "1d701ab649a331bbc4d3a117d3e779103d04282c3a83ac520b9c8f17a8a1bbf0",
+      "initial_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+      "canonical_authority_sha256": "2e338ae61dceaac3c3db0863f02cbccf0a9d98eb0842caf06c363207951e7c4c",
+      "previous_held_object_sha256": "552f20a7be5f8d7e85c0d311e0243e500014e1116e4b3fa48f8e5c526caa670a",
+      "execution_grant": null,
+      "execution_specification_validation": true,
+      "null_grant_rejected": true,
+      "disposition": "PREPARED — SEPARATE JASON AUTHORIZATION REQUIRED",
+      "object_location": "sealed evaluator custody; digest only disclosed"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "duration_seconds": 30,
+      "native_ceiling": 3000,
+      "maximum_command_holds": 300,
+      "operator_coordinates": 25,
+      "initial_state_sha256": "1d701ab649a331bbc4d3a117d3e779103d04282c3a83ac520b9c8f17a8a1bbf0",
+      "initial_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+      "canonical_authority_sha256": "4bf57dbfcc56404e3e43122d7359fdeff76363ff6e1cab41e2a942e98b629a33",
+      "previous_held_object_sha256": "7db9d5d7c36bea6aeac4f441385c6e3d892158ab9d8f9c2b807a7eb4f883b1af",
+      "execution_grant": null,
+      "execution_specification_validation": true,
+      "null_grant_rejected": true,
+      "disposition": "PREPARED — SEPARATE JASON AUTHORIZATION REQUIRED",
+      "object_location": "sealed evaluator custody; digest only disclosed"
+    }
+  ],
+  "complete_pair_initial_state_identical": true,
+  "execution_grants": null,
+  "evaluation_release": "After both trials have ended or the pair is explicitly abandoned; never between the pair."
+}

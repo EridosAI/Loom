@@ -1,0 +1,450 @@
+{
+  "purpose": "Reference custody only; not an execution authority",
+  "sources": [
+    {
+      "path": "C:/Users/Jason/.codex/attachments/01150d9f-0d0a-4462-bdb5-74786477f732/Pasted text.txt",
+      "sha256": "9c2cc6cca8d0c35c2c16817e7a0eaa481e519ba5cbd7f0bfb3c1f2dc144f8110",
+      "bytes": 15345
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/AGENTS.md",
+      "sha256": "a74e7cf9054e83c064d75989efdfbdb1b236803762127648996ba9216e34d4ed",
+      "bytes": 1614
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/sources/00_LOOM_CURRENT_STATE(2).md",
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b",
+      "bytes": 13757
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/sources/BASE_WORLD_COMPLETION_v0_1(1).md",
+      "sha256": "97756677a5c7d659198cb49a4771de43741bb4b05c17de017cd94973a05a67ab",
+      "bytes": 59939
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/research_direction_20260929/JASON_DEVELOPMENTAL_SELECTION_CLARIFICATION.md",
+      "sha256": "ff9f56da0ccf496ece166a0fe939d16fdda884e640173d71e6ccf2bb87fe4f89",
+      "bytes": 5250
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FOUNDER_SEARCH_60_LIFE_FINAL_REPORT.md",
+      "sha256": "56be862ea53226bfba70fe810d7b193146c0f40dd76c48b4a9fdced5aea82a63",
+      "bytes": 33584
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/analysis/FS034_INTERPRETATION.md",
+      "sha256": "884bc44dea64b5ce53571764bbfab208a1446f3ea504b533261340c97ecd4d74",
+      "bytes": 6068
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/analysis/ALL_SIXTY_AB.json",
+      "sha256": "c2c1ed886d543eaa47080530edb92842997ad3796ce2339381f6519e21aa6aad",
+      "bytes": 645100
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/INTERRUPTION_NOTE.md",
+      "sha256": "9c9240e4c31a7ade6d9bc0642262a22aeef3fa4992a2197bdd5781ddcbc199ad",
+      "bytes": 2333
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FINAL_DELIVERY_VERIFICATION.json",
+      "sha256": "0b09089ced393213b1a072a9012a1d23c504e02684b0034db5f72a977343d36c",
+      "bytes": 173619
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/impact_integrity_analysis_20260930_v0_1/IMPACT_INTEGRITY_DEVELOPMENT_ANALYSIS_v0_1.md",
+      "sha256": "a5d0362ea155fd4fd900ec94169337c3e26a0dfcd2abaed4c9955467d8aff612",
+      "bytes": 31676
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/impact_integrity_analysis_20260930_v0_1/BEHAVIORAL_EPISODES_ENRICHED.csv",
+      "sha256": "3c0124b19f4c51b62b9e9d3e49b5f878a5bfe099cfb2f2311c27c40acb265cd2",
+      "bytes": 27172
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/impact_integrity_analysis_20260930_v0_1/DESCRIPTIVE_CLASSIFICATIONS.json",
+      "sha256": "54de49b3a281fab8e2b7057cd08bb5d5239f800ac79789be2f06beef71c302dd",
+      "bytes": 3218
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/impact_integrity_analysis_20260930_v0_1/FINAL_VERIFICATION.json",
+      "sha256": "ef4dbb4480079134c6873e4f1865542d7c93a552a84d8c872c26747df814eb2b",
+      "bytes": 52292
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/impact_integrity_analysis_20260930_v0_1/INPUT_CUSTODY.json",
+      "sha256": "afa5630ca806506f5607b6a0caa207fb96c88714e59e9342e41e58bccd4c6ca1",
+      "bytes": 6584934
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_packet_20260930/PREPARATION_BOUNDARY_RESOLUTION.json",
+      "sha256": "c0998e43841d18cdfad0b55c9d0819a77f3e74dcb4bb6521bddc50b03ba525b3",
+      "bytes": 1198
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/configuration.json",
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+      "bytes": 3445
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_p/schema.py",
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "bytes": 7190
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_p/physics.py",
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+      "bytes": 19333
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_p/geometry.py",
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "bytes": 8616
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_p/chemistry.py",
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "bytes": 4565
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_p/engine.py",
+      "sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "bytes": 9957
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_p/prehistory.py",
+      "sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+      "bytes": 6513
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_p/neural.py",
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "bytes": 15195
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_developmental/core.py",
+      "sha256": "9857453c72a4c4398c01daf1285d0705718ef9d4d1f8283ef474a7d73aeb387f",
+      "bytes": 3656
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_developmental/evidence.py",
+      "sha256": "2805addcc842c675261e7978c43c01d48aa2b99358425b15161625e275c5c996",
+      "bytes": 3244
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_developmental/runner.py",
+      "sha256": "a516edec5674abef3dddf39a84f3fbe12a2e473532d9d304763aaefa41538b0a",
+      "bytes": 15605
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_developmental/verify.py",
+      "sha256": "732d98dfda593b13fe369e1fa06d4b8bf6578f3e70b2046bcde13024986428f3",
+      "bytes": 6170
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929/developmental_ecology/loom_developmental/replay.py",
+      "sha256": "68c5af5a403514d91ff41fe39eee10ef88705d72294fdc40c83ecc4a50360a87",
+      "bytes": 5340
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-001_STOP.json",
+      "sha256": "53ba20caddca9cc3131e6c894904122e1d0ca162a06568cf5f36a0ac887cf42d",
+      "bytes": 470
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-002_STOP.json",
+      "sha256": "ce4b4d8d616e9848c30e8d40bec768be4b230367e22191e95a294f483576e336",
+      "bytes": 470
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-003_STOP.json",
+      "sha256": "77bd654cd3551b6d3c89b2cc8198a87dc8cf67ae855aae5b00d0b8c780a92aa6",
+      "bytes": 470
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-004_STOP.json",
+      "sha256": "03c5fc28381652096dce6dfde630519c17a3f089157eb29ca69f17c35549c499",
+      "bytes": 469
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-005_STOP.json",
+      "sha256": "bba91294345afebfa4cdf00eb0d25e7139f6c71244aa4c493e7e6da615b0313a",
+      "bytes": 470
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-006_STOP.json",
+      "sha256": "a51f3597ffa893c047791eb4bed171ab8d45e6aa94fe4067dc88b6f501806f7b",
+      "bytes": 469
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-007_STOP.json",
+      "sha256": "95d49db7b942c88f195233722ad11daec9e99f64554ab9fc8a7e3e75ff111f5f",
+      "bytes": 470
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-008_STOP.json",
+      "sha256": "c85fa845073c3f53fec3053cd1cfee14044ef42a15d2f387d8d66e647c8316de",
+      "bytes": 471
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-009_STOP.json",
+      "sha256": "265462a3b2b628cc6c0b7baa0dc099da1d616f1c180d7c6254dda434e3a796ec",
+      "bytes": 470
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-010_STOP.json",
+      "sha256": "ecef20ff0603a1a1627eadc42e986c2b2b3091fcf75af795959051130cdbf309",
+      "bytes": 469
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-011_STOP.json",
+      "sha256": "23022ca95c0d8408087fb67760ac9d9dc2640c57105f857e85a58ad0a7bdc5d0",
+      "bytes": 468
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_initial_execution_20260930/FS-012_STOP.json",
+      "sha256": "4cb22995a7ff075334515f818847daa5836258b51c5535fc2b74462e861509bb",
+      "bytes": 471
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-013_STOP.json",
+      "sha256": "345694be9456a3819e39c1149511ac7db69ce7a5366d3fc14025736839cc3ad8",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-014_STOP.json",
+      "sha256": "d31522bc5f745de41182cc3b38770d3bfb1d7ac468615e542d985f9b20811450",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-015_STOP.json",
+      "sha256": "6017924550d453546799a7e02aa2a9aab3ee3f57bebb34fcbce2a14960058f3d",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-016_STOP.json",
+      "sha256": "437b15d796e864d67497be6677299d3220acbd11bc69d6e3e3251f842ae9a0b4",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-017_STOP.json",
+      "sha256": "6251869a51d4d1bc9743e7bd4278ee71497954813db7d8a5784fe2eb7f608f1b",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-018_STOP.json",
+      "sha256": "d7d068081234a1fc09eb173bd1722a88f2ddc98e14555f713bd8576e320136e7",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-019_STOP.json",
+      "sha256": "df5b51cc0d26277248c8c96e9dff7fedc9d09e67ba9f7ebb2696743b1abf8d0e",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-020_STOP.json",
+      "sha256": "9a9b8d86937beadea6daf98ebcacbb23c1681bea7b97eb9aaeafc134fd65b1d2",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-021_STOP.json",
+      "sha256": "d2a05a25c47844e195d64aef3a0d856943e088046baa8ab30220b737d0363b77",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-022_STOP.json",
+      "sha256": "6a06f47631cb16f30bedff512f3d5cd905116f07bae4ea79044748df71bb5ec6",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-023_STOP.json",
+      "sha256": "73f023d7118a2fd6aa4d064066474bd20f8a0298836e4f719bc00520904d40bb",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-024_STOP.json",
+      "sha256": "600eb8d30f99685940f1680203a7ab1b1bed92317a707ed71aec6193725d04e3",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-025_STOP.json",
+      "sha256": "911b0d13158439b7941f8df646acd7638b0f2746dd2233bd6be3d1147c3e9070",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-026_STOP.json",
+      "sha256": "3292e8c3d169fc8750b59d3518c86d94e3092107af4efaa08ef5057795418a57",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-027_STOP.json",
+      "sha256": "5e70efbfb63b3e3b1561abf7da506c07e6ba2d81c5d4563c4d37bafedc601d59",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-028_STOP.json",
+      "sha256": "e2128f1a2c6f516ce9cad595c26ba9b9256ddd75d2bf8d8350bd54920eb1b957",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-029_STOP.json",
+      "sha256": "1a670b15588ec821dbcea4a8b85f305f920cd55b6272538e8d1cfcc7edaecaa2",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-030_STOP.json",
+      "sha256": "1434e8f806aa659e0a911124fa0e5893048eb1a8e865d715b098f011d97ce9b9",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-031_STOP.json",
+      "sha256": "0a5d4397b75f1aefbb1aad31d71a8f424adb3cf3c51d7ba8c98011fbd67784f9",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-032_STOP.json",
+      "sha256": "f818914a41405b4cc477e0dcfaaa14c7dc1050ee267c3f1b5bf7a80b6948cf8c",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-033_STOP.json",
+      "sha256": "b67bce302751c7b530fa85db552ee19340ead11c55e22f35fa66b5f6c7c3f288",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-034_STOP.json",
+      "sha256": "53edda186b60740bbdf0caa9b4333d52a0c83f1b0d690ea58fbe6e48c78b7d87",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-035_STOP.json",
+      "sha256": "2df17738b2aff7b1922855445190bbe766eb792a6e714ada4a99bff7e34a3f59",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-036_STOP.json",
+      "sha256": "2351a9dcb7339ce1a1a2374fb9e97526f758073c215dfe7606d38965bfa02bfa",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-037_STOP.json",
+      "sha256": "6089bb0c905f3993c11f34221cbfacfe1942a230a6a2797372cc58b3673bfbf3",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-038_STOP.json",
+      "sha256": "364a1af59123fc331d364b758314a7196a42a3614bf955439bb39dc4b8bf54fe",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-039_STOP.json",
+      "sha256": "ae74f6033172450fd969bb7b3a0f82dfc1c16df9d8be1811a9a5f3ee1597e988",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-040_STOP.json",
+      "sha256": "9cd66583bc18542edcd2dbeb355000bded5eb8a1542ac1a600b7d3451032560e",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-041_STOP.json",
+      "sha256": "3e24ea3ce8b8cb867ef2f843424adb734ee7994adb3183d402bbfd843280b19b",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-042_STOP.json",
+      "sha256": "2f0186af60a096814e64097ea3702441cb0c0f4a10eb6d2db49e80af58838575",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-043_STOP.json",
+      "sha256": "a804a312e15be0a0851a7c05e79fc854eefbe020f1b77ed6a1fe8f04d12c3301",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-044_STOP.json",
+      "sha256": "375d27254de138609e4b35a891126766142b904a0aa71735f393b6068f9eff6f",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-045_STOP.json",
+      "sha256": "91bc19a5cea400ba42773dae528ac07bb1d96807651c8143d83a3b1d467f40d6",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-046_STOP.json",
+      "sha256": "3c0d6d2c36c0125a9f8641cf02ff80ad8de8b9b760d1c2f54abe958a5429cc2d",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-047_STOP.json",
+      "sha256": "18cd9d230d511d05ee1b90379045a60cc90fa530e9986b10689a301b3209a6a5",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-048_STOP.json",
+      "sha256": "a4d3e2848853cae7d68804a2a104038650aba5cb3ba7ac84fd36d44cd9afbf0f",
+      "bytes": 506
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-049_STOP.json",
+      "sha256": "5e8e779e8060f5afc00e55c7b650cc9a974be3d9a0d6fc1577d524a16f738d01",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-050_STOP.json",
+      "sha256": "41b13a22cd62588935f8045e20566b9bc291220bd9130e40e10f4702648cf445",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-051_STOP.json",
+      "sha256": "a07fa4d35210555397fbdb3aea8e79953bf477d0c265817bd1c388d9512a99e8",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-052_STOP.json",
+      "sha256": "d298953d647dae8e1902233e1e3b6ed382ed50fdc5d4b9b7e56a9b2b2cb30921",
+      "bytes": 505
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-053_STOP.json",
+      "sha256": "ca0119c135849c663e1cfcd9f9d4b5673005d7decd30d3c21a37c7526ea7e2e5",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-054_STOP.json",
+      "sha256": "fe198ec35a634505395f04e183890fbf5e0605d9c81916e799a145e519f2ceba",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-055_STOP.json",
+      "sha256": "3bc8e24c34e6a21965df78761e6c6fdfcb31edef2eccf44535f22b8647f0c425",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-056_STOP.json",
+      "sha256": "0d3171104f569fbbed26f77462727e3ac9473efb45921d403f5ed5e0b74d0115",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-057_STOP.json",
+      "sha256": "2819598cf64b23f59bc1572766aba1ec2e5bab52ecc233456b7579fce5b4f5fa",
+      "bytes": 507
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-058_STOP.json",
+      "sha256": "00867576cbc47aa7c4b36f99ed06bb426863ace8da49abf5585eaefdb3f95594",
+      "bytes": 508
+    },
+    {
+      "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/founder_expansion_execution_20260930/FS-059_STOP.json",
+      "sha256": "9fcaa96d2c82aaf044f97dad886016b0baa408744b0a14a096739ed7174e7172",
+      "bytes": 506
+    }
+  ],
+  "exploration_addendum": {
+    "path": "C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/nursery_0_design_20260930_v0_1/JASON_EXPLORATION_ADDENDUM.md",
+    "sha256": "cd20a3d75cb81eb28436bffa2b442fbb60454fd266ab153875597a9c71d2bc9f",
+    "provenance": "Verbatim user instruction received in this chat; not a launch approval"
+  }
+}

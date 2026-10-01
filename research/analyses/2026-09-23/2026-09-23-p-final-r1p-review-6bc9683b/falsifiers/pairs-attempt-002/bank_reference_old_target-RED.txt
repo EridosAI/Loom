@@ -1,0 +1,35 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________ test_bank_projection_and_reference_follow_new_value _____________
+
+    def test_bank_projection_and_reference_follow_new_value():
+        c=Config(); o=setup_neural(c); r=o.regulator
+        r.theta[:,:,0]=1.; r.reference[:,:,0]=.8
+        r.eligibility[:,:,0]=1.; r.xi[:]=1; r.phi[:]=0; r.phi[0]=1
+        r.body_mean[:]=0.
+        before=r.reference.copy(); r.credit(c,np.ones(2))
+        assert np.allclose(np.linalg.norm(r.theta,axis=2),1.)
+        expected=before+(-np.expm1(-c.wave_dt/c.tau_bank_reference))*(r.theta-before)
+        assert np.max(np.abs(expected-before))>1e-6
+        assert np.allclose(r.reference,expected,rtol=0,atol=1e-16)
+        assert np.linalg.norm(r.credit_diagnostic['projection'])>0
+        # An interior row actually changes, so following old theta cannot pass.
+        r=setup_neural(c).regulator; r.theta[:,:,0]=.4; r.reference[:,:,0]=.8
+        r.eligibility[:,:,0]=1.; r.xi[:]=1.; r.phi[:]=0.; r.phi[0]=1.; r.body_mean[:]=0.
+        old_theta=r.theta.copy(); before=r.reference.copy(); r.credit(c,np.ones(2))
+        expected_theta=old_theta+.05*.2*.5*r.eligibility-.0001*.2*(old_theta-before)
+        assert np.allclose(r.theta,expected_theta,rtol=0,atol=1e-16)
+        rate=-np.expm1(-c.wave_dt/c.tau_bank_reference)
+        expected=before+rate*(expected_theta-before)
+        assert np.max(abs(expected-(before+rate*(old_theta-before))))>1e-8
+>       assert np.allclose(r.reference,expected,rtol=0,atol=1e-16), 'Bank reference must follow newly projected theta'
+E       AssertionError: Bank reference must follow newly projected theta
+E       assert False
+E        +  where False = <function allclose at 0x000001A47CAEBE70>(array([[[0.799984, 0.      , 0.      , 0.      , 0.      , 0.      ,\n         0.      , 0.      , 0.      , 0.      , ....      ,\n         0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,\n         0.      , 0.      , 0.      ]]]), array([[[0.7999842, 0.       , 0.       , 0.       , 0.       ,\n         0.       , 0.       , 0.       , 0.       , 0...0.       ,\n         0.       , 0.       , 0.       , 0.       , 0.       ,\n         0.       , 0.       , 0.       ]]]), rtol=0, atol=1e-16)
+E        +    where <function allclose at 0x000001A47CAEBE70> = np.allclose
+E        +    and   array([[[0.799984, 0.      , 0.      , 0.      , 0.      , 0.      ,\n         0.      , 0.      , 0.      , 0.      , ....      ,\n         0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,\n         0.      , 0.      , 0.      ]]]) = <loom_p.neural.Regulator object at 0x000001A47FDFD090>.reference
+
+tests\test_neural.py:215: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_neural.py::test_bank_projection_and_reference_follow_new_value
+1 failed in 0.13s

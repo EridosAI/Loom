@@ -1,0 +1,88 @@
+{
+  "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-26-A5-launch-packet-HOLD-5f077481\\A5_LAUNCH_PACKET_HOLD.zip",
+  "zip_bytes": 167366701,
+  "zip_sha256": "2fa70cd6fb37a80043045678227a0b331b7df9205c7ac46e01d71df754e04460",
+  "manifest_payloads_verified": 89,
+  "archive_members": 90,
+  "crc_passed": true,
+  "all_unpacked_inbox_members_match_zip": true,
+  "both_delivery_receipts_match": true,
+  "held_canonical_sha256": "88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6",
+  "canonical_equals_manifest_without_null_grant": true,
+  "execution_grant_is_null": true,
+  "protocol_launch_ready": false,
+  "bound_file_identities_verified": 19,
+  "audit_source_hashes_match_packaged_files": true,
+  "copied_initial_snapshot_verified": true,
+  "embedded_A4_zip_and_record_match_registered_originals": true,
+  "supplied_before_after_manifests_identical": true,
+  "zero_execution_preparation_fields_verified": true,
+  "source_commissioning_failure_observed": false,
+  "classification": "APPARATUS / CLOCK-COMPATIBILITY QUESTION PENDING REVIEW",
+  "clock_audit_rerun_during_intake": false,
+  "programs_or_tests_run_during_intake": false,
+  "simulation_or_controller_execution_during_intake": false,
+  "git_operations": false,
+  "necessary_source_gaps": [],
+  "source_identity_conflicts": [],
+  "existing_catalog_rows_preserved": 228,
+  "protected_files_unchanged": 627,
+  "links_validated": 489,
+  "source_ids": [
+    "SRC-229",
+    "SRC-230",
+    "SRC-231",
+    "SRC-232",
+    "SRC-233",
+    "SRC-234",
+    "SRC-235",
+    "SRC-236",
+    "SRC-237",
+    "SRC-238",
+    "SRC-239",
+    "SRC-240",
+    "SRC-241",
+    "SRC-242",
+    "SRC-243",
+    "SRC-244",
+    "SRC-245",
+    "SRC-246",
+    "SRC-247",
+    "SRC-248",
+    "SRC-249",
+    "SRC-250",
+    "SRC-251",
+    "SRC-252",
+    "SRC-253",
+    "SRC-254",
+    "SRC-255",
+    "SRC-256"
+  ],
+  "shared_files": {
+    "AGENTS.md": {
+      "before": "3534f425258eaf5d0df07f14919b3496d27392dba89a14b8c9c0b8968e452ec5",
+      "after": "69d94e05b459c948054bcdd5268687aede645dbfeecb5022059cb992eb420b4f"
+    },
+    "00_RESEARCH_MAP.md": {
+      "before": "0e149d8c8fec6b9e613f2929adcf5c14056544aa685d1094862f11dd5874ed90",
+      "after": "7ec88570004aaa95bb64218195b17ebeebd65223e77c901da6f128985586139f"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "before": "9d8c3f4a9b360041deb06008ebe87d5fe9b2556e6a8b7128e808e4649469690c",
+      "after": "90de69a0e72f6d461354e2a66fe89133756d69cf7f17b383bd607894dd925b16"
+    },
+    "SOURCE_CATALOG.json": {
+      "before": "5896a3233d5c285317493817e3fa8659ad625510d209515032721ab32719be01",
+      "after": "e5d4d859fda9a19c8fbc972668ecb66a9bfbf37f6e62475213df94af5a6c1d37"
+    },
+    "SOURCE_REGISTER.md": {
+      "before": "19091f9323aaa2035edf027db6443a4fd01e363824feb7424aeab7bad7c957b6",
+      "after": "b2ecb4baf0dfe2c05f10e6d3503303994ec3d95da55d17bcf0b0e994c8868571"
+    }
+  },
+  "intake_complete": true,
+  "validation_scope": "Source custody, exact status registration, links and byte preservation; no review rerun or scientific validation",
+  "incoming_files_preserved": 93,
+  "recovery_archive_verified": true,
+  "full_derived_batch_files_verified": 93
+}

@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "life": "RS-M1-001",
+      "rows": 22494,
+      "cutoff": 4500.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.004788855658612173,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6706087482450259
+    },
+    {
+      "life": "RS-M1-002",
+      "rows": 22495,
+      "cutoff": 4500.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.007766836183018294,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6680590055646889
+    },
+    {
+      "life": "RS-M1-003",
+      "rows": 22496,
+      "cutoff": 4500.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.0031417042480461344,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6787239674283172
+    },
+    {
+      "life": "RS-M1-004",
+      "rows": 22496,
+      "cutoff": 4500.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.004799707131278391,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6792100246284073
+    },
+    {
+      "life": "RS-M1-005",
+      "rows": 22494,
+      "cutoff": 4500.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.002061325581516893,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6749327425559494
+    },
+    {
+      "life": "RS-M1-006",
+      "rows": 22494,
+      "cutoff": 4500.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.009598462255448775,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6752236166315297
+    },
+    {
+      "life": "RS-M1-007",
+      "rows": 22495,
+      "cutoff": 4500.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.0022300194667740914,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6749852994875536
+    },
+    {
+      "life": "RS-M1-008",
+      "rows": 14696,
+      "cutoff": 2939.9548705459583,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.008413573773404986,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6762730168587843
+    },
+    {
+      "life": "RS-M1-009",
+      "rows": 2999,
+      "cutoff": 600.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.01,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6858088109895867
+    },
+    {
+      "life": "RS-M1-010",
+      "rows": 2999,
+      "cutoff": 600.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.01,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6839572962824265
+    },
+    {
+      "life": "RS-M1-011",
+      "rows": 2999,
+      "cutoff": 600.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.01,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6875357335972436
+    },
+    {
+      "life": "RS-M1-012",
+      "rows": 2999,
+      "cutoff": 600.0,
+      "max_control_alignment_error": 5.551115123125783e-17,
+      "native_dt_min": 0.01,
+      "native_dt_max": 0.01,
+      "minimum_local_gain": 0.6805424000988385
+    }
+  ],
+  "world_steps": 0,
+  "RNG_draws": 0,
+  "alternate_trajectories": 0,
+  "receiver": "detached algebra at stored native operation; no accumulated counterfactual command"
+}

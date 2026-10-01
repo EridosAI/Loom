@@ -1,0 +1,100 @@
+{
+  "authority_sha256": "bdff35693db38800528d91e6d2d4d2085c640268e50713731df5ec27f8b76d1d",
+  "observed_simulated_time": 629.9999999995721,
+  "native_steps": 63000,
+  "planned_simulated_ceiling": 630,
+  "initial_EI": [
+    0.7,
+    1.0
+  ],
+  "final_EI": [
+    0.3667496379859223,
+    0.9747806260916136
+  ],
+  "minimum_native_EI": [
+    0.3667496379859223,
+    0.9747806260916136
+  ],
+  "source_transfers": [
+    0.343984269494295,
+    0.38058895895064127,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "all_source_intake": 0.7245732284449362,
+  "expenditure": 1.0578235904590032,
+  "damage": 0.02521937390838666,
+  "repair": 0.0,
+  "source_renewal": [
+    0.22327635303841367,
+    0.18844077862912137,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "initial_stocks": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "final_stocks": [
+    0.07929208354411771,
+    0.007851819678481782,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "sampled_native_path_length": 17.574978463143104,
+  "origin_attribution_totals": {
+    "initial_interval": [
+      0.3128560967774012,
+      0.4
+    ],
+    "renewed_interval": [
+      0.32457322844493625,
+      0.41171713166753504
+    ]
+  },
+  "renewed_lower_fraction_of_cost": 0.30683114970436587,
+  "renewed_lower_basal_equivalent_seconds": 216.38215229662416,
+  "recorded_balance_using_upper_initial_origin_only": 0.042176409540996884,
+  "renewed_supply_lower_bound_to_cover_recorded_expenditure": 0.0,
+  "necessity_scope": "These are arithmetic bounds for the recorded expenditure and source debits, not a simulated no-renewal survival counterfactual.",
+  "whole_energy_residual": -1.0658141036401503e-14,
+  "whole_integrity_residual": 3.0531133177191805e-16,
+  "whole_stock_residuals": [
+    -9.43689570931383e-16,
+    1.6653345369377348e-15,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "residual_aware_positivity_allowance": 6.361185467491025e-08,
+  "stop_label": "administrative_cutoff",
+  "stop_cause": null,
+  "complete_receipt": true,
+  "terminal_dimension": null,
+  "failure": null,
+  "complete_bounded_productive_recurrence_witness": false,
+  "observed_macro_returns": 2,
+  "planned_revisits_obtained": 2,
+  "interpretation": "Bounded external physical witness only; no P learning/perception, indefinite support, ecological impossibility or survival counterfactual follows. Full outcome predicates remain in the approved interpretation contract."
+}

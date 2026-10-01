@@ -1,0 +1,945 @@
+{
+  "method": "Apply the predeclared final ACTUAL contact endpoint, including zero-duration impacts; sum the unchanged event ledger after that endpoint. No interpolation, erased contacts, new rule, replay, rerun, or production change.",
+  "governing_source": "Approved OBSERVATION_AND_INTERPRETATION.md: final actual source-contact endpoint before the unattended interval; preserve every recontact.",
+  "initial_analysis_preserved": "A5_OBSERVATIONS.json and A5_RESULT_SUMMARY.json retain a conservative support-gap flag. Source 1 had a later zero-duration departure recontact, so that initial candidate interval was correctly flagged as interrupted. This supplemental measurement uses the final actual contact required by the packet.",
+  "initial_support_gap_witness_flag": false,
+  "complete_saved_data_validation": true,
+  "completed_nonterminal_observation": true,
+  "complete_bounded_productive_recurrence_witness": true,
+  "returns": [
+    {
+      "source": 0,
+      "visit": 3,
+      "last_positive_support_endpoint": 90.00000000000914,
+      "final_actual_contact_event_index": 9001,
+      "final_actual_contact_event": {
+        "duration": 0.01,
+        "impact": false,
+        "contacts": [
+          {
+            "collider": "source-0",
+            "material": 2,
+            "normal": [
+              0.999998814378517,
+              -0.0015398836190524897
+            ],
+            "impulse": 0.0009997717404633853,
+            "relative_speed": 9.473675453140472e-06,
+            "source": 0,
+            "force": 0.09997717404633852
+          }
+        ],
+        "energy_before": 0.7400765611479827,
+        "energy_after": 0.7400694253244556,
+        "integrity_before": 0.9930767410641572,
+        "integrity_after": 0.9930767410641572,
+        "damage": 0.0,
+        "repair": 0.0,
+        "repair_quality": 0.0,
+        "requested": [
+          9.136704697924824e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          9.136704697924824e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          2.0605686829851157e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          2.060657134132481e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 1.6272528224968878e-05,
+        "stock_before": [
+          0.03515347507470285,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.035148459595822044,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "time": 90.00000000000914,
+        "body_position": [
+          3.9999988142662373,
+          2.9984599283563154
+        ],
+        "body_angle": 3.1402398481123655,
+        "mode": "external_controller"
+      },
+      "actual_release_event_index": 9002,
+      "actual_release_event": {
+        "duration": 0.0,
+        "impact": true,
+        "contacts": [],
+        "energy_before": 0.7400694253244556,
+        "energy_after": 0.7400694253244556,
+        "integrity_before": 0.9930767410641572,
+        "integrity_after": 0.9930767410641572,
+        "damage": 0.0,
+        "repair": 0.0,
+        "requested": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 0.0,
+        "stock_before": [
+          0.035148459595822044,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.035148459595822044,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "event_kind": "release",
+        "colliders": [
+          "source-0"
+        ],
+        "time": 90.00000000000914,
+        "body_position": [
+          3.9999988142662373,
+          2.9984599283563154
+        ],
+        "body_angle": 3.1402398481123655,
+        "mode": "external_controller"
+      },
+      "actual_departure_time": 90.00000000000914,
+      "revisit_contact_start": 306.9283486087647,
+      "away_seconds": 216.92834860875553,
+      "first_one_body_diameter_clearance_native": {
+        "schema_version": 1,
+        "time": 97.63000000001304,
+        "elapsed": 0.01,
+        "native_index": 9763,
+        "raw": [
+          [
+            0.02833160061051353,
+            0.022665280488410825,
+            0.022312612731439557,
+            0.017850090185151646,
+            0.02524997160703002,
+            0.01456122663174414,
+            0.020000000000000004,
+            0.016000000000000004,
+            0.020000000000000004,
+            0.016000000000000004
+          ],
+          [
+            0.48387120512351584,
+            0.4354093153016723,
+            0.48607261449319106,
+            0.43843018653003757
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.4062543460315609,
+            0.36270362667957995,
+            0.33487343651182583,
+            0.03115183090019839,
+            -0.02079272229906863,
+            0.04517898189133383,
+            0.027127138529764096
+          ]
+        ],
+        "reserves": [
+          0.7249073388915468,
+          0.9930767410641572
+        ],
+        "position": [
+          4.987997255765725,
+          3.234963536135531
+        ],
+        "angle": -0.19155908638720215,
+        "velocity": [
+          0.34786908811238015,
+          -0.03572218456359668
+        ],
+        "omega": -0.03639250924122745,
+        "commands": [
+          0.4062543460315609,
+          0.36270362667957995
+        ],
+        "forces": [
+          0.15776910015672801,
+          0.14114992960802902
+        ],
+        "contact_rates": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          0.03826320143627293,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "field": {
+          "iterations": 7,
+          "residual": [
+            1.7261070087553354e-10,
+            9.938331085448654e-11
+          ],
+          "relative_residual": [
+            3.995279906774921e-11,
+            3.949823497939966e-11
+          ],
+          "old_mass": [
+            20.573395221860487,
+            11.974196176648757
+          ],
+          "new_mass": [
+            20.57329165586817,
+            11.974144393954283
+          ],
+          "emission": [
+            0.004011092203231615,
+            0.002343046101615807
+          ],
+          "decay": [
+            0.004114658331173635,
+            0.002394828878790857
+          ],
+          "mass_balance": [
+            1.3562659589155812e-10,
+            8.270134880736246e-11
+          ],
+          "minimum": 0.018758075945952846,
+          "negative_roundoff_count": 0,
+          "diffusion_min": 0.025,
+          "diffusion_max": 0.5
+        },
+        "status": "paused",
+        "random_counters": {
+          "life/world-phase": 1,
+          "life/world-position": 1,
+          "life/world-orientation": 1,
+          "anatomy/sensory-0-A": 1,
+          "anatomy/sensory-0-shared": 1,
+          "anatomy/sensory-0-fine": 1,
+          "anatomy/sensory-1-A": 1,
+          "anatomy/sensory-1-shared": 1,
+          "anatomy/sensory-1-fine": 1,
+          "anatomy/sensory-2-A": 1,
+          "anatomy/sensory-2-shared": 1,
+          "anatomy/sensory-2-fine": 1,
+          "anatomy/sensory-3-A": 1,
+          "anatomy/sensory-3-shared": 1,
+          "anatomy/sensory-3-fine": 1,
+          "anatomy/gate-0": 1,
+          "anatomy/gate-bias-0": 1,
+          "anatomy/gate-1": 1,
+          "anatomy/gate-bias-1": 1,
+          "anatomy/gate-2": 1,
+          "anatomy/gate-bias-2": 1,
+          "anatomy/gate-3": 1,
+          "anatomy/gate-bias-3": 1,
+          "anatomy/gate-4": 1,
+          "anatomy/gate-bias-4": 1,
+          "anatomy/gate-5": 1,
+          "anatomy/gate-bias-5": 1,
+          "anatomy/gate-6": 1,
+          "anatomy/gate-bias-6": 1,
+          "anatomy/gate-7": 1,
+          "anatomy/gate-bias-7": 1,
+          "anatomy/regulator-Bq": 1,
+          "anatomy/regulator-Bv": 1,
+          "anatomy/regulator-bias": 1,
+          "anatomy/motor-feedback": 1,
+          "life/motor-birth-phase": 1,
+          "life/motor-birth-nu": 1,
+          "life/motor-noise": 1,
+          "life/regulation-E": 1,
+          "life/regulation-I": 1
+        },
+        "neural_state": "inactive_newborn_not_P",
+        "mode": "external_controller",
+        "field_phase": 3.558411277237072,
+        "field_sha256": "34c5ab61f00a0ef3e4c6638ffc9c2686e41ed807023b784583e7527d5bc963cd"
+      },
+      "preceding_clearance_sample": {
+        "time": 97.62000000001304,
+        "native_index": 9762,
+        "position": [
+          4.984518564884601,
+          3.235320757981167
+        ],
+        "reserves": [
+          0.7249261836814104,
+          0.9930767410641572
+        ],
+        "stocks": [
+          0.038259157965765664,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      },
+      "all_contacts_after_support_before_clearance": [],
+      "away_event_slice": [
+        9002,
+        30744
+      ],
+      "interior_contact_events": [],
+      "boundary_straddling_events": [],
+      "stock_at_departure": 0.035148459595822044,
+      "stock_before_revisit": 0.10415575344039082,
+      "away_renewal": 0.06900729384456919,
+      "away_source_debit": 0.0,
+      "away_stock_residual": -4.163336342344337e-16,
+      "covered_duration": 216.92834860889883,
+      "revisit_transfer": 0.15511774111944965,
+      "revisit_renewal": 0.06165429141616873,
+      "away_restored_uptake_interval": [
+        0.058314990107458865,
+        0.06900729384456919
+      ],
+      "post_departure_renewal_uptake_lower": 0.1199692815236276,
+      "away_restored_lower_fraction_of_revisit_intake": 0.3759401709089674,
+      "away_restored_lower_fraction_of_whole_cost": 0.055127329956930954,
+      "away_restored_lower_basal_equivalent_seconds": 38.87666007163924,
+      "forced_away_renewed_uptake_resolved": true,
+      "predicates": {
+        "actual_release_observed": true,
+        "one_body_diameter_clearance_observed": true,
+        "partially_depleted_at_actual_departure": true,
+        "uninterrupted_away_interval": true,
+        "no_boundary_straddling_events": true,
+        "zero_away_debit": true,
+        "stock_identity_verified": true,
+        "duration_coverage_verified": true,
+        "positive_away_renewal": true,
+        "productive_revisit": true,
+        "positive_revisit_support": true,
+        "planned_visit_complete": true
+      },
+      "local_bounded_revisit": true
+    },
+    {
+      "source": 1,
+      "visit": 4,
+      "last_positive_support_endpoint": 273.06999999989665,
+      "final_actual_contact_event_index": 27355,
+      "final_actual_contact_event": {
+        "duration": 0.0,
+        "impact": true,
+        "contacts": [
+          {
+            "collider": "source-1",
+            "material": 2,
+            "normal": [
+              -0.9958717078892161,
+              -0.09077191980902488
+            ],
+            "impulse": 6.655064158420488e-08,
+            "relative_speed": 0.31915292799108347,
+            "source": 1
+          }
+        ],
+        "energy_before": 0.6646368632208921,
+        "energy_after": 0.6646368632208921,
+        "integrity_before": 0.9863437466720917,
+        "integrity_after": 0.9863437453410788,
+        "damage": 1.3310128316840975e-09,
+        "repair": 0.0,
+        "requested": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 0.0,
+        "stock_before": [
+          0.09569060799267981,
+          0.019167314788177535,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.09569060799267981,
+          0.019167314788177535,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "event_kind": "recontact_or_first_touch",
+        "time": 273.07356311601956,
+        "body_position": [
+          9.004128292014045,
+          2.9092280801821575
+        ],
+        "body_angle": 1.66230341263519,
+        "mode": "external_controller"
+      },
+      "actual_release_event_index": 27356,
+      "actual_release_event": {
+        "duration": 0.0,
+        "impact": true,
+        "contacts": [],
+        "energy_before": 0.6646368632208921,
+        "energy_after": 0.6646368632208921,
+        "integrity_before": 0.9863437453410788,
+        "integrity_after": 0.9863437453410788,
+        "damage": 0.0,
+        "repair": 0.0,
+        "requested": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "transfer": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_first": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "renewal_second": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "expenditure": 0.0,
+        "stock_before": [
+          0.09569060799267981,
+          0.019167314788177535,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "stock_after": [
+          0.09569060799267981,
+          0.019167314788177535,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "event_kind": "release",
+        "colliders": [
+          "source-1"
+        ],
+        "time": 273.07356311601956,
+        "body_position": [
+          9.004128292014045,
+          2.9092280801821575
+        ],
+        "body_angle": 1.66230341263519,
+        "mode": "external_controller"
+      },
+      "actual_departure_time": 273.07356311601956,
+      "revisit_contact_start": 492.092241357054,
+      "away_seconds": 219.01867824103442,
+      "first_one_body_diameter_clearance_native": {
+        "schema_version": 1,
+        "time": 277.9399999998922,
+        "elapsed": 0.01,
+        "native_index": 27794,
+        "raw": [
+          [
+            0.010078874508917755,
+            0.014974327841820664,
+            0.05206417484925272,
+            0.04165133987940218,
+            0.06997140614390171,
+            0.044817661229413275,
+            0.11285726886481144,
+            0.09028581509184914,
+            0.08836416734827485,
+            0.07069133387861988
+          ],
+          [
+            0.41330460456154094,
+            0.36906848928285735,
+            0.4100072104599542,
+            0.3652250309323066
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.49946309478530965,
+            0.5005311950674771,
+            0.33506178856454444,
+            -0.020207807316578306,
+            0.005883925278443459,
+            0.15332886152414146,
+            0.1473278410589839
+          ]
+        ],
+        "reserves": [
+          0.6549631297569143,
+          0.9863437453410788
+        ],
+        "position": [
+          8.007661895451074,
+          3.1987110122553504
+        ],
+        "angle": 3.2368610915079277,
+        "velocity": [
+          -0.34886148504348813,
+          -0.013033781327807126
+        ],
+        "omega": 0.010296988067594786,
+        "commands": [
+          0.49946309478530965,
+          0.5005311950674771
+        ],
+        "forces": [
+          0.17932082077680558,
+          0.18044660638625354
+        ],
+        "contact_rates": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "stocks": [
+          0.09695195727031435,
+          0.02135401315229669,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "field": {
+          "iterations": 7,
+          "residual": [
+            3.4530075467289467e-10,
+            1.9852816055606866e-10
+          ],
+          "relative_residual": [
+            8.621088109106556e-11,
+            8.392628124569635e-11
+          ],
+          "old_mass": [
+            18.783409962468287,
+            11.079204980777444
+          ],
+          "new_mass": [
+            18.78339447217224,
+            11.079197235633812
+          ],
+          "emission": [
+            0.003741188433450875,
+            0.0022080942167254374
+          ],
+          "decay": [
+            0.0037566788944344482,
+            0.0022158394471267625
+          ],
+          "mass_balance": [
+            1.6493682374746355e-10,
+            8.676910448826569e-11
+          ],
+          "minimum": 0.014776535194499313,
+          "negative_roundoff_count": 0,
+          "diffusion_min": 0.025,
+          "diffusion_max": 0.5
+        },
+        "status": "paused",
+        "random_counters": {
+          "life/world-phase": 1,
+          "life/world-position": 1,
+          "life/world-orientation": 1,
+          "anatomy/sensory-0-A": 1,
+          "anatomy/sensory-0-shared": 1,
+          "anatomy/sensory-0-fine": 1,
+          "anatomy/sensory-1-A": 1,
+          "anatomy/sensory-1-shared": 1,
+          "anatomy/sensory-1-fine": 1,
+          "anatomy/sensory-2-A": 1,
+          "anatomy/sensory-2-shared": 1,
+          "anatomy/sensory-2-fine": 1,
+          "anatomy/sensory-3-A": 1,
+          "anatomy/sensory-3-shared": 1,
+          "anatomy/sensory-3-fine": 1,
+          "anatomy/gate-0": 1,
+          "anatomy/gate-bias-0": 1,
+          "anatomy/gate-1": 1,
+          "anatomy/gate-bias-1": 1,
+          "anatomy/gate-2": 1,
+          "anatomy/gate-bias-2": 1,
+          "anatomy/gate-3": 1,
+          "anatomy/gate-bias-3": 1,
+          "anatomy/gate-4": 1,
+          "anatomy/gate-bias-4": 1,
+          "anatomy/gate-5": 1,
+          "anatomy/gate-bias-5": 1,
+          "anatomy/gate-6": 1,
+          "anatomy/gate-bias-6": 1,
+          "anatomy/gate-7": 1,
+          "anatomy/gate-bias-7": 1,
+          "anatomy/regulator-Bq": 1,
+          "anatomy/regulator-Bv": 1,
+          "anatomy/regulator-bias": 1,
+          "anatomy/motor-feedback": 1,
+          "life/motor-birth-phase": 1,
+          "life/motor-birth-nu": 1,
+          "life/motor-noise": 1,
+          "life/regulation-E": 1,
+          "life/regulation-I": 1
+        },
+        "neural_state": "inactive_newborn_not_P",
+        "mode": "external_controller",
+        "field_phase": 3.558411277237072,
+        "field_sha256": "0eb579dd2747425510d36e454076f981ba52f5feb959f4132011e228d43edecf"
+      },
+      "preceding_clearance_sample": {
+        "time": 277.92999999989223,
+        "native_index": 27793,
+        "position": [
+          8.011150510301508,
+          3.1988413500686286
+        ],
+        "reserves": [
+          0.6549831297283636,
+          0.9863437453410788
+        ],
+        "stocks": [
+          0.09694938103704333,
+          0.02134954694679816,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      },
+      "all_contacts_after_support_before_clearance": [
+        {
+          "event_index": 27355,
+          "event": {
+            "duration": 0.0,
+            "impact": true,
+            "contacts": [
+              {
+                "collider": "source-1",
+                "material": 2,
+                "normal": [
+                  -0.9958717078892161,
+                  -0.09077191980902488
+                ],
+                "impulse": 6.655064158420488e-08,
+                "relative_speed": 0.31915292799108347,
+                "source": 1
+              }
+            ],
+            "energy_before": 0.6646368632208921,
+            "energy_after": 0.6646368632208921,
+            "integrity_before": 0.9863437466720917,
+            "integrity_after": 0.9863437453410788,
+            "damage": 1.3310128316840975e-09,
+            "repair": 0.0,
+            "requested": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "transfer": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "renewal_first": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "renewal_second": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "expenditure": 0.0,
+            "stock_before": [
+              0.09569060799267981,
+              0.019167314788177535,
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ],
+            "stock_after": [
+              0.09569060799267981,
+              0.019167314788177535,
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ],
+            "event_kind": "recontact_or_first_touch",
+            "time": 273.07356311601956,
+            "body_position": [
+              9.004128292014045,
+              2.9092280801821575
+            ],
+            "body_angle": 1.66230341263519,
+            "mode": "external_controller"
+          }
+        }
+      ],
+      "away_event_slice": [
+        27356,
+        49690
+      ],
+      "interior_contact_events": [],
+      "boundary_straddling_events": [],
+      "stock_at_departure": 0.019167314788177535,
+      "stock_before_revisit": 0.0954123456880177,
+      "away_renewal": 0.07624503089983946,
+      "away_source_debit": 0.0,
+      "away_stock_residual": 7.077671781985373e-16,
+      "covered_duration": 219.01867824123366,
+      "revisit_transfer": 0.14966794700906288,
+      "revisit_renewal": 0.062107420999526965,
+      "away_restored_uptake_interval": [
+        0.06839321122135839,
+        0.07624503089983946
+      ],
+      "post_departure_renewal_uptake_lower": 0.13050063222088534,
+      "away_restored_lower_fraction_of_revisit_intake": 0.4569663217015795,
+      "away_restored_lower_fraction_of_whole_cost": 0.06465464737053339,
+      "away_restored_lower_basal_equivalent_seconds": 45.595474147572254,
+      "forced_away_renewed_uptake_resolved": true,
+      "predicates": {
+        "actual_release_observed": true,
+        "one_body_diameter_clearance_observed": true,
+        "partially_depleted_at_actual_departure": true,
+        "uninterrupted_away_interval": true,
+        "no_boundary_straddling_events": true,
+        "zero_away_debit": true,
+        "stock_identity_verified": true,
+        "duration_coverage_verified": true,
+        "positive_away_renewal": true,
+        "productive_revisit": true,
+        "positive_revisit_support": true,
+        "planned_visit_complete": true
+      },
+      "local_bounded_revisit": true
+    }
+  ],
+  "unchanged_raw_files_checked": 85,
+  "raw_evidence_unchanged": true,
+  "new_simulation_steps": 0,
+  "command_recomputations": 0,
+  "physical_replays": 0,
+  "production_code_changes": 0,
+  "original_analysis_outputs_changed": false
+}

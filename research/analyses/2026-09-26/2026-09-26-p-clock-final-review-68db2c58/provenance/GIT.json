@@ -1,0 +1,58 @@
+{
+  "HEAD": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "parent": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "P_ancestor": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "branch": "build/p-clock-correction-20260926-01a0c405",
+  "old_HEAD": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "target_status": "",
+  "old_status": "",
+  "changed_files": [
+    "M\tdevelopmental_ecology/loom_commissioning/authority.py",
+    "A\tdevelopmental_ecology/loom_commissioning/clock.py",
+    "M\tdevelopmental_ecology/loom_commissioning/controllers.py",
+    "M\tdevelopmental_ecology/loom_commissioning/pending.py",
+    "M\tdevelopmental_ecology/loom_commissioning/runner.py",
+    "M\tdevelopmental_ecology/loom_commissioning/validators.py",
+    "A\tdevelopmental_ecology/tests_apparatus/fixtures/clock_retrospective.json",
+    "M\tdevelopmental_ecology/tests_apparatus/test_apparatus.py",
+    "A\tdevelopmental_ecology/tests_apparatus/test_clock_scheduling.py",
+    "M\tdevelopmental_ecology/tests_apparatus/test_corrections.py",
+    "M\tdevelopmental_ecology/tests_apparatus/test_final_corrections.py",
+    "A\tdevelopmental_ecology/verify_clock_scheduling.py",
+    "A\tdocs/developmental_ecology/p_clock_correction_20260926/CLOCK_SCHEDULING_CORRECTION_REPORT.md",
+    "A\tdocs/developmental_ecology/p_clock_correction_20260926/NATIVE_INDEX_SCHEDULING_SPECIFICATION.md"
+  ],
+  "stat": " .../loom_commissioning/authority.py                |  14 +-\n developmental_ecology/loom_commissioning/clock.py  |  82 +++++++++\n .../loom_commissioning/controllers.py              |  32 ++--\n .../loom_commissioning/pending.py                  |  29 ++--\n developmental_ecology/loom_commissioning/runner.py |  23 +--\n .../loom_commissioning/validators.py               |  15 +-\n .../fixtures/clock_retrospective.json              |   1 +\n .../tests_apparatus/test_apparatus.py              |   2 +-\n .../tests_apparatus/test_clock_scheduling.py       | 193 +++++++++++++++++++++\n .../tests_apparatus/test_corrections.py            |  26 +--\n .../tests_apparatus/test_final_corrections.py      |   8 +-\n developmental_ecology/verify_clock_scheduling.py   |  34 ++++\n .../CLOCK_SCHEDULING_CORRECTION_REPORT.md          |  86 +++++++++\n .../NATIVE_INDEX_SCHEDULING_SPECIFICATION.md       |  61 +++++++\n 14 files changed, 545 insertions(+), 61 deletions(-)\n",
+  "patch": {
+    "bytes": 220445,
+    "sha256": "07b345f7ce95edc4ddf3d1edba662a416c0314c928640d1133e37edc13075714",
+    "matches_package": true
+  },
+  "P_unchanged": {
+    "loom_p": true,
+    "tests": true,
+    "configuration.json": true,
+    "requirements-lock.txt": true,
+    "adapter_from_5f": true
+  },
+  "EXP1-21_trees": {
+    "6bc9683b54e4fa80136fe8534d7713e2a250a95f": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "5f07748102cb5eaa302569c87efbae095050e9fe": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "68db2c581f07200966d699a4f55a65f9b96df1e9": "f1b884a7ada4c806786d1530d76d446aac5d37b1"
+  },
+  "apparatus_committed_blob_matches": {
+    "developmental_ecology/loom_commissioning/adapter.py": true,
+    "developmental_ecology/loom_commissioning/authority.py": true,
+    "developmental_ecology/loom_commissioning/clock.py": true,
+    "developmental_ecology/loom_commissioning/contract.py": true,
+    "developmental_ecology/loom_commissioning/controllers.py": true,
+    "developmental_ecology/loom_commissioning/diagnostics.py": true,
+    "developmental_ecology/loom_commissioning/evaluation.py": true,
+    "developmental_ecology/loom_commissioning/initialization.py": true,
+    "developmental_ecology/loom_commissioning/pending.py": true,
+    "developmental_ecology/loom_commissioning/runner.py": true,
+    "developmental_ecology/loom_commissioning/sensor_ui.py": true,
+    "developmental_ecology/loom_commissioning/validators.py": true,
+    "developmental_ecology/loom_commissioning/__init__.py": true
+  }
+}

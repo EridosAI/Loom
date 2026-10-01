@@ -1,0 +1,73 @@
+{
+  "HEAD": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "parent": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "P_ancestor": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "branch": "build/p-b1-operator-correction-20260926-01a0c405",
+  "target_status": "",
+  "old_HEAD": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "old_status": "",
+  "diff_files": [
+    "M\tdevelopmental_ecology/loom_commissioning/authority.py",
+    "M\tdevelopmental_ecology/loom_commissioning/contract.py",
+    "M\tdevelopmental_ecology/loom_commissioning/controllers.py",
+    "A\tdevelopmental_ecology/loom_commissioning/operator_view.py",
+    "M\tdevelopmental_ecology/loom_commissioning/pending.py",
+    "M\tdevelopmental_ecology/loom_commissioning/runner.py",
+    "M\tdevelopmental_ecology/loom_commissioning/sensor.html",
+    "M\tdevelopmental_ecology/loom_commissioning/sensor_ui.py",
+    "M\tdevelopmental_ecology/loom_commissioning/validators.py",
+    "A\tdevelopmental_ecology/tests_apparatus/b1_dom_fixture.cjs",
+    "A\tdevelopmental_ecology/tests_apparatus/test_b1_operator.py",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/B1_OPERATOR_APPARATUS_CORRECTION_REPORT.md",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/CHEMISTRY_DEPRIVATION_INFORMATION_FLOW.md",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/EXECUTION_SCOPE_RECORD.json",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/FINAL_PRESERVATION.json",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/LIVE_OPERATOR_STATE_MACHINE.md",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/P_CONFIG_WORLD_UNCHANGED.json",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/README.md",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/RED_GREEN_MATRIX.md",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/REGRESSION_RESULTS.json",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/RUNTIME_RECORD.json",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/SOURCE_IDENTITIES.json",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/STATIC_HELD_COMPATIBILITY.json",
+    "A\tdocs/developmental_ecology/p_b1_operator_correction_20260926/UI_REVIEW.json"
+  ],
+  "stat": " .../loom_commissioning/authority.py                |  22 +-\n .../loom_commissioning/contract.py                 |   4 +-\n .../loom_commissioning/controllers.py              |   8 +-\n .../loom_commissioning/operator_view.py            |  39 +++\n .../loom_commissioning/pending.py                  |   4 +-\n developmental_ecology/loom_commissioning/runner.py |  18 +-\n .../loom_commissioning/sensor.html                 | 102 ++++++-\n .../loom_commissioning/sensor_ui.py                | 250 +++++++++++++----\n .../loom_commissioning/validators.py               |  14 +-\n .../tests_apparatus/b1_dom_fixture.cjs             |  69 +++++\n .../tests_apparatus/test_b1_operator.py            | 305 +++++++++++++++++++++\n .../B1_OPERATOR_APPARATUS_CORRECTION_REPORT.md     |  73 +++++\n .../CHEMISTRY_DEPRIVATION_INFORMATION_FLOW.md      |  54 ++++\n .../EXECUTION_SCOPE_RECORD.json                    |  17 ++\n .../FINAL_PRESERVATION.json                        |  43 +++\n .../LIVE_OPERATOR_STATE_MACHINE.md                 |  44 +++\n .../P_CONFIG_WORLD_UNCHANGED.json                  |  39 +++\n .../p_b1_operator_correction_20260926/README.md    |  14 +\n .../RED_GREEN_MATRIX.md                            |  22 ++\n .../REGRESSION_RESULTS.json                        | 118 ++++++++\n .../RUNTIME_RECORD.json                            |  38 +++\n .../SOURCE_IDENTITIES.json                         | 147 ++++++++++\n .../STATIC_HELD_COMPATIBILITY.json                 |  75 +++++\n .../UI_REVIEW.json                                 |  24 ++\n 24 files changed, 1470 insertions(+), 73 deletions(-)\n",
+  "patch": {
+    "bytes": 132681,
+    "sha256": "2191f1058eb817f84ea8fb674388bfae4eb23b470b3b8887f1f882465b1a3ed1",
+    "package_exact": true
+  },
+  "unchanged": {
+    "loom_p": true,
+    "configuration.json": true,
+    "requirements-lock.txt": true,
+    "tests": true,
+    "loom_commissioning/adapter.py": true,
+    "loom_commissioning/clock.py": true,
+    "loom_commissioning/diagnostics.py": true,
+    "loom_commissioning/evaluation.py": true,
+    "loom_commissioning/initialization.py": true
+  },
+  "EXP1-21_trees": {
+    "6bc9683b54e4fa80136fe8534d7713e2a250a95f": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "68db2c581f07200966d699a4f55a65f9b96df1e9": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "352f73fffa6d9781eae8aa38e708a9a05669588f": "f1b884a7ada4c806786d1530d76d446aac5d37b1"
+  },
+  "apparatus_python_committed_blob_equal": {
+    "adapter.py": true,
+    "authority.py": true,
+    "clock.py": true,
+    "contract.py": true,
+    "controllers.py": true,
+    "diagnostics.py": true,
+    "evaluation.py": true,
+    "initialization.py": true,
+    "operator_view.py": true,
+    "pending.py": true,
+    "runner.py": true,
+    "sensor_ui.py": true,
+    "validators.py": true,
+    "__init__.py": true
+  }
+}

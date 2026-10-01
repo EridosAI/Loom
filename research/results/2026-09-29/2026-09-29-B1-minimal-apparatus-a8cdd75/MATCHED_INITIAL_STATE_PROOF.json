@@ -1,0 +1,78 @@
+{
+  "triplets": [
+    {
+      "start": "S1",
+      "complete_snapshot_bytes_identical": true,
+      "copies": [
+        {
+          "case": "B1-MINIMAL-S1-FULL",
+          "file": "cases/B1-MINIMAL-S1-FULL/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "d8a2657916dc62a9a80d58d26f25f374e597526da69d409128ecf61c074aba2b",
+          "state_sha256": "5cc5eda4aa4b1ac94fccda97ea42b485a2508fe33e2bb659f82cb61725d72671"
+        },
+        {
+          "case": "B1-MINIMAL-S1-CHEMISTRY-HIDDEN",
+          "file": "cases/B1-MINIMAL-S1-CHEMISTRY-HIDDEN/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "d8a2657916dc62a9a80d58d26f25f374e597526da69d409128ecf61c074aba2b",
+          "state_sha256": "5cc5eda4aa4b1ac94fccda97ea42b485a2508fe33e2bb659f82cb61725d72671"
+        },
+        {
+          "case": "B1-MINIMAL-S1-SENSORY-FREE",
+          "file": "cases/B1-MINIMAL-S1-SENSORY-FREE/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "d8a2657916dc62a9a80d58d26f25f374e597526da69d409128ecf61c074aba2b",
+          "state_sha256": "5cc5eda4aa4b1ac94fccda97ea42b485a2508fe33e2bb659f82cb61725d72671"
+        }
+      ]
+    },
+    {
+      "start": "S2",
+      "complete_snapshot_bytes_identical": true,
+      "copies": [
+        {
+          "case": "B1-MINIMAL-S2-FULL",
+          "file": "cases/B1-MINIMAL-S2-FULL/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "bfdc7ccd3bbfd4dd6546272ee80a63473902126fea17252e2379f25744e23883",
+          "state_sha256": "b76a91ee768311c2d79314ea302fe5b249b8a9be1064cc91f09cd92a0bbceddc"
+        },
+        {
+          "case": "B1-MINIMAL-S2-CHEMISTRY-HIDDEN",
+          "file": "cases/B1-MINIMAL-S2-CHEMISTRY-HIDDEN/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "bfdc7ccd3bbfd4dd6546272ee80a63473902126fea17252e2379f25744e23883",
+          "state_sha256": "b76a91ee768311c2d79314ea302fe5b249b8a9be1064cc91f09cd92a0bbceddc"
+        },
+        {
+          "case": "B1-MINIMAL-S2-SENSORY-FREE",
+          "file": "cases/B1-MINIMAL-S2-SENSORY-FREE/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "bfdc7ccd3bbfd4dd6546272ee80a63473902126fea17252e2379f25744e23883",
+          "state_sha256": "b76a91ee768311c2d79314ea302fe5b249b8a9be1064cc91f09cd92a0bbceddc"
+        }
+      ]
+    },
+    {
+      "start": "S3",
+      "complete_snapshot_bytes_identical": true,
+      "copies": [
+        {
+          "case": "B1-MINIMAL-S3-FULL",
+          "file": "cases/B1-MINIMAL-S3-FULL/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "2d6a5966c72c42a0569033b1b93fa02bb3525904b3789234db69e8c90a66dfa0",
+          "state_sha256": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0"
+        },
+        {
+          "case": "B1-MINIMAL-S3-CHEMISTRY-HIDDEN",
+          "file": "cases/B1-MINIMAL-S3-CHEMISTRY-HIDDEN/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "2d6a5966c72c42a0569033b1b93fa02bb3525904b3789234db69e8c90a66dfa0",
+          "state_sha256": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0"
+        },
+        {
+          "case": "B1-MINIMAL-S3-SENSORY-FREE",
+          "file": "cases/B1-MINIMAL-S3-SENSORY-FREE/INITIAL.snapshot.json.gz",
+          "snapshot_sha256": "2d6a5966c72c42a0569033b1b93fa02bb3525904b3789234db69e8c90a66dfa0",
+          "state_sha256": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0"
+        }
+      ]
+    }
+  ],
+  "includes": "Complete Engine snapshot: physical/body/field/phase/stocks/clock/RNG and retained inactive neural state.",
+  "arm_specific_controller_state": "Separate fresh SEEK / release_count=0 for every case; not part of physical snapshot."
+}

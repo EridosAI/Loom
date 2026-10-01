@@ -1,0 +1,75 @@
+{
+  "checkpoint": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "cases": [
+    {
+      "case": "PC-LR",
+      "horizon_seconds": 4,
+      "native_ceiling": 400,
+      "maximum_command_holds": 40,
+      "operator_coordinates": 29,
+      "pure_execution_specification_accepted": true,
+      "null_grant_rejected": true,
+      "unchanged_snapshot_sha256": "3ff0eb7ee409e990ffba65ac79df913f13875fd0cd811d191bd50cbd87d2e477"
+    },
+    {
+      "case": "PC-MOTION",
+      "horizon_seconds": 4,
+      "native_ceiling": 400,
+      "maximum_command_holds": 40,
+      "operator_coordinates": 29,
+      "pure_execution_specification_accepted": true,
+      "null_grant_rejected": true,
+      "unchanged_snapshot_sha256": "aaae774a025276a170df0ac2a3fb8e7b9aa6aa75c30a681037801f3cff887328"
+    },
+    {
+      "case": "PC-CONTACT",
+      "horizon_seconds": 6,
+      "native_ceiling": 600,
+      "maximum_command_holds": 60,
+      "operator_coordinates": 29,
+      "pure_execution_specification_accepted": true,
+      "null_grant_rejected": true,
+      "unchanged_snapshot_sha256": "ee115434b844b7aee30089cbeaab03ff932952f440b0686eff8da465f1880e1f"
+    },
+    {
+      "case": "PC-HOLD",
+      "horizon_seconds": 10,
+      "native_ceiling": 1000,
+      "maximum_command_holds": 100,
+      "operator_coordinates": 29,
+      "pure_execution_specification_accepted": true,
+      "null_grant_rejected": true,
+      "unchanged_snapshot_sha256": "54c02d8b4092b24761284939185c43addce086e3f9fe20adfb80ef0e14dabc7b"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "horizon_seconds": 30,
+      "native_ceiling": 3000,
+      "maximum_command_holds": 300,
+      "operator_coordinates": 29,
+      "pure_execution_specification_accepted": true,
+      "null_grant_rejected": true,
+      "unchanged_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "horizon_seconds": 30,
+      "native_ceiling": 3000,
+      "maximum_command_holds": 300,
+      "operator_coordinates": 25,
+      "pure_execution_specification_accepted": true,
+      "null_grant_rejected": true,
+      "unchanged_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8"
+    }
+  ],
+  "snapshot_deserializations": 0,
+  "new_transductions": 0,
+  "complete_pair_initial_state_identical": true,
+  "paired_semantic_difference": "case identity and declared display deprivation only",
+  "P_configuration_world_unchanged": true,
+  "clock_correction_unchanged": true,
+  "all_case_semantic_fields_preserved": true,
+  "positive_control_criteria_preserved": true,
+  "hidden_state_publicly_disclosed": false,
+  "limit": "Pure execution/clock/identity checks and unchanged snapshot-byte custody, not a repeated physical initial-state validation, operator demonstration, live UI test, simulation or execution grant."
+}

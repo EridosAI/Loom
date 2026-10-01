@@ -1,0 +1,149 @@
+{
+  "mode": "new",
+  "source": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+  "scope": "Only delivered generic manufactured <=0.2-second fixtures. No held PC/B1 reads, snapshots, runs, replay, grants or authority generation.",
+  "source_identity": {
+    "sensor_ui.py": "2ffd2128771cd8244b2be8b4fc4d6b35e54ca66d6cd84d3ecaed33ce9bbe9df9",
+    "runner.py": "9f9679a27dd3accd0949430a9c7111d5c7972aaadcb3247515603940ee0fcc49",
+    "authority.py": "d72339a71840af66ff75ca9b8199e8693b78ecdbbd3a900e25bea17c21b63a11",
+    "pending.py": "f05cd01d24d8d58b18e481bab3f7aa9e85e7d3e65f5d82f071928dd0979aabac",
+    "clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+    "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+  },
+  "checks": {
+    "lifecycle_http": {
+      "prepared_errors": [
+        "request unavailable",
+        "operator case is not running",
+        "operator case is not running"
+      ],
+      "prepared_physical_unchanged": true,
+      "paused_5_and_300_wall_seconds_complete_engine_session_equal": true,
+      "paused_custody_equal": true,
+      "wrong_session_error": "request unavailable",
+      "stale_start_error": "request unavailable",
+      "running_requests_denied": [
+        {
+          "status": 400,
+          "generic_error": true
+        },
+        {
+          "status": 400,
+          "generic_error": true
+        },
+        {
+          "status": 400,
+          "generic_error": true
+        },
+        {
+          "status": 400,
+          "generic_error": true
+        }
+      ],
+      "delayed_duplicate_denied": {
+        "status": 400,
+        "generic_error": true
+      },
+      "running_published_only_last_complete_display": true,
+      "client_disconnected_while_running": true,
+      "counts": {
+        "hold_entries": 1,
+        "active": 0,
+        "maximum_active": 1,
+        "native_calls": 10,
+        "field_durations": [
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "after_one_command": {
+        "engine": "dfd6a0cd62ff2fcaf23426d28985cfeb954799eb6953456a07f53c98cccab254",
+        "physical": "2981091e3d745a23009b40d9d03eab2f3ee8af009e1cccad8527a27da01176b4",
+        "session": "59c3e3188f09f9897ea3e2a2de97070b0b5a8f8717707125f40c2dd8b38235bd",
+        "native_index": 10,
+        "time": 0.09999999999999999,
+        "body": "8b9de506f300759e47678e79ab6963527037068d39af7ad4a6e94376bbfb827d",
+        "fields": "0dee332e0fe7a4fcf64c6e5a54ff263e13ffab69e4e621aff88faaf2797d506e",
+        "neural_rng_wave": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+        "energy": 0.6998399999999998,
+        "integrity": 0.8,
+        "execution_identity": "ac736eebcd5b409d072b68113fa1f9c4e27b5c1498f3bc659ae8f5e885acda7f",
+        "case_id": "fixture-independent-lifecycle"
+      },
+      "ended_errors": [
+        "request unavailable",
+        "request unavailable",
+        "closed segment"
+      ],
+      "interactive_resume_error": "interactive cases cannot resume",
+      "after_end_all_reads_rejections_inert": true,
+      "complete_generic_record_verification": {
+        "class": "AV",
+        "native_records": 10,
+        "wave_records": 0,
+        "events": 10,
+        "replayed": true,
+        "maximum_accounting_residual": 1.5998758307739225e-17,
+        "mode": "external_controller",
+        "status": "administrative_pause"
+      }
+    },
+    "cutoff": {
+      "native_index": 10,
+      "time": 0.09999999999999999,
+      "ended": true,
+      "after_end_error": "request unavailable",
+      "inert": true,
+      "verification": {
+        "class": "AV",
+        "native_records": 10,
+        "wave_records": 0,
+        "events": 10,
+        "replayed": true,
+        "maximum_accounting_residual": 1.5998758307739225e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      }
+    },
+    "post_validation_binding": {
+      "case": {
+        "operator_error": "request unavailable",
+        "native_calls": 0,
+        "native_index": 0,
+        "time": 0.0,
+        "physical_state_unchanged": true,
+        "ended": true,
+        "private_failure": "ValueError: manifest changed during run",
+        "limit": "Apparatus failure bookkeeping changes status; it does not evolve physical/RNG state."
+      },
+      "authority_session": {
+        "operator_error": "request unavailable",
+        "native_calls": 0,
+        "native_index": 0,
+        "time": 0.0,
+        "physical_state_unchanged": true,
+        "ended": true,
+        "private_failure": "ValueError: session execution identity mismatch",
+        "limit": "Apparatus failure bookkeeping changes status; it does not evolve physical/RNG state."
+      },
+      "deprivation": {
+        "operator_error": "request unavailable",
+        "native_calls": 0,
+        "native_index": 0,
+        "time": 0.0,
+        "physical_state_unchanged": true,
+        "ended": true,
+        "private_failure": "ValueError: manifest changed during run",
+        "limit": "Apparatus failure bookkeeping changes status; it does not evolve physical/RNG state."
+      }
+    }
+  }
+}

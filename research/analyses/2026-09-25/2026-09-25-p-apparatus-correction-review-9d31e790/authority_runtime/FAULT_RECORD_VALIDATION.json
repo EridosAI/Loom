@@ -1,0 +1,49 @@
+{
+  "alias-version": {
+    "accepted": true,
+    "result": {
+      "class": "AV",
+      "native_records": 1,
+      "wave_records": 0,
+      "events": 1,
+      "replayed": true,
+      "maximum_accounting_residual": 2.000014195056854e-17,
+      "mode": "external_controller",
+      "status": "administrative_pause"
+    }
+  },
+  "held-command": {
+    "accepted": false,
+    "error": "ValueError: extra native/wave/random/field update or native reconstruction mismatch"
+  },
+  "held-count": {
+    "accepted": false,
+    "error": "ValueError: missing controller decision"
+  },
+  "persist-first": {
+    "accepted": true,
+    "result": {
+      "class": "AV",
+      "native_records": 7,
+      "wave_records": 0,
+      "events": 7,
+      "replayed": true,
+      "maximum_accounting_residual": 5.439645587267117e-17,
+      "mode": "external_controller",
+      "status": "administrative_pause"
+    }
+  },
+  "persist-resumed": {
+    "accepted": true,
+    "result": {
+      "class": "AV",
+      "native_records": 4,
+      "wave_records": 0,
+      "events": 4,
+      "replayed": true,
+      "maximum_accounting_residual": 2.000014195056854e-17,
+      "mode": "external_controller",
+      "status": "administrative_pause"
+    }
+  }
+}

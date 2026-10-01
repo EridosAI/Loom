@@ -1,0 +1,60 @@
+{
+  "input_sha256": "f37dfec92288fbe8a650b00eed611d086a3ece3b280292e95b891e371cc0d37f",
+  "frames": 9184,
+  "events": 9185,
+  "mover_samples": 919,
+  "exact_first_contact_event": {
+    "id": 632,
+    "time": 6.31019048650431,
+    "duration": 0.0,
+    "kind": "recontact_or_first_touch",
+    "impact": true,
+    "contacts": [
+      {
+        "collider": "source-0",
+        "material": 2,
+        "normal": [
+          1.0,
+          0.0
+        ],
+        "impulse": 0.34430675199758054,
+        "relative_speed": 4.2165416175865874e-17,
+        "source": 0
+      }
+    ],
+    "contact": true,
+    "position": [
+      4.000000000033641,
+      3.0
+    ],
+    "angle": 3.141592653589793,
+    "Ebefore": 0.6874321110995589,
+    "E": 0.6874321110995589,
+    "Ibefore": 1.0,
+    "I": 0.9931138649600484,
+    "stock": 0.2,
+    "transfer": 0.0,
+    "sourceTransfer": 0.0,
+    "expense": 0.0,
+    "debit": 0.0,
+    "credit": 0.0,
+    "renewal": 0.0,
+    "residual": 0.0,
+    "damage": 0.006886135039951611,
+    "repair": 0.0,
+    "force": null
+  },
+  "peak_force": [
+    6.399999999999908,
+    0.27074663791428305,
+    641
+  ],
+  "impact_damage_sum": 0.006886135039951611,
+  "sustained_damage_sum": 3.712389589110808e-05,
+  "ledger_partition_all_events": true,
+  "simulation_steps": 0,
+  "mover_law_evaluations": 0,
+  "interpolated_physical_samples": 0,
+  "builder_sha256": "962d90bb3f637dcc26c939fe1046d769449b47dc01e6b8722cd665e49f84fcd7",
+  "viewer_data_sha256": "d9a9453d5396ab3141421285e95674fa167d80eb60c375ae38484a5a85b0014c"
+}

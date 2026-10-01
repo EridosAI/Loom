@@ -1,0 +1,13 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________ test_release_subdivision_does_not_repeat_native_or_noise ___________
+tests\test_corrective_contracts.py:78: in test_release_subdivision_does_not_repeat_native_or_noise
+    assert calls==[('native',.01,True),('field',.01)] and e.time==.01
+E   AssertionError: assert ([('native', 0...field', 0.01)] == [('native', 0...field', 0.01)]
+E     
+E     At index 1 diff: ('native', 0.01, True) != ('field', 0.01)
+E     Left contains one more item: ('field', 0.01)
+E     Use -v to get more diff)
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_release_subdivision_does_not_repeat_native_or_noise
+1 failed in 0.08s

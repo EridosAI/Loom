@@ -1,0 +1,776 @@
+[
+  {
+    "fault": "duplicate-approved_execution",
+    "test": "test_duplicate_approval_rejection[approved_execution]",
+    "intended_failure": "DUPLICATE APPROVAL BREACH: approved_execution",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.1234427000163123,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[approved_execution]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-approved_execution-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.183312599954661,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[approved_execution]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-approved_execution-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "duplicate-point",
+    "test": "test_duplicate_approval_rejection[point]",
+    "intended_failure": "DUPLICATE APPROVAL BREACH: point",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.1273191000218503,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[point]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-point-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.1568939999560826,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[point]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-point-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "duplicate-controller",
+    "test": "test_duplicate_approval_rejection[controller]",
+    "intended_failure": "DUPLICATE APPROVAL BREACH: controller",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.1523652000469156,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[controller]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-controller-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.1913046999834478,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[controller]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-controller-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "duplicate-until",
+    "test": "test_duplicate_approval_rejection[until]",
+    "intended_failure": "DUPLICATE APPROVAL BREACH: until",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.1320152999833226,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[until]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-until-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.1516575000132434,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[until]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-until-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "duplicate-identical",
+    "test": "test_duplicate_approval_rejection[identical]",
+    "intended_failure": "DUPLICATE APPROVAL BREACH: identical",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.1184083999833092,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[identical]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-identical-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.1593030000221916,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[identical]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\duplicate-identical-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "canonical-keys",
+    "test": "test_non_string_canonical_key",
+    "intended_failure": "CANONICAL KEY BREACH",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.7480301999603398,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_non_string_canonical_key",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\canonical-keys-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.7221828000037931,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_non_string_canonical_key",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\canonical-keys-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "approval-alias",
+    "test": "test_alias_and_semantic_mirror_rejection",
+    "intended_failure": "APPROVAL ALIAS BREACH",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.1185892000212334,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_alias_and_semantic_mirror_rejection",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\approval-alias-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.13723300001584,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_alias_and_semantic_mirror_rejection",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\approval-alias-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "protocol-shadow",
+    "test": "test_protocol_cannot_shadow_bound_fields",
+    "intended_failure": "PROTOCOL SHADOW BREACH",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0881917999940924,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_protocol_cannot_shadow_bound_fields",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\protocol-shadow-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.2062986000091769,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_protocol_cannot_shadow_bound_fields",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\protocol-shadow-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "dispatch-waypoint_command",
+    "test": "test_actual_dispatch_is_checked[waypoint_command]",
+    "intended_failure": "EXECUTED DISPATCH BREACH: waypoint_command",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.411767299985513,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[waypoint_command]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-waypoint_command-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.3060496000107378,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[waypoint_command]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-waypoint_command-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "dispatch-command_pair",
+    "test": "test_actual_dispatch_is_checked[command_pair]",
+    "intended_failure": "EXECUTED DISPATCH BREACH: command_pair",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.3478468999965116,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[command_pair]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-command_pair-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.2915088000008836,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[command_pair]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-command_pair-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "dispatch-privileged_input",
+    "test": "test_actual_dispatch_is_checked[privileged_input]",
+    "intended_failure": "EXECUTED DISPATCH BREACH: privileged_input",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.3248151000007056,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[privileged_input]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-privileged_input-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.2652349999989383,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[privileged_input]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-privileged_input-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "dispatch-time_due",
+    "test": "test_actual_dispatch_is_checked[time_due]",
+    "intended_failure": "EXECUTED DISPATCH BREACH: time_due",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.3270189000177197,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[time_due]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-time_due-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.2769390000030398,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[time_due]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-time_due-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "dispatch-observe_without_interference",
+    "test": "test_actual_dispatch_is_checked[observe_without_interference]",
+    "intended_failure": "EXECUTED DISPATCH BREACH: observe_without_interference",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.381615599966608,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[observe_without_interference]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-observe_without_interference-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.2806335999630392,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[observe_without_interference]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\dispatch-observe_without_interference-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "pending-command",
+    "test": "test_pending_mutation_before_advance_and_save[command]",
+    "intended_failure": "PENDING COMMAND BREACH: command",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.3414224999723956,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[command]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\pending-command-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 2.3066816000500694,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[command]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\pending-command-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "pending-remainder",
+    "test": "test_pending_mutation_before_advance_and_save[remainder]",
+    "intended_failure": "PENDING COMMAND BREACH: remainder",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.2678796000545844,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[remainder]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\pending-remainder-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 2.354631900030654,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[remainder]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\pending-remainder-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "pending-both",
+    "test": "test_pending_mutation_before_advance_and_save[both]",
+    "intended_failure": "PENDING COMMAND BREACH: both",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.276384200027678,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[both]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\pending-both-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 2.3333675999892876,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[both]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\pending-both-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "pending-decision",
+    "test": "test_pending_mutation_before_advance_and_save[decision]",
+    "intended_failure": "PENDING COMMAND BREACH: decision",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.2305896999896504,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[decision]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\pending-decision-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 2.2270071000093594,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[decision]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\pending-decision-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "decision-journal",
+    "test": "test_saved_decision_journal_rejection",
+    "intended_failure": "DECISION JOURNAL BREACH",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.4666545999934897,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_saved_decision_journal_rejection",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\decision-journal-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 3.144859899999574,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_final_corrections.py::test_saved_decision_journal_rejection",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-final-mechanical-closure-5f077481\\new-18-pairs-001\\decision-journal-GREEN-temp"
+      ]
+    }
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "label": "NON-CANONICAL RESURRECTION SANDBOX",
+  "status": "PASS",
+  "syntax_files": [
+    "analyse_passive.py",
+    "develop_questions.py",
+    "plot_passive.py",
+    "seal_package.py",
+    "write_report.py"
+  ],
+  "existing_manufactured_waves_checked": 3,
+  "new_simulation_steps": 0,
+  "current_population_outcomes_inspected": false,
+  "helper_sources": [
+    {
+      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\nursery_0_design_20260930_v0_1\\audit_exploration.py",
+      "preserved_copy": "passive_reference_sources\\audit_exploration.py",
+      "sha256": "034978d946ac7c4dabedd5adab4e76bd9cbb063bcc16b574254ebf01f74aabb2"
+    },
+    {
+      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\motor_commissioning_results_20260930_v0_1\\plot_passive.py",
+      "preserved_copy": "passive_reference_sources\\historical_plot_helpers.py",
+      "sha256": "6935d159d084bf0b1343c5a63cec0d23c4c7d30dcee069544cf199292ed34b05"
+    }
+  ]
+}

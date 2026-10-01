@@ -1,0 +1,97 @@
+{
+  "case": "PC-LR",
+  "observed_utc": "2026-09-27T00:24:41.1105108+00:00",
+  "user_report": "ChatGPT app updated; connection lost; asked for relaunch",
+  "recorded_url": "http://127.0.0.1:53754/",
+  "recorded_service_session_id": 13454,
+  "listener_present": false,
+  "execution_session_available": false,
+  "runtime_complete": true,
+  "runtime_status": "administrative_pause",
+  "stop_cause": "wall_time_limit",
+  "wall_seconds": 1222.6823884000187,
+  "final_simulation_seconds": 0.0,
+  "session_counters": {
+    "advanced": 0,
+    "field_updates": 0,
+    "body_wave_samples": 0
+  },
+  "initial_state_equals_final_state": true,
+  "stream_record_counts": {
+    "controller": 0,
+    "native": 0,
+    "wave": 0,
+    "sensor": 1,
+    "operator": 3
+  },
+  "operator_lifecycle_events": [
+    "prepared",
+    "paused",
+    "ended"
+  ],
+  "task_result": "NOT DEMONSTRATED: no operator observation submitted; no commands; administrative cutoff, not a physical or perceptual failure",
+  "artifacts_verified": [
+    {
+      "file": "controller.jsonl.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "diagnostics.jsonl.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "events.jsonl.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "final.restart.json.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "initial.restart.json.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "native.jsonl.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "operator.jsonl.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "scientific_observations.jsonl.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "sensor-display.json",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "sensor.jsonl.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    },
+    {
+      "file": "wave.jsonl.gz",
+      "sha256_matches": true,
+      "length_matches": true
+    }
+  ],
+  "manifest_sha256": "4c0658c7d60c2be39ad07a45852549e4b3097bd8528afc1a7054525a23592503",
+  "app_update_causation": "User-reported connection loss; recorded stop cause is wall_time_limit. No causal claim that the update triggered the cutoff.",
+  "recovery_action": "Read-only checks only; no relaunch, restart, resumed world, retry, code change or new authority object",
+  "new_attempt_requires": "Separate explicit authorization because original session ended irreversibly and prior grant prohibits retry",
+  "other_positive_controls_started": false,
+  "B1_executed": false,
+  "sealed_B1_accessed": false
+}

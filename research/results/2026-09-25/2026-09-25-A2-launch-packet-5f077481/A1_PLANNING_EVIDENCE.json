@@ -1,0 +1,25 @@
+{
+  "first_negative_contact_window": {
+    "first_native": 5201,
+    "last_native": 5220,
+    "start_time": 51.999999999998224,
+    "end_time": 52.199999999998184,
+    "complete_0_2_second_interval": true,
+    "energy_before": 0.7560812398417632,
+    "energy_after": 0.7560801179692649,
+    "energy_delta": -1.1218724983441675e-06,
+    "source_0_transfer": 0.00032392957268066963,
+    "all_source_transfer": 0.00032392957268066963,
+    "expenditure": 0.00032505144517903575,
+    "source_0_positive_duration_contact": true,
+    "absolute_energy_residual_sum": 6.268111572317603e-16,
+    "propagated_arithmetic_allowance": 2.100062681115723e-11,
+    "net_energy_sign": "negative_resolved",
+    "positive_net_contact_interval": false
+  },
+  "source_report": "references/FIRST_A1_COMMISSIONING_RESULT.zip: evidence/read-only-review/A1_OBSERVATIONS.json",
+  "status": "Historical evidence, not an A2 outcome",
+  "a1_final_time": 91.83000000001007,
+  "a1_ended_by": "administrative_pause / wall_time_limit",
+  "a1_source0_final_stock": 0.03425013279694742
+}

@@ -1,0 +1,23 @@
+{
+  "functions": {
+    "command_pair": true,
+    "waypoint_command": true,
+    "waypoint_stage": true,
+    "time_due": true,
+    "validate_plan": true,
+    "privileged_input": true,
+    "observe_without_interference": true
+  },
+  "gains_unchanged": true,
+  "gains": {
+    "heading_gain": 0.8,
+    "angular_damping": 0.2,
+    "distance_gain": 0.5,
+    "speed_damping": 0.4,
+    "force_gain": 0.4,
+    "turn_bound": 0.5,
+    "drive_bound": 0.5,
+    "maximum_target_force": 0.25,
+    "heading_distance_epsilon": 1e-12
+  }
+}

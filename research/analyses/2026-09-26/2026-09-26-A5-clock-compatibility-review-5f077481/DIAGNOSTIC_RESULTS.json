@@ -1,0 +1,1342 @@
+{
+  "diagnosis_only": true,
+  "p_commit": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "apparatus_commit": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "held_A5_sha256": "88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6",
+  "runtime": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "executable_sha256": "935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256",
+    "python_dlls": {
+      "python3.dll": "85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b",
+      "python313.dll": "0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": {
+        "version": "2.3.3",
+        "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af",
+        "file_count": 432,
+        "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+      },
+      "scipy": {
+        "version": "1.16.2",
+        "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1",
+        "file_count": 1078,
+        "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+      }
+    }
+  },
+  "first_native_exceedance": {
+    "index": 26941,
+    "accumulated": 269.4099999999,
+    "accumulated_hex": "0x1.0d68f5c28eee3p+8",
+    "accumulated_exact_decimal": "269.40999999989998059390927664935588836669921875",
+    "index_product": 269.41,
+    "index_product_hex": "0x1.0d68f5c28f5c3p+8",
+    "difference": -1.000444171950221e-10,
+    "difference_exact_decimal": "-1.00044417195022106170654296875E-10",
+    "ulp": 5.684341886080802e-14,
+    "absolute_guard_passes": false
+  },
+  "first_decision_rejection": {
+    "index": 26950,
+    "accumulated": 269.4999999998999,
+    "accumulated_hex": "0x1.0d7fffffff91fp+8",
+    "accumulated_exact_decimal": "269.49999999989989873938611708581447601318359375",
+    "index_product": 269.5,
+    "index_product_hex": "0x1.0d80000000000p+8",
+    "difference": -1.0010126061388291e-10,
+    "difference_exact_decimal": "-1.0010126061388291418552398681640625E-10",
+    "ulp": 5.684341886080802e-14,
+    "absolute_guard_passes": false
+  },
+  "checkpoints": {
+    "10": {
+      "index": 10,
+      "accumulated": 0.09999999999999999,
+      "accumulated_hex": "0x1.9999999999999p-4",
+      "accumulated_exact_decimal": "0.09999999999999999167332731531132594682276248931884765625",
+      "index_product": 0.1,
+      "index_product_hex": "0x1.999999999999ap-4",
+      "difference": -1.3877787807814457e-17,
+      "difference_exact_decimal": "-1.387778780781445675529539585113525390625E-17",
+      "ulp": 1.3877787807814457e-17,
+      "absolute_guard_passes": true
+    },
+    "20": {
+      "index": 20,
+      "accumulated": 0.20000000000000004,
+      "accumulated_hex": "0x1.999999999999bp-3",
+      "accumulated_exact_decimal": "0.2000000000000000388578058618804789148271083831787109375",
+      "index_product": 0.2,
+      "index_product_hex": "0x1.999999999999ap-3",
+      "difference": 2.7755575615628914e-17,
+      "difference_exact_decimal": "2.77555756156289135105907917022705078125E-17",
+      "ulp": 2.7755575615628914e-17,
+      "absolute_guard_passes": true
+    },
+    "9000": {
+      "index": 9000,
+      "accumulated": 90.00000000000914,
+      "accumulated_hex": "0x1.6800000000283p+6",
+      "accumulated_exact_decimal": "90.0000000000091375795818748883903026580810546875",
+      "index_product": 90.0,
+      "index_product_hex": "0x1.6800000000000p+6",
+      "difference": 9.137579581874888e-12,
+      "difference_exact_decimal": "9.1375795818748883903026580810546875E-12",
+      "ulp": 1.4210854715202004e-14,
+      "absolute_guard_passes": true
+    },
+    "12000": {
+      "index": 12000,
+      "accumulated": 120.00000000002449,
+      "accumulated_hex": "0x1.e0000000006bbp+6",
+      "accumulated_exact_decimal": "120.0000000000244853026742930524051189422607421875",
+      "index_product": 120.0,
+      "index_product_hex": "0x1.e000000000000p+6",
+      "difference": 2.4485302674293052e-11,
+      "difference_exact_decimal": "2.44853026742930524051189422607421875E-11",
+      "ulp": 1.4210854715202004e-14,
+      "absolute_guard_passes": true
+    },
+    "12800": {
+      "index": 12800,
+      "accumulated": 128.00000000002856,
+      "accumulated_hex": "0x1.00000000003edp+7",
+      "accumulated_exact_decimal": "128.000000000028563817977556027472019195556640625",
+      "index_product": 128.0,
+      "index_product_hex": "0x1.0000000000000p+7",
+      "difference": 2.8563817977556027e-11,
+      "difference_exact_decimal": "2.8563817977556027472019195556640625E-11",
+      "ulp": 2.842170943040401e-14,
+      "absolute_guard_passes": true
+    },
+    "18000": {
+      "index": 18000,
+      "accumulated": 179.99999999998127,
+      "accumulated_hex": "0x1.67ffffffffd6dp+7",
+      "accumulated_exact_decimal": "179.999999999981270093485363759100437164306640625",
+      "index_product": 180.0,
+      "index_product_hex": "0x1.6800000000000p+7",
+      "difference": -1.872990651463624e-11,
+      "difference_exact_decimal": "-1.8729906514636240899562835693359375E-11",
+      "ulp": 2.842170943040401e-14,
+      "absolute_guard_passes": true
+    },
+    "21000": {
+      "index": 21000,
+      "accumulated": 209.99999999995399,
+      "accumulated_hex": "0x1.a3ffffffff9adp+7",
+      "accumulated_exact_decimal": "209.999999999953985252432175911962985992431640625",
+      "index_product": 210.0,
+      "index_product_hex": "0x1.a400000000000p+7",
+      "difference": -4.601474756782409e-11,
+      "difference_exact_decimal": "-4.6014747567824088037014007568359375E-11",
+      "ulp": 2.842170943040401e-14,
+      "absolute_guard_passes": true
+    },
+    "25600": {
+      "index": 25600,
+      "accumulated": 255.99999999991215,
+      "accumulated_hex": "0x1.ffffffffff3edp+7",
+      "accumulated_exact_decimal": "255.999999999912148496150621213018894195556640625",
+      "index_product": 256.0,
+      "index_product_hex": "0x1.0000000000000p+8",
+      "difference": -8.785150384937879e-11,
+      "difference_exact_decimal": "-8.7851503849378786981105804443359375E-11",
+      "ulp": 2.842170943040401e-14,
+      "absolute_guard_passes": true
+    },
+    "26940": {
+      "index": 26940,
+      "accumulated": 269.3999999999,
+      "accumulated_hex": "0x1.0d66666665f87p+8",
+      "accumulated_exact_decimal": "269.39999999989998968885629437863826751708984375",
+      "index_product": 269.4,
+      "index_product_hex": "0x1.0d66666666666p+8",
+      "difference": -9.99875737761613e-11,
+      "difference_exact_decimal": "-9.998757377616129815578460693359375E-11",
+      "ulp": 5.684341886080802e-14,
+      "absolute_guard_passes": true
+    },
+    "26941": {
+      "index": 26941,
+      "accumulated": 269.4099999999,
+      "accumulated_hex": "0x1.0d68f5c28eee3p+8",
+      "accumulated_exact_decimal": "269.40999999989998059390927664935588836669921875",
+      "index_product": 269.41,
+      "index_product_hex": "0x1.0d68f5c28f5c3p+8",
+      "difference": -1.000444171950221e-10,
+      "difference_exact_decimal": "-1.00044417195022106170654296875E-10",
+      "ulp": 5.684341886080802e-14,
+      "absolute_guard_passes": false
+    },
+    "26950": {
+      "index": 26950,
+      "accumulated": 269.4999999998999,
+      "accumulated_hex": "0x1.0d7fffffff91fp+8",
+      "accumulated_exact_decimal": "269.49999999989989873938611708581447601318359375",
+      "index_product": 269.5,
+      "index_product_hex": "0x1.0d80000000000p+8",
+      "difference": -1.0010126061388291e-10,
+      "difference_exact_decimal": "-1.0010126061388291418552398681640625E-10",
+      "ulp": 5.684341886080802e-14,
+      "absolute_guard_passes": false
+    },
+    "27000": {
+      "index": 27000,
+      "accumulated": 269.99999999989944,
+      "accumulated_hex": "0x1.0dffffffff917p+8",
+      "accumulated_exact_decimal": "269.99999999989944399203523062169551849365234375",
+      "index_product": 270.0,
+      "index_product_hex": "0x1.0e00000000000p+8",
+      "difference": -1.0055600796476938e-10,
+      "difference_exact_decimal": "-1.0055600796476937830448150634765625E-10",
+      "ulp": 5.684341886080802e-14,
+      "absolute_guard_passes": false
+    },
+    "30000": {
+      "index": 30000,
+      "accumulated": 299.99999999987216,
+      "accumulated_hex": "0x1.2bffffffff737p+8",
+      "accumulated_exact_decimal": "299.99999999987215915098204277455806732177734375",
+      "index_product": 300.0,
+      "index_product_hex": "0x1.2c00000000000p+8",
+      "difference": -1.2784084901795723e-10,
+      "difference_exact_decimal": "-1.2784084901795722544193267822265625E-10",
+      "ulp": 5.684341886080802e-14,
+      "absolute_guard_passes": false
+    },
+    "45000": {
+      "index": 45000,
+      "accumulated": 449.99999999973573,
+      "accumulated_hex": "0x1.c1fffffffedd7p+8",
+      "accumulated_exact_decimal": "449.99999999973573494571610353887081146240234375",
+      "index_product": 450.0,
+      "index_product_hex": "0x1.c200000000000p+8",
+      "difference": -2.6426505428389646e-10,
+      "difference_exact_decimal": "-2.6426505428389646112918853759765625E-10",
+      "ulp": 5.684341886080802e-14,
+      "absolute_guard_passes": false
+    },
+    "48000": {
+      "index": 48000,
+      "accumulated": 479.99999999970845,
+      "accumulated_hex": "0x1.dffffffffebf7p+8",
+      "accumulated_exact_decimal": "479.99999999970845010466291569173336029052734375",
+      "index_product": 480.0,
+      "index_product_hex": "0x1.e000000000000p+8",
+      "difference": -2.915498953370843e-10,
+      "difference_exact_decimal": "-2.9154989533708430826663970947265625E-10",
+      "ulp": 5.684341886080802e-14,
+      "absolute_guard_passes": false
+    },
+    "51200": {
+      "index": 51200,
+      "accumulated": 511.99999999967935,
+      "accumulated_hex": "0x1.fffffffffe9f7p+8",
+      "accumulated_exact_decimal": "511.99999999967934627420618198812007904052734375",
+      "index_product": 512.0,
+      "index_product_hex": "0x1.0000000000000p+9",
+      "difference": -3.20653725793818e-10,
+      "difference_exact_decimal": "-3.2065372579381801187992095947265625E-10",
+      "ulp": 5.684341886080802e-14,
+      "absolute_guard_passes": false
+    },
+    "60000": {
+      "index": 60000,
+      "accumulated": 599.9999999995994,
+      "accumulated_hex": "0x1.2bffffffff23cp+9",
+      "accumulated_exact_decimal": "599.99999999959936758386902511119842529296875",
+      "index_product": 600.0,
+      "index_product_hex": "0x1.2c00000000000p+9",
+      "difference": -4.006324161309749e-10,
+      "difference_exact_decimal": "-4.0063241613097488880157470703125E-10",
+      "ulp": 1.1368683772161603e-13,
+      "absolute_guard_passes": false
+    },
+    "63000": {
+      "index": 63000,
+      "accumulated": 629.9999999995721,
+      "accumulated_hex": "0x1.3affffffff14cp+9",
+      "accumulated_exact_decimal": "629.99999999957208274281583726406097412109375",
+      "index_product": 630.0,
+      "index_product_hex": "0x1.3b00000000000p+9",
+      "difference": -4.2791725718416274e-10,
+      "difference_exact_decimal": "-4.2791725718416273593902587890625E-10",
+      "ulp": 1.1368683772161603e-13,
+      "absolute_guard_passes": false
+    },
+    "102400": {
+      "index": 102400,
+      "accumulated": 1023.9999999992137,
+      "accumulated_hex": "0x1.fffffffffe4fcp+9",
+      "accumulated_exact_decimal": "1023.99999999921374183031730353832244873046875",
+      "index_product": 1024.0,
+      "index_product_hex": "0x1.0000000000000p+10",
+      "difference": -7.862581696826965e-10,
+      "difference_exact_decimal": "-7.8625816968269646167755126953125E-10",
+      "ulp": 1.1368683772161603e-13,
+      "absolute_guard_passes": false
+    },
+    "120000": {
+      "index": 120000,
+      "accumulated": 1199.9999999990537,
+      "accumulated_hex": "0x1.2bfffffffefbep+10",
+      "accumulated_exact_decimal": "1199.99999999905367076280526816844940185546875",
+      "index_product": 1200.0,
+      "index_product_hex": "0x1.2c00000000000p+10",
+      "difference": -9.463292371947318e-10,
+      "difference_exact_decimal": "-9.4632923719473183155059814453125E-10",
+      "ulp": 2.2737367544323206e-13,
+      "absolute_guard_passes": false
+    }
+  },
+  "scalar_ranges": {
+    "63000": {
+      "max_absolute_accumulated_minus_index_product": 4.2791725718416274e-10,
+      "max_index_product_error_vs_exact_decimal": [
+        6.821210263296962e-14,
+        54630
+      ],
+      "max_local_ten_step_elapsed_error": [
+        1.1368683772161603e-13,
+        [
+          25610,
+          10
+        ]
+      ],
+      "max_remaining_native_count_error": 0,
+      "max_ulp": 1.1368683772161603e-13,
+      "scalar_native_count": 63000,
+      "scalar_command_hold_count": 6300,
+      "scalar_wave_boundaries": 3150,
+      "scalar_wave_elapsed_after20": 0.2,
+      "field_cadence": "Source specifies one .01 call per full native step; no FieldSolver called in this diagnostic",
+      "case_cutoff_predicate": true,
+      "minimum_recorded_clock_increment": 0.009999999999990905
+    },
+    "120000": {
+      "max_absolute_accumulated_minus_index_product": 9.463292371947318e-10,
+      "max_index_product_error_vs_exact_decimal": [
+        1.3642420526593923e-13,
+        109235
+      ],
+      "max_local_ten_step_elapsed_error": [
+        1.1368683772161603e-13,
+        [
+          25610,
+          10
+        ]
+      ],
+      "max_remaining_native_count_error": 0,
+      "max_ulp": 2.2737367544323206e-13,
+      "scalar_native_count": 120000,
+      "scalar_command_hold_count": 12000,
+      "scalar_wave_boundaries": 6000,
+      "scalar_wave_elapsed_after20": 0.2,
+      "field_cadence": "Source specifies one .01 call per full native step; no FieldSolver called in this diagnostic",
+      "case_cutoff_predicate": true,
+      "minimum_recorded_clock_increment": 0.009999999999990905
+    }
+  },
+  "float_increment_bins": {
+    "0.1": {
+      "ulp": 1.3877787807814457e-17,
+      "represented_increment": 0.009999999999999995,
+      "increment_minus_exact_point01": "-9/1801439850948198400",
+      "increment_error_float": -4.996003610813204e-18,
+      "one_e_minus10_in_ulps": 7205759.403792794,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": true
+    },
+    "90.0": {
+      "ulp": 1.4210854715202004e-14,
+      "represented_increment": 0.010000000000005116,
+      "increment_minus_exact_point01": "9/1759218604441600",
+      "increment_error_float": 5.115907697472721e-15,
+      "one_e_minus10_in_ulps": 7036.8744177664,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": true
+    },
+    "120.0": {
+      "ulp": 1.4210854715202004e-14,
+      "represented_increment": 0.010000000000005116,
+      "increment_minus_exact_point01": "9/1759218604441600",
+      "increment_error_float": 5.115907697472721e-15,
+      "one_e_minus10_in_ulps": 7036.8744177664,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": true
+    },
+    "128.0": {
+      "ulp": 2.842170943040401e-14,
+      "represented_increment": 0.009999999999990905,
+      "increment_minus_exact_point01": "-1/109951162777600",
+      "increment_error_float": -9.094947017729283e-15,
+      "one_e_minus10_in_ulps": 3518.4372088832,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": false
+    },
+    "200.0": {
+      "ulp": 2.842170943040401e-14,
+      "represented_increment": 0.009999999999990905,
+      "increment_minus_exact_point01": "-1/109951162777600",
+      "increment_error_float": -9.094947017729283e-15,
+      "one_e_minus10_in_ulps": 3518.4372088832,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": false
+    },
+    "256.0": {
+      "ulp": 5.684341886080802e-14,
+      "represented_increment": 0.009999999999990905,
+      "increment_minus_exact_point01": "-1/109951162777600",
+      "increment_error_float": -9.094947017729283e-15,
+      "one_e_minus10_in_ulps": 1759.2186044416,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": false
+    },
+    "269.5": {
+      "ulp": 5.684341886080802e-14,
+      "represented_increment": 0.009999999999990905,
+      "increment_minus_exact_point01": "-1/109951162777600",
+      "increment_error_float": -9.094947017729283e-15,
+      "one_e_minus10_in_ulps": 1759.2186044416,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": false
+    },
+    "512.0": {
+      "ulp": 1.1368683772161603e-13,
+      "represented_increment": 0.009999999999990905,
+      "increment_minus_exact_point01": "-1/109951162777600",
+      "increment_error_float": -9.094947017729283e-15,
+      "one_e_minus10_in_ulps": 879.6093022208,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": false
+    },
+    "630.0": {
+      "ulp": 1.1368683772161603e-13,
+      "represented_increment": 0.009999999999990905,
+      "increment_minus_exact_point01": "-1/109951162777600",
+      "increment_error_float": -9.094947017729283e-15,
+      "one_e_minus10_in_ulps": 879.6093022208,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": false
+    },
+    "1024.0": {
+      "ulp": 2.2737367544323206e-13,
+      "represented_increment": 0.009999999999990905,
+      "increment_minus_exact_point01": "-1/109951162777600",
+      "increment_error_float": -9.094947017729283e-15,
+      "one_e_minus10_in_ulps": 439.8046511104,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": false
+    },
+    "1200.0": {
+      "ulp": 2.2737367544323206e-13,
+      "represented_increment": 0.009999999999990905,
+      "increment_minus_exact_point01": "-1/109951162777600",
+      "increment_error_float": -9.094947017729283e-15,
+      "one_e_minus10_in_ulps": 439.8046511104,
+      "added_1e_minus12_resolved": true,
+      "added_1e_minus14_resolved": false
+    }
+  },
+  "binary_point01_exact_decimal": "0.01000000000000000020816681711721685132943093776702880859375",
+  "binary_point01_minus_exact_decimal": "3/14411518807585587200",
+  "A5_causal_scalar_traces": {
+    "26940": {
+      "index": 26940,
+      "time": 269.3999999999,
+      "stage_from_existing_scalar_comparator": 2,
+      "stage_deadline": 270.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 36060.00000001,
+      "remaining_native_steps": 36060,
+      "held_steps": 10,
+      "end_expression": 269.4999999999,
+      "new_hold_stage_check": true,
+      "absolute_clock_check": true,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 2,
+      "integer_route_done": false,
+      "integer_hold_end_within_expected_stage": true
+    },
+    "26950": {
+      "index": 26950,
+      "time": 269.4999999998999,
+      "stage_from_existing_scalar_comparator": 2,
+      "stage_deadline": 270.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 36050.00000001001,
+      "remaining_native_steps": 36050,
+      "held_steps": 10,
+      "end_expression": 269.5999999998999,
+      "new_hold_stage_check": true,
+      "absolute_clock_check": false,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 2,
+      "integer_route_done": false,
+      "integer_hold_end_within_expected_stage": true
+    },
+    "26990": {
+      "index": 26990,
+      "time": 269.89999999989953,
+      "stage_from_existing_scalar_comparator": 2,
+      "stage_deadline": 270.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 36010.00000001005,
+      "remaining_native_steps": 36010,
+      "held_steps": 10,
+      "end_expression": 269.99999999989956,
+      "new_hold_stage_check": true,
+      "absolute_clock_check": false,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 2,
+      "integer_route_done": false,
+      "integer_hold_end_within_expected_stage": true
+    },
+    "27000": {
+      "index": 27000,
+      "time": 269.99999999989944,
+      "stage_from_existing_scalar_comparator": 2,
+      "stage_deadline": 270.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 36000.000000010055,
+      "remaining_native_steps": 36000,
+      "held_steps": 10,
+      "end_expression": 270.09999999989947,
+      "new_hold_stage_check": false,
+      "absolute_clock_check": false,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 3,
+      "integer_route_done": false,
+      "integer_hold_end_within_expected_stage": true
+    },
+    "30000": {
+      "index": 30000,
+      "time": 299.99999999987216,
+      "stage_from_existing_scalar_comparator": 3,
+      "stage_deadline": 300.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 33000.000000012784,
+      "remaining_native_steps": 33000,
+      "held_steps": 10,
+      "end_expression": 300.0999999998722,
+      "new_hold_stage_check": false,
+      "absolute_clock_check": false,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 4,
+      "integer_route_done": false,
+      "integer_hold_end_within_expected_stage": true
+    },
+    "45000": {
+      "index": 45000,
+      "time": 449.99999999973573,
+      "stage_from_existing_scalar_comparator": 4,
+      "stage_deadline": 450.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 18000.000000026426,
+      "remaining_native_steps": 18000,
+      "held_steps": 10,
+      "end_expression": 450.09999999973576,
+      "new_hold_stage_check": false,
+      "absolute_clock_check": false,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 5,
+      "integer_route_done": false,
+      "integer_hold_end_within_expected_stage": true
+    },
+    "48000": {
+      "index": 48000,
+      "time": 479.99999999970845,
+      "stage_from_existing_scalar_comparator": 5,
+      "stage_deadline": 480.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 15000.000000029155,
+      "remaining_native_steps": 15000,
+      "held_steps": 10,
+      "end_expression": 480.0999999997085,
+      "new_hold_stage_check": false,
+      "absolute_clock_check": false,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 6,
+      "integer_route_done": false,
+      "integer_hold_end_within_expected_stage": true
+    },
+    "62990": {
+      "index": 62990,
+      "time": 629.8999999995722,
+      "stage_from_existing_scalar_comparator": 6,
+      "stage_deadline": 630.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 10.00000004278263,
+      "remaining_native_steps": 10,
+      "held_steps": 10,
+      "end_expression": 629.9999999995722,
+      "new_hold_stage_check": true,
+      "absolute_clock_check": false,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 6,
+      "integer_route_done": false,
+      "integer_hold_end_within_expected_stage": true
+    },
+    "63000": {
+      "index": 63000,
+      "time": 629.9999999995721,
+      "stage_from_existing_scalar_comparator": 6,
+      "stage_deadline": 630.0,
+      "route_complete_predicate": false,
+      "remaining_expression": 4.2791725718416274e-08,
+      "remaining_native_steps": 0,
+      "held_steps": 0,
+      "end_expression": 629.9999999995721,
+      "new_hold_stage_check": true,
+      "absolute_clock_check": false,
+      "case_guard_time_le_deadline_plus_1e_minus9": true,
+      "integer_expected_stage": 6,
+      "integer_route_done": true,
+      "integer_hold_end_within_expected_stage": true
+    }
+  },
+  "direct_production_prefix_results": [
+    {
+      "index": 26940,
+      "scope": "Schema/authority/clock prefix only. Deliberately invalid downstream input sentinel; not a valid physical command.",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "forbidden controller input",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 133
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 52
+        },
+        {
+          "file": "controllers.py",
+          "function": "validate_privileged",
+          "line": 39
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "index": 26950,
+      "scope": "Schema/authority/clock prefix only. Deliberately invalid downstream input sentinel; not a valid physical command.",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 133
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "index": 27000,
+      "scope": "Schema/authority/clock prefix only. Deliberately invalid downstream input sentinel; not a valid physical command.",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 133
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    }
+  ],
+  "detached_pending_predicate_results": [
+    {
+      "issued_index": 26940,
+      "progress": 0,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": 0.0,
+      "accepted": true
+    },
+    {
+      "issued_index": 26940,
+      "progress": 7,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -5.684341886080802e-14,
+      "accepted": true
+    },
+    {
+      "issued_index": 26940,
+      "progress": 9,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -5.684341886080802e-14,
+      "accepted": true
+    },
+    {
+      "issued_index": 26940,
+      "progress": 10,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -1.1368683772161603e-13,
+      "accepted": true
+    },
+    {
+      "issued_index": 26940,
+      "negative": "stale positive remainder at completed hold",
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "pending remainder differs from issued native progress",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 158
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 73
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 26950,
+      "progress": 0,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": 0.0,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 26950,
+      "progress": 7,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -5.684341886080802e-14,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 26950,
+      "progress": 9,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -5.684341886080802e-14,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 26950,
+      "progress": 10,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -1.1368683772161603e-13,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 30000,
+      "progress": 0,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": 0.0,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 30000,
+      "progress": 7,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -5.684341886080802e-14,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 30000,
+      "progress": 9,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -5.684341886080802e-14,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 30000,
+      "progress": 10,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -1.1368683772161603e-13,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 62990,
+      "progress": 0,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": 0.0,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 62990,
+      "progress": 7,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -1.1368683772161603e-13,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 62990,
+      "progress": 9,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -1.1368683772161603e-13,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "issued_index": 62990,
+      "progress": 10,
+      "json_scalar_roundtrip_exact": true,
+      "local_elapsed_error": -1.1368683772161603e-13,
+      "accepted": false,
+      "exception": "ValueError",
+      "message": "issued decision clock mismatch",
+      "traceback": [
+        {
+          "file": "diagnose_clock.py",
+          "function": "outcome",
+          "line": 36
+        },
+        {
+          "file": "diagnose_clock.py",
+          "function": "<lambda>",
+          "line": 150
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_pending",
+          "line": 71
+        },
+        {
+          "file": "pending.py",
+          "function": "validate_decision",
+          "line": 44
+        },
+        {
+          "file": "contract.py",
+          "function": "require",
+          "line": 29
+        }
+      ]
+    }
+  ],
+  "existing_detached_test_results": [
+    {
+      "test": "test_exact_review_boundary",
+      "time": 0.09999999999999999,
+      "passed": true
+    },
+    {
+      "test": "test_exact_review_boundary",
+      "time": 0.09999999999999999,
+      "passed": true
+    },
+    {
+      "test": "test_exact_review_boundary",
+      "time": 0.1,
+      "passed": true
+    },
+    {
+      "test": "test_exact_review_boundary",
+      "time": 0.10000000000000002,
+      "passed": true
+    },
+    {
+      "test": "test_exact_review_boundary",
+      "time": 0.10000000005000001,
+      "passed": true
+    },
+    {
+      "test": "test_final_stage_and_not_due_control",
+      "passed": true
+    }
+  ],
+  "prior_saved_action_metadata": [
+    {
+      "case": "A1",
+      "receipt_sha256": "a51be0e79589e8922d3f53485dad80aa7cfbf580775d77d9e614f69f0fcfa3f8",
+      "controller_stream_sha256": "04a726e0fb33f6043bdb4fa7ab5551a8e8027cc7476bb9d350422a3ddd81a39a",
+      "action_count": 919,
+      "maximum_saved_action_clock_error": 1.0061285138363019e-11,
+      "integer_stage_mismatches": [],
+      "final_time": 91.83000000001007,
+      "status": "administrative_pause",
+      "replayed": false
+    },
+    {
+      "case": "A2",
+      "receipt_sha256": "8030a9bf8e634bde4caf91e0a60d3014d29ee6d3b5b42fd01206a99a53e3dff9",
+      "controller_stream_sha256": "7a5c421e1e1489f084913cf21866b1a2259db14e8ceb5c7bcd3229cba5fce7b9",
+      "action_count": 1800,
+      "maximum_saved_action_clock_error": 2.8563817977556027e-11,
+      "integer_stage_mismatches": [],
+      "final_time": 179.99999999998127,
+      "status": "administrative_cutoff",
+      "replayed": false
+    },
+    {
+      "case": "A3",
+      "receipt_sha256": "3ad38a1466eb69e263f13ea990bdff868d2d856e01dda224d8ed9f2b3e64f306",
+      "controller_stream_sha256": "6742e41041d2d0c9daa9c7f5815a09a17192a96cbffc9808b8061e5a70c58dbe",
+      "action_count": 2100,
+      "maximum_saved_action_clock_error": 4.5929482439532876e-11,
+      "integer_stage_mismatches": [],
+      "final_time": 209.99999999995399,
+      "status": "administrative_cutoff",
+      "replayed": false
+    },
+    {
+      "case": "A4-CROSS",
+      "receipt_sha256": "4fd00fb748e866456b0f5610ad875336b9e5fed0623168939df4341a302675e6",
+      "controller_stream_sha256": "033ce998c73a8999ab2ad81c931884329d872e52c6e93411dcf81608155b6149",
+      "action_count": 160,
+      "maximum_saved_action_clock_error": 2.948752353404416e-13,
+      "integer_stage_mismatches": [],
+      "final_time": 15.999999999999703,
+      "status": "administrative_cutoff",
+      "replayed": false
+    },
+    {
+      "case": "A4-WAIT",
+      "receipt_sha256": "323bb948bd67b302060e2ddf63bc2f07aebc056c41bef5e50d2a1f84a6569ba9",
+      "controller_stream_sha256": "92fd15bbc3cb80c0efe1e5d7a2022ca25b56b599120a867110875aa9dc420c23",
+      "action_count": 280,
+      "maximum_saved_action_clock_error": 1.55964130499342e-12,
+      "integer_stage_mismatches": [],
+      "final_time": 28.000000000001577,
+      "status": "administrative_cutoff",
+      "replayed": false
+    },
+    {
+      "case": "A4-DETOUR",
+      "receipt_sha256": "fd5a8f1dfb0264a9fd30e1e7ff632ab3523c97e6df19c6c6e727e2daf3dbf042",
+      "controller_stream_sha256": "2baf5ace05be15d2e9e80430a87207992175c04c93d090e4efe8303756cacf58",
+      "action_count": 320,
+      "maximum_saved_action_clock_error": 2.184918912462308e-12,
+      "integer_stage_mismatches": [],
+      "final_time": 32.0000000000022,
+      "status": "administrative_cutoff",
+      "replayed": false
+    }
+  ],
+  "integer_schedule_oracle": {
+    "A5_deadline_native_indices": [
+      9000,
+      12000,
+      27000,
+      30000,
+      45000,
+      48000,
+      63000
+    ],
+    "A5_native_count": 63000,
+    "A5_command_count": 6300,
+    "A5_wave_boundaries": 3150,
+    "case_seven_native_steps": {
+      "hold_length": 7,
+      "legal_global_shortening": true
+    },
+    "interior_five_native_steps": {
+      "requested_hold_length": 10,
+      "deadline_native_index": 5,
+      "must_reject": true
+    },
+    "all_A5_holds_fit_their_index_stage": true,
+    "no_world_time_overwrite": true,
+    "no_controller_invocation": true
+  },
+  "uniform_tolerance_comparison": {
+    "scope": "Detached scalar candidate comparison only; no production tolerance altered",
+    "one_e_minus9_would_admit_zero_origin_clock_to1200": true,
+    "existing_early_control_time": 0.0999999998,
+    "existing_due_result": false,
+    "uniform_one_e_minus9_due_result": true,
+    "only_guard_increase_leaves_t270_stage_rejection": true
+  },
+  "max_mover_position_difference_bound_if_replacing_physical_time_at630": 3.584911230704159e-10,
+  "counts": {
+    "world_steps": 0,
+    "field_steps": 0,
+    "neural_steps": 0,
+    "RNG_draws": 0,
+    "world_constructors": 0,
+    "Run_constructors": 0,
+    "A5_controller_calls": 0,
+    "detached_legacy_controller_calls": 13
+  },
+  "forbidden_calls": [],
+  "tests_not_run": [
+    "All existing tests that create/advance/replay any world, including short pause/resume and one-step-at-1199.99 tests",
+    "Ecological trajectories",
+    "A5 controller against world",
+    "New prehistory",
+    "Physical convergence or throughput"
+  ],
+  "no_production_edits": true,
+  "no_replacement_authority": true,
+  "elapsed_wall_seconds": 2.794469299959019
+}

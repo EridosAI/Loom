@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.486" timestamp="2026-09-26T18:57:14.621793+08:00" hostname="Equinox"><testcase classname="tests_apparatus.test_b1_operator" name="test_D_raw_record_not_mutated" time="0.052"><failure message="AssertionError: DISPLAY DEPRIVATION ALTERED PHYSICAL RAW RECORD&#10;assert {'annotations...nds': [], ...} == {'annotations...nds': [], ...}&#10;  &#10;  Omitting 5 identical items, use -vv to show&#10;  Differing items:&#10;  {'history': [{'EI_sample_time': 0.0, 'actual_EI': [0.7, 0.8], 'native_index': 0, 'raw': [0.03135193295561997, 0.014689968883340218, 0.020000000000000004, 0.016000000000000004, 0.020000000000000004, 0.016000000000000004, ...], ...}]} != {'history': [{'EI_sample_time': 0.0, 'actual_EI': [0.7, 0.8], 'native_index': 0, 'raw': [0.03135193295561997, 0.014689968883340218, 0.020000000000000004, 0.016000000000000004, 0.020000000000000004, 0.016000000000000004, ...], ...}]}&#10;  Use -v to get more diff">def test_D_raw_record_not_mutated():
+        truth=raw_fixture();before=copy.deepcopy(truth)
+        if fault('D'):
+            for row in truth['history']:row['raw'][10:14]=[0.]*4
+        operator_view.project(truth,operator_view.display_identity('chemistry_hidden'))
+&gt;       assert truth==before,'DISPLAY DEPRIVATION ALTERED PHYSICAL RAW RECORD'
+E       AssertionError: DISPLAY DEPRIVATION ALTERED PHYSICAL RAW RECORD
+E       assert {'annotations...nds': [], ...} == {'annotations...nds': [], ...}
+E         
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'history': [{'EI_sample_time': 0.0, 'actual_EI': [0.7, 0.8], 'native_index': 0, 'raw': [0.03135193295561997, 0.014689968883340218, 0.020000000000000004, 0.016000000000000004, 0.020000000000000004, 0.016000000000000004, ...], ...}]} != {'history': [{'EI_sample_time': 0.0, 'actual_EI': [0.7, 0.8], 'native_index': 0, 'raw': [0.03135193295561997, 0.014689968883340218, 0.020000000000000004, 0.016000000000000004, 0.020000000000000004, 0.016000000000000004, ...], ...}]}
+E         Use -v to get more diff
+
+tests_apparatus\test_b1_operator.py:92: AssertionError</failure></testcase></testsuite></testsuites>

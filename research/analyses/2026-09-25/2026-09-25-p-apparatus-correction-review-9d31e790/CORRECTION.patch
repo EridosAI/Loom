@@ -1,0 +1,942 @@
+diff --git a/developmental_ecology/loom_commissioning/authority.py b/developmental_ecology/loom_commissioning/authority.py
+new file mode 100644
+index 0000000..1dfcc98
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/authority.py
+@@ -0,0 +1,123 @@
++"""Canonical, inspectable execution identities. No authority is created here."""
++import copy
++from functools import lru_cache
++import importlib.metadata
++import json
++import marshal
++import math
++from pathlib import Path
++import platform
++import sys
++import types
++from .contract import require, digest, INTACT, FIXED
++
++def canonical(value):
++    """UTF-8 JSON; sorted string keys, compact separators, finite numbers only."""
++    return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode('utf-8')
++
++def execution_object(manifest):
++    # Only the self-referential grant is excluded. Future manifest fields are
++    # therefore bound automatically rather than accidentally omitted.
++    return copy.deepcopy({k:v for k,v in manifest.items() if k!='execution_authority'})
++
++def execution_sha256(manifest):
++    return digest(canonical(execution_object(manifest)))
++
++def file_identity(name):
++    return digest((Path(__file__).parent/name).read_bytes())
++
++def callable_identity(fn):
++    # Bind live Python implementations as well as source bytes. Normalize only
++    # the location, so a byte-identical portable copy has the same code identity.
++    def portable(code):
++        constants=tuple(portable(c) if isinstance(c,types.CodeType) else c for c in code.co_consts)
++        return code.replace(co_filename=Path(code.co_filename).name,co_consts=constants)
++    return digest(marshal.dumps(portable(fn.__code__)))
++
++@lru_cache(maxsize=1)
++def _runtime_identity():
++    packages={}
++    for name in ('numpy','scipy'):
++        dist=importlib.metadata.distribution(name)
++        files={str(p).replace('\\','/'):digest(Path(dist.locate_file(p)).read_bytes())
++               for p in sorted(dist.files,key=str) if str(p).endswith(('.py','.pyd','.dll','.so','/METADATA','/RECORD'))}
++        packages[name]={'version':dist.version,'content_sha256':digest(canonical(files)),
++                        'file_count':len(files),'coverage':'installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode'}
++    dlls={p.name:digest(p.read_bytes()) for p in sorted(Path(sys.base_prefix).glob('python*.dll'))}
++    return {'python':sys.version,'implementation':platform.python_implementation(),
++            'executable_sha256':digest(Path(sys.executable).read_bytes()),'python_dlls':dlls,
++            'platform':platform.platform(),'packages':packages}
++
++def runtime_identity():
++    # A fresh process inventories its installed runtime once. This is an
++    # approval/workflow identity, not defense against hot patching native DLLs.
++    return copy.deepcopy(_runtime_identity())
++
++def controller_identity(kind):
++    from . import controllers as c
++    names=('waypoint_command','validate_plan','time_due','command_pair','privileged_input','validate_privileged') if kind=='waypoint' else (
++        ('privileged_input','validate_privileged','command_pair') if kind=='manual_privileged' else ('validate_sensor_payload','command_pair') if kind=='sensor_human' else ())
++    implementation={'controllers.py':file_identity('controllers.py'),
++                    'live_functions':{n:callable_identity(getattr(c,n)) for n in names}}
++    if kind=='sensor_human':
++        implementation.update({'sensor_ui.py':file_identity('sensor_ui.py'),'sensor.html':file_identity('sensor.html')})
++    interface={'none':'P-native','waypoint':'privileged-closed-input','manual_privileged':'privileged-manual-fallback',
++               'sensor_human':'29-raw-native-history-held-EI-own-commands'}[kind]
++    settings=copy.deepcopy(c.WAYPOINT_SETTINGS) if kind=='waypoint' else {}
++    return {'kind':kind,'implementation':implementation,'configuration':settings,'interface':interface}
++
++def adapter_identity(mode):
++    return {'mode':mode,'implementation_sha256':file_identity('adapter.py'),
++            'intervention':'freeze-reviewed-structure-at-reviewed-restoration-points' if mode==FIXED else 'inactive-neural-external-actuation' if mode!=INTACT else 'none'}
++
++def make_execution(mode,controller,*,plan=None,protocol=None,storage_limit=1_000_000_000,wall_limit=3600):
++    kind={'waypoint':'prescribed_waypoints','manual_privileged':'privileged_manual_procedure',
++          'sensor_human':'sensor_only_human_procedure','none':'native_autonomous_procedure'}[controller]
++    return {'runtime':runtime_identity(),'controller':controller_identity(controller),'adapter':adapter_identity(mode),
++            'procedure':{'kind':kind,'stages':copy.deepcopy(plan),'protocol':copy.deepcopy(protocol)},
++            'display_intervention':{'kind':'none'},
++            'resources':{'storage_limit_bytes':storage_limit,'wall_limit_seconds':wall_limit}}
++
++def validate_execution(m,*,complete=False):
++    x=m['execution']; expected=make_execution(m['mode'],m['controller'])
++    require(set(x)==set(expected), 'execution specification schema mismatch')
++    for k in ('runtime','controller','adapter'):
++        require(x[k]==expected[k],f'{k} execution identity mismatch')
++    # This correction binds existing full-display behavior; it does not build
++    # a new deprivation adapter or silently treat its label as an implementation.
++    require(x['display_intervention']=={'kind':'none'}, 'unsupported display intervention')
++    r=x['resources']
++    require(set(r)=={'storage_limit_bytes','wall_limit_seconds'} and type(r['storage_limit_bytes'])==int
++            and r['storage_limit_bytes']>0 and type(r['wall_limit_seconds']) in (int,float)
++            and math.isfinite(r['wall_limit_seconds']) and r['wall_limit_seconds']>0, 'explicit finite resource limits required')
++    p=x['procedure']
++    require(set(p)=={'kind','stages','protocol'} and p['kind']==expected['procedure']['kind'], 'procedure kind mismatch')
++    require(p['protocol'] is None or isinstance(p['protocol'],dict), 'structured procedure required')
++    if m['controller']=='waypoint':
++        if complete or p['stages'] is not None:
++            from .controllers import validate_plan
++            validate_plan(p['stages'])
++            require(p['stages'][0]['until']>m['initial_time']
++                    and p['stages'][-1]['until']<=m['hard_stop_time']+1e-10,'route outside duration scope')
++    else:
++        require(p['stages'] is None,'route supplied to another controller')
++        if complete and m['purpose']=='commissioning':
++            require(bool(p['protocol']),'explicit structured arm procedure required')
++    canonical(x)  # Reject non-finite or non-JSON procedure content.
++
++def validate_session(m,s):
++    x=m['execution']
++    require(s['route']==x['procedure']['stages'], 'session route differs from approved procedure')
++    require(s['wall_limit']==x['resources']['wall_limit_seconds']
++            and s['storage_limit']==x['resources']['storage_limit_bytes'], 'session resources differ from approved scope')
++    require(s['execution_sha256']==execution_sha256(m), 'session execution identity mismatch')
++
++def verify_approval_binding(m,authority):
++    expected=execution_sha256(m)
++    require(authority['approved_execution_sha256']==expected,'approved execution identity mismatch')
++    raw=Path(authority['request_path']).read_bytes()
++    require(digest(raw)==authority['request_sha256'],'execution authority identity mismatch')
++    request=json.loads(raw)
++    require(request.get('approved_execution_sha256')==expected
++            and canonical(request.get('approved_execution'))==canonical(execution_object(m)),
++            'request does not approve exact execution specification')
+diff --git a/developmental_ecology/loom_commissioning/contract.py b/developmental_ecology/loom_commissioning/contract.py
+index 4740673..ae62315 100644
+--- a/developmental_ecology/loom_commissioning/contract.py
++++ b/developmental_ecology/loom_commissioning/contract.py
+@@ -29,9 +29,10 @@ def require(condition, message):
+         raise ValueError(message)
+ 
+ def make_manifest(engine, case_id, mode, controller, seconds, *, purpose='manufactured_fixture',
+-                  initialization=None):
++                  initialization=None, plan=None, protocol=None, storage_limit=1_000_000_000, wall_limit=3600):
+     """Explicit constructor; it does not grant permission to execute a manifest."""
+-    return dict(schema=1, baseline=BASELINE, p_code=P_CODE, configuration=CONFIG,
++    from .authority import make_execution
++    return dict(schema=2, baseline=BASELINE, p_code=P_CODE, configuration=CONFIG,
+                 apparatus=apparatus_identity(), case_id=case_id, purpose=purpose,
+                 mode=mode, controller=controller, initial_state=state_hash(engine),
+                 initial_time=engine.time, initial_index=engine.native_index,
+@@ -39,12 +40,14 @@ def make_manifest(engine, case_id, mode, controller, seconds, *, purpose='manufa
+                 initialization=initialization or {'kind': 'manufactured', 'lawful_birth': False},
+                 duration_seconds=seconds, hard_stop_time=engine.time+seconds,
+                 command_hold_seconds=.1, selection=SELECTION.copy(), roster=ROSTER.copy(),
++                execution=make_execution(mode,controller,plan=plan,protocol=protocol,
++                                         storage_limit=storage_limit,wall_limit=wall_limit),
+                 execution_authority=None)
+ 
+ def validate_manifest(m, engine, *, initial=True):
+     required = set(make_manifest(engine, 'unused', INTACT, 'none', 0))
+     require(set(m) == required, 'manifest schema mismatch')
+-    require(m['schema'] == 1 and m['baseline'] == BASELINE and m['p_code'] == P_CODE
++    require(m['schema'] == 2 and m['baseline'] == BASELINE and m['p_code'] == P_CODE
+             and code_identity()['sha256'] == P_CODE, 'manifest/code identity mismatch')
+     require(m['configuration'] == CONFIG == engine.c.identity(), 'configuration identity mismatch')
+     require(m['apparatus'] == apparatus_identity(), 'apparatus identity mismatch')
+@@ -78,6 +81,8 @@ def validate_manifest(m, engine, *, initial=True):
+         verify_history(init,engine.c,m['initial_fields'],m['phase'])
+         if m['case_id'] in ('C1', 'C2'):
+             require(init.get('birth_id') in (1,2,3,4) and duration == 600, 'birth roster/ceiling mismatch')
++    from .authority import validate_execution
++    validate_execution(m)
+     return True
+ 
+ def authorize_execution(m):
+@@ -88,11 +93,13 @@ def authorize_execution(m):
+         require(m['execution_authority'] is None,'fixture is not a commissioning grant')
+         return
+     authority=m['execution_authority']
+-    require(isinstance(authority,dict) and set(authority)=={'request_path','request_sha256','approved_case','approved_initial_state','approved_duration'},
++    require(isinstance(authority,dict) and set(authority)=={'request_path','request_sha256','approved_case','approved_initial_state','approved_duration','approved_execution_sha256'},
+             'commissioning execution is not authorized')
+     require(authority['approved_case']==m['case_id'] and authority['approved_initial_state']==m['initial_state']
+             and authority['approved_duration']==m['duration_seconds'], 'execution grant scope mismatch')
+-    require(digest(Path(authority['request_path']).read_bytes())==authority['request_sha256'], 'execution authority identity mismatch')
++    from .authority import verify_approval_binding, validate_execution
++    verify_approval_binding(m,authority)
++    validate_execution(m,complete=True)
+ 
+ CLASSES = {'V1':'AV','V2':'AV','V3':'AV','A0':'AV','A1':'AV','A2':'AV','A3':'AV','A4':'AV','A5':'AV',
+            'B1':'AV','B2':'AV','B3':'AV','B4':'CO','C1':'CO','C2':'CO',
+diff --git a/developmental_ecology/loom_commissioning/controllers.py b/developmental_ecology/loom_commissioning/controllers.py
+index 127a5d5..462ec5e 100644
+--- a/developmental_ecology/loom_commissioning/controllers.py
++++ b/developmental_ecology/loom_commissioning/controllers.py
+@@ -4,8 +4,31 @@ import math
+ import numpy as np
+ from loom_p.geometry import fixtures, mover
+ from loom_p.records import view, state_hash
++from loom_p.schema import Config
+ from .contract import require
+ 
++# Same reviewed literals, now explicit approval-bearing controller configuration.
++WAYPOINT_SETTINGS={'heading_gain':.8,'angular_damping':.2,'distance_gain':.5,
++    'speed_damping':.4,'force_gain':.4,'turn_bound':.5,'drive_bound':.5,
++    'maximum_target_force':.25,'heading_distance_epsilon':1e-12}
++
++def time_due(now, deadline):
++    """Compare decision deadlines using P's existing absolute event-time tolerance.
++
++    This only classifies a controller boundary; it never modifies world time.
++    """
++    return now>=deadline or math.isclose(now,deadline,rel_tol=0.,abs_tol=Config().event_time_tol)
++
++def validate_plan(plan):
++    require(isinstance(plan,list) and bool(plan), 'invalid prescribed route')
++    previous=-float('inf')
++    for p in plan:
++        require(set(p)=={'point','until','press_force'} and len(p['point'])==2
++                and all(math.isfinite(float(v)) for v in (*p['point'],p['until'],p['press_force']))
++                and 0<=p['press_force']<=WAYPOINT_SETTINGS['maximum_target_force']
++                and p['until']>previous, 'invalid prescribed route')
++        previous=p['until']
++
+ PRIVILEGED_KEYS={'position','angle','velocity','omega','reserves','commands','geometry',
+                  'mover_phase','mover_velocity','stocks','contacts','time'}
+ SENSOR_KEYS={'schema','raw_labels','history','own_commands','annotations','availability'}
+@@ -48,24 +71,22 @@ def waypoint_command(data, plan, cursor):
+     """
+     validate_privileged(data)
+     require(bool(plan) and type(cursor)==int and 0<=cursor<len(plan), 'invalid route cursor')
+-    for p in plan:
+-        require(set(p)=={'point','until','press_force'} and len(p['point'])==2
+-                and all(math.isfinite(float(v)) for v in (*p['point'],p['until'],p['press_force']))
+-                and 0<=p['press_force']<=.25, 'invalid prescribed route')
+-    while cursor<len(plan)-1 and data['time']>=plan[cursor]['until']:
++    validate_plan(plan)
++    k=WAYPOINT_SETTINGS
++    while cursor<len(plan)-1 and time_due(data['time'],plan[cursor]['until']):
+         cursor+=1
+     p=plan[cursor]; delta=np.array(p['point'])-data['position']
+     distance=float(np.linalg.norm(delta))
+-    heading=math.atan2(delta[1],delta[0]) if distance>1e-12 else data['angle']
++    heading=math.atan2(delta[1],delta[0]) if distance>k['heading_distance_epsilon'] else data['angle']
+     error=math.atan2(math.sin(heading-data['angle']),math.cos(heading-data['angle']))
+-    turn=float(np.clip(.8*error-.2*data['omega'],-.5,.5))
++    turn=float(np.clip(k['heading_gain']*error-k['angular_damping']*data['omega'],-k['turn_bound'],k['turn_bound']))
+     forward=np.array([math.cos(data['angle']),math.sin(data['angle'])])
+     speed=float(forward@np.array(data['velocity']))
+-    drive=float(np.clip(.5*distance-.4*speed,0,.5))*max(0,math.cos(error))
++    drive=float(np.clip(k['distance_gain']*distance-k['speed_damping']*speed,0,k['drive_bound']))*max(0,math.cos(error))
+     if data['contacts'] and p['press_force']>0:
+         measured=sum(x['force'] for x in data['contacts'])
+-        drive=float(np.clip(float(np.mean(data['commands']))+.4*(p['press_force']-measured),0,.5))
+-    if data['time']>=p['until']: drive=0.; turn=0.
++        drive=float(np.clip(float(np.mean(data['commands']))+k['force_gain']*(p['press_force']-measured),0,k['drive_bound']))
++    if time_due(data['time'],p['until']): drive=0.; turn=0.
+     return command_pair([drive-turn,drive+turn]),cursor
+ 
+ def validate_sensor_payload(payload):
+diff --git a/developmental_ecology/loom_commissioning/runner.py b/developmental_ecology/loom_commissioning/runner.py
+index c45b91c..2217ec0 100644
+--- a/developmental_ecology/loom_commissioning/runner.py
++++ b/developmental_ecology/loom_commissioning/runner.py
+@@ -11,6 +11,8 @@ from . import adapter, diagnostics
+ from .contract import (INTACT, FIXED, EXTERNAL, validate_manifest, authorize_execution,
+                        apparatus_identity, digest, require)
+ from .controllers import SensorHistory, privileged_input, waypoint_command, command_pair, observe_without_interference
++from .controllers import time_due
++from .authority import execution_sha256, validate_execution, validate_session
+ 
+ def save_restart(path, engine, session, manifest):
+     payload=pack({'engine':engine,'session':session})
+@@ -28,6 +30,7 @@ def load_restart(path):
+     restored=unpack(wrapper['state']); e=restored['engine']; s=restored['session']; m=wrapper['manifest']
+     e.validate_state(); validate_manifest(m,e,initial=False); authorize_execution(m)
+     require(s['contract_sha256']==digest(strict_bytes(m)), 'restart manifest identity mismatch')
++    validate_session(m,s)
+     require(e.time<=m['hard_stop_time']+1e-9, 'duration cap bypass')
+     if m['mode']==FIXED: adapter.validate_frozen(e.organism,s['frozen'])
+     return e,s,m
+@@ -40,8 +43,17 @@ class Run:
+     native steps, including across a pause/restart in the middle of its hold.
+     """
+     def __init__(self, engine, manifest, output, *, session=None, parent=None, plan=None,
+-                 observer=diagnostics.passive, storage_limit=1_000_000_000, wall_limit=3600):
++                 observer=diagnostics.passive, storage_limit=None, wall_limit=None):
+         validate_manifest(manifest,engine,initial=session is None); authorize_execution(manifest)
++        validate_execution(manifest,complete=True)
++        require(observer is diagnostics.passive, 'unapproved observer implementation')
++        scope=manifest['execution']; resources=scope['resources']
++        require(plan is None or plan==scope['procedure']['stages'], 'supplied route differs from approved procedure')
++        storage_limit=resources['storage_limit_bytes'] if storage_limit is None else storage_limit
++        wall_limit=resources['wall_limit_seconds'] if wall_limit is None else wall_limit
++        require(storage_limit==resources['storage_limit_bytes'] and wall_limit==resources['wall_limit_seconds'],
++                'supplied resources differ from approved scope')
++        if session is not None: validate_session(manifest,session)
+         require(engine.status not in ('failure','terminal','budget_complete'), 'stopped state cannot resume')
+         self.engine=engine; self.manifest=copy.deepcopy(manifest); self.observer=observer
+         self.closed=False; self.started=time.perf_counter(); self.wall_limit=wall_limit
+@@ -56,7 +68,8 @@ class Run:
+                         and all(not np.any(v) for v in o.association.use.values()), 'fixed diagnostic must start from newborn structure')
+             history=SensorHistory(engine)
+             self.session={'contract_sha256':digest(strict_bytes(manifest)), 'frozen':adapter.structure(engine.organism) if manifest['mode']==FIXED else None,
+-                'sensor':vars(history),'hold_remaining':0,'held_command':[0.,0.], 'route':copy.deepcopy(plan),
++                'execution_sha256':execution_sha256(manifest),
++                'sensor':vars(history),'hold_remaining':0,'held_command':[0.,0.], 'route':copy.deepcopy(scope['procedure']['stages']),
+                 'cursor':0,'advanced':0,'field_updates':0,'body_wave_samples':0,
+                 'wall_seconds_used':0.,'bytes_used':0,'wall_limit':wall_limit,'storage_limit':storage_limit,
+                 'stop_reason':'administrative_pause'}
+@@ -84,6 +97,10 @@ class Run:
+     def _guard(self):
+         require(not self.closed, 'closed segment')
+         require(digest(strict_bytes(self.manifest))==self.session['contract_sha256'], 'manifest changed during run')
++        validate_session(self.manifest,self.session)
++        validate_execution(self.manifest,complete=True)
++        require(self.wall_limit==self.session['wall_limit'] and self.storage_limit==self.session['storage_limit'],
++                'live resources differ from approved scope')
+         require(self.engine.phase==self.manifest['phase'], 'wrong field/mover phase')
+         require(self.engine.c.identity()==self.manifest['configuration'], 'configuration identity mismatch')
+         require(self.engine.time<=self.manifest['hard_stop_time']+1e-9, 'duration cap bypass')
+@@ -99,7 +116,16 @@ class Run:
+         if kind=='waypoint':
+             require(command is None, 'manual override of deterministic controller')
+             inputs=observe_without_interference(self.engine,privileged_input)
+-            command,cursor=waypoint_command(copy.deepcopy(inputs),self.session['route'],self.session['cursor'])
++            # Clock/approved stages determine the decision; a mutable saved
++            # cursor cannot skip a prescribed stage on restart.
++            command,cursor=waypoint_command(copy.deepcopy(inputs),self.session['route'],0)
++            until=self.session['route'][cursor]['until']
++            require(not time_due(self.engine.time,until), 'route complete; no command hold authorized')
++            end=self.engine.time+min(10,self.remaining())*self.engine.c.native_dt
++            # Preserve the reviewed full ten-step hold (and existing global cap).
++            # An incompatible prescription is rejected; no partial stage hold,
++            # early transition, time extension or compensating later cut is invented.
++            require(end<=until or time_due(until,end), 'command hold would cross prescribed stage boundary')
+             self.session['cursor']=cursor
+         elif kind=='manual_privileged':
+             inputs=observe_without_interference(self.engine,privileged_input)
+diff --git a/developmental_ecology/tests_apparatus/fixtures/review-boundary-input.json b/developmental_ecology/tests_apparatus/fixtures/review-boundary-input.json
+new file mode 100644
+index 0000000..2c06f3c
+--- /dev/null
++++ b/developmental_ecology/tests_apparatus/fixtures/review-boundary-input.json
+@@ -0,0 +1,243 @@
++{
++  "position": [
++    5.001648928084086,
++    5.000509380889592
++  ],
++  "angle": 0.29774003877886773,
++  "velocity": [
++    0.0295395067024463,
++    0.009114800245673934
++  ],
++  "omega": -0.04012623370662198,
++  "reserves": [
++    0.6998022331755431,
++    0.8
++  ],
++  "commands": [
++    0.717668244562803,
++    0.237668244562803
++  ],
++  "geometry": [
++    {
++      "id": "wall-0",
++      "kind": "wall",
++      "axis": 0,
++      "sign": 1,
++      "boundary": 0,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "wall-1",
++      "kind": "wall",
++      "axis": 0,
++      "sign": -1,
++      "boundary": 20.0,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "wall-2",
++      "kind": "wall",
++      "axis": 1,
++      "sign": 1,
++      "boundary": 0,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "wall-3",
++      "kind": "wall",
++      "axis": 1,
++      "sign": -1,
++      "boundary": 20.0,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "source-0",
++      "kind": "disk",
++      "centre": [
++        3.0,
++        3.0
++      ],
++      "radius": 0.5,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "source-1",
++      "kind": "disk",
++      "centre": [
++        10.0,
++        3.0
++      ],
++      "radius": 0.5,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "source-2",
++      "kind": "disk",
++      "centre": [
++        17.0,
++        3.0
++      ],
++      "radius": 0.5,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "source-3",
++      "kind": "disk",
++      "centre": [
++        3.0,
++        10.0
++      ],
++      "radius": 0.5,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "source-4",
++      "kind": "disk",
++      "centre": [
++        17.0,
++        10.0
++      ],
++      "radius": 0.5,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "source-5",
++      "kind": "disk",
++      "centre": [
++        3.0,
++        17.0
++      ],
++      "radius": 0.5,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "source-6",
++      "kind": "disk",
++      "centre": [
++        10.0,
++        17.0
++      ],
++      "radius": 0.5,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "source-7",
++      "kind": "disk",
++      "centre": [
++        17.0,
++        17.0
++      ],
++      "radius": 0.5,
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "repair-0",
++      "kind": "rect",
++      "rect": [
++        0.0,
++        0.25,
++        8.0,
++        12.0
++      ],
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "repair-1",
++      "kind": "rect",
++      "rect": [
++        19.75,
++        20.0,
++        8.0,
++        12.0
++      ],
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "repair-2",
++      "kind": "rect",
++      "rect": [
++        8.0,
++        12.0,
++        19.75,
++        20.0
++      ],
++      "velocity": [
++        0.0,
++        0.0
++      ]
++    },
++    {
++      "id": "mover",
++      "kind": "rect",
++      "rect": [
++        9.083769679533427,
++        11.083769679533427,
++        9.5,
++        10.5
++      ],
++      "velocity": [
++        0.8375743067748151,
++        0.0
++      ]
++    }
++  ],
++  "mover_phase": 0.0,
++  "mover_velocity": [
++    0.8375743067748151,
++    0.0
++  ],
++  "stocks": [
++    0.2,
++    0.2,
++    0.2,
++    0.2,
++    0.2,
++    0.2,
++    0.2,
++    0.2
++  ],
++  "contacts": [],
++  "time": 0.09999999999999999
++}
+\ No newline at end of file
+diff --git a/developmental_ecology/tests_apparatus/test_corrections.py b/developmental_ecology/tests_apparatus/test_corrections.py
+new file mode 100644
+index 0000000..efc8b8f
+--- /dev/null
++++ b/developmental_ecology/tests_apparatus/test_corrections.py
+@@ -0,0 +1,203 @@
++"""A-R1/A-R2 only. Synthetic grants are validation inputs, never execution approval."""
++import copy
++from decimal import Decimal, ROUND_HALF_EVEN
++import gzip
++import json
++import math
++import os
++from pathlib import Path
++from unittest.mock import patch
++import numpy as np
++import pytest
++from test_apparatus import manufactured
++from loom_p.records import state_hash, strict_bytes
++from loom_p.chemistry import FieldSolver
++from loom_commissioning import authority, controllers, runner
++from loom_commissioning.contract import *
++from loom_commissioning.initialization import from_verified_cache
++from loom_commissioning.validators import read_stream, verify_segment
++
++PLAN=[{'point':[6.,5.],'until':.1,'press_force':0.}, {'point':[5.,6.],'until':.2,'press_force':0.}]
++HERE=Path(__file__).parent
++
++def fault(name): return os.environ.get('CORRECTION_FAULT')==name
++
++def grant_fixture(tmp_path):
++    cache=HERE.parent/'artifacts/prehistory-attempt-001'
++    e,init=from_verified_cache(cache,0)  # existing cache, no preparation/advancement
++    m=make_manifest(e,'authority-validation-only',EXTERNAL,'waypoint',.2,
++                    purpose='commissioning',initialization=init,plan=PLAN)
++    payload={'notice':'SYNTHETIC VALIDATION ONLY. NOT JASON APPROVAL. NO EXECUTION.',
++             'approved_execution':authority.execution_object(m),
++             'approved_execution_sha256':authority.execution_sha256(m)}
++    p=tmp_path/'synthetic-NOT-AUTHORITY.json'; p.write_bytes(authority.canonical(payload))
++    m['execution_authority']={'request_path':str(p),'request_sha256':digest(p.read_bytes()),
++        'approved_case':m['case_id'],'approved_initial_state':m['initial_state'],
++        'approved_duration':m['duration_seconds'],'approved_execution_sha256':authority.execution_sha256(m)}
++    return e,m,p
++
++def rejected(fn):
++    try: fn()
++    except ValueError: return True
++    return False
++
++AUTHORITY_FAULTS=('implementation','constants','route','stage_sequence','contact_target','manual_fallback',
++    'sensor_interface','intact_arm','fixed_adapter','deprivation','initial','prehistory','duration',
++    'resources','runtime','procedure','replay_arm','request_rebind')
++
++def substitute(m,name):
++    x=m['execution']
++    if name=='implementation': x['controller']['implementation']['controllers.py']='f'*64
++    elif name=='constants': x['controller']['configuration']['force_gain']=.41
++    elif name=='route': x['procedure']['stages'][0]['point']=[4.,5.]
++    elif name=='stage_sequence': x['procedure']['stages'][0]['point'],x['procedure']['stages'][1]['point']=x['procedure']['stages'][1]['point'],x['procedure']['stages'][0]['point']
++    elif name=='contact_target': x['procedure']['stages'][0]['press_force']=.1
++    elif name in ('manual_fallback','sensor_interface','intact_arm','fixed_adapter','replay_arm'):
++        mode,kind={'manual_fallback':(EXTERNAL,'manual_privileged'),'sensor_interface':(EXTERNAL,'sensor_human'),
++                   'intact_arm':(INTACT,'none'),'fixed_adapter':(FIXED,'none'),'replay_arm':(EXTERNAL,'waypoint')}[name]
++        m.update(mode=mode,controller=kind)
++        m['execution']=authority.make_execution(mode,kind,plan=PLAN if kind=='waypoint' else None,
++            protocol={'steps':[{'action':'bounded-interface-entry'}]})
++        if name=='replay_arm': m['case_id']='otherwise-compatible-other-arm'
++    elif name=='deprivation': x['display_intervention']={'kind':'chemistry_hidden'}
++    elif name=='initial': m['initial_state']='1'*64
++    elif name=='prehistory': m['initialization']['cache_receipt_sha256']='2'*64
++    elif name=='duration': m['duration_seconds']=.3; m['hard_stop_time']=m['initial_time']+.3
++    elif name=='resources': x['resources']['wall_limit_seconds']+=1
++    elif name=='runtime': x['runtime']['executable_sha256']='3'*64
++    elif name=='procedure': x['procedure']['protocol']={'steps':[{'action':'unapproved-wait'}]}
++    elif name=='request_rebind':
++        x['procedure']['stages'][0]['point']=[4.,5.]
++        # Even updating the grant's digest cannot rewrite the immutable request.
++        m['execution_authority']['approved_execution_sha256']=authority.execution_sha256(m)
++    else: raise AssertionError(name)
++
++@pytest.mark.parametrize('name',AUTHORITY_FAULTS)
++def test_approved_execution_binding(tmp_path,name):
++    e,m,p=grant_fixture(tmp_path); before=state_hash(e); saved=p.read_bytes()
++    validate_manifest(m,e); authorize_execution(m)  # positive validation only
++    other=copy.deepcopy(m); substitute(other,name)
++    # Isolate the new complete binding, so old case/duration guards cannot make
++    # this consequential test pass vacuously. All other grant bytes stay fixed.
++    check=(lambda:None) if fault('authority-'+name) else lambda:authority.verify_approval_binding(other,other['execution_authority'])
++    assert rejected(check), 'APPROVAL BINDING BREACH: '+name
++    # Full entry point must fail before a recorder/trajectory can be created.
++    output=tmp_path/'MUST-NOT-EXIST'
++    with patch.object(runner,'Recorder',side_effect=AssertionError('trajectory output created')):
++        assert rejected(lambda:runner.Run(e,other,output)), 'pre-output rejection failed'
++    assert not output.exists() and p.read_bytes()==saved and state_hash(e)==before and e.native_index==0
++    authorize_execution(m)  # exact approved validation control, never a Run
++
++def test_canonical_identity_and_live_program_guard(tmp_path):
++    e,m,p=grant_fixture(tmp_path)
++    reordered=dict(reversed(list(m.items())))
++    assert authority.execution_sha256(reordered)==authority.execution_sha256(m)
++    authorize_execution(reordered)
++    with patch.dict(controllers.WAYPOINT_SETTINGS,{'heading_gain':.81}):
++        with pytest.raises(ValueError,match='controller execution identity'): authorize_execution(m)
++    with patch.object(controllers,'waypoint_command',lambda data,plan,cursor:([0,0],cursor)):
++        with pytest.raises(ValueError,match='controller execution identity'): authorize_execution(m)
++    authorize_execution(m)
++
++def test_route_and_resources_rejected_before_output(tmp_path):
++    e=manufactured(); m=make_manifest(e,'fixture-bound-route',EXTERNAL,'waypoint',.2,plan=PLAN)
++    wrong=copy.deepcopy(PLAN); wrong[0]['point']=[4.,5.]
++    for kwargs in ({'plan':wrong},{'wall_limit':3601},{'storage_limit':999999999},{'observer':lambda *args:None}):
++        with pytest.raises(ValueError): runner.Run(e,m,tmp_path/'forbidden',**kwargs)
++        assert not (tmp_path/'forbidden').exists() and e.native_index==0
++    run=runner.Run(e,m,tmp_path/'correct',plan=PLAN)
++    before=state_hash(e)
++    run.wall_limit+=1
++    with pytest.raises(ValueError,match='live resources'): run.begin_command()
++    run.wall_limit-=1
++    run.session['route'][0]['point']=[4.,5.]
++    with pytest.raises(ValueError,match='session route'): run.begin_command()
++    assert state_hash(e)==before and not read_stream_after_flush(run,'controller')
++    run.session['route']=copy.deepcopy(PLAN); run.close()
++    _,s,_=runner.load_restart(tmp_path/'correct/final.restart.json.gz')
++    s['route']=wrong
++    with pytest.raises(ValueError,match='session route'):
++        runner.Run(e,m,tmp_path/'bad-resume',session=s)
++    assert not (tmp_path/'bad-resume').exists()
++
++def read_stream_after_flush(run,name):
++    # No command write occurred; don't read a still-open gzip trailer.
++    return run.sensor.payload['own_commands']
++
++def review_input():
++    return json.loads((HERE/'fixtures/review-boundary-input.json').read_bytes())
++
++def old_due(now,deadline): return now>=deadline
++
++def independent_tick(time):
++    # Decimal integer native-step oracle, independent of production isclose.
++    # The adjacent-ULP values are representations of native decision tick 10.
++    return int((Decimal.from_float(time)/Decimal('0.01')).to_integral_value(rounding=ROUND_HALF_EVEN))
++
++@pytest.mark.parametrize('time',[0.09999999999999999,math.nextafter(.1,-math.inf),.1,math.nextafter(.1,math.inf),.1+5e-11])
++def test_exact_review_boundary(time):
++    data=review_input(); assert data['time']==0.09999999999999999
++    data['time']=time
++    assert independent_tick(time)==10
++    # A stage owns ticks [0,10); next stage owns [10,20).
++    with patch.object(controllers,'time_due',old_due if fault('clock-transition') else controllers.time_due):
++        cmd,cursor=controllers.waypoint_command(data,PLAN,0)
++        assert cursor==1, 'CLOCK BREACH: expired stage issued another hold'
++    exact=copy.deepcopy(data); exact['time']=.1
++    oracle,_=controllers.waypoint_command(exact,PLAN,0)
++    assert np.array_equal(cmd,oracle)
++
++def test_final_stage_and_not_due_control():
++    data=review_input()
++    with patch.object(controllers,'time_due',old_due if fault('clock-final') else controllers.time_due):
++        cmd,_=controllers.waypoint_command(data,PLAN[:1],0)
++        assert not cmd.any(), 'CLOCK BREACH: final stage still drives'
++    data['time']=.09
++    cmd,cursor=controllers.waypoint_command(data,PLAN,0)
++    assert independent_tick(.09)==9 and cursor==0 and cmd.any()
++    # Just outside the declared timing tolerance remains genuinely not due.
++    data['time']=.1-2e-10
++    assert controllers.waypoint_command(data,PLAN,0)[1]==0
++
++def test_full_hold_cannot_cross_stage(tmp_path):
++    e=manufactured(); plan=copy.deepcopy(PLAN); plan[0]['until']=.05
++    m=make_manifest(e,'fixture-crossing',EXTERNAL,'waypoint',.2,plan=plan)
++    run=runner.Run(e,m,tmp_path/'crossing'); before=state_hash(e)
++    with pytest.raises(ValueError,match='cross prescribed stage'): run.begin_command()
++    assert not run.sensor.payload['own_commands'] and run.session['hold_remaining']==0 and state_hash(e)==before
++    run.close()
++
++@pytest.mark.parametrize('pause_index',[7,10])
++def test_boundary_resume_counts_and_absolute_cap(tmp_path,pause_index):
++    start=manufactured(); m=make_manifest(start,'fixture-corrected-boundary',EXTERNAL,'waypoint',.2,plan=PLAN)
++    first=runner.Run(copy.deepcopy(start),m,tmp_path/'first'); first.begin_command(); first.advance(pause_index)
++    assert first.engine.native_index==pause_index and first.session['hold_remaining']==10-pause_index
++    first.close(); resumed=runner.Run.resume(tmp_path/'first',tmp_path/'resumed')
++    if pause_index==7: resumed.hold()
++    assert resumed.engine.native_index==10 and resumed.engine.time==0.09999999999999999
++    resumed.begin_command()
++    assert resumed.session['cursor']==1 and resumed.session['hold_remaining']==10
++    resumed.advance(10)
++    continuous=runner.Run(copy.deepcopy(start),m,tmp_path/'continuous')
++    fields=[]; real=FieldSolver.step; neural=state_hash(start.organism)
++    def count(self,*args,**kwargs): fields.append(args[4]); return real(self,*args,**kwargs)
++    with patch.object(FieldSolver,'step',count): continuous.hold(); continuous.hold()
++    assert fields==[.01]*20 and continuous.engine.native_index==20
++    assert independent_tick(continuous.engine.time)==20
++    assert abs(Decimal.from_float(continuous.engine.time)-Decimal('0.20'))<Decimal('1e-15')
++    assert state_hash(continuous.engine)==state_hash(resumed.engine)
++    assert state_hash(continuous.engine.organism)==neural # includes RNG, native/wave counters
++    for name in ('first','resumed','continuous'): verify_segment(tmp_path/name)
++    assert read_stream(tmp_path/'continuous/wave.jsonl.gz')==[]
++    assert [r['hold_native_steps'] for r in read_stream(tmp_path/'continuous/controller.jsonl.gz')]==[10,10]
++    with pytest.raises(ValueError): resumed.hold()
++    assert resumed.engine.native_index==20
++
++def test_final_boundary_resume_cannot_gain_hold(tmp_path):
++    e=manufactured(); m=make_manifest(e,'fixture-final-boundary',EXTERNAL,'waypoint',.2,plan=PLAN[:1])
++    first=runner.Run(e,m,tmp_path/'first'); first.hold(); first.close()
++    resumed=runner.Run.resume(tmp_path/'first',tmp_path/'resumed'); before=state_hash(resumed.engine)
++    with pytest.raises(ValueError,match='route complete'): resumed.hold()
++    assert resumed.session['hold_remaining']==0 and resumed.engine.native_index==10 and state_hash(resumed.engine)==before
++    assert resumed.sensor.payload['own_commands']==first.sensor.payload['own_commands']
++    resumed.close()
+diff --git a/developmental_ecology/verify_corrections.py b/developmental_ecology/verify_corrections.py
+new file mode 100644
+index 0000000..db70ae4
+--- /dev/null
++++ b/developmental_ecology/verify_corrections.py
+@@ -0,0 +1,35 @@
++"""New A-R1/A-R2 consequential fault/control pairs; no commissioning entry point."""
++import argparse, json, os, subprocess, sys, time
++from pathlib import Path
++
++AUTHORITY=('implementation','constants','route','stage_sequence','contact_target','manual_fallback',
++    'sensor_interface','intact_arm','fixed_adapter','deprivation','initial','prehistory','duration',
++    'resources','runtime','procedure','replay_arm','request_rebind')
++
++def main(output):
++    root=Path(__file__).resolve().parent; out=Path(output).resolve(); out.mkdir(parents=True,exist_ok=False)
++    cases={f'authority-{n}':(f'test_approved_execution_binding[{n}]','APPROVAL BINDING BREACH: '+n) for n in AUTHORITY}
++    cases.update({'clock-transition':('test_exact_review_boundary','CLOCK BREACH: expired stage issued another hold'),
++                  'clock-final':('test_final_stage_and_not_due_control','CLOCK BREACH: final stage still drives')})
++    receipts=[]
++    for name,(test,message) in cases.items():
++        pair={'fault':name,'test':test,'intended_failure':message}
++        for colour in ('RED','GREEN'):
++            env=os.environ.copy(); env['PYTEST_DISABLE_PLUGIN_AUTOLOAD']='1'; env['PYTHONDONTWRITEBYTECODE']='1'; env['PYTHONPATH']=str(root)
++            env.pop('APPARATUS_FAULT',None); env.pop('CORRECTION_FAULT',None)
++            if colour=='RED': env['CORRECTION_FAULT']=name
++            cmd=[sys.executable,'-B','-X','utf8','-m','pytest',f'tests_apparatus/test_corrections.py::{test}',
++                 '-q','-p','no:cacheprovider','--basetemp',str(out/f'{name}-{colour}-temp')]
++            started=time.perf_counter(); r=subprocess.run(cmd,cwd=root,env=env,capture_output=True,text=True,encoding='utf-8',timeout=90)
++            log=r.stdout+r.stderr; (out/f'{name}-{colour}.log').write_text(log,encoding='utf-8')
++            intended=(r.returncode==1 and message in log and 'failed' in log) if colour=='RED' else r.returncode==0 and 'passed' in log
++            pair[colour]={'exit':r.returncode,'intended':intended,'wall_seconds':time.perf_counter()-started,'command':cmd}
++            print(name,colour,'verified' if intended else 'UNEXPECTED',flush=True)
++            if not intended:
++                (out/'INCOMPLETE.json').write_text(json.dumps(receipts+[pair],indent=2),encoding='utf-8')
++                raise RuntimeError(f'{name} {colour} did not reach intended check')
++        receipts.append(pair)
++    (out/'FAULT_MATRIX.json').write_text(json.dumps(receipts,indent=2),encoding='utf-8')
++
++if __name__=='__main__':
++    p=argparse.ArgumentParser(); p.add_argument('output'); main(p.parse_args().output)
+diff --git a/docs/developmental_ecology/p_apparatus_correction_20260924/CORRECTION_REPORT.md b/docs/developmental_ecology/p_apparatus_correction_20260924/CORRECTION_REPORT.md
+new file mode 100644
+index 0000000..2b780a8
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_correction_20260924/CORRECTION_REPORT.md
+@@ -0,0 +1,79 @@
++# Loom P apparatus: two-finding corrective pass
++
++Date: 2026-09-24. **Builder verification complete; stop for independent review.** This report does not declare the apparatus fit for commissioning. P remains scientifically uncommissioned and untested.
++
++Previous apparatus checkpoint: `05abf60401d08f38750bca589b1c040e10513d7b`. Unchanged P: `6bc9683b54e4fa80136fe8534d7713e2a250a95f`. The new local checkpoint and exact binary diff are identified by the portable package's `CHECKPOINT.json` and `CORRECTION.patch`. Worktree: `C:\Users\Jason\Desktop\Eridos\Loom-p-apparatus-20260924-01a0c405`; existing branch: `build/p-commissioning-apparatus-20260924-01a0c405`.
++
++## Scope and controlling sources
++
++Only independent review findings A-R1 (complete execution approval binding) and A-R2 (stage deadline comparison) were corrected. The complete `LOOM_P_INDEPENDENT_APPARATUS_FIDELITY_REVIEW.md`, physical subreview, exact authority/route/final-deadline probes and their saved records control this pass. Exact copies and Jason's corrective request are in `developmental_ecology/artifacts/apparatus-correction-20260924-01a0c405/references`. The commissioning design §4.1 requires 0.1-second command holds with 0.01-second mechanics; A-R2 requires preserving ten-step holds and pause remainders. Current Workbench orientation records the independent HOLD; this correction does not rewrite that record or confer independent closure.
++
++The scoped writes and tests ran on the actual Windows desktop, using local Git 2.50.0.windows.1 and the existing Python 3.13.5 environment (NumPy 2.3.3, SciPy 1.16.2, pytest 8.4.2). A harmless create/read/delete check passed inside the new correction evidence directory. Writes outside the project mirror used the approved scoped execution mechanism. No dependency installation, cloud substitute, vault Git write, remote operation or unattended simulation was used.
++
++## A-R1: before and after
++
++Before: the grant named a case, initial-state hash and duration, and checked request-file bytes. It did not compare the approved arm/controller or any full execution digest. The route entered `Run(..., plan=...)` separately. The exact original review reproduction was rerun against unchanged 05abf604: the same synthetic request and grant accepted sensor-human, manual-privileged, intact-P and fixed-structure substitutions. Zero native steps and zero commissioning constructors occurred. `old-05ab-authority-RED.log` preserves the reached failure.
++
++After: manifest schema 2 includes an explicit `execution` object. SHA-256 covers canonical UTF-8 JSON with sorted keys, compact separators and finite numbers, over **every manifest field except the self-referential `execution_authority`**. The grant must name that digest. The byte-hashed request must itself contain both the same digest and the complete readable approved object. Updating only a grant's digest cannot change the request's approved contents. This preserves the old case/state/duration checks rather than replacing them.
++
++The bound contents are:
++
++| Part | Included contents |
++|---|---|
++| Apparatus and P | Schema, exact baseline commit, all P module aggregate identity, all apparatus Python/HTML file identities, configuration identity |
++| Runtime | Python version/implementation, executable hash, Python DLL hashes, platform; installed NumPy/SciPy versions and deterministic content hashes of .py/.pyd/.dll/.so plus distribution METADATA/RECORD |
++| Case and arm | Exact case ID, purpose, mode, controller kind, adapter source identity and intervention label |
++| Controller | Source identity, live Python function-code identities, unchanged named gain/bound/force/epsilon constants; distinct privileged, manual-fallback and sensor-only interface identities; sensor UI source/HTML identity |
++| Procedure | Exact ordered point/until/press-force route; procedure kind and structured protocol record where applicable. Non-waypoint commissioning requires its explicit structured protocol |
++| Initialization | Complete initial-state hash, initial time/index, field-array hash, phase, complete prehistory/cache provenance |
++| Scope | Duration, absolute deadline, command-hold cadence, wall-time/storage limits, fixed diagnostic selection and birth roster |
++| Display intervention | Explicit implemented `none` identity. An unimplemented deprivation label is rejected; this pass builds no deprivation adapter |
++
++`RUNTIME_FILE_IDENTITIES.json` exposes the dependency file membership and individual hashes behind the runtime aggregates. An example synthetic approved object is packaged separately and prominently marked **NOT JASON AUTHORIZATION / NO EXECUTION**. Neither this report nor that example authorizes a case.
++
++The constructor validates the manifest, request binding, supplied route, resource limits and observer identity before opening the recorder. Route and resource identity are checked in saved sessions, on restart and before advancement. Live controller constants/functions are checked against the manifest. A changed route cannot enter via the old separate `plan` argument or mutable session route. A saved cursor cannot select another route stage: decisions derive the stage from approved times. Manual fallback, sensor-human operation and fixed structure have distinct identities and cannot inherit a waypoint grant. Only the existing passive observer is accepted at construction; observation algorithms were not changed.
++
++This is an auditable local workflow boundary, not cryptographic authentication of Jason or protection against the owner editing the runtime. Runtime dependency bytes are inventoried once per process; hot modification of loaded native code is outside that guarantee. Human compliance with the approved structured procedure remains an operator obligation; this code does not infer the meaning of arbitrary protocol prose.
++
++## A-R2: exact reproduction and correction
++
++The unchanged 05abf604 run used the review's saved input and produced time `0.09999999999999999` after native step 10. A deadline of `.1` differed by `1.3877787807814457e-17` seconds. Its old stage returned `[0.6958934252903155, 0.23474350126270044]`, eligible for another ten steps. The identical input at exactly `.1` selected the next stage and returned `[-0.3577907305552408, 0.6422092694447592]`. A single final stage also kept driving instead of returning zero. `old-05ab-clock-RED.log` preserves this original failure before edits.
++
++The sole boundary comparison now treats `now >= deadline` or an absolute difference within the **existing** P `event_time_tol=1e-10` as due (`rel_tol=0`). It applies to both stage progression and final stop. P time, dt, physical tolerances, gains and hold duration were not changed. World time is never rounded or reset. The saved input now selects cursor 1 and the exact-boundary command; its final-stage calculation returns `[0,0]`. See `EXACT_CLOCK_GREEN.json`.
++
++**Remaining-duration rule:** a completed stage cannot start another hold. At a due intermediate boundary, transition before calculating the next hold. At the final boundary, `Run` refuses another hold without advancing or recording a command. A full prescribed hold that would cross an interior stage deadline is rejected before command recording; it is not shortened, allowed to overshoot or compensated later. This fail-closed unsupported-prescription check preserves the design's ten-step hold requirement rather than inventing a partial-stage scheduling policy. The pre-existing global deadline may still truncate a final case hold, and a native terminal event still stops physics normally. Routes requiring a new partial-stage policy need a separate ruling; no planned route was changed or commissioned here.
++
++An immediately preceding representable value such as `nextafter(.1, -infinity)` is the same nominal native decision boundary within the declared tolerance, so it transitions/stops. `.09` and `.1 - 2e-10` remain not due. Test expectations use an independent Decimal/integer-native-tick oracle and explicit interval ownership `[0,10)` / `[10,20)`, not the production comparison.
++
++## Verification and consequential evidence
++
++| Verification | Result |
++|---|---|
++| Original 05abf604 counterexamples | Two reached RED failures, before runtime edits; validation/detached calculations only |
++| Existing fault matrix, unchanged script/tests | All 16 intended REDs followed by 16 GREEN controls |
++| New complete-approval faults | 18 intended REDs followed by 18 exact-object GREEN controls |
++| New clock faults | Transition and final-stop comparison restored to old behavior: two intended REDs followed by two GREEN controls |
++| Final complete worktree suite | **113 passed**: 59 unchanged P + 24 unchanged apparatus + 30 new correction cases |
++| Final complete portable suite | **113 passed**; see packaged `portable-suite-001.log` |
++
++The new authority pairs cover implementation, constants, route, ordered stages, contact target, manual fallback, sensor interface, intact arm, fixed adapter, deprivation, initial state, prehistory, duration, resources, runtime, procedure, another compatible arm, and attempted grant-digest rebinding without changing request bytes. Their RED mode isolates the complete-binding guard so an older case/duration guard cannot make the check pass vacuously. Full constructor controls also reject before recorder creation; accepted synthetic authority objects are only validated, never used to construct a commissioning run.
++
++The clock pairs restore the old comparator in detached calls. Additional GREEN tests verify exact/adjacent/effectively-at boundaries, clearly-not-due controls, rejection of a crossing hold, live program/resource mutation rejection, and pause/resume at indices 7 and 10. The step-7 route retains three steps, then transitions at native step 10. Both resumed paths equal their continuous counterpart through native step 20. Each measured continuous path has exactly twenty .01 field calls, unchanged inactive neural/RNG state, no neural wave, and two ten-step command records. Global cutoff prevents further steps. A final-stage boundary resume cannot gain any hold.
++
++All subprocesses disable plugin autoload and pytest cache, use `-B`, explicit source roots and fresh temporary roots. The portable run uses only the assembled code and its explicitly packaged verified life-0 cache. No new prehistory was prepared. Existing failed-development and earlier successful evidence is retained; final matrices are in `existing-faults-final-002` and `new-faults-final-002`. The initial identity-audit assertion incorrectly compared CRLF test checkout bytes directly with LF Git blobs; the corrected audit compares Git's unchanged checkout projection, with both hashes disclosed. No source was normalized to make the audit pass.
++
++## Preservation and exact change boundary
++
++All 13 P modules are byte-identical to their 6bc9683b Git blobs; aggregate SHA-256 is `63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9`. Configuration remains byte-identical to the baseline Windows checkout: `985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9`; its unchanged semantic identity is `a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a`. Raw Git configuration is LF and the checkout is CRLF; both identities are retained. All original P tests and the original apparatus test/fault-runner files retain their baseline representations.
++
++The historical `EXP1-21` tree remains `f1b884a7ada4c806786d1530d76d446aac5d37b1`. All 792 previously inventoried P artifacts match their hashes. The new before/after inventory also checks 1,908 pre-existing apparatus/review/design/package files. Original checkpoint/package, prior fault evidence, design and reviews are preserved. The original builder ZIP remains at Jason's supplied Workbench INBOX location and is included byte-identically as a historical archive in this package; SHA-256 `87f4dbde39a72559caf6045c7ac68a649d9691a000d1569af5d26b090a63b053`.
++
++Runtime changes are limited to `loom_commissioning/contract.py`, `controllers.py`, `runner.py`, and new `authority.py`. New tests, one extracted exact input fixture, a fault runner and this correction documentation accompany them. Adapter, diagnostics, evaluator, initialization, validators, UI, P and configuration are unchanged. Schema-1 records intentionally remain associated with their original runtime/package; they are not silently upgraded or rewritten.
++
++## Remaining limits and what was not tested
++
++Independent closure is still required. No commissioning grant has been issued, no case selected, and no commissioning trajectory launched. The execution receipt audit contains only manufactured fixture records. Short test timings are not a new commissioning throughput/storage estimate; hashing/guard overhead at lifetime scale is unmeasured.
++
++Not tested: A1–A5, B1–B4, C1/C2; 600-second lives; long lifetimes/cohorts; navigation/contact competence; efficacy, learning, survival, useful association/credit; tuning/sweeps; new prehistory or births 1–4; new display deprivations; new controller policies; fresh dependency installation; other operating systems; long-run storage/performance; new GUI appearance/double-click operation. No experiment number, preregistration, scientific reinterpretation, push, PR, merge, canonical Workbench edit or P/world-law change occurred.
++
++The unchanged double-click sensor launcher opens an inert saved view: `developmental_ecology/Open Paused Sensor Reference.cmd`. The separately named privileged review remains for evaluators. Neither is an execution interface for this corrective pass. Stop here for independent review.
+diff --git a/docs/developmental_ecology/p_apparatus_correction_20260924/LAW_CODE_TEST_MAP.md b/docs/developmental_ecology/p_apparatus_correction_20260924/LAW_CODE_TEST_MAP.md
+new file mode 100644
+index 0000000..b2c02dc
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_correction_20260924/LAW_CODE_TEST_MAP.md
+@@ -0,0 +1,16 @@
++# Correction source → code → check map
++
++This supplements the original apparatus map without reopening its verified areas.
++
++| Controlling requirement | Implementation | Consequential evidence |
++|---|---|---|
++| A-R1: exact approved object | `authority.execution_object`, `canonical`, `execution_sha256`, `verify_approval_binding`; schema-2 `contract.make_manifest` / `authorize_execution` | Original 05ab authority RED; `test_approved_execution_binding` (18 variants), `verify_corrections.py` and all 18 fault/control pairs |
++| Controller program and constants | `authority.controller_identity` and unchanged-valued `controllers.WAYPOINT_SETTINGS` | Implementation/constants pairs; live function/configuration mutation checks in `test_canonical_identity_and_live_program_guard` |
++| Complete arm/procedure/resources before output | `authority.validate_execution`; `Run.__init__` before `Recorder` | Manual/sensor/intact/fixed/deprivation/procedure/replay/resource pairs; `test_route_and_resources_rejected_before_output` |
++| Approval survives restart | `authority.validate_session`; `load_restart`, `Run.__init__`, `Run._guard`; clock-derived route cursor | Altered restored-session route rejection; waypoint resume at native 7 and 10; all original three-mode reconstruction cases |
++| A-R2: nominal native deadline | `controllers.time_due`, both route progression and final-stop uses | Original saved input RED; `test_exact_review_boundary` (five represented times), `test_final_stage_and_not_due_control`; transition/final comparator RED→GREEN pairs |
++| Design §4.1 ten-step holds; no unauthorized stage extension | `Run.begin_command` checks route completion and proposed hold endpoint before recording | `test_full_hold_cannot_cross_stage`; final-boundary resume cannot gain a hold |
++| Native cadence, independent duration accounting, absolute ceiling | Unchanged native advancement; new boundary guards only | Independent Decimal native-tick oracle, twenty .01 field calls, no neural/RNG/wave change; exact continuous/resumed equality; `verify_segment` reconstruction; original cap/terminal/noise tests |
++| P and historical preservation | No P/config/test edits | `UNCHANGED_P_AND_HISTORY.json`, `PRESERVATION_BEFORE.json`, `PRESERVATION_AFTER.json`; 113-case worktree and portable suites |
++
++Canonical identity is SHA-256 over UTF-8 sorted-key compact JSON, rejecting non-finite numbers and excluding only the grant field. Route times remain physical absolute deadlines. No equation, time step, physical tolerance or controller gain was tuned. The duration oracle is test-side Decimal/integer arithmetic; it does not invoke the production `time_due` function.

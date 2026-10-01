@@ -1,0 +1,491 @@
+{
+  "session_id": "2026-09-23-p-post-correction-intake-1677619b",
+  "created_at_utc": "2026-09-23T11:30:39.593936+00:00",
+  "reviewed_checkpoint": "f7eb6f27c661e3db193a4225b56a825d7e41739d",
+  "incoming": {
+    "LOOM_P_INDEPENDENT_POST_CORRECTION_FIDELITY_REVIEW.md": {
+      "bytes": 35475,
+      "sha256": "897610b06492554fd8299518dbc993117211ad133dda2129ee463299a1162f06"
+    },
+    "Loom_P_Independent_Post_Correction_Review_f7eb6f27_20260923.zip": {
+      "bytes": 83576570,
+      "sha256": "076eebb7c7e43428194cea26307e0f7433257ae55ea275d238e35d3d74877158"
+    }
+  },
+  "archive_members": 90,
+  "manifest_payloads_verified": 89,
+  "loose_report_matches_archive_and_receipt": true,
+  "nested_delivery_hash_matches_receipt": true,
+  "outer_zip_external_checksum_sidecar_supplied": false,
+  "old_catalog_rows_preserved": 52,
+  "source_ids": [
+    "SRC-053",
+    "SRC-054",
+    "SRC-055",
+    "SRC-056"
+  ],
+  "review_code_or_tests_executed": false,
+  "shared_files": [
+    "00_RESEARCH_MAP.md",
+    "01_WORKSPACE_STATUS.md",
+    "20_CANDIDATES/CAND-P.md",
+    "SOURCE_CATALOG.json",
+    "SOURCE_REGISTER.md"
+  ],
+  "status_text": "P engineering baseline\nCheckpoint: f7eb6f27c661e3db193a4225b56a825d7e41739d\nStatus: ENGINEERING HOLD\n\nR1 original fixture: closed\nR1-P oblique release/recontact class: open\nR2: verified closed\nR3: verified closed\nP mechanism fidelity: unchanged / previously verified\nScientific status: uncommissioned / untested",
+  "manifest_validation": [
+    {
+      "path": "FINAL_SUITE_INDEPENDENT.txt",
+      "bytes": 101,
+      "sha256": "050865300541efdf6e465bf6a1974741c15a1cc1e82f216c2ad7ed0c32702301"
+    },
+    {
+      "path": "LOOM_P_INDEPENDENT_POST_CORRECTION_FIDELITY_REVIEW.md",
+      "bytes": 35475,
+      "sha256": "897610b06492554fd8299518dbc993117211ad133dda2129ee463299a1162f06"
+    },
+    {
+      "path": "PORTABLE_SUITE_INDEPENDENT.txt",
+      "bytes": 101,
+      "sha256": "5918c16d36cfdb611d0a031d86dbc102255337e8c1b6b9b006b1af263250730c"
+    },
+    {
+      "path": "README_INTAKE.md",
+      "bytes": 2233,
+      "sha256": "0aec2d9927da731c6df4b6217c7e0d729e088fdb97cfc2ab27217ae4ec18caa2"
+    },
+    {
+      "path": "REMAINING_R1_INDEPENDENT_FAILURE.txt",
+      "bytes": 1205,
+      "sha256": "c94e29d25da9290e1150d8267d46a02106924843471f968413bf7a07d342f6dc"
+    },
+    {
+      "path": "REVIEW_RECEIPT.json",
+      "bytes": 2421,
+      "sha256": "4a0110ac399035388f0f358f72dc0188c2152e92f6baecc66fbafddf57609b54"
+    },
+    {
+      "path": "neural/independent_checks.json",
+      "bytes": 4728,
+      "sha256": "f40ef845c14306636fabf78af2b56792e63b484582a135eae2eeaa8d301c66ac"
+    },
+    {
+      "path": "neural/mutants-attempt-002/SUMMARY.json",
+      "bytes": 25250,
+      "sha256": "264369da6816618f5f463215ff3176f1e491bffca645877a6354959e9a4b5e23"
+    },
+    {
+      "path": "neural/mutants-attempt-002/bank_reference_frozen-GREEN.txt",
+      "bytes": 100,
+      "sha256": "188c7d2c78e3347bd0649f49b266c0cd289fd68f9cfe0221f5ea1989c86953ff"
+    },
+    {
+      "path": "neural/mutants-attempt-002/bank_reference_frozen-RED.txt",
+      "bytes": 2072,
+      "sha256": "6b36c976c7d364aaf3fd16a71fd27278ca384a67991c53f18adbaff1fdfef8ef"
+    },
+    {
+      "path": "neural/mutants-attempt-002/bank_reference_old_target-GREEN.txt",
+      "bytes": 100,
+      "sha256": "e595c9dd5a9edc1722d0f72303c939afef026f4ec243dac3267b63461a9fa194"
+    },
+    {
+      "path": "neural/mutants-attempt-002/bank_reference_old_target-RED.txt",
+      "bytes": 3014,
+      "sha256": "e3be00e1475a3fd67adc1d06fa25a8cbdc303160461b44fd316e33bb2bca0a35"
+    },
+    {
+      "path": "neural/mutants-attempt-002/body_footprint_missing-GREEN.txt",
+      "bytes": 100,
+      "sha256": "8ad57cbc4d8db15412b66082549e8911659560cbb57b5b814b8a722c2227bc6f"
+    },
+    {
+      "path": "neural/mutants-attempt-002/body_footprint_missing-RED.txt",
+      "bytes": 1802,
+      "sha256": "682920d80968a2e431b881e48d977844130e53b147574ebc113eb50a13089349"
+    },
+    {
+      "path": "neural/mutants-attempt-002/evoked_integrity_refill-GREEN.txt",
+      "bytes": 100,
+      "sha256": "188c7d2c78e3347bd0649f49b266c0cd289fd68f9cfe0221f5ea1989c86953ff"
+    },
+    {
+      "path": "neural/mutants-attempt-002/evoked_integrity_refill-RED.txt",
+      "bytes": 2102,
+      "sha256": "747bc5158d5df90c9a324096a568de632a025d8f14ccee45e114622a81d5c9f6"
+    },
+    {
+      "path": "neural/mutants-attempt-002/evoked_refill-GREEN.txt",
+      "bytes": 100,
+      "sha256": "db4ce22a81508ccb886f409bf6d5791df57d3810dd37302d8c4c62e5f45a28a3"
+    },
+    {
+      "path": "neural/mutants-attempt-002/evoked_refill-RED.txt",
+      "bytes": 2102,
+      "sha256": "74f96a4bc1001adcdd208bf0fbd48791f46d79332a85e8e39093931a90194b87"
+    },
+    {
+      "path": "neural/mutants-attempt-002/fine_reference_frozen-GREEN.txt",
+      "bytes": 100,
+      "sha256": "db80ef13e92e5f4207aae7adf10abb9db0cc7dfaccd870dc2654e9a9a25ec009"
+    },
+    {
+      "path": "neural/mutants-attempt-002/fine_reference_frozen-RED.txt",
+      "bytes": 2494,
+      "sha256": "7c4c79242809598969b864c26fd2ded83cd0e3a5ea726a716f51195c661dd0c1"
+    },
+    {
+      "path": "neural/mutants-attempt-002/fine_reference_new_target-GREEN.txt",
+      "bytes": 100,
+      "sha256": "db80ef13e92e5f4207aae7adf10abb9db0cc7dfaccd870dc2654e9a9a25ec009"
+    },
+    {
+      "path": "neural/mutants-attempt-002/fine_reference_new_target-RED.txt",
+      "bytes": 2498,
+      "sha256": "3b7a565b7d2e8691073fbc37cb19bc7685f84e72c38157c6aedc6249b12325e5"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_clock_injected-GREEN.txt",
+      "bytes": 100,
+      "sha256": "201f5a20b2fed2d18981a2cf094a90cbd230f4e0c22d666d1e0e2af3e8aef27a"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_clock_injected-RED.txt",
+      "bytes": 2022,
+      "sha256": "1c55b68e4bd862b947e7dc0c671b2f7b27a8c57157a3864894668404e7be57df"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_config_read-GREEN.txt",
+      "bytes": 100,
+      "sha256": "fbc152957b35a7a3a4725c17e32918f23f5bd96cce7574aa2d01ba5068369be2"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_config_read-RED.txt",
+      "bytes": 3402,
+      "sha256": "23b03e0e0bef91f6bf5b66fd7c0ce27581773216b925a85cd635853659e0b603"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_pose_injected-GREEN.txt",
+      "bytes": 100,
+      "sha256": "fbc152957b35a7a3a4725c17e32918f23f5bd96cce7574aa2d01ba5068369be2"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_pose_injected-RED.txt",
+      "bytes": 2022,
+      "sha256": "51c15b6a903565a9ba4cee832ec7a2cfc2c591467d2fb7d437eaa1063e89710c"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_stock_injected-GREEN.txt",
+      "bytes": 100,
+      "sha256": "773d5ae9b1ba699af0b8aa56d30953f3f75b84e7c76c61a77a882ed1a595f171"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_stock_injected-RED.txt",
+      "bytes": 2022,
+      "sha256": "9b3dea0122e1c571af9a5a63e8d9eb0c2740ae93f45a220553d6219eeb1971b0"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_world_counter_injected-GREEN.txt",
+      "bytes": 100,
+      "sha256": "f04e236a140756a8601c5fee98e861ab0eeeea06c2f332062e97abc85bb7c47d"
+    },
+    {
+      "path": "neural/mutants-attempt-002/hidden_world_counter_injected-RED.txt",
+      "bytes": 2022,
+      "sha256": "7c9a00cb44cf73f99b4b8b72985cdf713a594fc3306e89c1e786a14cc2ac7c9d"
+    },
+    {
+      "path": "neural/mutants-attempt-002/shared_reference_frozen-GREEN.txt",
+      "bytes": 100,
+      "sha256": "88bd8dfdb7a94b6010ba5e505610de7af6f1c0243a48a0fdf1fe146c619a4fa4"
+    },
+    {
+      "path": "neural/mutants-attempt-002/shared_reference_frozen-RED.txt",
+      "bytes": 2516,
+      "sha256": "24aca0ba7744be2b14ad860bbded14ff9db1dc8017c9b4b76db33b3c1dc88b6f"
+    },
+    {
+      "path": "neural/mutants-attempt-002/shared_reference_new_target-GREEN.txt",
+      "bytes": 100,
+      "sha256": "db80ef13e92e5f4207aae7adf10abb9db0cc7dfaccd870dc2654e9a9a25ec009"
+    },
+    {
+      "path": "neural/mutants-attempt-002/shared_reference_new_target-RED.txt",
+      "bytes": 2516,
+      "sha256": "e258f468c29df6d0d5429f9a5d202d27a55c6aa3fd2986f484f50f446ef344f6"
+    },
+    {
+      "path": "neural/mutants-attempt-002/terminal_guard_removed-GREEN.txt",
+      "bytes": 100,
+      "sha256": "6c9294c723e8b4f0071bc1ed44f3dc172e3f96f376c22867366595be33b8d48c"
+    },
+    {
+      "path": "neural/mutants-attempt-002/terminal_guard_removed-RED.txt",
+      "bytes": 2507,
+      "sha256": "03becf86ee46af9d79cbff2817a4fa3822ae21f7de404110b3817dc59985f9e4"
+    },
+    {
+      "path": "neural/mutants-attempt-002/terminal_guard_removed_59-GREEN.txt",
+      "bytes": 100,
+      "sha256": "d821f20c04a12f9d1bd510aef0cb4b1ab9c00a29682deb7187f6986b6fb8ecfe"
+    },
+    {
+      "path": "neural/mutants-attempt-002/terminal_guard_removed_59-RED.txt",
+      "bytes": 2507,
+      "sha256": "0fa798df8f46ce2289c540f5ecb4a449132c24fc0c2319e319228adc38122091"
+    },
+    {
+      "path": "neural/mutants/SUMMARY.json",
+      "bytes": 884,
+      "sha256": "487b5788b07c29ce5ebd5c6e1ba2adae8e616f22470ee4c3d544790106d0ad6a"
+    },
+    {
+      "path": "neural/mutants/bank_reference_frozen-RED.txt",
+      "bytes": 2072,
+      "sha256": "5d678cdafe52d3ee5068fcc41acadb90b6d5d9fc4009fa85f18d7fb48bc298d7"
+    },
+    {
+      "path": "neural/recheck_r3.py",
+      "bytes": 7484,
+      "sha256": "e1664b4e5d90777ff999ef9570a2e704ef29dc8084d94cc49aaa851bde1f1cc6"
+    },
+    {
+      "path": "neural/remaining-r1-crosscheck.txt",
+      "bytes": 1205,
+      "sha256": "c94e29d25da9290e1150d8267d46a02106924843471f968413bf7a07d342f6dc"
+    },
+    {
+      "path": "neural/review.md",
+      "bytes": 10118,
+      "sha256": "bf8e4d057ba8274d45a7e77e19e68721b3bed90eadfc4a6f4f3d5eb3d800c441"
+    },
+    {
+      "path": "package_independent_review.py",
+      "bytes": 6620,
+      "sha256": "b09fd1ae16822138f8f37acd252913d07bdaa159a542b8a6b4039a19343935e8"
+    },
+    {
+      "path": "physics/PHYSICAL_DELTA_REVIEW.md",
+      "bytes": 9749,
+      "sha256": "cfa95f6a6fa17ff0c209a178879954a9074cfd03c9d56ce6e52d1e8a73a56d6e"
+    },
+    {
+      "path": "physics/damage_suppressed-GREEN.txt",
+      "bytes": 100,
+      "sha256": "d821f20c04a12f9d1bd510aef0cb4b1ab9c00a29682deb7187f6986b6fb8ecfe"
+    },
+    {
+      "path": "physics/damage_suppressed-RED.txt",
+      "bytes": 800,
+      "sha256": "8b5a9f501836f5d369e76a2a1cc64afa8d4ed7cdf6df33ca777250d57416df77"
+    },
+    {
+      "path": "physics/double_source_debit-GREEN.txt",
+      "bytes": 100,
+      "sha256": "6c9294c723e8b4f0071bc1ed44f3dc172e3f96f376c22867366595be33b8d48c"
+    },
+    {
+      "path": "physics/double_source_debit-RED.txt",
+      "bytes": 1339,
+      "sha256": "0863c937165d54df40c1607711416ad7de70ba749d35ce1cb8feb825799b728a"
+    },
+    {
+      "path": "physics/native_repeated-GREEN.txt",
+      "bytes": 100,
+      "sha256": "6c9294c723e8b4f0071bc1ed44f3dc172e3f96f376c22867366595be33b8d48c"
+    },
+    {
+      "path": "physics/native_repeated-RED.txt",
+      "bytes": 867,
+      "sha256": "d90db988a8e767cc3264cb6cc8dc4c5d8d2a9c04c34b77a65381b8027667b195"
+    },
+    {
+      "path": "physics/oblique-release-current-RED-attempt-002.txt",
+      "bytes": 1201,
+      "sha256": "881889f6bf865437e62ec9c636cb4f4f0d447bcd22a4c78f5117f741eb834181"
+    },
+    {
+      "path": "physics/oblique-release-current-RED.txt",
+      "bytes": 1571,
+      "sha256": "8b21a5bbc347855da20773360b724e924734050d2c533774e3a2ceed79e3c77a"
+    },
+    {
+      "path": "physics/physics-delta-console.txt",
+      "bytes": 1380,
+      "sha256": "e58b9a1bf91e4993de2d311381256d90b98b427eb15b36d51c0ddfdd46251bcb"
+    },
+    {
+      "path": "physics/physics-delta-evidence.json",
+      "bytes": 17046,
+      "sha256": "6b053d6593448cef48ab29b5e5b66d5c8365fda5e6926082ce670eeeb08e7ba1"
+    },
+    {
+      "path": "physics/release_disabled-GREEN.txt",
+      "bytes": 100,
+      "sha256": "6c9294c723e8b4f0071bc1ed44f3dc172e3f96f376c22867366595be33b8d48c"
+    },
+    {
+      "path": "physics/release_disabled-RED.txt",
+      "bytes": 700,
+      "sha256": "69d2005f56a2da5c35b1e7a1d17d5a32bf5dd160572dbe4299fb06c0a4fd572d"
+    },
+    {
+      "path": "physics/reproduce_physics_delta.py",
+      "bytes": 6990,
+      "sha256": "6d3bbad9a567538394243ab9d5f990ea4e4bb369fb3a219c5bbe56d2d1250b0f"
+    },
+    {
+      "path": "physics/test_oblique_release_review.py",
+      "bytes": 1155,
+      "sha256": "a055c6a19d06d6fe30b6a6408b5cf63072178c86565498815577e0c81674e075"
+    },
+    {
+      "path": "provenance/ATTEMPT_COMPARISON.json",
+      "bytes": 3327,
+      "sha256": "589a035e078ff57b5e2ea4434a6460250c7134843e048c9aaec7f6c3a3155be1"
+    },
+    {
+      "path": "provenance/EVENT_COMPARISON.json",
+      "bytes": 1297,
+      "sha256": "3f8052295773b6356099bad3580bf59d6ff1534677563511f6e3f7095bc6f4a3"
+    },
+    {
+      "path": "provenance/EXACT_STREAM_COMPARISON.json",
+      "bytes": 378,
+      "sha256": "050dd598be761ed69fe7dfe13320450a9d147aea16c3ea7ecf4df9c02e98fb90"
+    },
+    {
+      "path": "provenance/GIT.json",
+      "bytes": 1436,
+      "sha256": "14da867509e37239644bd1410c2115c4827d49400f9601f3301b34ac19e7de02"
+    },
+    {
+      "path": "provenance/IDENTITIES.json",
+      "bytes": 1957,
+      "sha256": "327777eda342cb177253237c84b80a5ee2d1089545a31a955b51c82bdea93cf3"
+    },
+    {
+      "path": "provenance/MIDWAVE_RECONSTRUCTION.json",
+      "bytes": 196,
+      "sha256": "e17d90c411a6c90839a71f32028917edf48d8add656a788efd73be0cc77d6115"
+    },
+    {
+      "path": "provenance/OBSERVER.json",
+      "bytes": 787,
+      "sha256": "197e344f6039f89864bd9989090a1f8107ff5652788e3e65a63d1132809738db"
+    },
+    {
+      "path": "provenance/PACKAGE.json",
+      "bytes": 2730,
+      "sha256": "8fbf3043749d69333f754319cd2d5f49adcb766c3f2ab911a684edc16ea7a61c"
+    },
+    {
+      "path": "provenance/PREHISTORY.json",
+      "bytes": 388,
+      "sha256": "ab5ce052a1d74896019f29f810872005be6cba8975df087943e1c2fc486a295f"
+    },
+    {
+      "path": "provenance/PRESERVATION.json",
+      "bytes": 132,
+      "sha256": "a0adbea06fdff7a8971c2f376fec8c62a0908c6f6bf970104edd89d6cd3ab0e7"
+    },
+    {
+      "path": "provenance/PROVENANCE_REVIEW.md",
+      "bytes": 9249,
+      "sha256": "edb31c8f78a557621431618d8b21a63abb171298c99bd7b5f18a5e2d6bd9adea"
+    },
+    {
+      "path": "provenance/RECONSTRUCTION.json",
+      "bytes": 4729,
+      "sha256": "ea319ed9d0fd12fe3d04a527c6604b0a448f615faa9679335e274ac61ac8663d"
+    },
+    {
+      "path": "provenance/REVIEW_PRESERVATION.json",
+      "bytes": 120,
+      "sha256": "aebd0fc07fa615acc2489f539fd1c66b782cff95f1cdf907a12a4da4cfa313ca"
+    },
+    {
+      "path": "provenance/audit_provenance.py",
+      "bytes": 11637,
+      "sha256": "42d72ff9e6c555d65d1c8b55bb84c3060c6e8ba75b7426a92e3a36d3d0cf9052"
+    },
+    {
+      "path": "r2/SUMMARY.json",
+      "bytes": 868,
+      "sha256": "fe2b6e8be1a902aa3bdc308fabe6afeb0a08d8290bad5cd2acbe5810b7001c8d"
+    },
+    {
+      "path": "r2/actual_live_branch_removed.txt",
+      "bytes": 678,
+      "sha256": "217b7dfcfa9dbecceb0c34f1c9bd3737b2d80888adc2c72e91e34cc971885064"
+    },
+    {
+      "path": "r2/ambient_absent.txt",
+      "bytes": 263,
+      "sha256": "3891dea648852167e285009b01e32d9d565e63bdb3a7cea2ddebb6d835609a57"
+    },
+    {
+      "path": "r2/ambient_poisoned.txt",
+      "bytes": 265,
+      "sha256": "e025a2525bf20d86ba6a08ed835089a83dbee39ffbbdd7577227bdeafaebdea2"
+    },
+    {
+      "path": "r2/ambient_present.txt",
+      "bytes": 100,
+      "sha256": "d821f20c04a12f9d1bd510aef0cb4b1ab9c00a29682deb7187f6986b6fb8ecfe"
+    },
+    {
+      "path": "r2/delivered_live_branch_missing.txt",
+      "bytes": 678,
+      "sha256": "a2c2b1685713384f1616e70890a760c53049a2af5aa59c51d4557446a6e5e069"
+    },
+    {
+      "path": "r2/green_after_actual.txt",
+      "bytes": 100,
+      "sha256": "d821f20c04a12f9d1bd510aef0cb4b1ab9c00a29682deb7187f6986b6fb8ecfe"
+    },
+    {
+      "path": "r2/green_after_delivered.txt",
+      "bytes": 100,
+      "sha256": "d821f20c04a12f9d1bd510aef0cb4b1ab9c00a29682deb7187f6986b6fb8ecfe"
+    },
+    {
+      "path": "reproduce_remaining_r1.py",
+      "bytes": 2297,
+      "sha256": "6be862e3e81f809448d0bbd8b2d5e0a2d54a9c58584dda6d16a90e6336532fae"
+    },
+    {
+      "path": "review_inputs/CORRECTION.patch",
+      "bytes": 118608,
+      "sha256": "de8fd97320af569df91d629183a61649e8ae16c082c4fcc6610fc78c472c1a21"
+    },
+    {
+      "path": "review_inputs/LOOM_P_INDEPENDENT_FIDELITY_REVIEW.md",
+      "bytes": 41991,
+      "sha256": "ffa7ffe6561ed94c2003faf1eb123637a37932c8573757b018c0dfe070dada54"
+    },
+    {
+      "path": "review_inputs/POST_CORRECTION_REVIEW_REQUEST.txt",
+      "bytes": 11940,
+      "sha256": "1426443ce0f0d19d253844c861a73ed46545305c95890dfb87a5cfd48ea5c53e"
+    },
+    {
+      "path": "review_r2.py",
+      "bytes": 2857,
+      "sha256": "77b0bfec7ac5b9c7eeff14038dcd69935395861f082dd07fb6ffb2b591aa9e0a"
+    },
+    {
+      "path": "reviewed_delivery/Loom_P_corrective_review_20260923.zip",
+      "bytes": 83421895,
+      "sha256": "7e33da1b05646c5af352a4114e99082c52b51b2b5966911f30816fb2911091da"
+    }
+  ],
+  "published_and_read_back": true,
+  "resolved_local_links": 145,
+  "protected_files_unchanged": 63,
+  "incoming_files_unchanged": true,
+  "shared_before_hash_guards_passed": true,
+  "exact_requested_status_recorded": true,
+  "archive_copy_byte_identical": true,
+  "completed_at_utc": "2026-09-23T11:31:20.762770+00:00"
+}

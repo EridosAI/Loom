@@ -1,0 +1,61 @@
+{
+  "original_event_kinds": [
+    "release",
+    "interval",
+    "recontact_or_first_touch",
+    "interval"
+  ],
+  "original_durations": [
+    0.0,
+    0.0013148287095122722,
+    0.0,
+    0.008685171290487728
+  ],
+  "original_transfer": 9.205751373294674e-05,
+  "oblique_gap_samples": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0004997501665417116,
+      2.498144358042964e-09
+    ],
+    [
+      0.0009,
+      8.957368180517733e-10
+    ],
+    [
+      0.001,
+      -4.708011758225439e-12
+    ],
+    [
+      0.01,
+      -8.931528465705441e-07
+    ]
+  ],
+  "oblique_guard": null,
+  "oblique_return_roots": [
+    {
+      "low": 0.0009995291014071538,
+      "high": 0.000999529101407154,
+      "gap": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "low": 0.0009894214175272895,
+      "high": 0.0009894214175272897,
+      "gap": 9.999978622943217e-11,
+      "threshold": 1e-10
+    }
+  ],
+  "oblique_actual_durations": [
+    0.01
+  ],
+  "oblique_transfer": 9.858939985959484e-06,
+  "known_clear_swept_search": {
+    "error": "ArithmeticError: Swept contact search iteration limit"
+  },
+  "pending_exact_endpoint": "verified",
+  "evidence": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\physics\\physics-delta-evidence.json"
+}

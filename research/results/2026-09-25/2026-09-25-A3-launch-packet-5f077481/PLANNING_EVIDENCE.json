@@ -1,0 +1,18 @@
+{
+  "A1_source": "references/A1_PLANNING_EVIDENCE.json",
+  "A2_source": "references/A2_OBSERVATIONS.json",
+  "A2_zip_sha256": "212c0497531e3ccee7b2b3825045dda116ca15468fe3415a4e79634d620cb502",
+  "A2_authority": "229bedc93d793892488ee0f8b1b42035777f11f70952e43179a768a30cfc3007",
+  "separation": "A1/A2 observations inform allowance and ordinary-impact choice only; no A3 outcome is observed.",
+  "A2_reported_final_EI": [
+    0.7381512326543674,
+    0.9863441416153598
+  ],
+  "A2_first_source_contact_s": 6.31019048650431,
+  "A2_second_source_contact_s": 132.3764279535912,
+  "A2_total_damage": 0.013655858384640111,
+  "A2_repair": 0,
+  "selection_rule": "One ordinary wall impact below an existing strip; orthogonal nearby corridor; nearby existing source; selected before any A3 commands, without candidate trials.",
+  "workbench_navigation_status": "Current map/status stops at A1/V3; latest explicit request and verified A2 result are later evidence. Navigation not edited.",
+  "A2_boundary_reporting_limitation": "Preserve TIMING_REPORTING_NOTE.json; sub-tolerance nominal-boundary flags do not establish missing integration."
+}

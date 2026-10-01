@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.473" timestamp="2026-09-26T19:02:37.817540+08:00" hostname="Equinox"><testcase classname="tests_apparatus.test_b1_operator" name="test_C_DOM_and_UI" time="0.039"><failure message="AssertionError: CSS-ONLY MASK EXPORTED CHEMISTRY&#10;  &#10;  1 !== 0&#10;  &#10;  &#10;assert 1 == 0&#10; +  where 1 = CompletedProcess(args=['node', 'C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\wor...sts_apparatus\\b1_dom_fixture.cjs'], returncode=1, stdout='', stderr='CSS-ONLY MASK EXPORTED CHEMISTRY\n\n1 !== 0\n\n').returncode">def test_C_DOM_and_UI():
+        script=Path(__file__).with_name('b1_dom_fixture.cjs')
+        result=subprocess.run([os.environ.get('NODE_BIN','node'),str(script)],capture_output=True,text=True,timeout=30)
+&gt;       assert result.returncode==0,result.stdout+result.stderr
+E       AssertionError: CSS-ONLY MASK EXPORTED CHEMISTRY
+E         
+E         1 !== 0
+E         
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['node', 'C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\wor...sts_apparatus\\b1_dom_fixture.cjs'], returncode=1, stdout='', stderr='CSS-ONLY MASK EXPORTED CHEMISTRY\n\n1 !== 0\n\n').returncode
+
+tests_apparatus\test_b1_operator.py:85: AssertionError</failure></testcase></testsuite></testsuites>

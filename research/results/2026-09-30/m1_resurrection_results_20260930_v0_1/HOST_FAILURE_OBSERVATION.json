@@ -1,0 +1,43 @@
+{
+  "label": "NON-CANONICAL RESURRECTION SANDBOX",
+  "kind": "HOST_NATIVE_APPLICATION_ERROR",
+  "observed_utc": "2026-09-30T16:37:32.6468382Z",
+  "process_id": 74372,
+  "process_path": "C:\\Python313\\python.exe",
+  "process_start": "2026-09-30T12:53:19.9630159Z",
+  "cpu_seconds": 12754.25,
+  "event_time_utc": "2026-09-30T16:31:49.0667367Z",
+  "event_record_id": 64403,
+  "event_provider": "Application Popup",
+  "event_id": 26,
+  "message": "Application popup: python.exe - Application Error : The instruction at 0x00007FFAF9D1E20B referenced memory at 0x0000000000000002. The memory could not be read.\r\n\nClick on OK to terminate the program",
+  "last_files": [
+    {
+      "Name": "chunk-000296801-000296900.ld",
+      "Length": 101016,
+      "LastWriteTimeUtc": "2026-09-30T16:31:48.730133Z"
+    },
+    {
+      "Name": "chunk-000296701-000296800.ld",
+      "Length": 100857,
+      "LastWriteTimeUtc": "2026-09-30T16:31:48.3578037Z"
+    },
+    {
+      "Name": "chunk-000296601-000296700.ld",
+      "Length": 100690,
+      "LastWriteTimeUtc": "2026-09-30T16:31:47.9848587Z"
+    },
+    {
+      "Name": "chunk-000296501-000296600.ld",
+      "Length": 99760,
+      "LastWriteTimeUtc": "2026-09-30T16:31:47.6053528Z"
+    },
+    {
+      "Name": "chunk-000296401-000296500.ld",
+      "Length": 98883,
+      "LastWriteTimeUtc": "2026-09-30T16:31:47.240081Z"
+    }
+  ],
+  "action": "Stop this failed process only; no retry, reconstruction, continuation or replacement",
+  "exact_inflight_state_available": false
+}

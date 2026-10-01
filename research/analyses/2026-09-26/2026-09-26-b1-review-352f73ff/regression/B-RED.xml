@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.489" timestamp="2026-09-26T19:38:29.643019+08:00" hostname="Equinox"><testcase classname="tests_apparatus.test_b1_operator" name="test_B_payload_canary" time="0.052"><failure message="AssertionError: CHEMISTRY PAYLOAD LEAK&#10;assert '0.73123456789' not in '{&quot;schema&quot;: ...&quot;: &quot;paused&quot;}'&#10;  &#10;  '0.73123456789' is contained here:&#10;    00000004, 0.73123456789, 0.73223456789, 0.73323456789, 0.73423456789, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], &quot;actual_EI&quot;: [0.7, 0.8], &quot;EI_sample_time&quot;: 0.0}], &quot;own_commands&quot;: [], &quot;annotations&quot;: [], &quot;availability&quot;: &quot;paused&quot;}">def test_B_payload_canary():
+        truth=raw_fixture();mode=operator_view.display_identity('chemistry_hidden')
+        shown=copy.deepcopy(truth) if fault('B') else operator_view.project(truth,mode)
+&gt;       assert str(CANARY) not in json.dumps(shown),'CHEMISTRY PAYLOAD LEAK'
+E       AssertionError: CHEMISTRY PAYLOAD LEAK
+E       assert '0.73123456789' not in '{"schema": ...": "paused"}'
+E         
+E         '0.73123456789' is contained here:
+E           00000004, 0.73123456789, 0.73223456789, 0.73323456789, 0.73423456789, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "actual_EI": [0.7, 0.8], "EI_sample_time": 0.0}], "own_commands": [], "annotations": [], "availability": "paused"}
+
+tests_apparatus\test_b1_operator.py:77: AssertionError</failure></testcase></testsuite></testsuites>

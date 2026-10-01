@@ -1,0 +1,1284 @@
+{
+  "scope": "Saved log audit only plus one pytest --collect-only invocation; no tests rerun.",
+  "checkpoint": "9d31e7902658b15762052a2a6a3d161d64338524",
+  "pairs": [
+    {
+      "group": "previous_16",
+      "fault": "identity",
+      "test": "test_manifest_identity",
+      "intended_failure": "manifest/code identity mismatch",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: manifest/code identity mismatch"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:36:",
+        "loom_commissioning\\contract.py:50: in validate_manifest",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 12.73s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.76s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\identity-RED.log",
+      "green_log": "old-pairs-001\\identity-GREEN.log",
+      "red_sha256": "a322b9894f3ba0f236253d001d38a19cc778c1cdab3d193b7b3f0fc9546514b2",
+      "green_sha256": "7871da2dcf0d650ee1b945c9a665d4e92f9de77e641db7924caf0dd5475ff9a0",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "missing_native",
+      "test": "test_native_completeness",
+      "intended_failure": "missing native record",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: missing native record"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:45:",
+        "loom_commissioning\\validators.py:39: in validate_native_sequence",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.78s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.73s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\missing_native-RED.log",
+      "green_log": "old-pairs-001\\missing_native-GREEN.log",
+      "red_sha256": "ad613f1097b113d81474a95927f449f0b85f0ecf5a1ef516eff642020595aeac",
+      "green_sha256": "9214472f4ea76ad9bf5f1f68a490cdb9b65622eccf79a0ac6797931ab981769c",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "phase",
+      "test": "test_field_phase",
+      "intended_failure": "wrong field/mover phase",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: wrong field/mover phase"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:50:",
+        "loom_commissioning\\contract.py:64: in validate_manifest",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.77s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.74s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\phase-RED.log",
+      "green_log": "old-pairs-001\\phase-GREEN.log",
+      "red_sha256": "34169e77c2b77658f4956369ef279d1fd1b58d82c69ba36d8ea809f530821662",
+      "green_sha256": "08054f525f3e262e37d7681e7a64aecffdcc8f95dd2dc3c7c378754b0b40bda7",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "ledger",
+      "test": "test_accounting",
+      "intended_failure": "source debit/body credit mismatch",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: source debit/body credit mismatch"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:58:",
+        "loom_commissioning\\validators.py:33: in validate_ledger",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.41s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.36s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\ledger-RED.log",
+      "green_log": "old-pairs-001\\ledger-GREEN.log",
+      "red_sha256": "c74a07ca29f0f77a1a0164f48e49f438aff9c33f55d2411d40b8d94b14baf8c0",
+      "green_sha256": "1b6d285e9bf8c2d7876becb3febd98832a4a060079ff2e22611ccc00af141ee5",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "input",
+      "test": "test_controller_allowlist",
+      "intended_failure": "forbidden controller input",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: forbidden controller input"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:63:",
+        "loom_commissioning\\controllers.py:39: in validate_privileged",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.48s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.46s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\input-RED.log",
+      "green_log": "old-pairs-001\\input-GREEN.log",
+      "red_sha256": "77f09069ff56122bd326fbd922afa8e9962749886dadcdd6602ea66624451852",
+      "green_sha256": "69de30081207b2e691c89921084505ee58d1a75b0250ca65c87b22f3265c0d99",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "observer",
+      "test": "test_observer_noninterference",
+      "intended_failure": "observer RNG/state interference",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: observer RNG/state interference"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:74:",
+        "loom_commissioning\\controllers.py:136: in observe_without_interference",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.52s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.46s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\observer-RED.log",
+      "green_log": "old-pairs-001\\observer-GREEN.log",
+      "red_sha256": "005c2db6a03efe6f27cab113b15ee4bc5e3dc540ae98f9c8e3b5321ac6324a87",
+      "green_sha256": "69de30081207b2e691c89921084505ee58d1a75b0250ca65c87b22f3265c0d99",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "stop",
+      "test": "test_stop_reason",
+      "intended_failure": "mislabelled stop reason",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: mislabelled stop reason"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:78:",
+        "loom_commissioning\\validators.py:14: in validate_stop",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.78s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.70s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\stop-RED.log",
+      "green_log": "old-pairs-001\\stop-GREEN.log",
+      "red_sha256": "1966e096e16ca0ea4de3ad81eb806ad640f2a8b65119fdbbf1ffe68be8962875",
+      "green_sha256": "4cd578acaa79d6dfc8b52c71635309430e39428f946de9981a53003e6e3e2c86",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "sensor_leak",
+      "test": "test_sensor_boundary",
+      "intended_failure": "privileged data leakage into sensor-only interface",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: privileged data leakage into sensor-only interface"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:83:",
+        "loom_commissioning\\controllers.py:98: in validate_sensor_payload",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.46s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.41s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\sensor_leak-RED.log",
+      "green_log": "old-pairs-001\\sensor_leak-GREEN.log",
+      "red_sha256": "fd55a8103059254e8bc382b71b6effb3adf7b2295aa9d170ee8a7aac3b172523",
+      "green_sha256": "9459a7d273f5dc2761dee270a3ace79b1c9eccb1111157c448cdbd69b14743f3",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "label",
+      "test": "test_external_label",
+      "intended_failure": "external controller incorrectly labelled intact P",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: external controller incorrectly labelled intact P"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:93:",
+        "loom_commissioning\\contract.py:56: in validate_manifest",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.77s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.74s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\label-RED.log",
+      "green_log": "old-pairs-001\\label-GREEN.log",
+      "red_sha256": "0a1c2073ed684a0e5fecb384c5645d33c468a4f4955d9b21eb2e6e08354455bd",
+      "green_sha256": "08054f525f3e262e37d7681e7a64aecffdcc8f95dd2dc3c7c378754b0b40bda7",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "frozen",
+      "test": "test_frozen_persistence",
+      "intended_failure": "frozen structural parameter changed",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: frozen structural parameter changed"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:102:",
+        "loom_commissioning\\adapter.py:30: in validate_frozen",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.51s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.43s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\frozen-RED.log",
+      "green_log": "old-pairs-001\\frozen-GREEN.log",
+      "red_sha256": "d76125fe44795ff596203ffbf59e4a909c5856c72d7d019c9a15aab3e7688cdd",
+      "green_sha256": "d7b724ebd4e87b87755578c33078fbebf63bb1f3c8e99ddc03b4a076760e97d5",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "discarded",
+      "test": "test_discarded_update_has_no_later_effect",
+      "intended_failure": "discarded structural update affected later output/state",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E       AssertionError: discarded structural update affected later output/state"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:143: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 1.02s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 1.00s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\discarded-RED.log",
+      "green_log": "old-pairs-001\\discarded-GREEN.log",
+      "red_sha256": "e3558da7497c58380d240e02d67dd5b3ee570a16cb998b48288369a4167b4a38",
+      "green_sha256": "1680558edf657d7f75dac8246519cf3acf567c5b52dbf617bdf316974ee3fc3c",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "duration",
+      "test": "test_duration_guard",
+      "intended_failure": "manifest changed during run",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E           ValueError: manifest changed during run"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:149:",
+        "loom_commissioning\\runner.py:143: in advance",
+        "loom_commissioning\\runner.py:99: in _guard",
+        "loom_commissioning\\contract.py:29: ValueError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.93s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 1.06s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\duration-RED.log",
+      "green_log": "old-pairs-001\\duration-GREEN.log",
+      "red_sha256": "372f08a1d1e7c9a4367870bc4aadbd1e9a99927358b3d562dc0f0542ebf4553e",
+      "green_sha256": "d9772edda7360f9f73d31364226977873d026d3207b4a10d521c6fefefb29c2c",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "extra_updates",
+      "test": "test_controller_hold_schedule",
+      "intended_failure": "extra native/wave/random/field updates introduced by controller hold",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E       AssertionError: extra native/wave/random/field updates introduced by controller hold"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:177: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 2.19s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 2.51s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\extra_updates-RED.log",
+      "green_log": "old-pairs-001\\extra_updates-GREEN.log",
+      "red_sha256": "629700416c872a2192ff06a98cd2943f7ac4c14703d092501d6921784d86b5d5",
+      "green_sha256": "2ba0f19f314d956b2982e649cec3ddd29e442dae010026bf0a8f5f1ec6e734f7",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "extra_native",
+      "test": "test_controller_hold_schedule",
+      "intended_failure": "extra native/wave/random state change from external hold",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E       AssertionError: extra native/wave/random state change from external hold"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:178: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 2.30s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 2.52s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\extra_native-RED.log",
+      "green_log": "old-pairs-001\\extra_native-GREEN.log",
+      "red_sha256": "d7175d344c36c29eda82c1c17243abb97b7fbb3632f38d9c85ffc81543ac547e",
+      "green_sha256": "6bb56a36788edf8a42305a477e440ef55067665a3f1dff8d14b1a800d2c38792",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "extra_wave",
+      "test": "test_controller_hold_schedule",
+      "intended_failure": "extra native/wave/random state change from external hold",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E       AssertionError: extra native/wave/random state change from external hold"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:178: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 2.63s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 2.48s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\extra_wave-RED.log",
+      "green_log": "old-pairs-001\\extra_wave-GREEN.log",
+      "red_sha256": "16f0b313e1530e66192cc88e91a4b13d6d5a3e5e6bb5d9a433b7ba0dc8cb997c",
+      "green_sha256": "454310fb9b4dabdaabdfc894b873e3373a99edb6e0a112f77a07e9a03f3441a4",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "previous_16",
+      "fault": "extra_random",
+      "test": "test_controller_hold_schedule",
+      "intended_failure": "extra native/wave/random state change from external hold",
+      "injection_mechanism": "existing test-side data or operation fault at the named fixture; production guard/assertion exercised",
+      "red_exception_lines": [
+        "E       AssertionError: extra native/wave/random state change from external hold"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_apparatus.py:178: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 2.14s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 2.55s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "old-pairs-001\\extra_random-RED.log",
+      "green_log": "old-pairs-001\\extra_random-GREEN.log",
+      "red_sha256": "a8c53fee343cb743df330140d486749f54177a7abd64288d4937d1218b630cab",
+      "green_sha256": "60f6c2cf12011c588f139749e90e64b1e4bb0edc445e16fec56c411dacc1f2f6",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-implementation",
+      "test": "test_approved_execution_binding[implementation]",
+      "intended_failure": "APPROVAL BINDING BREACH: implementation",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: implementation"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 13.10s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.82s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-implementation-RED.log",
+      "green_log": "new-pairs-001\\authority-implementation-GREEN.log",
+      "red_sha256": "1df4b30cc8d8e0a44057f3ff6dc84944a7a3cd195b1d23fc134fcb456c44c6d9",
+      "green_sha256": "85e706aa16433f8f0d89305e7077ae4cc25f716f106185c39a8e935d02d1ef2c",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-constants",
+      "test": "test_approved_execution_binding[constants]",
+      "intended_failure": "APPROVAL BINDING BREACH: constants",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: constants"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.80s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.81s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-constants-RED.log",
+      "green_log": "new-pairs-001\\authority-constants-GREEN.log",
+      "red_sha256": "5c2acc2e1b831a851eef973c91940f10d889ac9cdbd63a7bb7c23a6c489468a6",
+      "green_sha256": "bf0fd24d88aed7013b352e904337d574db524c14855f2410bb70486f556d148f",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-route",
+      "test": "test_approved_execution_binding[route]",
+      "intended_failure": "APPROVAL BINDING BREACH: route",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: route"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.80s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.82s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-route-RED.log",
+      "green_log": "new-pairs-001\\authority-route-GREEN.log",
+      "red_sha256": "762581a37644bcd8ee9fb2d452092ceb69049d3c2ba09777062b35133ee83c4e",
+      "green_sha256": "85e706aa16433f8f0d89305e7077ae4cc25f716f106185c39a8e935d02d1ef2c",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-stage_sequence",
+      "test": "test_approved_execution_binding[stage_sequence]",
+      "intended_failure": "APPROVAL BINDING BREACH: stage_sequence",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: stage_sequence"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.80s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.84s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-stage_sequence-RED.log",
+      "green_log": "new-pairs-001\\authority-stage_sequence-GREEN.log",
+      "red_sha256": "283bc078b9aff9808d7ce42567eb3bc4d59ed9b59ecd7193f4ad528831418fa7",
+      "green_sha256": "16bf8ec884a36e217ab993ab399e0c564e45caf3b5f8a45906e7c2539cb70dbf",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-contact_target",
+      "test": "test_approved_execution_binding[contact_target]",
+      "intended_failure": "APPROVAL BINDING BREACH: contact_target",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: contact_target"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.84s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.85s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-contact_target-RED.log",
+      "green_log": "new-pairs-001\\authority-contact_target-GREEN.log",
+      "red_sha256": "b2f143e814b424572a35e90e84fc2f9b4068506c1b3e8ccefb587fc622909eef",
+      "green_sha256": "49bf6922cd8f1b22088f46dbdc62055c772502e6e8302c2c11cdc240a39c8aba",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-manual_fallback",
+      "test": "test_approved_execution_binding[manual_fallback]",
+      "intended_failure": "APPROVAL BINDING BREACH: manual_fallback",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: manual_fallback"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.80s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.82s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-manual_fallback-RED.log",
+      "green_log": "new-pairs-001\\authority-manual_fallback-GREEN.log",
+      "red_sha256": "62ceffa7c1efce89ed6085f4d43812d0ba3ca0ee7b06d32415f47cd85cb31405",
+      "green_sha256": "85e706aa16433f8f0d89305e7077ae4cc25f716f106185c39a8e935d02d1ef2c",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-sensor_interface",
+      "test": "test_approved_execution_binding[sensor_interface]",
+      "intended_failure": "APPROVAL BINDING BREACH: sensor_interface",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: sensor_interface"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.82s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.81s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-sensor_interface-RED.log",
+      "green_log": "new-pairs-001\\authority-sensor_interface-GREEN.log",
+      "red_sha256": "ef81c0ef2d4b6b405ea7a8fced1ba4f9f2b04da3164d1c8382ef24a3fd3bcfff",
+      "green_sha256": "bf0fd24d88aed7013b352e904337d574db524c14855f2410bb70486f556d148f",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-intact_arm",
+      "test": "test_approved_execution_binding[intact_arm]",
+      "intended_failure": "APPROVAL BINDING BREACH: intact_arm",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: intact_arm"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.82s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.83s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-intact_arm-RED.log",
+      "green_log": "new-pairs-001\\authority-intact_arm-GREEN.log",
+      "red_sha256": "54ac5a9a9dff76d895940addf9b7341a07433ebd8f0d45ae5aeda6162dcde508",
+      "green_sha256": "e2d80bebebb0a802eefa4b65f7108ff05a97fa187d3204e75dd15dff03e40e50",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-fixed_adapter",
+      "test": "test_approved_execution_binding[fixed_adapter]",
+      "intended_failure": "APPROVAL BINDING BREACH: fixed_adapter",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: fixed_adapter"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.81s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.84s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-fixed_adapter-RED.log",
+      "green_log": "new-pairs-001\\authority-fixed_adapter-GREEN.log",
+      "red_sha256": "004778d964678509f01d41e0709bc1965f5c6b267734586a39fe8f3080ddaa6c",
+      "green_sha256": "16bf8ec884a36e217ab993ab399e0c564e45caf3b5f8a45906e7c2539cb70dbf",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-deprivation",
+      "test": "test_approved_execution_binding[deprivation]",
+      "intended_failure": "APPROVAL BINDING BREACH: deprivation",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: deprivation"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.80s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.83s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-deprivation-RED.log",
+      "green_log": "new-pairs-001\\authority-deprivation-GREEN.log",
+      "red_sha256": "0f1f1c8cd7147b2c366515d79f83d4218b9815ae5d281169cde042af107d62f0",
+      "green_sha256": "e2d80bebebb0a802eefa4b65f7108ff05a97fa187d3204e75dd15dff03e40e50",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-initial",
+      "test": "test_approved_execution_binding[initial]",
+      "intended_failure": "APPROVAL BINDING BREACH: initial",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: initial"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.87s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.84s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-initial-RED.log",
+      "green_log": "new-pairs-001\\authority-initial-GREEN.log",
+      "red_sha256": "c91685ae289735ba5b991f103fe1d9e5b560979604cef6ad5bf91331c39a5f5a",
+      "green_sha256": "16bf8ec884a36e217ab993ab399e0c564e45caf3b5f8a45906e7c2539cb70dbf",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-prehistory",
+      "test": "test_approved_execution_binding[prehistory]",
+      "intended_failure": "APPROVAL BINDING BREACH: prehistory",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: prehistory"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.84s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.85s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-prehistory-RED.log",
+      "green_log": "new-pairs-001\\authority-prehistory-GREEN.log",
+      "red_sha256": "0f62eb97ab5b1d868592bda54c426292df7ef862fc246ce0fd02e7c5e02a8ff1",
+      "green_sha256": "49bf6922cd8f1b22088f46dbdc62055c772502e6e8302c2c11cdc240a39c8aba",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-duration",
+      "test": "test_approved_execution_binding[duration]",
+      "intended_failure": "APPROVAL BINDING BREACH: duration",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: duration"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.83s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.86s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-duration-RED.log",
+      "green_log": "new-pairs-001\\authority-duration-GREEN.log",
+      "red_sha256": "51277b0e0f624f2496135d44e50eccecc8d2d5df7934d436877fb814559f5996",
+      "green_sha256": "48a9c63ef9d290a9cd7ac361e6c80943eafde56fef9baa6358858baa47c8d718",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-resources",
+      "test": "test_approved_execution_binding[resources]",
+      "intended_failure": "APPROVAL BINDING BREACH: resources",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: resources"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.82s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.87s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-resources-RED.log",
+      "green_log": "new-pairs-001\\authority-resources-GREEN.log",
+      "red_sha256": "c03a790c166a64dcaef8e7dcef8ff53491b937a5b104aaed5cf6a3be226c6662",
+      "green_sha256": "604ad87756724bb897894ca29e6ad257b51a1992e5d2148e7faeeec1d9f5d182",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-runtime",
+      "test": "test_approved_execution_binding[runtime]",
+      "intended_failure": "APPROVAL BINDING BREACH: runtime",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: runtime"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.82s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.86s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-runtime-RED.log",
+      "green_log": "new-pairs-001\\authority-runtime-GREEN.log",
+      "red_sha256": "62a316c1ed6832e2bfdbe0238f36da749ed1b9519e795f0ee4d97dce2efdc53a",
+      "green_sha256": "48a9c63ef9d290a9cd7ac361e6c80943eafde56fef9baa6358858baa47c8d718",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-procedure",
+      "test": "test_approved_execution_binding[procedure]",
+      "intended_failure": "APPROVAL BINDING BREACH: procedure",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: procedure"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.83s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.84s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-procedure-RED.log",
+      "green_log": "new-pairs-001\\authority-procedure-GREEN.log",
+      "red_sha256": "f82673b3b1392b583b01cabfd7a7c9328472155f760edf3ec92b9c89c29f5e58",
+      "green_sha256": "16bf8ec884a36e217ab993ab399e0c564e45caf3b5f8a45906e7c2539cb70dbf",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-replay_arm",
+      "test": "test_approved_execution_binding[replay_arm]",
+      "intended_failure": "APPROVAL BINDING BREACH: replay_arm",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: replay_arm"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.83s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.83s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-replay_arm-RED.log",
+      "green_log": "new-pairs-001\\authority-replay_arm-GREEN.log",
+      "red_sha256": "ea3e866b0ae4448359253335788076fb809590d6a9099b33a1bf75126a7ca201",
+      "green_sha256": "e2d80bebebb0a802eefa4b65f7108ff05a97fa187d3204e75dd15dff03e40e50",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "authority-request_rebind",
+      "test": "test_approved_execution_binding[request_rebind]",
+      "intended_failure": "APPROVAL BINDING BREACH: request_rebind",
+      "injection_mechanism": "test callback bypass only: check=lambda:None; production verify_approval_binding is not patched",
+      "red_exception_lines": [
+        "E       AssertionError: APPROVAL BINDING BREACH: request_rebind"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:83: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.84s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.89s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\authority-request_rebind-RED.log",
+      "green_log": "new-pairs-001\\authority-request_rebind-GREEN.log",
+      "red_sha256": "858c39a63eeaf9b15c00bfdb24d28e48594aac5833de157e1a3531ca9cc70a58",
+      "green_sha256": "6b8e0043bd649b0a4586e59d620338685c09a787fa12d7524bcaf3799be30904",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "clock-transition",
+      "test": "test_exact_review_boundary",
+      "intended_failure": "CLOCK BREACH: expired stage issued another hold",
+      "injection_mechanism": "in-memory production controllers.time_due replacement with old raw >= comparison",
+      "red_exception_lines": [
+        "E           AssertionError: CLOCK BREACH: expired stage issued another hold",
+        "E           AssertionError: CLOCK BREACH: expired stage issued another hold"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:145: AssertionError"
+      ],
+      "red_summary": {
+        "text": "2 failed, 3 passed in 0.44s",
+        "failed": 2,
+        "passed": 3,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "5 passed in 0.39s",
+        "failed": 0,
+        "passed": 5,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\clock-transition-RED.log",
+      "green_log": "new-pairs-001\\clock-transition-GREEN.log",
+      "red_sha256": "d75d5cbf37cbb03e290d4b08fded514fb7042faa7916da2e8ac0b80700c7bd3b",
+      "green_sha256": "435d5a987d2fd3794f93782d4e19d1a1eab12ebe9353399fe9732b8646eb4854",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    },
+    {
+      "group": "correction_20",
+      "fault": "clock-final",
+      "test": "test_final_stage_and_not_due_control",
+      "intended_failure": "CLOCK BREACH: final stage still drives",
+      "injection_mechanism": "in-memory production controllers.time_due replacement with old raw >= comparison",
+      "red_exception_lines": [
+        "E           AssertionError: CLOCK BREACH: final stage still drives"
+      ],
+      "red_trace_frames": [
+        "tests_apparatus\\test_corrections.py:154: AssertionError"
+      ],
+      "red_summary": {
+        "text": "1 failed in 0.44s",
+        "failed": 1,
+        "passed": 0,
+        "errors": 0
+      },
+      "green_summary": {
+        "text": "1 passed in 0.38s",
+        "failed": 0,
+        "passed": 1,
+        "errors": 0
+      },
+      "red_exit": 1,
+      "green_exit": 0,
+      "red_log": "new-pairs-001\\clock-final-RED.log",
+      "green_log": "new-pairs-001\\clock-final-GREEN.log",
+      "red_sha256": "8a9f7089a1d734de6881005d80f74f8942bd3847e9b0781a70ba2b8050047690",
+      "green_sha256": "cac8f2444c91387fbd4c6b3dfeebcac4afaf6000faff0f8746230c740f460d7a",
+      "reached_intended_exception": true,
+      "clean_control_passed": true
+    }
+  ],
+  "collection": {
+    "exit": 0,
+    "command": [
+      "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "pytest",
+      "tests",
+      "tests_apparatus",
+      "--collect-only",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--basetemp",
+      "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\authority_runtime\\collect-only-njep_twa\\pytest"
+    ],
+    "cwd": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology",
+    "temp": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\authority_runtime\\collect-only-njep_twa",
+    "plugin_autoload_disabled": true,
+    "bytecode_disabled": true,
+    "pytest_cache_disabled": true,
+    "collected_total": 113,
+    "composition": {
+      "P_engineering": 59,
+      "previous_apparatus": 24,
+      "new_correction": 30
+    },
+    "log": "authority_runtime/collect-only.log",
+    "log_sha256": "ed896b71363d5eaef5083ca8cf7a1bdf93488a74f23276c769a33ae0a7de9047",
+    "test_bodies_executed": 0
+  },
+  "suite_logs": {
+    "worktree-suite.log": {
+      "summary": {
+        "text": "113 passed in 77.05s (0:01:17)",
+        "failed": 0,
+        "passed": 113,
+        "errors": 0
+      },
+      "sha256": "74503be1137b2a67bb9ac5745bf6c042c91c9ead51301a1c5ad7bd00faa32302"
+    },
+    "portable-suite.log": {
+      "summary": {
+        "text": "113 passed in 60.96s (0:01:00)",
+        "failed": 0,
+        "passed": 113,
+        "errors": 0
+      },
+      "sha256": "30a0657bfbf747ec1f8b79bda78255b34589edfcd80fde1158c665b62402fe05"
+    }
+  },
+  "summary": {
+    "pairs": 36,
+    "red_logs": 36,
+    "green_logs": 36,
+    "total_logs_audited": 72,
+    "all_reds_reach_intended_exception": true,
+    "all_green_controls_pass": true,
+    "red_test_failures": 37,
+    "red_test_passes": 3,
+    "green_test_passes": 40,
+    "authority_callback_bypass_pairs": 18,
+    "production_clock_comparison_pairs": 2,
+    "previous_pairs": 16,
+    "important_qualification": "18 authority REDs bypass a test callback, not a production implementation. They establish assertion sensitivity; clean controls exercise real rejection. Clock-transition RED has 2 failed/3 passed parameter cases; GREEN has 5 passed."
+  }
+}

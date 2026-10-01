@@ -1,0 +1,106 @@
+{
+  "mode": "old",
+  "source": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\portable\\developmental_ecology",
+  "scope": "Existing bounded manufactured apparatus fixtures only; no commissioning, prehistory, source mutation or new geometry cases.",
+  "source_files": {
+    "runner.py": {
+      "bytes": 14339,
+      "sha256": "a1c2764f0424b815b24e5c49496ba55eb9775757314fc88f6634dd41e3d3ba20"
+    },
+    "validators.py": {
+      "bytes": 7132,
+      "sha256": "047696a36f08c8d7d631d4fb65444a56fc0f742059ca46d91c9879722ca74c43"
+    },
+    "authority.py": {
+      "bytes": 7421,
+      "sha256": "402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59"
+    },
+    "controllers.py": {
+      "bytes": 7600,
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e"
+    }
+  },
+  "checks": {
+    "ordinary_save_resume": {
+      "issued_pair": [
+        0.717668244562803,
+        0.237668244562803
+      ],
+      "substituted_pair": [
+        -0.5,
+        0.5
+      ],
+      "initial_native_index": 7,
+      "original_remaining": 3,
+      "substituted_remaining": 4,
+      "final": {
+        "engine_hash": "949f682d733e1139119bbe9ff08f01643ca0851612a8429988a1a7e01a2fb92d",
+        "body_hash": "67806019940fa3d7a092eb29130386315e135062e171072b0472a11d5f9ea474",
+        "fields_hash": "05725c5026fd7cb7b0cec5fc8ff208d08fc613dddef5cd53ef74582afdd35cf9",
+        "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+        "native_index": 11,
+        "time": 0.10999999999999999,
+        "energy": 0.6997815632228801,
+        "integrity": 0.8
+      },
+      "stage_deadline": 0.1,
+      "full_verifications": [
+        {
+          "class": "AV",
+          "native_records": 7,
+          "wave_records": 0,
+          "events": 7,
+          "replayed": true,
+          "maximum_accounting_residual": 5.439645587267117e-17,
+          "mode": "external_controller",
+          "status": "administrative_pause"
+        },
+        {
+          "class": "AV",
+          "native_records": 4,
+          "wave_records": 0,
+          "events": 4,
+          "replayed": true,
+          "maximum_accounting_residual": 2.000014195056854e-17,
+          "mode": "external_controller",
+          "status": "administrative_pause"
+        }
+      ],
+      "hash_files_edited": false,
+      "old_guards_disabled": false
+    },
+    "loaded_session_constructor": {
+      "before": {
+        "engine_hash": "e8f595e64b1fde5e8971542cdd91a7006b6812e407d41ed771208eaab7b41ed1",
+        "body_hash": "40a89e47a8b740571ba27bb0f4e5415bcf7cc2840ffbb1ad0befac2576ca4eab",
+        "fields_hash": "49eb5bdd59358e745555a7b0c3296b253cf5087dd54254badf70da1e20284985",
+        "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+        "native_index": 7,
+        "time": 0.07,
+        "energy": 0.6998615632228802,
+        "integrity": 0.8
+      },
+      "after": {
+        "engine_hash": "949f682d733e1139119bbe9ff08f01643ca0851612a8429988a1a7e01a2fb92d",
+        "body_hash": "67806019940fa3d7a092eb29130386315e135062e171072b0472a11d5f9ea474",
+        "fields_hash": "05725c5026fd7cb7b0cec5fc8ff208d08fc613dddef5cd53ef74582afdd35cf9",
+        "neural_rng_hash": "a4cbe36f452a764b18dbc89d87164073ed84cf15a3dd3cea9020c2fc2f6e9ca0",
+        "native_index": 11,
+        "time": 0.10999999999999999,
+        "energy": 0.6997815632228801,
+        "integrity": 0.8
+      },
+      "accepted_mutated_pending": true,
+      "full_verification": {
+        "class": "AV",
+        "native_records": 4,
+        "wave_records": 0,
+        "events": 4,
+        "replayed": true,
+        "maximum_accounting_residual": 2.000014195056854e-17,
+        "mode": "external_controller",
+        "status": "administrative_pause"
+      }
+    }
+  }
+}

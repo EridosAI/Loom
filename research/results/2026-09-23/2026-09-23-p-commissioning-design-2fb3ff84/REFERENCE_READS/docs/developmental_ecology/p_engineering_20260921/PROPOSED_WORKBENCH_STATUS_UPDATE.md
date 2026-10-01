@@ -1,0 +1,7 @@
+# Proposed status contribution — for the workbench integrator
+
+Do not overwrite live workbench indexes from this contribution. Jason authorized the bounded P build on 2026-09-21 and resolved its optical boundary on 2026-09-22. D1–D3 remain accepted. Work continued in the same isolated code worktree/branch from bf5df05ad2aafb8590e8765a947df111956b9528; the review package CHECKPOINT_RECEIPT.json records the final commit.
+
+Status: bounded engineering build complete for review, uncommissioned. 44 component checks pass. birth_30s, nonzero_resume_1s and contact_ui_1s completed on attempt 002 after disclosed inspector/collision-search corrections; first attempts remain preserved. All 3,200 final neural states and final fields reconstructed exactly. Nonzero restart and observer non-interference matched. The original world-only preparation was reused after provenance/dependency checks. The paused inspector and its launcher were verified; its server is stopped.
+
+External directional light enters across the arena boundary; interior bodies cast shadows, ambient remains, and walls retain ordinary material/contact behaviour. The closed-wall interpretation is preserved as rejected for this branch. No other law or mechanism changed. No scientific lifetime, cohort, efficacy claim, sweep or commissioning campaign occurred. Capacity, packet limits, tonic centring, fading association, signal scale and fine differentiation remain open. Sources, R, alternatives and historical results are preserved. No vault Git writes or live-index edits occurred.

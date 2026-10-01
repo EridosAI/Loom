@@ -1,0 +1,1077 @@
+{
+  "mode": "new",
+  "source": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926\\developmental_ecology",
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "held_A5_sha256": "88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6",
+  "held_manifest_sha256": "bb4c8584e368583b81a3916ee12944fd807ee12fbf0d3ab803bfa9bd51fd445a",
+  "scope": "Native/scalar scheduling only. No A5 commands/world/trajectory or new authority.",
+  "independent_oracle": "80-digit Decimal admission, Python integer range and bisect_right ownership; no production deadline predicate used to construct expected results.",
+  "expected_stage_ends": [
+    9000,
+    12000,
+    27000,
+    30000,
+    45000,
+    48000,
+    63000
+  ],
+  "source_identity": {
+    "clock.py": {
+      "bytes": 3603,
+      "sha256": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2"
+    },
+    "controllers.py": {
+      "bytes": 8071,
+      "sha256": "d1f04a63101cc8de19281918fbb8d2e9cb1a1536df28f1346bfd680c809ba9a8"
+    },
+    "pending.py": {
+      "bytes": 6768,
+      "sha256": "32ce8651866ee46aa1bdc62675d5aa929368c9822a48a438bc24db52aaeb4b58"
+    },
+    "runner.py": {
+      "bytes": 18228,
+      "sha256": "d952cfe1eb2e2eae356eea22b83c9a32dca12e539b50a565e1c402ac42076929"
+    },
+    "authority.py": {
+      "bytes": 11187,
+      "sha256": "1b120460212497a2a9f4b0701f59f1c45136e6fc2bbb35bd1429016336f1fe7f"
+    },
+    "validators.py": {
+      "bytes": 8497,
+      "sha256": "1b2a910a277c50e806b7b631a941ea680cff7fd4c35c1e2a793eeea28283ec0e"
+    },
+    "adapter.py": {
+      "bytes": 6032,
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+    }
+  },
+  "corrected_A": {
+    "native_index": 26950,
+    "physical_time": 269.4999999998999,
+    "clock_prefix_reaches_later_input_sentinel": {
+      "accepted": false,
+      "message": "forbidden controller input",
+      "frames": [
+        {
+          "file": "check_schedule.py",
+          "line": 50,
+          "function": "outcome"
+        },
+        {
+          "file": "check_schedule.py",
+          "line": 153,
+          "function": "<lambda>"
+        },
+        {
+          "file": "pending.py",
+          "line": 51,
+          "function": "validate_decision"
+        },
+        {
+          "file": "controllers.py",
+          "line": 36,
+          "function": "validate_privileged"
+        },
+        {
+          "file": "contract.py",
+          "line": 29,
+          "function": "require"
+        }
+      ]
+    },
+    "complete_generic_manual_decision": {
+      "accepted": true
+    },
+    "allowance": 9.06471445182947e-10
+  },
+  "exact_crossing_expression": {
+    "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926\\developmental_ecology\\loom_commissioning\\runner.py",
+    "line": 175,
+    "code": "require(end <= until, 'command hold would cross prescribed stage boundary')"
+  },
+  "corrected_B": {
+    "native_index": 27000,
+    "physical_time": 269.99999999989944,
+    "stage": 3,
+    "hold_end": 27010,
+    "stage_end": 30000,
+    "result": {
+      "accepted": true
+    }
+  },
+  "representative_boundaries": [
+    {
+      "native_index": 26949,
+      "nominal_time": 269.49,
+      "physical_time": 269.4899999998999,
+      "physical_hex": "0x1.0d7d70a3d69c3p+8",
+      "drift": -1.0010126061388291e-10,
+      "allowance": 9.064116052721424e-10,
+      "stage": 2,
+      "expected_stage": 2,
+      "new_hold": 0,
+      "hold_validation": {
+        "accepted": false,
+        "message": "decision is not at a ten-step boundary",
+        "frames": [
+          {
+            "file": "check_schedule.py",
+            "line": 50,
+            "function": "outcome"
+          },
+          {
+            "file": "check_schedule.py",
+            "line": 169,
+            "function": "<lambda>"
+          },
+          {
+            "file": "clock.py",
+            "line": 47,
+            "function": "hold_steps"
+          },
+          {
+            "file": "contract.py",
+            "line": 29,
+            "function": "require"
+          }
+        ]
+      },
+      "route_complete": false
+    },
+    {
+      "native_index": 26950,
+      "nominal_time": 269.5,
+      "physical_time": 269.4999999998999,
+      "physical_hex": "0x1.0d7fffffff91fp+8",
+      "drift": -1.0010126061388291e-10,
+      "allowance": 9.06471445182947e-10,
+      "stage": 2,
+      "expected_stage": 2,
+      "new_hold": 10,
+      "hold_validation": {
+        "accepted": true
+      },
+      "route_complete": false
+    },
+    {
+      "native_index": 26951,
+      "nominal_time": 269.51,
+      "physical_time": 269.5099999998999,
+      "physical_hex": "0x1.0d828f5c2887bp+8",
+      "drift": -1.0010126061388291e-10,
+      "allowance": 9.065312873141976e-10,
+      "stage": 2,
+      "expected_stage": 2,
+      "new_hold": 0,
+      "hold_validation": {
+        "accepted": false,
+        "message": "decision is not at a ten-step boundary",
+        "frames": [
+          {
+            "file": "check_schedule.py",
+            "line": 50,
+            "function": "outcome"
+          },
+          {
+            "file": "check_schedule.py",
+            "line": 169,
+            "function": "<lambda>"
+          },
+          {
+            "file": "clock.py",
+            "line": 47,
+            "function": "hold_steps"
+          },
+          {
+            "file": "contract.py",
+            "line": 29,
+            "function": "require"
+          }
+        ]
+      },
+      "route_complete": false
+    },
+    {
+      "native_index": 26999,
+      "nominal_time": 269.99,
+      "physical_time": 269.98999999989945,
+      "physical_hex": "0x1.0dfd70a3d69bbp+8",
+      "drift": -1.0055600796476938e-10,
+      "allowance": 9.094063208587799e-10,
+      "stage": 2,
+      "expected_stage": 2,
+      "new_hold": 0,
+      "hold_validation": {
+        "accepted": false,
+        "message": "decision is not at a ten-step boundary",
+        "frames": [
+          {
+            "file": "check_schedule.py",
+            "line": 50,
+            "function": "outcome"
+          },
+          {
+            "file": "check_schedule.py",
+            "line": 169,
+            "function": "<lambda>"
+          },
+          {
+            "file": "clock.py",
+            "line": 47,
+            "function": "hold_steps"
+          },
+          {
+            "file": "contract.py",
+            "line": 29,
+            "function": "require"
+          }
+        ]
+      },
+      "route_complete": false
+    },
+    {
+      "native_index": 27000,
+      "nominal_time": 270.0,
+      "physical_time": 269.99999999989944,
+      "physical_hex": "0x1.0dffffffff917p+8",
+      "drift": -1.0055600796476938e-10,
+      "allowance": 9.094662717918868e-10,
+      "stage": 3,
+      "expected_stage": 3,
+      "new_hold": 10,
+      "hold_validation": {
+        "accepted": true
+      },
+      "route_complete": false
+    },
+    {
+      "native_index": 27001,
+      "nominal_time": 270.01,
+      "physical_time": 270.00999999989943,
+      "physical_hex": "0x1.0e028f5c28873p+8",
+      "drift": -1.0055600796476938e-10,
+      "allowance": 9.095262249454399e-10,
+      "stage": 3,
+      "expected_stage": 3,
+      "new_hold": 0,
+      "hold_validation": {
+        "accepted": false,
+        "message": "decision is not at a ten-step boundary",
+        "frames": [
+          {
+            "file": "check_schedule.py",
+            "line": 50,
+            "function": "outcome"
+          },
+          {
+            "file": "check_schedule.py",
+            "line": 169,
+            "function": "<lambda>"
+          },
+          {
+            "file": "clock.py",
+            "line": 47,
+            "function": "hold_steps"
+          },
+          {
+            "file": "contract.py",
+            "line": 29,
+            "function": "require"
+          }
+        ]
+      },
+      "route_complete": false
+    }
+  ],
+  "all_A5_stage_boundaries": [
+    {
+      "deadline_index": 9000,
+      "rows": [
+        {
+          "native_index": 8999,
+          "nominal_time": 89.99,
+          "physical_time": 89.99000000000913,
+          "physical_hex": "0x1.67f5c28f5c512p+6",
+          "drift": 9.137579581874888e-12,
+          "allowance": 1.899365037999377e-10,
+          "stage": 0,
+          "expected_stage": 0,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 9000,
+          "nominal_time": 90.0,
+          "physical_time": 90.00000000000914,
+          "physical_hex": "0x1.6800000000283p+6",
+          "drift": 9.137579581874888e-12,
+          "allowance": 1.8995648670415795e-10,
+          "stage": 1,
+          "expected_stage": 1,
+          "new_hold": 10,
+          "hold_validation": {
+            "accepted": true
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 9001,
+          "nominal_time": 90.01,
+          "physical_time": 90.01000000000914,
+          "physical_hex": "0x1.680a3d70a3ff4p+6",
+          "drift": 9.137579581874888e-12,
+          "allowance": 1.8997647182882426e-10,
+          "stage": 1,
+          "expected_stage": 1,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        }
+      ]
+    },
+    {
+      "deadline_index": 12000,
+      "rows": [
+        {
+          "native_index": 11999,
+          "nominal_time": 119.99,
+          "physical_time": 119.99000000002448,
+          "physical_hex": "0x1.dff5c28f5c94ap+6",
+          "drift": 2.447109181957785e-11,
+          "allowance": 2.598738930132979e-10,
+          "stage": 1,
+          "expected_stage": 1,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 12000,
+          "nominal_time": 120.0,
+          "physical_time": 120.00000000002449,
+          "physical_hex": "0x1.e0000000006bbp+6",
+          "drift": 2.4485302674293052e-11,
+          "allowance": 2.5990053725566596e-10,
+          "stage": 2,
+          "expected_stage": 2,
+          "new_hold": 10,
+          "hold_validation": {
+            "accepted": true
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 12001,
+          "nominal_time": 120.01,
+          "physical_time": 120.01000000002449,
+          "physical_hex": "0x1.e00a3d70a442cp+6",
+          "drift": 2.4485302674293052e-11,
+          "allowance": 2.5992718371848e-10,
+          "stage": 2,
+          "expected_stage": 2,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        }
+      ]
+    },
+    {
+      "deadline_index": 27000,
+      "rows": [
+        {
+          "native_index": 26999,
+          "nominal_time": 269.99,
+          "physical_time": 269.98999999989945,
+          "physical_hex": "0x1.0dfd70a3d69bbp+8",
+          "drift": -1.0055600796476938e-10,
+          "allowance": 9.094063208587799e-10,
+          "stage": 2,
+          "expected_stage": 2,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 27000,
+          "nominal_time": 270.0,
+          "physical_time": 269.99999999989944,
+          "physical_hex": "0x1.0dffffffff917p+8",
+          "drift": -1.0055600796476938e-10,
+          "allowance": 9.094662717918868e-10,
+          "stage": 3,
+          "expected_stage": 3,
+          "new_hold": 10,
+          "hold_validation": {
+            "accepted": true
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 27001,
+          "nominal_time": 270.01,
+          "physical_time": 270.00999999989943,
+          "physical_hex": "0x1.0e028f5c28873p+8",
+          "drift": -1.0055600796476938e-10,
+          "allowance": 9.095262249454399e-10,
+          "stage": 3,
+          "expected_stage": 3,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        }
+      ]
+    },
+    {
+      "deadline_index": 30000,
+      "rows": [
+        {
+          "native_index": 29999,
+          "nominal_time": 299.99,
+          "physical_time": 299.98999999987217,
+          "physical_hex": "0x1.2bfd70a3d67dbp+8",
+          "drift": -1.2784084901795723e-10,
+          "allowance": 1.0992477967324358e-09,
+          "stage": 3,
+          "expected_stage": 3,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 30000,
+          "nominal_time": 300.0,
+          "physical_time": 299.99999999987216,
+          "physical_hex": "0x1.2bffffffff737p+8",
+          "drift": -1.2784084901795723e-10,
+          "allowance": 1.0993144090036905e-09,
+          "stage": 4,
+          "expected_stage": 4,
+          "new_hold": 10,
+          "hold_validation": {
+            "accepted": true
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 30001,
+          "nominal_time": 300.01,
+          "physical_time": 300.00999999987215,
+          "physical_hex": "0x1.2c028f5c28693p+8",
+          "drift": -1.2784084901795723e-10,
+          "allowance": 1.0993810234953914e-09,
+          "stage": 4,
+          "expected_stage": 4,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        }
+      ]
+    },
+    {
+      "deadline_index": 45000,
+      "rows": [
+        {
+          "native_index": 44999,
+          "nominal_time": 449.99,
+          "physical_time": 449.98999999973574,
+          "physical_hex": "0x1.c1fd70a3d5e7bp+8",
+          "drift": -2.6426505428389646e-10,
+          "allowance": 2.348215392752902e-09,
+          "stage": 4,
+          "expected_stage": 4,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 45000,
+          "nominal_time": 450.0,
+          "physical_time": 449.99999999973573,
+          "physical_hex": "0x1.c1fffffffedd7p+8",
+          "drift": -2.6426505428389646e-10,
+          "allowance": 2.3483153117148956e-09,
+          "stage": 5,
+          "expected_stage": 5,
+          "new_hold": 10,
+          "hold_validation": {
+            "accepted": true
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 45001,
+          "nominal_time": 450.01,
+          "physical_time": 450.0099999997357,
+          "physical_hex": "0x1.c2028f5c27d33p+8",
+          "drift": -2.6426505428389646e-10,
+          "allowance": 2.3484152328973354e-09,
+          "stage": 5,
+          "expected_stage": 5,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        }
+      ]
+    },
+    {
+      "deadline_index": 48000,
+      "rows": [
+        {
+          "native_index": 47999,
+          "nominal_time": 479.99,
+          "physical_time": 479.98999999970846,
+          "physical_hex": "0x1.dffd70a3d5c9bp+8",
+          "drift": -2.915498953370843e-10,
+          "allowance": 2.6579609552875722e-09,
+          "stage": 5,
+          "expected_stage": 5,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 48000,
+          "nominal_time": 480.0,
+          "physical_time": 479.99999999970845,
+          "physical_hex": "0x1.dffffffffebf7p+8",
+          "drift": -2.915498953370843e-10,
+          "allowance": 2.658067535587714e-09,
+          "stage": 6,
+          "expected_stage": 6,
+          "new_hold": 10,
+          "hold_validation": {
+            "accepted": true
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 48001,
+          "nominal_time": 480.01,
+          "physical_time": 480.00999999970844,
+          "physical_hex": "0x1.e0028f5c27b53p+8",
+          "drift": -2.915498953370843e-10,
+          "allowance": 2.658174118108302e-09,
+          "stage": 6,
+          "expected_stage": 6,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        }
+      ]
+    },
+    {
+      "deadline_index": 63000,
+      "rows": [
+        {
+          "native_index": 62999,
+          "nominal_time": 629.99,
+          "physical_time": 629.9899999995721,
+          "physical_hex": "0x1.3afeb851ea99ep+9",
+          "drift": -4.2791725718416274e-10,
+          "allowance": 4.506562671452629e-09,
+          "stage": 6,
+          "expected_stage": 6,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "decision is not at a ten-step boundary",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 47,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": false
+        },
+        {
+          "native_index": 63000,
+          "nominal_time": 630.0,
+          "physical_time": 629.9999999995721,
+          "physical_hex": "0x1.3affffffff14cp+9",
+          "drift": -4.2791725718416274e-10,
+          "allowance": 4.50670255844351e-09,
+          "stage": 6,
+          "expected_stage": 6,
+          "new_hold": 0,
+          "hold_validation": {
+            "accepted": false,
+            "message": "duration cap reached",
+            "frames": [
+              {
+                "file": "check_schedule.py",
+                "line": 50,
+                "function": "outcome"
+              },
+              {
+                "file": "check_schedule.py",
+                "line": 169,
+                "function": "<lambda>"
+              },
+              {
+                "file": "clock.py",
+                "line": 46,
+                "function": "hold_steps"
+              },
+              {
+                "file": "contract.py",
+                "line": 29,
+                "function": "require"
+              }
+            ]
+          },
+          "route_complete": true
+        }
+      ]
+    }
+  ],
+  "static_schedule": {
+    "checked_native_indices": 63001,
+    "holds": 6300,
+    "steps": 63000,
+    "per_stage_hold_counts": [
+      900,
+      300,
+      1500,
+      300,
+      1500,
+      300,
+      1500
+    ],
+    "all_holds_exact_and_contiguous": true,
+    "stage_disagreements": 0,
+    "crossing_failures": 0,
+    "final_new_hold_rejected": true,
+    "final_physical_time": 629.9999999995721,
+    "max_abs_drift": 4.2791725718416274e-10,
+    "max_drift_fraction_of_allowance": 0.1187446309249412,
+    "max_local_ten_step_elapsed_residual": 1.1368683772161603e-13,
+    "final_allowance": 4.50670255844351e-09,
+    "native_mod20_opportunities": 3150,
+    "physical_cadence_claim": "No world cadence executed here; arithmetic index opportunities only."
+  },
+  "delivered_meaningful_clock_mismatches": [
+    {
+      "native_index": 26950,
+      "physical_time": 269.5099999998999,
+      "result": {
+        "accepted": false,
+        "message": "physical/native clock mismatch",
+        "frames": [
+          {
+            "file": "check_schedule.py",
+            "line": 50,
+            "function": "outcome"
+          },
+          {
+            "file": "check_schedule.py",
+            "line": 206,
+            "function": "<lambda>"
+          },
+          {
+            "file": "clock.py",
+            "line": 82,
+            "function": "validate_physical_time"
+          },
+          {
+            "file": "contract.py",
+            "line": 29,
+            "function": "require"
+          }
+        ]
+      },
+      "stage_still_index_owned": 2
+    },
+    {
+      "native_index": 27000,
+      "physical_time": 270.00999999989943,
+      "result": {
+        "accepted": false,
+        "message": "physical/native clock mismatch",
+        "frames": [
+          {
+            "file": "check_schedule.py",
+            "line": 50,
+            "function": "outcome"
+          },
+          {
+            "file": "check_schedule.py",
+            "line": 206,
+            "function": "<lambda>"
+          },
+          {
+            "file": "clock.py",
+            "line": 82,
+            "function": "validate_physical_time"
+          },
+          {
+            "file": "contract.py",
+            "line": 29,
+            "function": "require"
+          }
+        ]
+      },
+      "stage_still_index_owned": 3
+    },
+    {
+      "native_index": 63000,
+      "physical_time": 630.0099999995721,
+      "result": {
+        "accepted": false,
+        "message": "physical/native clock mismatch",
+        "frames": [
+          {
+            "file": "check_schedule.py",
+            "line": 50,
+            "function": "outcome"
+          },
+          {
+            "file": "check_schedule.py",
+            "line": 206,
+            "function": "<lambda>"
+          },
+          {
+            "file": "clock.py",
+            "line": 82,
+            "function": "validate_physical_time"
+          },
+          {
+            "file": "contract.py",
+            "line": 29,
+            "function": "require"
+          }
+        ]
+      },
+      "stage_still_index_owned": 6
+    }
+  ],
+  "physical_scalar_timestamps_unchanged": true,
+  "held_files_unchanged": true,
+  "fence": {
+    "blocked_calls": [],
+    "waypoint_command_calls": 0,
+    "world_constructors": 0,
+    "world_steps": 0,
+    "field_steps": 0,
+    "neural_steps": 0,
+    "random_draws": 0,
+    "Run_constructors": 0
+  }
+}

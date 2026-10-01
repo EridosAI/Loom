@@ -1,0 +1,38 @@
+{
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "implementation": "CPython",
+  "executable_sha256": "935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256",
+  "python_dlls": {
+    "python3.dll": "85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b",
+    "python313.dll": "0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": {
+      "version": "2.3.3",
+      "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af",
+      "file_count": 432,
+      "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+    },
+    "scipy": {
+      "version": "1.16.2",
+      "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1",
+      "file_count": 1078,
+      "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+    }
+  },
+  "python_executable": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+  "node_version": "v22.16.0",
+  "node_executable_sha256": "c5ff4c736112dd483c750fd4149d30c8a116db1a49b8b3ec88be4b65e6c86c19",
+  "test_packages": {
+    "pytest": "8.4.2",
+    "colorama": "0.4.6",
+    "iniconfig": "2.3.0",
+    "packaging": "26.3",
+    "pluggy": "1.6.0",
+    "pygments": "2.21.0"
+  },
+  "dependencies_installed_this_task": false,
+  "network_fetches": false,
+  "execution_environment": "Actual Windows local filesystem and executable processes; not a cloud copy"
+}

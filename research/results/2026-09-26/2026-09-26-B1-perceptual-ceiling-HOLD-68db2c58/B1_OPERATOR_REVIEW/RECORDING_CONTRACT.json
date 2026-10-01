@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "operator_record": [
+    "every exact raw value delivered/shown with time/native index",
+    "display formatting/version and condition",
+    "cadence-held E/I and sample timestamp",
+    "human commands and request/response wall timestamps",
+    "own notes",
+    "shown history and display condition changes, if any",
+    "pause/running/ended state",
+    "operator exposure declarations"
+  ],
+  "evaluator_record": [
+    "unaltered full 29 raw coordinates including hidden chemistry",
+    "complete native body pose/velocity/forces/E/I",
+    "all eight source stocks and chemical field identities",
+    "all contacts/releases/impulses/damage/repair",
+    "source debit/body credit/renewal half-steps/expenditure",
+    "issued and delivered command ledger",
+    "initial/final complete snapshots and periodic restarts",
+    "stop reason, errors and incomplete tails",
+    "opportunity geometry and actual sampled trajectory"
+  ],
+  "separation": "Operator endpoint serves only permitted condition-specific records. Evaluator files outside served paths and absent from operator bundle. No evaluator result released while either B1 trial remains active/pending.",
+  "fidelity": "Native .01 s records retained; no subsampling, interpolation, synthetic hints or loss of native chronology.",
+  "source_state": "Appearance does not directly encode stock; chemistry depends on stock, diffusion/history, position and occlusion. Depleted sources remain chemically present. No EMPTY flag.",
+  "display_masks_never_change_physics": true,
+  "post_trial_alignment": "Exact indices/timestamps of actual raw chemistry and evaluator stock, retaining gaps, all costs and contact interruptions.",
+  "current_checkpoint_limit": "Controller records contain the full SensorHistory at every decision, so raw display-history storage and validation grow quadratically in hold count. Masked egress/transcript contract is unimplemented and held."
+}

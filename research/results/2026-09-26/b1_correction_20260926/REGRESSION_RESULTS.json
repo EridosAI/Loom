@@ -1,0 +1,118 @@
+{
+  "final_worktree": {
+    "tests": 204,
+    "passed": 204,
+    "reported_seconds": 143.82
+  },
+  "final_portable": {
+    "tests": 204,
+    "passed": 204,
+    "reported_seconds": 143.73
+  },
+  "baseline_expected_failures": 2,
+  "final_fault_matrix": {
+    "expected_RED_assertion_failures": 12,
+    "GREEN_passes": 12
+  },
+  "all_regression_logs": [
+    {
+      "label": "REGRESSION_FIRST",
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "176",
+      "time": "123.306",
+      "timestamp": "2026-09-26T18:40:20.830290+08:00",
+      "hostname": "Equinox",
+      "log_sha256": "453201bf89d97cb74cb4fbf63ee2396f38885bc8fef0fa9d08a357ab1c8c5a03",
+      "junit_sha256": "e5ccf3a82277a458e53a8d33a4ef06f87aadd720c9b37879d3ea6167c52f8bc2"
+    },
+    {
+      "label": "NEW_FIRST",
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "23",
+      "time": "17.247",
+      "timestamp": "2026-09-26T18:44:54.996662+08:00",
+      "hostname": "Equinox",
+      "log_sha256": "242817db456d1132ca985cd94d19a1a4f7ab11b490ad0fd86b9c149a3872ff05",
+      "junit_sha256": "f024f7d85130a1cba20b0aaf9ac99fa993c474af199cb4750ba77fed9bc2bb36"
+    },
+    {
+      "label": "FINAL_REGRESSION",
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "202",
+      "time": "140.187",
+      "timestamp": "2026-09-26T18:53:36.995011+08:00",
+      "hostname": "Equinox",
+      "log_sha256": "083c2d63b1120970ca46d2348a12a98fda0451a2dd99f125f09fb30a7f0bff28",
+      "junit_sha256": "7bdfb601a0ee202d21449ed2b715b5d36be19d624e01677ace12d0d6525536ba"
+    },
+    {
+      "label": "CHECKPOINT_REGRESSION",
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "204",
+      "time": "137.985",
+      "timestamp": "2026-09-26T18:58:33.204876+08:00",
+      "hostname": "Equinox",
+      "log_sha256": "0652a547979bebf950b0dcf3a31679ac2034b22f0b36c3a7ce08b238ae26ad92",
+      "junit_sha256": "b43e0b614f85f3232fffd16b9feac972a9140cdb23821ac6b82e914a4cb5218e"
+    },
+    {
+      "label": "SEALED_REGRESSION",
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "204",
+      "time": "143.815",
+      "timestamp": "2026-09-26T19:02:33.902658+08:00",
+      "hostname": "Equinox",
+      "log_sha256": "62a129e3fa558cae267e3a3f4c1a123baed146943a966f69f0de3013b10782ba",
+      "junit_sha256": "31fbd2d79356c6630f5edd99b6ea0d393a7d3fe3c9db193fccacd9d40f82262d"
+    },
+    {
+      "label": "PORTABLE_REGRESSION",
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "204",
+      "time": "143.724",
+      "timestamp": "2026-09-26T19:02:34.041445+08:00",
+      "hostname": "Equinox",
+      "log_sha256": "79ed5511c3cc3fce642a0a6e82568a267ead1ac4c1e36bbc17ea1bc5f115e7e9",
+      "junit_sha256": "165ffa574c872576bbc8df7bebd66483fe1df70c05da6f5d504a8cdd8ded76bf"
+    }
+  ],
+  "all_fault_matrix_runs": [
+    {
+      "directory": "fault-matrix",
+      "verified_pairs": 12,
+      "matrix_sha256": "f88ff5bcfe52a5ed4282341a39146eb226c70534b0fe1aa13bb4a630de6ab7f5"
+    },
+    {
+      "directory": "fault-matrix-final",
+      "verified_pairs": 12,
+      "matrix_sha256": "d4b631ee606076b4b55af708dec392ceb98ee4ad1af04cc39cd26f9cf1b31d5e"
+    },
+    {
+      "directory": "fault-matrix-sealed",
+      "verified_pairs": 12,
+      "matrix_sha256": "3422c82bf17c69a3b2032f7e3caaaaeefd22e30781037d93a88b999e5b6b5dc9"
+    }
+  ],
+  "final_source_matches_portable": true,
+  "final_source_matches_fault_matrix": true,
+  "tests_kind": "manufactured/components; no prepared positive-control/B1/ecological case",
+  "reconstruction_scope": "existing component regressions and paired manufactured records only; no ecological replay"
+}

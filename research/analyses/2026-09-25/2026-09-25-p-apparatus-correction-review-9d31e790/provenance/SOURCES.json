@@ -1,0 +1,148 @@
+{
+  "reference_files": {
+    "CORRECTION_REQUEST.txt": {
+      "bytes": 7969,
+      "sha256": "2ab2bf27b169642f68fc1e53611542dd4580cb9d6172bfc0a900e4c98710d93c"
+    },
+    "FINAL_UNTIL_RESULTS.json": {
+      "bytes": 464,
+      "sha256": "0309c40e41730d90bd232f46d9bb95687b0e3dccb0d218de4d71d6b083153ced"
+    },
+    "LOOM_P_INDEPENDENT_APPARATUS_FIDELITY_REVIEW.md": {
+      "bytes": 39419,
+      "sha256": "d315eaf57c2b25fc8bc1b0b7e2e60d55d926634791e05033c23a8ffedec03c08"
+    },
+    "original-controller.jsonl.gz": {
+      "bytes": 654,
+      "sha256": "9d787031f365cf23d52002332f4b3b3efa49460cc5246b56b77331c1d9c3b7a0"
+    },
+    "probe_final_until.py": {
+      "bytes": 1190,
+      "sha256": "04aacaa431713fc88dab001a9e92cd4933f4535228656f0870a31fa4bcc41310"
+    },
+    "probe_route_boundary.py": {
+      "bytes": 1535,
+      "sha256": "707687ba57168c2edc8680392f162bffda0aae07a37e801b3b5e97ea04f36eeb"
+    },
+    "probe_runner_authority.py": {
+      "bytes": 10938,
+      "sha256": "c683c7204a969eac85e1ede0e37265c7f0ae70c092e091318ec3d9db6cdab218"
+    },
+    "ROUTE_BOUNDARY_RESULTS.json": {
+      "bytes": 701,
+      "sha256": "bb044cd734b5e774003dcb3d2c998b0346df695320e5df4f46fca30ebaa50ca1"
+    },
+    "RUNNER_AUTHORITY_CONTROLLER_REVIEW.md": {
+      "bytes": 14426,
+      "sha256": "dfc6b3d6e31d651dcf8609b14339f7a5c0697c88f18354d2b1c3bc860fb45fd2"
+    },
+    "RUNNER_AUTHORITY_RESULTS.json": {
+      "bytes": 5516,
+      "sha256": "897f3d07962e7ee93673f1310e8c41b6f44d992871b8992206e82a9f2e8a62c8"
+    }
+  },
+  "prior_review_exact_copies": [
+    {
+      "copy": "FINAL_UNTIL_RESULTS.json",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\physical\\FINAL_UNTIL_RESULTS.json"
+      ],
+      "identity": {
+        "bytes": 464,
+        "sha256": "0309c40e41730d90bd232f46d9bb95687b0e3dccb0d218de4d71d6b083153ced"
+      }
+    },
+    {
+      "copy": "LOOM_P_INDEPENDENT_APPARATUS_FIDELITY_REVIEW.md",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\LOOM_P_INDEPENDENT_APPARATUS_FIDELITY_REVIEW.md"
+      ],
+      "identity": {
+        "bytes": 39419,
+        "sha256": "d315eaf57c2b25fc8bc1b0b7e2e60d55d926634791e05033c23a8ffedec03c08"
+      }
+    },
+    {
+      "copy": "original-controller.jsonl.gz",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\physical\\hold-continuous\\controller.jsonl.gz"
+      ],
+      "identity": {
+        "bytes": 654,
+        "sha256": "9d787031f365cf23d52002332f4b3b3efa49460cc5246b56b77331c1d9c3b7a0"
+      }
+    },
+    {
+      "copy": "probe_final_until.py",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\physical\\probe_final_until.py"
+      ],
+      "identity": {
+        "bytes": 1190,
+        "sha256": "04aacaa431713fc88dab001a9e92cd4933f4535228656f0870a31fa4bcc41310"
+      }
+    },
+    {
+      "copy": "probe_route_boundary.py",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\physical\\probe_route_boundary.py"
+      ],
+      "identity": {
+        "bytes": 1535,
+        "sha256": "707687ba57168c2edc8680392f162bffda0aae07a37e801b3b5e97ea04f36eeb"
+      }
+    },
+    {
+      "copy": "probe_runner_authority.py",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\physical\\probe_runner_authority.py"
+      ],
+      "identity": {
+        "bytes": 10938,
+        "sha256": "c683c7204a969eac85e1ede0e37265c7f0ae70c092e091318ec3d9db6cdab218"
+      }
+    },
+    {
+      "copy": "ROUTE_BOUNDARY_RESULTS.json",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\physical\\ROUTE_BOUNDARY_RESULTS.json"
+      ],
+      "identity": {
+        "bytes": 701,
+        "sha256": "bb044cd734b5e774003dcb3d2c998b0346df695320e5df4f46fca30ebaa50ca1"
+      }
+    },
+    {
+      "copy": "RUNNER_AUTHORITY_CONTROLLER_REVIEW.md",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\physical\\RUNNER_AUTHORITY_CONTROLLER_REVIEW.md"
+      ],
+      "identity": {
+        "bytes": 14426,
+        "sha256": "dfc6b3d6e31d651dcf8609b14339f7a5c0697c88f18354d2b1c3bc860fb45fd2"
+      }
+    },
+    {
+      "copy": "RUNNER_AUTHORITY_RESULTS.json",
+      "source_matches": [
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\physical\\RUNNER_AUTHORITY_RESULTS.json"
+      ],
+      "identity": {
+        "bytes": 5516,
+        "sha256": "897f3d07962e7ee93673f1310e8c41b6f44d992871b8992206e82a9f2e8a62c8"
+      }
+    }
+  ],
+  "exact_boundary_fixture_matches_original_second_action_inputs": true,
+  "boundary_time": 0.09999999999999999,
+  "prior_builder_zip": {
+    "bytes": 5790938,
+    "sha256": "87f4dbde39a72559caf6045c7ac68a649d9691a000d1569af5d26b090a63b053"
+  },
+  "prior_independent_zip": {
+    "bytes": 7227837,
+    "sha256": "32c16dbf33ac368f4016b42b7c2b4ada355860e5541c5223ce3f163577d66006"
+  },
+  "prior_independent_zip_source": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-24-p-apparatus-review-05abf604\\Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip",
+  "correction_request_scope": "Delivered reference identity recorded; no separate original request path is declared in the package."
+}

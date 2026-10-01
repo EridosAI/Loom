@@ -1,0 +1,862 @@
+[
+  {
+    "fault": "authority-implementation",
+    "test": "test_approved_execution_binding[implementation]",
+    "intended_failure": "APPROVAL BINDING BREACH: implementation",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0189585000043735,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[implementation]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-implementation-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0195511000347324,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[implementation]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-implementation-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-constants",
+    "test": "test_approved_execution_binding[constants]",
+    "intended_failure": "APPROVAL BINDING BREACH: constants",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.9983587000169791,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[constants]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-constants-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0144997999886982,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[constants]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-constants-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-route",
+    "test": "test_approved_execution_binding[route]",
+    "intended_failure": "APPROVAL BINDING BREACH: route",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0274515000055544,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[route]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-route-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0436001000343822,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[route]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-route-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-stage_sequence",
+    "test": "test_approved_execution_binding[stage_sequence]",
+    "intended_failure": "APPROVAL BINDING BREACH: stage_sequence",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0054096999811009,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[stage_sequence]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-stage_sequence-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0316172000020742,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[stage_sequence]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-stage_sequence-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-contact_target",
+    "test": "test_approved_execution_binding[contact_target]",
+    "intended_failure": "APPROVAL BINDING BREACH: contact_target",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0207088000024669,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[contact_target]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-contact_target-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0744215999729931,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[contact_target]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-contact_target-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-manual_fallback",
+    "test": "test_approved_execution_binding[manual_fallback]",
+    "intended_failure": "APPROVAL BINDING BREACH: manual_fallback",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0264767000335269,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[manual_fallback]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-manual_fallback-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0212606000131927,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[manual_fallback]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-manual_fallback-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-sensor_interface",
+    "test": "test_approved_execution_binding[sensor_interface]",
+    "intended_failure": "APPROVAL BINDING BREACH: sensor_interface",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.015019599988591,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[sensor_interface]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-sensor_interface-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0370346999843605,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[sensor_interface]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-sensor_interface-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-intact_arm",
+    "test": "test_approved_execution_binding[intact_arm]",
+    "intended_failure": "APPROVAL BINDING BREACH: intact_arm",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0334183999802917,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[intact_arm]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-intact_arm-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0546303000301123,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[intact_arm]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-intact_arm-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-fixed_adapter",
+    "test": "test_approved_execution_binding[fixed_adapter]",
+    "intended_failure": "APPROVAL BINDING BREACH: fixed_adapter",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0512398999999277,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[fixed_adapter]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-fixed_adapter-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.027664499997627,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[fixed_adapter]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-fixed_adapter-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-deprivation",
+    "test": "test_approved_execution_binding[deprivation]",
+    "intended_failure": "APPROVAL BINDING BREACH: deprivation",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0086678999941796,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[deprivation]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-deprivation-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0576506999786943,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[deprivation]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-deprivation-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-initial",
+    "test": "test_approved_execution_binding[initial]",
+    "intended_failure": "APPROVAL BINDING BREACH: initial",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0066860999795608,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[initial]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-initial-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0267843999899924,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[initial]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-initial-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-prehistory",
+    "test": "test_approved_execution_binding[prehistory]",
+    "intended_failure": "APPROVAL BINDING BREACH: prehistory",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.038772700005211,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[prehistory]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-prehistory-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0204933999921195,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[prehistory]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-prehistory-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-duration",
+    "test": "test_approved_execution_binding[duration]",
+    "intended_failure": "APPROVAL BINDING BREACH: duration",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0140810999437235,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[duration]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-duration-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0271884999820031,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[duration]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-duration-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-resources",
+    "test": "test_approved_execution_binding[resources]",
+    "intended_failure": "APPROVAL BINDING BREACH: resources",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0426277999649756,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[resources]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-resources-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0304730999632739,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[resources]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-resources-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-runtime",
+    "test": "test_approved_execution_binding[runtime]",
+    "intended_failure": "APPROVAL BINDING BREACH: runtime",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0258234000066295,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[runtime]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-runtime-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0769514999701641,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[runtime]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-runtime-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-procedure",
+    "test": "test_approved_execution_binding[procedure]",
+    "intended_failure": "APPROVAL BINDING BREACH: procedure",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0199210999999195,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[procedure]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-procedure-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0250713000423275,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[procedure]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-procedure-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-replay_arm",
+    "test": "test_approved_execution_binding[replay_arm]",
+    "intended_failure": "APPROVAL BINDING BREACH: replay_arm",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.020929199992679,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[replay_arm]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-replay_arm-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.0289975999621674,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[replay_arm]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-replay_arm-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "authority-request_rebind",
+    "test": "test_approved_execution_binding[request_rebind]",
+    "intended_failure": "APPROVAL BINDING BREACH: request_rebind",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.023408000008203,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[request_rebind]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-request_rebind-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.039926600002218,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_approved_execution_binding[request_rebind]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\authority-request_rebind-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "clock-transition",
+    "test": "test_exact_review_boundary",
+    "intended_failure": "CLOCK BREACH: expired stage issued another hold",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.6444697000551969,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_exact_review_boundary",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\clock-transition-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.614837399974931,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_exact_review_boundary",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\clock-transition-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "clock-final",
+    "test": "test_final_stage_and_not_due_control",
+    "intended_failure": "CLOCK BREACH: final stage still drives",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.6654543000040576,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_final_stage_and_not_due_control",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\clock-final-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.5927149999770336,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_corrections.py::test_final_stage_and_not_due_control",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\prior-correction-faults\\clock-final-GREEN-temp"
+      ]
+    }
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "order": [
+    "PC-LR",
+    "PC-MOTION",
+    "PC-CONTACT",
+    "PC-HOLD",
+    "B1-FULL-RAW",
+    "B1-CHEMISTRY-HIDDEN"
+  ],
+  "all_statuses_now": "NOT DEMONSTRATED — NOT EXECUTED",
+  "automatic_launch": false,
+  "B1_gate": "All four operator controls explicitly documented as demonstrated, no unqualified test-state exposure, apparatus holds closed independently, new exact execution objects and Jason authorization. No automatic launch on a score.",
+  "evaluation_release": "Positive-control evaluation may be reviewed after each disclosed control. Withhold both B1 evaluator views until both paired trials have ended or the pair is explicitly abandoned; full-raw feedback cannot guide the hidden trial.",
+  "no_retry": true,
+  "no_extension": true,
+  "no_substitution": true
+}

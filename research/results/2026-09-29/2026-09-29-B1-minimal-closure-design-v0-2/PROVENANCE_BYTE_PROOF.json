@@ -1,0 +1,66 @@
+{
+  "checked_utc": "2026-09-29T09:15:57.100747+00:00",
+  "last_independently_reviewed": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "inspected_head": "b684912eaf7811cd318ee94c77172aca790f3a0d",
+  "branch": "build/p-b1-coordinate-colours-20260929-01a0c405",
+  "worktree": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-coordinate-colours-20260929",
+  "current_worktree_clean": true,
+  "descendants": [
+    {
+      "commit": "1060a17e3dd14c6361f6f15c95bb58fad3110ffc",
+      "parent": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+      "subject": "Compact the blinded operator display without changing controls",
+      "changed_files": [
+        "developmental_ecology/loom_commissioning/sensor.html",
+        "docs/developmental_ecology/p_b1_compact_layout_20260927/BROWSER_LAYOUT_QA.json",
+        "docs/developmental_ecology/p_b1_compact_layout_20260927/COMPACT_LAYOUT_REVIEW.md",
+        "docs/developmental_ecology/p_b1_compact_layout_20260927/DOM_COMPONENT_RESULT.txt",
+        "docs/developmental_ecology/p_b1_compact_layout_20260927/LAYOUT_BYTE_PROOF.json"
+      ],
+      "html_sha256": "0b322ff6e4291e5cc68076002e3e37faecb178e5609eab858721abe6fbdc3a95",
+      "outside_style_byte_identical": true
+    },
+    {
+      "commit": "b684912eaf7811cd318ee94c77172aca790f3a0d",
+      "parent": "1060a17e3dd14c6361f6f15c95bb58fad3110ffc",
+      "subject": "Match coordinate label colours to their existing graph traces",
+      "changed_files": [
+        "developmental_ecology/loom_commissioning/sensor.html",
+        "docs/developmental_ecology/p_b1_coordinate_colours_20260929/BROWSER_COLOUR_QA.json",
+        "docs/developmental_ecology/p_b1_coordinate_colours_20260929/BYTE_PROOF.json",
+        "docs/developmental_ecology/p_b1_coordinate_colours_20260929/DOM_RESULT.txt",
+        "docs/developmental_ecology/p_b1_coordinate_colours_20260929/REVIEW.md",
+        "docs/developmental_ecology/p_b1_coordinate_colours_20260929/VERIFICATION.json"
+      ],
+      "html_sha256": "3742b5989c0e3dd7d11e39d4376699dc3d3dd88918519a0bbe380073eb1c75b3",
+      "outside_style_byte_identical": true
+    }
+  ],
+  "all_changed_files": [
+    "developmental_ecology/loom_commissioning/sensor.html",
+    "docs/developmental_ecology/p_b1_compact_layout_20260927/BROWSER_LAYOUT_QA.json",
+    "docs/developmental_ecology/p_b1_compact_layout_20260927/COMPACT_LAYOUT_REVIEW.md",
+    "docs/developmental_ecology/p_b1_compact_layout_20260927/DOM_COMPONENT_RESULT.txt",
+    "docs/developmental_ecology/p_b1_compact_layout_20260927/LAYOUT_BYTE_PROOF.json",
+    "docs/developmental_ecology/p_b1_coordinate_colours_20260929/BROWSER_COLOUR_QA.json",
+    "docs/developmental_ecology/p_b1_coordinate_colours_20260929/BYTE_PROOF.json",
+    "docs/developmental_ecology/p_b1_coordinate_colours_20260929/DOM_RESULT.txt",
+    "docs/developmental_ecology/p_b1_coordinate_colours_20260929/REVIEW.md",
+    "docs/developmental_ecology/p_b1_coordinate_colours_20260929/VERIFICATION.json"
+  ],
+  "only_changed_production_file": "developmental_ecology/loom_commissioning/sensor.html",
+  "changed_documentation_file_count": 9,
+  "html_sha256": {
+    "352f73fffa6d9781eae8aa38e708a9a05669588f": "806221de1db825a72eaf8e5533553ff97cff11d30c4a7251cf517a128bcbcf9b",
+    "1060a17e3dd14c6361f6f15c95bb58fad3110ffc": "0b322ff6e4291e5cc68076002e3e37faecb178e5609eab858721abe6fbdc3a95",
+    "b684912eaf7811cd318ee94c77172aca790f3a0d": "3742b5989c0e3dd7d11e39d4376699dc3d3dd88918519a0bbe380073eb1c75b3"
+  },
+  "outside_style_sha256": {
+    "352f73fffa6d9781eae8aa38e708a9a05669588f": "6086af5ca4fe36f862a4f8a51a7d2378caa68c3e0f04ef16cbcbb6857cd0f251",
+    "1060a17e3dd14c6361f6f15c95bb58fad3110ffc": "6086af5ca4fe36f862a4f8a51a7d2378caa68c3e0f04ef16cbcbb6857cd0f251",
+    "b684912eaf7811cd318ee94c77172aca790f3a0d": "6086af5ca4fe36f862a4f8a51a7d2378caa68c3e0f04ef16cbcbb6857cd0f251"
+  },
+  "outside_style_byte_identical_across_all_three": true,
+  "current_production_bytes_match_git": true,
+  "no_new_independent_review_claim": true
+}

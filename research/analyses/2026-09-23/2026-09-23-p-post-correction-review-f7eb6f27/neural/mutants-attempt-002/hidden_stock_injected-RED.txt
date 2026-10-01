@@ -1,0 +1,32 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_hidden_state_cannot_bypass_declared_transductions ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001E3FF48F100>
+
+    def test_hidden_state_cannot_bypass_declared_transductions(monkeypatch):
+        import loom_p.engine as engine_module
+        a=arithmetic_engine(); b=arithmetic_engine(); fixed=copy.deepcopy(a.raw)
+        b.body.position[:]=[16.,14.]; b.body.angle=2.1; b.stocks[:]=.017
+        b.fields[:]=19.; b.time=42.; b.phase=2.8
+        b.c.source_positions=[[1.,1.]]; b.c.mover_centre=[18.,18.]
+        b.organism.rng.counters['life/world-position']=800
+        for e in (a,b): e.organism.c=LearnerConfig(e.c)
+        received=[]
+        def declared_transduction(c,body,fields,t,phase):
+            received.append((body.position.copy(),t,phase)); return copy.deepcopy(fixed)
+        monkeypatch.setattr(engine_module,'transduce',declared_transduction)
+        monkeypatch.setattr(engine_module,'advance',lambda c,body,stocks,t,phase,command,dt,allow:([],dt,None))
+        for _ in range(20):
+            a._coupled(.01,False); b._coupled(.01,False)
+>           assert neural_digest(a.organism)==neural_digest(b.organism), 'Hidden world state entered native learner arithmetic'
+E           AssertionError: Hidden world state entered native learner arithmetic
+E           assert '0a15caabae42...be20ab3ffaaeb' == '5383c9e37d69...e07af543c9dd4'
+E             
+E             - 5383c9e37d69d3286bc84ed6d3992304cf22aaeace508f873e3e07af543c9dd4
+E             + 0a15caabae42756ce1031955e20b3c56eb871852050e3906516be20ab3ffaaeb
+
+tests\test_corrective_contracts.py:135: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions
+1 failed in 0.13s

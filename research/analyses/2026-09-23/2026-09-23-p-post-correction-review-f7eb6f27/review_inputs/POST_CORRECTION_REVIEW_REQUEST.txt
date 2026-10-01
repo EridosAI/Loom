@@ -1,0 +1,349 @@
+Perform the independent post-correction fidelity review of the Loom P
+engineering baseline.
+
+Use the highest reasoning level available.
+
+This is a DELTA-FOCUSED adversarial review. The previous independent
+review already established that the selected P neural equations and
+major information-flow boundaries were faithful, while identifying
+three engineering blockers R1-R3.
+
+Previous reviewed checkpoint:
+d5f7efbe67193f215e52d95ca912db131a79f31c
+
+Read first:
+- LOOM_P_INDEPENDENT_FIDELITY_REVIEW.md
+- the previous BUILD_REPORT.md
+- the new corrective BUILD_REPORT / closure report
+- the new portable review package
+- the exact Git diff from d5f7efbe... to the new corrective commit
+
+Then inspect the actual new code and evidence.
+
+Do not modify code, configuration, documentation, Git state, artifacts
+or the Workbench. Do not fix anything. Do not push, commit, merge,
+rebase, tune parameters or begin commissioning.
+
+You may:
+- run the final component/test suite in a fresh isolated temporary
+  environment;
+- run deterministic component-level reproductions and mutants;
+- inspect and reconstruct the builder's already-recorded bounded smoke
+  evidence;
+- run read-only verification utilities that do not create a new
+  freely acting organism lifetime.
+
+Do NOT start additional scientific lives, commissioning trials,
+parameter sweeps or efficacy runs.
+
+PRIMARY QUESTION
+
+Determine whether the new exact checkpoint:
+1. closes R1-R3;
+2. introduces no new engineering defect material to commissioning;
+3. preserves the exact selected P mechanism and configuration;
+4. is fit to proceed to coupling commissioning.
+
+--------------------------------------------------
+A. SCOPE AND DIFF AUDIT
+--------------------------------------------------
+
+Independently inspect the complete diff from:
+
+d5f7efbe67193f215e52d95ca912db131a79f31c
+
+to the new corrective commit.
+
+Classify every changed line/file as belonging to:
+- R1 physical release/recontact correction;
+- R2 test isolation correction;
+- R3 verification/falsifier strengthening;
+- necessary evidence/provenance/reporting;
+- OUT OF SCOPE.
+
+There should be no mechanism redesign, parameter tuning, packet change,
+JEPA addition, R import, adaptive signal balancing, associative-regime
+change, world-law change or efficacy-oriented modification.
+
+Verify that the semantic configuration remains the same except for
+metadata needed to identify the corrected build.
+
+If any law-bearing or scientific parameter changed unexpectedly:
+classify UNRESOLVED / REQUIRES JASON and stop that line of inference.
+Do not rationalize it as harmless.
+
+--------------------------------------------------
+B. R1 — RELEASE / RECONTACT PHYSICS
+--------------------------------------------------
+
+Reproduce the exact counterexample from the previous independent review:
+
+- touching source 0;
+- body centre [2,3];
+- orientation 0;
+- energy 0.7;
+- integrity 1;
+- velocity [-0.001,0];
+- command [1,1];
+- native duration 0.01 s;
+- unchanged baseline configuration.
+
+Verify independently that:
+
+1. the body initially separates according to the implementation's
+   declared free-motion convention;
+
+2. the initial contact is ended rather than retained for the full
+   native interval;
+
+3. the free interval is represented as free motion with no source
+   transfer, repair or contact damage attributed to it;
+
+4. if the body returns during the same native interval, the return is
+   handled as a new swept/recontact event;
+
+5. positive-duration contact accounting reflects only physically
+   warranted contact time;
+
+6. source debit/body credit conservation remains correct;
+
+7. damage/repair accounting uses the corrected contact durations;
+
+8. no duplicate contact, zero-time transfer or event-order pathology is
+   introduced.
+
+Do not require a different integrator or claim exact continuous-world
+truth beyond the selected finite-step model. The question is whether
+the implementation now obeys its OWN declared event law.
+
+Inspect the builder's regression and its RED evidence.
+
+Independently demonstrate that disabling/breaking the new release logic
+causes the regression to fail.
+
+A test name or builder log is not enough.
+
+--------------------------------------------------
+C. R2 — FINAL SUITE ISOLATION
+--------------------------------------------------
+
+Run the complete delivered component/test suite in the fully assembled
+new checkpoint, using a fresh temporary directory and with caches /
+ambient test artifacts unable to supply hidden state.
+
+Verify:
+- all tests pass in the final delivered state;
+- the live-handoff timestamp test cannot read stale saved replay/waves;
+- its intended live branch is actually reached;
+- breaking that branch makes the test fail.
+
+Do not accept a fix consisting only of relaxed floating-point equality.
+
+Check specifically that test results are independent of the presence or
+absence of previously generated replay artifacts.
+
+--------------------------------------------------
+D. R3 — FALSIFIERS MUST ACTUALLY BITE
+--------------------------------------------------
+
+For every previously weak protection, inspect the actual test and its
+failure mode.
+
+1. Regulator bank reference following
+   - verify the oracle detects the real expected movement;
+   - disable the equation-21 reference following;
+   - test must fail.
+
+2. Sensory shared reference
+   - disable shared-reference following only;
+   - test must fail.
+
+3. Sensory fine reference
+   - disable fine-reference following only;
+   - test must fail.
+
+4. Terminal partial-step handoff exclusion
+   - verify the fixture lands on a scheduler state where removing the
+     exclusion would actually create a handoff;
+   - remove/bypass the exclusion in-memory;
+   - test must fail.
+
+5. Organism solid footprint in chemical diffusion
+   - verify the comparison holds mover/time geometry constant;
+   - remove only the organism footprint;
+   - test must fail.
+
+6. Privileged-information boundary
+   - inspect executable data-flow checks, not only allowlist strings;
+   - attempt representative forbidden-state injections/routes where the
+     test design permits;
+   - verify they cannot influence learner arithmetic outside declared
+     transductions.
+
+7. Evoked reserve ownership
+   - alter/inject evoked energy/integrity-related internal content;
+   - verify physical E and I cannot change directly;
+   - any effect must traverse the declared regulator/motor/physical path.
+
+For every consequential test, require OBSERVED RED -> GREEN evidence.
+If the claimed falsifier is unreachable, classify the protection as
+not verified even if the normal test is green.
+
+--------------------------------------------------
+E. REGRESSION OF PREVIOUSLY VERIFIED P FIDELITY
+--------------------------------------------------
+
+Do not repeat the entire first review, but spot-check every area touched
+by the corrective diff and the interfaces around it.
+
+Confirm that the correction did NOT alter:
+
+- P equations 1-21;
+- neural handoff order;
+- old-H read / later coactivity write;
+- previous-perturbation bodily credit;
+- support/query latency;
+- separate E/I teaching banks;
+- actual versus evoked reserve ownership;
+- mean-plus-endpoint packet construction;
+- receptor and packet centring;
+- one-level pooling law;
+- configurable sensory widths / pool membership;
+- deliberately contracting associative regime;
+- selected illumination boundary ruling;
+- random-stream cadence;
+- organism information boundary.
+
+If any of these changed, surface it as a mechanism/configuration change,
+not as an engineering correction.
+
+--------------------------------------------------
+F. BOUNDED SMOKE EVIDENCE
+--------------------------------------------------
+
+Inspect the newly recorded corrected versions of the same three bounded
+engineering cases only:
+
+- birth_30s
+- nonzero_resume_1s
+- contact_ui_1s
+
+Verify:
+- same configuration;
+- same master seed / life identity;
+- same administrative durations;
+- new artifact identities rather than overwritten attempt-002 evidence;
+- old d5f7efbe evidence still preserved;
+- any changed physical trajectory/state caused by the R1 fix is reported,
+  not tuned away.
+
+Do not interpret survival, learning or behaviour as efficacy evidence.
+
+Independently run the saved-record reconstruction utility on the new
+artifacts and verify the claimed reconstruction result.
+
+Check pause/resume and observer isolation evidence for regressions.
+
+--------------------------------------------------
+G. CHEMICAL PREHISTORY REUSE
+--------------------------------------------------
+
+Verify whether the 600-second world-only chemical prehistory was reused.
+
+If reused:
+- independently compare every relevant prehistory dependency between the
+  old and corrected checkpoints;
+- verify none changed;
+- verify the cached field identity remains the expected one.
+
+If a dependency changed but the old field was nevertheless reused:
+classify MUST-FIX BEFORE COMMISSIONING.
+
+If the builder regenerated the prehistory despite unchanged dependencies,
+record it but do not treat that alone as scientific failure.
+
+--------------------------------------------------
+H. PROVENANCE AND PRESERVATION
+--------------------------------------------------
+
+Verify:
+- previous checkpoint d5f7efbe remains reachable and unchanged;
+- old review artifacts remain preserved;
+- exact new branch and commit identity;
+- no push, PR or merge;
+- no Workbench/vault Git writes;
+- historical EXP1-21 tree unchanged;
+- packaged code/config/source identities match the new commit/runtime;
+- accepted reference documents were not silently rewritten.
+
+The older branch base at 98a8307e... was previously found not to be an
+implementation-fidelity defect. Do not reopen that issue unless the
+corrective work changed its relevance.
+
+--------------------------------------------------
+I. CLASSIFICATION
+--------------------------------------------------
+
+Classify every finding as exactly one of:
+
+- VERIFIED;
+- LIMITATION / EXPECTED PROVISIONAL CHOICE;
+- MUST-FIX BEFORE COMMISSIONING;
+- SCIENTIFIC QUESTION, NOT AN ENGINEERING DEFECT;
+- UNRESOLVED / REQUIRES JASON.
+
+Do not turn:
+- weak learned influence;
+- poor survival;
+- lack of useful differentiation;
+- mean/endpoint temporal compression;
+- receptor adaptation;
+- contracting association;
+- eight-unit capacity
+
+into engineering failures unless the IMPLEMENTATION differs from the
+selected specification.
+
+Those remain scientific/configuration questions for commissioning and
+later investigation.
+
+--------------------------------------------------
+J. FINAL DISPOSITION
+--------------------------------------------------
+
+Return one explicit answer:
+
+FIT TO PROCEED TO COUPLING COMMISSIONING
+
+or
+
+HOLD BEFORE COUPLING COMMISSIONING
+
+The first answer requires:
+- R1 closed;
+- R2 closed;
+- every material R3 falsifier demonstrated consequentially;
+- final delivered suite green;
+- no out-of-scope mechanism/configuration change;
+- corrected bounded artifacts internally reproducible;
+- no newly discovered engineering defect material to commissioning.
+
+A limitation or scientific uncertainty alone is NOT grounds for HOLD.
+
+If HOLD:
+state the smallest exact closure required.
+Do not propose a redesign unless the defect genuinely requires Jason.
+
+If FIT:
+do not design or begin commissioning.
+The next step remains a separate Jason-authorized commissioning-design
+task.
+
+Produce:
+1. one full independent post-correction review;
+2. a concise R1-R3 closure table;
+3. exact reproduction commands for consequential findings;
+4. exact reviewed commit/config/package identities;
+5. a portable ZIP suitable for Loom Research Workbench intake.
+
+Then stop.

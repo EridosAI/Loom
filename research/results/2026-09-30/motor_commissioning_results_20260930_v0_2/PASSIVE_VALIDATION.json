@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "case_id": "MC-FS-001-CURRENT",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.550437496767979e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-001-M1",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.550776309946881e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-001-M2",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9744,
+      "ledger_max_error": 5.551115123125783e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-002-CURRENT",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.550437496767979e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-002-M1",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.550776309946881e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-002-M2",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.550437496767979e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-003-CURRENT",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.550776309946881e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-003-M1",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.5500986835890775e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-003-M2",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9955,
+      "ledger_max_error": 5.549759870410176e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    }
+  ],
+  "total_native_rows": 81000,
+  "execution_source_modified": false,
+  "new_simulation_steps": 0,
+  "all_execution_file_hashes_still_match": true,
+  "decoder_source_sha256": "034978d946ac7c4dabedd5adab4e76bd9cbb063bcc16b574254ebf01f74aabb2",
+  "native_schema_source_sha256": "2805addcc842c675261e7978c43c01d48aa2b99358425b15161625e275c5c996",
+  "observer_seconds": 10.838314300053753,
+  "method": "passive typed decoder returns class attributes as plain data; no Loom import/replay"
+}

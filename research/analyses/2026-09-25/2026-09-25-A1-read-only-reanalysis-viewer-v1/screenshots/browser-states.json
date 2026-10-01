@@ -1,0 +1,470 @@
+[
+  {
+    "name": "01-initial",
+    "clock": "0.0000000000 s",
+    "sample": "native 0 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.700000"
+      ],
+      [
+        "integrity",
+        "1.000000"
+      ],
+      [
+        "stock",
+        "0.200000"
+      ],
+      [
+        "contact",
+        "No contact"
+      ],
+      [
+        "force",
+        "—"
+      ],
+      [
+        "windowNote",
+        "Initial state · no completed energy window."
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 0.000000 s; sample age 0.000000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. "
+      ]
+    ]
+  },
+  {
+    "name": "02-first-contact",
+    "clock": "6.3101904865 s",
+    "sample": "event 632 · native sample 631",
+    "values": [
+      [
+        "energy",
+        "0.687432"
+      ],
+      [
+        "integrity",
+        "0.993114"
+      ],
+      [
+        "stock",
+        "0.200000"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "Impact impulse"
+      ],
+      [
+        "windowNote",
+        "6.20–6.40 s · positive-net contact · ΔE 0.000443455"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 6.300000 s; sample age 0.010190 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Exact recorded event selected. Pose, E/I and stock use that event; other quantities retain their labelled native or controller timestamps."
+      ]
+    ]
+  },
+  {
+    "name": "03-positive-window",
+    "clock": "6.4000000000 s",
+    "sample": "native 640 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.688082"
+      ],
+      [
+        "integrity",
+        "0.993077"
+      ],
+      [
+        "stock",
+        "0.199182"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "0.270747"
+      ],
+      [
+        "windowNote",
+        "6.20–6.40 s · positive-net contact · ΔE 0.000443455"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 6.400000 s; sample age 0.000000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. "
+      ]
+    ]
+  },
+  {
+    "name": "04-administrative-stop",
+    "clock": "91.8300000000 s",
+    "sample": "native 9183 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.738746"
+      ],
+      [
+        "integrity",
+        "0.993077"
+      ],
+      [
+        "stock",
+        "0.034250"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "0.099982"
+      ],
+      [
+        "windowNote",
+        "91.80–91.83 s · partial tail · administrative pause · ΔE -2.197e-5"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 91.800000 s; sample age 0.030000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. Administrative pause: wall_time_limit. The unobserved 28.17 s are not displayed."
+      ]
+    ]
+  },
+  {
+    "name": "01-initial",
+    "clock": "0.0000000000 s",
+    "sample": "native 0 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.700000"
+      ],
+      [
+        "integrity",
+        "1.000000"
+      ],
+      [
+        "stock",
+        "0.200000"
+      ],
+      [
+        "contact",
+        "No contact"
+      ],
+      [
+        "force",
+        "—"
+      ],
+      [
+        "windowNote",
+        "Initial state · no completed energy window."
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 0.000000 s; sample age 0.000000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. "
+      ]
+    ]
+  },
+  {
+    "name": "02-first-contact",
+    "clock": "6.3101904865 s",
+    "sample": "event 632 · native sample 631",
+    "values": [
+      [
+        "energy",
+        "0.687432"
+      ],
+      [
+        "integrity",
+        "0.993114"
+      ],
+      [
+        "stock",
+        "0.200000"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "Impact impulse"
+      ],
+      [
+        "windowNote",
+        "6.20–6.40 s · positive-net contact · ΔE 0.000443455"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 6.300000 s; sample age 0.010190 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Exact recorded event selected. Pose, E/I and stock use that event; other quantities retain their labelled native or controller timestamps."
+      ]
+    ]
+  },
+  {
+    "name": "03-positive-window",
+    "clock": "6.4000000000 s",
+    "sample": "native 640 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.688082"
+      ],
+      [
+        "integrity",
+        "0.993077"
+      ],
+      [
+        "stock",
+        "0.199182"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "0.270747"
+      ],
+      [
+        "windowNote",
+        "6.20–6.40 s · positive-net contact · ΔE 0.000443455"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 6.400000 s; sample age 0.000000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. "
+      ]
+    ]
+  },
+  {
+    "name": "04-administrative-stop",
+    "clock": "91.8300000000 s",
+    "sample": "native 9183 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.738746"
+      ],
+      [
+        "integrity",
+        "0.993077"
+      ],
+      [
+        "stock",
+        "0.034250"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "0.099982"
+      ],
+      [
+        "windowNote",
+        "91.80–91.83 s · partial tail · administrative pause · ΔE -2.197e-5"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 91.800000 s; sample age 0.030000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. Administrative pause: wall_time_limit. The unobserved 28.17 s are not displayed."
+      ]
+    ]
+  },
+  {
+    "name": "01-initial",
+    "clock": "0.0000000000 s",
+    "sample": "native 0 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.700000"
+      ],
+      [
+        "integrity",
+        "1.000000"
+      ],
+      [
+        "stock",
+        "0.200000"
+      ],
+      [
+        "contact",
+        "No contact"
+      ],
+      [
+        "force",
+        "—"
+      ],
+      [
+        "windowNote",
+        "Initial state · no completed energy window."
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 0.000000 s; sample age 0.000000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. "
+      ]
+    ]
+  },
+  {
+    "name": "02-first-contact",
+    "clock": "6.3101904865 s",
+    "sample": "event 632 · native sample 631",
+    "values": [
+      [
+        "energy",
+        "0.687432"
+      ],
+      [
+        "integrity",
+        "0.993114"
+      ],
+      [
+        "stock",
+        "0.200000"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "Impact impulse"
+      ],
+      [
+        "windowNote",
+        "6.20–6.40 s · positive-net contact · ΔE 0.000443455"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 6.300000 s; sample age 0.010190 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Exact recorded event selected. Pose, E/I and stock use that event; other quantities retain their labelled native or controller timestamps."
+      ]
+    ]
+  },
+  {
+    "name": "03-positive-window",
+    "clock": "6.4000000000 s",
+    "sample": "native 640 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.688082"
+      ],
+      [
+        "integrity",
+        "0.993077"
+      ],
+      [
+        "stock",
+        "0.199182"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "0.270747"
+      ],
+      [
+        "windowNote",
+        "6.20–6.40 s · positive-net contact · ΔE 0.000443455"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 6.400000 s; sample age 0.000000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. "
+      ]
+    ]
+  },
+  {
+    "name": "04-administrative-stop",
+    "clock": "91.8300000000 s",
+    "sample": "native 9183 / 9183",
+    "values": [
+      [
+        "energy",
+        "0.738746"
+      ],
+      [
+        "integrity",
+        "0.993077"
+      ],
+      [
+        "stock",
+        "0.034250"
+      ],
+      [
+        "contact",
+        "Certified contact"
+      ],
+      [
+        "force",
+        "0.099982"
+      ],
+      [
+        "windowNote",
+        "91.80–91.83 s · partial tail · administrative pause · ΔE -2.197e-5"
+      ],
+      [
+        "moverNote",
+        "Mover: actual recorded axis-aligned rectangle from 91.800000 s; sample age 0.030000 s. Latest recorded geometry held visually; no interpolated mover sample."
+      ],
+      [
+        "selectionNote",
+        "Recorded native endpoint. No interpolation. Administrative pause: wall_time_limit. The unobserved 28.17 s are not displayed."
+      ]
+    ]
+  }
+]

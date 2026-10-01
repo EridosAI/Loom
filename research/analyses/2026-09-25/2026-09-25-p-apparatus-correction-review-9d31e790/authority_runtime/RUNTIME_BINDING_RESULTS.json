@@ -1,0 +1,87 @@
+{
+  "components": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\authority_runtime\\components-hqqjq_mt",
+  "scope": "Manufactured <=0.2 s fixtures and validation-only synthetic authority. No commissioning constructor or case execution.",
+  "runtime_callable_alias": {
+    "same_display_name": true,
+    "changed_callable_code_identity": true,
+    "authority_and_runtime_guard_accepted": true,
+    "approved_controller_identity_unchanged": true,
+    "approved_request_unchanged": true,
+    "expected_command": [
+      0.717668244562803,
+      0.237668244562803
+    ],
+    "delivered_command": [
+      -0.5,
+      0.5
+    ],
+    "native_steps": 1,
+    "control_controllers_namespace_rejected": "controller execution identity mismatch"
+  },
+  "live_held_command": {
+    "guard_accepted": true,
+    "recorded_approved_command": [
+      0.717668244562803,
+      0.237668244562803
+    ],
+    "delivered_command": [
+      -0.5,
+      0.5
+    ],
+    "native_steps": 1,
+    "execution_identity_unchanged": true
+  },
+  "live_hold_count": {
+    "guard_accepted": true,
+    "recorded_hold_steps": 10,
+    "executed_native_steps": 11,
+    "time": 0.10999999999999999,
+    "stage_deadline": 0.1,
+    "recorded_command": [
+      0.717668244562803,
+      0.237668244562803
+    ],
+    "command_after_deadline": [
+      0.717668244562803,
+      0.237668244562803
+    ]
+  },
+  "resume_pending_hold": {
+    "loaded_original_native_index": 7,
+    "original_remaining": 3,
+    "mutated_remaining": 4,
+    "session_validation_accepted": true,
+    "constructor_accepted": true,
+    "recorded_command": [
+      0.717668244562803,
+      0.237668244562803
+    ],
+    "delivered_command": [
+      -0.5,
+      0.5
+    ],
+    "final_native_index": 11,
+    "final_time": 0.10999999999999999,
+    "pre_resume_state": "e8f595e64b1fde5e8971542cdd91a7006b6812e407d41ed771208eaab7b41ed1",
+    "saved_manifest_unchanged": true
+  },
+  "saved_bad_pending_hold": {
+    "ordinary_save_and_resume_accepted": true,
+    "recorded_command": [
+      0.717668244562803,
+      0.237668244562803
+    ],
+    "delivered_command": [
+      -0.5,
+      0.5
+    ],
+    "final_native_index": 11,
+    "final_time": 0.10999999999999999,
+    "no_disk_receipt_or_restart_hash_edit": true
+  },
+  "positive_rejection_controls": {
+    "route": "session route differs from approved procedure",
+    "settings": "controller execution identity mismatch",
+    "resources": "live resources differ from approved scope"
+  }
+}

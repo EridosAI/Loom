@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="3.749" timestamp="2026-09-26T18:30:24.070498+08:00" hostname="Equinox"><testcase classname="b1_correction_20260926.test_before_correction" name="test_old_hidden_rejected" time="0.402"><failure message="ValueError: unsupported display intervention">def test_old_hidden_rejected():
+        m=make_manifest(manufactured(),'fixture-old-hidden',EXTERNAL,'sensor_human',.1)
+        m['execution']['display_intervention']={'kind':'chemistry_hidden'}
+&gt;       validate_execution(m,complete=True)
+
+b1_correction_20260926\test_before_correction.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+worktrees\loom-p-b1-apparatus-correction-20260926\developmental_ecology\loom_commissioning\authority.py:147: in validate_execution
+    require(x['display_intervention']=={'kind':'none'}, 'unsupported display intervention')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+condition = False, message = 'unsupported display intervention'
+
+    def require(condition, message):
+        if not condition:
+&gt;           raise ValueError(message)
+E           ValueError: unsupported display intervention
+
+worktrees\loom-p-b1-apparatus-correction-20260926\developmental_ecology\loom_commissioning\contract.py:29: ValueError</failure></testcase><testcase classname="b1_correction_20260926.test_before_correction" name="test_old_duplicate_creates_extra_hold" time="2.593"><failure message="AssertionError: Duplicate submission executed an extra hold&#10;assert 20 == 10&#10; +  where 20 = &lt;loom_p.engine.Engine object at 0x000002DB4970A850&gt;.native_index">tmp_path = WindowsPath('C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/b1_correction_20260926/before-temp/test_old_duplicate_creates_ext0')
+
+    def test_old_duplicate_creates_extra_hold(tmp_path):
+        e=manufactured();m=make_manifest(e,'fixture-old-duplicate',EXTERNAL,'sensor_human',.3)
+        r=Run(e,m,tmp_path/'old');g=HumanGateway(r)
+        try:
+            g.submit(.1,.1,'same submitted request')
+            g.submit(.1,.1,'same submitted request')
+&gt;           assert e.native_index==10,'Duplicate submission executed an extra hold'
+E           AssertionError: Duplicate submission executed an extra hold
+E           assert 20 == 10
+E            +  where 20 = &lt;loom_p.engine.Engine object at 0x000002DB4970A850&gt;.native_index
+
+b1_correction_20260926\test_before_correction.py:19: AssertionError</failure></testcase></testsuite></testsuites>

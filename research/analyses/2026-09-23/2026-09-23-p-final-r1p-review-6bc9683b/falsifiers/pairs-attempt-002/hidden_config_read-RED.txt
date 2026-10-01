@@ -1,0 +1,62 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_hidden_state_cannot_bypass_declared_transductions ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001B8EDCDDE00>
+
+    def test_hidden_state_cannot_bypass_declared_transductions(monkeypatch):
+        import loom_p.engine as engine_module
+        a=arithmetic_engine(); b=arithmetic_engine(); fixed=copy.deepcopy(a.raw)
+        b.body.position[:]=[16.,14.]; b.body.angle=2.1; b.stocks[:]=.017
+        b.fields[:]=19.; b.time=42.; b.phase=2.8
+        b.c.source_positions=[[1.,1.]]; b.c.mover_centre=[18.,18.]
+        b.organism.rng.counters['life/world-position']=800
+        for e in (a,b): e.organism.c=LearnerConfig(e.c)
+        received=[]
+        def declared_transduction(c,body,fields,t,phase):
+            received.append((body.position.copy(),t,phase)); return copy.deepcopy(fixed)
+        monkeypatch.setattr(engine_module,'transduce',declared_transduction)
+        monkeypatch.setattr(engine_module,'advance',lambda c,body,stocks,t,phase,command,dt,allow:([],dt,None))
+        for _ in range(20):
+>           a._coupled(.01,False); b._coupled(.01,False)
+            ^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_corrective_contracts.py:134: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <loom_p.engine.Engine object at 0x000001B8EDCD5D30>, dt = 0.01
+refresh = False, allow_terminal = False
+
+    def _coupled(self,dt,refresh,allow_terminal=False):
+>       command=self.organism.native(self.raw,dt,refresh_noise=refresh)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+loom_p\engine.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <loom_p.neural.Organism object at 0x000001B8EDCD6120>
+args = ([array([0.01      , 0.04222222, 0.07444444, 0.10666667, 0.13888889,
+       0.17111111, 0.20333333, 0.23555556, 0.2677....3       ]), array([0.01      , 0.05833333, 0.10666667, 0.155     , 0.20333333,
+       0.25166667, 0.3       ])], 0.01)
+kwargs = {'refresh_noise': False}
+
+    def broken(self,*args,**kwargs):
+>       hidden=self.c.source_positions
+               ^^^^^^^^^^^^^^^^^^^^^^^
+
+verify_correction_mutants.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <test_corrective_contracts.LearnerConfig object at 0x000001B8EDCD67B0>
+name = 'source_positions'
+
+    def __getattr__(self,name):
+>       assert name not in self.forbidden, 'Forbidden learner configuration read: '+name
+E       AssertionError: Forbidden learner configuration read: source_positions
+E       assert 'source_positions' not in {'birth_energy', 'grid_n', 'illumination_boundary', 'mover_centre', 'repair_rectangles', 'source_capacity', ...}
+E        +  where {'birth_energy', 'grid_n', 'illumination_boundary', 'mover_centre', 'repair_rectangles', 'source_capacity', ...} = <test_corrective_contracts.LearnerConfig object at 0x000001B8EDCD67B0>.forbidden
+
+tests\test_corrective_contracts.py:116: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions
+1 failed in 0.11s

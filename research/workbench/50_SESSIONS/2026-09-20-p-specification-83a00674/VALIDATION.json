@@ -1,0 +1,182 @@
+{
+  "result": "pass",
+  "validated_at": "2026-09-20T13:52:59.370015+08:00",
+  "scope": "Documentation and analytical checks only; no organism implementation, simulations, commissioning, scientific runs or Git.",
+  "selected_existing_sources": [
+    {
+      "source_id": "SRC-001",
+      "path": "90_SOURCES/reference_7ada2b300fa1/00_LOOM_CURRENT_STATE.md",
+      "unchanged": true,
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b"
+    },
+    {
+      "source_id": "SRC-002",
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md",
+      "unchanged": true,
+      "sha256": "729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab"
+    },
+    {
+      "source_id": "SRC-003",
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md",
+      "unchanged": true,
+      "sha256": "3ecb0bc5627003ee3f8e464d677e175692ac0a0ac94fa9a22d2c45e1496ac5b6"
+    },
+    {
+      "source_id": "SRC-004",
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md",
+      "unchanged": true,
+      "sha256": "b647f4e7f61deb09eea83272be9a2f3229f838de753a835447f64e91977e0d45"
+    },
+    {
+      "source_id": "SRC-005",
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md",
+      "unchanged": true,
+      "sha256": "80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef"
+    },
+    {
+      "source_id": "SRC-014",
+      "path": "90_SOURCES/direction_2026-09-18/LOOM_DEVELOPMENTAL_DIRECTION_v0_1_REVIEW_DRAFT.md",
+      "unchanged": true,
+      "sha256": "77a2ebd11e6e32d7fa0409914e1be58e63f2b2a3197f9bbff372fec3361b76d7"
+    },
+    {
+      "source_id": "SRC-017",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/REVIEW_AND_RECONCILIATION_NOTES.md",
+      "unchanged": true,
+      "sha256": "ffd8946fb241448afc14f76ebc2445ccf8dd6afda9507430f3776360cb720eeb"
+    },
+    {
+      "source_id": "SRC-019",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/sources/participation_retention/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md",
+      "unchanged": true,
+      "sha256": "ac3c3bfd9c71150224f65eea52ee623ad3e421c773650a19c5b825120995aa42"
+    },
+    {
+      "source_id": "SRC-021",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/sources/retention_only/LOOM_ASSOCIATIVE_REGULATION_WORKED_CANDIDATE_v0_1.md",
+      "unchanged": true,
+      "sha256": "17f03277633e8a9b3b59c655f15e5c7fd033869198aad0e1569e4f7f52c99686"
+    }
+  ],
+  "readiness_unchanged": true,
+  "incoming_handoff_matches_registered_copy": true,
+  "exact_parent_matches_handoff_sha256": true,
+  "identity_equivalence_checks": [
+    {
+      "source_id": "SRC-003",
+      "method": "Only display delimiters differ from catalogued checkpoint original.",
+      "verified": true
+    },
+    {
+      "source_id": "SRC-004",
+      "method": "Only display delimiters differ from catalogued checkpoint original.",
+      "verified": true
+    },
+    {
+      "source_id": "SRC-019",
+      "method": "Display delimiters changed; only remaining difference is equation3 whitespace; all other text identical.",
+      "verified": true
+    },
+    {
+      "source_id": "SRC-021",
+      "method": "Only display delimiters differ from catalogued checkpoint original.",
+      "verified": true
+    }
+  ],
+  "shared_integration": [
+    {
+      "path": "AGENTS.md",
+      "current_matches_integrated_version": true,
+      "prior_bytes_preserved": true,
+      "sha256": "4a6d5a5fe00a956aff1661d8fbffeeede026863bb9c0ed818013a12eacc40a56"
+    },
+    {
+      "path": "00_RESEARCH_MAP.md",
+      "current_matches_integrated_version": true,
+      "prior_bytes_preserved": true,
+      "sha256": "94568977c104a3511f20b36784fe0613134764eab6c883dee35d4a8042df2150"
+    },
+    {
+      "path": "01_WORKSPACE_STATUS.md",
+      "current_matches_integrated_version": true,
+      "prior_bytes_preserved": true,
+      "sha256": "e38231bc1c9b0df9240e30e95c49fdefdb53b590c4e55b42d02e6707926686a4"
+    },
+    {
+      "path": "02_OPEN_QUESTIONS.md",
+      "current_matches_integrated_version": true,
+      "prior_bytes_preserved": true,
+      "sha256": "4dc42046d15958a09b8204aad2bb5a18648a2e87d8a887b0554ed7d39c6d3e0a"
+    },
+    {
+      "path": "20_CANDIDATES/CAND-P.md",
+      "current_matches_integrated_version": true,
+      "prior_bytes_preserved": true,
+      "sha256": "dbf853059b997e8088e83232b9597b589fd0dfbc7017913584576290519b426e"
+    },
+    {
+      "path": "40_DECISIONS/DECISION_INDEX.md",
+      "current_matches_integrated_version": true,
+      "prior_bytes_preserved": true,
+      "sha256": "b770a77286ecec53e0522925b8aa8ddf2ad690ab837574de26dbe78c4588b315"
+    },
+    {
+      "path": "SOURCE_CATALOG.json",
+      "current_matches_integrated_version": true,
+      "prior_bytes_preserved": true,
+      "sha256": "6dcb607d334d77704ab23646075fca6d544cfccfcf3688780d94927c09b15a48"
+    },
+    {
+      "path": "SOURCE_REGISTER.md",
+      "current_matches_integrated_version": true,
+      "prior_bytes_preserved": true,
+      "sha256": "a11a413a4aa41007b1cd2d6afabf3076c4e06b3399affc6c8c599b9342f6ef6b"
+    }
+  ],
+  "historical_catalog_rows_preserved": 50,
+  "new_source_rows": 2,
+  "exact_acceptance_quote_matches": true,
+  "new_reading_docs_math_delimiters": "Obsidian-compatible; balanced checked",
+  "parent_equation_tags_once_each": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "local_links": {
+    "count": 253,
+    "failures": []
+  },
+  "analytical_review": {
+    "P_mechanism": "pass; dimensions, rate bound, retained equations and ordering",
+    "world_body": "pass after impact/duration, terminal partial-step and record-cost clarifications",
+    "walkthrough": "pass after adding body-to-packet diagram route",
+    "authority_and_history": "pass"
+  },
+  "unperformed": [
+    "organism numerical validation",
+    "simulation",
+    "commissioning",
+    "Obsidian renderer verification",
+    "scientific trial",
+    "Git operations"
+  ],
+  "export_context": "Original source-relative links retain workbench context; source archive is not bundled."
+}

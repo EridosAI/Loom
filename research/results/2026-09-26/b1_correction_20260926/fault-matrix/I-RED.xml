@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.952" timestamp="2026-09-26T18:47:57.044208+08:00" hostname="Equinox"><testcase classname="tests_apparatus.test_b1_operator" name="test_I_running_overlap" time="0.537"><failure message="AssertionError: OVERLAPPING EXECUTIONS ACCEPTED&#10;assert (False)">tmp_path = WindowsPath('C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/b1_correction_20260926/fault-matrix/I-RED-tmp/test_I_running_overlap0')
+
+    def test_I_running_overlap(tmp_path):
+        e,r,g=case(tmp_path);token=g.envelope()['decision_token'];entered=threading.Event();release=threading.Event()
+        calls=[];errors=[];real=g._claim
+        def claim(t,state):
+            if fault('I') and g._state=='running':return
+            return real(t,state)
+        def blocked_hold(*args):
+            calls.append('entered');entered.set()
+            if len(calls)==1:assert release.wait(5)
+        def first():
+            try:g.submit(0.,0.,'',token)
+            except Exception as ex:errors.append(type(ex).__name__)
+        try:
+            with patch.object(r,'hold',blocked_hold),patch.object(g,'_claim',claim):
+                thread=threading.Thread(target=first);thread.start();assert entered.wait(5)
+                assert g.envelope()['lifecycle']=='running' and g.envelope()['decision_token'] is None
+                denied=rejected(lambda:g.submit(0.,0.,'',token))
+                release.set();thread.join(5);assert not thread.is_alive()
+&gt;           assert denied and len(calls)==1 and not errors,'OVERLAPPING EXECUTIONS ACCEPTED'
+E           AssertionError: OVERLAPPING EXECUTIONS ACCEPTED
+E           assert (False)
+
+tests_apparatus\test_b1_operator.py:144: AssertionError</failure></testcase></testsuite></testsuites>

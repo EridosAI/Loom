@@ -1,0 +1,41 @@
+{
+  "status": "PC-MOTION ENDED AT WALL LIMIT; DISCUSSION OF PRESERVED READINGS ONLY",
+  "next_case": "PC-MOTION",
+  "order": [
+    "PC-LR",
+    "PC-MOTION",
+    "PC-CONTACT",
+    "PC-HOLD"
+  ],
+  "cases": [
+    {
+      "case": "PC-LR",
+      "attempts": 2,
+      "status": "ATTEMPT 002 CLOSED / DEMONSTRATED; ATTEMPT 001 ADMINISTRATIVE CUTOFF PRESERVED"
+    },
+    {
+      "case": "PC-MOTION",
+      "attempts": 1,
+      "status": "CLOSED AT 0.2 s / 2 COMMANDS; INTERPRETATION PARTIAL, NOT YET DEMONSTRATED"
+    },
+    {
+      "case": "PC-CONTACT",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    },
+    {
+      "case": "PC-HOLD",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    }
+  ],
+  "live_services": 1,
+  "timers_started": 3,
+  "worlds_loaded": 3,
+  "simulation_steps": 20,
+  "controller_commands": 2,
+  "all_commands_must_be_Jason_choices": true,
+  "service_url": "http://127.0.0.1:63327/",
+  "service_session_id": 75159,
+  "status_observed_utc": "2026-09-27T01:00:54.7742572+00:00"
+}

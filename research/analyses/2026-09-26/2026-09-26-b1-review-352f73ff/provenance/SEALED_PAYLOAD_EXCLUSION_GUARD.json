@@ -1,0 +1,171 @@
+{
+  "scope": "Exact-byte hashes of original held private payloads except public reference source, plus private archive. Hashes only: no private contents included. Apply these to every candidate final archive entry; no matching payload may be included.",
+  "forbidden_file_hashes": {
+    "80b7f0cc2ef52f773400ee9da9521ba3746839f0378451086b03d12b3916a308": {
+      "basename": "AUTHORING_SOURCE.py",
+      "bytes": 32676
+    },
+    "7db9d5d7c36bea6aeac4f441385c6e3d892158ab9d8f9c2b807a7eb4f883b1af": {
+      "basename": "B1-CHEMISTRY-HIDDEN.canonical.json",
+      "bytes": 6244
+    },
+    "d4346134c6e6a4a53142b0466c3c4927b6c9e2ab1f5ca04898b4ee19f27ab715": {
+      "basename": "B1-CHEMISTRY-HIDDEN.json",
+      "bytes": 7515
+    },
+    "552f20a7be5f8d7e85c0d311e0243e500014e1116e4b3fa48f8e5c526caa670a": {
+      "basename": "B1-FULL-RAW.canonical.json",
+      "bytes": 6105
+    },
+    "402a342db95aebb54efbd40e3ebf71d15e843cac2df5adadc972b1c934a23c54": {
+      "basename": "B1-FULL-RAW.json",
+      "bytes": 7358
+    },
+    "53e3f95cd802df05a6656016ccb09a2c85de44c1922fc692f8c5644893aed84d": {
+      "basename": "PC-CONTACT.canonical.json",
+      "bytes": 6088
+    },
+    "f322366de169f8c09767cc0385fa70db70f4d1be33a17a175e7aa23ce0d62d3d": {
+      "basename": "PC-CONTACT.json",
+      "bytes": 7341
+    },
+    "f1ff244ad17b05da73263de2db08671c3bd0f4c4eb4d2c345b07e3ed03184e7a": {
+      "basename": "PC-HOLD.canonical.json",
+      "bytes": 6087
+    },
+    "59f56dfdfee891999c37135c5671f9fa99bcac06e22902693db58c451be3588f": {
+      "basename": "PC-HOLD.json",
+      "bytes": 7340
+    },
+    "a0b9be6c662209f174d0e09c41cc8bdfb8bbdf0c4be7cc2a7f29d80554c5b5b0": {
+      "basename": "PC-LR.canonical.json",
+      "bytes": 6083
+    },
+    "c6caa09c44a81b58f3b6ebc5cfbe125c165f1c286ea3656d439a9790b81bdb5e": {
+      "basename": "PC-LR.json",
+      "bytes": 7336
+    },
+    "2cc8a94e23506fc7bdd54b859c1c8eb1f8db36149162f870b81e7f8746fe4d23": {
+      "basename": "PC-MOTION.canonical.json",
+      "bytes": 6087
+    },
+    "f0013ac8c330992700445ee13e57caa44591fc68e286fdbc431b897a191a5a3d": {
+      "basename": "PC-MOTION.json",
+      "bytes": 7340
+    },
+    "0971ceb1a9596d5582eeee5f11e8762c19b76575b02726f40926745b61db3315": {
+      "basename": "B1-CHEMISTRY-HIDDEN.json",
+      "bytes": 7547
+    },
+    "14c9e9c3e39b1b2b77ed4ccdc71e9b39f2e85011b5314f4639144cdcf0fc41ac": {
+      "basename": "B1-FULL-RAW.json",
+      "bytes": 7390
+    },
+    "18a3f3b7e725433476ff4f29678a52381ec05a948349854122b3757ad57f635d": {
+      "basename": "PC-CONTACT.json",
+      "bytes": 7373
+    },
+    "3e34ea8df05d5b11a01465d396d7b15d9be161b515f5d9116351757df9910b12": {
+      "basename": "PC-HOLD.json",
+      "bytes": 7372
+    },
+    "ccb8d85df5edcdc2c62141b4977fa4ce5a6a66a74bfaf4b39137e7fabc859486": {
+      "basename": "PC-LR.json",
+      "bytes": 7368
+    },
+    "bd63b91c915ca19a80c3920c9911d0821a406b27a1c12f597f92ace22068ec81": {
+      "basename": "PC-MOTION.json",
+      "bytes": 7372
+    },
+    "817569a590ac6cb32f165d02895254f971dc6bc7fb7f95937e7cd1669f3fd257": {
+      "basename": "DOCUMENT_AUTHORING_SOURCE.py",
+      "bytes": 35128
+    },
+    "9f7426a9c05ab3c486b76f73a6a59de1ef4a4f0d5a036bde1ec850bd6a20d6ee": {
+      "basename": "DOCUMENT_CORRECTION_SOURCE.py",
+      "bytes": 4799
+    },
+    "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543": {
+      "basename": "HELD_REVIEW_OBJECT.canonical.json",
+      "bytes": 17503
+    },
+    "30f9d0758fe6d41ff46597fb0127c6969cec0a59fc77f7de1ce376089c03fcea": {
+      "basename": "HELD_REVIEW_OBJECT.json",
+      "bytes": 19177
+    },
+    "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8": {
+      "basename": "B1-PAIR-INITIAL.snapshot.json.gz",
+      "bytes": 121491
+    },
+    "ee115434b844b7aee30089cbeaab03ff932952f440b0686eff8da465f1880e1f": {
+      "basename": "PC-CONTACT.snapshot.json.gz",
+      "bytes": 121479
+    },
+    "54c02d8b4092b24761284939185c43addce086e3f9fe20adfb80ef0e14dabc7b": {
+      "basename": "PC-HOLD.snapshot.json.gz",
+      "bytes": 121477
+    },
+    "3ff0eb7ee409e990ffba65ac79df913f13875fd0cd811d191bd50cbd87d2e477": {
+      "basename": "PC-LR.snapshot.json.gz",
+      "bytes": 121480
+    },
+    "aaae774a025276a170df0ac2a3fb8e7b9aa6aa75c30a681037801f3cff887328": {
+      "basename": "PC-MOTION.snapshot.json.gz",
+      "bytes": 121470
+    },
+    "6a9471317d0914603fc769d5609c8bb9aa7e5a602c90c4a4d230d513a37657b4": {
+      "basename": "INITIAL_STATE_CHECKS.json",
+      "bytes": 2038
+    },
+    "da928e612bd3070070c0cb1677dd26e55bb7f11ba2b5003ea8054092873d863c": {
+      "basename": "ORIGINALS_BEFORE.json",
+      "bytes": 16395
+    },
+    "975087d84b7e4e5af42d4fa7f6ad9a999e2b8a7d670217b3775446ce46e8985f": {
+      "basename": "PC-CONTACT.initial-display.json",
+      "bytes": 1487
+    },
+    "8f414a43f4055f3a9ae53123c2108da1cbec7fdb840f741ae0fe70f3b21f8f50": {
+      "basename": "PC-HOLD.initial-display.json",
+      "bytes": 1486
+    },
+    "f4706656dfca9568e5e9ae770d47c9f4c6efb07d51216871151fba130e0145d4": {
+      "basename": "PC-LR.initial-display.json",
+      "bytes": 1471
+    },
+    "2cdbf1870180ca0f8417fcd2aee95509bc5c5858ff820452f4d5c3acfe7d70da": {
+      "basename": "PC-MOTION.initial-display.json",
+      "bytes": 1497
+    },
+    "8e604dc9370008a7267c214825c4409006be0d9132b493c65e7a1878911731f7": {
+      "basename": "PREDECLARED_INITIAL_FIXTURES.json",
+      "bytes": 1993
+    },
+    "faaab894127b42dd82073114c3b4c80968d98957f6084416953d4369042e322c": {
+      "basename": "PRIVILEGED_EVALUATOR_MANIFEST.json",
+      "bytes": 8380
+    },
+    "de646e302d13479e29866cd60a60fdf735e765174d3a7f3dba4e55259f59b980": {
+      "basename": "README.md",
+      "bytes": 2816
+    },
+    "3ca8354ed2ccbc00f86e0c9e995229e285607e7a8206a32a51fabb0be1837ade": {
+      "basename": "SOURCE_IDENTITIES.json",
+      "bytes": 22458
+    },
+    "b5e1db2f5e3476dbf3c92fa4565358361dbae19276d16008d46b62526c020778": {
+      "basename": "B1_PRIVILEGED_EVALUATOR_HOLD.zip",
+      "bytes": 1173766
+    }
+  },
+  "forbidden_hash_count": 39,
+  "portable_payloads_checked": 2676,
+  "portable_collisions": {},
+  "forbidden_archive_path_components": [
+    "B1_PRIVILEGED_EVALUATOR_HOLD",
+    "case-manifests",
+    "initial-states",
+    "authority-objects"
+  ],
+  "review_approach": "Case-manifest structural comparison emitted only safe contract fields/booleans; none copied. Snapshots and geometry never deserialized."
+}

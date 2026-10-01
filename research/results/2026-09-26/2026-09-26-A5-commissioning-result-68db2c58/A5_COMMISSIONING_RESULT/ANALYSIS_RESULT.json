@@ -1,0 +1,27 @@
+{
+  "authority_sha256": "bdff35693db38800528d91e6d2d4d2085c640268e50713731df5ec27f8b76d1d",
+  "completed_sections": [
+    "RECORD_INTEGRITY",
+    "BOUNDARY_AND_DELIVERY",
+    "ACCOUNTING",
+    "A5_OBSERVATIONS"
+  ],
+  "errors": {},
+  "raw_files_checked": 85,
+  "original_raw_files_unchanged": true,
+  "analysis_wall_seconds": 92.06534059997648,
+  "new_simulation_steps": 0,
+  "controller_command_computations": 0,
+  "physical_replays": 0,
+  "research_module_imports": [],
+  "sources": {
+    "read_results.py": "86ef3bd8fc2e78f96c9a3df5595490fc6e83c2f46c4e4d333c4727cfe9cb164b",
+    "a5_analysis_core.py": "a4dcdecca724d981a2f5548f975d43743695a85cca6e8b148108f8b1f7390092",
+    "a5_observations.py": "f0e520c4499194d1b6d8886f0339ab7c661a751f9aa956e4b97f9f209a28a8b2",
+    "evidence.py": "e82d4b72b796ea31c16984a9a7d57444da900079a86ee1d74df8f06b58e0bd7a",
+    "v3_checker_v1_1.py": "3bf558f96205dbab0134a55a05af5ddccafc934841e778f8f5f765757463f6dc",
+    "prepare_reader.py": "abff61a32c3cbbe28e23800b2d6f71a74680c4fef48db91801e2a246aa7d01ff"
+  },
+  "scheduler_check": "Independent integer stage ownership and binary64 clock consistency arithmetic; no production command function called.",
+  "scope": "Saved data only; original evidence and production code unchanged. No world replay, sensor resampling, policy or parameter change."
+}

@@ -1,0 +1,87 @@
+{
+  "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-P_Final_Mechanical_Closure_Review\\Loom_P_Final_Mechanical_Closure_Review_5f077481_20260925.zip",
+  "zip_bytes": 65436042,
+  "zip_sha256": "04b9fc32f1a855338dc0b24d09f15288031f2b0931217b00560a741eacc66672",
+  "archive_members": 536,
+  "manifest_payloads_verified": 535,
+  "crc_passed": true,
+  "outer_archive": {
+    "members": 536,
+    "manifest_payloads_verified": 535,
+    "safe_unique_paths": true,
+    "crc_passed": true
+  },
+  "builder_archive": {
+    "members": 846,
+    "manifest_payloads_verified": 845,
+    "safe_unique_paths": true,
+    "crc_passed": true
+  },
+  "intervening_review_archive": {
+    "members": 482,
+    "manifest_payloads_verified": 481,
+    "safe_unique_paths": true,
+    "crc_passed": true
+  },
+  "apparatus_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "previous_hold_checkpoint": "9d31e7902658b15762052a2a6a3d161d64338524",
+  "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "disposition": "FIT TO BEGIN AUTHORIZED COUPLING COMMISSIONING",
+  "builder_zip_sha256": "c0c0a0c426ff85c5fbf848ad34bba543218ff4420ebf9c573bc66737f6a34fcf",
+  "builder_zip_bytes": 61132733,
+  "intervening_review_zip_sha256": "24261f1fec4c281894729201f65f5d0e89bda564ef31bb73160925dcf1561709",
+  "intervening_review_zip_bytes": 24920860,
+  "intervening_report_matches_nested_original": true,
+  "intervening_builder_archive_copies_identical": true,
+  "patch_matches_both_deliveries_and_recorded_identity": true,
+  "p_modules_match_prior_registered_package": 13,
+  "configuration_matches_prior_registered_package": true,
+  "apparatus_files_match_reviewed_identities": 13,
+  "suite_logs_match_reported_summaries": true,
+  "source_closure_table_preserved_verbatim": true,
+  "source_gap": "Adjacent INTAKE_RECEIPT.json referenced by source README not supplied; outer ZIP hash computed here.",
+  "review_rerun": false,
+  "commissioning_execution": false,
+  "scientific_execution": false,
+  "git_operations": false,
+  "existing_catalog_rows_preserved": 82,
+  "protected_files_unchanged": 99,
+  "links_validated": 229,
+  "source_ids": [
+    "SRC-083",
+    "SRC-084",
+    "SRC-085",
+    "SRC-086",
+    "SRC-087",
+    "SRC-088",
+    "SRC-089",
+    "SRC-090",
+    "SRC-091",
+    "SRC-092",
+    "SRC-093"
+  ],
+  "shared_files": {
+    "AGENTS.md": {
+      "before": "a289bcb909e899aaf23d3c1928db9650e30d2f61a6f47ab1e147cf6828058520",
+      "after": "58f0ab1ad6916b84a2133310389288503323aae72a8207606aa6aa83adb59b79"
+    },
+    "00_RESEARCH_MAP.md": {
+      "before": "19517b704d6018e3f71a80e86b2dfc229a8f99ae9bedc24efaa480c1604ee41d",
+      "after": "a88e21beab9adaeb77a5bec895aa22c626c682c8c2d0733a11832b292aafa739"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "before": "37b43a182008aab279f7e9cede6d659da5141436549f3a8dbb65d628535e2857",
+      "after": "93cd26313dd44081c96a612d8a68cd609830dfe4ee4bf56e5b08da584578f0aa"
+    },
+    "SOURCE_CATALOG.json": {
+      "before": "92c766b63b6d005e07cd05c443c57eafe6d6e049f3283617485a3b40cd7d0347",
+      "after": "dfd02f291f694aaf5bb6a874a806c9baea94724b46444a476006884e4f6aca11"
+    },
+    "SOURCE_REGISTER.md": {
+      "before": "673c0be4035d193a7df4783263a994ca95a516dc9483737fa6ad72249beedad1",
+      "after": "90ee690add1ae856142b6567e099a5e49d55282ca2ca47024e769367f50d528a"
+    }
+  },
+  "intake_complete": true,
+  "validation_scope": "Source custody, exact status registration, links and byte preservation; no review rerun or scientific validation"
+}

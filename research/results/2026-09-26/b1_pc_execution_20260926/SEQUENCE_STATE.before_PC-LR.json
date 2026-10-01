@@ -1,0 +1,38 @@
+{
+  "status": "WAITING FOR JASON READINESS",
+  "next_case": "PC-LR",
+  "order": [
+    "PC-LR",
+    "PC-MOTION",
+    "PC-CONTACT",
+    "PC-HOLD"
+  ],
+  "cases": [
+    {
+      "case": "PC-LR",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    },
+    {
+      "case": "PC-MOTION",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    },
+    {
+      "case": "PC-CONTACT",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    },
+    {
+      "case": "PC-HOLD",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    }
+  ],
+  "live_services": 0,
+  "timers_started": 0,
+  "worlds_loaded": 0,
+  "simulation_steps": 0,
+  "controller_commands": 0,
+  "all_commands_must_be_Jason_choices": true
+}

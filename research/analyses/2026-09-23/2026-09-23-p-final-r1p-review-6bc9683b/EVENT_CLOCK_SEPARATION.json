@@ -1,0 +1,52 @@
+{
+  "method": "Real scheduler and oblique physics; instrumented fixed-command learner/field/observer stand-ins; no free organism lifetime",
+  "cases": [
+    {
+      "start_index": 19,
+      "end_index": 20,
+      "time": 0.01,
+      "event_count": 4,
+      "calls": [
+        [
+          "native",
+          0.01,
+          false
+        ],
+        [
+          "field",
+          0.01
+        ],
+        [
+          "handoff"
+        ]
+      ],
+      "counters": {
+        "life/review-handoff": 1
+      },
+      "wave": {
+        "component_handoff": true
+      }
+    },
+    {
+      "start_index": 50,
+      "end_index": 51,
+      "time": 0.01,
+      "event_count": 4,
+      "calls": [
+        [
+          "native",
+          0.01,
+          true
+        ],
+        [
+          "field",
+          0.01
+        ]
+      ],
+      "counters": {
+        "life/review-native-noise": 1
+      },
+      "wave": null
+    }
+  ]
+}

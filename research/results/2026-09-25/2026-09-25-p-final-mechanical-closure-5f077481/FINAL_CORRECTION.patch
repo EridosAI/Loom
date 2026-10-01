@@ -1,0 +1,966 @@
+diff --git a/developmental_ecology/loom_commissioning/authority.py b/developmental_ecology/loom_commissioning/authority.py
+index 1dfcc98..bd90f8a 100644
+--- a/developmental_ecology/loom_commissioning/authority.py
++++ b/developmental_ecology/loom_commissioning/authority.py
+@@ -13,8 +13,45 @@ from .contract import require, digest, INTACT, FIXED
+ 
+ def canonical(value):
+     """UTF-8 JSON; sorted string keys, compact separators, finite numbers only."""
++    def unique_json(x):
++        if type(x) is dict:
++            require(all(type(k) is str for k in x), 'canonical object keys must be strings')
++            for v in x.values(): unique_json(v)
++        elif type(x) is list:
++            for v in x: unique_json(v)
++        else:
++            require(x is None or type(x) in (str,int,float,bool), 'non-JSON canonical value')
++    unique_json(value)
+     return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode('utf-8')
+ 
++def strict_loads(raw):
++    """Reject even identical duplicate keys at every nesting level."""
++    def object_pairs(pairs):
++        result={}
++        for key,value in pairs:
++            require(key not in result, 'duplicate JSON field: '+key)
++            result[key]=value
++        return result
++    def invalid_constant(value): raise ValueError('nonfinite JSON number: '+value)
++    result=json.loads(raw,object_pairs_hook=object_pairs,parse_constant=invalid_constant)
++    canonical(result)
++    return result
++
++def validate_dispatch(m,namespace):
++    """Check the very aliases the runner invokes, not another namespace."""
++    from . import controllers as c
++    names=('waypoint_command','privileged_input','command_pair','time_due','observe_without_interference')
++    bound={name:namespace[name] for name in (*names,'SensorHistory')}
++    for name in names:
++        actual=bound[name]
++        require(type(actual) is types.FunctionType and actual is getattr(c,name)
++                and actual.__globals__ is vars(c) and actual.__closure__ is None
++                and actual.__defaults__ is None and actual.__kwdefaults__ is None,
++                'executed controller dispatch mismatch: '+name)
++    require(bound['SensorHistory'] is c.SensorHistory, 'executed sensor history dispatch mismatch')
++    require(controller_identity(m['controller'])==m['execution']['controller'], 'controller execution identity mismatch')
++    return types.MappingProxyType(bound)
++
+ def execution_object(manifest):
+     # Only the self-referential grant is excluded. Future manifest fields are
+     # therefore bound automatically rather than accidentally omitted.
+@@ -55,8 +92,8 @@ def runtime_identity():
+ 
+ def controller_identity(kind):
+     from . import controllers as c
+-    names=('waypoint_command','validate_plan','time_due','command_pair','privileged_input','validate_privileged') if kind=='waypoint' else (
+-        ('privileged_input','validate_privileged','command_pair') if kind=='manual_privileged' else ('validate_sensor_payload','command_pair') if kind=='sensor_human' else ())
++    names=('waypoint_command','validate_plan','time_due','command_pair','privileged_input','validate_privileged','observe_without_interference') if kind=='waypoint' else (
++        ('privileged_input','validate_privileged','command_pair','observe_without_interference') if kind=='manual_privileged' else ('validate_sensor_payload','command_pair') if kind=='sensor_human' else ())
+     implementation={'controllers.py':file_identity('controllers.py'),
+                     'live_functions':{n:callable_identity(getattr(c,n)) for n in names}}
+     if kind=='sensor_human':
+@@ -78,6 +115,23 @@ def make_execution(mode,controller,*,plan=None,protocol=None,storage_limit=1_000
+             'display_intervention':{'kind':'none'},
+             'resources':{'storage_limit_bytes':storage_limit,'wall_limit_seconds':wall_limit}}
+ 
++def validate_protocol_fields(protocol):
++    # Protocol descriptions cannot supply second values for the typed execution
++    # fields. There is no alias/override channel hidden inside free-form data.
++    reserved={'schema','baseline','p_code','configuration','apparatus','runtime','case_id','mode','controller',
++        'controller_kind','controller_config','implementation','interface','command_interface','adapter',
++        'route','plan','stages','stage','point','until','press_force','intervention','display_intervention','deprivation',
++        'initial_state','initial_time','initial_index','initial_fields','initialization','phase','duration','duration_seconds',
++        'deadline','hard_stop_time','command_hold_seconds','resources','storage_limit_bytes','wall_limit_seconds',
++        'selection','roster','execution','execution_authority'}
++    def visit(value):
++        if isinstance(value,dict):
++            require(not reserved.intersection(value),'protocol shadows a bound execution field')
++            for item in value.values():visit(item)
++        elif isinstance(value,list):
++            for item in value:visit(item)
++    visit(protocol)
++
+ def validate_execution(m,*,complete=False):
+     x=m['execution']; expected=make_execution(m['mode'],m['controller'])
+     require(set(x)==set(expected), 'execution specification schema mismatch')
+@@ -93,6 +147,7 @@ def validate_execution(m,*,complete=False):
+     p=x['procedure']
+     require(set(p)=={'kind','stages','protocol'} and p['kind']==expected['procedure']['kind'], 'procedure kind mismatch')
+     require(p['protocol'] is None or isinstance(p['protocol'],dict), 'structured procedure required')
++    validate_protocol_fields(p['protocol'])
+     if m['controller']=='waypoint':
+         if complete or p['stages'] is not None:
+             from .controllers import validate_plan
+@@ -112,12 +167,18 @@ def validate_session(m,s):
+             and s['storage_limit']==x['resources']['storage_limit_bytes'], 'session resources differ from approved scope')
+     require(s['execution_sha256']==execution_sha256(m), 'session execution identity mismatch')
+ 
++def read_approval(raw):
++    request=strict_loads(raw)
++    require(set(request)=={'notice','approved_execution_sha256','approved_execution'}
++            and type(request['notice']) is str, 'unknown/aliased approval field or missing notice')
++    return request
++
+ def verify_approval_binding(m,authority):
++    raw=Path(authority['request_path']).read_bytes()
++    request=read_approval(raw)
+     expected=execution_sha256(m)
+     require(authority['approved_execution_sha256']==expected,'approved execution identity mismatch')
+-    raw=Path(authority['request_path']).read_bytes()
+     require(digest(raw)==authority['request_sha256'],'execution authority identity mismatch')
+-    request=json.loads(raw)
+     require(request.get('approved_execution_sha256')==expected
+             and canonical(request.get('approved_execution'))==canonical(execution_object(m)),
+             'request does not approve exact execution specification')
+diff --git a/developmental_ecology/loom_commissioning/pending.py b/developmental_ecology/loom_commissioning/pending.py
+new file mode 100644
+index 0000000..b870225
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/pending.py
+@@ -0,0 +1,118 @@
++"""Issued-command provenance and native progress; no world advancement."""
++import copy
++from pathlib import Path
++from types import SimpleNamespace
++from .authority import canonical, execution_sha256
++from .contract import require, digest, EXTERNAL
++from . import controllers as c
++from loom_p.records import state_hash
++
++class RestoredSession(dict):
++    """Loaded values plus a separate immutable-by-value read receipt.
++
++    Public dictionary edits do not update the read receipt. This is workflow
++    integrity, not a security boundary against arbitrary Python object surgery.
++    """
++    def __init__(self,values,engine,manifest,path):
++        super().__init__(values)
++        self._seal=state_hash(values)  # frozen diagnostic structures include NumPy arrays
++        self._engine_hash=state_hash(engine)
++        self._manifest=canonical(manifest)
++        self._origin=Path(path).resolve()
++
++def validate_restored(s,e,m):
++    require(type(s) is RestoredSession, 'resume requires a verified loaded session')
++    require(state_hash(dict(s))==s._seal and state_hash(e)==s._engine_hash
++            and canonical(m)==s._manifest, 'loaded pending/session state changed before resume')
++
++def decision_stage(m,inputs):
++    if m['controller']!='waypoint': return None
++    plan=copy.deepcopy(m['execution']['procedure']['stages'])
++    command,index=c.waypoint_command(copy.deepcopy(inputs),plan,0)
++    stage=plan[index]
++    return {'index':index,'identity':digest(canonical(stage)),
++            'start_time':m['initial_time'] if index==0 else plan[index-1]['until'],
++            'deadline':stage['until']}
++
++def validate_decision(m,d):
++    keys={'time','native_index','actor','controller','inputs','command','hold_native_steps','annotation',
++          'execution_sha256','stage','case_deadline'}
++    require(type(d) is dict and set(d)==keys, 'issued decision schema mismatch')
++    require(d['execution_sha256']==execution_sha256(m) and d['case_deadline']==m['hard_stop_time']
++            and d['actor']==EXTERNAL and m['mode']==EXTERNAL and d['controller']==m['controller'],
++            'issued decision authority mismatch')
++    require(type(d['native_index']) is int and d['native_index']>=m['initial_index']
++            and abs(d['time']-(m['initial_time']+(d['native_index']-m['initial_index'])*.01))<=1e-10,
++            'issued decision clock mismatch')
++    command=c.command_pair(d['command'])
++    steps=min(10,round((m['hard_stop_time']-d['time'])/.01))
++    require(type(d['hold_native_steps']) is int and d['hold_native_steps']==steps and steps>0,
++            'issued hold length mismatch')
++    if m['controller']=='waypoint':
++        c.validate_privileged(d['inputs'])
++        require(d['inputs']['time']==d['time'], 'issued controller input clock mismatch')
++        expected,_=c.waypoint_command(copy.deepcopy(d['inputs']),copy.deepcopy(m['execution']['procedure']['stages']),0)
++        require(command.tolist()==expected.tolist(), 'issued command differs from approved controller')
++    elif m['controller']=='manual_privileged': c.validate_privileged(d['inputs'])
++    else: c.validate_sensor_payload(d['inputs'])
++    require(d['stage']==decision_stage(m,d['inputs']), 'issued stage identity mismatch')
++    if d['stage'] is not None:
++        until=d['stage']['deadline']; end=d['time']+steps*.01
++        require(not c.time_due(d['time'],until) and (end<=until or c.time_due(until,end)),
++                'issued hold crosses stage authority')
++
++def validate_pending(m,s,e,seal=None):
++    d=s.get('decision')
++    if seal is not None:
++        require(canonical(d)==seal, 'issued decision changed during segment')
++    if d is None:
++        require(s['hold_remaining']==0 and s['held_command']==[0.,0.], 'pending command has no issued decision')
++        return
++    validate_decision(m,d)
++    progress=e.native_index-d['native_index']
++    require(type(s['hold_remaining']) is int and 0<=progress<=d['hold_native_steps']
++            and s['hold_remaining']==d['hold_native_steps']-progress, 'pending remainder differs from issued native progress')
++    require(s['held_command']==d['command'], 'pending command differs from issued decision')
++    require(s['cursor']==(d['stage']['index'] if d['stage'] is not None else 0), 'pending stage cursor mismatch')
++    expected_time=d['time']+progress*e.c.native_dt
++    if e.status!='terminal':
++        require(abs(e.time-expected_time)<=e.c.event_time_tol, 'pending command elapsed time mismatch')
++    else:
++        require(expected_time-e.c.native_dt-e.c.event_time_tol<=e.time<=expected_time+e.c.event_time_tol,
++                'terminal pending elapsed time mismatch')
++    if s['hold_remaining']:
++        end=e.time+s['hold_remaining']*e.c.native_dt
++        require(end<=m['hard_stop_time']+e.c.event_time_tol, 'pending hold crosses case authority')
++        if d['stage'] is not None:
++            until=d['stage']['deadline']
++            require(not c.time_due(e.time,until) and end<=until+e.c.event_time_tol,
++                    'pending hold crosses stage authority')
++
++def validate_journal(initial,session,final,finish,m,actions,native):
++    """Tie both snapshots to issued action records, independently of replay."""
++    working={'decision':copy.deepcopy(session['decision']),'held_command':session['held_command'].copy(),
++             'hold_remaining':session['hold_remaining'],'cursor':session['cursor']}
++    index=initial.native_index; now=initial.time; offset=0
++    def issue_at_current_clock():
++        nonlocal offset
++        while offset<len(actions) and actions[offset]['native_index']==index:
++            d=actions[offset]
++            require(working['hold_remaining']==0,'new decision interrupts pending hold')
++            validate_decision(m,d)
++            require(abs(d['time']-now)<=initial.c.event_time_tol, 'recorded decision clock mismatch')
++            working.update(decision=copy.deepcopy(d),held_command=d['command'].copy(),
++                           hold_remaining=d['hold_native_steps'],cursor=d['stage']['index'] if d['stage'] else 0)
++            offset+=1
++    for row in native:
++        issue_at_current_clock()
++        clock=SimpleNamespace(native_index=index,time=now,c=initial.c,status='active')
++        validate_pending(m,working,clock)
++        if m['mode']==EXTERNAL:
++            require(working['hold_remaining']>0,'native record lacks authorized pending command')
++            working['hold_remaining']-=1
++        index=row['native_index']; now=row['time']
++    issue_at_current_clock()
++    require(offset==len(actions),'unconsumed or out-of-order controller decision')
++    for key in ('decision','held_command','hold_remaining','cursor'):
++        require(canonical(finish[key])==canonical(working[key]),'pending decision journal continuity mismatch: '+key)
++    validate_pending(m,finish,final)
+diff --git a/developmental_ecology/loom_commissioning/runner.py b/developmental_ecology/loom_commissioning/runner.py
+index 2217ec0..7bd7f24 100644
+--- a/developmental_ecology/loom_commissioning/runner.py
++++ b/developmental_ecology/loom_commissioning/runner.py
+@@ -12,9 +12,11 @@ from .contract import (INTACT, FIXED, EXTERNAL, validate_manifest, authorize_exe
+                        apparatus_identity, digest, require)
+ from .controllers import SensorHistory, privileged_input, waypoint_command, command_pair, observe_without_interference
+ from .controllers import time_due
+-from .authority import execution_sha256, validate_execution, validate_session
++from .authority import execution_sha256, validate_execution, validate_session, canonical, strict_loads, validate_dispatch
++from .pending import RestoredSession, validate_restored, validate_pending, validate_decision, decision_stage
+ 
+ def save_restart(path, engine, session, manifest):
++    if engine.status!='failure': validate_pending(manifest,session,engine)
+     payload=pack({'engine':engine,'session':session})
+     wrapper={'manifest':manifest,'state':payload,'sha256':digest(strict_bytes(payload))}
+     data=gzip.compress(strict_bytes(wrapper),mtime=0)
+@@ -25,15 +27,31 @@ def save_restart(path, engine, session, manifest):
+     return digest(data)
+ 
+ def load_restart(path):
+-    wrapper=json.loads(gzip.decompress(Path(path).read_bytes()))
++    wrapper=strict_loads(gzip.decompress(Path(path).read_bytes()))
+     require(digest(strict_bytes(wrapper['state']))==wrapper['sha256'], 'restart checksum mismatch')
++    # P's packed dictionary representation is a pair list. Reject duplicate
++    # semantic keys before its unchanged unpacker could collapse them.
++    def packed_keys(value):
++        if isinstance(value,list):
++            for item in value: packed_keys(item)
++        elif isinstance(value,dict):
++            if '$dict' in value:
++                seen=set()
++                for key,item in value['$dict']:
++                    unpacked=unpack(key)
++                    require(unpacked not in seen,'duplicate packed state key')
++                    seen.add(unpacked); packed_keys(item)
++            else:
++                for item in value.values(): packed_keys(item)
++    packed_keys(wrapper['state'])
+     restored=unpack(wrapper['state']); e=restored['engine']; s=restored['session']; m=wrapper['manifest']
+     e.validate_state(); validate_manifest(m,e,initial=False); authorize_execution(m)
+     require(s['contract_sha256']==digest(strict_bytes(m)), 'restart manifest identity mismatch')
+     validate_session(m,s)
++    validate_pending(m,s,e)
+     require(e.time<=m['hard_stop_time']+1e-9, 'duration cap bypass')
+     if m['mode']==FIXED: adapter.validate_frozen(e.organism,s['frozen'])
+-    return e,s,m
++    return e,RestoredSession(s,e,m,path),m
+ 
+ class Run:
+     """One continuing trajectory. Resumes retain the original hard ceiling.
+@@ -46,6 +64,7 @@ class Run:
+                  observer=diagnostics.passive, storage_limit=None, wall_limit=None):
+         validate_manifest(manifest,engine,initial=session is None); authorize_execution(manifest)
+         validate_execution(manifest,complete=True)
++        dispatch=validate_dispatch(manifest,globals())
+         require(observer is diagnostics.passive, 'unapproved observer implementation')
+         scope=manifest['execution']; resources=scope['resources']
+         require(plan is None or plan==scope['procedure']['stages'], 'supplied route differs from approved procedure')
+@@ -53,7 +72,25 @@ class Run:
+         wall_limit=resources['wall_limit_seconds'] if wall_limit is None else wall_limit
+         require(storage_limit==resources['storage_limit_bytes'] and wall_limit==resources['wall_limit_seconds'],
+                 'supplied resources differ from approved scope')
+-        if session is not None: validate_session(manifest,session)
++        if session is not None:
++            validate_session(manifest,session); validate_restored(session,engine,manifest)
++            validate_pending(manifest,session,engine)
++            previous=session._origin.parent
++            receipt=strict_loads((previous/'manifest.json').read_bytes())
++            require(session._origin.name=='final.restart.json.gz' and receipt['complete']
++                    and receipt['status']=='administrative_pause','only complete pauses can resume')
++            from .validators import verify_segment
++            verify_segment(previous,replay=False)
++            require(digest(session._origin.read_bytes())==receipt['files']['final.restart.json.gz']['sha256'],
++                    'resume origin checksum mismatch')
++            original,original_session,original_manifest=load_restart(session._origin)
++            require(state_hash(engine)==state_hash(original) and manifest==original_manifest
++                    and state_hash(dict(session))==state_hash(dict(original_session)), 'resume differs from verified origin')
++            expected_parent={'manifest_sha256':digest((previous/'manifest.json').read_bytes()),
++                             'segment':os.path.relpath(previous,Path(output).resolve())}
++            require(parent is None or parent==expected_parent,'resume parent continuity mismatch')
++            parent=expected_parent
++        else: require(parent is None,'parent supplied without loaded session')
+         require(engine.status not in ('failure','terminal','budget_complete'), 'stopped state cannot resume')
+         self.engine=engine; self.manifest=copy.deepcopy(manifest); self.observer=observer
+         self.closed=False; self.started=time.perf_counter(); self.wall_limit=wall_limit
+@@ -66,17 +103,20 @@ class Run:
+                         and not np.any(o.regulator.reference)
+                         and all(not np.any(v) for v in o.association.H.values())
+                         and all(not np.any(v) for v in o.association.use.values()), 'fixed diagnostic must start from newborn structure')
+-            history=SensorHistory(engine)
++            history=dispatch['SensorHistory'](engine)
+             self.session={'contract_sha256':digest(strict_bytes(manifest)), 'frozen':adapter.structure(engine.organism) if manifest['mode']==FIXED else None,
+                 'execution_sha256':execution_sha256(manifest),
++                'decision':None,
+                 'sensor':vars(history),'hold_remaining':0,'held_command':[0.,0.], 'route':copy.deepcopy(scope['procedure']['stages']),
+                 'cursor':0,'advanced':0,'field_updates':0,'body_wave_samples':0,
+                 'wall_seconds_used':0.,'bytes_used':0,'wall_limit':wall_limit,'storage_limit':storage_limit,
+                 'stop_reason':'administrative_pause'}
+         else:
+-            self.session=copy.deepcopy(session)
++            self.session=copy.deepcopy(dict(session))
+             self.wall_limit=self.session['wall_limit']; self.storage_limit=self.session['storage_limit']
+-        self.sensor=SensorHistory.__new__(SensorHistory); self.sensor.__dict__=self.session['sensor']
++        self._decision_seal=canonical(self.session['decision'])
++        history_type=dispatch['SensorHistory']
++        self.sensor=history_type.__new__(history_type); self.sensor.__dict__=self.session['sensor']
+         self.recorder=Recorder(output,dict(contract=self.manifest,parent=parent,mode=manifest['mode']),storage_limit=self.storage_limit-self.session['bytes_used'])
+         for name in ('diagnostics','controller','sensor','scientific_observations'):
+             self.recorder.streams[name]=gzip.open(self.recorder.path/(name+'.jsonl.gz'),'wb')
+@@ -86,55 +126,66 @@ class Run:
+     @classmethod
+     def resume(cls, previous, output, **kwargs):
+         previous=Path(previous)
+-        receipt=json.loads((previous/'manifest.json').read_bytes())
++        receipt=strict_loads((previous/'manifest.json').read_bytes())
+         require(receipt['complete'] and receipt['status']=='administrative_pause', 'only complete pauses can resume')
+         for filename,identity in receipt['files'].items():
+             require(digest((previous/filename).read_bytes())==identity['sha256'], 'resume record checksum mismatch')
+         e,s,m=load_restart(previous/'final.restart.json.gz')
+         require(receipt['contract']==m, 'resume contract mismatch')
+-        return cls(e,m,output,session=s,parent={'manifest_sha256':digest((previous/'manifest.json').read_bytes())},**kwargs)
++        return cls(e,m,output,session=s,**kwargs)
+ 
+     def _guard(self):
+         require(not self.closed, 'closed segment')
+         require(digest(strict_bytes(self.manifest))==self.session['contract_sha256'], 'manifest changed during run')
+         validate_session(self.manifest,self.session)
+         validate_execution(self.manifest,complete=True)
++        dispatch=validate_dispatch(self.manifest,globals())
++        validate_pending(self.manifest,self.session,self.engine,self._decision_seal)
+         require(self.wall_limit==self.session['wall_limit'] and self.storage_limit==self.session['storage_limit'],
+                 'live resources differ from approved scope')
+         require(self.engine.phase==self.manifest['phase'], 'wrong field/mover phase')
+         require(self.engine.c.identity()==self.manifest['configuration'], 'configuration identity mismatch')
+         require(self.engine.time<=self.manifest['hard_stop_time']+1e-9, 'duration cap bypass')
++        return dispatch
+ 
+     def remaining(self):
+         return max(0,round((self.manifest['hard_stop_time']-self.engine.time)/self.engine.c.native_dt))
+ 
+     def begin_command(self, command=None, annotation=''):
+-        self._guard()
++        dispatch=self._guard()
+         require(self.manifest['mode']==EXTERNAL and self.session['hold_remaining']==0, 'command hold already active or no external controller')
+         require(self.remaining()>0, 'duration cap reached')
+         kind=self.manifest['controller']; inputs=None
++        cursor=0
+         if kind=='waypoint':
+             require(command is None, 'manual override of deterministic controller')
+-            inputs=observe_without_interference(self.engine,privileged_input)
++            inputs=dispatch['observe_without_interference'](self.engine,dispatch['privileged_input'])
+             # Clock/approved stages determine the decision; a mutable saved
+             # cursor cannot skip a prescribed stage on restart.
+-            command,cursor=waypoint_command(copy.deepcopy(inputs),self.session['route'],0)
++            approved_plan=copy.deepcopy(self.manifest['execution']['procedure']['stages'])
++            command,cursor=dispatch['waypoint_command'](copy.deepcopy(inputs),approved_plan,0)
++            require(approved_plan==self.manifest['execution']['procedure']['stages'], 'controller mutated its approved route input')
+             until=self.session['route'][cursor]['until']
+-            require(not time_due(self.engine.time,until), 'route complete; no command hold authorized')
++            require(not dispatch['time_due'](self.engine.time,until), 'route complete; no command hold authorized')
+             end=self.engine.time+min(10,self.remaining())*self.engine.c.native_dt
+             # Preserve the reviewed full ten-step hold (and existing global cap).
+             # An incompatible prescription is rejected; no partial stage hold,
+             # early transition, time extension or compensating later cut is invented.
+-            require(end<=until or time_due(until,end), 'command hold would cross prescribed stage boundary')
+-            self.session['cursor']=cursor
++            require(end<=until or dispatch['time_due'](until,end), 'command hold would cross prescribed stage boundary')
+         elif kind=='manual_privileged':
+-            inputs=observe_without_interference(self.engine,privileged_input)
++            inputs=dispatch['observe_without_interference'](self.engine,dispatch['privileged_input'])
+         elif kind=='sensor_human':
+             inputs=self.sensor.display()
+-        command=command_pair(command)
+-        self.session['held_command']=command.tolist(); self.session['hold_remaining']=min(10,self.remaining())
+-        action={'time':self.engine.time,'actor':EXTERNAL,'controller':kind,'inputs':inputs,
+-                'command':command.tolist(),'hold_native_steps':self.session['hold_remaining'],'annotation':str(annotation)}
++        command=dispatch['command_pair'](command)
++        self._guard()  # Revalidate the actual dispatch/configuration before accepting its result.
++        action={'time':self.engine.time,'native_index':self.engine.native_index,'actor':EXTERNAL,'controller':kind,'inputs':inputs,
++                'command':command.tolist(),'hold_native_steps':min(10,self.remaining()),'annotation':str(annotation),
++                'execution_sha256':execution_sha256(self.manifest),'stage':decision_stage(self.manifest,inputs),
++                'case_deadline':self.manifest['hard_stop_time']}
++        validate_decision(self.manifest,action)
++        self.session['decision']=copy.deepcopy(action); self._decision_seal=canonical(action)
++        self.session['held_command']=command.tolist(); self.session['hold_remaining']=action['hold_native_steps']
++        self.session['cursor']=cursor
+         self.recorder.append('controller',action)
+         self.sensor.payload['own_commands'].append({'time':self.engine.time,'command':command.tolist()})
+         if annotation: self.sensor.payload['annotations'].append({'time':self.engine.time,'text':str(annotation)})
+@@ -154,8 +205,12 @@ class Run:
+                 if self.session['bytes_used']+self.recorder.bytes_uncompressed+reserve>self.storage_limit:
+                     self.close('administrative_pause',cause='storage_reserve'); break
+                 before=copy.deepcopy(self.engine)
++                # Actuation consumes the sealed issued command, never a second
++                # lookup of an exposed mutable pair after its validation.
++                issued=strict_loads(self._decision_seal)
++                held=issued['command'] if issued is not None else [0.,0.]
+                 n,w,events,discarded=adapter.step(self.engine,self.manifest['mode'],
+-                    self.session['held_command'],self.session['frozen'])
++                    held,self.session['frozen'])
+                 self.session['advanced']+=1; self.session['field_updates']+=1
+                 if self.manifest['mode']==EXTERNAL:
+                     self.session['hold_remaining']-=1
+@@ -196,6 +251,7 @@ class Run:
+ 
+     def close(self, reason='administrative_pause', cause=None, error=None):
+         require(not self.closed, 'segment already closed')
++        if reason!='apparatus_failure': self._guard()
+         from .validators import validate_stop
+         validate_stop(reason,self.engine,self.manifest)
+         if reason not in ('terminal','apparatus_failure'): self.engine.status='paused'
+diff --git a/developmental_ecology/loom_commissioning/sensor_ui.py b/developmental_ecology/loom_commissioning/sensor_ui.py
+index f20bbe0..d8a2d13 100644
+--- a/developmental_ecology/loom_commissioning/sensor_ui.py
++++ b/developmental_ecology/loom_commissioning/sensor_ui.py
+@@ -6,10 +6,11 @@ import json
+ from pathlib import Path
+ from .controllers import validate_sensor_payload
+ from .contract import require, strict_bytes
++from .authority import strict_loads
+ 
+ class OfflineGateway:
+     def __init__(self,path):
+-        self.data=json.loads(Path(path).read_bytes())
++        self.data=strict_loads(Path(path).read_bytes())
+         validate_sensor_payload(self.data); self.data['availability']='offline_record'
+     def display(self): return copy.deepcopy(self.data)
+     def submit(self,*args): raise ValueError('Saved review cannot advance time')
+@@ -47,7 +48,7 @@ def handler(gateway):
+                 require(self.headers.get('Origin')==f'http://{self.headers.get("Host")}', 'origin mismatch')
+                 require(self.headers.get('Content-Type')=='application/json', 'JSON required')
+                 size=int(self.headers.get('Content-Length','0')); require(0<size<=4096,'request size')
+-                value=json.loads(self.rfile.read(size)); require(set(value)=={'left','right','annotation'},'command schema')
++                value=strict_loads(self.rfile.read(size)); require(set(value)=={'left','right','annotation'},'command schema')
+                 require(isinstance(value['annotation'],str) and len(value['annotation'])<=1000,'annotation length')
+                 output=gateway.submit(value['left'],value['right'],value['annotation'])
+                 validate_sensor_payload(output); self.send(200,strict_bytes(output),'application/json')
+diff --git a/developmental_ecology/loom_commissioning/validators.py b/developmental_ecology/loom_commissioning/validators.py
+index c723b35..5d1cf66 100644
+--- a/developmental_ecology/loom_commissioning/validators.py
++++ b/developmental_ecology/loom_commissioning/validators.py
+@@ -7,6 +7,8 @@ from loom_p.records import strict_bytes, view, state_hash
+ from .contract import require, digest, EXTERNAL, FIXED
+ from .controllers import validate_sensor_payload, validate_privileged, SensorHistory
+ from . import adapter
++from .authority import strict_loads, canonical
++from .pending import validate_journal
+ 
+ def validate_stop(reason,e,m):
+     require(reason in ('terminal','administrative_cutoff','administrative_pause','apparatus_failure'), 'mislabelled stop reason')
+@@ -47,16 +49,18 @@ def validate_native_sequence(native,initial,final,m):
+     require(abs(t-final.time)<1e-10 and final.time<=m['hard_stop_time']+1e-9, 'duration cap bypass')
+ 
+ def read_stream(path):
+-    with gzip.open(path,'rt',encoding='utf-8') as f: return [json.loads(line) for line in f]
++    with gzip.open(path,'rt',encoding='utf-8') as f: return [strict_loads(line) for line in f]
+ 
+-def verify_segment(directory, replay=True):
++def verify_segment(directory, replay=True, _ancestors=()):
+     """Native reconstruction verifies committed field/RNG/update counts too.
+ 
+     This replays ONLY this existing segment and never auto-continues it. For the
+     present build every segment is a manufactured <=0.6 s component fixture.
+     """
+     from .runner import load_restart
+-    directory=Path(directory); receipt=json.loads((directory/'manifest.json').read_bytes())
++    directory=Path(directory).resolve()
++    require(directory not in _ancestors,'cyclic segment ancestry')
++    receipt=strict_loads((directory/'manifest.json').read_bytes())
+     require(receipt['complete'], 'incomplete apparatus records')
+     for name,expected in receipt['files'].items():
+         data=(directory/name).read_bytes()
+@@ -64,15 +68,28 @@ def verify_segment(directory, replay=True):
+     initial,session,m=load_restart(directory/'initial.restart.json.gz')
+     final,finish,m2=load_restart(directory/'final.restart.json.gz')
+     require(m==m2==receipt['contract'], 'manifest identity mismatch')
++    parent=receipt.get('parent')
++    if parent is None:
++        require(state_hash(initial)==m['initial_state'] and initial.native_index==m['initial_index']
++                and session['decision'] is None, 'unanchored initial pending decision')
++    else:
++        require(set(parent)=={'segment','manifest_sha256'}, 'resume parent schema mismatch')
++        previous=(directory/parent['segment']).resolve()
++        require(digest((previous/'manifest.json').read_bytes())==parent['manifest_sha256'], 'resume parent checksum mismatch')
++        verify_segment(previous,replay=False,_ancestors=(*_ancestors,directory))
++        old,old_session,old_manifest=load_restart(previous/'final.restart.json.gz')
++        require(m==old_manifest and state_hash(initial)==state_hash(old)
++                and state_hash(dict(session))==state_hash(dict(old_session)), 'cross-segment pending/state continuity mismatch')
+     native=read_stream(directory/'native.jsonl.gz'); waves=read_stream(directory/'wave.jsonl.gz')
+     events=read_stream(directory/'events.jsonl.gz'); actions=read_stream(directory/'controller.jsonl.gz')
+     diagnostic=read_stream(directory/'diagnostics.jsonl.gz')
++    validate_journal(initial,session,final,finish,m,actions,native)
+     validate_native_sequence(native,initial,final,m); validate_stop(receipt['status'],final,m)
+     require(len(diagnostic)==len(native), 'missing native diagnostic record')
+     for kind in ('native','wave','events','controller','diagnostics','sensor','scientific_observations'):
+         require(len(read_stream(directory/(kind+'.jsonl.gz')))==receipt['records'].get(kind,0), 'record count mismatch')
+     maximum=validate_ledger(events,initial.c.arithmetic_tol)
+-    payload=json.loads((directory/'sensor-display.json').read_bytes()); validate_sensor_payload(payload)
++    payload=strict_loads((directory/'sensor-display.json').read_bytes()); validate_sensor_payload(payload)
+     for action in actions:
+         require(action['actor']==EXTERNAL and m['mode']==EXTERNAL, 'external controller incorrectly labelled intact P')
+         if action['controller']=='sensor_human': validate_sensor_payload(action['inputs'])
+diff --git a/developmental_ecology/tests_apparatus/fixtures/final_review/SYNTHETIC_duplicate-approved-execution_NO_EXECUTION.json b/developmental_ecology/tests_apparatus/fixtures/final_review/SYNTHETIC_duplicate-approved-execution_NO_EXECUTION.json
+new file mode 100644
+index 0000000..1359ada
+--- /dev/null
++++ b/developmental_ecology/tests_apparatus/fixtures/final_review/SYNTHETIC_duplicate-approved-execution_NO_EXECUTION.json
+@@ -0,0 +1 @@
++{"notice":"SYNTHETIC NO EXECUTION","approved_execution_sha256":"d6dc6a799d3f46c762027a3572e5ec804822dc2ce1ac2ee3c13c9cf884028851","approved_execution":{"apparatus":{"files":{"__init__.py":"426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46","adapter.py":"ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee","authority.py":"402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59","contract.py":"e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3","controllers.py":"45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e","diagnostics.py":"dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da","evaluation.py":"0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3","initialization.py":"bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a","runner.py":"a1c2764f0424b815b24e5c49496ba55eb9775757314fc88f6634dd41e3d3ba20","sensor.html":"3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a","sensor_ui.py":"20ab4d39502a1c262530512c4d0c6b4e41a1c76fb6c792f80d6e7c2098cb76f8","validators.py":"047696a36f08c8d7d631d4fb65444a56fc0f742059ca46d91c9879722ca74c43"},"sha256":"2c626ab028e895a1a63dfecdaa7bb6b4666beb26984af90dee020db01c040536"},"baseline":"6bc9683b54e4fa80136fe8534d7713e2a250a95f","case_id":"independent-authority-validation-only","command_hold_seconds":0.1,"configuration":"a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a","controller":"waypoint","duration_seconds":0.2,"execution":{"adapter":{"implementation_sha256":"ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee","intervention":"inactive-neural-external-actuation","mode":"external_controller"},"controller":{"configuration":{"angular_damping":0.2,"distance_gain":0.5,"drive_bound":0.5,"force_gain":0.4,"heading_distance_epsilon":1e-12,"heading_gain":0.8,"maximum_target_force":0.25,"speed_damping":0.4,"turn_bound":0.5},"implementation":{"controllers.py":"45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e","live_functions":{"command_pair":"53582e34a6ce011e67d5bd86fd5bb2468c5a078fab86d2be8efe2c4ee31b7488","privileged_input":"2709196e3406acb894934738cd297cb4b375885d18c4470dab9f707ef0762e15","time_due":"b244bdcd94727327692d2465d376f45e82fa55668c62a7b468462136fadcc8e1","validate_plan":"aa5addba33d6dfba3154cf6dd19019a70cae8b66a787504836af831fd7bf58bd","validate_privileged":"7823727a8df4ca4fa4fe247ed1b27f0363cf9bb61c2fa5bb0655e54574326758","waypoint_command":"86245131d5a207d6db5d57437a13b60b312f053ef53eb23862ee45af28739553"}},"interface":"privileged-closed-input","kind":"waypoint"},"display_intervention":{"kind":"none"},"procedure":{"kind":"prescribed_waypoints","protocol":null,"stages":[{"point":[4.0,5.0],"press_force":0.0,"until":0.1},{"point":[5.0,6.0],"press_force":0.0,"until":0.2}]},"resources":{"storage_limit_bytes":1000000000,"wall_limit_seconds":3600},"runtime":{"executable_sha256":"935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256","implementation":"CPython","packages":{"numpy":{"content_sha256":"02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af","coverage":"installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode","file_count":432,"version":"2.3.3"},"scipy":{"content_sha256":"b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1","coverage":"installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode","file_count":1078,"version":"1.16.2"}},"platform":"Windows-11-10.0.26200-SP0","python":"3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]","python_dlls":{"python3.dll":"85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b","python313.dll":"0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"}}},"hard_stop_time":0.2,"initial_fields":"7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096","initial_index":0,"initial_state":"8c12253592c243f1b175b8bcb8cc8352c2fa2c2661eeff14bc1399b81c34aaa0","initial_time":0.0,"initialization":{"birth_id":0,"cache_directory":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001","cache_receipt_sha256":"847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3","field_sha256":"7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096","kind":"verified_phase_history","phase":3.558411277237072},"mode":"external_controller","p_code":"63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9","phase":3.558411277237072,"purpose":"commissioning","roster":{"birth_ceiling_seconds":600,"birth_ids":[1,2,3,4],"execution_authorized":false,"zero_witness_interpretation":"unresolved opportunity at that coverage"},"schema":2,"selection":{"native":"native_index % 100 == 0","native_stride":100,"wave":"every_handoff"}},"approved_execution":{"apparatus":{"files":{"__init__.py":"426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46","adapter.py":"ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee","authority.py":"402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59","contract.py":"e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3","controllers.py":"45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e","diagnostics.py":"dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da","evaluation.py":"0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3","initialization.py":"bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a","runner.py":"a1c2764f0424b815b24e5c49496ba55eb9775757314fc88f6634dd41e3d3ba20","sensor.html":"3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a","sensor_ui.py":"20ab4d39502a1c262530512c4d0c6b4e41a1c76fb6c792f80d6e7c2098cb76f8","validators.py":"047696a36f08c8d7d631d4fb65444a56fc0f742059ca46d91c9879722ca74c43"},"sha256":"2c626ab028e895a1a63dfecdaa7bb6b4666beb26984af90dee020db01c040536"},"baseline":"6bc9683b54e4fa80136fe8534d7713e2a250a95f","case_id":"independent-authority-validation-only","command_hold_seconds":0.1,"configuration":"a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a","controller":"waypoint","duration_seconds":0.2,"execution":{"adapter":{"implementation_sha256":"ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee","intervention":"inactive-neural-external-actuation","mode":"external_controller"},"controller":{"configuration":{"angular_damping":0.2,"distance_gain":0.5,"drive_bound":0.5,"force_gain":0.4,"heading_distance_epsilon":1e-12,"heading_gain":0.8,"maximum_target_force":0.25,"speed_damping":0.4,"turn_bound":0.5},"implementation":{"controllers.py":"45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e","live_functions":{"command_pair":"53582e34a6ce011e67d5bd86fd5bb2468c5a078fab86d2be8efe2c4ee31b7488","privileged_input":"2709196e3406acb894934738cd297cb4b375885d18c4470dab9f707ef0762e15","time_due":"b244bdcd94727327692d2465d376f45e82fa55668c62a7b468462136fadcc8e1","validate_plan":"aa5addba33d6dfba3154cf6dd19019a70cae8b66a787504836af831fd7bf58bd","validate_privileged":"7823727a8df4ca4fa4fe247ed1b27f0363cf9bb61c2fa5bb0655e54574326758","waypoint_command":"86245131d5a207d6db5d57437a13b60b312f053ef53eb23862ee45af28739553"}},"interface":"privileged-closed-input","kind":"waypoint"},"display_intervention":{"kind":"none"},"procedure":{"kind":"prescribed_waypoints","protocol":null,"stages":[{"point":[6.0,5.0],"press_force":0.0,"until":0.1},{"point":[5.0,6.0],"press_force":0.0,"until":0.2}]},"resources":{"storage_limit_bytes":1000000000,"wall_limit_seconds":3600},"runtime":{"executable_sha256":"935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256","implementation":"CPython","packages":{"numpy":{"content_sha256":"02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af","coverage":"installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode","file_count":432,"version":"2.3.3"},"scipy":{"content_sha256":"b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1","coverage":"installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode","file_count":1078,"version":"1.16.2"}},"platform":"Windows-11-10.0.26200-SP0","python":"3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]","python_dlls":{"python3.dll":"85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b","python313.dll":"0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"}}},"hard_stop_time":0.2,"initial_fields":"7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096","initial_index":0,"initial_state":"8c12253592c243f1b175b8bcb8cc8352c2fa2c2661eeff14bc1399b81c34aaa0","initial_time":0.0,"initialization":{"birth_id":0,"cache_directory":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001","cache_receipt_sha256":"847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3","field_sha256":"7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096","kind":"verified_phase_history","phase":3.558411277237072},"mode":"external_controller","p_code":"63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9","phase":3.558411277237072,"purpose":"commissioning","roster":{"birth_ceiling_seconds":600,"birth_ids":[1,2,3,4],"execution_authorized":false,"zero_witness_interpretation":"unresolved opportunity at that coverage"},"schema":2,"selection":{"native":"native_index % 100 == 0","native_stride":100,"wave":"every_handoff"}}}
+\ No newline at end of file
+diff --git a/developmental_ecology/tests_apparatus/fixtures/final_review/SYNTHETIC_duplicate-nested-waypoint_NO_EXECUTION.json b/developmental_ecology/tests_apparatus/fixtures/final_review/SYNTHETIC_duplicate-nested-waypoint_NO_EXECUTION.json
+new file mode 100644
+index 0000000..8e150d7
+--- /dev/null
++++ b/developmental_ecology/tests_apparatus/fixtures/final_review/SYNTHETIC_duplicate-nested-waypoint_NO_EXECUTION.json
+@@ -0,0 +1 @@
++{"approved_execution":{"apparatus":{"files":{"__init__.py":"426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46","adapter.py":"ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee","authority.py":"402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59","contract.py":"e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3","controllers.py":"45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e","diagnostics.py":"dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da","evaluation.py":"0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3","initialization.py":"bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a","runner.py":"a1c2764f0424b815b24e5c49496ba55eb9775757314fc88f6634dd41e3d3ba20","sensor.html":"3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a","sensor_ui.py":"20ab4d39502a1c262530512c4d0c6b4e41a1c76fb6c792f80d6e7c2098cb76f8","validators.py":"047696a36f08c8d7d631d4fb65444a56fc0f742059ca46d91c9879722ca74c43"},"sha256":"2c626ab028e895a1a63dfecdaa7bb6b4666beb26984af90dee020db01c040536"},"baseline":"6bc9683b54e4fa80136fe8534d7713e2a250a95f","case_id":"independent-authority-validation-only","command_hold_seconds":0.1,"configuration":"a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a","controller":"waypoint","duration_seconds":0.2,"execution":{"adapter":{"implementation_sha256":"ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee","intervention":"inactive-neural-external-actuation","mode":"external_controller"},"controller":{"configuration":{"angular_damping":0.2,"distance_gain":0.5,"drive_bound":0.5,"force_gain":0.4,"heading_distance_epsilon":1e-12,"heading_gain":0.8,"maximum_target_force":0.25,"speed_damping":0.4,"turn_bound":0.5},"implementation":{"controllers.py":"45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e","live_functions":{"command_pair":"53582e34a6ce011e67d5bd86fd5bb2468c5a078fab86d2be8efe2c4ee31b7488","privileged_input":"2709196e3406acb894934738cd297cb4b375885d18c4470dab9f707ef0762e15","time_due":"b244bdcd94727327692d2465d376f45e82fa55668c62a7b468462136fadcc8e1","validate_plan":"aa5addba33d6dfba3154cf6dd19019a70cae8b66a787504836af831fd7bf58bd","validate_privileged":"7823727a8df4ca4fa4fe247ed1b27f0363cf9bb61c2fa5bb0655e54574326758","waypoint_command":"86245131d5a207d6db5d57437a13b60b312f053ef53eb23862ee45af28739553"}},"interface":"privileged-closed-input","kind":"waypoint"},"display_intervention":{"kind":"none"},"procedure":{"kind":"prescribed_waypoints","protocol":null,"stages":[{"point":[4.0,5.0],"point":[6.0,5.0],"press_force":0.0,"until":0.1},{"point":[5.0,6.0],"press_force":0.0,"until":0.2}]},"resources":{"storage_limit_bytes":1000000000,"wall_limit_seconds":3600},"runtime":{"executable_sha256":"935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256","implementation":"CPython","packages":{"numpy":{"content_sha256":"02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af","coverage":"installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode","file_count":432,"version":"2.3.3"},"scipy":{"content_sha256":"b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1","coverage":"installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode","file_count":1078,"version":"1.16.2"}},"platform":"Windows-11-10.0.26200-SP0","python":"3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]","python_dlls":{"python3.dll":"85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b","python313.dll":"0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"}}},"hard_stop_time":0.2,"initial_fields":"7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096","initial_index":0,"initial_state":"8c12253592c243f1b175b8bcb8cc8352c2fa2c2661eeff14bc1399b81c34aaa0","initial_time":0.0,"initialization":{"birth_id":0,"cache_directory":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001","cache_receipt_sha256":"847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3","field_sha256":"7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096","kind":"verified_phase_history","phase":3.558411277237072},"mode":"external_controller","p_code":"63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9","phase":3.558411277237072,"purpose":"commissioning","roster":{"birth_ceiling_seconds":600,"birth_ids":[1,2,3,4],"execution_authorized":false,"zero_witness_interpretation":"unresolved opportunity at that coverage"},"schema":2,"selection":{"native":"native_index % 100 == 0","native_stride":100,"wave":"every_handoff"}},"approved_execution_sha256":"d6dc6a799d3f46c762027a3572e5ec804822dc2ce1ac2ee3c13c9cf884028851","notice":"MANUFACTURED REVIEW DATA. NOT JASON AUTHORITY. NO EXECUTION."}
+\ No newline at end of file
+diff --git a/developmental_ecology/tests_apparatus/test_final_corrections.py b/developmental_ecology/tests_apparatus/test_final_corrections.py
+new file mode 100644
+index 0000000..73d346d
+--- /dev/null
++++ b/developmental_ecology/tests_apparatus/test_final_corrections.py
+@@ -0,0 +1,243 @@
++"""Only the three reproduced residuals; no commissioning execution."""
++import copy,gzip,json,math,os,shutil
++from contextlib import nullcontext
++from pathlib import Path
++from unittest.mock import patch
++import numpy as np
++import pytest
++from test_apparatus import manufactured
++from test_corrections import grant_fixture, PLAN
++from loom_p.records import state_hash,pack,unpack,strict_bytes
++from loom_p.chemistry import FieldSolver
++from loom_commissioning import authority,controllers,runner,pending,validators,adapter
++from loom_commissioning.contract import make_manifest,validate_manifest,authorize_execution,digest,EXTERNAL
++
++def mutant(name,obj,attr,replacement):
++    return patch.object(obj,attr,replacement) if os.environ.get('FINAL_FAULT')==name else nullcontext()
++
++def rejected(call):
++    try: call()
++    except ValueError:return True
++    return False
++
++def unchecked_dispatch(m,namespace):
++    return {name:namespace[name] for name in ('waypoint_command','privileged_input','command_pair','time_due','observe_without_interference','SensorHistory')}
++
++def rebind_request(m,path,raw):
++    path.write_bytes(raw)
++    m['execution_authority']['request_path']=str(path)
++    m['execution_authority']['request_sha256']=digest(raw)
++
++@pytest.mark.parametrize('name',['approved_execution','point','controller','until','identical'])
++def test_duplicate_approval_rejection(tmp_path,name):
++    e,m,path=grant_fixture(tmp_path);clean=path.read_bytes();before=state_hash(e)
++    if name=='approved_execution':
++        good=authority.execution_object(m);bad=copy.deepcopy(good);bad['execution']['procedure']['stages'][0]['point']=[4.,5.]
++        needle=b'"approved_execution":'+authority.canonical(good)
++        raw=clean.replace(needle,b'"approved_execution":'+authority.canonical(bad)+b','+needle)
++    else:
++        needle,conflict={'point':(b'"point":[6.0,5.0]',b'"point":[4.0,5.0]'),
++            'controller':(b'"controller":"waypoint"',b'"controller":"manual_privileged"'),
++            'until':(b'"until":0.1',b'"until":0.15'),
++            'identical':(b'"point":[6.0,5.0]',b'"point":[6.0,5.0]')}[name]
++        assert clean.count(needle)==1
++        raw=clean.replace(needle,conflict+b','+needle)
++    assert raw!=clean
++    rebind_request(m,path,raw)
++    with mutant('duplicate-'+name,authority,'strict_loads',json.loads):
++        assert rejected(lambda:authorize_execution(m)), 'DUPLICATE APPROVAL BREACH: '+name
++    with patch.object(runner,'Recorder',side_effect=AssertionError('trajectory output reached')):
++        assert rejected(lambda:runner.Run(e,m,tmp_path/'forbidden'))
++    assert not (tmp_path/'forbidden').exists() and state_hash(e)==before and e.native_index==0
++    rebind_request(m,path,clean);validate_manifest(m,e);authorize_execution(m)
++
++@pytest.mark.parametrize('name',['SYNTHETIC_duplicate-approved-execution_NO_EXECUTION.json',
++                                  'SYNTHETIC_duplicate-nested-waypoint_NO_EXECUTION.json'])
++def test_exact_review_raw_duplicates(name):
++    raw=(Path(__file__).parent/'fixtures/final_review'/name).read_bytes()
++    with pytest.raises(ValueError,match='duplicate JSON field'):authority.strict_loads(raw)
++
++def test_non_string_canonical_key():
++    legacy=lambda x:json.dumps(x,sort_keys=True,separators=(',',':'),allow_nan=False).encode()
++    with mutant('canonical-keys',authority,'canonical',legacy):
++        assert rejected(lambda:authority.canonical({'protocol':{1:'first declared procedure step'}})), 'CANONICAL KEY BREACH'
++    assert authority.strict_loads(authority.canonical({'protocol':{'1':'first declared procedure step'}}))=={'protocol':{'1':'first declared procedure step'}}
++
++def test_alias_and_semantic_mirror_rejection(tmp_path):
++    e,m,path=grant_fixture(tmp_path);clean=path.read_bytes()
++    for key,value in [('controller','manual_privileged'),('route',[]),('approved_manifest',{})]:
++        doc=json.loads(clean);doc[key]=value;rebind_request(m,path,authority.canonical(doc))
++        with mutant('approval-alias',authority,'read_approval',authority.strict_loads):
++            assert rejected(lambda:authorize_execution(m)), 'APPROVAL ALIAS BREACH'
++    rebind_request(m,path,clean)
++    for field,value in [('controller','manual_privileged'),('mode','intact_P')]:
++        other=copy.deepcopy(m);other[field]=value
++        assert rejected(lambda:validate_manifest(other,e))
++    authorize_execution(m)
++
++def test_protocol_cannot_shadow_bound_fields(tmp_path):
++    e,m,path=grant_fixture(tmp_path)
++    for key,value in [('controller','manual_privileged'),('route',[]),('intervention','chemistry_hidden')]:
++        other=copy.deepcopy(m);other['execution']['procedure']['protocol']={'steps':[{'action':'description',key:value}]}
++        with mutant('protocol-shadow',authority,'validate_protocol_fields',lambda *a:None):
++            assert rejected(lambda:authority.validate_execution(other,complete=True)), 'PROTOCOL SHADOW BREACH'
++        with patch.object(runner,'Recorder',side_effect=AssertionError('output reached')):
++            assert rejected(lambda:runner.Run(e,other,tmp_path/'forbidden'))
++    assert not (tmp_path/'forbidden').exists()
++    authorize_execution(m)
++
++@pytest.mark.parametrize('name',['waypoint_command','command_pair','privileged_input','time_due','observe_without_interference'])
++def test_actual_dispatch_is_checked(tmp_path,name):
++    e=manufactured();m=make_manifest(e,'fixture-dispatch',EXTERNAL,'waypoint',.2,plan=PLAN)
++    run=runner.Run(e,m,tmp_path/'run');original=getattr(runner,name);calls=[];before=state_hash(e)
++    def proxy(*args,**kwargs): calls.append(name);return original(*args,**kwargs)
++    proxy.__name__=proxy.__qualname__=name
++    try:
++        with patch.object(runner,name,proxy),mutant('dispatch-'+name,runner,'validate_dispatch',unchecked_dispatch):
++            rejected(run.begin_command)
++            assert not calls, 'EXECUTED DISPATCH BREACH: '+name
++        assert state_hash(e)==before and not run.sensor.payload['own_commands']
++        run.begin_command()
++        expected,_=controllers.waypoint_command(controllers.privileged_input(e),copy.deepcopy(PLAN),0)
++        assert run.session['held_command']==expected.tolist()
++    finally:
++        run.close()
++
++def test_dispatch_changed_between_check_and_use(tmp_path):
++    e=manufactured();m=make_manifest(e,'fixture-captured-dispatch',EXTERNAL,'waypoint',.2,plan=PLAN)
++    run=runner.Run(e,m,tmp_path/'run');real=runner.validate_dispatch;original=runner.waypoint_command;calls=[]
++    def other(*args):calls.append('unapproved');return np.array([-.5,.5]),0
++    def switch_after_check(manifest,namespace):
++        captured=real(manifest,namespace)
++        runner.waypoint_command=other
++        return captured
++    before=state_hash(e)
++    try:
++        with patch.object(runner,'validate_dispatch',switch_after_check):
++            assert rejected(run.begin_command)
++        assert calls==[] and state_hash(e)==before and not run.sensor.payload['own_commands']
++    finally:runner.waypoint_command=original;run.close()
++
++def test_gateway_rejects_duplicate_command_fields():
++    import threading,urllib.request,urllib.error
++    from http.server import HTTPServer
++    from loom_commissioning.sensor_ui import handler
++    class Gateway:
++        def __init__(self):self.calls=0
++        def submit(self,*args):self.calls+=1;return controllers.SensorHistory(manufactured()).display()
++    gateway=Gateway();server=HTTPServer(('127.0.0.1',0),handler(gateway));thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
++    try:
++        origin=f'http://127.0.0.1:{server.server_port}'
++        req=urllib.request.Request(origin+'/command',data=b'{"left":0.5,"left":-0.5,"right":0,"annotation":""}',
++            headers={'Origin':origin,'Content-Type':'application/json'},method='POST')
++        with pytest.raises(urllib.error.HTTPError) as error:urllib.request.urlopen(req)
++        assert error.value.code==400 and gateway.calls==0
++    finally:server.shutdown();server.server_close();thread.join()
++
++def test_post_approval_constants_and_route(tmp_path):
++    e=manufactured();m=make_manifest(e,'fixture-live-spec',EXTERNAL,'waypoint',.2,plan=PLAN)
++    run=runner.Run(e,m,tmp_path/'run');before=state_hash(e)
++    with patch.dict(controllers.WAYPOINT_SETTINGS,{'heading_gain':.81}):
++        assert rejected(run.begin_command)
++    run.session['route'][0]['point']=[4.,5.]
++    assert rejected(run.begin_command)
++    run.session['route']=copy.deepcopy(PLAN)
++    assert state_hash(e)==before and not run.sensor.payload['own_commands']
++    run.close()
++
++@pytest.mark.parametrize('name',['command','remainder','both','decision'])
++def test_pending_mutation_before_advance_and_save(tmp_path,name):
++    e=manufactured();m=make_manifest(e,'fixture-persisted-held',EXTERNAL,'waypoint',.2,plan=PLAN)
++    run=runner.Run(e,m,tmp_path/'first');run.begin_command();run.advance(7)
++    saved=copy.deepcopy(run.session);before=state_hash(e)
++    if name in ('command','both'):run.session['held_command']=[-.5,.5]
++    if name in ('remainder','both'):run.session['hold_remaining']=4
++    if name=='decision':
++        run.session['decision']['inputs']['position']=[7.,5.]
++        command,_=controllers.waypoint_command(run.session['decision']['inputs'],copy.deepcopy(PLAN),0)
++        run.session['decision']['command']=command.tolist();run.session['held_command']=command.tolist()
++    try:
++        with mutant('pending-'+name,runner,'validate_pending',lambda *a:None):
++            assert rejected(run._guard), 'PENDING COMMAND BREACH: '+name
++        with patch.object(adapter,'step',side_effect=AssertionError('world step reached')):
++            assert rejected(run.hold)
++        assert rejected(run.close)
++        assert state_hash(e)==before and e.native_index==7 and not (tmp_path/'first/final.restart.json.gz').exists()
++    finally:
++        run.session.clear();run.session.update(saved);run.sensor.__dict__=run.session['sensor'];run.close()
++    loaded,s,mm=runner.load_restart(tmp_path/'first/final.restart.json.gz')
++    s['held_command']=[-.5,.5];s['hold_remaining']=4
++    with patch.object(runner,'Recorder',side_effect=AssertionError('resume output reached')):
++        assert rejected(lambda:runner.Run(loaded,mm,tmp_path/'bad',session=s))
++    assert not (tmp_path/'bad').exists()
++
++def test_resume_binding_and_stage_transition(tmp_path):
++    e=manufactured();m=make_manifest(e,'fixture-resume-execution',EXTERNAL,'waypoint',.2,plan=PLAN)
++    first=runner.Run(e,m,tmp_path/'first');first.begin_command();issued=first.session['held_command'].copy();first.advance(7);first.close()
++    def proxy(*args):return controllers.waypoint_command(*args)
++    with patch.object(runner,'waypoint_command',proxy):
++        assert rejected(lambda:runner.Run.resume(tmp_path/'first',tmp_path/'bad-controller'))
++    assert not (tmp_path/'bad-controller').exists()
++    resumed=runner.Run.resume(tmp_path/'first',tmp_path/'resumed');assert resumed.session['hold_remaining']==3
++    before_neural=state_hash(resumed.engine.organism);fields=[];real=FieldSolver.step
++    def count(self,*a,**k):fields.append(a[4]);return real(self,*a,**k)
++    with patch.object(FieldSolver,'step',count):
++        resumed.hold();assert resumed.engine.native_index==10 and resumed.engine.body.command.tolist()==issued
++        # Exact pending-count corruption at the boundary is rejected. Returning
++        # to its intact issued-decision remainder permits only a fresh stage call.
++        resumed.session['hold_remaining']=1;before=state_hash(resumed.engine)
++        assert rejected(resumed.hold) and state_hash(resumed.engine)==before
++        resumed.session['hold_remaining']=0;resumed.hold()
++    assert fields==[.01]*13 and resumed.engine.native_index==20
++    assert abs(resumed.engine.time-.2)<1e-15 and resumed.engine.body.command.tolist()!=issued
++    assert state_hash(resumed.engine.organism)==before_neural
++    assert validators.read_stream(tmp_path/'resumed/wave.jsonl.gz')==[]
++    assert validators.verify_segment(tmp_path/'first')['native_records']==7
++    assert validators.verify_segment(tmp_path/'resumed')['native_records']==13
++
++@pytest.mark.parametrize('time,index,remaining,valid',[(.07,7,3,True),(.09,9,2,False),
++    (.1,10,1,False),(.1-5e-11,10,1,False),(math.nextafter(.1,math.inf),10,1,False)])
++def test_saved_pending_boundary_preflight(tmp_path,time,index,remaining,valid):
++    e=manufactured();m=make_manifest(e,'fixture-saved-boundary-input',EXTERNAL,'waypoint',.2,plan=PLAN)
++    run=runner.Run(e,m,tmp_path/'first');run.begin_command();run.advance(7);run.close()
++    loaded,s,mm=runner.load_restart(tmp_path/'first/final.restart.json.gz')
++    # Detached manufactured saved-state clock/remaining inputs; no claim these
++    # injected clocks form a reconstructed physical trajectory.
++    loaded.time=time;loaded.native_index=index;s['hold_remaining']=remaining
++    before=state_hash(loaded)
++    assert rejected(lambda:pending.validate_pending(mm,s,loaded)) is (not valid)
++    assert state_hash(loaded)==before
++    if index==10:
++        s['hold_remaining']=0;pending.validate_pending(mm,s,loaded)
++        _,next_stage=controllers.waypoint_command(controllers.privileged_input(loaded),copy.deepcopy(PLAN),0)
++        assert next_stage==1
++
++def test_saved_decision_journal_rejection(tmp_path):
++    e=manufactured();m=make_manifest(e,'fixture-record-continuity',EXTERNAL,'waypoint',.2,plan=PLAN)
++    run=runner.Run(e,m,tmp_path/'good');run.begin_command();run.advance(7);run.close()
++    shutil.copytree(tmp_path/'good',tmp_path/'bad')
++    p=tmp_path/'bad/final.restart.json.gz';wrapper=json.loads(gzip.decompress(p.read_bytes()));state=unpack(wrapper['state'])
++    d=state['session']['decision'];d['inputs']['position']=[7.,5.]
++    command,_=controllers.waypoint_command(d['inputs'],copy.deepcopy(PLAN),0)
++    d['command']=command.tolist();state['session']['held_command']=command.tolist()
++    # Coherent altered pending payload with honest new checksums: the original
++    # action journal must still reject it, even without replaying physical steps.
++    wrapper['state']=pack(state);wrapper['sha256']=digest(strict_bytes(wrapper['state']))
++    raw=gzip.compress(strict_bytes(wrapper),mtime=0);p.write_bytes(raw)
++    receipt=json.loads((tmp_path/'bad/manifest.json').read_bytes())
++    receipt['files'][p.name]={'bytes':len(raw),'sha256':digest(raw)}
++    (tmp_path/'bad/manifest.json').write_bytes(strict_bytes(receipt))
++    with mutant('decision-journal',validators,'validate_journal',lambda *a:None):
++        assert rejected(lambda:validators.verify_segment(tmp_path/'bad',replay=False)), 'DECISION JOURNAL BREACH'
++    assert rejected(lambda:runner.Run.resume(tmp_path/'bad',tmp_path/'bad-resume'))
++    assert not (tmp_path/'bad-resume').exists()
++    validators.verify_segment(tmp_path/'good')
++
++def test_duplicate_packed_pending_key(tmp_path):
++    e=manufactured();m=make_manifest(e,'fixture-packed-key',EXTERNAL,'waypoint',.1,plan=PLAN[:1])
++    run=runner.Run(e,m,tmp_path/'record');run.begin_command();run.close()
++    p=tmp_path/'record/final.restart.json.gz';wrapper=json.loads(gzip.decompress(p.read_bytes()))
++    state_pairs=wrapper['state']['$dict'];session=next(v for k,v in state_pairs if k=='session')
++    session['$dict'].append(['hold_remaining',11])
++    wrapper['sha256']=digest(strict_bytes(wrapper['state']));p.write_bytes(gzip.compress(strict_bytes(wrapper),mtime=0))
++    with pytest.raises(ValueError,match='duplicate packed state key'):runner.load_restart(p)
+diff --git a/developmental_ecology/verify_final_corrections.py b/developmental_ecology/verify_final_corrections.py
+new file mode 100644
+index 0000000..e6285a8
+--- /dev/null
++++ b/developmental_ecology/verify_final_corrections.py
+@@ -0,0 +1,38 @@
++"""Only three HOLD findings: subprocess RED/control evidence, no commissioning."""
++import argparse,json,os,subprocess,sys,time
++from pathlib import Path
++
++CASES={}
++for n in ('approved_execution','point','controller','until','identical'):
++    CASES['duplicate-'+n]=(f'test_duplicate_approval_rejection[{n}]','DUPLICATE APPROVAL BREACH: '+n)
++CASES['canonical-keys']=('test_non_string_canonical_key','CANONICAL KEY BREACH')
++CASES['approval-alias']=('test_alias_and_semantic_mirror_rejection','APPROVAL ALIAS BREACH')
++CASES['protocol-shadow']=('test_protocol_cannot_shadow_bound_fields','PROTOCOL SHADOW BREACH')
++for n in ('waypoint_command','command_pair','privileged_input','time_due','observe_without_interference'):
++    CASES['dispatch-'+n]=(f'test_actual_dispatch_is_checked[{n}]','EXECUTED DISPATCH BREACH: '+n)
++for n in ('command','remainder','both','decision'):
++    CASES['pending-'+n]=(f'test_pending_mutation_before_advance_and_save[{n}]','PENDING COMMAND BREACH: '+n)
++CASES['decision-journal']=('test_saved_decision_journal_rejection','DECISION JOURNAL BREACH')
++
++def main(output):
++    root=Path(__file__).resolve().parent;out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False);rows=[]
++    for name,(test,message) in CASES.items():
++        pair={'fault':name,'test':test,'intended_failure':message}
++        for colour in ('RED','GREEN'):
++            env=os.environ.copy();env.update(PYTEST_DISABLE_PLUGIN_AUTOLOAD='1',PYTHONDONTWRITEBYTECODE='1',PYTHONPATH=str(root))
++            for k in ('APPARATUS_FAULT','CORRECTION_FAULT','FINAL_FAULT'):env.pop(k,None)
++            if colour=='RED':env['FINAL_FAULT']=name
++            cmd=[sys.executable,'-B','-X','utf8','-m','pytest',f'tests_apparatus/test_final_corrections.py::{test}',
++                 '-q','-p','no:cacheprovider','--basetemp',str(out/f'{name}-{colour}-temp')]
++            start=time.perf_counter();r=subprocess.run(cmd,cwd=root,env=env,capture_output=True,text=True,encoding='utf-8',timeout=120)
++            log=r.stdout+r.stderr;(out/f'{name}-{colour}.log').write_text(log,encoding='utf-8')
++            valid=(r.returncode==1 and message in log and '1 failed' in log) if colour=='RED' else r.returncode==0 and '1 passed' in log
++            pair[colour]={'exit':r.returncode,'intended':valid,'wall_seconds':time.perf_counter()-start,'command':cmd}
++            print(name,colour,'verified' if valid else 'UNEXPECTED',flush=True)
++            if not valid:
++                (out/'INCOMPLETE.json').write_text(json.dumps(rows+[pair],indent=2),encoding='utf-8')
++                raise RuntimeError(name+' did not reach intended '+colour)
++        rows.append(pair)
++    (out/'FAULT_MATRIX.json').write_text(json.dumps(rows,indent=2),encoding='utf-8')
++if __name__=='__main__':
++    p=argparse.ArgumentParser();p.add_argument('output');main(p.parse_args().output)
+diff --git a/docs/developmental_ecology/p_apparatus_final_correction_20260925/FINAL_CORRECTION_REPORT.md b/docs/developmental_ecology/p_apparatus_final_correction_20260925/FINAL_CORRECTION_REPORT.md
+new file mode 100644
+index 0000000..a9553f9
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_final_correction_20260925/FINAL_CORRECTION_REPORT.md
+@@ -0,0 +1,90 @@
++# Loom P apparatus — final three-finding corrective pass
++
++Date: 2026-09-25. **Builder verification complete; stop for final mechanical closure review.** This is not a declaration of commissioning fitness or execution authority.
++
++Previous apparatus checkpoint: `9d31e7902658b15762052a2a6a3d161d64338524`. P remains `6bc9683b54e4fa80136fe8534d7713e2a250a95f`. The new checkpoint is recorded in the portable `CHECKPOINT.json`, alongside its exact `FINAL_CORRECTION.patch`. Worktree: `C:\Users\Jason\Desktop\Eridos\Loom-p-apparatus-20260924-01a0c405`; branch: `build/p-commissioning-apparatus-20260924-01a0c405`.
++
++## Authority, scope and environment
++
++The exact user request and complete `LOOM_P_FINAL_APPARATUS_CORRECTION_REVIEW.md` are preserved under `developmental_ecology/artifacts/apparatus-final-correction-20260925-01a0c405/references`. Only its three reproduced HOLD findings A-R1a, A-R1b and A-R1c were corrected. The already accepted numerical deadline comparison was not modified. Current Workbench orientation remains a historical navigation record; no canonical Workbench document or scientific sequence was rewritten.
++
++Execution was Windows desktop-local, using the existing Python 3.13.5 environment, NumPy 2.3.3, SciPy 1.16.2, pytest 8.4.2 and Git 2.50.0.windows.1. A scoped temporary create/read/delete check passed in the new evidence directory. No dependency installation, cloud execution substitute, new worktree, remote operation or background scientific run occurred. Local writes/commit used the authorized existing apparatus worktree; no vault Git write occurred.
++
++## A-R1a: one unambiguous approval object
++
++The exact two review files were accepted by unchanged 9d31e790 before edits: conflicting duplicate `approved_execution`, and conflicting nested route `point`. Their raw bytes were independently preserved and the original acceptance is recorded in `old-duplicates-RED.log` and `old-9d31-duplicates/RESULT.json`. No world step or commissioning constructor was used.
++
++The new `strict_loads` rejects duplicate JSON names at every nesting level, including identical duplicates and names that decode to the same string. Canonical input must use actual string dictionary keys and JSON-native values; integer-key coercion is rejected. Sorted keys and whitespace still do not alter an unambiguous semantic object. Non-finite values remain invalid. No first/last-value selection is performed.
++
++Approval documents have a closed envelope: `notice`, `approved_execution_sha256`, `approved_execution`. An additional alias such as `approved_manifest`, `route` or `controller` is rejected rather than silently ignored as a second prescription. The existing manifest and nested execution schemas remain closed; their required mirrored case/controller/mode/adapter/resource identities must agree. The apparatus supports no alternative alias spelling for those fields. The descriptive protocol is checked recursively and cannot contain a second typed execution field such as controller, route, stage or intervention, even inside a descriptive step. Protocol descriptions are not an override or a second configuration source; no natural-language interpreter is claimed.
++
++The same parser guards restart wrappers, record/receipt input and sensor command JSON. Packed restart dictionaries use pair lists, so a separate pre-unpack uniqueness check prevents repeated semantic keys in that representation from being collapsed by P's unchanged decoder. Sensor gateway changes are limited to these parser calls: a duplicated actuator field is rejected before gateway submission. The sensor interface, information boundary and command policy were not redesigned.
++
++Human-readable material contains the exact unique object used for the existing full execution digest. Raw request-byte identity, the readable object/digest match, and all former case/state/duration checks remain active.
++
++## A-R1b: bind the actual causal dispatch
++
++The exact original alias failure was reproduced on unchanged 9d31e790. A same-display-name replacement at `runner.waypoint_command` delivered `[-0.5,0.5]` in one native step while the checked controller would have produced `[0.717668244562803,0.237668244562803]`. Original replay accepted that record. See `old-dispatch-RED.log` and `old-9d31-dispatch/`.
++
++The runner now checks its actual invocation references and captures them in a read-only dispatch mapping. The callable captured and checked is the callable invoked. It verifies agreement with the approved module's function identity/configuration and disallows an alternate function/proxy, unexpected function globals, defaults or closure state in this supported dispatch. The same rule covers the other direct command-path aliases (`privileged_input`, `command_pair`, `time_due`, `observe_without_interference`) and the sensor-history class reference. Module implementation/constants still must match the manifest.
++
++Commands are computed from a detached approved route copy. The runner rechecks dispatch/specification and route/session integrity before accepting the result. A targeted check swaps the global runner reference immediately after validation: the captured approved callable is used, the substituted callable is never invoked, and the later check rejects the changed dispatch before command recording or world advancement.
++
++For physical advancement, the actuator pair comes from the independently retained serialized issued decision, rather than a second read of the exposed mutable `held_command` after validation. This binds the command actually passed into unchanged physical advancement. Matching implementations can be reconstructed in another process from the same approved specification; Python memory addresses are not portable approval identities.
++
++## A-R1c: issued decisions and legal pending remainders
++
++The exact original persistence failure was reproduced before edits: begin a ten-step first-stage command, advance seven steps, alter the pair and change remainder three to four, use ordinary close/resume, then reach native index 11 at `0.10999999999999999`, beyond the `.1` first-stage deadline. Both original segments passed the old verifier. No record checksum was forged in that reproduction. See `old-pending-RED.log` and `old-9d31-pending/`.
++
++Each newly issued action now retains its native index/time, controller identity and full execution digest, exact inputs and command, issued hold length, selected stage identity/start/absolute deadline, case deadline and annotation. The public session carries the decision for inspection; a separate immutable byte representation records what the segment actually issued. A public edit to the decision, pair, cursor or remainder cannot update that retained representation.
++
++Before advancement and normal save, the apparatus checks the decision against the approved controller/route; derives native progress from actual index minus issued index; requires the remaining count to equal issued steps minus progress; checks elapsed time against native cadence, including the existing partial-terminal exception; and verifies the remaining interval lies within stage and case authority. A changed pair, enlarged remainder, coherent replacement decision, stale completed-stage hold or inconsistent clock is rejected before another native step. The original numerical tolerance, native dt, full-hold rule and global-case shortening remain unchanged.
++
++Restart loading returns values with a separate read receipt over the complete losslessly serialized session, engine and manifest. Direct session edits fail before recorder creation. A resumed constructor also compares these values with the verified source snapshot, validates the source segment's issued-action journal, and accepts only a complete administrative pause. It records a relative parent-segment link and manifest identity. Source origin, body state, complete session and pending decision must remain continuous across segments.
++
++Record validation now checks issued actions, derived remainders and final pending state even when physical replay is disabled. For a resumed segment, it also verifies the parent and exact initial/final state/session continuity. A separate coherent saved-payload corruption with honest recomputed checksums is rejected because it disagrees with the original action journal. The old practice of trusting a resumed initial command merely because replay reproduces its later arithmetic is closed for the reproduced class.
++
++Invalid pending state is rejected, not silently shortened or used as a rescue. Continue from its intact verified state/checkpoint. Once the legitimate first-stage remainder is zero at its deadline, the next stage generates its own new command. The test returns a deliberately corrupted boundary remainder to its intact issued-decision value and confirms that only the newly generated next-stage command advances. No stale pair leaks forward.
++
++## Results and evidence
++
++| Verification | Result |
++|---|---|
++| Original 9d31e790 counterexamples | Three observed RED failures before edits; duplicate approval, actual dispatch, ordinary saved pending overrun |
++| Previous original apparatus matrix | 16 RED→GREEN pairs; original script/test bytes unchanged |
++| Previous correction matrix | 20 RED→GREEN pairs; original script/test bytes unchanged |
++| New narrowly scoped matrix | 18 RED→GREEN pairs |
++| Final worktree suite | **143 passed**: all 113 existing + 30 new |
++| Final assembled portable suite | **143 passed**; log packaged after the run |
++
++New pairs exercise five duplicate cases, non-string canonical keys, approval aliases, nested protocol shadows, five actual dispatch references, four pending mutations, and saved decision-journal disagreement. Faults remove the named production guard or restore the old parser/unchecked dispatch while leaving the rest active; each reaches its explicit breach assertion, followed by its clean control. They are not a new broad adversarial campaign. All prior failed and successful evidence is retained in separate directories. Final results are the `*-002` suite logs and `*-final-002/FAULT_MATRIX.json` files; earlier successful attempts remain labelled as intermediate evidence.
++
++Additional positive/negative checks cover the exact review raw files, required semantic mirrors, post-approval constants/route edits, a same-name proxy, replacement between check and use, mismatching reconstructed dispatch on resume, exact approved resume, duplicate packed pending keys and a duplicate command request rejected before submission.
++
++A real seven-step pause retains three steps. Its valid resume ends the first hold at index 10, then runs ten fresh second-stage steps to index 20. The resumed segment has exactly thirteen .01 field calls; the inactive external neural/RNG state is unchanged and there are no neural waves. At rejection points, complete engine hashes and causal-call sentinels show no advancement. The original unchanged tests supply further intact/fixed/external cadence, field, noise, terminal and complete-state reconstruction controls.
++
++Detached saved-state boundary inputs cover a valid `.07`/index-7/remainder-3 state, a crossing `.09`/index-9/remainder-2 state, exact `.1`, `.1-5e-11`, and `nextafter(.1,+infinity)`. Stale positive remainders are rejected. At nominal native index 10, the intact zero remainder is accepted and route selection proceeds to stage 1. Injected nearby clock values are explicitly manufactured preflight inputs, not asserted to be reconstructed physical trajectories. These checks use actual native-index progress; they do not enlarge timing tolerance or round world time.
++
++The initial unchanged regression attempt passed 112 and failed one fixed-structure restart because the new read receipt attempted ordinary JSON encoding of frozen NumPy arrays. The receipt now uses P's existing lossless state hash; approval JSON remains strict. That failed log is preserved. No P serializer, frozen-state law or existing test was changed. The first 27 new checks then passed; two targeted dispatch/gateway checks brought the additions to 29 and both intermediate suites to 142 passes. The final nested-protocol shadow rejection added one targeted check and one fault/control pair, bringing the final suite to 143 and the new matrix to 18 pairs. Intermediate apparatus sources are retained under `attempt-001-source`; its saved records retain that runtime identity. Final saved examples are under `review-evidence/final-suite-002`, with their parent chains.
++
++All final suites use the pinned local environment, disabled bytecode/plugin autoload/pytest cache, and fresh temporary roots. The portable run removes ambient `PYTHONPATH` and uses the assembled code and explicitly packaged verified life-0 cache. No prehistory preparation occurred. Test wall times are reported in logs, not extrapolated into a commissioning budget.
++
++## P, runtime and preservation
++
++All thirteen P modules remain byte-identical to their `6bc9683b` Git blobs, aggregate SHA-256 `63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9`. Configuration retains its baseline Windows checkout bytes, SHA-256 `985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9`, and semantic identity `a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a`. The unchanged LF Git / CRLF checkout representations are disclosed separately; no normalization was performed.
++
++All 59 P engineering checks remain unchanged and green. All 113 existing tests, their old fault scripts and the previous saved clock fixture remain unchanged. Controller arithmetic/comparator source, contract, adapter, diagnostics, initialization and evaluator retain their 9d31e790 bytes. Python/NumPy/SciPy runtime identities and dependency membership remain unchanged; individual dependency hashes and current apparatus identities are packaged.
++
++The pass checks 3,902 pre-existing apparatus/review files against its new before inventory; separately rechecks the prior 792 P artifacts and 1,908 prior apparatus/review/design files. These inventories overlap and are not summed as unique files. All sizes/hashes match. Historical EXP1–21 remains `f1b884a7ada4c806786d1530d76d446aac5d37b1`. Both previous apparatus checkpoints, their packages, earlier P checkpoints, all previous RED evidence and commissioning design records are preserved. The byte-identical 9d31e790 builder ZIP and its independent review ZIP are included as historical archives.
++
++Runtime edits are confined to `authority.py`, `runner.py`, `validators.py`, the two parser uses in `sensor_ui.py`, and new `pending.py`. New targeted tests, exact duplicate fixtures, fault runner and documentation accompany them. Full changes are in `FINAL_CORRECTION.patch`. Prior records require their original apparatus runtime; no historical snapshot is rewritten or silently upgraded.
++
++## Remaining limitations and untested work
++
++Final mechanical closure still requires independent review. No commissioning approval has been created or exercised. Hashes/read receipts establish local workflow integrity, not a cryptographic Jason signature or security against an owner replacing arbitrary interpreter/native code or private internals. Runtime dependency inventory remains process-local. Operator compliance with human procedure text is not inferred by software. Serialized external inputs must use the strict apparatus reader; the apparatus cannot recover duplicate source text already discarded by an unrelated caller's earlier parser.
++
++Invalid restart data must return to an intact verified checkpoint. Only complete paused segments can resume through the supported constructor; snapshots from incomplete/failure/cutoff records are not execution authority. Parent segments must accompany resumed segments for continuity validation, so the portable evidence retains each needed chain. Long-chain storage/performance is unmeasured. Cross-stage holds remain rejected rather than shortened, and no new partial-stage policy is introduced.
++
++Not tested: commissioning A1–A5/B1–B4/C1/C2, 600-second lives, long lifetimes/cohorts, efficacy, useful learning/survival, controller competence, parameter tuning/sweeps, new prehistory, new birth caches, new deprivations, fresh dependency installation, other operating systems, long-run throughput/storage, or a new browser appearance review. No mechanism/world-law change, experiment number, preregistration, push, PR, merge or canonical Workbench update occurred.
++
++The unchanged double-click `developmental_ecology/Open Paused Sensor Reference.cmd` opens a static saved view. It cannot advance a world. Stop for one final mechanical closure review.
+diff --git a/docs/developmental_ecology/p_apparatus_final_correction_20260925/LAW_CODE_TEST_MAP.md b/docs/developmental_ecology/p_apparatus_final_correction_20260925/LAW_CODE_TEST_MAP.md
+new file mode 100644
+index 0000000..6f3eca9
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_final_correction_20260925/LAW_CODE_TEST_MAP.md
+@@ -0,0 +1,14 @@
++# Three-finding mechanical closure map
++
++| Review requirement | Code path | Consequential checks |
++|---|---|---|
++| A-R1a: reject ambiguous serialized approval | `authority.strict_loads`, `read_approval`, `verify_approval_binding` | Exact two reviewer files; five duplicate RED→GREEN pairs; extra alias envelope rejected; exact unambiguous approved controls |
++| Unique canonical semantic values | `authority.canonical`, `validate_protocol_fields`; existing closed manifest/execution schemas | Integer-key coercion RED→GREEN; canonical-name/alias and top/nested mirror conflicts; nested protocol controller/route/intervention shadows RED→GREEN; finite/string-key controls |
++| Other supported serialized input | Strict reader in runner/validators/sensor gateway; packed-key uniqueness before P unpacking | Duplicate saved pending pair key; duplicate actuator JSON rejected before submission |
++| A-R1b: actual invoked controller | `authority.validate_dispatch`; captured dispatch in `Run.begin_command`; post-call guard | Five actual runner aliases RED→GREEN; same-name proxy; change immediately after check; post-approval constants/route; wrong reconstructed dispatch on resume |
++| Actual pair used by physics | Immutable issued decision bytes in `Run.advance` | Original old alias physical counterexample; approved fresh/resumed commands; altered held pair/decision rejected before advance |
++| A-R1c: issued state and native progress | `pending.validate_decision`, `validate_pending`; guards before advance/normal close/save/load | Exact old seven-plus-four persistence RED; four mutation pairs; legal seven-plus-three remainder; exact/tolerance/after-deadline preflight |
++| Cross-segment continuity | `RestoredSession`, `validate_restored`, source snapshot comparison, parent link and `validate_journal` | Modified loaded state rejected before Recorder; coherent modified saved payload rejected despite updated checksums; journal RED→GREEN; valid parent chain reconstruction |
++| Scientific/runtime preservation | No P/config/controller-clock edits | Unchanged 59 P + 24 original apparatus + 30 prior correction checks, 36 previous pairs, byte/hash/tree inventories |
++
++Native progress is the actual index difference from issuance; legal remainder is issued steps minus that difference. Pending time must match the original clock plus native progress within the existing tolerance (or the existing partial terminal interval). Both remaining stage/case endpoints are checked before further advancement. The controller's existing numerical due-time function is unchanged. No physical equation, tolerance, dt, hold duration or controller gain was changed.

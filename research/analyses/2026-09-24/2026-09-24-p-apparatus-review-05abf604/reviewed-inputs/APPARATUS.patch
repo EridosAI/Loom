@@ -1,0 +1,2581 @@
+diff --git a/developmental_ecology/Open Paused Sensor Reference.cmd b/developmental_ecology/Open Paused Sensor Reference.cmd
+new file mode 100644
+index 0000000..1337717
+--- /dev/null
++++ b/developmental_ecology/Open Paused Sensor Reference.cmd	
+@@ -0,0 +1,2 @@
++@echo off
++start "" "%~dp0artifacts\apparatus-20260924-01a0c405\review-evidence\SENSOR_ONLY_REVIEW.html"
+diff --git a/developmental_ecology/Open Privileged Apparatus Review.cmd b/developmental_ecology/Open Privileged Apparatus Review.cmd
+new file mode 100644
+index 0000000..a3003ba
+--- /dev/null
++++ b/developmental_ecology/Open Privileged Apparatus Review.cmd	
+@@ -0,0 +1,2 @@
++@echo off
++start "" "%~dp0artifacts\apparatus-20260924-01a0c405\review-evidence\privileged\PRIVILEGED_REVIEW.html"
+diff --git a/developmental_ecology/loom_commissioning/.gitattributes b/developmental_ecology/loom_commissioning/.gitattributes
+new file mode 100644
+index 0000000..3acd917
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/.gitattributes
+@@ -0,0 +1,2 @@
++*.py -text
++*.html -text
+diff --git a/developmental_ecology/loom_commissioning/__init__.py b/developmental_ecology/loom_commissioning/__init__.py
+new file mode 100644
+index 0000000..419f8ef
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/__init__.py
+@@ -0,0 +1 @@
++"""External commissioning apparatus. Construction is not execution authority."""
+diff --git a/developmental_ecology/loom_commissioning/adapter.py b/developmental_ecology/loom_commissioning/adapter.py
+new file mode 100644
+index 0000000..7d5ada9
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/adapter.py
+@@ -0,0 +1,119 @@
++"""External interventions around unchanged P operations; no persistent patching."""
++import copy
++import numpy as np
++from loom_p.engine import Engine
++from loom_p.physics import advance, TerminalCrossing
++from loom_p.geometry import transduce
++from loom_p.records import state_hash
++from .contract import INTACT, FIXED, EXTERNAL, require
++
++SENSORY = ('shared', 'fine', 'shared_ref', 'fine_ref')
++
++def structure(o):
++    return {'sensory':[{k:getattr(x,k).copy() for k in SENSORY} for x in o.cortices],
++            'H':copy.deepcopy(o.association.H), 'use':copy.deepcopy(o.association.use),
++            'theta':o.regulator.theta.copy(), 'reference':o.regulator.reference.copy()}
++
++def restore_sensory(o, frozen):
++    for x, values in zip(o.cortices, frozen['sensory']):
++        for k, v in values.items(): setattr(x, k, v.copy())
++
++def restore_maps(o, frozen):
++    o.association.H = copy.deepcopy(frozen['H'])
++    o.association.use = copy.deepcopy(frozen['use'])
++
++def restore_banks(o, frozen):
++    o.regulator.theta = frozen['theta'].copy()
++    o.regulator.reference = frozen['reference'].copy()
++
++def validate_frozen(o, frozen):
++    require(state_hash(structure(o)) == state_hash(frozen), 'frozen structural parameter changed')
++
++def fixed_native(o, raw, dt, refresh, frozen):
++    validate_frozen(o, frozen)
++    command = o.native(raw, dt, refresh)
++    hypothetical = structure(o)['sensory']
++    restore_sensory(o, frozen)  # x/C/mean/opening used the ordinary old-state RHS.
++    return command, {'hypothetical_sensory':hypothetical, 'applied_structural_increment':0}
++
++def fixed_handoff(o, reserves, frozen):
++    """P handoff order, with bank restore BEFORE output and maps BEFORE next read."""
++    validate_frozen(o, frozen)
++    c=o.c; r=o.regulator; a=o.association
++    require(abs(o.wave_elapsed-c.wave_dt)<1e-10, 'No handoff on partial wave')
++    old_controls=r.controls.copy()
++    packets=[x.packet(c.wave_dt) for x in o.cortices]+[np.array([reserves[0]]),np.array([reserves[1]]),
++             np.concatenate((o.motor.integral/c.wave_dt,o.motor.command)),old_controls]
++    o.motor.integral.fill(0)
++    beta,psi,old_means=a.packets_to_context(c,packets)
++    r.credit(c,np.asarray(reserves))
++    discarded_bank=copy.deepcopy(r.credit_diagnostic)
++    restore_banks(o, frozen)
++    gates,contributions=a.read(c,psi,r.h.copy())
++    r.output(c,o.rng,a.q,np.asarray(reserves))
++    a.write(c,psi,beta,gates,contributions)
++    discarded_maps=copy.deepcopy(a.diagnostic['map_updates'])
++    restore_maps(o, frozen)
++    o.wave_count+=1; o.wave_elapsed=0.
++    o.last_wave=dict(wave=o.wave_count,packets=packets,old_means=old_means,beta=beta,
++        traces=copy.deepcopy(a.traces),psi=psi,old_controls=old_controls,new_controls=r.controls.copy(),
++        association=copy.deepcopy(a.diagnostic),credit=discarded_bank,regulation=copy.deepcopy(r.output_diagnostic),
++        ordering=['packet','previous_credit','restore_banks','old_map_read_4_sweeps_final_q',
++                  'new_draw_controls','hypothetical_map_write_use_means','restore_maps_use'],
++        diagnostic_label=FIXED,structural_updates='discarded_hypothetical',applied_structural_increment=0,
++        discarded_maps=discarded_maps)
++    validate_frozen(o, frozen)
++    return o.last_wave
++
++def coupled(e, dt, refresh, mode, command, frozen, allow_terminal=False):
++    discarded=None
++    if mode==FIXED:
++        delivered, discarded=fixed_native(e.organism,e.raw,dt,refresh,frozen)
++    else:
++        delivered=np.array(command,dtype=float).copy()
++    events,actual,terminal=advance(e.c,e.body,e.stocks,e.time,e.phase,delivered,dt,allow_terminal)
++    if actual<dt-e.c.event_time_tol and not allow_terminal: raise ArithmeticError('Short physics without terminal')
++    e.fields=e.solver.step(e.fields,e.stocks,e.time+dt,e.phase,dt,e.body.position)
++    e.time+=dt; e.last_events=events
++    e.raw=transduce(e.c,e.body,e.fields,e.time,e.phase)
++    return terminal,discarded
++
++def step(e, mode, command=None, frozen=None):
++    """Intact P delegates directly. Modified arms retain the Engine.step schedule.
++
++    Candidate terminal substeps are discarded copies, including their RNG state.
++    External arms never advance the stored, inactive newborn neural object.
++    """
++    if mode==INTACT:
++        n,w,ev=e.step(); return n,w,ev,None
++    require(mode in (FIXED,EXTERNAL), 'unknown adapter mode')
++    require(e.status not in ('failure','terminal','budget_complete'), 'Stopped state cannot advance')
++    if mode==EXTERNAL:
++        command=np.asarray(command,dtype=float)
++        require(command.shape==(2,) and np.isfinite(command).all() and (abs(command)<=1).all(), 'invalid actuator command')
++    old=copy.deepcopy(e); dt=e.c.native_dt
++    refresh=e.native_index>0 and e.native_index%round(e.c.noise_refresh/dt)==0
++    try:
++        try: terminal,discarded=coupled(e,dt,refresh,mode,command,frozen)
++        except TerminalCrossing as event:
++            low=0.; high=dt; dimension=event.dimension
++            for _ in range(80):
++                mid=(low+high)/2; candidate=copy.deepcopy(old)
++                try: coupled(candidate,mid,refresh,mode,command,frozen); low=mid
++                except TerminalCrossing: high=mid
++                if high-low<=e.c.event_time_tol: break
++            else: raise ArithmeticError('Terminal location did not converge')
++            e.__dict__=copy.deepcopy(old.__dict__)
++            terminal,discarded=coupled(e,high,refresh,mode,command,frozen,True)
++            terminal=terminal or dimension; dt=high
++        e.native_index+=1; e.last_wave=None
++        if terminal:
++            e.status='terminal'; e.terminal_dimension=terminal
++        elif e.native_index%round(e.c.wave_dt/e.c.native_dt)==0 and mode==FIXED:
++            e.last_wave=fixed_handoff(e.organism,e.body.reserves,frozen)
++        e.last_native=e.observe_native(dt)
++        e.validate_state()
++        return e.last_native,e.last_wave,e.last_events,discarded
++    except Exception as error:
++        e.__dict__=old.__dict__; e.status='failure'; e.failure=f'{type(error).__name__}: {error}'
++        raise
+diff --git a/developmental_ecology/loom_commissioning/contract.py b/developmental_ecology/loom_commissioning/contract.py
+new file mode 100644
+index 0000000..4740673
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/contract.py
+@@ -0,0 +1,109 @@
++"""Closed manifests, identity checks and interpretation firewall."""
++from pathlib import Path
++import hashlib
++import math
++import numpy as np
++from loom_p.records import code_identity, strict_bytes, state_hash
++
++BASELINE = '6bc9683b54e4fa80136fe8534d7713e2a250a95f'
++P_CODE = '63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9'
++CONFIG = 'a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a'
++FIXED = 'FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC'
++INTACT = 'intact_P'
++EXTERNAL = 'external_controller'
++SELECTION = {'wave': 'every_handoff', 'native': 'native_index % 100 == 0', 'native_stride': 100}
++ROSTER = {'birth_ids': [1, 2, 3, 4], 'birth_ceiling_seconds': 600,
++          'zero_witness_interpretation': 'unresolved opportunity at that coverage',
++          'execution_authorized': False}
++
++def digest(data):
++    return hashlib.sha256(data).hexdigest()
++
++def apparatus_identity():
++    files = {p.name: digest(p.read_bytes()) for p in sorted(Path(__file__).parent.iterdir())
++             if p.suffix in ('.py', '.html')}
++    return {'sha256': digest(strict_bytes(files)), 'files': files}
++
++def require(condition, message):
++    if not condition:
++        raise ValueError(message)
++
++def make_manifest(engine, case_id, mode, controller, seconds, *, purpose='manufactured_fixture',
++                  initialization=None):
++    """Explicit constructor; it does not grant permission to execute a manifest."""
++    return dict(schema=1, baseline=BASELINE, p_code=P_CODE, configuration=CONFIG,
++                apparatus=apparatus_identity(), case_id=case_id, purpose=purpose,
++                mode=mode, controller=controller, initial_state=state_hash(engine),
++                initial_time=engine.time, initial_index=engine.native_index,
++                initial_fields=digest(engine.fields.tobytes()), phase=engine.phase,
++                initialization=initialization or {'kind': 'manufactured', 'lawful_birth': False},
++                duration_seconds=seconds, hard_stop_time=engine.time+seconds,
++                command_hold_seconds=.1, selection=SELECTION.copy(), roster=ROSTER.copy(),
++                execution_authority=None)
++
++def validate_manifest(m, engine, *, initial=True):
++    required = set(make_manifest(engine, 'unused', INTACT, 'none', 0))
++    require(set(m) == required, 'manifest schema mismatch')
++    require(m['schema'] == 1 and m['baseline'] == BASELINE and m['p_code'] == P_CODE
++            and code_identity()['sha256'] == P_CODE, 'manifest/code identity mismatch')
++    require(m['configuration'] == CONFIG == engine.c.identity(), 'configuration identity mismatch')
++    require(m['apparatus'] == apparatus_identity(), 'apparatus identity mismatch')
++    require(m['mode'] in (INTACT, FIXED, EXTERNAL), 'trajectory label invalid')
++    require(m['controller'] in ('none', 'waypoint', 'sensor_human', 'manual_privileged'), 'controller kind invalid')
++    require((m['controller'] == 'none') == (m['mode'] != EXTERNAL), 'external controller incorrectly labelled intact P')
++    duration = m['duration_seconds']
++    require(type(duration) in (int, float) and math.isfinite(duration) and 0 < duration <= 1200,
++            'duration cap invalid')
++    require(abs(duration/.01-round(duration/.01)) < 1e-8
++            and abs(m['hard_stop_time']-m['initial_time']-duration) < 1e-9, 'duration cap identity mismatch')
++    require(m['command_hold_seconds'] == .1 and m['selection'] == SELECTION and m['roster'] == ROSTER,
++            'fixed sampling/hold/roster contract mismatch')
++    require(engine.phase == m['phase'], 'wrong field/mover phase')
++    if initial:
++        require(engine.native_index == m['initial_index'] and engine.time == m['initial_time'], 'initial clock mismatch')
++        require(digest(engine.fields.tobytes()) == m['initial_fields'], 'wrong initial field')
++        require(state_hash(engine) == m['initial_state'], 'initial state identity mismatch')
++    if m['purpose'] == 'manufactured_fixture':
++        require(m['case_id'].startswith('fixture-') and duration <= .6
++                and m['initialization'] == {'kind': 'manufactured', 'lawful_birth': False},
++                'manufactured fixture cap/provenance invalid')
++    else:
++        require(m['purpose'] == 'commissioning', 'unknown run purpose')
++        init = m['initialization']
++        require(init.get('kind') == 'verified_phase_history'
++                and init.get('phase') == engine.phase
++                and init.get('field_sha256') == m['initial_fields']
++                and bool(init.get('cache_receipt_sha256')), 'lawful phase-specific prehistory required')
++        from .initialization import verify_history
++        verify_history(init,engine.c,m['initial_fields'],m['phase'])
++        if m['case_id'] in ('C1', 'C2'):
++            require(init.get('birth_id') in (1,2,3,4) and duration == 600, 'birth roster/ceiling mismatch')
++    return True
++
++def authorize_execution(m):
++    # Future executions require an explicit separately supplied local grant.
++    # No such grant is delivered or synthesized by the apparatus build. This is
++    # an auditable workflow boundary, not security against the machine owner.
++    if m['purpose']=='manufactured_fixture':
++        require(m['execution_authority'] is None,'fixture is not a commissioning grant')
++        return
++    authority=m['execution_authority']
++    require(isinstance(authority,dict) and set(authority)=={'request_path','request_sha256','approved_case','approved_initial_state','approved_duration'},
++            'commissioning execution is not authorized')
++    require(authority['approved_case']==m['case_id'] and authority['approved_initial_state']==m['initial_state']
++            and authority['approved_duration']==m['duration_seconds'], 'execution grant scope mismatch')
++    require(digest(Path(authority['request_path']).read_bytes())==authority['request_sha256'], 'execution authority identity mismatch')
++
++CLASSES = {'V1':'AV','V2':'AV','V3':'AV','A0':'AV','A1':'AV','A2':'AV','A3':'AV','A4':'AV','A5':'AV',
++           'B1':'AV','B2':'AV','B3':'AV','B4':'CO','C1':'CO','C2':'CO',
++           **{f'D{i}':'CO' for i in range(1,8)}, 'S1':'SO','S2':'SO'}
++
++def classify(row_id, observation):
++    require(row_id in CLASSES, 'unknown evidence class')
++    return {'row':row_id, 'class':CLASSES[row_id], 'observation':observation,
++            'interpretation_status':'preserved_not_a_configuration_ground' if CLASSES[row_id]=='SO' else 'commissioning_review_only'}
++
++def configuration_grounds(evidence):
++    require(all(x['class'] == CLASSES.get(x['row']) for x in evidence), 'evidence class mismatch')
++    require(all(x['class'] in ('AV','CO') for x in evidence), 'SO cannot ground a configuration adjustment before freeze')
++    return {'automatic_adjustment':False, 'requires':'Jason defect-specific ruling', 'evidence':evidence}
+diff --git a/developmental_ecology/loom_commissioning/controllers.py b/developmental_ecology/loom_commissioning/controllers.py
+new file mode 100644
+index 0000000..127a5d5
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/controllers.py
+@@ -0,0 +1,116 @@
++"""Capability boundaries: controllers receive copied data, never an Engine."""
++import copy
++import math
++import numpy as np
++from loom_p.geometry import fixtures, mover
++from loom_p.records import view, state_hash
++from .contract import require
++
++PRIVILEGED_KEYS={'position','angle','velocity','omega','reserves','commands','geometry',
++                 'mover_phase','mover_velocity','stocks','contacts','time'}
++SENSOR_KEYS={'schema','raw_labels','history','own_commands','annotations','availability'}
++ROW_KEYS={'native_index','time','raw','actual_EI','EI_sample_time'}
++LABELS=[f'{name}_{i}' for name,width in [('light',10),('chemistry',4),('contact',8),('proprioception',7)] for i in range(width)]
++
++def validate_privileged(data):
++    require(set(data)==PRIVILEGED_KEYS, 'forbidden controller input')
++    base={'id','kind','velocity'}
++    for f in data['geometry']:
++        specific={'wall':{'axis','sign','boundary'},'disk':{'centre','radius'},'rect':{'rect'}}
++        require(f.get('kind') in specific and set(f)==base|specific[f['kind']], 'forbidden geometry input')
++    for x in data['contacts']:
++        require(set(x)=={'normal','force','impulse'}, 'forbidden contact input')
++    return True
++
++def privileged_input(e):
++    scene=[]
++    for f in fixtures(e.c,e.time,e.phase):
++        scene.append({k:copy.deepcopy(v) for k,v in f.items() if k not in ('material','source')})
++    contacts=[{k:copy.deepcopy(x.get(k,0.)) for k in ('normal','force','impulse')}
++              for event in e.last_events for x in event.get('contacts',[])]
++    result=view(dict(position=e.body.position.copy(),angle=e.body.angle,velocity=e.body.velocity.copy(),
++        omega=e.body.omega,reserves=e.body.reserves,commands=e.body.command.copy(),geometry=scene,
++        mover_phase=e.phase,mover_velocity=mover(e.c,e.time,e.phase)[1],stocks=e.stocks.copy(),
++        contacts=contacts,time=e.time))
++    validate_privileged(result)
++    return result
++
++def command_pair(command):
++    values=np.asarray(command,dtype=float)
++    require(values.shape==(2,) and np.isfinite(values).all() and np.all(abs(values)<=1), 'invalid actuator command')
++    return values.copy()
++
++def waypoint_command(data, plan, cursor):
++    """Deterministic geometry-specified route, not an optimized policy.
++
++    A plan consists of fixed point/wait/press entries, provided before execution.
++    Contact servo uses measured normal force; it cannot set the body's force.
++    """
++    validate_privileged(data)
++    require(bool(plan) and type(cursor)==int and 0<=cursor<len(plan), 'invalid route cursor')
++    for p in plan:
++        require(set(p)=={'point','until','press_force'} and len(p['point'])==2
++                and all(math.isfinite(float(v)) for v in (*p['point'],p['until'],p['press_force']))
++                and 0<=p['press_force']<=.25, 'invalid prescribed route')
++    while cursor<len(plan)-1 and data['time']>=plan[cursor]['until']:
++        cursor+=1
++    p=plan[cursor]; delta=np.array(p['point'])-data['position']
++    distance=float(np.linalg.norm(delta))
++    heading=math.atan2(delta[1],delta[0]) if distance>1e-12 else data['angle']
++    error=math.atan2(math.sin(heading-data['angle']),math.cos(heading-data['angle']))
++    turn=float(np.clip(.8*error-.2*data['omega'],-.5,.5))
++    forward=np.array([math.cos(data['angle']),math.sin(data['angle'])])
++    speed=float(forward@np.array(data['velocity']))
++    drive=float(np.clip(.5*distance-.4*speed,0,.5))*max(0,math.cos(error))
++    if data['contacts'] and p['press_force']>0:
++        measured=sum(x['force'] for x in data['contacts'])
++        drive=float(np.clip(float(np.mean(data['commands']))+.4*(p['press_force']-measured),0,.5))
++    if data['time']>=p['until']: drive=0.; turn=0.
++    return command_pair([drive-turn,drive+turn]),cursor
++
++def validate_sensor_payload(payload):
++    require(set(payload)==SENSOR_KEYS and payload['schema']==1 and payload['raw_labels']==LABELS,
++            'privileged data leakage into sensor-only interface')
++    require(payload['availability'] in ('paused','offline_record','unavailable'), 'privileged status leak')
++    previous=-1; previous_time=-float('inf'); held=None; sampled=None
++    for row in payload['history']:
++        require(set(row)==ROW_KEYS, 'privileged data leakage into sensor-only interface')
++        require(type(row['native_index'])==int and row['native_index']>previous and row['time']>previous_time,
++                'sensor history time/order mismatch')
++        raw=np.asarray(row['raw'],dtype=float); ei=np.asarray(row['actual_EI'],dtype=float)
++        require(raw.shape==(29,) and ei.shape==(2,) and np.isfinite(raw).all() and np.isfinite(ei).all(), 'raw/actual EI schema mismatch')
++        require(row['EI_sample_time']<=row['time']+1e-12, 'future EI leak')
++        if sampled is not None and row['EI_sample_time']==sampled:
++            require(row['actual_EI']==held, 'EI cadence leak')
++        if sampled is not None and row['EI_sample_time']!=sampled:
++            require(row['native_index']%20==0 and abs(row['EI_sample_time']-row['time'])<1e-12, 'EI cadence leak')
++        previous=row['native_index']; previous_time=row['time']; sampled=row['EI_sample_time']; held=row['actual_EI']
++    for item in payload['own_commands']:
++        require(set(item)=={'time','command'}, 'privileged command record leak'); command_pair(item['command'])
++    for item in payload['annotations']:
++        require(set(item)=={'time','text'} and isinstance(item['text'],str), 'privileged annotation leak')
++    return True
++
++class SensorHistory:
++    def __init__(self, engine):
++        self.payload={'schema':1,'raw_labels':LABELS.copy(),'history':[],'own_commands':[],
++                      'annotations':[],'availability':'paused'}
++        self.held=engine.body.reserves.tolist(); self.sample_time=engine.time
++        self.observe(engine, initial=True)
++
++    def observe(self,e,initial=False):
++        if not initial and e.native_index%20==0 and e.status!='terminal':
++            self.held=e.body.reserves.tolist(); self.sample_time=e.time
++        self.payload['history'].append(dict(native_index=e.native_index,time=e.time,
++            raw=np.concatenate(e.raw).tolist(),actual_EI=self.held.copy(),EI_sample_time=self.sample_time))
++
++    def display(self):
++        result=copy.deepcopy(self.payload)
++        validate_sensor_payload(result)
++        return result
++
++def observe_without_interference(engine, observer):
++    before=state_hash(engine)
++    result=observer(engine)
++    require(state_hash(engine)==before, 'observer RNG/state interference')
++    return result
+diff --git a/developmental_ecology/loom_commissioning/diagnostics.py b/developmental_ecology/loom_commissioning/diagnostics.py
+new file mode 100644
+index 0000000..9eae158
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/diagnostics.py
+@@ -0,0 +1,114 @@
++"""Passive, timestamped operands and detached immediate-receiver sensitivities."""
++import copy
++import numpy as np
++from scipy.special import expit
++from loom_p.neural import follow
++from loom_p.records import state_hash
++from .contract import EXTERNAL, FIXED, SELECTION, require
++
++def motor_receiver(before, after):
++    c=before.c; m=before.organism.motor; r=before.organism.regulator
++    d=after.organism.motor.diagnostic
++    terms={'oscillator':c.motor_amplitude*np.sin(m.phase), 'noise':c.motor_noise_amplitude*m.nu,
++           'direct_feedback':d['direct_feedback'], 'motor_evocation':d['evoked'], 'regulatory_current':d['current']}
++    total=sum(terms.values()); dt=after.last_native['elapsed']
++    def receive(value, attenuation=r.attenuation):
++        target=np.tanh(value); tendency=follow(m.tendency,target,dt,c.tau_motor)
++        return {'target':target,'tendency':tendency,'command':(1-attenuation)*tendency}
++    baseline=receive(total)
++    require(np.allclose(baseline['command'],d['command'],rtol=0,atol=1e-15), 'motor receiver reconstruction mismatch')
++    return {'contributions':terms,'attenuation':r.attenuation.copy(),'baseline':baseline,
++            'without':{**{k:receive(total-v) for k,v in terms.items()},'attenuation':receive(total,np.zeros(2))},
++            'scope':'same frozen receiver, no alternate trajectory or benefit'}
++
++def wave_receiver(before, after, wave):
++    c=before.c; r=after.organism.regulator
++    rd=wave['regulation']; a=before.organism.association; old_h=before.organism.regulator.h
++    def association(psi, support):
++        detached=copy.deepcopy(a)
++        detached.read(c,psi,support)
++        return detached.q.copy()
++    q=association(wave['psi'],old_h)
++    require(np.array_equal(q,wave['association']['q']), 'associative receiver reconstruction mismatch')
++    def receiver(q_value, omit=None):
++        evoked=r.Bq@q_value; body=r.Bv@after.body.reserves; bias=r.bias.copy()
++        if omit=='evoked': evoked*=0
++        if omit=='body': body*=0
++        if omit=='bias': bias*=0
++        features=np.concatenate(([1.],np.tanh(evoked+body+bias)))
++        learned=np.einsum('dof,f->do',r.theta,features,optimize=False)
++        exploration=rd['exploration'].copy()
++        for bank in (0,1):
++            if omit==f'learned_{bank}': learned[bank]*=0
++            if omit==f'exploration_{bank}': exploration[bank]*=0
++        weighted=rd['need'][:,None]*(learned+exploration); g=c.group_count
++        controls=np.concatenate((expit(weighted[:,:g].sum(axis=0)),
++            c.current_max/2*np.tanh(weighted[:,g:g+2]).sum(axis=0),
++            expit(c.attenuation_bias+weighted[:,g+2:g+4].sum(axis=0))))
++        return {'features':features,'weighted_logits':weighted,'controls':controls}
++    baseline=receiver(q)
++    require(np.array_equal(baseline['controls'],rd['controls']), 'regulator receiver reconstruction mismatch')
++    omissions={name:receiver(q,name) for name in ('evoked','body','bias','learned_0','learned_1','exploration_0','exploration_1')}
++    query_probes={}
++    for m in range(4):
++        psi=wave['psi'].copy(); psi[c.slices[m]]=0
++        alternate=association(psi,old_h)
++        query_probes[f'sensory_context_{m}']={'q':alternate,'q_difference':alternate-q,'receiver':receiver(alternate)}
++    alternate=association(wave['psi'],np.zeros_like(old_h))
++    query_probes['support_to_zero_with_query_floor']={'q':alternate,'q_difference':alternate-q,'receiver':receiver(alternate)}
++    return {'baseline':baseline,'without':omissions,'query_support_dependencies':query_probes,
++            'scope':'immediate defined read/receiver dependencies; unchanged RNG, maps and trajectory'}
++
++def passive(before, after, wave, mode, discarded):
++    """Every native alignment retained; expensive influence rule fixed in manifest."""
++    before_hash=state_hash(before); after_hash=state_hash(after)
++    row={'class':'CO','native_index':after.native_index,'input_time':before.time,'endpoint_time':after.time,
++         'raw_step_start':[x.copy() for x in before.raw],'raw_endpoint':[x.copy() for x in after.raw],
++         'mode':mode,'selection':SELECTION.copy()}
++    if mode==EXTERNAL:
++        row.update(neural_scope='inactive newborn object; no P experience or hypothetical action recorded')
++    else:
++        row['cortices']=[]
++        for i,(old,new) in enumerate(zip(before.organism.cortices,after.organism.cortices)):
++            hypothetical=discarded['hypothetical_sensory'][i] if mode==FIXED else None
++            row['cortices'].append({'mean_old':old.mean.copy(),'mean_new':new.mean.copy(),
++                'residual_used':before.raw[i]-old.mean,
++                'activity_old':old.x.copy(),'activity_new':new.x.copy(),'activity_saturation':abs(new.x),
++                'coactivity':new.C.copy(),'activity_integral':new.integral.copy(),
++                'shared_old':old.shared.copy(),'fine_old':old.fine.copy(),
++                'shared_reference':old.shared_ref.copy(),'fine_reference':old.fine_ref.copy(),
++                'shared_applied_delta':new.shared-old.shared,'fine_applied_delta':new.fine-old.fine,
++                'hypothetical_discarded':hypothetical,'pressures':copy.deepcopy(new.diagnostic['groups']),
++                'weight_row_norms':np.linalg.norm(new.weights,axis=1),
++                'within_pool_gram':[new.weights[g]@new.weights[g].T for g in new.groups]})
++        if wave is not None:
++            row['wave_alignment']={k:copy.deepcopy(wave[k]) for k in ('packets','old_means','beta','traces','psi')}
++            row['wave_alignment']['query']=wave['association']['query'].copy()
++            row['wave_alignment']['q']=wave['association']['q'].copy()
++            row['credit_separate_E_I']={'actual_reserves':after.body.reserves,
++                'old_eligibility':before.organism.regulator.eligibility.copy(),
++                'old_theta':before.organism.regulator.theta.copy(),
++                'old_reference':before.organism.regulator.reference.copy(),
++                'applied_theta_delta':after.organism.regulator.theta-before.organism.regulator.theta,
++                'credit':copy.deepcopy(wave['credit']), 'outputs':copy.deepcopy(wave['regulation'])}
++            row['D5_wave']=wave_receiver(before,after,wave)
++        if after.native_index%SELECTION['native_stride']==0 or wave is not None:
++            row['D5_native']=motor_receiver(before,after)
++    require(state_hash(before)==before_hash and state_hash(after)==after_hash, 'observer RNG/state interference')
++    return row
++
++def spectrum(activity):
++    """Continuous spectrum; no invented numerical rank success threshold."""
++    values=np.asarray(activity,dtype=float)
++    require(values.ndim==2 and len(values)>1 and np.isfinite(values).all(), 'spectrum needs finite history')
++    centred=values-values.mean(axis=0)
++    return {'singular_values':np.linalg.svd(centred,compute_uv=False),
++            'covariance':centred.T@centred/(len(values)-1),'sample_count':len(values),
++            'rank_interpretation':'unresolved without precision/physical distinction analysis'}
++
++def packet_pair_distances(histories, packets):
++    """All candidate pair distances retained; no selection on downstream q."""
++    require(len(histories)==len(packets), 'packet/history count mismatch')
++    return [{'i':i,'j':j,'packet_distance':float(np.linalg.norm(np.asarray(packets[i])-packets[j])),
++             'native_distance':float(np.linalg.norm(np.asarray(histories[i])-histories[j]))}
++            for i in range(len(packets)) for j in range(i+1,len(packets))]
+diff --git a/developmental_ecology/loom_commissioning/evaluation.py b/developmental_ecology/loom_commissioning/evaluation.py
+new file mode 100644
+index 0000000..9ca8ad4
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/evaluation.py
+@@ -0,0 +1,59 @@
++"""Privileged offline evaluation, never imported by the sensor-only server."""
++import json
++from pathlib import Path
++import numpy as np
++from loom_p.records import strict_bytes, view
++from .contract import classify, ROSTER
++from .validators import read_stream, verify_segment
++
++def evaluate(directory):
++    root=Path(directory); validation=verify_segment(root)
++    native=read_stream(root/'native.jsonl.gz'); events=read_stream(root/'events.jsonl.gz')
++    diagnostic=read_stream(root/'diagnostics.jsonl.gz')
++    receipt=json.loads((root/'manifest.json').read_bytes())
++    tolerance=1e-12
++    first={name:None for name in ('source_contact','transfer','damage','repair_contact','eligible_damaged_repair','positive_restoration','mover_contact')}
++    contacts=[]
++    for e in events:
++        evidence={'time':e['time'],'energy':e['energy_after'],'integrity':e['integrity_after']}
++        flags={'source_contact':any('source' in c for c in e['contacts']),
++               'transfer':sum(e['transfer'])>tolerance,'damage':e['damage']>tolerance,
++               'repair_contact':any(c['material']==3 for c in e['contacts']),
++               'eligible_damaged_repair':e['integrity_before']<1 and e.get('repair_quality',0)>0,
++               'positive_restoration':e['repair']>tolerance,
++               'mover_contact':any(c['collider']=='mover' for c in e['contacts'])}
++        for key,flag in flags.items():
++            if flag and first[key] is None: first[key]=dict(evidence)
++        if e['contacts']: contacts.append({'time':e['time'],'duration':e['duration'],'contacts':e['contacts']})
++    # Keep operands and uncertainty; no tiny-positive-as-useful or biological gate.
++    ledgers=[{'time':e['time'],'duration':e['duration'],'transfer':sum(e['transfer']),
++              'cost':e['expenditure'],'repair':e['repair'],'damage':e['damage'],
++              'energy_before':e['energy_before'],'energy_after':e['energy_after'],
++              'stock_before':e['stock_before'],'stock_after':e['stock_after'],
++              'renewal':(np.asarray(e['renewal_first'])+e['renewal_second']).tolist(),
++              'sign_resolution_floor':tolerance} for e in events]
++    return {'scope':'privileged evaluator only; manufactured apparatus evidence, no commissioning witness',
++        'AV':[classify('V1',validation)],'CO':[classify('C1',{'first_observed_in_this_segment':first,
++            'denominator':'one manufactured segment, not a birth roster','contacts':contacts})],
++        'SO_preserved':read_stream(root/'scientific_observations.jsonl.gz'),
++        'SO_status':'preserved; cannot ground configuration adjustment before freeze',
++        'roster':ROSTER,'case_status':'manufactured fixture only',
++        'lawful_births_executed':0,'births':{str(i):'unstarted' for i in (1,2,3,4)},
++        'native':native,'physical_ledgers':ledgers,'diagnostics':diagnostic,
++        'identity':receipt['contract'],'stop_reason':receipt['status']}
++
++def write_review(directory,output):
++    result=evaluate(directory); root=Path(output); root.mkdir(exist_ok=False)
++    data=strict_bytes(view(result)); (root/'evaluation.json').write_bytes(data)
++    # No live API and no sensor-controller route to these privileged records.
++    template='''<!doctype html><meta charset="utf-8"><title>Loom apparatus · privileged review</title>
++<style>body{font:16px system-ui;background:#f5f4ef;color:#183a3c;max-width:1100px;margin:35px auto;padding:20px}section{background:white;padding:18px;margin:15px 0;border:1px solid #ccd9d4;border-radius:10px}canvas{width:100%;height:150px}pre{overflow:auto;max-height:400px;font-size:12px}label{margin-right:20px}</style>
++<h1>Privileged apparatus review</h1><p>Manufactured component fixture. These observations do not establish commissioning, survival or learning.</p>
++<section><h2>Record and interpretation</h2><p id="summary"></p><p>AV and CO are the commissioning review surface. Raw SO observations are preserved separately and cannot support a configuration adjustment before freeze.</p></section>
++<section><h2>Aligned native history</h2><label>Endpoint <input id="at" type="range" min="0" value="0"></label><span id="clock"></span><p>Step-start input → old receptor mean → residual → new activity. End-of-step transduction has its own timestamp.</p><canvas id="plot" width="1000" height="160"></canvas><pre id="detail"></pre></section>
++<section><h2>Physical ledgers and first observations</h2><pre id="ledger"></pre></section>
++<section><h2>Separate scientific observations</h2><pre id="so"></pre></section>
++<script>const D=__DATA__;const slider=document.querySelector('#at');slider.max=Math.max(0,D.diagnostics.length-1);document.querySelector('#summary').textContent=D.identity.mode+' · '+D.AV[0].observation.native_records+' native records · '+D.stop_reason+' · Births 1–4 remain unstarted.';document.querySelector('#ledger').textContent=JSON.stringify({observations:D.CO,ledgers:D.physical_ledgers},null,2);document.querySelector('#so').textContent=JSON.stringify(D.SO_preserved,null,2);function render(){let d=D.diagnostics[Number(slider.value)];if(!d)return;document.querySelector('#clock').textContent=d.input_time.toFixed(3)+' → '+d.endpoint_time.toFixed(3)+' s';document.querySelector('#detail').textContent=JSON.stringify(d,null,2);let ctx=document.querySelector('#plot').getContext('2d');ctx.clearRect(0,0,1000,160);let rows=D.diagnostics.slice(0,Number(slider.value)+1);[0,1,2,3].forEach((ch,j)=>{ctx.strokeStyle=['#245c58','#b56435','#6656a3','#397eb0'][j];ctx.beginPath();rows.forEach((r,i)=>{let v=r.cortices?r.cortices[ch].activity_new[0]:r.raw_endpoint[ch][0],x=1000*i/Math.max(1,rows.length-1),y=80-65*Math.tanh(v);i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke()})}slider.oninput=render;render();</script>'''
++    text=template.replace('__DATA__',data.decode('utf-8').replace('<','\\u003c'))
++    (root/'PRIVILEGED_REVIEW.html').write_text(text,encoding='utf-8')
++    return result
+diff --git a/developmental_ecology/loom_commissioning/initialization.py b/developmental_ecology/loom_commissioning/initialization.py
+new file mode 100644
+index 0000000..a8500b4
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/initialization.py
+@@ -0,0 +1,24 @@
++"""Load a verified phase-specific history; never prepare one or launch a life."""
++from pathlib import Path
++from loom_p.schema import Config
++from loom_p.prehistory import load
++from loom_p.engine import Engine
++from .contract import digest, CONFIG, require
++
++def from_verified_cache(directory, birth_id):
++    c=Config(); require(c.identity()==CONFIG,'configuration identity mismatch')
++    fields,phase,rng,provenance=load(c,directory,life=birth_id)
++    engine=Engine(c,fields,phase,rng,provenance)
++    receipt=Path(directory)/'manifest.json'
++    initialization={'kind':'verified_phase_history','birth_id':birth_id,'phase':phase,
++        'field_sha256':digest(fields.tobytes()),'cache_directory':str(Path(directory).resolve()),
++        'cache_receipt_sha256':digest(receipt.read_bytes())}
++    return engine,initialization
++
++def verify_history(initialization,c,initial_fields,phase):
++    directory=Path(initialization['cache_directory'])
++    require(digest((directory/'manifest.json').read_bytes())==initialization['cache_receipt_sha256'],
++            'field history receipt mismatch')
++    fields,actual_phase,_,_=load(c,directory,life=initialization['birth_id'])
++    require(actual_phase==phase==initialization['phase'] and digest(fields.tobytes())==initial_fields,
++            'wrong field/mover phase')
+diff --git a/developmental_ecology/loom_commissioning/runner.py b/developmental_ecology/loom_commissioning/runner.py
+new file mode 100644
+index 0000000..c45b91c
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/runner.py
+@@ -0,0 +1,189 @@
++"""Bounded native scheduler, append-only segments and exact all-state restart."""
++import copy
++import gzip
++import json
++import os
++from pathlib import Path
++import time
++import numpy as np
++from loom_p.records import Recorder, pack, unpack, strict_bytes, state_hash, view
++from . import adapter, diagnostics
++from .contract import (INTACT, FIXED, EXTERNAL, validate_manifest, authorize_execution,
++                       apparatus_identity, digest, require)
++from .controllers import SensorHistory, privileged_input, waypoint_command, command_pair, observe_without_interference
++
++def save_restart(path, engine, session, manifest):
++    payload=pack({'engine':engine,'session':session})
++    wrapper={'manifest':manifest,'state':payload,'sha256':digest(strict_bytes(payload))}
++    data=gzip.compress(strict_bytes(wrapper),mtime=0)
++    path=Path(path); temporary=path.with_suffix(path.suffix+'.partial')
++    with temporary.open('xb') as f:
++        f.write(data); f.flush(); os.fsync(f.fileno())
++    os.replace(temporary,path)
++    return digest(data)
++
++def load_restart(path):
++    wrapper=json.loads(gzip.decompress(Path(path).read_bytes()))
++    require(digest(strict_bytes(wrapper['state']))==wrapper['sha256'], 'restart checksum mismatch')
++    restored=unpack(wrapper['state']); e=restored['engine']; s=restored['session']; m=wrapper['manifest']
++    e.validate_state(); validate_manifest(m,e,initial=False); authorize_execution(m)
++    require(s['contract_sha256']==digest(strict_bytes(m)), 'restart manifest identity mismatch')
++    require(e.time<=m['hard_stop_time']+1e-9, 'duration cap bypass')
++    if m['mode']==FIXED: adapter.validate_frozen(e.organism,s['frozen'])
++    return e,s,m
++
++class Run:
++    """One continuing trajectory. Resumes retain the original hard ceiling.
++
++    No constructor evolves a world. Each explicit call advances native steps,
++    not a succession of Engine.run_bounded calls. An external decision owns ten
++    native steps, including across a pause/restart in the middle of its hold.
++    """
++    def __init__(self, engine, manifest, output, *, session=None, parent=None, plan=None,
++                 observer=diagnostics.passive, storage_limit=1_000_000_000, wall_limit=3600):
++        validate_manifest(manifest,engine,initial=session is None); authorize_execution(manifest)
++        require(engine.status not in ('failure','terminal','budget_complete'), 'stopped state cannot resume')
++        self.engine=engine; self.manifest=copy.deepcopy(manifest); self.observer=observer
++        self.closed=False; self.started=time.perf_counter(); self.wall_limit=wall_limit
++        self.storage_limit=storage_limit
++        if session is None:
++            require(np.isfinite(wall_limit) and wall_limit>0 and type(storage_limit)==int and storage_limit>0, 'explicit finite resource limits required')
++            if manifest['mode']==FIXED:
++                o=engine.organism
++                require(o.native_count==o.wave_count==0 and not np.any(o.regulator.theta)
++                        and not np.any(o.regulator.reference)
++                        and all(not np.any(v) for v in o.association.H.values())
++                        and all(not np.any(v) for v in o.association.use.values()), 'fixed diagnostic must start from newborn structure')
++            history=SensorHistory(engine)
++            self.session={'contract_sha256':digest(strict_bytes(manifest)), 'frozen':adapter.structure(engine.organism) if manifest['mode']==FIXED else None,
++                'sensor':vars(history),'hold_remaining':0,'held_command':[0.,0.], 'route':copy.deepcopy(plan),
++                'cursor':0,'advanced':0,'field_updates':0,'body_wave_samples':0,
++                'wall_seconds_used':0.,'bytes_used':0,'wall_limit':wall_limit,'storage_limit':storage_limit,
++                'stop_reason':'administrative_pause'}
++        else:
++            self.session=copy.deepcopy(session)
++            self.wall_limit=self.session['wall_limit']; self.storage_limit=self.session['storage_limit']
++        self.sensor=SensorHistory.__new__(SensorHistory); self.sensor.__dict__=self.session['sensor']
++        self.recorder=Recorder(output,dict(contract=self.manifest,parent=parent,mode=manifest['mode']),storage_limit=self.storage_limit-self.session['bytes_used'])
++        for name in ('diagnostics','controller','sensor','scientific_observations'):
++            self.recorder.streams[name]=gzip.open(self.recorder.path/(name+'.jsonl.gz'),'wb')
++        save_restart(self.recorder.path/'initial.restart.json.gz',engine,self.session,self.manifest)
++        self.recorder.append('sensor',self.sensor.display())
++
++    @classmethod
++    def resume(cls, previous, output, **kwargs):
++        previous=Path(previous)
++        receipt=json.loads((previous/'manifest.json').read_bytes())
++        require(receipt['complete'] and receipt['status']=='administrative_pause', 'only complete pauses can resume')
++        for filename,identity in receipt['files'].items():
++            require(digest((previous/filename).read_bytes())==identity['sha256'], 'resume record checksum mismatch')
++        e,s,m=load_restart(previous/'final.restart.json.gz')
++        require(receipt['contract']==m, 'resume contract mismatch')
++        return cls(e,m,output,session=s,parent={'manifest_sha256':digest((previous/'manifest.json').read_bytes())},**kwargs)
++
++    def _guard(self):
++        require(not self.closed, 'closed segment')
++        require(digest(strict_bytes(self.manifest))==self.session['contract_sha256'], 'manifest changed during run')
++        require(self.engine.phase==self.manifest['phase'], 'wrong field/mover phase')
++        require(self.engine.c.identity()==self.manifest['configuration'], 'configuration identity mismatch')
++        require(self.engine.time<=self.manifest['hard_stop_time']+1e-9, 'duration cap bypass')
++
++    def remaining(self):
++        return max(0,round((self.manifest['hard_stop_time']-self.engine.time)/self.engine.c.native_dt))
++
++    def begin_command(self, command=None, annotation=''):
++        self._guard()
++        require(self.manifest['mode']==EXTERNAL and self.session['hold_remaining']==0, 'command hold already active or no external controller')
++        require(self.remaining()>0, 'duration cap reached')
++        kind=self.manifest['controller']; inputs=None
++        if kind=='waypoint':
++            require(command is None, 'manual override of deterministic controller')
++            inputs=observe_without_interference(self.engine,privileged_input)
++            command,cursor=waypoint_command(copy.deepcopy(inputs),self.session['route'],self.session['cursor'])
++            self.session['cursor']=cursor
++        elif kind=='manual_privileged':
++            inputs=observe_without_interference(self.engine,privileged_input)
++        elif kind=='sensor_human':
++            inputs=self.sensor.display()
++        command=command_pair(command)
++        self.session['held_command']=command.tolist(); self.session['hold_remaining']=min(10,self.remaining())
++        action={'time':self.engine.time,'actor':EXTERNAL,'controller':kind,'inputs':inputs,
++                'command':command.tolist(),'hold_native_steps':self.session['hold_remaining'],'annotation':str(annotation)}
++        self.recorder.append('controller',action)
++        self.sensor.payload['own_commands'].append({'time':self.engine.time,'command':command.tolist()})
++        if annotation: self.sensor.payload['annotations'].append({'time':self.engine.time,'text':str(annotation)})
++
++    def advance(self, native_steps):
++        self._guard()
++        require(type(native_steps)==int and 0<=native_steps<=self.remaining(), 'duration cap bypass')
++        if self.manifest['mode']==EXTERNAL:
++            require(native_steps<=self.session['hold_remaining'], 'controller hold cannot insert extra steps')
++        try:
++            for _ in range(native_steps):
++                self._guard()
++                if self.session['wall_seconds_used']+time.perf_counter()-self.started>=self.wall_limit:
++                    self.close('administrative_pause',cause='wall_time_limit'); break
++                # Clean soft storage stop BEFORE stepping; I/O errors below are failures.
++                reserve=max(16_000_000,2*self.recorder.widths.get('diagnostics',{}).get('max',0)*30)
++                if self.session['bytes_used']+self.recorder.bytes_uncompressed+reserve>self.storage_limit:
++                    self.close('administrative_pause',cause='storage_reserve'); break
++                before=copy.deepcopy(self.engine)
++                n,w,events,discarded=adapter.step(self.engine,self.manifest['mode'],
++                    self.session['held_command'],self.session['frozen'])
++                self.session['advanced']+=1; self.session['field_updates']+=1
++                if self.manifest['mode']==EXTERNAL:
++                    self.session['hold_remaining']-=1
++                    n={k:v for k,v in n.items() if k not in ('sensory','motor','controls','organism_sha256')}
++                    n['neural_state']='inactive_newborn_not_P'
++                n=dict(n,mode=self.manifest['mode'],field_phase=self.engine.phase,
++                       field_sha256=digest(self.engine.fields.tobytes()))
++                self.recorder.append('native',n)
++                if w is not None: self.recorder.append('wave',dict(time=self.engine.time,mode=self.manifest['mode'],**w))
++                for event in events: self.recorder.append('events',dict(event,mode=self.manifest['mode']))
++                if self.engine.native_index%20==0 and self.engine.status!='terminal': self.session['body_wave_samples']+=1
++                before_hash=state_hash(self.engine)
++                diagnostic=self.observer(before,self.engine,w,self.manifest['mode'],discarded)
++                require(before_hash==state_hash(self.engine), 'observer RNG/state interference')
++                self.recorder.append('diagnostics',diagnostic)
++                self.sensor.observe(self.engine)
++                self.recorder.append('sensor',self.sensor.payload['history'][-1])
++                if self.engine.native_index%1000==0:
++                    save_restart(self.recorder.path/f'native-{self.engine.native_index}.restart.json.gz',self.engine,self.session,self.manifest)
++                if self.engine.status=='terminal': self.close('terminal'); break
++                if self.remaining()==0: self.close('administrative_cutoff'); break
++        except Exception as error:
++            self.engine.status='failure'; self.engine.failure=f'{type(error).__name__}: {error}'
++            if not self.closed: self.close('apparatus_failure',error=self.engine.failure)
++            raise
++
++    def hold(self, command=None, annotation=''):
++        if self.session['hold_remaining']==0: self.begin_command(command,annotation)
++        else: require(command is None, 'cannot replace an interrupted held command')
++        self.advance(self.session['hold_remaining'])
++
++    def display(self):
++        return self.sensor.display()  # no time/RNG/field update
++
++    def preserve_scientific_observation(self, observation):
++        from .contract import classify
++        self.recorder.append('scientific_observations',classify('S1',observation))
++
++    def close(self, reason='administrative_pause', cause=None, error=None):
++        require(not self.closed, 'segment already closed')
++        from .validators import validate_stop
++        validate_stop(reason,self.engine,self.manifest)
++        if reason not in ('terminal','apparatus_failure'): self.engine.status='paused'
++        self.session['stop_reason']=reason
++        self.session['wall_seconds_used']+=time.perf_counter()-self.started
++        self.session['bytes_used']+=self.recorder.bytes_uncompressed
++        try:
++            save_restart(self.recorder.path/'final.restart.json.gz',self.engine,self.session,self.manifest)
++            (self.recorder.path/'sensor-display.json').write_bytes(strict_bytes(self.display()))
++            self.recorder.manifest.update(stop_cause=cause,final_state=state_hash(self.engine),
++                final_time=self.engine.time,terminal_dimension=self.engine.terminal_dimension,
++                session_counters={k:self.session[k] for k in ('advanced','field_updates','body_wave_samples')})
++            self.recorder.close(reason,reason!='apparatus_failure',error)
++        except Exception as failure:
++            self.recorder.close('apparatus_failure',False,str(failure))
++            raise
++        finally: self.closed=True
+diff --git a/developmental_ecology/loom_commissioning/sensor.html b/developmental_ecology/loom_commissioning/sensor.html
+new file mode 100644
+index 0000000..299f661
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/sensor.html
+@@ -0,0 +1,16 @@
++<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
++<title>Loom · Sensor-only reference</title>
++<style>body{font:16px system-ui;background:#f5f4ef;color:#183a3c;margin:32px auto;max-width:1150px;padding:0 22px}h1{font-size:30px;margin-bottom:8px}p{line-height:1.5}.bar,.panel{background:white;border:1px solid #d3ddda;border-radius:10px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}table{width:100%;font-variant-numeric:tabular-nums}td{padding:3px}td:last-child{text-align:right}canvas{width:100%;height:135px}input{width:90px;padding:9px}button{padding:10px 16px;background:#245c58;color:white;border:0;border-radius:6px;margin:4px}button:disabled{opacity:.45}label{display:inline-block;margin-right:15px}.muted{color:#536764}#note{width:55%}@media(max-width:700px){.grid{grid-template-columns:1fr}#note{width:90%}}</style>
++<h1>Sensor-only reference</h1><p>Read the body's raw sensory history and your own commands. Time stays paused while you inspect the record.</p>
++<div class="bar"><strong id="state">Loading saved readings…</strong><p id="body"></p><label>History endpoint <input id="at" type="range" min="0" value="0" style="width:300px"></label><span id="time"></span></div>
++<div id="channels" class="grid"></div>
++<div class="panel"><h2>Two actuator commands</h2><p>Each decision holds the left and right commands for 0.1 bodily seconds, or until an earlier stop. Values range from −1 to 1.</p>
++<label>Left <input id="left" type="number" min="-1" max="1" step="0.05" value="0"></label><label>Right <input id="right" type="number" min="-1" max="1" step="0.05" value="0"></label><button id="send" disabled>Apply one hold</button>
++<p><label>Own note <input id="note" type="text" maxlength="1000"></label></p><p id="message" role="status"></p><h3>Your command history</h3><pre id="commands"></pre><button id="download">Save displayed history</button></div>
++<p class="muted">Saved review has no active world. The display supplies 29 raw coordinates; actual energy and integrity are held between 5 Hz samples. Privileged evaluation is a separate file.</p>
++<script>
++let data;const names=['Light · 10 coordinates','Chemistry · 4 coordinates','Contact · 8 coordinates','Proprioception · 7 coordinates'];const widths=[10,4,8,7];
++function render(){const idx=Number(document.querySelector('#at').value),row=data.history[idx];if(!row)return;document.querySelector('#state').textContent=data.availability==='offline_record'?'Paused saved review':'Paused between decisions';document.querySelector('#time').textContent=row.time.toFixed(3)+' s';document.querySelector('#body').textContent='Actual energy '+row.actual_EI[0].toFixed(6)+' · Actual integrity '+row.actual_EI[1].toFixed(6)+' · sampled at '+row.EI_sample_time.toFixed(3)+' s';document.querySelector('#channels').replaceChildren();let off=0;names.forEach((name,g)=>{let section=document.createElement('section');section.className='panel';let title=document.createElement('h2');title.textContent=name;section.append(title);let canvas=document.createElement('canvas');canvas.width=520;canvas.height=140;canvas.setAttribute('aria-label',name+' raw history');section.append(canvas);let table=document.createElement('table');for(let k=0;k<widths[g];k++){let tr=document.createElement('tr'),label=document.createElement('td'),value=document.createElement('td');label.textContent=data.raw_labels[off+k];value.textContent=row.raw[off+k].toPrecision(7);tr.append(label,value);table.append(tr)}section.append(table);document.querySelector('#channels').append(section);let ctx=canvas.getContext('2d'),start=Math.max(0,idx-999),samples=data.history.slice(start,idx+1),vals=samples.flatMap(r=>r.raw.slice(off,off+widths[g])),lo=Math.min(...vals),hi=Math.max(...vals);for(let k=0;k<widths[g];k++){ctx.strokeStyle=`hsl(${k*360/widths[g]},55%,40%)`;ctx.beginPath();samples.forEach((r,j)=>{let x=j*520/Math.max(1,samples.length-1),y=130-120*(r.raw[off+k]-lo)/Math.max(1e-12,hi-lo);j?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke()}off+=widths[g]});document.querySelector('#commands').textContent=data.own_commands.filter(x=>x.time<=row.time).map(x=>x.time.toFixed(3)+' s  ['+x.command.join(', ')+']').join('\n');document.querySelector('#send').disabled=data.availability!=='paused'}
++function accept(value){data=value;let slider=document.querySelector('#at');slider.max=Math.max(0,data.history.length-1);slider.value=slider.max;render()}
++document.querySelector('#at').oninput=render;document.querySelector('#send').onclick=async()=>{let response=await fetch('/command',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({left:Number(document.querySelector('#left').value),right:Number(document.querySelector('#right').value),annotation:document.querySelector('#note').value})});let result=await response.json();if(response.ok)accept(result);else document.querySelector('#message').textContent=result.message};document.querySelector('#download').onclick=()=>{let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data)],{type:'application/json'}));a.download='sensor-history.json';a.click();URL.revokeObjectURL(a.href)};fetch('/sensors').then(r=>r.json()).then(accept);
++</script></html>
+diff --git a/developmental_ecology/loom_commissioning/sensor_ui.py b/developmental_ecology/loom_commissioning/sensor_ui.py
+new file mode 100644
+index 0000000..f20bbe0
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/sensor_ui.py
+@@ -0,0 +1,69 @@
++"""Loopback sensor-only interface. The default entry point is inert saved review."""
++import argparse
++import copy
++from http.server import BaseHTTPRequestHandler, HTTPServer
++import json
++from pathlib import Path
++from .controllers import validate_sensor_payload
++from .contract import require, strict_bytes
++
++class OfflineGateway:
++    def __init__(self,path):
++        self.data=json.loads(Path(path).read_bytes())
++        validate_sensor_payload(self.data); self.data['availability']='offline_record'
++    def display(self): return copy.deepcopy(self.data)
++    def submit(self,*args): raise ValueError('Saved review cannot advance time')
++
++class HumanGateway:
++    """No evaluation endpoint. A later authorized run can supply this gateway."""
++    def __init__(self,run):
++        require(run.manifest['controller']=='sensor_human','sensor-human run required')
++        self._run=run
++    def display(self): return self._run.display()
++    def submit(self,left,right,annotation):
++        self._run.hold([left,right],annotation)
++        return self.display()
++
++def handler(gateway):
++    class Handler(BaseHTTPRequestHandler):
++        def log_message(self,*args): pass
++        def send(self,code,body,content_type):
++            self.send_response(code)
++            self.send_header('Content-Type',content_type)
++            self.send_header('Cache-Control','no-store')
++            self.send_header('X-Content-Type-Options','nosniff')
++            self.end_headers(); self.wfile.write(body)
++        def do_GET(self):
++            if self.path=='/':
++                self.send(200,Path(__file__).with_name('sensor.html').read_bytes(),'text/html; charset=utf-8')
++            elif self.path=='/sensors':
++                value=gateway.display(); validate_sensor_payload(value)
++                self.send(200,strict_bytes(value),'application/json')
++            else: self.send(404,b'Unavailable','text/plain')
++        def do_POST(self):
++            # No generic file serving, evaluation, snapshot or state-setting API.
++            if self.path!='/command': self.send(404,b'Unavailable','text/plain'); return
++            try:
++                require(self.headers.get('Origin')==f'http://{self.headers.get("Host")}', 'origin mismatch')
++                require(self.headers.get('Content-Type')=='application/json', 'JSON required')
++                size=int(self.headers.get('Content-Length','0')); require(0<size<=4096,'request size')
++                value=json.loads(self.rfile.read(size)); require(set(value)=={'left','right','annotation'},'command schema')
++                require(isinstance(value['annotation'],str) and len(value['annotation'])<=1000,'annotation length')
++                output=gateway.submit(value['left'],value['right'],value['annotation'])
++                validate_sensor_payload(output); self.send(200,strict_bytes(output),'application/json')
++            except Exception:
++                # Privileged physics exceptions and event details never reach the operator.
++                self.send(400,b'{"message":"Command unavailable; time has paused."}','application/json')
++    return Handler
++
++def main():
++    parser=argparse.ArgumentParser(description='Paused, sensor-only saved review; no world is created')
++    parser.add_argument('--record',required=True); parser.add_argument('--port',type=int,default=8768)
++    args=parser.parse_args()
++    server=HTTPServer(('127.0.0.1',args.port),handler(OfflineGateway(args.record)))
++    print(f'Saved sensor review: http://127.0.0.1:{args.port} (no world updates)',flush=True)
++    try: server.serve_forever()
++    except KeyboardInterrupt: pass
++    finally: server.server_close()
++
++if __name__=='__main__': main()
+diff --git a/developmental_ecology/loom_commissioning/validators.py b/developmental_ecology/loom_commissioning/validators.py
+new file mode 100644
+index 0000000..c723b35
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/validators.py
+@@ -0,0 +1,110 @@
++"""Consequential AV validators. No useful behavior or survival requirement."""
++import gzip
++import json
++from pathlib import Path
++import numpy as np
++from loom_p.records import strict_bytes, view, state_hash
++from .contract import require, digest, EXTERNAL, FIXED
++from .controllers import validate_sensor_payload, validate_privileged, SensorHistory
++from . import adapter
++
++def validate_stop(reason,e,m):
++    require(reason in ('terminal','administrative_cutoff','administrative_pause','apparatus_failure'), 'mislabelled stop reason')
++    if reason=='terminal':
++        require(e.status=='terminal' and e.terminal_dimension in ('energy','integrity') and min(e.body.reserves)<=1e-9,
++                'mislabelled stop reason')
++    elif reason=='apparatus_failure':
++        require(e.status=='failure' and bool(e.failure), 'mislabelled stop reason')
++    else:
++        require(e.terminal_dimension is None and e.status not in ('failure','terminal'), 'mislabelled stop reason')
++        if reason=='administrative_cutoff':
++            require(abs(e.time-m['hard_stop_time'])<1e-9, 'mislabelled stop reason')
++        else: require(e.time<m['hard_stop_time']-1e-9, 'mislabelled stop reason')
++
++def validate_ledger(records, tolerance=1e-12):
++    maximum=0.
++    for r in records:
++        # Release markers also carry complete zero-duration accounting.
++        transfer=np.asarray(r['transfer']); renew=np.asarray(r['renewal_first'])+r['renewal_second']
++        energy=(r['energy_after']-r['energy_before'])-(float(transfer.sum())-r['expenditure'])
++        stock=np.asarray(r['stock_after'])-r['stock_before']-renew+transfer
++        integrity=r['integrity_after']-r['integrity_before']-(r['repair']-r['damage'])
++        maximum=max(maximum,abs(energy),float(np.max(abs(stock))),abs(integrity))
++        require(maximum<=tolerance, 'source debit/body credit mismatch')
++        if r['duration']==0:
++            require(not np.any(transfer) and r['expenditure']==r['repair']==0, 'zero-duration exchange')
++    return maximum
++
++def validate_native_sequence(native,initial,final,m):
++    require(len(native)==final.native_index-initial.native_index, 'missing native record')
++    t=initial.time
++    for i,n in enumerate(native,initial.native_index+1):
++        require(n['native_index']==i and 0<n['elapsed']<=initial.c.native_dt+1e-12, 'missing native record')
++        t+=n['elapsed']
++        require(abs(n['time']-t)<1e-10, 'missing native record')
++        require(n['field_phase']==m['phase'], 'wrong field/mover phase')
++        require(n['mode']==m['mode'], 'external controller incorrectly labelled intact P')
++    require(abs(t-final.time)<1e-10 and final.time<=m['hard_stop_time']+1e-9, 'duration cap bypass')
++
++def read_stream(path):
++    with gzip.open(path,'rt',encoding='utf-8') as f: return [json.loads(line) for line in f]
++
++def verify_segment(directory, replay=True):
++    """Native reconstruction verifies committed field/RNG/update counts too.
++
++    This replays ONLY this existing segment and never auto-continues it. For the
++    present build every segment is a manufactured <=0.6 s component fixture.
++    """
++    from .runner import load_restart
++    directory=Path(directory); receipt=json.loads((directory/'manifest.json').read_bytes())
++    require(receipt['complete'], 'incomplete apparatus records')
++    for name,expected in receipt['files'].items():
++        data=(directory/name).read_bytes()
++        require(len(data)==expected['bytes'] and digest(data)==expected['sha256'], 'record checksum mismatch')
++    initial,session,m=load_restart(directory/'initial.restart.json.gz')
++    final,finish,m2=load_restart(directory/'final.restart.json.gz')
++    require(m==m2==receipt['contract'], 'manifest identity mismatch')
++    native=read_stream(directory/'native.jsonl.gz'); waves=read_stream(directory/'wave.jsonl.gz')
++    events=read_stream(directory/'events.jsonl.gz'); actions=read_stream(directory/'controller.jsonl.gz')
++    diagnostic=read_stream(directory/'diagnostics.jsonl.gz')
++    validate_native_sequence(native,initial,final,m); validate_stop(receipt['status'],final,m)
++    require(len(diagnostic)==len(native), 'missing native diagnostic record')
++    for kind in ('native','wave','events','controller','diagnostics','sensor','scientific_observations'):
++        require(len(read_stream(directory/(kind+'.jsonl.gz')))==receipt['records'].get(kind,0), 'record count mismatch')
++    maximum=validate_ledger(events,initial.c.arithmetic_tol)
++    payload=json.loads((directory/'sensor-display.json').read_bytes()); validate_sensor_payload(payload)
++    for action in actions:
++        require(action['actor']==EXTERNAL and m['mode']==EXTERNAL, 'external controller incorrectly labelled intact P')
++        if action['controller']=='sensor_human': validate_sensor_payload(action['inputs'])
++        else: validate_privileged(action['inputs'])
++    if replay:
++        e=initial; wave_index=0; replay_events=[]
++        history=SensorHistory.__new__(SensorHistory); history.__dict__=session['sensor']
++        commands={round(x['time'],10):x for x in actions}
++        held=session['held_command']; remaining=session['hold_remaining']
++        for n in native:
++            if m['mode']==EXTERNAL:
++                if remaining==0:
++                    action=commands.get(round(e.time,10)); require(action is not None,'missing controller decision')
++                    held=action['command']; remaining=action['hold_native_steps']
++                remaining-=1
++            actual,w,ev,discarded=adapter.step(e,m['mode'],held,session['frozen'])
++            history.observe(e)
++            replay_events.extend(dict(x,mode=m['mode']) for x in ev)
++            if m['mode']==EXTERNAL:
++                actual={k:v for k,v in actual.items() if k not in ('sensory','motor','controls','organism_sha256')}
++                actual['neural_state']='inactive_newborn_not_P'
++            actual=dict(actual,mode=m['mode'],field_phase=e.phase,field_sha256=digest(e.fields.tobytes()))
++            require(strict_bytes(view(actual))==strict_bytes(n), 'extra native/wave/random/field update or native reconstruction mismatch')
++            if w is not None:
++                require(wave_index<len(waves) and strict_bytes(view(dict(time=e.time,mode=m['mode'],**w)))==strict_bytes(waves[wave_index]),
++                        'wave reconstruction mismatch')
++                wave_index+=1
++            if m['mode']==FIXED: adapter.validate_frozen(e.organism,session['frozen'])
++        require(wave_index==len(waves), 'extra wave record')
++        require(strict_bytes(view(replay_events))==strict_bytes(events),'event replay mismatch')
++        require(state_hash(e)==state_hash(final)==receipt['final_state'], 'final state reconstruction mismatch')
++        require(finish['field_updates']-session['field_updates']==len(native), 'extra field update count')
++        require(history.payload['history']==payload['history'], 'privileged raw/EI substitution in sensor interface')
++    return {'class':'AV','native_records':len(native),'wave_records':len(waves),'events':len(events),
++            'replayed':replay,'maximum_accounting_residual':maximum,'mode':m['mode'],'status':receipt['status']}
+diff --git a/developmental_ecology/package_apparatus.py b/developmental_ecology/package_apparatus.py
+new file mode 100644
+index 0000000..968ce7c
+--- /dev/null
++++ b/developmental_ecology/package_apparatus.py
+@@ -0,0 +1,138 @@
++"""Package existing manufactured evidence; never start or continue a world."""
++import argparse,hashlib,json,platform,shutil,subprocess,sys,zipfile
++from pathlib import Path
++import numpy,scipy,pytest
++from loom_p.records import code_identity,strict_bytes
++from loom_commissioning.contract import apparatus_identity,BASELINE,CONFIG,FIXED,INTACT,EXTERNAL,ROSTER
++
++ROOT=Path(__file__).resolve().parent
++REPO=ROOT.parent
++EVIDENCE=ROOT/'artifacts/apparatus-20260924-01a0c405'
++DOCS=REPO/'docs/developmental_ecology/p_apparatus_20260924'
++
++def digest(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
++def write_json(path,data): Path(path).write_bytes(json.dumps(data,indent=2,ensure_ascii=False).encode('utf-8'))
++
++def prepare():
++    from loom_commissioning.evaluation import write_review
++    review=EVIDENCE/'review-evidence'; review.mkdir(exist_ok=True)
++    modes={INTACT:'intact-manufactured',FIXED:'fixed-manufactured',EXTERNAL:'external-manufactured'}
++    rates=[]
++    for p in (EVIDENCE/'tests-attempt-003').glob('test_pause_resume_and_reconstr*/continuous/manifest.json'):
++        m=json.loads(p.read_bytes()); name=modes[m['contract']['mode']]
++        dest=review/'records'/name
++        for segment in ('first','second','continuous'):
++            shutil.copytree(p.parent.parent/segment,dest/segment)
++        duration=m['final_time']-m['contract']['initial_time']
++        stored=sum(x.stat().st_size for x in p.parent.iterdir() if x.is_file())
++        rates.append({'mode':m['contract']['mode'],'duration_seconds':duration,'wall_seconds':m['wall_seconds'],
++            'stored_bytes':stored,'uncompressed_record_bytes':m['uncompressed_bytes'],
++            'wall_seconds_per_simulated_second':m['wall_seconds']/duration,
++            'stored_bytes_per_simulated_second':stored/duration,
++            'scope':'0.2 s manufactured component including snapshot/diagnostic overhead; not steady-state throughput'})
++    assert len(rates)==3
++    write_review(review/'records/intact-manufactured/continuous',review/'privileged')
++    sensor=json.loads((review/'records/external-manufactured/continuous/sensor-display.json').read_bytes())
++    sensor['availability']='offline_record'
++    template=(ROOT/'loom_commissioning/sensor.html').read_text(encoding='utf-8')
++    offline=template.replace("fetch('/sensors').then(r=>r.json()).then(accept);",
++        'accept('+strict_bytes(sensor).decode().replace('<','\\u003c')+');')
++    assert "fetch('/sensors')" not in offline
++    (review/'SENSOR_ONLY_REVIEW.html').write_bytes(offline.encode('utf-8'))
++    (review/'sensor-display.json').write_bytes(strict_bytes(sensor))
++    for filename,target in [('Open Paused Sensor Reference.cmd','artifacts\\apparatus-20260924-01a0c405\\review-evidence\\SENSOR_ONLY_REVIEW.html'),
++                            ('Open Privileged Apparatus Review.cmd','artifacts\\apparatus-20260924-01a0c405\\review-evidence\\privileged\\PRIVILEGED_REVIEW.html')]:
++        (ROOT/filename).write_bytes(('@echo off\r\nstart "" "%~dp0'+target+'"\r\n').encode('utf-8'))
++    runtime={'python':sys.version,'executable':sys.executable,'platform':platform.platform(),'numpy':numpy.__version__,
++             'scipy':scipy.__version__,'pytest':pytest.__version__,'p_code':code_identity(),
++             'apparatus_code':apparatus_identity(),'configuration_semantic':CONFIG,
++             'configuration_file_sha256':digest(ROOT/'configuration.json'),
++             'local_execution':'Windows desktop host; existing local venv; no new dependencies installed'}
++    write_json(EVIDENCE/'RUNTIME_RECORD.json',runtime)
++    write_json(EVIDENCE/'RUNTIME_STORAGE_ESTIMATE.json',{'measured_components':rates,
++        'historical_30s_rate':{'wall_seconds_per_simulated_second':4.6905,'stored_MB_per_simulated_second':1.9709},
++        'future_world_ceiling_seconds':8960,'prior_planning_machine_hours':11.67,
++        'prior_planning_compressed_GB':17.66,'status':'commissioning unexecuted; no long-run overhead measured',
++        'conservative_component_rate_extrapolation':{'machine_hours':max(x['wall_seconds_per_simulated_second'] for x in rates)*8960/3600,
++            'stored_GB':max(x['stored_bytes_per_simulated_second'] for x in rates)*8960/1e9,
++            'warning':'planning envelope only, dominated by short-fixture and restart overhead; not an approved budget'},
++        'source_of_extra_cost':'full aligned native operands, all-wave D5 detached reads, receiver records and full restart state',
++        'native_evidence_downsampled':False,'prehistory_preparations_executed':0})
++    write_json(EVIDENCE/'EVENTUAL_ROSTER_NOT_AUTHORIZED.json',ROSTER)
++    print('Prepared three complete manufactured record sets and separate paused review pages')
++
++def assemble():
++    destination=ROOT/'artifacts/review-package-apparatus-20260924-01a0c405/assembled'
++    destination.mkdir(parents=True,exist_ok=False)
++    code=destination/'developmental_ecology'; code.mkdir()
++    for name in ('loom_p','loom_commissioning','tests','tests_apparatus'):
++        shutil.copytree(ROOT/name,code/name,ignore=shutil.ignore_patterns('__pycache__','.pytest_cache'))
++    for name in ('configuration.json','requirements-lock.txt','verify_apparatus.py','package_apparatus.py',
++                 'Open Paused Sensor Reference.cmd','Open Privileged Apparatus Review.cmd'):
++        source=ROOT/name
++        if source.exists(): shutil.copyfile(source,code/name)
++    shutil.copytree(ROOT/'artifacts/prehistory-attempt-001',code/'artifacts/prehistory-attempt-001')
++    target=code/'artifacts/apparatus-20260924-01a0c405'; target.mkdir()
++    shutil.copytree(EVIDENCE/'review-evidence',target/'review-evidence')
++    shutil.copytree(EVIDENCE/'references',target/'references')
++    for p in EVIDENCE.iterdir():
++        if p.is_file(): shutil.copyfile(p,target/p.name)
++    faults=target/'faults-attempt-002'; faults.mkdir()
++    for p in (EVIDENCE/'faults-attempt-002').iterdir():
++        if p.is_file(): shutil.copyfile(p,faults/p.name)
++    shutil.copytree(DOCS,destination/'docs/developmental_ecology/p_apparatus_20260924')
++    (destination/'START_HERE.md').write_text('''# Loom P apparatus review
++
++Apparatus construction only. P baseline 6bc9683b remains uncommissioned/untested.
++
++Double-click `developmental_ecology/Open Paused Sensor Reference.cmd` for an inert recorded sensor view.
++The separately named privileged review is for evaluators; someone who sees it cannot provide a blinded sensory witness for that fixture.
++These static pages need no Python and cannot advance a body.
++
++Read `docs/developmental_ecology/p_apparatus_20260924/BUILD_REPORT.md` and `CHECKPOINT.json`.
++`SOURCE_IDENTITIES.json`, the unchanged design ZIP, P source/configuration, full manufactured streams/restarts,
++fault logs, test logs, exact Git patch and inventories are included. Earlier failed-development logs are retained.
++
++For component reproduction use Python 3.13.5 with the included pinned requirements. Run from `developmental_ecology`:
++
++```powershell
++$env:PYTEST_DISABLE_PLUGIN_AUTOLOAD='1'
++python -B -X utf8 -m pytest tests tests_apparatus -q -p no:cacheprovider --basetemp C:\\Temp\\loom-apparatus-review-UNIQUE
++python -B -X utf8 verify_apparatus.py C:\\Temp\\loom-apparatus-faults-UNIQUE
++```
++
++Choose unused paths. These commands execute manufactured component fixtures, not commissioning.
++Never run the legacy smoke/prehistory helpers under this apparatus-build authority.
++Fresh dependency installation and another operating system were not tested.
++''',encoding='utf-8')
++    print(destination)
++
++def seal():
++    package=ROOT/'artifacts/review-package-apparatus-20260924-01a0c405'; assembled=package/'assembled'
++    checkpoint=subprocess.check_output(['git','-C',str(REPO),'rev-parse','HEAD'],text=True).strip()
++    branch=subprocess.check_output(['git','-C',str(REPO),'branch','--show-current'],text=True).strip()
++    status=subprocess.check_output(['git','-C',str(REPO),'status','--porcelain'],text=True)
++    assert not status,status
++    patch=subprocess.check_output(['git','-C',str(REPO),'diff','--binary',BASELINE,checkpoint])
++    (assembled/'APPARATUS.patch').write_bytes(patch)
++    write_json(assembled/'CHECKPOINT.json',{'checkpoint':checkpoint,'parent':BASELINE,'branch':branch,'worktree':str(REPO),
++        'patch_sha256':hashlib.sha256(patch).hexdigest(),'p_code':code_identity(),'apparatus':apparatus_identity()})
++    for name in ('portable-suite.log','PRESERVATION_AFTER.json','UI_REVIEW.json'):
++        shutil.copyfile(EVIDENCE/name,assembled/'developmental_ecology/artifacts/apparatus-20260924-01a0c405'/name)
++    inventory={p.relative_to(assembled).as_posix():{'bytes':p.stat().st_size,'sha256':digest(p)} for p in sorted(assembled.rglob('*')) if p.is_file()}
++    write_json(assembled/'ARTIFACT_MANIFEST.json',{'files':inventory,'checkpoint':checkpoint})
++    output=package/'Loom_P_Commissioning_Apparatus_Review_20260924.zip'
++    with zipfile.ZipFile(output,'x',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
++        for p in sorted(assembled.rglob('*')):
++            if p.is_file(): z.write(p,p.relative_to(assembled).as_posix())
++    with zipfile.ZipFile(output) as z:
++        assert z.testzip() is None
++        for name,row in inventory.items():
++            data=z.read(name); assert len(data)==row['bytes'] and hashlib.sha256(data).hexdigest()==row['sha256']
++    receipt={'zip':str(output),'bytes':output.stat().st_size,'sha256':digest(output),
++             'checkpoint':checkpoint,'inventoried_files':len(inventory),'all_payload_hashes_verified':True}
++    write_json(package/'RECEIPT.json',receipt); print(json.dumps(receipt,indent=2))
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser(); parser.add_argument('stage',choices=('prepare','assemble','seal')); args=parser.parse_args()
++    globals()[args.stage]()
+diff --git a/developmental_ecology/tests_apparatus/test_apparatus.py b/developmental_ecology/tests_apparatus/test_apparatus.py
+new file mode 100644
+index 0000000..ba134a4
+--- /dev/null
++++ b/developmental_ecology/tests_apparatus/test_apparatus.py
+@@ -0,0 +1,283 @@
++"""Manufactured component fixtures only; no commissioning row is executed."""
++import copy
++import json
++import os
++from pathlib import Path
++from unittest.mock import patch
++import numpy as np
++import pytest
++from loom_p.schema import Config, Streams
++from loom_p.engine import Engine
++from loom_p.physics import Body, account
++from loom_p.geometry import transduce
++from loom_p.neural import Organism, Regulator, Cortex, Association
++from loom_p.records import state_hash
++from loom_commissioning.contract import *
++from loom_commissioning import adapter, diagnostics
++from loom_commissioning.controllers import *
++from loom_commissioning.runner import Run, load_restart
++from loom_commissioning.validators import *
++
++def manufactured(time=0.,index=0):
++    c=Config(); fields=np.zeros((2,c.grid_n,c.grid_n),dtype=float)
++    e=Engine(c,fields,0.,Streams(c.master_seed),{'kind':'manufactured_zero_field_not_lawful_birth'})
++    e.body=Body(np.array([5.,5.]),.3,energy=.7,integrity=.8)
++    e.time=time; e.native_index=index
++    e.raw=transduce(c,e.body,e.fields,e.time,e.phase)
++    e.organism=Organism(c,Streams(c.master_seed),e.raw,e.body.reserves)
++    e.birth_provenance={'kind':'manufactured','position':[5.,5.],'angle':.3,'phase':0.}
++    return e
++
++def faulty(name): return os.environ.get('APPARATUS_FAULT')==name
++
++def test_manifest_identity():
++    e=manufactured(); m=make_manifest(e,'fixture-identity',INTACT,'none',.01)
++    if faulty('identity'): m['p_code']='0'*64
++    validate_manifest(m,e)
++    bad=copy.deepcopy(m); bad['configuration']='bad'
++    with pytest.raises(ValueError,match='configuration identity'): validate_manifest(bad,e)
++
++def test_native_completeness():
++    e=manufactured(); start=copy.deepcopy(e); m=make_manifest(e,'fixture-sequence',INTACT,'none',.01)
++    n,_,_,_=adapter.step(e,INTACT)
++    records=[dict(n,mode=INTACT,field_phase=e.phase)]
++    if faulty('missing_native'): records=[]
++    validate_native_sequence(records,start,e,m)
++
++def test_field_phase():
++    e=manufactured(); m=make_manifest(e,'fixture-phase',INTACT,'none',.01)
++    if faulty('phase'): e.phase+=.1
++    validate_manifest(m,e)
++
++def test_accounting():
++    c=Config(); b=Body(np.array([2.,3.]),0.,energy=.5,integrity=.8); stocks=np.full(8,.2)
++    contact={'source':0,'material':2,'impulse':.001,'relative_speed':0.}
++    event=account(c,b,stocks,[contact],.01)
++    assert event['transfer'].sum()>0
++    if faulty('ledger'): event['energy_after']+=1e-5
++    validate_ledger([event])
++
++def test_controller_allowlist():
++    e=manufactured(); values=privileged_input(e)
++    if faulty('input'): values['neural_q']=e.organism.association.q.tolist()
++    validate_privileged(values)
++    plan=[{'point':[6.,5.],'until':2.,'press_force':0.}]
++    before=state_hash(e); one,cursor=waypoint_command(values,plan,0); two,_=waypoint_command(copy.deepcopy(values),plan,0)
++    assert np.array_equal(one,two) and max(abs(one))<=1 and cursor==0
++    assert state_hash(e)==before
++
++def test_observer_noninterference():
++    e=manufactured()
++    def observer(x):
++        if faulty('observer'): x.organism.rng.draw('observer-intrusion',(1,))
++        return privileged_input(x)
++    observe_without_interference(e,observer)
++
++def test_stop_reason():
++    e=manufactured(); m=make_manifest(e,'fixture-stop',INTACT,'none',.01)
++    validate_stop('terminal' if faulty('stop') else 'administrative_pause',e,m)
++
++def test_sensor_boundary():
++    e=manufactured(); h=SensorHistory(e); payload=h.display()
++    if faulty('sensor_leak'): payload['history'][0]['position']=e.body.position.tolist()
++    validate_sensor_payload(payload)
++    # Actual E changes between handoffs, but the permitted display value holds.
++    e.time=.01; e.native_index=1; e.body.energy=.6; h.observe(e)
++    assert h.display()['history'][-1]['actual_EI']==[.7,.8]
++    e.time=.2; e.native_index=20; h.observe(e)
++    assert h.display()['history'][-1]['actual_EI']==[.6,.8]
++
++def test_external_label():
++    e=manufactured(); m=make_manifest(e,'fixture-external',EXTERNAL,'sensor_human',.1)
++    if faulty('label'): m['mode']=INTACT
++    validate_manifest(m,e)
++
++def test_frozen_persistence():
++    e=manufactured(); o=e.organism; frozen=adapter.structure(o)
++    original=adapter.restore_sensory
++    def maybe_restore(obj,values):
++        if not faulty('frozen'): original(obj,values)
++    with patch.object(adapter,'restore_sensory',maybe_restore):
++        adapter.fixed_native(o,e.raw,.01,False,frozen)
++    adapter.validate_frozen(o,frozen)
++
++def causal_state(o):
++    result=copy.deepcopy(o)
++    # Diagnostics deliberately retain discarded hypothetical operands. These
++    # are not receiver state; full records retain them separately.
++    result.last_wave={}
++    for cortex in result.cortices: cortex.diagnostic={}
++    result.association.diagnostic={}; result.regulator.credit_diagnostic={}; result.regulator.output_diagnostic={}
++    return result
++
++def test_discarded_update_has_no_later_effect():
++    e=manufactured(); o=e.organism; frozen=adapter.structure(o)
++    other=copy.deepcopy(o); originals=(Cortex.step,Regulator.credit,Association.write)
++    def poison_cortex(self,*args,**kwargs):
++        originals[0](self,*args,**kwargs)
++        self.shared+=.123; self.fine-=.09; self.shared_ref+=.03; self.fine_ref+=.07
++    def poison_bank(self,*args,**kwargs):
++        originals[1](self,*args,**kwargs); self.theta+=.2; self.reference-=.3
++    def poison_map(self,*args,**kwargs):
++        originals[2](self,*args,**kwargs)
++        for key in self.H: self.H[key]+=.01; self.use[key]+=.1
++    def sequence(obj):
++        for _ in range(20): adapter.fixed_native(obj,e.raw,.01,False,frozen)
++        adapter.fixed_handoff(obj,np.array([.69,.79]),frozen)
++        adapter.fixed_native(obj,e.raw,.01,False,frozen)
++    sequence(o)
++    restore=adapter.restore_banks
++    def late(obj,values):
++        if not faulty('discarded'): restore(obj,values)
++    with patch.object(Cortex,'step',poison_cortex),patch.object(Regulator,'credit',poison_bank),patch.object(Association,'write',poison_map),patch.object(adapter,'restore_banks',late):
++        if faulty('discarded'):
++            # A late restore leaves no persistent structural fault, but controls
++            # already consumed the discarded bank. Bypass only the end invariant
++            # to restore after output and expose the consequential later state.
++            original_output=Regulator.output
++            def output(self,*args,**kwargs):
++                original_output(self,*args,**kwargs); self.theta=frozen['theta'].copy(); self.reference=frozen['reference'].copy()
++            with patch.object(Regulator,'output',output): sequence(other)
++        else: sequence(other)
++    adapter.validate_frozen(other,frozen)
++    assert state_hash(causal_state(o))==state_hash(causal_state(other)), 'discarded structural update affected later output/state'
++
++def test_duration_guard(tmp_path):
++    e=manufactured(); m=make_manifest(e,'fixture-cap',INTACT,'none',.01); run=Run(e,m,tmp_path/'cap')
++    try:
++        if faulty('duration'): run.manifest['hard_stop_time']+=.01
++        run.advance(1)
++        assert run.closed and run.engine.time==.01
++        with pytest.raises(ValueError): run.advance(1)
++    finally:
++        if not run.closed: run.close()
++
++def test_controller_hold_schedule(tmp_path):
++    e=manufactured(time=.49,index=49)
++    m=make_manifest(e,'fixture-hold',EXTERNAL,'sensor_human',.1)
++    run=Run(e,m,tmp_path/'hold'); initial_rng=e.organism.rng.counters.copy(); initial_o=state_hash(e.organism)
++    original=e.solver.step; calls=[]
++    def measured(*args,**kwargs): calls.append(args[4]); return original(*args,**kwargs)
++    # The injected extra field evolution changes the actual field, not a counter.
++    original_coupled=adapter.coupled
++    def extra(*args,**kwargs):
++        result=original_coupled(*args,**kwargs)
++        if faulty('extra_updates'):
++            x=args[0]; x.fields=x.solver.step(x.fields,x.stocks,x.time,x.phase,args[1],x.body.position)
++        if faulty('extra_native'): args[0].organism.native(args[0].raw,args[1])
++        if faulty('extra_wave'):
++            args[0].organism.wave_elapsed=.2; args[0].organism.handoff(args[0].body.reserves)
++        if faulty('extra_random'): args[0].organism.rng.draw('unexpected-controller-draw',(1,))
++        return result
++    # P serialization cannot pack instance-bound methods; instrument the class.
++    from loom_p.chemistry import FieldSolver
++    real=FieldSolver.step
++    def count(self,*args,**kwargs): calls.append(args[4]); return real(self,*args,**kwargs)
++    with patch.object(FieldSolver,'step',count),patch.object(adapter,'coupled',extra): run.hold([.1,.1])
++    assert len(calls)==10, 'extra native/wave/random/field updates introduced by controller hold'
++    assert e.native_index==59 and e.organism.rng.counters==initial_rng and state_hash(e.organism)==initial_o, 'extra native/wave/random state change from external hold'
++    verify_segment(tmp_path/'hold')
++
++@pytest.mark.parametrize('mode,controller',[(INTACT,'none'),(FIXED,'none'),(EXTERNAL,'sensor_human')])
++def test_pause_resume_and_reconstruction(tmp_path,mode,controller):
++    e=manufactured(); initial=copy.deepcopy(e); m=make_manifest(e,'fixture-resume',mode,controller,.2)
++    one=Run(e,m,tmp_path/'first')
++    if mode==EXTERNAL: one.begin_command([.1,-.1])
++    one.advance(7); digest_before=state_hash(e)
++    one.display(); one.display(); assert state_hash(e)==digest_before
++    one.close(); verify_segment(tmp_path/'first')
++    resumed=Run.resume(tmp_path/'first',tmp_path/'second')
++    if mode==EXTERNAL: resumed.hold(); resumed.hold([.1,-.1])
++    else: resumed.advance(13)
++    verify_segment(tmp_path/'second')
++    other=Run(initial,m,tmp_path/'continuous')
++    if mode==EXTERNAL: other.hold([.1,-.1]); other.hold([.1,-.1])
++    else: other.advance(20)
++    assert state_hash(other.engine)==state_hash(resumed.engine)
++    verify_segment(tmp_path/'continuous')
++
++def test_long_ceiling_endpoint_without_long_trajectory(tmp_path):
++    # One manufactured native step at a large clock value, not a 1,200 s life.
++    e=manufactured(time=1199.99,index=119999)
++    m=make_manifest(e,'fixture-long-clock',EXTERNAL,'sensor_human',.01)
++    run=Run(e,m,tmp_path/'long-clock'); run.hold([0.,0.]); verify_segment(tmp_path/'long-clock')
++    assert abs(e.time-1200)<1e-10 and e.native_index==120000
++    proposal=copy.deepcopy(m); proposal.update(purpose='commissioning',case_id='A5',duration_seconds=1200,initial_time=0,hard_stop_time=1200)
++    with pytest.raises(ValueError,match='not authorized'): authorize_execution(proposal)
++
++def test_native_wave_noise_schedules_above_old_cap(tmp_path):
++    e=manufactured(time=31.99,index=3199)
++    e.organism.wave_elapsed=.19
++    m=make_manifest(e,'fixture-large-clock-P',INTACT,'none',.01)
++    run=Run(e,m,tmp_path/'large-clock-P'); run.advance(1)
++    assert e.organism.wave_count==1 and e.native_index==3200
++    verify_segment(tmp_path/'large-clock-P')
++    e=manufactured(time=.49,index=49); e.organism.wave_elapsed=.09
++    m=make_manifest(e,'fixture-noise',INTACT,'none',.02)
++    count=e.organism.rng.counters['life/motor-noise']
++    run=Run(e,m,tmp_path/'noise'); run.advance(2)
++    assert e.organism.rng.counters['life/motor-noise']==count+1
++    verify_segment(tmp_path/'noise')
++
++def test_nonzero_receivers_and_every_wave_selection():
++    e=manufactured(); o=e.organism
++    for key in o.association.H: o.association.H[key].fill(.0001)
++    o.regulator.theta.fill(.002)
++    for _ in range(19): e.step()
++    before=copy.deepcopy(e); _,wave,_=e.step()
++    record=diagnostics.passive(before,e,wave,INTACT,None)
++    assert 'D5_wave' in record and 'D5_native' in record
++    influence=record['D5_wave']
++    assert np.linalg.norm(wave['association']['q'])>0
++    assert np.linalg.norm(influence['without']['evoked']['features']-influence['baseline']['features'])>0
++
++def test_long_manifest_and_verified_cache_do_not_authorize_execution(tmp_path):
++    from loom_commissioning.initialization import from_verified_cache
++    cache=Path(__file__).resolve().parents[1]/'artifacts/prehistory-attempt-001'
++    e,initialization=from_verified_cache(cache,0)  # read-only reuse, no preparation or advancement
++    m=make_manifest(e,'A5',EXTERNAL,'waypoint',1200,purpose='commissioning',initialization=initialization)
++    validate_manifest(m,e)
++    with pytest.raises(ValueError,match='not authorized'): Run(e,m,tmp_path/'must-not-exist')
++    assert not (tmp_path/'must-not-exist').exists() and e.native_index==0
++
++def test_partial_terminal_has_no_handoff(tmp_path):
++    e=manufactured(time=.19,index=19); e.body.energy=.000005
++    e.raw=transduce(e.c,e.body,e.fields,e.time,e.phase)
++    m=make_manifest(e,'fixture-terminal',EXTERNAL,'sensor_human',.1)
++    run=Run(e,m,tmp_path/'terminal'); counters=e.organism.rng.counters.copy(); run.hold([0.,0.])
++    assert e.status=='terminal' and e.time<.2 and e.native_index==20 and e.organism.rng.counters==counters
++    assert run.session['body_wave_samples']==0
++    verify_segment(tmp_path/'terminal')
++
++def test_firewall_and_packet_alias():
++    av=classify('V1',{'identity':'valid'}); so=classify('S1',{'raw_observation':'harmful relation'})
++    assert configuration_grounds([av])['automatic_adjustment'] is False
++    with pytest.raises(ValueError,match='SO cannot'): configuration_grounds([av,so])
++    # Same trapezoidal mean and endpoint, different order; detached mathematics.
++    a=np.array([0.,1.,-1.,0.,0.]); b=np.array([0.,-1.,1.,0.,0.])
++    packets=[np.array([np.trapezoid(x)/4,x[-1]]) for x in (a,b)]
++    distances=diagnostics.packet_pair_distances([a,b],packets)
++    assert distances[0]['packet_distance']==0 and distances[0]['native_distance']>0
++
++def test_io_failure_is_incomplete(tmp_path):
++    e=manufactured(); m=make_manifest(e,'fixture-io',INTACT,'none',.01)
++    run=Run(e,m,tmp_path/'io')
++    run.recorder.storage_limit=1
++    with pytest.raises(OSError): run.advance(1)
++    receipt=json.loads((tmp_path/'io'/'manifest.json').read_bytes())
++    assert receipt['status']=='apparatus_failure' and not receipt['complete']
++
++def test_server_has_no_privileged_routes(tmp_path):
++    import threading, urllib.request, urllib.error
++    from http.server import HTTPServer
++    from loom_commissioning.sensor_ui import handler,OfflineGateway
++    file=tmp_path/'safe.json'; file.write_bytes(strict_bytes(SensorHistory(manufactured()).display()))
++    server=HTTPServer(('127.0.0.1',0),handler(OfflineGateway(file)))
++    thread=threading.Thread(target=server.serve_forever,daemon=True); thread.start()
++    try:
++        base=f'http://127.0.0.1:{server.server_port}'
++        with urllib.request.urlopen(base+'/sensors') as response: validate_sensor_payload(json.load(response))
++        for suffix in ('/evaluation','/manifest.json','/../configuration.json','/state'):
++            with pytest.raises(urllib.error.HTTPError) as error: urllib.request.urlopen(base+suffix)
++            assert error.value.code==404
++    finally: server.shutdown(); server.server_close(); thread.join()
+diff --git a/developmental_ecology/verify_apparatus.py b/developmental_ecology/verify_apparatus.py
+new file mode 100644
+index 0000000..9fc46c6
+--- /dev/null
++++ b/developmental_ecology/verify_apparatus.py
+@@ -0,0 +1,47 @@
++"""Bounded apparatus verification. No prehistory or commissioning trajectory entry point."""
++import argparse,json,os,subprocess,sys,time
++from pathlib import Path
++
++FAULTS={
++ 'identity':('test_manifest_identity','manifest/code identity mismatch'),
++ 'missing_native':('test_native_completeness','missing native record'),
++ 'phase':('test_field_phase','wrong field/mover phase'),
++ 'ledger':('test_accounting','source debit/body credit mismatch'),
++ 'input':('test_controller_allowlist','forbidden controller input'),
++ 'observer':('test_observer_noninterference','observer RNG/state interference'),
++ 'stop':('test_stop_reason','mislabelled stop reason'),
++ 'sensor_leak':('test_sensor_boundary','privileged data leakage into sensor-only interface'),
++ 'label':('test_external_label','external controller incorrectly labelled intact P'),
++ 'frozen':('test_frozen_persistence','frozen structural parameter changed'),
++ 'discarded':('test_discarded_update_has_no_later_effect','discarded structural update affected later output/state'),
++ 'duration':('test_duration_guard','manifest changed during run'),
++ 'extra_updates':('test_controller_hold_schedule','extra native/wave/random/field updates introduced by controller hold')}
++for _name in ('extra_native','extra_wave','extra_random'):
++    FAULTS[_name]=('test_controller_hold_schedule','extra native/wave/random state change from external hold')
++
++def faults(output):
++    output=Path(output); output.mkdir(parents=True,exist_ok=False); root=Path(__file__).parent
++    receipts=[]
++    for name,(test,expected) in FAULTS.items():
++        pair={'fault':name,'test':test,'intended_failure':expected}
++        for colour in ('RED','GREEN'):
++            env=os.environ.copy(); env['PYTEST_DISABLE_PLUGIN_AUTOLOAD']='1'; env['PYTHONDONTWRITEBYTECODE']='1'
++            env['PYTHONPATH']=str(root); env.pop('APPARATUS_FAULT',None)
++            if colour=='RED': env['APPARATUS_FAULT']=name
++            cmd=[sys.executable,'-B','-X','utf8','-m','pytest',f'tests_apparatus/test_apparatus.py::{test}',
++                 '-q','-p','no:cacheprovider','--basetemp',str(output/f'{name}-{colour}-temp')]
++            start=time.perf_counter(); result=subprocess.run(cmd,cwd=root,env=env,capture_output=True,text=True,encoding='utf-8',timeout=90)
++            text=result.stdout+result.stderr; (output/f'{name}-{colour}.log').write_text(text,encoding='utf-8')
++            valid=(result.returncode==1 and expected in text and '1 failed' in text) if colour=='RED' else (result.returncode==0 and '1 passed' in text)
++            pair[colour]={'exit':result.returncode,'intended':valid,'wall_seconds':time.perf_counter()-start,'command':cmd}
++            print(name,colour,'verified' if valid else 'UNEXPECTED',flush=True)
++            if not valid:
++                (output/'INCOMPLETE.json').write_text(json.dumps(receipts+[pair],indent=2),encoding='utf-8')
++                raise RuntimeError(f'{name} {colour} did not reach intended result')
++        receipts.append(pair)
++    (output/'FAULT_MATRIX.json').write_text(json.dumps(receipts,indent=2),encoding='utf-8')
++    return receipts
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser(); parser.add_argument('output'); args=parser.parse_args()
++    faults(args.output)
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/AUTHORITY_AND_INFORMATION_FLOW.md b/docs/developmental_ecology/p_apparatus_20260924/AUTHORITY_AND_INFORMATION_FLOW.md
+new file mode 100644
+index 0000000..f4fe2e2
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/AUTHORITY_AND_INFORMATION_FLOW.md
+@@ -0,0 +1,22 @@
++# Authority and information-flow map
++
++The current user request authorizes apparatus construction and minimum manufactured engineering fixtures only. The five commissioning design documents are accepted for that scope with the seven user rulings. In particular, the D5 ruling replaces the earlier at-most-100-wave-samples proposal with every handoff where practical. No other design proposal is promoted to a permission to run.
++
++| Actor / component | Reads | Writes / capability | Forbidden crossing |
++|---|---|---|---|
++| Intact P | Existing raw tuple and actual E/I through original engine | Existing P state and two motor commands | World geometry, labels, stock, phase or observer conclusions |
++| Privileged external controller | Copied body pose/velocity/E/I/commands; geometry; mover phase/velocity; stocks; normal/force/impulse; world clock | Two actuator commands and route cursor | Engine reference, direct physical-state mutation, neural state or random generator |
++| Sensor-only human gateway | 29 raw coordinates, raw history, cadence-held E/I, own commands/annotations | Two commands for one hold | World/evaluation/snapshot/manifest/phase/stock/fixture payload or privileged exception |
++| Fixed-structure adapter | Ordinary P inputs and explicitly listed frozen newborn fields | Restore only listed structure at declared boundaries; retain hypothetical updates as diagnostics | A substitute policy, disabled transient dynamics, changed P settings or an intact-P label |
++| Passive diagnostics | Detached pre/post snapshots and recorded contributions | New diagnostic records | Live RNG or state mutation, alternate world evolution, outcome-based sampling |
++| Privileged evaluator | Completed native/wave/event records and restart snapshots | Separate offline AV/CO display and preserved SO stream | Live human-controller information |
++| Configuration-ground builder | Evidence rows with fixed registered classes | Review request requiring Jason | SO as a pre-freeze adjustment ground; automatic configuration edits |
++| Bounded runner | Exact explicit contract and complete state | Native steps within deadline; append-only records; honest stop | New births, silent resets, longer durations on restart, invisible incomplete tails |
++
++Default launchers open inert saved HTML. They do not start Python, create a world, run a timer or install anything. The optional loopback sensor server defaults to an offline saved-record gateway. A live human gateway must be explicitly supplied by a later authorized task. Privileged evaluation is a separate module/output and has no route on that server.
++
++The execution-authority record for a future commissioning manifest must identify a separately supplied request file and its SHA-256, the approved case, exact initial-state hash and duration. This release supplies no such grant. Hash checks establish custody and scope, not the identity of a human author; Jason's actual instruction remains the authority. The four birth IDs and 600-second ceiling are prospective roster metadata with `execution_authorized=false`.
++
++A future operator must not inspect the test's privileged starting state/phase or evaluation before a blinded sensory witness. Human positive controls and held-out scenario/deprivation protocols remain an execution-task requirement, untested here. An automated learned sensory controller was not built.
++
++No shared workbench map, canonical research source or vault Git state was written. The main Loom checkout's preexisting modifications remain outside this worktree. Prior engineering artifacts and failed-development evidence are preserved. The new commit is local only and is an engineering checkpoint, not commissioning approval or an evidential freeze.
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/BUILD_REPORT.md b/docs/developmental_ecology/p_apparatus_20260924/BUILD_REPORT.md
+new file mode 100644
+index 0000000..e1a2a87
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/BUILD_REPORT.md
+@@ -0,0 +1,49 @@
++# Loom P coupling-commissioning apparatus — construction review
++
++Date: 2026-09-24. P implementation: `6bc9683b54e4fa80136fe8534d7713e2a250a95f`.
++
++**Apparatus construction and bounded component verification complete. Commissioning has not begun or been authorized.** The P runtime and configuration are unchanged. This apparatus needs independent review before commissioning execution. P retains its prior scoped engineering-fidelity disposition and remains scientifically uncommissioned/untested.
++
++The isolated worktree is `C:\Users\Jason\Desktop\Eridos\Loom-p-apparatus-20260924-01a0c405`, branch `build/p-commissioning-apparatus-20260924-01a0c405`. The portable package's `CHECKPOINT.json` gives the final local commit, its parent, exact binary diff and code identities without a self-referential commit claim in this committed document.
++
++## Implemented apparatus
++
++`developmental_ecology/loom_commissioning` is a separate package. No file in `loom_p`, no P parameter, and no earlier engineering test was edited. Eight units per sensory cortex, two pools, mean-plus-endpoint packets, both centring operations, contracting association, separate E/I credit and all other P laws remain intact. R and all alternatives remain preserved.
++
++The manifest requires exact P, configuration and apparatus identities; a complete initial-state identity; phase/field provenance; a fixed duration and absolute deadline; controller/trajectory identity; predetermined D5 selection; and the unstarted birth roster. It supports the design's horizons through 1,200 seconds. Intact P advances through the original `Engine.step`. The external and fixed-structure adapters retain its native/field/terminal schedule with their declared interventions. No runner calls the old 30-second bounded function repeatedly.
++
++Commands in external arms are held for ten native steps. A pause between decisions does not advance any clock or random stream. A pause at step seven retains the remaining three held steps across restart. The original deadline, controller state, frozen structure, sensor history, random state, body, chemistry and neural state survive in the restart record. Only a completed administrative pause resumes. A cutoff, terminal state, incomplete stream or apparatus failure cannot silently restart. A new output segment preserves the prior segment and its manifest hash. The periodic snapshot trigger was exercised at the manufactured 1,200-second clock endpoint; a continuing ten-second checkpoint series was not run.
++
++The physical-ceiling controller is a deterministic prescribed-waypoint/wait/contact-force-feedback controller. Its input schema is closed to the design's privileged geometry/body/stock/contact/clock list. It receives copied values and returns only two bounded actuator commands. Its initial controller constants are disclosed in code; they were not tuned on outcomes. Its route-following capability for A1–A5 is **not established**. Manual privileged command entry remains an API fallback, recorded as external control.
++
++The human sensor interface receives only the 29 raw coordinates, their history, held actual E/I at the native wave cadence, and the operator's commands/notes. The loopback server has no evaluation, manifest, file-serving, pose or world-setting endpoint. Privileged exceptions are not returned to the operator. A separate offline evaluator reads physical and neural records. An operator who has inspected those privileged records cannot supply a blinded witness for that fixture.
++
++The **FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC** freezes sensory `shared`, `fine`, `shared_ref`, `fine_ref`; association `H` and `use`; and regulator `theta` and `reference`. It requires newborn structure. Bank restoration occurs between credit and control production; sensory fields are restored immediately after native operations; maps/use are restored after their hypothetical write and before any next read. Transient states continue. Hypothetical updates remain inspectable and the applied structural increment is explicitly zero. This arm is never labelled intact P and supplies no innate-performance proof.
++
++Every native sample retains aligned step-start raw, receptor mean/residual, activity, shared/fine pressure, references, support, opening and applied increments. Every wave retains packet/mean/beta/trace/query alignment, association contributions and separate E/I credit operands. D5 evaluates every handoff; native-only motor probes use `native_index % 100 == 0`, with motor reconstruction also at every handoff. Selection is fixed before any magnitudes are read. Detached receivers reconstruct the original output before removing one contribution, including recomputing query/support read dependencies. They consume no live random draws. There is no gain normalization or alternate behavioral trajectory.
++
++AV and CO are the commissioning review surface. SO observations have a separate preserved stream and cannot pass `configuration_grounds`. That API produces a request for Jason's defect-specific decision; it cannot adjust configuration. The four proposed birth IDs and 600-second ceilings remain in every manifest. Zero witnesses at that coverage means unresolved opportunity; no extension rule exists.
++
++## Verification and limits
++
++The final worktree suite passed **83 tests in 34.18 seconds**: 24 apparatus checks and all 59 unchanged P component checks. All **16 observed RED→GREEN pairs** reached their intended fault, including separate native, wave, random and field interventions. Full logs and commands are in `faults-attempt-002/FAULT_MATRIX.json`. The fully assembled portable package also passed **83 tests in 58.63 seconds**, recorded separately in `portable-suite.log`.
++
++The new fixtures are manufactured, not lawful ecological births: zero initial chemical fields, phase zero, a disclosed body state at `[5,5]`, and explicitly manufactured clock/state variants. Normal recorded components last 0.2 seconds; controller checks last 0.1 seconds. A partial-terminal fixture uses a manufactured small energy reserve. One manufactured native step begins at clock 1,199.99 seconds; another at 31.99 seconds tests P's due wave. These are clock-boundary components, not 1,200- or 32-second lives. A 1,200-second manifest with the existing verified life-0 cache was validated and its unauthorized execution rejected before output creation. No new prehistory was prepared, and life-0 history was not reused for births 1–4.
++
++The fixed-structure poison fixture changes discarded sensory, bank, map and use updates while keeping their ordinary transient operations. With correct restoration, all subsequent causal state and RNG match. A deliberately late bank restoration leaves frozen parameters restored but changes subsequent output/state; it fails the intended assertion. Receiver checks also use manufactured nonzero maps/banks so q and removal sensitivity are not tested only at their zero birth values.
++
++All three recorded modes reproduce their complete native, wave, event and final field/neural state from saved initial states. Paused and continuous paths agree. Recorded sensor histories are compared against reconstructed physical transduction and held E/I, not merely checked for field names. Source debit, body credit, renewal, expenditure, damage and restoration are balanced. No useful behavior, learning or survival threshold is a pass condition.
++
++Development history is retained: the first apparatus suite had one validator error (`E/I` versus P's actual `energy/integrity` terminal names); the next combined run lacked the existing prehistory cache in the fresh worktree, producing five setup failures. Correcting the validator and copying the unchanged cache resolved those failures. A packaging-only directory glob and archive-manifest filename were corrected before package completion; neither affected P or the apparatus runtime. Earlier logs and evidence were not erased.
++
++The sensor display was inspected in the browser and its history slider verified: at 0.100 seconds, E/I still show their 0.000-second sample; at 0.200 seconds, the new sample appears. The apply button is disabled in saved review. The temporary server was stopped. Browser security blocked direct `file:` navigation, so native double-click execution was not automated. The static launch targets and their embedded saved payloads were checked. `UI_REVIEW.json` preserves that limitation.
++
++## Runtime, storage and execution boundary
++
++The 0.2-second components cost 2.44–3.03 wall seconds including recorder/snapshot and diagnostic overhead. Intact P's stored record set is 960,238 bytes; fixed structure is 598,918 bytes; external control is 156,375 bytes. These are short component measurements, **not steady-state lifetime rates**. Applying the largest observed rates to the previously proposed 8,960-second workload gives a provisional envelope of about **37.74 machine-hours and 43.02 GB stored**, or about 86.04 GB with one duplicate. This does not authorize that workload or budget and is not a calibrated performance forecast. The original 11.67-hour/17.66-GB estimate and its different basis are retained in the estimate JSON. Native evidence was not downsampled to meet a budget.
++
++Execution was real Windows desktop-local Python 3.13.5, Git 2.50.0.windows.1, NumPy 2.3.3, SciPy 1.16.2 and pytest 8.4.2. The existing isolated environment was reused; no dependencies were installed. Scoped local writes and the new code worktree were approved. Source design archive, all 55 reading copies and the 68-entry delivery payload were hash-verified. The prior artifact inventory contains 792 files; final preservation results are in `PRESERVATION_AFTER.json`.
++
++**Not tested or claimed:** A1–A5, B1–B4, C1, C2; a 600-second life; a new phase prehistory; controller navigation/recovery competence; human positive controls or perceptual-ceiling capability; blinded held-out trials or deprivation scenarios; long-run performance, storage growth or ten-second periodic-snapshot execution; commissioning sufficiency; survival, developmental utility or beneficial learning; scientific efficacy, population rates or an innate-maintenance result; fresh dependency installation or cross-platform identity; exhaustive contact convergence. No capacity sweep, parameter change, efficacy tuning, experiment number, scientific preregistration, push, PR, merge, vault Git write or ongoing background run was performed.
++
++Before any later commissioning, Jason must authorize exact starts/routes/phases, operator controls, resource limits and cases. Birth-specific verified caches must exist. The apparatus accepts a separately supplied authority-file identity scoped to the exact case, initial state and duration; none is delivered here. This is an auditable workflow guard, not an authentication system for the machine owner. Acceptance of a design or this ZIP is not that grant. Stop at apparatus review.
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/EXECUTION_LEDGER.md b/docs/developmental_ecology/p_apparatus_20260924/EXECUTION_LEDGER.md
+new file mode 100644
+index 0000000..2c1c084
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/EXECUTION_LEDGER.md
+@@ -0,0 +1,21 @@
++# Execution ledger — apparatus construction only
++
++All new world evolution belongs to deterministic manufactured engineering fixtures. No A1–A5, B1–B4, C1/C2 commissioning trajectory or life-specific prehistory preparation was executed. Component fixtures, saved reconstruction and regression checks are not ecological witnesses.
++
++| Activity | Result / scope |
++|---|---|
++| Local capability check | Actual Windows code/workbench paths resolved and read; code worktree read/write/readback temporary probe removed; Python/Git versions and installed pinned dependencies checked; no dependency installation |
++| Repository isolation | New worktree and local branch created directly from exact 6bc9683b; preexisting main checkout and completed engineering worktree preserved |
++| Source custody | Five live design documents match the delivered copies; current instructions/orientation/final review/request read; 55 read copies, archive hash and complete design delivery manifest verified |
++| Development suite 001 | 20 passed, 1 failed: terminal-dimension naming error in new validator; log retained |
++| Combined suite 002 | 77 passed, 5 setup failures: saved prehistory fixture absent from new worktree; log retained; existing cache copied byte-for-byte, not regenerated |
++| Final worktree suite 003 | 83 passed, 34.18 seconds; new fixtures at most 0.2 seconds, including modified clock/reserve cases |
++| Fault matrix attempts 001 and 002 | 16 intended faults followed by 16 clean controls in each; final-code matrix 002 is authoritative; both retained locally |
++| Saved-record review assembly | Three modes, each with 0.07-second pause, continuation and matching 0.2-second continuous fixture; complete original streams and restarts copied; evaluator replay is confined to the saved manufactured segment |
++| UI QA | Saved sensor page visually checked; 0.100/0.200-second held E/I verified; no actuator command sent; direct local-file navigation blocked by browser security; temporary server stopped |
++| Fully assembled portable suite | 83 passed, 58.63 seconds; no cache regeneration; fresh temporary root outside package |
++| Final preservation | 792 prior artifact files, all 13 P runtime modules, configuration, original tests, exact source documents and historical tree unchanged within enumerated audit scope |
++
++No full scientific lifetime, cohort, sweep, efficacy tuning, experiment number, preregistration, background continuation, push, PR, merge or vault Git write occurred. The exact command-level fault transcript is retained. The test implementations and logs disclose all manufactured interventions and repeated component/replay executions; no successful biological outcome selected a fixture or a parameter.
++
++Earlier setup/packaging errors did not establish validator RED evidence. Only the intended-fault checks in the final matrix count as RED→GREEN. Local packaging initially used an incorrect archive-manifest filename and an overlong pytest-directory glob; these utilities were corrected without modifying sources or scientific code.
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/FAULT_MATRIX.json b/docs/developmental_ecology/p_apparatus_20260924/FAULT_MATRIX.json
+new file mode 100644
+index 0000000..f8daa4c
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/FAULT_MATRIX.json
+@@ -0,0 +1,690 @@
++[
++  {
++    "fault": "identity",
++    "test": "test_manifest_identity",
++    "intended_failure": "manifest/code identity mismatch",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.792146000021603,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_manifest_identity",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\identity-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.7303108999913093,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_manifest_identity",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\identity-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "missing_native",
++    "test": "test_native_completeness",
++    "intended_failure": "missing native record",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.7866510999738239,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_native_completeness",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\missing_native-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.6959002000221517,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_native_completeness",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\missing_native-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "phase",
++    "test": "test_field_phase",
++    "intended_failure": "wrong field/mover phase",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.723625099984929,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_field_phase",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\phase-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.7211335000174586,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_field_phase",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\phase-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "ledger",
++    "test": "test_accounting",
++    "intended_failure": "source debit/body credit mismatch",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.6613658000133,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_accounting",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\ledger-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.5964311999850906,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_accounting",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\ledger-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "input",
++    "test": "test_controller_allowlist",
++    "intended_failure": "forbidden controller input",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.7409938000200782,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_allowlist",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\input-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.7054296999995131,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_allowlist",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\input-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "observer",
++    "test": "test_observer_noninterference",
++    "intended_failure": "observer RNG/state interference",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.7728260000003502,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_observer_noninterference",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\observer-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.7120179000194184,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_observer_noninterference",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\observer-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "stop",
++    "test": "test_stop_reason",
++    "intended_failure": "mislabelled stop reason",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.7273610999982338,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_stop_reason",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\stop-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.6962834000005387,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_stop_reason",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\stop-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "sensor_leak",
++    "test": "test_sensor_boundary",
++    "intended_failure": "privileged data leakage into sensor-only interface",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.7180563999863807,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_sensor_boundary",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\sensor_leak-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.6836560999799985,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_sensor_boundary",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\sensor_leak-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "label",
++    "test": "test_external_label",
++    "intended_failure": "external controller incorrectly labelled intact P",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.7590123999980278,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_external_label",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\label-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.7918590999906883,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_external_label",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\label-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "frozen",
++    "test": "test_frozen_persistence",
++    "intended_failure": "frozen structural parameter changed",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.7416152000078,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_frozen_persistence",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\frozen-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.7016127999813762,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_frozen_persistence",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\frozen-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "discarded",
++    "test": "test_discarded_update_has_no_later_effect",
++    "intended_failure": "discarded structural update affected later output/state",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 1.249283299985109,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_discarded_update_has_no_later_effect",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\discarded-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 1.199190199986333,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_discarded_update_has_no_later_effect",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\discarded-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "duration",
++    "test": "test_duration_guard",
++    "intended_failure": "manifest changed during run",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 0.9644381999969482,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_duration_guard",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\duration-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 0.9959640000015497,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_duration_guard",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\duration-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "extra_updates",
++    "test": "test_controller_hold_schedule",
++    "intended_failure": "extra native/wave/random/field updates introduced by controller hold",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 2.150794000015594,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\extra_updates-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 2.453258499997901,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\extra_updates-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "extra_native",
++    "test": "test_controller_hold_schedule",
++    "intended_failure": "extra native/wave/random state change from external hold",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 2.2396471000101883,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\extra_native-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 2.4173088999814354,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\extra_native-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "extra_wave",
++    "test": "test_controller_hold_schedule",
++    "intended_failure": "extra native/wave/random state change from external hold",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 2.581640199990943,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\extra_wave-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 2.533115500002168,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\extra_wave-GREEN-temp"
++      ]
++    }
++  },
++  {
++    "fault": "extra_random",
++    "test": "test_controller_hold_schedule",
++    "intended_failure": "extra native/wave/random state change from external hold",
++    "RED": {
++      "exit": 1,
++      "intended": true,
++      "wall_seconds": 2.0994853999873158,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\extra_random-RED-temp"
++      ]
++    },
++    "GREEN": {
++      "exit": 0,
++      "intended": true,
++      "wall_seconds": 2.438648600014858,
++      "command": [
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++        "-B",
++        "-X",
++        "utf8",
++        "-m",
++        "pytest",
++        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
++        "-q",
++        "-p",
++        "no:cacheprovider",
++        "--basetemp",
++        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\apparatus-20260924-01a0c405\\faults-attempt-002\\extra_random-GREEN-temp"
++      ]
++    }
++  }
++]
+\ No newline at end of file
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/LAW_CODE_TEST_MAP.md b/docs/developmental_ecology/p_apparatus_20260924/LAW_CODE_TEST_MAP.md
+new file mode 100644
+index 0000000..37dbb8a
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/LAW_CODE_TEST_MAP.md
+@@ -0,0 +1,26 @@
++# Law, code and component-verification map
++
++All paths below are relative to `developmental_ecology`. The unchanged P equations remain in `loom_p/neural.py` and its original equation map. This is an apparatus intervention map, not a new mechanism specification.
++
++| Requirement / source | Implementation | Consequential evidence |
++|---|---|---|
++| Exact reviewed P and configuration; design §2 | `contract.validate_manifest`; `initialization.verify_history` | Identity/config rejection; phase mismatch; verified cache load; unmodified 59-test suite |
++| Native 0.01 s, wave 0.2 s, four sweeps; design §§2,8 | `Run.advance`; intact `Engine.step`; `adapter.step` for declared modified arms | Above-old-cap single native step with due wave; noise boundary; partial terminal before due handoff; saved full replay |
++| Original body/world/field laws | Original `physics.advance`, `FieldSolver.step`, `transduce` | Unchanged P regression tests; debit/credit mutant; field reconstruction; duplicate-field mutant |
++| Explicit duration and original restart deadline | `contract.make_manifest`, `Run._guard`, `Run.remaining`, `load_restart`, `Run.resume` | Cap mutation rejected; no output for unauthorized A5 manifest; step-seven pause equals continuous advance |
++| Ten-step command holds; design §4.1 | `begin_command`, `hold`, session held-command/remainder | Separate extra native, wave, random and field faults; full external object inactivity and field replay |
++| Closed privileged allowlist; design §4.1 | `controllers.privileged_input`, `validate_privileged`, `waypoint_command` | Forbidden neural input rejected; repeat command equality; bounded two-actuator result |
++| Raw-only human ceiling; design §5.1 | `SensorHistory`, `HumanGateway`, restricted HTTP handler | 29-coordinate and E/I cadence assertions; privileged key rejected; reconstructed raw/EI comparison; forbidden endpoint tests; browser check |
++| Freeze sensory fields; P equations 1–3,15–16; design §6 | `fixed_native`, `restore_sensory` | Persistent-change fault; poisoned hypothetical updates leave later causal state identical |
++| Freeze banks between credit and output; P equations 11–14; design §6 | `fixed_handoff`, `restore_banks` | Late-restore fault changes later output despite restored parameters; unchanged transient eligibility/body mean/RNG |
++| Freeze maps/use before next read; P equations 5–10; design §6 | `fixed_handoff`, `restore_maps` | Poisoned map/use discarded without changing later causal state; stored hypothetical versus zero applied increments |
++| Raw → packet → query alignment; design §§5.3,7 | `diagnostics.passive`; original wave records | Separate start/end timestamps; exact snapshot/native/wave replay; manufactured mean/endpoint alias |
++| Pooling, opening, support, formation and coarsening | `diagnostics.passive` cortical records | Original P equation tests plus per-group old/new/reference and pressure operands; no diversity or growth gate |
++| Receiver influence; design §7.3 and Jason's D5 ruling | `wave_receiver`, `motor_receiver`; immutable `SELECTION` | Original receiver reconstruction; nonzero manufactured q/banks; every handoff and fixed native-index selection; observer interference fault |
++| Separate actual E/I credit; design §7.4 | Original `Regulator.credit/output`; `credit_separate_E_I` records | Previous perturbation/features, old/new eligibility, actual body mean/trend, learning/reference/projection and applied delta; original credit tests |
++| AV/CO/SO firewall; Jason ruling 6 | `classify`, `configuration_grounds`; separate scientific stream | SO rejection with raw observation preserved; no automatic adjustment path |
++| Complete records and honest stop reasons; design §8 | `Recorder`, restart wrapper, `verify_segment`, `validate_stop` | Missing native and wrong stop mutants; injected I/O failure produces incomplete apparatus failure; all-state replay |
++
++The fixed-structure adapter duplicates only the necessary handoff and modified-arm scheduling order. It calls the unchanged operations for all equations. Its hypothetical diagnostic buffers can differ under poisoning; the test excludes only those observational buffers when comparing future causal state. It does not exclude body, random, control, filter, trace, activity or eligibility state.
++
++The complete mandatory fault table, commands, exact intended failures and individual RED/GREEN exits are in `artifacts/apparatus-20260924-01a0c405/faults-attempt-002/FAULT_MATRIX.json`. Each clean control is a separate process. No test asserts useful learning or behavior.
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/PLAIN_LANGUAGE_WALKTHROUGH.md b/docs/developmental_ecology/p_apparatus_20260924/PLAIN_LANGUAGE_WALKTHROUGH.md
+new file mode 100644
+index 0000000..704319d
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/PLAIN_LANGUAGE_WALKTHROUGH.md
+@@ -0,0 +1,21 @@
++# What the apparatus actually does
++
++P itself is unchanged. The new code is the equipment around it: a clock with a hard stop, a recorder, two forms of external control, a deliberately modified diagnostic arm, and separate views for an operator and an evaluator.
++
++For intact P, each real 0.01-second step still goes through the reviewed engine. At 0.2 seconds its normal handoff occurs. The apparatus records what happened and stops at the declared deadline. It does not turn a long observation into repeated 30-second permissions. A missing record or physical calculation failure is an apparatus failure, not a dead organism or a successful cutoff.
++
++For physical-ceiling work, an external controller sees the permitted privileged body/world information. It follows a route written in advance and can adjust its two actuator commands using contact force. It cannot move the body directly, add reserves, refill a source or alter contact. Its actions are labelled `external_controller`. This build checked bounded commands, determinism, timing and input isolation; it did not show that the controller can complete an ecological circuit.
++
++The sensor-only human sees a much smaller window: ten light, four chemical, eight contact and seven proprioceptive values. Actual energy and integrity arrive at five samples per second and remain held between samples. The operator can look back through raw history and their own commands. They receive no map, body pose, object name, source stock, mover phase or event notification. A decision holds the two commands for 0.1 bodily seconds. Looking at the screen adds no bodily time.
++
++The fixed-structure arm has a separate, explicit name: **FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC**. Its learned structure stays at its initial values while sensory activity, body dynamics, centring, traces, eligibility, exploration and other transient states continue. The recorder shows hypothetical updates that were discarded. The crucial timing is that a discarded bank update is removed before it can produce a control. Tests deliberately broke that timing and detected a later effect even after the weights had been restored.
++
++The evaluator can follow a sensory value through raw input, receptor mean, residual, cortical activity, emitted packet, packet centring, trace, query and returned association. Step-start and step-end readings are marked separately. Shared and fine sensory structure, support and formation/coarsening pressures remain separate. Energy and integrity credit also remain separate.
++
++At every handoff, detached receiver calculations remove one contribution at a time and compare the immediate result with the original. Native motor-only samples follow a fixed index rule. These calculations answer whether a contribution can change its receiver in that state. They do not produce another trajectory, infer benefit, or automatically balance gains.
++
++There are three interpretation classes. AV concerns apparatus validity. CO describes opportunity and what the configuration makes observable. SO concerns scientific usefulness. Raw SO observations are retained, but the apparatus rejects them as grounds for adjusting configuration before freeze. Neither disappointing survival nor useful learning selects the settings.
++
++The supplied review pages show only short manufactured fixtures. Use `Open Paused Sensor Reference.cmd` to inspect the restricted view. Use the separately named privileged review only as an evaluator. Both launch static saved pages and cannot advance a world. The live human gateway exists for a separately authorized future task; the delivered launchers do not attach it to a life.
++
++Births 1, 2, 3 and 4 are still unstarted. Their eventual ceilings remain 600 seconds. No commissioning outcome, innate-performance claim or scientific result has been produced by this build.
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/RUNTIME_RECORD.json b/docs/developmental_ecology/p_apparatus_20260924/RUNTIME_RECORD.json
+new file mode 100644
+index 0000000..9847835
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/RUNTIME_RECORD.json
+@@ -0,0 +1,45 @@
++{
++  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
++  "executable": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++  "platform": "Windows-11-10.0.26200-SP0",
++  "numpy": "2.3.3",
++  "scipy": "1.16.2",
++  "pytest": "8.4.2",
++  "p_code": {
++    "sha256": "63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9",
++    "files": {
++      "__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
++      "chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
++      "diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
++      "engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
++      "geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
++      "inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
++      "neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
++      "physics.py": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
++      "prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
++      "reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
++      "records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
++      "schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
++      "smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
++    }
++  },
++  "apparatus_code": {
++    "sha256": "5dfe2c85b570d1ee84c83d812d883dd39b8bd6d1ffc3797461b7827463ba5058",
++    "files": {
++      "__init__.py": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
++      "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
++      "contract.py": "7334c4f1391909e0cc25b9f8c861dac1d90f93048852798826f28f5374655f81",
++      "controllers.py": "064f27b73903dff7d7793d609e65c574aa21a59bdf1cc32bea039b7591ec34dd",
++      "diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
++      "evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
++      "initialization.py": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
++      "runner.py": "1597ce5689515384c96c37f3e16afabdcfaceecc2cacdb04810fcc77b33d0299",
++      "sensor.html": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a",
++      "sensor_ui.py": "20ab4d39502a1c262530512c4d0c6b4e41a1c76fb6c792f80d6e7c2098cb76f8",
++      "validators.py": "047696a36f08c8d7d631d4fb65444a56fc0f742059ca46d91c9879722ca74c43"
++    }
++  },
++  "configuration_semantic": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
++  "configuration_file_sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
++  "local_execution": "Windows desktop host; existing local venv; no new dependencies installed"
++}
+\ No newline at end of file
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/RUNTIME_STORAGE_ESTIMATE.json b/docs/developmental_ecology/p_apparatus_20260924/RUNTIME_STORAGE_ESTIMATE.json
+new file mode 100644
+index 0000000..69283fc
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/RUNTIME_STORAGE_ESTIMATE.json
+@@ -0,0 +1,50 @@
++{
++  "measured_components": [
++    {
++      "mode": "intact_P",
++      "duration_seconds": 0.20000000000000004,
++      "wall_seconds": 2.872594199987361,
++      "stored_bytes": 960238,
++      "uncompressed_record_bytes": 2296376,
++      "wall_seconds_per_simulated_second": 14.362970999936802,
++      "stored_bytes_per_simulated_second": 4801189.999999999,
++      "scope": "0.2 s manufactured component including snapshot/diagnostic overhead; not steady-state throughput"
++    },
++    {
++      "mode": "FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC",
++      "duration_seconds": 0.20000000000000004,
++      "wall_seconds": 3.0330579000001308,
++      "stored_bytes": 598918,
++      "uncompressed_record_bytes": 2256686,
++      "wall_seconds_per_simulated_second": 15.16528950000065,
++      "stored_bytes_per_simulated_second": 2994589.9999999995,
++      "scope": "0.2 s manufactured component including snapshot/diagnostic overhead; not steady-state throughput"
++    },
++    {
++      "mode": "external_controller",
++      "duration_seconds": 0.20000000000000004,
++      "wall_seconds": 2.4444540000113193,
++      "stored_bytes": 156375,
++      "uncompressed_record_bytes": 106661,
++      "wall_seconds_per_simulated_second": 12.222270000056595,
++      "stored_bytes_per_simulated_second": 781874.9999999999,
++      "scope": "0.2 s manufactured component including snapshot/diagnostic overhead; not steady-state throughput"
++    }
++  ],
++  "historical_30s_rate": {
++    "wall_seconds_per_simulated_second": 4.6905,
++    "stored_MB_per_simulated_second": 1.9709
++  },
++  "future_world_ceiling_seconds": 8960,
++  "prior_planning_machine_hours": 11.67,
++  "prior_planning_compressed_GB": 17.66,
++  "status": "commissioning unexecuted; no long-run overhead measured",
++  "conservative_component_rate_extrapolation": {
++    "machine_hours": 37.744720533334956,
++    "stored_GB": 43.01866239999999,
++    "warning": "planning envelope only, dominated by short-fixture and restart overhead; not an approved budget"
++  },
++  "source_of_extra_cost": "full aligned native operands, all-wave D5 detached reads, receiver records and full restart state",
++  "native_evidence_downsampled": false,
++  "prehistory_preparations_executed": 0
++}
+\ No newline at end of file
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/SOURCE_IDENTITIES.json b/docs/developmental_ecology/p_apparatus_20260924/SOURCE_IDENTITIES.json
+new file mode 100644
+index 0000000..75c1891
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/SOURCE_IDENTITIES.json
+@@ -0,0 +1,82 @@
++{
++  "sources": [
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\50_SESSIONS\\2026-09-23-p-commissioning-design-2fb3ff84\\P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md",
++      "name": "P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md",
++      "sha256": "d25c9829d799fd497f1598ea64afb448a3558fd886105eacf737c1cb8bbae42c",
++      "bytes": 49871
++    },
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\50_SESSIONS\\2026-09-23-p-commissioning-design-2fb3ff84\\P_COMMISSIONING_MATRIX_v0_1_REVIEW_DRAFT.md",
++      "name": "P_COMMISSIONING_MATRIX_v0_1_REVIEW_DRAFT.md",
++      "sha256": "c653e378d5413bc95b8056624d6742d6d02298385dccb84b57f9a2d306beca90",
++      "bytes": 11461
++    },
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\50_SESSIONS\\2026-09-23-p-commissioning-design-2fb3ff84\\P_COMMISSIONING_CONFIGURATION_CHANGE_RULES_v0_1.md",
++      "name": "P_COMMISSIONING_CONFIGURATION_CHANGE_RULES_v0_1.md",
++      "sha256": "b4ebf441a56f4cf08a17fba842a9eae003819cc8d8b7b29b1285fff6de8e6229",
++      "bytes": 16147
++    },
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\50_SESSIONS\\2026-09-23-p-commissioning-design-2fb3ff84\\DECISIONS_REQUIRED_BEFORE_EXECUTION.md",
++      "name": "DECISIONS_REQUIRED_BEFORE_EXECUTION.md",
++      "sha256": "9ecfc5125dd7df00ba0f6d864c6429c475d4e803d393a4dc62eb24a658a27a3b",
++      "bytes": 3938
++    },
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\50_SESSIONS\\2026-09-23-p-commissioning-design-2fb3ff84\\P_COMMISSIONING_PLAIN_LANGUAGE_WALKTHROUGH_v0_1.md",
++      "name": "P_COMMISSIONING_PLAIN_LANGUAGE_WALKTHROUGH_v0_1.md",
++      "sha256": "b93f5471379e510559c4eaff29d0186664c3f1a25b00a16477a8373f098fea9e",
++      "bytes": 14764
++    },
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\AGENTS.md",
++      "name": "AGENTS.md",
++      "sha256": "3b2c771598e602472b2c66393d30c987d6ebe705bed8e1f7fd213c2a084142a7",
++      "bytes": 9990
++    },
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\00_RESEARCH_MAP.md",
++      "name": "00_RESEARCH_MAP.md",
++      "sha256": "e66de14cf6dcb33b238ec91723fc8a07e602e1d1d4c3919bc81032482846481c",
++      "bytes": 8235
++    },
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\01_WORKSPACE_STATUS.md",
++      "name": "01_WORKSPACE_STATUS.md",
++      "sha256": "510fcf5e3a161a5fcc8949b07650719d801e2c479502b8813bd96f04226929cd",
++      "bytes": 10688
++    },
++    {
++      "source": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\90_SOURCES\\p_final_r1p_review_2026-09-23_08df839e\\LOOM_P_FINAL_INDEPENDENT_R1P_FIDELITY_REVIEW.md",
++      "name": "LOOM_P_FINAL_INDEPENDENT_R1P_FIDELITY_REVIEW.md",
++      "sha256": "8e9bcddfd19bcd1cc362f93186d6656ed0ee9f75b78fad4c8ef02ec1962e3a25",
++      "bytes": 33791
++    },
++    {
++      "source": "C:\\Users\\Jason\\.codex\\attachments\\57dba765-655a-445a-adc3-29618b3d0307\\Pasted text.txt",
++      "name": "APPARATUS_BUILD_REQUEST.txt",
++      "sha256": "f1abfe2e0c7a321272c86a74ce9df5c1fec2f2e3946d2fe53b19a3068d52cbf0",
++      "bytes": 5841
++    }
++  ],
++  "reading_copies_verified": 55,
++  "design_archive_sha256": "018f23d8e1bdb9433d7a50c8e421f09deb70d26febc3a5f14d98fa3b467551d0",
++  "protected_artifact_count": 792,
++  "p_runtime": {
++    "__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
++    "chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
++    "diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
++    "engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
++    "geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
++    "inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
++    "neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
++    "physics.py": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
++    "prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
++    "reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
++    "records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
++    "schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
++    "smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
++  }
++}
+\ No newline at end of file
+diff --git a/docs/developmental_ecology/p_apparatus_20260924/UI_REVIEW.json b/docs/developmental_ecology/p_apparatus_20260924/UI_REVIEW.json
+new file mode 100644
+index 0000000..e45239d
+--- /dev/null
++++ b/docs/developmental_ecology/p_apparatus_20260924/UI_REVIEW.json
+@@ -0,0 +1,9 @@
++{
++  "served_display": "visually checked in Codex in-app browser",
++  "history_navigation": "0.200 to 0.100 s; EI held at initial sample until 0.200 s",
++  "raw_coordinates": 29,
++  "command_button": "disabled for offline record",
++  "local_file_navigation": "blocked by browser URL security policy; no workaround attempted",
++  "double_click_launch": "launcher text and target verified; direct native double-click not automated",
++  "server_stopped": true
++}

@@ -1,0 +1,22 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________ test_touch_release_return_duration_and_accounting ______________
+
+    def test_touch_release_return_duration_and_accounting():
+        c,b,stocks=touching_counterexample(); initial=copy.deepcopy(b)
+        force=actuator_forces(c,b,np.ones(2)); vinf=force.sum()/c.linear_drag
+        tr=np.log((vinf-b.velocity[0])/vinf)*c.body_mass/c.linear_drag
+        v,_=free_velocity(c,b,force,tr/2)
+        source=next(f for f in fixtures(c,0,0) if f['id']=='source-0')
+        gap,_=gap_normal(b.position+tr/2*v,c.body_radius,source)
+        assert gap>3000*c.geometry_tol
+        events,elapsed,terminal=advance(c,b,stocks,0.,0.,np.ones(2),.01)
+        releases=[r for r in events if r.get('event_kind')=='release']
+>       assert releases and releases[0]['time']==0., 'Touching body must release at the start'
+E       AssertionError: Touching body must release at the start
+E       assert ([])
+
+tests\test_corrective_contracts.py:29: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting
+1 failed in 0.07s

@@ -1,0 +1,40 @@
+{
+  "checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "authority_request": {
+    "source_id": "SRC-061",
+    "path": "90_SOURCES/p_commissioning_design_authority_2026-09-23_2fb3ff84/Pasted text.txt",
+    "original_filename": "Pasted text.txt",
+    "bytes": 11181,
+    "sha256": "e9517c0b62e2ab9fbd3ff2de46a4d18bd4577fabd0ddf3549ad567f9451f060a",
+    "role": "user-commissioning-design-authority",
+    "authority": "Jason: commissioning design and scoped registration/status only; no execution or mechanism/configuration/canon changes",
+    "received_on": "2026-09-23",
+    "source_date": "not separately stated",
+    "stated_author": "Jason (user-provided request)",
+    "acquired_from": "C:\\Users\\Jason\\.codex\\attachments\\36f043f0-2a46-4cfc-8549-c0980b264a45\\Pasted text.txt",
+    "reviewed_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+    "record": "50_SESSIONS/2026-09-23-p-commissioning-design-2fb3ff84/COMPLETION_REPORT.md",
+    "notes": "Byte-identical request; proposals in the resulting design remain awaiting review."
+  },
+  "final_review": {
+    "catalog_id": "SRC-057",
+    "path": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\90_SOURCES\\p_final_r1p_review_2026-09-23_08df839e\\LOOM_P_FINAL_INDEPENDENT_R1P_FIDELITY_REVIEW.md",
+    "bytes": 33791,
+    "sha256": "8e9bcddfd19bcd1cc362f93186d6656ed0ee9f75b78fad4c8ef02ec1962e3a25"
+  },
+  "outer_archive": {
+    "catalog_id": "SRC-058",
+    "path": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\90_SOURCES\\p_final_r1p_review_2026-09-23_08df839e\\Loom_P_Final_Independent_R1P_Review_6bc9683b_20260923.zip",
+    "sha256": "c395141315a58a91be55d26034b2c97460caf840a01b9622c0317680015fcf2c"
+  },
+  "nested_archive": {
+    "member": "reviewed_delivery/Loom_P_R1P_corrective_review_20260923.zip",
+    "sha256": "c1f2cd0ed8ebe09f3a9b07d087f6fe9f25ca62f3f61a827628802bc35e5fa322"
+  },
+  "runtime_sha256": "63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9",
+  "config_semantic_sha256": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+  "configuration_file_sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+  "reading_copy_count": 55,
+  "reading_copy_manifest_matches": 54,
+  "note": "ARTIFACT_MANIFEST.json itself is covered by nested archive custody, not by a self-referential manifest row. Original reference files are copied unchanged; none was executed."
+}

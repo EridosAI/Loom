@@ -1,0 +1,173 @@
+Prepare the next Loom P coupling-commissioning launch packet.
+
+DO NOT EXECUTE IT.
+
+P:
+6bc9683b54e4fa80136fe8534d7713e2a250a95f
+
+Commissioning apparatus:
+5f07748102cb5eaa302569c87efbae095050e9fe
+
+Completed physical commissioning:
+A0
+A1
+A2
+A3
+
+Next commissioning object:
+A4 — mover crossing / waiting / detour.
+
+Prepare the three A4 physical witnesses already defined by the accepted
+commissioning design:
+
+1. timed crossing;
+2. waiting for a usable crossing opportunity;
+3. always-clear / geometrically valid detour.
+
+These are privileged external-controller physical witnesses.
+They are NOT P learning or perceptual tests.
+
+Do not alter:
+
+- mover law, speed, size or path
+- body mechanics
+- expenditure
+- E/I
+- controller gains
+- world geometry
+- sensor laws
+- P mechanism/configuration
+
+PURPOSE
+
+Establish whether the actual finite body and paired actuators have:
+
+- a physically realizable time-dependent crossing;
+- a physically realizable wait-then-cross strategy;
+- a physically realizable detour/bypass;
+
+under the existing mover and world laws.
+
+Do not require all phases to be safe.
+
+Do not require the controller to optimize travel time or energy.
+
+THREE CASES
+
+Prepare three independent predetermined cases.
+
+A4-CROSS:
+A route whose intended progress actually intersects the mover's path.
+Choose a mover phase by deterministic apparatus grounds that makes a
+crossing opportunity physically available.
+
+A4-WAIT:
+Begin from a state where immediately proceeding would conflict with the
+mover's occupancy/path timing.
+The controller must wait using the existing actuator interface, then
+proceed when the prescribed opportunity occurs.
+
+A4-DETOUR:
+Use the declared always-clear alternative route around the mover region.
+Do not treat the entire mover swept region as permanently occupied.
+
+For each case predeclare:
+
+- initial body state
+- mover phase
+- lawful field/prehistory identity
+- route/stages
+- controller constants
+- duration ceiling
+- administrative/resource limit
+- stop conditions
+
+Do not trial multiple phases/routes and choose successful ones.
+
+OBSERVATIONS
+
+Record separately for every case:
+
+- approach to mover region
+- mover position/phase
+- minimum body–mover clearance
+- actual mover contact, if any
+- collision impulse/damage, if any
+- waiting duration
+- crossing entry and exit
+- detour path length
+- travel time
+- expenditure
+- starting/final E/I
+- destination arrival
+- controller failure
+- physical nonviability
+- administrative cutoff
+
+A mover contact is not automatically failure.
+A longer detour is not automatically failure.
+A controller miss does not automatically establish physical impossibility.
+
+The claim sought is bounded physical opportunity only.
+
+NO TUNING
+
+Do not alter anything if one strategy performs poorly.
+
+Preserve:
+
+- failed crossings
+- timing misses
+- damage
+- excessive waiting
+- reserve costs
+- controller limitations
+
+No retry or route replacement inside the authorized batch unless the
+authority object explicitly defines separate predetermined cases.
+
+RESOURCE PLAN
+
+Use actual A2/A3 long-run throughput for projections.
+
+The original design allowed up to 3 × 120 simulated seconds, but choose
+the shortest predetermined horizons that genuinely pose each strategy.
+
+Do not reduce native recording fidelity.
+
+Report projected total wall time/storage before execution.
+
+VIEWER
+
+Retain the physical records needed for passive replay:
+
+- arena
+- body path/orientation
+- mover path and actual sampled pose
+- commands
+- E/I
+- contact/impulses
+- timing and waiting state
+
+Do not add a live renderer or feedback path.
+
+AUTHORITY
+
+Construct one exact launch packet containing three separately identified
+A4 cases.
+
+The authority object must bind every case, route, mover phase, controller,
+initial state and duration individually.
+
+No case may be substituted for another.
+
+Produce:
+
+1. plain-language three-case plan;
+2. exact case manifests;
+3. resource projection;
+4. interpretation table;
+5. canonical authority object/hash;
+6. verification that no simulation execution occurred.
+
+Stop for Jason's authorization.

@@ -1,0 +1,306 @@
+{
+  "authority_status": "PROPOSED / NOT AUTHORIZED",
+  "authority_sha256": "229bedc93d793892488ee0f8b1b42035777f11f70952e43179a768a30cfc3007",
+  "files": {
+    "A1_PLANNING_EVIDENCE.json": {
+      "bytes": 1077,
+      "sha256": "bb42b858057f2e4bb43c58b04665cab88625395f320bca7aa4b9248d92bb4e14"
+    },
+    "A2_LAUNCH_PACKET.md": {
+      "bytes": 9762,
+      "sha256": "912273a0791e18aa0640bf5950b4f7d52e95891ea5121b4429960e8b6eee8ab8"
+    },
+    "A2_MANIFEST.json": {
+      "bytes": 11411,
+      "sha256": "ae6c4c52277a6aafa43b219095c5d817ffce09bf946eef81abea642c6e99b348"
+    },
+    "AUTHORITY_OBJECT.canonical.json": {
+      "bytes": 8903,
+      "sha256": "229bedc93d793892488ee0f8b1b42035777f11f70952e43179a768a30cfc3007"
+    },
+    "AUTHORITY_OBJECT.json": {
+      "bytes": 11379,
+      "sha256": "c64513b467b53af5baa9348ff31374693a8059d6760499f5249c199fa31e4768"
+    },
+    "AUTHORITY_SHA256.txt": {
+      "bytes": 99,
+      "sha256": "7a6015559bb2d2d4a02cc6b57bc7f2baeeafca2ae847ec2c0669c65b2de2b896"
+    },
+    "BUDGET.json": {
+      "bytes": 1970,
+      "sha256": "5ca238ea6f902a6aa9bccf1879cc51f5bb32bbbf0b25416f46b310e34436b464"
+    },
+    "build_packet.py": {
+      "bytes": 20463,
+      "sha256": "a0d2363abb6e222f06271e29012a31572ba19aaaf3583588bb83fd2ebd30853f"
+    },
+    "CODE_AND_RUNTIME_IDENTITIES.json": {
+      "bytes": 5626,
+      "sha256": "dc77b4e7a48329ec437363787a132513fc9d633e4c06d80bb7bffe4e921ffdad"
+    },
+    "empty-excludes": {
+      "bytes": 82,
+      "sha256": "5174ed3d7d8bfb2ca438fa4dfd73ce6116504c71edde35a30ad0c1dcc6d510bf"
+    },
+    "GEOMETRY.json": {
+      "bytes": 2518,
+      "sha256": "380ad4e591ad2465efbd2f9547f929486101baab4e735839bd11f9dc3d5268e6"
+    },
+    "HASH_AFTER.json": {
+      "bytes": 51688,
+      "sha256": "51a717725a79865fe903df221d9f4b004cb60e35d2fa086395276f50a29ad730"
+    },
+    "HASH_BEFORE.json": {
+      "bytes": 51688,
+      "sha256": "51a717725a79865fe903df221d9f4b004cb60e35d2fa086395276f50a29ad730"
+    },
+    "INITIAL_A2.snapshot.json.gz": {
+      "bytes": 121474,
+      "sha256": "348079e967a34a98cd395a5b117f484c3ea8ba58edc6b0f4cb3f4975e6bbd557"
+    },
+    "INITIAL_STATE_SUMMARY.json": {
+      "bytes": 3451,
+      "sha256": "cbaea68f8536b90f74d47524dbb11d8a47412c0d9a4429ae7f904569ea09b639"
+    },
+    "instrument/developmental_ecology/configuration.json": {
+      "bytes": 3445,
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9"
+    },
+    "instrument/developmental_ecology/loom_commissioning/__init__.py": {
+      "bytes": 81,
+      "sha256": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46"
+    },
+    "instrument/developmental_ecology/loom_commissioning/adapter.py": {
+      "bytes": 6032,
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+    },
+    "instrument/developmental_ecology/loom_commissioning/authority.py": {
+      "bytes": 10790,
+      "sha256": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca"
+    },
+    "instrument/developmental_ecology/loom_commissioning/contract.py": {
+      "bytes": 7199,
+      "sha256": "e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3"
+    },
+    "instrument/developmental_ecology/loom_commissioning/controllers.py": {
+      "bytes": 7600,
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e"
+    },
+    "instrument/developmental_ecology/loom_commissioning/diagnostics.py": {
+      "bytes": 7466,
+      "sha256": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da"
+    },
+    "instrument/developmental_ecology/loom_commissioning/evaluation.py": {
+      "bytes": 5907,
+      "sha256": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3"
+    },
+    "instrument/developmental_ecology/loom_commissioning/initialization.py": {
+      "bytes": 1299,
+      "sha256": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a"
+    },
+    "instrument/developmental_ecology/loom_commissioning/pending.py": {
+      "bytes": 6756,
+      "sha256": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8"
+    },
+    "instrument/developmental_ecology/loom_commissioning/runner.py": {
+      "bytes": 18123,
+      "sha256": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57"
+    },
+    "instrument/developmental_ecology/loom_commissioning/sensor.html": {
+      "bytes": 5297,
+      "sha256": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a"
+    },
+    "instrument/developmental_ecology/loom_commissioning/sensor_ui.py": {
+      "bytes": 3685,
+      "sha256": "b5596ad3aff664df951d63ba2311e232ff483de6c7dcc8ac446b0c240868572e"
+    },
+    "instrument/developmental_ecology/loom_commissioning/validators.py": {
+      "bytes": 8285,
+      "sha256": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a"
+    },
+    "instrument/developmental_ecology/loom_p/__init__.py": {
+      "bytes": 99,
+      "sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a"
+    },
+    "instrument/developmental_ecology/loom_p/chemistry.py": {
+      "bytes": 4565,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    "instrument/developmental_ecology/loom_p/diagnostics.py": {
+      "bytes": 4887,
+      "sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0"
+    },
+    "instrument/developmental_ecology/loom_p/engine.py": {
+      "bytes": 9957,
+      "sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d"
+    },
+    "instrument/developmental_ecology/loom_p/geometry.py": {
+      "bytes": 8616,
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3"
+    },
+    "instrument/developmental_ecology/loom_p/inspector.py": {
+      "bytes": 20150,
+      "sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83"
+    },
+    "instrument/developmental_ecology/loom_p/neural.py": {
+      "bytes": 15195,
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca"
+    },
+    "instrument/developmental_ecology/loom_p/physics.py": {
+      "bytes": 19333,
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783"
+    },
+    "instrument/developmental_ecology/loom_p/prehistory.py": {
+      "bytes": 6513,
+      "sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588"
+    },
+    "instrument/developmental_ecology/loom_p/reconstruction.py": {
+      "bytes": 1879,
+      "sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b"
+    },
+    "instrument/developmental_ecology/loom_p/records.py": {
+      "bytes": 7470,
+      "sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e"
+    },
+    "instrument/developmental_ecology/loom_p/schema.py": {
+      "bytes": 7190,
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc"
+    },
+    "instrument/developmental_ecology/loom_p/smokes.py": {
+      "bytes": 5575,
+      "sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+    },
+    "instrument/developmental_ecology/requirements-lock.txt": {
+      "bytes": 129,
+      "sha256": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6"
+    },
+    "INTERPRETATION.md": {
+      "bytes": 9127,
+      "sha256": "da0500b9681c65f7b5fcbd96d2003e119f77732978f7e9e3fc796cecf9a1337d"
+    },
+    "LOCAL_CAPABILITY_RECORD.json": {
+      "bytes": 879,
+      "sha256": "933caf5a4afa10623314c51308fc6e4ad581cbf8ae0ad366c7ae5bc7b02a8a6d"
+    },
+    "PREPARATION_CHECKS.json": {
+      "bytes": 1283,
+      "sha256": "c4f80eca6b322ba4e980118e2ab73e02d2ecaf589b96cbdf3b7122ae41920a0f"
+    },
+    "PRESERVATION.json": {
+      "bytes": 281,
+      "sha256": "79128e99468e44c36b0c18f31f6b67421ab22337185e67551e4396fba297d2b2"
+    },
+    "PROCEDURES.md": {
+      "bytes": 11352,
+      "sha256": "a93a9461d7f1db0ad1f2b715a9ff3fa481dc3383d99ecb2039a7febe16528450"
+    },
+    "README.md": {
+      "bytes": 2676,
+      "sha256": "96689716ad7fb9b3cdacd09980b13fa3e00e3d74994980bef049a3852818cbc4"
+    },
+    "references/00_LOOM_CURRENT_STATE.md": {
+      "bytes": 13757,
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b"
+    },
+    "references/A2_PREPARATION_REQUEST.txt": {
+      "bytes": 5172,
+      "sha256": "d468ec3d1c05f18df86725fe783cf8b4134a14ac99ece9c8bd5abd174242b02d"
+    },
+    "references/DECISION-P-APPARATUS-SCOPE-2026-09-24-73c9ad61.md": {
+      "bytes": 3119,
+      "sha256": "88b14aa57a2ffee82e5e912883f5f4d4f3f83ae253fd0212eb0b1ac95e289763"
+    },
+    "references/evidence.py": {
+      "bytes": 3801,
+      "sha256": "e82d4b72b796ea31c16984a9a7d57444da900079a86ee1d74df8f06b58e0bd7a"
+    },
+    "references/FIRST_A1_COMMISSIONING_RESULT.zip": {
+      "bytes": 24287600,
+      "sha256": "f37dfec92288fbe8a650b00eed611d086a3ece3b280292e95b891e371cc0d37f"
+    },
+    "references/LOOM_P_FINAL_MECHANICAL_CLOSURE_REVIEW.md": {
+      "bytes": 26291,
+      "sha256": "e5c658a728ccd72643c27eae8b81b5d2ef5bdfc6b0c845fd9cbda6d6a3903756"
+    },
+    "references/P_COMMISSIONING_CONFIGURATION_CHANGE_RULES_v0_1.md": {
+      "bytes": 16147,
+      "sha256": "b4ebf441a56f4cf08a17fba842a9eae003819cc8d8b7b29b1285fff6de8e6229"
+    },
+    "references/P_COMMISSIONING_MATRIX_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 11461,
+      "sha256": "c653e378d5413bc95b8056624d6742d6d02298385dccb84b57f9a2d306beca90"
+    },
+    "references/P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 49871,
+      "sha256": "d25c9829d799fd497f1598ea64afb448a3558fd886105eacf737c1cb8bbae42c"
+    },
+    "references/REGISTERED_A1.md": {
+      "bytes": 14167,
+      "sha256": "afc265edc4ae206d9f5cbed9662ab321d4fe8ae9ffef31240e87535ec70e08c0"
+    },
+    "references/REGISTERED_V3.md": {
+      "bytes": 9001,
+      "sha256": "72e347d0155edbcd9e55acd15d63584a1ba1082610a78ee3109133a2745b6276"
+    },
+    "references/v3_checker_v1_1.py": {
+      "bytes": 12042,
+      "sha256": "3bf558f96205dbab0134a55a05af5ddccafc934841e778f8f5f765757463f6dc"
+    },
+    "references/V3_READ_ONLY_REANALYSIS_REPORT.md": {
+      "bytes": 6782,
+      "sha256": "adfc8131a6915f65b48c8301299087d7f418cf02b78b377353c9948e7b852e3a"
+    },
+    "references/V3_RESULT_v1_1.json": {
+      "bytes": 2558354,
+      "sha256": "6a859637f430fb07d9eed835177df9c8077f42ff596e77cb0b09a7084f5289a5"
+    },
+    "references/VIEWER_DATA_FLOW.md": {
+      "bytes": 8265,
+      "sha256": "c3d5a034ace14038c462023b1aec28aa597406ac13542eac6f56fe90a4121b29"
+    },
+    "references/WORKBENCH_AGENTS.md": {
+      "bytes": 16040,
+      "sha256": "b7bbae686f0eb98161745f4ede987fbd47a1299e4710ce8112e6704cf713b63e"
+    },
+    "references/WORKBENCH_MAP.md": {
+      "bytes": 17956,
+      "sha256": "a5d156cd86ff8dd4d2d0125a5dcf2d7eeb1374493e1159c1b43feb6cc35f1ac4"
+    },
+    "references/WORKBENCH_STATUS.md": {
+      "bytes": 20312,
+      "sha256": "e318a9b31cbed6ad71409587dfdd4f21811ababc7d3c5535ca49a6138c59e3f7"
+    },
+    "seal_packet.py": {
+      "bytes": 3013,
+      "sha256": "bcbf5f97192a0c207ae950e9ee5b13a81252b80e1cfd287287fd81e511529bd6"
+    },
+    "SOURCE_IDENTITIES.json": {
+      "bytes": 6096,
+      "sha256": "f6225e6245cb849b99ae6d80c6fba1f7578d2badb21fc6e16758b94a1a81bfba"
+    },
+    "validate_packet.py": {
+      "bytes": 2946,
+      "sha256": "57dec9948b8c153728bb571c5cdb3079c0e8cb3c0a2697b421f1cb4d52ad2071"
+    },
+    "verified-cache/fields.npz": {
+      "bytes": 94596,
+      "sha256": "f968ed0875d68e3421c5acc9f9a4a218727b9698877b1cc86225d4fec9e6ef7d"
+    },
+    "verified-cache/law-source-at-preparation/chemistry.py": {
+      "bytes": 4565,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    "verified-cache/law-source-at-preparation/geometry.py": {
+      "bytes": 7814,
+      "sha256": "b57861757e051c7a789df0ef31a28632d1e57dae3e0c3c933edf07667c11d877"
+    },
+    "verified-cache/law-source-at-preparation/schema.py": {
+      "bytes": 7050,
+      "sha256": "2df77ee95f708aa755750e214ac9269985d8988760d2c08b5e9c36e477b574bd"
+    },
+    "verified-cache/manifest.json": {
+      "bytes": 2020,
+      "sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3"
+    }
+  }
+}

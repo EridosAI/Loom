@@ -1,0 +1,16 @@
+{
+  "sha256": "074d2fae284623329de780ace0eeabce0dd1072d874b620356b8eed098aeb8da",
+  "kind": "Review/custody identity ONLY — not execution authority",
+  "historical_held_identity": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
+  "case_authority_count": 6,
+  "no_batch_authority": true,
+  "all_grants_null": true,
+  "sealed_archive_identity": {
+    "archive": "B1_SEALED_EVALUATOR.zip",
+    "sha256": "98d0a1bd5c117c79e00eb6b32e7701f3793bdef2a1e24f1db453d4acc269fb88",
+    "bytes": 1943056,
+    "payloads": 68,
+    "verified": true
+  },
+  "operator_instruction": "Do not open the sealed evaluator archive; only its opaque identity is disclosed."
+}

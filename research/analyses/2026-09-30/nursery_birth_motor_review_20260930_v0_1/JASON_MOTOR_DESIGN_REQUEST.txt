@@ -1,0 +1,345 @@
+NURSERY-0 DESIGN FOLLOW-UP — NEWBORN SPONTANEOUS MOTOR STRUCTURE
+
+Do not lock the Nursery-0 geometry yet.
+
+The completed passive exploration audit has exposed a more specific
+developmental bottleneck that must be reviewed before choosing arena size,
+source density or viability tuning.
+
+DESIGN ONLY.
+
+No world simulation.
+No P execution.
+No parameter application.
+No launch authority.
+No canon rewrite.
+No push / PR / merge.
+
+==================================================
+OBSERVED EVIDENCE
+==================================================
+
+Use NEWBORN_EXPLORATION_DYNAMICS_AUDIT_v0_1 as the primary evidence.
+
+Across 59 complete current-world lives:
+
+- median path length ≈ 13.6558 world units;
+- median maximum excursion from birth ≈ 0.5327;
+- median final displacement ≈ 0.2924;
+- median sustained forward/reverse switches ≈ 94 per life;
+- median forward and reverse bout duration ≈ 3.4 s;
+- approximately equal forward and reverse residence;
+- median re-entry into previously visited 0.25-unit cells ≈ 92.96%;
+- coverage growth largely stalls while motion continues;
+- body heading remains strongly persistent;
+- movement direction commonly reverses relative to that heading;
+- 50 contact-free lives show essentially the same pattern;
+- therefore wall/contact trapping does not explain the population result.
+
+The current spontaneous motor implementation contains independent
+zero-centred components with periods 7 s and 9 s plus short-correlated
+noise.
+
+The existing 7/9-s oscillator bases show approximately R² ≈ 0.93 against
+the corresponding recorded command channels.
+
+The joint 7/9-s periodic template repeats every 63 s. Actual trajectories
+do not repeat exactly because other terms and noise remain active, but
+this fixed recurrent template should be considered when interpreting the
+observed repeated forward/backward movement.
+
+==================================================
+CURRENT INTERPRETATION
+==================================================
+
+The leading descriptive limitation is not simple lack of motor activity.
+
+It is:
+
+SUBSTANTIAL MOVEMENT
++
+SHORT-LIVED FORWARD/REVERSE TRANSLATION
++
+STRONGLY PERSISTENT BODY HEADING
++
+HIGH SPATIAL RECURRENCE
+=
+POOR EXPLORATORY EXPOSURE.
+
+Do not silently convert this interpretation into a causal proof.
+
+The passive audit cannot isolate every contribution from:
+
+- spontaneous generator;
+- direct sensory feedback;
+- P regulation;
+- body mechanics;
+- depletion-dependent actuation.
+
+However, the evidence is strong enough to justify reviewing the newborn
+spontaneous temporal structure before treating smaller arena geometry as
+the primary remedy.
+
+==================================================
+ACCEPTED FUNCTIONAL CONSTRAINT
+==================================================
+
+Preserve the accepted Loom requirement:
+
+Initial action arises through STRUCTURED ENDOGENOUS SPONTANEOUS ACTIVITY.
+
+It must NOT become:
+
+- white-noise control;
+- explicit curiosity reward;
+- novelty maximisation;
+- target seeking;
+- source seeking;
+- distance-from-birth reward;
+- unexplored-space detection;
+- semantic EXPLORE behaviour;
+- a hand-authored source-finding policy.
+
+The spontaneous process may contain innate physical/temporal biases.
+
+A body-forward locomotor tendency or temporally persistent movement is
+not automatically semantic competence.
+
+==================================================
+DESIGN QUESTION
+==================================================
+
+Ask:
+
+What is the minimum blind endogenous motor dynamic that gives a newborn
+meaningful exposure to its environment while leaving WHAT IS USEFUL to
+be learned from experience?
+
+The desired newborn should naturally generate enough spatial variation
+for reality to teach it.
+
+It should not be born knowing where to go.
+
+==================================================
+FUNCTIONAL REQUIREMENTS TO EXAMINE
+==================================================
+
+Consider whether the spontaneous motor process should provide:
+
+1. sustained translational bouts long enough to produce meaningful
+   displacement;
+
+2. slower changes in directional tendency than the present ~3.4-s
+   forward/reverse bouts;
+
+3. gradual wandering / curvature;
+
+4. occasional larger spontaneous reorientation;
+
+5. variation across time and individuals;
+
+6. no exact short-period repeating motor template;
+
+7. no guaranteed spatial coverage;
+
+8. ordinary opportunities for stopping, reversing and low activity;
+
+9. continued compatibility with paired low-level actuation;
+
+10. continued susceptibility to sensory feedback and learned regulation.
+
+In particular examine whether the spontaneous process should be an
+ONGOING ACTIVITY that learned regulation can materially bias rather than
+a large fixed oscillator onto which learned signals make only tiny
+perturbations.
+
+Do not assume this requires increasing actuator magnitude.
+
+==================================================
+IMPORTANT DISTINCTION
+==================================================
+
+Separate:
+
+MOTOR MAGNITUDE
+from
+MOTOR TEMPORAL ORGANISATION.
+
+The existing animals already accumulate substantial path length.
+
+Increasing amplitude alone may:
+
+- increase energy consumption;
+- increase impact severity;
+- preserve the same forward/back cancellation;
+- shorten developmental runway.
+
+Prefer improving exploratory displacement per unit of ordinary movement
+before simply increasing strength.
+
+==================================================
+CANDIDATE MECHANISMS
+==================================================
+
+Derive candidate mechanisms from the functional requirements above.
+
+Do not select a conventional controller merely because it is familiar.
+
+Return at most THREE minimal candidate spontaneous-process families.
+
+For each candidate explain:
+
+- its actual state variables;
+- what temporal persistence it imposes;
+- what is innate versus learnable;
+- how paired actuator outputs arise;
+- whether it has a preferred body-forward tendency;
+- how reorientation occurs;
+- whether it contains fixed periods;
+- how stochasticity enters;
+- how P/direct feedback/regulation can influence it;
+- why it does not encode semantic exploration;
+- likely failure modes.
+
+Possible conceptual directions MAY include things such as:
+
+- persistent coupled common/differential motor dynamics;
+- persistent locomotor drive with slowly varying turning tendency;
+- continuous activity with occasional endogenous reorientation.
+
+These are examples only.
+
+Do not treat them as selected mechanisms.
+
+Remain open to a better unfamiliar construction.
+
+==================================================
+LOOM-SPECIFIC CHECK
+==================================================
+
+For each candidate ask:
+
+Does this create useful ongoing activity that EXPERIENCE can shape?
+
+A spontaneous mechanism that generates excellent random coverage but
+leaves little room for learned influence is not necessarily suitable.
+
+Likewise a mechanism that requires P to already know how to move is not
+suitable.
+
+The target is a newborn predisposition that exposes itself to reality,
+then becomes increasingly shaped by what happens.
+
+==================================================
+RELATION TO NURSERY-0
+==================================================
+
+Do NOT discard the existing N0-A / N0-B / N0-C designs.
+
+Keep them provisional.
+
+After this motor review, reconsider whether Nursery-0 actually needs the
+currently proposed 14-unit geometry.
+
+A more exploratory newborn may permit:
+
+- a larger arena;
+- lower source density than previously proposed;
+- fewer forced wall encounters;
+- lower integrity pressure;
+- richer route choice.
+
+Conversely, source sparsity and developmental runway may remain genuine
+problems even after exploration improves.
+
+Do not decide those quantities until the motor question is resolved.
+
+==================================================
+RESILIENCE / ENERGY TUNING
+==================================================
+
+Do not tune birth energy, basal cost, impact resilience or repair yet.
+
+A changed motor process can alter:
+
+- time-to-source;
+- energy expenditure;
+- collision frequency;
+- impact severity;
+- repair opportunity.
+
+Therefore the amount of viability tuning required should be reconsidered
+AFTER motor opportunity is characterised.
+
+==================================================
+PROPOSE A MINIMAL COMMISSIONING TEST
+==================================================
+
+After presenting the <=3 candidate spontaneous processes, design a SMALL
+NON-SCIENTIFIC commissioning comparison.
+
+Do not execute it.
+
+Its purpose is only to test motor/world exposure properties.
+
+It should compare the current motor process against the candidate
+processes using fixed newborn/current-world conditions and short enough
+runs to avoid turning this into a developmental experiment.
+
+Prefer metrics such as:
+
+- path length;
+- maximum excursion;
+- spatial coverage growth;
+- forward/reverse switch rate;
+- bout duration;
+- velocity-direction persistence;
+- heading behaviour;
+- revisit fraction;
+- energy expenditure;
+- collision/contact frequency;
+- damage exposure.
+
+Do NOT use:
+
+- learned success;
+- source-finding reward;
+- founder score;
+- survival score;
+- trained controller performance
+
+to select the spontaneous process.
+
+Source encounters may be reported as an opportunity consequence, but the
+motor process must not be tuned directly to maximise food hits.
+
+Propose the minimum number and duration of commissioning lives necessary
+to distinguish gross kinematic regimes.
+
+==================================================
+DELIVERY
+==================================================
+
+Produce:
+
+1. NEWBORN_SPONTANEOUS_MOTOR_DESIGN_REVIEW_v0_1.md
+2. explicit current-generator diagnosis
+3. <=3 candidate mechanism families
+4. Loom-principle comparison for each
+5. imposed-structure / hidden-competence audit
+6. interaction with P/regulation analysis
+7. proposed minimal commissioning matrix
+8. metrics and failure criteria
+9. implications for the provisional Nursery-0 candidates
+10. exact unresolved decisions requiring Jason review
+
+Clearly separate:
+
+OBSERVED EVIDENCE
+JASON-ACCEPTED CONSTRAINTS
+DESIGN PROPOSALS
+UNRESOLVED INTERPRETATIONS
+
+Do not choose or implement a replacement motor process in this task.
+
+Stop for Jason review.

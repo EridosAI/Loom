@@ -1,0 +1,74 @@
+{
+  "cases": {
+    "A4-CROSS": {
+      "simulated_seconds": 15.999999999999703,
+      "native_steps": 1600,
+      "recorder_wall_seconds": 186.37656289996812,
+      "whole_process_wall_seconds": 187.67379909998272,
+      "uncompressed_stream_bytes": 8333307,
+      "stored_trajectory_bytes": 2996378,
+      "record_counts": {
+        "sensor": 1601,
+        "controller": 160,
+        "native": 1600,
+        "events": 1600,
+        "diagnostics": 1600
+      },
+      "wall_cap_seconds": 480,
+      "uncompressed_stream_cap_bytes": 100000000,
+      "status": "administrative_cutoff",
+      "stop_cause": null,
+      "complete": true
+    },
+    "A4-WAIT": {
+      "simulated_seconds": 28.000000000001577,
+      "native_steps": 2800,
+      "recorder_wall_seconds": 321.48029839998344,
+      "whole_process_wall_seconds": 322.49465379997855,
+      "uncompressed_stream_bytes": 13973590,
+      "stored_trajectory_bytes": 4432767,
+      "record_counts": {
+        "sensor": 2801,
+        "controller": 280,
+        "native": 2800,
+        "events": 2800,
+        "diagnostics": 2800
+      },
+      "wall_cap_seconds": 780,
+      "uncompressed_stream_cap_bytes": 100000000,
+      "status": "administrative_cutoff",
+      "stop_cause": null,
+      "complete": true
+    },
+    "A4-DETOUR": {
+      "simulated_seconds": 32.0000000000022,
+      "native_steps": 3200,
+      "recorder_wall_seconds": 359.9644704000093,
+      "whole_process_wall_seconds": 360.95906140003353,
+      "uncompressed_stream_bytes": 16472363,
+      "stored_trajectory_bytes": 6101973,
+      "record_counts": {
+        "sensor": 3201,
+        "controller": 320,
+        "native": 3200,
+        "events": 3200,
+        "diagnostics": 3200
+      },
+      "wall_cap_seconds": 840,
+      "uncompressed_stream_cap_bytes": 100000000,
+      "status": "administrative_cutoff",
+      "stop_cause": null,
+      "complete": true
+    }
+  },
+  "total_simulated_seconds": 76.00000000000348,
+  "total_native_steps": 7600,
+  "total_recorder_wall_seconds": 867.8213316999609,
+  "total_uncompressed_stream_bytes": 38779260,
+  "total_stored_trajectory_bytes": 13531118,
+  "total_runner_wall_cap_seconds": 2100,
+  "read_only_reporting_cap_seconds": 600,
+  "combined_disk_cap_bytes": 3000000000,
+  "analysis_wall_seconds_including_reports": 2.440917600004468,
+  "scope": "Actual full-fidelity records only; no throughput rerun."
+}

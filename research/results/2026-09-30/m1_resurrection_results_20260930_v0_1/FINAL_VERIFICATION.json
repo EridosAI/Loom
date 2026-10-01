@@ -1,0 +1,25 @@
+{
+  "label": "NON-CANONICAL RESURRECTION SANDBOX",
+  "status": "PASS_AVAILABLE_EVIDENCE",
+  "runtime": "752b7c335347a5f55fd3e7cdf1b904137d41e5b229b8ea2252caa8e12a455f3c",
+  "execution_files": 37909,
+  "execution_bytes": 4258393873,
+  "preparation_files_unchanged": 79,
+  "historical_motor_archives_unchanged": {
+    "v0_1": {
+      "archive_sha256": "73873228bbc26d9d5de65eb16ee68cd108c61a4691098141be47fe8a29901446",
+      "unchanged_execution_files": 220
+    },
+    "v0_2": {
+      "archive_sha256": "94a76ee327d257b3902e6f120ddd75300949ab7066015db057b0f4eb2a5228c5",
+      "unchanged_execution_files": 896
+    }
+  },
+  "canonical_source_unchanged": true,
+  "passive_only_after_stop": true,
+  "completed_receipts_verified": 19,
+  "native_host_failure": true,
+  "full_state_at_crashed_durable_endpoint_available": false,
+  "no_retry_or_replacement": true,
+  "no_canonical_amendment": true
+}

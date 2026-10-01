@@ -1,0 +1,147 @@
+{
+  "basis": "Actual sealed A2 and A3 long-run results; no new benchmark. Decimal bytes/MB. Linear projections are estimates, not physical outcomes or completion guarantees.",
+  "measurements": {
+    "A2": {
+      "simulated_seconds_recorded": 179.99999999998127,
+      "native_steps": 18000,
+      "recorder_wall_seconds": 2116.0327042000135,
+      "whole_process_wall_seconds": 2116.937599800003,
+      "wall_ceiling_seconds": 3600,
+      "uncompressed_stream_bytes": 105656295,
+      "uncompressed_stream_ceiling_bytes": 1500000000,
+      "stored_trajectory_bytes_including_snapshots_and_receipt": 62740096,
+      "analysis_wall_seconds": 9.043997599976137,
+      "read_only_reporting_ceiling_seconds": 3600,
+      "disk_reserve_bytes": 3000000000
+    },
+    "A3": {
+      "simulated_seconds_recorded": 209.99999999995399,
+      "native_steps": 21000,
+      "recorder_wall_seconds": 2506.2327364000375,
+      "whole_process_wall_seconds": 2522.917206999962,
+      "wall_ceiling_seconds": 4200,
+      "uncompressed_stream_bytes": 119343991,
+      "uncompressed_stream_ceiling_bytes": 1500000000,
+      "stored_trajectory_bytes_including_snapshots_and_receipt": 81734261,
+      "analysis_wall_seconds": 12.756232699961402,
+      "read_only_reporting_ceiling_seconds": 3600,
+      "disk_reserve_bytes": 3000000000
+    }
+  },
+  "rates": {
+    "A2": {
+      "recorder_wall_seconds_per_sim_second": 11.755737245556855,
+      "whole_process_wall_seconds_per_sim_second": 11.760764443334574,
+      "uncompressed_bytes_per_sim_second": 586979.4166667277,
+      "stored_bytes_per_sim_second": 348556.08888892515
+    },
+    "A3": {
+      "recorder_wall_seconds_per_sim_second": 11.934441601907556,
+      "whole_process_wall_seconds_per_sim_second": 12.013891461907214,
+      "uncompressed_bytes_per_sim_second": 568304.7190477436,
+      "stored_bytes_per_sim_second": 389210.76666675194
+    }
+  },
+  "per_case": {
+    "A4-CROSS": {
+      "simulated_seconds": 16.0,
+      "native_steps": 1600,
+      "command_decisions": 160,
+      "wall_cap_seconds": 480,
+      "uncompressed_stream_cap_bytes": 100000000,
+      "by_measured_case": {
+        "A2": {
+          "recorder_wall_seconds": 188.09179592890968,
+          "whole_process_wall_seconds": 188.1722310933532,
+          "uncompressed_stream_bytes": 9391670.666667644,
+          "stored_trajectory_bytes": 5576897.422222802
+        },
+        "A3": {
+          "recorder_wall_seconds": 190.9510656305209,
+          "whole_process_wall_seconds": 192.22226339051542,
+          "uncompressed_stream_bytes": 9092875.504763898,
+          "stored_trajectory_bytes": 6227372.266668031
+        }
+      },
+      "reserve_lower_bound_no_intake": 0.6599999999999999
+    },
+    "A4-WAIT": {
+      "simulated_seconds": 28.0,
+      "native_steps": 2800,
+      "command_decisions": 280,
+      "wall_cap_seconds": 780,
+      "uncompressed_stream_cap_bytes": 100000000,
+      "by_measured_case": {
+        "A2": {
+          "recorder_wall_seconds": 329.1606428755919,
+          "whole_process_wall_seconds": 329.30140441336806,
+          "uncompressed_stream_bytes": 16435423.666668378,
+          "stored_trajectory_bytes": 9759570.488889905
+        },
+        "A3": {
+          "recorder_wall_seconds": 334.1643648534116,
+          "whole_process_wall_seconds": 336.388960933402,
+          "uncompressed_stream_bytes": 15912532.13333682,
+          "stored_trajectory_bytes": 10897901.466669055
+        }
+      },
+      "reserve_lower_bound_no_intake": 0.6299999999999999
+    },
+    "A4-DETOUR": {
+      "simulated_seconds": 32.0,
+      "native_steps": 3200,
+      "command_decisions": 320,
+      "wall_cap_seconds": 840,
+      "uncompressed_stream_cap_bytes": 100000000,
+      "by_measured_case": {
+        "A2": {
+          "recorder_wall_seconds": 376.18359185781935,
+          "whole_process_wall_seconds": 376.3444621867064,
+          "uncompressed_stream_bytes": 18783341.333335288,
+          "stored_trajectory_bytes": 11153794.844445605
+        },
+        "A3": {
+          "recorder_wall_seconds": 381.9021312610418,
+          "whole_process_wall_seconds": 384.44452678103085,
+          "uncompressed_stream_bytes": 18185751.009527795,
+          "stored_trajectory_bytes": 12454744.533336062
+        }
+      },
+      "reserve_lower_bound_no_intake": 0.62
+    }
+  },
+  "total_simulated_seconds": 76,
+  "total_native_steps": 7600,
+  "total_command_decisions": 760,
+  "total_by_measured_case": {
+    "A2": {
+      "recorder_wall_seconds": 893.436030662321,
+      "whole_process_wall_seconds": 893.8180976934276,
+      "uncompressed_stream_bytes": 44610435.666671306,
+      "stored_trajectory_bytes": 26490262.755558312
+    },
+    "A3": {
+      "recorder_wall_seconds": 907.0175617449743,
+      "whole_process_wall_seconds": 913.0557511049483,
+      "uncompressed_stream_bytes": 43191158.647628516,
+      "stored_trajectory_bytes": 29580018.266673148
+    }
+  },
+  "total_runner_wall_cap_seconds": 2100,
+  "total_read_only_reporting_cap_seconds": 600,
+  "total_combined_wall_allowance_seconds": 2700,
+  "combined_disk_cap_bytes": 3000000000,
+  "free_disk_precondition_bytes": 3000000000,
+  "sum_uncompressed_stream_caps_bytes": 300000000,
+  "historical_review_archive_bytes": 154602321,
+  "estimated_launch_packet_bytes": 160000000,
+  "estimated_result_bundle_including_launch_bytes": 200000000,
+  "storage_plan": "At worst measured trajectory rate about 29.6 MB for the new three records, about 44.7 MB uncompressed. Launch review carries about 155 MB of immutable nested prior evidence; allow about 160 MB launch and 200 MB result per copy, plus raw/analysis. All copies share the declared 3 GB cap. Three fresh starts add overhead that linear per-second extrapolation does not resolve.",
+  "limitations": [
+    "Mover contact complexity and host load may differ from A2/A3.",
+    "Short fresh runs have startup/snapshot overhead; do not claim the measured rates are guaranteed.",
+    "Full native/sensor/contact/snapshot fidelity remains unchanged.",
+    "Recorder storage guard counts uncompressed streams plus a reserve, not all files.",
+    "Native-step wall guards and flushes may slightly exceed nominal caps; no continuation afterward."
+  ]
+}

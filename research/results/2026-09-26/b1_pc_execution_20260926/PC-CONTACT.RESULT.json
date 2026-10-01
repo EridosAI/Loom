@@ -1,0 +1,20 @@
+{
+  "case": "PC-CONTACT",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T01:30:48.1595700+00:00",
+  "stop_cause": "operator_withdrawal",
+  "simulation_seconds": 2.299999999999995,
+  "native_steps": 230,
+  "commands": 23,
+  "operator_assessment": "PARTIAL: approximate first-contact detection reported with uncertainty; channel identification unresolved; sustained-support interpretation was mistaken and corrected by post-case physical replay.",
+  "demonstration_status": "NOT MARKED FULLY DEMONSTRATED; preserve partial interpretation and later guidance separately",
+  "physical_review": "PC-CONTACT-REPLAY/CONTACT_REVIEW.json",
+  "operator_observation": "PC-CONTACT.USER_CONTACT_OBSERVATION.json",
+  "replay_requested_by_Jason": true,
+  "closure": "Case ended through the existing interface while awaiting the end-case clarification; no assistant end or actuator request was sent",
+  "additional_feedback": "Post-case physical plan-view replay before PC-HOLD; preserve this practice exposure when interpreting subsequent controls",
+  "no_further_world_steps": true,
+  "no_interface_or_production_code_changes": true,
+  "B1_state_accessed": false,
+  "PC_HOLD_started": false
+}

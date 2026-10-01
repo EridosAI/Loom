@@ -1,0 +1,70 @@
+{
+  "created_at_utc": "2026-09-23T12:16:14.748891+00:00",
+  "verdict": "FIT TO PROCEED TO COUPLING COMMISSIONING",
+  "reviewed_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "previous_checkpoint": "f7eb6f27c661e3db193a4225b56a825d7e41739d",
+  "original_checkpoint": "d5f7efbe67193f215e52d95ca912db131a79f31c",
+  "branch": "build/p-engineering-baseline-20260921-01a0c405",
+  "worktree": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405",
+  "final_worktree_clean": true,
+  "report": "LOOM_P_FINAL_INDEPENDENT_R1P_FIDELITY_REVIEW.md",
+  "report_sha256": "8e9bcddfd19bcd1cc362f93186d6656ed0ee9f75b78fad4c8ef02ec1962e3a25",
+  "R1P": "VERIFIED",
+  "R2": "VERIFIED",
+  "R3": "VERIFIED",
+  "must_fix_findings": 0,
+  "unexpected_law_bearing_changes": 0,
+  "component_cases": 4,
+  "exact_oblique_free_duration": 0.00099450757408153,
+  "exact_oblique_first_collision_passes": 15,
+  "new_fault_pairs": 4,
+  "retained_fault_pairs": 14,
+  "independently_observed_pairs": 18,
+  "final_suite": {
+    "worktree_passed": 59,
+    "portable_passed": 59
+  },
+  "neural_states_exact": 3200,
+  "final_fields_exact": 3,
+  "detached_midwave_records_exact": 93,
+  "observer_reconstructed_records": 40,
+  "preserved_prior_artifacts": 489,
+  "target_artifacts_unchanged_during_audit": 792,
+  "semantic_configuration_sha256": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+  "runtime_code_sha256": "63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9",
+  "reviewed_delivery": {
+    "name": "Loom_P_R1P_corrective_review_20260923.zip",
+    "bytes": 150085054,
+    "sha256": "c1f2cd0ed8ebe09f3a9b07d087f6fe9f25ca62f3f61a827628802bc35e5fa322"
+  },
+  "correction_patch_sha256": "a6b58eff994e5900013dda2265805c397c4071424fd3fe3af7e95c9de375c1a7",
+  "archive_tree": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+  "source_inventory_unchanged": 14,
+  "source_inventory_total": 16,
+  "administrative_source_changes": [
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\00_RESEARCH_MAP.md",
+      "old_bytes": 4919,
+      "new_bytes": 5685,
+      "old_sha256": "94568977c104a3511f20b36784fe0613134764eab6c883dee35d4a8042df2150",
+      "new_sha256": "3c41c9fbad74fd5efbf59eb405a18f9bb1ff49df5076dbeef9f4323bc5e7491d"
+    },
+    {
+      "path": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\01_WORKSPACE_STATUS.md",
+      "old_bytes": 6573,
+      "new_bytes": 7462,
+      "old_sha256": "e38231bc1c9b0df9240e30e95c49fdefdb53b590c4e55b42d02e6707926686a4",
+      "new_sha256": "87dd151c48bfbb73b1cee0d1751434ea959d2760cfcc3dba1eed14184d9cf410"
+    }
+  ],
+  "selected_scientific_sources_unchanged": true,
+  "previous_independent_review_sha256": "897610b06492554fd8299518dbc993117211ad133dda2129ee463299a1162f06",
+  "original_independent_review_sha256": "ffa7ffe6561ed94c2003faf1eb123637a37932c8573757b018c0dfe070dada54",
+  "prehistory_reused": true,
+  "review_prehistory_generations": 0,
+  "review_lifetimes": 0,
+  "review_target_writes": 0,
+  "commissioning_designed_or_started": false,
+  "workbench_intake_performed": false,
+  "disposition_boundary": "Separate Jason-authorized commissioning-design task; no scientific efficacy claim or arbitrary-contact-space proof"
+}

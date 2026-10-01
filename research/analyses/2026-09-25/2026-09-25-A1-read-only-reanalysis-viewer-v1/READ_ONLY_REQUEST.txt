@@ -1,0 +1,372 @@
+Perform a POST-RUN READ-ONLY ANALYSIS AND VISUALIZATION task on the first
+Loom P A1 commissioning evidence.
+
+This is NOT a commissioning execution task.
+
+Do not resume, retry, replay physically, or evolve the simulation.
+
+P:
+6bc9683b54e4fa80136fe8534d7713e2a250a95f
+
+Commissioning apparatus:
+5f07748102cb5eaa302569c87efbae095050e9fe
+
+Executed authority:
+a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc
+
+Use the exact immutable first-A1 evidence package and
+FIRST_A1_COMMISSIONING_REPORT.md.
+
+The historical A1 trajectory must remain byte-identical.
+
+No P/configuration/world/controller/apparatus law change is authorised.
+No Git push/PR/merge.
+No commissioning case may run.
+
+
+==================================================
+PART 1 — CLOSE V3 USING EXISTING RECORDS ONLY
+==================================================
+
+The original read-only V3 post-check failed because it asserted:
+
+len(native) == len(sensors) == len(diagnostic)
+
+The actual reviewed recorder has:
+- one initial sensor/display envelope;
+- then one sensor row associated with each native step.
+
+Observed counts:
+- sensors: 9,184
+- native: 9,183
+
+Do NOT simply delete/drop the first sensor row by assumption.
+
+First inspect:
+- recorder implementation;
+- timestamps;
+- initial display-envelope semantics;
+- native-record semantics;
+- diagnostic-record semantics;
+- the reviewed sensor-reference interface contract.
+
+Derive and document the correct alignment rule from the implementation
+and records.
+
+Create a NEW VERSIONED READ-ONLY V3 CHECKER.
+
+Preserve unchanged:
+- original checker;
+- original AssertionError;
+- V3_BOUNDARY_ERROR.json;
+- V3_POST_CHECK_LIMITATION.md;
+- V3_COUNT_FINDING.json.
+
+The new checker must identify:
+- the initial display envelope explicitly;
+- the exact mapping of subsequent sensor entries to native records;
+- any endpoint/start-of-step timing distinction;
+- E/I hold cadence;
+- controller input isolation;
+- issued versus delivered commands;
+- inactive neural-state invariance;
+- RNG invariance;
+- any other originally intended V3 comparisons that were not reached.
+
+Add tests using manufactured/copy records if needed, but do not alter the
+A1 raw evidence.
+
+Use an independent alignment check where practical:
+timestamps/index progression should support the mapping, not merely
+matching array lengths.
+
+If the recorder implementation and evidence do NOT support a unique
+alignment, stop and report V3 unresolved rather than forcing one.
+
+
+==================================================
+V3 RESULT STATUS
+==================================================
+
+After running the corrected checker against the immutable records, report
+one of:
+
+V3 COMPLETED — checks support the reviewed boundary claim
+
+V3 COMPLETED WITH LIMITATION — identify exact limitation
+
+V3 REMAINS UNRESOLVED — explain why
+
+Do not call V3 a new trajectory result.
+It is a new analysis of the original A1 evidence.
+
+Store:
+- checker version/identity;
+- input evidence hashes;
+- exact alignment rule;
+- result;
+- reproduction command;
+- old/new analysis relationship.
+
+Do not overwrite the historical failed V3 analysis.
+
+
+==================================================
+PART 2 — BUILD A PASSIVE A1 PLAN-VIEW REPLAY
+==================================================
+
+After Part 1 is complete, build a LOCAL READ-ONLY trajectory viewer for
+Jason.
+
+Purpose:
+allow a human to develop intuition for the actual Base World and the
+first real A1 physical interaction.
+
+The viewer is downstream of recorded evidence only.
+
+It must:
+- never instantiate/run Engine;
+- never calculate or issue controller commands;
+- never modify raw evidence;
+- never consume simulation RNG;
+- never write back into trajectory records;
+- never be usable as a live control interface.
+
+Prefer a simple local browser-based viewer that can be launched by
+double-click or a small local read-only server if browser security
+requires it.
+
+Keep dependencies minimal.
+
+
+==================================================
+PLAN VIEW
+==================================================
+
+Show the actual arena to scale.
+
+At minimum display:
+- arena walls;
+- all eight energy sources;
+- restorative wall regions if their geometry is available in the
+  recorded/static configuration;
+- mover and its actual recorded position/orientation;
+- organism body at actual radius;
+- body orientation;
+- body path travelled so far;
+- source-0 clearly distinguishable as the commissioned target;
+- current contact state.
+
+Do not invent geometry absent from the configuration/evidence.
+
+Use actual recorded world coordinates.
+
+
+==================================================
+TIME SCRUBBER / PLAYBACK
+==================================================
+
+Provide:
+- scrubber from t=0 to t=91.83 s;
+- play/pause;
+- restart;
+- adjustable playback speed;
+- step one native record;
+- jump to:
+  - first source contact;
+  - first positive-net complete contact interval;
+  - administrative stop.
+
+Playback must use recorded states.
+Interpolation, if used visually, must be labelled as display interpolation
+and must not manufacture physical samples.
+
+
+==================================================
+SYNCHRONIZED PHYSICAL TRACES
+==================================================
+
+Alongside/below the plan view show synchronized plots or values for:
+
+- E;
+- I;
+- source-0 stock;
+- source transfer;
+- expenditure;
+- net energy change;
+- left/right commanded actuator values;
+- delivered/realized actuator values if separately recorded;
+- contact force;
+- contact/no-contact;
+- relevant impact/stress/restoration events.
+
+For fixed 0.2 s energy windows visually distinguish:
+- positive-net;
+- negative-net;
+- unresolved/other;
+- partial terminal window.
+
+Do not imply that a negative-net contact window is failure.
+
+
+==================================================
+EVENT MARKERS
+==================================================
+
+Mark exact recorded events including:
+
+- first certified source-0 contact:
+  6.3101904865 s
+
+- first complete positive-net interval:
+  6.2–6.4 s
+
+- administrative stop:
+  91.83 s
+
+Also show:
+- contact starts/releases;
+- impact/stress events;
+- material integrity changes where supported;
+- source debit/body credit events.
+
+The first positive-net fixed window begins slightly before the reported
+first event timestamp because of the complete-window convention; preserve
+the actual definitions rather than "correcting" one to match the other.
+
+
+==================================================
+INSPECTION PANELS
+==================================================
+
+Provide optional toggles/panels for:
+
+PHYSICS
+- body pose/velocity
+- source contact
+- force
+- mover
+- actuator commands
+
+VIABILITY
+- E
+- I
+- intake
+- expenditure
+- source stock
+
+SENSORS
+- recorded raw sensor values where available
+- clearly label these as observer/replayed records
+
+ACCOUNTING
+- debit
+- credit
+- renewal
+- residual
+
+Do NOT add cortex/association developmental graphics for this A1 as though
+they were active evidence.
+
+This external-controller trajectory recorded zero neural wave rows.
+
+If inactive neural state is shown for V3 inspection, label it explicitly
+as INACTIVE / boundary-validation information, not an organism learning
+trace.
+
+
+==================================================
+VISUAL QUESTIONS TO MAKE EASY TO ANSWER
+==================================================
+
+The viewer should make these immediately inspectable:
+
+1. What path did the body actually take?
+2. How did it approach source-0?
+3. What happened at the first impact?
+4. Why did integrity decrease?
+5. Did contact force oscillate around the requested 0.1?
+6. When were contact windows energetically positive versus negative?
+7. How quickly did source-0 stock fall?
+8. How did total E nevertheless rise?
+9. What was happening immediately before administrative cutoff?
+
+Do not automatically assign causal explanations.
+The viewer exposes evidence; interpretation remains separate.
+
+
+==================================================
+INTEGRITY / FORCE DETAIL
+==================================================
+
+Because this first witness observed:
+
+I:
+1.0 -> 0.993076741064
+
+and contact force reached:
+0.270746637914
+
+while requested target force was:
+0.1
+
+include a useful synchronized force/integrity view around:
+- initial impact;
+- peak-force events;
+- integrity-loss events.
+
+Do not classify the force overshoot as a defect or tune the controller.
+
+This is for inspection only.
+
+
+==================================================
+EVIDENCE CUSTODY
+==================================================
+
+Before analysis:
+- hash the raw input evidence;
+- verify it against the packaged manifests.
+
+After analysis/viewer generation:
+- verify raw evidence hashes are unchanged.
+
+Derived viewer files must live outside the raw trajectory directory or in
+an explicitly derived/read-only analysis subtree.
+
+Never overwrite raw files.
+
+
+==================================================
+DELIVERY
+==================================================
+
+Produce:
+
+1. V3_READ_ONLY_REANALYSIS_REPORT.md
+2. versioned corrected V3 checker
+3. V3 result JSON
+4. alignment/reproduction tests
+5. passive replay viewer
+6. double-click launcher where practical
+7. VIEWER_DATA_FLOW.md explaining exactly what files feed each display
+8. evidence hash-before/hash-after proof
+9. screenshots or a short static validation artifact showing the viewer
+   at:
+   - t=0
+   - first contact
+   - a positive-net contact interval
+   - near administrative stop
+10. portable review package for Workbench intake
+
+Do not produce a new commissioning result package that replaces the
+original.
+
+The original A1 evidence remains canonical for the trajectory.
+The V3 reanalysis and visualizer are derived artifacts.
+
+Do not resume A1.
+Do not execute any new world trajectory.
+Do not tune anything.
+
+Stop after read-only V3 reanalysis and viewer verification.

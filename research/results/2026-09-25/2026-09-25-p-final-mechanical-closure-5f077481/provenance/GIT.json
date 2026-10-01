@@ -1,0 +1,34 @@
+{
+  "head": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "parent": "9d31e7902658b15762052a2a6a3d161d64338524",
+  "branch": "build/p-commissioning-apparatus-20260924-01a0c405",
+  "status": "",
+  "diff": "M\tdevelopmental_ecology/loom_commissioning/authority.py\nA\tdevelopmental_ecology/loom_commissioning/pending.py\nM\tdevelopmental_ecology/loom_commissioning/runner.py\nM\tdevelopmental_ecology/loom_commissioning/sensor_ui.py\nM\tdevelopmental_ecology/loom_commissioning/validators.py\nA\tdevelopmental_ecology/tests_apparatus/fixtures/final_review/SYNTHETIC_duplicate-approved-execution_NO_EXECUTION.json\nA\tdevelopmental_ecology/tests_apparatus/fixtures/final_review/SYNTHETIC_duplicate-nested-waypoint_NO_EXECUTION.json\nA\tdevelopmental_ecology/tests_apparatus/test_final_corrections.py\nA\tdevelopmental_ecology/verify_final_corrections.py\nA\tdocs/developmental_ecology/p_apparatus_final_correction_20260925/FINAL_CORRECTION_REPORT.md\nA\tdocs/developmental_ecology/p_apparatus_final_correction_20260925/LAW_CODE_TEST_MAP.md\n",
+  "patch_bytes": 89686,
+  "patch_sha256": "10b3d7f9f3f70d709f07267b0d8802ddab2943ea645fcda280681cca0f0e4585",
+  "unchanged_paths": [
+    "developmental_ecology/loom_p",
+    "developmental_ecology/configuration.json",
+    "developmental_ecology/tests",
+    "developmental_ecology/tests_apparatus/test_apparatus.py",
+    "developmental_ecology/tests_apparatus/test_corrections.py",
+    "developmental_ecology/tests_apparatus/fixtures/review-boundary-input.json",
+    "developmental_ecology/verify_apparatus.py",
+    "developmental_ecology/verify_corrections.py",
+    "developmental_ecology/loom_commissioning/controllers.py",
+    "developmental_ecology/loom_commissioning/contract.py",
+    "developmental_ecology/loom_commissioning/adapter.py",
+    "developmental_ecology/loom_commissioning/diagnostics.py",
+    "developmental_ecology/loom_commissioning/initialization.py",
+    "developmental_ecology/loom_commissioning/evaluation.py"
+  ],
+  "EXP1_21": {
+    "d5f7efbe67193f215e52d95ca912db131a79f31c": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "f7eb6f27c661e3db193a4225b56a825d7e41739d": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "6bc9683b54e4fa80136fe8534d7713e2a250a95f": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "05abf60401d08f38750bca589b1c040e10513d7b": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "9d31e7902658b15762052a2a6a3d161d64338524": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "5f07748102cb5eaa302569c87efbae095050e9fe": "f1b884a7ada4c806786d1530d76d446aac5d37b1"
+  },
+  "all_earlier_checkpoints_ancestors": true
+}

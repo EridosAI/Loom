@@ -1,0 +1,918 @@
+diff --git a/developmental_ecology/DEVELOPMENTAL_RUNNER.md b/developmental_ecology/DEVELOPMENTAL_RUNNER.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..cb66fbc25bf178a628b4938fc2f962f05067a274
+--- /dev/null
++++ b/developmental_ecology/DEVELOPMENTAL_RUNNER.md
+@@ -0,0 +1,39 @@
++# Developmental execution apparatus
++
++This package adds an intact-P execution path beside `loom_commissioning`. It does not edit `loom_p`, the Base World configuration, or historical apparatus. It is not a controller and does not create a population or choose births. Engineering authorization: Jason's 29 September 2026 developmental-runner optimization request. Scientific execution requires a separate reviewed exact grant; none is supplied here.
++
++## Execution and custody
++
++`loom_developmental.runner.Life` owns one append-only evidence directory. It binds the frozen P code/configuration, apparatus files, Python/runtime libraries, exact initial causal state, absolute native deadline, resource envelope, checkpoint policy and preceding receipt. An engineering grant additionally requires a disclosed manufactured fixture and binds the engineering request by SHA-256. A future `developmental-intact-P` grant requires a separate exact approval scope; this build creates none.
++
++`Life.advance()` calls `core.step`, preserving the existing `_coupled` and handoff operations, operation order, RNG schedule, native/wave/field cadence and terminal bisection. Native rollback copies only mutating state; a wave boundary additionally copies the association/regulator structures. Rare terminal root finding retains complete candidate copies. No observer or external-controller callback is accepted in this execution path.
++
++`Engine.last_native` becomes a small observer cache. It has no causal consumer in P. Every other Engine field, including every organism field, is included in exact equivalence comparisons. The original `Engine` implementation is preserved unchanged.
++
++Default recording: 100-step chunks, full checkpoints every 6,000 native steps and at birth/pause/stage/terminal boundaries, lossless zlib level 1. Each file is created exclusively, flushed and atomically closed; partial files and incomplete faults prevent automatic continuation. A receipt chains segment metadata and closed chunk/checkpoint hashes. A shared content-addressed identity document replaces per-life source copies; the frozen code/runtime must remain available separately.
++
++Native rows preserve endpoint raw sensory channels, actual commands/body/E/I/stocks/mover/field diagnostics and RNG counters. The initial checkpoint's raw input plus preceding endpoint readings recover every input actually received by P. Physical event records preserve substep timing, exchange, contacts, impulses and source/integrity accounting. Wave rows retain actual compact packet/context/return/credit/control/use/change summaries. Dense evolving matrices are checkpointed and exactly reconstructible from lived inputs.
++
++Cheap native finiteness, sequence and physical ledger checks remain online. Complete state/config validation occurs at segment boundaries; whole-file verification is post-run. No GUI, browser, charts, old cumulative sensory-history copies, live detached D5 calculation or ZIP work occurs during a life. The small receipt index grows linearly in the number of chunks; native payload buffering is bounded to one chunk. There is no growing whole-history serialization loop.
++
++## Pause and continuation
++
++`close('administrative_pause')` seals the current partial chunk and exact state. `Life.continue_life(store, grant)` verifies the prior store and requires the exact preceding final-state hash, parent receipt, same life identifier and exact runtime/apparatus identity. It reuses the same directory and appends a new segment. Absolute deadlines 60,000 → 90,000 → 180,000 represent total ages 600 → 900 → 1,800 seconds under the unchanged native cadence. Learned/transient state, fields, stocks, E/I, body, phase, absolute time and RNG are loaded; no constructor for a new organism/world is invoked.
++
++Terminal or failure states cannot continue. A resource pause is administrative; it is not a biological terminal. A recorder exception creates an incomplete apparatus-failure record with a best-effort unclosed tail. Such a failure is not automatically resumable. Wall/storage limits are checked before each step, with a 16 MB closure reserve. They are administrative limits with bounded step/closure overhead, not a hard operating-system disk quota.
++
++## Read-only analysis
++
++`verify_store(path)` checks complete segment custody, hashes, sequences and physical accounting without advancing P or a world.
++
++`replay.reconstruct(path, first_index=..., last_index=..., deep=..., fields=...)` reads the nearest preceding checkpoint and only relevant chunks. It replays P against saved actual inputs, never advances body physics, and compares actual commands, compact wave outputs, RNG and chunk-end P hashes. Optional field reconstruction uses the saved actual body/stocks/times and original solver, and checks saved field hashes. Optional deep diagnostics invoke the original passive/D5 routines on detached reconstructed states. Diagnostic callbacks receive detached objects only.
++
++Analysis apparatus may change while the saved causal code, recorded numerical runtime and schema must match. The record and analysis identities are both returned. Live continuation is stricter: it requires the entire original apparatus/runtime identity. Historical engineering files made before Python-DLL binding retain their original, explicitly narrower runtime manifest; they are never silently rebound.
++
++Deep analysis can incur up to one checkpoint interval of neural/field warm-up. It does not decompress an entire life to inspect a small interval. Freeze the numerical environment for bit-exact reconstruction. The binary format has a class allowlist, no pickle/eval, size/depth bounds, and rejects trailing/truncated/corrupt data. It is an integrity format, not protection against a malicious machine owner.
++
++## Engineering checks
++
++The test folder is `tests_developmental`. Tests accept `LOOM_ENGINEERING_CACHE` (the preserved lawful phase-0 prehistory cache) and `LOOM_ENGINEERING_REQUEST` (the engineering authorization text). They use only disclosed `loom_p.smokes` fixtures, never Founder starts. Use a fresh writable pytest base directory and disable the cache provider. Running these tests evolves short manufactured fixtures and therefore remains an engineering action, not a passive viewer.
++
++The review package contains measurements, complete benchmark records, source identities, development failures, exact old/lean comparisons and the resource projection. The single longer benchmark was 600 seconds. Clock/continuation boundaries around 900 and 1,800 seconds were manufactured short checks; no 1,800-second life or scientific population was run.
+diff --git a/developmental_ecology/loom_developmental/.gitattributes b/developmental_ecology/loom_developmental/.gitattributes
+new file mode 100644
+index 0000000000000000000000000000000000000000..258b569f92c19956dad348c9b673708e17424576
+--- /dev/null
++++ b/developmental_ecology/loom_developmental/.gitattributes
+@@ -0,0 +1,2 @@
++# Keep apparatus identities stable across Git checkout line-ending defaults.
++*.py -text
+diff --git a/developmental_ecology/loom_developmental/__init__.py b/developmental_ecology/loom_developmental/__init__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ece89ac58b37d45ebc648832354a626ea3e105c7
+--- /dev/null
++++ b/developmental_ecology/loom_developmental/__init__.py
+@@ -0,0 +1 @@
++"""Developmental execution apparatus. Frozen loom_p remains byte unchanged."""
+diff --git a/developmental_ecology/loom_developmental/codec.py b/developmental_ecology/loom_developmental/codec.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..f766fddd96e93553ae44ebf6dfdacded34ab70a7
+--- /dev/null
++++ b/developmental_ecology/loom_developmental/codec.py
+@@ -0,0 +1,131 @@
++"""Lossless typed binary trees, bounded decoding; no pickle or executable payloads."""
++import hashlib
++import os
++from pathlib import Path
++import struct
++import zlib
++import numpy as np
++from loom_p.records import registry
++
++MAGIC=b'LOOMDEV1'
++LIMIT=512_000_000
++U=struct.Struct('<Q')
++F=struct.Struct('<d')
++
++def encode(value):
++    parts=[]
++    def put(x):
++        if isinstance(x,np.ndarray):
++            if x.dtype.kind not in 'fiu':raise ValueError('unsupported array dtype')
++            parts.append(b'a');put(x.dtype.str);put(tuple(x.shape))
++            raw=np.ascontiguousarray(x).tobytes();parts.extend((U.pack(len(raw)),raw))
++        elif isinstance(x,np.generic):put(x.item())
++        elif x is None:parts.append(b'n')
++        elif x is True:parts.append(b't')
++        elif x is False:parts.append(b'f')
++        elif isinstance(x,int):
++            raw=str(x).encode('ascii');parts.extend((b'i',U.pack(len(raw)),raw))
++        elif isinstance(x,float):parts.extend((b'r',F.pack(x)))
++        elif isinstance(x,str):
++            raw=x.encode('utf8');parts.extend((b's',U.pack(len(raw)),raw))
++        elif isinstance(x,(bytes,bytearray)):
++            parts.extend((b'b',U.pack(len(x)),bytes(x)))
++        elif isinstance(x,slice):parts.append(b'/');put((x.start,x.stop,x.step))
++        elif isinstance(x,(list,tuple)):
++            parts.extend((b'l' if isinstance(x,list) else b'u',U.pack(len(x))))
++            for item in x:put(item)
++        elif isinstance(x,dict):
++            parts.extend((b'd',U.pack(len(x))))
++            for k,v in x.items():put(k);put(v)
++        elif type(x).__name__ in registry() and type(x) is registry()[type(x).__name__]:
++            parts.append(b'o');put(type(x).__name__);put(vars(x))
++        else:raise ValueError(f'unsupported binary type {type(x)}')
++    try:
++        put(value)
++        return b''.join(parts)
++    finally:
++        # Recursive closure otherwise retains the complete byte-parts list
++        # until cyclic GC. Break it immediately; encoded bytes are unchanged.
++        put=None
++        parts.clear()
++
++def decode(raw):
++    if len(raw)>LIMIT:raise ValueError('oversize binary object')
++    data=memoryview(raw);offset=0
++    def take(n):
++        nonlocal offset
++        if n<0 or offset+n>len(data):raise ValueError('truncated binary object')
++        result=data[offset:offset+n];offset+=n;return result
++    def count():return U.unpack(take(8))[0]
++    def get(depth=0):
++        if depth>100:raise ValueError('binary nesting limit')
++        tag=bytes(take(1))
++        if tag==b'n':return None
++        if tag==b't':return True
++        if tag==b'f':return False
++        if tag==b'r':return F.unpack(take(8))[0]
++        if tag in (b's',b'i',b'b'):
++            value=bytes(take(count()))
++            if tag==b'b':return value
++            if tag==b'i':return int(value)
++            return value.decode('utf8')
++        if tag in (b'l',b'u',b'd'):
++            n=count()
++            if n>len(raw):raise ValueError('invalid binary count')
++            if tag==b'd':
++                result={}
++                for _ in range(n):
++                    k=get(depth+1);v=get(depth+1)
++                    if k in result:raise ValueError('duplicate binary key')
++                    result[k]=v
++                return result
++            result=[get(depth+1) for _ in range(n)]
++            return tuple(result) if tag==b'u' else result
++        if tag==b'/':return slice(*get(depth+1))
++        if tag==b'a':
++            dtype=np.dtype(get(depth+1));shape=get(depth+1);n=count()
++            if dtype.kind not in 'fiu' or not isinstance(shape,tuple) or any(type(i)!=int or i<0 for i in shape):raise ValueError('unsafe array')
++            expected=dtype.itemsize
++            for i in shape:expected*=i
++            if n!=expected:raise ValueError('array size mismatch')
++            return np.frombuffer(take(n),dtype=dtype).reshape(shape).copy()
++        if tag==b'o':
++            name=get(depth+1);attrs=get(depth+1);cls=registry().get(name)
++            if cls is None or not isinstance(attrs,dict):raise ValueError('unknown binary class')
++            obj=cls.__new__(cls);obj.__dict__.update(attrs);return obj
++        raise ValueError('unknown binary tag')
++    try:
++        value=get()
++        if offset!=len(data):raise ValueError('binary trailing data')
++        return value
++    finally:
++        get=None
++
++def digest(value):return hashlib.sha256(encode(value)).hexdigest()
++
++def write(path,value,level=1):
++    path=Path(path)
++    if path.exists():raise FileExistsError(path)
++    raw=encode(value)
++    if len(raw)>LIMIT:raise ValueError('oversize binary object')
++    payload=zlib.compress(raw,level) if level else raw
++    header=MAGIC+bytes([level])+U.pack(len(raw))+hashlib.sha256(raw).digest()
++    temporary=path.with_name(path.name+'.partial')
++    with temporary.open('xb') as f:
++        f.write(header);f.write(payload);f.flush();os.fsync(f.fileno())
++    os.replace(temporary,path)
++    return {'file':path.name,'bytes':path.stat().st_size,'raw_bytes':len(raw),
++            'sha256':hashlib.sha256(header+payload).hexdigest(),'raw_sha256':hashlib.sha256(raw).hexdigest()}
++
++def read(path,expected=None):
++    blob=Path(path).read_bytes()
++    if expected and hashlib.sha256(blob).hexdigest()!=expected:raise ValueError('binary file checksum mismatch')
++    if blob[:8]!=MAGIC or len(blob)<49:raise ValueError('binary file header')
++    level=blob[8];size=U.unpack(blob[9:17])[0]
++    if level>9 or size>LIMIT:raise ValueError('binary compression/size bound')
++    if level:
++        d=zlib.decompressobj();raw=d.decompress(blob[49:],size+1)
++        if not d.eof or d.unused_data or d.unconsumed_tail:raise ValueError('truncated/oversize compressed payload')
++    else:raw=blob[49:]
++    if len(raw)!=size or hashlib.sha256(raw).digest()!=blob[17:49]:raise ValueError('binary payload checksum mismatch')
++    return decode(raw)
+diff --git a/developmental_ecology/loom_developmental/core.py b/developmental_ecology/loom_developmental/core.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ae4ee6fc81fd4e4713aab8e7d68fb812b8b7f22b
+--- /dev/null
++++ b/developmental_ecology/loom_developmental/core.py
+@@ -0,0 +1,74 @@
++"""Transaction scheduler around the unchanged P causal operations.
++
++Native rollback copies only fields mutated in-place before commit. Static field
++geometry, configuration, matrices and non-writing wave state are shared. Rare
++terminal root-finding remains the exact baseline algorithm, using complete copies.
++"""
++import copy
++import numpy as np
++from loom_p.engine import Engine
++from loom_p.physics import TerminalCrossing
++
++def backup(e):
++    old=copy.copy(e)
++    old.body=copy.deepcopy(e.body);old.stocks=e.stocks.copy()
++    old.solver=copy.copy(e.solver)
++    o=e.organism;old.organism=copy.copy(o);b=old.organism
++    b.rng=copy.copy(o.rng);b.rng.counters=o.rng.counters.copy()
++    b.cortices=[]
++    for c in o.cortices:
++        saved=copy.copy(c)
++        for name in ('shared','fine','integral'):setattr(saved,name,getattr(c,name).copy())
++        b.cortices.append(saved)
++    b.motor=copy.copy(o.motor)
++    b.motor.phase=o.motor.phase.copy();b.motor.integral=o.motor.integral.copy()
++    if (e.native_index+1)%round(e.c.wave_dt/e.c.native_dt)==0:
++        b.association=copy.deepcopy(o.association)
++        b.regulator=copy.deepcopy(o.regulator)
++    return old
++
++def cheap_finite(e,wave):
++    arrays=[e.body.position,e.body.velocity,e.body.command,e.body.force,e.body.reserves,*e.raw,
++            e.organism.motor.command,e.organism.motor.phase,e.organism.motor.nu]
++    for c in e.organism.cortices:
++        arrays.extend((c.x,c.shared,c.fine,c.mean,c.C,c.integral,c.shared_ref,c.fine_ref,c.opening))
++    if wave:
++        a=e.organism.association;r=e.organism.regulator
++        arrays.extend((a.a,a.q,r.theta,r.reference,r.eligibility,r.controls,*a.H.values(),*a.use.values()))
++    if any(not np.isfinite(x).all() for x in arrays):raise ValueError('Nonfinite committed causal state')
++
++def step(e):
++    """Same operation order/terminal search as Engine.step; no live observer work."""
++    if e.status in ('failure','terminal','budget_complete'):raise RuntimeError('Stopped state cannot advance')
++    old=backup(e);dt=e.c.native_dt
++    refresh=e.native_index>0 and e.native_index%round(e.c.noise_refresh/dt)==0
++    terminal=None
++    try:
++        try:terminal=Engine._coupled(e,dt,refresh)
++        except TerminalCrossing as event:
++            low=0.;high=dt;dimension=event.dimension
++            for _ in range(80):
++                mid=(low+high)/2;candidate=copy.deepcopy(old)
++                try:
++                    Engine._coupled(candidate,mid,refresh);low=mid
++                except TerminalCrossing:high=mid
++                if high-low<=e.c.event_time_tol:break
++            else:raise ArithmeticError('Terminal location did not converge')
++            e.__dict__=copy.deepcopy(old.__dict__)
++            terminal=Engine._coupled(e,high,refresh,True) or dimension;dt=high
++        e.native_index+=1;e.last_wave=None
++        if terminal:e.status='terminal';e.terminal_dimension=terminal
++        elif e.native_index%round(e.c.wave_dt/e.c.native_dt)==0:
++            e.last_wave=e.organism.handoff(e.body.reserves)
++        # This cache is observer-only; complete native observation is recreated
++        # from Tier 1 and neural replay instead of copying/hashing it every step.
++        e.last_native={'time':e.time,'elapsed':dt,'native_index':e.native_index}
++        cheap_finite(e,e.last_wave is not None)
++        return dt,e.last_wave,e.last_events
++    except Exception as error:
++        e.__dict__=old.__dict__;e.status='failure';e.failure=f'{type(error).__name__}: {error}'
++        raise
++
++def causal_state(e):
++    """Only the observer native cache differs; every other Engine field compares."""
++    return {k:v for k,v in vars(e).items() if k!='last_native'}
+diff --git a/developmental_ecology/loom_developmental/evidence.py b/developmental_ecology/loom_developmental/evidence.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..bf728ffd2a9e72a43ad206bc6b8c6cd0a73779db
+--- /dev/null
++++ b/developmental_ecology/loom_developmental/evidence.py
+@@ -0,0 +1,54 @@
++"""Tier-1 observations: columnar native facts and compact actual wave outputs."""
++import numpy as np
++from loom_p.geometry import mover
++
++NATIVE_FIELDS=[('time',1),('elapsed',1),('position',2),('angle',1),('velocity',2),('omega',1),
++    ('commands',2),('forces',2),('contact_rates',8),('reserves',2),('stocks',8),
++    ('raw',29),('mover_rectangle',4),('mover_velocity',2),('rng_dynamic',3),
++    ('field_iterations',1),('field_relative_residual',2),('field_mass_balance',2),
++    ('field_minimum',1),('field_negative_roundoff_count',1),('event_count',1)]
++SLICES={};WIDTH=0
++for name,width in NATIVE_FIELDS:SLICES[name]=slice(WIDTH,WIDTH+width);WIDTH+=width
++DYNAMIC=('life/motor-noise','life/regulation-E','life/regulation-I')
++
++def native_row(e,dt):
++    rect,velocity=mover(e.c,e.time,e.phase);b=e.body;s=e.solver.last
++    values=(e.time,dt,*b.position,b.angle,*b.velocity,b.omega,*b.command,*b.force,
++        *b.contact_rates,*b.reserves,*e.stocks,*np.concatenate(e.raw),*rect,*velocity,
++        *(e.organism.rng.counters[k] for k in DYNAMIC),s['iterations'],
++        *s['relative_residual'],*s['mass_balance'],s['minimum'],s['negative_roundoff_count'],len(e.last_events))
++    if any(e.organism.rng.counters[k]>2**53 for k in DYNAMIC):raise ValueError('native counter exact-integer bound')
++    return np.asarray(values,dtype='<f8')
++
++def raw_tuple(row):
++    x=row[SLICES['raw']];return (x[:10].copy(),x[10:14].copy(),x[14:22].copy(),x[22:].copy())
++
++def wave_row(e,w):
++    """No new neural calculations; only compact outputs already computed by P."""
++    a=w['association'];r=w['regulation'];credit=w['credit']
++    summaries=np.stack([np.concatenate([v[name] for name in ('new_norm','use')])
++        for v in a['map_updates'].values()])
++    return {'index':e.native_index,'wave':e.organism.wave_count,
++        'packets':np.concatenate(w['packets']),
++        'psi':w['psi'],'q':a['q'],'controls':w['new_controls'],
++        'credit_trend':credit['trend'],
++        'learned':r['learned'],'exploration':r['exploration'],'need':r['need'],
++        'map_update_use':summaries,
++        'sensory_shared_norm':np.array([np.linalg.norm(c.shared) for c in e.organism.cortices]),
++        'sensory_fine_norm':np.array([np.linalg.norm(c.fine) for c in e.organism.cortices]),
++        'pool_opening':np.concatenate([c.opening for c in e.organism.cortices]),
++        'regulator_bank_norm':np.linalg.norm(e.organism.regulator.theta,axis=(1,2))}
++
++def check_ledger(events,tolerance):
++    maximum=0.
++    for r in events:
++        transfer=np.asarray(r['transfer']);renew=np.asarray(r['renewal_first'])+r['renewal_second']
++        errors=((r['energy_after']-r['energy_before'])-(float(transfer.sum())-r['expenditure']),
++            float(np.max(abs(np.asarray(r['stock_after'])-r['stock_before']-renew+transfer))),
++            r['integrity_after']-r['integrity_before']-(r['repair']-r['damage']))
++        if not np.isfinite(errors).all() or max(abs(x) for x in errors)>tolerance:
++            raise ArithmeticError('source/energy/integrity ledger mismatch')
++        if r['duration']==0 and (np.any(transfer) or r['expenditure']!=0 or r['repair']!=0):
++            raise ArithmeticError('zero-duration exchange')
++        maximum=max(maximum,*map(abs,errors))
++    return maximum
+diff --git a/developmental_ecology/loom_developmental/replay.py b/developmental_ecology/loom_developmental/replay.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..842a95d16c4ba624ddb0d206a0aa2d5009ac10ff
+--- /dev/null
++++ b/developmental_ecology/loom_developmental/replay.py
+@@ -0,0 +1,83 @@
++"""Tier 2: exact P reconstruction from realized sensory inputs, never physics.
++
++Optional field reconstruction uses recorded stocks/poses, not a new trajectory.
++Returned objects are detached. There is no path back into the live recorder.
++"""
++import copy
++import hashlib
++import json
++from pathlib import Path
++import numpy as np
++from loom_commissioning.diagnostics import passive
++from loom_commissioning.contract import INTACT
++from . import codec,core,evidence
++from .verify import catalog
++from .runner import identity,canonical
++
++def apply_body(e,row):
++    s=evidence.SLICES;b=e.body
++    for field,key in [('position','position'),('velocity','velocity'),('command','commands'),('force','forces'),('contact_rates','contact_rates')]:
++        setattr(b,field,row[s[key]].copy())
++    b.angle=float(row[s['angle']][0]);b.omega=float(row[s['omega']][0])
++    b.energy,b.integrity=map(float,row[s['reserves']]);e.stocks=row[s['stocks']].copy()
++
++def reconstruct(store,*,first_index=None,last_index=None,deep=False,fields=False,callback=None):
++    """Read complete custody; decompress only the interval from its nearest checkpoint.
++
++    callback receives detached reconstructed states/diagnostics for engineering
++    checks or analysis. It is never supplied a live Life or engine reference.
++    """
++    store=Path(store);custody=catalog(store)
++    current=identity()
++    receipt=json.loads(sorted(store.glob('segment-*.json'))[-1].read_bytes())
++    recorded=json.loads((store/receipt['asset_path']/(custody['identity_sha256']+'.json')).read_bytes())
++    # Analysis apparatus may improve independently of a sealed life. The
++    # causal implementation, numerical runtime and recording schema may not.
++    # Never use this compatibility rule for live continuation (which is strict).
++    for key in recorded:
++        if key!='apparatus' and canonical(current[key])!=canonical(recorded[key]):
++            raise ValueError('causal reconstruction runtime/schema changed')
++    checkpoints=custody['checkpoints'];chunks=custody['chunks']
++    first=first_index if first_index is not None else min(x['index'] for x in checkpoints)+1
++    last=last_index if last_index is not None else max(x['last_index'] for x in chunks)
++    cp=max((x for x in checkpoints if x['index']<first),key=lambda x:x['index'])
++    e=codec.read(store/cp['file'],cp['sha256'])['engine'];count=0;checked_chunks=0
++    for chunk in chunks:
++        if chunk['last_index']<=e.native_index or chunk['first_index']>last:continue
++        data=codec.read(store/chunk['file'],chunk['sha256']);waves={w['index']:w for w in data['waves']};event_offset=0
++        for index,row in enumerate(data['native'],data['first_index']):
++            count_events=int(row[evidence.SLICES['event_count']][0])
++            events=data['events'][event_offset:event_offset+count_events];event_offset+=count_events
++            if index<=e.native_index:continue
++            if index>last:break
++            before=copy.deepcopy(e) if deep and index>=first else None
++            dt=float(row[evidence.SLICES['elapsed']][0]);old_index=e.native_index
++            refresh=old_index>0 and old_index%round(e.c.noise_refresh/e.c.native_dt)==0
++            command=e.organism.native(e.raw,dt,refresh_noise=refresh)
++            if not np.array_equal(command,row[evidence.SLICES['commands']]):raise ValueError('P command reconstruction mismatch')
++            apply_body(e,row);e.time=float(row[0]);e.native_index=index
++            if fields:e.fields=e.solver.step(e.fields,e.stocks,e.time,e.phase,dt,e.body.position)
++            e.raw=evidence.raw_tuple(row);e.last_native={'elapsed':dt,'time':e.time,'native_index':index};e.last_wave=None
++            e.last_events=events
++            terminal=index==data['last_index'] and data['endpoint_status']=='terminal'
++            if terminal:e.status='terminal';e.terminal_dimension=data['terminal_dimension']
++            elif index%round(e.c.wave_dt/e.c.native_dt)==0:
++                e.last_wave=e.organism.handoff(e.body.reserves)
++                if index not in waves or codec.encode(evidence.wave_row(e,e.last_wave))!=codec.encode(waves[index]):
++                    raise ValueError('actual wave output reconstruction mismatch')
++            actual=[e.organism.rng.counters[k] for k in evidence.DYNAMIC]
++            if not np.array_equal(actual,row[evidence.SLICES['rng_dynamic']]):raise ValueError('native RNG reconstruction mismatch')
++            if index>=first:
++                count+=1
++                diag=passive(before,e,e.last_wave,INTACT,None) if deep else None
++                if callback is not None:callback(index,e,diag)
++        if e.native_index==data['last_index']:
++            if codec.digest(e.organism)!=data['P_endpoint_sha256'] or e.organism.rng.counters!=data['rng_endpoint']:
++                raise ValueError('exact P/RNG chunk endpoint mismatch')
++            if fields and hashlib.sha256(e.fields.tobytes()).hexdigest()!=data['field_endpoint_sha256']:
++                raise ValueError('realized field reconstruction mismatch')
++            checked_chunks+=1
++    return {'engine':e,'native_reconstructed':count,'checked_chunks':checked_chunks,
++        'recording_identity':custody['identity_sha256'],
++        'analysis_identity':hashlib.sha256(canonical(current)).hexdigest(),
++        'physics_executed':False,'fields_reconstructed':fields,'live_state_modified':False}
+diff --git a/developmental_ecology/loom_developmental/runner.py b/developmental_ecology/loom_developmental/runner.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..5855f106caa50f8e9b0edb4b9c81d3edb98a40d3
+--- /dev/null
++++ b/developmental_ecology/loom_developmental/runner.py
+@@ -0,0 +1,234 @@
++"""One append-only continuing life; immutable grants, strong segment boundaries.
++
++No controller, UI, observer callback, automatic continuation or population launch.
++"""
++import copy
++import hashlib
++import json
++import math
++import os
++from pathlib import Path
++import platform
++import sys
++import time
++import numpy as np
++import scipy
++from loom_p.records import code_identity
++from loom_commissioning.contract import P_CODE,CONFIG
++from . import codec,core,evidence
++
++def file_hash(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
++
++def canonical(value):return json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False).encode()
++
++def identity():
++    p=code_identity()
++    if p['sha256']!=P_CODE:raise ValueError('P code differs from frozen baseline')
++    root=Path(__file__).parent
++    app={f.name:file_hash(f) for f in sorted(root.glob('*.py'))}
++    # Bind loaded numerical distributions once per segment, including native
++    # extensions. Shared identity assets are reused by content address.
++    runtime={}
++    for module in (np,scipy):
++        base=Path(module.__file__).parent
++        for f in sorted(base.rglob('*')):
++            if f.is_file() and f.suffix in ('.py','.pyd','.dll'):
++                runtime[module.__name__+'/'+f.relative_to(base).as_posix()]=file_hash(f)
++        libs=base.with_name(base.name+'.libs')
++        if libs.exists():
++            for f in sorted(libs.glob('*.dll')):runtime[libs.name+'/'+f.name]=file_hash(f)
++    # The venv launcher alone does not identify the executing Python DLL or
++    # standard-library native kernels. Bind these shared runtime files too.
++    python_runtime={}
++    base=Path(sys.base_prefix)
++    for f in sorted(base.glob('python*.dll')):python_runtime[f.name]=file_hash(f)
++    for f in sorted((base/'DLLs').glob('*')):
++        if f.is_file() and f.suffix in ('.pyd','.dll'):
++            python_runtime['DLLs/'+f.name]=file_hash(f)
++    return {'P':p,'apparatus':app,'python':sys.version,'platform':platform.platform(),
++            'executable':file_hash(sys.executable),'numpy':np.__version__,'scipy':scipy.__version__,
++            'runtime_files':runtime,'python_runtime_files':python_runtime,'native_fields':evidence.NATIVE_FIELDS}
++
++def create_engineering_grant(e,end_index,request_path,*,wall_limit=3600,storage_limit=2_000_000_000,
++                             checkpoint_stride=6000,chunk_steps=100):
++    """Explicit fixture grant; never a Founder Search authority constructor."""
++    if not getattr(e,'fixture',{}).get('manufactured'):
++        raise ValueError('engineering requires disclosed manufactured fixture')
++    return {'schema':1,'kind':'engineering-benchmark','life_id':'ENGINEERING-'+e.fixture['name'],
++        'initial_causal_sha256':codec.digest(core.causal_state(e)),
++        'initial_index':e.native_index,'end_index':end_index,'parent_receipt_sha256':None,
++        'request_path':str(Path(request_path).resolve()),'request_sha256':file_hash(request_path),
++        'wall_limit_seconds':wall_limit,'storage_limit_bytes':storage_limit,
++        'checkpoint_stride':checkpoint_stride,'chunk_steps':chunk_steps,'compression_level':1}
++
++def validate_grant(g,e,parent):
++    keys={'schema','kind','life_id','initial_causal_sha256','initial_index','end_index',
++        'parent_receipt_sha256','request_path','request_sha256','wall_limit_seconds','storage_limit_bytes',
++        'checkpoint_stride','chunk_steps','compression_level'}
++    if set(g)!=keys or g['schema']!=1:raise ValueError('unknown developmental grant schema')
++    if e.c.identity()!=CONFIG:raise ValueError('configuration changed')
++    if e.status in ('terminal','failure','budget_complete'):raise ValueError('stopped life cannot continue')
++    if g['initial_index']!=e.native_index or g['initial_causal_sha256']!=codec.digest(core.causal_state(e)):
++        raise ValueError('grant initial state mismatch')
++    if type(g['end_index'])!=int or not e.native_index<g['end_index']<=10_000_000:
++        raise ValueError('invalid absolute native deadline')
++    if g['kind']=='engineering-benchmark':
++        if not getattr(e,'fixture',{}).get('manufactured') or g['end_index']-e.native_index>60000:
++            raise ValueError('manufactured engineering scope exceeded')
++        if file_hash(g['request_path'])!=g['request_sha256']:raise ValueError('engineering request changed')
++    elif g['kind']=='developmental-intact-P':
++        # This parser supports later separately reviewed grants. This build
++        # generates none. A notice alone or an engineering request is insufficient.
++        request=json.loads(Path(g['request_path']).read_bytes())
++        if file_hash(g['request_path'])!=g['request_sha256']:raise ValueError('approval checksum mismatch')
++        bound={k:v for k,v in g.items() if k not in ('request_path','request_sha256')}
++        if set(request)!={'notice','approved_scope'} or request['approved_scope']!=bound or not request['notice']:
++            raise ValueError('exact separate developmental approval required')
++    else:raise ValueError('unknown execution kind')
++    if g['parent_receipt_sha256']!=parent:raise ValueError('continuation parent mismatch')
++    for key in ('checkpoint_stride','chunk_steps','storage_limit_bytes'):
++        if type(g[key])!=int or g[key]<=0:raise ValueError('invalid resource/recording limit')
++    if g['storage_limit_bytes']<16_000_000:raise ValueError('storage limit cannot accommodate closure reserve')
++    if g['chunk_steps']>1000 or g['checkpoint_stride']%g['chunk_steps'] or not 0<=g['compression_level']<=9:
++        raise ValueError('invalid chunk/checkpoint policy')
++    if not math.isfinite(g['wall_limit_seconds']) or g['wall_limit_seconds']<=0:raise ValueError('invalid wall limit')
++
++def atomic_json(path,value):
++    if path.exists():raise FileExistsError(path)
++    temporary=path.with_name(path.name+'.partial')
++    with temporary.open('xb') as f:f.write(canonical(value));f.flush();os.fsync(f.fileno())
++    os.replace(temporary,path)
++
++class Life:
++    def __init__(self,e,store,grant,*,parent=None,asset_root=None):
++        self.engine=e;self.store=Path(store);self.grant=copy.deepcopy(grant)
++        self.parent=parent;self.closed=False;self.clock_started=time.perf_counter()
++        validate_grant(self.grant,e,parent);e.validate_state()
++        self.binding=identity();self.identity_sha256=hashlib.sha256(canonical(self.binding)).hexdigest()
++        self.asset_root=Path(asset_root) if asset_root else self.store.parent/'shared-assets'
++        self.asset_root.mkdir(parents=True,exist_ok=True)
++        asset=self.asset_root/(self.identity_sha256+'.json')
++        if asset.exists():
++            if asset.read_bytes()!=canonical(self.binding):raise ValueError('shared immutable asset changed')
++        else:atomic_json(asset,self.binding)
++        if parent is None:self.store.mkdir(parents=True,exist_ok=False)
++        elif not self.store.is_dir():raise ValueError('missing continuing-life store')
++        existing=sorted(self.store.glob('segment-*.json'))
++        self.segment=len(existing);self.files=[];self.checkpoints=[];self.chunk_refs=[]
++        atomic_json(self.store/f'attempt-{self.segment:03d}.json',{
++            'grant':self.grant,'identity_sha256':self.identity_sha256,'parent':parent})
++        self.rows=np.empty((self.grant['chunk_steps'],evidence.WIDTH),dtype='<f8');self.used=0
++        self.waves=[];self.events=[];self.chunk_start=e.native_index;self.chunk_start_time=e.time
++        self.last_index=e.native_index;self.last_time=e.time;self.ledger_maximum=0.;self.event_count=0
++        self.blocks=[];self.chunk_started=time.perf_counter();self.bytes_written=0;self.timings={'checkpoint':0.,'chunk_write':0.}
++        self.initial_checkpoint=self.checkpoint('initial') if parent is None else self._parent_checkpoint()
++        self.run_started=time.perf_counter()
++
++    def _parent_checkpoint(self):
++        previous=json.loads(sorted(self.store.glob('segment-*.json'))[-1].read_bytes())
++        return previous['final_checkpoint']
++
++    def checkpoint(self,label):
++        start=time.perf_counter();e=self.engine
++        name=f'checkpoint-{e.native_index:09d}-s{self.segment:03d}-{label}.ld'
++        record=codec.write(self.store/name,{'engine':e,'identity':self.identity_sha256,
++            'index':e.native_index,'wave':e.organism.wave_count,'life_id':self.grant['life_id']},self.grant['compression_level'])
++        record.update(index=e.native_index,wave=e.organism.wave_count,seconds=time.perf_counter()-start)
++        self.files.append(record);self.checkpoints.append(record);self.bytes_written+=record['bytes']
++        self.timings['checkpoint']+=record['seconds'];return record
++
++    def flush(self):
++        if not self.used:return
++        e=self.engine;start=time.perf_counter()
++        value={'first_index':self.chunk_start+1,'last_index':e.native_index,'start_time':self.chunk_start_time,
++            'native':self.rows[:self.used].copy(),'waves':self.waves,'events':self.events,
++            'P_endpoint_sha256':codec.digest(e.organism),'rng_endpoint':e.organism.rng.counters.copy(),
++            'field_endpoint_sha256':hashlib.sha256(e.fields.tobytes()).hexdigest(),
++            'endpoint_status':e.status,'terminal_dimension':e.terminal_dimension}
++        name=f'chunk-{self.chunk_start+1:09d}-{e.native_index:09d}.ld'
++        record=codec.write(self.store/name,value,self.grant['compression_level'])
++        record.update(first_index=self.chunk_start+1,last_index=e.native_index)
++        self.files.append(record);self.chunk_refs.append(record);self.bytes_written+=record['bytes']
++        self.timings['chunk_write']+=time.perf_counter()-start
++        self.blocks.append({'first_index':self.chunk_start+1,'last_index':e.native_index,
++            'simulated_seconds':e.time-self.chunk_start_time,'wall_seconds':time.perf_counter()-self.chunk_started})
++        self.chunk_start=e.native_index;self.chunk_start_time=e.time;self.used=0;self.waves=[];self.events=[]
++        self.chunk_started=time.perf_counter()
++
++    def advance(self,steps=None):
++        if self.closed:raise RuntimeError('closed segment')
++        remaining=self.grant['end_index']-self.engine.native_index
++        steps=remaining if steps is None else steps
++        if type(steps)!=int or not 0<=steps<=remaining:raise ValueError('deadline exceeded')
++        try:
++            for _ in range(steps):
++                if time.perf_counter()-self.clock_started>=self.grant['wall_limit_seconds']:
++                    self.close('resource_pause','wall_time');break
++                # Reserve checkpoint + final chunk before evolution. A failure
++                # still becomes an apparatus failure, never biological death.
++                if self.bytes_written+16_000_000>=self.grant['storage_limit_bytes']:
++                    self.close('resource_pause','storage_reserve');break
++                e=self.engine;dt,w,events=core.step(e)
++                if e.native_index!=self.last_index+1 or e.time!=self.last_time+dt:
++                    raise ArithmeticError('native sequence mismatch')
++                self.ledger_maximum=max(self.ledger_maximum,evidence.check_ledger(events,e.c.arithmetic_tol))
++                self.event_count+=len(events);self.rows[self.used]=evidence.native_row(e,dt);self.used+=1
++                if w is not None:self.waves.append(evidence.wave_row(e,w))
++                self.events.extend(events);self.last_index=e.native_index;self.last_time=e.time
++                if self.used==len(self.rows):self.flush()
++                if e.status=='terminal':self.close('terminal');break
++                if e.native_index==self.grant['end_index']:self.close('stage_complete');break
++                if e.native_index%self.grant['checkpoint_stride']==0:
++                    self.flush();self.checkpoint('periodic')
++        except Exception as error:
++            # Do not mutate physical/P state to turn an I/O/observer fault into
++            # a biological event. Keep a best-effort failure record and stop.
++            self.closed=True
++            fault={'kind':'apparatus_failure','error':f'{type(error).__name__}: {error}',
++                'native_index':self.engine.native_index,'last_recorded_index':self.last_index,
++                'complete':False,'parent':self.parent}
++            try:atomic_json(self.store/f'failure-s{self.segment:03d}.json',fault)
++            except OSError:pass
++            try:codec.write(self.store/f'failure-tail-s{self.segment:03d}.ld',{
++                'engine':self.engine,'unclosed_native':self.rows[:self.used].copy(),
++                'unclosed_waves':self.waves,'unclosed_events':self.events,'failure':fault})
++            except (OSError,ValueError):pass
++            raise
++
++    def close(self,status='administrative_pause',cause=None):
++        if self.closed:raise RuntimeError('segment already closed')
++        e=self.engine
++        if status not in ('administrative_pause','resource_pause','stage_complete','terminal'):raise ValueError('unknown stop')
++        if (status=='terminal')!=(e.status=='terminal'):raise ValueError('terminal label mismatch')
++        if status=='stage_complete' and e.native_index!=self.grant['end_index']:raise ValueError('premature stage completion')
++        self.flush();e.validate_state();final=self.checkpoint('final')
++        value={'schema':1,'life_id':self.grant['life_id'],'segment':self.segment,'parent_receipt_sha256':self.parent,
++            'grant':self.grant,'identity_sha256':self.identity_sha256,'asset_path':os.path.relpath(self.asset_root,self.store),
++            'status':status,'cause':cause,'complete':True,'initial_checkpoint':self.initial_checkpoint,
++            'final_checkpoint':final,'initial_index':self.grant['initial_index'],'final_index':e.native_index,
++            'native_steps':e.native_index-self.grant['initial_index'],'wave_index':e.organism.wave_count,
++            'final_causal_sha256':codec.digest(core.causal_state(e)),'files':self.files,'chunks':self.chunk_refs,
++            'checkpoints':self.checkpoints,'blocks':self.blocks,'event_count':self.event_count,
++            'ledger_maximum':self.ledger_maximum,'timings':self.timings,
++            'wall_seconds':time.perf_counter()-self.clock_started,'execution_wall_seconds':time.perf_counter()-self.run_started,
++            'final_time':e.time,'bytes_written':self.bytes_written}
++        # Immutable source checks at segment end; no live function rebinding.
++        root=Path(__file__).parent
++        if self.binding['apparatus']!={p.name:file_hash(p) for p in sorted(root.glob('*.py'))} or code_identity()!=self.binding['P']:
++            raise ValueError('execution source changed during segment')
++        atomic_json(self.store/f'segment-{self.segment:03d}.json',value)
++        self.closed=True;self.receipt=value
++
++    @classmethod
++    def continue_life(cls,store,grant):
++        from .verify import verify_store
++        store=Path(store);verification=verify_store(store)
++        previous=sorted(store.glob('segment-*.json'))[-1];receipt=json.loads(previous.read_bytes())
++        if receipt['status'] not in ('administrative_pause','resource_pause','stage_complete'):
++            raise ValueError('noncontinuable life')
++        if grant['life_id']!=receipt['life_id']:raise ValueError('continuing life identity changed')
++        state=codec.read(store/receipt['final_checkpoint']['file'],receipt['final_checkpoint']['sha256'])
++        current=identity()
++        if hashlib.sha256(canonical(current)).hexdigest()!=receipt['identity_sha256']:
++            raise ValueError('continuation apparatus/runtime identity changed')
++        return cls(state['engine'],store,grant,parent=file_hash(previous),asset_root=store/receipt['asset_path'])
+diff --git a/developmental_ecology/loom_developmental/verify.py b/developmental_ecology/loom_developmental/verify.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..fbdf0b8c9514cd09ab8f456a90455288a95c17de
+--- /dev/null
++++ b/developmental_ecology/loom_developmental/verify.py
+@@ -0,0 +1,86 @@
++"""Read-only segment custody, native sequence and exact physical accounting."""
++import hashlib
++import json
++from pathlib import Path
++import time
++import numpy as np
++from . import codec,core,evidence
++from .runner import file_hash
++
++def catalog(store):
++    """Read the small receipt chain only; payloads are verified on interval access."""
++    store=Path(store);parent=None;chunks=[];checkpoints=[];identity=None
++    if list(store.glob('*.partial')) or list(store.glob('failure-*')):raise ValueError('incomplete/failure store')
++    receipts=sorted(store.glob('segment-*.json'))
++    if not receipts:raise ValueError('no complete segment')
++    for seq,path in enumerate(receipts):
++        r=json.loads(path.read_bytes())
++        if not r['complete'] or r['segment']!=seq or r['parent_receipt_sha256']!=parent:
++            raise ValueError('segment chain mismatch')
++        asset=store/r['asset_path']/(r['identity_sha256']+'.json')
++        if file_hash(asset)!=r['identity_sha256']:raise ValueError('asset checksum mismatch')
++        if identity is not None and identity!=r['identity_sha256']:raise ValueError('segment identity changed')
++        identity=r['identity_sha256'];chunks.extend(r['chunks']);checkpoints.extend(r['checkpoints']);parent=file_hash(path)
++    return {'chunks':chunks,'checkpoints':checkpoints,'identity_sha256':identity,'last_receipt_sha256':parent}
++
++def verify_store(store):
++    start=time.perf_counter();store=Path(store)
++    if list(store.glob('*.partial')) or list(store.glob('failure-*')):
++        raise ValueError('incomplete/failure store; no automatic continuation')
++    receipts=sorted(store.glob('segment-*.json'))
++    if not receipts:raise ValueError('no complete segment')
++    parent=None;previous=None;allowed=set();native_count=0;wave_count=0;event_count=0;maximum=0.
++    families={'native':0,'waves':0,'events':0,'checkpoint':0,'chunks_stored':0,'metadata':0}
++    all_chunks=[];checkpoint_refs=[]
++    for seq,path in enumerate(receipts):
++        r=json.loads(path.read_bytes());attempt=store/f'attempt-{seq:03d}.json';a=json.loads(attempt.read_bytes())
++        allowed.update((path.name,attempt.name));families['metadata']+=path.stat().st_size+attempt.stat().st_size
++        if r['segment']!=seq or r['parent_receipt_sha256']!=parent or not r['complete']:
++            raise ValueError('segment lineage mismatch')
++        if a!={'grant':r['grant'],'identity_sha256':r['identity_sha256'],'parent':parent}:
++            raise ValueError('attempt/grant mismatch')
++        asset=store/r['asset_path']/(r['identity_sha256']+'.json')
++        if file_hash(asset)!=r['identity_sha256']:raise ValueError('immutable asset checksum mismatch')
++        initial=codec.read(store/r['initial_checkpoint']['file'],r['initial_checkpoint']['sha256'])['engine']
++        final=codec.read(store/r['final_checkpoint']['file'],r['final_checkpoint']['sha256'])['engine']
++        if previous is not None and codec.digest(core.causal_state(initial))!=previous:
++            raise ValueError('continuation state changed')
++        if initial.native_index!=r['initial_index'] or final.native_index!=r['final_index']:
++            raise ValueError('checkpoint index mismatch')
++        if codec.digest(core.causal_state(initial))!=r['grant']['initial_causal_sha256'] or codec.digest(core.causal_state(final))!=r['final_causal_sha256']:
++            raise ValueError('checkpoint state binding mismatch')
++        initial.validate_state();final.validate_state()
++        index=initial.native_index;t=initial.time;waves=initial.organism.wave_count
++        for f in r['files']:
++            allowed.add(f['file'])
++            if file_hash(store/f['file'])!=f['sha256']:raise ValueError('file checksum mismatch')
++        for f in r['checkpoints']:
++            families['checkpoint']+=f['bytes'];checkpoint_refs.append(f)
++        for f in r['chunks']:
++            data=codec.read(store/f['file'],f['sha256']);rows=data['native']
++            if rows.dtype!=np.dtype('<f8') or rows.ndim!=2 or rows.shape[1]!=evidence.WIDTH or not np.isfinite(rows).all():
++                raise ValueError('native array schema/finiteness mismatch')
++            if data['first_index']!=index+1 or data['last_index']!=index+len(rows) or data['start_time']!=t:
++                raise ValueError('chunk index/time discontinuity')
++            for row in rows:
++                dt=float(row[evidence.SLICES['elapsed']][0]);t+=dt;index+=1
++                if not 0<dt<=initial.c.native_dt or t!=row[0]:raise ValueError('native elapsed mismatch')
++            if int(rows[:,evidence.SLICES['event_count']].sum())!=len(data['events']):raise ValueError('event/native alignment mismatch')
++            for w in data['waves']:
++                waves+=1;wave_count+=1
++                if w['wave']!=waves or w['index']%20:raise ValueError('wave discontinuity')
++            event_count+=len(data['events']);maximum=max(maximum,evidence.check_ledger(data['events'],initial.c.arithmetic_tol))
++            for family in ('native','waves','events'):families[family]+=len(codec.encode(data[family]))
++            families['chunks_stored']+=f['bytes'];native_count+=len(rows);all_chunks.append(f)
++        if index!=final.native_index or t!=final.time or waves!=final.organism.wave_count:
++            raise ValueError('final sequence mismatch')
++        if r['status']=='stage_complete' and index!=r['grant']['end_index']:raise ValueError('premature ceiling')
++        if (r['status']=='terminal')!=(final.status=='terminal'):raise ValueError('terminal stop mismatch')
++        if index>r['grant']['end_index']:raise ValueError('deadline exceeded')
++        previous=r['final_causal_sha256'];parent=file_hash(path)
++    actual={p.name for p in store.iterdir() if p.is_file()}
++    if actual!=allowed:raise ValueError('unsealed/extra evidence tail')
++    return {'segments':len(receipts),'native_steps':native_count,'waves':wave_count,'events':event_count,
++        'ledger_maximum':maximum,'family_bytes':families,'verification_wall_seconds':time.perf_counter()-start,
++        'chunks':all_chunks,'checkpoints':checkpoint_refs,'last_receipt_sha256':parent,
++        'final_causal_sha256':previous,'physical_replay':False,'P_execution':False}
+diff --git a/developmental_ecology/tests_developmental/test_core.py b/developmental_ecology/tests_developmental/test_core.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..2bf5fb7691b3df5e18c7c4498f61efed85ad8b45
+--- /dev/null
++++ b/developmental_ecology/tests_developmental/test_core.py
+@@ -0,0 +1,56 @@
++import copy
++import json
++import os
++from pathlib import Path
++import numpy as np
++import pytest
++from loom_p.schema import Config
++from loom_p.smokes import make_case
++from loom_p.engine import Engine
++from loom_developmental import core,codec
++
++CACHE=Path(os.environ.get('LOOM_ENGINEERING_CACHE',r'C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\developmental_ecology\artifacts\prehistory-attempt-001'))
++CONFIG=Path(__file__).resolve().parents[1]/'configuration.json'
++
++def fixture(name='nonzero_resume_1s'):
++    return make_case(Config(**json.loads(CONFIG.read_text())),name,CACHE)
++
++@pytest.mark.parametrize('name',['nonzero_resume_1s','contact_ui_1s'])
++def test_every_causal_field_old_vs_lean(name):
++    old=fixture(name);lean=copy.deepcopy(old)
++    for _ in range(60):
++        n,w,events=old.step();dt,lw,le=core.step(lean)
++        assert codec.encode(core.causal_state(old))==codec.encode(core.causal_state(lean))
++        assert codec.encode(w)==codec.encode(lw)
++        assert codec.encode(events)==codec.encode(le)
++        assert n['elapsed']==dt
++
++def test_terminal_exact_partial():
++    old=fixture();old.body.energy=1e-5;lean=copy.deepcopy(old)
++    old.step();dt,_,_=core.step(lean)
++    assert old.status==lean.status=='terminal'
++    assert 0<dt<.01
++    assert codec.encode(core.causal_state(old))==codec.encode(core.causal_state(lean))
++
++def test_integrity_terminal_exact_partial():
++    old=fixture('contact_ui_1s');old.body.integrity=1e-9;lean=copy.deepcopy(old)
++    old.step();dt,_,_=core.step(lean)
++    assert old.status==lean.status=='terminal'
++    assert old.terminal_dimension=='integrity'
++    assert codec.encode(core.causal_state(old))==codec.encode(core.causal_state(lean))
++
++def test_rollback_on_failure():
++    old=fixture();old.fields[0,0,0]=-1.;lean=copy.deepcopy(old)
++    with pytest.raises(ArithmeticError):old.step()
++    with pytest.raises(ArithmeticError):core.step(lean)
++    assert codec.encode(core.causal_state(old))==codec.encode(core.causal_state(lean))
++
++def test_binary_exact_state_and_corruption(tmp_path):
++    e=fixture();raw=codec.encode(e);restored=codec.decode(raw)
++    assert raw==codec.encode(restored)
++    record=codec.write(tmp_path/'state.ld',e)
++    assert raw==codec.encode(codec.read(tmp_path/'state.ld',record['sha256']))
++    blob=bytearray((tmp_path/'state.ld').read_bytes());blob[-1]^=1
++    (tmp_path/'broken.ld').write_bytes(blob)
++    with pytest.raises(ValueError):codec.read(tmp_path/'broken.ld',record['sha256'])
++    with pytest.raises(ValueError):codec.decode(raw[:-1])
+diff --git a/developmental_ecology/tests_developmental/test_store.py b/developmental_ecology/tests_developmental/test_store.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..6d7671076e5313d32d6fcff3ecf1313f52282d9c
+--- /dev/null
++++ b/developmental_ecology/tests_developmental/test_store.py
+@@ -0,0 +1,92 @@
++import copy
++import json
++import os
++from pathlib import Path
++import numpy as np
++import pytest
++from loom_commissioning.diagnostics import passive
++from loom_commissioning.contract import INTACT
++from loom_developmental import codec,core
++from loom_developmental.runner import Life,create_engineering_grant,file_hash
++from loom_developmental.verify import verify_store
++from loom_developmental.replay import reconstruct
++from test_core import fixture
++
++REQUEST=Path(os.environ.get('LOOM_ENGINEERING_REQUEST',r'C:\Users\Jason\.codex\attachments\400b7786-b3fc-4525-b4cb-f23c18150dff\Pasted text.txt'))
++
++def grant(e,end,parent=None):
++    g=create_engineering_grant(e,end,REQUEST,chunk_steps=20,checkpoint_stride=40)
++    g['parent_receipt_sha256']=parent;return g
++
++def test_exact_tier2_and_D5_from_saved_inputs(tmp_path):
++    initial=fixture();old=copy.deepcopy(initial);expected={};expected_d5={}
++    for i in range(1,61):
++        before=copy.deepcopy(old);n,w,events=old.step()
++        expected[i]=codec.encode(core.causal_state(old))
++        expected_d5[i]=codec.encode(passive(before,old,w,INTACT,None))
++    run=Life(initial,tmp_path/'life',grant(initial,60));run.advance()
++    assert verify_store(run.store)['native_steps']==60
++    checked=[]
++    def check(index,detached,diag):
++        assert codec.encode(core.causal_state(detached))==expected[index]
++        assert codec.encode(diag)==expected_d5[index];checked.append(index)
++    reconstruct(run.store,first_index=1,last_index=60,deep=True,fields=True,callback=check)
++    assert checked==list(range(1,61))
++    assert codec.encode(core.causal_state(run.engine))==expected[60]
++
++def test_continuous_vs_partial_wave_split_exact(tmp_path):
++    initial=fixture();a=Life(copy.deepcopy(initial),tmp_path/'continuous',grant(initial,60));a.advance()
++    b=Life(copy.deepcopy(initial),tmp_path/'split',grant(initial,7));b.advance()
++    for end in (20,60):
++        receipt=sorted(b.store.glob('segment-*.json'))[-1]
++        g=grant(b.engine,end,file_hash(receipt));b=Life.continue_life(b.store,g);b.advance()
++    assert codec.encode(core.causal_state(a.engine))==codec.encode(core.causal_state(b.engine))
++    assert verify_store(b.store)['native_steps']==60
++    assert verify_store(b.store)['segments']==3
++
++@pytest.mark.parametrize('boundary',[600,900,1800])
++def test_manufactured_absolute_clock_boundary(tmp_path,boundary):
++    e=fixture();index=boundary*100-7;e.native_index=index;e.time=index*.01
++    e.organism.native_count=index;e.organism.wave_count=index//20;e.organism.wave_elapsed=(index%20)*.01
++    a=copy.deepcopy(e)
++    for _ in range(14):a.step()
++    run=Life(e,tmp_path/'life',grant(e,boundary*100));run.advance()
++    parent=file_hash(sorted(run.store.glob('segment-*.json'))[-1]);g=grant(run.engine,boundary*100+7,parent)
++    run=Life.continue_life(run.store,g);run.advance()
++    assert codec.encode(core.causal_state(a))==codec.encode(core.causal_state(run.engine))
++
++def test_terminal_resource_scope_and_corruption(tmp_path):
++    e=fixture();e.body.energy=1e-5;r=Life(e,tmp_path/'terminal',grant(e,10));r.advance()
++    assert r.receipt['status']=='terminal'
++    with pytest.raises(ValueError):Life.continue_life(r.store,grant(e,20,file_hash(r.store/'segment-000.json')))
++    e=fixture();g=grant(e,10);g['storage_limit_bytes']=16_000_000
++    r=Life(e,tmp_path/'resource',g);r.advance();assert e.native_index==0
++    assert r.receipt['status']=='resource_pause'
++    assert sum(f.stat().st_size for f in r.store.iterdir() if f.is_file())<g['storage_limit_bytes']
++    with pytest.raises(ValueError):Life(fixture(),tmp_path/'impossible-resource',dict(grant(fixture(),10),storage_limit_bytes=100))
++    with pytest.raises(ValueError):Life(e,tmp_path/'bad',dict(g,end_index=0))
++    e=fixture();r=Life(e,tmp_path/'corrupt',grant(e,10));r.advance()
++    chunk=next(r.store.glob('chunk-*.ld'));blob=bytearray(chunk.read_bytes());blob[-1]^=1;chunk.write_bytes(blob)
++    with pytest.raises(ValueError):verify_store(r.store)
++
++def test_recorder_fault_not_biological_event(tmp_path,monkeypatch):
++    e=fixture();r=Life(e,tmp_path/'fault',grant(e,20))
++    original=codec.write
++    def fail_chunk(path,*args,**kwargs):
++        if Path(path).name.startswith('chunk-'):raise OSError('injected recorder failure')
++        return original(path,*args,**kwargs)
++    monkeypatch.setattr(codec,'write',fail_chunk)
++    with pytest.raises(OSError):r.advance()
++    assert e.status!='terminal' and r.closed
++    assert (r.store/'failure-s000.json').is_file()
++    assert (r.store/'failure-tail-s000.ld').is_file()
++    with pytest.raises(ValueError):verify_store(r.store)
++
++def test_no_birth_no_authority_substitution(tmp_path):
++    e=fixture();g=grant(e,20);g['initial_causal_sha256']='0'*64
++    with pytest.raises(ValueError):Life(e,tmp_path/'bad-state',g)
++    g=grant(e,20);g['kind']='developmental-intact-P'
++    with pytest.raises((ValueError,json.JSONDecodeError)):Life(e,tmp_path/'no-science-grant',g)
++    g=grant(e,20);r=Life(e,tmp_path/'first',g);r.advance()
++    g=grant(e,40,'0'*64)
++    with pytest.raises(ValueError):Life.continue_life(r.store,g)

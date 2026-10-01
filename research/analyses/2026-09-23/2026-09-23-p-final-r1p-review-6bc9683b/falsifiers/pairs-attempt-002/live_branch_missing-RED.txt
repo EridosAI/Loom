@@ -1,0 +1,24 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________ test_live_handoff_observation_has_physical_timestamp _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000017F60A5DA70>
+tmp_path = WindowsPath('C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/exports/2026-09-23-p-final-r1p-review-6bc9683b/falsifiers/isolated-temp-002/live_branch_missing-RED/test_live_handoff_observation_0')
+
+    def test_live_handoff_observation_has_physical_timestamp(monkeypatch,tmp_path):
+        import loom_p.inspector as inspector
+        # Constructor sees an explicitly empty artifact root, including wave history.
+        monkeypatch.setattr(inspector,'ROOT',tmp_path)
+        e=manufactured_component_state(); app=Inspector(); app.engine=e
+        assert app.replay==[] and app.waves==[] and app.record_path is None
+        e.time=.2; e.last_native={'time':.2,'position':[5,5],'angle':0,'stocks':[.2]*8,'reserves':[.7,1]}
+        e.last_wave={'wave':1,'live_branch_sentinel':'manufactured-live-only'}
+        before=state_hash(e); result=app.observation()
+>       assert result['wave'] is not None, 'Live handoff branch was not exercised'
+E       AssertionError: Live handoff branch was not exercised
+E       assert None is not None
+
+tests\test_records.py:85: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_records.py::test_live_handoff_observation_has_physical_timestamp
+1 failed in 0.11s

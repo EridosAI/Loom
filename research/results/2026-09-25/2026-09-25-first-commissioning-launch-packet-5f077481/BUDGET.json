@@ -1,0 +1,14 @@
+{
+  "maximum_simulated_seconds": 120,
+  "maximum_full_native_steps": 12000,
+  "maximum_command_decisions": 1200,
+  "projected_wall_seconds": 562.8567139999941,
+  "projected_stored_bytes": 236503028.0,
+  "projected_uncompressed_bytes": 662463660.0,
+  "bound_run_wall_seconds": 1200,
+  "bound_uncompressed_stream_bytes": 1500000000,
+  "disk_allowance_primary_and_copy_bytes": 3000000000,
+  "component_machine_seconds_ceiling": 3600,
+  "component_bytes_ceiling": 1000000000,
+  "assumption": "Historical full-P 30-second engineering rate as proxy; external commissioning overhead unmeasured; no benchmark run."
+}

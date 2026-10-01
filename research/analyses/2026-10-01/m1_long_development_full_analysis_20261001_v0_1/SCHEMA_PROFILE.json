@@ -1,0 +1,3747 @@
+{
+  "c": {
+    "stored_class": "Config",
+    "attributes": {
+      "schema_version": 1,
+      "identifier": "p_engineering_baseline_v0_1",
+      "status": "uncommissioned",
+      "widths": [
+        8,
+        8,
+        "..."
+      ],
+      "pools": [
+        [
+          [
+            0,
+            1,
+            "..."
+          ],
+          [
+            4,
+            5,
+            "..."
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            "..."
+          ],
+          [
+            4,
+            5,
+            "..."
+          ]
+        ],
+        "..."
+      ],
+      "master_seed": 5284097,
+      "native_dt": 0.01,
+      "wave_dt": 0.2,
+      "sweeps": 4,
+      "tau_a": 0.2,
+      "tau_x": 0.1,
+      "tau_motor": 0.1,
+      "tau_receptor": 30.0,
+      "tau_coactivity": 10.0,
+      "tau_packet_mean": 60.0,
+      "tau_trace": 5.0,
+      "gate_branches": 4,
+      "feature_width": 32,
+      "gate_epsilon": 0.05,
+      "query_floor": 0.1,
+      "eta_shared": 0.0001,
+      "eta_fine": 0.001,
+      "competition": 0.1,
+      "rho_shared": 1e-05,
+      "rho_fine": 5e-05,
+      "tau_shared_reference": 10000.0,
+      "tau_fine_reference": 5000.0,
+      "lambda_fine_min": 0.0001,
+      "lambda_immature": 0.005,
+      "lambda_reclaim": 0.005,
+      "tau_open": 300.0,
+      "shared_radius": 0.3,
+      "fine_radius": 0.08,
+      "eta_map": 0.0001,
+      "lambda_map_min": 0.0001,
+      "lambda_unused": 0.001,
+      "tau_use": 30.0,
+      "use_epsilon": 0.01,
+      "map_radius": 0.1,
+      "tau_body": 2.0,
+      "tau_eligibility": 5.0,
+      "eta_bank": 0.05,
+      "rho_bank": 0.0001,
+      "tau_bank_reference": 5000.0,
+      "bank_radius": 1.0,
+      "exploration": 0.1,
+      "need_floor": 0.25,
+      "current_max": 0.5,
+      "attenuation_bias": -1.3862943611198906,
+      "motor_amplitude": 0.25,
+      "motor_noise_amplitude": 0.1,
+      "motor_periods": [
+        7.0,
+        9.0
+      ],
+      "tau_noise": 1.0,
+      "noise_refresh": 0.5,
+      "world_side": 20.0,
+      "body_radius": 0.5,
+      "body_mass": 1.0,
+      "body_inertia": 0.125,
+      "lever": 0.35,
+      "linear_drag": 1.0,
+      "angular_drag": 0.2,
+      "source_radius": 0.5,
+      "source_positions": [
+        [
+          3,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        "..."
+      ],
+      "repair_rectangles": [
+        [
+          0,
+          0.25,
+          "..."
+        ],
+        [
+          19.75,
+          20,
+          "..."
+        ],
+        "..."
+      ],
+      "source_capacity": 0.2,
+      "source_tau": 400.0,
+      "uptake_rate": 0.04,
+      "basal_cost": 0.0015,
+      "effort_cost": 0.001,
+      "damage_per_impulse": 0.02,
+      "stress_threshold": 0.25,
+      "repair_rate": 0.02,
+      "exchange_force_scale": 0.1,
+      "exchange_speed_scale": 0.25,
+      "birth_energy": 0.7,
+      "mover_centre": [
+        10.0,
+        10.0
+      ],
+      "mover_amplitude": 4.0,
+      "mover_period": 30.0,
+      "mover_size": [
+        2.0,
+        1.0
+      ],
+      "grid_n": 80,
+      "medium_diffusion": 0.5,
+      "solid_diffusion": 0.025,
+      "chemical_decay": 0.02,
+      "prehistory_seconds": 600.0,
+      "field_rtol": 1e-10,
+      "arithmetic_tol": 1e-12,
+      "geometry_tol": 1e-10,
+      "overlap_tol": 1e-08,
+      "event_time_tol": 1e-10,
+      "illumination_boundary": "open"
+    }
+  },
+  "solver": {
+    "stored_class": "FieldSolver",
+    "attributes": {
+      "c": {
+        "stored_class": "Config",
+        "attributes": {
+          "schema_version": 1,
+          "identifier": "p_engineering_baseline_v0_1",
+          "status": "uncommissioned",
+          "widths": [
+            8,
+            8,
+            "..."
+          ],
+          "pools": [
+            [
+              [
+                0,
+                1,
+                "..."
+              ],
+              [
+                4,
+                5,
+                "..."
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                "..."
+              ],
+              [
+                4,
+                5,
+                "..."
+              ]
+            ],
+            "..."
+          ],
+          "master_seed": 5284097,
+          "native_dt": 0.01,
+          "wave_dt": 0.2,
+          "sweeps": 4,
+          "tau_a": 0.2,
+          "tau_x": 0.1,
+          "tau_motor": 0.1,
+          "tau_receptor": 30.0,
+          "tau_coactivity": 10.0,
+          "tau_packet_mean": 60.0,
+          "tau_trace": 5.0,
+          "gate_branches": 4,
+          "feature_width": 32,
+          "gate_epsilon": 0.05,
+          "query_floor": 0.1,
+          "eta_shared": 0.0001,
+          "eta_fine": 0.001,
+          "competition": 0.1,
+          "rho_shared": 1e-05,
+          "rho_fine": 5e-05,
+          "tau_shared_reference": 10000.0,
+          "tau_fine_reference": 5000.0,
+          "lambda_fine_min": 0.0001,
+          "lambda_immature": 0.005,
+          "lambda_reclaim": 0.005,
+          "tau_open": 300.0,
+          "shared_radius": 0.3,
+          "fine_radius": 0.08,
+          "eta_map": 0.0001,
+          "lambda_map_min": 0.0001,
+          "lambda_unused": 0.001,
+          "tau_use": 30.0,
+          "use_epsilon": 0.01,
+          "map_radius": 0.1,
+          "tau_body": 2.0,
+          "tau_eligibility": 5.0,
+          "eta_bank": 0.05,
+          "rho_bank": 0.0001,
+          "tau_bank_reference": 5000.0,
+          "bank_radius": 1.0,
+          "exploration": 0.1,
+          "need_floor": 0.25,
+          "current_max": 0.5,
+          "attenuation_bias": -1.3862943611198906,
+          "motor_amplitude": 0.25,
+          "motor_noise_amplitude": 0.1,
+          "motor_periods": [
+            7.0,
+            9.0
+          ],
+          "tau_noise": 1.0,
+          "noise_refresh": 0.5,
+          "world_side": 20.0,
+          "body_radius": 0.5,
+          "body_mass": 1.0,
+          "body_inertia": 0.125,
+          "lever": 0.35,
+          "linear_drag": 1.0,
+          "angular_drag": 0.2,
+          "source_radius": 0.5,
+          "source_positions": [
+            [
+              3,
+              3
+            ],
+            [
+              10,
+              3
+            ],
+            "..."
+          ],
+          "repair_rectangles": [
+            [
+              0,
+              0.25,
+              "..."
+            ],
+            [
+              19.75,
+              20,
+              "..."
+            ],
+            "..."
+          ],
+          "source_capacity": 0.2,
+          "source_tau": 400.0,
+          "uptake_rate": 0.04,
+          "basal_cost": 0.0015,
+          "effort_cost": 0.001,
+          "damage_per_impulse": 0.02,
+          "stress_threshold": 0.25,
+          "repair_rate": 0.02,
+          "exchange_force_scale": 0.1,
+          "exchange_speed_scale": 0.25,
+          "birth_energy": 0.7,
+          "mover_centre": [
+            10.0,
+            10.0
+          ],
+          "mover_amplitude": 4.0,
+          "mover_period": 30.0,
+          "mover_size": [
+            2.0,
+            1.0
+          ],
+          "grid_n": 80,
+          "medium_diffusion": 0.5,
+          "solid_diffusion": 0.025,
+          "chemical_decay": 0.02,
+          "prehistory_seconds": 600.0,
+          "field_rtol": 1e-10,
+          "arithmetic_tol": 1e-12,
+          "geometry_tol": 1e-10,
+          "overlap_tol": 1e-08,
+          "event_time_tol": 1e-10,
+          "illumination_boundary": "open"
+        }
+      },
+      "cell_area": 0.0625,
+      "sources": {
+        "shape": [
+          8,
+          80,
+          80
+        ],
+        "dtype": "float64"
+      },
+      "repairs": {
+        "shape": [
+          3,
+          80,
+          80
+        ],
+        "dtype": "float64"
+      },
+      "static": {
+        "shape": [
+          80,
+          80
+        ],
+        "dtype": "float64"
+      },
+      "source_distributions": {
+        "shape": [
+          8,
+          80,
+          80
+        ],
+        "dtype": "float64"
+      },
+      "repair_distributions": {
+        "shape": [
+          3,
+          80,
+          80
+        ],
+        "dtype": "float64"
+      },
+      "last": {
+        "iterations": 7,
+        "residual": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "relative_residual": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "old_mass": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "new_mass": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "emission": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "decay": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "mass_balance": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "minimum": 0.020422874993046593,
+        "negative_roundoff_count": 0,
+        "diffusion_min": 0.025,
+        "diffusion_max": 0.5
+      }
+    }
+  },
+  "fields": {
+    "shape": [
+      2,
+      80,
+      80
+    ],
+    "dtype": "float64"
+  },
+  "phase": 3.948658818725883,
+  "stocks": {
+    "shape": [
+      8
+    ],
+    "dtype": "float64"
+  },
+  "time": 2339.963720845616,
+  "native_index": 234000,
+  "status": "paused",
+  "failure": null,
+  "terminal_dimension": null,
+  "prehistory": {
+    "body": "absent",
+    "boundary": "no_flux",
+    "code": {
+      "files": {
+        "__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+        "chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+        "diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+        "engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+        "geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+        "inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+        "neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+        "physics.py": "240981ab76b83954c68229b8eeda676f6099ac14eb0e5611b977fe6a2a5f2909",
+        "prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+        "reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+        "records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+        "schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+        "smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+      },
+      "sha256": "98bbf9053ca55ef545c6fc868e54c85342149d143319281a47f9a1fd71c28c7d"
+    },
+    "end_time": 0.0,
+    "field_max": 0.21082774826673326,
+    "field_min": 0.020624092550014524,
+    "field_sha256": "4b942fc65949ca78d22e4e269feadaa584c62d940fb831c80b17e19b574e5605",
+    "file_bytes": 94563,
+    "file_sha256": "a483a1c8d35f121bbdafbd08179193f54359a2dde23532996c24ece7104df08a",
+    "initial_fields": "zero",
+    "law": {
+      "arithmetic_tol": 1e-12,
+      "chemical_decay": 0.02,
+      "field_rtol": 1e-10,
+      "grid_n": 80,
+      "medium_diffusion": 0.5,
+      "mover_amplitude": 4.0,
+      "mover_centre": [
+        10.0,
+        10.0
+      ],
+      "mover_period": 30.0,
+      "mover_size": [
+        2.0,
+        1.0
+      ],
+      "native_dt": 0.01,
+      "prehistory_seconds": 600.0,
+      "repair_rectangles": [
+        [
+          0,
+          0.25,
+          "..."
+        ],
+        [
+          19.75,
+          20,
+          "..."
+        ],
+        "..."
+      ],
+      "solid_diffusion": 0.025,
+      "source_capacity": 0.2,
+      "source_positions": [
+        [
+          3,
+          3
+        ],
+        [
+          10,
+          3
+        ],
+        "..."
+      ],
+      "source_radius": 0.5,
+      "world_side": 20.0
+    },
+    "life": 1000002,
+    "master_seed": 5284097,
+    "max_iterations": 11,
+    "max_mass_balance_error": 5.926677213233256e-10,
+    "max_relative_residual": 9.999670276920037e-11,
+    "organism_created": false,
+    "phase": 3.948658818725883,
+    "rng_counters": {
+      "life/world-phase": 1
+    },
+    "sandbox_label": "NON-CANONICAL RESURRECTION SANDBOX",
+    "schema_version": 1,
+    "source_stocks": "full_constant",
+    "start_time": -600.0,
+    "status": "complete",
+    "steps_completed": 60000,
+    "steps_required": 60000,
+    "wall_seconds": 46.71014630002901
+  },
+  "body": {
+    "stored_class": "Body",
+    "attributes": {
+      "position": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "angle": -6.190289528930899,
+      "energy": 0.426759139586691,
+      "integrity": 0.8444127878101532,
+      "velocity": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "omega": -0.09616939040883628,
+      "command": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "force": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "contact_rates": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      }
+    }
+  },
+  "birth_provenance": {
+    "position": {
+      "shape": [
+        2
+      ],
+      "dtype": "float64"
+    },
+    "angle": 6.257915526080499,
+    "phase": 3.948658818725883,
+    "rejected": []
+  },
+  "raw": [
+    {
+      "shape": [
+        10
+      ],
+      "dtype": "float64"
+    },
+    {
+      "shape": [
+        4
+      ],
+      "dtype": "float64"
+    },
+    "..."
+  ],
+  "organism": {
+    "stored_class": "Organism",
+    "attributes": {
+      "c": {
+        "stored_class": "Config",
+        "attributes": {
+          "schema_version": 1,
+          "identifier": "p_engineering_baseline_v0_1",
+          "status": "uncommissioned",
+          "widths": [
+            8,
+            8,
+            "..."
+          ],
+          "pools": [
+            [
+              [
+                0,
+                1,
+                "..."
+              ],
+              [
+                4,
+                5,
+                "..."
+              ]
+            ],
+            [
+              [
+                0,
+                1,
+                "..."
+              ],
+              [
+                4,
+                5,
+                "..."
+              ]
+            ],
+            "..."
+          ],
+          "master_seed": 5284097,
+          "native_dt": 0.01,
+          "wave_dt": 0.2,
+          "sweeps": 4,
+          "tau_a": 0.2,
+          "tau_x": 0.1,
+          "tau_motor": 0.1,
+          "tau_receptor": 30.0,
+          "tau_coactivity": 10.0,
+          "tau_packet_mean": 60.0,
+          "tau_trace": 5.0,
+          "gate_branches": 4,
+          "feature_width": 32,
+          "gate_epsilon": 0.05,
+          "query_floor": 0.1,
+          "eta_shared": 0.0001,
+          "eta_fine": 0.001,
+          "competition": 0.1,
+          "rho_shared": 1e-05,
+          "rho_fine": 5e-05,
+          "tau_shared_reference": 10000.0,
+          "tau_fine_reference": 5000.0,
+          "lambda_fine_min": 0.0001,
+          "lambda_immature": 0.005,
+          "lambda_reclaim": 0.005,
+          "tau_open": 300.0,
+          "shared_radius": 0.3,
+          "fine_radius": 0.08,
+          "eta_map": 0.0001,
+          "lambda_map_min": 0.0001,
+          "lambda_unused": 0.001,
+          "tau_use": 30.0,
+          "use_epsilon": 0.01,
+          "map_radius": 0.1,
+          "tau_body": 2.0,
+          "tau_eligibility": 5.0,
+          "eta_bank": 0.05,
+          "rho_bank": 0.0001,
+          "tau_bank_reference": 5000.0,
+          "bank_radius": 1.0,
+          "exploration": 0.1,
+          "need_floor": 0.25,
+          "current_max": 0.5,
+          "attenuation_bias": -1.3862943611198906,
+          "motor_amplitude": 0.25,
+          "motor_noise_amplitude": 0.1,
+          "motor_periods": [
+            7.0,
+            9.0
+          ],
+          "tau_noise": 1.0,
+          "noise_refresh": 0.5,
+          "world_side": 20.0,
+          "body_radius": 0.5,
+          "body_mass": 1.0,
+          "body_inertia": 0.125,
+          "lever": 0.35,
+          "linear_drag": 1.0,
+          "angular_drag": 0.2,
+          "source_radius": 0.5,
+          "source_positions": [
+            [
+              3,
+              3
+            ],
+            [
+              10,
+              3
+            ],
+            "..."
+          ],
+          "repair_rectangles": [
+            [
+              0,
+              0.25,
+              "..."
+            ],
+            [
+              19.75,
+              20,
+              "..."
+            ],
+            "..."
+          ],
+          "source_capacity": 0.2,
+          "source_tau": 400.0,
+          "uptake_rate": 0.04,
+          "basal_cost": 0.0015,
+          "effort_cost": 0.001,
+          "damage_per_impulse": 0.02,
+          "stress_threshold": 0.25,
+          "repair_rate": 0.02,
+          "exchange_force_scale": 0.1,
+          "exchange_speed_scale": 0.25,
+          "birth_energy": 0.7,
+          "mover_centre": [
+            10.0,
+            10.0
+          ],
+          "mover_amplitude": 4.0,
+          "mover_period": 30.0,
+          "mover_size": [
+            2.0,
+            1.0
+          ],
+          "grid_n": 80,
+          "medium_diffusion": 0.5,
+          "solid_diffusion": 0.025,
+          "chemical_decay": 0.02,
+          "prehistory_seconds": 600.0,
+          "field_rtol": 1e-10,
+          "arithmetic_tol": 1e-12,
+          "geometry_tol": 1e-10,
+          "overlap_tol": 1e-08,
+          "event_time_tol": 1e-10,
+          "illumination_boundary": "open"
+        }
+      },
+      "rng": {
+        "stored_class": "Streams",
+        "attributes": {
+          "seed": 5284097,
+          "life": 1000002,
+          "counters": {
+            "life/world-phase": 1,
+            "life/world-position": 1,
+            "life/world-orientation": 1,
+            "anatomy/sensory-0-A": 1,
+            "anatomy/sensory-0-shared": 1,
+            "anatomy/sensory-0-fine": 1,
+            "anatomy/sensory-1-A": 1,
+            "anatomy/sensory-1-shared": 1,
+            "anatomy/sensory-1-fine": 1,
+            "anatomy/sensory-2-A": 1,
+            "anatomy/sensory-2-shared": 1,
+            "anatomy/sensory-2-fine": 1,
+            "anatomy/sensory-3-A": 1,
+            "anatomy/sensory-3-shared": 1,
+            "anatomy/sensory-3-fine": 1,
+            "anatomy/gate-0": 1,
+            "anatomy/gate-bias-0": 1,
+            "anatomy/gate-1": 1,
+            "anatomy/gate-bias-1": 1,
+            "anatomy/gate-2": 1,
+            "anatomy/gate-bias-2": 1,
+            "anatomy/gate-3": 1,
+            "anatomy/gate-bias-3": 1,
+            "anatomy/gate-4": 1,
+            "anatomy/gate-bias-4": 1,
+            "anatomy/gate-5": 1,
+            "anatomy/gate-bias-5": 1,
+            "anatomy/gate-6": 1,
+            "anatomy/gate-bias-6": 1,
+            "anatomy/gate-7": 1,
+            "anatomy/gate-bias-7": 1,
+            "anatomy/regulator-Bq": 1,
+            "anatomy/regulator-Bv": 1,
+            "anatomy/regulator-bias": 1,
+            "anatomy/motor-feedback": 1,
+            "life/motor-birth-phase": 1,
+            "life/motor-birth-nu": 1,
+            "life/motor-noise": 4680,
+            "life/regulation-E": 11698,
+            "life/regulation-I": 11698
+          }
+        }
+      },
+      "cortices": [
+        {
+          "stored_class": "Cortex",
+          "attributes": {
+            "index": 0,
+            "groups": [
+              {
+                "shape": [
+                  4
+                ],
+                "dtype": "int64"
+              },
+              {
+                "shape": [
+                  4
+                ],
+                "dtype": "int64"
+              }
+            ],
+            "A": {
+              "shape": [
+                8,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "shared": {
+              "shape": [
+                2,
+                10
+              ],
+              "dtype": "float64"
+            },
+            "fine": {
+              "shape": [
+                8,
+                10
+              ],
+              "dtype": "float64"
+            },
+            "shared_ref": {
+              "shape": [
+                2,
+                10
+              ],
+              "dtype": "float64"
+            },
+            "fine_ref": {
+              "shape": [
+                8,
+                10
+              ],
+              "dtype": "float64"
+            },
+            "opening": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "mean": {
+              "shape": [
+                10
+              ],
+              "dtype": "float64"
+            },
+            "x": {
+              "shape": [
+                8
+              ],
+              "dtype": "float64"
+            },
+            "C": {
+              "shape": [
+                8,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "integral": {
+              "shape": [
+                8
+              ],
+              "dtype": "float64"
+            },
+            "diagnostic": [
+              "raw",
+              "mean",
+              "residual",
+              "x_old",
+              "weights",
+              "formation",
+              "groups",
+              "x_new"
+            ]
+          }
+        },
+        {
+          "stored_class": "Cortex",
+          "attributes": {
+            "index": 1,
+            "groups": [
+              {
+                "shape": [
+                  4
+                ],
+                "dtype": "int64"
+              },
+              {
+                "shape": [
+                  4
+                ],
+                "dtype": "int64"
+              }
+            ],
+            "A": {
+              "shape": [
+                8,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "shared": {
+              "shape": [
+                2,
+                4
+              ],
+              "dtype": "float64"
+            },
+            "fine": {
+              "shape": [
+                8,
+                4
+              ],
+              "dtype": "float64"
+            },
+            "shared_ref": {
+              "shape": [
+                2,
+                4
+              ],
+              "dtype": "float64"
+            },
+            "fine_ref": {
+              "shape": [
+                8,
+                4
+              ],
+              "dtype": "float64"
+            },
+            "opening": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "mean": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "x": {
+              "shape": [
+                8
+              ],
+              "dtype": "float64"
+            },
+            "C": {
+              "shape": [
+                8,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "integral": {
+              "shape": [
+                8
+              ],
+              "dtype": "float64"
+            },
+            "diagnostic": [
+              "raw",
+              "mean",
+              "residual",
+              "x_old",
+              "weights",
+              "formation",
+              "groups",
+              "x_new"
+            ]
+          }
+        },
+        "..."
+      ],
+      "association": {
+        "stored_class": "Association",
+        "attributes": {
+          "slices": [
+            [
+              "stored_slice"
+            ],
+            [
+              "stored_slice"
+            ],
+            "..."
+          ],
+          "widths": [
+            32,
+            32,
+            "..."
+          ],
+          "H": {
+            "(0, 1)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 2)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 3)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 4)": {
+              "shape": [
+                4,
+                32,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(0, 5)": {
+              "shape": [
+                4,
+                32,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(0, 6)": {
+              "shape": [
+                4,
+                32,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(0, 7)": {
+              "shape": [
+                4,
+                32,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(1, 0)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 2)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 3)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 4)": {
+              "shape": [
+                4,
+                32,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(1, 5)": {
+              "shape": [
+                4,
+                32,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(1, 6)": {
+              "shape": [
+                4,
+                32,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(1, 7)": {
+              "shape": [
+                4,
+                32,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(2, 0)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 1)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 3)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 4)": {
+              "shape": [
+                4,
+                32,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(2, 5)": {
+              "shape": [
+                4,
+                32,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(2, 6)": {
+              "shape": [
+                4,
+                32,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(2, 7)": {
+              "shape": [
+                4,
+                32,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(3, 0)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 1)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 2)": {
+              "shape": [
+                4,
+                32,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 4)": {
+              "shape": [
+                4,
+                32,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(3, 5)": {
+              "shape": [
+                4,
+                32,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(3, 6)": {
+              "shape": [
+                4,
+                32,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(3, 7)": {
+              "shape": [
+                4,
+                32,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(4, 0)": {
+              "shape": [
+                4,
+                2,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(4, 1)": {
+              "shape": [
+                4,
+                2,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(4, 2)": {
+              "shape": [
+                4,
+                2,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(4, 3)": {
+              "shape": [
+                4,
+                2,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(4, 5)": {
+              "shape": [
+                4,
+                2,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(4, 6)": {
+              "shape": [
+                4,
+                2,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(4, 7)": {
+              "shape": [
+                4,
+                2,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(5, 0)": {
+              "shape": [
+                4,
+                2,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(5, 1)": {
+              "shape": [
+                4,
+                2,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(5, 2)": {
+              "shape": [
+                4,
+                2,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(5, 3)": {
+              "shape": [
+                4,
+                2,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(5, 4)": {
+              "shape": [
+                4,
+                2,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(5, 6)": {
+              "shape": [
+                4,
+                2,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(5, 7)": {
+              "shape": [
+                4,
+                2,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(6, 0)": {
+              "shape": [
+                4,
+                8,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(6, 1)": {
+              "shape": [
+                4,
+                8,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(6, 2)": {
+              "shape": [
+                4,
+                8,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(6, 3)": {
+              "shape": [
+                4,
+                8,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(6, 4)": {
+              "shape": [
+                4,
+                8,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(6, 5)": {
+              "shape": [
+                4,
+                8,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(6, 7)": {
+              "shape": [
+                4,
+                8,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(7, 0)": {
+              "shape": [
+                4,
+                24,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(7, 1)": {
+              "shape": [
+                4,
+                24,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(7, 2)": {
+              "shape": [
+                4,
+                24,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(7, 3)": {
+              "shape": [
+                4,
+                24,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(7, 4)": {
+              "shape": [
+                4,
+                24,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(7, 5)": {
+              "shape": [
+                4,
+                24,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(7, 6)": {
+              "shape": [
+                4,
+                24,
+                8
+              ],
+              "dtype": "float64"
+            }
+          },
+          "use": {
+            "(0, 1)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(0, 2)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(0, 3)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(0, 4)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(0, 5)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(0, 6)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(0, 7)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(1, 0)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(1, 2)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(1, 3)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(1, 4)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(1, 5)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(1, 6)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(1, 7)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(2, 0)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(2, 1)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(2, 3)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(2, 4)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(2, 5)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(2, 6)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(2, 7)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(3, 0)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(3, 1)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(3, 2)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(3, 4)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(3, 5)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(3, 6)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(3, 7)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(4, 0)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(4, 1)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(4, 2)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(4, 3)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(4, 5)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(4, 6)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(4, 7)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(5, 0)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(5, 1)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(5, 2)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(5, 3)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(5, 4)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(5, 6)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(5, 7)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(6, 0)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(6, 1)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(6, 2)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(6, 3)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(6, 4)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(6, 5)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(6, 7)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(7, 0)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(7, 1)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(7, 2)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(7, 3)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(7, 4)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(7, 5)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "(7, 6)": {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            }
+          },
+          "gate_vectors": [
+            {
+              "shape": [
+                4,
+                132
+              ],
+              "dtype": "float64"
+            },
+            {
+              "shape": [
+                4,
+                132
+              ],
+              "dtype": "float64"
+            },
+            "..."
+          ],
+          "gate_bias": [
+            {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            {
+              "shape": [
+                4
+              ],
+              "dtype": "float64"
+            },
+            "..."
+          ],
+          "a": {
+            "shape": [
+              164
+            ],
+            "dtype": "float64"
+          },
+          "q": {
+            "shape": [
+              164
+            ],
+            "dtype": "float64"
+          },
+          "means": [
+            {
+              "shape": [
+                16
+              ],
+              "dtype": "float64"
+            },
+            {
+              "shape": [
+                16
+              ],
+              "dtype": "float64"
+            },
+            "..."
+          ],
+          "traces": [
+            {
+              "shape": [
+                16
+              ],
+              "dtype": "float64"
+            },
+            {
+              "shape": [
+                16
+              ],
+              "dtype": "float64"
+            },
+            "..."
+          ],
+          "write_count": 11697,
+          "diagnostic": {
+            "gates": {
+              "shape": [
+                8,
+                4
+              ],
+              "dtype": "float64"
+            },
+            "gain": {
+              "shape": [
+                164
+              ],
+              "dtype": "float64"
+            },
+            "query": {
+              "shape": [
+                164
+              ],
+              "dtype": "float64"
+            },
+            "a_initial": {
+              "shape": [
+                164
+              ],
+              "dtype": "float64"
+            },
+            "a_final": {
+              "shape": [
+                164
+              ],
+              "dtype": "float64"
+            },
+            "sweeps": [
+              {
+                "shape": [
+                  164
+                ],
+                "dtype": "float64"
+              },
+              {
+                "shape": [
+                  164
+                ],
+                "dtype": "float64"
+              },
+              "..."
+            ],
+            "q": {
+              "shape": [
+                164
+              ],
+              "dtype": "float64"
+            },
+            "contributions": [
+              "(0, 1)",
+              "(0, 2)",
+              "(0, 3)",
+              "(0, 4)",
+              "(0, 5)",
+              "(0, 6)",
+              "(0, 7)",
+              "(1, 0)",
+              "(1, 2)",
+              "(1, 3)",
+              "(1, 4)",
+              "(1, 5)",
+              "(1, 6)",
+              "(1, 7)",
+              "(2, 0)",
+              "(2, 1)",
+              "(2, 3)",
+              "(2, 4)",
+              "(2, 5)",
+              "(2, 6)",
+              "(2, 7)",
+              "(3, 0)",
+              "(3, 1)",
+              "(3, 2)",
+              "(3, 4)",
+              "(3, 5)",
+              "(3, 6)",
+              "(3, 7)",
+              "(4, 0)",
+              "(4, 1)",
+              "(4, 2)",
+              "(4, 3)",
+              "(4, 5)",
+              "(4, 6)",
+              "(4, 7)",
+              "(5, 0)",
+              "(5, 1)",
+              "(5, 2)",
+              "(5, 3)",
+              "(5, 4)",
+              "(5, 6)",
+              "(5, 7)",
+              "(6, 0)",
+              "(6, 1)",
+              "(6, 2)",
+              "(6, 3)",
+              "(6, 4)",
+              "(6, 5)",
+              "(6, 7)",
+              "(7, 0)",
+              "(7, 1)",
+              "(7, 2)",
+              "(7, 3)",
+              "(7, 4)",
+              "(7, 5)",
+              "(7, 6)"
+            ],
+            "read_write_count": 11696,
+            "map_updates": [
+              "(0, 1)",
+              "(0, 2)",
+              "(0, 3)",
+              "(0, 4)",
+              "(0, 5)",
+              "(0, 6)",
+              "(0, 7)",
+              "(1, 0)",
+              "(1, 2)",
+              "(1, 3)",
+              "(1, 4)",
+              "(1, 5)",
+              "(1, 6)",
+              "(1, 7)",
+              "(2, 0)",
+              "(2, 1)",
+              "(2, 3)",
+              "(2, 4)",
+              "(2, 5)",
+              "(2, 6)",
+              "(2, 7)",
+              "(3, 0)",
+              "(3, 1)",
+              "(3, 2)",
+              "(3, 4)",
+              "(3, 5)",
+              "(3, 6)",
+              "(3, 7)",
+              "(4, 0)",
+              "(4, 1)",
+              "(4, 2)",
+              "(4, 3)",
+              "(4, 5)",
+              "(4, 6)",
+              "(4, 7)",
+              "(5, 0)",
+              "(5, 1)",
+              "(5, 2)",
+              "(5, 3)",
+              "(5, 4)",
+              "(5, 6)",
+              "(5, 7)",
+              "(6, 0)",
+              "(6, 1)",
+              "(6, 2)",
+              "(6, 3)",
+              "(6, 4)",
+              "(6, 5)",
+              "(6, 7)",
+              "(7, 0)",
+              "(7, 1)",
+              "(7, 2)",
+              "(7, 3)",
+              "(7, 4)",
+              "(7, 5)",
+              "(7, 6)"
+            ]
+          }
+        }
+      },
+      "regulator": {
+        "stored_class": "Regulator",
+        "attributes": {
+          "theta": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          },
+          "reference": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          },
+          "eligibility": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          },
+          "body_mean": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "Bq": {
+            "shape": [
+              32,
+              164
+            ],
+            "dtype": "float64"
+          },
+          "Bv": {
+            "shape": [
+              32,
+              2
+            ],
+            "dtype": "float64"
+          },
+          "bias": {
+            "shape": [
+              32
+            ],
+            "dtype": "float64"
+          },
+          "phi": {
+            "shape": [
+              33
+            ],
+            "dtype": "float64"
+          },
+          "xi": {
+            "shape": [
+              2,
+              12
+            ],
+            "dtype": "float64"
+          },
+          "h": {
+            "shape": [
+              8
+            ],
+            "dtype": "float64"
+          },
+          "current": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "attenuation": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "credit_diagnostic": {
+            "trend": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "old_body_mean": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "body_mean": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "previous_xi": {
+              "shape": [
+                2,
+                12
+              ],
+              "dtype": "float64"
+            },
+            "previous_phi": {
+              "shape": [
+                33
+              ],
+              "dtype": "float64"
+            },
+            "learning": {
+              "shape": [
+                2,
+                12,
+                33
+              ],
+              "dtype": "float64"
+            },
+            "reference_force": {
+              "shape": [
+                2,
+                12,
+                33
+              ],
+              "dtype": "float64"
+            },
+            "projection": {
+              "shape": [
+                2,
+                12,
+                33
+              ],
+              "dtype": "float64"
+            },
+            "eligibility": {
+              "shape": [
+                2,
+                12,
+                33
+              ],
+              "dtype": "float64"
+            },
+            "theta": {
+              "shape": [
+                2,
+                12,
+                33
+              ],
+              "dtype": "float64"
+            },
+            "reference": {
+              "shape": [
+                2,
+                12,
+                33
+              ],
+              "dtype": "float64"
+            }
+          },
+          "output_diagnostic": {
+            "Bq_q": {
+              "shape": [
+                32
+              ],
+              "dtype": "float64"
+            },
+            "Bv_body": {
+              "shape": [
+                32
+              ],
+              "dtype": "float64"
+            },
+            "bias": {
+              "shape": [
+                32
+              ],
+              "dtype": "float64"
+            },
+            "phi": {
+              "shape": [
+                33
+              ],
+              "dtype": "float64"
+            },
+            "learned": {
+              "shape": [
+                2,
+                12
+              ],
+              "dtype": "float64"
+            },
+            "exploration": {
+              "shape": [
+                2,
+                12
+              ],
+              "dtype": "float64"
+            },
+            "logits": {
+              "shape": [
+                2,
+                12
+              ],
+              "dtype": "float64"
+            },
+            "need": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "weighted": {
+              "shape": [
+                2,
+                12
+              ],
+              "dtype": "float64"
+            },
+            "xi": {
+              "shape": [
+                2,
+                12
+              ],
+              "dtype": "float64"
+            },
+            "controls": {
+              "shape": [
+                12
+              ],
+              "dtype": "float64"
+            },
+            "feature_saturation": {
+              "shape": [
+                32
+              ],
+              "dtype": "float64"
+            }
+          }
+        }
+      },
+      "motor": {
+        "stored_class": "Motor",
+        "attributes": {
+          "feedback": {
+            "shape": [
+              2,
+              15
+            ],
+            "dtype": "float64"
+          },
+          "phase": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "nu": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "drive": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "tendency": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "command": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "integral": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "diagnostic": {
+            "oscillator": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "direct_feedback": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "evoked": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "current": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "target": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "tendency": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "command": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "phase": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "nu": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "drive": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            }
+          },
+          "commissioning": {
+            "process": "M1",
+            "tick": 234000,
+            "latent": {
+              "shape": [
+                2
+              ],
+              "dtype": "float64"
+            },
+            "rng": [
+              "stored_class",
+              "attributes"
+            ]
+          }
+        }
+      },
+      "wave_count": 11697,
+      "native_count": 234000,
+      "wave_elapsed": 0.02,
+      "last_wave": {
+        "wave": 11697,
+        "packets": [
+          {
+            "shape": [
+              16
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              16
+            ],
+            "dtype": "float64"
+          },
+          "..."
+        ],
+        "old_means": [
+          {
+            "shape": [
+              16
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              16
+            ],
+            "dtype": "float64"
+          },
+          "..."
+        ],
+        "beta": [
+          {
+            "shape": [
+              16
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              16
+            ],
+            "dtype": "float64"
+          },
+          "..."
+        ],
+        "traces": [
+          {
+            "shape": [
+              16
+            ],
+            "dtype": "float64"
+          },
+          {
+            "shape": [
+              16
+            ],
+            "dtype": "float64"
+          },
+          "..."
+        ],
+        "psi": {
+          "shape": [
+            164
+          ],
+          "dtype": "float64"
+        },
+        "old_controls": {
+          "shape": [
+            12
+          ],
+          "dtype": "float64"
+        },
+        "new_controls": {
+          "shape": [
+            12
+          ],
+          "dtype": "float64"
+        },
+        "association": {
+          "gates": {
+            "shape": [
+              8,
+              4
+            ],
+            "dtype": "float64"
+          },
+          "gain": {
+            "shape": [
+              164
+            ],
+            "dtype": "float64"
+          },
+          "query": {
+            "shape": [
+              164
+            ],
+            "dtype": "float64"
+          },
+          "a_initial": {
+            "shape": [
+              164
+            ],
+            "dtype": "float64"
+          },
+          "a_final": {
+            "shape": [
+              164
+            ],
+            "dtype": "float64"
+          },
+          "sweeps": [
+            {
+              "shape": [
+                164
+              ],
+              "dtype": "float64"
+            },
+            {
+              "shape": [
+                164
+              ],
+              "dtype": "float64"
+            },
+            "..."
+          ],
+          "q": {
+            "shape": [
+              164
+            ],
+            "dtype": "float64"
+          },
+          "contributions": {
+            "(0, 1)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 2)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 3)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 4)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 5)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 6)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(0, 7)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 0)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 2)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 3)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 4)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 5)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 6)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(1, 7)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 0)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 1)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 3)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 4)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 5)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 6)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(2, 7)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 0)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 1)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 2)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 4)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 5)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 6)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(3, 7)": {
+              "shape": [
+                4,
+                32
+              ],
+              "dtype": "float64"
+            },
+            "(4, 0)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(4, 1)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(4, 2)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(4, 3)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(4, 5)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(4, 6)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(4, 7)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(5, 0)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(5, 1)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(5, 2)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(5, 3)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(5, 4)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(5, 6)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(5, 7)": {
+              "shape": [
+                4,
+                2
+              ],
+              "dtype": "float64"
+            },
+            "(6, 0)": {
+              "shape": [
+                4,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(6, 1)": {
+              "shape": [
+                4,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(6, 2)": {
+              "shape": [
+                4,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(6, 3)": {
+              "shape": [
+                4,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(6, 4)": {
+              "shape": [
+                4,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(6, 5)": {
+              "shape": [
+                4,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(6, 7)": {
+              "shape": [
+                4,
+                8
+              ],
+              "dtype": "float64"
+            },
+            "(7, 0)": {
+              "shape": [
+                4,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(7, 1)": {
+              "shape": [
+                4,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(7, 2)": {
+              "shape": [
+                4,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(7, 3)": {
+              "shape": [
+                4,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(7, 4)": {
+              "shape": [
+                4,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(7, 5)": {
+              "shape": [
+                4,
+                24
+              ],
+              "dtype": "float64"
+            },
+            "(7, 6)": {
+              "shape": [
+                4,
+                24
+              ],
+              "dtype": "float64"
+            }
+          },
+          "read_write_count": 11696,
+          "map_updates": {
+            "(0, 1)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(0, 2)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(0, 3)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(0, 4)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(0, 5)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(0, 6)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(0, 7)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(1, 0)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(1, 2)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(1, 3)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(1, 4)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(1, 5)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(1, 6)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(1, 7)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(2, 0)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(2, 1)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(2, 3)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(2, 4)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(2, 5)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(2, 6)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(2, 7)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(3, 0)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(3, 1)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(3, 2)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(3, 4)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(3, 5)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(3, 6)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(3, 7)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(4, 0)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(4, 1)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(4, 2)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(4, 3)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(4, 5)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(4, 6)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(4, 7)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(5, 0)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(5, 1)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(5, 2)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(5, 3)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(5, 4)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(5, 6)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(5, 7)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(6, 0)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(6, 1)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(6, 2)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(6, 3)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(6, 4)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(6, 5)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(6, 7)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(7, 0)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(7, 1)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(7, 2)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(7, 3)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(7, 4)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(7, 5)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ],
+            "(7, 6)": [
+              "old_norm",
+              "new_norm",
+              "write_norm",
+              "decay_norm",
+              "projection_norm",
+              "old_use",
+              "use",
+              "use_drive"
+            ]
+          }
+        },
+        "credit": {
+          "trend": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "old_body_mean": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "body_mean": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "previous_xi": {
+            "shape": [
+              2,
+              12
+            ],
+            "dtype": "float64"
+          },
+          "previous_phi": {
+            "shape": [
+              33
+            ],
+            "dtype": "float64"
+          },
+          "learning": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          },
+          "reference_force": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          },
+          "projection": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          },
+          "eligibility": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          },
+          "theta": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          },
+          "reference": {
+            "shape": [
+              2,
+              12,
+              33
+            ],
+            "dtype": "float64"
+          }
+        },
+        "regulation": {
+          "Bq_q": {
+            "shape": [
+              32
+            ],
+            "dtype": "float64"
+          },
+          "Bv_body": {
+            "shape": [
+              32
+            ],
+            "dtype": "float64"
+          },
+          "bias": {
+            "shape": [
+              32
+            ],
+            "dtype": "float64"
+          },
+          "phi": {
+            "shape": [
+              33
+            ],
+            "dtype": "float64"
+          },
+          "learned": {
+            "shape": [
+              2,
+              12
+            ],
+            "dtype": "float64"
+          },
+          "exploration": {
+            "shape": [
+              2,
+              12
+            ],
+            "dtype": "float64"
+          },
+          "logits": {
+            "shape": [
+              2,
+              12
+            ],
+            "dtype": "float64"
+          },
+          "need": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64"
+          },
+          "weighted": {
+            "shape": [
+              2,
+              12
+            ],
+            "dtype": "float64"
+          },
+          "xi": {
+            "shape": [
+              2,
+              12
+            ],
+            "dtype": "float64"
+          },
+          "controls": {
+            "shape": [
+              12
+            ],
+            "dtype": "float64"
+          },
+          "feature_saturation": {
+            "shape": [
+              32
+            ],
+            "dtype": "float64"
+          }
+        },
+        "ordering": [
+          "packet",
+          "previous_credit",
+          "..."
+        ]
+      }
+    }
+  },
+  "last_events": [
+    {
+      "duration": 0.01,
+      "impact": false,
+      "contacts": [],
+      "energy_before": 0.42677540217147036,
+      "energy_after": 0.426759139586691,
+      "integrity_before": 0.8444127878101532,
+      "integrity_after": 0.8444127878101532,
+      "damage": 0.0,
+      "repair": 0.0,
+      "repair_quality": 0.0,
+      "requested": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "transfer": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "renewal_first": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "renewal_second": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "expenditure": 1.6262584779360197e-05,
+      "stock_before": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "stock_after": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "time": 2339.963720845616,
+      "body_position": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "body_angle": -6.190289528930899
+    }
+  ],
+  "last_native": {
+    "time": 2339.963720845616,
+    "elapsed": 0.01,
+    "native_index": 234000
+  },
+  "last_wave": null,
+  "sandbox": {
+    "label": "NON-CANONICAL RESURRECTION SANDBOX",
+    "resurrections": 5,
+    "packet_epoch_time": 2149.3437208414553,
+    "packet_epoch_native": 214938,
+    "discarded_partial_seconds": 0.543720840960741
+  }
+}

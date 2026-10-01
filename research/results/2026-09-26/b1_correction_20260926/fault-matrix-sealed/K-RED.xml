@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.622" timestamp="2026-09-26T19:02:59.536670+08:00" hostname="Equinox"><testcase classname="tests_apparatus.test_b1_operator" name="test_K_refresh_reconnect_inert" time="1.170"><failure message="AssertionError: REFRESH/RECONNECT ADVANCED WORLD&#10;assert '420644f1be5e...e9723ac358af2' == 'ee4332720505...3f4926a043eed'&#10;  &#10;  - ee4332720505c524f5c23725aeb82f17f3179351a274cc47d533f4926a043eed&#10;  + 420644f1be5e4cfaf2e8d77a797b83bf49e6bc9deec5d754842e9723ac358af2">tmp_path = WindowsPath('C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/b1_correction_20260926/fault-matrix-sealed/K-RED-tmp/test_K_refresh_reconnect_inert0')
+
+    def test_K_refresh_reconnect_inert(tmp_path):
+        e,r,g=case(tmp_path);before=state_hash(e);real=g.display
+        def display():
+            if fault('K'):adapter.step(e,EXTERNAL,[0.,0.],None)
+            return real()
+        try:
+            with patch.object(g,'display',display),service(g) as base:
+                for path in ('/','/session','/sensors','/session'):get(base,path)
+&gt;           assert state_hash(e)==before,'REFRESH/RECONNECT ADVANCED WORLD'
+E           AssertionError: REFRESH/RECONNECT ADVANCED WORLD
+E           assert '420644f1be5e...e9723ac358af2' == 'ee4332720505...3f4926a043eed'
+E             
+E             - ee4332720505c524f5c23725aeb82f17f3179351a274cc47d533f4926a043eed
+E             + 420644f1be5e4cfaf2e8d77a797b83bf49e6bc9deec5d754842e9723ac358af2
+
+tests_apparatus\test_b1_operator.py:170: AssertionError</failure></testcase></testsuite></testsuites>

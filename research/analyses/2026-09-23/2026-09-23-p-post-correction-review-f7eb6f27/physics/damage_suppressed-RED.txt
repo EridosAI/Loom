@@ -1,0 +1,13 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________ test_touch_release_return_duration_and_accounting ______________
+tests\test_corrective_contracts.py:48: in test_touch_release_return_duration_and_accounting
+    assert r['integrity_after']-r['integrity_before']==pytest.approx(r['repair']-expected,abs=1e-16)
+E   assert np.float64(0.0) == -8.8015219082...e-05 ± 1.0e-16
+E     
+E     comparison failed
+E     Obtained: 0.0
+E     Expected: -8.801521908259946e-05 ± 1.0e-16
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting
+1 failed in 0.07s

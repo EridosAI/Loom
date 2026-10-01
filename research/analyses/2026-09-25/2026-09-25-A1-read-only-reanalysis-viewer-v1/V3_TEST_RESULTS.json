@@ -1,0 +1,107 @@
+{
+  "tests": [
+    {
+      "test": "actual complete record alignment",
+      "result": "PASS"
+    },
+    {
+      "test": "reject missing initial envelope",
+      "result": "PASS",
+      "rejected_with": "First sensor entry is not the reviewed display envelope"
+    },
+    {
+      "test": "reject wrong initial anchor",
+      "result": "PASS",
+      "rejected_with": "Initial time/index anchor"
+    },
+    {
+      "test": "reject extra envelope key",
+      "result": "PASS",
+      "rejected_with": "First sensor entry is not the reviewed display envelope"
+    },
+    {
+      "test": "reject swapped rows despite same count",
+      "result": "PASS",
+      "rejected_with": "Index progression/mapping mismatch"
+    },
+    {
+      "test": "reject duplicate native index",
+      "result": "PASS",
+      "rejected_with": "Duplicate sensor native index"
+    },
+    {
+      "test": "reject endpoint shifted to start",
+      "result": "PASS",
+      "rejected_with": "Endpoint time mismatch"
+    },
+    {
+      "test": "reject diagnostic start/end confusion",
+      "result": "PASS",
+      "rejected_with": "Diagnostic start time mismatch"
+    },
+    {
+      "test": "reject diagnostic raw drift",
+      "result": "PASS",
+      "rejected_with": "Diagnostic start/endpoint raw mismatch"
+    },
+    {
+      "test": "reject future E/I release",
+      "result": "PASS",
+      "rejected_with": "E/I hold cadence mismatch"
+    },
+    {
+      "test": "reject missed E/I handoff",
+      "result": "PASS",
+      "rejected_with": "E/I hold cadence mismatch"
+    },
+    {
+      "test": "reject raw coordinate drift",
+      "result": "PASS",
+      "rejected_with": "Raw sensor/native mismatch"
+    },
+    {
+      "test": "reject elapsed-time inconsistency",
+      "result": "PASS",
+      "rejected_with": "Independent elapsed-time progression mismatch"
+    },
+    {
+      "test": "actual issued/delivered and isolated input records",
+      "result": "PASS"
+    },
+    {
+      "test": "reject controller neural leak",
+      "result": "PASS",
+      "rejected_with": "Controller input schema leak"
+    },
+    {
+      "test": "reject geometry material leak",
+      "result": "PASS",
+      "rejected_with": "Controller geometry schema leak"
+    },
+    {
+      "test": "reject delivered command change",
+      "result": "PASS",
+      "rejected_with": "Issued/delivered command differs"
+    },
+    {
+      "test": "reject decision start-state substitution",
+      "result": "PASS",
+      "rejected_with": "Controller input does not match recorded decision-boundary position"
+    },
+    {
+      "test": "reject native RNG counter change",
+      "result": "PASS",
+      "rejected_with": "Native RNG counters changed"
+    },
+    {
+      "test": "reject neural wave record",
+      "result": "PASS",
+      "rejected_with": "Unexpected neural/scientific rows"
+    }
+  ],
+  "passed": 20,
+  "simulation_steps": 0,
+  "raw_file_writes": 0,
+  "checker_sha256": "3bf558f96205dbab0134a55a05af5ddccafc934841e778f8f5f765757463f6dc",
+  "test_sha256": "79cb53aa919200216c493ea2df05e513d4083762eef21da6edf75e9e4e8c7c3f"
+}

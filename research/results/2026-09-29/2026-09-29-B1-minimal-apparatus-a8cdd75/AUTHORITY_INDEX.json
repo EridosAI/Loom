@@ -1,0 +1,97 @@
+{
+  "status": "NINE SEPARATE PROPOSALS / ZERO GRANTS",
+  "case_order": [
+    "B1-MINIMAL-S1-FULL",
+    "B1-MINIMAL-S1-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S1-SENSORY-FREE",
+    "B1-MINIMAL-S2-FULL",
+    "B1-MINIMAL-S2-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S2-SENSORY-FREE",
+    "B1-MINIMAL-S3-FULL",
+    "B1-MINIMAL-S3-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S3-SENSORY-FREE"
+  ],
+  "cases": [
+    {
+      "case_id": "B1-MINIMAL-S1-FULL",
+      "arm": "FULL",
+      "start": "S1",
+      "authority_sha256": "d829e5d9b5825c6b72b9ddb26491f508cd8030654599dc309f6bf2efb1620912",
+      "execution_sha256": "22e754d557273781852d727a550a201cbc17ce71d623373b9c57c42581a3f955",
+      "object_file": "cases/B1-MINIMAL-S1-FULL/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S1-FULL/MANIFEST.json"
+    },
+    {
+      "case_id": "B1-MINIMAL-S1-CHEMISTRY-HIDDEN",
+      "arm": "CHEMISTRY-HIDDEN",
+      "start": "S1",
+      "authority_sha256": "e46379806700a4aa638e00fbc6e36ddf97e04c8e80f420cb8fb792c2cc379b69",
+      "execution_sha256": "4d97a3a07c65dd018fdd22a87085634a17755dc8ee9db9f878b5e172d206d86a",
+      "object_file": "cases/B1-MINIMAL-S1-CHEMISTRY-HIDDEN/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S1-CHEMISTRY-HIDDEN/MANIFEST.json"
+    },
+    {
+      "case_id": "B1-MINIMAL-S1-SENSORY-FREE",
+      "arm": "SENSORY-FREE",
+      "start": "S1",
+      "authority_sha256": "394dfc775fc1c6dc93820384a79f4fd63291f06ee03bb28f80e464c989861dbc",
+      "execution_sha256": "62edc20ae079707d978b7785f047fcc41e155562edf4a485b56f68252b629dd9",
+      "object_file": "cases/B1-MINIMAL-S1-SENSORY-FREE/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S1-SENSORY-FREE/MANIFEST.json"
+    },
+    {
+      "case_id": "B1-MINIMAL-S2-FULL",
+      "arm": "FULL",
+      "start": "S2",
+      "authority_sha256": "a60dacc6b0d536aaddf7dc71313b1adf3fe91013466f5852368dcf3bdef580b5",
+      "execution_sha256": "9ec3f9737c34bfd84c2e1b99d281084ca1e71396010d7e3a6a7311c3405e1d32",
+      "object_file": "cases/B1-MINIMAL-S2-FULL/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S2-FULL/MANIFEST.json"
+    },
+    {
+      "case_id": "B1-MINIMAL-S2-CHEMISTRY-HIDDEN",
+      "arm": "CHEMISTRY-HIDDEN",
+      "start": "S2",
+      "authority_sha256": "1febeb0e0cf33dbcb67478e1d8081031c45a28df348ef09cfdcee79de0c0c36b",
+      "execution_sha256": "a955d750d8077514b247ded810df108cf6bd72ccc38ced6dd931a02f6edfc6f9",
+      "object_file": "cases/B1-MINIMAL-S2-CHEMISTRY-HIDDEN/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S2-CHEMISTRY-HIDDEN/MANIFEST.json"
+    },
+    {
+      "case_id": "B1-MINIMAL-S2-SENSORY-FREE",
+      "arm": "SENSORY-FREE",
+      "start": "S2",
+      "authority_sha256": "fbf477f0220bdbf43ae80e077abe74a25e0afd78878fb9ecd710aaee78ba2092",
+      "execution_sha256": "b327273ce7cd1e92c872f4dad8ef31b51395041368c3e7e48b218d3dc6d01355",
+      "object_file": "cases/B1-MINIMAL-S2-SENSORY-FREE/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S2-SENSORY-FREE/MANIFEST.json"
+    },
+    {
+      "case_id": "B1-MINIMAL-S3-FULL",
+      "arm": "FULL",
+      "start": "S3",
+      "authority_sha256": "a2f6d55d86d360f3cb6ca13af6a1b97b642d09ddd311321a448e481d26452ca3",
+      "execution_sha256": "2c9a51408fd8c6e47f41faa1f477061ae5f9b133d13bd025162bb6cdba473505",
+      "object_file": "cases/B1-MINIMAL-S3-FULL/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S3-FULL/MANIFEST.json"
+    },
+    {
+      "case_id": "B1-MINIMAL-S3-CHEMISTRY-HIDDEN",
+      "arm": "CHEMISTRY-HIDDEN",
+      "start": "S3",
+      "authority_sha256": "e9cb37366aac8c0a7eba71ae5607ec61fd542bd5de58c53166508d20fe6badb4",
+      "execution_sha256": "02a63cf1a1fb9973cf41cff9ad11c95d5766d872d0f9488358c77435bbdf0962",
+      "object_file": "cases/B1-MINIMAL-S3-CHEMISTRY-HIDDEN/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S3-CHEMISTRY-HIDDEN/MANIFEST.json"
+    },
+    {
+      "case_id": "B1-MINIMAL-S3-SENSORY-FREE",
+      "arm": "SENSORY-FREE",
+      "start": "S3",
+      "authority_sha256": "bdb6ae7f3394ea5d763b8110ace43be8ffa0183e12eb57da9a044dc8a378901c",
+      "execution_sha256": "0d68ec1e20b7c732b515bee6c3b83b86c80f6dfdc876cc290ed478eb4218ddee",
+      "object_file": "cases/B1-MINIMAL-S3-SENSORY-FREE/AUTHORITY_OBJECT.canonical.json",
+      "manifest_file": "cases/B1-MINIMAL-S3-SENSORY-FREE/MANIFEST.json"
+    }
+  ]
+}

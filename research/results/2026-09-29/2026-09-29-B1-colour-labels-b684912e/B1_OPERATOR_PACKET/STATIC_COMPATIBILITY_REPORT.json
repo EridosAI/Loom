@@ -1,0 +1,41 @@
+{
+  "checkpoint": "b684912eaf7811cd318ee94c77172aca790f3a0d",
+  "cases": [
+    {
+      "case": "B1-FULL-RAW",
+      "canonical_authority_sha256": "936cd43b20c84378c3d7a2e99825fb87029c873872db6e504279ee7a931ce901",
+      "previous_authority_sha256": "45f2349183579ed478e4c5582cdb70ba6619e06769ccfaad05f2dd36d26b173d",
+      "duration_seconds": 30,
+      "native_ceiling": 3000,
+      "maximum_command_holds": 300,
+      "operator_coordinates": 29,
+      "initial_state_sha256": "1d701ab649a331bbc4d3a117d3e779103d04282c3a83ac520b9c8f17a8a1bbf0",
+      "initial_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+      "execution_grant": null,
+      "static_validation": true,
+      "null_grant_rejected": true
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "canonical_authority_sha256": "9a1a6c5f3927398cb0827a89ed72fe243a1d5cdb458cc4a114f4caef4dbffc84",
+      "previous_authority_sha256": "aba8ca69db2a9ae66f9eb62c25ba0c64a82733d249310876e82e12ab94571a9e",
+      "duration_seconds": 30,
+      "native_ceiling": 3000,
+      "maximum_command_holds": 300,
+      "operator_coordinates": 25,
+      "initial_state_sha256": "1d701ab649a331bbc4d3a117d3e779103d04282c3a83ac520b9c8f17a8a1bbf0",
+      "initial_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+      "execution_grant": null,
+      "static_validation": true,
+      "null_grant_rejected": true
+    }
+  ],
+  "complete_pair_initial_state_identical": true,
+  "shared_snapshot_not_deserialized": true,
+  "prior_run_prefixes_preserved": true,
+  "production_change": "29 CSS rules colour existing coordinate labels only",
+  "unchanged_controller_semantics": true,
+  "unexpected_semantic_changes": [],
+  "no_new_independent_disposition_claimed": true,
+  "scope": "Identity/schema, null-grant rejection and integer clock checks only; no new world, controller invocation, prehistory, physical rerun or B1 launch."
+}

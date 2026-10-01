@@ -1,0 +1,90 @@
+{
+  "parent_checkpoint": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "checkpoint": "1060a17e3dd14c6361f6f15c95bb58fad3110ffc",
+  "manifest_changes": [
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COMPACT LAYOUT"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COMPACT LAYOUT"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COMPACT LAYOUT"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "APPROVED LAYOUT AND ADMINISTRATIVE HISTORY DOCUMENT BINDING"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/procedure/protocol/bound_documents/OPERATOR_EXPOSURE_AND_ATTEMPT_HISTORY.json",
+      "classification": "APPROVED LAYOUT AND ADMINISTRATIVE HISTORY DOCUMENT BINDING"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/procedure/protocol/bound_documents/PROTOCOL_CONTRACT.json",
+      "classification": "APPROVED LAYOUT AND ADMINISTRATIVE HISTORY DOCUMENT BINDING"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COMPACT LAYOUT"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COMPACT LAYOUT"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COMPACT LAYOUT"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "APPROVED LAYOUT AND ADMINISTRATIVE HISTORY DOCUMENT BINDING"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/procedure/protocol/bound_documents/OPERATOR_EXPOSURE_AND_ATTEMPT_HISTORY.json",
+      "classification": "APPROVED LAYOUT AND ADMINISTRATIVE HISTORY DOCUMENT BINDING"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/procedure/protocol/bound_documents/PROTOCOL_CONTRACT.json",
+      "classification": "APPROVED LAYOUT AND ADMINISTRATIVE HISTORY DOCUMENT BINDING"
+    }
+  ],
+  "changed_public_contract_fields": {
+    "DISPLAY_CONTRACT.json": [
+      "/compact_layout",
+      "/independent_disposition",
+      "/reviewed_checkpoint",
+      "/reviewed_files/sensor.html"
+    ],
+    "PROTOCOL_CONTRACT.json": [
+      "/grants",
+      "/memory"
+    ]
+  },
+  "expected_changes": [
+    "CSS layout and required source/document identity bindings",
+    "Explicitly bind zero-step closure and prior permitted-reading exposure; no naivety claim"
+  ],
+  "unchanged": [
+    "all physical initial fields and snapshot bytes",
+    "P, world, body, sensors, controller and runtime",
+    "paired order and display deprivation",
+    "duration, holds, cadence, resource limits and fidelity",
+    "completion and interpretation criteria"
+  ],
+  "unexpected_semantic_changes": []
+}

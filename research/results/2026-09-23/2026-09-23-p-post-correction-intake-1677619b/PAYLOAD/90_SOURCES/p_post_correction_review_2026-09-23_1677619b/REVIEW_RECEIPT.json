@@ -1,0 +1,48 @@
+{
+  "created_at_utc": "2026-09-23T11:19:16.606143+00:00",
+  "verdict": "HOLD BEFORE COUPLING COMMISSIONING",
+  "previous_checkpoint": "d5f7efbe67193f215e52d95ca912db131a79f31c",
+  "reviewed_checkpoint": "f7eb6f27c661e3db193a4225b56a825d7e41739d",
+  "branch": "build/p-engineering-baseline-20260921-01a0c405",
+  "worktree": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405",
+  "final_worktree_clean": true,
+  "report": "LOOM_P_INDEPENDENT_POST_CORRECTION_FIDELITY_REVIEW.md",
+  "report_sha256": "897610b06492554fd8299518dbc993117211ad133dda2129ee463299a1162f06",
+  "classifications": {
+    "R1": "MUST-FIX BEFORE COMMISSIONING",
+    "R2": "VERIFIED",
+    "R3": "VERIFIED"
+  },
+  "original_r1_counterexample_corrected": true,
+  "remaining_r1": "Resolvable oblique release/free-flight/return retained as full-duration sustained contact",
+  "suite": {
+    "worktree_passed": 55,
+    "portable_assembled_passed": 55
+  },
+  "observed_delivered_mutant_pairs": 14,
+  "additional_consequential_mutant_pairs": 8,
+  "total_consequential_pairs": 22,
+  "corrected_saved_neural_states_exact": 3200,
+  "corrected_final_fields_exact": 3,
+  "midwave_saved_neural_states_exact": 93,
+  "observer_reconstruction_records": 40,
+  "semantic_configuration_sha256": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+  "runtime_code_sha256": "af53b321220001166b73bc420b67c7526cddfe4198b8bf34ef69f7406082d868",
+  "reviewed_delivery": {
+    "name": "Loom_P_corrective_review_20260923.zip",
+    "bytes": 83421895,
+    "sha256": "7e33da1b05646c5af352a4114e99082c52b51b2b5966911f30816fb2911091da"
+  },
+  "correction_patch_sha256": "de8fd97320af569df91d629183a61649e8ae16c082c4fcc6610fc78c472c1a21",
+  "previous_independent_report_sha256": "ffa7ffe6561ed94c2003faf1eb123637a37932c8573757b018c0dfe070dada54",
+  "preserved_prior_artifact_files": 252,
+  "prior_build_manifest_entries_verified": 87,
+  "target_artifact_files_unchanged_during_audit": 474,
+  "field_prehistory_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+  "archive_tree": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+  "review_created_lifetimes": 0,
+  "review_prehistory_generations": 0,
+  "review_target_writes": 0,
+  "remote_or_workbench_operations_by_review": false,
+  "builder_historical_no_push_pr_vault_write_claim": "Not independently provable from supplied final local artifacts; no contrary evidence found"
+}

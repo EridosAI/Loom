@@ -1,0 +1,306 @@
+{
+  "scope": "Static axis-aligned body-centre segments and analytic sine/time inequalities only; no dynamics or control calls, no sampled candidate runs.",
+  "body_radius": 0.5,
+  "phase": 3.558411277237072,
+  "mover_law": {
+    "centre": [
+      10,
+      10
+    ],
+    "amplitude": 4,
+    "period": 30,
+    "size": [
+      2,
+      1
+    ]
+  },
+  "static_fixtures": [
+    {
+      "id": "wall-0",
+      "kind": "wall",
+      "axis": 0,
+      "sign": 1,
+      "boundary": 0
+    },
+    {
+      "id": "wall-1",
+      "kind": "wall",
+      "axis": 0,
+      "sign": -1,
+      "boundary": 20
+    },
+    {
+      "id": "wall-2",
+      "kind": "wall",
+      "axis": 1,
+      "sign": 1,
+      "boundary": 0
+    },
+    {
+      "id": "wall-3",
+      "kind": "wall",
+      "axis": 1,
+      "sign": -1,
+      "boundary": 20
+    },
+    {
+      "id": "source-0",
+      "kind": "disk",
+      "centre": [
+        3,
+        3
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-1",
+      "kind": "disk",
+      "centre": [
+        10,
+        3
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-2",
+      "kind": "disk",
+      "centre": [
+        17,
+        3
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-3",
+      "kind": "disk",
+      "centre": [
+        3,
+        10
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-4",
+      "kind": "disk",
+      "centre": [
+        17,
+        10
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-5",
+      "kind": "disk",
+      "centre": [
+        3,
+        17
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-6",
+      "kind": "disk",
+      "centre": [
+        10,
+        17
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-7",
+      "kind": "disk",
+      "centre": [
+        17,
+        17
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "repair-0",
+      "kind": "rect",
+      "rect": [
+        0,
+        0.25,
+        8,
+        12
+      ]
+    },
+    {
+      "id": "repair-1",
+      "kind": "rect",
+      "rect": [
+        19.75,
+        20,
+        8,
+        12
+      ]
+    },
+    {
+      "id": "repair-2",
+      "kind": "rect",
+      "rect": [
+        8,
+        12,
+        19.75,
+        20
+      ]
+    }
+  ],
+  "mover_swept_rectangle": [
+    5.0,
+    15.0,
+    9.5,
+    10.5
+  ],
+  "segments": {
+    "A4-CROSS": {
+      "from": [
+        10.0,
+        8.8
+      ],
+      "to": [
+        10.0,
+        12.0
+      ],
+      "nominal_length": 3.1999999999999993,
+      "static_surface_clearances": {
+        "wall-0": 9.5,
+        "wall-1": 9.5,
+        "wall-2": 8.3,
+        "wall-3": 7.5,
+        "source-0": 8.09065454189081,
+        "source-1": 4.800000000000001,
+        "source-2": 8.09065454189081,
+        "source-3": 6.0,
+        "source-4": 6.0,
+        "source-5": 7.602325267042627,
+        "source-6": 4.0,
+        "source-7": 7.602325267042627,
+        "repair-0": 9.25,
+        "repair-1": 9.25,
+        "repair-2": 7.25
+      },
+      "crosses_mover_swept_region": true
+    },
+    "A4-WAIT": {
+      "from": [
+        6.0,
+        8.8
+      ],
+      "to": [
+        6.0,
+        12.0
+      ],
+      "nominal_length": 3.1999999999999993,
+      "static_surface_clearances": {
+        "wall-0": 5.5,
+        "wall-1": 13.5,
+        "wall-2": 8.3,
+        "wall-3": 7.5,
+        "source-0": 5.529931086925804,
+        "source-1": 6.045565981523415,
+        "source-2": 11.435433245367852,
+        "source-3": 2.0,
+        "source-4": 10.0,
+        "source-5": 4.830951894845301,
+        "source-6": 5.4031242374328485,
+        "source-7": 11.083045973594572,
+        "repair-0": 5.25,
+        "repair-1": 13.25,
+        "repair-2": 7.503905296791061
+      },
+      "crosses_mover_swept_region": true
+    },
+    "A4-DETOUR": {
+      "from": [
+        1.5,
+        6.0
+      ],
+      "to": [
+        1.5,
+        14.0
+      ],
+      "nominal_length": 8.0,
+      "static_surface_clearances": {
+        "wall-0": 1.0,
+        "wall-1": 18.0,
+        "wall-2": 5.5,
+        "wall-3": 5.5,
+        "source-0": 2.3541019662496847,
+        "source-1": 8.013878188659973,
+        "source-2": 14.787653403846944,
+        "source-3": 0.5,
+        "source-4": 14.5,
+        "source-5": 2.3541019662496847,
+        "source-6": 8.013878188659973,
+        "source-7": 14.787653403846944,
+        "repair-0": 0.75,
+        "repair-1": 17.75,
+        "repair-2": 8.178277478854891
+      },
+      "crosses_mover_swept_region": false,
+      "mover_union_clearance": 3.0
+    }
+  },
+  "CROSS": {
+    "nominal_x": 10,
+    "clear_for_all_y_start": 0,
+    "clear_for_all_y_end_exclusive": 11.17447826712641,
+    "reason": "mover right edge < 9.5 until its return; radius-0.5 body at x=10 is horizontally clear",
+    "analytic_conditional_exit_bound_s": 10,
+    "minimum_drive_before_exit": 0.348,
+    "energy_lower_bound_through_t10": 0.675,
+    "forward_force_lower_bound": 0.25752,
+    "distance_lower_bound_at_t10_if_not_exited": 2.317691691389913
+  },
+  "WAIT": {
+    "nominal_x": 6,
+    "horizontal_conflict_interval": [
+      1.2333532913373766,
+      9.786322049089135
+    ],
+    "release_at": 12,
+    "next_horizontal_conflict_at": 31.233353291337377,
+    "stationary_minimum_mover_gap": 0.2,
+    "immediate_proceed_argument": {
+      "counterfactual_executed": false,
+      "time_used_for_contradiction": 3,
+      "mover_rect_at_t3": [
+        5.54002652856963,
+        7.54002652856963,
+        9.5,
+        10.5
+      ],
+      "no_contact_speed_upper_bound": 0.38,
+      "no_contact_displacement_upper_bound": 1.14,
+      "minimum_distance_to_destination_through_t3": 2.06,
+      "drive_lower_unclipped": 0.878,
+      "therefore_saturated_drive": 0.5,
+      "conservative_forward_force_lower_bound": 0.376,
+      "speed_lower_bound_after_t1": 0.23767733011953768,
+      "displacement_lower_bound_over_t1_to_t3": 0.47535466023907536,
+      "body_centre_y_interval_at_t3_under_no_contact_assumption": [
+        9.275354660239076,
+        9.940000000000001
+      ],
+      "conclusion": "At t=3 mover rectangle contains x=6; the no-contact y bounds force disk overlap. Thus immediate northward progress must conflict before/by 3 s. This is an analytic contradiction using unchanged saturated actuator/drag laws, not an executed comparison."
+    },
+    "analytic_conditional_exit_bound_absolute_s": 22,
+    "minimum_drive_before_exit": 0.348,
+    "energy_lower_bound_through_t22": 0.645,
+    "forward_force_lower_bound": 0.249168,
+    "distance_lower_bound_over_10s_if_not_exited": 2.242523312209699
+  },
+  "bound_derivation": "Until northward centre y=11, destination distance >=1 and speed <=0.38, so drive >=0.5-0.4*0.38=0.348. No-contact healthy symmetric forces have zero torque. Reserve bound E>=0.7-0.0025*t gives the stated force floors. Unit-mass/unit-drag v>=Fmin*(1-exp(-elapsed)); the existing positive-acceleration endpoint-position update has a right-sum displacement no smaller than the integral. Both ten-second lower distances exceed the required 2.2 m and fall inside their clear intervals. These ideal symmetric analytic opportunity bounds are not executed controller-competence or floating-contact certification.",
+  "detour_reference": "A0_GEOMETRY.json / A0_only_left_bypass, exact endpoints retained",
+  "detour_corridor_half_width": 0.25,
+  "detour_corridor_static_margin_lower_bound": 0.25,
+  "detour_corridor_mover_union_margin_lower_bound": 2.75,
+  "selected_without_trials": true,
+  "candidate_trajectory_count": 0,
+  "limitations": [
+    "Nominal paths do not assert actual realized paths.",
+    "Full fixed-ceiling outcomes, damage, timing misses and controller limits remain unobserved.",
+    "Rounded decimal bounds are conservative; actual floating contact behavior is left to the authorized record."
+  ]
+}

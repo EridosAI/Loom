@@ -1,0 +1,52 @@
+{
+  "P": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "apparatus": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "historical_held_identity": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
+  "packet_custody_sha256": "074d2fae284623329de780ace0eeabce0dd1072d874b620356b8eed098aeb8da",
+  "public": {
+    "archive": "B1_OPERATOR_PACKET.zip",
+    "sha256": "b65e17ca315a34b3eae52c96542afd9d39926a7bfb8343890640696d24cd319c",
+    "bytes": 43426,
+    "payloads": 29,
+    "verified": true
+  },
+  "sealed": {
+    "archive": "B1_SEALED_EVALUATOR.zip",
+    "sha256": "98d0a1bd5c117c79e00eb6b32e7701f3793bdef2a1e24f1db453d4acc269fb88",
+    "bytes": 1943056,
+    "payloads": 68,
+    "verified": true
+  },
+  "case_authorities": [
+    {
+      "case": "PC-LR",
+      "canonical_authority_sha256": "a80a9098b7eed714f824eccd841d17e29e94cc607489ddf7a5390f1dc38c493a"
+    },
+    {
+      "case": "PC-MOTION",
+      "canonical_authority_sha256": "c35d7a469da2598a0bcb0abc9b952592fc5310525fac2f3e1f5edf0461bf401c"
+    },
+    {
+      "case": "PC-CONTACT",
+      "canonical_authority_sha256": "2e9989e37863c32ae89fd559adf51942bd8152b8d5244a8de1baf2234c52ba1d"
+    },
+    {
+      "case": "PC-HOLD",
+      "canonical_authority_sha256": "ac1c5615c2c99ebe2524e3648b81003d7eeb42f1b54493212afd8d3cb83d719f"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "canonical_authority_sha256": "2e338ae61dceaac3c3db0863f02cbccf0a9d98eb0842caf06c363207951e7c4c"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "canonical_authority_sha256": "4bf57dbfcc56404e3e43122d7359fdeff76363ff6e1cab41e2a942e98b629a33"
+    }
+  ],
+  "operator_blinding_preserved": true,
+  "zero_simulation_or_controller_execution": true,
+  "all_grants_null": true,
+  "unexpected_semantic_changes": 0,
+  "next_decision": "Positive controls only; no B1 authorization",
+  "no_code_or_git_writes": true
+}

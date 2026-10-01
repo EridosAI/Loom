@@ -1,0 +1,86 @@
+{
+  "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW.zip",
+  "zip_bytes": 29194,
+  "zip_sha256": "778e94cc40b54016eb60830029da9b50525f7dd2953e5bd34ca5278229ff5172",
+  "manifest_payloads_verified": 20,
+  "archive_members": 21,
+  "operator_crc_passed": true,
+  "operator_expanded_copies_match": 21,
+  "held_review_custody_identity": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
+  "held_identity_check": "Matched current user instruction, operator-safe held identity and outer receipt; sealed canonical object not opened/recomputed",
+  "opaque_evaluator_archive_sha256": "b5e1db2f5e3476dbf3c92fa4565358361dbae19276d16008d46b62526c020778",
+  "opaque_evaluator_archive_bytes": 1173766,
+  "evaluator_archive_members_enumerated": false,
+  "evaluator_archive_extracted": false,
+  "evaluator_manifests_or_state_opened": false,
+  "evaluator_internal_payload_verification_by_intake": false,
+  "evaluator_live_reading_links_added": false,
+  "matching_paired_initial_state_opaque_identities": true,
+  "case_grants_reported_null": 6,
+  "preparation_execution_counts_zero": true,
+  "source_initial_zero_time_transductions_reported": 5,
+  "documentation_revision": 2,
+  "classification": "COMMISSIONING-APPARATUS DEFECTS",
+  "B1_executed": false,
+  "tests_or_validators_run_by_intake": false,
+  "git_operations": false,
+  "necessary_operator_safe_source_gaps": [],
+  "existing_catalog_rows_preserved": 330,
+  "protected_files_unchanged": 1236,
+  "links_validated": 647,
+  "source_ids": [
+    "SRC-331",
+    "SRC-332",
+    "SRC-333",
+    "SRC-334",
+    "SRC-335",
+    "SRC-336",
+    "SRC-337",
+    "SRC-338",
+    "SRC-339",
+    "SRC-340",
+    "SRC-341",
+    "SRC-342",
+    "SRC-343",
+    "SRC-344",
+    "SRC-345",
+    "SRC-346",
+    "SRC-347",
+    "SRC-348",
+    "SRC-349",
+    "SRC-350",
+    "SRC-351",
+    "SRC-352"
+  ],
+  "shared_files": {
+    "AGENTS.md": {
+      "before": "872d7e796864fc8e492fcfc380b1e5b29e73a82b606f7ff13851ca59c086bacc",
+      "after": "9ed3ebfc808d659022e5d9dad39c0316c16b492c98a13587a43c3b3f9a4bb0a6"
+    },
+    "00_RESEARCH_MAP.md": {
+      "before": "44163ae0183804f69e64fb9e8a2197b87916293ce73289fbfd0f267013b19988",
+      "after": "26b65cdf86fcd5cab1265b44dbda4d6f4b7373b8499e4336271bc29a838f568d"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "before": "7922ca02de7ef216bc69dd221a34e2ff0262ceb30d061ab1972f76a75ee3ebfa",
+      "after": "42c3059f7c0d3a13011368b6c4a98bccefdacc78e2fafd5392293b2a9a5f314b"
+    },
+    "SOURCE_CATALOG.json": {
+      "before": "13f1362eaa454c2de570a9ba2b077a6066d5c4aeb8247c512066a350c049f4ff",
+      "after": "c1a3e0b8a7715295f7e5c8a3984fcde6589438d2c7023bf06ab3bb42d727603b"
+    },
+    "SOURCE_REGISTER.md": {
+      "before": "128eb4b9ae35c811f24bc61bc36b04b9d0c22b8efbb7ec0c9ccfd9dcd990b2e1",
+      "after": "90d4a9e820c0510187eb47d9618e6bfb6daae326615bd28ac84376d823a2bc5e"
+    },
+    "40_DECISIONS/DECISION_INDEX.md": {
+      "before": "fa7801a581a2430c316317b1853ec1ef0c69b3d7391778b7d40a3339b478c6b9",
+      "after": "e8a131d9067e91f386aae5946272f09044fd221ccfa0f131ca220a7d4a03d29e"
+    }
+  },
+  "intake_complete": true,
+  "validation_scope": "Source custody, exact status registration, links and byte preservation; no review rerun or scientific validation",
+  "incoming_files_preserved": 27,
+  "recovery_archive_verified": true,
+  "full_derived_batch_files_verified": 27
+}

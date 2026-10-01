@@ -1,0 +1,26 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_ test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference] _
+
+reference = 'fine_ref', target = 'fine', tau = 'tau_fine_reference'
+
+    @pytest.mark.parametrize('reference,target,tau',[('shared_ref','shared','tau_shared_reference'),('fine_ref','fine','tau_fine_reference')])
+    def test_separate_sensory_reference_following(reference,target,tau):
+        c=Config(); raw=[np.zeros(d) for d in (10,4,8,7)]
+        o=Organism(c,Streams(c.master_seed),raw,np.array([.7,1.])); x=o.cortices[0]
+        setattr(x,reference,getattr(x,reference)*.5)
+        x.x[:]=np.linspace(-.4,.5,8); old=copy.deepcopy(x)
+        expected=getattr(old,reference)+(-np.expm1(-.01/getattr(c,tau)))*(getattr(old,target)-getattr(old,reference))
+        assert np.max(np.abs(expected-getattr(old,reference)))>1e-10
+        x.step(c,np.linspace(0,.9,10),np.array([.2,.8]),.01)
+>       assert np.allclose(getattr(x,reference),expected,rtol=0,atol=1e-18), reference+' movement missing'
+E       AssertionError: fine_ref movement missing
+E       assert False
+E        +  where False = <function allclose at 0x000001EE75779F70>(array([[ 0.00018257,  0.00036515,  0.00036515,  0.00036515,  0.        ,\n        -0.00018257,  0.00018257,  0.00018257...7678, -0.00035355,  0.00017678,  0.00053033,\n         0.00035355,  0.00035355, -0.00035355,  0.        ,  0.00035355]]), array([[ 0.00018257,  0.00036515,  0.00036515,  0.00036515,  0.        ,\n        -0.00018257,  0.00018257,  0.00018257...7678, -0.00035355,  0.00017678,  0.00053033,\n         0.00035355,  0.00035355, -0.00035355,  0.        ,  0.00035355]]), rtol=0, atol=1e-18)
+E        +    where <function allclose at 0x000001EE75779F70> = np.allclose
+E        +    and   array([[ 0.00018257,  0.00036515,  0.00036515,  0.00036515,  0.        ,\n        -0.00018257,  0.00018257,  0.00018257...7678, -0.00035355,  0.00017678,  0.00053033,\n         0.00035355,  0.00035355, -0.00035355,  0.        ,  0.00035355]]) = getattr(<loom_p.neural.Cortex object at 0x000001EE255ADD30>, 'fine_ref')
+
+tests\test_corrective_contracts.py:91: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]
+1 failed in 0.08s

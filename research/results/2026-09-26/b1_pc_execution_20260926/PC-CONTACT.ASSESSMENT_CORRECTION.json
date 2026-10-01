@@ -1,0 +1,39 @@
+{
+  "case": "PC-CONTACT",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T03:08:57.235065+00:00",
+  "previous_assessment_file": "PC-CONTACT.RESULT.json",
+  "previous_assessment_sha256": "ad7796152cafaca471f61c07f6b7a98ae3d568c4e6d098a28169c0202285c56f",
+  "previous_assessment": "PARTIAL / NOT MARKED FULLY DEMONSTRATED",
+  "corrected_assessment": "DEMONSTRATED FOR DECLARED CONTACT-ONSET RECOGNITION; TIMING UNCERTAINTY AND SCENE-INTERPRETATION ERRORS PRESERVED",
+  "criterion_source": "POSITIVE_CONTROL_CARDS.md",
+  "criterion_source_sha256": "3aebdbbab918ab73d77b9ac208b4c4120bda735fe3465f2428d106af757aed14",
+  "exact_criterion": "Use small paired entries to approach, and identify contact onset from raw contact/proprioceptive history.",
+  "user_original_observation": "This looks liek contact was around the 0.8s mark but I can't exactly tell. Not sure which colour is which coordinate. But it looks like I hit something hard but it didn't last. Like I went through it or something. Or I glanced off something. Then at 1.7/1.8s I hit something again but its like rough ground or somethign because I keep going ove rit.\n\nCan we just have an animated screen so I can see what is happening? Like a plan view of the bug and scene?",
+  "user_approximate_onset_seconds": 0.8,
+  "actual_impact_seconds": 0.8984177401672448,
+  "actual_first_native_contact_sample": 0.9000000000000006,
+  "actual_support_intervals": [
+    [
+      0.8984177401672448,
+      2.299999999999995
+    ]
+  ],
+  "reason": "The assistant incorrectly treated trace-colour/channel identification and a correct explanation of later continuous support as additional PC-CONTACT pass requirements. The predeclared task was onset recognition. Jason identified the first contact transition before physical replay, with approximate timing. The card sets no numerical timing-accuracy gate; none is added now.",
+  "retained_limitations": [
+    "Original timing was tentative, not precise event-time identification.",
+    "Trace colours were not confidently associated with coordinates.",
+    "Later persistence was misinterpreted as another impact or rough ground.",
+    "First commands were [1,1], not a careful small approach; subsequent smaller pairs and all resulting damage remain recorded. No damage-free gate was specified.",
+    "Post-case physical replay and explanations were additional feedback; not evidence of prior correct scene interpretation."
+  ],
+  "correction_basis": "Existing pre-feedback observation and accepted criterion, not a new run or a newly supplied operator answer.",
+  "original_result_and_report_preserved": true,
+  "recorded_physics_changed": false,
+  "acceptance_criterion_changed": false,
+  "no_new_timing_tolerance": true,
+  "runtime_receipt_sha256": "bcba4a6c4da850638cb619648b09c4704fc384993632fe27b5c8929e428cd7fd",
+  "original_contact_run_hashes_and_lengths_reverified": true,
+  "B1_state_accessed": false,
+  "B1_execution_authorized": false
+}

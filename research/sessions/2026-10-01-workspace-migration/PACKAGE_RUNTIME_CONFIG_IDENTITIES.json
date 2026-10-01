@@ -1,0 +1,108 @@
+[
+  {
+    "package": "b1_correction_20260926",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_correction_20260926\\PREFLIGHT.json",
+    "identity_source_sha256": "0fc8377002bf234e2a136f23fcf8ce93a7f190b3beddf25ed26ec96f7665bd78",
+    "source_declared_identity_fields": {},
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  },
+  {
+    "package": "b1_correction_20260926",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_correction_20260926\\SOURCE_IDENTITIES.json",
+    "identity_source_sha256": "3336cc630e64acc669a9034a4d0b52b460970089e3c2b0f3ff81951f5c04eeb8",
+    "source_declared_identity_fields": {
+      "request_sha256": "703716a620a7c378934a2273506decaf14e28b041f52cb391e9b26f7d692bc71"
+    },
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  },
+  {
+    "package": "founder_expansion_execution_20260930",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\founder_expansion_execution_20260930\\PREFLIGHT.json",
+    "identity_source_sha256": "b9bfdbd9008106955fe27228a90d7e73ffef72da56aece50bf9ca0c5d740ac36",
+    "source_declared_identity_fields": {
+      "P_commit": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "authority_count": 48,
+      "checkpoint": "87abae34e19d4e46234402a6b1ba776814956ec1",
+      "frozen_configuration": true,
+      "full_runtime_sha256": "2fc498951552f53698d70da31f5957e1e208016320c2e27e7dfb20e5e5e7a6ab",
+      "memory/peak_commit_bytes": 1619509248,
+      "status": "PASS"
+    },
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  },
+  {
+    "package": "founder_initial_execution_20260930",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\founder_initial_execution_20260930\\PREFLIGHT.json",
+    "identity_source_sha256": "b8a059e83b0eb2f610b93c4dc723f352cd1e908be63f1c95263c8f2326d72998",
+    "source_declared_identity_fields": {
+      "P_commit": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "authority_count": 12,
+      "checkpoint": "87abae34e19d4e46234402a6b1ba776814956ec1",
+      "frozen_configuration": true,
+      "full_runtime_sha256": "2fc498951552f53698d70da31f5957e1e208016320c2e27e7dfb20e5e5e7a6ab",
+      "memory/peak_commit_bytes": 1616740352,
+      "status": "PASS"
+    },
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  },
+  {
+    "package": "m1_resurrection_sandbox_20260930_v0_1",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\m1_resurrection_sandbox_20260930_v0_1\\PREPARATION_MANIFEST.json",
+    "identity_source_sha256": "387ab315f5d4c112ebb613da34c7cff1293ebba5b9141a1179b0e5a735eaea20",
+    "source_declared_identity_fields": {
+      "label": "NON-CANONICAL RESURRECTION SANDBOX"
+    },
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  },
+  {
+    "package": "m1_resurrection_sandbox_20260930_v0_1",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\m1_resurrection_sandbox_20260930_v0_1\\RUNTIME_IDENTITY.json",
+    "identity_source_sha256": "752b7c335347a5f55fd3e7cdf1b904137d41e5b229b8ea2252caa8e12a455f3c",
+    "source_declared_identity_fields": {
+      "M1_parameters_sha256": "f028166e2a74fd5458176918d66c5038b06014af16851819f54e6924eb8e2aa1",
+      "base/P/sha256": "98bbf9053ca55ef545c6fc868e54c85342149d143319281a47f9a1fd71c28c7d",
+      "base/contact_correction_checkpoint": "1d7cd6fd450ea528562b2c825589ab4de18a5b38",
+      "base/numpy": "2.3.3",
+      "base/platform": "Windows-11-10.0.26200-SP0",
+      "base/python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "base/scipy": "1.16.2",
+      "config_file_sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+      "label": "NON-CANONICAL RESURRECTION SANDBOX"
+    },
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  },
+  {
+    "package": "motor_commissioning_preparation_20260930_v0_1",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\motor_commissioning_preparation_20260930_v0_1\\RUNTIME_IDENTITY.json",
+    "identity_source_sha256": "d1b14d75dc30e2934c76e209e0354ca236ac0115f381b4cbbf5c15093ba9a41a",
+    "source_declared_identity_fields": {
+      "P/sha256": "63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9",
+      "numpy": "2.3.3",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "scipy": "1.16.2"
+    },
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  },
+  {
+    "package": "motor_commissioning_preparation_20260930_v0_2",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\motor_commissioning_preparation_20260930_v0_2\\RUNTIME_IDENTITY.json",
+    "identity_source_sha256": "5df0ced8bf5602c84852bc2074fca8d422cc39cc55b9bab00a4b653bbe714c49",
+    "source_declared_identity_fields": {
+      "P/sha256": "98bbf9053ca55ef545c6fc868e54c85342149d143319281a47f9a1fd71c28c7d",
+      "contact_correction_checkpoint": "1d7cd6fd450ea528562b2c825589ab4de18a5b38",
+      "numpy": "2.3.3",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "scipy": "1.16.2"
+    },
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  },
+  {
+    "package": "nursery_birth_motor_review_20260930_v0_1",
+    "identity_source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\nursery_birth_motor_review_20260930_v0_1\\INPUT_CUSTODY.json",
+    "identity_source_sha256": "89611d108378ff1fa3a94b8e051b86e537c725f4edc18f929a39337c06d54dc8",
+    "source_declared_identity_fields": {},
+    "scope": "Selected identity fields from existing documentary JSON; not revalidated by executing any runtime."
+  }
+]

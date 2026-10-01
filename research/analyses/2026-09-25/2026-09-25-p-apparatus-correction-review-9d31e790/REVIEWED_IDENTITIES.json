@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-25",
+  "disposition": "HOLD BEFORE COUPLING COMMISSIONING",
+  "corrected_checkpoint": "9d31e7902658b15762052a2a6a3d161d64338524",
+  "previous_apparatus": "05abf60401d08f38750bca589b1c040e10513d7b",
+  "unchanged_P": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "branch": "build/p-commissioning-apparatus-20260924-01a0c405",
+  "target": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405",
+  "P_runtime": {
+    "sha256": "63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9",
+    "files": {
+      "__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+      "chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+      "engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+      "neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "physics.py": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+      "prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+      "reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+      "records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+      "schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+    }
+  },
+  "apparatus_runtime": {
+    "sha256": "2c626ab028e895a1a63dfecdaa7bb6b4666beb26984af90dee020db01c040536",
+    "files": {
+      "__init__.py": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+      "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+      "authority.py": "402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59",
+      "contract.py": "e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3",
+      "controllers.py": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+      "evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+      "initialization.py": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+      "runner.py": "a1c2764f0424b815b24e5c49496ba55eb9775757314fc88f6634dd41e3d3ba20",
+      "sensor.html": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a",
+      "sensor_ui.py": "20ab4d39502a1c262530512c4d0c6b4e41a1c76fb6c792f80d6e7c2098cb76f8",
+      "validators.py": "047696a36f08c8d7d631d4fb65444a56fc0f742059ca46d91c9879722ca74c43"
+    }
+  },
+  "configuration_semantic": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+  "configuration_file": {
+    "bytes": 3445,
+    "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9"
+  },
+  "patch": {
+    "bytes": 58401,
+    "sha256": "20e5bc0f285a5bac6e7c46443e117b4bfc54c06695c5d6b2e4a98ce38fd19ba1"
+  },
+  "builder_zip": {
+    "zip": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\review-package-apparatus-correction-20260924-01a0c405\\Loom_P_Apparatus_Correction_Review_20260924.zip",
+    "sha256": "e261dbb9836a916f3ff4b6daa3ae8d9c21ea12194198d1ed63dfa7ee9b798a81",
+    "bytes": 20202546,
+    "entries": 434,
+    "manifest_entries": 433,
+    "all_payload_hashes_verified": true,
+    "CRC_ok": true,
+    "safe_unique_paths": true,
+    "portable_suite_root": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\portable\\developmental_ecology",
+    "checkpoint": {
+      "previous": "05abf60401d08f38750bca589b1c040e10513d7b",
+      "checkpoint": "9d31e7902658b15762052a2a6a3d161d64338524",
+      "P": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "branch": "build/p-commissioning-apparatus-20260924-01a0c405",
+      "worktree": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405",
+      "patch_sha256": "20e5bc0f285a5bac6e7c46443e117b4bfc54c06695c5d6b2e4a98ce38fd19ba1",
+      "patch_bytes": 58401,
+      "independent_review_required": true,
+      "commissioning_authorized": false
+    }
+  },
+  "EXP1_21": {
+    "6bc9683b54e4fa80136fe8534d7713e2a250a95f": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "05abf60401d08f38750bca589b1c040e10513d7b": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "9d31e7902658b15762052a2a6a3d161d64338524": "f1b884a7ada4c806786d1530d76d446aac5d37b1"
+  },
+  "suite_composition": {
+    "P_engineering": 59,
+    "previous_apparatus": 24,
+    "new_correction": 30
+  },
+  "suite_results": {
+    "worktree": "113 passed in 77.05s",
+    "portable": "113 passed in 60.96s"
+  },
+  "fault_audit": {
+    "pairs": 36,
+    "red_logs": 36,
+    "green_logs": 36,
+    "total_logs_audited": 72,
+    "all_reds_reach_intended_exception": true,
+    "all_green_controls_pass": true,
+    "red_test_failures": 37,
+    "red_test_passes": 3,
+    "green_test_passes": 40,
+    "authority_callback_bypass_pairs": 18,
+    "production_clock_comparison_pairs": 2,
+    "previous_pairs": 16,
+    "important_qualification": "18 authority REDs bypass a test callback, not a production implementation. They establish assertion sensitivity; clean controls exercise real rejection. Clock-transition RED has 2 failed/3 passed parameter cases; GREEN has 5 passed."
+  },
+  "preservation": {
+    "previous_P_files": 792,
+    "previous_apparatus_review_design_files": 1908,
+    "target_artifacts_unchanged": 3106
+  },
+  "required_closures": [
+    "A-R1a: reject ambiguous approval representations",
+    "A-R1b: bind the actual invoked controller callable",
+    "A-R1c: validate pending-command and hold continuity across advancement/save/resume/replay"
+  ],
+  "commissioning_authorized": false,
+  "commissioning_executed_by_review": false,
+  "authoritative_provenance_receipts": "provenance/scoped-complete/; supersedes restricted preliminary receipts"
+}

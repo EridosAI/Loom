@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________ test_touch_release_return_duration_and_accounting ______________
+tests\test_corrective_contracts.py:29: in test_touch_release_return_duration_and_accounting
+    assert releases and releases[0]['time']==0., 'Touching body must release at the start'
+E   AssertionError: Touching body must release at the start
+E   assert ([])
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting
+1 failed in 0.07s

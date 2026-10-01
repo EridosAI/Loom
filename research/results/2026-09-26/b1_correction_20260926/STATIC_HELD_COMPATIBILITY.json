@@ -1,0 +1,75 @@
+{
+  "held_review_hash": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
+  "static_only": true,
+  "held_source_files_unchanged": 124,
+  "pair_complete_initial_state_identical": true,
+  "paired_semantic_difference": "operator display deprivation only; case identities differ",
+  "cases": [
+    {
+      "case": "PC-LR",
+      "horizon_seconds": 4,
+      "unchanged_snapshot_sha256": "3ff0eb7ee409e990ffba65ac79df913f13875fd0cd811d191bd50cbd87d2e477",
+      "controller": "sensor_human",
+      "display_representable": true,
+      "grid_and_hold_representable": true,
+      "execution_grant": null
+    },
+    {
+      "case": "PC-MOTION",
+      "horizon_seconds": 4,
+      "unchanged_snapshot_sha256": "aaae774a025276a170df0ac2a3fb8e7b9aa6aa75c30a681037801f3cff887328",
+      "controller": "sensor_human",
+      "display_representable": true,
+      "grid_and_hold_representable": true,
+      "execution_grant": null
+    },
+    {
+      "case": "PC-CONTACT",
+      "horizon_seconds": 6,
+      "unchanged_snapshot_sha256": "ee115434b844b7aee30089cbeaab03ff932952f440b0686eff8da465f1880e1f",
+      "controller": "sensor_human",
+      "display_representable": true,
+      "grid_and_hold_representable": true,
+      "execution_grant": null
+    },
+    {
+      "case": "PC-HOLD",
+      "horizon_seconds": 10,
+      "unchanged_snapshot_sha256": "54c02d8b4092b24761284939185c43addce086e3f9fe20adfb80ef0e14dabc7b",
+      "controller": "sensor_human",
+      "display_representable": true,
+      "grid_and_hold_representable": true,
+      "execution_grant": null
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "horizon_seconds": 30,
+      "unchanged_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+      "controller": "sensor_human",
+      "display_representable": true,
+      "grid_and_hold_representable": true,
+      "execution_grant": null
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "horizon_seconds": 30,
+      "unchanged_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+      "controller": "sensor_human",
+      "display_representable": true,
+      "grid_and_hold_representable": true,
+      "execution_grant": null
+    }
+  ],
+  "positive_controls": {
+    "left_right": "All actual light/chemistry coordinates retained in full-raw practice.",
+    "command_achieved": "Seven real proprioception channels, actual paired commands and ordered native history retained.",
+    "contact_onset": "All eight actual native contact channels retained.",
+    "gentle_hold": "Same actuators, 0.1 s holds, native contact/proprioception and 5 Hz E/I; no servo added."
+  },
+  "physical_raw_recording": "Shared full 29-coordinate SensorHistory/native physical recording; only copied operator view is projected.",
+  "no_snapshot_loaded": true,
+  "no_controller_or_world_invoked": true,
+  "new_launch_objects_saved": 0,
+  "new_execution_authorities": 0,
+  "interpretation": "Type/identity compatibility only. No demonstration, human outcome, independent closure or B1 launch fitness claimed."
+}

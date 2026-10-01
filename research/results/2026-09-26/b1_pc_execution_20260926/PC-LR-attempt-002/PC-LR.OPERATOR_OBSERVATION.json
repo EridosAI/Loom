@@ -1,0 +1,23 @@
+{
+  "case": "PC-LR",
+  "attempt": 2,
+  "recorded_utc": "2026-09-27T00:29:14.7934693+00:00",
+  "user_statement_verbatim": "Chemistry 0 is bigger",
+  "preceding_prompt": "Before applying any motor command, compare chemistry_0 with chemistry_2 and tell me which is larger. 0 is right-front; 2 is left-front.",
+  "interpreted_statement": "chemistry_0 (right-front) > chemistry_2 (left-front)",
+  "displayed_chemistry_0": "0.5885631",
+  "displayed_chemistry_2": "0.5777454",
+  "exact_chemistry_0": 0.5885631339300567,
+  "exact_chemistry_2": 0.5777453792391184,
+  "exact_right_minus_left": 0.010817754690938264,
+  "simulation_time": 0.0,
+  "native_index": 0,
+  "own_command_count": 0,
+  "lifecycle": "prepared",
+  "comparison_result": "DEMONSTRATED",
+  "case_lifecycle_result": "Awaiting case closure; comparison recorded before any action",
+  "assistance": "General anatomy and channel pairing explained; assistant selected a like-receptor pair to compare. Jason supplied the comparison sign; no comparison answer or motor command supplied before his response. This was a disclosed interface practice control.",
+  "interpretation": "Guided operator ability to read a left/right raw-channel difference only; no navigation, causal source inference or P learning claim.",
+  "assistant_actuator_commands": 0,
+  "B1_state_accessed": false
+}

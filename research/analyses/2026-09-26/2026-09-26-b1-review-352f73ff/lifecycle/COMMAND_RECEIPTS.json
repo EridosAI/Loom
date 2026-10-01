@@ -1,0 +1,17 @@
+{
+  "cwd":"C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97",
+  "python":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+  "options":["-B","-X","utf8"],
+  "environment":{"PYTHONDONTWRITEBYTECODE":"1"},
+  "script":"exports\\2026-09-26-b1-review-352f73ff\\lifecycle\\check_lifecycle.py",
+  "script_sha256":"6b7e6284c563e71d509822e72a7606baccaed705b91ee5118f31a55de3748b02",
+  "runs":[
+    {"argument":"old","python_exit":1,"log":"old.log","results":"old-results.json","assessment":"Actual68db hidden declaration rejected before native evolution; exact duplicate accepted two generic holds,20steps; intended OLD DUPLICATE RED assertion."},
+    {"argument":"new","python_exit":0,"log":"new.log","results":"new-results.json","assessment":"GREEN. Corrected realHTTP lifecycle/concurrency/clientdisconnect/delayedtoken/custody/end probes; exactlyone10step hold. Separate10step cutoff and0step postvalidation identity/deprivation negatives."},
+    {"script":"exports\\2026-09-26-b1-review-352f73ff\\lifecycle\\check_old_hidden.py","script_sha256":"cf9a1575936db03a90d780ae46d89631787f9de5a8c3682cf6e571de2ff29521","python_exit":1,"log":"old-hidden-exact.log","results":"old-hidden-exact-results.json","assessment":"Actual68db rejects complete exact corrected hidden declaration copied from own generic manufactured record; originalFULL-RAW accepts. Validationonly, noEngine/Run/snapshot; intendedOLD HIDDEN RED assertion."}
+  ],
+  "first_hold_cross_version_complete_engine_hash":"dfd6a0cd62ff2fcaf23426d28985cfeb954799eb6953456a07f53c98cccab254",
+  "scope":"Delivered generic manufactured fixtures only, maximum0.2-second horizon per fixture. No held PC/B1 reads, commands, snapshots, execution, geometry or grant generation.",
+  "all_servers_and_requests_joined":true,
+  "all_outputs_in_this_new_review_directory":true
+}

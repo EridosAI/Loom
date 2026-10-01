@@ -1,0 +1,15 @@
+{
+  "platform": "Actual desktop-local Windows paths, not a cloud/session simulation",
+  "Python": "3.13.5",
+  "Git": "2.50.0.windows.1",
+  "runtime_inventory": "CODE_AND_RUNTIME_IDENTITIES.json",
+  "scoped_temporary_write_read_delete": "passed in new packet folder only",
+  "disk_free_bytes_at_seal": 695614382080,
+  "proposed_free_disk_precondition_bytes": 3000000000,
+  "disk_precondition_currently_met": true,
+  "execution_authority": "missing by design; Jason has authorized preparation only",
+  "dependencies": "existing pinned local runtime verified; none installed",
+  "code_worktree_access": "read only; no write needed or attempted",
+  "future_execution_output_write_access": "requires normal sandbox approval for exact new artifact destination outside project writable root, after genuine Jason execution approval",
+  "background_processes_started": 0
+}

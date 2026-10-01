@@ -1,0 +1,66 @@
+{
+  "cache_files": {
+    "fields.npz": {
+      "bytes": 94596,
+      "sha256": "f968ed0875d68e3421c5acc9f9a4a218727b9698877b1cc86225d4fec9e6ef7d"
+    },
+    "law-source-at-preparation/chemistry.py": {
+      "bytes": 4565,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    "law-source-at-preparation/geometry.py": {
+      "bytes": 7814,
+      "sha256": "b57861757e051c7a789df0ef31a28632d1e57dae3e0c3c933edf07667c11d877"
+    },
+    "law-source-at-preparation/schema.py": {
+      "bytes": 7050,
+      "sha256": "2df77ee95f708aa755750e214ac9269985d8988760d2c08b5e9c36e477b574bd"
+    },
+    "manifest.json": {
+      "bytes": 2020,
+      "sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3"
+    }
+  },
+  "field_array_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+  "phase": 3.558411277237072,
+  "steps": 60000,
+  "reuse_verification": {
+    "original_modules_sha256": {
+      "chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "geometry.py": "b57861757e051c7a789df0ef31a28632d1e57dae3e0c3c933edf07667c11d877",
+      "schema.py": "2df77ee95f708aa755750e214ac9269985d8988760d2c08b5e9c36e477b574bd"
+    },
+    "current_modules_sha256": {
+      "chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc"
+    },
+    "method": "Original module bytes verified; chemistry byte identical; geometry area/mover and Streams AST/imports identical; field-law parameters, source state and phase matched. Optical-domain change only; no prehistory rerun."
+  },
+  "law_equal": true,
+  "wrong_birth_rejections": [
+    {
+      "birth_id": 1,
+      "expected_phase": 4.301831170857631,
+      "rejected": "Unmatched or incomplete chemical prehistory"
+    },
+    {
+      "birth_id": 2,
+      "expected_phase": 4.7259539459117725,
+      "rejected": "Unmatched or incomplete chemical prehistory"
+    },
+    {
+      "birth_id": 3,
+      "expected_phase": 0.570217752910867,
+      "rejected": "Unmatched or incomplete chemical prehistory"
+    },
+    {
+      "birth_id": 4,
+      "expected_phase": 0.5403400097866494,
+      "rejected": "Unmatched or incomplete chemical prehistory"
+    }
+  ],
+  "valid_life0_1200_manifest_validation_inert": true,
+  "life0_state": "8c12253592c243f1b175b8bcb8cc8352c2fa2c2661eeff14bc1399b81c34aaa0",
+  "no_prepare_or_evolution_executed": true
+}

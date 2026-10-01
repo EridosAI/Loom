@@ -1,0 +1,167 @@
+{
+  "label": "NON-CANONICAL RESURRECTION SANDBOX",
+  "status": "PASS",
+  "checks": [
+    {
+      "life_id": "RS-M1-001",
+      "rows": 450008,
+      "waves": 22494,
+      "events": 488106,
+      "accounting_residual": [
+        8.615330671091215e-14,
+        -3.148523108897905e-15
+      ],
+      "ledger_max": 5.551115123125783e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 4500.0
+    },
+    {
+      "life_id": "RS-M1-002",
+      "rows": 450007,
+      "waves": 22495,
+      "events": 500322,
+      "accounting_residual": [
+        1.0658141036401503e-13,
+        2.9802549317281546e-15
+      ],
+      "ledger_max": 5.551115123125783e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 4500.0
+    },
+    {
+      "life_id": "RS-M1-003",
+      "rows": 450007,
+      "waves": 22496,
+      "events": 463969,
+      "accounting_residual": [
+        -3.6415315207705135e-14,
+        -1.0130785099704553e-15
+      ],
+      "ledger_max": 5.551115123125783e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 4500.0
+    },
+    {
+      "life_id": "RS-M1-004",
+      "rows": 450006,
+      "waves": 22496,
+      "events": 471017,
+      "accounting_residual": [
+        -3.304023721284466e-13,
+        2.518818487118324e-15
+      ],
+      "ledger_max": 5.551115123125783e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 4500.0
+    },
+    {
+      "life_id": "RS-M1-005",
+      "rows": 450005,
+      "waves": 22494,
+      "events": 458289,
+      "accounting_residual": [
+        -2.540190280342358e-13,
+        3.070358908525278e-16
+      ],
+      "ledger_max": 5.551115123125783e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 4500.0
+    },
+    {
+      "life_id": "RS-M1-006",
+      "rows": 450005,
+      "waves": 22494,
+      "events": 462382,
+      "accounting_residual": [
+        -3.9968028886505635e-14,
+        1.394717674685353e-15
+      ],
+      "ledger_max": 5.551115123125783e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 4500.0
+    },
+    {
+      "life_id": "RS-M1-007",
+      "rows": 450006,
+      "waves": 22495,
+      "events": 514202,
+      "accounting_residual": [
+        2.5757174171303632e-14,
+        4.088743232877334e-15
+      ],
+      "ledger_max": 5.551115123125783e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 4500.0
+    },
+    {
+      "life_id": "RS-M1-008",
+      "rows": 296900,
+      "waves": 14841,
+      "events": 317116,
+      "accounting_residual": [
+        -7.105427357601002e-15,
+        6.2836021108569895e-15
+      ],
+      "ledger_max": 5.551115123125783e-17,
+      "complete_causal_state_at_endpoint": false,
+      "last_complete_checkpoint_age": 2939.9548705459583
+    },
+    {
+      "life_id": "RS-M1-009",
+      "rows": 60001,
+      "waves": 2999,
+      "events": 62777,
+      "accounting_residual": [
+        -1.2989609388114332e-14,
+        5.393634757572263e-16
+      ],
+      "ledger_max": 5.550776309946881e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 600.0
+    },
+    {
+      "life_id": "RS-M1-010",
+      "rows": 60001,
+      "waves": 2999,
+      "events": 60001,
+      "accounting_residual": [
+        -1.0436096431476471e-14,
+        0.0
+      ],
+      "ledger_max": 5.550776309946881e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 600.0
+    },
+    {
+      "life_id": "RS-M1-011",
+      "rows": 60001,
+      "waves": 2999,
+      "events": 63342,
+      "accounting_residual": [
+        2.886579864025407e-15,
+        -3.085883328382555e-15
+      ],
+      "ledger_max": 5.550776309946881e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 600.0
+    },
+    {
+      "life_id": "RS-M1-012",
+      "rows": 60001,
+      "waves": 2999,
+      "events": 60024,
+      "accounting_residual": [
+        -9.992007221626409e-16,
+        1.8791934154605006e-15
+      ],
+      "ledger_max": 5.550776309946881e-17,
+      "complete_causal_state_at_endpoint": true,
+      "last_complete_checkpoint_age": 600.0
+    }
+  ],
+  "execution_bytes_unchanged": true,
+  "new_simulation_steps": 0,
+  "decoder_source_sha256": "034978d946ac7c4dabedd5adab4e76bd9cbb063bcc16b574254ebf01f74aabb2",
+  "schema_source_sha256": "2805addcc842c675261e7978c43c01d48aa2b99358425b15161625e275c5c996",
+  "observer_wall_seconds": 340.2990952000255
+}

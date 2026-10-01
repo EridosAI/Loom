@@ -1,0 +1,757 @@
+{
+  "historical_authority_sha256": "88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6",
+  "new_authority_sha256": "bdff35693db38800528d91e6d2d4d2085c640268e50713731df5ec27f8b76d1d",
+  "classification_labels": [
+    "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+    "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+    "UNEXPECTED SEMANTIC CHANGE"
+  ],
+  "unexpected_semantic_changes": [],
+  "document_replacements": {
+    "PROCEDURES.md": [
+      {
+        "before": "# A5 proposed circuit — HOLD, not authorized or ready to launch",
+        "after": "# A5 proposed circuit — launch-ready proposal, awaiting Jason authorization",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      },
+      {
+        "before": "**A static clock audit found that the pinned apparatus would reject a nonterminal command decision at native index 26,950, about 269.5 seconds, before the first planned revisit.** Read `OPEN_ISSUE_A5_CLOCK.md`. This packet preserves the full proposal for review, with a null grant and a bound HOLD. It must not be executed as written. No clock repair, deadline workaround, shortened substitute, trial or simulation has been performed.",
+        "after": "**The reviewed native-index clock correction removes the scheduling blocker.** The unchanged 630-second proposal is bound to apparatus `68db2c581f07200966d699a4f55a65f9b96df1e9`. `STATIC_SCHEDULER_COMPATIBILITY.md` records scalar-only checks through native index 63,000. The old object remains HOLD / NON-LAUNCHABLE in `historical-held/`; the new execution grant remains null. No A5 simulation or controller command has been performed.",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      },
+      {
+        "before": "Grid alignment alone does not cure the discovered accumulated-clock issue.",
+        "after": "The reviewed scheduler assigns stages and ten-step holds by exact native indices while leaving the continuous physical clock unchanged. Stage-end indices are 9000, 12000, 27000, 30000, 45000, 48000 and 63000; a decision at an interior stage end belongs to the next stage.",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      },
+      {
+        "before": "Subject to a future resolved launch packet and separate genuine authorization:",
+        "after": "Subject to separate genuine authorization of this exact regenerated packet:",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      },
+      {
+        "before": "Stop for Jason's review of this held proposal and its clock finding.",
+        "after": "Stop for Jason's authorization of this new exact object. The reviewed correction does not itself authorize A5.",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      }
+    ],
+    "OBSERVATION_AND_INTERPRETATION.md": [
+      {
+        "before": "**Held proposal; no A5 measurements yet.**",
+        "after": "**Launch-ready proposal awaiting authorization; no A5 measurements yet.**",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      },
+      {
+        "before": "after a separately resolved and authorized launch",
+        "after": "after a separately authorized launch",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      },
+      {
+        "before": "record failure or the present static clock incompatibility",
+        "after": "record failure or a clock incompatibility",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      },
+      {
+        "before": "The present hold is static apparatus evidence, not an executed A5 outcome.",
+        "after": "The historical clock hold remains static apparatus evidence, not an executed A5 outcome.",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      }
+    ],
+    "RESOURCE_PLAN.md": [
+      {
+        "before": "**HOLD:** these are costs for the proposed full 630-second case, not a promise that the pinned apparatus can execute it. The static clock incompatibility must be resolved separately first.",
+        "after": "**Awaiting authorization:** the clock correction is reviewed and the proposed full 630-second schedule passes scalar preflight. These remain the unchanged A2/A3-based estimates, not a new benchmark or runtime guarantee. The scheduler correction requires no change to the retained numerical projection.",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      },
+      {
+        "before": "No such launcher/monitor is implemented or invoked in this held packet.",
+        "after": "No such launcher/monitor is implemented or invoked in this preparation packet. A future separately authorized execution must implement this same administrative accounting before its first world step.",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      }
+    ],
+    "REVIEW_AND_EXECUTION_BOUNDARY.md": [
+      {
+        "before": "# Review boundary\n\nThis is a **held, unauthorised proposal**. The canonical object is the apparatus's normal execution object (the complete manifest with only `execution_authority` excluded), binding the one A5 case, original snapshot, route, phase, controller, code/runtime, horizon, ceilings, observation contract and clock issue. It is supplied for exact review, not as a fit-to-launch claim. `execution_authority` is null, and the unchanged authorization gate is checked to reject it.\n\nThe bound protocol sets `launch_disposition` to `HOLD_CLOCK_INCOMPATIBILITY`. Neither the existence of a digest nor historical A1–A4 approvals grants A5 execution. This hold is a workflow instruction; the pinned apparatus does not automatically interpret the protocol's descriptive hold label. A caller must not synthesize a grant and launch anyway. No launch command, grant, live inspector or executable runner is supplied.\n\nJason's next review can address the proposed physical question, schedule, costs and the new clock finding. A separate clock-compatibility ruling is needed before any apparatus correction. If that changes the instrument, prepare a new exact packet under the new verified identity and obtain a distinct genuine execution authorization. No pre-approval of such changes is implied here. The held object's hash is not permission to ignore its own hold.\n\nThe prospective case is one fresh continuous trajectory only. No retry, resume, extension, route/phase/source replacement, early-success selection, gain change, physical-law/P change, extra case, scientific lifetime, cohort, sweep or useful-learning gate is part of it. Body, source, field, mover and controller history remain continuous between contacts. Ordinary failure and terminal evidence must be preserved. After any future authorized first stop, report from saved evidence and stop.\n\nPreparation is limited to local source/identity reads, exact copies, harmless scoped access verification, static geometry/renewal/resource/scalar-clock arithmetic, declarative schema/dispatch/denial checks, canonical hashing and packaging. No world or controller call is permitted. All source and prior evidence files remain immutable. There are no Git writes, commits, pushes, PRs, merges or workbench navigation edits in this task.\n",
+        "after": "# Review and execution boundary\n\nThis is a launch-ready proposal awaiting Jason's separate authorization. The canonical object is the complete manifest with only `execution_authority` excluded. It binds one A5 case, original snapshot, phase/prehistory, unchanged route, controller constants and actuator arithmetic, corrected scheduling/code identity, runtime, 630-second horizon, all resource ceilings, recording, observation and interpretation contracts. The execution grant is null and the existing gate rejects it.\n\nThe protocol disposition `READY_FOR_JASON_AUTHORIZATION` means packet preparation is complete; it grants no execution. Jason's current request reports the independent disposition FIT FOR A5 LAUNCH-PACKET REGENERATION for apparatus `68db2c581f07200966d699a4f55a65f9b96df1e9`. Earlier workbench navigation and the correction report's pre-review labels are dated history; they were not rewritten. The current user request supplies the later ruling. No live inspection, controller command, world step or simulation RNG draw has occurred in regeneration.\n\nHistorical authority `88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6` remains HOLD / NON-LAUNCHABLE and cannot authorize the corrected instrument. Its exact canonical bytes, manifest, original issue/audit and original documents are retained under `historical-held/`, with large immutable references/cache shared at their original relative locations. `HISTORICAL_PACKET_LAYOUT.json` makes byte-exact reconstruction explicit.\n\nThe prospective case is one fresh continuous trajectory only. No retry, resume, extension, route/phase/source replacement, early-success selection, gain change, physical-law/P change, extra case, scientific lifetime, cohort, sweep or useful-learning gate is part of it. Body, source, field, mover and controller history remain continuous between contacts. Ordinary failure and terminal evidence must be preserved. After any future authorized first stop, report from saved evidence and stop.\n\nBefore any future authorized first world step, reverify the exact approved object, live checkpoint/source/runtime/dispatch identities, initial snapshot/cache, bound files, empty prospective output and the unchanged 10 GB free-space precondition. Enforce the existing 4-hour runner and 1-hour saved-data allowance, 1.5 GB stream ceiling, 10 GB combined-new-artifact ceiling, 9 GB stop request and 1 GB flush reserve. The resource monitor is an administrative execution wrapper to be supplied only within a separately authorized execution, not a new controller or permission to change its trajectory.\n\nThis regeneration uses only source/identity reads, exact copies, harmless scoped access verification, scalar clock arithmetic, pure stage/hold checks, declarative execution/dispatch checks, null-grant denial, canonical hashing and packaging. No production history validator, Engine/Run constructor, live command, replay or prehistory generation is invoked. Existing full regression results are referenced, not rerun. No launch command or grant is supplied. No code modification, Git write, commit, push, PR, merge or workbench navigation edit is part of this task. Stop for Jason's decision.\n",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Replace obsolete clock-HOLD status/representation only; preserve all prospective physical and interpretation terms."
+      }
+    ]
+  },
+  "byte_identical_scientific_files": [
+    "INITIAL_A5.snapshot.json.gz",
+    "INITIAL_STATE_SUMMARY.json",
+    "CIRCUIT_AND_RENEWAL_RATIONALE.json",
+    "VIEWER_RECORD_CONTRACT.md"
+  ],
+  "note": "Field-level exact comparison; JSON pointers use RFC6901 escaping. Document edits are exact before/after replacements checked against original bytes. Every unspecified manifest field is unchanged. New audit/report/hash utilities are preparation evidence, never trajectory definitions.",
+  "manifest_fields": [
+    {
+      "path": "/apparatus/files/authority.py",
+      "operation": "replace",
+      "before": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca",
+      "after": "1b120460212497a2a9f4b0701f59f1c45136e6fc2bbb35bd1429016336f1fe7f",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/apparatus/files/clock.py",
+      "operation": "add",
+      "after": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/apparatus/files/controllers.py",
+      "operation": "replace",
+      "before": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "after": "d1f04a63101cc8de19281918fbb8d2e9cb1a1536df28f1346bfd680c809ba9a8",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/apparatus/files/pending.py",
+      "operation": "replace",
+      "before": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8",
+      "after": "32ce8651866ee46aa1bdc62675d5aa929368c9822a48a438bc24db52aaeb4b58",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/apparatus/files/runner.py",
+      "operation": "replace",
+      "before": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57",
+      "after": "d952cfe1eb2e2eae356eea22b83c9a32dca12e539b50a565e1c402ac42076929",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/apparatus/files/validators.py",
+      "operation": "replace",
+      "before": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a",
+      "after": "1b2a910a277c50e806b7b631a941ea680cff7fd4c35c1e2a793eeea28283ec0e",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/apparatus/sha256",
+      "operation": "replace",
+      "before": "d5801b69ae38d3259f3426aed8753fef8d76132a2f4ffecdd9baffb29afeb71a",
+      "after": "aaaac00790800d220589215d4d94b079bc4a9840a4d90b2c43be4196b204d2cf",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/clock.py",
+      "operation": "add",
+      "after": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/controllers.py",
+      "operation": "replace",
+      "before": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "after": "d1f04a63101cc8de19281918fbb8d2e9cb1a1536df28f1346bfd680c809ba9a8",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_clock_functions",
+      "operation": "add",
+      "after": {
+        "grid_steps": "142b174a238cfddba06694cfa240324dafc4e14a87f2daac8058907805370873",
+        "case_end": "f2d8fea2fb4e5f31656af55c97212faf4d0eace91a37064017d0bf60607c3d4e",
+        "stage_ends": "1844718c2a841a15f80027486770f01afb89a62bcd2958b202635bbfece60615",
+        "decision_clock": "2272bfa54ab7466e84bc52746a04a5c8efe2109aa7d16c4e3d5e06916198eb48",
+        "hold_steps": "d5bd52e4c740c27e4819ef8012cd51f30a49e7f6cbdb856a8732e2e3c0c5dfcf",
+        "expected_time": "8de29cdeb64bb554cded5af25a5555fc9b57ed0542a22a41a96c30f59dbd9feb",
+        "clock_allowance": "af8e5701444bf4a64fe5784455722b87a067952602afeed83e41abb99270b495",
+        "validate_physical_time": "d6e7b3817bdf8cd08ec1ce805c82a076aad708dcb361d7e94c68dd219cf02baa"
+      },
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_functions/command_pair",
+      "operation": "replace",
+      "before": "53582e34a6ce011e67d5bd86fd5bb2468c5a078fab86d2be8efe2c4ee31b7488",
+      "after": "24c8f5133fef407334d5a515876701765bc31add79dce143cc93289cc8973b83",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_functions/observe_without_interference",
+      "operation": "replace",
+      "before": "9792fb83d206da89b14f10c157c1bfb88e454bb0af49343829a2611d90cca555",
+      "after": "ef133340b37ff1c4a1668a1615580fbf824bfebf49018cea05ea7427bc865b9c",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_functions/privileged_input",
+      "operation": "replace",
+      "before": "2709196e3406acb894934738cd297cb4b375885d18c4470dab9f707ef0762e15",
+      "after": "e0932be70011088670a4aa7ae28155b6603ab6044ce0e2d33992b74193863839",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_functions/time_due",
+      "operation": "replace",
+      "before": "b244bdcd94727327692d2465d376f45e82fa55668c62a7b468462136fadcc8e1",
+      "after": "9b0cc2b2eb605332f6969dd1a6bb0c01fccc8b634251a72dc2e73ef93c30a97e",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_functions/validate_plan",
+      "operation": "replace",
+      "before": "aa5addba33d6dfba3154cf6dd19019a70cae8b66a787504836af831fd7bf58bd",
+      "after": "531ef855f8d61a4e244901ba1ec93783f32bf9bbb68c3e137ae632a797f7fc1a",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_functions/validate_privileged",
+      "operation": "replace",
+      "before": "7823727a8df4ca4fa4fe247ed1b27f0363cf9bb61c2fa5bb0655e54574326758",
+      "after": "e9cc063c35315d4242be3df691ef339172157347b95c489d428477aeda535193",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_functions/waypoint_command",
+      "operation": "replace",
+      "before": "86245131d5a207d6db5d57437a13b60b312f053ef53eb23862ee45af28739553",
+      "after": "d69f71588f48def30c489289b773ae073ad37cc892db00bd9f27eae5abe7f54b",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/controller/implementation/live_functions/waypoint_stage",
+      "operation": "add",
+      "after": "7230dd983b964f13c6e6861494e782af3c6322b40a0e8a252729d0904b528346",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/analysis_destination",
+      "operation": "replace",
+      "before": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\commissioning-A5-20260926-5f077481\\read-only-review",
+      "after": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926\\developmental_ecology\\artifacts\\commissioning-A5-20260926-68db2c58\\read-only-review",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/CLOCK_AUDIT.json",
+      "operation": "remove",
+      "before": "36c2e6c1afda6ec6b174302471e1fe5a55a26d3d931b52ae4ed429890689eab4",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/CODE_AND_RUNTIME_IDENTITIES.json",
+      "operation": "replace",
+      "before": "9d8aae281a20de38c41bfc691e5d0e13b324408ecffc4bc99b1bfb1da21178d9",
+      "after": "cc65c05d79c54747401c616f0675ab102b2157b51c0892ec01ca260dfbd795f7",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/OBSERVATION_AND_INTERPRETATION.md",
+      "operation": "replace",
+      "before": "660d82ed7b3fc6dacc3edde5bf14fbfebd573bf854d37b3478b0a158d539cac5",
+      "after": "65b24bc9ff104c070581ea2258767874565e1a64c14021ba05def321ba8a4be0",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/OPEN_ISSUE_A5_CLOCK.md",
+      "operation": "remove",
+      "before": "ae408222f3c2b9f32db15a5b276cb0b4fb78c2324ebd7b05d2dfa683304b6fc4",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/PLANNING_EVIDENCE.json",
+      "operation": "remove",
+      "before": "cfa6a9fcb737833b3dbf3d09687f58922baa8ee7edcd12128b9fb7690f6f6eb7",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/PREPARATION_REVIEW_NOTE.json",
+      "operation": "remove",
+      "before": "8c318b8b02aa50b58dc1564da7c48a1ab08d734966bdaa5ebddf7a0c9b9a32c0",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/PROCEDURES.md",
+      "operation": "replace",
+      "before": "b331dccf80ad8821e194f45149a9e3dc75f8924f9b00e37b43ae7d358a112f39",
+      "after": "6f9357a0efdd9f549eb0cd90179f62677924f31dc2a817c25655487895f4194c",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/RESOURCE_PLAN.md",
+      "operation": "replace",
+      "before": "e3e317a877a2705d29ad60af642d5db9b5945002ca5a492e1e0db1716a95166f",
+      "after": "a233ca5ea6c88ead16e7e4d83944989f212f687dc9b78a5bc73991d1db2ac01c",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/RESOURCE_PROJECTION.json",
+      "operation": "replace",
+      "before": "bfd5f977a7a42066fec356c4090ca7dd52d62bbfb05c63080637354cc67942cf",
+      "after": "a8699644d5178a13c533e673524c6c86f1565ab4eb6799f6b10144cf0c28cd9e",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/REVIEW_AND_EXECUTION_BOUNDARY.md",
+      "operation": "replace",
+      "before": "f9ce2b21ea96df7656a31f3b6540d8d1af69ab277601b16f7337b8c971ded1c5",
+      "after": "c9f88423f5a6125ba89a7de1a97f62c0874107567c1153cbabba18a766f3d5be",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/SOURCE_IDENTITIES.json",
+      "operation": "replace",
+      "before": "6fc822eb07556bd4c514ee42375fab5eab67f08540c8e61665b13c8e822d0d5a",
+      "after": "f4ffd2fed5f96aa7b7e8c50a3f57a491670e8ec415a14f2fc18e0eec0fc4f639",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/STATIC_HOLD_SCHEDULE.csv",
+      "operation": "add",
+      "after": "f3e617d03a7264971907f7571d69c343ac551923f4e128ce24d96251e7be07b6",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/STATIC_SCHEDULER_COMPATIBILITY.json",
+      "operation": "add",
+      "after": "2a257fe6f40e72907ecc6d52d1b14468ad482919eb6a89d83bf567961269a63a",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/STATIC_SCHEDULER_COMPATIBILITY.md",
+      "operation": "add",
+      "after": "a6d3cb7612f5eb31c5f4e4d09df9408d5eabc5df03ece1e143e338bb938a32f6",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/build_packet.py",
+      "operation": "remove",
+      "before": "0728899ddd662e42ca2f86c83e8a27ea934017deea112c9d75e30c9064fa2cab",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/clock_audit.py",
+      "operation": "remove",
+      "before": "1707721e7506d6e819cba0c0ce58b512779e8e2d74d674880c3f5c45087e61e7",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/deliver_packet.py",
+      "operation": "remove",
+      "before": "b9adb12a3618ba5029fd12bd98880611bf00af61abef62b1d6dfde8f06a4c94f",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/finish_packet.py",
+      "operation": "remove",
+      "before": "9d60701b06c04c80c94460b38dc77fdd795bd89467976be1cfbf34f6ffc5b4f4",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/historical-held~1AUTHORITY_OBJECT.canonical.json",
+      "operation": "add",
+      "after": "88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/historical-held~1CLOCK_AUDIT.json",
+      "operation": "add",
+      "after": "36c2e6c1afda6ec6b174302471e1fe5a55a26d3d931b52ae4ed429890689eab4",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/historical-held~1FILE_MANIFEST.json",
+      "operation": "add",
+      "after": "5383905b6222b4bd2cacf36cb264c8825671f6279637cd87cf3d89ca46835a95",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/historical-held~1OPEN_ISSUE_A5_CLOCK.md",
+      "operation": "add",
+      "after": "ae408222f3c2b9f32db15a5b276cb0b4fb78c2324ebd7b05d2dfa683304b6fc4",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/regenerate.py",
+      "operation": "add",
+      "after": "b50dfa8b1a58d438610a7140c50cf167d65069e94b2efde9b5462b3242dc025e",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/static_scheduler_check.py",
+      "operation": "add",
+      "after": "760c490693b7019802c693816762da30cc0b43159f3a6107e246a5729fcbeead",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/bound_files/validate_packet.py",
+      "operation": "replace",
+      "before": "d84c3fcd5aa138482881a60c4c2549ae524c0ecfbc05a97a3dfa97856a66ce3b",
+      "after": "439aebb7f0d471ed035e5d478c9fc05945d6757a7fe37eb32f6e0253df0186b5",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/launch_disposition",
+      "operation": "replace",
+      "before": "HOLD_CLOCK_INCOMPATIBILITY",
+      "after": "READY_FOR_JASON_AUTHORIZATION",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/launch_preconditions/0",
+      "operation": "replace",
+      "before": "HOLD must be resolved by a separate Jason ruling; do not execute this proposal as written",
+      "after": "Separate genuine Jason authorization of this new exact canonical object; execution grant remains null during preparation",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/launch_preconditions/1",
+      "operation": "replace",
+      "before": "Any apparatus correction requires new verified identity and newly bound launch object",
+      "after": "Corrected apparatus 68db2c581f07200966d699a4f55a65f9b96df1e9 and its bound native-index scheduling implementation; static schedule preflight passes through native index 63000",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/launch_preconditions/2",
+      "operation": "replace",
+      "before": "Future genuine approval, exact live identities, cache/snapshot/file verification, empty prospective output and adequate disk",
+      "after": "Before execution reverify exact live identities, dispatch, cache/snapshot/bound files, empty prospective output and the unchanged disk/resource monitor requirements",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/launch_ready",
+      "operation": "replace",
+      "before": false,
+      "after": true,
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/packet_status",
+      "operation": "replace",
+      "before": "PROPOSED / NOT AUTHORIZED / HOLD",
+      "after": "PROPOSED / NOT AUTHORIZED / LAUNCH-READY",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/record_destination",
+      "operation": "replace",
+      "before": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\commissioning-A5-20260926-5f077481\\trajectory-001",
+      "after": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926\\developmental_ecology\\artifacts\\commissioning-A5-20260926-68db2c58\\trajectory-001",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/reviewed_checkpoints/apparatus_git_sha",
+      "operation": "replace",
+      "before": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "after": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+      "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    },
+    {
+      "path": "/execution/procedure/protocol/schedule_interpretation",
+      "operation": "replace",
+      "before": "Fixed absolute-clock target windows, no outcome-triggered switch or actual-contact guarantee; one completed return circuit plus second outbound leg.",
+      "after": "Fixed physical target windows owned by exact native indices, no outcome-triggered switch or actual-contact guarantee; one completed return circuit plus second outbound leg.",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Corrected apparatus identity/evidence binding or reviewed native-index scheduling preflight; no ecological term changed."
+    }
+  ],
+  "supporting_json_fields": {
+    "CODE_AND_RUNTIME_IDENTITIES.json": [
+      {
+        "path": "/apparatus/files/authority.py",
+        "operation": "replace",
+        "before": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca",
+        "after": "1b120460212497a2a9f4b0701f59f1c45136e6fc2bbb35bd1429016336f1fe7f",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/apparatus/files/clock.py",
+        "operation": "add",
+        "after": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/apparatus/files/controllers.py",
+        "operation": "replace",
+        "before": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+        "after": "d1f04a63101cc8de19281918fbb8d2e9cb1a1536df28f1346bfd680c809ba9a8",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/apparatus/files/pending.py",
+        "operation": "replace",
+        "before": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8",
+        "after": "32ce8651866ee46aa1bdc62675d5aa929368c9822a48a438bc24db52aaeb4b58",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/apparatus/files/runner.py",
+        "operation": "replace",
+        "before": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57",
+        "after": "d952cfe1eb2e2eae356eea22b83c9a32dca12e539b50a565e1c402ac42076929",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/apparatus/files/validators.py",
+        "operation": "replace",
+        "before": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a",
+        "after": "1b2a910a277c50e806b7b631a941ea680cff7fd4c35c1e2a793eeea28283ec0e",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/apparatus/sha256",
+        "operation": "replace",
+        "before": "d5801b69ae38d3259f3426aed8753fef8d76132a2f4ffecdd9baffb29afeb71a",
+        "after": "aaaac00790800d220589215d4d94b079bc4a9840a4d90b2c43be4196b204d2cf",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/apparatus_commit",
+        "operation": "replace",
+        "before": "5f07748102cb5eaa302569c87efbae095050e9fe",
+        "after": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/branch",
+        "operation": "replace",
+        "before": "build/p-commissioning-apparatus-20260924-01a0c405",
+        "after": "build/p-clock-correction-20260926-01a0c405",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      },
+      {
+        "path": "/worktree",
+        "operation": "replace",
+        "before": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405",
+        "after": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926",
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Bind the actual corrected checkpoint; P/configuration/runtime unchanged."
+      }
+    ],
+    "RESOURCE_PROJECTION.json": [
+      {
+        "path": "/enforcement",
+        "operation": "replace",
+        "before": "No executable wrapper supplied under HOLD. Future authorized wrapper must preflight free space, measure all bound new output trees before every command hold, request clean administrative_pause when >=9 GB or free<1 GB, and prohibit copying/reporting work that would cross 10 GB. Native-step wall/stream guards remain unchanged. Final native operation/flush is not an OS hard quota; expose any overrun/I/O failure.",
+        "after": "No executable wrapper supplied in this preparation packet. Future authorized wrapper must preflight free space, measure all bound new output trees before every command hold, request clean administrative_pause when >=9 GB or free<1 GB, and prohibit copying/reporting work that would cross 10 GB. Native-step wall/stream guards remain unchanged. Final native operation/flush is not an OS hard quota; expose any overrun/I/O failure.",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Remove obsolete clock HOLD wording only; every measurement, estimate and cap remains exact."
+      },
+      {
+        "path": "/status",
+        "operation": "replace",
+        "before": "Conditional proposal estimates only; current clock hold prevents meaningful full-horizon launch. No benchmark or A5 run.",
+        "after": "Retained A2/A3 measured-basis estimates for the unchanged 630-second proposal under the reviewed scheduler. No new benchmark or A5 run; awaiting authorization.",
+        "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+        "reason": "Remove obsolete clock HOLD wording only; every measurement, estimate and cap remains exact."
+      }
+    ],
+    "SOURCE_IDENTITIES.json": [
+      {
+        "path": "/A5_REGENERATION_REQUEST.txt",
+        "operation": "add",
+        "after": {
+          "source_path": "C:\\Users\\Jason\\.codex\\attachments\\6b973486-d30d-44ff-962c-fd71fa7cde1e\\Pasted text.txt",
+          "sha256": "2375ddc1208e2c0b48b65993a0db83058d1eb7fa32fd16333215fdf7cf69f3fb",
+          "bytes": 5631
+        },
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Add exact current ruling and corrected-instrument provenance; original reference identities unchanged."
+      },
+      {
+        "path": "/clock-correction~1CHECKPOINT.json",
+        "operation": "add",
+        "after": {
+          "source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\portable\\Loom_P_Clock_Correction_Review_20260926\\CHECKPOINT.json",
+          "sha256": "5bffe5ac2a42d1eb389bdeadd5f84d70958a71b1c439c01fbf4b180493d05df1",
+          "bytes": 1663
+        },
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Add exact current ruling and corrected-instrument provenance; original reference identities unchanged."
+      },
+      {
+        "path": "/clock-correction~1CLOCK_SCHEDULING_CORRECTION.patch",
+        "operation": "add",
+        "after": {
+          "source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\portable\\Loom_P_Clock_Correction_Review_20260926\\CLOCK_SCHEDULING_CORRECTION.patch",
+          "sha256": "07b345f7ce95edc4ddf3d1edba662a416c0314c928640d1133e37edc13075714",
+          "bytes": 220445
+        },
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Add exact current ruling and corrected-instrument provenance; original reference identities unchanged."
+      },
+      {
+        "path": "/clock-correction~1CLOCK_SCHEDULING_CORRECTION_REPORT.md",
+        "operation": "add",
+        "after": {
+          "source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\portable\\Loom_P_Clock_Correction_Review_20260926\\CLOCK_SCHEDULING_CORRECTION_REPORT.md",
+          "sha256": "32bd4229e8dc62e25b2b427d703f9c315816c46b5de6ed4936c321ca1faa9b2b",
+          "bytes": 11683
+        },
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Add exact current ruling and corrected-instrument provenance; original reference identities unchanged."
+      },
+      {
+        "path": "/clock-correction~1CORRECTION_DETAILS.json",
+        "operation": "add",
+        "after": {
+          "source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\CORRECTION_DETAILS.json",
+          "sha256": "61259a3d6696e36e16ccfe4f58dbbd7df4c5a9acba3d97ef4146a1a236568691",
+          "bytes": 7978
+        },
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Add exact current ruling and corrected-instrument provenance; original reference identities unchanged."
+      },
+      {
+        "path": "/clock-correction~1NATIVE_INDEX_SCHEDULING_SPECIFICATION.md",
+        "operation": "add",
+        "after": {
+          "source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926\\docs\\developmental_ecology\\p_clock_correction_20260926\\NATIVE_INDEX_SCHEDULING_SPECIFICATION.md",
+          "sha256": "188e1e76215a7bd0dafc285eb2ac5abd4ba9578344ea603305684432a5df84ec",
+          "bytes": 7845
+        },
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Add exact current ruling and corrected-instrument provenance; original reference identities unchanged."
+      },
+      {
+        "path": "/clock-correction~1PRESERVATION_FINAL.json",
+        "operation": "add",
+        "after": {
+          "source_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\PRESERVATION_FINAL.json",
+          "sha256": "c78a812f3d2e581785ac427a869c4726231d7b17e25ab38b4fdbc878d7262ec6",
+          "bytes": 2962
+        },
+        "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+        "reason": "Add exact current ruling and corrected-instrument provenance; original reference identities unchanged."
+      }
+    ]
+  },
+  "corrected_instrument_sources": [
+    {
+      "file": "authority.py",
+      "before_sha256": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca",
+      "after_sha256": "1b120460212497a2a9f4b0701f59f1c45136e6fc2bbb35bd1429016336f1fe7f",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Previously reviewed native-index correction at the exact requested checkpoint; this preparation makes no code changes."
+    },
+    {
+      "file": "clock.py",
+      "before_sha256": null,
+      "after_sha256": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Previously reviewed native-index correction at the exact requested checkpoint; this preparation makes no code changes."
+    },
+    {
+      "file": "controllers.py",
+      "before_sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "after_sha256": "d1f04a63101cc8de19281918fbb8d2e9cb1a1536df28f1346bfd680c809ba9a8",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Previously reviewed native-index correction at the exact requested checkpoint; this preparation makes no code changes."
+    },
+    {
+      "file": "pending.py",
+      "before_sha256": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8",
+      "after_sha256": "32ce8651866ee46aa1bdc62675d5aa929368c9822a48a438bc24db52aaeb4b58",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Previously reviewed native-index correction at the exact requested checkpoint; this preparation makes no code changes."
+    },
+    {
+      "file": "runner.py",
+      "before_sha256": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57",
+      "after_sha256": "d952cfe1eb2e2eae356eea22b83c9a32dca12e539b50a565e1c402ac42076929",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Previously reviewed native-index correction at the exact requested checkpoint; this preparation makes no code changes."
+    },
+    {
+      "file": "validators.py",
+      "before_sha256": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a",
+      "after_sha256": "1b2a910a277c50e806b7b631a941ea680cff7fd4c35c1e2a793eeea28283ec0e",
+      "classification": "SCHEDULER REPRESENTATION CHANGE REQUIRED BY CLOCK FIX",
+      "reason": "Previously reviewed native-index correction at the exact requested checkpoint; this preparation makes no code changes."
+    }
+  ],
+  "unchanged_verifications": {
+    "horizon_seconds": 630,
+    "source_order": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "stages_exact": true,
+    "initial_snapshot_exact": true,
+    "phase_prehistory_exact": true,
+    "P_configuration_world_exact": true,
+    "controller_constants_exact": true,
+    "actuator_arithmetic_AST_exact_except_scheduler_context": true,
+    "renewal_expenditure_exact": true,
+    "observation_definitions_and_interpretation_limits_exact_except_clock_status": true,
+    "recording_contract_exact": true,
+    "resource_measurements_estimates_and_ceilings_exact": true,
+    "runtime_exact": true
+  }
+}

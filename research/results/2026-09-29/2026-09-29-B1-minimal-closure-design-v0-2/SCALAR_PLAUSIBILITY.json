@@ -1,0 +1,23 @@
+{
+  "status": "ALGEBRA ONLY / NOT A TRAJECTORY OR CONTROLLER EXECUTION",
+  "conditioning": "Undamaged body at E=0.7, I=1; ideal frozen reserves and stationary frontal contact where stated.",
+  "actuator_force_coefficient": 0.38,
+  "seek_pair_when_balanced": [
+    0.3,
+    0.3
+  ],
+  "free_terminal_speed": 0.22799999999999998,
+  "continuous_drag_30s_straight_displacement": 6.6120000000000205,
+  "angular_terminal_rate_per_differential_command": 1.3299999999999996,
+  "maximum_scalar_angular_terminal_rate": 0.5319999999999999,
+  "hold_pair": [
+    0.05,
+    0.05
+  ],
+  "ideal_hold_force": 0.038000000000000006,
+  "ideal_exchange_quality": 0.2753623188405797,
+  "initial_gross_transfer_rate_if_full_source_and_stationary": 0.003304347826086957,
+  "static_contact_onset_rate_equivalent": 0.012823323596887645,
+  "coupling_dynamics_evaluated": false,
+  "new_model_or_controller_implemented": false
+}

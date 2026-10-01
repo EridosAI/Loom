@@ -1,0 +1,519 @@
+{
+  "schema": 1,
+  "recorded_utc": "2026-09-27T03:00:07.949243+00:00",
+  "scope": "PC-only passive review; not an executable launch authorization",
+  "files": {
+    "accepted-public-design/CONTROL_GATE.json": {
+      "bytes": 818,
+      "sha256": "e3c4dac264f15e848c256a41a85ddd8ac04661b3789a857430ed449e3dbced57"
+    },
+    "accepted-public-design/DISPLAY_CONTRACT.json": {
+      "bytes": 3715,
+      "sha256": "22de0ca7173aadbd5c6573414b8405df68aeb1b8f600ae24ebafc91d1f892669"
+    },
+    "accepted-public-design/PC_AUTHORITY_IDENTITIES.json": {
+      "bytes": 3675,
+      "sha256": "9b3a7223cee4c463c5c569c133055f72c39658aba879ffee225d831d6eee8095"
+    },
+    "accepted-public-design/POSITIVE_CONTROL_CARDS.md": {
+      "bytes": 3408,
+      "sha256": "3aebdbbab918ab73d77b9ac208b4c4120bda735fe3465f2428d106af757aed14"
+    },
+    "accepted-public-design/PROTOCOL_CONTRACT.json": {
+      "bytes": 974,
+      "sha256": "29802b17fe8e275a384087ab94a970a09383b80d9320e652e5a61a8b04d4fed5"
+    },
+    "accepted-public-design/RECORDING_CONTRACT.json": {
+      "bytes": 1991,
+      "sha256": "647c8a4611dc1827c61b191b20ce0f00ea6e1bfe021415902e24b8de02fd34e4"
+    },
+    "prepared-PC-inputs/approvals/PC-CONTACT.request.json": {
+      "bytes": 7633,
+      "sha256": "abac2e9184b942ce512099eee7fd656199629f2c866e26f44d816d1cf8674024"
+    },
+    "prepared-PC-inputs/approvals/PC-HOLD.request.json": {
+      "bytes": 7632,
+      "sha256": "70b002a890f13567766e4487791243219120c8b1aeb8f182e5d96f0ff572832e"
+    },
+    "prepared-PC-inputs/approvals/PC-LR.request.json": {
+      "bytes": 7628,
+      "sha256": "1d0bd9219cd37182d084db30f6bc3dde4b1bf074de5350e9eead06a146df232d"
+    },
+    "prepared-PC-inputs/approvals/PC-MOTION.request.json": {
+      "bytes": 7632,
+      "sha256": "0b21721c62a213170a2263441366db799505829176c5fd2e42590abf72417338"
+    },
+    "prepared-PC-inputs/inputs/PC-CONTACT.snapshot.json.gz": {
+      "bytes": 121479,
+      "sha256": "ee115434b844b7aee30089cbeaab03ff932952f440b0686eff8da465f1880e1f"
+    },
+    "prepared-PC-inputs/inputs/PC-HOLD.snapshot.json.gz": {
+      "bytes": 121477,
+      "sha256": "54c02d8b4092b24761284939185c43addce086e3f9fe20adfb80ef0e14dabc7b"
+    },
+    "prepared-PC-inputs/inputs/PC-LR.snapshot.json.gz": {
+      "bytes": 121480,
+      "sha256": "3ff0eb7ee409e990ffba65ac79df913f13875fd0cd811d191bd50cbd87d2e477"
+    },
+    "prepared-PC-inputs/inputs/PC-MOTION.snapshot.json.gz": {
+      "bytes": 121470,
+      "sha256": "aaae774a025276a170df0ac2a3fb8e7b9aa6aa75c30a681037801f3cff887328"
+    },
+    "prepared-PC-inputs/launch-manifests/PC-CONTACT.json": {
+      "bytes": 8379,
+      "sha256": "6fd20c474a7158c7b875694c5375a26b030e456f2ad5dd7edce65308fb5171eb"
+    },
+    "prepared-PC-inputs/launch-manifests/PC-HOLD.json": {
+      "bytes": 8373,
+      "sha256": "3ad9c71e42f7e9602eee1a5cebcc087858699858989f36e808f069ec7133e2ce"
+    },
+    "prepared-PC-inputs/launch-manifests/PC-LR.json": {
+      "bytes": 8364,
+      "sha256": "1ee72c27099776e9fbbb7bf2521e1646579067eab3c0a4ce477db6d364f2fdbb"
+    },
+    "prepared-PC-inputs/launch-manifests/PC-MOTION.json": {
+      "bytes": 8376,
+      "sha256": "ef860a5c23672b5e820bd51819258e69749b9cdeda71b16f11ee747d4f074e15"
+    },
+    "records/PC-CONTACT/controller.jsonl.gz": {
+      "bytes": 447292,
+      "sha256": "5785c3dd0d8d4e3c79a64c5016e07765a12ac421a878f8916a5f23f2dc30cec0"
+    },
+    "records/PC-CONTACT/diagnostics.jsonl.gz": {
+      "bytes": 55507,
+      "sha256": "288ace24829ede113630ed38fcc3fef7686a58a81c75d35654de201cf28671a5"
+    },
+    "records/PC-CONTACT/events.jsonl.gz": {
+      "bytes": 22676,
+      "sha256": "7d1350cf395f0a95b542f6fc4fd68b362447fc2702bbb8e127af03c39861e6cd"
+    },
+    "records/PC-CONTACT/final.restart.json.gz": {
+      "bytes": 212301,
+      "sha256": "2bf89f257d79e634b4d93ff62ef73d30a08324ba4dfb7f29700f4eadbba40182"
+    },
+    "records/PC-CONTACT/initial.restart.json.gz": {
+      "bytes": 125536,
+      "sha256": "4e43c5a49ffeae4c7eb53b19051594ab3d2d3815b32ebada06e4de0dd7669a26"
+    },
+    "records/PC-CONTACT/manifest.json": {
+      "bytes": 10640,
+      "sha256": "bcba4a6c4da850638cb619648b09c4704fc384993632fe27b5c8929e428cd7fd"
+    },
+    "records/PC-CONTACT/native.jsonl.gz": {
+      "bytes": 113599,
+      "sha256": "fdeb43c3c8ee40fa1c031818c22c55a0e387230e2089ed2967ae1de375a3cede"
+    },
+    "records/PC-CONTACT/operator.jsonl.gz": {
+      "bytes": 2761,
+      "sha256": "34d531e494239b8f8cdcad70fffd1e8391fe45ec69ac004a2e56dd458eaa82e3"
+    },
+    "records/PC-CONTACT/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "451e4e2fef5c8e444b81d16aee7dd2c8baa0e8bad2f20232069536d128af0007"
+    },
+    "records/PC-CONTACT/sensor-display.json": {
+      "bytes": 133102,
+      "sha256": "6d58d65e5786353a054ff978f7235c79ae1d0e9408c0e0a10bb2eb83f7667c5a"
+    },
+    "records/PC-CONTACT/sensor.jsonl.gz": {
+      "bytes": 50247,
+      "sha256": "d916eb3854f0abab79e30e70e1fe22129660608a07d37ffb945a7d3a923ce4c1"
+    },
+    "records/PC-CONTACT/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "46117e23efc2aa4b24a8271fa22be0ebfbfab4718da9f99cddf8e43e613a7068"
+    },
+    "records/PC-HOLD/controller.jsonl.gz": {
+      "bytes": 1229303,
+      "sha256": "6e1ebaa55fb828c04a677c16f28a695d3fc2e4d43034944653804601a2cd0130"
+    },
+    "records/PC-HOLD/diagnostics.jsonl.gz": {
+      "bytes": 90337,
+      "sha256": "b1b8f21a5226710ef7a50b82d964ca94eb1a7e664ee111565e8d7bae23786add"
+    },
+    "records/PC-HOLD/events.jsonl.gz": {
+      "bytes": 31397,
+      "sha256": "680d98d829f3e568eb56d7f113af967843bd0b6ae21f39389f56820e89101187"
+    },
+    "records/PC-HOLD/final.restart.json.gz": {
+      "bytes": 263792,
+      "sha256": "a33726652cf3bb6d6213bf3f045a04b449024f5f8c2572723a7a9e7af3b9d7a1"
+    },
+    "records/PC-HOLD/initial.restart.json.gz": {
+      "bytes": 125497,
+      "sha256": "144df488831778fb1e91b3892a96391a7f36ed118ee2ce5f73fbf0ce6c148772"
+    },
+    "records/PC-HOLD/manifest.json": {
+      "bytes": 10637,
+      "sha256": "bd0db1053809c6c88d84814682385b9a2beb0e963fe164a6f0a4758cfcf9dd18"
+    },
+    "records/PC-HOLD/native.jsonl.gz": {
+      "bytes": 187399,
+      "sha256": "24b7e9834fe077a3db50cf18d9985f64604c8a2846e31f5f9397af1fbbf86211"
+    },
+    "records/PC-HOLD/operator.jsonl.gz": {
+      "bytes": 4419,
+      "sha256": "7c6de75b3e1f136ab279ca0d313aa002bce97639c8efbfb5aba5eda59bc4d02d"
+    },
+    "records/PC-HOLD/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "fe91c2f53347626319c5a307ee53029a16d507082179a4708596841a75676b7c"
+    },
+    "records/PC-HOLD/sensor-display.json": {
+      "bytes": 225762,
+      "sha256": "09c78c694668985814c54a94d5aa944fd063449d0de80e9392fe640d37a61f7a"
+    },
+    "records/PC-HOLD/sensor.jsonl.gz": {
+      "bytes": 81393,
+      "sha256": "386068eace670b1d71e2b8b46356a5e6eaf8c075c8b1273088cfab2ab6c1057f"
+    },
+    "records/PC-HOLD/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "b795089ba683a3f149bb18baab55c4b4d22967b9e6e82d595317b3ddd1e3e277"
+    },
+    "records/PC-LR-attempt-002/controller.jsonl.gz": {
+      "bytes": 37,
+      "sha256": "b08b94bfe0661bd1fd6f57a5a988643c5041a1617cc028f2f665b0e38956e4a7"
+    },
+    "records/PC-LR-attempt-002/diagnostics.jsonl.gz": {
+      "bytes": 38,
+      "sha256": "5769e7904dcdd63773b5df137ef5b6f8f6aef33b13b975e5f8098dc90e154a5e"
+    },
+    "records/PC-LR-attempt-002/events.jsonl.gz": {
+      "bytes": 33,
+      "sha256": "062502bcaab91242ab0c3a4b6da748878e1a64619d5496409bd4bcc80e5e63c4"
+    },
+    "records/PC-LR-attempt-002/final.restart.json.gz": {
+      "bytes": 125533,
+      "sha256": "b00b80fe03b2036a8e54cb3885925adca71c98bf72ea84ba5ff181b43b801896"
+    },
+    "records/PC-LR-attempt-002/initial.restart.json.gz": {
+      "bytes": 125522,
+      "sha256": "16ed6e461557df5c93caebb855a735b2fdf46efc9be3029e3a1368e70db1b5f3"
+    },
+    "records/PC-LR-attempt-002/manifest.json": {
+      "bytes": 10403,
+      "sha256": "5585fe04117df315934978a5464f7873aae1e273f8a81d1d4ea8a4cb32ba236b"
+    },
+    "records/PC-LR-attempt-002/native.jsonl.gz": {
+      "bytes": 33,
+      "sha256": "d9f894a153e259b229fcdce5ed2697ab28a62029c8074a6fd0f38dbf5caeec43"
+    },
+    "records/PC-LR-attempt-002/operator.jsonl.gz": {
+      "bytes": 272,
+      "sha256": "c10c3549251d1cbf80b77e288b90abb43c2fd049e905d743778eec4f2f7e74ff"
+    },
+    "records/PC-LR-attempt-002/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "b422a38e964c29dbfe333acd1376624ddabf86bc1a2530c0be58631627ced19e"
+    },
+    "records/PC-LR-attempt-002/sensor-display.json": {
+      "bytes": 910,
+      "sha256": "2b38145561e71926fdde47f9e7cfcd5632f711a0e9ebd19af0eec1658bf660f5"
+    },
+    "records/PC-LR-attempt-002/sensor.jsonl.gz": {
+      "bytes": 423,
+      "sha256": "186f45cb1eb629851a63637be3846b00fa2d2d9f1c23e60c75268e98b914e5e2"
+    },
+    "records/PC-LR-attempt-002/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "4a5fb1e5e943268a28f35304a1745dc69058eb02b88c454cc23ca9241cca9e67"
+    },
+    "records/PC-LR/controller.jsonl.gz": {
+      "bytes": 37,
+      "sha256": "4d27a7699509e16ff9c023e91dd68372d1176aa60d44dc360efeccff0415e8b9"
+    },
+    "records/PC-LR/diagnostics.jsonl.gz": {
+      "bytes": 38,
+      "sha256": "999ec78f917d50e16e4809a8677d5174082aa3942e3862e60cd3fe9bfc22543e"
+    },
+    "records/PC-LR/events.jsonl.gz": {
+      "bytes": 33,
+      "sha256": "2de4da941af8cc16a56061b4a05d8e4ffd8f2e14df4dc7adda3f801b6e469298"
+    },
+    "records/PC-LR/final.restart.json.gz": {
+      "bytes": 125532,
+      "sha256": "38ac4dd1fd31b9e9e46ca92085be5e2743c6195d4038f1c3a4ed4a98c07d6762"
+    },
+    "records/PC-LR/initial.restart.json.gz": {
+      "bytes": 125520,
+      "sha256": "90fd2bab929b815fce466a4ba234ad95521f1dca9368aac2ec5c32c314c4d4fb"
+    },
+    "records/PC-LR/manifest.json": {
+      "bytes": 10389,
+      "sha256": "4c0658c7d60c2be39ad07a45852549e4b3097bd8528afc1a7054525a23592503"
+    },
+    "records/PC-LR/native.jsonl.gz": {
+      "bytes": 33,
+      "sha256": "b43440a5698e2c662867ef26a3229df8c3c39259f81dc88cd5df840b96a30d74"
+    },
+    "records/PC-LR/operator.jsonl.gz": {
+      "bytes": 305,
+      "sha256": "65bf6674bd9e3826861b57ad36f0ed932042f271e7c9444eef1f6a7c4e001382"
+    },
+    "records/PC-LR/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "cd8fd41143daf42ab9148cbfda0b02d44aae6d2a4217aced8eecc9ef908a25ec"
+    },
+    "records/PC-LR/sensor-display.json": {
+      "bytes": 910,
+      "sha256": "2b38145561e71926fdde47f9e7cfcd5632f711a0e9ebd19af0eec1658bf660f5"
+    },
+    "records/PC-LR/sensor.jsonl.gz": {
+      "bytes": 423,
+      "sha256": "e6b8ebe5b9e20469b13c899269e7cffb33c9d29df9fdd27db56c4eb1b7d09fa9"
+    },
+    "records/PC-LR/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "4fe76baadf3b45de71e0c54aa13f0325ffa338ff37b275088755d728468aabef"
+    },
+    "records/PC-MOTION/controller.jsonl.gz": {
+      "bytes": 2248,
+      "sha256": "dc3dc5c00f59e4f11bf9bd4260f496cacf39dfe4ab135712f5bd0785bda91462"
+    },
+    "records/PC-MOTION/diagnostics.jsonl.gz": {
+      "bytes": 4759,
+      "sha256": "aa248e1cb75a4a43f4244e5a3859707ebecc59e93795edec8ac5aba7b6afa4e7"
+    },
+    "records/PC-MOTION/events.jsonl.gz": {
+      "bytes": 1647,
+      "sha256": "aa1185bceb0c75c3ec48f429a7a9699f61b3abdf3a72f9ec514b7397e7854915"
+    },
+    "records/PC-MOTION/final.restart.json.gz": {
+      "bytes": 131007,
+      "sha256": "b6deba1b5ee26cd359597bcd22ba20e73086d39fc24d9941c849b6490be318a2"
+    },
+    "records/PC-MOTION/initial.restart.json.gz": {
+      "bytes": 125492,
+      "sha256": "a7ba854d5a69f8fbc6caba7ed21b75a41d127262e51f0e146ceaa07fddb8015f"
+    },
+    "records/PC-MOTION/manifest.json": {
+      "bytes": 10616,
+      "sha256": "ebbf8a6240b21220d4cd057820aacb53eba5acf8e7bae1773a3aba609b2b09f0"
+    },
+    "records/PC-MOTION/native.jsonl.gz": {
+      "bytes": 9854,
+      "sha256": "1197a89bc795664865c15b82f57d7ac18da07a0d2710f10e5b6670204ddb5cdb"
+    },
+    "records/PC-MOTION/operator.jsonl.gz": {
+      "bytes": 539,
+      "sha256": "badd947051ebad67e1cec32113d7d83ca31e8e9c9c273fa6b5cad4dfc51340cc"
+    },
+    "records/PC-MOTION/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "b93f47b5f53e4d024a4334169bd39e073fd4c9b54372401520d4c747c3fe413a"
+    },
+    "records/PC-MOTION/sensor-display.json": {
+      "bytes": 11346,
+      "sha256": "d4bd6e852acec7566b3d966300772ae395f99ab6a42ab75ad367807ba57a8768"
+    },
+    "records/PC-MOTION/sensor.jsonl.gz": {
+      "bytes": 4359,
+      "sha256": "4841921db2cd186491ea979a2c9c1d2b68765d4ecddef9e547d019d8d53f8705"
+    },
+    "records/PC-MOTION/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "0caedd45b03f06ea0697663ed2847096154f436e55870649a23d574815cae29e"
+    },
+    "review/FINAL_RECORD_AUDIT.json": {
+      "bytes": 3771,
+      "sha256": "d9455e8164cec83e1beefaf81b74bca26f576282c587a53b6ea8273477a32891"
+    },
+    "review/OPERATOR_INTEGRITY_RECORD.before_readiness.json": {
+      "bytes": 670,
+      "sha256": "d9127b0718f680be085f72718d01bfc0c1534184989b8ae4c25945874de94977"
+    },
+    "review/OPERATOR_INTEGRITY_RECORD.json": {
+      "bytes": 897,
+      "sha256": "188f0ff929705f47a36638b36b48f341f3bcaf62e899049a60ceea3d5fc2e30a"
+    },
+    "review/PC-CONTACT-REPLAY/CONTACT_REVIEW.json": {
+      "bytes": 2217,
+      "sha256": "83f3e68d42a9a9e3be2c2cd707e5f79402e387761b800e4e3597b2cdeb335f57"
+    },
+    "review/PC-CONTACT-REPLAY/OPERATOR_REFLECTION.json": {
+      "bytes": 1161,
+      "sha256": "4ef33f41c375d87ba035f63bf0fa8f2f090a3d529d550fa2818f4f3a4106eb5e"
+    },
+    "review/PC-CONTACT-REPLAY/REPLAY_DATA.json": {
+      "bytes": 125074,
+      "sha256": "0ebe2cca64848fe17a2b506934544c45a4a5368dcc23540c97331821600f653f"
+    },
+    "review/PC-CONTACT-REPLAY/REPLAY_PROVENANCE.json": {
+      "bytes": 2789,
+      "sha256": "a2da7746e1092dbfdc479373c9dee3e2d0bb6e5e892a7380ef4c9294448f4e56"
+    },
+    "review/PC-CONTACT-REPLAY/SERVICE_CLOSURE.json": {
+      "bytes": 275,
+      "sha256": "acae16ef737904af212c405b36e0996c7bf95f4c197dc0ad6bb3b743b407a3de"
+    },
+    "review/PC-CONTACT.LAUNCH_INTENT.json": {
+      "bytes": 668,
+      "sha256": "5cc05b57d7f606be340b86a4c6959dbdda6e7ddd3cae302f5790ce1084b33bf4"
+    },
+    "review/PC-CONTACT.LAUNCH_RECEIPT.json": {
+      "bytes": 861,
+      "sha256": "8c16ca68e6b336fd9b415a641bc078439e6a9f5ecdac8db5a0d0cdcdf2622614"
+    },
+    "review/PC-CONTACT.OBSERVATION_BEFORE_REPLAY.display.json": {
+      "bytes": 223124,
+      "sha256": "3c6804b5ca8709fb779da387cfb80a5546ed933f9a03e729b6916a3b3cb16f53"
+    },
+    "review/PC-CONTACT.RESULT.json": {
+      "bytes": 1197,
+      "sha256": "ad7796152cafaca471f61c07f6b7a98ae3d568c4e6d098a28169c0202285c56f"
+    },
+    "review/PC-CONTACT.USER_CONTACT_OBSERVATION.json": {
+      "bytes": 1291,
+      "sha256": "a414041b18f72faa4f274f9aefe7a02555f6a7a0ada396eb6704a30f2db92809"
+    },
+    "review/PC-CONTACT.USER_CONTACT_OBSERVATION.png": {
+      "bytes": 281239,
+      "sha256": "2fb2a2fb36fc75696a4925f50fcd88a0eb9e1147c15c760c584cda03550a818e"
+    },
+    "review/PC-HOLD.CLOSURE.json": {
+      "bytes": 2050,
+      "sha256": "9af98694d584eb2d5eef11b47eff166ec83b1417b8a3d14149b6b993297d930c"
+    },
+    "review/PC-HOLD.LAUNCH_INTENT.json": {
+      "bytes": 1164,
+      "sha256": "7a9e31f1123de9d75e0f8db1bd38c9bab2eb0af81ae3fe7dfc9501909e11d8e9"
+    },
+    "review/PC-HOLD.LAUNCH_RECEIPT.json": {
+      "bytes": 815,
+      "sha256": "aa66913651bf5a362380a603f54139e7242936759bdf5dd416be55a9f4ffc3ae"
+    },
+    "review/PC-HOLD.OPERATOR_REFLECTION.json": {
+      "bytes": 726,
+      "sha256": "85a78a3b4a44ce5039a256df91629556abcbfd8caf03a559f33339ec401e41a5"
+    },
+    "review/PC-HOLD.RESULT.json": {
+      "bytes": 8478,
+      "sha256": "1890f40169a9cb2c56382885b451cbb74ccb7066fd10a10ef876fffba5897c24"
+    },
+    "review/PC-HOLD.SERVICE_CLOSURE.json": {
+      "bytes": 310,
+      "sha256": "99d3b02ae7cd4fa7054449cb7a20a17f963ed485d2194b332a35379dacf0f7c5"
+    },
+    "review/PC-HOLD.USER_CONTACT_OBSERVATION.json": {
+      "bytes": 985,
+      "sha256": "31a9f6cc9d566f7314350f33f5fce645ee2cb972d0f03c6f399bf9aa84b28e78"
+    },
+    "review/PC-HOLD.USER_CONTACT_OBSERVATION.png": {
+      "bytes": 223203,
+      "sha256": "0f3679e6a7ab507f0e952e4a9bde882f4566f9461a1c3644ad220c327849b550"
+    },
+    "review/PC-LR-attempt-002/LAUNCH_INTENT.json": {
+      "bytes": 2073,
+      "sha256": "27b51aee4e6ca69d53aca2d5735e3e78dbcd3e23fbe686aefab63b2537843d26"
+    },
+    "review/PC-LR-attempt-002/LAUNCH_PLAN.json": {
+      "bytes": 1342,
+      "sha256": "6bfe4814d01b92d7cd454e7717034f8a9717abd0d75c5bd3e1f70c004719afd5"
+    },
+    "review/PC-LR-attempt-002/LAUNCH_RECEIPT.json": {
+      "bytes": 947,
+      "sha256": "d7e4485752f12fe610822aff53b9cee0a7cd90d908dd662a0bb28c0356953dc4"
+    },
+    "review/PC-LR-attempt-002/PC-LR.OPERATOR_OBSERVATION.json": {
+      "bytes": 1354,
+      "sha256": "dc224b52cceac4cdf49c77fca15caa845af519e82da3030243c10aa8df2b591c"
+    },
+    "review/PC-LR-attempt-002/PC-LR.PREACTION_DISPLAY.json": {
+      "bytes": 1504,
+      "sha256": "1138594d1f80b6629be654ca1bfc12f34452833c1ae43a02daaa17dbe83c1b6f"
+    },
+    "review/PC-LR-attempt-002/RESULT.json": {
+      "bytes": 2507,
+      "sha256": "743b2b372a14276777b1c934988ce4c5fc7c1b9937075faf63960651308fa331"
+    },
+    "review/PC-LR-attempt-002/SEQUENCE_STATE.before_launch.json": {
+      "bytes": 965,
+      "sha256": "9322b624b4cfbb9ce302041db426664a7930db419ef69dd03ba1ce49d0dfe6f5"
+    },
+    "review/PC-LR-attempt-002/SERVICE_CLOSURE.json": {
+      "bytes": 303,
+      "sha256": "0db393951bba4e81c1248a35986723fb1c0afe56f3acba15ba24bc890a649288"
+    },
+    "review/PC-LR-attempt-002/approval.request.json": {
+      "bytes": 9198,
+      "sha256": "76334cfd43bff64fd42f3bd4be2f50dcccee0d4ad47c567407f3f71a811f2084"
+    },
+    "review/PC-LR-attempt-002/launch-manifest.json": {
+      "bytes": 8537,
+      "sha256": "2ec3b614129e70b3c23c1ed90a4f72fc7ca09f0cb0a71acbeceb2cd4f0d8cdcc"
+    },
+    "review/PC-LR.CONNECTION_LOSS_REVIEW.json": {
+      "bytes": 2910,
+      "sha256": "44fb2a0332cf4478c53b2c76cd95f379ec4b14e9d63ea1d9c5f99d631f03eaac"
+    },
+    "review/PC-LR.LAUNCH_INTENT.json": {
+      "bytes": 697,
+      "sha256": "7027938c55984b49c99535c926aeccc51273432d346ea84d57c33081ade9063f"
+    },
+    "review/PC-LR.LAUNCH_RECEIPT.json": {
+      "bytes": 962,
+      "sha256": "426ad8e64c12252f595dbf3a53924a061139daa0b662b3d4c61972991c9ba111"
+    },
+    "review/PC-MOTION.CLOSURE.json": {
+      "bytes": 1037,
+      "sha256": "9df45741b6c02f366fe8d2aa350f28b49c8978c697e861851c16b449e3fa4ebb"
+    },
+    "review/PC-MOTION.EXPLANATION.20260927T0050210767987Z.json": {
+      "bytes": 1254,
+      "sha256": "b4e62a0248a03ad90530243f375147c940196cea8cef812cb4821b4e48e7f462"
+    },
+    "review/PC-MOTION.EXPLANATION.20260927T0100223584063Z.json": {
+      "bytes": 800,
+      "sha256": "c027f24d636cc847241f0dda7c568f1e181a60f42e8caf35e8b3a72590c1da68"
+    },
+    "review/PC-MOTION.LAUNCH_INTENT.json": {
+      "bytes": 676,
+      "sha256": "01f8db7c5fa1f91ebdc919a69c2aba493acaaad24892a62d78aafec3a5ebddee"
+    },
+    "review/PC-MOTION.LAUNCH_RECEIPT.json": {
+      "bytes": 856,
+      "sha256": "5ae528ee98b09b540c6316f6bcbaa45d3c5b0bd61616d17e92a59d34bb688cf3"
+    },
+    "review/PC-MOTION.OBSERVATION.20260927T0047135395038Z.display.json": {
+      "bytes": 19720,
+      "sha256": "a895c6e885491900a8e3ac5f1157f1571330f3a6e282bce0074a23a8a24682cf"
+    },
+    "review/PC-MOTION.OBSERVATION.20260927T0047135395038Z.record.json": {
+      "bytes": 1095,
+      "sha256": "7d78af3ee684112f23dc0a3f4f31c556521e80bc4ca01ffb68f4411ba31da364"
+    },
+    "review/PC-MOTION.OBSERVATION.20260927T0047135395038Z.user.png": {
+      "bytes": 213217,
+      "sha256": "6d8b971867f631c99b77caffd03217cced885017e86fe414e07c5265f60046b2"
+    },
+    "review/PC-MOTION.RESULT.json": {
+      "bytes": 2885,
+      "sha256": "bff20144eeb3deacd9f87100ed1bf6485533bfc1e643a534ba105822eb6a7d14"
+    },
+    "review/PC-MOTION.SERVICE_CLOSURE.json": {
+      "bytes": 214,
+      "sha256": "db465baf0885e2b79eeba807d3995348ff19c3cd750f4e623d783339f9d9bf66"
+    },
+    "review/POSITIVE_CONTROL_EXECUTION_REPORT.md": {
+      "bytes": 8233,
+      "sha256": "31e99933989981471acfc49e60885d55c9fe14dfa77d5f2efa5e6c5da3975623"
+    },
+    "review/PRELAUNCH_CHECKS.json": {
+      "bytes": 2441,
+      "sha256": "f614240265e43b24a90890fc4eae1e4124b7f4132bf41048f0b2f707037c568a"
+    },
+    "review/SEQUENCE_STATE.json": {
+      "bytes": 1152,
+      "sha256": "d746bec2f164a4740cbaffb83fd1bba5f3df548acf7c69badbfcb3a50d43a068"
+    },
+    "review/finish_positive_control_review.py": {
+      "bytes": 15202,
+      "sha256": "e27caaefe457868ced55f6891b7f4c7fa2a72c6e7867ed69f39ec8d91cf9c91a"
+    },
+    "review/review_pc_hold.py": {
+      "bytes": 8807,
+      "sha256": "429c438dd847d46b18c524a90a64f8fca299e17f6dbf0cff3d448ddfc98b0ca1"
+    }
+  }
+}

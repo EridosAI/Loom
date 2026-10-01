@@ -1,0 +1,73 @@
+{
+  "label": "NON-CANONICAL RESURRECTION SANDBOX",
+  "available_age": 36868.95487054659,
+  "resurrections": 77,
+  "resurrection_causes": [
+    "energy"
+  ],
+  "discarded_partial_seconds": 7.660144869461655,
+  "external_energy": 53.90000000000463,
+  "source_energy": 2.342139759762746,
+  "expenditure": 59.935575449394385,
+  "fixed_seven_bands": [
+    {
+      "start": 0,
+      "end": 900,
+      "exposure": 6300,
+      "source_bouts": 7,
+      "source_contact_s": 57.96613464260637,
+      "source_energy": 0.23841967890963242,
+      "expenditure": 10.237507646186954,
+      "source_fraction": 0.023288840130774785
+    },
+    {
+      "start": 900,
+      "end": 1800,
+      "exposure": 6300,
+      "source_bouts": 12,
+      "source_contact_s": 83.73367906133785,
+      "source_energy": 0.28169713992028433,
+      "expenditure": 10.246383892029064,
+      "source_fraction": 0.02749234685023114
+    },
+    {
+      "start": 1800,
+      "end": 2700,
+      "exposure": 6300,
+      "source_bouts": 34,
+      "source_contact_s": 212.5484525879251,
+      "source_energy": 0.6339064982497726,
+      "expenditure": 10.251307793981326,
+      "source_fraction": 0.06183664669808737
+    },
+    {
+      "start": 2700,
+      "end": 3600,
+      "exposure": 6300,
+      "source_bouts": 22,
+      "source_contact_s": 154.76734688017086,
+      "source_energy": 0.465982939808282,
+      "expenditure": 10.244046417182648,
+      "source_fraction": 0.04548817145407256
+    },
+    {
+      "start": 3600,
+      "end": 4500,
+      "exposure": 6300,
+      "source_bouts": 19,
+      "source_contact_s": 123.51616290139009,
+      "source_energy": 0.36123895108440346,
+      "expenditure": 10.237816201644783,
+      "source_fraction": 0.035284766201054446
+    }
+  ],
+  "late_learned_current_relative_M1_range": [
+    0.002208563250627082,
+    0.01151732888915785
+  ],
+  "max_accounting_residual": 3.304023721284466e-13,
+  "literal_source_fragments": 84350,
+  "grouped_source_bouts": 103,
+  "grouped_fragment_conservation": "PASS",
+  "new_simulation_steps": 0
+}

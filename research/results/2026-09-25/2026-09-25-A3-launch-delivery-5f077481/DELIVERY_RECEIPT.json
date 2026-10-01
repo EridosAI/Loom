@@ -1,0 +1,31 @@
+{
+  "packet": "A3_LAUNCH_PACKET.zip",
+  "bytes": 80932296,
+  "sha256": "4c580299d098ad26eb5c6be4dd98e4e26e1fb8e4c766fa8591d516fdb6fdcfce",
+  "authority_sha256": "43a40bad2a7fbc8939a941ef190be8967aa5453eeaab8f537e6bfea2955769fd",
+  "authority_status": "PROPOSED / NOT AUTHORIZED",
+  "folder_validation": {
+    "valid": true,
+    "payloads": 86,
+    "authority_sha256": "43a40bad2a7fbc8939a941ef190be8967aa5453eeaab8f537e6bfea2955769fd",
+    "grant": null,
+    "A3_executed": false,
+    "scope": "Byte inventory, closed proposed object, healthy zero-time snapshot and preparation record checks; no dynamics or controller calls"
+  },
+  "zip_validation": {
+    "valid": true,
+    "payloads": 86,
+    "authority_sha256": "43a40bad2a7fbc8939a941ef190be8967aa5453eeaab8f537e6bfea2955769fd",
+    "grant": null,
+    "A3_executed": false,
+    "scope": "Byte inventory, closed proposed object, healthy zero-time snapshot and preparation record checks; no dynamics or controller calls"
+  },
+  "original_files_rechecked": 286,
+  "original_files_unchanged": true,
+  "Git_clean_and_HEAD_unchanged": true,
+  "prospective_run_directory_absent": true,
+  "execution_occurred": false,
+  "unexecuted_world_steps": 0,
+  "whole_task_instantaneous_zero_time_sensor_evaluations": 2,
+  "preparation_history": "preparation-history/PREPARATION_HISTORY.md"
+}

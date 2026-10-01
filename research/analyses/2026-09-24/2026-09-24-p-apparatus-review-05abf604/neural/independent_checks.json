@@ -1,0 +1,149 @@
+{
+  "fixed_poison": {
+    "cases": {
+      "sensory": {
+        "causal_state_identical": true,
+        "rng_identical": true,
+        "frozen_identical": true,
+        "frozen_alias_absent": true
+      },
+      "banks": {
+        "causal_state_identical": true,
+        "rng_identical": true,
+        "frozen_identical": true,
+        "frozen_alias_absent": true
+      },
+      "maps_use": {
+        "causal_state_identical": true,
+        "rng_identical": true,
+        "frozen_identical": true,
+        "frozen_alias_absent": true
+      },
+      "all": {
+        "causal_state_identical": true,
+        "rng_identical": true,
+        "frozen_identical": true,
+        "frozen_alias_absent": true
+      }
+    },
+    "late_restore_frozen_but_causal_RED": true,
+    "late_restore_max_control_difference": 0.07729363526569996,
+    "fast_state_changes": {
+      "cortex_0.mean": true,
+      "cortex_0.x": true,
+      "cortex_0.C": true,
+      "cortex_0.opening": true,
+      "cortex_1.mean": true,
+      "cortex_1.x": true,
+      "cortex_1.C": true,
+      "cortex_1.opening": true,
+      "cortex_2.mean": true,
+      "cortex_2.x": true,
+      "cortex_2.C": true,
+      "cortex_2.opening": true,
+      "cortex_3.mean": true,
+      "cortex_3.x": true,
+      "cortex_3.C": true,
+      "cortex_3.opening": true,
+      "association.a": true,
+      "association.means": true,
+      "association.traces": true,
+      "regulator.body_mean": true,
+      "regulator.eligibility": true,
+      "regulator.phi": true,
+      "regulator.xi": true,
+      "regulator.controls": true,
+      "motor.phase": true,
+      "motor.nu": true,
+      "motor.drive": true,
+      "motor.tendency": true,
+      "motor.command": true
+    },
+    "sensory_motor_integrals_accumulate_then_reset_at_handoff": true,
+    "reference_rng": {
+      "anatomy/sensory-0-A": 1,
+      "anatomy/sensory-0-shared": 1,
+      "anatomy/sensory-0-fine": 1,
+      "anatomy/sensory-1-A": 1,
+      "anatomy/sensory-1-shared": 1,
+      "anatomy/sensory-1-fine": 1,
+      "anatomy/sensory-2-A": 1,
+      "anatomy/sensory-2-shared": 1,
+      "anatomy/sensory-2-fine": 1,
+      "anatomy/sensory-3-A": 1,
+      "anatomy/sensory-3-shared": 1,
+      "anatomy/sensory-3-fine": 1,
+      "anatomy/gate-0": 1,
+      "anatomy/gate-bias-0": 1,
+      "anatomy/gate-1": 1,
+      "anatomy/gate-bias-1": 1,
+      "anatomy/gate-2": 1,
+      "anatomy/gate-bias-2": 1,
+      "anatomy/gate-3": 1,
+      "anatomy/gate-bias-3": 1,
+      "anatomy/gate-4": 1,
+      "anatomy/gate-bias-4": 1,
+      "anatomy/gate-5": 1,
+      "anatomy/gate-bias-5": 1,
+      "anatomy/gate-6": 1,
+      "anatomy/gate-bias-6": 1,
+      "anatomy/gate-7": 1,
+      "anatomy/gate-bias-7": 1,
+      "anatomy/regulator-Bq": 1,
+      "anatomy/regulator-Bv": 1,
+      "anatomy/regulator-bias": 1,
+      "anatomy/motor-feedback": 1,
+      "life/motor-birth-phase": 1,
+      "life/motor-birth-nu": 1,
+      "life/motor-noise": 2,
+      "life/regulation-E": 3,
+      "life/regulation-I": 3
+    },
+    "reference_causal_hash": "77b57f151a82c52b0e7c49d9a542e1e00e2310545173cab9acf3895c6d4fcca5"
+  },
+  "receivers_alignment": {
+    "nonzero_q_norm": 0.00032818861375509854,
+    "omission_control_max_differences": {
+      "evoked": 3.0416409509126385e-08,
+      "body": 0.0013580344218542349,
+      "bias": 0.00045968850019662694,
+      "learned_0": 0.0008118059252332221,
+      "learned_1": 0.0011014356092149402,
+      "exploration_0": 0.01187431880703127,
+      "exploration_1": 0.009997958663999662
+    },
+    "all_explicit_equations_match": true,
+    "motor_omission_command_max_differences": {
+      "oscillator": 0.01840110169634974,
+      "noise": 0.0057766288092570735,
+      "direct_feedback": 0.00020753983050081012,
+      "motor_evocation": 0.0005996567708801311,
+      "regulatory_current": 0.0015905914576236045,
+      "attenuation": 0.004565228514420393
+    },
+    "dependency_probes_nonzero_and_correct": true,
+    "baseline_corruption_rejected": true,
+    "native_step_start_endpoint_distinct_and_aligned": true,
+    "observer_state_rng_unchanged": true
+  },
+  "selection_leakage": {
+    "contract": {
+      "wave": "every_handoff",
+      "native": "native_index % 100 == 0",
+      "native_stride": 100
+    },
+    "selected_indices": {
+      "1": false,
+      "99": false,
+      "100": true,
+      "101": false,
+      "200": true
+    },
+    "every_handoff_observed": true,
+    "deep_controller_copy_mutation_has_no_world_effect": true,
+    "sensor_display_is_a_copy": true,
+    "privileged_metadata_absent_from_sensor": true,
+    "intact_ignores_external_command_and_privileged_metadata": true
+  },
+  "scope": "Manufactured components only; two one-native intact fixtures and one manufactured handoff; detached frozen-input neural arithmetic. No commissioning rows or freely acting lives."
+}

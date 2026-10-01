@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "case_id": "MC-FS-001-CURRENT",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.550437496767979e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-001-M1",
+      "native_rows": 9000,
+      "waves": 450,
+      "events": 9000,
+      "ledger_max_error": 5.550776309946881e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 0,
+      "closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-001-M2",
+      "native_rows": 1025,
+      "waves": 51,
+      "events": 1030,
+      "ledger_max_error": 5.54467767272665e-17,
+      "final_clock_matches": true,
+      "final_body_matches": true,
+      "tail_rows_verified": 25,
+      "closed_receipt": false
+    }
+  ],
+  "total_native_rows": 19025,
+  "execution_source_modified": false,
+  "new_simulation_steps": 0,
+  "all_execution_file_hashes_still_match": true,
+  "decoder_source_sha256": "034978d946ac7c4dabedd5adab4e76bd9cbb063bcc16b574254ebf01f74aabb2",
+  "native_schema_source_sha256": "2805addcc842c675261e7978c43c01d48aa2b99358425b15161625e275c5c996",
+  "observer_seconds": 2.190630199969746,
+  "method": "passive typed decoder returns class attributes as plain data; no Loom import/replay"
+}

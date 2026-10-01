@@ -1,0 +1,41 @@
+{
+  "status": "ALL FOUR CONTROLS CLOSED; PC-HOLD REVIEWED; B1 NOT AUTHORIZED OR EXECUTED",
+  "next_case": null,
+  "order": [
+    "PC-LR",
+    "PC-MOTION",
+    "PC-CONTACT",
+    "PC-HOLD"
+  ],
+  "cases": [
+    {
+      "case": "PC-LR",
+      "attempts": 2,
+      "status": "ATTEMPT 002 CLOSED / DEMONSTRATED; ATTEMPT 001 ADMINISTRATIVE CUTOFF PRESERVED"
+    },
+    {
+      "case": "PC-MOTION",
+      "attempts": 1,
+      "status": "CLOSED AT WALL CAP; DEMONSTRATED WITH GUIDANCE AND POST-CLOSURE EXPLANATION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "attempts": 1,
+      "status": "CLOSED AT 2.3 s; OPERATOR INTERPRETATION PARTIAL; POST-CASE REPLAY PROVIDED"
+    },
+    {
+      "case": "PC-HOLD",
+      "attempts": 1,
+      "status": "CLOSED AT 3.9 s / NOT DEMONSTRATED — PREDECLARED 1.0 s TARGET NOT OBTAINED"
+    }
+  ],
+  "live_services": 0,
+  "timers_started": 5,
+  "worlds_loaded": 5,
+  "simulation_steps": 640,
+  "controller_commands": 64,
+  "all_commands_must_be_Jason_choices": true,
+  "service_url": null,
+  "service_session_id": null,
+  "status_observed_utc": "2026-09-27T02:57:10.8264035+00:00"
+}

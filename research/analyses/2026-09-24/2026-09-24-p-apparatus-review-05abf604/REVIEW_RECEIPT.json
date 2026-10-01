@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-24",
+  "disposition": "HOLD BEFORE COUPLING COMMISSIONING",
+  "apparatus_checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b",
+  "scientific_P_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "findings": [
+    {
+      "id": "A-R1",
+      "classification": "MUST-FIX BEFORE COMMISSIONING",
+      "finding": "Approval lacks complete arm/controller/route execution-contract binding"
+    },
+    {
+      "id": "A-R2",
+      "classification": "MUST-FIX BEFORE COMMISSIONING",
+      "finding": "Nominal route deadline may miss a ten-native-step command hold"
+    }
+  ],
+  "worktree_suite": {
+    "passed": 83,
+    "seconds": 34.04
+  },
+  "portable_suite": {
+    "passed": 83,
+    "seconds": 33.46
+  },
+  "unchanged_prior_P_checks": 59,
+  "delivered_fault_pairs_verified": 16,
+  "additional_firewall_pair_verified": true,
+  "prior_artifacts_preserved": 792,
+  "saved_segments_reconstructed": 9,
+  "saved_native_records_including_duplicates": 120,
+  "unique_continuous_native_records": 60,
+  "saved_diagnostics_exact": 60,
+  "target_modified": false,
+  "commissioning_executed": false,
+  "prehistory_prepared": false,
+  "builder_zip": {
+    "original_path": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24-p-commissioning-apparatus\\Loom_P_Commissioning_Apparatus_Review_20260924.zip",
+    "bytes": 5790938,
+    "sha256": "87f4dbde39a72559caf6045c7ac68a649d9691a000d1569af5d26b090a63b053"
+  },
+  "report": {
+    "bytes": 39419,
+    "sha256": "d315eaf57c2b25fc8bc1b0b7e2e60d55d926634791e05033c23a8ffedec03c08"
+  },
+  "scope": "Component suites, authorized manufactured fixtures, deliberate in-memory faults, detached saved replay and read-only provenance only"
+}

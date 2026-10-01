@@ -1,0 +1,318 @@
+{
+  "body_radius": 0.5,
+  "all_static_fixtures": [
+    {
+      "id": "wall-0",
+      "kind": "wall",
+      "axis": 0,
+      "sign": 1,
+      "boundary": 0
+    },
+    {
+      "id": "wall-1",
+      "kind": "wall",
+      "axis": 0,
+      "sign": -1,
+      "boundary": 20
+    },
+    {
+      "id": "wall-2",
+      "kind": "wall",
+      "axis": 1,
+      "sign": 1,
+      "boundary": 0
+    },
+    {
+      "id": "wall-3",
+      "kind": "wall",
+      "axis": 1,
+      "sign": -1,
+      "boundary": 20
+    },
+    {
+      "id": "source-0",
+      "kind": "disk",
+      "centre": [
+        3,
+        3
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-1",
+      "kind": "disk",
+      "centre": [
+        10,
+        3
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-2",
+      "kind": "disk",
+      "centre": [
+        17,
+        3
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-3",
+      "kind": "disk",
+      "centre": [
+        3,
+        10
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-4",
+      "kind": "disk",
+      "centre": [
+        17,
+        10
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-5",
+      "kind": "disk",
+      "centre": [
+        3,
+        17
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-6",
+      "kind": "disk",
+      "centre": [
+        10,
+        17
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "source-7",
+      "kind": "disk",
+      "centre": [
+        17,
+        17
+      ],
+      "radius": 0.5
+    },
+    {
+      "id": "repair-0",
+      "kind": "rect",
+      "rect": [
+        0,
+        0.25,
+        8,
+        12
+      ]
+    },
+    {
+      "id": "repair-1",
+      "kind": "rect",
+      "rect": [
+        19.75,
+        20,
+        8,
+        12
+      ]
+    },
+    {
+      "id": "repair-2",
+      "kind": "rect",
+      "rect": [
+        8,
+        12,
+        19.75,
+        20
+      ]
+    }
+  ],
+  "mover_swept_rectangle": [
+    5.0,
+    15.0,
+    9.5,
+    10.5
+  ],
+  "segments": {
+    "damage_approach": {
+      "from": [
+        2.5,
+        6.0
+      ],
+      "to": [
+        0.5,
+        6.0
+      ],
+      "length": 2.0,
+      "surface_clearances": {
+        "wall-0": 0.0,
+        "wall-1": 17.0,
+        "wall-2": 5.5,
+        "wall-3": 13.5,
+        "source-0": 2.0413812651491097,
+        "source-1": 7.077747210701755,
+        "source-2": 13.807092894960848,
+        "source-3": 3.0311288741492746,
+        "source-4": 14.041608956491324,
+        "source-5": 10.01135777277262,
+        "source-6": 12.313526955694348,
+        "source-7": 17.200274723201296,
+        "repair-0": 1.5155644370746373,
+        "repair-1": 16.865554986812256,
+        "repair-2": 14.309203219619887
+      },
+      "mover_union_clearance": 3.8011626335213133
+    },
+    "wall_release": {
+      "from": [
+        0.5,
+        6.0
+      ],
+      "to": [
+        1.5,
+        6.0
+      ],
+      "length": 1.0,
+      "surface_clearances": {
+        "wall-0": 0.0,
+        "wall-1": 18.0,
+        "wall-2": 5.5,
+        "wall-3": 13.5,
+        "source-0": 2.3541019662496847,
+        "source-1": 8.013878188659973,
+        "source-2": 14.787653403846944,
+        "source-3": 3.272001872658765,
+        "source-4": 15.007810593582121,
+        "source-5": 10.10180165558726,
+        "source-6": 12.901438774457844,
+        "source-7": 18.00657780874821,
+        "repair-0": 1.5155644370746373,
+        "repair-1": 17.859261967737158,
+        "repair-2": 14.70896117425513
+      },
+      "mover_union_clearance": 4.449747468305833
+    },
+    "corridor": {
+      "from": [
+        1.5,
+        6.0
+      ],
+      "to": [
+        1.5,
+        10.0
+      ],
+      "length": 4.0,
+      "surface_clearances": {
+        "wall-0": 1.0,
+        "wall-1": 18.0,
+        "wall-2": 5.5,
+        "wall-3": 9.5,
+        "source-0": 2.3541019662496847,
+        "source-1": 8.013878188659973,
+        "source-2": 14.787653403846944,
+        "source-3": 0.5,
+        "source-4": 14.5,
+        "source-5": 6.158910531638177,
+        "source-6": 10.01135777277262,
+        "source-7": 16.00735135169495,
+        "repair-0": 0.75,
+        "repair-1": 17.75,
+        "repair-2": 11.218041645257966
+      },
+      "mover_union_clearance": 3.0
+    },
+    "repair_approach": {
+      "from": [
+        1.5,
+        10.0
+      ],
+      "to": [
+        0.75,
+        10.0
+      ],
+      "length": 0.75,
+      "surface_clearances": {
+        "wall-0": 0.25,
+        "wall-1": 18.0,
+        "wall-2": 9.5,
+        "wall-3": 9.5,
+        "source-0": 6.158910531638177,
+        "source-1": 10.01135777277262,
+        "source-2": 16.00735135169495,
+        "source-3": 0.5,
+        "source-4": 14.5,
+        "source-5": 6.158910531638177,
+        "source-6": 10.01135777277262,
+        "source-7": 16.00735135169495,
+        "repair-0": 0.0,
+        "repair-1": 17.75,
+        "repair-2": 11.218041645257966
+      },
+      "mover_union_clearance": 3.0
+    },
+    "repair_release": {
+      "from": [
+        0.75,
+        10.0
+      ],
+      "to": [
+        1.5,
+        10.0
+      ],
+      "length": 0.75,
+      "surface_clearances": {
+        "wall-0": 0.25,
+        "wall-1": 18.0,
+        "wall-2": 9.5,
+        "wall-3": 9.5,
+        "source-0": 6.158910531638177,
+        "source-1": 10.01135777277262,
+        "source-2": 16.00735135169495,
+        "source-3": 0.5,
+        "source-4": 14.5,
+        "source-5": 6.158910531638177,
+        "source-6": 10.01135777277262,
+        "source-7": 16.00735135169495,
+        "repair-0": 0.0,
+        "repair-1": 17.75,
+        "repair-2": 11.218041645257966
+      },
+      "mover_union_clearance": 3.0
+    },
+    "energy_approach": {
+      "from": [
+        1.5,
+        10.0
+      ],
+      "to": [
+        2.0,
+        10.0
+      ],
+      "length": 0.5,
+      "surface_clearances": {
+        "wall-0": 1.0,
+        "wall-1": 17.5,
+        "wall-2": 9.5,
+        "wall-3": 9.5,
+        "source-0": 6.0710678118654755,
+        "source-1": 9.63014581273465,
+        "source-2": 15.552945357246848,
+        "source-3": 0.0,
+        "source-4": 14.0,
+        "source-5": 6.0710678118654755,
+        "source-6": 9.63014581273465,
+        "source-7": 15.552945357246848,
+        "repair-0": 0.75,
+        "repair-1": 17.25,
+        "repair-2": 10.94825314185531
+      },
+      "mover_union_clearance": 2.5
+    }
+  },
+  "scope": "Axis-aligned nominal finite-body paths only. No executed or predicted controller trajectory; actual deviations untested."
+}

@@ -1,0 +1,266 @@
+{
+  "authority_status": "PROPOSED / NOT AUTHORIZED",
+  "canonical_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+  "files": {
+    "A0_GEOMETRY.json": {
+      "bytes": 3092,
+      "sha256": "60bcaaf5f28bc2fe2c36d11fa17cda225c87d88ea093520494a415b8973970e2"
+    },
+    "A1_MANIFEST.json": {
+      "bytes": 10276,
+      "sha256": "cf81877649978fd7235621817a53441a2ee4869a35d8dbf228c1663fd96f241d"
+    },
+    "AUTHORITY_OBJECT.canonical.json": {
+      "bytes": 8019,
+      "sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc"
+    },
+    "AUTHORITY_OBJECT.json": {
+      "bytes": 10244,
+      "sha256": "13c1f7c33b1fb8ab5335fcd36a43d82b92234deac2256da88f108ac49dd872f9"
+    },
+    "AUTHORITY_SHA256.txt": {
+      "bytes": 99,
+      "sha256": "ab48c0ea39cd25616df34acd4ce39c207f02c59eea959a9b31252c874fba1f0e"
+    },
+    "BUDGET.json": {
+      "bytes": 623,
+      "sha256": "99af33b446225304f155de7576fece15dcb77ea36dd0d59ce4de1134ac6d5458"
+    },
+    "CODE_AND_RUNTIME_IDENTITIES.json": {
+      "bytes": 12104,
+      "sha256": "82b2773a6880fd2d933e7a2f07a277d6f1f5685c735b97d776f66fdf607df7dc"
+    },
+    "FIRST_COMMISSIONING_LAUNCH_PACKET.md": {
+      "bytes": 8352,
+      "sha256": "fd4939c21976e6a932a9534ca202de05275927d9f7c7c1384a1bb69857e4d6e6"
+    },
+    "INITIAL_A1.snapshot.json.gz": {
+      "bytes": 121474,
+      "sha256": "348079e967a34a98cd395a5b117f484c3ea8ba58edc6b0f4cb3f4975e6bbd557"
+    },
+    "INITIAL_STATE_SUMMARY.json": {
+      "bytes": 3104,
+      "sha256": "523e4c028fec6ff2ca23cb3f5e1ed457c3d7467b9c35763455d9335fc559eab8"
+    },
+    "instrument/developmental_ecology/configuration.json": {
+      "bytes": 3445,
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9"
+    },
+    "instrument/developmental_ecology/loom_commissioning/__init__.py": {
+      "bytes": 81,
+      "sha256": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46"
+    },
+    "instrument/developmental_ecology/loom_commissioning/adapter.py": {
+      "bytes": 6032,
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+    },
+    "instrument/developmental_ecology/loom_commissioning/authority.py": {
+      "bytes": 10790,
+      "sha256": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca"
+    },
+    "instrument/developmental_ecology/loom_commissioning/contract.py": {
+      "bytes": 7199,
+      "sha256": "e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3"
+    },
+    "instrument/developmental_ecology/loom_commissioning/controllers.py": {
+      "bytes": 7600,
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e"
+    },
+    "instrument/developmental_ecology/loom_commissioning/diagnostics.py": {
+      "bytes": 7466,
+      "sha256": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da"
+    },
+    "instrument/developmental_ecology/loom_commissioning/evaluation.py": {
+      "bytes": 5907,
+      "sha256": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3"
+    },
+    "instrument/developmental_ecology/loom_commissioning/initialization.py": {
+      "bytes": 1299,
+      "sha256": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a"
+    },
+    "instrument/developmental_ecology/loom_commissioning/pending.py": {
+      "bytes": 6756,
+      "sha256": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8"
+    },
+    "instrument/developmental_ecology/loom_commissioning/runner.py": {
+      "bytes": 18123,
+      "sha256": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57"
+    },
+    "instrument/developmental_ecology/loom_commissioning/sensor.html": {
+      "bytes": 5297,
+      "sha256": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a"
+    },
+    "instrument/developmental_ecology/loom_commissioning/sensor_ui.py": {
+      "bytes": 3685,
+      "sha256": "b5596ad3aff664df951d63ba2311e232ff483de6c7dcc8ac446b0c240868572e"
+    },
+    "instrument/developmental_ecology/loom_commissioning/validators.py": {
+      "bytes": 8285,
+      "sha256": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a"
+    },
+    "instrument/developmental_ecology/loom_p/__init__.py": {
+      "bytes": 99,
+      "sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a"
+    },
+    "instrument/developmental_ecology/loom_p/chemistry.py": {
+      "bytes": 4565,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    "instrument/developmental_ecology/loom_p/diagnostics.py": {
+      "bytes": 4887,
+      "sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0"
+    },
+    "instrument/developmental_ecology/loom_p/engine.py": {
+      "bytes": 9957,
+      "sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d"
+    },
+    "instrument/developmental_ecology/loom_p/geometry.py": {
+      "bytes": 8616,
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3"
+    },
+    "instrument/developmental_ecology/loom_p/inspector.py": {
+      "bytes": 20150,
+      "sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83"
+    },
+    "instrument/developmental_ecology/loom_p/neural.py": {
+      "bytes": 15195,
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca"
+    },
+    "instrument/developmental_ecology/loom_p/physics.py": {
+      "bytes": 19333,
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783"
+    },
+    "instrument/developmental_ecology/loom_p/prehistory.py": {
+      "bytes": 6513,
+      "sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588"
+    },
+    "instrument/developmental_ecology/loom_p/reconstruction.py": {
+      "bytes": 1879,
+      "sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b"
+    },
+    "instrument/developmental_ecology/loom_p/records.py": {
+      "bytes": 7470,
+      "sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e"
+    },
+    "instrument/developmental_ecology/loom_p/schema.py": {
+      "bytes": 7190,
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc"
+    },
+    "instrument/developmental_ecology/loom_p/smokes.py": {
+      "bytes": 5575,
+      "sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+    },
+    "instrument/developmental_ecology/requirements-lock.txt": {
+      "bytes": 129,
+      "sha256": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6"
+    },
+    "packet_checks.py": {
+      "bytes": 7768,
+      "sha256": "5424e00cb0fbb6e1ecfa2fa835e5f7a5828f61bf8d0c64b4b86d097b7536cc31"
+    },
+    "PORTABLE_VALIDATION.json": {
+      "bytes": 439,
+      "sha256": "c8fa2d7209950f6b89d079079d84bd713482bae46393fc3cd9d42e9434c17496"
+    },
+    "PREPARATION_CHECKS.json": {
+      "bytes": 7394,
+      "sha256": "df4d4086753f4bbad2190dc5448829d8bc849a691bfd3917f8826a519ef11342"
+    },
+    "prepare_packet.py": {
+      "bytes": 14038,
+      "sha256": "226fcae752890f81954a206b68f66b86994a9b39aeaebdc258a30aaa896fbc3c"
+    },
+    "PRESERVATION.json": {
+      "bytes": 296,
+      "sha256": "c033ee9518def69bf19450086abf3b9e796bb54aaca8b7864ee93a6c5c3da461"
+    },
+    "PROCEDURES.md": {
+      "bytes": 16548,
+      "sha256": "779bd99ad396019c19aa6421850a1a9613eb84b0ac7a471455a6b9d2dc3ed065"
+    },
+    "references/00_LOOM_CURRENT_STATE.md": {
+      "bytes": 13757,
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b"
+    },
+    "references/COMPUTE_ESTIMATE.json": {
+      "bytes": 1978,
+      "sha256": "c7e2615ae533057dd1c56608f378f37f6b3f44bb005688a2408946c05538eb0d"
+    },
+    "references/DECISION-P-APPARATUS-SCOPE-2026-09-24-73c9ad61.md": {
+      "bytes": 3119,
+      "sha256": "88b14aa57a2ffee82e5e912883f5f4d4f3f83ae253fd0212eb0b1ac95e289763"
+    },
+    "references/FIRST_LAUNCH_REQUEST.txt": {
+      "bytes": 5481,
+      "sha256": "0e7fa7665c9435401f6035ee1f7eb3096a4509123976ee7e6f7aff731b64f0f0"
+    },
+    "references/independent-r1p-evidence.json": {
+      "bytes": 41431,
+      "sha256": "87900b34fe866b3b97ba058ffe327ac8eadf76f1c155c9b220d1dfd4bdfa1238"
+    },
+    "references/LOOM_P_FINAL_MECHANICAL_CLOSURE_REVIEW.md": {
+      "bytes": 26291,
+      "sha256": "e5c658a728ccd72643c27eae8b81b5d2ef5bdfc6b0c845fd9cbda6d6a3903756"
+    },
+    "references/P_COMMISSIONING_CONFIGURATION_CHANGE_RULES_v0_1.md": {
+      "bytes": 16147,
+      "sha256": "b4ebf441a56f4cf08a17fba842a9eae003819cc8d8b7b29b1285fff6de8e6229"
+    },
+    "references/P_COMMISSIONING_MATRIX_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 11461,
+      "sha256": "c653e378d5413bc95b8056624d6742d6d02298385dccb84b57f9a2d306beca90"
+    },
+    "references/P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 49871,
+      "sha256": "d25c9829d799fd497f1598ea64afb448a3558fd886105eacf737c1cb8bbae42c"
+    },
+    "references/WORKBENCH_AGENTS.md": {
+      "bytes": 13223,
+      "sha256": "58f0ab1ad6916b84a2133310389288503323aae72a8207606aa6aa83adb59b79"
+    },
+    "references/WORKBENCH_MAP.md": {
+      "bytes": 12535,
+      "sha256": "a88e21beab9adaeb77a5bec895aa22c626c682c8c2d0733a11832b292aafa739"
+    },
+    "references/WORKBENCH_STATUS.md": {
+      "bytes": 14988,
+      "sha256": "93cd26313dd44081c96a612d8a68cd609830dfe4ee4bf56e5b08da584578f0aa"
+    },
+    "seal_packet.py": {
+      "bytes": 2215,
+      "sha256": "60781b8da67fb3cf0bccde410e85852d477b0b5e4530beac053e637c4be63f36"
+    },
+    "SOURCE_IDENTITIES.json": {
+      "bytes": 3992,
+      "sha256": "3c20d0e8abb9c775ac6f7035f9c9aa18152d2c2e8a707c6473e5ed2fe8e99c26"
+    },
+    "V2_ARCHIVED_ACCOUNTING_CHECK.json": {
+      "bytes": 18623,
+      "sha256": "dbdd6617881a534574d58c833a4dd95b5b5e5700f95b2ec837be60547bface3b"
+    },
+    "validate_packet.py": {
+      "bytes": 2992,
+      "sha256": "d28a1433caca4b47d890877931575cb6bdb9631371bc346191cc342eec541ea2"
+    },
+    "verified-cache/fields.npz": {
+      "bytes": 94596,
+      "sha256": "f968ed0875d68e3421c5acc9f9a4a218727b9698877b1cc86225d4fec9e6ef7d"
+    },
+    "verified-cache/law-source-at-preparation/chemistry.py": {
+      "bytes": 4565,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    "verified-cache/law-source-at-preparation/geometry.py": {
+      "bytes": 7814,
+      "sha256": "b57861757e051c7a789df0ef31a28632d1e57dae3e0c3c933edf07667c11d877"
+    },
+    "verified-cache/law-source-at-preparation/schema.py": {
+      "bytes": 7050,
+      "sha256": "2df77ee95f708aa755750e214ac9269985d8988760d2c08b5e9c36e477b574bd"
+    },
+    "verified-cache/manifest.json": {
+      "bytes": 2020,
+      "sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3"
+    }
+  }
+}

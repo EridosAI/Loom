@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "utc": "2026-09-30T10:31:38.047355+00:00",
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "numpy": "2.3.3",
+  "scope": "PASSIVE_BIRTH_AUDIT_AND_MOTOR_DESIGN_ONLY",
+  "original_checkpoint_files_verified": 60,
+  "original_input_files_unchanged": 76,
+  "original_nursery_package_files_unchanged": 157,
+  "founder_outcome_summary_matches_original_delivery_hash": true,
+  "P": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "runner_head": "87abae34e19d4e46234402a6b1ba776814956ec1",
+  "git_clean": true,
+  "git_read_warnings": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied",
+  "candidate_motor_families": 2,
+  "replacement_selected": false,
+  "birth_law_selected": false,
+  "nursery_parameters_applied": false,
+  "existing_three_candidates_preserved": true,
+  "world_steps": 0,
+  "P_steps": 0,
+  "motor_generator_steps": 0,
+  "field_steps": 0,
+  "prehistory_steps": 0,
+  "new_births": 0,
+  "new_rng_draws": 0,
+  "new_authority_objects": 0,
+  "production_modifications": false,
+  "canon_modifications": false,
+  "git_writes": false,
+  "old_human_B1_evaluator_not_accessed": true,
+  "FS060": "APPARATUS_INTERRUPTED_UNCLOSED",
+  "checks": [
+    "checkpoint file and payload hashes",
+    "all actual birth clearances and rejected-proposal ledgers",
+    "stored initial stream counters",
+    "raw chemistry static reproduction",
+    "rectangular signed distances",
+    "bilinear gradients on manufactured affine fields",
+    "rank ties and Poisson-binomial tail",
+    "finite non-wrapping convolution on manufactured mask",
+    "stratum marginal probability algebra",
+    "document links/equation delimiters/control characters",
+    "figure visual inspection"
+  ],
+  "figures_visually_reviewed": true,
+  "files": [
+    {
+      "path": "audit_birth.py",
+      "bytes": 18812,
+      "sha256": "c22802799fc1b8fe8613db9998b6603328c02d9108a664b23e6fac8fb7322fd6"
+    },
+    {
+      "path": "BIRTH_ARENA_MAP.png",
+      "bytes": 268395,
+      "sha256": "2c51f22c39dca3f5eef31aef17d0eebbd465632ae8b77135b6428e6ddeb95b5d"
+    },
+    {
+      "path": "BIRTH_ARENA_MAP.svg",
+      "bytes": 157530,
+      "sha256": "a2f37b0305e352940836f116b14ae2ed471b0076e00b57f78ac1510810ee4aaa"
+    },
+    {
+      "path": "BIRTH_AUDIT_METHODS.md",
+      "bytes": 3873,
+      "sha256": "d74228b182a0d6714221e6b75ee366d1ba18bf6f00c3d110f84b19ee3996edf8"
+    },
+    {
+      "path": "BIRTH_AUDIT_RESULTS.json",
+      "bytes": 39306,
+      "sha256": "7975f4acdaac07f57d4049f2d6c4acf88ee6cddcf493dc3039fcd975c06740a1"
+    },
+    {
+      "path": "BIRTH_GEOGRAPHY_ALL_60.csv",
+      "bytes": 51557,
+      "sha256": "a426240ad3256cbb57e9479821bf1cce451410f7242d1f439f6a08de025fc1aa"
+    },
+    {
+      "path": "BIRTH_GEOGRAPHY_ASSOCIATIONS.png",
+      "bytes": 216084,
+      "sha256": "2d5161539237dc333371582182053cfc25a1cbbac141c78c62967941a6dc6fbf"
+    },
+    {
+      "path": "BIRTH_GEOGRAPHY_ASSOCIATIONS.svg",
+      "bytes": 49758,
+      "sha256": "ee886d0316f4e06ac227f5be06967cde6a7a7593b7ffc89dd490adf350703e37"
+    },
+    {
+      "path": "BIRTH_GEOGRAPHY_AUDIT_v0_1.md",
+      "bytes": 23711,
+      "sha256": "777a8493b06f8462410cb5a6e8553baa3f3c8506e486503b1813f03ae0a78227"
+    },
+    {
+      "path": "BIRTH_INITIAL_DETAILS.json",
+      "bytes": 210746,
+      "sha256": "d7d688ce678693177909b494c43e642009a1cd26c97d0f910f038f6c20ea3e91"
+    },
+    {
+      "path": "BIRTH_QUADRAT_COUNTS.csv",
+      "bytes": 31710,
+      "sha256": "f00698596dbb180eff4b687f48799f8e5aa3736cd295d530b453e2de7d858adb"
+    },
+    {
+      "path": "BIRTH_SAFE_SUPPORT_GRID.npz",
+      "bytes": 25369,
+      "sha256": "8ab4ab871bd55b19ef5f16b0c150effc58e89aac5f4e7bc6d721d44dd192ddfb"
+    },
+    {
+      "path": "BIRTH_SUPPLEMENT.json",
+      "bytes": 4674,
+      "sha256": "9f939888b8fab2baee4ebc1b4c848c85dc839d4062da4d733455086a569f4503"
+    },
+    {
+      "path": "EXPLORATORY_ASSOCIATIONS.csv",
+      "bytes": 1537,
+      "sha256": "7c50cbbf79945af55d91dc8b09187d67a6152a2a8c3af93e33eaf5979136dcfd"
+    },
+    {
+      "path": "INPUT_CUSTODY.json",
+      "bytes": 22846,
+      "sha256": "89611d108378ff1fa3a94b8e051b86e537c725f4edc18f929a39337c06d54dc8"
+    },
+    {
+      "path": "JASON_BIRTH_GEOGRAPHY_REQUEST.md",
+      "bytes": 1221,
+      "sha256": "7104140b124d92fe285950964d70bceaaa8c589427ce618a00e59657bfa98e60"
+    },
+    {
+      "path": "JASON_MOTOR_DESIGN_REQUEST.txt",
+      "bytes": 10585,
+      "sha256": "a7f513e588b0a73d456b86447da516d4e0978d2358fcfc1a6110b9088c8d9bbf"
+    },
+    {
+      "path": "NEWBORN_SPONTANEOUS_MOTOR_DESIGN_REVIEW_v0_1.md",
+      "bytes": 31960,
+      "sha256": "d81e587c14d2d5e3c083ccb94d515361369fbc51558c59f68348e16a01725e2d"
+    },
+    {
+      "path": "OUTCOME_ASSOCIATION_GROUPS.json",
+      "bytes": 25033,
+      "sha256": "fa6a32202cdc535f59510666a19e435ab170859fe32d7b9d91448ff8cece3d97"
+    },
+    {
+      "path": "plot_birth.py",
+      "bytes": 7787,
+      "sha256": "bdaeea43d4cc428d953237850cd7555d265c53d30cb7607fccb2e06f1a9d1e53"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3309,
+      "sha256": "0024e103b6565177f98a45f3832c90d57b269c74de0b98567fd81b15c9ed2c58"
+    },
+    {
+      "path": "SAFE_SUPPORT_QUADRATURE.json",
+      "bytes": 39831,
+      "sha256": "e723118e5befa83c5b6605d04a426ec3b662a719073271123833778e36cc2d25"
+    },
+    {
+      "path": "supplement_birth.py",
+      "bytes": 4424,
+      "sha256": "f7a7db801f95315a562992b701a7b5ca30a62b60ccbccf36103978d81360fe82"
+    },
+    {
+      "path": "verify_review.py",
+      "bytes": 5735,
+      "sha256": "01b4281e9a75accb95178f371af3ff41eae975559cf0044916c9630cd6610abb"
+    },
+    {
+      "path": "write_birth_report.py",
+      "bytes": 23307,
+      "sha256": "4a1759fb85c90a8a1270b87a146cde31ceafb7e25a63faecd31267335fa68ec0"
+    }
+  ],
+  "total_bytes": 1279100
+}

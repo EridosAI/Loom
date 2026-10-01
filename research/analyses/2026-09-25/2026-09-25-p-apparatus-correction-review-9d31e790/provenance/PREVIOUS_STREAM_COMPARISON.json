@@ -1,0 +1,148 @@
+{
+  "modes": [
+    {
+      "mode": "intact_P",
+      "streams": {
+        "native": {
+          "uncompressed_bytes": 846789,
+          "sha256": "3afba8bab8a953877c70e010b310075e4a04d8debdc91abe024017af8970eee0",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "wave": {
+          "uncompressed_bytes": 126823,
+          "sha256": "30c83095b134ae435f43e6b57b783985123e02e5fb0b235cb6e2371f15a03d4d",
+          "rows": 1,
+          "exact_previous_05ab_bytes": true
+        },
+        "events": {
+          "uncompressed_bytes": 13121,
+          "sha256": "7eb6a114c26677f357d0bba14d2911d179c13c57210dc7e7dde06cda77d229f7",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "diagnostics": {
+          "uncompressed_bytes": 1297441,
+          "sha256": "3eee5d4388caf5c8ef0a4a7286680efa807d3349cf539b8595d35c5d9cff0ef2",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "controller": {
+          "uncompressed_bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rows": 0,
+          "exact_previous_05ab_bytes": true
+        },
+        "sensor": {
+          "uncompressed_bytes": 12202,
+          "sha256": "163b94eebd4cb142a1f88c811a6b61dead5084eeef10108ecd57fc6810d37299",
+          "rows": 21,
+          "exact_previous_05ab_bytes": true
+        },
+        "scientific_observations": {
+          "uncompressed_bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rows": 0,
+          "exact_previous_05ab_bytes": true
+        }
+      }
+    },
+    {
+      "mode": "FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC",
+      "streams": {
+        "native": {
+          "uncompressed_bytes": 761291,
+          "sha256": "e966899465f376431e218da92f5dd64c8c9e99aad962d951f721c335e3156e89",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "wave": {
+          "uncompressed_bytes": 143530,
+          "sha256": "1c6cc1cd6854a7fe5b24f1a0f87217fd6d52fc5906d5a71c036a8b7ac3c48284",
+          "rows": 1,
+          "exact_previous_05ab_bytes": true
+        },
+        "events": {
+          "uncompressed_bytes": 13961,
+          "sha256": "49c1f7ffd2eb51db654197db4c46696797aca22412d0a9398687a99c64e976b1",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "diagnostics": {
+          "uncompressed_bytes": 1325702,
+          "sha256": "83f579ec7e3e93facb6892af393c2042780554182cf2a84399bd7c97dc4e30a6",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "controller": {
+          "uncompressed_bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rows": 0,
+          "exact_previous_05ab_bytes": true
+        },
+        "sensor": {
+          "uncompressed_bytes": 12202,
+          "sha256": "163b94eebd4cb142a1f88c811a6b61dead5084eeef10108ecd57fc6810d37299",
+          "rows": 21,
+          "exact_previous_05ab_bytes": true
+        },
+        "scientific_observations": {
+          "uncompressed_bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rows": 0,
+          "exact_previous_05ab_bytes": true
+        }
+      }
+    },
+    {
+      "mode": "external_controller",
+      "streams": {
+        "native": {
+          "uncompressed_bytes": 49932,
+          "sha256": "7b13ab3e431fd6f978af3dbfe91eef94a832615a77a35dde3aed99dd68c455a7",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "wave": {
+          "uncompressed_bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rows": 0,
+          "exact_previous_05ab_bytes": true
+        },
+        "events": {
+          "uncompressed_bytes": 13345,
+          "sha256": "5dd96f1b4ed8d552c2983ffbd33f1fb708939fadab901b7a4223ce0d522b670d",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "diagnostics": {
+          "uncompressed_bytes": 24547,
+          "sha256": "de8cbe85eaa1cc10bf169d8e4f0bfbf68111c58990d1275cc69dd00c421c2e09",
+          "rows": 20,
+          "exact_previous_05ab_bytes": true
+        },
+        "controller": {
+          "uncompressed_bytes": 7289,
+          "sha256": "d75cf6a33ff4d092daa9d010d397f513a4525ff348dacee3ed8ec0d5c7a6c63f",
+          "rows": 2,
+          "exact_previous_05ab_bytes": true
+        },
+        "sensor": {
+          "uncompressed_bytes": 11548,
+          "sha256": "0307e8dbef54eaf4b45b26254bfa794f3678d5850db2b80df0327aca0b3bacd2",
+          "rows": 21,
+          "exact_previous_05ab_bytes": true
+        },
+        "scientific_observations": {
+          "uncompressed_bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rows": 0,
+          "exact_previous_05ab_bytes": true
+        }
+      }
+    }
+  ],
+  "streams_verified": 21,
+  "all_uncompressed_stream_bytes_equal_previous_runtime": true,
+  "target_files_still_unchanged": 3106
+}

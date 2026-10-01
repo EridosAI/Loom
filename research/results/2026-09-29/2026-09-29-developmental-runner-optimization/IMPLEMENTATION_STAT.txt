@@ -1,0 +1,12 @@
+ developmental_ecology/DEVELOPMENTAL_RUNNER.md      |  39 ++++
+ .../loom_developmental/.gitattributes              |   2 +
+ .../loom_developmental/__init__.py                 |   1 +
+ developmental_ecology/loom_developmental/codec.py  | 131 ++++++++++++
+ developmental_ecology/loom_developmental/core.py   |  74 +++++++
+ .../loom_developmental/evidence.py                 |  54 +++++
+ developmental_ecology/loom_developmental/replay.py |  83 ++++++++
+ developmental_ecology/loom_developmental/runner.py | 234 +++++++++++++++++++++
+ developmental_ecology/loom_developmental/verify.py |  86 ++++++++
+ .../tests_developmental/test_core.py               |  56 +++++
+ .../tests_developmental/test_store.py              |  92 ++++++++
+ 11 files changed, 852 insertions(+)

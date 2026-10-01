@@ -1,0 +1,789 @@
+{
+  "exclusive_seconds_by_category": {
+    "serialization": 1.7986007000000002,
+    "validation": 0.011289999999999996,
+    "hashing": 0.1580583,
+    "other_shared_kernels_python": 1.2844440999999998,
+    "observer_diagnostics": 0.0017122000000000003,
+    "state_copy": 0.1503163,
+    "fields": 0.018390700000000003,
+    "geometry_sensing_shared": 0.030079300000000003,
+    "compression": 0.255189,
+    "P_neural": 0.018378900000000004,
+    "filesystem": 0.0626474,
+    "snapshot_generation": 0.0003634,
+    "physics": 0.005166199999999999,
+    "recorder_writes": 0.0018552000000000002,
+    "detached_D5": 0.00037210000000000005
+  },
+  "top_functions": [
+    {
+      "file": "C:\\Python313\\Lib\\json\\encoder.py",
+      "line": 205,
+      "function": "iterencode",
+      "calls": 477,
+      "exclusive_seconds": 1.123246,
+      "inclusive_seconds": 1.123246,
+      "category": "serialization"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method binascii.b2a_base64>",
+      "calls": 97213,
+      "exclusive_seconds": 0.6419164,
+      "inclusive_seconds": 0.6419164,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 21,
+      "function": "pack",
+      "calls": 481946,
+      "exclusive_seconds": 0.6022074000000001,
+      "inclusive_seconds": 1.6878981000000002,
+      "category": "serialization"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 3039094,
+      "exclusive_seconds": 0.19379500000000002,
+      "inclusive_seconds": 0.1940292,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'compress' of 'zlib.Compress' objects>",
+      "calls": 82,
+      "exclusive_seconds": 0.1531168,
+      "inclusive_seconds": 0.1531168,
+      "category": "compression"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _hashlib.openssl_sha256>",
+      "calls": 943,
+      "exclusive_seconds": 0.1471655,
+      "inclusive_seconds": 0.1471655,
+      "category": "hashing"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method zlib.compress>",
+      "calls": 2,
+      "exclusive_seconds": 0.0948601,
+      "inclusive_seconds": 0.0948601,
+      "category": "compression"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+      "calls": 101362,
+      "exclusive_seconds": 0.08576120000000001,
+      "inclusive_seconds": 0.08576120000000001,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\copy.py",
+      "line": 119,
+      "function": "deepcopy",
+      "calls": 120240,
+      "exclusive_seconds": 0.08052190000000001,
+      "inclusive_seconds": 0.1923766,
+      "category": "state_copy"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'encode' of 'str' objects>",
+      "calls": 515,
+      "exclusive_seconds": 0.06050610000000001,
+      "inclusive_seconds": 0.06050610000000001,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'decode' of 'bytes' objects>",
+      "calls": 97233,
+      "exclusive_seconds": 0.049615900000000004,
+      "inclusive_seconds": 0.049615900000000004,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _io.open>",
+      "calls": 206,
+      "exclusive_seconds": 0.045674700000000006,
+      "inclusive_seconds": 0.047320100000000004,
+      "category": "filesystem"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 57,
+      "function": "state_bytes",
+      "calls": 163,
+      "exclusive_seconds": 0.0442209,
+      "inclusive_seconds": 2.8203228,
+      "category": "serialization"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'tobytes' of 'numpy.ndarray' objects>",
+      "calls": 97235,
+      "exclusive_seconds": 0.037093600000000004,
+      "inclusive_seconds": 0.037093600000000004,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'all' of 'numpy.ndarray' objects>",
+      "calls": 96143,
+      "exclusive_seconds": 0.029226000000000002,
+      "inclusive_seconds": 0.1251684,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method '__deepcopy__' of 'numpy.ndarray' objects>",
+      "calls": 27336,
+      "exclusive_seconds": 0.025356200000000002,
+      "inclusive_seconds": 0.025356200000000002,
+      "category": "state_copy"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'get' of 'dict' objects>",
+      "calls": 241677,
+      "exclusive_seconds": 0.0206249,
+      "inclusive_seconds": 0.0206249,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\copy.py",
+      "line": 218,
+      "function": "_deepcopy_dict",
+      "calls": 5476,
+      "exclusive_seconds": 0.018417100000000002,
+      "inclusive_seconds": 0.1906159,
+      "category": "state_copy"
+    },
+    {
+      "file": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Lib\\site-packages\\numpy\\_core\\_methods.py",
+      "line": 66,
+      "function": "_all",
+      "calls": 96145,
+      "exclusive_seconds": 0.016533100000000002,
+      "inclusive_seconds": 0.0959459,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\base64.py",
+      "line": 51,
+      "function": "b64encode",
+      "calls": 97213,
+      "exclusive_seconds": 0.0160688,
+      "inclusive_seconds": 0.6579852,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\geometry.py",
+      "line": 76,
+      "function": "ray_hit",
+      "calls": 8220,
+      "exclusive_seconds": 0.0144489,
+      "inclusive_seconds": 0.016189500000000002,
+      "category": "geometry_sensing_shared"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 56,
+      "function": "strict_bytes",
+      "calls": 280,
+      "exclusive_seconds": 0.0132776,
+      "inclusive_seconds": 1.1942751,
+      "category": "serialization"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\copy.py",
+      "line": 232,
+      "function": "_keep_alive",
+      "calls": 37961,
+      "exclusive_seconds": 0.0105404,
+      "inclusive_seconds": 0.016465300000000002,
+      "category": "state_copy"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.id>",
+      "calls": 173249,
+      "exclusive_seconds": 0.010393900000000001,
+      "inclusive_seconds": 0.010393900000000001,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 13,
+      "function": "registry",
+      "calls": 2375,
+      "exclusive_seconds": 0.009632400000000001,
+      "inclusive_seconds": 0.014065800000000002,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 58,
+      "function": "state_hash",
+      "calls": 123,
+      "exclusive_seconds": 0.0090861,
+      "inclusive_seconds": 2.4230724,
+      "category": "hashing"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method numpy.ascontiguousarray>",
+      "calls": 97213,
+      "exclusive_seconds": 0.008941600000000001,
+      "inclusive_seconds": 0.008941600000000001,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\chemistry.py",
+      "line": 37,
+      "function": "apply",
+      "calls": 160,
+      "exclusive_seconds": 0.008457600000000001,
+      "inclusive_seconds": 0.008457600000000001,
+      "category": "fields"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 86,
+      "function": "view",
+      "calls": 13128,
+      "exclusive_seconds": 0.0078483,
+      "inclusive_seconds": 0.012566800000000001,
+      "category": "serialization"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\dataclasses.py",
+      "line": 1362,
+      "function": "_asdict_inner",
+      "calls": 22816,
+      "exclusive_seconds": 0.0073692,
+      "inclusive_seconds": 0.0103427,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\chemistry.py",
+      "line": 30,
+      "function": "step",
+      "calls": 20,
+      "exclusive_seconds": 0.0068637,
+      "inclusive_seconds": 0.030893,
+      "category": "fields"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_commissioning\\runner.py",
+      "line": 230,
+      "function": "advance",
+      "calls": 2,
+      "exclusive_seconds": 0.0053425,
+      "inclusive_seconds": 3.7084794000000003,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\neural.py",
+      "line": 42,
+      "function": "step",
+      "calls": 80,
+      "exclusive_seconds": 0.0051847,
+      "inclusive_seconds": 0.017848700000000002,
+      "category": "P_neural"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'flush' of 'zlib.Compress' objects>",
+      "calls": 89,
+      "exclusive_seconds": 0.0051808,
+      "inclusive_seconds": 0.0051808,
+      "category": "compression"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\neural.py",
+      "line": 103,
+      "function": "return_read",
+      "calls": 35,
+      "exclusive_seconds": 0.0050175,
+      "inclusive_seconds": 0.011133200000000001,
+      "category": "P_neural"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'append' of 'list' objects>",
+      "calls": 53191,
+      "exclusive_seconds": 0.0049219,
+      "inclusive_seconds": 0.0049219,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\copy.py",
+      "line": 201,
+      "function": "_deepcopy_tuple",
+      "calls": 5304,
+      "exclusive_seconds": 0.0048196,
+      "inclusive_seconds": 0.013968000000000001,
+      "category": "state_copy"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 94,
+      "function": "scalar_count",
+      "calls": 12803,
+      "exclusive_seconds": 0.0048155,
+      "inclusive_seconds": 0.010871800000000001,
+      "category": "serialization"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'read' of '_io.BufferedReader' objects>",
+      "calls": 195,
+      "exclusive_seconds": 0.0041557,
+      "inclusive_seconds": 0.0041557,
+      "category": "filesystem"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\copy.py",
+      "line": 173,
+      "function": "_deepcopy_atomic",
+      "calls": 76859,
+      "exclusive_seconds": 0.0041285,
+      "inclusive_seconds": 0.0041285,
+      "category": "state_copy"
+    },
+    {
+      "file": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Lib\\site-packages\\numpy\\linalg\\_linalg.py",
+      "line": 2623,
+      "function": "norm",
+      "calls": 2108,
+      "exclusive_seconds": 0.004097900000000001,
+      "inclusive_seconds": 0.007249,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.getattr>",
+      "calls": 43939,
+      "exclusive_seconds": 0.0040718,
+      "inclusive_seconds": 0.0040718,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\geometry.py",
+      "line": 122,
+      "function": "light_readings",
+      "calls": 20,
+      "exclusive_seconds": 0.004054,
+      "inclusive_seconds": 0.025023100000000003,
+      "category": "geometry_sensing_shared"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'write' of '_io.BufferedWriter' objects>",
+      "calls": 321,
+      "exclusive_seconds": 0.0038484,
+      "inclusive_seconds": 0.1574036,
+      "category": "filesystem"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\copy.py",
+      "line": 192,
+      "function": "_deepcopy_list",
+      "calls": 3063,
+      "exclusive_seconds": 0.0035723,
+      "inclusive_seconds": 0.09126640000000001,
+      "category": "state_copy"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_commissioning\\adapter.py",
+      "line": 81,
+      "function": "step",
+      "calls": 20,
+      "exclusive_seconds": 0.0032966000000000002,
+      "inclusive_seconds": 0.7611412000000001,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method numpy._core._multiarray_umath.c_einsum>",
+      "calls": 1994,
+      "exclusive_seconds": 0.0032834,
+      "inclusive_seconds": 0.0032834,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\physics.py",
+      "line": 210,
+      "function": "first_collision",
+      "calls": 20,
+      "exclusive_seconds": 0.0032140000000000003,
+      "inclusive_seconds": 0.009028300000000001,
+      "category": "physics"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'items' of 'dict' objects>",
+      "calls": 24137,
+      "exclusive_seconds": 0.0032047,
+      "inclusive_seconds": 0.0032047,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method nt.fsync>",
+      "calls": 2,
+      "exclusive_seconds": 0.0031948000000000002,
+      "inclusive_seconds": 0.0031948000000000002,
+      "category": "filesystem"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\neural.py",
+      "line": 37,
+      "function": "weights",
+      "calls": 480,
+      "exclusive_seconds": 0.0027977,
+      "inclusive_seconds": 0.0029543,
+      "category": "P_neural"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\engine.py",
+      "line": 28,
+      "function": "validate_state",
+      "calls": 20,
+      "exclusive_seconds": 0.0027825000000000003,
+      "inclusive_seconds": 0.3882302,
+      "category": "validation"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'item' of 'numpy.generic' objects>",
+      "calls": 3944,
+      "exclusive_seconds": 0.0027445,
+      "inclusive_seconds": 0.0027445,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "<frozen importlib._bootstrap>",
+      "line": 645,
+      "function": "parent",
+      "calls": 12146,
+      "exclusive_seconds": 0.0026232,
+      "inclusive_seconds": 0.0046061,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.issubclass>",
+      "calls": 34858,
+      "exclusive_seconds": 0.0025252,
+      "inclusive_seconds": 0.0025252,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'tolist' of 'numpy.ndarray' objects>",
+      "calls": 7535,
+      "exclusive_seconds": 0.0024286,
+      "inclusive_seconds": 0.0024286,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'flush' of '_io.BufferedWriter' objects>",
+      "calls": 173,
+      "exclusive_seconds": 0.0024199,
+      "inclusive_seconds": 0.0031287000000000003,
+      "category": "filesystem"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\geometry.py",
+      "line": 5,
+      "function": "circle_rect_area",
+      "calls": 500,
+      "exclusive_seconds": 0.0022922000000000003,
+      "inclusive_seconds": 0.0044745,
+      "category": "geometry_sensing_shared"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\geometry.py",
+      "line": 60,
+      "function": "gap_normal",
+      "calls": 1280,
+      "exclusive_seconds": 0.0022749000000000003,
+      "inclusive_seconds": 0.0066541000000000005,
+      "category": "geometry_sensing_shared"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 96,
+      "function": "<genexpr>",
+      "calls": 12465,
+      "exclusive_seconds": 0.0021167,
+      "inclusive_seconds": 0.0105135,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+      "line": 257,
+      "function": "_parse_path",
+      "calls": 842,
+      "exclusive_seconds": 0.002098,
+      "inclusive_seconds": 0.0038094,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_commissioning\\authority.py",
+      "line": 16,
+      "function": "unique_json",
+      "calls": 3742,
+      "exclusive_seconds": 0.0020752,
+      "inclusive_seconds": 0.0032515,
+      "category": "validation"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'rpartition' of 'str' objects>",
+      "calls": 12151,
+      "exclusive_seconds": 0.0019837,
+      "inclusive_seconds": 0.0019837,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\neural.py",
+      "line": 10,
+      "function": "tangent_step",
+      "calls": 320,
+      "exclusive_seconds": 0.0019668000000000003,
+      "inclusive_seconds": 0.0074746000000000005,
+      "category": "P_neural"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.sum>",
+      "calls": 4358,
+      "exclusive_seconds": 0.0019239,
+      "inclusive_seconds": 0.011019500000000002,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Lib\\site-packages\\numpy\\_core\\_methods.py",
+      "line": 117,
+      "function": "_mean",
+      "calls": 900,
+      "exclusive_seconds": 0.0018670000000000002,
+      "inclusive_seconds": 0.0043297000000000006,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\chemistry.py",
+      "line": 15,
+      "function": "coefficients",
+      "calls": 20,
+      "exclusive_seconds": 0.0017347,
+      "inclusive_seconds": 0.0078594,
+      "category": "fields"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_commissioning\\diagnostics.py",
+      "line": 62,
+      "function": "passive",
+      "calls": 20,
+      "exclusive_seconds": 0.0016760000000000002,
+      "inclusive_seconds": 1.5961177000000002,
+      "category": "observer_diagnostics"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method '__exit__' of '_io._IOBase' objects>",
+      "calls": 200,
+      "exclusive_seconds": 0.0016356,
+      "inclusive_seconds": 0.0016356,
+      "category": "filesystem"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'copy' of 'numpy.ndarray' objects>",
+      "calls": 3676,
+      "exclusive_seconds": 0.0015492000000000001,
+      "inclusive_seconds": 0.0015492000000000001,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\records.py",
+      "line": 108,
+      "function": "append",
+      "calls": 82,
+      "exclusive_seconds": 0.0015048000000000001,
+      "inclusive_seconds": 0.2322548,
+      "category": "recorder_writes"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.compile>",
+      "calls": 1,
+      "exclusive_seconds": 0.0014930000000000002,
+      "inclusive_seconds": 0.0014930000000000002,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method numpy.zeros>",
+      "calls": 7965,
+      "exclusive_seconds": 0.0014859,
+      "inclusive_seconds": 0.0014859,
+      "category": "other_shared_kernels_python"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\copy.py",
+      "line": 248,
+      "function": "_reconstruct",
+      "calls": 894,
+      "exclusive_seconds": 0.0014653000000000001,
+      "inclusive_seconds": 0.157115,
+      "category": "state_copy"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\geometry.py",
+      "line": 50,
+      "function": "fixtures",
+      "calls": 100,
+      "exclusive_seconds": 0.0013412,
+      "inclusive_seconds": 0.0026767,
+      "category": "geometry_sensing_shared"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\chemistry.py",
+      "line": 25,
+      "function": "emission",
+      "calls": 20,
+      "exclusive_seconds": 0.0013347,
+      "inclusive_seconds": 0.002733,
+      "category": "fields"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\schema.py",
+      "line": 104,
+      "function": "validate",
+      "calls": 20,
+      "exclusive_seconds": 0.0012929,
+      "inclusive_seconds": 0.0036747000000000004,
+      "category": "validation"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\json\\__init__.py",
+      "line": 183,
+      "function": "dumps",
+      "calls": 477,
+      "exclusive_seconds": 0.0012124,
+      "inclusive_seconds": 1.1261507000000002,
+      "category": "serialization"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\neural.py",
+      "line": 7,
+      "function": "follow",
+      "calls": 602,
+      "exclusive_seconds": 0.0011173,
+      "inclusive_seconds": 0.0011173,
+      "category": "P_neural"
+    },
+    {
+      "file": "C:\\Python313\\Lib\\json\\encoder.py",
+      "line": 183,
+      "function": "encode",
+      "calls": 477,
+      "exclusive_seconds": 0.0010921000000000001,
+      "inclusive_seconds": 1.1246678,
+      "category": "serialization"
+    }
+  ],
+  "inclusive_core_functions": [
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\neural.py",
+      "line": 209,
+      "function": "native",
+      "calls": 20,
+      "exclusive_seconds": 0.00019030000000000002,
+      "inclusive_seconds": 0.0189445,
+      "category": "P_neural"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\chemistry.py",
+      "line": 30,
+      "function": "step",
+      "calls": 20,
+      "exclusive_seconds": 0.0068637,
+      "inclusive_seconds": 0.030893,
+      "category": "fields"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\geometry.py",
+      "line": 147,
+      "function": "transduce",
+      "calls": 20,
+      "exclusive_seconds": 0.0006213000000000001,
+      "inclusive_seconds": 0.0266294,
+      "category": "geometry_sensing_shared"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\neural.py",
+      "line": 218,
+      "function": "handoff",
+      "calls": 1,
+      "exclusive_seconds": 2.9100000000000003e-05,
+      "inclusive_seconds": 0.0075662,
+      "category": "P_neural"
+    },
+    {
+      "file": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929\\developmental_ecology\\loom_p\\physics.py",
+      "line": 248,
+      "function": "advance",
+      "calls": 20,
+      "exclusive_seconds": 0.0005362,
+      "inclusive_seconds": 0.014893400000000001,
+      "category": "physics"
+    }
+  ],
+  "warning": "Exclusive bins sum without double counting. Shared kernels remain separate. Inclusive core values overlap exclusive bins; do not add them. Profiler changes wall throughput."
+}

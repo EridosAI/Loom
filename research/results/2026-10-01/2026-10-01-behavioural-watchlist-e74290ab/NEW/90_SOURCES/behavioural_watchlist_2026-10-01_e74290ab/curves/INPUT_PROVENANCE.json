@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "execution_files": 37909,
+  "execution_bytes": 4258393873,
+  "execution_seal_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\m1_resurrection_results_20260930_v0_1\\EXECUTION_CUSTODY_SEAL.json",
+  "execution_seal_sha256": "0261fd9662319d91fc573b246afec03ecbc4b8829bb3d5a9a42fe0c4071b4d40",
+  "archive": {
+    "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\M1_RESURRECTION_SANDBOX_20260930_v0_1.zip",
+    "bytes": 4653285580,
+    "sha256": "a165c5c48e4b9ed6a84a8ba02b7b1bc23ca57f43f38bfe6d0058694969e7e651"
+  },
+  "sources": [
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-contact-release-20260930\\developmental_ecology\\configuration.json",
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-contact-release-20260930\\developmental_ecology\\loom_p\\neural.py",
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-contact-release-20260930\\developmental_ecology\\loom_p\\geometry.py",
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-contact-release-20260930\\developmental_ecology\\loom_p\\physics.py",
+      "sha256": "240981ab76b83954c68229b8eeda676f6099ac14eb0e5611b977fe6a2a5f2909"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-contact-release-20260930\\developmental_ecology\\loom_p\\schema.py",
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-contact-release-20260930\\developmental_ecology\\loom_developmental\\evidence.py",
+      "sha256": "2805addcc842c675261e7978c43c01d48aa2b99358425b15161625e275c5c996"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\m1_resurrection_results_20260930_v0_1\\passive_reference_sources\\audit_exploration.py",
+      "sha256": "034978d946ac7c4dabedd5adab4e76bd9cbb063bcc16b574254ebf01f74aabb2"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\m1_resurrection_sandbox_20260930_v0_1\\sandbox_core.py",
+      "sha256": "2e579bf9d11f33d74acd9299930696029255a2736b484538203c53eb6d3a0c0f"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\m1_resurrection_sandbox_20260930_v0_1\\sandbox_evidence.py",
+      "sha256": "1184aa55c0bc2753101d5830c2d839dde68380d15f21d7202436b3559b1ae2ac"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\m1_resurrection_sandbox_20260930_v0_1\\sandbox_runner.py",
+      "sha256": "415bb813b6213dfcd733e66570f5afa735c0b86567ddf8f426c46a33753f4e3f"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\motor_commissioning_preparation_20260930_v0_2\\loom_motor_commissioning\\motor.py",
+      "sha256": "ba7cb0a74c27f75092d90d49283ff5ac585ec05b6e15f2e4747a38144f695464"
+    }
+  ],
+  "passive_verification_seconds": 263.3731613,
+  "new_simulation_steps": 0
+}

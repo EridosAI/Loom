@@ -1,0 +1,39 @@
+{
+  "phase": "after",
+  "world_steps": 0,
+  "P_calls": 0,
+  "iterations": 100,
+  "encoded_sha256": "05ff3d0d00f63b4affee37dd851e5922046860c942c577e0350302aadaf7989d",
+  "encoded_bytes": 223464,
+  "baseline": {
+    "closures": {
+      "put": 0,
+      "get": 0
+    },
+    "retained_encoding_parts_bytes": 0,
+    "peak_working_set_bytes": 65798144,
+    "working_set_bytes": 64557056,
+    "peak_pagefile_bytes": 1593327616
+  },
+  "before_collection": {
+    "closures": {
+      "put": 0,
+      "get": 0
+    },
+    "retained_encoding_parts_bytes": 0,
+    "peak_working_set_bytes": 66490368,
+    "working_set_bytes": 65896448,
+    "peak_pagefile_bytes": 1594404864
+  },
+  "after_collection": {
+    "closures": {
+      "put": 0,
+      "get": 0
+    },
+    "retained_encoding_parts_bytes": 0,
+    "peak_working_set_bytes": 66490368,
+    "working_set_bytes": 65904640,
+    "peak_pagefile_bytes": 1594404864
+  },
+  "collected": 46
+}

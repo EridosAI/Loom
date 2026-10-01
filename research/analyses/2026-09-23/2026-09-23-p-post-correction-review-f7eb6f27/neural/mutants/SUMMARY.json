@@ -1,0 +1,23 @@
+[
+  {
+    "name": "bank_reference_frozen",
+    "test": "tests/test_neural.py::test_bank_projection_and_reference_follow_new_value",
+    "expected_message": "assert np.allclose(r.reference",
+    "expected_test_line": "tests/test_neural.py:204",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "bank_reference_frozen"
+      ],
+      "exit_code": 1,
+      "confirmed": false,
+      "output": "mutants\\bank_reference_frozen-RED.txt",
+      "sha256": "5d678cdafe52d3ee5068fcc41acadb90b6d5d9fc4009fa85f18d7fb48bc298d7"
+    }
+  }
+]

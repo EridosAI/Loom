@@ -1,0 +1,28 @@
+{
+  "case": "PC-MOTION",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T01:00:54.7742572+00:00",
+  "stop_cause": "wall_time_limit",
+  "runtime_status": "administrative_pause",
+  "complete": true,
+  "final_time": 0.20000000000000004,
+  "session_counters": {
+    "advanced": 20,
+    "field_updates": 20,
+    "body_wave_samples": 1
+  },
+  "records": {
+    "sensor": 21,
+    "operator": 7,
+    "controller": 2,
+    "native": 20,
+    "events": 20,
+    "diagnostics": 20
+  },
+  "wall_seconds": 1241.4253604999976,
+  "all_recorded_artifact_hashes_and_lengths_verified": true,
+  "receipt_sha256": "ebbf8a6240b21220d4cd057820aacb53eba5acf8e7bae1773a3aba609b2b09f0",
+  "operator_interpretation": "Command channels and forward sign identified; turning sign corrected with assistance; discrepancy explanation pending. Do not infer demonstration.",
+  "discussion_boundary": "Subsequent explanation concerns preserved records only; no restart, further hold or resumed simulation authorized.",
+  "B1_state_accessed": false
+}

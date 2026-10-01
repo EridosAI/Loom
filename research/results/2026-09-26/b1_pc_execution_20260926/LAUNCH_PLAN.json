@@ -1,0 +1,156 @@
+{
+  "app": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "order": [
+    "PC-LR",
+    "PC-MOTION",
+    "PC-CONTACT",
+    "PC-HOLD"
+  ],
+  "cases": [
+    {
+      "case": "PC-LR",
+      "authority_sha256": "a80a9098b7eed714f824eccd841d17e29e94cc607489ddf7a5390f1dc38c493a",
+      "duration_seconds": 4,
+      "wall_limit_seconds": 1200,
+      "stream_limit_bytes": 256000000,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "loom_commissioning.sensor_ui",
+        "--manifest",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\launch-manifests\\PC-LR.json",
+        "--initial",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\inputs\\PC-LR.snapshot.json.gz",
+        "--output",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\runs\\PC-LR",
+        "--port",
+        "0"
+      ],
+      "cwd": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "status": "AUTHORIZED / NOT STARTED — WAIT FOR JASON READINESS",
+      "native_steps": 0,
+      "simulation_seconds": 0,
+      "attempt_count": 0,
+      "approval_request_sha256": "1d0bd9219cd37182d084db30f6bc3dde4b1bf074de5350e9eead06a146df232d",
+      "granted_manifest_sha256": "1ee72c27099776e9fbbb7bf2521e1646579067eab3c0a4ce477db6d364f2fdbb",
+      "snapshot_sha256": "3ff0eb7ee409e990ffba65ac79df913f13875fd0cd811d191bd50cbd87d2e477"
+    },
+    {
+      "case": "PC-MOTION",
+      "authority_sha256": "c35d7a469da2598a0bcb0abc9b952592fc5310525fac2f3e1f5edf0461bf401c",
+      "duration_seconds": 4,
+      "wall_limit_seconds": 1200,
+      "stream_limit_bytes": 256000000,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "loom_commissioning.sensor_ui",
+        "--manifest",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\launch-manifests\\PC-MOTION.json",
+        "--initial",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\inputs\\PC-MOTION.snapshot.json.gz",
+        "--output",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\runs\\PC-MOTION",
+        "--port",
+        "0"
+      ],
+      "cwd": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "status": "AUTHORIZED / NOT STARTED — WAIT FOR JASON READINESS",
+      "native_steps": 0,
+      "simulation_seconds": 0,
+      "attempt_count": 0,
+      "approval_request_sha256": "0b21721c62a213170a2263441366db799505829176c5fd2e42590abf72417338",
+      "granted_manifest_sha256": "ef860a5c23672b5e820bd51819258e69749b9cdeda71b16f11ee747d4f074e15",
+      "snapshot_sha256": "aaae774a025276a170df0ac2a3fb8e7b9aa6aa75c30a681037801f3cff887328"
+    },
+    {
+      "case": "PC-CONTACT",
+      "authority_sha256": "2e9989e37863c32ae89fd559adf51942bd8152b8d5244a8de1baf2234c52ba1d",
+      "duration_seconds": 6,
+      "wall_limit_seconds": 1200,
+      "stream_limit_bytes": 256000000,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "loom_commissioning.sensor_ui",
+        "--manifest",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\launch-manifests\\PC-CONTACT.json",
+        "--initial",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\inputs\\PC-CONTACT.snapshot.json.gz",
+        "--output",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\runs\\PC-CONTACT",
+        "--port",
+        "0"
+      ],
+      "cwd": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "status": "AUTHORIZED / NOT STARTED — WAIT FOR JASON READINESS",
+      "native_steps": 0,
+      "simulation_seconds": 0,
+      "attempt_count": 0,
+      "approval_request_sha256": "abac2e9184b942ce512099eee7fd656199629f2c866e26f44d816d1cf8674024",
+      "granted_manifest_sha256": "6fd20c474a7158c7b875694c5375a26b030e456f2ad5dd7edce65308fb5171eb",
+      "snapshot_sha256": "ee115434b844b7aee30089cbeaab03ff932952f440b0686eff8da465f1880e1f"
+    },
+    {
+      "case": "PC-HOLD",
+      "authority_sha256": "ac1c5615c2c99ebe2524e3648b81003d7eeb42f1b54493212afd8d3cb83d719f",
+      "duration_seconds": 10,
+      "wall_limit_seconds": 1200,
+      "stream_limit_bytes": 256000000,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "loom_commissioning.sensor_ui",
+        "--manifest",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\launch-manifests\\PC-HOLD.json",
+        "--initial",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\inputs\\PC-HOLD.snapshot.json.gz",
+        "--output",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_pc_execution_20260926\\runs\\PC-HOLD",
+        "--port",
+        "0"
+      ],
+      "cwd": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+      "environment": {
+        "PYTHONPATH": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "status": "AUTHORIZED / NOT STARTED — WAIT FOR JASON READINESS",
+      "native_steps": 0,
+      "simulation_seconds": 0,
+      "attempt_count": 0,
+      "approval_request_sha256": "70b002a890f13567766e4487791243219120c8b1aeb8f182e5d96f0ff572832e",
+      "granted_manifest_sha256": "3ad9c71e42f7e9602eee1a5cebcc087858699858989f36e808f069ec7133e2ce",
+      "snapshot_sha256": "54c02d8b4092b24761284939185c43addce086e3f9fe20adfb80ef0e14dabc7b"
+    }
+  ],
+  "automatic_launch": false,
+  "automatic_progression": false,
+  "current_permission": "Preparation only until Jason returns and says ready; authorization of exact four scopes is retained.",
+  "B1_authorized": false,
+  "simulation_or_control_policy_added": false
+}

@@ -1,0 +1,35 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_evoked_reserves_have_no_direct_physical_ownership ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000016DBBD41E00>
+
+    def test_evoked_reserves_have_no_direct_physical_ownership(monkeypatch):
+        import loom_p.engine as engine_module
+        commands=[]; outcomes=[]
+        monkeypatch.setattr(engine_module,'transduce',lambda *args:[np.zeros(d) for d in (10,4,8,7)])
+        for sign in (-1.,1.):
+            e=arithmetic_engine(); o=e.organism; before=copy.deepcopy(e.body)
+            o.association.q[e.c.slices[4]]=sign*.8
+            o.association.q[e.c.slices[5]]=sign*.6
+            o.regulator.theta[:,:,1:]=.03
+            reserves=e.body.reserves
+            o.regulator.output(e.c,o.rng,o.association.q,reserves)
+            assert np.array_equal(reserves,before.reserves), 'Evocation mutated actual reserve input'
+            assert np.array_equal(e.body.reserves,before.reserves)
+            # Independent physical oracle gets only the declared delivered command.
+            clone=copy.deepcopy(o); command=clone.native(e.raw,.01)
+            expected=copy.deepcopy(before); expected_stocks=e.stocks.copy()
+            advance(e.c,expected,expected_stocks,e.time,e.phase,command,.01)
+            e._coupled(.01,False)
+>           assert state_bytes(e.body)==state_bytes(expected), 'Evoked reserve bypassed motor/physical ownership'
+E           AssertionError: Evoked reserve bypassed motor/physical ownership
+E           assert b'{"$class":"...ape":[8]}]]}}' == b'{"$class":"...ape":[8]}]]}}'
+E             
+E             At index 158 diff: b'0' != b'8'
+E             Use -v to get more diff
+
+tests\test_corrective_contracts.py:165: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_corrective_contracts.py::test_evoked_reserves_have_no_direct_physical_ownership
+1 failed in 0.09s

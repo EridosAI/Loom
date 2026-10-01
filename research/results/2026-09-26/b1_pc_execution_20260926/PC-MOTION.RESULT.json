@@ -1,0 +1,83 @@
+{
+  "case": "PC-MOTION",
+  "attempt": 1,
+  "outcome": "DEMONSTRATED WITH EXPLICIT GUIDANCE",
+  "recorded_utc": "2026-09-27T01:11:32.202320+00:00",
+  "user_final_statement_verbatim": "I think 5 and 6 represent a mismatch. So something like slipping wheels. Or dragging on one side.",
+  "assessment": "Jason correctly identified command channels 0/1, forward sign, turning modality and the discrepancy/mismatch concept. Turning direction initially inverted and corrected by assistant. Examples of slipping/drag are hypotheses, not established causes.",
+  "assistance": "Assistant supplied the anatomy map, explained bounded motion and discrepancy transformations, corrected negative turning sign to right/clockwise, and explained that discrepancy does not uniquely identify a cause. Do not label the result unassisted.",
+  "timing_qualification": "Final conceptual explanation was received after the administrative wall cutoff, using the preserved 0.2 s observation. No further world advancement occurred.",
+  "interpretation": "Disclosed guided operator/interface familiarization only; independent turning-sign mastery, navigation and P learning not demonstrated.",
+  "actual_stop_cause": "wall_time_limit",
+  "actual_runtime_status": "administrative_pause",
+  "wall_seconds": 1241.4253604999976,
+  "simulation_seconds": 0.20000000000000004,
+  "native_steps": 20,
+  "commands": [
+    {
+      "time": 0.0,
+      "pair": [
+        0.7,
+        0.0
+      ]
+    },
+    {
+      "time": 0.09999999999999999,
+      "pair": [
+        0.4,
+        0.8
+      ]
+    }
+  ],
+  "initial_position": [
+    6.0,
+    5.0
+  ],
+  "final_position": [
+    6.006231456608939,
+    4.999982877974513
+  ],
+  "final_orientation": -0.007970624763742055,
+  "final_velocity_world": [
+    0.06628273386295609,
+    -0.000294910916131639
+  ],
+  "final_forward_speed": 0.06628297897395113,
+  "final_lateral_speed": 0.0002334076576962153,
+  "final_turning_rate": -0.019327200469921278,
+  "final_proprioception": [
+    0.4,
+    0.8,
+    0.06618607931022052,
+    0.00023340765345759965,
+    -0.01104366555018379,
+    0.31577981112079506,
+    0.6294360090830511
+  ],
+  "transduction_matches_existing_source": true,
+  "starting_EI": [
+    0.7,
+    1.0
+  ],
+  "final_EI": [
+    0.6996049999999991,
+    1.0
+  ],
+  "expenditure": 0.00039500000000000006,
+  "damage": 0.0,
+  "contact_records": 0,
+  "record_counts": {
+    "sensor": 21,
+    "operator": 7,
+    "controller": 2,
+    "native": 20,
+    "events": 20,
+    "diagnostics": 20
+  },
+  "all_artifact_hashes_and_lengths_verified": true,
+  "runtime_receipt_sha256": "ebbf8a6240b21220d4cd057820aacb53eba5acf8e7bae1773a3aba609b2b09f0",
+  "apparatus": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "assistant_actuator_commands": 0,
+  "retry_or_continuation": false,
+  "B1_state_accessed": false
+}

@@ -1,0 +1,240 @@
+{
+  "cases": [
+    {
+      "case_id": "MC-FS-001-CURRENT",
+      "wall_seconds": 34.82307590008713,
+      "stored_bytes": 7257157,
+      "initial_file": {
+        "bytes": 123787,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141152,
+        "raw_sha256": "cabbf0dd0800d9e37c25a0f388f90e1b6478016c832dc0f4eb4ed49a40965b7f",
+        "seconds": 0.010247900034300983,
+        "sha256": "10d807eebb84429d257223727d8ee8750c067778c40fa51bd6ba518fbc1941b5",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 728297,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601058,
+        "raw_sha256": "e42fab4e266bb39455deab1da4ca569cbc0acd22cbbf90535802753ff8803234",
+        "seconds": 0.030612200032919645,
+        "sha256": "5827e01e96d29bee7107ef16db0573511a4573508fdda18c2bec5209cb2450d7",
+        "wave": 450
+      },
+      "final_causal_sha256": "468d4317ef94175fe95c6dd340c2ff415e4d223a306db1c30e3502808e3490a0"
+    },
+    {
+      "case_id": "MC-FS-001-M1",
+      "wall_seconds": 47.54990510002244,
+      "stored_bytes": 7222406,
+      "initial_file": {
+        "bytes": 123947,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141465,
+        "raw_sha256": "776ab8bdf81e096cf06c26436176d5ce0bc1848d6fae76c0c73a82a6d0c801e6",
+        "seconds": 0.014043799950741231,
+        "sha256": "5f334784d7be0d5c359a52351bc7cc34b6d28db26f80ad0d8e8804207c9aae14",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 730723,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601429,
+        "raw_sha256": "9da1d77f3f2eb43011a30e886f64b01a29027bc6746c72d3f2e3c583f215cd47",
+        "seconds": 0.034750499995425344,
+        "sha256": "d3ceee48769e7c28fea0e6f7d248416c201cd39b3132632a26c569ff890d9d7d",
+        "wave": 450
+      },
+      "final_causal_sha256": "e930935b1cd1a7ca9ac65fe836421077a10b456eeaa219832f78d8f426d381b5"
+    },
+    {
+      "case_id": "MC-FS-001-M2",
+      "wall_seconds": 37.76040939998347,
+      "stored_bytes": 9064350,
+      "initial_file": {
+        "bytes": 123989,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141617,
+        "raw_sha256": "2bd19577d1304137739f36129f31fd55a19803ad79c7815a67807bd7376656e6",
+        "seconds": 0.009977199952118099,
+        "sha256": "616d38270896706e3d940a2dab6060cd1a6208d9e3802519a87fad6c2c91676b",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 1112431,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601577,
+        "raw_sha256": "5e4034b454b58afb4f7b53e3ac634d6579ea2bd70b5071d62456a1e27dac2108",
+        "seconds": 0.03975330002140254,
+        "sha256": "eb8563002eb950e771d0821a489816f0e5c76f00ff6f5c0ff771de669e04b63a",
+        "wave": 450
+      },
+      "final_causal_sha256": "6b5f2b456463e4978e46e023402bb58e73130782a24bc4f064888bdccfd76556"
+    },
+    {
+      "case_id": "MC-FS-002-CURRENT",
+      "wall_seconds": 30.95643919997383,
+      "stored_bytes": 7080800,
+      "initial_file": {
+        "bytes": 123787,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141152,
+        "raw_sha256": "9f92a881b44d6cccf3d63291b760a093ff74d4cf9e077fa7bca0f6d9e58388ab",
+        "seconds": 0.010441099992021918,
+        "sha256": "9b5512b5ca563424a82885acd585b5f8ddaacfced8167bdd6a34100100213878",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 728796,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601058,
+        "raw_sha256": "63fc993119a4de8ea1fa5af3d0a8b7882d401bdb7abed3bb7161ee80d616cfae",
+        "seconds": 0.02812659996561706,
+        "sha256": "5e04d7913cbf2d3d283eeecf30196f874550b2802cee53a233af5f5b74da1181",
+        "wave": 450
+      },
+      "final_causal_sha256": "94a0084dd70c19a05d82ae2790fdf68cb6578a1cbd9678007e2aea1dabbeacc0"
+    },
+    {
+      "case_id": "MC-FS-002-M1",
+      "wall_seconds": 32.95898960006889,
+      "stored_bytes": 7183538,
+      "initial_file": {
+        "bytes": 123951,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141465,
+        "raw_sha256": "94562c24294ed24e5d0cba695fdb1d98bc2531529d41f2b42da1ff27bdde82d8",
+        "seconds": 0.013870300026610494,
+        "sha256": "8ae23f58dc552abd915b4fa717449fa9a4f9669cb36c97aeb62b4ab123713aaa",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 730802,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601429,
+        "raw_sha256": "79b8585f146091fb41e6a5605789490cd414bf90c34630194254b3ab89199902",
+        "seconds": 0.030959199997596443,
+        "sha256": "02e0b4451b520b7f43ee40b49cbbe6db15cf9bcd3a9278f0596c9dbd84506866",
+        "wave": 450
+      },
+      "final_causal_sha256": "bbd7c52ff0005f3344944fee5128e7a7ac2aaa28692dee2eb9e9bf24ba176876"
+    },
+    {
+      "case_id": "MC-FS-002-M2",
+      "wall_seconds": 32.77868079999462,
+      "stored_bytes": 7254820,
+      "initial_file": {
+        "bytes": 123993,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141617,
+        "raw_sha256": "6f0fc6ff6967a5eb7f7f534a784321dbddbd366ff724de20c94e8694ba7e3c7c",
+        "seconds": 0.010376600082963705,
+        "sha256": "d5a0a7a38a824c15c65e09723f9bf2047a197402e0ae9ce1b78db7cf289a992e",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 730101,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601577,
+        "raw_sha256": "010c31a922231b3918b4b0a94e32bb167b2f917b093e01733c46e86360a3a463",
+        "seconds": 0.030387300066649914,
+        "sha256": "45cce19d7b5299c2574a61336f79204abd4db95077e3be4c61e601a3ea0bb5cf",
+        "wave": 450
+      },
+      "final_causal_sha256": "1808465ef05bb2bdd44e0f6e4f2da6bdfa0a940c24ad80d7807f9e038c4e2477"
+    },
+    {
+      "case_id": "MC-FS-003-CURRENT",
+      "wall_seconds": 34.99816960003227,
+      "stored_bytes": 7261628,
+      "initial_file": {
+        "bytes": 123856,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141152,
+        "raw_sha256": "89fb811812ac8032b6e7199222edb1c9dc5b70019df5a7a2a5f979210137b500",
+        "seconds": 0.009979399968869984,
+        "sha256": "cac026e31ed1eb92e9c62de5a2dd028cbec1d5b0475d253624d47351f5ca18f9",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 729980,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601058,
+        "raw_sha256": "8ea3a85d9fcc7c3cd84e82c65bec60343451f03871fbf8b82e5a58698618f961",
+        "seconds": 0.03797980002127588,
+        "sha256": "9e5ecb66b9535e1111a07f4e2d9352cbe2c53f99629b414b8a22c38c18adb263",
+        "wave": 450
+      },
+      "final_causal_sha256": "07ae57f7b7b4666bf79e18b5a7783adc51745c71922788408cfff6fa5523aa4a"
+    },
+    {
+      "case_id": "MC-FS-003-M1",
+      "wall_seconds": 31.94035879999865,
+      "stored_bytes": 7086815,
+      "initial_file": {
+        "bytes": 124016,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141465,
+        "raw_sha256": "f1518fedb9131b7cfffc6dbea180576b55bf3fbe9f3c0edcbd6b7c0cd38cc4b3",
+        "seconds": 0.010979900020174682,
+        "sha256": "dec9e8d432ead6686795870844f4171450caf78a59ea5fcbf74db4427e89ee70",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 729933,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601429,
+        "raw_sha256": "9b343c6601928ed1b4e59047dcd7809c93821ab86b76f66947971e88ea1825c2",
+        "seconds": 0.029081800021231174,
+        "sha256": "4f37f5fb10fff3e14d6abc34732f02a6226f89291999efc6cdfcfe864b6c8b75",
+        "wave": 450
+      },
+      "final_causal_sha256": "c15bac26c7a45ffac81d7567809ffd1e46c50cbc5e64bfea6860eeb85987b528"
+    },
+    {
+      "case_id": "MC-FS-003-M2",
+      "wall_seconds": 35.72657239995897,
+      "stored_bytes": 7944541,
+      "initial_file": {
+        "bytes": 124055,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141616,
+        "raw_sha256": "6777f3d4aba2a13e707eca3a3218bf54c817972bd503598db2f4c26fd2d080b6",
+        "seconds": 0.00994739995803684,
+        "sha256": "91935d5e56ccf45afb77da5d14accde20204422d6bf75f87138b62012351132c",
+        "wave": 0
+      },
+      "final_file": {
+        "bytes": 1113608,
+        "file": "checkpoint-000009000-s000-final.ld",
+        "index": 9000,
+        "raw_bytes": 2601577,
+        "raw_sha256": "b9ee3759c49c7a1c3142667f2c7706667ca0ab12cb9ce06b9742a990f3e28571",
+        "seconds": 0.04315629997290671,
+        "sha256": "b30d3e098ff14b22a76935dd9a02a9ab2bec157fd135434fa28fd6e8a8b5262e",
+        "wave": 450
+      },
+      "final_causal_sha256": "3cd903d3a8c38c651bbb415cfd6273a188bb729c13399d2fa06f2fef27b7dadb"
+    }
+  ],
+  "execution_total_bytes": 67792479,
+  "shared_assets_bytes": 163529
+}

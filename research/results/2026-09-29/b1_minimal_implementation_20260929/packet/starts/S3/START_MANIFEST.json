@@ -1,0 +1,169 @@
+{
+  "start": "S3",
+  "body": {
+    "position": [
+      17.0,
+      6.25
+    ],
+    "angle": -2.617993877991494,
+    "energy": 0.7,
+    "integrity": 1.0,
+    "velocity": [
+      0.0,
+      0.0
+    ],
+    "omega": 0.0,
+    "command": [
+      0.0,
+      0.0
+    ],
+    "force": [
+      0.0,
+      0.0
+    ],
+    "contact_rates": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "target_source_index": 2,
+  "target_source_position": [
+    17.0,
+    3.0
+  ],
+  "surface_gap": 2.25,
+  "relative_bearing_degrees": 60.0,
+  "actual_bearing_degrees": 59.999999999999986,
+  "native_index": 0,
+  "time": 0.0,
+  "phase": 3.558411277237072,
+  "stocks": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "initialization": {
+    "kind": "verified_phase_history",
+    "birth_id": 0,
+    "phase": 3.558411277237072,
+    "field_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+    "cache_directory": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001",
+    "cache_receipt_sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3"
+  },
+  "field_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+  "state_sha256": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0",
+  "snapshot_sha256": "2d6a5966c72c42a0569033b1b93fa02bb3525904b3789234db69e8c90a66dfa0",
+  "inactive_organism_sha256": "0d1de850e85a085dd7288cadbd8be0da577211a8a1e47d819a5d7e111024a5ed",
+  "rng_counters": {
+    "life/world-phase": 1,
+    "life/world-position": 1,
+    "life/world-orientation": 1,
+    "anatomy/sensory-0-A": 1,
+    "anatomy/sensory-0-shared": 1,
+    "anatomy/sensory-0-fine": 1,
+    "anatomy/sensory-1-A": 1,
+    "anatomy/sensory-1-shared": 1,
+    "anatomy/sensory-1-fine": 1,
+    "anatomy/sensory-2-A": 1,
+    "anatomy/sensory-2-shared": 1,
+    "anatomy/sensory-2-fine": 1,
+    "anatomy/sensory-3-A": 1,
+    "anatomy/sensory-3-shared": 1,
+    "anatomy/sensory-3-fine": 1,
+    "anatomy/gate-0": 1,
+    "anatomy/gate-bias-0": 1,
+    "anatomy/gate-1": 1,
+    "anatomy/gate-bias-1": 1,
+    "anatomy/gate-2": 1,
+    "anatomy/gate-bias-2": 1,
+    "anatomy/gate-3": 1,
+    "anatomy/gate-bias-3": 1,
+    "anatomy/gate-4": 1,
+    "anatomy/gate-bias-4": 1,
+    "anatomy/gate-5": 1,
+    "anatomy/gate-bias-5": 1,
+    "anatomy/gate-6": 1,
+    "anatomy/gate-bias-6": 1,
+    "anatomy/gate-7": 1,
+    "anatomy/gate-bias-7": 1,
+    "anatomy/regulator-Bq": 1,
+    "anatomy/regulator-Bv": 1,
+    "anatomy/regulator-bias": 1,
+    "anatomy/motor-feedback": 1,
+    "life/motor-birth-phase": 1,
+    "life/motor-birth-nu": 1,
+    "life/motor-noise": 1,
+    "life/regulation-E": 1,
+    "life/regulation-I": 1
+  },
+  "initial_gaps": {
+    "wall-0": 16.5,
+    "wall-1": 2.5,
+    "wall-2": 5.75,
+    "wall-3": 13.25,
+    "source-0": 13.37228235180481,
+    "source-1": 6.7176745202165655,
+    "source-2": 2.25,
+    "source-3": 13.493533040635745,
+    "source-4": 2.75,
+    "source-5": 16.651133108103853,
+    "source-6": 11.8281916106675,
+    "source-7": 9.75,
+    "repair-0": 16.34116979309929,
+    "repair-1": 2.7596012026013246,
+    "repair-2": 13.896180048887969,
+    "mover": 7.783596478060996
+  },
+  "approach_segment": [
+    [
+      17.0,
+      6.25
+    ],
+    [
+      17.0,
+      4.0
+    ]
+  ],
+  "approach_clearance": {
+    "wall-0": 16.5,
+    "wall-1": 2.5,
+    "wall-2": 3.5,
+    "wall-3": 13.25,
+    "source-0": 13.035668847618199,
+    "source-1": 6.0710678118654755,
+    "source-3": 13.493533040635745,
+    "source-4": 2.75,
+    "source-5": 16.651133108103853,
+    "source-6": 11.8281916106675,
+    "source-7": 9.75,
+    "repair-0": 16.34116979309929,
+    "repair-1": 2.7596012026013246,
+    "repair-2": 13.896180048887969,
+    "mover-swept-region": 3.316084380618437
+  },
+  "nominal_forward_envelope": 6.612000000000021,
+  "forward_source_clearances": {
+    "source-0": 7.27402954097723,
+    "source-1": 0.27507035981628847,
+    "source-2": 1.8145825622994254,
+    "source-3": 9.87398569269631,
+    "source-4": 2.75,
+    "source-5": 15.310351462950276,
+    "source-6": 11.809773090682716,
+    "source-7": 9.75
+  },
+  "label": "Manufactured external assay start; not a P life or continuation",
+  "controller_calls": 0,
+  "world_steps": 0
+}

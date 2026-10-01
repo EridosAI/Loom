@@ -1,0 +1,79 @@
+{
+  "basis": "Immutable actual A1/A2 long-run receipts, not smoke timing; no new benchmark",
+  "A1_measured": {
+    "simulated_seconds": 91.83000000001007,
+    "native_steps": 9183,
+    "recorder_wall_seconds": 1201.2759735999862,
+    "whole_process_wall_seconds": 1202.0992398999515,
+    "uncompressed_stream_bytes": 54337980,
+    "stored_trajectory_bytes_including_snapshots_and_receipt": 24977060
+  },
+  "A2_measured": {
+    "simulated_seconds_recorded": 179.99999999998127,
+    "native_steps": 18000,
+    "recorder_wall_seconds": 2116.0327042000135,
+    "whole_process_wall_seconds": 2116.937599800003,
+    "wall_ceiling_seconds": 3600,
+    "uncompressed_stream_bytes": 105656295,
+    "uncompressed_stream_ceiling_bytes": 1500000000,
+    "stored_trajectory_bytes_including_snapshots_and_receipt": 62740096,
+    "analysis_wall_seconds": 9.043997599976137,
+    "read_only_reporting_ceiling_seconds": 3600,
+    "disk_reserve_bytes": 3000000000
+  },
+  "rates": {
+    "A1": {
+      "wall_seconds_per_simulated_second": 13.081519912880914,
+      "uncompressed_bytes_per_simulated_second": 591723.6197320488,
+      "stored_bytes_per_simulated_second": 271992.37721874396,
+      "projection_210_simulated_seconds": {
+        "wall_seconds": 2747.119181704992,
+        "uncompressed_bytes": 124261960.14373024,
+        "stored_trajectory_bytes": 57118399.215936236
+      }
+    },
+    "A2": {
+      "wall_seconds_per_simulated_second": 11.755737245556855,
+      "uncompressed_bytes_per_simulated_second": 586979.4166667277,
+      "stored_bytes_per_simulated_second": 348556.08888892515,
+      "projection_210_simulated_seconds": {
+        "wall_seconds": 2468.7048215669392,
+        "uncompressed_bytes": 123265677.50001283,
+        "stored_trajectory_bytes": 73196778.66667429
+      }
+    }
+  },
+  "A1_tail_wall_seconds_per_simulated_second": 13.476664837735473,
+  "A1_tail_projection_seconds": 2830.0996159244496,
+  "simulated_ceiling_seconds": 210,
+  "native_step_ceiling": 21000,
+  "command_decision_ceiling": 2100,
+  "runner_wall_ceiling_seconds": 4200,
+  "uncompressed_stream_ceiling_bytes": 1500000000,
+  "primary_analysis_delivery_disk_ceiling_bytes": 3000000000,
+  "free_disk_precondition_bytes": 3000000000,
+  "separate_read_only_reporting_ceiling_seconds": 3600,
+  "separate_reporting_world_steps": 0,
+  "wall_headroom_over_A1_tail_fraction": 0.48404670152505336,
+  "reserve_lower_envelope_no_intake": {
+    "equation": "E >= 0.7 - 0.0025*t while viable",
+    "at_155": 0.31249999999999994,
+    "at_180": 0.24999999999999994,
+    "at_210": 0.17499999999999993
+  },
+  "ideal_repair_illustration_only": {
+    "force": 0.1,
+    "relative_speed": 0.0,
+    "quality": 0.3,
+    "rate_constant_per_second": 0.006,
+    "fraction_of_deficit_restored_in_70_seconds": 0.3429531801849432
+  },
+  "limitations": [
+    "Linear projections are not completion guarantees or storage bounds.",
+    "Sensor histories and snapshot overhead grow; A2 stored bytes per second exceeded A1.",
+    "Actual A3 mechanics/contact and host load may differ.",
+    "Storage guard counts uncompressed streams, not snapshots or delivery copies.",
+    "Guards check between native steps; final flush and one in-flight step may overrun nominal wall threshold.",
+    "No trial, route rehearsal, dynamic benchmark or parameter tuning occurred."
+  ]
+}

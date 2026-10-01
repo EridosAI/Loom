@@ -1,0 +1,3427 @@
+{
+  "scope": "Fresh log audit plus collect-only, no further test bodies",
+  "pairs": 59,
+  "logs": 118,
+  "all_intended_exceptions_verified": true,
+  "collection": {
+    "command": [
+      "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "tests",
+      "tests_apparatus",
+      "--collect-only",
+      "-q",
+      "-p",
+      "no:cacheprovider"
+    ],
+    "composition": {
+      "P_engineering": 59,
+      "original_apparatus": 24,
+      "previous_correction": 30,
+      "final_correction": 30,
+      "clock_correction": 33
+    },
+    "total": 176,
+    "test_ids": [
+      "tests/test_boundary_and_scheduler.py::test_open_domain_finite_shadow_boundary_and_protruding_repair",
+      "tests/test_boundary_and_scheduler.py::test_ambient_survives_shadow_and_directional_surface_response",
+      "tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[50]",
+      "tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[19]",
+      "tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[59]",
+      "tests/test_boundary_and_scheduler.py::test_coupled_failure_rolls_back_and_run_marks_incomplete",
+      "tests/test_boundary_and_scheduler.py::test_simultaneous_moving_and_static_sustained_projection",
+      "tests/test_boundary_and_scheduler.py::test_separating_near_source_does_not_inherit_remote_mover_speed",
+      "tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting",
+      "tests/test_corrective_contracts.py::test_outward_or_tangent_source_release[velocity0-3.141592653589793]",
+      "tests/test_corrective_contracts.py::test_outward_or_tangent_source_release[velocity1-3.141592653589793]",
+      "tests/test_corrective_contracts.py::test_outward_or_tangent_source_release[velocity2-0.0]",
+      "tests/test_corrective_contracts.py::test_release_subdivision_does_not_repeat_native_or_noise",
+      "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[shared_ref-shared-tau_shared_reference]",
+      "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]",
+      "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+      "tests/test_corrective_contracts.py::test_evoked_reserves_have_no_direct_physical_ownership",
+      "tests/test_neural.py::test_inventory_and_alternate",
+      "tests/test_neural.py::test_bad_pool_schema[pools0]",
+      "tests/test_neural.py::test_bad_pool_schema[pools1]",
+      "tests/test_neural.py::test_indexed_random_and_endpoints",
+      "tests/test_neural.py::test_sensory_old_rhs_and_pool_terms",
+      "tests/test_neural.py::test_projection_tangent_and_fixed_capacity",
+      "tests/test_neural.py::test_support_changes_only_prescribed_spring_and_gain",
+      "tests/test_neural.py::test_simultaneous_four_sweeps_final_old_q_and_single_write",
+      "tests/test_neural.py::test_previous_credit_and_bank_separation",
+      "tests/test_neural.py::test_regulator_and_motor_exact_routes",
+      "tests/test_neural.py::test_birth_first_write_cannot_affect_first_read",
+      "tests/test_neural.py::test_no_finite_or_partial_wave_fabrication",
+      "tests/test_neural.py::test_packet_context_old_mean_and_exact_filter",
+      "tests/test_neural.py::test_gate_target_exclusion_normalisation_and_other_channel_route",
+      "tests/test_neural.py::test_map_use_old_decay_and_mean_update",
+      "tests/test_neural.py::test_need_superposition_and_saturation_formulas",
+      "tests/test_neural.py::test_bank_projection_and_reference_follow_new_value",
+      "tests/test_neural.py::test_opening_group_independence_and_fixed_weight_count",
+      "tests/test_neural.py::test_motor_old_state_noise_phase_and_packet_mean_endpoint",
+      "tests/test_physical.py::test_exact_cell_area_and_emission_conservation",
+      "tests/test_physical.py::test_field_flux_mass_and_moving_geometry_continuity",
+      "tests/test_physical.py::test_zero_rhs_and_solver_failure",
+      "tests/test_physical.py::test_stock_body_conservation_headroom_and_renewal",
+      "tests/test_physical.py::test_impact_has_damage_but_no_exchange_or_repair",
+      "tests/test_physical.py::test_gentle_repair_and_every_collider_stress",
+      "tests/test_physical.py::test_stalled_commands_still_cost_and_reserves_not_evocation",
+      "tests/test_physical.py::test_simultaneous_projection_and_negative_fixture",
+      "tests/test_physical.py::test_source_swept_impact_does_not_transfer_during_free_flight",
+      "tests/test_physical.py::test_analytic_mover_collision",
+      "tests/test_physical.py::test_terminal_physics_reports_crossing_without_revival",
+      "tests/test_physical.py::test_bilinear_constant_and_proprioceptive_command_movement_distinction",
+      "tests/test_physical.py::test_light_rear_blindness_with_shadow_controlled",
+      "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]",
+      "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[different-normal-force]",
+      "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[reflected-longer-flight]",
+      "tests/test_r1p_oblique.py::test_oblique_event_subdivision_keeps_native_noise_and_field_cadence",
+      "tests/test_records.py::test_nonzero_all_state_roundtrip",
+      "tests/test_records.py::test_malformed_and_nonfinite_snapshots",
+      "tests/test_records.py::test_storage_failure_honest_manifest",
+      "tests/test_records.py::test_observation_and_replay_are_inert_without_engine_steps",
+      "tests/test_records.py::test_valid_checksum_cannot_hide_missing_or_wrong_shape_state",
+      "tests/test_records.py::test_live_handoff_observation_has_physical_timestamp",
+      "tests_apparatus/test_apparatus.py::test_manifest_identity",
+      "tests_apparatus/test_apparatus.py::test_native_completeness",
+      "tests_apparatus/test_apparatus.py::test_field_phase",
+      "tests_apparatus/test_apparatus.py::test_accounting",
+      "tests_apparatus/test_apparatus.py::test_controller_allowlist",
+      "tests_apparatus/test_apparatus.py::test_observer_noninterference",
+      "tests_apparatus/test_apparatus.py::test_stop_reason",
+      "tests_apparatus/test_apparatus.py::test_sensor_boundary",
+      "tests_apparatus/test_apparatus.py::test_external_label",
+      "tests_apparatus/test_apparatus.py::test_frozen_persistence",
+      "tests_apparatus/test_apparatus.py::test_discarded_update_has_no_later_effect",
+      "tests_apparatus/test_apparatus.py::test_duration_guard",
+      "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+      "tests_apparatus/test_apparatus.py::test_pause_resume_and_reconstruction[intact_P-none]",
+      "tests_apparatus/test_apparatus.py::test_pause_resume_and_reconstruction[FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC-none]",
+      "tests_apparatus/test_apparatus.py::test_pause_resume_and_reconstruction[external_controller-sensor_human]",
+      "tests_apparatus/test_apparatus.py::test_long_ceiling_endpoint_without_long_trajectory",
+      "tests_apparatus/test_apparatus.py::test_native_wave_noise_schedules_above_old_cap",
+      "tests_apparatus/test_apparatus.py::test_nonzero_receivers_and_every_wave_selection",
+      "tests_apparatus/test_apparatus.py::test_long_manifest_and_verified_cache_do_not_authorize_execution",
+      "tests_apparatus/test_apparatus.py::test_partial_terminal_has_no_handoff",
+      "tests_apparatus/test_apparatus.py::test_firewall_and_packet_alias",
+      "tests_apparatus/test_apparatus.py::test_io_failure_is_incomplete",
+      "tests_apparatus/test_apparatus.py::test_server_has_no_privileged_routes",
+      "tests_apparatus/test_clock_scheduling.py::test_old_absolute_rejection_corrected",
+      "tests_apparatus/test_clock_scheduling.py::test_independent_270_transition",
+      "tests_apparatus/test_clock_scheduling.py::test_required_native_boundaries[26949-2]",
+      "tests_apparatus/test_clock_scheduling.py::test_required_native_boundaries[26950-2]",
+      "tests_apparatus/test_clock_scheduling.py::test_required_native_boundaries[26951-2]",
+      "tests_apparatus/test_clock_scheduling.py::test_required_native_boundaries[26999-2]",
+      "tests_apparatus/test_clock_scheduling.py::test_required_native_boundaries[27000-3]",
+      "tests_apparatus/test_clock_scheduling.py::test_required_native_boundaries[27001-3]",
+      "tests_apparatus/test_clock_scheduling.py::test_entire_630_index_schedule",
+      "tests_apparatus/test_clock_scheduling.py::test_full_schema_clock_bound[0.0-0]",
+      "tests_apparatus/test_clock_scheduling.py::test_full_schema_clock_bound[31.99-3199]",
+      "tests_apparatus/test_clock_scheduling.py::test_full_schema_clock_bound[1199.99-119999]",
+      "tests_apparatus/test_clock_scheduling.py::test_full_schema_clock_bound[-120.0-0]",
+      "tests_apparatus/test_clock_scheduling.py::test_corrupt_physical_clock_rejected",
+      "tests_apparatus/test_clock_scheduling.py::test_off_grid_declared_stage_rejected",
+      "tests_apparatus/test_clock_scheduling.py::test_no_extra_decision",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[26999]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[27000]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[27001]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[29999]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[30000]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[44999]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[45000]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[47999]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[48000]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[62999]",
+      "tests_apparatus/test_clock_scheduling.py::test_detached_late_pending_and_serialization[63000]",
+      "tests_apparatus/test_clock_scheduling.py::test_late_short_world_pause_resume[9]",
+      "tests_apparatus/test_clock_scheduling.py::test_late_short_world_pause_resume[10]",
+      "tests_apparatus/test_clock_scheduling.py::test_late_short_world_pause_resume[11]",
+      "tests_apparatus/test_clock_scheduling.py::test_terminal_fraction_and_seven_step_cap",
+      "tests_apparatus/test_clock_scheduling.py::test_live_clock_binding_before_output",
+      "tests_apparatus/test_clock_scheduling.py::test_retrospective_saved_stage_rows",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[implementation]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[constants]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[route]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[stage_sequence]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[contact_target]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[manual_fallback]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[sensor_interface]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[intact_arm]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[fixed_adapter]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[deprivation]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[initial]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[prehistory]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[duration]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[resources]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[runtime]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[procedure]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[replay_arm]",
+      "tests_apparatus/test_corrections.py::test_approved_execution_binding[request_rebind]",
+      "tests_apparatus/test_corrections.py::test_canonical_identity_and_live_program_guard",
+      "tests_apparatus/test_corrections.py::test_route_and_resources_rejected_before_output",
+      "tests_apparatus/test_corrections.py::test_exact_review_boundary[0.09999999999999999_0]",
+      "tests_apparatus/test_corrections.py::test_exact_review_boundary[0.09999999999999999_1]",
+      "tests_apparatus/test_corrections.py::test_exact_review_boundary[0.1]",
+      "tests_apparatus/test_corrections.py::test_exact_review_boundary[0.10000000000000002]",
+      "tests_apparatus/test_corrections.py::test_exact_review_boundary[0.10000000005000001]",
+      "tests_apparatus/test_corrections.py::test_final_stage_and_not_due_control",
+      "tests_apparatus/test_corrections.py::test_full_hold_cannot_cross_stage",
+      "tests_apparatus/test_corrections.py::test_boundary_resume_counts_and_absolute_cap[7]",
+      "tests_apparatus/test_corrections.py::test_boundary_resume_counts_and_absolute_cap[10]",
+      "tests_apparatus/test_corrections.py::test_final_boundary_resume_cannot_gain_hold",
+      "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[approved_execution]",
+      "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[point]",
+      "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[controller]",
+      "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[until]",
+      "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[identical]",
+      "tests_apparatus/test_final_corrections.py::test_exact_review_raw_duplicates[SYNTHETIC_duplicate-approved-execution_NO_EXECUTION.json]",
+      "tests_apparatus/test_final_corrections.py::test_exact_review_raw_duplicates[SYNTHETIC_duplicate-nested-waypoint_NO_EXECUTION.json]",
+      "tests_apparatus/test_final_corrections.py::test_non_string_canonical_key",
+      "tests_apparatus/test_final_corrections.py::test_alias_and_semantic_mirror_rejection",
+      "tests_apparatus/test_final_corrections.py::test_protocol_cannot_shadow_bound_fields",
+      "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[waypoint_command]",
+      "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[command_pair]",
+      "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[privileged_input]",
+      "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[time_due]",
+      "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[observe_without_interference]",
+      "tests_apparatus/test_final_corrections.py::test_dispatch_changed_between_check_and_use",
+      "tests_apparatus/test_final_corrections.py::test_gateway_rejects_duplicate_command_fields",
+      "tests_apparatus/test_final_corrections.py::test_post_approval_constants_and_route",
+      "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[command]",
+      "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[remainder]",
+      "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[both]",
+      "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[decision]",
+      "tests_apparatus/test_final_corrections.py::test_resume_binding_and_stage_transition",
+      "tests_apparatus/test_final_corrections.py::test_saved_pending_boundary_preflight[0.07-7-3-True]",
+      "tests_apparatus/test_final_corrections.py::test_saved_pending_boundary_preflight[0.09-9-2-False]",
+      "tests_apparatus/test_final_corrections.py::test_saved_pending_boundary_preflight[0.1-10-1-False]",
+      "tests_apparatus/test_final_corrections.py::test_saved_pending_boundary_preflight[0.09999999995-10-1-False]",
+      "tests_apparatus/test_final_corrections.py::test_saved_pending_boundary_preflight[0.10000000000000002-10-1-False]",
+      "tests_apparatus/test_final_corrections.py::test_saved_decision_journal_rejection",
+      "tests_apparatus/test_final_corrections.py::test_duplicate_packed_pending_key"
+    ]
+  },
+  "suites": {
+    "worktree": "176 passed in 134.94s",
+    "portable": "176 passed in 134.94s"
+  },
+  "matrix_rows": [
+    {
+      "fault": "identity",
+      "test": "test_manifest_identity",
+      "intended_failure": "manifest/code identity mismatch",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.76s",
+        "exception_lines": [
+          "E           ValueError: manifest/code identity mismatch"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:36: ",
+          "loom_commissioning\\contract.py:50: in validate_manifest",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "9aaeb3408007694e2eac606c04cb0df59919a971378fa49824597b877aca3e32",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_manifest_identity",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\identity-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.74s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "08054f525f3e262e37d7681e7a64aecffdcc8f95dd2dc3c7c378754b0b40bda7",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_manifest_identity",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\identity-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "missing_native",
+      "test": "test_native_completeness",
+      "intended_failure": "missing native record",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.77s",
+        "exception_lines": [
+          "E           ValueError: missing native record"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:45: ",
+          "loom_commissioning\\validators.py:43: in validate_native_sequence",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "ce62d92369d7cded06e86a47fb92d8b10ae0380ef46de732ccd5a036ccd682b0",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_native_completeness",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\missing_native-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.73s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "9214472f4ea76ad9bf5f1f68a490cdb9b65622eccf79a0ac6797931ab981769c",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_native_completeness",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\missing_native-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "phase",
+      "test": "test_field_phase",
+      "intended_failure": "wrong field/mover phase",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.76s",
+        "exception_lines": [
+          "E           ValueError: wrong field/mover phase"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:50: ",
+          "loom_commissioning\\contract.py:64: in validate_manifest",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "7525c0ca82d93d627fc981f3ab7d1f1ac2ae6504d0fcde20575b2e731e59d7c6",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_field_phase",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\phase-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.71s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "201f5a20b2fed2d18981a2cf094a90cbd230f4e0c22d666d1e0e2af3e8aef27a",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_field_phase",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\phase-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "ledger",
+      "test": "test_accounting",
+      "intended_failure": "source debit/body credit mismatch",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.41s",
+        "exception_lines": [
+          "E           ValueError: source debit/body credit mismatch"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:58: ",
+          "loom_commissioning\\validators.py:37: in validate_ledger",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "075c62b4cd694590a007aebcd131eb8909cd99947b498ae7a433456e12858dc8",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_accounting",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\ledger-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.34s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0bd96cd6d7d3e36dea7a7c6e054236fc80eec4d3cff0f00701c9b871b790cb1d",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_accounting",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\ledger-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "input",
+      "test": "test_controller_allowlist",
+      "intended_failure": "forbidden controller input",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.44s",
+        "exception_lines": [
+          "E           ValueError: forbidden controller input"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:63: ",
+          "loom_commissioning\\controllers.py:36: in validate_privileged",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "e4fe45512b3897a3c76c706e90d329f028b3aabaa7267e5f39534302c0ba0e6e",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_allowlist",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\input-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.42s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "18d7ed42ae2657f5e655109e8219c4de53db53651e2cb8b297569b3b68056dcb",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_allowlist",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\input-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "observer",
+      "test": "test_observer_noninterference",
+      "intended_failure": "observer RNG/state interference",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.47s",
+        "exception_lines": [
+          "E           ValueError: observer RNG/state interference"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:74: ",
+          "loom_commissioning\\controllers.py:146: in observe_without_interference",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "c0bd09a2390b78a4279277175cd372ad5b7cccd6be50ac3f084fecd7c410c4e2",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_observer_noninterference",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\observer-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.45s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "291b5bc97d346c2bc2d55883a10bd5eb5a8e1f6d386e45ab29998613470592e3",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_observer_noninterference",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\observer-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "stop",
+      "test": "test_stop_reason",
+      "intended_failure": "mislabelled stop reason",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.74s",
+        "exception_lines": [
+          "E           ValueError: mislabelled stop reason"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:78: ",
+          "loom_commissioning\\validators.py:16: in validate_stop",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "41eadb7064b622524545a5882aea419d2b9fa2a2aa8400ec0ee2f107d86d312f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_stop_reason",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\stop-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.68s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "773d5ae9b1ba699af0b8aa56d30953f3f75b84e7c76c61a77a882ed1a595f171",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_stop_reason",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\stop-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "sensor_leak",
+      "test": "test_sensor_boundary",
+      "intended_failure": "privileged data leakage into sensor-only interface",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.45s",
+        "exception_lines": [
+          "E           ValueError: privileged data leakage into sensor-only interface"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:83: ",
+          "loom_commissioning\\controllers.py:108: in validate_sensor_payload",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "a1935e60f674ec0f4b904d4f06b2e6fc62468e94a635491c9abcdfae5c57e1ec",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_sensor_boundary",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\sensor_leak-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.41s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "9459a7d273f5dc2761dee270a3ace79b1c9eccb1111157c448cdbd69b14743f3",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_sensor_boundary",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\sensor_leak-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "label",
+      "test": "test_external_label",
+      "intended_failure": "external controller incorrectly labelled intact P",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.74s",
+        "exception_lines": [
+          "E           ValueError: external controller incorrectly labelled intact P"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:93: ",
+          "loom_commissioning\\contract.py:56: in validate_manifest",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "bb44b73bf97d4cbf711c93b77571c85cbd454745673a7ab2dd010f7e991fef93",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_external_label",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\label-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.73s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "9214472f4ea76ad9bf5f1f68a490cdb9b65622eccf79a0ac6797931ab981769c",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_external_label",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\label-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "frozen",
+      "test": "test_frozen_persistence",
+      "intended_failure": "frozen structural parameter changed",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.47s",
+        "exception_lines": [
+          "E           ValueError: frozen structural parameter changed"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:102: ",
+          "loom_commissioning\\adapter.py:30: in validate_frozen",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "f92a13a0308b25b388428e7c095cd9ea8bab369027982548c439fae2c6fa6c89",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_frozen_persistence",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\frozen-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.45s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "291b5bc97d346c2bc2d55883a10bd5eb5a8e1f6d386e45ab29998613470592e3",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_frozen_persistence",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\frozen-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "discarded",
+      "test": "test_discarded_update_has_no_later_effect",
+      "intended_failure": "discarded structural update affected later output/state",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.99s",
+        "exception_lines": [
+          "E       AssertionError: discarded structural update affected later output/state",
+          "E       assert '88983f71d02e...af80b69811a4c' == 'f993d86422c4...24cf449542a5a'",
+          "E         ",
+          "E         - f993d86422c4fe0bb79197206a7b1c3fe12b4bbb1c247d7dcaf24cf449542a5a",
+          "E         + 88983f71d02e573d3cc967040d1647ce7b5e71680d11a4715faaf80b69811a4c"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:143: AssertionError"
+        ],
+        "sha256": "f30613eff11b0ded56b042560f5cba1585c99ab3a1c6a4eb45ae78815145dd01",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_discarded_update_has_no_later_effect",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\discarded-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.94s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "a998f81fca05f59418864e13634f26320d4b685104bff9b253bc7cdadb8af003",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_discarded_update_has_no_later_effect",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\discarded-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "duration",
+      "test": "test_duration_guard",
+      "intended_failure": "manifest changed during run",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.86s",
+        "exception_lines": [
+          "E           ValueError: manifest changed during run",
+          "E           ValueError: manifest changed during run"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:149: ",
+          "loom_commissioning\\runner.py:195: in advance",
+          "loom_commissioning\\runner.py:139: in _guard",
+          "loom_commissioning\\contract.py:29: ValueError",
+          "tests_apparatus\\test_apparatus.py:153: ",
+          "loom_commissioning\\runner.py:255: in close",
+          "loom_commissioning\\runner.py:139: in _guard",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "a8d28cf632add5fb63c344f8feb0f39e374708e8b8b0540010ddc520ffb5fa50",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_duration_guard",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\duration-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.98s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "80a49dfa261a7e2ad5e7885fe00669b445b9a446a1645bf34d2354726e1e2a56",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_duration_guard",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\duration-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "extra_updates",
+      "test": "test_controller_hold_schedule",
+      "intended_failure": "extra native/wave/random/field updates introduced by controller hold",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 2.11s",
+        "exception_lines": [
+          "E       AssertionError: extra native/wave/random/field updates introduced by controller hold",
+          "E       assert 20 == 10",
+          "E        +  where 20 = len([0.01, 0.01, 0.01, 0.01, 0.01, 0.01, ...])"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:177: AssertionError"
+        ],
+        "sha256": "76b82818f8724b94d2ee35dd698539dd852d20575d9831e822811122737f00ff",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\extra_updates-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 2.52s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "6bb56a36788edf8a42305a477e440ef55067665a3f1dff8d14b1a800d2c38792",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\extra_updates-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "extra_native",
+      "test": "test_controller_hold_schedule",
+      "intended_failure": "extra native/wave/random state change from external hold",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 2.15s",
+        "exception_lines": [
+          "E       AssertionError: extra native/wave/random state change from external hold",
+          "E       assert (59 == 59 and {'anatomy/gat...te-3': 1, ...} == {'anatomy/gat...te-3': 1, ...}",
+          "E        +  where 59 = <loom_p.engine.Engine object at 0x0000021A7FCCF230>.native_index",
+          "E         ",
+          "E         Omitting 37 identical items, use -vv to show",
+          "E         Use -v to get more diff and 'a3d87d3f36b1...5b82ae1ba8f83' == '546e5b8280ed...1d6157cbfedd8'",
+          "E         ",
+          "E         - 546e5b8280ed516696ffc6fdb4b16dec7d157035e5504c6ff6a1d6157cbfedd8",
+          "E         + a3d87d3f36b1ccc713dfe891435dab61ed199a6228e1806f38d5b82ae1ba8f83)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:178: AssertionError"
+        ],
+        "sha256": "e802540d7927140495cfb47cff1d99c8f1030e1a2272d4510fab115967158e2c",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\extra_native-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 2.43s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "12d9d2868173a4c894d482ef2bf5e168d57e534452825c784054a4dacee20d95",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\extra_native-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "extra_wave",
+      "test": "test_controller_hold_schedule",
+      "intended_failure": "extra native/wave/random state change from external hold",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 2.53s",
+        "exception_lines": [
+          "E       AssertionError: extra native/wave/random state change from external hold",
+          "E       assert (59 == 59 and {'anatomy/gat...te-3': 1, ...} == {'anatomy/gat...te-3': 1, ...}",
+          "E        +  where 59 = <loom_p.engine.Engine object at 0x000002141731F230>.native_index",
+          "E         ",
+          "E         Omitting 35 identical items, use -vv to show",
+          "E         Differing items:",
+          "E         {'life/regulation-I': 11} != {'life/regulation-I': 1}",
+          "E         {'life/regulation-E': 11} != {'life/regulation-E': 1}",
+          "E         Use -v to get more diff)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:178: AssertionError"
+        ],
+        "sha256": "36b03bb91a77e48e8d1992ac662af0ac7b41d617f1932c1f8beedeffc85e1768",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\extra_wave-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 2.48s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "454310fb9b4dabdaabdfc894b873e3373a99edb6e0a112f77a07e9a03f3441a4",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\extra_wave-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "extra_random",
+      "test": "test_controller_hold_schedule",
+      "intended_failure": "extra native/wave/random state change from external hold",
+      "matrix": "apparatus-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 2.16s",
+        "exception_lines": [
+          "E       AssertionError: extra native/wave/random state change from external hold",
+          "E       assert (59 == 59 and {'anatomy/gat...te-3': 1, ...} == {'anatomy/gat...te-3': 1, ...}",
+          "E        +  where 59 = <loom_p.engine.Engine object at 0x000002014F21F230>.native_index",
+          "E         ",
+          "E         Omitting 37 identical items, use -vv to show",
+          "E         Left contains 1 more item:",
+          "E         {'life/unexpected-controller-draw': 10}",
+          "E         Use -v to get more diff)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_apparatus.py:178: AssertionError"
+        ],
+        "sha256": "077a71c35851900995d92215d883c6dab74187078bdbee7b3e21a4e39aea5184",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\extra_random-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 2.53s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "5205400864525686cb2dab446cc2e073f754fde0d6c30df403fc7bee23c9507e",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\apparatus-faults\\extra_random-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-implementation",
+      "test": "test_approved_execution_binding[implementation]",
+      "intended_failure": "APPROVAL BINDING BREACH: implementation",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.80s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: implementation",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000001E87BC3D580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "541243e08f1d72239509b930f74dac2cb2b489ae6c562b8e3736d0e370e87ce8",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[implementation]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-implementation-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.79s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0028b606c075f76cdf23bf827f20bfa76a810f9bb715a28e497f8f67cc643223",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[implementation]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-implementation-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-constants",
+      "test": "test_approved_execution_binding[constants]",
+      "intended_failure": "APPROVAL BINDING BREACH: constants",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.81s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: constants",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000001BE7F5FD580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "a7bbbbe0865e474eb62154fb1d26c77c3506bd79cfa9c822cf9002727f1e0495",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[constants]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-constants-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.78s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0823a3386a208324b305f54fc6f485f5a05f8349c579be91780688525ab43862",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[constants]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-constants-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-route",
+      "test": "test_approved_execution_binding[route]",
+      "intended_failure": "APPROVAL BINDING BREACH: route",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.76s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: route",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x0000024A0E4B9580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "af110341fa5a1eab6b402ab6aafa687e9e8c1e284dd41f20efd0fec88c8fe15e",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[route]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-route-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.81s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "bf0fd24d88aed7013b352e904337d574db524c14855f2410bb70486f556d148f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[route]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-route-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-stage_sequence",
+      "test": "test_approved_execution_binding[stage_sequence]",
+      "intended_failure": "APPROVAL BINDING BREACH: stage_sequence",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.79s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: stage_sequence",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x0000017D03589580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "4b3ad17d84ff7b9fc706bc1c9242873409b7eaee013925b64ff326de3d07cb62",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[stage_sequence]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-stage_sequence-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.78s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0823a3386a208324b305f54fc6f485f5a05f8349c579be91780688525ab43862",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[stage_sequence]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-stage_sequence-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-contact_target",
+      "test": "test_approved_execution_binding[contact_target]",
+      "intended_failure": "APPROVAL BINDING BREACH: contact_target",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.78s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: contact_target",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000001E43D8FD580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "6e078523f1c61fd493a7c9d0164567f50158c142daf5c01a2d6615132104c234",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[contact_target]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-contact_target-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.80s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "fd1807cb90e99f82b6cbe687ce1680076b7d16027099d9c8701e92ae561e0309",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[contact_target]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-contact_target-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-manual_fallback",
+      "test": "test_approved_execution_binding[manual_fallback]",
+      "intended_failure": "APPROVAL BINDING BREACH: manual_fallback",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.77s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: manual_fallback",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x0000022D72001D00>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "ed38a17f6da0aa4686d77dbfc79912ae177894da99349112f351ffe58a6f6df4",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[manual_fallback]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-manual_fallback-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.79s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0028b606c075f76cdf23bf827f20bfa76a810f9bb715a28e497f8f67cc643223",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[manual_fallback]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-manual_fallback-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-sensor_interface",
+      "test": "test_approved_execution_binding[sensor_interface]",
+      "intended_failure": "APPROVAL BINDING BREACH: sensor_interface",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.76s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: sensor_interface",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000002C23BB2DB20>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "d5561ed1a340f465009a149406741450e7aed0b69c4e32636ca6aeac3a09fbef",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[sensor_interface]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-sensor_interface-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.80s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "fd1807cb90e99f82b6cbe687ce1680076b7d16027099d9c8701e92ae561e0309",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[sensor_interface]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-sensor_interface-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-intact_arm",
+      "test": "test_approved_execution_binding[intact_arm]",
+      "intended_failure": "APPROVAL BINDING BREACH: intact_arm",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.78s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: intact_arm",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000001A376BCD9E0>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "6f3b72416947d94d17d0a8fa73e9340986bcf02403c7032598ac66201ff98d5a",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[intact_arm]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-intact_arm-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.86s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "48a9c63ef9d290a9cd7ac361e6c80943eafde56fef9baa6358858baa47c8d718",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[intact_arm]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-intact_arm-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-fixed_adapter",
+      "test": "test_approved_execution_binding[fixed_adapter]",
+      "intended_failure": "APPROVAL BINDING BREACH: fixed_adapter",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.80s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: fixed_adapter",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000001A4FFC019E0>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "acfece46afeeebb720e96f9be79a277fc99c877e79c003eba79ce2e1299e7596",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[fixed_adapter]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-fixed_adapter-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.79s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0028b606c075f76cdf23bf827f20bfa76a810f9bb715a28e497f8f67cc643223",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[fixed_adapter]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-fixed_adapter-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-deprivation",
+      "test": "test_approved_execution_binding[deprivation]",
+      "intended_failure": "APPROVAL BINDING BREACH: deprivation",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.78s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: deprivation",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x00000217875A5580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "973f7ed5b9eafa212a3690639bfe3b2f30f9f95dd67c59eaf22ba513a189d915",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[deprivation]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-deprivation-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.80s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "fd1807cb90e99f82b6cbe687ce1680076b7d16027099d9c8701e92ae561e0309",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[deprivation]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-deprivation-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-initial",
+      "test": "test_approved_execution_binding[initial]",
+      "intended_failure": "APPROVAL BINDING BREACH: initial",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.77s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: initial",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x00000212FF70D580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "c9e40b889d194157ef4919d13ec1fc504ddfe61ae45a6fbe70557de73f5be943",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[initial]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-initial-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.78s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0823a3386a208324b305f54fc6f485f5a05f8349c579be91780688525ab43862",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[initial]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-initial-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-prehistory",
+      "test": "test_approved_execution_binding[prehistory]",
+      "intended_failure": "APPROVAL BINDING BREACH: prehistory",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.78s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: prehistory",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x0000023CD81B9580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "021c2637b337c29db7a81d1e8f0c222674e1a75a95a90bf4632ec5e622cee80e",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[prehistory]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-prehistory-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.78s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0823a3386a208324b305f54fc6f485f5a05f8349c579be91780688525ab43862",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[prehistory]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-prehistory-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-duration",
+      "test": "test_approved_execution_binding[duration]",
+      "intended_failure": "APPROVAL BINDING BREACH: duration",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.80s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: duration",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000002527F879580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "b6e392643e31e63b6c2469f1c6b12c306f000522ba74ea9de3426a98feabf4f4",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[duration]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-duration-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.81s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "bf0fd24d88aed7013b352e904337d574db524c14855f2410bb70486f556d148f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[duration]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-duration-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-resources",
+      "test": "test_approved_execution_binding[resources]",
+      "intended_failure": "APPROVAL BINDING BREACH: resources",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.81s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: resources",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x0000017EDFCBD580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "ca47be7da58e7be1fb554cfffd03622d0a1aedb12f03382ac6eea31d2f3f042e",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[resources]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-resources-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.80s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "fd1807cb90e99f82b6cbe687ce1680076b7d16027099d9c8701e92ae561e0309",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[resources]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-resources-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-runtime",
+      "test": "test_approved_execution_binding[runtime]",
+      "intended_failure": "APPROVAL BINDING BREACH: runtime",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.78s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: runtime",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x0000017DB7925580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "a4332352ddb35e27f6c1016547fdfaa88443402dc33ee78da80b1c0891e7e29f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[runtime]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-runtime-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.78s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0823a3386a208324b305f54fc6f485f5a05f8349c579be91780688525ab43862",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[runtime]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-runtime-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-procedure",
+      "test": "test_approved_execution_binding[procedure]",
+      "intended_failure": "APPROVAL BINDING BREACH: procedure",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.79s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: procedure",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x0000021BA02A1580>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "b4788d5f1f2dcc7529b951fc51935fd49375b2d208b85b828a5dcc35a2262215",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[procedure]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-procedure-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.80s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "fd1807cb90e99f82b6cbe687ce1680076b7d16027099d9c8701e92ae561e0309",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[procedure]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-procedure-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-replay_arm",
+      "test": "test_approved_execution_binding[replay_arm]",
+      "intended_failure": "APPROVAL BINDING BREACH: replay_arm",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.79s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: replay_arm",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000001D8BF3CDF80>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "5df8c808f95698e77e2b7be2fe6e452488f990a1db8298c5621c9d06f5d1467f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[replay_arm]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-replay_arm-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.79s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "0028b606c075f76cdf23bf827f20bfa76a810f9bb715a28e497f8f67cc643223",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[replay_arm]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-replay_arm-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "authority-request_rebind",
+      "test": "test_approved_execution_binding[request_rebind]",
+      "intended_failure": "APPROVAL BINDING BREACH: request_rebind",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.78s",
+        "exception_lines": [
+          "E       AssertionError: APPROVAL BINDING BREACH: request_rebind",
+          "E       assert False",
+          "E        +  where False = rejected(<function test_approved_execution_binding.<locals>.<lambda> at 0x000001F3495D96C0>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:83: AssertionError"
+        ],
+        "sha256": "e9c4094c0f02d6db48bd2e4d20ef6ce7e54af71450ef6eb14110bbd42f16aee9",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[request_rebind]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-request_rebind-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.82s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "85e706aa16433f8f0d89305e7077ae4cc25f716f106185c39a8e935d02d1ef2c",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_approved_execution_binding[request_rebind]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\authority-request_rebind-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "clock-transition",
+      "test": "test_exact_review_boundary",
+      "intended_failure": "CLOCK BREACH: expired stage issued another hold",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "2 failed, 3 passed in 0.41s",
+        "exception_lines": [
+          "E           AssertionError: CLOCK BREACH: expired stage issued another hold",
+          "E           assert 0 == 1",
+          "E           AssertionError: CLOCK BREACH: expired stage issued another hold",
+          "E           assert 0 == 1"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:147: AssertionError",
+          "tests_apparatus\\test_corrections.py:147: AssertionError"
+        ],
+        "sha256": "0d670db88764b0fe7a9ad70447cdba61fc629dca5d1bb79e77bb84caba92b4d3",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_exact_review_boundary",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\clock-transition-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "5 passed in 0.37s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "4da252514279d6c33c09caf5f762047c86009245231d9a33285f057c844c81f0",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_exact_review_boundary",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\clock-transition-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "clock-final",
+      "test": "test_final_stage_and_not_due_control",
+      "intended_failure": "CLOCK BREACH: final stage still drives",
+      "matrix": "correction-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.41s",
+        "exception_lines": [
+          "E           AssertionError: CLOCK BREACH: final stage still drives",
+          "E           assert not np.True_",
+          "E            +  where np.True_ = <built-in method any of numpy.ndarray object at 0x0000024F7FC1D9B0>()",
+          "E            +    where <built-in method any of numpy.ndarray object at 0x0000024F7FC1D9B0> = array([0.69589343, 0.2347435 ]).any"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_corrections.py:157: AssertionError"
+        ],
+        "sha256": "e9c2c211e89e401ecf992f5ffbc065681ac833a8e2bcf6bc688799210753626f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_final_stage_and_not_due_control",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\clock-final-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.36s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "1b6d285e9bf8c2d7876becb3febd98832a4a060079ff2e22611ccc00af141ee5",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_corrections.py::test_final_stage_and_not_due_control",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\correction-faults\\clock-final-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "duplicate-approved_execution",
+      "test": "test_duplicate_approval_rejection[approved_execution]",
+      "intended_failure": "DUPLICATE APPROVAL BREACH: approved_execution",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.77s",
+        "exception_lines": [
+          "E           AssertionError: DUPLICATE APPROVAL BREACH: approved_execution",
+          "E           assert False",
+          "E            +  where False = rejected(<function test_duplicate_approval_rejection.<locals>.<lambda> at 0x0000028E7FDB5760>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:48: AssertionError"
+        ],
+        "sha256": "c830ac596d77f8c4ecca28251f27a6658e412ceb94f9b131fa3eedb5d86c5b45",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[approved_execution]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-approved_execution-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.81s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "bf0fd24d88aed7013b352e904337d574db524c14855f2410bb70486f556d148f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[approved_execution]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-approved_execution-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "duplicate-point",
+      "test": "test_duplicate_approval_rejection[point]",
+      "intended_failure": "DUPLICATE APPROVAL BREACH: point",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.75s",
+        "exception_lines": [
+          "E           AssertionError: DUPLICATE APPROVAL BREACH: point",
+          "E           assert False",
+          "E            +  where False = rejected(<function test_duplicate_approval_rejection.<locals>.<lambda> at 0x000002407FA6D760>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:48: AssertionError"
+        ],
+        "sha256": "36f2679d83cc9458fa05ca90fac7a0885e7051d4a74fd55b8365f258c53c8ace",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[point]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-point-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.81s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "bf0fd24d88aed7013b352e904337d574db524c14855f2410bb70486f556d148f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[point]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-point-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "duplicate-controller",
+      "test": "test_duplicate_approval_rejection[controller]",
+      "intended_failure": "DUPLICATE APPROVAL BREACH: controller",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.76s",
+        "exception_lines": [
+          "E           AssertionError: DUPLICATE APPROVAL BREACH: controller",
+          "E           assert False",
+          "E            +  where False = rejected(<function test_duplicate_approval_rejection.<locals>.<lambda> at 0x000001EE9B419760>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:48: AssertionError"
+        ],
+        "sha256": "c2624541de724980caf014195ef533f61a08c2db1239f509246c1434f37510a0",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[controller]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-controller-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.83s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "e2d80bebebb0a802eefa4b65f7108ff05a97fa187d3204e75dd15dff03e40e50",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[controller]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-controller-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "duplicate-until",
+      "test": "test_duplicate_approval_rejection[until]",
+      "intended_failure": "DUPLICATE APPROVAL BREACH: until",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.73s",
+        "exception_lines": [
+          "E           AssertionError: DUPLICATE APPROVAL BREACH: until",
+          "E           assert False",
+          "E            +  where False = rejected(<function test_duplicate_approval_rejection.<locals>.<lambda> at 0x00000280BBADD760>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:48: AssertionError"
+        ],
+        "sha256": "c8eba115cd884e0a4f9b8991bf3a4dc66edce5f19464850d56b482dee855b0e8",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[until]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-until-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.81s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "bf0fd24d88aed7013b352e904337d574db524c14855f2410bb70486f556d148f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[until]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-until-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "duplicate-identical",
+      "test": "test_duplicate_approval_rejection[identical]",
+      "intended_failure": "DUPLICATE APPROVAL BREACH: identical",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.75s",
+        "exception_lines": [
+          "E           AssertionError: DUPLICATE APPROVAL BREACH: identical",
+          "E           assert False",
+          "E            +  where False = rejected(<function test_duplicate_approval_rejection.<locals>.<lambda> at 0x000001AA7F9ED760>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:48: AssertionError"
+        ],
+        "sha256": "1437642a43bd24827938abf66f4c98dde58419ff69d26e4d0fee4d615291fae6",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[identical]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-identical-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.82s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "85e706aa16433f8f0d89305e7077ae4cc25f716f106185c39a8e935d02d1ef2c",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_duplicate_approval_rejection[identical]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\duplicate-identical-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "canonical-keys",
+      "test": "test_non_string_canonical_key",
+      "intended_failure": "CANONICAL KEY BREACH",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.45s",
+        "exception_lines": [
+          "E           AssertionError: CANONICAL KEY BREACH",
+          "E           assert False",
+          "E            +  where False = rejected(<function test_non_string_canonical_key.<locals>.<lambda> at 0x0000024690775120>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:63: AssertionError"
+        ],
+        "sha256": "c859788a017ed796920d2cb0d2a6c9c17f434b2820014c862cd778e293d4a8b7",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_non_string_canonical_key",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\canonical-keys-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.38s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "cac8f2444c91387fbd4c6b3dfeebcac4afaf6000faff0f8746230c740f460d7a",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_non_string_canonical_key",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\canonical-keys-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "approval-alias",
+      "test": "test_alias_and_semantic_mirror_rejection",
+      "intended_failure": "APPROVAL ALIAS BREACH",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.74s",
+        "exception_lines": [
+          "E               AssertionError: APPROVAL ALIAS BREACH",
+          "E               assert False",
+          "E                +  where False = rejected(<function test_alias_and_semantic_mirror_rejection.<locals>.<lambda> at 0x000001BB7FC196C0>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:71: AssertionError"
+        ],
+        "sha256": "a8249e02a61e18d408e27ddc18e5c20e4361a8e28e93f4f6ae398d6efeb04695",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_alias_and_semantic_mirror_rejection",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\approval-alias-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.75s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "9dd199ab94e11be293cfb8d44f58bd794bc906d7e94595acb3c048e42380b8f4",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_alias_and_semantic_mirror_rejection",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\approval-alias-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "protocol-shadow",
+      "test": "test_protocol_cannot_shadow_bound_fields",
+      "intended_failure": "PROTOCOL SHADOW BREACH",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.74s",
+        "exception_lines": [
+          "E               AssertionError: PROTOCOL SHADOW BREACH",
+          "E               assert False",
+          "E                +  where False = rejected(<function test_protocol_cannot_shadow_bound_fields.<locals>.<lambda> at 0x00000159BA4496C0>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:83: AssertionError"
+        ],
+        "sha256": "1a0639a851e4f7d9a11992af0dc03219be23c2ccf03e2588a65994ecc5285be8",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_protocol_cannot_shadow_bound_fields",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\protocol-shadow-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.81s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "bf0fd24d88aed7013b352e904337d574db524c14855f2410bb70486f556d148f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_protocol_cannot_shadow_bound_fields",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\protocol-shadow-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "dispatch-waypoint_command",
+      "test": "test_actual_dispatch_is_checked[waypoint_command]",
+      "intended_failure": "EXECUTED DISPATCH BREACH: waypoint_command",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 1.00s",
+        "exception_lines": [
+          "E               AssertionError: EXECUTED DISPATCH BREACH: waypoint_command",
+          "E               assert not ['waypoint_command']"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:98: AssertionError"
+        ],
+        "sha256": "2d49e8e1456589ca3b58f83618b2e92ff8b31274e0180f8b0a76cbca660d620e",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[waypoint_command]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-waypoint_command-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.94s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "a998f81fca05f59418864e13634f26320d4b685104bff9b253bc7cdadb8af003",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[waypoint_command]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-waypoint_command-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "dispatch-command_pair",
+      "test": "test_actual_dispatch_is_checked[command_pair]",
+      "intended_failure": "EXECUTED DISPATCH BREACH: command_pair",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 1.00s",
+        "exception_lines": [
+          "E               AssertionError: EXECUTED DISPATCH BREACH: command_pair",
+          "E               assert not ['command_pair']"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:98: AssertionError"
+        ],
+        "sha256": "43d90f70ecdc228df63c66b66433e7c600082b65cb204ac480869f4f086ac35f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[command_pair]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-command_pair-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.98s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "80a49dfa261a7e2ad5e7885fe00669b445b9a446a1645bf34d2354726e1e2a56",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[command_pair]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-command_pair-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "dispatch-privileged_input",
+      "test": "test_actual_dispatch_is_checked[privileged_input]",
+      "intended_failure": "EXECUTED DISPATCH BREACH: privileged_input",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 1.00s",
+        "exception_lines": [
+          "E               AssertionError: EXECUTED DISPATCH BREACH: privileged_input",
+          "E               assert not ['privileged_input']"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:98: AssertionError"
+        ],
+        "sha256": "3ebffb72f103d201cf257c3f1141d0b97bd101ce6c092b7dfee406069e9d5676",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[privileged_input]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-privileged_input-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.93s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "5036a117336232a73a45367b7993c5587044669dcd573432f79ad7323f827302",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[privileged_input]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-privileged_input-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "dispatch-time_due",
+      "test": "test_actual_dispatch_is_checked[time_due]",
+      "intended_failure": "EXECUTED DISPATCH BREACH: time_due",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.98s",
+        "exception_lines": [
+          "E               AssertionError: EXECUTED DISPATCH BREACH: time_due",
+          "E               assert not ['time_due']"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:98: AssertionError"
+        ],
+        "sha256": "85478a05d39a405693f8b3b0af160204af27491b1292f57b735f3606a4bdf44e",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[time_due]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-time_due-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 1.00s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "1680558edf657d7f75dac8246519cf3acf567c5b52dbf617bdf316974ee3fc3c",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[time_due]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-time_due-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "dispatch-observe_without_interference",
+      "test": "test_actual_dispatch_is_checked[observe_without_interference]",
+      "intended_failure": "EXECUTED DISPATCH BREACH: observe_without_interference",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 1.00s",
+        "exception_lines": [
+          "E               AssertionError: EXECUTED DISPATCH BREACH: observe_without_interference",
+          "E               assert not ['observe_without_interference']"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:98: AssertionError"
+        ],
+        "sha256": "2dcd1d125edc1b3d19839595e25cee3144d3f96fe390feffd503e3e1f22d6621",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[observe_without_interference]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-observe_without_interference-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.97s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "3540d91ec320c224de34431488d94bb509ee1f0d3077c7b83c9c5b56b52ef419",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_actual_dispatch_is_checked[observe_without_interference]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\dispatch-observe_without_interference-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "pending-command",
+      "test": "test_pending_mutation_before_advance_and_save[command]",
+      "intended_failure": "PENDING COMMAND BREACH: command",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 1.81s",
+        "exception_lines": [
+          "E               AssertionError: PENDING COMMAND BREACH: command",
+          "E               assert False",
+          "E                +  where False = rejected(_guard)",
+          "E                +    where _guard = <loom_commissioning.runner.Run object at 0x0000014B39125D30>._guard"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:161: AssertionError"
+        ],
+        "sha256": "af72236c4956116b2d074b8c5439fff8af13c78210a89c3afb20ac3229463276",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[command]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\pending-command-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 1.87s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "8b89c9f0affe7f0bf26663353b6ee28348e024daf3856cbb69becc6194c290e2",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[command]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\pending-command-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "pending-remainder",
+      "test": "test_pending_mutation_before_advance_and_save[remainder]",
+      "intended_failure": "PENDING COMMAND BREACH: remainder",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 1.77s",
+        "exception_lines": [
+          "E               AssertionError: PENDING COMMAND BREACH: remainder",
+          "E               assert False",
+          "E                +  where False = rejected(_guard)",
+          "E                +    where _guard = <loom_commissioning.runner.Run object at 0x00000253F87A9D30>._guard"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:161: AssertionError"
+        ],
+        "sha256": "c4b7327ff21e33ed7ab445ba0b0595e636d4eb54e4ae6d86a872227ac4bd5fd8",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[remainder]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\pending-remainder-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 1.90s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "f62f8b49a0c0582a3d3af75ca059dfe4c1b68e73ee109ae4f47246fbd5402894",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[remainder]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\pending-remainder-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "pending-both",
+      "test": "test_pending_mutation_before_advance_and_save[both]",
+      "intended_failure": "PENDING COMMAND BREACH: both",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 1.76s",
+        "exception_lines": [
+          "E               AssertionError: PENDING COMMAND BREACH: both",
+          "E               assert False",
+          "E                +  where False = rejected(_guard)",
+          "E                +    where _guard = <loom_commissioning.runner.Run object at 0x000001E38D599D30>._guard"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:161: AssertionError"
+        ],
+        "sha256": "1c697dfae44c3f2e81938b84781bf58a4fc347ba3faff8296b0a397c07caf144",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[both]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\pending-both-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 1.91s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "d52321e75144761b2585df2f15e73780ab79d5b63144dd427b64c414a0e66175",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[both]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\pending-both-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "pending-decision",
+      "test": "test_pending_mutation_before_advance_and_save[decision]",
+      "intended_failure": "PENDING COMMAND BREACH: decision",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 1.80s",
+        "exception_lines": [
+          "E               AssertionError: PENDING COMMAND BREACH: decision",
+          "E               assert False",
+          "E                +  where False = rejected(_guard)",
+          "E                +    where _guard = <loom_commissioning.runner.Run object at 0x0000023A77629D30>._guard"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:161: AssertionError"
+        ],
+        "sha256": "6f846fe0ba959b45a35dc82a8f564620ca298f686a217bfffb11766d04b97416",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[decision]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\pending-decision-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 1.89s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "6cd8abe9314b897e38acb4df55fe2291a8a9f959c5884636965c7215e889a591",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_pending_mutation_before_advance_and_save[decision]",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\pending-decision-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "decision-journal",
+      "test": "test_saved_decision_journal_rejection",
+      "intended_failure": "DECISION JOURNAL BREACH",
+      "matrix": "final-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 2.04s",
+        "exception_lines": [
+          "E           AssertionError: DECISION JOURNAL BREACH",
+          "E           assert False",
+          "E            +  where False = rejected(<function test_saved_decision_journal_rejection.<locals>.<lambda> at 0x000001E5FFECDF80>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_final_corrections.py:231: AssertionError"
+        ],
+        "sha256": "83d53a9cd2cbb388e8060d7cb699d1825cdc6524ba063e40f24acffe144a043b",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_saved_decision_journal_rejection",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\decision-journal-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 2.63s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "51b2f99402f3446f0d5c0b181b9ee9c5dd7ee9b3ec81ffabb67f036ac28e4b41",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_final_corrections.py::test_saved_decision_journal_rejection",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\final-faults\\decision-journal-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "old-absolute",
+      "test": "test_old_absolute_rejection_corrected",
+      "intended_failure": "physical/native clock mismatch",
+      "matrix": "clock-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.46s",
+        "exception_lines": [
+          "E           ValueError: physical/native clock mismatch"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_clock_scheduling.py:57: ",
+          "loom_commissioning\\pending.py:45: in validate_decision",
+          "loom_commissioning\\clock.py:82: in validate_physical_time",
+          "loom_commissioning\\contract.py:29: ValueError"
+        ],
+        "sha256": "979e391784257b7f034fec3efaf46db3866a3a072a0045efae21acdd134ec931",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_old_absolute_rejection_corrected",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\old-absolute-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.40s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "1d0400b7205282bd72e6eb571701546a0f171a00f5d1b25b094300a09f619ecb",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_old_absolute_rejection_corrected",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\old-absolute-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "old-stage",
+      "test": "test_independent_270_transition",
+      "intended_failure": "STAGE OWNERSHIP BREACH",
+      "matrix": "clock-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.43s",
+        "exception_lines": [
+          "E           AssertionError: STAGE OWNERSHIP BREACH at 27000",
+          "E           assert 2 == 3"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_clock_scheduling.py:64: AssertionError"
+        ],
+        "sha256": "8b5015c17cfd4ac9471ac00f9c1490cad8a5236a4de9b23b746626f22b5c031f",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_independent_270_transition",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\old-stage-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.38s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "cac8f2444c91387fbd4c6b3dfeebcac4afaf6000faff0f8746230c740f460d7a",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_independent_270_transition",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\old-stage-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "clock-corruption",
+      "test": "test_corrupt_physical_clock_rejected",
+      "intended_failure": "TIMING CORRUPTION BREACH",
+      "matrix": "clock-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.42s",
+        "exception_lines": [
+          "E               AssertionError: TIMING CORRUPTION BREACH",
+          "E               assert False",
+          "E                +  where False = rejected(<function test_corrupt_physical_clock_rejected.<locals>.<lambda> at 0x000002017E0C4EA0>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_clock_scheduling.py:103: AssertionError"
+        ],
+        "sha256": "cbe28b013228dda9dfdbc4f43712f15f9ab03eda825cba8bf2bc3979692e5802",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_corrupt_physical_clock_rejected",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\clock-corruption-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.38s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "cac8f2444c91387fbd4c6b3dfeebcac4afaf6000faff0f8746230c740f460d7a",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_corrupt_physical_clock_rejected",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\clock-corruption-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "grid-rounding",
+      "test": "test_off_grid_declared_stage_rejected",
+      "intended_failure": "GRID ROUNDING BREACH",
+      "matrix": "clock-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.42s",
+        "exception_lines": [
+          "E           AssertionError: GRID ROUNDING BREACH",
+          "E           assert False",
+          "E            +  where False = rejected(<function test_off_grid_declared_stage_rejected.<locals>.<lambda> at 0x0000027BE0294EA0>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_clock_scheduling.py:113: AssertionError"
+        ],
+        "sha256": "abf990cde4cecfa517325fcb1315630b4275e49d4b6d3301db9d160b2d13eb8b",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_off_grid_declared_stage_rejected",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\grid-rounding-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.73s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "9214472f4ea76ad9bf5f1f68a490cdb9b65622eccf79a0ac6797931ab981769c",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_off_grid_declared_stage_rejected",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\grid-rounding-GREEN-temp"
+        ]
+      }
+    },
+    {
+      "fault": "extra-decision",
+      "test": "test_no_extra_decision",
+      "intended_failure": "EXTRA DECISION BREACH",
+      "matrix": "clock-faults",
+      "RED": {
+        "exit": 1,
+        "summary": "1 failed in 0.40s",
+        "exception_lines": [
+          "E               AssertionError: EXTRA DECISION BREACH",
+          "E               assert False",
+          "E                +  where False = rejected(<function test_no_extra_decision.<locals>.<lambda> at 0x0000019D1C254EA0>)"
+        ],
+        "trace_frames": [
+          "tests_apparatus\\test_clock_scheduling.py:124: AssertionError"
+        ],
+        "sha256": "44cd03200fca77d7d252be0e685745d8ab5ac4612239f840f697bdd18edce3a3",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_no_extra_decision",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\extra-decision-RED-temp"
+        ]
+      },
+      "GREEN": {
+        "exit": 0,
+        "summary": "1 passed in 0.37s",
+        "exception_lines": [],
+        "trace_frames": [],
+        "sha256": "4b901e9fb121489422c56c94f4112a34c14f497e2e01c9caa23941fe690489cf",
+        "command": [
+          "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-X",
+          "utf8",
+          "-m",
+          "pytest",
+          "tests_apparatus/test_clock_scheduling.py::test_no_extra_decision",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-p-clock-final-review-68db2c58\\regression\\clock-faults\\extra-decision-GREEN-temp"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "operator": "Jason",
+  "condition_order": [
+    "B1-FULL-RAW",
+    "B1-CHEMISTRY-HIDDEN"
+  ],
+  "controls": "Manual bounded pair only. No AI, observer, waypoint, hint, control law, autoplay, or repeat-until-outcome driver.",
+  "trial_stops": [
+    "fixed native deadline",
+    "physical terminal E or I",
+    "apparatus/record/controller failure",
+    "wall/storage administrative stop",
+    "explicit operator withdrawal at paused boundary"
+  ],
+  "after_early_stop": "Preserve prefix and reason. Do not resume, retry, replace, extend or switch to another controller automatically.",
+  "memory": "FULL-RAW remains first in the pair. Jason already saw its permitted initial readings during a zero-step attempt closed for layout correction; no wholly unseen starting-state claim remains. No privileged feedback was released. The second condition can benefit from memory of FULL-RAW; the fixed order is not counterbalanced and cannot establish chemistry necessity.",
+  "grants": "None in this regenerated packet. Authorize each exact new object separately. Historical grants do not authorize these objects."
+}

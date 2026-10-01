@@ -1,0 +1,13 @@
+{
+  "case": "PC-CONTACT",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T01:49:23.8937929+00:00",
+  "user_statement_verbatim": "Oh for some reason I had 90 degree turn being equal to one. That was never said. Just what was in my head. Good to see this and understand how much each increment stands for. This is much better.",
+  "context": "After passive recorded plan-view replay, before PC-HOLD launch",
+  "interpretation": "Jason explicitly identified and revised his unstated assumption that a value of one meant a 90-degree turn. Reported that the replay improved understanding.",
+  "clarification": "Each actuator hold fixes a 0.1-second interval, not a turning angle. Actuator values are effort commands; proprioception_4 is a scaled angular velocity, not orientation or accumulated angle. Actual rotation depends on the evolving mechanics.",
+  "assessment_boundary": "Preserve this post-replay learning separately from original sensor-only interpretation; do not retroactively mark the original onset/channel interpretation independently demonstrated.",
+  "no_new_simulation": true,
+  "PC_HOLD_started": false,
+  "B1_state_accessed": false
+}

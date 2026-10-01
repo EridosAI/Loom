@@ -1,0 +1,26 @@
+{
+  "P": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "apparatus": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "held_review_sha256": "f5c81c5aa6c741887ab2fa16700b54516a01a622d16ac9ccb86295655a281883",
+  "public": {
+    "archive": "B1_OPERATOR_REVIEW.zip",
+    "sha256": "0165b5dd1af0fcfa9dd7813f2540a96cdbf5dc2858aea0a6e1c08030962dda50",
+    "bytes": 28604,
+    "payloads": 19,
+    "verified": true
+  },
+  "privileged": {
+    "archive": "B1_PRIVILEGED_EVALUATOR_HOLD.zip",
+    "sha256": "4bf38627444574a740ede207b01441fb7a9ee1ab7612b65eba44319d4a775845",
+    "bytes": 1166400,
+    "payloads": 100,
+    "verified": true
+  },
+  "simulation_steps": 0,
+  "controller_calls": 0,
+  "new_prehistory_steps": 0,
+  "initial_sensor_transductions": 5,
+  "all_payloads_verified": true,
+  "packet_status": "PREPARED / HOLD / NOT LAUNCH-READY",
+  "operator_material_contains_no_B1_state": true
+}
