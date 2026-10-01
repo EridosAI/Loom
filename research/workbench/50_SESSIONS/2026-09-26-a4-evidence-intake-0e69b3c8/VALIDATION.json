@@ -1,0 +1,107 @@
+{
+  "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-26-A4-commissioning-result-5f077481\\A4_COMMISSIONING_RESULT.zip",
+  "zip_bytes": 166625900,
+  "zip_sha256": "3d6eaaa52b056a344bd2b1c5312ded561c477c273a01868f075dae3424097f8a",
+  "manifest_payloads_verified": 121,
+  "archive_members": 122,
+  "crc_passed": true,
+  "all_unpacked_inbox_members_match_zip": true,
+  "both_result_delivery_receipts_match": true,
+  "launch_payloads_verified": 89,
+  "launch_crc_passed": true,
+  "launch_zip_sha256": "84b351f3b8721351575a52c915733fbb9ad499e25f04b5fa6617c0744fa70b0e",
+  "launch_matches_separate_delivery": true,
+  "approved_canonical_sha256": "47a71e78ad4bbb920f2b29f7d9b0e3c5f520eb4905880916c85f0cc8bbb9f1e0",
+  "approved_canonical_matches_launch": true,
+  "constituent_execution_sha256": {
+    "A4-CROSS": "6c56c5384727c093afdf20423856b0ddb3e6587430ba492fdf6183c45fd0247d",
+    "A4-WAIT": "fb544e4ceb3d142ba7cbdfe0657895fd6394c1c21cc19f2dd6de84f0ab55c78c",
+    "A4-DETOUR": "3280f88321d2920ac2c88112d7bb8558a89d7abf1309642c68b192d22920e6fc"
+  },
+  "all_constituents_and_initial_snapshots_match_bound_launch": true,
+  "embedded_A3_zip_and_contact_note_match_registered_originals": true,
+  "supplied_before_after_original_manifests_identical": true,
+  "supplied_before_after_raw_analysis_manifests_identical": true,
+  "analysis_source_hashes_match_packaged_files": true,
+  "requested_reporting_precision_matches_saved_summary": true,
+  "source_case_order": [
+    "A4-CROSS",
+    "A4-WAIT",
+    "A4-DETOUR"
+  ],
+  "source_total_native_steps": 7600,
+  "source_attempts_per_case": 1,
+  "programs_or_tests_run_during_intake": false,
+  "simulation_or_controller_execution_during_intake": false,
+  "git_operations": false,
+  "necessary_source_gaps": [],
+  "source_identity_conflicts": [],
+  "existing_catalog_rows_preserved": 192,
+  "protected_files_unchanged": 494,
+  "links_validated": 448,
+  "source_ids": [
+    "SRC-193",
+    "SRC-194",
+    "SRC-195",
+    "SRC-196",
+    "SRC-197",
+    "SRC-198",
+    "SRC-199",
+    "SRC-200",
+    "SRC-201",
+    "SRC-202",
+    "SRC-203",
+    "SRC-204",
+    "SRC-205",
+    "SRC-206",
+    "SRC-207",
+    "SRC-208",
+    "SRC-209",
+    "SRC-210",
+    "SRC-211",
+    "SRC-212",
+    "SRC-213",
+    "SRC-214",
+    "SRC-215",
+    "SRC-216",
+    "SRC-217",
+    "SRC-218",
+    "SRC-219",
+    "SRC-220",
+    "SRC-221",
+    "SRC-222",
+    "SRC-223",
+    "SRC-224",
+    "SRC-225",
+    "SRC-226",
+    "SRC-227",
+    "SRC-228"
+  ],
+  "shared_files": {
+    "AGENTS.md": {
+      "before": "8e06acda7de0ddb647beb8563c1650d92653b88669ba095a38c12c4ff355e1e8",
+      "after": "3534f425258eaf5d0df07f14919b3496d27392dba89a14b8c9c0b8968e452ec5"
+    },
+    "00_RESEARCH_MAP.md": {
+      "before": "4ca4ae2ae3c6d76dd6f760698818becda019cbb9e4346f5b28b018292071eb2d",
+      "after": "0e149d8c8fec6b9e613f2929adcf5c14056544aa685d1094862f11dd5874ed90"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "before": "795ba379f4cd54fe2b7b3598604b3f48de339b8f316cb2289468b83aa695d7fa",
+      "after": "9d8c3f4a9b360041deb06008ebe87d5fe9b2556e6a8b7128e808e4649469690c"
+    },
+    "SOURCE_CATALOG.json": {
+      "before": "c8f4213d0d6fb31459fe6250ca4b700f81efc5710a8c4119d81be4a0e963b377",
+      "after": "5896a3233d5c285317493817e3fa8659ad625510d209515032721ab32719be01"
+    },
+    "SOURCE_REGISTER.md": {
+      "before": "9a7d91533c583eb884f7251400dc74c94dd047842178a9fbb0dcbc7cfadfd6e5",
+      "after": "19091f9323aaa2035edf027db6443a4fd01e363824feb7424aeab7bad7c957b6"
+    }
+  },
+  "intake_complete": true,
+  "validation_scope": "Source custody, exact status registration, links and byte preservation; no review rerun or scientific validation",
+  "incoming_files_preserved": 128,
+  "recovery_archive_verified": true,
+  "full_derived_batch_files_verified": 127
+}

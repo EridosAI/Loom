@@ -1,0 +1,9 @@
+# A5 evidence intake — completion
+
+Registered **A5 OBSERVED COMMISSIONING EVIDENCE** under `bdff35693db38800528d91e6d2d4d2085c640268e50713731df5ec27f8b76d1d`. [Full record](A5_COMMISSIONING_EVIDENCE_RECORD.md). The finite A0–A5 physical ceiling has been exercised within its scoped bounded witness set; next layer PERCEPTUAL CEILING, with B1–B4/C1–C2 unexecuted and scientific/developmental efficacy UNTESTED.
+
+Read AGENTS/map/status, authority index, primary A5 plain-language/final summary, boundary audit, original support-gap summary, execution/approval/trajectory receipts and saved-data validation/preservation records. Preserved original ZIP, checksum, receipt and all 127 members, including complete trajectory and approved launch ZIP. Verified 126 payload hashes/CRC reads, matching expanded copies, canonical authority/grant, 73 trajectory receipt payload identities, 158 nested launch payloads, bound documents and exact saved values. Original false flag, supplemental contact audit and final interpretation remain distinct. Registered SRC-300–SRC-330.
+
+Updated AGENTS.md, 00_RESEARCH_MAP.md, 01_WORKSPACE_STATUS.md, SOURCE_CATALOG.json, SOURCE_REGISTER.md and 40_DECISIONS/DECISION_INDEX.md plus this new session/source batch. PRIOR_SHARED_NOTES.zip/receipt preserve all six prior shared notes. Earlier sources, candidate/review/decision/session bytes, old catalog rows and historical held A5 hash remain unchanged. [Source identities](SOURCE_IDENTITIES.json) · [Validation](VALIDATION.json).
+
+Renewal availability and renewed productive uptake demonstrated; survival necessity not demonstrated. No counterfactual claim, parameter change, scientific freeze, canon change, new experiment number, new simulation, replay, controller recomputation, analysis rerun, actual repository modification or Git operation. No necessary source gap found. Stop after status confirmation.

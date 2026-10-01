@@ -1,0 +1,803 @@
+[
+  {
+    "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-contact-release-20260930",
+    "branch": "build/p-contact-release-20260930",
+    "head": "1d7cd6fd450ea528562b2c825589ab4de18a5b38",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "1d7cd6fd450ea528562b2c825589ab4de18a5b38\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-contact-release-20260930\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "1d7cd6fd450ea528562b2c825589ab4de18a5b38\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-contact-release-20260930\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  },
+  {
+    "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926",
+    "branch": "build/p-b1-compact-layout-20260927-01a0c405",
+    "head": "1060a17e3dd14c6361f6f15c95bb58fad3110ffc",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "1060a17e3dd14c6361f6f15c95bb58fad3110ffc\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-b1-compact-layout-20260927-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "1060a17e3dd14c6361f6f15c95bb58fad3110ffc\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-b1-compact-layout-20260927-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  },
+  {
+    "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-coordinate-colours-20260929",
+    "branch": "build/p-b1-coordinate-colours-20260929-01a0c405",
+    "head": "b684912eaf7811cd318ee94c77172aca790f3a0d",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "b684912eaf7811cd318ee94c77172aca790f3a0d\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-b1-coordinate-colours-20260929-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "b684912eaf7811cd318ee94c77172aca790f3a0d\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-b1-coordinate-colours-20260929-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  },
+  {
+    "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-minimal-20260929",
+    "branch": "build/p-developmental-runner-20260929",
+    "head": "87abae34e19d4e46234402a6b1ba776814956ec1",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "87abae34e19d4e46234402a6b1ba776814956ec1\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-developmental-runner-20260929\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "87abae34e19d4e46234402a6b1ba776814956ec1\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-developmental-runner-20260929\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  },
+  {
+    "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926",
+    "branch": "build/p-clock-correction-20260926-01a0c405",
+    "head": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "68db2c581f07200966d699a4f55a65f9b96df1e9\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-clock-correction-20260926-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "68db2c581f07200966d699a4f55a65f9b96df1e9\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-clock-correction-20260926-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  },
+  {
+    "path": "C:\\Users\\Jason\\.codex\\visualizations\\2026\\09\\03\\01a066e5-1e9b-7f73-af0f-cc68ac5df2cd\\loom-base-world-completion",
+    "branch": "docs/base-world-completion",
+    "head": "9dffecf4d7da962ac423414f37a38cdb28eaefc9",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "9dffecf4d7da962ac423414f37a38cdb28eaefc9\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "docs/base-world-completion\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "9dffecf4d7da962ac423414f37a38cdb28eaefc9\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "docs/base-world-completion\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  },
+  {
+    "path": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom",
+    "branch": "main",
+    "head": "98a8307e56f6884f2cc5dfb29ef924294f629c22",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "98a8307e56f6884f2cc5dfb29ef924294f629c22\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "main\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": " M README.md\u0000?? BASE_WORLD_COMPLETION_DOCUMENTATION.patch\u0000?? EXP1-21/docs/00 Loom Current State.md\u0000?? EXP1-21/docs/CC_BRIEF_banked_shelf_commit.md\u0000?? EXP1-21/docs/EXP19_CC_LAUNCH_BRIEF_v2.md\u0000?? EXP1-21/docs/EXP19_ORDERING_WINDOW_PREREG_v3.md\u0000?? EXP1-21/docs/EXP21_PAM_TEACHING_CONTRAST_PREREG_DRAFT.md\u0000?? EXP1-21/docs/FABLE_EXP21_BUILD_AND_G3_ORDER.md\u0000?? EXP1-21/docs/HANDOFF_next_assistant_post_EXP21.md\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g20dwell.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g20dwell.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g21fchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g21fchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_full.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_full.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_half.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_half.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s1_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s1_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s2_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s2_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s3_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s3_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s0_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s0_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s1_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s1_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s2_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s2_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s0_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s0_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s1_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s1_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s2_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s2_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s3_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s3_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1broken.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1broken.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_order.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_order.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2b.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2b.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.probe_shadow.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp_isobal.py\u0000?? EXP1-21/scratchpad/exp17_reconcile.py\u0000?? LOOM_CODEX_BASE_WORLD_INTEGRATION.md\u0000?? SHA256SUMS.txt\u0000?? Workbench Backups/Loom_P_Engineering_Build_Handoff_2026-09-21.zip\u0000?? Workbench Backups/Loom_Research_Workbench_Starter_2026-09-20.zip\u0000?? Workbench Backups/Loom_Workbench_2026-09-20-setup-3ea17017.zip\u0000?? docs/Fruit_Fly_Brain_Models_and_Adaptive_Control.pdf\u0000?? docs/Hardware/EXTROPIC_LOOM_TECHNOLOGY_BRIEF_v0_1.md\u0000?? docs/LOOM_ASSOCIATIVE_REGULATION_WORKED_CANDIDATE_v0_1.md\u0000?? docs/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md\u0000?? docs/LOOM_DEVELOPMENTAL_DIRECTION_v0_1_REVIEW_DRAFT.md\u0000?? docs/LOOM_SOURCE_AND_CONTINUATION_AUDIT_v0_1_DRAFT.md\u0000?? docs/LOOM_TEMPORAL_ASSOCIATION_CROSS_CHAT_HANDOFF_v0_1_DRAFT.md\u0000?? docs/LOOM_WORKBENCH_AND_BEHAVIOURAL_WATCHLIST_PRACTICE_v0_1.md\u0000?? docs/Multi Model Research Mechanism Task/Astra deep-research-report.md\u0000?? docs/Multi Model Research Mechanism Task/Deep Seek - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/Fable 5.1 - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/GLM 5.3 - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/Grok LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_REPORT_v0_1.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_BRIEF_v0_1_DRAFT.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_MULTI_MODEL_RESEARCH_LAUNCH_NOTE_v0_1_DRAFT.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_MULTI_MODEL_RESEARCH_PACKET_v0_1_DRAFT.md\u0000?? docs/REVIEW_AND_RECONCILIATION_NOTES.md\u0000?? repository_files/00_LOOM_CURRENT_STATE.md\u0000?? repository_files/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md\u0000?? repository_files/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md\u0000?? repository_files/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md\u0000",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "98a8307e56f6884f2cc5dfb29ef924294f629c22\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "main\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": " M README.md\u0000?? BASE_WORLD_COMPLETION_DOCUMENTATION.patch\u0000?? EXP1-21/docs/00 Loom Current State.md\u0000?? EXP1-21/docs/CC_BRIEF_banked_shelf_commit.md\u0000?? EXP1-21/docs/EXP19_CC_LAUNCH_BRIEF_v2.md\u0000?? EXP1-21/docs/EXP19_ORDERING_WINDOW_PREREG_v3.md\u0000?? EXP1-21/docs/EXP21_PAM_TEACHING_CONTRAST_PREREG_DRAFT.md\u0000?? EXP1-21/docs/FABLE_EXP21_BUILD_AND_G3_ORDER.md\u0000?? EXP1-21/docs/HANDOFF_next_assistant_post_EXP21.md\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g20dwell.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g20dwell.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g21fchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g21fchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_full.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_full.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_half.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_half.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s1_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s1_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s2_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s2_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s3_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s3_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s0_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s0_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s1_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s1_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s2_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s2_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s0_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s0_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s1_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s1_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s2_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s2_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s3_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s3_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1broken.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1broken.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_order.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_order.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2b.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2b.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.probe_shadow.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp_isobal.py\u0000?? EXP1-21/scratchpad/exp17_reconcile.py\u0000?? LOOM_CODEX_BASE_WORLD_INTEGRATION.md\u0000?? SHA256SUMS.txt\u0000?? Workbench Backups/Loom_P_Engineering_Build_Handoff_2026-09-21.zip\u0000?? Workbench Backups/Loom_Research_Workbench_Starter_2026-09-20.zip\u0000?? Workbench Backups/Loom_Workbench_2026-09-20-setup-3ea17017.zip\u0000?? docs/Fruit_Fly_Brain_Models_and_Adaptive_Control.pdf\u0000?? docs/Hardware/EXTROPIC_LOOM_TECHNOLOGY_BRIEF_v0_1.md\u0000?? docs/LOOM_ASSOCIATIVE_REGULATION_WORKED_CANDIDATE_v0_1.md\u0000?? docs/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md\u0000?? docs/LOOM_DEVELOPMENTAL_DIRECTION_v0_1_REVIEW_DRAFT.md\u0000?? docs/LOOM_SOURCE_AND_CONTINUATION_AUDIT_v0_1_DRAFT.md\u0000?? docs/LOOM_TEMPORAL_ASSOCIATION_CROSS_CHAT_HANDOFF_v0_1_DRAFT.md\u0000?? docs/LOOM_WORKBENCH_AND_BEHAVIOURAL_WATCHLIST_PRACTICE_v0_1.md\u0000?? docs/Multi Model Research Mechanism Task/Astra deep-research-report.md\u0000?? docs/Multi Model Research Mechanism Task/Deep Seek - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/Fable 5.1 - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/GLM 5.3 - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/Grok LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_REPORT_v0_1.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_BRIEF_v0_1_DRAFT.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_MULTI_MODEL_RESEARCH_LAUNCH_NOTE_v0_1_DRAFT.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_MULTI_MODEL_RESEARCH_PACKET_v0_1_DRAFT.md\u0000?? docs/REVIEW_AND_RECONCILIATION_NOTES.md\u0000?? repository_files/00_LOOM_CURRENT_STATE.md\u0000?? repository_files/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md\u0000?? repository_files/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md\u0000?? repository_files/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md\u0000",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  },
+  {
+    "path": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405",
+    "branch": "build/p-commissioning-apparatus-20260924-01a0c405",
+    "head": "5f07748102cb5eaa302569c87efbae095050e9fe",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "5f07748102cb5eaa302569c87efbae095050e9fe\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-commissioning-apparatus-20260924-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "5f07748102cb5eaa302569c87efbae095050e9fe\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-commissioning-apparatus-20260924-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  },
+  {
+    "path": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405",
+    "branch": "build/p-engineering-baseline-20260921-01a0c405",
+    "head": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+    "common_dir": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "unchanged_head_branch_status_common_dir": true,
+    "before": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "6bc9683b54e4fa80136fe8534d7713e2a250a95f\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-engineering-baseline-20260921-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    },
+    "after": {
+      "head": {
+        "command": [
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stdout": "6bc9683b54e4fa80136fe8534d7713e2a250a95f\n",
+        "stderr": ""
+      },
+      "branch": {
+        "command": [
+          "branch",
+          "--show-current"
+        ],
+        "exit_code": 0,
+        "stdout": "build/p-engineering-baseline-20260921-01a0c405\n",
+        "stderr": ""
+      },
+      "common_dir": {
+        "command": [
+          "rev-parse",
+          "--path-format=absolute",
+          "--git-common-dir"
+        ],
+        "exit_code": 0,
+        "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+        "stderr": ""
+      },
+      "status_z": {
+        "command": [
+          "status",
+          "--porcelain=v1",
+          "-z",
+          "--untracked-files=all"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+      }
+    }
+  }
+]

@@ -1,0 +1,876 @@
+{
+  "session_id": "2026-09-20-setup-3ea17017",
+  "started_at": "2026-09-20T11:26:48.745679+08:00",
+  "model_attribution": "Codex, system-described as based on GPT-6; exact serving revision unknown",
+  "resolved_root": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench",
+  "parent_AGENTS_found": [],
+  "access_test": {
+    "path": "50_SESSIONS/2026-09-20-setup-3ea17017/ACCESS_TEST.txt",
+    "sha256": "eb411425f72fbb4aacc2db2929761def5a875d0b554c439f748e4e04c59d40cb",
+    "readback_matches": true
+  },
+  "source_verification": [
+    {
+      "id": "SRC-001",
+      "path": "90_SOURCES/reference_7ada2b300fa1/00_LOOM_CURRENT_STATE.md",
+      "bytes": 13757,
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b",
+      "pass": true
+    },
+    {
+      "id": "SRC-002",
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md",
+      "bytes": 25684,
+      "sha256": "729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab",
+      "pass": true
+    },
+    {
+      "id": "SRC-003",
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md",
+      "bytes": 31840,
+      "sha256": "9cb58ab268acb7a6023c0a7ab80fa2f1a816de69dabf1df2b48fe7d4c597edbc",
+      "pass": true
+    },
+    {
+      "id": "SRC-004",
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md",
+      "bytes": 59939,
+      "sha256": "97756677a5c7d659198cb49a4771de43741bb4b05c17de017cd94973a05a67ab",
+      "pass": true
+    },
+    {
+      "id": "SRC-005",
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md",
+      "bytes": 29585,
+      "sha256": "80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef",
+      "pass": true
+    },
+    {
+      "id": "SRC-006",
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/association_cortex_operation_spec.md",
+      "bytes": 16980,
+      "sha256": "527ddd82191eb0cb4cd6d0c6ce8a1fd064ea8152e640459ddaeb2ccc92b47cbe",
+      "pass": true
+    },
+    {
+      "id": "SRC-007",
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/substrate_description.md",
+      "bytes": 6749,
+      "sha256": "09d7a05740155bf081577f906acc95f10dd151533ea6d566ada179aa8a9840c4",
+      "pass": true
+    },
+    {
+      "id": "SRC-008",
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/HANDOFF_fable_to_opus_method.md",
+      "bytes": 9535,
+      "sha256": "f09e416d2070f6d1335ed7d489505a7528930019be5d6d064ebd822131d41aad",
+      "pass": true
+    },
+    {
+      "id": "SRC-009",
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/CORRIDOR_PROTOCOL.md",
+      "bytes": 13689,
+      "sha256": "a20d63de5f8d404d63bc075c8b160757883ec89ff55e6633326296c773a37cd0",
+      "pass": true
+    },
+    {
+      "id": "SRC-010",
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/Guiding List.md",
+      "bytes": 3494,
+      "sha256": "f980e3c5bcf1b76e8563dc3cf550bb76b157309adcee0e04a584fc22ae1b5f6f",
+      "pass": true
+    },
+    {
+      "id": "SRC-011",
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/MECHANISM_MAP_v1_2_RECONCILED.md",
+      "bytes": 23937,
+      "sha256": "c6cdcad20f094d3facf35a4d6c2ed965b757eb5a2d3e7513f622eb40e714467e",
+      "pass": true
+    },
+    {
+      "id": "SRC-012",
+      "path": "90_SOURCES/reference_7ada2b300fa1/PROJECT_FILES_MANIFEST.txt",
+      "bytes": 8980,
+      "sha256": "ee0c2720f0ae8ca7b14a5eeb1805b727a104d716a5c7c3ddeb1fc2dc1843c430",
+      "pass": true
+    },
+    {
+      "id": "SRC-013",
+      "path": "90_SOURCES/input_variants/stale_landing_status/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1(2).md",
+      "bytes": 31769,
+      "sha256": "72e3c22e9c4a6bc67fda81886a7e87db7080ae1570e54d2c9204f2048496dd35",
+      "pass": true
+    },
+    {
+      "id": "SRC-014",
+      "path": "90_SOURCES/direction_2026-09-18/LOOM_DEVELOPMENTAL_DIRECTION_v0_1_REVIEW_DRAFT.md",
+      "bytes": 39997,
+      "sha256": "77a2ebd11e6e32d7fa0409914e1be58e63f2b2a3197f9bbff372fec3361b76d7",
+      "pass": true
+    },
+    {
+      "id": "SRC-015",
+      "path": "90_SOURCES/direction_2026-09-18/LOOM_SOURCE_AND_CONTINUATION_AUDIT_v0_1_DRAFT.md",
+      "bytes": 28404,
+      "sha256": "9826cc67c236a768f544ba07bcf5abde7632ebbbb91c4ef41433d1610f325593",
+      "pass": true
+    },
+    {
+      "id": "SRC-016",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/README.md",
+      "bytes": 360,
+      "sha256": "700baacd0b18c374e4120c491ec868fe129b49429ce2a951b0e10c546e3f7ca1",
+      "pass": true
+    },
+    {
+      "id": "SRC-017",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/REVIEW_AND_RECONCILIATION_NOTES.md",
+      "bytes": 16587,
+      "sha256": "ffd8946fb241448afc14f76ebc2445ccf8dd6afda9507430f3776360cb720eeb",
+      "pass": true
+    },
+    {
+      "id": "SRC-018",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/SOURCE_MANIFEST.json",
+      "bytes": 1183,
+      "sha256": "363ddcd1ab6dd0c4504efa4911e2d52d4565e0a2635fcffc0572c53b7559de04",
+      "pass": true
+    },
+    {
+      "id": "SRC-019",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/sources/participation_retention/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md",
+      "bytes": 38379,
+      "sha256": "34bd519bb01253f783521204c9e6358b11703282ec322f4707e5ece1bb6a4da4",
+      "pass": true
+    },
+    {
+      "id": "SRC-020",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/sources/participation_retention/Pasted text.txt",
+      "bytes": 28607,
+      "sha256": "57776f55b3d1e8a7fbc0a8bbae54ed5b30439d7fe395f67aacb49ff1ef97055f",
+      "pass": true
+    },
+    {
+      "id": "SRC-021",
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/sources/retention_only/LOOM_ASSOCIATIVE_REGULATION_WORKED_CANDIDATE_v0_1.md",
+      "bytes": 36604,
+      "sha256": "07deb554fbbd771f87a3f556e61fd6fb13fc82f06be8c270aac94814f9ec0714",
+      "pass": true
+    },
+    {
+      "id": "SRC-022",
+      "path": "90_SOURCES/original_research_assignment/LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_BRIEF_v0_1_DRAFT.md",
+      "bytes": 34692,
+      "sha256": "ba7668ac2d7e72a36922acbae509518607f5b79fc16edf1be1f7074a14bd5b81",
+      "pass": true
+    },
+    {
+      "id": "SRC-023",
+      "path": "90_SOURCES/original_research_assignment/LOOM_MULTI_MODEL_RESEARCH_PACKET_v0_1_DRAFT.md",
+      "bytes": 42998,
+      "sha256": "ccaa595452bfc4213156a7cc47c0f243140c5b38765b9980d7dd9f2098cfa598",
+      "pass": true
+    },
+    {
+      "id": "SRC-024",
+      "path": "90_SOURCES/original_research_assignment/LOOM_MULTI_MODEL_RESEARCH_LAUNCH_NOTE_v0_1_DRAFT.md",
+      "bytes": 8056,
+      "sha256": "2f20dc63adc3b2c9efdd4feb2aa807ae3089ea65cae5d673b989dadcfc2041e4",
+      "pass": true
+    },
+    {
+      "id": "SRC-025",
+      "path": "90_SOURCES/research_reports/GLM 5.3 - Research Report.md",
+      "bytes": 61750,
+      "sha256": "900ae11fddc3f9b5f106e3fec3269763f22e9cd31e32595ec037fd88c6d323c7",
+      "pass": true
+    },
+    {
+      "id": "SRC-026",
+      "path": "90_SOURCES/research_reports/Grok LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_REPORT_v0_1(1).md",
+      "bytes": 48665,
+      "sha256": "2019d7da2facc7414989974f849c97304be436a0ea5c8f34ff355ff0749c66c4",
+      "pass": true
+    },
+    {
+      "id": "SRC-027",
+      "path": "90_SOURCES/research_reports/Astra deep-research-report(1).md",
+      "bytes": 46609,
+      "sha256": "48471a0ccc714c885307637d406956a007c60767cff633319620e5e130bb203b",
+      "pass": true
+    },
+    {
+      "id": "SRC-028",
+      "path": "90_SOURCES/research_reports/Deep Seek - Research Report.md",
+      "bytes": 66413,
+      "sha256": "00238fb38af2611f85e599be192f71bd434031fdb492c0a291c2280dd1fb7123",
+      "pass": true
+    },
+    {
+      "id": "SRC-029",
+      "path": "90_SOURCES/research_reports/LOOM_INDEPENDENT_MECHANISM_INVESTIGATION(1).md",
+      "bytes": 69119,
+      "sha256": "559a8d63fe2a613d9230efde75519c0f6afceb2f9b557202b4fe502107aeef81",
+      "pass": true
+    },
+    {
+      "id": "SRC-030",
+      "path": "90_SOURCES/discussions/bounded_arithmetic_and_temporal_discussion/Pasted markdown(4).md",
+      "bytes": 83615,
+      "sha256": "b47810c19257fc18c80c68c3810ac0e13cb10bff8b95033c09015e5a76ce9c43",
+      "pass": true
+    },
+    {
+      "id": "SRC-031",
+      "path": "90_SOURCES/discussions/autonomy_review/Pasted markdown (2).md",
+      "bytes": 11447,
+      "sha256": "b28db37e92df7f8a64a98341dbe99a8172810c3924eea8fd6d970054a6e612b9",
+      "pass": true
+    },
+    {
+      "id": "SRC-032",
+      "path": "90_SOURCES/discussions/four_jobs_review/Pasted markdown(2).md",
+      "bytes": 16747,
+      "sha256": "6d49b124e287743fac7e4b78efe18d5767b1cc664549719bc2577f3e9fd8e6c9",
+      "pass": true
+    },
+    {
+      "id": "SRC-033",
+      "path": "90_SOURCES/other_research/EXTROPIC_LOOM_TECHNOLOGY_BRIEF_v0_1.md",
+      "bytes": 9611,
+      "sha256": "70ce6e2c63aac87f0c9cc9b80c71afaa4997dbc592b7c4f21c359422d5eefdd7",
+      "pass": true
+    },
+    {
+      "id": "SRC-034",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 1 Retrospective.md",
+      "bytes": 10477,
+      "sha256": "414f06e560b37b49ee3474dae256a7651b1b26634c79f60d503ab42781db949b",
+      "pass": true
+    },
+    {
+      "id": "SRC-035",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 2 Retrospective.md",
+      "bytes": 5531,
+      "sha256": "e882192283c52d1393a9540075a5bb05d94bdb08ba48c15f383719878af39055",
+      "pass": true
+    },
+    {
+      "id": "SRC-036",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 3 Retrospective.md",
+      "bytes": 21984,
+      "sha256": "814177e39d269ed59cb59c623c4b718b560ac1eac0e29ab907956e34fd9cd8fb",
+      "pass": true
+    },
+    {
+      "id": "SRC-037",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 4 Retrospective.md",
+      "bytes": 23679,
+      "sha256": "968abde4dc555cefd08d5773ba33488ad09659a6a4384c641f47d5d70705ba15",
+      "pass": true
+    },
+    {
+      "id": "SRC-038",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 5 Retrospective.md",
+      "bytes": 22933,
+      "sha256": "3a9852c9ddd5b2af94c5d48159c4ae3c707a4a2445a0db8a26c6e7ecb81578c1",
+      "pass": true
+    },
+    {
+      "id": "SRC-039",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 6 Retrospective.md",
+      "bytes": 22516,
+      "sha256": "0a27723c077c28ae0f8b85777ede38064fed236cd204743bdfcbe8470459efd5",
+      "pass": true
+    },
+    {
+      "id": "SRC-040",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 7 Retrospective.md",
+      "bytes": 16623,
+      "sha256": "27af85592bbc339099021371795f0c45c4c616a33125a1a1a1e6338696844066",
+      "pass": true
+    },
+    {
+      "id": "SRC-041",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 8 Retrospective.md",
+      "bytes": 19032,
+      "sha256": "c2f89c9313d03974b3c7c7fc54a87cadbf0e09b764b0c119c1ed0f3ffe02533b",
+      "pass": true
+    },
+    {
+      "id": "SRC-042",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 9 Retrospective.md",
+      "bytes": 20813,
+      "sha256": "f0b667593ae3cffba2e0973f865b0d1b8bab30e899ed7bba1a77d3a422dc323b",
+      "pass": true
+    },
+    {
+      "id": "SRC-043",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 10 Retrospective.md",
+      "bytes": 14896,
+      "sha256": "2f8e7364d8233b4bcf3c9748195cf9f53d8b0bd0fc603a5bafac48aacbb6321b",
+      "pass": true
+    },
+    {
+      "id": "SRC-044",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 11 Retrospective.md",
+      "bytes": 21579,
+      "sha256": "8047a584eee1b7a79750b7eba5a46dc5030a181213d6694166b05e3a345a0f75",
+      "pass": true
+    },
+    {
+      "id": "SRC-045",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 12 Retrospective.md",
+      "bytes": 16954,
+      "sha256": "ed69bb43924a9dbc23af850a9258e21c3e565751fe423eae08e7f98eb0522d59",
+      "pass": true
+    },
+    {
+      "id": "SRC-046",
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 13 Retrospective.md",
+      "bytes": 24608,
+      "sha256": "49c4ffe2e4c4a81beab30aadbf7e9f305c1ae0b1b6da03e117a9e11ffea56c89",
+      "pass": true
+    },
+    {
+      "id": "SRC-047",
+      "path": "90_SOURCES/historical_retrospectives/2026-07-16 - Loom philosophy.md",
+      "bytes": 104910,
+      "sha256": "8d3c115201184a35c2c4223f5b97dc7025dc459849dbb21808bebac18497c569",
+      "pass": true
+    },
+    {
+      "id": "SRC-048",
+      "path": "90_SOURCES/historical_retrospectives/HANDOFF_fable_post_EXP20(1).md",
+      "bytes": 8474,
+      "sha256": "dd588291feede366374a6b5fa6464c05d2481aabdd0282c3b96d6f5f71527d03",
+      "pass": true
+    },
+    {
+      "id": "SRC-049",
+      "path": "90_SOURCES/original_delivery_archives/Loom_Candidate_Comparison_2026-09-20.zip",
+      "bytes": 49739,
+      "sha256": "033d7be1c4a8d911ac5c290399441c4aabbcb3ea26f42bf089f1b7c8d9c688ac",
+      "pass": true
+    },
+    {
+      "id": "SRC-050",
+      "path": "90_SOURCES/original_delivery_archives/Loom_Continuation_Draft_2026-09-18.zip",
+      "bytes": 28443,
+      "sha256": "2e3a2ec49ca4b11298adf259b2d87dcb77cc9e42a45c7d9b4eaa845f916cdbce",
+      "pass": true
+    }
+  ],
+  "package_verification": [
+    {
+      "path": ".gitattributes",
+      "sha256": "5c07f2eba8fafde4f535f15787b19b84fd06255a222bf0802e59e0f9130ae2cc",
+      "pass": true
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "ac97885ef9e8ca1a7baac005a132f413f67c423018ba7dce9ade00040193c93b",
+      "pass": true
+    },
+    {
+      "path": "80_TEMPLATES/CANDIDATE.md",
+      "sha256": "dcef9ddbeeb63fe1000cc2c161a7416815f8ad8131dd4001b32b6e6032c8a070",
+      "pass": true
+    },
+    {
+      "path": "80_TEMPLATES/DECISION.md",
+      "sha256": "6ea449096e49f189934365aca3548330dd21077eb2435e1de2a3197e30182409",
+      "pass": true
+    },
+    {
+      "path": "80_TEMPLATES/IDEA.md",
+      "sha256": "8e299f22f0cbf578c817846c31958ac059705c5c7b364da5598826d77813b166",
+      "pass": true
+    },
+    {
+      "path": "80_TEMPLATES/REVIEW.md",
+      "sha256": "7486252a8e08da79d00aa82cbdf687b71ae63740619fc8d774a7f5caa19fa7b4",
+      "pass": true
+    },
+    {
+      "path": "80_TEMPLATES/SESSION.md",
+      "sha256": "087efe487eeacba37f5bddb6b17f8e386a3b4b02b37754343f8649e887710dbd",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/README.md",
+      "sha256": "700baacd0b18c374e4120c491ec868fe129b49429ce2a951b0e10c546e3f7ca1",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/REVIEW_AND_RECONCILIATION_NOTES.md",
+      "sha256": "ffd8946fb241448afc14f76ebc2445ccf8dd6afda9507430f3776360cb720eeb",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/SOURCE_MANIFEST.json",
+      "sha256": "363ddcd1ab6dd0c4504efa4911e2d52d4565e0a2635fcffc0572c53b7559de04",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/sources/participation_retention/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md",
+      "sha256": "34bd519bb01253f783521204c9e6358b11703282ec322f4707e5ece1bb6a4da4",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/sources/participation_retention/Pasted text.txt",
+      "sha256": "57776f55b3d1e8a7fbc0a8bbae54ed5b30439d7fe395f67aacb49ff1ef97055f",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/candidate_comparison_2026-09-20/sources/retention_only/LOOM_ASSOCIATIVE_REGULATION_WORKED_CANDIDATE_v0_1.md",
+      "sha256": "07deb554fbbd771f87a3f556e61fd6fb13fc82f06be8c270aac94814f9ec0714",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/direction_2026-09-18/LOOM_DEVELOPMENTAL_DIRECTION_v0_1_REVIEW_DRAFT.md",
+      "sha256": "77a2ebd11e6e32d7fa0409914e1be58e63f2b2a3197f9bbff372fec3361b76d7",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/direction_2026-09-18/LOOM_SOURCE_AND_CONTINUATION_AUDIT_v0_1_DRAFT.md",
+      "sha256": "9826cc67c236a768f544ba07bcf5abde7632ebbbb91c4ef41433d1610f325593",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/discussions/autonomy_review/Pasted markdown (2).md",
+      "sha256": "b28db37e92df7f8a64a98341dbe99a8172810c3924eea8fd6d970054a6e612b9",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/discussions/bounded_arithmetic_and_temporal_discussion/Pasted markdown(4).md",
+      "sha256": "b47810c19257fc18c80c68c3810ac0e13cb10bff8b95033c09015e5a76ce9c43",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/discussions/four_jobs_review/Pasted markdown(2).md",
+      "sha256": "6d49b124e287743fac7e4b78efe18d5767b1cc664549719bc2577f3e9fd8e6c9",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/2026-07-16 - Loom philosophy.md",
+      "sha256": "8d3c115201184a35c2c4223f5b97dc7025dc459849dbb21808bebac18497c569",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/HANDOFF_fable_post_EXP20(1).md",
+      "sha256": "dd588291feede366374a6b5fa6464c05d2481aabdd0282c3b96d6f5f71527d03",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 1 Retrospective.md",
+      "sha256": "414f06e560b37b49ee3474dae256a7651b1b26634c79f60d503ab42781db949b",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 10 Retrospective.md",
+      "sha256": "2f8e7364d8233b4bcf3c9748195cf9f53d8b0bd0fc603a5bafac48aacbb6321b",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 11 Retrospective.md",
+      "sha256": "8047a584eee1b7a79750b7eba5a46dc5030a181213d6694166b05e3a345a0f75",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 12 Retrospective.md",
+      "sha256": "ed69bb43924a9dbc23af850a9258e21c3e565751fe423eae08e7f98eb0522d59",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 13 Retrospective.md",
+      "sha256": "49c4ffe2e4c4a81beab30aadbf7e9f305c1ae0b1b6da03e117a9e11ffea56c89",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 2 Retrospective.md",
+      "sha256": "e882192283c52d1393a9540075a5bb05d94bdb08ba48c15f383719878af39055",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 3 Retrospective.md",
+      "sha256": "814177e39d269ed59cb59c623c4b718b560ac1eac0e29ab907956e34fd9cd8fb",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 4 Retrospective.md",
+      "sha256": "968abde4dc555cefd08d5773ba33488ad09659a6a4384c641f47d5d70705ba15",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 5 Retrospective.md",
+      "sha256": "3a9852c9ddd5b2af94c5d48159c4ae3c707a4a2445a0db8a26c6e7ecb81578c1",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 6 Retrospective.md",
+      "sha256": "0a27723c077c28ae0f8b85777ede38064fed236cd204743bdfcbe8470459efd5",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 7 Retrospective.md",
+      "sha256": "27af85592bbc339099021371795f0c45c4c616a33125a1a1a1e6338696844066",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 8 Retrospective.md",
+      "sha256": "c2f89c9313d03974b3c7c7fc54a87cadbf0e09b764b0c119c1ed0f3ffe02533b",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/historical_retrospectives/Loom Chat 9 Retrospective.md",
+      "sha256": "f0b667593ae3cffba2e0973f865b0d1b8bab30e899ed7bba1a77d3a422dc323b",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/input_variants/stale_landing_status/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1(2).md",
+      "sha256": "72e3c22e9c4a6bc67fda81886a7e87db7080ae1570e54d2c9204f2048496dd35",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/original_delivery_archives/Loom_Candidate_Comparison_2026-09-20.zip",
+      "sha256": "033d7be1c4a8d911ac5c290399441c4aabbcb3ea26f42bf089f1b7c8d9c688ac",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/original_delivery_archives/Loom_Continuation_Draft_2026-09-18.zip",
+      "sha256": "2e3a2ec49ca4b11298adf259b2d87dcb77cc9e42a45c7d9b4eaa845f916cdbce",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/original_research_assignment/LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_BRIEF_v0_1_DRAFT.md",
+      "sha256": "ba7668ac2d7e72a36922acbae509518607f5b79fc16edf1be1f7074a14bd5b81",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/original_research_assignment/LOOM_MULTI_MODEL_RESEARCH_LAUNCH_NOTE_v0_1_DRAFT.md",
+      "sha256": "2f20dc63adc3b2c9efdd4feb2aa807ae3089ea65cae5d673b989dadcfc2041e4",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/original_research_assignment/LOOM_MULTI_MODEL_RESEARCH_PACKET_v0_1_DRAFT.md",
+      "sha256": "ccaa595452bfc4213156a7cc47c0f243140c5b38765b9980d7dd9f2098cfa598",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/other_research/EXTROPIC_LOOM_TECHNOLOGY_BRIEF_v0_1.md",
+      "sha256": "70ce6e2c63aac87f0c9cc9b80c71afaa4997dbc592b7c4f21c359422d5eefdd7",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/00_LOOM_CURRENT_STATE.md",
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/CORRIDOR_PROTOCOL.md",
+      "sha256": "a20d63de5f8d404d63bc075c8b160757883ec89ff55e6633326296c773a37cd0",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/Guiding List.md",
+      "sha256": "f980e3c5bcf1b76e8563dc3cf550bb76b157309adcee0e04a584fc22ae1b5f6f",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/HANDOFF_fable_to_opus_method.md",
+      "sha256": "f09e416d2070f6d1335ed7d489505a7528930019be5d6d064ebd822131d41aad",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/MECHANISM_MAP_v1_2_RECONCILED.md",
+      "sha256": "c6cdcad20f094d3facf35a4d6c2ed965b757eb5a2d3e7513f622eb40e714467e",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/association_cortex_operation_spec.md",
+      "sha256": "527ddd82191eb0cb4cd6d0c6ce8a1fd064ea8152e640459ddaeb2ccc92b47cbe",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/substrate_description.md",
+      "sha256": "09d7a05740155bf081577f906acc95f10dd151533ea6d566ada179aa8a9840c4",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/PROJECT_FILES_MANIFEST.txt",
+      "sha256": "ee0c2720f0ae8ca7b14a5eeb1805b727a104d716a5c7c3ddeb1fc2dc1843c430",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md",
+      "sha256": "97756677a5c7d659198cb49a4771de43741bb4b05c17de017cd94973a05a67ab",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md",
+      "sha256": "80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md",
+      "sha256": "729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md",
+      "sha256": "9cb58ab268acb7a6023c0a7ab80fa2f1a816de69dabf1df2b48fe7d4c597edbc",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/research_reports/Astra deep-research-report(1).md",
+      "sha256": "48471a0ccc714c885307637d406956a007c60767cff633319620e5e130bb203b",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/research_reports/Deep Seek - Research Report.md",
+      "sha256": "00238fb38af2611f85e599be192f71bd434031fdb492c0a291c2280dd1fb7123",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/research_reports/GLM 5.3 - Research Report.md",
+      "sha256": "900ae11fddc3f9b5f106e3fec3269763f22e9cd31e32595ec037fd88c6d323c7",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/research_reports/Grok LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_REPORT_v0_1(1).md",
+      "sha256": "2019d7da2facc7414989974f849c97304be436a0ea5c8f34ff355ff0749c66c4",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/research_reports/LOOM_INDEPENDENT_MECHANISM_INVESTIGATION(1).md",
+      "sha256": "559a8d63fe2a613d9230efde75519c0f6afceb2f9b557202b4fe502107aeef81",
+      "pass": true
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "d80f7d71f03d5b6356fc99500f37267e60b42da79a0a9781e4ff64eba419d2a1",
+      "pass": true
+    },
+    {
+      "path": "IMPORT_NEW_MATERIAL.txt",
+      "sha256": "eeb6ef191fe66bfbe597e1f8c66c023bd303d4f595e2119e553f6aa56a6dbf68",
+      "pass": true
+    },
+    {
+      "path": "INBOX/README.md",
+      "sha256": "caf22696b078ff1bf92e74aada5f695c95a5645fe2c36a455e9d834b979160ac",
+      "pass": true
+    },
+    {
+      "path": "INTEGRATE_CONTRIBUTION.txt",
+      "sha256": "35f006aa33a4931e678924986d9c21069208c88e2d86b00b78c361921bc5a872",
+      "pass": true
+    },
+    {
+      "path": "PACKAGING_VALIDATION.md",
+      "sha256": "c84d6437330dbfe2718c795a68527034421a9e6eb9dc65628898a060f673f52f",
+      "pass": true
+    },
+    {
+      "path": "README_FIRST.md",
+      "sha256": "531ba2af27c51025d555fdea8e3aa59f4cd0c4c35bebecbfe84194456af77e36",
+      "pass": true
+    },
+    {
+      "path": "SETUP_PROVENANCE.md",
+      "sha256": "64ea413af7febd64ed8d8c76ddd214451305ee83c8fd8ed3178407c21c972dc7",
+      "pass": true
+    },
+    {
+      "path": "SETUP_WORK_SESSION.md",
+      "sha256": "77d69b4b28b2cfb9abc8fcad606835865cd0bef525fbdcbc4d29a342c5470f7a",
+      "pass": true
+    },
+    {
+      "path": "SOURCE_CATALOG.json",
+      "sha256": "684b8fdaa29b25d9283491b41bdb387ad45df096b9d5b38e39e7667ee802fd83",
+      "pass": true
+    },
+    {
+      "path": "SOURCE_REGISTER.md",
+      "sha256": "1660d4aedee49dc0f718017a9a11fa9dec4be4d8cb75dc6900a6ee2017509f2e",
+      "pass": true
+    },
+    {
+      "path": "START_CONTRIBUTOR_SESSION.txt",
+      "sha256": "ed41eca2d18f1c9ac80c4a844f056b3867805258fed43dbbef4264db7d4a38d2",
+      "pass": true
+    },
+    {
+      "path": "START_LATER_DESIGN_SESSION.txt",
+      "sha256": "f45edbad5c6489d7a4d25a85a0100b285b7265628aa3b37bfa9827b1c43dcc53",
+      "pass": true
+    },
+    {
+      "path": "START_WORK_SESSION.txt",
+      "sha256": "13fb3533c6d2761ec2fa686a9e6c4c3c6a4f6aacb7b5f10da5b54aa233e76082",
+      "pass": true
+    }
+  ],
+  "reference_verification": [
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/00_LOOM_CURRENT_STATE.md",
+      "bytes": 13757,
+      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b",
+      "git_blob_sha1": "e1fb0f14298e6800813377572f37d88b34a01874",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md",
+      "bytes": 25684,
+      "sha256": "729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab",
+      "git_blob_sha1": "a9d3d0cf5bb3dfcc0bd04e7c05fc654f18e613a4",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md",
+      "bytes": 31840,
+      "sha256": "9cb58ab268acb7a6023c0a7ab80fa2f1a816de69dabf1df2b48fe7d4c597edbc",
+      "git_blob_sha1": "6cad779bafb4c1c60d1f008916628fb2e1b0fa76",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md",
+      "bytes": 59939,
+      "sha256": "97756677a5c7d659198cb49a4771de43741bb4b05c17de017cd94973a05a67ab",
+      "git_blob_sha1": "f05bc1b894cd44c12446a19bd42151adab523dc1",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md",
+      "bytes": 29585,
+      "sha256": "80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef",
+      "git_blob_sha1": "95dd66dd161c2ab591fc2ff272fe14e0e5adead7",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/association_cortex_operation_spec.md",
+      "bytes": 16980,
+      "sha256": "527ddd82191eb0cb4cd6d0c6ce8a1fd064ea8152e640459ddaeb2ccc92b47cbe",
+      "git_blob_sha1": "9b8a209d8af6998c033377c0b4fe3ab923f9df99",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/substrate_description.md",
+      "bytes": 6749,
+      "sha256": "09d7a05740155bf081577f906acc95f10dd151533ea6d566ada179aa8a9840c4",
+      "git_blob_sha1": "70e4092d2d81709ffb34aee9df1a78343ccc5979",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/HANDOFF_fable_to_opus_method.md",
+      "bytes": 9535,
+      "sha256": "f09e416d2070f6d1335ed7d489505a7528930019be5d6d064ebd822131d41aad",
+      "git_blob_sha1": "7b020b1656b9e7f0ad8fa3c626f8ed3536f0b18c",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/CORRIDOR_PROTOCOL.md",
+      "bytes": 13689,
+      "sha256": "a20d63de5f8d404d63bc075c8b160757883ec89ff55e6633326296c773a37cd0",
+      "git_blob_sha1": "4fad682b9de58cb1153514603519275f985247b9",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/Guiding List.md",
+      "bytes": 3494,
+      "sha256": "f980e3c5bcf1b76e8563dc3cf550bb76b157309adcee0e04a584fc22ae1b5f6f",
+      "git_blob_sha1": "77ba99611e229d6210439df3942f7e7d3a266243",
+      "pass": true
+    },
+    {
+      "path": "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/MECHANISM_MAP_v1_2_RECONCILED.md",
+      "bytes": 23937,
+      "sha256": "c6cdcad20f094d3facf35a4d6c2ed965b757eb5a2d3e7513f622eb40e714467e",
+      "git_blob_sha1": "6425bff71f6c350f2781c4c20afa8cc326c96f9c",
+      "pass": true
+    }
+  ],
+  "as_received_files": {
+    ".gitattributes": "5c07f2eba8fafde4f535f15787b19b84fd06255a222bf0802e59e0f9130ae2cc",
+    ".gitignore": "ac97885ef9e8ca1a7baac005a132f413f67c423018ba7dce9ade00040193c93b",
+    "AGENTS.md": "d80f7d71f03d5b6356fc99500f37267e60b42da79a0a9781e4ff64eba419d2a1",
+    "IMPORT_NEW_MATERIAL.txt": "eeb6ef191fe66bfbe597e1f8c66c023bd303d4f595e2119e553f6aa56a6dbf68",
+    "INTEGRATE_CONTRIBUTION.txt": "35f006aa33a4931e678924986d9c21069208c88e2d86b00b78c361921bc5a872",
+    "PACKAGE_SHA256SUMS.txt": "aad64d9a32ed4f64deea18d0ac9b6f34517094d14e490fd42ffeda99df0e2dd5",
+    "PACKAGING_VALIDATION.md": "c84d6437330dbfe2718c795a68527034421a9e6eb9dc65628898a060f673f52f",
+    "README_FIRST.md": "531ba2af27c51025d555fdea8e3aa59f4cd0c4c35bebecbfe84194456af77e36",
+    "SETUP_PROVENANCE.md": "64ea413af7febd64ed8d8c76ddd214451305ee83c8fd8ed3178407c21c972dc7",
+    "SETUP_WORK_SESSION.md": "77d69b4b28b2cfb9abc8fcad606835865cd0bef525fbdcbc4d29a342c5470f7a",
+    "SOURCE_CATALOG.json": "684b8fdaa29b25d9283491b41bdb387ad45df096b9d5b38e39e7667ee802fd83",
+    "SOURCE_REGISTER.md": "1660d4aedee49dc0f718017a9a11fa9dec4be4d8cb75dc6900a6ee2017509f2e",
+    "START_CONTRIBUTOR_SESSION.txt": "ed41eca2d18f1c9ac80c4a844f056b3867805258fed43dbbef4264db7d4a38d2",
+    "START_LATER_DESIGN_SESSION.txt": "f45edbad5c6489d7a4d25a85a0100b285b7265628aa3b37bfa9827b1c43dcc53",
+    "START_WORK_SESSION.txt": "13fb3533c6d2761ec2fa686a9e6c4c3c6a4f6aacb7b5f10da5b54aa233e76082",
+    "80_TEMPLATES/CANDIDATE.md": "dcef9ddbeeb63fe1000cc2c161a7416815f8ad8131dd4001b32b6e6032c8a070",
+    "80_TEMPLATES/DECISION.md": "6ea449096e49f189934365aca3548330dd21077eb2435e1de2a3197e30182409",
+    "80_TEMPLATES/IDEA.md": "8e299f22f0cbf578c817846c31958ac059705c5c7b364da5598826d77813b166",
+    "80_TEMPLATES/REVIEW.md": "7486252a8e08da79d00aa82cbdf687b71ae63740619fc8d774a7f5caa19fa7b4",
+    "80_TEMPLATES/SESSION.md": "087efe487eeacba37f5bddb6b17f8e386a3b4b02b37754343f8649e887710dbd",
+    "INBOX/README.md": "caf22696b078ff1bf92e74aada5f695c95a5645fe2c36a455e9d834b979160ac",
+    "90_SOURCES/candidate_comparison_2026-09-20/README.md": "700baacd0b18c374e4120c491ec868fe129b49429ce2a951b0e10c546e3f7ca1",
+    "90_SOURCES/candidate_comparison_2026-09-20/REVIEW_AND_RECONCILIATION_NOTES.md": "ffd8946fb241448afc14f76ebc2445ccf8dd6afda9507430f3776360cb720eeb",
+    "90_SOURCES/candidate_comparison_2026-09-20/SOURCE_MANIFEST.json": "363ddcd1ab6dd0c4504efa4911e2d52d4565e0a2635fcffc0572c53b7559de04",
+    "90_SOURCES/direction_2026-09-18/LOOM_DEVELOPMENTAL_DIRECTION_v0_1_REVIEW_DRAFT.md": "77a2ebd11e6e32d7fa0409914e1be58e63f2b2a3197f9bbff372fec3361b76d7",
+    "90_SOURCES/direction_2026-09-18/LOOM_SOURCE_AND_CONTINUATION_AUDIT_v0_1_DRAFT.md": "9826cc67c236a768f544ba07bcf5abde7632ebbbb91c4ef41433d1610f325593",
+    "90_SOURCES/historical_retrospectives/2026-07-16 - Loom philosophy.md": "8d3c115201184a35c2c4223f5b97dc7025dc459849dbb21808bebac18497c569",
+    "90_SOURCES/historical_retrospectives/HANDOFF_fable_post_EXP20(1).md": "dd588291feede366374a6b5fa6464c05d2481aabdd0282c3b96d6f5f71527d03",
+    "90_SOURCES/historical_retrospectives/Loom Chat 1 Retrospective.md": "414f06e560b37b49ee3474dae256a7651b1b26634c79f60d503ab42781db949b",
+    "90_SOURCES/historical_retrospectives/Loom Chat 10 Retrospective.md": "2f8e7364d8233b4bcf3c9748195cf9f53d8b0bd0fc603a5bafac48aacbb6321b",
+    "90_SOURCES/historical_retrospectives/Loom Chat 11 Retrospective.md": "8047a584eee1b7a79750b7eba5a46dc5030a181213d6694166b05e3a345a0f75",
+    "90_SOURCES/historical_retrospectives/Loom Chat 12 Retrospective.md": "ed69bb43924a9dbc23af850a9258e21c3e565751fe423eae08e7f98eb0522d59",
+    "90_SOURCES/historical_retrospectives/Loom Chat 13 Retrospective.md": "49c4ffe2e4c4a81beab30aadbf7e9f305c1ae0b1b6da03e117a9e11ffea56c89",
+    "90_SOURCES/historical_retrospectives/Loom Chat 2 Retrospective.md": "e882192283c52d1393a9540075a5bb05d94bdb08ba48c15f383719878af39055",
+    "90_SOURCES/historical_retrospectives/Loom Chat 3 Retrospective.md": "814177e39d269ed59cb59c623c4b718b560ac1eac0e29ab907956e34fd9cd8fb",
+    "90_SOURCES/historical_retrospectives/Loom Chat 4 Retrospective.md": "968abde4dc555cefd08d5773ba33488ad09659a6a4384c641f47d5d70705ba15",
+    "90_SOURCES/historical_retrospectives/Loom Chat 5 Retrospective.md": "3a9852c9ddd5b2af94c5d48159c4ae3c707a4a2445a0db8a26c6e7ecb81578c1",
+    "90_SOURCES/historical_retrospectives/Loom Chat 6 Retrospective.md": "0a27723c077c28ae0f8b85777ede38064fed236cd204743bdfcbe8470459efd5",
+    "90_SOURCES/historical_retrospectives/Loom Chat 7 Retrospective.md": "27af85592bbc339099021371795f0c45c4c616a33125a1a1a1e6338696844066",
+    "90_SOURCES/historical_retrospectives/Loom Chat 8 Retrospective.md": "c2f89c9313d03974b3c7c7fc54a87cadbf0e09b764b0c119c1ed0f3ffe02533b",
+    "90_SOURCES/historical_retrospectives/Loom Chat 9 Retrospective.md": "f0b667593ae3cffba2e0973f865b0d1b8bab30e899ed7bba1a77d3a422dc323b",
+    "90_SOURCES/original_delivery_archives/Loom_Candidate_Comparison_2026-09-20.zip": "033d7be1c4a8d911ac5c290399441c4aabbcb3ea26f42bf089f1b7c8d9c688ac",
+    "90_SOURCES/original_delivery_archives/Loom_Continuation_Draft_2026-09-18.zip": "2e3a2ec49ca4b11298adf259b2d87dcb77cc9e42a45c7d9b4eaa845f916cdbce",
+    "90_SOURCES/original_research_assignment/LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_BRIEF_v0_1_DRAFT.md": "ba7668ac2d7e72a36922acbae509518607f5b79fc16edf1be1f7074a14bd5b81",
+    "90_SOURCES/original_research_assignment/LOOM_MULTI_MODEL_RESEARCH_LAUNCH_NOTE_v0_1_DRAFT.md": "2f20dc63adc3b2c9efdd4feb2aa807ae3089ea65cae5d673b989dadcfc2041e4",
+    "90_SOURCES/original_research_assignment/LOOM_MULTI_MODEL_RESEARCH_PACKET_v0_1_DRAFT.md": "ccaa595452bfc4213156a7cc47c0f243140c5b38765b9980d7dd9f2098cfa598",
+    "90_SOURCES/other_research/EXTROPIC_LOOM_TECHNOLOGY_BRIEF_v0_1.md": "70ce6e2c63aac87f0c9cc9b80c71afaa4997dbc592b7c4f21c359422d5eefdd7",
+    "90_SOURCES/reference_7ada2b300fa1/00_LOOM_CURRENT_STATE.md": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b",
+    "90_SOURCES/reference_7ada2b300fa1/PROJECT_FILES_MANIFEST.txt": "ee0c2720f0ae8ca7b14a5eeb1805b727a104d716a5c7c3ddeb1fc2dc1843c430",
+    "90_SOURCES/research_reports/Astra deep-research-report(1).md": "48471a0ccc714c885307637d406956a007c60767cff633319620e5e130bb203b",
+    "90_SOURCES/research_reports/Deep Seek - Research Report.md": "00238fb38af2611f85e599be192f71bd434031fdb492c0a291c2280dd1fb7123",
+    "90_SOURCES/research_reports/GLM 5.3 - Research Report.md": "900ae11fddc3f9b5f106e3fec3269763f22e9cd31e32595ec037fd88c6d323c7",
+    "90_SOURCES/research_reports/Grok LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_REPORT_v0_1(1).md": "2019d7da2facc7414989974f849c97304be436a0ea5c8f34ff355ff0749c66c4",
+    "90_SOURCES/research_reports/LOOM_INDEPENDENT_MECHANISM_INVESTIGATION(1).md": "559a8d63fe2a613d9230efde75519c0f6afceb2f9b557202b4fe502107aeef81",
+    "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/association_cortex_operation_spec.md": "527ddd82191eb0cb4cd6d0c6ce8a1fd064ea8152e640459ddaeb2ccc92b47cbe",
+    "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/CORRIDOR_PROTOCOL.md": "a20d63de5f8d404d63bc075c8b160757883ec89ff55e6633326296c773a37cd0",
+    "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/Guiding List.md": "f980e3c5bcf1b76e8563dc3cf550bb76b157309adcee0e04a584fc22ae1b5f6f",
+    "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/HANDOFF_fable_to_opus_method.md": "f09e416d2070f6d1335ed7d489505a7528930019be5d6d064ebd822131d41aad",
+    "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/MECHANISM_MAP_v1_2_RECONCILED.md": "c6cdcad20f094d3facf35a4d6c2ed965b757eb5a2d3e7513f622eb40e714467e",
+    "90_SOURCES/reference_7ada2b300fa1/EXP1-21/docs/substrate_description.md": "09d7a05740155bf081577f906acc95f10dd151533ea6d566ada179aa8a9840c4",
+    "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md": "97756677a5c7d659198cb49a4771de43741bb4b05c17de017cd94973a05a67ab",
+    "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md": "80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef",
+    "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md": "729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab",
+    "90_SOURCES/reference_7ada2b300fa1/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md": "9cb58ab268acb7a6023c0a7ab80fa2f1a816de69dabf1df2b48fe7d4c597edbc",
+    "90_SOURCES/input_variants/stale_landing_status/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1(2).md": "72e3c22e9c4a6bc67fda81886a7e87db7080ae1570e54d2c9204f2048496dd35",
+    "90_SOURCES/discussions/autonomy_review/Pasted markdown (2).md": "b28db37e92df7f8a64a98341dbe99a8172810c3924eea8fd6d970054a6e612b9",
+    "90_SOURCES/discussions/bounded_arithmetic_and_temporal_discussion/Pasted markdown(4).md": "b47810c19257fc18c80c68c3810ac0e13cb10bff8b95033c09015e5a76ce9c43",
+    "90_SOURCES/discussions/four_jobs_review/Pasted markdown(2).md": "6d49b124e287743fac7e4b78efe18d5767b1cc664549719bc2577f3e9fd8e6c9",
+    "90_SOURCES/candidate_comparison_2026-09-20/sources/participation_retention/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md": "34bd519bb01253f783521204c9e6358b11703282ec322f4707e5ece1bb6a4da4",
+    "90_SOURCES/candidate_comparison_2026-09-20/sources/participation_retention/Pasted text.txt": "57776f55b3d1e8a7fbc0a8bbae54ed5b30439d7fe395f67aacb49ff1ef97055f",
+    "90_SOURCES/candidate_comparison_2026-09-20/sources/retention_only/LOOM_ASSOCIATIVE_REGULATION_WORKED_CANDIDATE_v0_1.md": "07deb554fbbd771f87a3f556e61fd6fb13fc82f06be8c270aac94814f9ec0714"
+  },
+  "enclosing_repository": "C:\\Users\\Jason\\Documents\\Obsidian",
+  "git_metadata_baseline": {
+    "config": "16ede81ff8225a028ea47d7da268da123355decf7cc0fa7b66b8cc4060005fa6",
+    "index": "d6f1e7a96a06fdf70a7cd7786e027f4222887e30272813cba7b87cab28bb8ba9",
+    "HEAD": "f6f2b945f6c411b02ba3da9c7ace88dcf71b6af65ba2e0d89aa82900042b5a10",
+    "packed-refs": null
+  },
+  "git_probe": "Read-only discovery with a command-scoped safe.directory override after sandbox ownership warning; no configuration written."
+}

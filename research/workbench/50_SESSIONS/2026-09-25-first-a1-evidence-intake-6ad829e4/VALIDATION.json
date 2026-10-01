@@ -1,0 +1,104 @@
+{
+  "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-first-A1-commissioning-result-5f077481\\FIRST_A1_COMMISSIONING_RESULT.zip",
+  "zip_bytes": 24287600,
+  "zip_sha256": "f37dfec92288fbe8a650b00eed611d086a3ece3b280292e95b891e371cc0d37f",
+  "manifest_payloads_verified": 49,
+  "result_archive": {
+    "members": 50,
+    "payloads": 49,
+    "length_sha256_crc_valid": true,
+    "safe_unique_paths": true
+  },
+  "launch_archive": {
+    "members": 66,
+    "payloads": 65,
+    "length_sha256_crc_valid": true,
+    "safe_unique_paths": true
+  },
+  "launch_zip_sha256": "371e5ea9c7ab2972a5c1d2eee3914d9a9bb27e7bda13a76bf5a20b5331d61be5",
+  "launch_matches_separate_inbox_copy": true,
+  "outer_matches_delivery_receipt": true,
+  "loose_report_manifest_readme_preservation_match_zip": true,
+  "predecessor_review_matches_packaged_reference": true,
+  "canonical_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+  "approved_canonical_bytes_match_original_launch": true,
+  "approval_envelope_and_launched_object_match": true,
+  "apparatus_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "original_checker_matches_recorded_hash": true,
+  "source_discrepancy": {
+    "request_wording": "459 complete contact windows",
+    "packaged_summary_field": "complete_fixed_windows = 459",
+    "saved_window_labels": {
+      "complete_fixed_total": 459,
+      "complete_with_contact": 428,
+      "complete_without_contact": 31,
+      "complete_contact_positive_resolved": 229,
+      "complete_contact_negative_resolved": 199,
+      "partial_tail_contact_negative_resolved": 1
+    },
+    "source_member": "evidence/read-only-review/A1_OBSERVATIONS.json::all_fixed_windows",
+    "resolution": "Record 459 complete fixed windows in total, of which 428 contain positive-duration source-0 contact; preserve original request and evidence. This is a census of stored labels, not corrected V3 analysis.",
+    "first_positive_window_note": "The 6.2–6.4 s complete fixed bin contains first contact at 6.31019048650431 s; complete describes the bin, not contact throughout it."
+  },
+  "source_counts_copied_from_receipt_and_summary": true,
+  "new_physical_execution": false,
+  "new_corrected_V3_analysis": false,
+  "packaged_program_execution": false,
+  "git_operations": false,
+  "existing_catalog_rows_preserved": 93,
+  "protected_files_unchanged": 111,
+  "links_validated": 282,
+  "source_ids": [
+    "SRC-094",
+    "SRC-095",
+    "SRC-096",
+    "SRC-097",
+    "SRC-098",
+    "SRC-099",
+    "SRC-100",
+    "SRC-101",
+    "SRC-102",
+    "SRC-103",
+    "SRC-104",
+    "SRC-105",
+    "SRC-106",
+    "SRC-107",
+    "SRC-108",
+    "SRC-109",
+    "SRC-110",
+    "SRC-111",
+    "SRC-112",
+    "SRC-113",
+    "SRC-114",
+    "SRC-115",
+    "SRC-116",
+    "SRC-117"
+  ],
+  "shared_files": {
+    "AGENTS.md": {
+      "before": "58f0ab1ad6916b84a2133310389288503323aae72a8207606aa6aa83adb59b79",
+      "after": "94681ad654260d5b070f012b329efacea5755a3b4537db98e5deba2aeaad2b1d"
+    },
+    "00_RESEARCH_MAP.md": {
+      "before": "a88e21beab9adaeb77a5bec895aa22c626c682c8c2d0733a11832b292aafa739",
+      "after": "abbdb3f425696e26fdd199f32c020e0a042a488cfac4d79774b2e37e5686bec6"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "before": "93cd26313dd44081c96a612d8a68cd609830dfe4ee4bf56e5b08da584578f0aa",
+      "after": "db6efad2c1f46bd508c0fb66f993ed350d2f71fff6b10133cf5b2f3386a2dc58"
+    },
+    "SOURCE_CATALOG.json": {
+      "before": "dfd02f291f694aaf5bb6a874a806c9baea94724b46444a476006884e4f6aca11",
+      "after": "c15346603aeced9b0cc1771eb05ce29f4522ac67ee4e42131ea37a81a5a3c62a"
+    },
+    "SOURCE_REGISTER.md": {
+      "before": "90ee690add1ae856142b6567e099a5e49d55282ca2ca47024e769367f50d528a",
+      "after": "6ccb25f01da32ebc9784b3e585632280707db823bcff7c2b0d32016833921d28"
+    }
+  },
+  "intake_complete": true,
+  "validation_scope": "Source custody, exact status registration, links and byte preservation; no review rerun or scientific validation",
+  "incoming_files_preserved": 8,
+  "recovery_archive_verified": true
+}

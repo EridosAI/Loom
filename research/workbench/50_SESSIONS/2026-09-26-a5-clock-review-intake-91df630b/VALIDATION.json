@@ -1,0 +1,81 @@
+{
+  "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-26-A5-clock-compatibility-review-5f077481\\A5_CLOCK_COMPATIBILITY_REVIEW.zip",
+  "zip_bytes": 225072,
+  "zip_sha256": "4419dede7014c86b9063c045ce62195494621aae9892604383f86d4cb5ffad44",
+  "manifest_payloads_verified": 53,
+  "archive_members": 54,
+  "crc_passed": true,
+  "all_unpacked_inbox_members_match_zip": true,
+  "delivery_receipt_and_sidecar_match": true,
+  "packaged_reference_identities_verified": 42,
+  "held_reference_copies_match_registered_originals": 5,
+  "held_canonical_sha256": "88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6",
+  "supplied_before_after_manifests_byte_identical": true,
+  "supplied_preservation_identities": 250,
+  "reported_prior_decisions": 5579,
+  "reported_stage_mismatches": 0,
+  "reported_detached_legacy_tests_passed": 6,
+  "reported_detached_legacy_controller_calls": 13,
+  "reported_A5_controller_and_world_execution": 0,
+  "classification": "APPARATUS DEFECT — correction required to pose approved longer horizons",
+  "correction_decision": "accepted-by-jason",
+  "correction_implemented_by_intake": false,
+  "correction_verification": "outstanding",
+  "A5_executed": false,
+  "A5_launch_authorized": false,
+  "review_or_tests_rerun_during_intake": false,
+  "git_operations": false,
+  "necessary_source_gaps": [],
+  "source_identity_conflicts": [],
+  "existing_catalog_rows_preserved": 256,
+  "protected_files_unchanged": 725,
+  "links_validated": 538,
+  "source_ids": [
+    "SRC-257",
+    "SRC-258",
+    "SRC-259",
+    "SRC-260",
+    "SRC-261",
+    "SRC-262",
+    "SRC-263",
+    "SRC-264",
+    "SRC-265",
+    "SRC-266",
+    "SRC-267",
+    "SRC-268",
+    "SRC-269",
+    "SRC-270",
+    "SRC-271"
+  ],
+  "shared_files": {
+    "AGENTS.md": {
+      "before": "69d94e05b459c948054bcdd5268687aede645dbfeecb5022059cb992eb420b4f",
+      "after": "e999e563a94705592bb6ca3c63421e422ba8dca025119586aeebae22e56a2839"
+    },
+    "00_RESEARCH_MAP.md": {
+      "before": "7ec88570004aaa95bb64218195b17ebeebd65223e77c901da6f128985586139f",
+      "after": "37da2a2da02f704e6db4488c66f368e72c63d8720f7f68d08a8507640e1484f5"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "before": "90de69a0e72f6d461354e2a66fe89133756d69cf7f17b383bd607894dd925b16",
+      "after": "8ecc7ced567245a07c48f793da5acef414db61f4b33507dcd4529ce875c81a20"
+    },
+    "SOURCE_CATALOG.json": {
+      "before": "e5d4d859fda9a19c8fbc972668ecb66a9bfbf37f6e62475213df94af5a6c1d37",
+      "after": "10707d6947d33a543885f7562f91659fabe815235a8b330fdae90a5f729819fd"
+    },
+    "SOURCE_REGISTER.md": {
+      "before": "b2ecb4baf0dfe2c05f10e6d3503303994ec3d95da55d17bcf0b0e994c8868571",
+      "after": "7308521f91e1faa697bec3f62a972de926ce8b90d270cb347d7bca330949c6b0"
+    },
+    "40_DECISIONS/DECISION_INDEX.md": {
+      "before": "5af1d6b309ca6d82fbdbb52045b9384dc8a1bce0f4db2fa8e054289a75c41120",
+      "after": "cbbc25ae7276b31cf4c1e96e0c0112bacede547812e14e81923da6a6078c44ad"
+    }
+  },
+  "intake_complete": true,
+  "validation_scope": "Source custody, exact status registration, links and byte preservation; no review rerun or scientific validation",
+  "incoming_files_preserved": 57,
+  "recovery_archive_verified": true,
+  "full_derived_batch_files_verified": 57
+}

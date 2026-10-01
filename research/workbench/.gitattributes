@@ -1,0 +1,11 @@
+# Authored notes are portable text. Protected source bytes are never normalized.
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+90_SOURCES/** -text -filter -ident -working-tree-encoding
+INBOX/** -text -filter -ident -working-tree-encoding
+*.zip -text
+
+# Repository migration: preserve exact source bytes; original Obsidian attributes remain provenance.
+* -text -filter -ident -working-tree-encoding

@@ -1,0 +1,84 @@
+{
+  "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A2-commissioning-result-5f077481\\A2_COMMISSIONING_RESULT.zip",
+  "zip_bytes": 80305245,
+  "zip_sha256": "212c0497531e3ccee7b2b3825045dda116ca15468fe3415a4e79634d620cb502",
+  "manifest_payloads_verified": 60,
+  "archive_members": 61,
+  "crc_passed": true,
+  "all_unpacked_inbox_members_match_zip": true,
+  "launch_payloads_verified": 75,
+  "launch_crc_passed": true,
+  "launch_zip_sha256": "c080d089f3be5f65e88a9bdbcd774421197483d79d0a6e4ce8d7cb178eaed1c3",
+  "launch_matches_separate_delivery": true,
+  "approved_canonical_sha256": "229bedc93d793892488ee0f8b1b42035777f11f70952e43179a768a30cfc3007",
+  "approved_canonical_matches_launch": true,
+  "embedded_A1_matches_registered_original": true,
+  "supplied_before_after_original_manifests_identical": true,
+  "supplied_before_after_raw_analysis_manifests_identical": true,
+  "timing_flags_preserved_without_patch": true,
+  "source_execution_native_steps": 18000,
+  "source_stop": "administrative_cutoff",
+  "programs_or_tests_run_during_intake": false,
+  "simulation_or_controller_execution_during_intake": false,
+  "git_operations": false,
+  "necessary_source_gaps": [],
+  "source_identity_conflicts": [],
+  "existing_catalog_rows_preserved": 137,
+  "protected_files_unchanged": 199,
+  "links_validated": 353,
+  "source_ids": [
+    "SRC-138",
+    "SRC-139",
+    "SRC-140",
+    "SRC-141",
+    "SRC-142",
+    "SRC-143",
+    "SRC-144",
+    "SRC-145",
+    "SRC-146",
+    "SRC-147",
+    "SRC-148",
+    "SRC-149",
+    "SRC-150",
+    "SRC-151",
+    "SRC-152",
+    "SRC-153",
+    "SRC-154",
+    "SRC-155",
+    "SRC-156",
+    "SRC-157",
+    "SRC-158",
+    "SRC-159",
+    "SRC-160",
+    "SRC-161",
+    "SRC-162",
+    "SRC-163"
+  ],
+  "shared_files": {
+    "AGENTS.md": {
+      "before": "b7bbae686f0eb98161745f4ede987fbd47a1299e4710ce8112e6704cf713b63e",
+      "after": "e25fc416e628a1044948c3a18800e61d3f250764dd10e72ce867bf98f06be002"
+    },
+    "00_RESEARCH_MAP.md": {
+      "before": "a5d156cd86ff8dd4d2d0125a5dcf2d7eeb1374493e1159c1b43feb6cc35f1ac4",
+      "after": "45dfc56d8faa77b1e13029e9302041c81bb4030104bfc905a890b7c1fdf29b5b"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "before": "e318a9b31cbed6ad71409587dfdd4f21811ababc7d3c5535ca49a6138c59e3f7",
+      "after": "e04f3235e179e293ce3db7ef3a979f16698db6100d9638374bbaf5d9dfb482ad"
+    },
+    "SOURCE_CATALOG.json": {
+      "before": "148774468284e9e3058e017df8a385573a8040babfde7c520d31a1bcc92e7df6",
+      "after": "9c9a4a4b247ec1809ca2f0b6be53c2a8fb172588779bd0698cf42b8de195661c"
+    },
+    "SOURCE_REGISTER.md": {
+      "before": "3e56e090f0676b82283465c3bb286c7b70456331e7397656e59f74e350ae7193",
+      "after": "dae38d28022d407cc27c4d31e137f0cd465c4fadea51e9a0071b5ee521c7251c"
+    }
+  },
+  "intake_complete": true,
+  "validation_scope": "Source custody, exact status registration, links and byte preservation; no review rerun or scientific validation",
+  "incoming_files_preserved": 65,
+  "recovery_archive_verified": true,
+  "full_derived_batch_files_verified": 67
+}

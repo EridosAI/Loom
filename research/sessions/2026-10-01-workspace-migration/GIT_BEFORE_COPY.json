@@ -1,0 +1,137 @@
+{
+  "time_utc": "2026-10-01T03:14:38.242144+00:00",
+  "primary": {
+    "head": {
+      "command": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "98a8307e56f6884f2cc5dfb29ef924294f629c22\n",
+      "stderr": ""
+    },
+    "branch": {
+      "command": [
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stdout": "main\n",
+      "stderr": ""
+    },
+    "common_dir": {
+      "command": [
+        "rev-parse",
+        "--path-format=absolute",
+        "--git-common-dir"
+      ],
+      "exit_code": 0,
+      "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+      "stderr": ""
+    },
+    "status": {
+      "command": [
+        "status",
+        "--porcelain=v1",
+        "-z",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": " M README.md\u0000?? BASE_WORLD_COMPLETION_DOCUMENTATION.patch\u0000?? EXP1-21/docs/00 Loom Current State.md\u0000?? EXP1-21/docs/CC_BRIEF_banked_shelf_commit.md\u0000?? EXP1-21/docs/EXP19_CC_LAUNCH_BRIEF_v2.md\u0000?? EXP1-21/docs/EXP19_ORDERING_WINDOW_PREREG_v3.md\u0000?? EXP1-21/docs/EXP21_PAM_TEACHING_CONTRAST_PREREG_DRAFT.md\u0000?? EXP1-21/docs/FABLE_EXP21_BUILD_AND_G3_ORDER.md\u0000?? EXP1-21/docs/HANDOFF_next_assistant_post_EXP21.md\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g20dwell.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g20dwell.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g21fchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp12_dwell_s0_g21fchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_full.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_full.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_half.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s0_tsmk_half.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s1_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s1_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s2_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s2_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s3_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B128_s3_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s0_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s0_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s1_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s1_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s2_oomchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B32_s2_oomchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s0_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s0_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s1_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s1_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s2_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s2_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s3_g9tail.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp19_wperm_B512_s3_g9tail.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1broken.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp14_exp20_ubuf_K1_s0_g20k1broken.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_gen.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_order.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_order.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0broken_stim.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2b.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onchk2b.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.manifest.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.probe_primary.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp08/exp21/exp21_on_s0_g0onprobe2b.probe_shadow.json\u0000?? EXP1-21/experiments/05_attention_sculpting/exp_isobal.py\u0000?? EXP1-21/scratchpad/exp17_reconcile.py\u0000?? LOOM_CODEX_BASE_WORLD_INTEGRATION.md\u0000?? SHA256SUMS.txt\u0000?? Workbench Backups/Loom_P_Engineering_Build_Handoff_2026-09-21.zip\u0000?? Workbench Backups/Loom_Research_Workbench_Starter_2026-09-20.zip\u0000?? Workbench Backups/Loom_Workbench_2026-09-20-setup-3ea17017.zip\u0000?? docs/Fruit_Fly_Brain_Models_and_Adaptive_Control.pdf\u0000?? docs/Hardware/EXTROPIC_LOOM_TECHNOLOGY_BRIEF_v0_1.md\u0000?? docs/LOOM_ASSOCIATIVE_REGULATION_WORKED_CANDIDATE_v0_1.md\u0000?? docs/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md\u0000?? docs/LOOM_DEVELOPMENTAL_DIRECTION_v0_1_REVIEW_DRAFT.md\u0000?? docs/LOOM_SOURCE_AND_CONTINUATION_AUDIT_v0_1_DRAFT.md\u0000?? docs/LOOM_TEMPORAL_ASSOCIATION_CROSS_CHAT_HANDOFF_v0_1_DRAFT.md\u0000?? docs/LOOM_WORKBENCH_AND_BEHAVIOURAL_WATCHLIST_PRACTICE_v0_1.md\u0000?? docs/Multi Model Research Mechanism Task/Astra deep-research-report.md\u0000?? docs/Multi Model Research Mechanism Task/Deep Seek - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/Fable 5.1 - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/GLM 5.3 - Research Report.md\u0000?? docs/Multi Model Research Mechanism Task/Grok LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_REPORT_v0_1.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_DEVELOPMENTAL_MECHANISM_RESEARCH_BRIEF_v0_1_DRAFT.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_MULTI_MODEL_RESEARCH_LAUNCH_NOTE_v0_1_DRAFT.md\u0000?? docs/Multi Model Research Mechanism Task/LOOM_MULTI_MODEL_RESEARCH_PACKET_v0_1_DRAFT.md\u0000?? docs/REVIEW_AND_RECONCILIATION_NOTES.md\u0000?? repository_files/00_LOOM_CURRENT_STATE.md\u0000?? repository_files/docs/developmental_ecology/BASE_WORLD_COMPLETION_v0_1.md\u0000?? repository_files/docs/developmental_ecology/DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md\u0000?? repository_files/docs/developmental_ecology/PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md\u0000",
+      "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+    },
+    "refs": {
+      "command": [
+        "for-each-ref",
+        "--format=%(refname) %(objectname)",
+        "refs/heads",
+        "refs/remotes"
+      ],
+      "exit_code": 0,
+      "stdout": "refs/heads/build/p-b1-compact-layout-20260927-01a0c405 1060a17e3dd14c6361f6f15c95bb58fad3110ffc\nrefs/heads/build/p-b1-coordinate-colours-20260929-01a0c405 b684912eaf7811cd318ee94c77172aca790f3a0d\nrefs/heads/build/p-b1-minimal-20260929-01a0c405 a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad\nrefs/heads/build/p-b1-operator-correction-20260926-01a0c405 352f73fffa6d9781eae8aa38e708a9a05669588f\nrefs/heads/build/p-clock-correction-20260926-01a0c405 68db2c581f07200966d699a4f55a65f9b96df1e9\nrefs/heads/build/p-commissioning-apparatus-20260924-01a0c405 5f07748102cb5eaa302569c87efbae095050e9fe\nrefs/heads/build/p-contact-release-20260930 1d7cd6fd450ea528562b2c825589ab4de18a5b38\nrefs/heads/build/p-developmental-runner-20260929 87abae34e19d4e46234402a6b1ba776814956ec1\nrefs/heads/build/p-engineering-baseline-20260921-01a0c405 6bc9683b54e4fa80136fe8534d7713e2a250a95f\nrefs/heads/docs/base-world-completion 9dffecf4d7da962ac423414f37a38cdb28eaefc9\nrefs/heads/main 98a8307e56f6884f2cc5dfb29ef924294f629c22\nrefs/heads/restructure/developmental-ecology 103973f6646a4c12ac817cb085e0456f19f77cb9\nrefs/heads/restructure/research-workspace-in-repo-20261001 7ada2b300fa12a26b0daf40b1fa5682243ff6625\nrefs/remotes/origin/HEAD 7ada2b300fa12a26b0daf40b1fa5682243ff6625\nrefs/remotes/origin/docs/base-world-completion 9dffecf4d7da962ac423414f37a38cdb28eaefc9\nrefs/remotes/origin/main 7ada2b300fa12a26b0daf40b1fa5682243ff6625\nrefs/remotes/origin/restructure/developmental-ecology 103973f6646a4c12ac817cb085e0456f19f77cb9\n",
+      "stderr": ""
+    },
+    "worktrees": {
+      "command": [
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "worktree C:/Users/Jason/Desktop/Eridos/Loom\nHEAD 98a8307e56f6884f2cc5dfb29ef924294f629c22\nbranch refs/heads/main\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-contact-release-20260930\nHEAD 1d7cd6fd450ea528562b2c825589ab4de18a5b38\nbranch refs/heads/build/p-contact-release-20260930\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-apparatus-correction-20260926\nHEAD 1060a17e3dd14c6361f6f15c95bb58fad3110ffc\nbranch refs/heads/build/p-b1-compact-layout-20260927-01a0c405\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-coordinate-colours-20260929\nHEAD b684912eaf7811cd318ee94c77172aca790f3a0d\nbranch refs/heads/build/p-b1-coordinate-colours-20260929-01a0c405\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929\nHEAD 87abae34e19d4e46234402a6b1ba776814956ec1\nbranch refs/heads/build/p-developmental-runner-20260929\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-clock-correction-20260926\nHEAD 68db2c581f07200966d699a4f55a65f9b96df1e9\nbranch refs/heads/build/p-clock-correction-20260926-01a0c405\n\nworktree C:/Users/Jason/.codex/visualizations/2026/09/03/01a066e5-1e9b-7f73-af0f-cc68ac5df2cd/loom-base-world-completion\nHEAD 9dffecf4d7da962ac423414f37a38cdb28eaefc9\nbranch refs/heads/docs/base-world-completion\n\nworktree C:/Users/Jason/Desktop/Eridos/Loom-p-apparatus-20260924-01a0c405\nHEAD 5f07748102cb5eaa302569c87efbae095050e9fe\nbranch refs/heads/build/p-commissioning-apparatus-20260924-01a0c405\n\nworktree C:/Users/Jason/Desktop/Eridos/Loom-p-engineering-20260921-01a0c405\nHEAD 6bc9683b54e4fa80136fe8534d7713e2a250a95f\nbranch refs/heads/build/p-engineering-baseline-20260921-01a0c405\n\nworktree C:/Users/Jason/Desktop/Eridos/Loom-research-workspace-20261001\nHEAD 7ada2b300fa12a26b0daf40b1fa5682243ff6625\nbranch refs/heads/restructure/research-workspace-in-repo-20261001\n\n",
+      "stderr": ""
+    }
+  },
+  "migration_worktree": {
+    "head": {
+      "command": [
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "7ada2b300fa12a26b0daf40b1fa5682243ff6625\n",
+      "stderr": ""
+    },
+    "branch": {
+      "command": [
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "stdout": "restructure/research-workspace-in-repo-20261001\n",
+      "stderr": ""
+    },
+    "common_dir": {
+      "command": [
+        "rev-parse",
+        "--path-format=absolute",
+        "--git-common-dir"
+      ],
+      "exit_code": 0,
+      "stdout": "C:/Users/Jason/Desktop/Eridos/Loom/.git\n",
+      "stderr": ""
+    },
+    "status": {
+      "command": [
+        "status",
+        "--porcelain=v1",
+        "-z",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\n"
+    },
+    "refs": {
+      "command": [
+        "for-each-ref",
+        "--format=%(refname) %(objectname)",
+        "refs/heads",
+        "refs/remotes"
+      ],
+      "exit_code": 0,
+      "stdout": "refs/heads/build/p-b1-compact-layout-20260927-01a0c405 1060a17e3dd14c6361f6f15c95bb58fad3110ffc\nrefs/heads/build/p-b1-coordinate-colours-20260929-01a0c405 b684912eaf7811cd318ee94c77172aca790f3a0d\nrefs/heads/build/p-b1-minimal-20260929-01a0c405 a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad\nrefs/heads/build/p-b1-operator-correction-20260926-01a0c405 352f73fffa6d9781eae8aa38e708a9a05669588f\nrefs/heads/build/p-clock-correction-20260926-01a0c405 68db2c581f07200966d699a4f55a65f9b96df1e9\nrefs/heads/build/p-commissioning-apparatus-20260924-01a0c405 5f07748102cb5eaa302569c87efbae095050e9fe\nrefs/heads/build/p-contact-release-20260930 1d7cd6fd450ea528562b2c825589ab4de18a5b38\nrefs/heads/build/p-developmental-runner-20260929 87abae34e19d4e46234402a6b1ba776814956ec1\nrefs/heads/build/p-engineering-baseline-20260921-01a0c405 6bc9683b54e4fa80136fe8534d7713e2a250a95f\nrefs/heads/docs/base-world-completion 9dffecf4d7da962ac423414f37a38cdb28eaefc9\nrefs/heads/main 98a8307e56f6884f2cc5dfb29ef924294f629c22\nrefs/heads/restructure/developmental-ecology 103973f6646a4c12ac817cb085e0456f19f77cb9\nrefs/heads/restructure/research-workspace-in-repo-20261001 7ada2b300fa12a26b0daf40b1fa5682243ff6625\nrefs/remotes/origin/HEAD 7ada2b300fa12a26b0daf40b1fa5682243ff6625\nrefs/remotes/origin/docs/base-world-completion 9dffecf4d7da962ac423414f37a38cdb28eaefc9\nrefs/remotes/origin/main 7ada2b300fa12a26b0daf40b1fa5682243ff6625\nrefs/remotes/origin/restructure/developmental-ecology 103973f6646a4c12ac817cb085e0456f19f77cb9\n",
+      "stderr": ""
+    },
+    "worktrees": {
+      "command": [
+        "worktree",
+        "list",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": "worktree C:/Users/Jason/Desktop/Eridos/Loom\nHEAD 98a8307e56f6884f2cc5dfb29ef924294f629c22\nbranch refs/heads/main\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-contact-release-20260930\nHEAD 1d7cd6fd450ea528562b2c825589ab4de18a5b38\nbranch refs/heads/build/p-contact-release-20260930\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-apparatus-correction-20260926\nHEAD 1060a17e3dd14c6361f6f15c95bb58fad3110ffc\nbranch refs/heads/build/p-b1-compact-layout-20260927-01a0c405\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-coordinate-colours-20260929\nHEAD b684912eaf7811cd318ee94c77172aca790f3a0d\nbranch refs/heads/build/p-b1-coordinate-colours-20260929-01a0c405\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-b1-minimal-20260929\nHEAD 87abae34e19d4e46234402a6b1ba776814956ec1\nbranch refs/heads/build/p-developmental-runner-20260929\n\nworktree C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/worktrees/loom-p-clock-correction-20260926\nHEAD 68db2c581f07200966d699a4f55a65f9b96df1e9\nbranch refs/heads/build/p-clock-correction-20260926-01a0c405\n\nworktree C:/Users/Jason/.codex/visualizations/2026/09/03/01a066e5-1e9b-7f73-af0f-cc68ac5df2cd/loom-base-world-completion\nHEAD 9dffecf4d7da962ac423414f37a38cdb28eaefc9\nbranch refs/heads/docs/base-world-completion\n\nworktree C:/Users/Jason/Desktop/Eridos/Loom-p-apparatus-20260924-01a0c405\nHEAD 5f07748102cb5eaa302569c87efbae095050e9fe\nbranch refs/heads/build/p-commissioning-apparatus-20260924-01a0c405\n\nworktree C:/Users/Jason/Desktop/Eridos/Loom-p-engineering-20260921-01a0c405\nHEAD 6bc9683b54e4fa80136fe8534d7713e2a250a95f\nbranch refs/heads/build/p-engineering-baseline-20260921-01a0c405\n\nworktree C:/Users/Jason/Desktop/Eridos/Loom-research-workspace-20261001\nHEAD 7ada2b300fa12a26b0daf40b1fa5682243ff6625\nbranch refs/heads/restructure/research-workspace-in-repo-20261001\n\n",
+      "stderr": ""
+    }
+  },
+  "fetch_operation": "git fetch --prune origin, remote-read operation; authorized local shared Git metadata update; no primary working-file/index mutation",
+  "fetched_origin_main": {
+    "command": [
+      "rev-parse",
+      "origin/main"
+    ],
+    "exit_code": 0,
+    "stdout": "7ada2b300fa12a26b0daf40b1fa5682243ff6625\n",
+    "stderr": ""
+  }
+}

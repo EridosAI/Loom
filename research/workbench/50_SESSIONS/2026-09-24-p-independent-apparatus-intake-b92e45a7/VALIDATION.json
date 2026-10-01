@@ -1,0 +1,62 @@
+{
+  "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24_P_Independent_Apparatus_Review\\Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip",
+  "zip_bytes": 7227837,
+  "zip_sha256": "32c16dbf33ac368f4016b42b7c2b4ada355860e5541c5223ce3f163577d66006",
+  "archive_members": 239,
+  "manifest_payloads_verified": 238,
+  "crc_passed": true,
+  "report_matches_review_receipt": true,
+  "apparatus_checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b",
+  "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "nested_builder_zip_matches_prior": true,
+  "nested_builder_payloads_verified": 220,
+  "review_findings": [
+    {
+      "user_id": "A1",
+      "source_id": "A-R1"
+    },
+    {
+      "user_id": "A2",
+      "source_id": "A-R2"
+    }
+  ],
+  "other_finding_table_preserved_verbatim": true,
+  "review_rerun": false,
+  "scientific_execution": false,
+  "git_operations": false,
+  "existing_catalog_rows_preserved": 76,
+  "protected_files_unchanged": 93,
+  "links_validated": 201,
+  "source_ids": [
+    "SRC-077",
+    "SRC-078",
+    "SRC-079",
+    "SRC-080",
+    "SRC-081",
+    "SRC-082"
+  ],
+  "shared_files": {
+    "AGENTS.md": {
+      "before": "a2d2d2445b336acb77f19d191b93354e63adef3ecbe026262008d24c704b2a24",
+      "after": "a289bcb909e899aaf23d3c1928db9650e30d2f61a6f47ab1e147cf6828058520"
+    },
+    "00_RESEARCH_MAP.md": {
+      "before": "fc391014d9c255287de8577fc0e9f487589907d8b79579accab2b0137e29d017",
+      "after": "19517b704d6018e3f71a80e86b2dfc229a8f99ae9bedc24efaa480c1604ee41d"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "before": "fd8c4b1abe11317d617291f8d4e03c31aacb77d5520d3afbbe8b624c6507f96a",
+      "after": "37b43a182008aab279f7e9cede6d659da5141436549f3a8dbb65d628535e2857"
+    },
+    "SOURCE_CATALOG.json": {
+      "before": "e0280d93122f1c0dd4b2355f5188892fce67997fa90fddbca6a008c7e8e2b0b0",
+      "after": "92c766b63b6d005e07cd05c443c57eafe6d6e049f3283617485a3b40cd7d0347"
+    },
+    "SOURCE_REGISTER.md": {
+      "before": "47b3e49c6ec0fded610df61b0a3d25cd8860f624494b75b5872ec1a4212a375c",
+      "after": "673c0be4035d193a7df4783263a994ca95a516dc9483737fa6ad72249beedad1"
+    }
+  },
+  "intake_complete": true,
+  "validation_scope": "Source custody, exact status registration, links and byte preservation; no review rerun or scientific validation"
+}
