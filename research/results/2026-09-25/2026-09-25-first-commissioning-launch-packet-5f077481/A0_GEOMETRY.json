@@ -1,0 +1,131 @@
+{
+  "A1_centre_segment_to_contact_locus": {
+    "from": [
+      6.0,
+      3.0
+    ],
+    "to": [
+      4.0,
+      3.0
+    ],
+    "static_surface_clearances": {
+      "wall-0": 3.5,
+      "wall-1": 13.5,
+      "wall-2": 2.5,
+      "wall-3": 16.5,
+      "source-0": 0.0,
+      "source-1": 3.0,
+      "source-2": 10.0,
+      "source-3": 6.0710678118654755,
+      "source-4": 12.038404810405298,
+      "source-5": 13.035668847618199,
+      "source-6": 13.560219778561036,
+      "source-7": 16.804493814764857,
+      "repair-0": 5.75,
+      "repair-1": 14.130874888399532,
+      "repair-2": 16.368980407837338
+    },
+    "minimum_to_mover_union_over_all_phases": 6.0
+  },
+  "A0_only_left_bypass": {
+    "from": [
+      1.5,
+      6.0
+    ],
+    "to": [
+      1.5,
+      14.0
+    ],
+    "static_surface_clearances": {
+      "wall-0": 1.0,
+      "wall-1": 18.0,
+      "wall-2": 5.5,
+      "wall-3": 5.5,
+      "source-0": 2.3541019662496847,
+      "source-1": 8.013878188659973,
+      "source-2": 14.787653403846944,
+      "source-3": 0.5,
+      "source-4": 14.5,
+      "source-5": 2.3541019662496847,
+      "source-6": 8.013878188659973,
+      "source-7": 14.787653403846944,
+      "repair-0": 0.75,
+      "repair-1": 17.75,
+      "repair-2": 8.178277478854891
+    },
+    "minimum_to_mover_union_over_all_phases": 3.0
+  },
+  "phase_snapshots": [
+    {
+      "at_time": 0.0,
+      "mover_rect": [
+        7.380585940418742,
+        9.380585940418742,
+        9.5,
+        10.5
+      ],
+      "mover_velocity": [
+        -0.7660305017401406,
+        0.0
+      ],
+      "probe_10_10_surface_gap": 0.11941405958125806
+    },
+    {
+      "at_time": 7.5,
+      "mover_rect": [
+        5.342473772666756,
+        7.342473772666756,
+        9.5,
+        10.5
+      ],
+      "mover_velocity": [
+        0.3391692875133669,
+        0.0
+      ],
+      "probe_10_10_surface_gap": 2.1575262273332436
+    },
+    {
+      "at_time": 15.0,
+      "mover_rect": [
+        10.619414059581258,
+        12.619414059581258,
+        9.5,
+        10.5
+      ],
+      "mover_velocity": [
+        0.7660305017401406,
+        0.0
+      ],
+      "probe_10_10_surface_gap": 0.11941405958125806
+    },
+    {
+      "at_time": 22.5,
+      "mover_rect": [
+        12.657526227333243,
+        14.657526227333243,
+        9.5,
+        10.5
+      ],
+      "mover_velocity": [
+        -0.33916928751336684,
+        0.0
+      ],
+      "probe_10_10_surface_gap": 2.1575262273332427
+    },
+    {
+      "at_time": 30.0,
+      "mover_rect": [
+        7.380585940418749,
+        9.380585940418749,
+        9.5,
+        10.5
+      ],
+      "mover_velocity": [
+        -0.7660305017401413,
+        0.0
+      ],
+      "probe_10_10_surface_gap": 0.11941405958125095
+    }
+  ],
+  "scope": "Finite-radius geometry only. No point-agent path, world evolution, reserve-feasibility claim or alternative A1 trajectory. Mover union used only to certify a bypass, never as a permanent exclusion of its whole swept area."
+}

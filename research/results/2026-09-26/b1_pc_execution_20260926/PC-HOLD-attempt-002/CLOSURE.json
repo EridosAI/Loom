@@ -1,0 +1,64 @@
+{
+  "recorded_utc": "2026-09-27T03:08:57.235065+00:00",
+  "case": "PC-HOLD",
+  "attempt": 2,
+  "complete": true,
+  "stop_cause": "operator_withdrawal",
+  "final_time": 1.500000000000001,
+  "records": {
+    "sensor": 151,
+    "operator": 33,
+    "controller": 15,
+    "native": 150,
+    "events": 152,
+    "diagnostics": 150
+  },
+  "runtime_receipt_sha256": "d3de30c964330edeb1ef31ff216a46b3f60c28d376d9fc89b5a178acbfb6cfeb",
+  "files_verified": {
+    "controller.jsonl.gz": {
+      "bytes": 137909,
+      "sha256": "d1c019a8f18719f7522087031d245cccf9d586aba9db67b08740c980edb7a9db"
+    },
+    "diagnostics.jsonl.gz": {
+      "bytes": 30411,
+      "sha256": "e040a9cac00988dd976f4f42062a4601f598f7eeb46143c52fb4b00a6db4d0e5"
+    },
+    "events.jsonl.gz": {
+      "bytes": 12354,
+      "sha256": "46c07b8b16975dac708ce4800a631886c1d75b992061b5c433609ba6ac311a49"
+    },
+    "final.restart.json.gz": {
+      "bytes": 172020,
+      "sha256": "d0287882f80db0c5b3ce58532587be14c84ee2649c7338e40ff6bc01c9dde6c5"
+    },
+    "initial.restart.json.gz": {
+      "bytes": 125498,
+      "sha256": "105e8e4020fd1df906f1daf56060546445f6645b6cc85938dff6e165e6cd2f38"
+    },
+    "native.jsonl.gz": {
+      "bytes": 66923,
+      "sha256": "89574b1caf9b5ceb9ec80b1887f058379dfde0a0f1fefc0edbcd5988a08239fb"
+    },
+    "operator.jsonl.gz": {
+      "bytes": 1910,
+      "sha256": "c770ebfd63c5a36dc015ce227c80963fd349774ab3ef7a73d36d87d751c5445d"
+    },
+    "scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "d7be3d54541cec5eaba3aeb0a2d4fae7fac17e8b530705a9f57f6d8b32969150"
+    },
+    "sensor-display.json": {
+      "bytes": 89672,
+      "sha256": "664f2615a466c2919f36353c01c11110f55d9bc3198f9e477e4b4577be0de03d"
+    },
+    "sensor.jsonl.gz": {
+      "bytes": 27500,
+      "sha256": "036b7161448158d6230138a431215bb2904e72c9c2f13943d31e9cd451281b8d"
+    },
+    "wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "4dc2aecc1725623af20da5b557694b64b2d7044ad3603d7820b4ed2471f538cd"
+    }
+  },
+  "assistant_sent_end": false
+}

@@ -1,0 +1,19 @@
+{
+  "preparation_only": true,
+  "authoring_failures": [],
+  "executed_build_helpers": 1,
+  "static_fixture_authorings": 3,
+  "proposal_review_changes": [
+    "Before sealing, scaled resource projection keys were corrected from rate-unit names to total-unit names. Numeric projections, states, phase, routes, controllers and horizons unchanged. The guarded authoring helper was updated for reproducibility; it was not rerun."
+  ],
+  "discarded_or_trial_simulations": 0,
+  "request_provenance": "A4_PREPARATION_REQUEST.txt is a transcription of the current user message with separator formatting normalized; it is not an original attachment or an execution approval.",
+  "not_tested": [
+    "Actual A4 commands or trajectories",
+    "Actual waiting/crossing/detour success",
+    "Contact/damage outcomes or exact continuous-time clearance minimum",
+    "P neural learning, perception, prediction or efficacy",
+    "All phases, reserves or starts",
+    "Any lifetime, cohort, additional case, retry or continuation"
+  ]
+}

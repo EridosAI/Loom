@@ -1,0 +1,181 @@
+{
+  "HISTORICAL_PRESERVATION": {
+    "checked": 250,
+    "changed": {}
+  },
+  "ORIGINAL_STAGE_SOURCES": {
+    "checked": 12,
+    "changed": {}
+  },
+  "ALL_SAVED_PAYLOADS_PRESERVATION": {
+    "checked": 114,
+    "changed": {}
+  },
+  "held_original": {
+    "checked": 89,
+    "changed": {}
+  },
+  "held_delivered": {
+    "checked": 89,
+    "changed": {}
+  },
+  "portable_payloads": {
+    "checked": 375,
+    "changed": {}
+  },
+  "target_package_sources": {
+    "checked": 55,
+    "changed": {}
+  },
+  "A5_evidence_limits": {
+    "held_execution_authority": null,
+    "held_hash": {
+      "sha256": "88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6",
+      "bytes": 9885
+    },
+    "known_A5_destinations": {
+      "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\commissioning-A5-20260926-5f077481": false,
+      "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926\\developmental_ecology\\artifacts\\commissioning-A5-20260926-5f077481": false
+    },
+    "packaged_late_pause_resume_records": [
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re0/continuous/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 31,
+          "controller": 3,
+          "native": 30,
+          "events": 30,
+          "diagnostics": 30
+        },
+        "final_time": 270.1999999999997
+      },
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re0/first/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 10,
+          "controller": 1,
+          "native": 9,
+          "events": 9,
+          "diagnostics": 9
+        },
+        "final_time": 269.9899999999999
+      },
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re0/resumed/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 22,
+          "native": 21,
+          "events": 21,
+          "diagnostics": 21,
+          "controller": 2
+        },
+        "final_time": 270.1999999999997
+      },
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re1/continuous/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 31,
+          "controller": 3,
+          "native": 30,
+          "events": 30,
+          "diagnostics": 30
+        },
+        "final_time": 270.1999999999997
+      },
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re1/first/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 11,
+          "controller": 1,
+          "native": 10,
+          "events": 10,
+          "diagnostics": 10
+        },
+        "final_time": 269.9999999999999
+      },
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re1/resumed/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 21,
+          "controller": 2,
+          "native": 20,
+          "events": 20,
+          "diagnostics": 20
+        },
+        "final_time": 270.1999999999997
+      },
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re2/continuous/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 31,
+          "controller": 3,
+          "native": 30,
+          "events": 30,
+          "diagnostics": 30
+        },
+        "final_time": 270.1999999999997
+      },
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re2/first/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 12,
+          "controller": 2,
+          "native": 11,
+          "events": 11,
+          "diagnostics": 11
+        },
+        "final_time": 270.0099999999999
+      },
+      {
+        "path": "evidence/late_pause_resume_records/test_late_short_world_pause_re2/resumed/manifest.json",
+        "case_id": "fixture-late-resume",
+        "purpose": "manufactured_fixture",
+        "duration_seconds": 0.3,
+        "records": {
+          "sensor": 20,
+          "native": 19,
+          "events": 19,
+          "diagnostics": 19,
+          "controller": 1
+        },
+        "final_time": 270.1999999999997
+      }
+    ],
+    "scope": "Enumerated original held packet, original saved historical receipts, complete correction ZIP, and the two declared A5 output paths. No universal negative claim about unrecorded files/processes elsewhere."
+  },
+  "final_git": {
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926": {
+      "HEAD": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+      "status": ""
+    },
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405": {
+      "HEAD": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "status": ""
+    }
+  },
+  "all_rehashed_unchanged": true
+}

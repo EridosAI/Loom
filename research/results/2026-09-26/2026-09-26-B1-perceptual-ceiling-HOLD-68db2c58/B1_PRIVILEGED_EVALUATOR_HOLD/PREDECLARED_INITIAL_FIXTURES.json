@@ -1,0 +1,59 @@
+{
+  "selection_sha256": "f0255e9afa2896f9b076f15e7f610372795a8bb2f84d2a7ffc0e0ce05d97586b",
+  "selection_policy": "One hash-selected member of the declared static bottom/top-row opportunity set, with a fixed offset and heading offset; no alternatives tried. Middle-row opportunities excluded geometrically to avoid importing an A4 mover challenge.",
+  "source_index_evaluator_only": 0,
+  "fixtures": [
+    {
+      "id": "PC-LR",
+      "seconds": 4,
+      "position": [
+        4.2,
+        3.8
+      ],
+      "angle": 0.0,
+      "description": "Disclosed asymmetric raw sensory reading"
+    },
+    {
+      "id": "PC-MOTION",
+      "seconds": 4,
+      "position": [
+        6.0,
+        5.0
+      ],
+      "angle": 0.0,
+      "description": "Disclosed free-space command and achieved-motion distinction"
+    },
+    {
+      "id": "PC-CONTACT",
+      "seconds": 6,
+      "position": [
+        0.65,
+        6.0
+      ],
+      "angle": 3.141592653589793,
+      "description": "Disclosed approach to a plain boundary wall"
+    },
+    {
+      "id": "PC-HOLD",
+      "seconds": 10,
+      "position": [
+        0.52,
+        6.0
+      ],
+      "angle": 3.141592653589793,
+      "description": "Disclosed near-wall gentle contact hold"
+    },
+    {
+      "id": "B1-PAIR-INITIAL",
+      "seconds": 30,
+      "position": [
+        5.5,
+        4.0
+      ],
+      "angle": -2.2110862764774284,
+      "description": "Single held-out, manufactured external-controller state; not a sampled newborn"
+    }
+  ],
+  "phase_history": "Reuse the existing lawful body-absent life-0 field cache. No new field history or phase. Phase reuse is a prior-knowledge limitation; do not assert an unfamiliar phase.",
+  "held_out_scope": "New complete body state and its raw interface have not been shown to the operator in preparation. General world knowledge and previous phase knowledge cannot be erased. Exposure declaration required before any future trial."
+}

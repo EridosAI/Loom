@@ -1,0 +1,123 @@
+{
+  "scope": "passive current records plus analytical distributions; zero world/native organism evolution",
+  "current_first90_records": [
+    {
+      "start": "FS-001",
+      "interval_seconds": 90,
+      "spontaneous": {
+        "mean": -0.002137180823695801,
+        "rms": 0.1848800713449827,
+        "mean_absolute": 0.1647840584448262,
+        "maximum_absolute": 0.330853410647648
+      },
+      "actual_command": {
+        "mean": -0.0021478867392300577,
+        "rms": 0.146892337009823,
+        "mean_absolute": 0.1312870973463019,
+        "maximum_absolute": 0.2658669011565798
+      },
+      "actual_effort_loss": 0.01181583876116717,
+      "actual_effort_rate": 0.0001312870973463019,
+      "basal_loss": 0.135,
+      "phase_noise_60s_saved_checkpoint_match": true
+    },
+    {
+      "start": "FS-002",
+      "interval_seconds": 90,
+      "spontaneous": {
+        "mean": -0.005451589806118097,
+        "rms": 0.18868155080785554,
+        "mean_absolute": 0.16772080641821818,
+        "maximum_absolute": 0.3382539622537163
+      },
+      "actual_command": {
+        "mean": -0.004179278159653388,
+        "rms": 0.1492738112970254,
+        "mean_absolute": 0.1329641955508919,
+        "maximum_absolute": 0.28314441222509046
+      },
+      "actual_effort_loss": 0.011966777599580272,
+      "actual_effort_rate": 0.00013296419555089192,
+      "basal_loss": 0.135,
+      "phase_noise_60s_saved_checkpoint_match": true
+    },
+    {
+      "start": "FS-003",
+      "interval_seconds": 90,
+      "spontaneous": {
+        "mean": 0.013543448523798437,
+        "rms": 0.18291511753928066,
+        "mean_absolute": 0.16288441836839226,
+        "maximum_absolute": 0.3490705225303291
+      },
+      "actual_command": {
+        "mean": 0.009990622021777204,
+        "rms": 0.1448608618752316,
+        "mean_absolute": 0.1292119555986962,
+        "maximum_absolute": 0.27976245798747146
+      },
+      "actual_effort_loss": 0.01162907600388266,
+      "actual_effort_rate": 0.00012921195559869624,
+      "basal_loss": 0.135,
+      "phase_noise_60s_saved_checkpoint_match": true
+    }
+  ],
+  "current_stationary": {
+    "spontaneous_bound": 0.35,
+    "noise_native_second_moment": 0.21307443491692887,
+    "spontaneous_rms": 0.1827039801131034,
+    "mean_absolute_approx": 0.16188971024938234,
+    "neutral_effort_rate_approx": 0.00012751981447682736,
+    "integration_qualification": "12 sign terms; omitted spontaneous tail <= 0.1*exp(-6); refresh phase quadrature at 0,.05,...,.45; proxy not actual command"
+  },
+  "M1": {
+    "spontaneous_bound": 0.35,
+    "stationary_spontaneous_rms": 0.18309928378410037,
+    "mean_absolute": 0.1576494180952913,
+    "neutral_effort_rate": 0.00012402067212724974,
+    "latent_sign_run_mean_common": 6.316029320659948,
+    "latent_sign_run_mean_differential": 4.4894991623042335
+  },
+  "M2": {
+    "spontaneous_bound": 0.35,
+    "stationary_spontaneous_rms_bounds": [
+      0.17500129785646104,
+      0.17517359530933602
+    ],
+    "mean_absolute_bounds": [
+      0.14953581038037966,
+      0.149714979082641
+    ],
+    "neutral_effort_rate_bounds": [
+      0.00011776380308664775,
+      0.00011790249804145638
+    ],
+    "birth_distribution_same_as_M1": true,
+    "mean_target_sign_bout_seconds": 16,
+    "qualification": "stationary renewal-boundary variance bounds propagated through exact native pre-update ages and uniform renewal durations; birth is a fresh renewal, not claimed stationary"
+  },
+  "proxy_definition": "instantaneous neutral command u=0.8*tanh(o); no direct/q/current; before existing 0.1s motor smoothing; not a world/effort forecast",
+  "resource": {
+    "completed_receipts": 59,
+    "wall_per_sim_seconds": {
+      "min": 0.3179383045864386,
+      "median": 0.3478387945099706,
+      "max": 1.0496519176411192
+    },
+    "bytes_per_sim_seconds": {
+      "min": 72781.54977318647,
+      "median": 75635.82216221077,
+      "max": 94612.586516227
+    },
+    "nine_by_90_wall_seconds": [
+      257.5300267150153,
+      281.74942355307616,
+      850.2180532893066
+    ],
+    "nine_by_90_primary_bytes": [
+      58953055.31628104,
+      61265015.95139072,
+      76636195.07814388
+    ]
+  }
+}

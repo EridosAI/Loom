@@ -1,0 +1,68 @@
+{
+  "status": "PASS \u2014 file-only audit",
+  "archive_payload_counts": {
+    "public": 19,
+    "privileged": 100
+  },
+  "exact_manifests": 6,
+  "null_execution_grants": 6,
+  "identical_paired_initial_state": true,
+  "only_pose_and_initial_raw_changed": true,
+  "fixture_difference_paths": {
+    "B1-PAIR-INITIAL.snapshot.json.gz": {
+      "engine_fields": [
+        "body",
+        "raw"
+      ],
+      "body_fields": [
+        "angle",
+        "position"
+      ]
+    },
+    "PC-CONTACT.snapshot.json.gz": {
+      "engine_fields": [
+        "body",
+        "raw"
+      ],
+      "body_fields": [
+        "position"
+      ]
+    },
+    "PC-HOLD.snapshot.json.gz": {
+      "engine_fields": [
+        "body",
+        "raw"
+      ],
+      "body_fields": [
+        "position"
+      ]
+    },
+    "PC-LR.snapshot.json.gz": {
+      "engine_fields": [
+        "body",
+        "raw"
+      ],
+      "body_fields": [
+        "angle",
+        "position"
+      ]
+    },
+    "PC-MOTION.snapshot.json.gz": {
+      "engine_fields": [
+        "body",
+        "raw"
+      ],
+      "body_fields": [
+        "angle",
+        "position"
+      ]
+    }
+  },
+  "protected_original_files_unchanged": 63,
+  "canonical_review_hash": "f5c81c5aa6c741887ab2fa16700b54516a01a622d16ac9ccb86295655a281883",
+  "public_exact_phase_and_heading_absent": true,
+  "public_snapshot_files_absent": true,
+  "simulation_steps": 0,
+  "controller_calls": 0,
+  "notes": "No research imports; archive/JSON/hash checks only. Public prose/JSON fields were also manually reviewed. No claim of owner-resistant secrecy."
+}

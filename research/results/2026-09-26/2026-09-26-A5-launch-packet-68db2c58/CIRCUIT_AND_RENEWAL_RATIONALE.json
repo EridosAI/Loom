@@ -1,0 +1,132 @@
+{
+  "method": "Static geometry, saved measurements and analytic source-law evaluation only. No dynamic trajectory, controller command or candidate trial.",
+  "source_centres": [
+    [
+      3,
+      3
+    ],
+    [
+      10,
+      3
+    ],
+    [
+      17,
+      3
+    ],
+    [
+      3,
+      10
+    ],
+    [
+      17,
+      10
+    ],
+    [
+      3,
+      17
+    ],
+    [
+      10,
+      17
+    ],
+    [
+      17,
+      17
+    ]
+  ],
+  "body_radius": 0.5,
+  "source_radius": 0.5,
+  "source_order": [
+    0,
+    1,
+    0,
+    1
+  ],
+  "nominal_body_contact_positions": [
+    [
+      4.0,
+      3.0
+    ],
+    [
+      9.0,
+      3.0
+    ]
+  ],
+  "nominal_body_centre_legs_metres": [
+    2.0,
+    5.0,
+    5.0,
+    5.0
+  ],
+  "nominal_total_path_metres": 17.0,
+  "mover_swept_rectangle": [
+    5.0,
+    15.0,
+    9.5,
+    10.5
+  ],
+  "nominal_bottom_route_surface_gap_to_mover_union": 6.0,
+  "nominal_bottom_wall_surface_gap": 2.5,
+  "renewal_tau_seconds": 400.0,
+  "capacity_per_source": 0.2,
+  "away_time_law_examples": {
+    "210": {
+      "restored_fraction_of_deficit": 0.40844463563318495,
+      "illustrative_A2_departure_stock": 0.035148459595822044,
+      "illustrative_unattended_return_stock": 0.10248118694977577,
+      "illustrative_renewal": 0.06733272735395374
+    },
+    "216": {
+      "restored_fraction_of_deficit": 0.4172517476260103,
+      "illustrative_A2_departure_stock": 0.035148459595822044,
+      "illustrative_unattended_return_stock": 0.10393305292830517,
+      "illustrative_renewal": 0.0687845933324831
+    },
+    "222": {
+      "restored_fraction_of_deficit": 0.425927738803564,
+      "illustrative_A2_departure_stock": 0.035148459595822044,
+      "illustrative_unattended_return_stock": 0.10536330343845794,
+      "illustrative_renewal": 0.07021484384263589
+    }
+  },
+  "A1_A2_initial_approach": {
+    "nominal_metres": 2.0,
+    "actual_contact_seconds": 6.31019048650431,
+    "nominal_metres_per_second": 0.3169476427498389
+  },
+  "A2_transfer_leg": {
+    "actual_release": 90.00000000000914,
+    "actual_arrival": 132.3764279535912,
+    "actual_seconds": 42.37642795358205,
+    "actual_expenditure": 0.07565364813787812,
+    "nominal_contact_to_contact_metres": 5.0,
+    "nominal_distance_per_elapsed_second": 0.1179901242614611
+  },
+  "A4_detour_arrival": {
+    "actual_sampled_metres": 7.750192603431225,
+    "actual_seconds": 23.43,
+    "sampled_metres_per_elapsed_second": 0.33078073424802495
+  },
+  "A2_source0_first_stage": {
+    "departure_stock": 0.035148459595822044,
+    "actual_gross_intake": 0.18886652837484535,
+    "actual_expenditure": 0.14879710305038218
+  },
+  "planned_horizon_seconds": 630.0,
+  "scheduled_dwell_windows_seconds": [
+    90.0,
+    150.0,
+    150.0,
+    150.0
+  ],
+  "separate_departure_windows_seconds": [
+    30.0,
+    30.0,
+    30.0
+  ],
+  "planned_contact_time_not_guaranteed": true,
+  "trial_trajectories": 0,
+  "two_source_maximum_total_renewal_per_second": 0.001,
+  "basal_expenditure_per_second": 0.0015,
+  "indefinite_viability_claim": false
+}

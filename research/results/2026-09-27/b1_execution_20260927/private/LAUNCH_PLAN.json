@@ -1,0 +1,27 @@
+{
+  "case": "B1-FULL-RAW",
+  "command": [
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "loom_commissioning.sensor_ui",
+    "--manifest",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_execution_20260927\\private\\B1-FULL-RAW.launch-manifest.json",
+    "--initial",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-regenerated-352f73ff\\B1_SEALED_EVALUATOR\\initial-states\\B1-PAIR-INITIAL.snapshot.json.gz",
+    "--output",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_execution_20260927\\private\\runs\\B1-FULL-RAW",
+    "--port",
+    "0"
+  ],
+  "cwd": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "maximum_invocations": 1,
+  "automatic_commands": false,
+  "authority_sha256": "2e338ae61dceaac3c3db0863f02cbccf0a9d98eb0842caf06c363207951e7c4c"
+}

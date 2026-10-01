@@ -1,0 +1,41 @@
+{
+  "status": "ALL CONTROLS CLOSED; REVIEW ADDENDUM RECORDED; B1 NOT AUTHORIZED OR EXECUTED",
+  "next_case": null,
+  "order": [
+    "PC-LR",
+    "PC-MOTION",
+    "PC-CONTACT",
+    "PC-HOLD"
+  ],
+  "cases": [
+    {
+      "case": "PC-LR",
+      "attempts": 2,
+      "status": "ATTEMPT 002 CLOSED / DEMONSTRATED; ATTEMPT 001 ADMINISTRATIVE CUTOFF PRESERVED"
+    },
+    {
+      "case": "PC-MOTION",
+      "attempts": 1,
+      "status": "CLOSED AT WALL CAP; DEMONSTRATED WITH GUIDANCE AND POST-CLOSURE EXPLANATION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "attempts": 1,
+      "status": "CLOSED / ONSET RECOGNITION DEMONSTRATED; ASSESSMENT CORRECTION RECORDED, ORIGINAL ERRORS PRESERVED"
+    },
+    {
+      "case": "PC-HOLD",
+      "attempts": 2,
+      "status": "ATTEMPT 001 TARGET NOT MET; AUTHORIZED ATTEMPT 002 DEMONSTRATED WITH PRIOR PRACTICE AND TIMING GUIDANCE"
+    }
+  ],
+  "live_services": 0,
+  "timers_started": 6,
+  "worlds_loaded": 6,
+  "simulation_steps": 790,
+  "controller_commands": 79,
+  "all_commands_must_be_Jason_choices": true,
+  "service_url": null,
+  "service_session_id": null,
+  "status_observed_utc": "2026-09-27T03:09:36.7083987+00:00"
+}

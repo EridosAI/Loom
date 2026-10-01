@@ -1,0 +1,925 @@
+{
+  "manufactured_record_manifests": 153,
+  "records": [
+    {
+      "path": "evidence/component-records/before-temp/test_old_duplicate_creates_ext0/old/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-old-duplicate",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_actual_dispatch_is_checke0/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_actual_dispatch_is_checke1/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_actual_dispatch_is_checke2/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_actual_dispatch_is_checke3/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_actual_dispatch_is_checke4/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_boundary_resume_counts_an0/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_boundary_resume_counts_an0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_boundary_resume_counts_an0/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_boundary_resume_counts_an1/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_boundary_resume_counts_an1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_boundary_resume_counts_an1/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_controller_hold_schedule0/hold/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-hold",
+      "duration_seconds": 0.1
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_dispatch_changed_between_0/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-captured-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_duplicate_packed_pending_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-packed-key",
+      "duration_seconds": 0.1
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_duration_guard0/cap/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-cap",
+      "duration_seconds": 0.01
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_final_boundary_resume_can0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-final-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_final_boundary_resume_can0/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-final-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_full_hold_cannot_cross_st0/crossing/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-crossing",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_H_duplicate_token0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_http_delayed_duplicate_an0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_http_egress_and_generic_e0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_I_running_overlap0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_io_failure_is_incomplete0/io/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-io",
+      "duration_seconds": 0.01
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_J_ended_irreversible0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_K_refresh_reconnect_inert0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re0/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re0/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re1/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re1/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re2/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re2/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_late_short_world_pause_re2/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_long_ceiling_endpoint_wit0/long-clock/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-long-clock",
+      "duration_seconds": 0.01
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_native_wave_noise_schedul0/large-clock-P/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-large-clock-P",
+      "duration_seconds": 0.01
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_native_wave_noise_schedul0/noise/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-noise",
+      "duration_seconds": 0.02
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_page_connection_closed_wh0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_partial_terminal_has_no_h0/terminal/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-terminal",
+      "duration_seconds": 0.1
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr0/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr0/second/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr1/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr1/second/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr2/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr2/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pause_resume_and_reconstr2/second/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_paused_inertness_E_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_paused_inertness_F_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_paused_inertness_G_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pending_mutation_before_a0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-persisted-held",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pending_mutation_before_a1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-persisted-held",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pending_mutation_before_a2/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-persisted-held",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_pending_mutation_before_a3/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-persisted-held",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_post_approval_constants_a0/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-live-spec",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_prepared_and_paused_guard0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-prepared",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_private_failure_retained_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_resume_binding_and_stage_0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume-execution",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_resume_binding_and_stage_0/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume-execution",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_route_and_resources_rejec0/correct/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-bound-route",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_same_physics_and_complete0/chemistry_hidden/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-identical-physics",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_same_physics_and_complete0/none/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-identical-physics",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_saved_decision_journal_re0/bad/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-record-continuity",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_saved_decision_journal_re0/good/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-record-continuity",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_saved_pending_boundary_pr0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_saved_pending_boundary_pr1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_saved_pending_boundary_pr2/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_saved_pending_boundary_pr3/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_saved_pending_boundary_pr4/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_stop_modes_end_without_re0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_stop_modes_end_without_re1/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_stop_modes_end_without_re2/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_stop_modes_end_without_re3/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_stop_modes_end_without_re4/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/PORTABLE_REGRESSION-temp/test_stop_modes_end_without_re5/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_actual_dispatch_is_checke0/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_actual_dispatch_is_checke1/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_actual_dispatch_is_checke2/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_actual_dispatch_is_checke3/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_actual_dispatch_is_checke4/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_boundary_resume_counts_an0/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_boundary_resume_counts_an0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_boundary_resume_counts_an0/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_boundary_resume_counts_an1/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_boundary_resume_counts_an1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_boundary_resume_counts_an1/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-corrected-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_controller_hold_schedule0/hold/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-hold",
+      "duration_seconds": 0.1
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_dispatch_changed_between_0/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-captured-dispatch",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_duplicate_packed_pending_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-packed-key",
+      "duration_seconds": 0.1
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_duration_guard0/cap/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-cap",
+      "duration_seconds": 0.01
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_final_boundary_resume_can0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-final-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_final_boundary_resume_can0/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-final-boundary",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_full_hold_cannot_cross_st0/crossing/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-crossing",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_H_duplicate_token0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_http_delayed_duplicate_an0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_http_egress_and_generic_e0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_I_running_overlap0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_io_failure_is_incomplete0/io/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-io",
+      "duration_seconds": 0.01
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_J_ended_irreversible0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_K_refresh_reconnect_inert0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re0/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re0/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re1/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re1/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re2/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re2/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_late_short_world_pause_re2/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-late-resume",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_long_ceiling_endpoint_wit0/long-clock/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-long-clock",
+      "duration_seconds": 0.01
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_native_wave_noise_schedul0/large-clock-P/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-large-clock-P",
+      "duration_seconds": 0.01
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_native_wave_noise_schedul0/noise/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-noise",
+      "duration_seconds": 0.02
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_page_connection_closed_wh0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_partial_terminal_has_no_h0/terminal/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-terminal",
+      "duration_seconds": 0.1
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr0/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr0/second/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr1/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr1/second/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr2/continuous/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr2/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pause_resume_and_reconstr2/second/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_paused_inertness_E_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_paused_inertness_F_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_paused_inertness_G_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pending_mutation_before_a0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-persisted-held",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pending_mutation_before_a1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-persisted-held",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pending_mutation_before_a2/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-persisted-held",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_pending_mutation_before_a3/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-persisted-held",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_post_approval_constants_a0/run/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-live-spec",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_prepared_and_paused_guard0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-prepared",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_private_failure_retained_0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_resume_binding_and_stage_0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume-execution",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_resume_binding_and_stage_0/resumed/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-resume-execution",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_route_and_resources_rejec0/correct/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-bound-route",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_same_physics_and_complete0/chemistry_hidden/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-identical-physics",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_same_physics_and_complete0/none/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-identical-physics",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_saved_decision_journal_re0/bad/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-record-continuity",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_saved_decision_journal_re0/good/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-record-continuity",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_saved_pending_boundary_pr0/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_saved_pending_boundary_pr1/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_saved_pending_boundary_pr2/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_saved_pending_boundary_pr3/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_saved_pending_boundary_pr4/first/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-saved-boundary-input",
+      "duration_seconds": 0.2
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_stop_modes_end_without_re0/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_stop_modes_end_without_re1/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_stop_modes_end_without_re2/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_stop_modes_end_without_re3/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_stop_modes_end_without_re4/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    },
+    {
+      "path": "evidence/component-records/SEALED_REGRESSION-temp/test_stop_modes_end_without_re5/record/manifest.json",
+      "purpose": "manufactured_fixture",
+      "case_id": "fixture-B1-component",
+      "duration_seconds": 0.3
+    }
+  ],
+  "commissioning_count": 0,
+  "scope": "Only delivered component-record manifests, plus preserved held null-grant metadata. This is not a universal negative about unrecorded external activity."
+}

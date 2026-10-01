@@ -1,0 +1,43 @@
+{
+  "source": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\portable\\developmental_ecology",
+  "apparatus_identity": {
+    "sha256": "2c626ab028e895a1a63dfecdaa7bb6b4666beb26984af90dee020db01c040536",
+    "files": {
+      "__init__.py": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+      "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+      "authority.py": "402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59",
+      "contract.py": "e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3",
+      "controllers.py": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+      "evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+      "initialization.py": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+      "runner.py": "a1c2764f0424b815b24e5c49496ba55eb9775757314fc88f6634dd41e3d3ba20",
+      "sensor.html": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a",
+      "sensor_ui.py": "20ab4d39502a1c262530512c4d0c6b4e41a1c76fb6c792f80d6e7c2098cb76f8",
+      "validators.py": "047696a36f08c8d7d631d4fb65444a56fc0f742059ca46d91c9879722ca74c43"
+    }
+  },
+  "authority_source_sha256": "402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59",
+  "rows": [
+    {
+      "fixture": "SYNTHETIC_duplicate-approved-execution_NO_EXECUTION.json",
+      "sha256": "b6efa768ee86703ab604118ea8f8e72d46070146ca1ac36535dc555e9cad2f51",
+      "authorization": {
+        "accepted": true
+      }
+    },
+    {
+      "fixture": "SYNTHETIC_duplicate-nested-waypoint_NO_EXECUTION.json",
+      "sha256": "7331d8ab7036f1bec1a8a995e994e52e7a08c65b3f08df6a9b69771eac3446e0",
+      "authorization": {
+        "accepted": true
+      }
+    }
+  ],
+  "exact_unambiguous_current_spec_accepted": true,
+  "engine_state_unchanged": true,
+  "native_steps": 0,
+  "Run_constructors": 0,
+  "prehistory_prepared": false,
+  "scope": "The exact two delivered prior raw files; synthetic approval-only controls."
+}

@@ -1,0 +1,658 @@
+{
+  "sources": [
+    {
+      "source_id": "SRC-118",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip",
+      "original_filename": "A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip",
+      "bytes": 29350238,
+      "sha256": "f8abb9adad900e80ee0b56c07a3068a4b5bc34a343dba580e360302b46c27d05",
+      "role": "derived-delivery-custody",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip",
+      "archive_member": null,
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-119",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/DELIVERY_RECEIPT.json",
+      "original_filename": "DELIVERY_RECEIPT.json",
+      "bytes": 2814,
+      "sha256": "b67e67d73b4d8af24814c958c815cdd7696399bbb3ab66b2a8321ded6e1f6adb",
+      "role": "derived-delivery-custody",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\DELIVERY_RECEIPT.json",
+      "archive_member": null,
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-120",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/README.md",
+      "original_filename": "README.md",
+      "bytes": 1769,
+      "sha256": "ea9c642516b507e3a9d2431eecc9810329ac0a0e621653fa9f4cde9820019004",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/README.md",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/README.md",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-121",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_READ_ONLY_REANALYSIS_REPORT.md",
+      "original_filename": "V3_READ_ONLY_REANALYSIS_REPORT.md",
+      "bytes": 6782,
+      "sha256": "adfc8131a6915f65b48c8301299087d7f418cf02b78b377353c9948e7b852e3a",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_READ_ONLY_REANALYSIS_REPORT.md",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_READ_ONLY_REANALYSIS_REPORT.md",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-122",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_RESULT_v1_1.json",
+      "original_filename": "V3_RESULT_v1_1.json",
+      "bytes": 2558354,
+      "sha256": "6a859637f430fb07d9eed835177df9c8077f42ff596e77cb0b09a7084f5289a5",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_RESULT_v1_1.json",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_RESULT_v1_1.json",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-123",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_TEST_RESULTS.json",
+      "original_filename": "V3_TEST_RESULTS.json",
+      "bytes": 3182,
+      "sha256": "525c50961076a398c21e851cd26a8efed26f41a8100fdc3426dd4952c167acdb",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_TEST_RESULTS.json",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_TEST_RESULTS.json",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-124",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_DATA_TEST_RESULTS.json",
+      "original_filename": "VIEWER_DATA_TEST_RESULTS.json",
+      "bytes": 1091,
+      "sha256": "554d289c9cd38a36c4403f0d58bf867579e3de50cce0589ee017d9326088d347",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_DATA_TEST_RESULTS.json",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_DATA_TEST_RESULTS.json",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-125",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_DATA_FLOW.md",
+      "original_filename": "VIEWER_DATA_FLOW.md",
+      "bytes": 8265,
+      "sha256": "c3d5a034ace14038c462023b1aec28aa597406ac13542eac6f56fe90a4121b29",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_DATA_FLOW.md",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_DATA_FLOW.md",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-126",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_VERIFICATION.md",
+      "original_filename": "VIEWER_VERIFICATION.md",
+      "bytes": 2692,
+      "sha256": "6559dd5b964e0c37947fb19bd28d96250b7d189a4de4e0fcba1898bd5c460345",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_VERIFICATION.md",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_VERIFICATION.md",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-127",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/CUSTODY_PROOF.json",
+      "original_filename": "CUSTODY_PROOF.json",
+      "bytes": 9632,
+      "sha256": "a78cee48ad56659c93670116aa58aa7032d0802996f0b2c0e488ec8ba3d0eedb",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/CUSTODY_PROOF.json",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/CUSTODY_PROOF.json",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-128",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/HASH_BEFORE.json",
+      "original_filename": "HASH_BEFORE.json",
+      "bytes": 8478,
+      "sha256": "9195e7ba366456c8c3ab8d111f5eb69263e28c24f37436b9c3966d1af059b3ab",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/HASH_BEFORE.json",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/HASH_BEFORE.json",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-129",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/HASH_AFTER.json",
+      "original_filename": "HASH_AFTER.json",
+      "bytes": 8478,
+      "sha256": "9195e7ba366456c8c3ab8d111f5eb69263e28c24f37436b9c3966d1af059b3ab",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/HASH_AFTER.json",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/HASH_AFTER.json",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-130",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/FILE_MANIFEST.json",
+      "original_filename": "FILE_MANIFEST.json",
+      "bytes": 8560,
+      "sha256": "9269f795f6cbac2bd3c2f748bad3667f39dbadbacad52868d3bc9e7145c4f95a",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/FILE_MANIFEST.json",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/FILE_MANIFEST.json",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-131",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/v3_checker_v1_1.py",
+      "original_filename": "v3_checker_v1_1.py",
+      "bytes": 12042,
+      "sha256": "3bf558f96205dbab0134a55a05af5ddccafc934841e778f8f5f765757463f6dc",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/v3_checker_v1_1.py",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/v3_checker_v1_1.py",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-132",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/index.html",
+      "original_filename": "index.html",
+      "bytes": 7474,
+      "sha256": "cfb48076eddfe8c7b5cc396602a818e9ec017bb64fb14dadcd6c94974ebf81e5",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/index.html",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/index.html",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-133",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/OPEN_A1_VIEWER.cmd",
+      "original_filename": "OPEN_A1_VIEWER.cmd",
+      "bytes": 459,
+      "sha256": "de9f09df28d7a84cc8236dd2ed991c22bdb34f7c6cf7224def3faa4dd5d733c6",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/OPEN_A1_VIEWER.cmd",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/OPEN_A1_VIEWER.cmd",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-134",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/viewer.js",
+      "original_filename": "viewer.js",
+      "bytes": 15561,
+      "sha256": "0da1f4fbf69bf932a90a9ff715daad5c0b91f616b382b63dacab8edf459bfb96",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/viewer.js",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/viewer.js",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-135",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/viewer_data.js",
+      "original_filename": "viewer_data.js",
+      "bytes": 20590167,
+      "sha256": "d9a9453d5396ab3141421285e95674fa167d80eb60c375ae38484a5a85b0014c",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/viewer_data.js",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/viewer_data.js",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-136",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/styles.css",
+      "original_filename": "styles.css",
+      "bytes": 3946,
+      "sha256": "330ab93f0edaf75f85ef51d0a6a2ecb09c4b42dbabf2ab917ae5f09dd7cb34e4",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/styles.css",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/styles.css",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    },
+    {
+      "source_id": "SRC-137",
+      "path": "90_SOURCES/p_a1_v3_reanalysis_viewer_2026-09-25_4e7b80c2/A1_READ_ONLY_REANALYSIS_VIEWER_v1/STATIC_VIEWER_VALIDATION.html",
+      "original_filename": "STATIC_VIEWER_VALIDATION.html",
+      "bytes": 4372,
+      "sha256": "f1cedbeaf743a0b5e329469749d807babd1a49efb211c99b922fa40acc1a092d",
+      "role": "derived-read-only-analysis-and-viewer-source",
+      "prepared": "2026-09-25",
+      "stated_author": "Supplied derived analysis/viewer; exact assistant model/backend not stated in report",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip::A1_READ_ONLY_REANALYSIS_VIEWER_v1/STATIC_VIEWER_VALIDATION.html",
+      "archive_member": "A1_READ_ONLY_REANALYSIS_VIEWER_v1/STATIC_VIEWER_VALIDATION.html",
+      "authority": "Jason requests registration of completed reanalysis/viewer only; no new run, replay or scientific conclusion",
+      "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "reviewed_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+      "review_note": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/A1_V3_REANALYSIS_AND_VIEWER_CONTINUATION.md",
+      "record": "50_SESSIONS/2026-09-25-v3-viewer-intake-4e7b80c2/INTAKE_RECORD.md",
+      "continues": "50_SESSIONS/2026-09-25-first-a1-evidence-intake-6ad829e4/FIRST_A1_COMMISSIONING_EVIDENCE_RECORD.md",
+      "notes": "Complete original package tree preserved byte-for-byte; all remaining payload identities are in FILE_MANIFEST.json. Original A1 and failed V3 remain unchanged."
+    }
+  ],
+  "verification": {
+    "incoming_zip": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-25-A1-read-only-reanalysis-viewer-v1\\A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip",
+    "zip_bytes": 29350238,
+    "zip_sha256": "f8abb9adad900e80ee0b56c07a3068a4b5bc34a343dba580e360302b46c27d05",
+    "manifest_payloads_verified": 53,
+    "archive_members": 54,
+    "crc_passed": true,
+    "all_unpacked_inbox_members_match_zip": true,
+    "original_A1_zip_matches_registered_source": true,
+    "original_A1_zip_sha256": "f37dfec92288fbe8a650b00eed611d086a3ece3b280292e95b891e371cc0d37f",
+    "historical_V3_copies_verified": {
+      "read_results.py": "1a17768261b606cbaed0258efad42ab3b1719f17444715b23644816461ba5e21",
+      "V3_BOUNDARY_ERROR.json": "03dab60b31d45eb7aae2963a6a8feac8ef7377e00538bab4e2e6caac1035fc34",
+      "V3_POST_CHECK_LIMITATION.md": "f5f10c5523eaac9aa7e0fee9e155aedbb89c186e949cc86186aceecda5e1ec3a",
+      "V3_COUNT_FINDING.json": "40c64c1282db57142caea8115ecb0734d42041841e8265aa47c2cd90b85e0bad",
+      "A1_RESULT_SUMMARY.json": "21e4d9e316cb7d611065aca9b1ec27013c74c42a7218a9d4cd1b7d18f668088d"
+    },
+    "hash_before_after_byte_identical": true,
+    "source_execution_authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+    "v3_checker_sha256": "3bf558f96205dbab0134a55a05af5ddccafc934841e778f8f5f765757463f6dc",
+    "recorded_v3_tests_passed": 20,
+    "recorded_viewer_data_checks_passed": 14,
+    "tests_or_analysis_rerun": false,
+    "viewer_launched": false,
+    "scientific_execution": false,
+    "git_operations": false,
+    "source_conflicts": []
+  },
+  "all_preserved_batch_files": {
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1.zip": {
+      "bytes": 29350238,
+      "sha256": "f8abb9adad900e80ee0b56c07a3068a4b5bc34a343dba580e360302b46c27d05"
+    },
+    "DELIVERY_RECEIPT.json": {
+      "bytes": 2814,
+      "sha256": "b67e67d73b4d8af24814c958c815cdd7696399bbb3ab66b2a8321ded6e1f6adb"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/ANALYSIS_RUNTIME.json": {
+      "bytes": 575,
+      "sha256": "40c07784a4e4e0d4806320bba149064eec88d2813b1a59b4ad3abf9233a9ee74"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/BROWSER_VERIFICATION.json": {
+      "bytes": 760,
+      "sha256": "1b6185d0b4a66b0b044fa1919a68310e69ef1fe35eb817c14a92e2b2dd211105"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/build_viewer_data.py": {
+      "bytes": 7075,
+      "sha256": "962d90bb3f637dcc26c939fe1046d769449b47dc01e6b8722cd665e49f84fcd7"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/CUSTODY_PROOF.json": {
+      "bytes": 9632,
+      "sha256": "a78cee48ad56659c93670116aa58aa7032d0802996f0b2c0e488ec8ba3d0eedb"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/evidence.py": {
+      "bytes": 3801,
+      "sha256": "e82d4b72b796ea31c16984a9a7d57444da900079a86ee1d74df8f06b58e0bd7a"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/FILE_MANIFEST.json": {
+      "bytes": 8560,
+      "sha256": "9269f795f6cbac2bd3c2f748bad3667f39dbadbacad52868d3bc9e7145c4f95a"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/HASH_AFTER.json": {
+      "bytes": 8478,
+      "sha256": "9195e7ba366456c8c3ab8d111f5eb69263e28c24f37436b9c3966d1af059b3ab"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/HASH_BEFORE.json": {
+      "bytes": 8478,
+      "sha256": "9195e7ba366456c8c3ab8d111f5eb69263e28c24f37436b9c3966d1af059b3ab"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/index.html": {
+      "bytes": 7474,
+      "sha256": "cfb48076eddfe8c7b5cc396602a818e9ec017bb64fb14dadcd6c94974ebf81e5"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/OPEN_A1_VIEWER.cmd": {
+      "bytes": 459,
+      "sha256": "de9f09df28d7a84cc8236dd2ed991c22bdb34f7c6cf7224def3faa4dd5d733c6"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/package_derived.py": {
+      "bytes": 10484,
+      "sha256": "d8d38bbc97ec0066a75bdaa751eecec8cee46ad2e1cf517741ad7ab9b2505a27"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/README.md": {
+      "bytes": 1769,
+      "sha256": "ea9c642516b507e3a9d2431eecc9810329ac0a0e621653fa9f4cde9820019004"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/READ_ONLY_REQUEST.txt": {
+      "bytes": 10235,
+      "sha256": "51ff3d984816c1a68fabe8a0d38dddd23725e669e36d3594df4bcb3f1c898401"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/REPRODUCTION_CHECK.json": {
+      "bytes": 271,
+      "sha256": "4eb281de08b51ffb3a1b88e9973a6ea92b14d90ab5f8a85a126f05f88cb6db1b"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/serve_readonly.py": {
+      "bytes": 1941,
+      "sha256": "fa3b3a94811be655b3c06d695d549b00fff392723642cd02c17da013dfb9109f"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/STATIC_VIEWER_VALIDATION.html": {
+      "bytes": 4372,
+      "sha256": "f1cedbeaf743a0b5e329469749d807babd1a49efb211c99b922fa40acc1a092d"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/styles.css": {
+      "bytes": 3946,
+      "sha256": "330ab93f0edaf75f85ef51d0a6a2ecb09c4b42dbabf2ab917ae5f09dd7cb34e4"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/test_v3_v1_1.py": {
+      "bytes": 3435,
+      "sha256": "79cb53aa919200216c493ea2df05e513d4083762eef21da6edf75e9e4e8c7c3f"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/test_viewer_data.py": {
+      "bytes": 3808,
+      "sha256": "3c9c5f6fdc108b01899a1d7a8bffc876e35ec409580241e5cd74490d5a9dec78"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/v3_checker_v1_1.py": {
+      "bytes": 12042,
+      "sha256": "3bf558f96205dbab0134a55a05af5ddccafc934841e778f8f5f765757463f6dc"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_READ_ONLY_REANALYSIS_REPORT.md": {
+      "bytes": 6782,
+      "sha256": "adfc8131a6915f65b48c8301299087d7f418cf02b78b377353c9948e7b852e3a"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_RESULT_v1_1.json": {
+      "bytes": 2558354,
+      "sha256": "6a859637f430fb07d9eed835177df9c8077f42ff596e77cb0b09a7084f5289a5"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/V3_TEST_RESULTS.json": {
+      "bytes": 3182,
+      "sha256": "525c50961076a398c21e851cd26a8efed26f41a8100fdc3426dd4952c167acdb"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/verify_preview.py": {
+      "bytes": 2563,
+      "sha256": "d0ef401cf981867f605d8bf871b1bd945507cc0828df416f5c334613aca6772d"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/viewer.js": {
+      "bytes": 15561,
+      "sha256": "0da1f4fbf69bf932a90a9ff715daad5c0b91f616b382b63dacab8edf459bfb96"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/viewer_data.js": {
+      "bytes": 20590167,
+      "sha256": "d9a9453d5396ab3141421285e95674fa167d80eb60c375ae38484a5a85b0014c"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_DATA_FLOW.md": {
+      "bytes": 8265,
+      "sha256": "c3d5a034ace14038c462023b1aec28aa597406ac13542eac6f56fe90a4121b29"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_DATA_TEST_RESULTS.json": {
+      "bytes": 1091,
+      "sha256": "554d289c9cd38a36c4403f0d58bf867579e3de50cce0589ee017d9326088d347"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_EXTRACTION.json": {
+      "bytes": 1587,
+      "sha256": "3ef202b33e595ed26a72a7828753faa749ab1c24bea0e9d94c1f9c0e6d5573db"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/VIEWER_VERIFICATION.md": {
+      "bytes": 2692,
+      "sha256": "6559dd5b964e0c37947fb19bd28d96250b7d189a4de4e0fcba1898bd5c460345"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/FIRST_A1_COMMISSIONING_REPORT.md": {
+      "bytes": 8616,
+      "sha256": "b277198d38c925142822e98cd0e37fe8534a425183ae6d53fee5d1407078c9f8"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/FIRST_A1_COMMISSIONING_RESULT.zip": {
+      "bytes": 24287600,
+      "sha256": "f37dfec92288fbe8a650b00eed611d086a3ece3b280292e95b891e371cc0d37f"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/PROCEDURES.md": {
+      "bytes": 16548,
+      "sha256": "779bd99ad396019c19aa6421850a1a9613eb84b0ac7a471455a6b9d2dc3ed065"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md": {
+      "bytes": 49871,
+      "sha256": "d25c9829d799fd497f1598ea64afb448a3558fd886105eacf737c1cb8bbae42c"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/screenshots/01-initial-screen.png": {
+      "bytes": 76178,
+      "sha256": "5548e4e3f7db71eb83532333fa88b5b3e82734b3a4504827ca30adb6e6aac2ca"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/screenshots/02-first-contact-screen.png": {
+      "bytes": 80052,
+      "sha256": "554f1c37c177da3afbe956ded1a3e5dc5c89b0d0d5f58456263c4b13d7e3a56e"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/screenshots/03-positive-window-screen.png": {
+      "bytes": 76125,
+      "sha256": "46ce434d81d85289f04300df2a622993c7e08b1a433361d6442bd0a880b42dd6"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/screenshots/04-administrative-stop-screen.png": {
+      "bytes": 81378,
+      "sha256": "3fbff10b29ae550474eb77acb4b0fe3894f750bb1c707aa069ed98e70a57f8d4"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/screenshots/05-force-integrity-detail.png": {
+      "bytes": 77971,
+      "sha256": "0c5d2450713267adf4be5beb1c17888e746f20ffda6b9d0f0a0a25d23a57ce18"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/screenshots/browser-control-checks.json": {
+      "bytes": 896,
+      "sha256": "58b0459d6aa25d0141b31aec4975461fa28e64f8841370ad2a77c9dad3eac123"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/screenshots/browser-states.json": {
+      "bytes": 10358,
+      "sha256": "3bc0817135db2cdb4fb086859f6a61c2e1dfd3bdce0a073144ebce111c1ab336"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/historical-v3/A1_RESULT_SUMMARY.json": {
+      "bytes": 4020,
+      "sha256": "21e4d9e316cb7d611065aca9b1ec27013c74c42a7218a9d4cd1b7d18f668088d"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/historical-v3/read_results.py": {
+      "bytes": 11898,
+      "sha256": "1a17768261b606cbaed0258efad42ab3b1719f17444715b23644816461ba5e21"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/historical-v3/V3_BOUNDARY_ERROR.json": {
+      "bytes": 616,
+      "sha256": "03dab60b31d45eb7aae2963a6a8feac8ef7377e00538bab4e2e6caac1035fc34"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/historical-v3/V3_COUNT_FINDING.json": {
+      "bytes": 1891,
+      "sha256": "40c64c1282db57142caea8115ecb0734d42041841e8265aa47c2cd90b85e0bad"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/historical-v3/V3_POST_CHECK_LIMITATION.md": {
+      "bytes": 1606,
+      "sha256": "f5f10c5523eaac9aa7e0fee9e155aedbb89c186e949cc86186aceecda5e1ec3a"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/reviewed-runtime/configuration.json": {
+      "bytes": 3445,
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/reviewed-runtime/loom_commissioning/adapter.py": {
+      "bytes": 6032,
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/reviewed-runtime/loom_commissioning/controllers.py": {
+      "bytes": 7600,
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/reviewed-runtime/loom_commissioning/diagnostics.py": {
+      "bytes": 7466,
+      "sha256": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/reviewed-runtime/loom_commissioning/runner.py": {
+      "bytes": 18123,
+      "sha256": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/reviewed-runtime/loom_p/geometry.py": {
+      "bytes": 8616,
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/reviewed-runtime/loom_p/physics.py": {
+      "bytes": 19333,
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783"
+    },
+    "A1_READ_ONLY_REANALYSIS_VIEWER_v1/references/reviewed-runtime/loom_p/records.py": {
+      "bytes": 7470,
+      "sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e"
+    }
+  }
+}

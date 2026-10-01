@@ -1,0 +1,48 @@
+{
+  "profile": {
+    "exclusive_seconds": {
+      "other_harness": 0.02550920215435326,
+      "validation_accounting": 0.03041070664767176,
+      "hashing_binding": 0.1687219007872045,
+      "filesystem_io": 0.09170519828330725,
+      "serialization": 3.5872707803500816,
+      "state_copy": 0.2531983850058168,
+      "body_contact_viability": 0.018395403865724802,
+      "compression": 0.24967040226329118,
+      "snapshot_checkpoint": 0.0005921998526901007,
+      "recorder_writes": 0.001646400080062449,
+      "P_neural": 0.04269499168731272,
+      "chemical_field": 0.032559697167016566,
+      "sensor_computation": 0.03189809725154191,
+      "observer_diagnostics": 0.0024187000235542655,
+      "detached_D5": 0.0006400004494935274
+    },
+    "callback_seconds": 5.224731434136629,
+    "profiled_wall_seconds": 9.76207269995939,
+    "events": 10928367,
+    "warning": "Context-attributed measured execution excludes callback time; profiling perturbs throughput. Unprofiled runs determine speed."
+  },
+  "wall_seconds": 9.762019999907352,
+  "simulated_seconds": 0.20000000000000004,
+  "native_steps": 20,
+  "waves": 1,
+  "memory": {
+    "peak_working_set_bytes": 89714688,
+    "working_set_bytes": 71057408,
+    "peak_pagefile_bytes": 1650503680
+  },
+  "bytes_by_file": {
+    "controller.jsonl.gz": 37,
+    "diagnostics.jsonl.gz": 462843,
+    "events.jsonl.gz": 1967,
+    "final.restart.json.gz": 773711,
+    "initial.restart.json.gz": 128569,
+    "manifest.json": 7879,
+    "native.jsonl.gz": 357810,
+    "scientific_observations.jsonl.gz": 50,
+    "sensor-display.json": 11963,
+    "sensor.jsonl.gz": 5091,
+    "wave.jsonl.gz": 28801
+  },
+  "no_scientific_outcome_analysis": true
+}

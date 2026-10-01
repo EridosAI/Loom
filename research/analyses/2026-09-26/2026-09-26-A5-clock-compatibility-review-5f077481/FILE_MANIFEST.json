@@ -1,0 +1,218 @@
+{
+  "schema": "diagnosis-review-file-manifest-v1",
+  "execution_authority": false,
+  "files": {
+    "A5_CLOCK_COMPATIBILITY_REVIEW.md": {
+      "sha256": "c226073d361e17d7f2b7cd788a6826c9982f91e8f745b559641a1f21b58e6518",
+      "bytes": 33651
+    },
+    "ARITHMETIC_DETAIL.json": {
+      "sha256": "87fb92596a46cd9670654c56c2835568e342c9850d284af813204f0dc0ba63c7",
+      "bytes": 3059
+    },
+    "CLOCK_HISTORY.json": {
+      "sha256": "561de0a5d1dc10acd747ba10bf81e7f695e43ce85157a35202402ec3e7bb2051",
+      "bytes": 3571
+    },
+    "diagnose_clock.py": {
+      "sha256": "9db0f050a98f046cd746334834321c6773a35e1d548817e8f27303190a00d76e",
+      "bytes": 18635
+    },
+    "DIAGNOSTIC_RESULTS.json": {
+      "sha256": "0fa3ffe7614d4c88911693172559f542c588c9f15a17a1a2aedc778c627481ac",
+      "bytes": 44384
+    },
+    "FINAL_VERIFICATION.json": {
+      "sha256": "2cd41fe6a577ed68cc4d96bd91e67e2b10f4d79d2668d0a7007ee9067f6894f1",
+      "bytes": 979
+    },
+    "PRESERVATION.json": {
+      "sha256": "179add904b7bb1de1fa5dc02fd48fad324c9043f9cb6878dc5f57a1a249ca85d",
+      "bytes": 431
+    },
+    "README.md": {
+      "sha256": "8274b7b3b0da89d25994f0dda69103eac5ac48caf7fafb61bb2184826561128c",
+      "bytes": 2850
+    },
+    "REFERENCE_MANIFEST.json": {
+      "sha256": "3f115aa379d554632d36388d7176e84bf78d91e2fd271b5be35abdbc8a5431e0",
+      "bytes": 14114
+    },
+    "references/held_A5_reference/A5_MANIFEST.json": {
+      "sha256": "bb4c8584e368583b81a3916ee12944fd807ee12fbf0d3ab803bfa9bd51fd445a",
+      "bytes": 12924
+    },
+    "references/held_A5_reference/CLOCK_AUDIT.json": {
+      "sha256": "36c2e6c1afda6ec6b174302471e1fe5a55a26d3d931b52ae4ed429890689eab4",
+      "bytes": 12494
+    },
+    "references/held_A5_reference/CODE_AND_RUNTIME_IDENTITIES.json": {
+      "sha256": "9d8aae281a20de38c41bfc691e5d0e13b324408ecffc4bc99b1bfb1da21178d9",
+      "bytes": 4513
+    },
+    "references/held_A5_reference/OPEN_ISSUE_A5_CLOCK.md": {
+      "sha256": "ae408222f3c2b9f32db15a5b276cb0b4fb78c2324ebd7b05d2dfa683304b6fc4",
+      "bytes": 3807
+    },
+    "references/held_A5_reference/README.md": {
+      "sha256": "c123c13bcfb9b9b4e9de2a87ff61bc4341b10baa640cf48a794549e0180f3831",
+      "bytes": 5222
+    },
+    "references/instrument/configuration.json": {
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+      "bytes": 3445
+    },
+    "references/instrument/loom_commissioning/__init__.py": {
+      "sha256": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+      "bytes": 81
+    },
+    "references/instrument/loom_commissioning/adapter.py": {
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+      "bytes": 6032
+    },
+    "references/instrument/loom_commissioning/authority.py": {
+      "sha256": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca",
+      "bytes": 10790
+    },
+    "references/instrument/loom_commissioning/contract.py": {
+      "sha256": "e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3",
+      "bytes": 7199
+    },
+    "references/instrument/loom_commissioning/controllers.py": {
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "bytes": 7600
+    },
+    "references/instrument/loom_commissioning/diagnostics.py": {
+      "sha256": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+      "bytes": 7466
+    },
+    "references/instrument/loom_commissioning/evaluation.py": {
+      "sha256": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+      "bytes": 5907
+    },
+    "references/instrument/loom_commissioning/initialization.py": {
+      "sha256": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+      "bytes": 1299
+    },
+    "references/instrument/loom_commissioning/pending.py": {
+      "sha256": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8",
+      "bytes": 6756
+    },
+    "references/instrument/loom_commissioning/runner.py": {
+      "sha256": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57",
+      "bytes": 18123
+    },
+    "references/instrument/loom_commissioning/sensor_ui.py": {
+      "sha256": "b5596ad3aff664df951d63ba2311e232ff483de6c7dcc8ac446b0c240868572e",
+      "bytes": 3685
+    },
+    "references/instrument/loom_commissioning/validators.py": {
+      "sha256": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a",
+      "bytes": 8285
+    },
+    "references/instrument/loom_p/__init__.py": {
+      "sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+      "bytes": 99
+    },
+    "references/instrument/loom_p/chemistry.py": {
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "bytes": 4565
+    },
+    "references/instrument/loom_p/diagnostics.py": {
+      "sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+      "bytes": 4887
+    },
+    "references/instrument/loom_p/engine.py": {
+      "sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "bytes": 9957
+    },
+    "references/instrument/loom_p/geometry.py": {
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "bytes": 8616
+    },
+    "references/instrument/loom_p/inspector.py": {
+      "sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+      "bytes": 20150
+    },
+    "references/instrument/loom_p/neural.py": {
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "bytes": 15195
+    },
+    "references/instrument/loom_p/physics.py": {
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+      "bytes": 19333
+    },
+    "references/instrument/loom_p/prehistory.py": {
+      "sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+      "bytes": 6513
+    },
+    "references/instrument/loom_p/reconstruction.py": {
+      "sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+      "bytes": 1879
+    },
+    "references/instrument/loom_p/records.py": {
+      "sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+      "bytes": 7470
+    },
+    "references/instrument/loom_p/schema.py": {
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "bytes": 7190
+    },
+    "references/instrument/loom_p/smokes.py": {
+      "sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b",
+      "bytes": 5575
+    },
+    "references/instrument/requirements-lock.txt": {
+      "sha256": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6",
+      "bytes": 129
+    },
+    "references/prior_reviews/CORRECTION_REPORT.md": {
+      "sha256": "aea072288c3d1ca5d952ff34df66d59a57902621129a155c55319a576845a29f",
+      "bytes": 13638
+    },
+    "references/prior_reviews/FINAL_CORRECTION_REPORT.md": {
+      "sha256": "2cb6deb751bd5abd40b67734cbbdb55d73a2b3edf9301b4a9f39e2b65d8bdb86",
+      "bytes": 16654
+    },
+    "references/prior_reviews/INDEPENDENT_CLOCK_REVIEW.md": {
+      "sha256": "54202595f48b4859ca0c0ffaee9e910647b04dd5bd1b51dddd470ec75d8bf57a",
+      "bytes": 12489
+    },
+    "references/prior_reviews/LOOM_P_FINAL_APPARATUS_CORRECTION_REVIEW.md": {
+      "sha256": "2c9516b3cac596fffd7996cdeba9b983dfca5604d0c0b50b2113113f55d287e2",
+      "bytes": 33213
+    },
+    "references/prior_reviews/LOOM_P_FINAL_MECHANICAL_CLOSURE_REVIEW.md": {
+      "sha256": "e5c658a728ccd72643c27eae8b81b5d2ef5bdfc6b0c845fd9cbda6d6a3903756",
+      "bytes": 26291
+    },
+    "references/prior_reviews/RUNNER_AUTHORITY_CONTROLLER_REVIEW.md": {
+      "sha256": "dfc6b3d6e31d651dcf8609b14339f7a5c0697c88f18354d2b1c3bc860fb45fd2",
+      "bytes": 14426
+    },
+    "references/tests/fixtures/review-boundary-input.json": {
+      "sha256": "c6135a3d1c834991142bb38fd91db55ae1af83f2a3de7781ee5ba49f3df41771",
+      "bytes": 3766
+    },
+    "references/tests/test_apparatus.py": {
+      "sha256": "8cc322b9ad3dc62fa036a351306e66299db94c7c99a51c2b2beb4e8bd35d178e",
+      "bytes": 14909
+    },
+    "references/tests/test_corrections.py": {
+      "sha256": "554b65f2b181ea4a40bef2b169bf1fa9905488a16af3bc13e6c1629565eae6ec",
+      "bytes": 12065
+    },
+    "references/tests/test_final_corrections.py": {
+      "sha256": "66ddfca0cc17f088054e7eb2b1826c31e07cd433d00117e7a783e68f7ba23877",
+      "bytes": 15375
+    },
+    "SOURCE_IDENTITIES_AFTER.json": {
+      "sha256": "25008d592209595b0df1be128b17fe8c2cefc15f57d4733ccb891058e3e7d85b",
+      "bytes": 72642
+    },
+    "SOURCE_IDENTITIES_BEFORE.json": {
+      "sha256": "25008d592209595b0df1be128b17fe8c2cefc15f57d4733ccb891058e3e7d85b",
+      "bytes": 72642
+    }
+  }
+}

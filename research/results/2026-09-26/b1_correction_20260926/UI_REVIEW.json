@@ -1,0 +1,24 @@
+{
+  "kind": "synthetic browser appearance and interaction; no world/Engine/controller",
+  "observed_html_sha256": "db30b0fe1216adce0b3d8466a801c99dfd0d71bb13f188432017c37d9d131f49",
+  "final_html_sha256": "806221de1db825a72eaf8e5533553ff97cff11d30c4a7251cf517a128bcbcf9b",
+  "actual_browser": "Codex in-app browser, temporary local tab",
+  "invented_history": true,
+  "fixed_simulated_time": 0.4,
+  "observations": [
+    "PREPARED, command disabled",
+    "Start -> PAUSED without time change",
+    "double click -> one synthetic POST; RUNNING while delayed response",
+    "return PAUSED, one fake command only",
+    "refresh -> PAUSED with one fake command",
+    "End -> ENDED with disabled controls"
+  ],
+  "late_change": "Fast second-click and held-key suppression added after direct browser inspection; covered in final detached Node DOM test.",
+  "screenshot_saved": false,
+  "synthetic_server_final_receipt_saved": false,
+  "temporary_tab_closed": true,
+  "temporary_server_stopped": true,
+  "loopback_port_closed_verified": true,
+  "commissioning_or_positive_control_run": false,
+  "limits": "Synthetic transport is not physical integration or human competence evidence; direct inspection and final automated DOM checks are distinct."
+}

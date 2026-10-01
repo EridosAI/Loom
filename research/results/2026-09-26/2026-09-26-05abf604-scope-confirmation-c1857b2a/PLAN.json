@@ -1,0 +1,133 @@
+{
+  "session": "50_SESSIONS/2026-09-26-05abf604-scope-confirmation-c1857b2a",
+  "record": "50_SESSIONS/2026-09-26-05abf604-scope-confirmation-c1857b2a/APPARATUS_REVIEW_SCOPE_CONFIRMATION.md",
+  "before": {
+    "00_RESEARCH_MAP.md": {
+      "bytes": 23181,
+      "sha256": "2be7770abad8caf8c384dbbfafb64ef0b3156e8b5212761e75fb13252f8e27c1"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "bytes": 25519,
+      "sha256": "c21f5d0819eb0eaff95b5d0853267b8c6a0cc1aa6c1b0475e7585d82f2cfd971"
+    }
+  },
+  "protected": {
+    "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip": "32c16dbf33ac368f4016b42b7c2b4ada355860e5541c5223ce3f163577d66006",
+    "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/LOOM_P_INDEPENDENT_APPARATUS_FIDELITY_REVIEW.md": "d315eaf57c2b25fc8bc1b0b7e2e60d55d926634791e05033c23a8ffedec03c08",
+    "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/REVIEW_RECEIPT.json": "90f8e3c9f966ef20f9ef9c1766e303d47a40267102e8caec2370c3e691b0a4ea",
+    "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/FILE_MANIFEST.json": "786eafd33c35fba5505aafc37f98e55ec00543a8f821af0364a19d2e7cd4a144",
+    "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/README_INTAKE.md": "cab079ab3306ed48aaab4fc1861bae1d68a1ac61488c45585fa392e1cd2e441f",
+    "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/REPRODUCTION_COMMANDS.md": "532b66fcd0757c1acb434c157b70742673ac983789d74b55468bc30e7bc1d965",
+    "30_REVIEWS/REVIEW-P-APPARATUS-INDEPENDENT-05abf604-2026-09-24-b92e45a7.md": "2e44bbf5cb7bd4e6901c1fd82b6c27c52614b2a4cd602e1ed153e42fc6e270bf",
+    "30_REVIEWS/REVIEW-P-APPARATUS-MECHANICAL-CLOSURE-5f077481-2026-09-25-c84f219a.md": "8374f394afb123a6b86ebf03fd64e4b586909ddd17068dcadb844e77113abdcd",
+    "50_SESSIONS/2026-09-26-a3-evidence-intake-7c42a9d1/A3_COMMISSIONING_EVIDENCE_RECORD.md": "4d8d6b69dc8f73941b82f2263a311fe9ad1d52c968686e8ed22011993e843530",
+    "SOURCE_CATALOG.json": "c8f4213d0d6fb31459fe6250ca4b700f81efc5710a8c4119d81be4a0e963b377",
+    "SOURCE_REGISTER.md": "9a7d91533c583eb884f7251400dc74c94dd047842178a9fbb0dcbc7cfadfd6e5",
+    "AGENTS.md": "8e06acda7de0ddb647beb8563c1650d92653b88669ba095a38c12c4ff355e1e8"
+  },
+  "sources": [
+    {
+      "source_id": "SRC-077",
+      "path": "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip",
+      "original_filename": "Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip",
+      "bytes": 7227837,
+      "sha256": "32c16dbf33ac368f4016b42b7c2b4ada355860e5541c5223ce3f163577d66006",
+      "role": "independent-apparatus-review-delivery-archive",
+      "prepared": "2026-09-24",
+      "stated_author": "Independent reviewer; exact model/backend not stated in main review/receipt",
+      "authority": "Independent apparatus engineering review, registered under Jason’s explicit status instruction; not commissioning or repair authority",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24_P_Independent_Apparatus_Review\\Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip",
+      "reviewed_checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "review_note": "30_REVIEWS/REVIEW-P-APPARATUS-INDEPENDENT-05abf604-2026-09-24-b92e45a7.md",
+      "record": "50_SESSIONS/2026-09-24-p-independent-apparatus-intake-b92e45a7/INTAKE_RECORD.md",
+      "notes": "Original bytes preserved. User blocker A1 maps to source A-R1; user blocker A2 maps to source A-R2. Other reviewed dispositions unchanged."
+    },
+    {
+      "source_id": "SRC-078",
+      "path": "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/LOOM_P_INDEPENDENT_APPARATUS_FIDELITY_REVIEW.md",
+      "original_filename": "LOOM_P_INDEPENDENT_APPARATUS_FIDELITY_REVIEW.md",
+      "bytes": 39419,
+      "sha256": "d315eaf57c2b25fc8bc1b0b7e2e60d55d926634791e05033c23a8ffedec03c08",
+      "role": "independent-apparatus-fidelity-review",
+      "prepared": "2026-09-24",
+      "stated_author": "Independent reviewer; exact model/backend not stated in main review/receipt",
+      "authority": "Independent apparatus engineering review, registered under Jason’s explicit status instruction; not commissioning or repair authority",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24_P_Independent_Apparatus_Review\\Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip::LOOM_P_INDEPENDENT_APPARATUS_FIDELITY_REVIEW.md",
+      "reviewed_checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "review_note": "30_REVIEWS/REVIEW-P-APPARATUS-INDEPENDENT-05abf604-2026-09-24-b92e45a7.md",
+      "record": "50_SESSIONS/2026-09-24-p-independent-apparatus-intake-b92e45a7/INTAKE_RECORD.md",
+      "notes": "Original bytes preserved. User blocker A1 maps to source A-R1; user blocker A2 maps to source A-R2. Other reviewed dispositions unchanged."
+    },
+    {
+      "source_id": "SRC-079",
+      "path": "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/REVIEW_RECEIPT.json",
+      "original_filename": "REVIEW_RECEIPT.json",
+      "bytes": 1818,
+      "sha256": "90f8e3c9f966ef20f9ef9c1766e303d47a40267102e8caec2370c3e691b0a4ea",
+      "role": "independent-review-custody-metadata",
+      "prepared": "2026-09-24",
+      "stated_author": "Independent reviewer; exact model/backend not stated in main review/receipt",
+      "authority": "Independent apparatus engineering review, registered under Jason’s explicit status instruction; not commissioning or repair authority",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24_P_Independent_Apparatus_Review\\Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip::REVIEW_RECEIPT.json",
+      "reviewed_checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "review_note": "30_REVIEWS/REVIEW-P-APPARATUS-INDEPENDENT-05abf604-2026-09-24-b92e45a7.md",
+      "record": "50_SESSIONS/2026-09-24-p-independent-apparatus-intake-b92e45a7/INTAKE_RECORD.md",
+      "notes": "Original bytes preserved. User blocker A1 maps to source A-R1; user blocker A2 maps to source A-R2. Other reviewed dispositions unchanged."
+    },
+    {
+      "source_id": "SRC-080",
+      "path": "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/FILE_MANIFEST.json",
+      "original_filename": "FILE_MANIFEST.json",
+      "bytes": 39189,
+      "sha256": "786eafd33c35fba5505aafc37f98e55ec00543a8f821af0364a19d2e7cd4a144",
+      "role": "independent-review-custody-manifest",
+      "prepared": "2026-09-24",
+      "stated_author": "Independent reviewer; exact model/backend not stated in main review/receipt",
+      "authority": "Independent apparatus engineering review, registered under Jason’s explicit status instruction; not commissioning or repair authority",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24_P_Independent_Apparatus_Review\\Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip::FILE_MANIFEST.json",
+      "reviewed_checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "review_note": "30_REVIEWS/REVIEW-P-APPARATUS-INDEPENDENT-05abf604-2026-09-24-b92e45a7.md",
+      "record": "50_SESSIONS/2026-09-24-p-independent-apparatus-intake-b92e45a7/INTAKE_RECORD.md",
+      "notes": "Original bytes preserved. User blocker A1 maps to source A-R1; user blocker A2 maps to source A-R2. Other reviewed dispositions unchanged."
+    },
+    {
+      "source_id": "SRC-081",
+      "path": "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/README_INTAKE.md",
+      "original_filename": "README_INTAKE.md",
+      "bytes": 2199,
+      "sha256": "cab079ab3306ed48aaab4fc1861bae1d68a1ac61488c45585fa392e1cd2e441f",
+      "role": "independent-review-intake-note",
+      "prepared": "2026-09-24",
+      "stated_author": "Independent reviewer; exact model/backend not stated in main review/receipt",
+      "authority": "Independent apparatus engineering review, registered under Jason’s explicit status instruction; not commissioning or repair authority",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24_P_Independent_Apparatus_Review\\Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip::README_INTAKE.md",
+      "reviewed_checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "review_note": "30_REVIEWS/REVIEW-P-APPARATUS-INDEPENDENT-05abf604-2026-09-24-b92e45a7.md",
+      "record": "50_SESSIONS/2026-09-24-p-independent-apparatus-intake-b92e45a7/INTAKE_RECORD.md",
+      "notes": "Original bytes preserved. User blocker A1 maps to source A-R1; user blocker A2 maps to source A-R2. Other reviewed dispositions unchanged."
+    },
+    {
+      "source_id": "SRC-082",
+      "path": "90_SOURCES/p_independent_apparatus_review_2026-09-24_b92e45a7/REPRODUCTION_COMMANDS.md",
+      "original_filename": "REPRODUCTION_COMMANDS.md",
+      "bytes": 5752,
+      "sha256": "532b66fcd0757c1acb434c157b70742673ac983789d74b55468bc30e7bc1d965",
+      "role": "independent-review-reproduction-record",
+      "prepared": "2026-09-24",
+      "stated_author": "Independent reviewer; exact model/backend not stated in main review/receipt",
+      "authority": "Independent apparatus engineering review, registered under Jason’s explicit status instruction; not commissioning or repair authority",
+      "acquired_from": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-24_P_Independent_Apparatus_Review\\Loom_P_Independent_Apparatus_Review_05abf604_20260924.zip::REPRODUCTION_COMMANDS.md",
+      "reviewed_checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b",
+      "p_baseline_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+      "review_note": "30_REVIEWS/REVIEW-P-APPARATUS-INDEPENDENT-05abf604-2026-09-24-b92e45a7.md",
+      "record": "50_SESSIONS/2026-09-24-p-independent-apparatus-intake-b92e45a7/INTAKE_RECORD.md",
+      "notes": "Original bytes preserved. User blocker A1 maps to source A-R1; user blocker A2 maps to source A-R2. Other reviewed dispositions unchanged."
+    }
+  ],
+  "checkpoint": "05abf60401d08f38750bca589b1c040e10513d7b"
+}

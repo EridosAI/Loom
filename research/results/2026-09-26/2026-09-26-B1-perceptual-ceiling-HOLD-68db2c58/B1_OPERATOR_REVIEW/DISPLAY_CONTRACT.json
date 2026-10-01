@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "reviewed_checkpoint": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "reviewed_files": {
+    "sensor.html": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a",
+    "sensor_ui.py": "b5596ad3aff664df951d63ba2311e232ff483de6c7dcc8ac446b0c240868572e",
+    "controllers.py": "d1f04a63101cc8de19281918fbb8d2e9cb1a1536df28f1346bfd680c809ba9a8",
+    "runner.py": "d952cfe1eb2e2eae356eea22b83c9a32dca12e539b50a565e1c402ac42076929",
+    "authority.py": "1b120460212497a2a9f4b0701f59f1c45136e6fc2bbb35bd1429016336f1fe7f",
+    "pending.py": "32ce8651866ee46aa1bdc62675d5aa929368c9822a48a438bc24db52aaeb4b58"
+  },
+  "permitted": {
+    "raw_native_coordinates": [
+      10,
+      4,
+      8,
+      7
+    ],
+    "raw_cadence_seconds": 0.01,
+    "EI_handoff_seconds": 0.2,
+    "EI_between_handoffs": "held previous sample",
+    "own_commands": true,
+    "own_notes": true,
+    "ordered_history": true
+  },
+  "forbidden": [
+    "global position",
+    "truth heading/pose",
+    "world image/map",
+    "fixture/source identity or position",
+    "stock",
+    "mover phase/velocity",
+    "material labels",
+    "analytic gradients",
+    "privileged notifications",
+    "evaluation",
+    "future values"
+  ],
+  "physical_pause": "No command request: zero world, bodily, field, native/P clock or RNG advancement. Wall resource timer continues.",
+  "control": {
+    "left_right_range": [
+      -1,
+      1
+    ],
+    "hold_seconds": 0.1,
+    "native_steps_per_hold": 10,
+    "auto_repeat": false,
+    "command_batching": false,
+    "command_queue": false
+  },
+  "full_raw": {
+    "kind": "none",
+    "implemented_at_checkpoint": true
+  },
+  "chemistry_hidden": {
+    "kind": "chemistry_hidden",
+    "implemented_at_checkpoint": false,
+    "raw_flat_indices": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "representation": "Withheld at server boundary; absent/null display entries marked hidden, never zero-valued real readings.",
+    "all_egress": "Withhold from current values, plots, all past history, HTTP payload, downloads, notes/autofill and user-visible controller transcripts. Complete actual 29-coordinate raw stream retained evaluator-only.",
+    "physical_changes": false,
+    "other_channels_unchanged": true,
+    "implementation_sha256": null
+  },
+  "prelaunch_gaps": [
+    "Checkpoint accepts display_intervention none only.",
+    "Page does not show running/in-flight state or disable the send button during an outstanding request.",
+    "Closed Run still exposes availability paused; lifecycle stop handling needs explicit reviewed integration.",
+    "Live launcher is not supplied by sensor_ui.main; it opens offline records only."
+  ]
+}

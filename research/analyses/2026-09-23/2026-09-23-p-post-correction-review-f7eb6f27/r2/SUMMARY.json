@@ -1,0 +1,44 @@
+[
+  {
+    "mode": "ambient_present",
+    "exit_code": 0,
+    "expected_red": false,
+    "consequential": true
+  },
+  {
+    "mode": "ambient_absent",
+    "exit_code": 0,
+    "expected_red": false,
+    "consequential": true
+  },
+  {
+    "mode": "ambient_poisoned",
+    "exit_code": 0,
+    "expected_red": false,
+    "consequential": true
+  },
+  {
+    "mode": "delivered_live_branch_missing",
+    "exit_code": 1,
+    "expected_red": true,
+    "consequential": true
+  },
+  {
+    "mode": "green_after_delivered",
+    "exit_code": 0,
+    "expected_red": false,
+    "consequential": true
+  },
+  {
+    "mode": "actual_live_branch_removed",
+    "exit_code": 1,
+    "expected_red": true,
+    "consequential": true
+  },
+  {
+    "mode": "green_after_actual",
+    "exit_code": 0,
+    "expected_red": false,
+    "consequential": true
+  }
+]

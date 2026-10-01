@@ -1,0 +1,122 @@
+{
+  "modes": [
+    {
+      "case": "test_pause_resume_and_reconstr0",
+      "streams_equal": {
+        "native": {
+          "sha256": "3afba8bab8a953877c70e010b310075e4a04d8debdc91abe024017af8970eee0",
+          "bytes": 846789,
+          "rows": 20
+        },
+        "wave": {
+          "sha256": "30c83095b134ae435f43e6b57b783985123e02e5fb0b235cb6e2371f15a03d4d",
+          "bytes": 126823,
+          "rows": 1
+        },
+        "events": {
+          "sha256": "7eb6a114c26677f357d0bba14d2911d179c13c57210dc7e7dde06cda77d229f7",
+          "bytes": 13121,
+          "rows": 20
+        },
+        "diagnostics": {
+          "sha256": "3eee5d4388caf5c8ef0a4a7286680efa807d3349cf539b8595d35c5d9cff0ef2",
+          "bytes": 1297441,
+          "rows": 20
+        },
+        "sensor": {
+          "sha256": "163b94eebd4cb142a1f88c811a6b61dead5084eeef10108ecd57fc6810d37299",
+          "bytes": 12202,
+          "rows": 21
+        },
+        "scientific_observations": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0,
+          "rows": 0
+        }
+      },
+      "old_controller_fields_preserved": true,
+      "new_controller_fields": []
+    },
+    {
+      "case": "test_pause_resume_and_reconstr1",
+      "streams_equal": {
+        "native": {
+          "sha256": "e966899465f376431e218da92f5dd64c8c9e99aad962d951f721c335e3156e89",
+          "bytes": 761291,
+          "rows": 20
+        },
+        "wave": {
+          "sha256": "1c6cc1cd6854a7fe5b24f1a0f87217fd6d52fc5906d5a71c036a8b7ac3c48284",
+          "bytes": 143530,
+          "rows": 1
+        },
+        "events": {
+          "sha256": "49c1f7ffd2eb51db654197db4c46696797aca22412d0a9398687a99c64e976b1",
+          "bytes": 13961,
+          "rows": 20
+        },
+        "diagnostics": {
+          "sha256": "83f579ec7e3e93facb6892af393c2042780554182cf2a84399bd7c97dc4e30a6",
+          "bytes": 1325702,
+          "rows": 20
+        },
+        "sensor": {
+          "sha256": "163b94eebd4cb142a1f88c811a6b61dead5084eeef10108ecd57fc6810d37299",
+          "bytes": 12202,
+          "rows": 21
+        },
+        "scientific_observations": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0,
+          "rows": 0
+        }
+      },
+      "old_controller_fields_preserved": true,
+      "new_controller_fields": []
+    },
+    {
+      "case": "test_pause_resume_and_reconstr2",
+      "streams_equal": {
+        "native": {
+          "sha256": "7b13ab3e431fd6f978af3dbfe91eef94a832615a77a35dde3aed99dd68c455a7",
+          "bytes": 49932,
+          "rows": 20
+        },
+        "wave": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0,
+          "rows": 0
+        },
+        "events": {
+          "sha256": "5dd96f1b4ed8d552c2983ffbd33f1fb708939fadab901b7a4223ce0d522b670d",
+          "bytes": 13345,
+          "rows": 20
+        },
+        "diagnostics": {
+          "sha256": "de8cbe85eaa1cc10bf169d8e4f0bfbf68111c58990d1275cc69dd00c421c2e09",
+          "bytes": 24547,
+          "rows": 20
+        },
+        "sensor": {
+          "sha256": "0307e8dbef54eaf4b45b26254bfa794f3678d5850db2b80df0327aca0b3bacd2",
+          "bytes": 11548,
+          "rows": 21
+        },
+        "scientific_observations": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0,
+          "rows": 0
+        }
+      },
+      "old_controller_fields_preserved": true,
+      "new_controller_fields": [
+        "case_deadline",
+        "execution_sha256",
+        "native_index",
+        "stage"
+      ]
+    }
+  ],
+  "unchanged_streams": 18,
+  "all_old_controller_fields_preserved": true
+}

@@ -1,0 +1,22 @@
+{
+  "old_apparatus": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "world_steps": 0,
+  "A5_controller_world_calls": 0,
+  "A": {
+    "status": "RED",
+    "index": 26950,
+    "physical_time": 269.4999999998999,
+    "error": "issued decision clock mismatch",
+    "source": "pending.validate_decision"
+  },
+  "B": {
+    "status": "RED",
+    "index": 27000,
+    "physical_time": 269.99999999989944,
+    "stage": 2,
+    "deadline": 270.0,
+    "end": 270.09999999989947,
+    "error": "command hold would cross prescribed stage boundary",
+    "method": "Exact runner condition extracted by AST; first guard excluded, detached generic controller input and same deadlines."
+  }
+}

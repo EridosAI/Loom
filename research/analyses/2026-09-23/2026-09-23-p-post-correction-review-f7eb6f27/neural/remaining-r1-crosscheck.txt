@@ -1,0 +1,38 @@
+{
+  "checkpoint": "f7eb6f27c661e3db193a4225b56a825d7e41739d",
+  "angle": 1.557638052356994,
+  "initial_velocity": [
+    -1e-05,
+    0.0
+  ],
+  "force": [
+    0.38,
+    0.38
+  ],
+  "geometry_tol": 1e-10,
+  "gap_at_half_millisecond": 2.4981434698645444e-09,
+  "return_to_geometry_tol": 0.0009894214175273546,
+  "zero_gap_return": 0.000999529101407247,
+  "release_probe": null,
+  "event_count": 1,
+  "elapsed": 0.01,
+  "terminal": null,
+  "free_duration": 0,
+  "contact_duration": 0.01,
+  "transfer": 9.858939985959484e-06,
+  "release_events": 0,
+  "recontact_events": 0,
+  "final_position": [
+    2.0,
+    3.000075614717061
+  ],
+  "final_reserves": [
+    0.699984858939986,
+    1.0
+  ]
+}
+Traceback (most recent call last):
+  File "C:\Users\Jason\.codex\.chatgpt-projects\g-p-6a6fb425222c8191a814fdc0f7d89f97\exports\2026-09-23-p-post-correction-review-f7eb6f27\reproduce_remaining_r1.py", line 43, in <module>
+    assert observed['free_duration'] > .0009, 'R1 remains: resolvable release/return was charged as full-duration contact'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: R1 remains: resolvable release/return was charged as full-duration contact

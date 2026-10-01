@@ -1,0 +1,48 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_terminal_scheduler_restores_trial_state_and_draws_once[19] _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002453B9B1F30>
+start_index = 19
+
+    @pytest.mark.parametrize('start_index',[50,19,59])
+    def test_terminal_scheduler_restores_trial_state_and_draws_once(monkeypatch,start_index):
+        # Scheduler arithmetic fixture, with physical/neural/field stand-ins. No fourth
+        # complete-loop organism case. The real physical crossing is tested separately.
+        e=Engine.__new__(Engine); e.c=Config(); e.time=0.; e.native_index=start_index
+        e.status='paused'; e.failure=None; e.terminal_dimension=None
+        e.rng=Streams(1); e.accumulator=0.; e.last_events=[]; e.last_wave=None
+        e.organism=SimpleNamespace(handoff=lambda _:pytest.fail('Invented terminal handoff'))
+        e.body=SimpleNamespace(reserves=np.array([0.,1.]))
+        def coupled(self,dt,refresh,allow_terminal=False):
+            assert refresh==(start_index==50)
+            self.rng.draw('terminal-test',(1,)); self.accumulator+=dt; self.time+=dt
+            if dt>=.003:
+                if not allow_terminal: raise TerminalCrossing(.003,'energy',[])
+                return 'energy'
+        monkeypatch.setattr(Engine,'_coupled',coupled)
+        monkeypatch.setattr(Engine,'observe_native',lambda self,dt:dict(time=self.time,elapsed=dt))
+        monkeypatch.setattr(Engine,'validate_state',lambda self:True)
+>       native,wave,_=e.step()
+                      ^^^^^^^^
+
+tests\test_boundary_and_scheduler.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <loom_p.engine.Engine object at 0x000002453B9A16A0>
+
+>   ???
+
+<mutant terminal guard>:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+_ = array([0., 1.])
+
+>   e.organism=SimpleNamespace(handoff=lambda _:pytest.fail('Invented terminal handoff'))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: Invented terminal handoff
+
+tests\test_boundary_and_scheduler.py:48: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[19]
+1 failed in 0.06s

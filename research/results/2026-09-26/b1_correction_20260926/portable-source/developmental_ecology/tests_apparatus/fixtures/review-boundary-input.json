@@ -1,0 +1,243 @@
+{
+  "position": [
+    5.001648928084086,
+    5.000509380889592
+  ],
+  "angle": 0.29774003877886773,
+  "velocity": [
+    0.0295395067024463,
+    0.009114800245673934
+  ],
+  "omega": -0.04012623370662198,
+  "reserves": [
+    0.6998022331755431,
+    0.8
+  ],
+  "commands": [
+    0.717668244562803,
+    0.237668244562803
+  ],
+  "geometry": [
+    {
+      "id": "wall-0",
+      "kind": "wall",
+      "axis": 0,
+      "sign": 1,
+      "boundary": 0,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "wall-1",
+      "kind": "wall",
+      "axis": 0,
+      "sign": -1,
+      "boundary": 20.0,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "wall-2",
+      "kind": "wall",
+      "axis": 1,
+      "sign": 1,
+      "boundary": 0,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "wall-3",
+      "kind": "wall",
+      "axis": 1,
+      "sign": -1,
+      "boundary": 20.0,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "source-0",
+      "kind": "disk",
+      "centre": [
+        3.0,
+        3.0
+      ],
+      "radius": 0.5,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "source-1",
+      "kind": "disk",
+      "centre": [
+        10.0,
+        3.0
+      ],
+      "radius": 0.5,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "source-2",
+      "kind": "disk",
+      "centre": [
+        17.0,
+        3.0
+      ],
+      "radius": 0.5,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "source-3",
+      "kind": "disk",
+      "centre": [
+        3.0,
+        10.0
+      ],
+      "radius": 0.5,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "source-4",
+      "kind": "disk",
+      "centre": [
+        17.0,
+        10.0
+      ],
+      "radius": 0.5,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "source-5",
+      "kind": "disk",
+      "centre": [
+        3.0,
+        17.0
+      ],
+      "radius": 0.5,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "source-6",
+      "kind": "disk",
+      "centre": [
+        10.0,
+        17.0
+      ],
+      "radius": 0.5,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "source-7",
+      "kind": "disk",
+      "centre": [
+        17.0,
+        17.0
+      ],
+      "radius": 0.5,
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "repair-0",
+      "kind": "rect",
+      "rect": [
+        0.0,
+        0.25,
+        8.0,
+        12.0
+      ],
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "repair-1",
+      "kind": "rect",
+      "rect": [
+        19.75,
+        20.0,
+        8.0,
+        12.0
+      ],
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "repair-2",
+      "kind": "rect",
+      "rect": [
+        8.0,
+        12.0,
+        19.75,
+        20.0
+      ],
+      "velocity": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "mover",
+      "kind": "rect",
+      "rect": [
+        9.083769679533427,
+        11.083769679533427,
+        9.5,
+        10.5
+      ],
+      "velocity": [
+        0.8375743067748151,
+        0.0
+      ]
+    }
+  ],
+  "mover_phase": 0.0,
+  "mover_velocity": [
+    0.8375743067748151,
+    0.0
+  ],
+  "stocks": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "contacts": [],
+  "time": 0.09999999999999999
+}

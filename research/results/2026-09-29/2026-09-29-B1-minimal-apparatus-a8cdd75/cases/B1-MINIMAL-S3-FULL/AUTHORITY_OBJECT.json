@@ -1,0 +1,329 @@
+{
+  "schema": "loom-B1-minimal-single-case-authority-v1",
+  "status": "PROPOSED / NOT AUTHORIZED",
+  "case_id": "B1-MINIMAL-S3-FULL",
+  "reference_arm": "FULL",
+  "P": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "apparatus_checkpoint": "a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad",
+  "initial_snapshot": {
+    "file": "cases/B1-MINIMAL-S3-FULL/INITIAL.snapshot.json.gz",
+    "sha256": "2d6a5966c72c42a0569033b1b93fa02bb3525904b3789234db69e8c90a66dfa0",
+    "state_sha256": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0"
+  },
+  "start_manifest": {
+    "file": "starts/S3/START_MANIFEST.json",
+    "sha256": "55ce1090b0320e7b6d88d183f5f6f059f8d9bd108968ec5d341b0ed64dc922de"
+  },
+  "execution_sha256": "2c9a51408fd8c6e47f41faa1f477061ae5f9b133d13bd025162bb6cdba473505",
+  "execution_object": {
+    "schema": 2,
+    "baseline": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+    "p_code": "63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9",
+    "configuration": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+    "apparatus": {
+      "sha256": "044b4c7e2c66d5637313374edc1ac6441c82298b8021f18c587c03b67a2df454",
+      "files": {
+        "__init__.py": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+        "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+        "authority.py": "93257ab0bcb0ab593e45c1164cdca5d36d52c47d701cd60a6abfcf8551f7a23a",
+        "clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+        "contract.py": "f9924c2c0cf24bf3c1590b19e8b2c259138321a45c181f13ab2fc3d83b8d978d",
+        "controllers.py": "b1aaaa2b41da7c41524512ed0104cf0195b83a0611c3dc84c392c579b375403b",
+        "diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+        "evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+        "initialization.py": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+        "operator_view.py": "1c4fa0dcd6e941d6d93ddbdad24ca813524ab66854ba1b1b8c30f5a23a9473b7",
+        "pending.py": "38fddaa3c8d28c21ad7d291626f85a798152bb6a4a91ea1c4b5cc485c056ff82",
+        "raw_reference.py": "4e9a1f38435946eb1386ce4a94458f99ef1a76b96b8589c358899c005d3e2682",
+        "runner.py": "1cf0a8ba57403617e5640ce33af613ab02662cecfc4578c97546281338a3c346",
+        "sensor.html": "3742b5989c0e3dd7d11e39d4376699dc3d3dd88918519a0bbe380073eb1c75b3",
+        "sensor_ui.py": "2ffd2128771cd8244b2be8b4fc4d6b35e54ca66d6cd84d3ecaed33ce9bbe9df9",
+        "validators.py": "766a4a4a5d7403e7f6278d1cc821d3c12d83e6aba5aa8624f81ed799177e06c2"
+      }
+    },
+    "case_id": "B1-MINIMAL-S3-FULL",
+    "purpose": "commissioning",
+    "mode": "external_controller",
+    "controller": "automated_raw_reference",
+    "initial_state": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0",
+    "initial_time": 0.0,
+    "initial_index": 0,
+    "initial_fields": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+    "phase": 3.558411277237072,
+    "initialization": {
+      "kind": "verified_phase_history",
+      "birth_id": 0,
+      "phase": 3.558411277237072,
+      "field_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+      "cache_directory": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001",
+      "cache_receipt_sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3",
+      "prepared_apparatus_checkpoint": "a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad"
+    },
+    "duration_seconds": 30.0,
+    "hard_stop_time": 30.0,
+    "command_hold_seconds": 0.1,
+    "selection": {
+      "wave": "every_handoff",
+      "native": "native_index % 100 == 0",
+      "native_stride": 100
+    },
+    "roster": {
+      "birth_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "birth_ceiling_seconds": 600,
+      "zero_witness_interpretation": "unresolved opportunity at that coverage",
+      "execution_authorized": false
+    },
+    "execution": {
+      "runtime": {
+        "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+        "implementation": "CPython",
+        "executable_sha256": "935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256",
+        "python_dlls": {
+          "python3.dll": "85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b",
+          "python313.dll": "0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"
+        },
+        "platform": "Windows-11-10.0.26200-SP0",
+        "packages": {
+          "numpy": {
+            "version": "2.3.3",
+            "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af",
+            "file_count": 432,
+            "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+          },
+          "scipy": {
+            "version": "1.16.2",
+            "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1",
+            "file_count": 1078,
+            "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+          }
+        }
+      },
+      "controller": {
+        "kind": "automated_raw_reference",
+        "implementation": {
+          "controllers.py": "b1aaaa2b41da7c41524512ed0104cf0195b83a0611c3dc84c392c579b375403b",
+          "live_functions": {
+            "validate_sensor_payload": "22b6bed033f3794360ed21bfde1c9a1d3bac283f302f8f031c3b07d7d97ea3c5",
+            "validate_history": "5e318049f7c529742ff790e8aa337c4575e6c42fb53e687460948bc80064d750",
+            "command_pair": "24c8f5133fef407334d5a515876701765bc31add79dce143cc93289cc8973b83"
+          },
+          "clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+          "live_clock_functions": {
+            "grid_steps": "142b174a238cfddba06694cfa240324dafc4e14a87f2daac8058907805370873",
+            "case_end": "f2d8fea2fb4e5f31656af55c97212faf4d0eace91a37064017d0bf60607c3d4e",
+            "stage_ends": "1844718c2a841a15f80027486770f01afb89a62bcd2958b202635bbfece60615",
+            "decision_clock": "2272bfa54ab7466e84bc52746a04a5c8efe2109aa7d16c4e3d5e06916198eb48",
+            "hold_steps": "d5bd52e4c740c27e4819ef8012cd51f30a49e7f6cbdb856a8732e2e3c0c5dfcf",
+            "expected_time": "8de29cdeb64bb554cded5af25a5555fc9b57ed0542a22a41a96c30f59dbd9feb",
+            "clock_allowance": "af8e5701444bf4a64fe5784455722b87a067952602afeed83e41abb99270b495",
+            "validate_physical_time": "d6e7b3817bdf8cd08ec1ce805c82a076aad708dcb361d7e94c68dd219cf02baa"
+          },
+          "raw_reference.py": "4e9a1f38435946eb1386ce4a94458f99ef1a76b96b8589c358899c005d3e2682",
+          "live_reference_functions": {
+            "arm_from_manifest": "caf4d377349a0257a20644807fbf162c123c8752a40e0fb84a4009d95fa6578e",
+            "initial_state": "0426a1794d78b7f16fca38ac6ad7b5c45ca662bd3a07e5dabd7961a82f25b7c8",
+            "validate_state": "f994ab2fbcfcae8d2a60635e98a5973f233fe76a7818354b323986ac2395c875",
+            "validate_input": "644b238029167f3096496e0efaa2a7d988a49dcc15b8bc7ed98d1d2c6227b24c",
+            "project": "8b168ebafdc5b04b09aef184b2de0a3263fb393f862a800f0d54a9c5b3e8353c",
+            "command": "20b58409a5b7f2188a3268d50a36741f63db0cbf606b8e5b77b47013d4bbd62b"
+          }
+        },
+        "configuration": {
+          "law": {
+            "window_rows": 10,
+            "receptor_scale": 0.05,
+            "contrast_epsilon": 1e-12,
+            "drive": 0.3,
+            "drive_imbalance": 4.0,
+            "turn_gain": 2.0,
+            "angular_damping": 0.2,
+            "turn_bound": 0.4,
+            "contact_sectors": [
+              7,
+              0,
+              1
+            ],
+            "hold_on": 0.05,
+            "release_below": 0.02,
+            "release_windows": 3,
+            "hold_drive": 0.05,
+            "null_pair": [
+              0.3,
+              0.3
+            ]
+          },
+          "arms": [
+            "FULL",
+            "CHEMISTRY-HIDDEN",
+            "SENSORY-FREE"
+          ],
+          "design_sha256": "8f0437aaa53bb192dad36f5337340a2cc8a4b7060660445d573f9c5ca473cbe6",
+          "raw_labels": [
+            "light_0",
+            "light_1",
+            "light_2",
+            "light_3",
+            "light_4",
+            "light_5",
+            "light_6",
+            "light_7",
+            "light_8",
+            "light_9",
+            "chemistry_0",
+            "chemistry_1",
+            "chemistry_2",
+            "chemistry_3",
+            "contact_0",
+            "contact_1",
+            "contact_2",
+            "contact_3",
+            "contact_4",
+            "contact_5",
+            "contact_6",
+            "contact_7",
+            "proprioception_0",
+            "proprioception_1",
+            "proprioception_2",
+            "proprioception_3",
+            "proprioception_4",
+            "proprioception_5",
+            "proprioception_6"
+          ],
+          "hidden_labels": [
+            "light_0",
+            "light_1",
+            "light_2",
+            "light_3",
+            "light_4",
+            "light_5",
+            "light_6",
+            "light_7",
+            "light_8",
+            "light_9",
+            "contact_0",
+            "contact_1",
+            "contact_2",
+            "contact_3",
+            "contact_4",
+            "contact_5",
+            "contact_6",
+            "contact_7",
+            "proprioception_0",
+            "proprioception_1",
+            "proprioception_2",
+            "proprioception_3",
+            "proprioception_4",
+            "proprioception_5",
+            "proprioception_6"
+          ],
+          "kept": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        "interface": "fixed-v0.2-FULL-29-or-HIDDEN-25-or-SENSORY-FREE-no-input"
+      },
+      "adapter": {
+        "mode": "external_controller",
+        "implementation_sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+        "intervention": "inactive-neural-external-actuation"
+      },
+      "procedure": {
+        "kind": "fixed_raw_sensory_reference_procedure",
+        "stages": null,
+        "protocol": {
+          "reference_arm": "FULL",
+          "design_sha256": "8f0437aaa53bb192dad36f5337340a2cc8a4b7060660445d573f9c5ca473cbe6"
+        }
+      },
+      "display_intervention": {
+        "kind": "none"
+      },
+      "resources": {
+        "storage_limit_bytes": 1500000000,
+        "wall_limit_seconds": 600
+      }
+    }
+  },
+  "shared_batch_order": [
+    "B1-MINIMAL-S1-FULL",
+    "B1-MINIMAL-S1-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S1-SENSORY-FREE",
+    "B1-MINIMAL-S2-FULL",
+    "B1-MINIMAL-S2-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S2-SENSORY-FREE",
+    "B1-MINIMAL-S3-FULL",
+    "B1-MINIMAL-S3-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S3-SENSORY-FREE"
+  ],
+  "shared_resource_limits": {
+    "maximum_attempts_per_case": 1,
+    "total_simulated_seconds": 270,
+    "total_native_steps": 27000,
+    "total_command_holds": 2700,
+    "wall_per_case_seconds": 600,
+    "aggregate_execution_wall_seconds": 5400,
+    "read_only_reporting_seconds": 1800,
+    "stream_cap_per_case_bytes": 1500000000,
+    "combined_new_artifact_cap_bytes": 20000000000,
+    "stop_request_bytes": 19000000000,
+    "flush_reserve_bytes": 1000000000,
+    "minimum_free_bytes": 20000000000
+  },
+  "rules": {
+    "no_retry": true,
+    "no_continuation": true,
+    "no_substitution": true,
+    "no_tuning": true,
+    "no_extra_cases": true,
+    "no_new_prehistory": true,
+    "case_authorization_does_not_authorize_others": true,
+    "stop_batch_on": [
+      "preflight_failure",
+      "apparatus_failure",
+      "controller_exception",
+      "administrative_interruption",
+      "resource_cutoff"
+    ],
+    "normal_ceiling_or_physical_terminal_may_proceed_only_to_next_separately_authorized_case": true
+  },
+  "bound_documents": {
+    "RESOURCE_AND_EXECUTION_PLAN.md": "819c9c92b21e5482764a40f213f11f264fd08efc20299b98418cf060162221e6",
+    "RESOURCE_PROJECTION.json": "b1b85804297785c346ced9f39056411910385711bcf99030357d34ea177ca81b",
+    "CHECKPOINT.json": "d5960415a57f89c770af082ad84ccff1c9ac793eea50459118cd51c2f6de764f",
+    "SOURCE_IDENTITIES.json": "bcf18ad650f8a668fc5668b7c4265dd92b67e66e50dcb0a37f209db6e46cd996",
+    "MATCHED_INITIAL_STATE_PROOF.json": "b021a0aeab296b23e0bd58e4fabc1c54f7dccaf429c524c23db04b6ab5f1ca0b",
+    "PREHISTORY_REUSE.json": "67eaa8b4ffef7ca0ea85700e9406515982c2a94fe9e17a8263c2ab4c91428cf9",
+    "STATIC_PREPARATION_CHECKS.json": "8294109364aea9bd0eb53e6e4ba23273effedd3d7f1a62fb2f0d8cb76cb0fd7d",
+    "accepted-design/B1_MINIMAL_CLOSURE_DESIGN_v0_2.md": "8f0437aaa53bb192dad36f5337340a2cc8a4b7060660445d573f9c5ca473cbe6"
+  },
+  "approval_workflow": "Jason must separately authorize this canonical object hash. Only then may its exact execution object be placed in a genuine approval envelope. No grant is supplied here."
+}

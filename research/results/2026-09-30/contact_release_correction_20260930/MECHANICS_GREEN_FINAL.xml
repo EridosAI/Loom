@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="1" skipped="0" tests="45" time="1.202" timestamp="2026-09-30T19:49:45.653944+08:00" hostname="Equinox"><testcase classname="tests.test_contact_face_exit" name="test_exact_face_to_corner_transition_is_resolved" time="0.005" /><testcase classname="tests.test_contact_face_exit" name="test_nearby_face_exit_geometry[-0.001]" time="0.005" /><testcase classname="tests.test_contact_face_exit" name="test_nearby_face_exit_geometry[0.001]" time="0.004" /><testcase classname="tests.test_contact_face_exit" name="test_guard_still_rejects_the_penetrating_free_path" time="0.001" /><testcase classname="tests.test_contact_face_exit" name="test_corrected_piecewise_paths_have_no_interior_penetration" time="0.018" /><testcase classname="tests.test_contact_face_exit" name="test_face_not_yet_ending_does_not_release" time="0.002" /><testcase classname="tests.test_contact_face_exit" name="test_clear_corner_separates_without_invented_contact" time="0.001" /><testcase classname="tests.test_contact_face_exit" name="test_invalid_overlap_is_still_rejected" time="0.001" /><testcase classname="tests.test_contact_face_exit" name="test_incoming_body_still_impacts_before_face_exit" time="0.006" /><testcase classname="tests.test_contact_face_exit" name="test_uncertified_feature_is_not_a_guard_bypass" time="0.001" /><testcase classname="tests.test_contact_face_exit" name="test_reflected_geometry_obeys_same_transition" time="0.002"><failure message="assert False&#10; +  where False = any(&lt;generator object test_reflected_geometry_obeys_same_transition.&lt;locals&gt;.&lt;genexpr&gt; at 0x00000257930EBD30&gt;)">def test_reflected_geometry_obeys_same_transition():
+        c,b,s,t,p,u,dt=exact_input();b.position[0]=c.world_side-b.position[0];b.velocity[0]*=-1
+        b.angle=np.pi-b.angle;b.omega*=-1;p=np.pi-p-4*np.pi*t/c.mover_period
+        events,_,_=advance(c,b,s,t,p,u[::-1],dt)
+&gt;       assert any(r.get('event_kind')=='contact_feature_boundary' for r in events)
+E       assert False
+E        +  where False = any(&lt;generator object test_reflected_geometry_obeys_same_transition.&lt;locals&gt;.&lt;genexpr&gt; at 0x00000257930EBD30&gt;)
+
+tests\test_contact_face_exit.py:128: AssertionError</failure></testcase><testcase classname="tests.test_r1p_oblique" name="test_oblique_release_free_return_and_accounting[review-exact]" time="0.005" /><testcase classname="tests.test_r1p_oblique" name="test_oblique_release_free_return_and_accounting[different-normal-force]" time="0.005" /><testcase classname="tests.test_r1p_oblique" name="test_oblique_release_free_return_and_accounting[reflected-longer-flight]" time="0.007" /><testcase classname="tests.test_r1p_oblique" name="test_oblique_event_subdivision_keeps_native_noise_and_field_cadence" time="0.005" /><testcase classname="tests.test_corrective_contracts" name="test_touch_release_return_duration_and_accounting" time="0.003" /><testcase classname="tests.test_corrective_contracts" name="test_outward_or_tangent_source_release[velocity0-3.141592653589793]" time="0.001" /><testcase classname="tests.test_corrective_contracts" name="test_outward_or_tangent_source_release[velocity1-3.141592653589793]" time="0.001" /><testcase classname="tests.test_corrective_contracts" name="test_outward_or_tangent_source_release[velocity2-0.0]" time="0.001" /><testcase classname="tests.test_corrective_contracts" name="test_release_subdivision_does_not_repeat_native_or_noise" time="0.003" /><testcase classname="tests.test_corrective_contracts" name="test_separate_sensory_reference_following[shared_ref-shared-tau_shared_reference]" time="0.025" /><testcase classname="tests.test_corrective_contracts" name="test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]" time="0.024" /><testcase classname="tests.test_corrective_contracts" name="test_hidden_state_cannot_bypass_declared_transductions" time="0.413" /><testcase classname="tests.test_corrective_contracts" name="test_evoked_reserves_have_no_direct_physical_ownership" time="0.054" /><testcase classname="tests.test_physical" name="test_exact_cell_area_and_emission_conservation" time="0.001" /><testcase classname="tests.test_physical" name="test_field_flux_mass_and_moving_geometry_continuity" time="0.003" /><testcase classname="tests.test_physical" name="test_zero_rhs_and_solver_failure" time="0.002" /><testcase classname="tests.test_physical" name="test_stock_body_conservation_headroom_and_renewal" time="0.000" /><testcase classname="tests.test_physical" name="test_impact_has_damage_but_no_exchange_or_repair" time="0.000" /><testcase classname="tests.test_physical" name="test_gentle_repair_and_every_collider_stress" time="0.000" /><testcase classname="tests.test_physical" name="test_stalled_commands_still_cost_and_reserves_not_evocation" time="0.000" /><testcase classname="tests.test_physical" name="test_simultaneous_projection_and_negative_fixture" time="0.001" /><testcase classname="tests.test_physical" name="test_source_swept_impact_does_not_transfer_during_free_flight" time="0.003" /><testcase classname="tests.test_physical" name="test_analytic_mover_collision" time="0.003" /><testcase classname="tests.test_physical" name="test_terminal_physics_reports_crossing_without_revival" time="0.001" /><testcase classname="tests.test_physical" name="test_bilinear_constant_and_proprioceptive_command_movement_distinction" time="0.001" /><testcase classname="tests.test_physical" name="test_light_rear_blindness_with_shadow_controlled" time="0.001" /><testcase classname="tests.test_boundary_and_scheduler" name="test_open_domain_finite_shadow_boundary_and_protruding_repair" time="0.000" /><testcase classname="tests.test_boundary_and_scheduler" name="test_ambient_survives_shadow_and_directional_surface_response" time="0.001" /><testcase classname="tests.test_boundary_and_scheduler" name="test_terminal_scheduler_restores_trial_state_and_draws_once[50]" time="0.002" /><testcase classname="tests.test_boundary_and_scheduler" name="test_terminal_scheduler_restores_trial_state_and_draws_once[19]" time="0.002" /><testcase classname="tests.test_boundary_and_scheduler" name="test_terminal_scheduler_restores_trial_state_and_draws_once[59]" time="0.002" /><testcase classname="tests.test_boundary_and_scheduler" name="test_coupled_failure_rolls_back_and_run_marks_incomplete" time="0.002"><error message="failed on setup with &quot;PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Jason\\AppData\\Local\\Temp\\pytest-of-Jason'&quot;">cls = &lt;class '_pytest.runner.CallInfo'&gt;
+func = &lt;function call_and_report.&lt;locals&gt;.&lt;lambda&gt; at 0x00000257932E9620&gt;
+when = 'setup'
+reraise = (&lt;class '_pytest.outcomes.Exit'&gt;, &lt;class 'KeyboardInterrupt'&gt;)
+
+    @classmethod
+    def from_call(
+        cls,
+        func: Callable[[], TResult],
+        when: Literal["collect", "setup", "call", "teardown"],
+        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,
+    ) -&gt; CallInfo[TResult]:
+        """Call func, wrapping the result in a CallInfo.
+    
+        :param func:
+            The function to call. Called without arguments.
+        :type func: Callable[[], _pytest.runner.TResult]
+        :param when:
+            The phase in which the function is called.
+        :param reraise:
+            Exception or exceptions that shall propagate if raised by the
+            function, instead of being wrapped in the CallInfo.
+        """
+        excinfo = None
+        instant = timing.Instant()
+        try:
+&gt;           result: TResult | None = func()
+                                     ^^^^^^
+
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\runner.py:344: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\runner.py:246: in &lt;lambda&gt;
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\pluggy\_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\pluggy\_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\logging.py:843: in pytest_runtest_setup
+    yield
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\capture.py:895: in pytest_runtest_setup
+    return (yield)
+            ^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\runner.py:164: in pytest_runtest_setup
+    item.session._setupstate.setup(item)
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\runner.py:514: in setup
+    col.setup()
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\python.py:1674: in setup
+    self._request._fillfixtures()
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\fixtures.py:720: in _fillfixtures
+    item.funcargs[argname] = self.getfixturevalue(argname)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\fixtures.py:549: in getfixturevalue
+    fixturedef = self._get_active_fixturedef(argname)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\fixtures.py:640: in _get_active_fixturedef
+    fixturedef.execute(request=subrequest)
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\fixtures.py:1128: in execute
+    result = ihook.pytest_fixture_setup(fixturedef=self, request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\pluggy\_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\pluggy\_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\setuponly.py:36: in pytest_fixture_setup
+    return (yield)
+            ^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\fixtures.py:1196: in pytest_fixture_setup
+    result = call_fixture_func(fixturefunc, request, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\fixtures.py:923: in call_fixture_func
+    fixture_result = next(generator)
+                     ^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\tmpdir.py:264: in tmp_path
+    path = _mk_tmp(request, tmp_path_factory)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\tmpdir.py:251: in _mk_tmp
+    return factory.mktemp(name, numbered=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\tmpdir.py:130: in mktemp
+    basename = self._ensure_relative_to_basetemp(basename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\tmpdir.py:111: in _ensure_relative_to_basetemp
+    if (self.getbasetemp() / basename).resolve().parent != self.getbasetemp():
+        ^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\tmpdir.py:186: in getbasetemp
+    basetemp = make_numbered_dir_with_cleanup(
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\pathlib.py:407: in make_numbered_dir_with_cleanup
+    raise e
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\pathlib.py:388: in make_numbered_dir_with_cleanup
+    p = make_numbered_dir(root, prefix, mode)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\pathlib.py:229: in make_numbered_dir
+    max_existing = max(map(parse_num, find_suffixes(root, prefix)), default=-1)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\pathlib.py:188: in extract_suffixes
+    for entry in iter:
+                 ^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Jason/AppData/Local/Temp/pytest-of-Jason')
+prefix = 'pytest-'
+
+    def find_prefixed(root: Path, prefix: str) -&gt; Iterator[os.DirEntry[str]]:
+        """Find all elements in root that begin with the prefix, case-insensitive."""
+        l_prefix = prefix.lower()
+&gt;       for x in os.scandir(root):
+                 ^^^^^^^^^^^^^^^^
+E       PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Jason\\AppData\\Local\\Temp\\pytest-of-Jason'
+
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\.venv\Lib\site-packages\_pytest\pathlib.py:176: PermissionError</error></testcase><testcase classname="tests.test_boundary_and_scheduler" name="test_simultaneous_moving_and_static_sustained_projection" time="0.001" /><testcase classname="tests.test_boundary_and_scheduler" name="test_separating_near_source_does_not_inherit_remote_mover_speed" time="0.001" /></testsuite></testsuites>

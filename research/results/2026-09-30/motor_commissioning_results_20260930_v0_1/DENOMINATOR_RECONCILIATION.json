@@ -1,0 +1,134 @@
+{
+  "raw_denominator": {
+    "active_wall_seconds": 67.00199370004702,
+    "cases": [
+      {
+        "case_id": "MC-FS-001-CURRENT",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-001-M1",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-001-M2",
+        "native_steps": 0,
+        "status": "STARTED"
+      },
+      {
+        "case_id": "MC-FS-002-CURRENT",
+        "native_steps": 0,
+        "status": "NOT_STARTED"
+      },
+      {
+        "case_id": "MC-FS-002-M1",
+        "native_steps": 0,
+        "status": "NOT_STARTED"
+      },
+      {
+        "case_id": "MC-FS-002-M2",
+        "native_steps": 0,
+        "status": "NOT_STARTED"
+      },
+      {
+        "case_id": "MC-FS-003-CURRENT",
+        "native_steps": 0,
+        "status": "NOT_STARTED"
+      },
+      {
+        "case_id": "MC-FS-003-M1",
+        "native_steps": 0,
+        "status": "NOT_STARTED"
+      },
+      {
+        "case_id": "MC-FS-003-M2",
+        "native_steps": 0,
+        "status": "NOT_STARTED"
+      }
+    ],
+    "no_automatic_selection": true,
+    "no_continuation": true,
+    "no_retry": true,
+    "preflight_wall_seconds": 3.5107458998681977,
+    "stop": "ArithmeticError: Free-path release prefix crosses solid before clearance",
+    "verification_wall_seconds": 3.208827199996449
+  },
+  "cases": [
+    {
+      "case_id": "MC-FS-001-CURRENT",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-001-M1",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-001-M2",
+      "status": "APPARATUS_FAILURE_PREFIX",
+      "native_steps": 1025,
+      "duration_s": 10.25,
+      "has_closed_receipt": false
+    },
+    {
+      "case_id": "MC-FS-002-CURRENT",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "native_steps": 0,
+      "duration_s": 0,
+      "metrics": null
+    },
+    {
+      "case_id": "MC-FS-002-M1",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "native_steps": 0,
+      "duration_s": 0,
+      "metrics": null
+    },
+    {
+      "case_id": "MC-FS-002-M2",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "native_steps": 0,
+      "duration_s": 0,
+      "metrics": null
+    },
+    {
+      "case_id": "MC-FS-003-CURRENT",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "native_steps": 0,
+      "duration_s": 0,
+      "metrics": null
+    },
+    {
+      "case_id": "MC-FS-003-M1",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "native_steps": 0,
+      "duration_s": 0,
+      "metrics": null
+    },
+    {
+      "case_id": "MC-FS-003-M2",
+      "status": "NOT_STARTED_BATCH_STOP",
+      "native_steps": 0,
+      "duration_s": 0,
+      "metrics": null
+    }
+  ],
+  "reason": "Immutable executor row for failed case remains STARTED/0; reconciled from failure receipt and verified tail without editing it.",
+  "attempted_next_native_step": 1026,
+  "complete_cases": 2,
+  "interrupted_prefixes": 1,
+  "unstarted_cases": 6,
+  "no_retry": true,
+  "no_continuation": true
+}

@@ -1,0 +1,675 @@
+{
+  "status": "DESIGN_PROPOSAL_NOT_EXECUTABLE",
+  "base_configuration_file_sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+  "recommended": "N0-B",
+  "candidates": [
+    {
+      "candidate": "N0-A",
+      "status": "DESIGN_PROPOSAL_NOT_EXECUTABLE",
+      "reason": "Ecology-only comparison; current biology retained",
+      "ecology_shared": true,
+      "proposed_differences": [
+        {
+          "field": "world_side",
+          "current": 20.0,
+          "proposed": 14.0,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "source_positions",
+          "current": [
+            [
+              3,
+              3
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              17,
+              3
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              17,
+              17
+            ]
+          ],
+          "proposed": [
+            [
+              2.5,
+              2.0
+            ],
+            [
+              7.0,
+              2.0
+            ],
+            [
+              11.5,
+              2.0
+            ],
+            [
+              2.5,
+              4.5
+            ],
+            [
+              7.0,
+              4.5
+            ],
+            [
+              11.5,
+              4.5
+            ],
+            [
+              2.5,
+              9.5
+            ],
+            [
+              7.0,
+              9.5
+            ],
+            [
+              11.5,
+              9.5
+            ],
+            [
+              2.5,
+              12.0
+            ],
+            [
+              7.0,
+              12.0
+            ],
+            [
+              11.5,
+              12.0
+            ]
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "repair_rectangles",
+          "current": [
+            [
+              0,
+              0.25,
+              8,
+              12
+            ],
+            [
+              19.75,
+              20,
+              8,
+              12
+            ],
+            [
+              8,
+              12,
+              19.75,
+              20
+            ]
+          ],
+          "proposed": [
+            [
+              0.0,
+              0.25,
+              5.0,
+              9.0
+            ],
+            [
+              13.75,
+              14.0,
+              5.0,
+              9.0
+            ],
+            [
+              5.0,
+              9.0,
+              13.75,
+              14.0
+            ]
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "mover_centre",
+          "current": [
+            10.0,
+            10.0
+          ],
+          "proposed": [
+            7.0,
+            7.0
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "grid_n",
+          "current": 80,
+          "proposed": 56,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        }
+      ],
+      "unchanged_key_values": {
+        "body_radius": 0.5,
+        "body_mass": 1.0,
+        "body_inertia": 0.125,
+        "lever": 0.35,
+        "linear_drag": 1.0,
+        "angular_drag": 0.2,
+        "source_radius": 0.5,
+        "source_capacity": 0.2,
+        "source_tau": 400.0,
+        "uptake_rate": 0.04,
+        "birth_energy": 0.7,
+        "effort_cost": 0.001,
+        "stress_threshold": 0.25,
+        "repair_rate": 0.02,
+        "exchange_force_scale": 0.1,
+        "exchange_speed_scale": 0.25,
+        "mover_amplitude": 4.0,
+        "mover_period": 30.0,
+        "mover_size": [
+          2.0,
+          1.0
+        ],
+        "medium_diffusion": 0.5,
+        "solid_diffusion": 0.025,
+        "chemical_decay": 0.02,
+        "prehistory_seconds": 600.0,
+        "native_dt": 0.01,
+        "wave_dt": 0.2,
+        "illumination_boundary": "open"
+      },
+      "basal_cost": 0.0015,
+      "damage_per_impulse": 0.02,
+      "birth_integrity": 1.0,
+      "actuator_integrity_factors": [
+        "0.4+0.6*I",
+        "0.7+0.3*I"
+      ],
+      "all_other_baseline_values": "Unchanged",
+      "launch_permission": false
+    },
+    {
+      "candidate": "N0-B",
+      "status": "DESIGN_PROPOSAL_NOT_EXECUTABLE",
+      "reason": "Proposed 20% lower maintenance cost; preferred interpretable runway intervention",
+      "ecology_shared": true,
+      "proposed_differences": [
+        {
+          "field": "world_side",
+          "current": 20.0,
+          "proposed": 14.0,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "source_positions",
+          "current": [
+            [
+              3,
+              3
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              17,
+              3
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              17,
+              17
+            ]
+          ],
+          "proposed": [
+            [
+              2.5,
+              2.0
+            ],
+            [
+              7.0,
+              2.0
+            ],
+            [
+              11.5,
+              2.0
+            ],
+            [
+              2.5,
+              4.5
+            ],
+            [
+              7.0,
+              4.5
+            ],
+            [
+              11.5,
+              4.5
+            ],
+            [
+              2.5,
+              9.5
+            ],
+            [
+              7.0,
+              9.5
+            ],
+            [
+              11.5,
+              9.5
+            ],
+            [
+              2.5,
+              12.0
+            ],
+            [
+              7.0,
+              12.0
+            ],
+            [
+              11.5,
+              12.0
+            ]
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "repair_rectangles",
+          "current": [
+            [
+              0,
+              0.25,
+              8,
+              12
+            ],
+            [
+              19.75,
+              20,
+              8,
+              12
+            ],
+            [
+              8,
+              12,
+              19.75,
+              20
+            ]
+          ],
+          "proposed": [
+            [
+              0.0,
+              0.25,
+              5.0,
+              9.0
+            ],
+            [
+              13.75,
+              14.0,
+              5.0,
+              9.0
+            ],
+            [
+              5.0,
+              9.0,
+              13.75,
+              14.0
+            ]
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "mover_centre",
+          "current": [
+            10.0,
+            10.0
+          ],
+          "proposed": [
+            7.0,
+            7.0
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "grid_n",
+          "current": 80,
+          "proposed": 56,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "basal_cost",
+          "current": 0.0015,
+          "proposed": 0.0012,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        }
+      ],
+      "unchanged_key_values": {
+        "body_radius": 0.5,
+        "body_mass": 1.0,
+        "body_inertia": 0.125,
+        "lever": 0.35,
+        "linear_drag": 1.0,
+        "angular_drag": 0.2,
+        "source_radius": 0.5,
+        "source_capacity": 0.2,
+        "source_tau": 400.0,
+        "uptake_rate": 0.04,
+        "birth_energy": 0.7,
+        "effort_cost": 0.001,
+        "stress_threshold": 0.25,
+        "repair_rate": 0.02,
+        "exchange_force_scale": 0.1,
+        "exchange_speed_scale": 0.25,
+        "mover_amplitude": 4.0,
+        "mover_period": 30.0,
+        "mover_size": [
+          2.0,
+          1.0
+        ],
+        "medium_diffusion": 0.5,
+        "solid_diffusion": 0.025,
+        "chemical_decay": 0.02,
+        "prehistory_seconds": 600.0,
+        "native_dt": 0.01,
+        "wave_dt": 0.2,
+        "illumination_boundary": "open"
+      },
+      "basal_cost": 0.0012,
+      "damage_per_impulse": 0.02,
+      "birth_integrity": 1.0,
+      "actuator_integrity_factors": [
+        "0.4+0.6*I",
+        "0.7+0.3*I"
+      ],
+      "all_other_baseline_values": "Unchanged",
+      "launch_permission": false
+    },
+    {
+      "candidate": "N0-C",
+      "status": "DESIGN_PROPOSAL_NOT_EXECUTABLE",
+      "reason": "Same energy runway plus proposed 25% lower I loss per impulse; lower evidence support",
+      "ecology_shared": true,
+      "proposed_differences": [
+        {
+          "field": "world_side",
+          "current": 20.0,
+          "proposed": 14.0,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "source_positions",
+          "current": [
+            [
+              3,
+              3
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              17,
+              3
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              17,
+              17
+            ]
+          ],
+          "proposed": [
+            [
+              2.5,
+              2.0
+            ],
+            [
+              7.0,
+              2.0
+            ],
+            [
+              11.5,
+              2.0
+            ],
+            [
+              2.5,
+              4.5
+            ],
+            [
+              7.0,
+              4.5
+            ],
+            [
+              11.5,
+              4.5
+            ],
+            [
+              2.5,
+              9.5
+            ],
+            [
+              7.0,
+              9.5
+            ],
+            [
+              11.5,
+              9.5
+            ],
+            [
+              2.5,
+              12.0
+            ],
+            [
+              7.0,
+              12.0
+            ],
+            [
+              11.5,
+              12.0
+            ]
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "repair_rectangles",
+          "current": [
+            [
+              0,
+              0.25,
+              8,
+              12
+            ],
+            [
+              19.75,
+              20,
+              8,
+              12
+            ],
+            [
+              8,
+              12,
+              19.75,
+              20
+            ]
+          ],
+          "proposed": [
+            [
+              0.0,
+              0.25,
+              5.0,
+              9.0
+            ],
+            [
+              13.75,
+              14.0,
+              5.0,
+              9.0
+            ],
+            [
+              5.0,
+              9.0,
+              13.75,
+              14.0
+            ]
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "mover_centre",
+          "current": [
+            10.0,
+            10.0
+          ],
+          "proposed": [
+            7.0,
+            7.0
+          ],
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "grid_n",
+          "current": 80,
+          "proposed": 56,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "basal_cost",
+          "current": 0.0015,
+          "proposed": 0.0012,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        },
+        {
+          "field": "damage_per_impulse",
+          "current": 0.02,
+          "proposed": 0.015,
+          "provenance": "Assistant design choice in NURSERY_0_DESIGN_v0_1; not applied",
+          "confidence": "Geometry/accounting explicit; developmental effect untested",
+          "reversibility": "Only between separately fixed future configurations"
+        }
+      ],
+      "unchanged_key_values": {
+        "body_radius": 0.5,
+        "body_mass": 1.0,
+        "body_inertia": 0.125,
+        "lever": 0.35,
+        "linear_drag": 1.0,
+        "angular_drag": 0.2,
+        "source_radius": 0.5,
+        "source_capacity": 0.2,
+        "source_tau": 400.0,
+        "uptake_rate": 0.04,
+        "birth_energy": 0.7,
+        "effort_cost": 0.001,
+        "stress_threshold": 0.25,
+        "repair_rate": 0.02,
+        "exchange_force_scale": 0.1,
+        "exchange_speed_scale": 0.25,
+        "mover_amplitude": 4.0,
+        "mover_period": 30.0,
+        "mover_size": [
+          2.0,
+          1.0
+        ],
+        "medium_diffusion": 0.5,
+        "solid_diffusion": 0.025,
+        "chemical_decay": 0.02,
+        "prehistory_seconds": 600.0,
+        "native_dt": 0.01,
+        "wave_dt": 0.2,
+        "illumination_boundary": "open"
+      },
+      "basal_cost": 0.0012,
+      "damage_per_impulse": 0.015,
+      "birth_integrity": 1.0,
+      "actuator_integrity_factors": [
+        "0.4+0.6*I",
+        "0.7+0.3*I"
+      ],
+      "all_other_baseline_values": "Unchanged",
+      "launch_permission": false
+    }
+  ],
+  "no_seeds_or_starts_prepared": true,
+  "no_launch_authorities_created": true
+}

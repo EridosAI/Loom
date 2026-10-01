@@ -1,0 +1,20 @@
+{
+  "recorded_utc": "2026-09-29T07:21:21.0755891Z",
+  "case": "B1-CHEMISTRY-HIDDEN",
+  "authority_sha256": "9a1a6c5f3927398cb0827a89ed72fe243a1d5cdb458cc4a114f4caef4dbffc84",
+  "status": "AUTHORIZED-BUT-NOT-EXECUTED / WITHDRAWN AT JASON DIRECTION",
+  "prior_lifecycle": "prepared",
+  "final_lifecycle": "ended",
+  "end_request_posted": true,
+  "simulated_seconds": 0,
+  "native_steps": 0,
+  "commands": 0,
+  "assistant_start_requests": 0,
+  "assistant_command_requests": 0,
+  "preparation_world_loaded_previously": true,
+  "preparation_timer_started_previously": true,
+  "evaluator_state_inspected": false,
+  "execution_authorization_withdrawn": true,
+  "resume_or_retry_authorized": false,
+  "reason": "Jason withdrew the human case because operator familiarization and manual interaction confound the intended perceptual-ceiling question; design-only replacement requested."
+}

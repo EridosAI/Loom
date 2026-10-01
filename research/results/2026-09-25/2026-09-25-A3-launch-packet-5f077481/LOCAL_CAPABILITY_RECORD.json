@@ -1,0 +1,17 @@
+{
+  "platform": "Actual desktop-local Windows; resolved code/workbench/project paths, not cloud execution",
+  "Python": "Python 3.13.5",
+  "Git": "git version 2.50.0.windows.1",
+  "runtime_inventory": "CODE_AND_RUNTIME_IDENTITIES.json",
+  "scoped_temporary_write_read_delete": "passed in new packet folder only",
+  "disk_free_bytes_at_seal": 687131611136,
+  "proposed_free_disk_precondition_bytes": 3000000000,
+  "disk_precondition_currently_met": true,
+  "execution_authority": "missing by design; preparation only",
+  "dependencies": "existing pinned Python/numpy/scipy identities checked; none installed",
+  "code_worktree": "read only, unchanged clean branch/HEAD; no new worktree or code write needed",
+  "prospective_A3_run_directory_absent": true,
+  "future_execution_output_permission": "Normal sandbox approval for exact artifact output outside project root, only after genuine Jason execution authority",
+  "background_processes_started": 0,
+  "viewer_inspector_servers_started": 0
+}

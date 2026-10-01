@@ -1,0 +1,345 @@
+{
+  "V1": {
+    "valid": true,
+    "state_sha256": "37adf68654e324141c678316f0f1f4b777853948e548cdd0d133e810c8722a6b",
+    "execution_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+    "native_index": 0,
+    "time": 0.0,
+    "state_unchanged": true
+  },
+  "V3_initial_read": {
+    "privileged_actual_input": {
+      "position": [
+        6.0,
+        3.0
+      ],
+      "angle": 3.141592653589793,
+      "velocity": [
+        0.0,
+        0.0
+      ],
+      "omega": 0.0,
+      "reserves": [
+        0.7,
+        1.0
+      ],
+      "commands": [
+        0.0,
+        0.0
+      ],
+      "geometry": [
+        {
+          "id": "wall-0",
+          "kind": "wall",
+          "axis": 0,
+          "sign": 1,
+          "boundary": 0,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "wall-1",
+          "kind": "wall",
+          "axis": 0,
+          "sign": -1,
+          "boundary": 20.0,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "wall-2",
+          "kind": "wall",
+          "axis": 1,
+          "sign": 1,
+          "boundary": 0,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "wall-3",
+          "kind": "wall",
+          "axis": 1,
+          "sign": -1,
+          "boundary": 20.0,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "source-0",
+          "kind": "disk",
+          "centre": [
+            3.0,
+            3.0
+          ],
+          "radius": 0.5,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "source-1",
+          "kind": "disk",
+          "centre": [
+            10.0,
+            3.0
+          ],
+          "radius": 0.5,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "source-2",
+          "kind": "disk",
+          "centre": [
+            17.0,
+            3.0
+          ],
+          "radius": 0.5,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "source-3",
+          "kind": "disk",
+          "centre": [
+            3.0,
+            10.0
+          ],
+          "radius": 0.5,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "source-4",
+          "kind": "disk",
+          "centre": [
+            17.0,
+            10.0
+          ],
+          "radius": 0.5,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "source-5",
+          "kind": "disk",
+          "centre": [
+            3.0,
+            17.0
+          ],
+          "radius": 0.5,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "source-6",
+          "kind": "disk",
+          "centre": [
+            10.0,
+            17.0
+          ],
+          "radius": 0.5,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "source-7",
+          "kind": "disk",
+          "centre": [
+            17.0,
+            17.0
+          ],
+          "radius": 0.5,
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "repair-0",
+          "kind": "rect",
+          "rect": [
+            0.0,
+            0.25,
+            8.0,
+            12.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "repair-1",
+          "kind": "rect",
+          "rect": [
+            19.75,
+            20.0,
+            8.0,
+            12.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "repair-2",
+          "kind": "rect",
+          "rect": [
+            8.0,
+            12.0,
+            19.75,
+            20.0
+          ],
+          "velocity": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": "mover",
+          "kind": "rect",
+          "rect": [
+            7.380585940418742,
+            9.380585940418742,
+            9.5,
+            10.5
+          ],
+          "velocity": [
+            -0.7660305017401406,
+            0.0
+          ]
+        }
+      ],
+      "mover_phase": 3.558411277237072,
+      "mover_velocity": [
+        -0.7660305017401406,
+        0.0
+      ],
+      "stocks": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "contacts": [],
+      "time": 0.0
+    },
+    "separate_raw_observer_payload": {
+      "schema": 1,
+      "raw_labels": [
+        "light_0",
+        "light_1",
+        "light_2",
+        "light_3",
+        "light_4",
+        "light_5",
+        "light_6",
+        "light_7",
+        "light_8",
+        "light_9",
+        "chemistry_0",
+        "chemistry_1",
+        "chemistry_2",
+        "chemistry_3",
+        "contact_0",
+        "contact_1",
+        "contact_2",
+        "contact_3",
+        "contact_4",
+        "contact_5",
+        "contact_6",
+        "contact_7",
+        "proprioception_0",
+        "proprioception_1",
+        "proprioception_2",
+        "proprioception_3",
+        "proprioception_4",
+        "proprioception_5",
+        "proprioception_6"
+      ],
+      "history": [
+        {
+          "native_index": 0,
+          "time": 0.0,
+          "raw": [
+            0.014097411596037541,
+            0.016752262509911,
+            0.1127368556369649,
+            0.09018948450957191,
+            0.05399025323295842,
+            0.021596101293183362,
+            0.021795713674257117,
+            0.01743657093940569,
+            0.08023458736011009,
+            0.06418766988808809,
+            0.561445164829953,
+            0.5116456069612856,
+            0.5637923165466786,
+            0.5136118410843067,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "actual_EI": [
+            0.7,
+            1.0
+          ],
+          "EI_sample_time": 0.0
+        }
+      ],
+      "own_commands": [],
+      "annotations": [],
+      "availability": "paused"
+    },
+    "state_unchanged": true,
+    "scope": "Initial live-object read only; no sensory trial and no command produced."
+  },
+  "null_grant_rejected": "commissioning execution is not authorized",
+  "snapshot_roundtrip_identical": true,
+  "initial_state_unchanged_after_checks": true,
+  "commissioning_trajectories_executed": 0,
+  "controller_commands_computed": 0,
+  "new_prehistory_preparations": 0,
+  "engine_native_field_wave_account_replay_calls": 0,
+  "future_live_V2_V3": "pending A1 evidence, not asserted complete",
+  "preparation_wall_seconds": 1.2913440999691375
+}

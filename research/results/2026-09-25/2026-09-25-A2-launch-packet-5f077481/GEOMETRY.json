@@ -1,0 +1,107 @@
+{
+  "body_radius": 0.5,
+  "source_0": [
+    3,
+    3
+  ],
+  "source_1": [
+    10,
+    3
+  ],
+  "mover_swept_rectangle": [
+    5.0,
+    15.0,
+    9.5,
+    10.5
+  ],
+  "segments": {
+    "first_approach": {
+      "from": [
+        6.0,
+        3.0
+      ],
+      "to": [
+        4.0,
+        3.0
+      ],
+      "length": 2.0,
+      "surface_clearances": {
+        "wall-0": 3.5,
+        "wall-1": 13.5,
+        "wall-2": 2.5,
+        "wall-3": 16.5,
+        "source-0": 0.0,
+        "source-1": 3.0,
+        "source-2": 10.0,
+        "source-3": 6.0710678118654755,
+        "source-4": 12.038404810405298,
+        "source-5": 13.035668847618199,
+        "source-6": 13.560219778561036,
+        "source-7": 16.804493814764857,
+        "repair-0": 5.75,
+        "repair-1": 14.130874888399532,
+        "repair-2": 16.368980407837338
+      },
+      "mover_union_clearance": 6.0
+    },
+    "depart_to_original_start": {
+      "from": [
+        4.0,
+        3.0
+      ],
+      "to": [
+        6.0,
+        3.0
+      ],
+      "length": 2.0,
+      "surface_clearances": {
+        "wall-0": 3.5,
+        "wall-1": 13.5,
+        "wall-2": 2.5,
+        "wall-3": 16.5,
+        "source-0": 0.0,
+        "source-1": 3.0,
+        "source-2": 10.0,
+        "source-3": 6.0710678118654755,
+        "source-4": 12.038404810405298,
+        "source-5": 13.035668847618199,
+        "source-6": 13.560219778561036,
+        "source-7": 16.804493814764857,
+        "repair-0": 5.75,
+        "repair-1": 14.130874888399532,
+        "repair-2": 16.368980407837338
+      },
+      "mover_union_clearance": 6.0
+    },
+    "second_approach": {
+      "from": [
+        6.0,
+        3.0
+      ],
+      "to": [
+        9.0,
+        3.0
+      ],
+      "length": 3.0,
+      "surface_clearances": {
+        "wall-0": 5.5,
+        "wall-1": 10.5,
+        "wall-2": 2.5,
+        "wall-3": 16.5,
+        "source-0": 2.0,
+        "source-1": 0.0,
+        "source-2": 7.0,
+        "source-3": 6.615773105863909,
+        "source-4": 9.63014581273465,
+        "source-5": 13.317821063276353,
+        "source-6": 13.035668847618199,
+        "source-7": 15.124515496597098,
+        "repair-0": 7.1198753270640855,
+        "repair-1": 11.355905701379376,
+        "repair-2": 16.25
+      },
+      "mover_union_clearance": 6.0
+    }
+  },
+  "scope": "Exact straight-segment finite-body clearance only; no dynamic/controller path prediction; no A2 execution."
+}

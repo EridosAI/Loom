@@ -1,0 +1,4 @@
+Observed tool output for the final focused suite, also retained as machine-written JUnit XML:
+35 passed in 1.17s
+Command: Python 3.13.5 -B -X utf8 -m pytest -p no:cacheprovider developmental_ecology/tests_apparatus/test_b1_minimal.py --basetemp <workspace>/b1_minimal_implementation_20260929/component-03 -q --tb=short --junitxml=<workspace>/b1_minimal_implementation_20260929/COMPONENT_JUNIT.xml
+No physical execution; inert scheduler stubs only.

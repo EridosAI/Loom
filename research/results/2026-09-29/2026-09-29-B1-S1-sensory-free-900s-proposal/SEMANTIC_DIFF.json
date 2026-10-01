@@ -1,0 +1,77 @@
+{
+  "old_authority_sha256": "394dfc775fc1c6dc93820384a79f4fd63291f06ee03bb28f80e464c989861dbc",
+  "new_authority_sha256": "57386e964ea018050bedc18a397e4611203926626e4363c2c9b04d79c9fc5ba2",
+  "execution_changes": [
+    {
+      "path": "/execution/resources/wall_limit_seconds",
+      "operation": "replace",
+      "before": 600,
+      "after": 900
+    }
+  ],
+  "complete_outer_object_diff": [
+    {
+      "path": "/bound_documents/JASON_REQUEST.md",
+      "operation": "add",
+      "after": "8a6ffcb2ae27bcb0ae4bb31f9aa73b6b6c65b66dbc67a50aa7f101853a630edd"
+    },
+    {
+      "path": "/bound_documents/RESOURCE_ADJUSTMENT_PROJECTION.json",
+      "operation": "add",
+      "after": "1217c90c270843b836953e5fdbbd8e5c283be415104dcb95570d55ace48372eb"
+    },
+    {
+      "path": "/bound_documents/SINGLE_CASE_RESOURCE_PLAN.md",
+      "operation": "add",
+      "after": "91fa30ccfae33368ee8d81716f977bf744a38a4bcd8bf127da65556ce9261505"
+    },
+    {
+      "path": "/execution_object/execution/resources/wall_limit_seconds",
+      "operation": "replace",
+      "before": 600,
+      "after": 900
+    },
+    {
+      "path": "/execution_sha256",
+      "operation": "replace",
+      "before": "62edc20ae079707d978b7785f047fcc41e155562edf4a485b56f68252b629dd9",
+      "after": "97bf333344bc97c2bdf7bd61f2ce0c758a75a9f7201561ca297d3539c6fe565f"
+    },
+    {
+      "path": "/shared_resource_limits/wall_per_case_seconds",
+      "operation": "replace",
+      "before": 600,
+      "after": 900
+    },
+    {
+      "path": "/single_case_resource_amendment",
+      "operation": "add",
+      "after": {
+        "original_authority_sha256": "394dfc775fc1c6dc93820384a79f4fd63291f06ee03bb28f80e464c989861dbc",
+        "original_execution_sha256": "62edc20ae079707d978b7785f047fcc41e155562edf4a485b56f68252b629dd9",
+        "new_authorization_required": true,
+        "execution_order": [
+          "B1-MINIMAL-S1-SENSORY-FREE"
+        ],
+        "maximum_attempts": 1,
+        "only_execution_parameter_change": {
+          "path": "/execution/resources/wall_limit_seconds",
+          "operation": "replace",
+          "before": 600,
+          "after": 900
+        },
+        "precedence": "This amendment and SINGLE_CASE_RESOURCE_PLAN.md govern this proposal. Original shared_batch_order, batch maxima and original resource documents are historical context, not an active schedule or transferable allowance. The sole resource value increased is this case wall allowance, mirrored in shared_resource_limits.",
+        "prior_nine_case_batch_remains_stopped": true,
+        "original_rule_allowing_a_next_separately_authorized_batch_case_is_inactive": true,
+        "after_any_stop": "Stop. No automatic next case, retry or continuation.",
+        "S1_FULL": "Preserve as accepted productive FULL witness; never continue or retry.",
+        "other_cases": "No S1-HIDDEN, S2 or S3 preparation/execution authorized by this object.",
+        "old_sealed_human_B1_state_access": "prohibited"
+      }
+    }
+  ],
+  "unexpected_execution_changes": [],
+  "same_snapshot_bytes": true,
+  "same_checkpoint": true,
+  "wrapper_explanation": "Derived execution hash changes; administrative mirror 600->900; newly bound preparation/resource documents and single-case scope restriction. Original batch fields retained explicitly as history only."
+}

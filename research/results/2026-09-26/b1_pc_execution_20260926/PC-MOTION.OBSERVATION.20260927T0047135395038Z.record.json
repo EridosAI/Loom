@@ -1,0 +1,33 @@
+{
+  "case": "PC-MOTION",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T00:47:13.5363713+00:00",
+  "user_submission": "Screenshot only; no verbal interpretation yet",
+  "image_file": "PC-MOTION.OBSERVATION.20260927T0047135395038Z.user.png",
+  "image_sha256": "6d8b971867f631c99b77caffd03217cced885017e86fe414e07c5265f60046b2",
+  "display_file": "PC-MOTION.OBSERVATION.20260927T0047135395038Z.display.json",
+  "display_sha256": "a895c6e885491900a8e3ac5f1157f1571330f3a6e282bce0074a23a8a24682cf",
+  "lifecycle_at_check": "paused",
+  "simulation_time_at_check": 0.20000000000000004,
+  "command_history": [
+    {
+      "time": 0.0,
+      "command": [
+        0.7,
+        0.0
+      ]
+    },
+    {
+      "time": 0.09999999999999999,
+      "command": [
+        0.4,
+        0.8
+      ]
+    }
+  ],
+  "operator_explanation": "PENDING",
+  "demonstration_status": "PENDING: human explanation distinguishing command, achieved motion and discrepancy is still required",
+  "assistant_actuator_commands": 0,
+  "privileged_evaluator_read": false,
+  "B1_state_accessed": false
+}

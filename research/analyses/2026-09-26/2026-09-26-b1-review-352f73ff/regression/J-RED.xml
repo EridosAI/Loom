@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1.017" timestamp="2026-09-26T19:38:52.251059+08:00" hostname="Equinox"><testcase classname="tests_apparatus.test_b1_operator" name="test_J_ended_irreversible" time="0.580"><failure message="AssertionError: ENDED ADVANCED WORLD&#10;assert (False)">tmp_path = WindowsPath('C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/exports/2026-09-26-b1-review-352f73ff/regression/J-RED-temp/test_J_ended_irreversible0')
+
+    def test_J_ended_irreversible(tmp_path):
+        e,r,g=case(tmp_path);old=g.envelope()['decision_token'];g.end(old);before=state_hash(e)
+        real=g.submit
+        def submit(*args):
+            if fault('J'):
+                adapter.step(e,EXTERNAL,[0.,0.],None);return g.envelope()
+            return real(*args)
+        with patch.object(g,'submit',submit):denied=rejected(lambda:g.submit(0.,0.,'',old))
+&gt;       assert denied and state_hash(e)==before and e.native_index==0,'ENDED ADVANCED WORLD'
+E       AssertionError: ENDED ADVANCED WORLD
+E       assert (False)
+
+tests_apparatus\test_b1_operator.py:156: AssertionError</failure></testcase></testsuite></testsuites>

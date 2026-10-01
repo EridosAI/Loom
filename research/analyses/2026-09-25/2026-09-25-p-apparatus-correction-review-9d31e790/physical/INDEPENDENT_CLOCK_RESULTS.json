@@ -1,0 +1,370 @@
+{
+  "scope": "fixed manufactured boundaries and at most 0.2-second components; no commissioning",
+  "timing_oracle": "80-digit Decimal interval ownership [deadline - existing absolute tolerance, infinity); integer native ticks",
+  "exact_old_new": {
+    "old_blob_sha256": "064f27b73903dff7d7793d609e65c574aa21a59bdf1cc32bea039b7591ec34dd",
+    "saved_time": 0.09999999999999999,
+    "old_cursor": 0,
+    "new_cursor": 1,
+    "old_command": [
+      0.6958934252903155,
+      0.23474350126270044
+    ],
+    "new_command": [
+      -0.3577907305552408,
+      0.6422092694447592
+    ],
+    "old_final": [
+      0.6958934252903155,
+      0.23474350126270044
+    ],
+    "new_final": [
+      0.0,
+      0.0
+    ],
+    "old_code_fails_independent_tick_expectation": true,
+    "disabled_comparison_fails_same_expectation": true,
+    "restored_comparison_passes": true
+  },
+  "boundary_class": [
+    {
+      "name": "full_hold_before",
+      "now": 0.0,
+      "deadline_minus_now_decimal": "0.1000000000000000055511151231257827021181583404541015625",
+      "oracle_due": false,
+      "cursor": 0,
+      "final_stopped": false
+    },
+    {
+      "name": "one_native_before",
+      "now": 0.09,
+      "deadline_minus_now_decimal": "0.0100000000000000088817841970012523233890533447265625000",
+      "oracle_due": false,
+      "cursor": 0,
+      "final_stopped": false
+    },
+    {
+      "name": "two_tolerances_before",
+      "now": 0.0999999998,
+      "deadline_minus_now_decimal": "2.0000000267028639200361794792115688323974609375E-10",
+      "oracle_due": false,
+      "cursor": 0,
+      "final_stopped": false
+    },
+    {
+      "name": "one_point_one_tolerances_before",
+      "now": 0.09999999989000001,
+      "deadline_minus_now_decimal": "1.0999999522365300208548433147370815277099609375E-10",
+      "oracle_due": false,
+      "cursor": 0,
+      "final_stopped": false
+    },
+    {
+      "name": "below_tolerance_edge",
+      "now": 0.0999999999,
+      "deadline_minus_now_decimal": "1.000000082740370999090373516082763671875000000E-10",
+      "oracle_due": false,
+      "cursor": 0,
+      "final_stopped": false
+    },
+    {
+      "name": "represented_tolerance_edge",
+      "now": 0.09999999990000001,
+      "deadline_minus_now_decimal": "9.999999439624929209458059631288051605224609375E-11",
+      "oracle_due": true,
+      "cursor": 1,
+      "final_stopped": true
+    },
+    {
+      "name": "above_tolerance_edge",
+      "now": 0.09999999990000003,
+      "deadline_minus_now_decimal": "9.99999805184614842801238410174846649169921875E-11",
+      "oracle_due": true,
+      "cursor": 1,
+      "final_stopped": true
+    },
+    {
+      "name": "half_tolerance_before",
+      "now": 0.09999999995,
+      "deadline_minus_now_decimal": "5.00000041370185499545186758041381835937500000E-11",
+      "oracle_due": true,
+      "cursor": 1,
+      "final_stopped": true
+    },
+    {
+      "name": "immediately_below",
+      "now": 0.09999999999999999,
+      "deadline_minus_now_decimal": "1.387778780781445675529539585113525390625E-17",
+      "oracle_due": true,
+      "cursor": 1,
+      "final_stopped": true
+    },
+    {
+      "name": "exact",
+      "now": 0.1,
+      "deadline_minus_now_decimal": "0E-55",
+      "oracle_due": true,
+      "cursor": 1,
+      "final_stopped": true
+    },
+    {
+      "name": "immediately_above",
+      "now": 0.10000000000000002,
+      "deadline_minus_now_decimal": "-1.387778780781445675529539585113525390625E-17",
+      "oracle_due": true,
+      "cursor": 1,
+      "final_stopped": true
+    },
+    {
+      "name": "half_tolerance_above",
+      "now": 0.10000000005000001,
+      "deadline_minus_now_decimal": "-5.00000041370185499545186758041381835937500000E-11",
+      "oracle_due": true,
+      "cursor": 1,
+      "final_stopped": true
+    },
+    {
+      "name": "two_tolerances_above",
+      "now": 0.10000000020000001,
+      "deadline_minus_now_decimal": "-2.0000000267028639200361794792115688323974609375E-10",
+      "oracle_due": true,
+      "cursor": 1,
+      "final_stopped": true
+    }
+  ],
+  "continuous": {
+    "final_time": 0.20000000000000004,
+    "final_tick": 20,
+    "field_calls": 20,
+    "neural_rng_unchanged": true,
+    "verification": {
+      "class": "AV",
+      "native_records": 20,
+      "wave_records": 0,
+      "events": 20,
+      "replayed": true,
+      "maximum_accounting_residual": 5.439645587267117e-17,
+      "mode": "external_controller",
+      "status": "administrative_cutoff"
+    }
+  },
+  "pause_resume": [
+    {
+      "pause_index": 7,
+      "pause_time": 0.07,
+      "remaining": 3,
+      "held_command_preserved": true,
+      "next_stage_cursor": 1,
+      "next_stage_new_command": true,
+      "state_equal_continuous": true,
+      "first_verification": {
+        "class": "AV",
+        "native_records": 7,
+        "wave_records": 0,
+        "events": 7,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_pause"
+      },
+      "resumed_verification": {
+        "class": "AV",
+        "native_records": 13,
+        "wave_records": 0,
+        "events": 13,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      }
+    },
+    {
+      "pause_index": 9,
+      "pause_time": 0.09,
+      "remaining": 1,
+      "held_command_preserved": true,
+      "next_stage_cursor": 1,
+      "next_stage_new_command": true,
+      "state_equal_continuous": true,
+      "first_verification": {
+        "class": "AV",
+        "native_records": 9,
+        "wave_records": 0,
+        "events": 9,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_pause"
+      },
+      "resumed_verification": {
+        "class": "AV",
+        "native_records": 11,
+        "wave_records": 0,
+        "events": 11,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      }
+    },
+    {
+      "pause_index": 10,
+      "pause_time": 0.09999999999999999,
+      "remaining": 0,
+      "held_command_preserved": true,
+      "next_stage_cursor": 1,
+      "next_stage_new_command": true,
+      "state_equal_continuous": true,
+      "first_verification": {
+        "class": "AV",
+        "native_records": 10,
+        "wave_records": 0,
+        "events": 10,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_pause"
+      },
+      "resumed_verification": {
+        "class": "AV",
+        "native_records": 10,
+        "wave_records": 0,
+        "events": 10,
+        "replayed": true,
+        "maximum_accounting_residual": 2.000014195056854e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      }
+    }
+  ],
+  "preflight_only_clock_states": [
+    {
+      "case": "clearly_before",
+      "time": 0.0,
+      "oracle_accept": true,
+      "error": null,
+      "cursor": 0,
+      "hold_remaining": 10,
+      "world_unchanged": true,
+      "rejection_session_unchanged": false,
+      "command_records": 1
+    },
+    {
+      "case": "crossing_less_than_hold",
+      "time": 0.09,
+      "oracle_accept": false,
+      "error": "command hold would cross prescribed stage boundary",
+      "cursor": 0,
+      "hold_remaining": 0,
+      "world_unchanged": true,
+      "rejection_session_unchanged": true,
+      "command_records": 0
+    },
+    {
+      "case": "outside_tolerance",
+      "time": 0.0999999998,
+      "oracle_accept": false,
+      "error": "command hold would cross prescribed stage boundary",
+      "cursor": 0,
+      "hold_remaining": 0,
+      "world_unchanged": true,
+      "rejection_session_unchanged": true,
+      "command_records": 0
+    },
+    {
+      "case": "effectively_due",
+      "time": 0.09999999995,
+      "oracle_accept": true,
+      "error": null,
+      "cursor": 1,
+      "hold_remaining": 10,
+      "world_unchanged": true,
+      "rejection_session_unchanged": false,
+      "command_records": 1
+    },
+    {
+      "case": "exactly_due",
+      "time": 0.1,
+      "oracle_accept": true,
+      "error": null,
+      "cursor": 1,
+      "hold_remaining": 10,
+      "world_unchanged": true,
+      "rejection_session_unchanged": false,
+      "command_records": 1
+    },
+    {
+      "case": "above_due",
+      "time": 0.10000000005000001,
+      "oracle_accept": true,
+      "error": null,
+      "cursor": 1,
+      "hold_remaining": 10,
+      "world_unchanged": true,
+      "rejection_session_unchanged": false,
+      "command_records": 1
+    }
+  ],
+  "expired_final_retries_resume": [
+    {
+      "label": "nominal",
+      "time": 0.09999999999999999,
+      "errors": [
+        "route complete; no command hold authorized",
+        "route complete; no command hold authorized",
+        "route complete; no command hold authorized"
+      ],
+      "remaining": 0,
+      "no_state_or_command_change": true,
+      "native_index": 10
+    },
+    {
+      "label": "half-tolerance-before",
+      "time": 0.09999999995,
+      "errors": [
+        "route complete; no command hold authorized",
+        "route complete; no command hold authorized",
+        "route complete; no command hold authorized"
+      ],
+      "remaining": 0,
+      "no_state_or_command_change": true,
+      "native_index": 10
+    }
+  ],
+  "global_deadlines": [
+    {
+      "kind": "full",
+      "duration": 0.1,
+      "final_time": 0.09999999999999999,
+      "steps": 10,
+      "hold_steps": 10,
+      "verification": {
+        "class": "AV",
+        "native_records": 10,
+        "wave_records": 0,
+        "events": 10,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      }
+    },
+    {
+      "kind": "short-global",
+      "duration": 0.07,
+      "final_time": 0.07,
+      "steps": 7,
+      "hold_steps": 7,
+      "verification": {
+        "class": "AV",
+        "native_records": 7,
+        "wave_records": 0,
+        "events": 7,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      }
+    }
+  ]
+}

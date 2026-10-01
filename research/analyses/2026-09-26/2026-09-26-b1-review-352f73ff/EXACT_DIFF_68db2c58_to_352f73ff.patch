@@ -1,0 +1,1837 @@
+diff --git a/developmental_ecology/loom_commissioning/authority.py b/developmental_ecology/loom_commissioning/authority.py
+index c451902508712fcdc1f5f83db9930c635519f211..d3f19e38559a69c74e8f3df4cd3956dcb56ba76d 100644
+--- a/developmental_ecology/loom_commissioning/authority.py
++++ b/developmental_ecology/loom_commissioning/authority.py
+@@ -102,7 +102,11 @@ def controller_identity(kind):
+                         ('grid_steps','case_end','stage_ends','decision_clock','hold_steps',
+                          'expected_time','clock_allowance','validate_physical_time')}}
+     if kind=='sensor_human':
+-        implementation.update({'sensor_ui.py':file_identity('sensor_ui.py'),'sensor.html':file_identity('sensor.html')})
++        from . import operator_view
++        implementation.update({'sensor_ui.py':file_identity('sensor_ui.py'),'sensor.html':file_identity('sensor.html'),
++            'operator_view.py':file_identity('operator_view.py'),
++            'live_operator_functions':{n:callable_identity(getattr(operator_view,n)) for n in
++                ('display_identity','validate_intervention','validate_operator_payload','project')}})
+     interface={'none':'P-native','waypoint':'privileged-closed-input','manual_privileged':'privileged-manual-fallback',
+                'sensor_human':'29-raw-native-history-held-EI-own-commands'}[kind]
+     settings=copy.deepcopy(c.WAYPOINT_SETTINGS) if kind=='waypoint' else {}
+@@ -112,12 +116,13 @@ def adapter_identity(mode):
+     return {'mode':mode,'implementation_sha256':file_identity('adapter.py'),
+             'intervention':'freeze-reviewed-structure-at-reviewed-restoration-points' if mode==FIXED else 'inactive-neural-external-actuation' if mode!=INTACT else 'none'}
+ 
+-def make_execution(mode,controller,*,plan=None,protocol=None,storage_limit=1_000_000_000,wall_limit=3600):
++def make_execution(mode,controller,*,plan=None,protocol=None,storage_limit=1_000_000_000,wall_limit=3600,display='none'):
++    from .operator_view import display_identity
+     kind={'waypoint':'prescribed_waypoints','manual_privileged':'privileged_manual_procedure',
+           'sensor_human':'sensor_only_human_procedure','none':'native_autonomous_procedure'}[controller]
+     return {'runtime':runtime_identity(),'controller':controller_identity(controller),'adapter':adapter_identity(mode),
+             'procedure':{'kind':kind,'stages':copy.deepcopy(plan),'protocol':copy.deepcopy(protocol)},
+-            'display_intervention':{'kind':'none'},
++            'display_intervention':display_identity(display),
+             'resources':{'storage_limit_bytes':storage_limit,'wall_limit_seconds':wall_limit}}
+ 
+ def validate_protocol_fields(protocol):
+@@ -142,9 +147,11 @@ def validate_execution(m,*,complete=False):
+     require(set(x)==set(expected), 'execution specification schema mismatch')
+     for k in ('runtime','controller','adapter'):
+         require(x[k]==expected[k],f'{k} execution identity mismatch')
+-    # This correction binds existing full-display behavior; it does not build
+-    # a new deprivation adapter or silently treat its label as an implementation.
+-    require(x['display_intervention']=={'kind':'none'}, 'unsupported display intervention')
++    from .operator_view import validate_intervention
++    validate_intervention(x['display_intervention'])
++    require(x['display_intervention']=={'kind':'none'} or
++            (m['controller']=='sensor_human' and m['mode']=='external_controller'),
++            'display deprivation requires the sensor-only human arm')
+     r=x['resources']
+     require(set(r)=={'storage_limit_bytes','wall_limit_seconds'} and type(r['storage_limit_bytes'])==int
+             and r['storage_limit_bytes']>0 and type(r['wall_limit_seconds']) in (int,float)
+@@ -172,6 +179,9 @@ def validate_session(m,s):
+     require(s['wall_limit']==x['resources']['wall_limit_seconds']
+             and s['storage_limit']==x['resources']['storage_limit_bytes'], 'session resources differ from approved scope')
+     require(s['execution_sha256']==execution_sha256(m), 'session execution identity mismatch')
++    if 'operator_lifecycle' in s:
++        require(m['controller']=='sensor_human' and s['operator_lifecycle'] in
++                ('prepared','paused','running','ended'),'invalid operator lifecycle')
+ 
+ def read_approval(raw):
+     request=strict_loads(raw)
+diff --git a/developmental_ecology/loom_commissioning/contract.py b/developmental_ecology/loom_commissioning/contract.py
+index ae623153aca1845d01047228b5a2d4c807ca447a..4838b110a90098ae081a8b0a54d758fe3eb8505a 100644
+--- a/developmental_ecology/loom_commissioning/contract.py
++++ b/developmental_ecology/loom_commissioning/contract.py
+@@ -29,7 +29,7 @@ def require(condition, message):
+         raise ValueError(message)
+ 
+ def make_manifest(engine, case_id, mode, controller, seconds, *, purpose='manufactured_fixture',
+-                  initialization=None, plan=None, protocol=None, storage_limit=1_000_000_000, wall_limit=3600):
++                  initialization=None, plan=None, protocol=None, storage_limit=1_000_000_000, wall_limit=3600,display='none'):
+     """Explicit constructor; it does not grant permission to execute a manifest."""
+     from .authority import make_execution
+     return dict(schema=2, baseline=BASELINE, p_code=P_CODE, configuration=CONFIG,
+@@ -41,7 +41,7 @@ def make_manifest(engine, case_id, mode, controller, seconds, *, purpose='manufa
+                 duration_seconds=seconds, hard_stop_time=engine.time+seconds,
+                 command_hold_seconds=.1, selection=SELECTION.copy(), roster=ROSTER.copy(),
+                 execution=make_execution(mode,controller,plan=plan,protocol=protocol,
+-                                         storage_limit=storage_limit,wall_limit=wall_limit),
++                                         storage_limit=storage_limit,wall_limit=wall_limit,display=display),
+                 execution_authority=None)
+ 
+ def validate_manifest(m, engine, *, initial=True):
+diff --git a/developmental_ecology/loom_commissioning/controllers.py b/developmental_ecology/loom_commissioning/controllers.py
+index c4906f512a869c947682d0d6f286491f9c12668d..e8be6c67cb4b3ed782d4d47b86cf7cc6a9868448 100644
+--- a/developmental_ecology/loom_commissioning/controllers.py
++++ b/developmental_ecology/loom_commissioning/controllers.py
+@@ -100,7 +100,11 @@ def waypoint_command(data, plan, decision):
+     return command_pair([drive-turn,drive+turn]),cursor
+ 
+ def validate_sensor_payload(payload):
+-    require(set(payload)==SENSOR_KEYS and payload['schema']==1 and payload['raw_labels']==LABELS,
++    return validate_history(payload,LABELS,1)
++
++def validate_history(payload,labels,schema):
++    """Closed coordinate schema; physical history always uses the 29-label wrapper."""
++    require(set(payload)==SENSOR_KEYS and payload['schema']==schema and payload['raw_labels']==labels,
+             'privileged data leakage into sensor-only interface')
+     require(payload['availability'] in ('paused','offline_record','unavailable'), 'privileged status leak')
+     previous=-1; previous_time=-float('inf'); held=None; sampled=None
+@@ -109,7 +113,7 @@ def validate_sensor_payload(payload):
+         require(type(row['native_index'])==int and row['native_index']>previous and row['time']>previous_time,
+                 'sensor history time/order mismatch')
+         raw=np.asarray(row['raw'],dtype=float); ei=np.asarray(row['actual_EI'],dtype=float)
+-        require(raw.shape==(29,) and ei.shape==(2,) and np.isfinite(raw).all() and np.isfinite(ei).all(), 'raw/actual EI schema mismatch')
++        require(raw.shape==(len(labels),) and ei.shape==(2,) and np.isfinite(raw).all() and np.isfinite(ei).all(), 'raw/actual EI schema mismatch')
+         require(row['EI_sample_time']<=row['time']+1e-12, 'future EI leak')
+         if sampled is not None and row['EI_sample_time']==sampled:
+             require(row['actual_EI']==held, 'EI cadence leak')
+diff --git a/developmental_ecology/loom_commissioning/operator_view.py b/developmental_ecology/loom_commissioning/operator_view.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..ddcb0bd7b7bd886ae32f1352ba30c0b09f256e79
+--- /dev/null
++++ b/developmental_ecology/loom_commissioning/operator_view.py
+@@ -0,0 +1,39 @@
++"""One-way operator projection. Never receives an Engine or changes raw history."""
++import copy
++from pathlib import Path
++from .contract import digest, require
++from .controllers import LABELS, validate_sensor_payload, validate_history
++
++KEPT=tuple(i for i in range(29) if i not in (10,11,12,13))
++HIDDEN_LABELS=[LABELS[i] for i in KEPT]
++
++def display_identity(kind='none'):
++    require(kind in ('none','chemistry_hidden'),'unsupported display intervention')
++    if kind=='none':return {'kind':'none'}
++    return {'kind':'chemistry_hidden','raw_flat_indices':[10,11,12,13],
++            'representation':'omitted','implementation_sha256':digest(Path(__file__).read_bytes())}
++
++def validate_intervention(value):
++    require(isinstance(value,dict) and value.get('kind') in ('none','chemistry_hidden'),
++            'unsupported display intervention')
++    require(value==display_identity(value['kind']),'display implementation identity mismatch')
++
++def validate_operator_payload(payload,intervention):
++    validate_intervention(intervention)
++    if intervention['kind']=='none':return validate_sensor_payload(payload)
++    return validate_history(payload,HIDDEN_LABELS,2)
++
++def project(payload,intervention):
++    """Copy permitted values; chemistry is absent, never zeroed or summarized."""
++    validate_intervention(intervention);validate_sensor_payload(payload)
++    result=copy.deepcopy(payload)
++    if intervention['kind']=='chemistry_hidden':
++        result['schema']=2;result['raw_labels']=HIDDEN_LABELS.copy()
++        for row in result['history']:row['raw']=[row['raw'][i] for i in KEPT]
++    validate_operator_payload(result,intervention)
++    return result
++
++def infer_display(payload):
++    """Saved operator files contain either a complete full or omitted schema."""
++    kind='none' if payload.get('schema')==1 else 'chemistry_hidden'
++    value=display_identity(kind);validate_operator_payload(payload,value);return value
+diff --git a/developmental_ecology/loom_commissioning/pending.py b/developmental_ecology/loom_commissioning/pending.py
+index 318f2ecb3856909560f9f48afd8892c0b4fcb30e..a6a7ae1022a31b26de7309c558ee3babda12615a 100644
+--- a/developmental_ecology/loom_commissioning/pending.py
++++ b/developmental_ecology/loom_commissioning/pending.py
+@@ -54,7 +54,9 @@ def validate_decision(m,d):
+                                      clock.decision_clock(m,d['native_index']))
+         require(command.tolist()==expected.tolist(), 'issued command differs from approved controller')
+     elif m['controller']=='manual_privileged': c.validate_privileged(d['inputs'])
+-    else: c.validate_sensor_payload(d['inputs'])
++    else:
++        from .operator_view import validate_operator_payload
++        validate_operator_payload(d['inputs'],m['execution']['display_intervention'])
+     require(d['stage']==decision_stage(m,d['inputs'],d['native_index']), 'issued stage identity mismatch')
+     if d['stage'] is not None:
+         until=clock.stage_ends(m)[d['stage']['index']]; end=d['native_index']+steps
+diff --git a/developmental_ecology/loom_commissioning/runner.py b/developmental_ecology/loom_commissioning/runner.py
+index b85d7d31e3cc1f1d800f7994c20cc40bc8ad01ae..d284cf3744e8dccd040295126e9f7b36e7454fd0 100644
+--- a/developmental_ecology/loom_commissioning/runner.py
++++ b/developmental_ecology/loom_commissioning/runner.py
+@@ -73,6 +73,7 @@ class Run:
+         require(storage_limit==resources['storage_limit_bytes'] and wall_limit==resources['wall_limit_seconds'],
+                 'supplied resources differ from approved scope')
+         if session is not None:
++            require('operator_lifecycle' not in session,'interactive cases cannot resume')
+             validate_session(manifest,session); validate_restored(session,engine,manifest)
+             validate_pending(manifest,session,engine)
+             previous=session._origin.parent
+@@ -153,6 +154,7 @@ class Run:
+ 
+     def begin_command(self, command=None, annotation=''):
+         dispatch=self._guard()
++        require(self.session.get('operator_lifecycle','running')=='running','operator case is not running')
+         require(self.manifest['mode']==EXTERNAL and self.session['hold_remaining']==0, 'command hold already active or no external controller')
+         require(self.remaining()>0, 'duration cap reached')
+         kind=self.manifest['controller']; inputs=None
+@@ -176,7 +178,7 @@ class Run:
+         elif kind=='manual_privileged':
+             inputs=dispatch['observe_without_interference'](self.engine,dispatch['privileged_input'])
+         elif kind=='sensor_human':
+-            inputs=self.sensor.display()
++            inputs=self.display()
+         command=dispatch['command_pair'](command)
+         self._guard()  # Revalidate the actual dispatch/configuration before accepting its result.
+         action={'time':self.engine.time,'native_index':self.engine.native_index,'actor':EXTERNAL,'controller':kind,'inputs':inputs,
+@@ -193,6 +195,7 @@ class Run:
+ 
+     def advance(self, native_steps):
+         self._guard()
++        require(self.session.get('operator_lifecycle','running')=='running','operator case is not running')
+         require(type(native_steps)==int and 0<=native_steps<=self.remaining(), 'duration cap bypass')
+         if self.manifest['mode']==EXTERNAL:
+             require(native_steps<=self.session['hold_remaining'], 'controller hold cannot insert extra steps')
+@@ -244,7 +247,10 @@ class Run:
+         self.advance(self.session['hold_remaining'])
+ 
+     def display(self):
+-        return self.sensor.display()  # no time/RNG/field update
++        from .operator_view import project
++        result=project(self.sensor.display(),self.manifest['execution']['display_intervention'])
++        if self.closed or self.session.get('operator_lifecycle')=='ended':result['availability']='unavailable'
++        return result  # no time/RNG/field update; raw SensorHistory stays complete
+ 
+     def preserve_scientific_observation(self, observation):
+         from .contract import classify
+@@ -257,9 +263,15 @@ class Run:
+         validate_stop(reason,self.engine,self.manifest)
+         if reason not in ('terminal','apparatus_failure'): self.engine.status='paused'
+         self.session['stop_reason']=reason
++        if 'operator_lifecycle' in self.session:self.session['operator_lifecycle']='ended'
+         self.session['wall_seconds_used']+=time.perf_counter()-self.started
+-        self.session['bytes_used']+=self.recorder.bytes_uncompressed
+         try:
++            if 'operator' in self.recorder.streams:
++                self.recorder.append('operator',dict(event='ended',lifecycle='ended',
++                    wall_seconds=self.session['wall_seconds_used'],
++                    display_condition=self.manifest['execution']['display_intervention']['kind'],
++                    display_sha256=digest(strict_bytes(self.display()))))
++            self.session['bytes_used']+=self.recorder.bytes_uncompressed
+             save_restart(self.recorder.path/'final.restart.json.gz',self.engine,self.session,self.manifest)
+             (self.recorder.path/'sensor-display.json').write_bytes(strict_bytes(self.display()))
+             self.recorder.manifest.update(stop_cause=cause,final_state=state_hash(self.engine),
+diff --git a/developmental_ecology/loom_commissioning/sensor.html b/developmental_ecology/loom_commissioning/sensor.html
+index 299f66140af90240ab078f111dd82d069c3177f0..fd6df822d9d8f998dd15f9d9c74a1ee5f92a8650 100644
+--- a/developmental_ecology/loom_commissioning/sensor.html
++++ b/developmental_ecology/loom_commissioning/sensor.html
+@@ -1,16 +1,98 @@
+ <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Loom · Sensor-only reference</title>
+-<style>body{font:16px system-ui;background:#f5f4ef;color:#183a3c;margin:32px auto;max-width:1150px;padding:0 22px}h1{font-size:30px;margin-bottom:8px}p{line-height:1.5}.bar,.panel{background:white;border:1px solid #d3ddda;border-radius:10px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}table{width:100%;font-variant-numeric:tabular-nums}td{padding:3px}td:last-child{text-align:right}canvas{width:100%;height:135px}input{width:90px;padding:9px}button{padding:10px 16px;background:#245c58;color:white;border:0;border-radius:6px;margin:4px}button:disabled{opacity:.45}label{display:inline-block;margin-right:15px}.muted{color:#536764}#note{width:55%}@media(max-width:700px){.grid{grid-template-columns:1fr}#note{width:90%}}</style>
+-<h1>Sensor-only reference</h1><p>Read the body's raw sensory history and your own commands. Time stays paused while you inspect the record.</p>
+-<div class="bar"><strong id="state">Loading saved readings…</strong><p id="body"></p><label>History endpoint <input id="at" type="range" min="0" value="0" style="width:300px"></label><span id="time"></span></div>
++<style>
++body{font:16px system-ui;background:#f5f4ef;color:#183a3c;margin:32px auto;max-width:1150px;padding:0 22px}h1{font-size:30px;margin-bottom:8px}p{line-height:1.5}.bar,.panel{background:white;border:1px solid #d3ddda;border-radius:10px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}table{width:100%;font-variant-numeric:tabular-nums}td,th{padding:3px;text-align:right}td:first-child,th:first-child{text-align:left}canvas{width:100%;height:135px}input{width:90px;padding:9px}button{padding:10px 16px;background:#245c58;color:white;border:0;border-radius:6px;margin:4px}button:disabled{opacity:.45}label{display:inline-block;margin-right:15px}.muted{color:#536764}#note{width:55%}#state{font-size:22px}pre{white-space:pre-wrap;overflow-wrap:anywhere}@media(max-width:700px){.grid{grid-template-columns:1fr}#note{width:90%}}
++</style>
++<h1>Sensor-only reference</h1>
++<p>Inspect the raw history and choose one paired command. Deliberation while paused consumes no bodily time.</p>
++<div class="bar"><strong id="state" role="status">NOT CONNECTED</strong><p id="mode"></p><p id="current"></p><p id="body"></p>
++<button id="start" disabled>Begin paused session</button><button id="end" disabled>End this case</button><button id="refresh">Refresh readings</button>
++<p><label>History endpoint <input id="at" type="range" min="0" value="0" style="width:300px"></label><span id="time"></span></p></div>
+ <div id="channels" class="grid"></div>
+-<div class="panel"><h2>Two actuator commands</h2><p>Each decision holds the left and right commands for 0.1 bodily seconds, or until an earlier stop. Values range from −1 to 1.</p>
++<div class="panel"><h2>Two actuator commands</h2><p>One decision holds the pair for 0.1 bodily seconds, or until an earlier stop. Each command ranges from −1 to 1. A zero pair still advances one hold.</p>
+ <label>Left <input id="left" type="number" min="-1" max="1" step="0.05" value="0"></label><label>Right <input id="right" type="number" min="-1" max="1" step="0.05" value="0"></label><button id="send" disabled>Apply one hold</button>
+-<p><label>Own note <input id="note" type="text" maxlength="1000"></label></p><p id="message" role="status"></p><h3>Your command history</h3><pre id="commands"></pre><button id="download">Save displayed history</button></div>
+-<p class="muted">Saved review has no active world. The display supplies 29 raw coordinates; actual energy and integrity are held between 5 Hz samples. Privileged evaluation is a separate file.</p>
++<p><label>Own note <input id="note" type="text" maxlength="1000"></label></p><p id="message" role="status"></p>
++<h3>Your command history</h3><pre id="commands"></pre><h3>Your notes</h3><pre id="notes"></pre><button id="download" disabled>Save displayed history</button></div>
++<p class="muted">Actual energy and integrity are held between 5 Hz samples. Running shows the last complete readings until the bounded hold returns. A saved review cannot advance a world.</p>
+ <script>
+-let data;const names=['Light · 10 coordinates','Chemistry · 4 coordinates','Contact · 8 coordinates','Proprioception · 7 coordinates'];const widths=[10,4,8,7];
+-function render(){const idx=Number(document.querySelector('#at').value),row=data.history[idx];if(!row)return;document.querySelector('#state').textContent=data.availability==='offline_record'?'Paused saved review':'Paused between decisions';document.querySelector('#time').textContent=row.time.toFixed(3)+' s';document.querySelector('#body').textContent='Actual energy '+row.actual_EI[0].toFixed(6)+' · Actual integrity '+row.actual_EI[1].toFixed(6)+' · sampled at '+row.EI_sample_time.toFixed(3)+' s';document.querySelector('#channels').replaceChildren();let off=0;names.forEach((name,g)=>{let section=document.createElement('section');section.className='panel';let title=document.createElement('h2');title.textContent=name;section.append(title);let canvas=document.createElement('canvas');canvas.width=520;canvas.height=140;canvas.setAttribute('aria-label',name+' raw history');section.append(canvas);let table=document.createElement('table');for(let k=0;k<widths[g];k++){let tr=document.createElement('tr'),label=document.createElement('td'),value=document.createElement('td');label.textContent=data.raw_labels[off+k];value.textContent=row.raw[off+k].toPrecision(7);tr.append(label,value);table.append(tr)}section.append(table);document.querySelector('#channels').append(section);let ctx=canvas.getContext('2d'),start=Math.max(0,idx-999),samples=data.history.slice(start,idx+1),vals=samples.flatMap(r=>r.raw.slice(off,off+widths[g])),lo=Math.min(...vals),hi=Math.max(...vals);for(let k=0;k<widths[g];k++){ctx.strokeStyle=`hsl(${k*360/widths[g]},55%,40%)`;ctx.beginPath();samples.forEach((r,j)=>{let x=j*520/Math.max(1,samples.length-1),y=130-120*(r.raw[off+k]-lo)/Math.max(1e-12,hi-lo);j?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke()}off+=widths[g]});document.querySelector('#commands').textContent=data.own_commands.filter(x=>x.time<=row.time).map(x=>x.time.toFixed(3)+' s  ['+x.command.join(', ')+']').join('\n');document.querySelector('#send').disabled=data.availability!=='paused'}
+-function accept(value){data=value;let slider=document.querySelector('#at');slider.max=Math.max(0,data.history.length-1);slider.value=slider.max;render()}
+-document.querySelector('#at').oninput=render;document.querySelector('#send').onclick=async()=>{let response=await fetch('/command',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({left:Number(document.querySelector('#left').value),right:Number(document.querySelector('#right').value),annotation:document.querySelector('#note').value})});let result=await response.json();if(response.ok)accept(result);else document.querySelector('#message').textContent=result.message};document.querySelector('#download').onclick=()=>{let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(data)],{type:'application/json'}));a.download='sensor-history.json';a.click();URL.revokeObjectURL(a.href)};fetch('/sensors').then(r=>r.json()).then(accept);
++'use strict';
++let session=null,inFlight=false,inFlightAction=null,locked=false,reading=false,epoch=0;
++const q=s=>document.querySelector(s);
++const allLabels=['light','chemistry','contact','proprioception'].flatMap((n,g)=>Array.from({length:[10,4,8,7][g]},(_,i)=>`${n}_${i}`));
++function keys(value,names){return value && Object.keys(value).sort().join('|')===names.slice().sort().join('|');}
++function validateEnvelope(v){
++  if(!keys(v,['schema','lifecycle','display_condition','decision_token','sensors','offline']) || v.schema!==1 || !['prepared','paused','running','ended'].includes(v.lifecycle) || !['none','chemistry_hidden'].includes(v.display_condition))throw Error();
++  const d=v.sensors,hidden=v.display_condition==='chemistry_hidden',labels=allLabels.filter(n=>!hidden||!n.startsWith('chemistry_'));
++  if(!keys(d,['schema','raw_labels','history','own_commands','annotations','availability']) || d.schema!==(hidden?2:1) || JSON.stringify(d.raw_labels)!==JSON.stringify(labels) || !Array.isArray(d.history) || !d.history.length)throw Error();
++  let prev=-1;
++  for(const r of d.history){
++    if(!keys(r,['native_index','time','raw','actual_EI','EI_sample_time']) || r.native_index<=prev || !Array.isArray(r.raw) || r.raw.length!==labels.length || !r.raw.every(Number.isFinite) || r.actual_EI.length!==2 || !r.actual_EI.every(Number.isFinite))throw Error();
++    prev=r.native_index;
++  }
++  if(!d.own_commands.every(c=>keys(c,['time','command'])&&c.command.length===2&&c.command.every(Number.isFinite)) || !d.annotations.every(n=>keys(n,['time','text'])&&typeof n.text==='string'))throw Error();
++}
++function controls(){
++  const available=session&&!inFlight&&!locked&&!session.offline;
++  q('#send').disabled=!(available&&session.lifecycle==='paused');
++  q('#start').disabled=!(available&&session.lifecycle==='prepared');
++  q('#end').disabled=!(available&&['prepared','paused'].includes(session.lifecycle));
++  q('#download').disabled=!session||locked;
++  q('#refresh').disabled=inFlight;
++}
++function render(){
++  controls();if(!session)return;
++  const d=session.sensors,idx=Number(q('#at').value),row=d.history[idx],latest=d.history[d.history.length-1];if(!row)return;
++  q('#state').textContent=locked?'CONNECTION UNCERTAIN — CONTROLS LOCKED':inFlight?(inFlightAction==='/command'?'RUNNING / REQUEST IN FLIGHT':session.lifecycle.toUpperCase()+' / REQUEST PENDING'):session.offline?'ENDED · SAVED REVIEW':session.lifecycle==='prepared'?'PREPARED / NOT STARTED':session.lifecycle.toUpperCase();
++  q('#mode').textContent=session.display_condition==='chemistry_hidden'?'CHEMISTRY UNAVAILABLE IN THIS CONDITION':'FULL-RAW · 29 coordinates';
++  q('#current').textContent='Last complete simulated time: '+latest.time.toFixed(3)+' s';
++  q('#time').textContent='Selected history: '+row.time.toFixed(3)+' s';
++  q('#body').textContent='Actual energy '+latest.actual_EI[0].toFixed(6)+' · Actual integrity '+latest.actual_EI[1].toFixed(6)+' · sampled at '+latest.EI_sample_time.toFixed(3)+' s';
++  q('#channels').replaceChildren();
++  for(const name of ['light','chemistry','contact','proprioception']){
++    const indices=d.raw_labels.map((label,i)=>label.startsWith(name+'_')?i:-1).filter(i=>i>=0);
++    const section=document.createElement('section');section.className='panel';const title=document.createElement('h2');title.textContent=name[0].toUpperCase()+name.slice(1);section.append(title);
++    if(!indices.length){const label=document.createElement('p');label.textContent='CHEMISTRY UNAVAILABLE IN THIS CONDITION';section.append(label);q('#channels').append(section);continue;}
++    const canvas=document.createElement('canvas');canvas.width=520;canvas.height=140;canvas.setAttribute('aria-label',name+' raw history');section.append(canvas);
++    const table=document.createElement('table'),heading=document.createElement('tr');
++    for(const text of ['Coordinate','Current','Selected']){const cell=document.createElement('th');cell.textContent=text;heading.append(cell);}table.append(heading);
++    for(const i of indices){const tr=document.createElement('tr');for(const text of [d.raw_labels[i],latest.raw[i].toPrecision(7),row.raw[i].toPrecision(7)]){const cell=document.createElement('td');cell.textContent=text;tr.append(cell);}table.append(tr);}
++    section.append(table);q('#channels').append(section);
++    const ctx=canvas.getContext('2d'),samples=d.history.slice(Math.max(0,idx-999),idx+1),vals=samples.flatMap(r=>indices.map(i=>r.raw[i])),lo=Math.min(...vals),hi=Math.max(...vals);
++    indices.forEach((i,k)=>{ctx.strokeStyle=`hsl(${k*360/indices.length},55%,40%)`;ctx.beginPath();samples.forEach((r,j)=>{const x=j*520/Math.max(1,samples.length-1),y=130-120*(r.raw[i]-lo)/Math.max(1e-12,hi-lo);j?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();});
++  }
++  q('#commands').textContent=d.own_commands.map(c=>c.time.toFixed(3)+' s  ['+c.command.join(', ')+']').join('\n');
++  q('#notes').textContent=d.annotations.map(n=>n.time.toFixed(3)+' s  '+n.text).join('\n');
++}
++function accept(v,latest=false){
++  validateEnvelope(v);const oldLength=session?session.sensors.history.length:0;session=v;
++  const slider=q('#at');slider.max=v.sensors.history.length-1;
++  if(latest||oldLength!==v.sensors.history.length)slider.value=slider.max;
++  render();
++}
++function failClosed(){locked=true;q('#message').textContent='Connection or request uncertain. Do not resubmit. Refresh the permitted display to inspect the case state.';render();controls();}
++async function read(){
++  if(reading||inFlight)return;reading=true;const requestedEpoch=epoch;
++  try{const r=await fetch('/session',{cache:'no-store'});if(!r.ok)throw Error();const v=await r.json();if(requestedEpoch!==epoch||inFlight)return;validateEnvelope(v);locked=false;accept(v);}catch(_){if(requestedEpoch===epoch&&!inFlight)failClosed();}finally{reading=false;}
++}
++async function action(path){
++  if(inFlight||locked||!session||session.offline)return;
++  const required=path==='/start'?'prepared':'paused';
++  if(path==='/end'?!['prepared','paused'].includes(session.lifecycle):session.lifecycle!==required)return;
++  const body={token:session.decision_token};
++  if(path==='/command'){
++    body.left=Number(q('#left').value);body.right=Number(q('#right').value);body.annotation=q('#note').value;
++    if(![body.left,body.right].every(v=>Number.isFinite(v)&&Math.abs(v)<=1)){q('#message').textContent='Enter both commands between −1 and 1.';return;}
++  }
++  epoch+=1;inFlightAction=path;inFlight=true;render();
++  try{const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});if(!r.ok)throw Error();const v=await r.json();inFlight=false;accept(v,true);q('#message').textContent='';}
++  catch(_){inFlight=false;failClosed();}finally{controls();}
++}
++q('#at').oninput=render;
++q('#send').onclick=e=>{if(!e||e.detail<=1)action('/command');};
++q('#send').onkeydown=e=>{if(e.repeat)e.preventDefault();};
++q('#start').onclick=()=>action('/start');q('#end').onclick=()=>action('/end');q('#refresh').onclick=read;
++q('#download').onclick=()=>{if(!session||locked)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(session.sensors)],{type:'application/json'}));a.download='sensor-history.json';a.click();URL.revokeObjectURL(a.href);};
++// Reads may refresh/reconnect; they never submit a command or repeat an action.
++setInterval(()=>{if(session&&!session.offline&&!locked&&!inFlight)read();},1000);
++read();
+ </script></html>
+diff --git a/developmental_ecology/loom_commissioning/sensor_ui.py b/developmental_ecology/loom_commissioning/sensor_ui.py
+index d8a2d138dc3f2a197ee62d2c361603d42ca0a9e7..d0d6a8d46f541b9201c1f902f0149b6e10696bc2 100644
+--- a/developmental_ecology/loom_commissioning/sensor_ui.py
++++ b/developmental_ecology/loom_commissioning/sensor_ui.py
+@@ -1,70 +1,228 @@
+-"""Loopback sensor-only interface. The default entry point is inert saved review."""
++"""Loopback operator service. No evaluator/file endpoint; no automatic command."""
+ import argparse
+ import copy
+-from http.server import BaseHTTPRequestHandler, HTTPServer
+-import json
++import gzip
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+ from pathlib import Path
+-from .controllers import validate_sensor_payload
+-from .contract import require, strict_bytes
++import secrets
++import sys
++import threading
++import time
++from .contract import require, strict_bytes, digest
+ from .authority import strict_loads
++from .controllers import command_pair
++from .operator_view import infer_display, validate_operator_payload
++
++ERROR=b'{"message":"Request unavailable. Refresh the permitted display before deciding again. Do not resubmit an uncertain command."}'
++
++def validate_envelope(value,intervention):
++    require(type(value) is dict and set(value)=={'schema','lifecycle','display_condition','decision_token','sensors','offline'}
++            and value['schema']==1 and value['lifecycle'] in ('prepared','paused','running','ended')
++            and value['display_condition']==intervention['kind'] and type(value['offline']) is bool,
++            'operator envelope mismatch')
++    actionable=value['lifecycle'] in ('prepared','paused') and not value['offline']
++    require(isinstance(value['decision_token'],str) if actionable else value['decision_token'] is None,
++            'operator token mismatch')
++    validate_operator_payload(value['sensors'],intervention)
++
++class OperatorHTTPServer(ThreadingHTTPServer):
++    daemon_threads=False
++    def handle_error(self,request,client_address):pass  # No exception/log side channel.
+ 
+ class OfflineGateway:
+     def __init__(self,path):
+         self.data=strict_loads(Path(path).read_bytes())
+-        validate_sensor_payload(self.data); self.data['availability']='offline_record'
+-    def display(self): return copy.deepcopy(self.data)
+-    def submit(self,*args): raise ValueError('Saved review cannot advance time')
++        self.intervention=infer_display(self.data);self.data['availability']='offline_record'
++    def display(self):return copy.deepcopy(self.data)
++    def envelope(self):return {'schema':1,'lifecycle':'ended','display_condition':self.intervention['kind'],
++                               'decision_token':None,'sensors':self.display(),'offline':True}
++    def submit(self,*args):raise ValueError('Saved review cannot advance time')
+ 
+ class HumanGateway:
+-    """No evaluation endpoint. A later authorized run can supply this gateway."""
++    """One interactive case, from prepared through irreversible ended.
++
++    Readers see a copied last-complete display while a bounded hold runs.
++    Tokens are consumed before actuation. Queued/retried old requests cannot
++    become a second decision after network delay.
++    """
+     def __init__(self,run):
+-        require(run.manifest['controller']=='sensor_human','sensor-human run required')
+-        self._run=run
+-    def display(self): return self._run.display()
+-    def submit(self,left,right,annotation):
+-        self._run.hold([left,right],annotation)
+-        return self.display()
++        run._guard()
++        require(run.manifest['controller']=='sensor_human' and not run.closed
++                and run.session['decision'] is None and run.session['advanced']==0
++                and 'operator_lifecycle' not in run.session,'fresh sensor-human case required')
++        self._run=run;self.intervention=copy.deepcopy(run.manifest['execution']['display_intervention'])
++        self._lock=threading.RLock();self._nonce=secrets.token_hex(16);self._revision=0
++        self._payload=run.display();self._state='prepared'
++        run.session['operator_lifecycle']='prepared'
++        run.recorder.streams['operator']=gzip.open(run.recorder.path/'operator.jsonl.gz','wb')
++        from .runner import save_restart
++        save_restart(run.recorder.path/'initial.restart.json.gz',run.engine,run.session,run.manifest)
++        self._audit('prepared')
++
++    def _token(self):
++        return f'{self._nonce}:{self._revision}' if self._state in ('prepared','paused') else None
++
++    def _audit(self,event):
++        if self._run.closed:return
++        self._run.recorder.append('operator',dict(event=event,lifecycle=self._state,
++            wall_seconds=time.perf_counter()-self._run.started,
++            display_condition=self.intervention['kind'],display_sha256=digest(strict_bytes(self._payload))))
++
++    def _transition(self,state):
++        require(self._state!='ended','ended is irreversible')
++        self._state=state;self._run.session['operator_lifecycle']=state;self._revision+=1
++
++    def _expire(self):
++        if self._state in ('prepared','paused') and not self._run.closed:
++            elapsed=self._run.session['wall_seconds_used']+time.perf_counter()-self._run.started
++            if elapsed>=self._run.wall_limit:
++                self._run.close('administrative_pause',cause='wall_time_limit')
++        if self._run.closed:
++            self._state='ended';self._payload=self._run.display()
++
++    def display(self):
++        with self._lock:
++            self._expire();validate_operator_payload(self._payload,self.intervention)
++            return copy.deepcopy(self._payload)
++
++    def envelope(self):
++        with self._lock:
++            payload=self.display()
++            return {'schema':1,'lifecycle':self._state,'display_condition':self.intervention['kind'],
++                    'decision_token':self._token(),'sensors':payload,'offline':False}
++
++    def _claim(self,token,state):
++        self._expire()
++        require(self._state==state and isinstance(token,str) and secrets.compare_digest(token,self._token()),
++                'request unavailable')
++
++    def start(self,token):
++        with self._lock:
++            self._claim(token,'prepared');self._transition('paused');self._audit('paused')
++            return self.envelope()
++
++    def submit(self,left,right,annotation,token):
++        pair=command_pair([left,right])
++        require(isinstance(annotation,str) and len(annotation)<=1000,'annotation length')
++        # Claim/publication use the lock; native execution does not hold it.
++        # RUNNING readers receive only the last complete permitted display.
++        with self._lock:
++            self._claim(token,'paused');self._transition('running')
++            try:self._audit('command_accepted')
++            except Exception as error:
++                self._fail(error);raise ValueError('request unavailable') from None
++        try:
++            self._run.hold(pair,annotation)
++            with self._lock:
++                self._payload=self._run.display()
++                if self._run.closed:self._state='ended'
++                else:self._transition('paused');self._audit('paused')
++                return self.envelope()
++        except Exception as error:
++            with self._lock:self._fail(error)
++            raise ValueError('request unavailable') from None
++
++    def _fail(self,error):
++        self._state='ended';self._run.session['operator_lifecycle']='ended';self._revision+=1
++        if not self._run.closed:
++            self._run.engine.status='failure';self._run.engine.failure=f'{type(error).__name__}: {error}'
++            try:self._run.close('apparatus_failure',error=self._run.engine.failure)
++            except Exception:pass  # Preserve incomplete private receipt; never restart.
++        self._payload=self._run.display()
++
++    def end(self,token):
++        with self._lock:
++            self._expire();require(self._state in ('prepared','paused'),'request unavailable')
++            self._claim(token,self._state)
++            self._run.close('administrative_pause',cause='operator_withdrawal')
++            self._state='ended';self._revision+=1;self._payload=self._run.display()
++            return self.envelope()
++
++    def shutdown(self):
++        # server_close joins its bounded in-flight requests before this call.
++        with self._lock:
++            if self._state in ('prepared','paused'):self.end(self._token())
++            require(self._state=='ended','cannot shut down during an active hold')
+ 
+ def handler(gateway):
+     class Handler(BaseHTTPRequestHandler):
+-        def log_message(self,*args): pass
++        def log_message(self,*args):pass
+         def send(self,code,body,content_type):
+-            self.send_response(code)
+-            self.send_header('Content-Type',content_type)
+-            self.send_header('Cache-Control','no-store')
+-            self.send_header('X-Content-Type-Options','nosniff')
+-            self.end_headers(); self.wfile.write(body)
++            self.send_response(code);self.send_header('Content-Type',content_type)
++            self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff')
++            self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'")
++            self.end_headers();self.wfile.write(body)
+         def do_GET(self):
+-            if self.path=='/':
+-                self.send(200,Path(__file__).with_name('sensor.html').read_bytes(),'text/html; charset=utf-8')
+-            elif self.path=='/sensors':
+-                value=gateway.display(); validate_sensor_payload(value)
+-                self.send(200,strict_bytes(value),'application/json')
+-            else: self.send(404,b'Unavailable','text/plain')
++            try:
++                if self.path=='/':
++                    self.send(200,Path(__file__).with_name('sensor.html').read_bytes(),'text/html; charset=utf-8')
++                elif self.path in ('/sensors','/session'):
++                    value=gateway.display() if self.path=='/sensors' else gateway.envelope()
++                    payload=value if self.path=='/sensors' else value['sensors']
++                    validate_operator_payload(payload,gateway.intervention)
++                    if self.path=='/session':validate_envelope(value,gateway.intervention)
++                    self.send(200,strict_bytes(value),'application/json')
++                else:self.send(404,b'Unavailable','text/plain')
++            except Exception:self.send(400,ERROR,'application/json')
+         def do_POST(self):
+-            # No generic file serving, evaluation, snapshot or state-setting API.
+-            if self.path!='/command': self.send(404,b'Unavailable','text/plain'); return
++            if self.path not in ('/command','/start','/end'):
++                self.send(404,b'Unavailable','text/plain');return
+             try:
+                 require(self.headers.get('Origin')==f'http://{self.headers.get("Host")}', 'origin mismatch')
+-                require(self.headers.get('Content-Type')=='application/json', 'JSON required')
+-                size=int(self.headers.get('Content-Length','0')); require(0<size<=4096,'request size')
+-                value=strict_loads(self.rfile.read(size)); require(set(value)=={'left','right','annotation'},'command schema')
+-                require(isinstance(value['annotation'],str) and len(value['annotation'])<=1000,'annotation length')
+-                output=gateway.submit(value['left'],value['right'],value['annotation'])
+-                validate_sensor_payload(output); self.send(200,strict_bytes(output),'application/json')
+-            except Exception:
+-                # Privileged physics exceptions and event details never reach the operator.
+-                self.send(400,b'{"message":"Command unavailable; time has paused."}','application/json')
++                require(self.headers.get('Content-Type')=='application/json','JSON required')
++                size=int(self.headers.get('Content-Length','0'));require(0<size<=8192,'request size')
++                value=strict_loads(self.rfile.read(size))
++                if self.path=='/command':
++                    require(set(value)=={'left','right','annotation','token'},'command schema')
++                    output=gateway.submit(value['left'],value['right'],value['annotation'],value['token'])
++                else:
++                    require(set(value)=={'token'},'lifecycle schema')
++                    output=(gateway.start if self.path=='/start' else gateway.end)(value['token'])
++                validate_envelope(output,gateway.intervention)
++                self.send(200,strict_bytes(output),'application/json')
++            except Exception:self.send(400,ERROR,'application/json')
+     return Handler
+ 
++def live_gateway(manifest_path,initial_path,output):
++    """Explicit future granted launch. No case selection, grant or retry here."""
++    from .authority import validate_execution
++    from .contract import authorize_execution
++    m=strict_loads(Path(manifest_path).read_bytes())
++    require(m['purpose']=='commissioning' and m['controller']=='sensor_human','sensor-human commissioning manifest required')
++    validate_execution(m,complete=True);authorize_execution(m)
++    from loom_p.records import load_snapshot
++    from .runner import Run
++    run=Run(load_snapshot(initial_path),m,output)
++    try:return HumanGateway(run)
++    except Exception as error:
++        if not run.closed:
++            run.engine.status='failure';run.engine.failure=f'{type(error).__name__}: {error}'
++            run.close('apparatus_failure',error=run.engine.failure)
++        raise
++
+ def main():
+-    parser=argparse.ArgumentParser(description='Paused, sensor-only saved review; no world is created')
+-    parser.add_argument('--record',required=True); parser.add_argument('--port',type=int,default=8768)
++    parser=argparse.ArgumentParser(description='Sensor-only operator service; no automatic world advancement')
++    source=parser.add_mutually_exclusive_group(required=True)
++    source.add_argument('--record');source.add_argument('--manifest')
++    parser.add_argument('--initial');parser.add_argument('--output');parser.add_argument('--port',type=int,default=8768)
+     args=parser.parse_args()
+-    server=HTTPServer(('127.0.0.1',args.port),handler(OfflineGateway(args.record)))
+-    print(f'Saved sensor review: http://127.0.0.1:{args.port} (no world updates)',flush=True)
+-    try: server.serve_forever()
+-    except KeyboardInterrupt: pass
+-    finally: server.server_close()
++    require(bool(args.manifest)==bool(args.initial and args.output),'live launch requires manifest, initial snapshot and new output')
++    gateway=live_gateway(args.manifest,args.initial,args.output) if args.manifest else OfflineGateway(args.record)
++    server=None
++    try:
++        server=OperatorHTTPServer(('127.0.0.1',args.port),handler(gateway))
++        print(f'Sensor-only interface: http://127.0.0.1:{server.server_port} (no automatic commands)',flush=True)
++        server.serve_forever()
++    except KeyboardInterrupt:pass
++    finally:
++        if server is not None:server.server_close()
++        if isinstance(gateway,HumanGateway):gateway.shutdown()
++
++def entrypoint():
++    try:main()
++    except Exception:
++        print('Operator interface unavailable. No automatic continuation. Consult the private apparatus record.',file=sys.stderr)
++        return 1
++    return 0
+ 
+-if __name__=='__main__': main()
++if __name__=='__main__':raise SystemExit(entrypoint())
+diff --git a/developmental_ecology/loom_commissioning/validators.py b/developmental_ecology/loom_commissioning/validators.py
+index e084f324f82e1ed428e1cd9f1cffbf55525eed77..db9dc241502b4463e3bc1fdecc687a317dd11b47 100644
+--- a/developmental_ecology/loom_commissioning/validators.py
++++ b/developmental_ecology/loom_commissioning/validators.py
+@@ -9,6 +9,7 @@ from .controllers import validate_sensor_payload, validate_privileged, SensorHis
+ from . import adapter, clock
+ from .authority import strict_loads, canonical
+ from .pending import validate_journal
++from .operator_view import project, validate_operator_payload
+ 
+ def validate_stop(reason,e,m):
+     require(reason in ('terminal','administrative_cutoff','administrative_pause','apparatus_failure'), 'mislabelled stop reason')
+@@ -92,10 +93,16 @@ def verify_segment(directory, replay=True, _ancestors=()):
+     for kind in ('native','wave','events','controller','diagnostics','sensor','scientific_observations'):
+         require(len(read_stream(directory/(kind+'.jsonl.gz')))==receipt['records'].get(kind,0), 'record count mismatch')
+     maximum=validate_ledger(events,initial.c.arithmetic_tol)
+-    payload=strict_loads((directory/'sensor-display.json').read_bytes()); validate_sensor_payload(payload)
++    intervention=m['execution']['display_intervention']
++    payload=strict_loads((directory/'sensor-display.json').read_bytes()); validate_operator_payload(payload,intervention)
++    raw_sensor=read_stream(directory/'sensor.jsonl.gz')
++    validate_sensor_payload(raw_sensor[0])
++    require(raw_sensor[0]==session['sensor']['payload']
++            and raw_sensor[1:]==finish['sensor']['payload']['history'][len(raw_sensor[0]['history']):],
++            'raw sensor recording differs from physical history')
+     for action in actions:
+         require(action['actor']==EXTERNAL and m['mode']==EXTERNAL, 'external controller incorrectly labelled intact P')
+-        if action['controller']=='sensor_human': validate_sensor_payload(action['inputs'])
++        if action['controller']=='sensor_human': validate_operator_payload(action['inputs'],intervention)
+         else: validate_privileged(action['inputs'])
+     if replay:
+         e=initial; wave_index=0; replay_events=[]
+@@ -125,6 +132,7 @@ def verify_segment(directory, replay=True, _ancestors=()):
+         require(strict_bytes(view(replay_events))==strict_bytes(events),'event replay mismatch')
+         require(state_hash(e)==state_hash(final)==receipt['final_state'], 'final state reconstruction mismatch')
+         require(finish['field_updates']-session['field_updates']==len(native), 'extra field update count')
+-        require(history.payload['history']==payload['history'], 'privileged raw/EI substitution in sensor interface')
++        require(history.payload['history']==finish['sensor']['payload']['history'], 'physical raw sensor substitution')
++        require(project(history.payload,intervention)['history']==payload['history'], 'privileged raw/EI substitution in sensor interface')
+     return {'class':'AV','native_records':len(native),'wave_records':len(waves),'events':len(events),
+             'replayed':replay,'maximum_accounting_residual':maximum,'mode':m['mode'],'status':receipt['status']}
+diff --git a/developmental_ecology/tests_apparatus/b1_dom_fixture.cjs b/developmental_ecology/tests_apparatus/b1_dom_fixture.cjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..926b395100544672b0d7e5a2e065a527499175a1
+--- /dev/null
++++ b/developmental_ecology/tests_apparatus/b1_dom_fixture.cjs
+@@ -0,0 +1,69 @@
++// Detached DOM/transport component. No Python, Engine, fixture state or world.
++const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert');
++const html=fs.readFileSync(path.join(__dirname,'../loom_commissioning/sensor.html'),'utf8');
++const source=html.match(/<script>([\s\S]*)<\/script>/)[1];
++const canary=.73123456789;
++const labels=['light','chemistry','contact','proprioception'].flatMap((n,g)=>Array.from({length:[10,4,8,7][g]},(_,i)=>`${n}_${i}`));
++function envelope(hidden=false,bad=false,state='paused'){
++ const selected=labels.filter(n=>!hidden||bad||!n.startsWith('chemistry_'));
++ return {schema:1,lifecycle:state,display_condition:hidden?'chemistry_hidden':'none',decision_token:['paused','prepared'].includes(state)?'fixture-token':null,offline:false,
++ sensors:{schema:hidden&&!bad?2:1,raw_labels:selected,availability:'paused',history:[{native_index:0,time:0,raw:selected.map(n=>n.startsWith('chemistry_')?canary:.25),actual_EI:[.7,1],EI_sample_time:0}],own_commands:[],annotations:[]}};
++}
++class Element{
++ constructor(tag){this.tag=tag;this.children=[];this.textContent='';this.disabled=false;this.value=0;this.max=0;this.attrs={};}
++ append(...c){this.children.push(...c);}replaceChildren(...c){this.children=c;}setAttribute(k,v){this.attrs[k]=v;}
++ getContext(){return {beginPath(){},lineTo(){},moveTo(){},stroke(){}};}click(){if(this.onclick)return this.onclick();}
++}
++function harness(value,js=source){
++ const nodes=new Map(),calls=[],downloads=[],timers=[];let pending=null;
++ const document={querySelector(sel){if(!nodes.has(sel))nodes.set(sel,new Element('div'));return nodes.get(sel);},createElement(tag){return new Element(tag);}};
++ const context=vm.createContext({document,console,Number,JSON,Math,Array,Error,Blob:class{constructor(parts){this.parts=parts;}},
++ URL:{createObjectURL(b){downloads.push(b.parts.join(''));return 'blob:fixture';},revokeObjectURL(){}},setInterval(fn){timers.push(fn);},
++ fetch(url,options){calls.push({url,options});if(options&&options.method==='POST')return new Promise(resolve=>{pending=resolve;});return Promise.resolve({ok:true,json:async()=>JSON.parse(JSON.stringify(value))});}});
++ vm.runInContext(js,context);
++ return {nodes,calls,downloads,timers,context,resolve(v){const p=pending;pending=null;p({ok:true,json:async()=>v});}};
++}
++const flush=()=>new Promise(resolve=>setImmediate(resolve));
++async function ready(h){await flush();await flush();return h;}
++function text(node){return String(node.textContent)+' '+node.children.map(text).join(' ');}
++(async()=>{
++ // CSS-only hiding is rejected before assigning payload/DOM/download state.
++ const mutant=process.env.B1_FAULT==='C'?source.replace('function validateEnvelope(v){','function validateEnvelope(v){return;'):source;
++ const bad=await ready(harness(envelope(true,true),mutant));
++ bad.nodes.get('#download').onclick();
++ assert.strictEqual(bad.downloads.length,0,'CSS-ONLY MASK EXPORTED CHEMISTRY');
++ assert(!text(bad.nodes.get('#channels')||new Element('div')).includes('0.7312346'),'CSS-ONLY MASK LEFT CHEMISTRY IN DOM');
++ assert.strictEqual(bad.nodes.get('#send').disabled,true);
++ const hidden=await ready(harness(envelope(true)));
++ hidden.nodes.get('#download').onclick();
++ const exported=JSON.parse(hidden.downloads[0]);
++ assert.strictEqual(exported.history[0].raw.length,25);assert(!hidden.downloads[0].includes(String(canary)));
++ assert(!text(hidden.nodes.get('#channels')).includes('0.7312346'));
++ assert(text(hidden.nodes.get('#channels')).includes('CHEMISTRY UNAVAILABLE IN THIS CONDITION'));
++ // Delayed browser response and double-click cause exactly one POST.
++ hidden.nodes.get('#send').onclick();hidden.nodes.get('#send').onclick();
++ assert.strictEqual(hidden.calls.filter(c=>c.options?.method==='POST').length,1);
++ assert.strictEqual(hidden.nodes.get('#send').disabled,true);
++ assert(hidden.nodes.get('#state').textContent.startsWith('RUNNING'));
++ hidden.resolve(envelope(true,false,'paused'));await ready(hidden);
++ assert.strictEqual(hidden.nodes.get('#state').textContent,'PAUSED');assert.strictEqual(hidden.nodes.get('#send').disabled,false);
++ // Even a fast first response must not turn the browser's second double-click
++ // event or held-key repeat into a fresh decision with the new token.
++ hidden.nodes.get('#send').onclick({detail:2});
++ assert.strictEqual(hidden.calls.filter(c=>c.options?.method==='POST').length,1);
++ let prevented=false;hidden.nodes.get('#send').onkeydown({repeat:true,preventDefault(){prevented=true;}});assert(prevented);
++ // Refresh/reconnect is only a GET; end remains non-actionable.
++ const before=hidden.calls.filter(c=>c.options?.method==='POST').length;
++ await hidden.nodes.get('#refresh').onclick();await ready(hidden);
++ assert.strictEqual(hidden.calls.filter(c=>c.options?.method==='POST').length,before);
++ const ended=await ready(harness(envelope(true,false,'ended')));ended.nodes.get('#send').onclick();
++ assert.strictEqual(ended.calls.filter(c=>c.options?.method==='POST').length,0);
++ assert.strictEqual(ended.nodes.get('#state').textContent,'ENDED');
++ const full=await ready(harness(envelope(false)));full.nodes.get('#download').onclick();
++ assert.strictEqual(JSON.parse(full.downloads[0]).history[0].raw.length,29);assert(full.downloads[0].includes(String(canary)));
++ assert(text(full.nodes.get('#channels')).includes('0.7312346'));
++ const prepared=await ready(harness(envelope(true,false,'prepared')));
++ assert.strictEqual(prepared.nodes.get('#send').disabled,true);assert.strictEqual(prepared.nodes.get('#start').disabled,false);
++ prepared.nodes.get('#start').onclick();assert(prepared.nodes.get('#state').textContent.startsWith('PREPARED'));
++ console.log('DOM canary, downloadable data, FULL-RAW, lifecycle, delayed response, double click and refresh checks passed.');
++})().catch(error=>{console.error(error.message);process.exitCode=1;});
+diff --git a/developmental_ecology/tests_apparatus/test_b1_operator.py b/developmental_ecology/tests_apparatus/test_b1_operator.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..fda45be79337de44d41a98022de9ec6014b7d80c
+--- /dev/null
++++ b/developmental_ecology/tests_apparatus/test_b1_operator.py
+@@ -0,0 +1,305 @@
++"""Manufactured B1 apparatus components only; no prepared PC or B1 fixture."""
++import copy
++from contextlib import contextmanager
++import json
++import os
++from pathlib import Path
++import subprocess
++import threading
++import urllib.error
++import urllib.request
++from unittest.mock import patch
++import numpy as np
++import pytest
++from test_apparatus import manufactured
++from loom_p.geometry import transduce
++from loom_p.records import state_hash,strict_bytes
++from loom_commissioning import authority,operator_view,adapter,sensor_ui
++from loom_commissioning.contract import make_manifest,EXTERNAL,require
++from loom_commissioning.controllers import SensorHistory,validate_sensor_payload
++from loom_commissioning.runner import Run
++from loom_commissioning.validators import read_stream,verify_segment
++
++CANARY=.73123456789
++def fault(name):return os.environ.get('B1_FAULT')==name
++def rejected(fn):
++    try:fn()
++    except (ValueError,urllib.error.HTTPError):return True
++    return False
++
++def raw_fixture():
++    h=SensorHistory(manufactured()).display()
++    for j in range(4):h['history'][0]['raw'][10+j]=CANARY+j/1000
++    return h
++
++def case(tmp_path,display='chemistry_hidden',seconds=.3):
++    e=manufactured();e.fields.fill(.17);e.raw=transduce(e.c,e.body,e.fields,e.time,e.phase)
++    m=make_manifest(e,'fixture-B1-component',EXTERNAL,'sensor_human',seconds,display=display)
++    r=Run(e,m,tmp_path/'record');g=sensor_ui.HumanGateway(r)
++    g.start(g.envelope()['decision_token'])
++    return e,r,g
++
++def finish(r,g):
++    if r.closed:return
++    try:g.end(g.envelope()['decision_token'])
++    except Exception:
++        r.engine.status='failure';r.engine.failure='manufactured injected fault'
++        r.close('apparatus_failure',error='manufactured injected fault')
++
++@contextmanager
++def service(gateway):
++    server=sensor_ui.OperatorHTTPServer(('127.0.0.1',0),sensor_ui.handler(gateway))
++    t=threading.Thread(target=server.serve_forever);t.start()
++    try:yield f'http://127.0.0.1:{server.server_port}'
++    finally:server.shutdown();server.server_close();t.join(timeout=5);assert not t.is_alive()
++
++def get(base,path='/session'):
++    with urllib.request.urlopen(base+path,timeout=5) as response:return response.read()
++
++def post(base,path,value):
++    req=urllib.request.Request(base+path,data=strict_bytes(value),method='POST',
++        headers={'Origin':base,'Content-Type':'application/json'})
++    with urllib.request.urlopen(req,timeout=10) as response:return json.loads(response.read())
++
++def test_A_hidden_authority():
++    m=make_manifest(manufactured(),'fixture-mask-authority',EXTERNAL,'sensor_human',.1,display='chemistry_hidden')
++    if fault('A'):require(m['execution']['display_intervention']=={'kind':'none'},'old rejection')
++    authority.validate_execution(m,complete=True)
++    raw=copy.deepcopy(m);raw['execution']['display_intervention']={'kind':'none'}
++    assert authority.execution_sha256(raw)!=authority.execution_sha256(m)
++    for bad in ({'kind':'chemistry_hidden'},dict(m['execution']['display_intervention'],implementation_sha256='0'*64)):
++        broken=copy.deepcopy(m);broken['execution']['display_intervention']=bad
++        assert rejected(lambda:authority.validate_execution(broken,complete=True))
++
++def test_B_payload_canary():
++    truth=raw_fixture();mode=operator_view.display_identity('chemistry_hidden')
++    shown=copy.deepcopy(truth) if fault('B') else operator_view.project(truth,mode)
++    assert str(CANARY) not in json.dumps(shown),'CHEMISTRY PAYLOAD LEAK'
++    operator_view.validate_operator_payload(shown,mode)
++    assert len(shown['history'][0]['raw'])==25
++    assert shown['history'][0]['raw']==[truth['history'][0]['raw'][i] for i in operator_view.KEPT]
++
++def test_C_DOM_and_UI():
++    script=Path(__file__).with_name('b1_dom_fixture.cjs')
++    result=subprocess.run([os.environ.get('NODE_BIN','node'),str(script)],capture_output=True,text=True,timeout=30)
++    assert result.returncode==0,result.stdout+result.stderr
++
++def test_D_raw_record_not_mutated():
++    truth=raw_fixture();before=copy.deepcopy(truth)
++    if fault('D'):
++        for row in truth['history']:row['raw'][10:14]=[0.]*4
++    operator_view.project(truth,operator_view.display_identity('chemistry_hidden'))
++    assert truth==before,'DISPLAY DEPRIVATION ALTERED PHYSICAL RAW RECORD'
++
++@pytest.mark.parametrize('mutation',['E','F','G'])
++def test_paused_inertness(tmp_path,mutation):
++    e,r,g=case(tmp_path);before=state_hash(e);old=g.display
++    def display():
++        if fault(mutation):
++            if mutation=='E':e.time+=.01
++            elif mutation=='F':e.organism.rng.draw('injected-paused-consumption',(1,))
++            else:e.body.energy-=.001
++        return old()
++    try:
++        with patch.object(g,'display',display):
++            g.envelope();g.envelope()
++        assert state_hash(e)==before,'PAUSED CLOCK/RNG/EXPENDITURE BREACH '+mutation
++        # Five seconds and five minutes of deliberation are clock objects, not sleeps.
++        for elapsed in (5.,300.):
++            with patch.object(sensor_ui.time,'perf_counter',return_value=r.started+elapsed):g.envelope()
++            assert state_hash(e)==before
++    finally:finish(r,g)
++
++def test_H_duplicate_token(tmp_path):
++    e,r,g=case(tmp_path);token=g.envelope()['decision_token'];real=g._claim
++    def claim(t,state):
++        if fault('H') and state=='paused' and g._state=='paused':return
++        return real(t,state)
++    try:
++        with patch.object(g,'_claim',claim):
++            g.submit(.1,.1,'first',token)
++            denied=rejected(lambda:g.submit(.1,.1,'duplicate',token))
++        assert denied and e.native_index==10,'DUPLICATE CREATED EXTRA HOLD'
++        assert r.recorder.counts['controller']==1
++    finally:finish(r,g)
++
++def test_I_running_overlap(tmp_path):
++    e,r,g=case(tmp_path);token=g.envelope()['decision_token'];entered=threading.Event();release=threading.Event()
++    calls=[];errors=[];real=g._claim
++    def claim(t,state):
++        if fault('I') and g._state=='running':return
++        return real(t,state)
++    def blocked_hold(*args):
++        calls.append('entered');entered.set()
++        if len(calls)==1:assert release.wait(5)
++    def first():
++        try:g.submit(0.,0.,'',token)
++        except Exception as ex:errors.append(type(ex).__name__)
++    try:
++        with patch.object(r,'hold',blocked_hold),patch.object(g,'_claim',claim):
++            thread=threading.Thread(target=first);thread.start();assert entered.wait(5)
++            assert g.envelope()['lifecycle']=='running' and g.envelope()['decision_token'] is None
++            denied=rejected(lambda:g.submit(0.,0.,'',token))
++            release.set();thread.join(5);assert not thread.is_alive()
++        assert denied and len(calls)==1 and not errors,'OVERLAPPING EXECUTIONS ACCEPTED'
++        assert e.native_index==0  # synchronization stub, not a physical trajectory
++    finally:release.set();finish(r,g)
++
++def test_J_ended_irreversible(tmp_path):
++    e,r,g=case(tmp_path);old=g.envelope()['decision_token'];g.end(old);before=state_hash(e)
++    real=g.submit
++    def submit(*args):
++        if fault('J'):
++            adapter.step(e,EXTERNAL,[0.,0.],None);return g.envelope()
++        return real(*args)
++    with patch.object(g,'submit',submit):denied=rejected(lambda:g.submit(0.,0.,'',old))
++    assert denied and state_hash(e)==before and e.native_index==0,'ENDED ADVANCED WORLD'
++    assert g.envelope()['lifecycle']=='ended'
++    assert rejected(lambda:g.start(old))
++    assert rejected(lambda:Run.resume(r.recorder.path,tmp_path/'resume-forbidden'))
++    assert not (tmp_path/'resume-forbidden').exists()
++
++def test_K_refresh_reconnect_inert(tmp_path):
++    e,r,g=case(tmp_path);before=state_hash(e);real=g.display
++    def display():
++        if fault('K'):adapter.step(e,EXTERNAL,[0.,0.],None)
++        return real()
++    try:
++        with patch.object(g,'display',display),service(g) as base:
++            for path in ('/','/session','/sensors','/session'):get(base,path)
++        assert state_hash(e)==before,'REFRESH/RECONNECT ADVANCED WORLD'
++    finally:finish(r,g)
++
++def test_L_full_raw_preserved():
++    truth=raw_fixture()
++    shown=operator_view.project(truth,operator_view.display_identity('chemistry_hidden' if fault('L') else 'none'))
++    assert shown==truth and len(shown['history'][0]['raw'])==29,'FULL RAW LOST CHEMISTRY'
++
++def test_same_physics_and_complete_records(tmp_path):
++    initial=manufactured();initial.fields.fill(.17);initial.raw=transduce(initial.c,initial.body,initial.fields,0.,initial.phase)
++    final=[];records=[]
++    for mode in ('none','chemistry_hidden'):
++        e=copy.deepcopy(initial);m=make_manifest(e,'fixture-identical-physics',EXTERNAL,'sensor_human',.2,display=mode)
++        r=Run(e,m,tmp_path/mode);g=sensor_ui.HumanGateway(r);g.start(g.envelope()['decision_token'])
++        for command in ((.13,.07),(-.1,.04)):g.submit(*command,'manufactured',g.envelope()['decision_token'])
++        assert r.closed and g.envelope()['lifecycle']=='ended' and e.native_index==20
++        final.append(state_hash(e))
++        records.append({name:read_stream(r.recorder.path/(name+'.jsonl.gz')) for name in ('native','wave','events','sensor')})
++        assert len(records[-1]['sensor'])==21 and all(len(row['raw'])==29 for row in records[-1]['sensor'][1:])
++        assert any(row['raw'][10]!=0 for row in records[-1]['sensor'][1:])
++        assert len(read_stream(r.recorder.path/'controller.jsonl.gz')[0]['inputs']['history'][0]['raw'])==(29 if mode=='none' else 25)
++        assert verify_segment(r.recorder.path)['native_records']==20
++    assert final[0]==final[1] and records[0]==records[1]
++
++def test_http_egress_and_generic_errors(tmp_path,capsys):
++    e,r,g=case(tmp_path);g._payload['history'][0]['raw'][0]=.123456
++    # Full truth gets a chemistry canary; every subsequent operator publication
++    # is a projection. No canary enters notes, commands or other real channels.
++    r.sensor.payload['history'][0]['raw'][10]=CANARY;g._payload=r.display()
++    try:
++        with service(g) as base:
++            for endpoint in ('/','/sensors','/session'):
++                data=get(base,endpoint)
++                assert str(CANARY).encode() not in data
++            for endpoint in ('/evaluation','/state','/manifest.json','/sensor-display.json','/../configuration.json','/socket','/debug','/download','/snapshot'):
++                with pytest.raises(urllib.error.HTTPError) as err:get(base,endpoint)
++                assert err.value.code==404 and str(CANARY).encode() not in err.value.read()
++            with patch.object(g,'submit',side_effect=ValueError('PRIVATE CHEMISTRY '+str(CANARY))):
++                with pytest.raises(urllib.error.HTTPError) as err:post(base,'/command',dict(left=0,right=0,annotation='',token=g.envelope()['decision_token']))
++                assert err.value.read()==sensor_ui.ERROR
++            # Payload, metadata and aggregate injections fail at the server boundary.
++            for where in ('payload','aggregate'):
++                real=g.envelope()
++                if where=='payload':real['sensors']['history'][0]['raw'].insert(10,CANARY)
++                else:real['chemistry_mean']=CANARY
++                with patch.object(g,'envelope',return_value=real):
++                    with pytest.raises(urllib.error.HTTPError) as err:get(base)
++                    assert str(CANARY).encode() not in err.value.read()
++        captured=capsys.readouterr();assert str(CANARY) not in captured.out+captured.err
++    finally:finish(r,g)
++
++def test_http_delayed_duplicate_and_running(tmp_path):
++    e,r,g=case(tmp_path);token=g.envelope()['decision_token'];entered=threading.Event();release=threading.Event()
++    real=r.hold;results=[]
++    def slow(*args):entered.set();assert release.wait(5);return real(*args)
++    try:
++        with service(g) as base,patch.object(r,'hold',slow):
++            value=dict(left=.1,right=.1,annotation='',token=token)
++            t=threading.Thread(target=lambda:results.append(post(base,'/command',value)));t.start();assert entered.wait(5)
++            assert json.loads(get(base))['lifecycle']=='running'
++            assert rejected(lambda:post(base,'/command',value))
++            release.set();t.join(10);assert not t.is_alive()
++            assert rejected(lambda:post(base,'/command',value))  # serial delayed delivery
++        assert e.native_index==10 and len(results)==1
++    finally:release.set();finish(r,g)
++
++@pytest.mark.parametrize('stop',['terminal','wall','storage','failure','withdrawal','shutdown'])
++def test_stop_modes_end_without_resume(tmp_path,stop):
++    e,r,g=case(tmp_path);token=g.envelope()['decision_token']
++    try:
++        if stop=='terminal':
++            e.body.energy=.000005;g.submit(0,0,'',token)
++        elif stop=='wall':
++            with patch.object(sensor_ui.time,'perf_counter',return_value=r.started+r.wall_limit+1):g.envelope()
++        elif stop=='storage':
++            r.session['bytes_used']=r.storage_limit;g.submit(0,0,'',token)
++        elif stop=='failure':
++            with patch.object(r,'hold',side_effect=OSError('private failure')):assert rejected(lambda:g.submit(0,0,'',token))
++        elif stop=='withdrawal':g.end(token)
++        else:g.shutdown()
++        assert r.closed and g.envelope()['lifecycle']=='ended'
++        n=e.native_index;assert rejected(lambda:g.submit(0,0,'',token));assert e.native_index==n
++        assert rejected(lambda:Run.resume(r.recorder.path,tmp_path/'forbidden'))
++    finally:finish(r,g)
++
++def test_prepared_and_paused_guard(tmp_path):
++    e=manufactured();r=Run(e,make_manifest(e,'fixture-prepared',EXTERNAL,'sensor_human',.2),tmp_path/'record')
++    g=sensor_ui.HumanGateway(r);before=state_hash(e)
++    try:
++        assert g.envelope()['lifecycle']=='prepared'
++        assert rejected(lambda:g.submit(0,0,'',g.envelope()['decision_token']))
++        assert rejected(lambda:r.begin_command([0,0])) and rejected(lambda:r.advance(0))
++        g.start(g.envelope()['decision_token'])
++        for _ in range(3):g.display();g.envelope()
++        assert state_hash(e)==before and not r.sensor.payload['own_commands']
++    finally:finish(r,g)
++
++def test_ungranted_live_launcher(tmp_path):
++    e=manufactured();m=make_manifest(e,'no-live-permission',EXTERNAL,'sensor_human',30,purpose='commissioning',protocol={'description':'static authorization rejection only'})
++    path=tmp_path/'no-grant.json';path.write_bytes(strict_bytes(m))
++    with patch('loom_p.records.load_snapshot',side_effect=AssertionError('state loaded before authority')):
++        assert rejected(lambda:sensor_ui.live_gateway(path,tmp_path/'absent-snapshot',tmp_path/'forbidden'))
++    assert not (tmp_path/'forbidden').exists()
++
++@pytest.mark.parametrize('mode,controller',[('intact_P','none'),('external_controller','waypoint')])
++def test_deprivation_restricted_to_human_arm(mode,controller):
++    m=make_manifest(manufactured(),'fixture-wrong-display-arm',mode,controller,.1,display='chemistry_hidden')
++    assert rejected(lambda:authority.validate_execution(m,complete=True))
++
++def test_page_connection_closed_while_paused(tmp_path):
++    import socket
++    e,r,g=case(tmp_path);before=state_hash(e);token=g.envelope()['decision_token']
++    try:
++        with service(g) as base:
++            port=int(base.rsplit(':',1)[1])
++            with socket.create_connection(('127.0.0.1',port),timeout=5) as connection:
++                connection.sendall(f'GET /session HTTP/1.0\r\nHost: 127.0.0.1:{port}\r\n\r\n'.encode())
++                assert connection.recv(100).startswith(b'HTTP/')
++            # Closing the page/connection supplies no command or implicit resume.
++            assert g.envelope()['lifecycle']=='paused' and g.envelope()['decision_token']==token
++        assert state_hash(e)==before and e.native_index==0
++    finally:finish(r,g)
++
++def test_startup_exception_does_not_leak(capsys):
++    with patch.object(sensor_ui,'main',side_effect=ValueError('private chemistry '+str(CANARY))):
++        assert sensor_ui.entrypoint()==1
++    captured=capsys.readouterr()
++    assert str(CANARY) not in captured.out+captured.err and 'private chemistry' not in captured.err
++
++def test_private_failure_retained_operator_error_generic(tmp_path):
++    e,r,g=case(tmp_path);token=g.envelope()['decision_token']
++    with patch.object(r,'hold',side_effect=ValueError('manufactured private canary '+str(CANARY))):
++        with pytest.raises(ValueError) as caught:g.submit(0,0,'',token)
++    assert str(CANARY) not in str(caught.value) and g.envelope()['lifecycle']=='ended'
++    receipt=json.loads((r.recorder.path/'manifest.json').read_bytes())
++    assert str(CANARY) in receipt['error'] and not receipt['complete']
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/B1_OPERATOR_APPARATUS_CORRECTION_REPORT.md b/docs/developmental_ecology/p_b1_operator_correction_20260926/B1_OPERATOR_APPARATUS_CORRECTION_REPORT.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..31cea298e487fdb2bd2dacef3273cd72d3a6bd2b
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/B1_OPERATOR_APPARATUS_CORRECTION_REPORT.md
+@@ -0,0 +1,73 @@
++# B1 operator apparatus correction — submitted for narrow independent review
++
++Date: 2026-09-26. This records implementation and component evidence, not B1 launch fitness or a perceptual result. The exact new local checkpoint, parent, branch and worktree are in the delivered `CHECKPOINT.json`; this report is committed with that checkpoint.
++
++## Authority and preserved inputs
++
++Jason authorized two apparatus corrections: the reviewed display-side chemistry-hidden condition and the interactive prepared/paused/running/ended lifecycle. The controlling request is `832f5af3-01d7-417d-83b2-4e889158997a/Pasted text.txt`, preserved in the review package. P remains `6bc9683b54e4fa80136fe8534d7713e2a250a95f`; the parent apparatus is `68db2c581f07200966d699a4f55a65f9b96df1e9`.
++
++The complete held B1 delivery was read and its 124 payload/archive files inventoried before implementation. Held review/custody identity `45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543` remains historical and NON-LAUNCHABLE. Its bytes, initial snapshots, protocols, fixture definitions and horizons were not modified. Sealed manifests were treated as inert data; snapshots were checked as bytes, never loaded into an Engine. No sealed geometry or evaluator state is included in this report or the portable package.
++
++Orientation used `00_LOOM_CURRENT_STATE(2).md`, the current workbench instructions/map/status, the held packet, and `P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md`. The current workbench records A0–A5 as bounded physical evidence and B1 as held; older unexecuted-A5 statuses retain their dated meanings. The held packet's `PROTOCOL_CONTRACT.json` requires preserving an early-stop prefix without resuming. This is consistent with ordinary pause between 0.1-second decisions in the commissioning design. No conflicting lifecycle contract was found.
++
++## Defects and implemented correction
++
++`OPEN_ISSUE_B1_INTERFACE.md` identifies B1-H1: the old apparatus rejects every display intervention except `none`. B1-H2/H3 identify a page that looks paused during a hold, accepts queued submissions, supplies only an offline launcher, and can continue to look actionable after closure. The pre-correction fixture demonstrates the old chemistry rejection and that two submissions can produce twenty native steps instead of one ten-step hold. These are apparatus findings; they establish no perceptual, P or world failure.
++
++The new `operator_view.py` copies the actual sensor history and omits raw indices 10–13 from every operator row in CHEMISTRY-HIDDEN. It creates no zero, null, placeholder number, chemistry aggregate or estimated replacement. The result has 25 actual coordinates: 10 light, 8 contact and 7 proprioception. Actual E/I at its original cadence, commands and notes remain. FULL-RAW retains its schema-1, 29-coordinate payload and actual values. The new hidden schema is version 2. The condition and implementation hash are part of exact execution identity; an unimplemented label or mismatched implementation is rejected.
++
++Raw `SensorHistory`, native sensor recording, physical chemistry, snapshots and evaluator truth remain complete. Human decision records instead contain exactly the permitted display used for that decision. The validator checks both the full physical history and its declared operator projection. A manufactured paired 0.2-second check produced identical final physical state and identical native, wave, event and full sensor records in the two display modes.
++
++`HumanGateway` now attaches only to a fresh unadvanced human case. Starting changes PREPARED to PAUSED without stepping. One accepted decision consumes its token, enters RUNNING, executes the existing bounded hold, and returns to PAUSED or ENDED. The server rejects overlapping and delayed duplicate requests. The page disables controls before sending, rejects a second double-click event and key-repeat, and never automatically retries an uncertain command. Closing or refreshing a paused page does not issue a command. An ended interactive case cannot restart or resume, including after an administrative stop.
++
++The explicit future live factory checks execution authority before loading an initial state or creating a run directory. It was tested only for rejection of an ungranted manufactured manifest. No held case was launched. Operator routes expose only the page, a validated condition-specific payload and a closed lifecycle envelope; there is no evaluator/file/debug service. Error responses and startup messages are generic. Private failures remain in private receipts. See `CHEMISTRY_DEPRIVATION_INFORMATION_FLOW.md` and `LIVE_OPERATOR_STATE_MACHINE.md` for exact boundaries.
++
++## Code surface and unchanged behavior
++
++| File under developmental_ecology/loom_commissioning | Narrow change |
++|---|---|
++| operator_view.py (new) | Copy-only omission, exact mode identity and closed payload validation |
++| authority.py / contract.py | Bind and validate display implementation; construct explicitly requested mode; validate optional interactive lifecycle |
++| controllers.py | Share the existing history validator across exact 29- and 25-coordinate schemas |
++| pending.py | Validate issued human input against declared display schema |
++| runner.py | Gate attached interactive stepping, record the permitted decision input, end lifecycle and prohibit interactive resume |
++| sensor_ui.py / sensor.html | Explicit live lifecycle, single-use decisions, permitted history display, closed HTTP surfaces and generic errors |
++| validators.py | Validate both complete raw physical records and condition-specific operator records |
++
++`tests_apparatus/test_b1_operator.py` and `b1_dom_fixture.cjs` add 28 component cases. No other production file changed. `clock.py`, `adapter.py`, P modules, world/sensor/body physics and `configuration.json` are byte-identical to the parent. Controller command bounds, gains, mechanics, expenditure, 0.01-second native dt, 0.1-second hold, field cadence, wave cadence and E/I cadence remain unchanged. The original history-growth cost is not optimized away.
++
++The clock correction and old generic manufactured pause/resume path remain. The new no-resume rule applies to explicitly attached interactive sessions: ending a case is different from pausing between decisions. P, fixed-structure and waypoint implementations receive no new control policy or physics change. All new behavior changes apparatus identity; historical A1–A5 retain their original checkpoints and interpretations.
++
++## Actual checks and results
++
++| Check | Result |
++|---|---|
++| Original P and apparatus regressions after correction | 176 passed |
++| Final exact-source worktree P + apparatus suite | 204 passed in 143.82 s |
++| Byte-identical portable source suite | 204 passed in 143.73 s |
++| A–L consequential fault/control matrix | 12 expected assertion failures, each followed by its passing control |
++| Baseline 68db pre-correction examples | 2 expected failures: hidden rejection and duplicate extra hold |
++| Paused 5-second / 300-second deliberation | Manufactured wall-clock substitution, unchanged complete physical state hash |
++| Hidden/full paired physical check | Same physical final hash and raw records; operator rows 25 / 29 |
++| Held controls and B1 pair | Static type/grid/identity compatibility only; all original snapshots and horizons retained |
++| Browser appearance/interaction | Synthetic transport, invented history, no Engine; lifecycle and permitted display inspected |
++
++Final regression reports include all existing clock/index scheduling, authority, pause/resume, fixed-structure and sensor-only isolation tests. Fault runs are intentionally RED, not unresolved test failures. Each RED was checked for the named assertion and one test failure, rather than accepting import/collection errors. `RED_GREEN_MATRIX.md` maps the mutations to checks. Raw logs, JUnit results, source identities, runtime records and manufactured records are in the portable package.
++
++Browser inspection used invented fixed-time data and the actual HTML/HTTP surface. It observed PREPARED, PAUSED, RUNNING during a delayed response, PAUSED after one fake command, unchanged state after refresh, and irreversible ENDED. The later fast-double-click/key-repeat guard is covered by the final detached DOM test. No screenshot or synthetic-server final receipt was saved; `UI_REVIEW.json` distinguishes direct observations from automated evidence. The temporary tab and server were closed. No live renderer or ecological feedback path was added.
++
++## Static compatibility and preservation
++
++All four held positive-control specifications remain representable: left/right distinction, command versus achieved movement, contact onset, and gentle contact hold. Their original horizons are 4, 4, 6 and 10 seconds. The two B1 specifications retain the same complete initial physical state and 30-second horizons. Their semantic difference remains operator-view deprivation only, with separate case names. The corrected validator accepted disposable in-memory type checks; no regenerated manifest, launch object or grant was saved or hashed as a new authority.
++
++`STATIC_HELD_COMPATIBILITY.json` contains only public case names, horizons and opaque snapshot hashes. It is not a control demonstration or evidence that a human can perform B1. `P_CONFIG_WORLD_UNCHANGED.json` provides byte and AST comparisons; final preservation evidence rechecks held source hashes and original P/config blobs. The worktree is attached to the actual Windows Loom repository; Python and Git ran locally. Existing dependencies were reused. No Git operation was performed in the Obsidian repository.
++
++## Limits and review boundary
++
++No prepared positive control, B1 FULL-RAW, B1 CHEMISTRY-HIDDEN or other ecological case ran. No ecological replay was performed. Existing regression reconstruction tests and the new paired-record validator operated on manufactured component records only; this is not a blanket claim that no test invoked reconstruction code. No new prehistory was generated. No P learning, perception, efficacy, survival or human competence was evaluated.
++
++The UI is an operator/evaluator workflow separation, not isolation from a person with arbitrary filesystem or Python access. Tests cover named leakage surfaces and concurrency cases, not every possible fault or operating-system failure. A connection lost during a hold cannot cancel already authorized native steps; the bounded hold completes or ends on its existing stop condition and never starts another. Wall/storage limits remain administrative limits. A paused human spends zero simulated bodily time, but may reach a wall-time administrative end.
++
++The history-growth/resource concern B1-R1 remains. No 30-second interactive throughput benchmark, resource retuning, recording reduction, hidden fixture trial or usability/competence study was performed. Private incomplete records are retained on apparatus failure; no recovery continuation was introduced. There was no push, PR, merge, canon update or experiment number.
++
++This checkpoint is submitted for narrow independent correction review. It does not self-certify B1 launch fitness. After independent closure, a separately authorized task must regenerate the held packet against the new apparatus identity and obtain new execution authority. The historical held packet stays unchanged. Stop here.
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/CHEMISTRY_DEPRIVATION_INFORMATION_FLOW.md b/docs/developmental_ecology/p_b1_operator_correction_20260926/CHEMISTRY_DEPRIVATION_INFORMATION_FLOW.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..57148f307d6efd533a1bb21aa2a943dbd5a8a03f
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/CHEMISTRY_DEPRIVATION_INFORMATION_FLOW.md
+@@ -0,0 +1,54 @@
++# Chemistry deprivation: information flow and review map
++
++Status: implemented apparatus boundary, submitted for independent review. No ecological case or prepared positive control was executed.
++
++```mermaid
++flowchart TD
++    A[Unchanged world and physical chemistry] --> B[Unchanged transduction: 29 real coordinates]
++    B --> C[Complete private SensorHistory and raw sensor stream]
++    C --> D[Private snapshots and evaluator records]
++    C --> E[Copy-only operator projection]
++    F[Exact authority-bound display condition] --> E
++    E --> G[Full raw: 29 values, schema 1]
++    E --> H[Chemistry hidden: 25 values, schema 2]
++    G --> I[Closed operator payload validation]
++    H --> I
++    I --> J[Permitted HTTP, DOM, history, download]
++    I --> K[Private record of actual operator decision inputs]
++    J --> L[Human paired command with single-use token]
++    L --> M[Existing bounded actuator hold]
++    M --> A
++```
++
++There is no projection-to-physics path. The only control path is the existing explicit paired actuator command. Human behavior may differ when information differs; the apparatus neither compensates nor supplies a policy.
++
++## Exact coordinate and identity contract
++
++`operator_view.KEPT` is raw indices 0–9 and 14–28. CHEMISTRY-HIDDEN rows contain the actual selected 25 values in their original order. Raw indices 10–13 are absent from current and every historical row. The condition label is explicit; omitted channels have no numeric slot or derived summary. FULL-RAW returns a validated copy of the complete original schema-1 payload.
++
++The hidden display identity has exactly `kind`, `raw_flat_indices`, `representation` and `implementation_sha256`: `chemistry_hidden`, `[10,11,12,13]`, `omitted`, and the SHA-256 of `operator_view.py`. The sensor-human controller identity also binds that source and its live projection/validation functions, alongside HTML, gateway and existing clock/controller identities. The complete execution object remains authority-bound. An unsupported shorthand or modified hash is rejected. Hidden display is restricted to the external sensor-human arm. This task creates no B1 launch authority.
++
++## Surface-by-surface evidence
++
++| Surface | Construction and check |
++|---|---|
++| Physical chemistry/transduction | P files and configuration unchanged; real four chemistry values retained; manufactured paired histories/final state identical |
++| Current and historical operator values | All rows projected server-side; exact schema/label/width checked; chemistry canary and extra raw-coordinate mutations rejected |
++| HTTP | Only GET `/`, `/session`, `/sensors` and POST `/start`, `/command`, `/end`; payload and envelope validated before serialization |
++| DOM / data attributes | Browser receives 25-value payload; detached DOM fixture rejects CSS-only hiding; notes rendered as text, not markup |
++| Operator download | Browser serializes the already validated permitted sensor payload; fixed generic filename; no download/file endpoint |
++| Metadata/aggregates | Closed envelope and nested history keys; extra chemistry aggregate field rejected; no spatial or event metadata generated |
++| E/I | Actual values held at the original reviewed cadence; no chemistry-derived statistics |
++| Commands/notes | Only the human's commands and supplied text; no private controller/evaluator annotations are inserted |
++| Exceptions/logs | Generic HTTP error and startup error; access/server exception logs suppressed; private exception preserved only in private run receipt |
++| Evaluator/files/debug | No route serves manifests, snapshots, maps, evaluator outputs, stocks, global position, heading or source identities; route probes return generic 404 |
++| Websocket | No websocket implementation or route; `/socket` is unavailable |
++| OS filenames/paths in browser | No case directory or snapshot path supplied; generated filename is independent of physical/evaluator state |
++
++The permitted channels can naturally carry lawful information correlated with the environment. This correction removes direct chemistry coordinates and prohibited extras; it does not destroy lawful contact/light/proprioception/E/I evidence or human memory. An operator who manually types information into their own notes is not a new privileged server channel.
++
++## Private recording remains complete
++
++`Run.sensor` and `sensor.jsonl.gz` retain the full raw history. Native/wave/event records and complete snapshots retain physical truth. The final `sensor-display.json` and human controller input records preserve what the operator could see. `operator.jsonl.gz` is a private lifecycle/display-hash audit; it is never served. `validators.verify_segment` independently validates raw physical rows and the declared projected rows. The new paired manufactured test checks nonzero real chemistry in the raw record as well as full equality across display conditions.
++
++The operator HTTP service has no evaluator gateway and no arbitrary file handler. Private output folders are not a web root. This is separation by the implemented service interface, not operating-system access isolation. The independent package contains only invented/manufactured test states and public held-packet materials, never sealed B1 fixture state.
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/EXECUTION_SCOPE_RECORD.json b/docs/developmental_ecology/p_b1_operator_correction_20260926/EXECUTION_SCOPE_RECORD.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..8711ea5e7fd26a17926cde243febca1da658de96
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/EXECUTION_SCOPE_RECORD.json
+@@ -0,0 +1,17 @@
++{
++  "commissioning_cases_executed": 0,
++  "prepared_positive_controls_executed": 0,
++  "B1_FULL_RAW_executed": 0,
++  "B1_CHEMISTRY_HIDDEN_executed": 0,
++  "ecological_trajectories_executed": 0,
++  "ecological_replays": 0,
++  "new_prehistory": 0,
++  "new_B1_launch_authorities": 0,
++  "component_tests_executed": true,
++  "manufactured_record_reconstruction": true,
++  "scope": "All stepping and reconstruction in this correction is in authorized component/manufactured tests; static held checks do not construct a Run.",
++  "earlier_evidence": "No A1-A5 output changed, rerun or replayed; original checkpoints and interpretations preserved.",
++  "browser": "Invented data and synthetic transport only; no feedback into a simulation.",
++  "local_git": "New isolated code worktree and scoped local commit only; no vault Git, push, PR, merge or history rewrite.",
++  "authority_boundary": "Stop for independent narrow correction review. Historical held B1 remains non-launchable; later regeneration and new authorization are separate."
++}
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/FINAL_PRESERVATION.json b/docs/developmental_ecology/p_b1_operator_correction_20260926/FINAL_PRESERVATION.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..7a7b537825138636de82622d4b3546cbdd4fc7e2
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/FINAL_PRESERVATION.json
+@@ -0,0 +1,43 @@
++{
++  "parent_checkpoint": "68db2c581f07200966d699a4f55a65f9b96df1e9",
++  "P_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
++  "byte_identical_files": {
++    "loom_p\\__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
++    "loom_p\\chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
++    "loom_p\\diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
++    "loom_p\\engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
++    "loom_p\\geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
++    "loom_p\\inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
++    "loom_p\\neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
++    "loom_p\\physics.py": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
++    "loom_p\\prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
++    "loom_p\\reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
++    "loom_p\\records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
++    "loom_p\\schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
++    "loom_p\\smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b",
++    "configuration.json": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
++    "requirements-lock.txt": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6",
++    "loom_commissioning\\clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
++    "loom_commissioning\\adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
++    "loom_commissioning\\diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
++    "loom_commissioning\\evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3"
++  },
++  "controller_functions_AST_identical": [
++    "command_pair",
++    "waypoint_command",
++    "waypoint_stage",
++    "time_due",
++    "validate_plan",
++    "privileged_input",
++    "observe_without_interference"
++  ],
++  "P_config_clock_git_diff_empty": true,
++  "held_packet_files_and_archives_checked": 124,
++  "held_packet_unchanged": true,
++  "no_p_world_sensor_physics_configuration_change": true,
++  "no_existing_evidence_rewritten": true,
++  "original_P_checkpoint_blob_comparisons": 14,
++  "parent_checkpoint_blob_comparisons": 19,
++  "git_comparison_method": "Read-only git hash-object (without -w), using existing path filters, compared to committed blob IDs. Configuration checkout has existing CRLF versus LF Git storage; no file rewritten. Parent worktree bytes also match exactly.",
++  "held_before_inventory_sha256": "866b625e30989fab94114b6981807b8a3ee35b01ff3dbea2250d6b9b51868644"
++}
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/LIVE_OPERATOR_STATE_MACHINE.md b/docs/developmental_ecology/p_b1_operator_correction_20260926/LIVE_OPERATOR_STATE_MACHINE.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..65704a28ea59d9f72fd4fe48de4a287b11eb7b99
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/LIVE_OPERATOR_STATE_MACHINE.md
+@@ -0,0 +1,44 @@
++# Interactive sensor-only lifecycle specification
++
++The controlling held `PROTOCOL_CONTRACT.json` permits one bounded decision at a time and forbids resume/retry/replacement after an early stop. The commissioning design's pauses between decisions remain available. An ended case cannot be reopened.
++
++| Current state | Request / event | Next state | World effect |
++|---|---|---|---|
++| PREPARED | Permitted display/read/refresh | PREPARED | None |
++| PREPARED | Explicit start with current token | PAUSED | None |
++| PREPARED | Command | Rejected | None |
++| PAUSED | Display/read/refresh/reconnect/deliberate | PAUSED | None |
++| PAUSED | Valid paired command + current token | RUNNING | Exactly the existing declared hold, subject to existing stops |
++| RUNNING | Last-complete permitted display read | RUNNING | Read itself adds no steps |
++| RUNNING | Any additional command/start/end | Rejected | No second hold; current authorized hold remains bounded |
++| RUNNING | Hold completes with no stop | PAUSED | No extra step after the hold |
++| RUNNING | Case deadline / physical terminal / resource stop / apparatus failure | ENDED | Preserve prefix; no further actuation |
++| PREPARED or PAUSED | Explicit end / shutdown / detected wall limit | ENDED | Bookkeeping only; no physical step |
++| ENDED | Any command/start/resume | Rejected | None, irreversible |
++| ENDED | Permitted display/read | ENDED | None |
++
++## Physical and wall clocks
++
++The gateway never steps an Engine for polling, display, refresh, connection closure, start or end. Paused fields, body expenditure, native/neural state and simulation RNG do not advance. Five seconds and five minutes of real deliberation are tested with manufactured wall-clock objects and the complete physical-state hash. Opaque request tokens use operating-system randomness, never the simulation RNG.
++
++The existing command pair is still bounded by [-1,1] on each actuator, with an unchanged 0.1-second hold and 0.01-second native steps. Existing integer-index deadline handling and physical-clock validation remain byte-identical. No batching, repeated-until-success command, macro, pause expenditure, new controller gain or action assistance is supplied.
++
++Administrative wall time includes deliberation. Expiry while paused can write an end receipt but cannot consume simulated time. Wall expiry is checked on reads/claims; no background simulation exists. Storage and native stops keep their existing runner checks. A case that reaches a resource stop becomes ENDED even if its historical receipt label is `administrative_pause`; interactive continuation is prohibited.
++
++## Single decision and concurrency
++
++The gateway claims a current opaque revision token under a lock before entering RUNNING. That token is invalidated immediately. The bounded execution runs outside the lock so readers can obtain the copied last-complete permitted display. Publication returns the next PAUSED token only after the hold finishes. A delayed request with the consumed token is rejected even if it arrives after the case has become paused again. No queue is used.
++
++The client shows RUNNING and disables controls before sending. It ignores the second browser double-click event and suppresses held-key repeat; the server token check independently rejects duplicates. Response epochs stop stale read replies from overwriting a newer state/token. An uncertain request locks action controls and requires an explicit permitted refresh; the browser never resubmits. Refresh and reconnect use GET only.
++
++Closing a paused page sends no command and leaves the world inert. Closing/disconnecting during a hold does not create a second hold and does not promise cancellation of a command already accepted. A server shutdown joins a bounded in-flight request before ending the case. An abrupt process/OS failure is not claimed recoverable; the partial record remains evidence and continuation is not authorized.
++
++## Guard and persistence surfaces
++
++`HumanGateway` requires a fresh sensor-human run with zero advanced steps and no pending decision. It records `operator_lifecycle` in the restart session and writes lifecycle audit rows. `Run.begin_command` and `Run.advance` reject calls outside RUNNING when this lifecycle is attached. `Run.close` sets ENDED before writing final state. `Run` construction from any session carrying an interactive lifecycle is rejected, so loading a restart cannot re-enable an ended case. Existing unattached low-level manufactured pause/resume tests remain valid and are not a human continuation workflow.
++
++The UI envelope contains only schema, lifecycle, display condition, decision token, permitted sensors and offline status. It exposes no private stop cause. Private receipts retain the actual cause and errors for later evaluation. Offline review cannot actuate. The explicit live factory rejects missing authority before state load and output creation. This task neither launched that factory against held state nor generated its required B1 authority.
++
++## Required review evidence and limits
++
++Tests cover prepared guards; paused physical clock/RNG/expenditure; duplicate, overlapping and delayed submissions; HTTP/DOM behavior; refresh/reconnect; closed page connection; all stop categories; generic errors; and rejection of interactive resume. The actual browser appearance check used an invented fixed-time transport with no Engine, complemented by final automated DOM checks. These tests do not establish human competence, 30-second interactive throughput, exhaustive concurrency correctness or B1 launch fitness.
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/P_CONFIG_WORLD_UNCHANGED.json b/docs/developmental_ecology/p_b1_operator_correction_20260926/P_CONFIG_WORLD_UNCHANGED.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..eb5f72e9b3ce9ed9ce75dd1baf35220d7ee705df
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/P_CONFIG_WORLD_UNCHANGED.json
+@@ -0,0 +1,39 @@
++{
++  "parent_checkpoint": "68db2c581f07200966d699a4f55a65f9b96df1e9",
++  "P_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
++  "byte_identical_files": {
++    "loom_p\\__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
++    "loom_p\\chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
++    "loom_p\\diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
++    "loom_p\\engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
++    "loom_p\\geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
++    "loom_p\\inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
++    "loom_p\\neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
++    "loom_p\\physics.py": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
++    "loom_p\\prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
++    "loom_p\\reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
++    "loom_p\\records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
++    "loom_p\\schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
++    "loom_p\\smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b",
++    "configuration.json": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
++    "requirements-lock.txt": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6",
++    "loom_commissioning\\clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
++    "loom_commissioning\\adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
++    "loom_commissioning\\diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
++    "loom_commissioning\\evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3"
++  },
++  "controller_functions_AST_identical": [
++    "command_pair",
++    "waypoint_command",
++    "waypoint_stage",
++    "time_due",
++    "validate_plan",
++    "privileged_input",
++    "observe_without_interference"
++  ],
++  "P_config_clock_git_diff_empty": true,
++  "held_packet_files_and_archives_checked": 124,
++  "held_packet_unchanged": true,
++  "no_p_world_sensor_physics_configuration_change": true,
++  "no_existing_evidence_rewritten": true
++}
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/README.md b/docs/developmental_ecology/p_b1_operator_correction_20260926/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..829110e0299c9b26f7fd32417425a9ccf5a00596
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/README.md
+@@ -0,0 +1,14 @@
++# B1 apparatus-only correction review
++
++Start with [the correction report](B1_OPERATOR_APPARATUS_CORRECTION_REPORT.md), then review the [information-flow map](CHEMISTRY_DEPRIVATION_INFORMATION_FLOW.md), [interactive lifecycle](LIVE_OPERATOR_STATE_MACHINE.md), and [A–L matrix](RED_GREEN_MATRIX.md).
++
++Evidence summaries committed here:
++
++- `REGRESSION_RESULTS.json`: final 204 worktree and 204 portable passes, prior regression logs, and fault/control runs.
++- `FINAL_PRESERVATION.json`: byte identities, committed-blob comparisons and unchanged held-file count. `P_CONFIG_WORLD_UNCHANGED.json` preserves the preceding byte/AST proof.
++- `STATIC_HELD_COMPATIBILITY.json`: inert compatibility only, with no private fixture contents or new authorities.
++- `RUNTIME_RECORD.json`, `SOURCE_IDENTITIES.json`, `UI_REVIEW.json`, `EXECUTION_SCOPE_RECORD.json`: provenance and explicit boundaries.
++
++The portable review package additionally contains the exact checkpoint/diff, complete source/configuration/tests, existing lawful component cache, raw JUnit/log evidence, manufactured component records and the public held contracts. Its `PAYLOAD_MANIFEST.json` covers every other package file. It includes neither the sealed B1 fixture nor a new launch object. The ZIP is a review delivery, not execution authorization.
++
++All execution in this correction is component/manufactured testing. No prepared positive control, B1 or ecological run/replay was performed. Stop for independent correction review; do not infer launch fitness from this checkpoint.
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/RED_GREEN_MATRIX.md b/docs/developmental_ecology/p_b1_operator_correction_20260926/RED_GREEN_MATRIX.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..e807c5eb90ca7c734ef3212680db4e1d1634dec8
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/RED_GREEN_MATRIX.md
+@@ -0,0 +1,22 @@
++# Consequential A–L fault/control matrix
++
++All twelve final injected faults produced the expected single assertion failure, then the unmutated control passed. None of the RED results is a collection/import error. Exact logs, JUnit outputs and source identities are in `evidence/fault-matrix-sealed` in the portable package. Production files were not mutated between fault and control; the detached/component fixture enables the named fault through `B1_FAULT`.
++
++| ID | Deliberate fault | Observable RED assertion | GREEN coverage |
++|---|---|---|---|
++| A | Reinstate old `none`-only guard | old rejection | Exact implemented hidden identity accepted; bad identity rejected; mode changes authority digest |
++| B | Supply complete chemistry-bearing payload | CHEMISTRY PAYLOAD LEAK | Every row has only the 25 permitted actual coordinates |
++| C | Bypass client schema validation to simulate CSS-only hiding | CSS-ONLY MASK EXPORTED CHEMISTRY | Invalid data withheld from DOM and download; hidden/full display checks |
++| D | Zero physical chemistry before projection | DISPLAY DEPRIVATION ALTERED PHYSICAL RAW RECORD | Projection leaves source object unchanged; separate paired actual-record equality test |
++| E | Advance time during paused read | PAUSED CLOCK/RNG/EXPENDITURE BREACH E | Complete physical state unchanged |
++| F | Draw simulation RNG during paused read | PAUSED CLOCK/RNG/EXPENDITURE BREACH F | Complete physical state unchanged |
++| G | Charge energy during paused read | PAUSED CLOCK/RNG/EXPENDITURE BREACH G | Complete physical state unchanged |
++| H | Accept a consumed token again | DUPLICATE CREATED EXTRA HOLD | One actual ten-native-step hold and one decision record |
++| I | Accept another entry while running | OVERLAPPING EXECUTIONS ACCEPTED | One entered execution; controlled synchronization stub, no physical trajectory |
++| J | Step adapter after end | ENDED ADVANCED WORLD | No physical state change; start/resume also rejected |
++| K | Step on display GET during refresh/reconnect | REFRESH/RECONNECT ADVANCED WORLD | Repeated page/session/sensor reads remain inert |
++| L | Apply omission to FULL-RAW | FULL RAW LOST CHEMISTRY | Full payload equals source exactly and retains all 29 actual values |
++
++The baseline `BEFORE_CORRECTION` evidence separately ran two expected failures against unmodified 68db source: genuine hidden rejection and duplicate extra hold. The A fault above deliberately reinstates the old guard in a component fixture; it is not presented as an independent baseline execution. Fault C's disabled validator is deliberately adversarial; actual server projection and server schema validation provide an additional earlier boundary.
++
++New components use invented/manufactured states only. Fault H/J/K execute small explicit manufactured holds/steps to make failure consequential; I uses a blocking function to detect overlapping entry without evolving a world. The paired validation test reconstructs only its manufactured record. No held B1/positive-control/ecological fixture was executed or replayed. Supporting HTTP tests probe denied evaluator/file routes, generic errors, extra metadata/aggregate rejection and delayed duplicates. Node tests check DOM, downloads, fast/delayed double clicks, key repeat and lifecycle presentation.
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/REGRESSION_RESULTS.json b/docs/developmental_ecology/p_b1_operator_correction_20260926/REGRESSION_RESULTS.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..0c562fc111eae72aa95bb1aab4efd7ca7c187ccb
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/REGRESSION_RESULTS.json
+@@ -0,0 +1,118 @@
++{
++  "final_worktree": {
++    "tests": 204,
++    "passed": 204,
++    "reported_seconds": 143.82
++  },
++  "final_portable": {
++    "tests": 204,
++    "passed": 204,
++    "reported_seconds": 143.73
++  },
++  "baseline_expected_failures": 2,
++  "final_fault_matrix": {
++    "expected_RED_assertion_failures": 12,
++    "GREEN_passes": 12
++  },
++  "all_regression_logs": [
++    {
++      "label": "REGRESSION_FIRST",
++      "name": "pytest",
++      "errors": "0",
++      "failures": "0",
++      "skipped": "0",
++      "tests": "176",
++      "time": "123.306",
++      "timestamp": "2026-09-26T18:40:20.830290+08:00",
++      "hostname": "Equinox",
++      "log_sha256": "453201bf89d97cb74cb4fbf63ee2396f38885bc8fef0fa9d08a357ab1c8c5a03",
++      "junit_sha256": "e5ccf3a82277a458e53a8d33a4ef06f87aadd720c9b37879d3ea6167c52f8bc2"
++    },
++    {
++      "label": "NEW_FIRST",
++      "name": "pytest",
++      "errors": "0",
++      "failures": "0",
++      "skipped": "0",
++      "tests": "23",
++      "time": "17.247",
++      "timestamp": "2026-09-26T18:44:54.996662+08:00",
++      "hostname": "Equinox",
++      "log_sha256": "242817db456d1132ca985cd94d19a1a4f7ab11b490ad0fd86b9c149a3872ff05",
++      "junit_sha256": "f024f7d85130a1cba20b0aaf9ac99fa993c474af199cb4750ba77fed9bc2bb36"
++    },
++    {
++      "label": "FINAL_REGRESSION",
++      "name": "pytest",
++      "errors": "0",
++      "failures": "0",
++      "skipped": "0",
++      "tests": "202",
++      "time": "140.187",
++      "timestamp": "2026-09-26T18:53:36.995011+08:00",
++      "hostname": "Equinox",
++      "log_sha256": "083c2d63b1120970ca46d2348a12a98fda0451a2dd99f125f09fb30a7f0bff28",
++      "junit_sha256": "7bdfb601a0ee202d21449ed2b715b5d36be19d624e01677ace12d0d6525536ba"
++    },
++    {
++      "label": "CHECKPOINT_REGRESSION",
++      "name": "pytest",
++      "errors": "0",
++      "failures": "0",
++      "skipped": "0",
++      "tests": "204",
++      "time": "137.985",
++      "timestamp": "2026-09-26T18:58:33.204876+08:00",
++      "hostname": "Equinox",
++      "log_sha256": "0652a547979bebf950b0dcf3a31679ac2034b22f0b36c3a7ce08b238ae26ad92",
++      "junit_sha256": "b43e0b614f85f3232fffd16b9feac972a9140cdb23821ac6b82e914a4cb5218e"
++    },
++    {
++      "label": "SEALED_REGRESSION",
++      "name": "pytest",
++      "errors": "0",
++      "failures": "0",
++      "skipped": "0",
++      "tests": "204",
++      "time": "143.815",
++      "timestamp": "2026-09-26T19:02:33.902658+08:00",
++      "hostname": "Equinox",
++      "log_sha256": "62a129e3fa558cae267e3a3f4c1a123baed146943a966f69f0de3013b10782ba",
++      "junit_sha256": "31fbd2d79356c6630f5edd99b6ea0d393a7d3fe3c9db193fccacd9d40f82262d"
++    },
++    {
++      "label": "PORTABLE_REGRESSION",
++      "name": "pytest",
++      "errors": "0",
++      "failures": "0",
++      "skipped": "0",
++      "tests": "204",
++      "time": "143.724",
++      "timestamp": "2026-09-26T19:02:34.041445+08:00",
++      "hostname": "Equinox",
++      "log_sha256": "79ed5511c3cc3fce642a0a6e82568a267ead1ac4c1e36bbc17ea1bc5f115e7e9",
++      "junit_sha256": "165ffa574c872576bbc8df7bebd66483fe1df70c05da6f5d504a8cdd8ded76bf"
++    }
++  ],
++  "all_fault_matrix_runs": [
++    {
++      "directory": "fault-matrix",
++      "verified_pairs": 12,
++      "matrix_sha256": "f88ff5bcfe52a5ed4282341a39146eb226c70534b0fe1aa13bb4a630de6ab7f5"
++    },
++    {
++      "directory": "fault-matrix-final",
++      "verified_pairs": 12,
++      "matrix_sha256": "d4b631ee606076b4b55af708dec392ceb98ee4ad1af04cc39cd26f9cf1b31d5e"
++    },
++    {
++      "directory": "fault-matrix-sealed",
++      "verified_pairs": 12,
++      "matrix_sha256": "3422c82bf17c69a3b2032f7e3caaaaeefd22e30781037d93a88b999e5b6b5dc9"
++    }
++  ],
++  "final_source_matches_portable": true,
++  "final_source_matches_fault_matrix": true,
++  "tests_kind": "manufactured/components; no prepared positive-control/B1/ecological case",
++  "reconstruction_scope": "existing component regressions and paired manufactured records only; no ecological replay"
++}
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/RUNTIME_RECORD.json b/docs/developmental_ecology/p_b1_operator_correction_20260926/RUNTIME_RECORD.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..e4695d8b98e347b12dba32b7c54732344392ff78
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/RUNTIME_RECORD.json
+@@ -0,0 +1,38 @@
++{
++  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
++  "implementation": "CPython",
++  "executable_sha256": "935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256",
++  "python_dlls": {
++    "python3.dll": "85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b",
++    "python313.dll": "0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"
++  },
++  "platform": "Windows-11-10.0.26200-SP0",
++  "packages": {
++    "numpy": {
++      "version": "2.3.3",
++      "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af",
++      "file_count": 432,
++      "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
++    },
++    "scipy": {
++      "version": "1.16.2",
++      "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1",
++      "file_count": 1078,
++      "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
++    }
++  },
++  "python_executable": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
++  "node_version": "v22.16.0",
++  "node_executable_sha256": "c5ff4c736112dd483c750fd4149d30c8a116db1a49b8b3ec88be4b65e6c86c19",
++  "test_packages": {
++    "pytest": "8.4.2",
++    "colorama": "0.4.6",
++    "iniconfig": "2.3.0",
++    "packaging": "26.3",
++    "pluggy": "1.6.0",
++    "pygments": "2.21.0"
++  },
++  "dependencies_installed_this_task": false,
++  "network_fetches": false,
++  "execution_environment": "Actual Windows local filesystem and executable processes; not a cloud copy"
++}
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/SOURCE_IDENTITIES.json b/docs/developmental_ecology/p_b1_operator_correction_20260926/SOURCE_IDENTITIES.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..211aad4e7018e0892be5aa6c6d3d9fad8cf88084
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/SOURCE_IDENTITIES.json
+@@ -0,0 +1,147 @@
++{
++  "request_sha256": "703716a620a7c378934a2273506decaf14e28b041f52cb391e9b26f7d692bc71",
++  "held_review_hash": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
++  "public_sources": [
++    {
++      "filename": "Pasted text.txt",
++      "original_path": "C:\\Users\\Jason\\.codex\\attachments\\832f5af3-01d7-417d-83b2-4e889158997a\\Pasted text.txt",
++      "sha256": "703716a620a7c378934a2273506decaf14e28b041f52cb391e9b26f7d692bc71"
++    },
++    {
++      "filename": "AGENTS.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\AGENTS.md",
++      "sha256": "a74e7cf9054e83c064d75989efdfbdb1b236803762127648996ba9216e34d4ed"
++    },
++    {
++      "filename": "00_LOOM_CURRENT_STATE(2).md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\sources\\00_LOOM_CURRENT_STATE(2).md",
++      "sha256": "6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b"
++    },
++    {
++      "filename": "AGENTS.md",
++      "original_path": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\AGENTS.md",
++      "sha256": "9ed3ebfc808d659022e5d9dad39c0316c16b492c98a13587a43c3b3f9a4bb0a6"
++    },
++    {
++      "filename": "00_RESEARCH_MAP.md",
++      "original_path": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\00_RESEARCH_MAP.md",
++      "sha256": "26b65cdf86fcd5cab1265b44dbda4d6f4b7373b8499e4336271bc29a838f568d"
++    },
++    {
++      "filename": "01_WORKSPACE_STATUS.md",
++      "original_path": "C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\01_WORKSPACE_STATUS.md",
++      "sha256": "42c3059f7c0d3a13011368b6c4a98bccefdacc78e2fafd5392293b2a9a5f314b"
++    },
++    {
++      "filename": "P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-commissioning-design-2fb3ff84\\PACKAGE\\P_COUPLING_COMMISSIONING_DESIGN_v0_1_REVIEW_DRAFT.md",
++      "sha256": "d25c9829d799fd497f1598ea64afb448a3558fd886105eacf737c1cb8bbae42c"
++    },
++    {
++      "filename": "CASE_AND_AUTHORITY_INDEX.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\CASE_AND_AUTHORITY_INDEX.json",
++      "sha256": "1c6e32a0c1fe068d929afcca6d4fa2de04b0a0fa79bdf0e5ebfbf4c6eb69e2fe"
++    },
++    {
++      "filename": "CONTROL_GATE.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\CONTROL_GATE.json",
++      "sha256": "e3c4dac264f15e848c256a41a85ddd8ac04661b3789a857430ed449e3dbced57"
++    },
++    {
++      "filename": "DISPLAY_CONTRACT.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\DISPLAY_CONTRACT.json",
++      "sha256": "cd13b1a178310a8320484d11018647ab87ca51473948bb31564908a6d90868f8"
++    },
++    {
++      "filename": "DOCUMENTATION_REVISION.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\DOCUMENTATION_REVISION.json",
++      "sha256": "53dea0ee442d63cf0867c1c1de97d24b5e38c819086ff1dec4c658078d429589"
++    },
++    {
++      "filename": "FILE_MANIFEST.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\FILE_MANIFEST.json",
++      "sha256": "53ec68c7462a7d46e98f24bfce93444c3d5812c32c7eb886e115a709168f8703"
++    },
++    {
++      "filename": "HELD_REVIEW_IDENTITY.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\HELD_REVIEW_IDENTITY.json",
++      "sha256": "3bfc77965a002383ad6867c31a5079d9a38d8e5fa2a50fab4f3a8ade6b7e124a"
++    },
++    {
++      "filename": "INTERPRETATION_TABLE.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\INTERPRETATION_TABLE.md",
++      "sha256": "997184d3782a0ee64aa9f41f6d8d1b565cc4bf90fde41dbda4dc3e41742209c3"
++    },
++    {
++      "filename": "OPEN_ISSUE_B1_INTERFACE.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\OPEN_ISSUE_B1_INTERFACE.md",
++      "sha256": "ce9aaac77c418518bd2dcb836f16a3ad5d3b0cac0e34d74dca9f22b3a47e83e6"
++    },
++    {
++      "filename": "OPERATOR_INSTRUCTIONS.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\OPERATOR_INSTRUCTIONS.md",
++      "sha256": "d07fdbf50547f28ed0c15f24dd95634343f8d4d5f348f53c3a1ebb6160ab5304"
++    },
++    {
++      "filename": "OPERATOR_INTEGRITY_FORM.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\OPERATOR_INTEGRITY_FORM.md",
++      "sha256": "66674c6cb87e0854e104568fbf5277690929fde3690f8968116236c0da20c8ac"
++    },
++    {
++      "filename": "POSITIVE_CONTROL_CARDS.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\POSITIVE_CONTROL_CARDS.md",
++      "sha256": "3aebdbbab918ab73d77b9ac208b4c4120bda735fe3465f2428d106af757aed14"
++    },
++    {
++      "filename": "PREPARATION_CHECKS.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\PREPARATION_CHECKS.json",
++      "sha256": "c1f6924af0fe5cda6964f6e1d168df8eaf75485ed712af0a4c8ca7d2cb4f8c33"
++    },
++    {
++      "filename": "PRESERVATION.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\PRESERVATION.json",
++      "sha256": "e5f951a0a6bfdd4bd96e422a994be197eab6e7c5a389e9483a36eb6db27fc1d8"
++    },
++    {
++      "filename": "PROTOCOL_CONTRACT.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\PROTOCOL_CONTRACT.json",
++      "sha256": "29802b17fe8e275a384087ab94a970a09383b80d9320e652e5a61a8b04d4fed5"
++    },
++    {
++      "filename": "README.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\README.md",
++      "sha256": "d50f4d5fee9777eb3641985364ab7bad22a950d6635687ab6306d72c8eb48d78"
++    },
++    {
++      "filename": "RECORDING_CONTRACT.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\RECORDING_CONTRACT.json",
++      "sha256": "b4bc1e13fde7a07e441ff6cd40f3d7a829b0abeff95e5cf2f021a59e6c720eb3"
++    },
++    {
++      "filename": "RESOURCE_PLAN.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\RESOURCE_PLAN.md",
++      "sha256": "e8463b829ad56dd8ca02e973827de286ee254a294e6d4468d56c621b36ff76f9"
++    },
++    {
++      "filename": "RESOURCE_PROJECTION.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\RESOURCE_PROJECTION.json",
++      "sha256": "a9c3acfecf06c1d651918f364d20809133e6f2575ecd875ad29034aac8ebeb7a"
++    },
++    {
++      "filename": "REVIEW_AND_AUTHORITY_BOUNDARY.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\REVIEW_AND_AUTHORITY_BOUNDARY.md",
++      "sha256": "69495d104313eb1797504cbfb6b0dd6341b5d2857dcc55a0b899465afabea068"
++    },
++    {
++      "filename": "SESSION_RECORD.md",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\SESSION_RECORD.md",
++      "sha256": "f55f554180ce4f7b4962d1e882325b8f5460bf5b53ce878f742173d23765b557"
++    },
++    {
++      "filename": "STATIC_COMPATIBILITY_FINDINGS.json",
++      "original_path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_OPERATOR_REVIEW\\STATIC_COMPATIBILITY_FINDINGS.json",
++      "sha256": "4853a4c8283b59e2a8e93cea2798778adc3c5cb7264be8978b186e0a34527f81"
++    }
++  ],
++  "private_sources": "Held package bytes inventoried privately; sealed manifests treated as inert JSON; snapshots hashed only. Private contents and detailed fixture inventory are excluded from this delivery."
++}
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/STATIC_HELD_COMPATIBILITY.json b/docs/developmental_ecology/p_b1_operator_correction_20260926/STATIC_HELD_COMPATIBILITY.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..00bda3abb3c1f484a2072db63b6ffa4dc90341fc
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/STATIC_HELD_COMPATIBILITY.json
+@@ -0,0 +1,75 @@
++{
++  "held_review_hash": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
++  "static_only": true,
++  "held_source_files_unchanged": 124,
++  "pair_complete_initial_state_identical": true,
++  "paired_semantic_difference": "operator display deprivation only; case identities differ",
++  "cases": [
++    {
++      "case": "PC-LR",
++      "horizon_seconds": 4,
++      "unchanged_snapshot_sha256": "3ff0eb7ee409e990ffba65ac79df913f13875fd0cd811d191bd50cbd87d2e477",
++      "controller": "sensor_human",
++      "display_representable": true,
++      "grid_and_hold_representable": true,
++      "execution_grant": null
++    },
++    {
++      "case": "PC-MOTION",
++      "horizon_seconds": 4,
++      "unchanged_snapshot_sha256": "aaae774a025276a170df0ac2a3fb8e7b9aa6aa75c30a681037801f3cff887328",
++      "controller": "sensor_human",
++      "display_representable": true,
++      "grid_and_hold_representable": true,
++      "execution_grant": null
++    },
++    {
++      "case": "PC-CONTACT",
++      "horizon_seconds": 6,
++      "unchanged_snapshot_sha256": "ee115434b844b7aee30089cbeaab03ff932952f440b0686eff8da465f1880e1f",
++      "controller": "sensor_human",
++      "display_representable": true,
++      "grid_and_hold_representable": true,
++      "execution_grant": null
++    },
++    {
++      "case": "PC-HOLD",
++      "horizon_seconds": 10,
++      "unchanged_snapshot_sha256": "54c02d8b4092b24761284939185c43addce086e3f9fe20adfb80ef0e14dabc7b",
++      "controller": "sensor_human",
++      "display_representable": true,
++      "grid_and_hold_representable": true,
++      "execution_grant": null
++    },
++    {
++      "case": "B1-FULL-RAW",
++      "horizon_seconds": 30,
++      "unchanged_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
++      "controller": "sensor_human",
++      "display_representable": true,
++      "grid_and_hold_representable": true,
++      "execution_grant": null
++    },
++    {
++      "case": "B1-CHEMISTRY-HIDDEN",
++      "horizon_seconds": 30,
++      "unchanged_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
++      "controller": "sensor_human",
++      "display_representable": true,
++      "grid_and_hold_representable": true,
++      "execution_grant": null
++    }
++  ],
++  "positive_controls": {
++    "left_right": "All actual light/chemistry coordinates retained in full-raw practice.",
++    "command_achieved": "Seven real proprioception channels, actual paired commands and ordered native history retained.",
++    "contact_onset": "All eight actual native contact channels retained.",
++    "gentle_hold": "Same actuators, 0.1 s holds, native contact/proprioception and 5 Hz E/I; no servo added."
++  },
++  "physical_raw_recording": "Shared full 29-coordinate SensorHistory/native physical recording; only copied operator view is projected.",
++  "no_snapshot_loaded": true,
++  "no_controller_or_world_invoked": true,
++  "new_launch_objects_saved": 0,
++  "new_execution_authorities": 0,
++  "interpretation": "Type/identity compatibility only. No demonstration, human outcome, independent closure or B1 launch fitness claimed."
++}
+\ No newline at end of file
+diff --git a/docs/developmental_ecology/p_b1_operator_correction_20260926/UI_REVIEW.json b/docs/developmental_ecology/p_b1_operator_correction_20260926/UI_REVIEW.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..0325c5df7bffda3ebce8084afb77d7cb2dea608e
+--- /dev/null
++++ b/docs/developmental_ecology/p_b1_operator_correction_20260926/UI_REVIEW.json
+@@ -0,0 +1,24 @@
++{
++  "kind": "synthetic browser appearance and interaction; no world/Engine/controller",
++  "observed_html_sha256": "db30b0fe1216adce0b3d8466a801c99dfd0d71bb13f188432017c37d9d131f49",
++  "final_html_sha256": "806221de1db825a72eaf8e5533553ff97cff11d30c4a7251cf517a128bcbcf9b",
++  "actual_browser": "Codex in-app browser, temporary local tab",
++  "invented_history": true,
++  "fixed_simulated_time": 0.4,
++  "observations": [
++    "PREPARED, command disabled",
++    "Start -> PAUSED without time change",
++    "double click -> one synthetic POST; RUNNING while delayed response",
++    "return PAUSED, one fake command only",
++    "refresh -> PAUSED with one fake command",
++    "End -> ENDED with disabled controls"
++  ],
++  "late_change": "Fast second-click and held-key suppression added after direct browser inspection; covered in final detached Node DOM test.",
++  "screenshot_saved": false,
++  "synthetic_server_final_receipt_saved": false,
++  "temporary_tab_closed": true,
++  "temporary_server_stopped": true,
++  "loopback_port_closed_verified": true,
++  "commissioning_or_positive_control_run": false,
++  "limits": "Synthetic transport is not physical integration or human competence evidence; direct inspection and final automated DOM checks are distinct."
++}

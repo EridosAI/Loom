@@ -1,0 +1,266 @@
+{
+  "c": {
+    "schema_version": 1,
+    "identifier": "p_engineering_baseline_v0_1",
+    "status": "uncommissioned",
+    "widths": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "pools": [
+      [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ]
+      ]
+    ],
+    "master_seed": 5284097,
+    "native_dt": 0.01,
+    "wave_dt": 0.2,
+    "sweeps": 4,
+    "tau_a": 0.2,
+    "tau_x": 0.1,
+    "tau_motor": 0.1,
+    "tau_receptor": 30.0,
+    "tau_coactivity": 10.0,
+    "tau_packet_mean": 60.0,
+    "tau_trace": 5.0,
+    "gate_branches": 4,
+    "feature_width": 32,
+    "gate_epsilon": 0.05,
+    "query_floor": 0.1,
+    "eta_shared": 0.0001,
+    "eta_fine": 0.001,
+    "competition": 0.1,
+    "rho_shared": 1e-05,
+    "rho_fine": 5e-05,
+    "tau_shared_reference": 10000.0,
+    "tau_fine_reference": 5000.0,
+    "lambda_fine_min": 0.0001,
+    "lambda_immature": 0.005,
+    "lambda_reclaim": 0.005,
+    "tau_open": 300.0,
+    "shared_radius": 0.3,
+    "fine_radius": 0.08,
+    "eta_map": 0.0001,
+    "lambda_map_min": 0.0001,
+    "lambda_unused": 0.001,
+    "tau_use": 30.0,
+    "use_epsilon": 0.01,
+    "map_radius": 0.1,
+    "tau_body": 2.0,
+    "tau_eligibility": 5.0,
+    "eta_bank": 0.05,
+    "rho_bank": 0.0001,
+    "tau_bank_reference": 5000.0,
+    "bank_radius": 1.0,
+    "exploration": 0.1,
+    "need_floor": 0.25,
+    "current_max": 0.5,
+    "attenuation_bias": -1.3862943611198906,
+    "motor_amplitude": 0.25,
+    "motor_noise_amplitude": 0.1,
+    "motor_periods": [
+      7.0,
+      9.0
+    ],
+    "tau_noise": 1.0,
+    "noise_refresh": 0.5,
+    "world_side": 20.0,
+    "body_radius": 0.5,
+    "body_mass": 1.0,
+    "body_inertia": 0.125,
+    "lever": 0.35,
+    "linear_drag": 1.0,
+    "angular_drag": 0.2,
+    "source_radius": 0.5,
+    "source_positions": [
+      [
+        3,
+        3
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        17,
+        3
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        17,
+        10
+      ],
+      [
+        3,
+        17
+      ],
+      [
+        10,
+        17
+      ],
+      [
+        17,
+        17
+      ]
+    ],
+    "repair_rectangles": [
+      [
+        0,
+        0.25,
+        8,
+        12
+      ],
+      [
+        19.75,
+        20,
+        8,
+        12
+      ],
+      [
+        8,
+        12,
+        19.75,
+        20
+      ]
+    ],
+    "source_capacity": 0.2,
+    "source_tau": 400.0,
+    "uptake_rate": 0.04,
+    "basal_cost": 0.0015,
+    "effort_cost": 0.001,
+    "damage_per_impulse": 0.02,
+    "stress_threshold": 0.25,
+    "repair_rate": 0.02,
+    "exchange_force_scale": 0.1,
+    "exchange_speed_scale": 0.25,
+    "birth_energy": 0.7,
+    "mover_centre": [
+      10.0,
+      10.0
+    ],
+    "mover_amplitude": 4.0,
+    "mover_period": 30.0,
+    "mover_size": [
+      2.0,
+      1.0
+    ],
+    "grid_n": 80,
+    "medium_diffusion": 0.5,
+    "solid_diffusion": 0.025,
+    "chemical_decay": 0.02,
+    "prehistory_seconds": 600.0,
+    "field_rtol": 1e-10,
+    "arithmetic_tol": 1e-12,
+    "geometry_tol": 1e-10,
+    "overlap_tol": 1e-08,
+    "event_time_tol": 1e-10,
+    "illumination_boundary": "open"
+  },
+  "body": {
+    "position": [
+      9.663002128485367,
+      8.999999999935511
+    ],
+    "angle": 5.317310609141483,
+    "energy": 0.6821731869954111,
+    "integrity": 0.9921831420229044,
+    "velocity": [
+      -0.0930360840814401,
+      0.0
+    ],
+    "omega": 0.02164230508214243,
+    "command": [
+      -0.2413015312342493,
+      -0.22919945632624222
+    ],
+    "force": [
+      -0.08955360593284482,
+      -0.08526261023756262
+    ],
+    "contact_rates": [
+      0.0,
+      0.0,
+      0.0,
+      0.11021654733945055,
+      0.032882772872184815,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "stocks": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "t": 10.249999999999826,
+  "phase": 4.301831170857631,
+  "command": [
+    -0.24067992715298328,
+    -0.22884852876080816
+  ],
+  "dt": 0.01
+}

@@ -1,0 +1,95 @@
+{
+  "old_commit": "d5f7efbe67193f215e52d95ca912db131a79f31c",
+  "new_commit": "f7eb6f27c661e3db193a4225b56a825d7e41739d",
+  "semantic_configuration_sha256": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+  "unchanged_files": {
+    "developmental_ecology/loom_p/neural.py": {
+      "old_sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "new_sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "working_sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "commits_identical": true,
+      "working_identical_to_commit": true,
+      "working_normalized_identical_to_commit": true
+    },
+    "developmental_ecology/loom_p/schema.py": {
+      "old_sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "new_sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "working_sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "commits_identical": true,
+      "working_identical_to_commit": true,
+      "working_normalized_identical_to_commit": true
+    },
+    "developmental_ecology/loom_p/engine.py": {
+      "old_sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "new_sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "working_sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "commits_identical": true,
+      "working_identical_to_commit": true,
+      "working_normalized_identical_to_commit": true
+    },
+    "developmental_ecology/loom_p/chemistry.py": {
+      "old_sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "new_sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "working_sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "commits_identical": true,
+      "working_identical_to_commit": true,
+      "working_normalized_identical_to_commit": true
+    },
+    "developmental_ecology/loom_p/geometry.py": {
+      "old_sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "new_sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "working_sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "commits_identical": true,
+      "working_identical_to_commit": true,
+      "working_normalized_identical_to_commit": true
+    },
+    "developmental_ecology/loom_p/inspector.py": {
+      "old_sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+      "new_sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+      "working_sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+      "commits_identical": true,
+      "working_identical_to_commit": true,
+      "working_normalized_identical_to_commit": true
+    },
+    "developmental_ecology/loom_p/records.py": {
+      "old_sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+      "new_sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+      "working_sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+      "commits_identical": true,
+      "working_identical_to_commit": true,
+      "working_normalized_identical_to_commit": true
+    },
+    "developmental_ecology/configuration.json": {
+      "old_sha256": "c4554dc5eb2f798d01004a85b73753744e5da42ceec177a9b8f571acafe1c4a5",
+      "new_sha256": "c4554dc5eb2f798d01004a85b73753744e5da42ceec177a9b8f571acafe1c4a5",
+      "working_sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+      "commits_identical": true,
+      "working_identical_to_commit": false,
+      "working_normalized_identical_to_commit": true
+    }
+  },
+  "reference_movement_magnitudes": {
+    "shared_ref": {
+      "max_required_movement": 7.905690197970716e-09,
+      "max_old_vs_new_target_difference": 2.7898169885354207e-13,
+      "max_actual_oracle_error": 0.0
+    },
+    "fine_ref": {
+      "max_required_movement": 1.0954440195654752e-09,
+      "max_old_vs_new_target_difference": 3.425076682776057e-12,
+      "max_actual_oracle_error": 0.0
+    },
+    "bank_reference": {
+      "max_required_movement": 1.5799364010637973e-05,
+      "max_new_vs_old_target_difference": 2.003159936814214e-07
+    }
+  },
+  "footprint_control": {
+    "time": 0.01,
+    "phase": 0.7,
+    "occupied_cells": 16,
+    "all_occupied_cells_reduced": true,
+    "all_outside_cells_identical": true,
+    "max_change": 0.475
+  }
+}

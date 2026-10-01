@@ -1,0 +1,24 @@
+{
+  "head": "05abf60401d08f38750bca589b1c040e10513d7b",
+  "parent": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "branch": "build/p-commissioning-apparatus-20260924-01a0c405",
+  "status": "",
+  "diff": "A\tdevelopmental_ecology/Open Paused Sensor Reference.cmd\nA\tdevelopmental_ecology/Open Privileged Apparatus Review.cmd\nA\tdevelopmental_ecology/loom_commissioning/.gitattributes\nA\tdevelopmental_ecology/loom_commissioning/__init__.py\nA\tdevelopmental_ecology/loom_commissioning/adapter.py\nA\tdevelopmental_ecology/loom_commissioning/contract.py\nA\tdevelopmental_ecology/loom_commissioning/controllers.py\nA\tdevelopmental_ecology/loom_commissioning/diagnostics.py\nA\tdevelopmental_ecology/loom_commissioning/evaluation.py\nA\tdevelopmental_ecology/loom_commissioning/initialization.py\nA\tdevelopmental_ecology/loom_commissioning/runner.py\nA\tdevelopmental_ecology/loom_commissioning/sensor.html\nA\tdevelopmental_ecology/loom_commissioning/sensor_ui.py\nA\tdevelopmental_ecology/loom_commissioning/validators.py\nA\tdevelopmental_ecology/package_apparatus.py\nA\tdevelopmental_ecology/tests_apparatus/test_apparatus.py\nA\tdevelopmental_ecology/verify_apparatus.py\nA\tdocs/developmental_ecology/p_apparatus_20260924/AUTHORITY_AND_INFORMATION_FLOW.md\nA\tdocs/developmental_ecology/p_apparatus_20260924/BUILD_REPORT.md\nA\tdocs/developmental_ecology/p_apparatus_20260924/EXECUTION_LEDGER.md\nA\tdocs/developmental_ecology/p_apparatus_20260924/FAULT_MATRIX.json\nA\tdocs/developmental_ecology/p_apparatus_20260924/LAW_CODE_TEST_MAP.md\nA\tdocs/developmental_ecology/p_apparatus_20260924/PLAIN_LANGUAGE_WALKTHROUGH.md\nA\tdocs/developmental_ecology/p_apparatus_20260924/RUNTIME_RECORD.json\nA\tdocs/developmental_ecology/p_apparatus_20260924/RUNTIME_STORAGE_ESTIMATE.json\nA\tdocs/developmental_ecology/p_apparatus_20260924/SOURCE_IDENTITIES.json\nA\tdocs/developmental_ecology/p_apparatus_20260924/UI_REVIEW.json\n",
+  "unchanged_paths": {
+    "developmental_ecology/loom_p": true,
+    "developmental_ecology/configuration.json": true,
+    "developmental_ecology/tests": true,
+    "EXP1-21": true
+  },
+  "experiment_trees": {
+    "EXP1-21": {
+      "6bc9683b54e4fa80136fe8534d7713e2a250a95f": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+      "05abf60401d08f38750bca589b1c040e10513d7b": "f1b884a7ada4c806786d1530d76d446aac5d37b1"
+    }
+  },
+  "patch": {
+    "bytes": 160506,
+    "sha256": "d4fdf864080d0ee09c8a5a0fdfbd0fc1272722caf0768bc0e88e972f714f5dab"
+  },
+  "scope_note": "EXP1-21 explicitly verified by supplemental command; initial generic experiments path was not used as evidence."
+}

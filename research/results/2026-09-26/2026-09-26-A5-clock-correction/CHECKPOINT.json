@@ -1,0 +1,28 @@
+{
+  "checkpoint": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "parent": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "branch": "build/p-clock-correction-20260926-01a0c405",
+  "worktree": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926",
+  "P": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "changed_files": [
+    "developmental_ecology/loom_commissioning/authority.py",
+    "developmental_ecology/loom_commissioning/clock.py",
+    "developmental_ecology/loom_commissioning/controllers.py",
+    "developmental_ecology/loom_commissioning/pending.py",
+    "developmental_ecology/loom_commissioning/runner.py",
+    "developmental_ecology/loom_commissioning/validators.py",
+    "developmental_ecology/tests_apparatus/fixtures/clock_retrospective.json",
+    "developmental_ecology/tests_apparatus/test_apparatus.py",
+    "developmental_ecology/tests_apparatus/test_clock_scheduling.py",
+    "developmental_ecology/tests_apparatus/test_corrections.py",
+    "developmental_ecology/tests_apparatus/test_final_corrections.py",
+    "developmental_ecology/verify_clock_scheduling.py",
+    "docs/developmental_ecology/p_clock_correction_20260926/CLOCK_SCHEDULING_CORRECTION_REPORT.md",
+    "docs/developmental_ecology/p_clock_correction_20260926/NATIVE_INDEX_SCHEDULING_SPECIFICATION.md"
+  ],
+  "patch_sha256": "07b345f7ce95edc4ddf3d1edba662a416c0314c928640d1133e37edc13075714",
+  "git_clean": true,
+  "tested_apparatus_bytes_match_committed_blobs": true,
+  "push_PR_merge": false,
+  "scope": "Local apparatus correction; stop for narrow review; not A5 authority."
+}

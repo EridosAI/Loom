@@ -1,0 +1,244 @@
+Implement the approved narrow A5 clock-compatibility correction.
+
+This is an APPARATUS CORRECTION ONLY.
+
+Current P:
+6bc9683b54e4fa80136fe8534d7713e2a250a95f
+
+Current commissioning apparatus:
+5f07748102cb5eaa302569c87efbae095050e9fe
+
+Held A5 proposal:
+88dd97546d565711a7f852795da7188f551651d0b529f4684b9e4013a5b940f6
+
+Read:
+- A5_CLOCK_COMPATIBILITY_REVIEW.md
+- OPEN_ISSUE_A5_CLOCK.md
+- CLOCK_AUDIT.json
+- prior apparatus clock correction/review evidence
+- pause/resume and authority-binding tests
+
+AUTHORIZED CHANGE
+
+Replace floating-clock-based controller scheduling/stage ownership with
+native-index-derived scheduling.
+
+Do NOT change:
+- native dt = 0.01 s
+- command-hold duration = 0.1 s / ten native steps
+- wave cadence
+- physical/world clock evolution
+- field cadence
+- physics integration
+- P code/configuration
+- body/world laws
+- controller gains
+- A5 route/stages
+- any A1–A4 evidence
+
+==================================================
+1. CANONICAL DISCRETE SCHEDULING
+==================================================
+
+At manifest/controller preparation, derive exact scheduling boundaries in
+native-step units.
+
+Where the controller contract uses times that are required to align to the
+native grid, validate that alignment explicitly.
+
+For example:
+269.5 s -> native index 26,950
+
+Do not repeatedly infer stage ownership by comparing accumulated physical
+float time against nominal decimal deadlines.
+
+Stage ownership, command validity and hold boundaries must be derived from
+integer native indices.
+
+Keep the human-readable physical-time values in manifests and records.
+
+Do not silently round a non-grid-aligned requested stage time.
+Reject it during validation unless the existing specification explicitly
+defines another representation.
+
+==================================================
+2. PHYSICAL CLOCK REMAINS REAL
+==================================================
+
+The existing physical clock must remain unchanged as simulation state.
+
+Do not replace world time with an integer counter in physics.
+
+Retain:
+- physical accumulated time;
+- native index;
+- their expected relation.
+
+Add a validation invariant comparing physical time against the
+index-derived expected native time within a numerically justified
+allowance.
+
+A discrepancy should diagnose timing corruption; it must not choose stage
+ownership.
+
+Event-resolution/contact substeps must not create extra controller/native
+indices.
+
+Terminal partial steps retain their existing semantics.
+
+==================================================
+3. CONTROLLER DECISION CADENCE
+==================================================
+
+Preserve ten-native-step command holds.
+
+Verify:
+- command decisions occur at the same intended native indices;
+- stage changes occur at the declared boundaries;
+- a hold may not cross a stage boundary if the existing reviewed contract
+  forbids that;
+- the next stage receives a fresh authorised command;
+- no extra command is gained at 269.5 s, 270 s or any other boundary.
+
+Use index arithmetic for:
+- stage selection;
+- remaining hold length;
+- stage transition;
+- deadline ownership.
+
+Do not use accumulated float clock as the primary predicate for these.
+
+==================================================
+4. AUTHORITY / MANIFEST SEMANTICS
+==================================================
+
+The correction changes the apparatus implementation identity.
+
+Therefore:
+- create a NEW apparatus checkpoint;
+- do not alter the historical held A5 authority object;
+- do not treat 88dd9754... as launchable;
+- future A5 preparation must bind the new apparatus identity and receive a
+  new canonical authority hash.
+
+Human-readable stage times/routes remain those already proposed unless a
+separate decision changes them.
+
+==================================================
+5. PAUSE / RESUME
+==================================================
+
+Persist and validate:
+- native index;
+- physical clock;
+- controller stage;
+- remaining hold steps;
+- approved specification identity.
+
+On resume:
+- reconstruct stage ownership from the native index;
+- validate physical clock consistency;
+- reject mismatched index/clock/controller state;
+- do not let a stale pending command cross a newly resolved stage boundary.
+
+==================================================
+6. REQUIRED RED -> GREEN TESTS
+==================================================
+
+Reproduce the exact old failures against the old apparatus:
+
+A. step 26,950 / accumulated clock 269.4999999998999;
+B. independent transition rejection at 270 s.
+
+Both must be observed RED under the old implementation.
+
+On the corrected apparatus, verify GREEN.
+
+Add boundary tests at minimum for:
+- 269.49
+- 269.50
+- 269.51
+- 269.99
+- 270.00
+- 270.01
+represented through their correct native indices.
+
+Also test:
+- long scheduling through 630 s;
+- final A5 stage boundaries;
+- exact ten-step holds;
+- pause/resume immediately before/at/after a stage boundary;
+- deliberate index/physical-clock mismatch -> RED;
+- non-grid-aligned manifest stage time -> RED unless explicitly supported;
+- no duplicate native/wave/field/random updates.
+
+Use independent expected integer schedules as the test oracle.
+
+==================================================
+7. RETROSPECTIVE COMPATIBILITY
+==================================================
+
+Using saved A1–A4 records only:
+
+verify every one of the reported 5,579 controller decisions maps to the
+same intended stage under the new index scheduler.
+
+Do not modify/replay those trajectories.
+
+Report any discrepancy explicitly.
+
+Their historical execution remains under the old apparatus checkpoint;
+this check establishes compatibility, not retroactive execution identity.
+
+==================================================
+8. FULL REGRESSION
+==================================================
+
+Run:
+- all existing P tests unchanged;
+- all existing commissioning-apparatus tests;
+- all prior authority/clock/save-resume fault pairs;
+- new long-horizon/index-scheduling tests.
+
+Run the final complete suite:
+1. from the worktree;
+2. from the portable review package.
+
+P/runtime/configuration must remain unchanged.
+
+==================================================
+9. NO A5 EXECUTION
+==================================================
+
+Do not run A5.
+Do not compute its controller trajectory against the world.
+Do not prepare a new launch authority in this correction task.
+Do not tune its route or horizon.
+
+Static validation that the corrected scheduler can represent the 630 s
+manifest is permitted.
+
+==================================================
+10. DELIVERY
+==================================================
+
+Produce:
+
+- new local apparatus checkpoint SHA;
+- exact diff;
+- CLOCK_SCHEDULING_CORRECTION_REPORT.md;
+- before/after reproduction of both old failures;
+- native-index scheduling specification;
+- physical-clock cross-validation rule;
+- pause/resume compatibility evidence;
+- A1–A4 5,579-decision compatibility result;
+- full RED->GREEN matrix;
+- complete regression results;
+- proof P/config/world laws unchanged;
+- portable independent-review package.
+
+Do not self-declare A5 launch fitness.
+
+Stop for a narrow correction review.
+
+No push, PR or merge.

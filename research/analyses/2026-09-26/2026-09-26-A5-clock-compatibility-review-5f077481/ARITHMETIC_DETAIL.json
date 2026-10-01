@@ -1,0 +1,80 @@
+{
+  "scope": "Scalar supplement only; no Loom imports, world objects, production edits or replacement authority.",
+  "explicit_twenty_additions": 0.20000000000000004,
+  "builtin_sum_twenty_terms": 0.2,
+  "builtin_sum_note": "Pinned Python 3.13 builtin sum is not the same accumulation algorithm as the production += loop. DIAGNOSTIC_RESULTS.scalar_ranges.scalar_wave_elapsed_after20 used builtin sum; use explicit_twenty_additions here for production-style elapsed representation. The original diagnostic file and helper remain preserved.",
+  "stage_local_subtraction_300_to450": 149.99999999986358,
+  "stage_local_subtraction_error": -1.3642420526593924e-10,
+  "fresh_150_second_scalar_accumulator": 150.00000000000855,
+  "fresh_150_second_scalar_accumulator_error": 8.554934538551606e-12,
+  "index_native_spacing_at630": 0.009999999999990905,
+  "partial_terminal_example": {
+    "start": 629.9899999995721,
+    "local_partial": 0.0033333333581685998,
+    "absolute_endpoint": 629.9933333329302,
+    "absolute_difference_back": 0.0033333333581140323
+  },
+  "retained_absolute_tolerance": 1e-10,
+  "recurrent_clock_reference_spot_checks": [
+    {
+      "native_index": 7,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 10,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 26940,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 26950,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 27000,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 30000,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 45000,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 48000,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 62990,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    },
+    {
+      "native_index": 63000,
+      "unchanged_record_matches_reference": true,
+      "one_native_index_shift_rejected": true,
+      "clock_plus_2e_minus10_rejected": true
+    }
+  ]
+}

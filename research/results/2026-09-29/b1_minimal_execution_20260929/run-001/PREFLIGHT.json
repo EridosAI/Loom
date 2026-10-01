@@ -1,0 +1,155 @@
+{
+  "started_utc": "2026-09-29T10:52:55.172319+00:00",
+  "checks": [
+    {
+      "packet_files_verified": 111,
+      "manifest_sha256": "1cc821215fb4225bd6beb49b8f0960aacb5521c01b6a892a401c16d75bd37549"
+    },
+    {
+      "runtime_source_files_verified": 31,
+      "runtime_identity_exact": true
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "B1-MINIMAL-S1-FULL",
+      "authority_sha256": "d829e5d9b5825c6b72b9ddb26491f508cd8030654599dc309f6bf2efb1620912",
+      "execution_sha256": "22e754d557273781852d727a550a201cbc17ce71d623373b9c57c42581a3f955",
+      "initial_snapshot_sha256": "d8a2657916dc62a9a80d58d26f25f374e597526da69d409128ecf61c074aba2b",
+      "initial_state_sha256": "5cc5eda4aa4b1ac94fccda97ea42b485a2508fe33e2bb659f82cb61725d72671",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    },
+    {
+      "case_id": "B1-MINIMAL-S1-CHEMISTRY-HIDDEN",
+      "authority_sha256": "e46379806700a4aa638e00fbc6e36ddf97e04c8e80f420cb8fb792c2cc379b69",
+      "execution_sha256": "4d97a3a07c65dd018fdd22a87085634a17755dc8ee9db9f878b5e172d206d86a",
+      "initial_snapshot_sha256": "d8a2657916dc62a9a80d58d26f25f374e597526da69d409128ecf61c074aba2b",
+      "initial_state_sha256": "5cc5eda4aa4b1ac94fccda97ea42b485a2508fe33e2bb659f82cb61725d72671",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    },
+    {
+      "case_id": "B1-MINIMAL-S1-SENSORY-FREE",
+      "authority_sha256": "394dfc775fc1c6dc93820384a79f4fd63291f06ee03bb28f80e464c989861dbc",
+      "execution_sha256": "62edc20ae079707d978b7785f047fcc41e155562edf4a485b56f68252b629dd9",
+      "initial_snapshot_sha256": "d8a2657916dc62a9a80d58d26f25f374e597526da69d409128ecf61c074aba2b",
+      "initial_state_sha256": "5cc5eda4aa4b1ac94fccda97ea42b485a2508fe33e2bb659f82cb61725d72671",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    },
+    {
+      "case_id": "B1-MINIMAL-S2-FULL",
+      "authority_sha256": "a60dacc6b0d536aaddf7dc71313b1adf3fe91013466f5852368dcf3bdef580b5",
+      "execution_sha256": "9ec3f9737c34bfd84c2e1b99d281084ca1e71396010d7e3a6a7311c3405e1d32",
+      "initial_snapshot_sha256": "bfdc7ccd3bbfd4dd6546272ee80a63473902126fea17252e2379f25744e23883",
+      "initial_state_sha256": "b76a91ee768311c2d79314ea302fe5b249b8a9be1064cc91f09cd92a0bbceddc",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    },
+    {
+      "case_id": "B1-MINIMAL-S2-CHEMISTRY-HIDDEN",
+      "authority_sha256": "1febeb0e0cf33dbcb67478e1d8081031c45a28df348ef09cfdcee79de0c0c36b",
+      "execution_sha256": "a955d750d8077514b247ded810df108cf6bd72ccc38ced6dd931a02f6edfc6f9",
+      "initial_snapshot_sha256": "bfdc7ccd3bbfd4dd6546272ee80a63473902126fea17252e2379f25744e23883",
+      "initial_state_sha256": "b76a91ee768311c2d79314ea302fe5b249b8a9be1064cc91f09cd92a0bbceddc",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    },
+    {
+      "case_id": "B1-MINIMAL-S2-SENSORY-FREE",
+      "authority_sha256": "fbf477f0220bdbf43ae80e077abe74a25e0afd78878fb9ecd710aaee78ba2092",
+      "execution_sha256": "b327273ce7cd1e92c872f4dad8ef31b51395041368c3e7e48b218d3dc6d01355",
+      "initial_snapshot_sha256": "bfdc7ccd3bbfd4dd6546272ee80a63473902126fea17252e2379f25744e23883",
+      "initial_state_sha256": "b76a91ee768311c2d79314ea302fe5b249b8a9be1064cc91f09cd92a0bbceddc",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    },
+    {
+      "case_id": "B1-MINIMAL-S3-FULL",
+      "authority_sha256": "a2f6d55d86d360f3cb6ca13af6a1b97b642d09ddd311321a448e481d26452ca3",
+      "execution_sha256": "2c9a51408fd8c6e47f41faa1f477061ae5f9b133d13bd025162bb6cdba473505",
+      "initial_snapshot_sha256": "2d6a5966c72c42a0569033b1b93fa02bb3525904b3789234db69e8c90a66dfa0",
+      "initial_state_sha256": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    },
+    {
+      "case_id": "B1-MINIMAL-S3-CHEMISTRY-HIDDEN",
+      "authority_sha256": "e9cb37366aac8c0a7eba71ae5607ec61fd542bd5de58c53166508d20fe6badb4",
+      "execution_sha256": "02a63cf1a1fb9973cf41cff9ad11c95d5766d872d0f9488358c77435bbdf0962",
+      "initial_snapshot_sha256": "2d6a5966c72c42a0569033b1b93fa02bb3525904b3789234db69e8c90a66dfa0",
+      "initial_state_sha256": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    },
+    {
+      "case_id": "B1-MINIMAL-S3-SENSORY-FREE",
+      "authority_sha256": "bdb6ae7f3394ea5d763b8110ace43be8ffa0183e12eb57da9a044dc8a378901c",
+      "execution_sha256": "0d68ec1e20b7c732b515bee6c3b83b86c80f6dfdc876cc290ed478eb4218ddee",
+      "initial_snapshot_sha256": "2d6a5966c72c42a0569033b1b93fa02bb3525904b3789234db69e8c90a66dfa0",
+      "initial_state_sha256": "2431e071b62caf6f3dd08b336b6f5df1e5ef1f85206d1fc84fa85b69048292e0",
+      "full_runtime_cache_loader": "PASS",
+      "manifest_runtime_dispatch_grant": "PASS",
+      "state_RNG_clock_unchanged": true
+    }
+  ],
+  "status": "PASS",
+  "git": {
+    "head": "a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad",
+    "status": "",
+    "branch": "build/p-b1-minimal-20260929-01a0c405",
+    "common_directory": "C:/Users/Jason/Desktop/Eridos/Loom/.git",
+    "version": "git version 2.50.0.windows.1"
+  },
+  "runtime": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "executable_sha256": "935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256",
+    "python_dlls": {
+      "python3.dll": "85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b",
+      "python313.dll": "0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": {
+        "version": "2.3.3",
+        "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af",
+        "file_count": 432,
+        "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+      },
+      "scipy": {
+        "version": "1.16.2",
+        "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1",
+        "file_count": 1078,
+        "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+      }
+    }
+  },
+  "ended_utc": "2026-09-29T10:52:57.141597+00:00",
+  "resources": {
+    "combined_new_bytes": 7804722,
+    "free_bytes": 634313261056
+  },
+  "counted_roots": [
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_minimal_execution_20260929",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_minimal_implementation_20260929",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_minimal_closure_design_20260929",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-minimal-apparatus-a8cdd75",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-minimal-apparatus-a8cdd75.zip",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-minimal-closure-results-a8cdd75",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-minimal-closure-results-a8cdd75.zip"
+  ],
+  "zero_native_steps": true,
+  "zero_controller_decisions": true,
+  "old_human_B1_material_accessed": false,
+  "matched_triplets_exact": true
+}

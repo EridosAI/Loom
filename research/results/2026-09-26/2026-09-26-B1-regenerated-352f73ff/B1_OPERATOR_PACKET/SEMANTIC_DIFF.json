@@ -1,0 +1,699 @@
+{
+  "old_held_identity": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
+  "old_apparatus": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "new_apparatus": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "classifications": [
+    "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION",
+    "OPERATOR-LIFECYCLE REPRESENTATION CHANGE REQUIRED BY CORRECTION",
+    "UNEXPECTED SEMANTIC CHANGE"
+  ],
+  "manifest_changes": [
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/authority.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/contract.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/pending.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/runner.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/files/validators.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/execution/controller/implementation/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/execution/controller/implementation/live_functions/validate_sensor_payload",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/execution/controller/implementation/live_operator_functions",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/execution/controller/implementation/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/execution/controller/implementation/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-LR",
+      "path": "/execution/procedure/protocol/bound_documents/RECORDING_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/authority.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/contract.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/pending.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/runner.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/files/validators.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/execution/controller/implementation/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/execution/controller/implementation/live_functions/validate_sensor_payload",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/execution/controller/implementation/live_operator_functions",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/execution/controller/implementation/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/execution/controller/implementation/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-MOTION",
+      "path": "/execution/procedure/protocol/bound_documents/RECORDING_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/authority.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/contract.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/pending.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/runner.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/files/validators.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/execution/controller/implementation/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/execution/controller/implementation/live_functions/validate_sensor_payload",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/execution/controller/implementation/live_operator_functions",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/execution/controller/implementation/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/execution/controller/implementation/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-CONTACT",
+      "path": "/execution/procedure/protocol/bound_documents/RECORDING_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/authority.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/contract.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/pending.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/runner.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/files/validators.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/execution/controller/implementation/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/execution/controller/implementation/live_functions/validate_sensor_payload",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/execution/controller/implementation/live_operator_functions",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/execution/controller/implementation/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/execution/controller/implementation/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "PC-HOLD",
+      "path": "/execution/procedure/protocol/bound_documents/RECORDING_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/authority.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/contract.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/pending.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/runner.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/validators.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/controller/implementation/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/controller/implementation/live_functions/validate_sensor_payload",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/controller/implementation/live_operator_functions",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/controller/implementation/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/controller/implementation/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/procedure/protocol/bound_documents/RECORDING_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/authority.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/contract.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/pending.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/runner.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/validators.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/controller/implementation/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/controller/implementation/live_functions/validate_sensor_payload",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/controller/implementation/live_operator_functions",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/controller/implementation/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/controller/implementation/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/display_intervention/implementation_sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/display_intervention/raw_flat_indices",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/display_intervention/representation",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/display_intervention/specification_sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/procedure/protocol/bound_documents/RECORDING_CONTRACT.json",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    }
+  ],
+  "contract_and_estimate_changes": [
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/chemistry_hidden/implementation_sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/chemistry_hidden/implemented_at_checkpoint",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/chemistry_hidden/representation",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/chemistry_unavailable_label",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/coordinate_counts",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/independent_disposition",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/operator_lifecycle",
+      "classification": "OPERATOR-LIFECYCLE REPRESENTATION CHANGE REQUIRED BY CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/prelaunch_gaps",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/reviewed_checkpoint",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/reviewed_files/authority.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/reviewed_files/controllers.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/reviewed_files/operator_view.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/reviewed_files/pending.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/reviewed_files/runner.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/reviewed_files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "DISPLAY_CONTRACT.json",
+      "path": "/reviewed_files/sensor_ui.py",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "RECORDING_CONTRACT.json",
+      "path": "/current_checkpoint_limit",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "RESOURCE_PROJECTION.json",
+      "path": "/cases",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "RESOURCE_PROJECTION.json",
+      "path": "/combined_primary_copy_planning_bytes",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "RESOURCE_PROJECTION.json",
+      "path": "/corrected_interactive_overhead_measured",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "RESOURCE_PROJECTION.json",
+      "path": "/correction_estimate_basis",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "RESOURCE_PROJECTION.json",
+      "path": "/pc_only_totals",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    },
+    {
+      "document": "RESOURCE_PROJECTION.json",
+      "path": "/uncertainty",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPARATUS CORRECTION"
+    }
+  ],
+  "byte_identical_controlling_documents": {
+    "POSITIVE_CONTROL_CARDS.md": "3aebdbbab918ab73d77b9ac208b4c4120bda735fe3465f2428d106af757aed14",
+    "OPERATOR_INTEGRITY_FORM.md": "66674c6cb87e0854e104568fbf5277690929fde3690f8968116236c0da20c8ac",
+    "INTERPRETATION_TABLE.md": "997184d3782a0ee64aa9f41f6d8d1b565cc4bf90fde41dbda4dc3e41742209c3",
+    "CONTROL_GATE.json": "e3c4dac264f15e848c256a41a85ddd8ac04661b3789a857430ed449e3dbced57",
+    "PROTOCOL_CONTRACT.json": "29802b17fe8e275a384087ab94a970a09383b80d9320e652e5a61a8b04d4fed5"
+  },
+  "unexpected_semantic_changes": [],
+  "statement": "All initial, physical, timing, resource-cap, action, admission, completion and interpretation fields preserved. Only source/runtime/UI identity bindings and implemented display/lifecycle representation updated; storage estimate adds required audit overhead.",
+  "positive_control_disclosure": "Existing cards retained byte-identically per Jason clarification; applies only to disclosed controls, never B1 geometry."
+}

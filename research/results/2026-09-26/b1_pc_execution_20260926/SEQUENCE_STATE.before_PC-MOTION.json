@@ -1,0 +1,41 @@
+{
+  "status": "PC-LR ATTEMPT 002 LIVE; WAITING FOR JASON OPERATION",
+  "next_case": "PC-LR",
+  "order": [
+    "PC-LR",
+    "PC-MOTION",
+    "PC-CONTACT",
+    "PC-HOLD"
+  ],
+  "cases": [
+    {
+      "case": "PC-LR",
+      "attempts": 2,
+      "status": "ATTEMPT 002: PRE-ACTION LEFT/RIGHT COMPARISON DEMONSTRATED; CASE STILL OPEN"
+    },
+    {
+      "case": "PC-MOTION",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    },
+    {
+      "case": "PC-CONTACT",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    },
+    {
+      "case": "PC-HOLD",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    }
+  ],
+  "live_services": 1,
+  "timers_started": 2,
+  "worlds_loaded": 2,
+  "simulation_steps": 0,
+  "controller_commands": 0,
+  "all_commands_must_be_Jason_choices": true,
+  "service_url": "http://127.0.0.1:51692/",
+  "service_session_id": 58353,
+  "status_observed_utc": "2026-09-27T00:29:14.7934693+00:00"
+}

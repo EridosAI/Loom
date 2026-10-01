@@ -1,0 +1,44 @@
+{
+  "scope": "Saved-state loading, three predetermined zero-time body/heading changes with instantaneous transduction, static geometry/closed-form timing, source/runtime/dispatch identities and null-grant rejection only.",
+  "Engine_constructor_calls": 0,
+  "Run_constructor_calls": 0,
+  "computed_controller_commands": 0,
+  "world_steps": 0,
+  "field_steps": 0,
+  "neural_steps": 0,
+  "simulation_RNG_draws": 0,
+  "new_prehistory_steps": 0,
+  "replays": 0,
+  "trial_routes": 0,
+  "trial_phases": 0,
+  "allowed_static_calls": {
+    "load_snapshot": 6,
+    "transduce": 3,
+    "save_snapshot": 3
+  },
+  "blocked_dynamic_calls": [],
+  "null_grant_denials": [
+    {
+      "case": "A4-CROSS",
+      "reason": "commissioning execution is not authorized"
+    },
+    {
+      "case": "A4-WAIT",
+      "reason": "commissioning execution is not authorized"
+    },
+    {
+      "case": "A4-DETOUR",
+      "reason": "commissioning execution is not authorized"
+    }
+  ],
+  "full_production_history_validation_executed": false,
+  "snapshot_roundtrips": 3,
+  "phase_fields_receipt_law_matching": true,
+  "inactive_neural_RNG_unchanged": true,
+  "actual_runtime_and_dispatch_identical": true,
+  "native_fidelity_unchanged": true,
+  "all_stages_on_native_hold_wave_grids": true,
+  "prospective_output_directory_absent": true,
+  "preparation_wall_seconds": 3.6702115000225604,
+  "preparation_status": "No A4 outcome observed. Full prospective production preflight deferred until genuine separate approval."
+}

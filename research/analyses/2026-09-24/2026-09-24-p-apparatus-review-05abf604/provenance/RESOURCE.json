@@ -1,0 +1,71 @@
+{
+  "components": [
+    {
+      "mode": "intact_P",
+      "duration_seconds": 0.20000000000000004,
+      "wall_seconds": 2.872594199987361,
+      "stored_bytes": 960238,
+      "uncompressed_record_bytes": 2296376,
+      "wall_seconds_per_simulated_second": 14.362970999936802,
+      "stored_bytes_per_simulated_second": 4801189.999999999,
+      "scope": "0.2 s manufactured component including snapshot/diagnostic overhead; not steady-state throughput"
+    },
+    {
+      "mode": "FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC",
+      "duration_seconds": 0.20000000000000004,
+      "wall_seconds": 3.0330579000001308,
+      "stored_bytes": 598918,
+      "uncompressed_record_bytes": 2256686,
+      "wall_seconds_per_simulated_second": 15.16528950000065,
+      "stored_bytes_per_simulated_second": 2994589.9999999995,
+      "scope": "0.2 s manufactured component including snapshot/diagnostic overhead; not steady-state throughput"
+    },
+    {
+      "mode": "external_controller",
+      "duration_seconds": 0.20000000000000004,
+      "wall_seconds": 2.4444540000113193,
+      "stored_bytes": 156375,
+      "uncompressed_record_bytes": 106661,
+      "wall_seconds_per_simulated_second": 12.222270000056595,
+      "stored_bytes_per_simulated_second": 781874.9999999999,
+      "scope": "0.2 s manufactured component including snapshot/diagnostic overhead; not steady-state throughput"
+    }
+  ],
+  "workload": {
+    "physical": {
+      "simulated_seconds": 3080,
+      "estimated_machine_hours": 4.0129599053703275,
+      "estimated_stored_GB": 6.070244385333333,
+      "estimated_uncompressed_GB": 17.00323394
+    },
+    "perceptual": {
+      "simulated_seconds": 1080,
+      "estimated_machine_hours": 1.4071417849999852,
+      "estimated_stored_GB": 2.128527252,
+      "estimated_uncompressed_GB": 5.96217294
+    },
+    "intact_P": {
+      "simulated_seconds": 2400,
+      "estimated_machine_hours": 3.1269817444444112,
+      "estimated_stored_GB": 4.73006056,
+      "estimated_uncompressed_GB": 13.2492732
+    },
+    "fixed_structure_if_approved": {
+      "simulated_seconds": 2400,
+      "estimated_machine_hours": 3.1269817444444112,
+      "estimated_stored_GB": 4.73006056,
+      "estimated_uncompressed_GB": 13.2492732
+    },
+    "total": {
+      "simulated_seconds": 8960,
+      "estimated_machine_hours": 11.674065179259136,
+      "estimated_stored_GB": 17.658892757333334,
+      "estimated_uncompressed_GB": 49.46395328
+    }
+  },
+  "total_seconds": 8960,
+  "projected_hours": 37.744720533334956,
+  "projected_GB": 43.01866239999999,
+  "one_duplicate_GB": 86.03732479999998,
+  "interpretation": "Arithmetic extrapolation of short fixture rates, not observed or calibrated commissioning throughput."
+}

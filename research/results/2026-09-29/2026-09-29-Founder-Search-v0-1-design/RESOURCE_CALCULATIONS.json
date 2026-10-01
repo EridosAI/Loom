@@ -1,0 +1,151 @@
+{
+  "status": "Design arithmetic only; no measurements generated; not approved limits",
+  "measurements": {
+    "A2": {
+      "simulated_seconds": 179.99999999998127,
+      "wall_seconds": 2116.0327042000135,
+      "wall_seconds_per_simulated_second": 11.755737245556855,
+      "stored_bytes": 62740096,
+      "stored_bytes_per_simulated_second": 348556.08888892515,
+      "analysis_wall_seconds": 9.043997599976137,
+      "P_active": false
+    },
+    "A3": {
+      "simulated_seconds": 209.99999999995399,
+      "wall_seconds": 2506.2327364000375,
+      "wall_seconds_per_simulated_second": 11.934441601907556,
+      "stored_bytes": 81734261,
+      "stored_bytes_per_simulated_second": 389210.76666675194,
+      "analysis_wall_seconds": 12.756232699961402,
+      "P_active": false
+    },
+    "B1_FULL": {
+      "simulated_seconds": 29.790000000001857,
+      "wall_seconds": 600.9738899000222,
+      "wall_seconds_per_simulated_second": 20.173678747901466,
+      "stored_bytes": 92075074,
+      "stored_bytes_per_simulated_second": 3090804.7667000424,
+      "P_active": false
+    },
+    "B1_SENSORY_FREE": {
+      "simulated_seconds": 30.00000000000189,
+      "wall_seconds": 356.7404504000442,
+      "wall_seconds_per_simulated_second": 11.89134834666739,
+      "stored_bytes": 6676995,
+      "stored_bytes_per_simulated_second": 222566.49999998597,
+      "P_active": false
+    },
+    "intact_P_component": {
+      "mode": "intact_P",
+      "duration_seconds": 0.20000000000000004,
+      "wall_seconds": 2.872594199987361,
+      "stored_bytes": 960238,
+      "uncompressed_record_bytes": 2296376,
+      "wall_seconds_per_simulated_second": 14.362970999936802,
+      "stored_bytes_per_simulated_second": 4801189.999999999,
+      "scope": "0.2 s manufactured component including snapshot/diagnostic overhead; not steady-state throughput"
+    },
+    "intact_P_historical_30s": {
+      "wall_seconds_per_simulated_second": 4.6905,
+      "stored_MB_per_simulated_second": 1.9709
+    },
+    "prehistory_one_phase": {
+      "world_only_seconds": 600,
+      "wall_seconds": 65.17840160000014,
+      "P_active": false,
+      "scope": "one historical phase, no new preparation"
+    }
+  },
+  "stages": {
+    "common_window": {
+      "simulated_seconds": 7200,
+      "native_steps": 720000,
+      "waves": 36000,
+      "measured_rate_extrapolated_hours": {
+        "A2": 23.51147449111371,
+        "A3": 23.868883203815113,
+        "B1_FULL": 40.34735749580293,
+        "B1_SENSORY_FREE": 23.78269669333478,
+        "intact_P_component": 28.725941999873605,
+        "intact_P_historical_30s": 9.381
+      },
+      "execution_planning_hours": 50.0,
+      "stored_GB_historical": 14.19048,
+      "stored_GB_component": 34.56856799999999,
+      "uncompressed_GB_component": 82.66953599999998,
+      "stored_GB_planning": 43.2,
+      "primary_plus_one_archive_GB_planning": 86.4,
+      "uncompressed_workspace_GB_planning": 86.4
+    },
+    "maximum_staged_total": {
+      "simulated_seconds": 10200,
+      "native_steps": 1020000,
+      "waves": 51000,
+      "measured_rate_extrapolated_hours": {
+        "A2": 33.307922195744425,
+        "A3": 33.814251205404744,
+        "B1_FULL": 57.158756452387486,
+        "B1_SENSORY_FREE": 33.69215364889094,
+        "intact_P_component": 40.69508449982094,
+        "intact_P_historical_30s": 13.28975
+      },
+      "execution_planning_hours": 70.83333333333333,
+      "stored_GB_historical": 20.103180000000002,
+      "stored_GB_component": 48.972137999999994,
+      "uncompressed_GB_component": 117.11517599999999,
+      "stored_GB_planning": 61.2,
+      "primary_plus_one_archive_GB_planning": 122.4,
+      "uncompressed_workspace_GB_planning": 122.4
+    }
+  },
+  "population_options": {
+    "8": {
+      "simulated_seconds": 4800,
+      "A2_rate_hours": 15.67431632740914,
+      "A3_rate_hours": 15.912588802543409
+    },
+    "12": {
+      "simulated_seconds": 7200,
+      "A2_rate_hours": 23.51147449111371,
+      "A3_rate_hours": 23.868883203815113
+    },
+    "16": {
+      "simulated_seconds": 9600,
+      "A2_rate_hours": 31.34863265481828,
+      "A3_rate_hours": 31.825177605086818
+    }
+  },
+  "hypothetical_at_least_one_in_12": {
+    "0.01": 0.11361512828387077,
+    "0.05": 0.45963991233736334
+  },
+  "prehistory_if_twelve_missing": {
+    "field_steps": 720000,
+    "world_only_seconds": 7200,
+    "measured_rate_projection_minutes": 13.03568032000003,
+    "existing_15_minute_each_guard_total_hours": 3.0
+  },
+  "assumptions": {
+    "planning_wall_seconds_per_simulated_second": 25,
+    "planning_stored_bytes_per_simulated_second": 6000000,
+    "planning_uncompressed_bytes_per_simulated_second": 12000000,
+    "initial_postrun_analysis_hours": 4,
+    "later_postrun_analysis_hours": 4,
+    "initial_capacity_GB": 200,
+    "maximum_capacity_GB": 280,
+    "initial_machine_hours_allowance": 57,
+    "maximum_machine_hours_allowance": 81.83333333333333,
+    "Jason_selected_total_age_checkpoints_seconds": [
+      600,
+      900,
+      1800
+    ],
+    "slow_reference_time_constants_seconds": [
+      5000,
+      10000
+    ],
+    "pure_simulation_vs_recording_split_measured": false,
+    "long_run_current_intact_P_rate_measured": false,
+    "lossless_evidence_fidelity_unchanged": true
+  }
+}

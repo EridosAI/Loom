@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "reviewed_checkpoint": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "reviewed_files": {
+    "sensor.html": "806221de1db825a72eaf8e5533553ff97cff11d30c4a7251cf517a128bcbcf9b",
+    "sensor_ui.py": "2ffd2128771cd8244b2be8b4fc4d6b35e54ca66d6cd84d3ecaed33ce9bbe9df9",
+    "controllers.py": "b1aaaa2b41da7c41524512ed0104cf0195b83a0611c3dc84c392c579b375403b",
+    "runner.py": "9f9679a27dd3accd0949430a9c7111d5c7972aaadcb3247515603940ee0fcc49",
+    "authority.py": "d72339a71840af66ff75ca9b8199e8693b78ecdbbd3a900e25bea17c21b63a11",
+    "pending.py": "f05cd01d24d8d58b18e481bab3f7aa9e85e7d3e65f5d82f071928dd0979aabac",
+    "operator_view.py": "1c4fa0dcd6e941d6d93ddbdad24ca813524ab66854ba1b1b8c30f5a23a9473b7"
+  },
+  "permitted": {
+    "raw_native_coordinates": [
+      10,
+      4,
+      8,
+      7
+    ],
+    "raw_cadence_seconds": 0.01,
+    "EI_handoff_seconds": 0.2,
+    "EI_between_handoffs": "held previous sample",
+    "own_commands": true,
+    "own_notes": true,
+    "ordered_history": true
+  },
+  "forbidden": [
+    "global position",
+    "truth heading/pose",
+    "world image/map",
+    "fixture/source identity or position",
+    "stock",
+    "mover phase/velocity",
+    "material labels",
+    "analytic gradients",
+    "privileged notifications",
+    "evaluation",
+    "future values"
+  ],
+  "physical_pause": "No command request: zero world, bodily, field, native/P clock or RNG advancement. Wall resource timer continues.",
+  "control": {
+    "left_right_range": [
+      -1,
+      1
+    ],
+    "hold_seconds": 0.1,
+    "native_steps_per_hold": 10,
+    "auto_repeat": false,
+    "command_batching": false,
+    "command_queue": false
+  },
+  "full_raw": {
+    "kind": "none",
+    "implemented_at_checkpoint": true
+  },
+  "chemistry_hidden": {
+    "kind": "chemistry_hidden",
+    "implemented_at_checkpoint": true,
+    "raw_flat_indices": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "representation": "Four chemistry coordinates omitted entirely from current and historical operator rows; 25 actual remaining values, schema 2. No numeric surrogate.",
+    "all_egress": "Withhold from current values, plots, all past history, HTTP payload, downloads, notes/autofill and user-visible controller transcripts. Complete actual 29-coordinate raw stream retained evaluator-only.",
+    "physical_changes": false,
+    "other_channels_unchanged": true,
+    "implementation_sha256": "1c4fa0dcd6e941d6d93ddbdad24ca813524ab66854ba1b1b8c30f5a23a9473b7"
+  },
+  "prelaunch_gaps": [],
+  "operator_lifecycle": {
+    "states": [
+      "prepared",
+      "paused",
+      "running",
+      "ended"
+    ],
+    "prepared": "Explicit Start changes to PAUSED without a native step.",
+    "paused": "Inspect permitted history and prepare one command; no simulated time, energy, field, neural/native or simulation RNG advancement.",
+    "running": "One accepted current-token command executes the unchanged bounded hold. No overlapping or queued second command.",
+    "after_hold": "PAUSED unless a terminal, deadline, resource, failure or withdrawal stop ends the case.",
+    "ended": "Irreversible for this case. No resume, continuation, retry, replacement or extension.",
+    "delayed_or_duplicate_request": "Consumed decision tokens are rejected. Browser never retries uncertain commands automatically.",
+    "wall_resources": "Real deliberation consumes no bodily time but counts toward the unchanged administrative wall limit."
+  },
+  "coordinate_counts": {
+    "FULL-RAW": 29,
+    "CHEMISTRY-HIDDEN": 25
+  },
+  "chemistry_unavailable_label": "CHEMISTRY UNAVAILABLE IN THIS CONDITION",
+  "independent_disposition": "FIT FOR B1 LAUNCH-PACKET REGENERATION — supplied by Jason in this regeneration request"
+}

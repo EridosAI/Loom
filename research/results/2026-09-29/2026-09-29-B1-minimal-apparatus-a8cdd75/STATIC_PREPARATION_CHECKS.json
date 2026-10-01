@@ -1,0 +1,21 @@
+{
+  "allowed_calls": {
+    "load_snapshot": 4,
+    "transduce": 3,
+    "save_snapshot": 3
+  },
+  "blocked_calls": [],
+  "world_steps": 0,
+  "field_steps": 0,
+  "prehistory_steps": 0,
+  "controller_calls_on_starts": 0,
+  "simulation_RNG_draws": 0,
+  "Engine_or_Run_constructors": 0,
+  "candidate_outcome_trials": 0,
+  "geometry_replacements": 0,
+  "production_bytes_frozen_before_and_after": true,
+  "old_human_B1_fixture_inspected": false,
+  "exact_geometries_admissible": true,
+  "matched_complete_initial_states": true,
+  "execution_grants_created": 0
+}

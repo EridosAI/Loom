@@ -1,0 +1,258 @@
+{
+  "status": "PASS — scalar scheduling compatibility only",
+  "native_indices_checked": 63001,
+  "prescribed_holds_checked": 6300,
+  "stage_end_indices": [
+    9000,
+    12000,
+    27000,
+    30000,
+    45000,
+    48000,
+    63000
+  ],
+  "case_end_index": 63000,
+  "all_stage_and_case_guards_pass": true,
+  "physical_clock_checks_pass": true,
+  "former_269_5_rejection_absent": true,
+  "independent_270_rejection_absent": true,
+  "holds_end_at_stage_boundary_without_shortening": true,
+  "final_time": 629.9999999995721,
+  "maximum_absolute_accumulation_error": 4.2791725718416274e-10,
+  "boundary_rows": [
+    {
+      "native_index": 8999,
+      "accumulated_scalar_time": 89.99000000000913,
+      "nominal_time": 89.99,
+      "error": 9.137579581874888e-12,
+      "allowance": 1.899365037999377e-10,
+      "stage_zero_based": 0,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 9000,
+      "accumulated_scalar_time": 90.00000000000914,
+      "nominal_time": 90.0,
+      "error": 9.137579581874888e-12,
+      "allowance": 1.8995648670415795e-10,
+      "stage_zero_based": 1,
+      "fresh_hold_permitted": true,
+      "case_complete": false
+    },
+    {
+      "native_index": 9001,
+      "accumulated_scalar_time": 90.01000000000914,
+      "nominal_time": 90.01,
+      "error": 9.137579581874888e-12,
+      "allowance": 1.8997647182882426e-10,
+      "stage_zero_based": 1,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 11999,
+      "accumulated_scalar_time": 119.99000000002448,
+      "nominal_time": 119.99000000000001,
+      "error": 2.447109181957785e-11,
+      "allowance": 2.598738930132979e-10,
+      "stage_zero_based": 1,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 12000,
+      "accumulated_scalar_time": 120.00000000002449,
+      "nominal_time": 120.0,
+      "error": 2.4485302674293052e-11,
+      "allowance": 2.5990053725566596e-10,
+      "stage_zero_based": 2,
+      "fresh_hold_permitted": true,
+      "case_complete": false
+    },
+    {
+      "native_index": 12001,
+      "accumulated_scalar_time": 120.01000000002449,
+      "nominal_time": 120.01,
+      "error": 2.4485302674293052e-11,
+      "allowance": 2.5992718371848e-10,
+      "stage_zero_based": 2,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 26949,
+      "accumulated_scalar_time": 269.4899999998999,
+      "nominal_time": 269.49,
+      "error": -1.0010126061388291e-10,
+      "allowance": 9.064116052721424e-10,
+      "stage_zero_based": 2,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 26950,
+      "accumulated_scalar_time": 269.4999999998999,
+      "nominal_time": 269.5,
+      "error": -1.0010126061388291e-10,
+      "allowance": 9.06471445182947e-10,
+      "stage_zero_based": 2,
+      "fresh_hold_permitted": true,
+      "case_complete": false
+    },
+    {
+      "native_index": 26951,
+      "accumulated_scalar_time": 269.5099999998999,
+      "nominal_time": 269.51,
+      "error": -1.0010126061388291e-10,
+      "allowance": 9.065312873141976e-10,
+      "stage_zero_based": 2,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 26999,
+      "accumulated_scalar_time": 269.98999999989945,
+      "nominal_time": 269.99,
+      "error": -1.0055600796476938e-10,
+      "allowance": 9.094063208587799e-10,
+      "stage_zero_based": 2,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 27000,
+      "accumulated_scalar_time": 269.99999999989944,
+      "nominal_time": 270.0,
+      "error": -1.0055600796476938e-10,
+      "allowance": 9.094662717918868e-10,
+      "stage_zero_based": 3,
+      "fresh_hold_permitted": true,
+      "case_complete": false
+    },
+    {
+      "native_index": 27001,
+      "accumulated_scalar_time": 270.00999999989943,
+      "nominal_time": 270.01,
+      "error": -1.0055600796476938e-10,
+      "allowance": 9.095262249454399e-10,
+      "stage_zero_based": 3,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 29999,
+      "accumulated_scalar_time": 299.98999999987217,
+      "nominal_time": 299.99,
+      "error": -1.2784084901795723e-10,
+      "allowance": 1.0992477967324358e-09,
+      "stage_zero_based": 3,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 30000,
+      "accumulated_scalar_time": 299.99999999987216,
+      "nominal_time": 300.0,
+      "error": -1.2784084901795723e-10,
+      "allowance": 1.0993144090036905e-09,
+      "stage_zero_based": 4,
+      "fresh_hold_permitted": true,
+      "case_complete": false
+    },
+    {
+      "native_index": 30001,
+      "accumulated_scalar_time": 300.00999999987215,
+      "nominal_time": 300.01,
+      "error": -1.2784084901795723e-10,
+      "allowance": 1.0993810234953914e-09,
+      "stage_zero_based": 4,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 44999,
+      "accumulated_scalar_time": 449.98999999973574,
+      "nominal_time": 449.99,
+      "error": -2.6426505428389646e-10,
+      "allowance": 2.348215392752902e-09,
+      "stage_zero_based": 4,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 45000,
+      "accumulated_scalar_time": 449.99999999973573,
+      "nominal_time": 450.0,
+      "error": -2.6426505428389646e-10,
+      "allowance": 2.3483153117148956e-09,
+      "stage_zero_based": 5,
+      "fresh_hold_permitted": true,
+      "case_complete": false
+    },
+    {
+      "native_index": 45001,
+      "accumulated_scalar_time": 450.0099999997357,
+      "nominal_time": 450.01,
+      "error": -2.6426505428389646e-10,
+      "allowance": 2.3484152328973354e-09,
+      "stage_zero_based": 5,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 47999,
+      "accumulated_scalar_time": 479.98999999970846,
+      "nominal_time": 479.99,
+      "error": -2.915498953370843e-10,
+      "allowance": 2.6579609552875722e-09,
+      "stage_zero_based": 5,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 48000,
+      "accumulated_scalar_time": 479.99999999970845,
+      "nominal_time": 480.0,
+      "error": -2.915498953370843e-10,
+      "allowance": 2.658067535587714e-09,
+      "stage_zero_based": 6,
+      "fresh_hold_permitted": true,
+      "case_complete": false
+    },
+    {
+      "native_index": 48001,
+      "accumulated_scalar_time": 480.00999999970844,
+      "nominal_time": 480.01,
+      "error": -2.915498953370843e-10,
+      "allowance": 2.658174118108302e-09,
+      "stage_zero_based": 6,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 62999,
+      "accumulated_scalar_time": 629.9899999995721,
+      "nominal_time": 629.99,
+      "error": -4.2791725718416274e-10,
+      "allowance": 4.506562671452629e-09,
+      "stage_zero_based": 6,
+      "fresh_hold_permitted": false,
+      "case_complete": false
+    },
+    {
+      "native_index": 63000,
+      "accumulated_scalar_time": 629.9999999995721,
+      "nominal_time": 630.0,
+      "error": -4.2791725718416274e-10,
+      "allowance": 4.50670255844351e-09,
+      "stage_zero_based": 6,
+      "fresh_hold_permitted": false,
+      "case_complete": true
+    }
+  ],
+  "world_steps": 0,
+  "controller_commands": 0,
+  "simulation_RNG_draws": 0,
+  "note": "The loop adds scalar 0.01 values and calls pure scheduler functions. No Engine, Run, command, field, sensor, event, neural or RNG function is invoked. Cadence representability is not a physical trajectory or runtime benchmark."
+}

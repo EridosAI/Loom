@@ -1,0 +1,14 @@
+{
+  "case": "PC-HOLD",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T02:42:45.3223766+00:00",
+  "user_statement_verbatim": "I think I did that. I can see contact. I backed off movement, the contact force dropped. Then I just held it there.",
+  "observed_lifecycle": "paused",
+  "observed_simulated_time": 1.1000000000000008,
+  "observed_command_count": 11,
+  "interpretation": "Operator reports detected contact, reduced commands, and maintained a lower contact signal. Physical force and qualifying continuous duration not yet evaluated because the case remains open.",
+  "public_command_timing": "Commands [0.05,0.05] begin at 0.5 s and have advanced to 1.1 s: 0.6 simulated seconds at that pair. This is not a physical-force qualification.",
+  "assistant_actions": "Read-only session request; no start, command, end, or physical evaluator inspection.",
+  "image_sha256": "0f3679e6a7ab507f0e952e4a9bde882f4566f9461a1c3644ad220c327849b550",
+  "B1_state_accessed": false
+}

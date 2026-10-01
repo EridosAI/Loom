@@ -1,0 +1,35 @@
+{
+  "scope": "detached one-call calculation; no new trajectory",
+  "plan": [
+    {
+      "point": [
+        6.0,
+        5.0
+      ],
+      "until": 0.1,
+      "press_force": 0.0
+    },
+    {
+      "point": [
+        5.0,
+        6.0
+      ],
+      "until": 0.2,
+      "press_force": 0.0
+    }
+  ],
+  "actual_saved_time": 0.09999999999999999,
+  "mathematical_native_boundary": 0.1,
+  "difference_seconds": 1.3877787807814457e-17,
+  "actual_cursor": 0,
+  "exact_boundary_cursor": 1,
+  "actual_command": [
+    0.6958934252903155,
+    0.23474350126270044
+  ],
+  "exact_boundary_command": [
+    -0.3577907305552408,
+    0.6422092694447592
+  ],
+  "hold_native_steps": 10
+}

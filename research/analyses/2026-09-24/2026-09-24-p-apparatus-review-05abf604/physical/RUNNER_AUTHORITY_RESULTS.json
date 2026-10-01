@@ -1,0 +1,202 @@
+{
+  "scope": "manufactured <=0.2 second apparatus components and validation-only cache reuse; no commissioning execution",
+  "long_manifest_without_execution": {
+    "validated_duration": 1200,
+    "rejection": {
+      "rejected": true,
+      "type": "ValueError",
+      "message": "commissioning execution is not authorized"
+    },
+    "output_exists": false,
+    "native_steps": 0,
+    "state_unchanged": true
+  },
+  "authority_binding": {
+    "baseline_accepted": true,
+    "unchanged_request_sha256": "6561ffeafab08a249a9a3f471de725ebc3a65ebe30893ee0f76a3f15fcdeadaa",
+    "mode_controller_variants": [
+      {
+        "mode": "external_controller",
+        "controller": "sensor_human",
+        "accepted": true,
+        "same_authority": true
+      },
+      {
+        "mode": "external_controller",
+        "controller": "manual_privileged",
+        "accepted": true,
+        "same_authority": true
+      },
+      {
+        "mode": "intact_P",
+        "controller": "none",
+        "accepted": true,
+        "same_authority": true
+      },
+      {
+        "mode": "FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC",
+        "controller": "none",
+        "accepted": true,
+        "same_authority": true
+      }
+    ],
+    "rejected_controls": {
+      "case_id": {
+        "rejected": true,
+        "type": "ValueError",
+        "message": "execution grant scope mismatch"
+      },
+      "duration_seconds": {
+        "rejected": true,
+        "type": "ValueError",
+        "message": "execution grant scope mismatch"
+      },
+      "initial_state": {
+        "rejected": true,
+        "type": "ValueError",
+        "message": "initial state identity mismatch"
+      },
+      "p_code": {
+        "rejected": true,
+        "type": "ValueError",
+        "message": "manifest/code identity mismatch"
+      },
+      "configuration": {
+        "rejected": true,
+        "type": "ValueError",
+        "message": "configuration identity mismatch"
+      },
+      "apparatus": {
+        "rejected": true,
+        "type": "ValueError",
+        "message": "apparatus identity mismatch"
+      },
+      "authority_file_hash": {
+        "rejected": true,
+        "type": "ValueError",
+        "message": "execution authority identity mismatch"
+      }
+    },
+    "native_steps": 0,
+    "commissioning_run_constructors": 0
+  },
+  "hold_resume": {
+    "paused_index": 7,
+    "remaining_at_pause": 3,
+    "held_command": [
+      0.717668244562803,
+      0.237668244562803
+    ],
+    "first_hold_end_index": 10,
+    "final_index": 20,
+    "final_time": 0.20000000000000004,
+    "original_deadline": 0.2,
+    "continuous_state_equal": true,
+    "external_neural_rng_state_unchanged": true,
+    "field_calls": 20,
+    "display_state_unchanged": true,
+    "complete_segment_verification": {
+      "hold-first": {
+        "class": "AV",
+        "native_records": 7,
+        "wave_records": 0,
+        "events": 7,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_pause"
+      },
+      "hold-resumed": {
+        "class": "AV",
+        "native_records": 13,
+        "wave_records": 0,
+        "events": 13,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      },
+      "hold-continuous": {
+        "class": "AV",
+        "native_records": 20,
+        "wave_records": 0,
+        "events": 20,
+        "replayed": true,
+        "maximum_accounting_residual": 5.439645587267117e-17,
+        "mode": "external_controller",
+        "status": "administrative_cutoff"
+      }
+    },
+    "cutoff_resume_rejection": {
+      "rejected": true,
+      "type": "ValueError",
+      "message": "only complete pauses can resume"
+    }
+  },
+  "route_binding": [
+    {
+      "manifest_sha256": "7aee6631cda1a138d3b1e6b3383530fb47a0a7e23b8bcda947417b70e2c34bdc",
+      "plan": [
+        {
+          "point": [
+            6.0,
+            5.0
+          ],
+          "until": 0.1,
+          "press_force": 0.0
+        }
+      ],
+      "command": [
+        0.717668244562803,
+        0.237668244562803
+      ],
+      "native_steps": 0
+    },
+    {
+      "manifest_sha256": "7aee6631cda1a138d3b1e6b3383530fb47a0a7e23b8bcda947417b70e2c34bdc",
+      "plan": [
+        {
+          "point": [
+            4.0,
+            5.0
+          ],
+          "until": 0.1,
+          "press_force": 0.0
+        }
+      ],
+      "command": [
+        -0.5,
+        0.5
+      ],
+      "native_steps": 0
+    }
+  ],
+  "privileged_controller_boundary": {
+    "deep_copy_mutations_leave_engine_unchanged": true,
+    "baseline_command": [
+      0.717668244562803,
+      0.237668244562803
+    ],
+    "bounded": true,
+    "forbidden_input_rejection": {
+      "rejected": true,
+      "type": "ValueError",
+      "message": "forbidden controller input"
+    }
+  },
+  "failure_stop": {
+    "trigger": {
+      "rejected": true,
+      "type": "ArithmeticError",
+      "message": "independent manufactured apparatus failure"
+    },
+    "complete": false,
+    "status": "apparatus_failure",
+    "resume_rejection": {
+      "rejected": true,
+      "type": "ValueError",
+      "message": "only complete pauses can resume"
+    },
+    "native_steps": 0
+  }
+}

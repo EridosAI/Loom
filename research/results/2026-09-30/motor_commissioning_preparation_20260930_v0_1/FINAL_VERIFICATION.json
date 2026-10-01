@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "utc": "2026-09-30T11:09:13.872432+00:00",
+  "host": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "prepared_cases": 9,
+  "world_cases_started": 0,
+  "world_steps": 0,
+  "organism_steps": 0,
+  "learning_handoffs": 0,
+  "new_prehistory": 0,
+  "component_tests": 26,
+  "component_failures": 0,
+  "component_errors": 0,
+  "component_world_evolution_blocked": true,
+  "byte_matched_original_physical_triplets": 3,
+  "full_original_state_restored_by_removing_only_candidate_attribute": true,
+  "separate_candidate_rng_namespaces": true,
+  "checks": {
+    "nursery_0_design_20260930_v0_1": 157,
+    "nursery_birth_motor_review_20260930_v0_1": 25,
+    "previous_review_inputs": 76,
+    "current_reference_inputs": 338
+  },
+  "full_runtime_preflight": {
+    "status": "PASS",
+    "runtime_sha256": "d1b14d75dc30e2934c76e209e0354ca236ac0115f381b4cbbf5c15093ba9a41a",
+    "cases": [
+      {
+        "case_id": "MC-FS-001-CURRENT",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "4f5b1fe5782e101442d767679cf82b869aba6b5d2e72cbe3d3268b657fe9da1f",
+        "matched_original_except_declared_process": true
+      },
+      {
+        "case_id": "MC-FS-001-M1",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "ee92d5cc7ffc544c113efb7faafa003f57fcc02c7d37242000360eab1b457e15",
+        "matched_original_except_declared_process": true
+      },
+      {
+        "case_id": "MC-FS-001-M2",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "91bb2c91b5254006c0f46f6ec1082363c9dd1779e8acb29d108cedd00e07d6b7",
+        "matched_original_except_declared_process": true
+      },
+      {
+        "case_id": "MC-FS-002-CURRENT",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "5cb7f9e3023344d822d278876e6ca98c43a2ed921c0fbe0b201074eab274c017",
+        "matched_original_except_declared_process": true
+      },
+      {
+        "case_id": "MC-FS-002-M1",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "1942502579dbeb578a0f7ce48e077f3e384b390b6f6686ec3f2eec9b3615f2f0",
+        "matched_original_except_declared_process": true
+      },
+      {
+        "case_id": "MC-FS-002-M2",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "13eb0cfa16304a4ee276ddb3e00915dcd0111f0f2da1ff82e46045f236df1ec4",
+        "matched_original_except_declared_process": true
+      },
+      {
+        "case_id": "MC-FS-003-CURRENT",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "27f12fb1b6c8aca2cce13cc302ca337b5331bb1683c653fbece7cd478bd181a1",
+        "matched_original_except_declared_process": true
+      },
+      {
+        "case_id": "MC-FS-003-M1",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "cbf71afd4a77eb896cedecc8d34dd5ed703b132889abe00008b5237445bde7f8",
+        "matched_original_except_declared_process": true
+      },
+      {
+        "case_id": "MC-FS-003-M2",
+        "initial_index": 0,
+        "time": 0.0,
+        "initial_causal_sha256": "8b9531a984fb43bc13cdf25cc6390a7f511f9706c89ec99a40d9a83ce75754f7",
+        "matched_original_except_declared_process": true
+      }
+    ],
+    "world_steps": 0,
+    "organism_steps": 0,
+    "no_new_prehistory": true,
+    "full_runtime_seconds": 0.8425737000070512
+  },
+  "frozen_checkout_head": "87abae34e19d4e46234402a6b1ba776814956ec1",
+  "frozen_checkout_clean": true,
+  "canonical_source_edits": 0,
+  "git_writes": 0,
+  "dependencies_installed": 0,
+  "nursery_changes": 0,
+  "birth_law_changes": 0,
+  "viability_changes": 0,
+  "P_learning_changes": 0,
+  "source_law_changes": 0,
+  "old_human_B1_evaluator_accessed": false,
+  "authority_status": "NINE_NEW_PROPOSALS_ONLY",
+  "authorized_execution_objects": 0,
+  "automatic_selection": false
+}

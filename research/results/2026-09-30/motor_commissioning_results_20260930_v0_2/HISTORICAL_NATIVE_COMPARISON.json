@@ -1,0 +1,29 @@
+[
+  {
+    "case_id": "MC-FS-001-CURRENT",
+    "historical_available_rows": 9000,
+    "current_available_rows": 9000,
+    "compared_rows": 9000,
+    "all_native_fields_identical": true,
+    "first_differing_native": null,
+    "scope": "complete native physical facts only; historical prefix retained without continuation or overwrite"
+  },
+  {
+    "case_id": "MC-FS-001-M1",
+    "historical_available_rows": 9000,
+    "current_available_rows": 9000,
+    "compared_rows": 9000,
+    "all_native_fields_identical": true,
+    "first_differing_native": null,
+    "scope": "complete native physical facts only; historical prefix retained without continuation or overwrite"
+  },
+  {
+    "case_id": "MC-FS-001-M2",
+    "historical_available_rows": 1025,
+    "current_available_rows": 9000,
+    "compared_rows": 1025,
+    "all_native_fields_identical": true,
+    "first_differing_native": null,
+    "scope": "complete native physical facts only; historical prefix retained without continuation or overwrite"
+  }
+]

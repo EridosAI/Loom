@@ -1,0 +1,42 @@
+{
+  "planning_source": "Actual one A1 attempt and immutable progress/receipt records, not engineering-smoke rates",
+  "a1_zip_sha256": "f37dfec92288fbe8a650b00eed611d086a3ece3b280292e95b891e371cc0d37f",
+  "a1_measured": {
+    "simulated_seconds": 91.83000000001007,
+    "native_steps": 9183,
+    "recorder_wall_seconds": 1201.2759735999862,
+    "whole_process_wall_seconds": 1202.0992398999515,
+    "uncompressed_stream_bytes": 54337980,
+    "stored_trajectory_bytes_including_snapshots_and_receipt": 24977060
+  },
+  "rates": {
+    "wall_seconds_per_simulated_second": 13.081519912880914,
+    "uncompressed_bytes_per_simulated_second": 591723.6197320488,
+    "stored_trajectory_bytes_per_simulated_second": 271992.37721874396,
+    "tail_start_simulated_time": 71.79999999999983,
+    "tail_wall_seconds_per_simulated_second": 13.476664837735473
+  },
+  "projection_180_seconds": {
+    "average_wall_seconds": 2354.6735843185647,
+    "tail_wall_seconds": 2425.7996707923853,
+    "uncompressed_bytes": 106510251.55176878,
+    "stored_trajectory_bytes": 48958627.89937392
+  },
+  "old_400_seconds_average_wall_seconds": 5232.607965152366,
+  "proposed_case_simulated_ceiling": 180,
+  "native_steps_ceiling": 18000,
+  "command_decisions_ceiling": 1800,
+  "runner_wall_seconds_ceiling": 3600,
+  "uncompressed_stream_bytes_ceiling": 1500000000,
+  "local_free_disk_reserve_bytes": 3000000000,
+  "separate_read_only_reporting_wall_seconds_ceiling": 3600,
+  "separate_reporting_world_steps": 0,
+  "wall_headroom_fraction": 0.528874330597219,
+  "limitations": [
+    "Linear projection is not an assured completion time or storage bound.",
+    "Restart sensor history grows; snapshot costs and total stored size need not scale linearly.",
+    "Second-stage travel/contact and host load may differ from A1.",
+    "Storage guard counts uncompressed streams, not total snapshots/archives.",
+    "No new performance benchmark was executed."
+  ]
+}

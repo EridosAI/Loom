@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "review_kind": "Independent calculation paths by same analyst; not a second-person or external scientific review",
+  "full_checkpoints_checked": 807,
+  "checks": [
+    {
+      "life": "RS-M1-001",
+      "checkpoints_checked": 99,
+      "max_checkpoint_norm_error": 5.421010862427522e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 22494,
+      "raw_native": 450008,
+      "cutoff": 4500.0
+    },
+    {
+      "life": "RS-M1-002",
+      "checkpoints_checked": 97,
+      "max_checkpoint_norm_error": 5.421010862427522e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 22495,
+      "raw_native": 450007,
+      "cutoff": 4500.0
+    },
+    {
+      "life": "RS-M1-003",
+      "checkpoints_checked": 99,
+      "max_checkpoint_norm_error": 5.421010862427522e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 22496,
+      "raw_native": 450007,
+      "cutoff": 4500.0
+    },
+    {
+      "life": "RS-M1-004",
+      "checkpoints_checked": 97,
+      "max_checkpoint_norm_error": 5.421010862427522e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 22496,
+      "raw_native": 450006,
+      "cutoff": 4500.0
+    },
+    {
+      "life": "RS-M1-005",
+      "checkpoints_checked": 99,
+      "max_checkpoint_norm_error": 5.421010862427522e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 22494,
+      "raw_native": 450005,
+      "cutoff": 4500.0
+    },
+    {
+      "life": "RS-M1-006",
+      "checkpoints_checked": 99,
+      "max_checkpoint_norm_error": 5.421010862427522e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 22494,
+      "raw_native": 450005,
+      "cutoff": 4500.0
+    },
+    {
+      "life": "RS-M1-007",
+      "checkpoints_checked": 97,
+      "max_checkpoint_norm_error": 5.421010862427522e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 22495,
+      "raw_native": 450006,
+      "cutoff": 4500.0
+    },
+    {
+      "life": "RS-M1-008",
+      "checkpoints_checked": 64,
+      "max_checkpoint_norm_error": 5.421010862427522e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 14696,
+      "raw_native": 294000,
+      "cutoff": 2939.9548705459583
+    },
+    {
+      "life": "RS-M1-009",
+      "checkpoints_checked": 14,
+      "max_checkpoint_norm_error": 0.0,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 2999,
+      "raw_native": 60001,
+      "cutoff": 600.0
+    },
+    {
+      "life": "RS-M1-010",
+      "checkpoints_checked": 14,
+      "max_checkpoint_norm_error": 2.710505431213761e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 2999,
+      "raw_native": 60001,
+      "cutoff": 600.0
+    },
+    {
+      "life": "RS-M1-011",
+      "checkpoints_checked": 14,
+      "max_checkpoint_norm_error": 1.3552527156068805e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 2999,
+      "raw_native": 60001,
+      "cutoff": 600.0
+    },
+    {
+      "life": "RS-M1-012",
+      "checkpoints_checked": 14,
+      "max_checkpoint_norm_error": 2.710505431213761e-20,
+      "prior_wave_comparison_error": 0.0,
+      "raw_waves": 2999,
+      "raw_native": 60001,
+      "cutoff": 600.0
+    }
+  ],
+  "new_simulation_steps": 0,
+  "no_simulator_imports": true
+}

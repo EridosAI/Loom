@@ -1,0 +1,46 @@
+{
+  "source": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology",
+  "apparatus_identity": {
+    "sha256": "d5801b69ae38d3259f3426aed8753fef8d76132a2f4ffecdd9baffb29afeb71a",
+    "files": {
+      "__init__.py": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+      "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+      "authority.py": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca",
+      "contract.py": "e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3",
+      "controllers.py": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+      "evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+      "initialization.py": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+      "pending.py": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8",
+      "runner.py": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57",
+      "sensor.html": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a",
+      "sensor_ui.py": "b5596ad3aff664df951d63ba2311e232ff483de6c7dcc8ac446b0c240868572e",
+      "validators.py": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a"
+    }
+  },
+  "authority_source_sha256": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca",
+  "rows": [
+    {
+      "fixture": "SYNTHETIC_duplicate-approved-execution_NO_EXECUTION.json",
+      "sha256": "b6efa768ee86703ab604118ea8f8e72d46070146ca1ac36535dc555e9cad2f51",
+      "authorization": {
+        "accepted": false,
+        "error": "duplicate JSON field: approved_execution"
+      }
+    },
+    {
+      "fixture": "SYNTHETIC_duplicate-nested-waypoint_NO_EXECUTION.json",
+      "sha256": "7331d8ab7036f1bec1a8a995e994e52e7a08c65b3f08df6a9b69771eac3446e0",
+      "authorization": {
+        "accepted": false,
+        "error": "duplicate JSON field: point"
+      }
+    }
+  ],
+  "exact_unambiguous_current_spec_accepted": true,
+  "engine_state_unchanged": true,
+  "native_steps": 0,
+  "Run_constructors": 0,
+  "prehistory_prepared": false,
+  "scope": "The exact two delivered prior raw files; synthetic approval-only controls."
+}

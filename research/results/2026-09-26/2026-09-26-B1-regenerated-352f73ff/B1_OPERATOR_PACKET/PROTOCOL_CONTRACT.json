@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "operator": "Jason",
+  "condition_order": [
+    "B1-FULL-RAW",
+    "B1-CHEMISTRY-HIDDEN"
+  ],
+  "controls": "Manual bounded pair only. No AI, observer, waypoint, hint, control law, autoplay, or repeat-until-outcome driver.",
+  "trial_stops": [
+    "fixed native deadline",
+    "physical terminal E or I",
+    "apparatus/record/controller failure",
+    "wall/storage administrative stop",
+    "explicit operator withdrawal at paused boundary"
+  ],
+  "after_early_stop": "Preserve prefix and reason. Do not resume, retry, replace, extend or switch to another controller automatically.",
+  "memory": "FULL-RAW first preserves the primary naive-to-this-held-out-state witness. The second trial can benefit from human memory of the first; this fixed order is not counterbalanced and cannot establish chemistry necessity.",
+  "grants": "None. Packet HOLD covers every case even where a full-display execution object is structurally valid."
+}

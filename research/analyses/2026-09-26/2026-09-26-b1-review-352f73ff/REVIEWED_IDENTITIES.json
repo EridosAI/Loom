@@ -1,0 +1,301 @@
+{
+  "date": "2026-09-26",
+  "disposition": "FIT FOR B1 LAUNCH-PACKET REGENERATION",
+  "checkpoint": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "parent": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+  "P_checkpoint": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "branch": "build/p-b1-operator-correction-20260926-01a0c405",
+  "held_review_hash": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
+  "identities": {
+    "P": {
+      "sha256": "63a0241e57756aa5d0fb69c661b59dd9ddb08d53947ffc16005e483caec65ad9",
+      "files": {
+        "__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+        "chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+        "diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+        "engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+        "geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+        "inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+        "neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+        "physics.py": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+        "prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+        "reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+        "records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+        "schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+        "smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+      }
+    },
+    "apparatus": {
+      "sha256": "1ef4264e937d7501a32cd06ab76393304916c763a99d834915b8c5d06e6ac703",
+      "files": {
+        "__init__.py": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+        "adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+        "authority.py": "d72339a71840af66ff75ca9b8199e8693b78ecdbbd3a900e25bea17c21b63a11",
+        "clock.py": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+        "contract.py": "150cf92e6d238675527f914db1b2c2b12ff6aa2445b8bf1064c8f12c50dfee6c",
+        "controllers.py": "b1aaaa2b41da7c41524512ed0104cf0195b83a0611c3dc84c392c579b375403b",
+        "diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+        "evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+        "initialization.py": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+        "operator_view.py": "1c4fa0dcd6e941d6d93ddbdad24ca813524ab66854ba1b1b8c30f5a23a9473b7",
+        "pending.py": "f05cd01d24d8d58b18e481bab3f7aa9e85e7d3e65f5d82f071928dd0979aabac",
+        "runner.py": "9f9679a27dd3accd0949430a9c7111d5c7972aaadcb3247515603940ee0fcc49",
+        "sensor.html": "806221de1db825a72eaf8e5533553ff97cff11d30c4a7251cf517a128bcbcf9b",
+        "sensor_ui.py": "2ffd2128771cd8244b2be8b4fc4d6b35e54ca66d6cd84d3ecaed33ce9bbe9df9",
+        "validators.py": "1aec6a4aeea76a96c1bd33863a5c97c6095052319b7cd051144663a0432e2083"
+      }
+    },
+    "configuration_semantic": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+    "configuration_file": {
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+      "bytes": 3445
+    },
+    "runtime": {
+      "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+      "implementation": "CPython",
+      "executable_sha256": "935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256",
+      "python_dlls": {
+        "python3.dll": "85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b",
+        "python313.dll": "0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"
+      },
+      "platform": "Windows-11-10.0.26200-SP0",
+      "packages": {
+        "numpy": {
+          "version": "2.3.3",
+          "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af",
+          "file_count": 432,
+          "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+        },
+        "scipy": {
+          "version": "1.16.2",
+          "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1",
+          "file_count": 1078,
+          "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+        }
+      }
+    },
+    "runtime_matches_builder": true,
+    "node": {
+      "path": "C:\\Program Files\\nodejs\\node.EXE",
+      "version": "v22.16.0",
+      "sha256": "c5ff4c736112dd483c750fd4149d30c8a116db1a49b8b3ec88be4b65e6c86c19",
+      "bytes": 85119640
+    },
+    "test_packages": {
+      "pytest": "8.4.2",
+      "colorama": "0.4.6",
+      "iniconfig": "2.3.0",
+      "packaging": "26.3",
+      "pluggy": "1.6.0",
+      "pygments": "2.21.0"
+    }
+  },
+  "patch": {
+    "bytes": 132681,
+    "sha256": "2191f1058eb817f84ea8fb674388bfae4eb23b470b3b8887f1f882465b1a3ed1",
+    "package_exact": true
+  },
+  "builder_zip": {
+    "archive": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-operator-correction-352f73ff-review-02\\B1_OPERATOR_APPARATUS_CORRECTION_REVIEW.zip",
+    "sha256": "0166f1395e9f10fba96e05f5d53264ba2fc275db2122087810406107e3ccf318",
+    "bytes": 27546035,
+    "entries": 2677,
+    "payloads_verified": 2676,
+    "payload_bytes": 31245458,
+    "manifest_sha256": "e38cdb730db72fd3addd9c86b1878249631d9ce39326d6a6e0c69e97fe478c58",
+    "CRC_verified": true,
+    "safe_paths_and_duplicate_checks": true,
+    "extraction_prefix_removed": "B1_OPERATOR_APPARATUS_CORRECTION_REVIEW/",
+    "destination": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-b1-review-352f73ff\\portable",
+    "suite_root": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-b1-review-352f73ff\\portable\\source\\developmental_ecology"
+  },
+  "final_preservation": {
+    "source_and_evidence_files_rehashed": 3064,
+    "changed": {},
+    "all_unchanged": true,
+    "held_files": 124,
+    "original_omitted_A5_files": 115,
+    "current_and_parent_git": {
+      "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926": {
+        "HEAD": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+        "status": ""
+      },
+      "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-clock-correction-20260926": {
+        "HEAD": "68db2c581f07200966d699a4f55a65f9b96df1e9",
+        "status": ""
+      }
+    },
+    "original_archives": {
+      "2026-09-26-B1-operator-correction-352f73ff": {
+        "sha256": "4bc28da9927b29c75310a8ab56e73ccb45460b58d5e217074dac8632a1c4fc0d",
+        "bytes": 457395677
+      },
+      "2026-09-26-B1-operator-correction-352f73ff-review-02": {
+        "sha256": "0166f1395e9f10fba96e05f5d53264ba2fc275db2122087810406107e3ccf318",
+        "bytes": 27546035
+      }
+    },
+    "forbidden_held_payload_hashes": 39,
+    "portable_sealed_payload_collisions": 0,
+    "no_held_snapshots_decoded": true,
+    "no_authority_objects_generated": true,
+    "no_simulation_or_controller_calls_by_subreview": true
+  },
+  "static_compatibility": {
+    "held_review_hash": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
+    "held_object_hash_matches": [
+      {
+        "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-B1-perceptual-ceiling-HOLD-68db2c58-review-02\\B1_PRIVILEGED_EVALUATOR_HOLD\\HELD_REVIEW_OBJECT.canonical.json",
+        "sha256": "45d71cd121f823368401b11c4a1010d509af3224f49168ad528653274d0e7543",
+        "bytes": 17503
+      }
+    ],
+    "snapshot_content_decoded": false,
+    "private_manifest_values_output": false,
+    "private_manifests_copied": false,
+    "pair_top_level_different_keys": [
+      "case_id",
+      "execution"
+    ],
+    "pair_execution_different_keys": [
+      "display_intervention"
+    ],
+    "pair_identical_complete_initial_state": true,
+    "pair_only_case_id_and_declared_display_differ": true,
+    "pair_same_world_laws": true,
+    "cases": [
+      {
+        "case": "PC-LR",
+        "duration_seconds": 4,
+        "native_steps": 400,
+        "holds": 40,
+        "all_holds_ten_steps": true,
+        "unchanged_snapshot": {
+          "sha256": "3ff0eb7ee409e990ffba65ac79df913f13875fd0cd811d191bd50cbd87d2e477",
+          "bytes": 121480
+        },
+        "same_p_and_config": true,
+        "display_kind": "none",
+        "display_identity_valid": true,
+        "execution_grant": null
+      },
+      {
+        "case": "PC-MOTION",
+        "duration_seconds": 4,
+        "native_steps": 400,
+        "holds": 40,
+        "all_holds_ten_steps": true,
+        "unchanged_snapshot": {
+          "sha256": "aaae774a025276a170df0ac2a3fb8e7b9aa6aa75c30a681037801f3cff887328",
+          "bytes": 121470
+        },
+        "same_p_and_config": true,
+        "display_kind": "none",
+        "display_identity_valid": true,
+        "execution_grant": null
+      },
+      {
+        "case": "PC-CONTACT",
+        "duration_seconds": 6,
+        "native_steps": 600,
+        "holds": 60,
+        "all_holds_ten_steps": true,
+        "unchanged_snapshot": {
+          "sha256": "ee115434b844b7aee30089cbeaab03ff932952f440b0686eff8da465f1880e1f",
+          "bytes": 121479
+        },
+        "same_p_and_config": true,
+        "display_kind": "none",
+        "display_identity_valid": true,
+        "execution_grant": null
+      },
+      {
+        "case": "PC-HOLD",
+        "duration_seconds": 10,
+        "native_steps": 1000,
+        "holds": 100,
+        "all_holds_ten_steps": true,
+        "unchanged_snapshot": {
+          "sha256": "54c02d8b4092b24761284939185c43addce086e3f9fe20adfb80ef0e14dabc7b",
+          "bytes": 121477
+        },
+        "same_p_and_config": true,
+        "display_kind": "none",
+        "display_identity_valid": true,
+        "execution_grant": null
+      },
+      {
+        "case": "B1-FULL-RAW",
+        "duration_seconds": 30,
+        "native_steps": 3000,
+        "holds": 300,
+        "all_holds_ten_steps": true,
+        "unchanged_snapshot": {
+          "sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+          "bytes": 121491
+        },
+        "same_p_and_config": true,
+        "display_kind": "none",
+        "display_identity_valid": true,
+        "execution_grant": null
+      },
+      {
+        "case": "B1-CHEMISTRY-HIDDEN",
+        "duration_seconds": 30,
+        "native_steps": 3000,
+        "holds": 300,
+        "all_holds_ten_steps": true,
+        "unchanged_snapshot": {
+          "sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+          "bytes": 121491
+        },
+        "same_p_and_config": true,
+        "display_kind": "chemistry_hidden",
+        "display_identity_valid": true,
+        "execution_grant": null
+      }
+    ],
+    "positive_control_information_channels": {
+      "left_right": "Full 10 light and 4 chemistry values retained",
+      "command_and_movement": "Paired own command history plus 7 proprioception values retained",
+      "contact_onset": "All 8 contact values retained",
+      "gentle_contact_hold": "Same actuator and 10-native-step hold, contact/proprioception and original E/I cadence"
+    },
+    "full_raw_coordinates": 29,
+    "hidden_coordinates": 25,
+    "hidden_indices_omitted": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "physical_recording_evidence": "P sensor computation, adapter and SensorHistory.observe unchanged; source review confirms private sensor stream remains full, operator projection is copy-only. Root tests independently exercise manufactured pair equality.",
+    "new_execution_objects_constructed": 0,
+    "new_launch_authorities": 0,
+    "controller_calls": 0,
+    "world_steps": 0,
+    "scope": "Static contract/grid/identity compatibility only; no positive control or B1 executed, no snapshot deserialized, no hidden geometry inspected. Held checkpoint remains non-launchable and is not rewritten."
+  },
+  "regression": {
+    "suites": {
+      "worktree-suite": "204 passed in 149.41s",
+      "portable-suite": "204 passed in 150.31s"
+    },
+    "composition": {
+      "P_engineering": 59,
+      "original_apparatus": 24,
+      "previous_correction": 30,
+      "final_correction": 30,
+      "clock_correction": 33,
+      "B1_operator": 28
+    },
+    "pairs": 12,
+    "logs": 24
+  },
+  "prepared_controls_executed": false,
+  "B1_executed": false,
+  "new_launch_authority": false,
+  "launch_packet_regenerated": false,
+  "hidden_snapshots_decoded": false,
+  "hidden_state_disclosed": false
+}

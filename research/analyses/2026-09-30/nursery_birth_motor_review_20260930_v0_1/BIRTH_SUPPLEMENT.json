@@ -1,0 +1,147 @@
+{
+  "birth_near_source_counts": {
+    "0.5": 5,
+    "1": 12,
+    "2": 28
+  },
+  "source_bearing_front_hemisphere": 29,
+  "source_bearing_eight_bins": [
+    8,
+    7,
+    7,
+    7,
+    5,
+    10,
+    7,
+    9
+  ],
+  "nearest_source_counts": [
+    5,
+    13,
+    6,
+    10,
+    8,
+    6,
+    8,
+    4
+  ],
+  "swept_overlap_births": [
+    "FS-010",
+    "FS-032",
+    "FS-033",
+    "FS-034"
+  ],
+  "near_source_improvement": {
+    "median": 0.17481070211776828,
+    "maximum": 0.9626428436370311
+  },
+  "damaged_birth_table": [
+    {
+      "life_id": "FS-002",
+      "nearest_wall_body_gap": 0.3557473706134775,
+      "nearest_source_body_gap": 2.5993827737279243,
+      "mover_swept_body_gap": 8.144252629386523,
+      "mover_actual_body_gap": 8.144252629386523,
+      "later_damage": 0.0033378151683539172,
+      "later_max_excursion": 0.4366131779805646
+    },
+    {
+      "life_id": "FS-010",
+      "nearest_wall_body_gap": 6.517896806865999,
+      "nearest_source_body_gap": 3.088907129686353,
+      "mover_swept_body_gap": -0.24127293143324557,
+      "mover_actual_body_gap": 4.90752733257975,
+      "later_damage": 0.01692408689137445,
+      "later_max_excursion": 1.1834324867564188
+    },
+    {
+      "life_id": "FS-015",
+      "nearest_wall_body_gap": 4.73930291994648,
+      "nearest_source_body_gap": 1.4646147551622617,
+      "mover_swept_body_gap": 0.029489351126422036,
+      "mover_actual_body_gap": 5.050030669398491,
+      "later_damage": 0.007132234115457371,
+      "later_max_excursion": 0.3359768946792736
+    },
+    {
+      "life_id": "FS-017",
+      "nearest_wall_body_gap": 0.6826275263264092,
+      "nearest_source_body_gap": 1.423653177075126,
+      "mover_swept_body_gap": 3.473672384350494,
+      "mover_actual_body_gap": 10.008059628555406,
+      "later_damage": 0.001080874831531504,
+      "later_max_excursion": 0.6202558289069919
+    },
+    {
+      "life_id": "FS-032",
+      "nearest_wall_body_gap": 4.1698741764934875,
+      "nearest_source_body_gap": 0.7624963689838482,
+      "mover_swept_body_gap": -0.16375842861813983,
+      "mover_actual_body_gap": 6.269417584971864,
+      "later_damage": 0.004759824244276347,
+      "later_max_excursion": 0.8521155884823292
+    },
+    {
+      "life_id": "FS-033",
+      "nearest_wall_body_gap": 5.91110765355962,
+      "nearest_source_body_gap": 2.5004950309549057,
+      "mover_swept_body_gap": -0.21399107030074482,
+      "mover_actual_body_gap": 1.0620575292821826,
+      "later_damage": 0.00919267427352074,
+      "later_max_excursion": 1.182726154062556
+    },
+    {
+      "life_id": "FS-034",
+      "nearest_wall_body_gap": 4.3292100304649495,
+      "nearest_source_body_gap": 0.8419331767961027,
+      "mover_swept_body_gap": -0.32921003046494945,
+      "mover_actual_body_gap": 6.6011806077646895,
+      "later_damage": 0.00943260546191838,
+      "later_max_excursion": 0.944129742572374
+    },
+    {
+      "life_id": "FS-038",
+      "nearest_wall_body_gap": 0.2530778127161082,
+      "nearest_source_body_gap": 1.6599229482840383,
+      "mover_swept_body_gap": 8.265895716095017,
+      "mover_actual_body_gap": 9.14705587742604,
+      "later_damage": 0.0024910259581503724,
+      "later_max_excursion": 0.2969706474063157
+    },
+    {
+      "life_id": "FS-044",
+      "nearest_wall_body_gap": 0.7500233727541854,
+      "nearest_source_body_gap": 1.3832307089053586,
+      "mover_swept_body_gap": 7.749976627245815,
+      "mover_actual_body_gap": 7.749976627245815,
+      "later_damage": 0.002328471780721906,
+      "later_max_excursion": 0.5119509705459817
+    }
+  ],
+  "rejected_lives": [
+    "FS-024",
+    "FS-035",
+    "FS-037",
+    "FS-057"
+  ],
+  "rejection_count_descriptive_check": {
+    "expected_rejections_approx": 14.46941402037421,
+    "observed": 4,
+    "approx_probability_total_at_most_four": 0.0028347595291168706,
+    "meaning": "Exploratory check under ideal independent proposals; area variation across phases is below 0.02%. Not an accepted-position clustering test, no PRNG defect proved, no reroll."
+  },
+  "detached_convolution_check": "PASS: finite non-wrapping mask convolution equals direct sums at all manufactured grid points",
+  "finer_static_quadrature": {
+    "dx": 0.025,
+    "mean_safe_area": 291.09995833333335,
+    "area_range": [
+      291.09625,
+      291.10625
+    ],
+    "coverage_within_1": 0.4416161669401943,
+    "coverage_within_2": 0.8490944328392248,
+    "expected_births_source_gap_le05": 3.543001179954588,
+    "expected_births_source_gap_le1": 12.561853225079123,
+    "no_births_drawn": true
+  }
+}

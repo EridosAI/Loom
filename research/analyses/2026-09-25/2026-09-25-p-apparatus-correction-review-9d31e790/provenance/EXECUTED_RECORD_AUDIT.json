@@ -1,0 +1,64 @@
+{
+  "record_count": 8,
+  "all_manufactured": true,
+  "commissioning_receipts": 0,
+  "records": [
+    {
+      "path": "review-evidence\\test_final_boundary_resume_can0\\first\\manifest.json",
+      "case": "fixture-final-boundary",
+      "duration": 0.2,
+      "status": "administrative_pause",
+      "schema": 2
+    },
+    {
+      "path": "review-evidence\\test_final_boundary_resume_can0\\resumed\\manifest.json",
+      "case": "fixture-final-boundary",
+      "duration": 0.2,
+      "status": "administrative_pause",
+      "schema": 2
+    },
+    {
+      "path": "review-evidence\\test_boundary_resume_counts_an1\\continuous\\manifest.json",
+      "case": "fixture-corrected-boundary",
+      "duration": 0.2,
+      "status": "administrative_cutoff",
+      "schema": 2
+    },
+    {
+      "path": "review-evidence\\test_boundary_resume_counts_an1\\first\\manifest.json",
+      "case": "fixture-corrected-boundary",
+      "duration": 0.2,
+      "status": "administrative_pause",
+      "schema": 2
+    },
+    {
+      "path": "review-evidence\\test_boundary_resume_counts_an1\\resumed\\manifest.json",
+      "case": "fixture-corrected-boundary",
+      "duration": 0.2,
+      "status": "administrative_cutoff",
+      "schema": 2
+    },
+    {
+      "path": "review-evidence\\test_boundary_resume_counts_an0\\continuous\\manifest.json",
+      "case": "fixture-corrected-boundary",
+      "duration": 0.2,
+      "status": "administrative_cutoff",
+      "schema": 2
+    },
+    {
+      "path": "review-evidence\\test_boundary_resume_counts_an0\\first\\manifest.json",
+      "case": "fixture-corrected-boundary",
+      "duration": 0.2,
+      "status": "administrative_pause",
+      "schema": 2
+    },
+    {
+      "path": "review-evidence\\test_boundary_resume_counts_an0\\resumed\\manifest.json",
+      "case": "fixture-corrected-boundary",
+      "duration": 0.2,
+      "status": "administrative_cutoff",
+      "schema": 2
+    }
+  ],
+  "claim_limit": "Only enumerated receipt-bearing artifacts; no inference about unrecorded historical actions."
+}

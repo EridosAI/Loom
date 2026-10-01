@@ -1,0 +1,51 @@
+{
+  "bytes": 83421895,
+  "sha256": "7e33da1b05646c5af352a4114e99082c52b51b2b5966911f30816fb2911091da",
+  "inventory_entries": 152,
+  "members": 153,
+  "all_hashes_match": true,
+  "tracked_files": 51,
+  "working_package_match": true,
+  "committed_crlf_only_variants": [
+    "developmental_ecology/configuration.json"
+  ],
+  "patch_sha256": "de8fd97320af569df91d629183a61649e8ae16c082c4fcc6610fc78c472c1a21",
+  "patch_equals_git_diff": true,
+  "old_zip_identity": {
+    "bytes": 16832616,
+    "sha256": "a376ad876a164e96cc0b0b1f4f9d250fc8bb70bc4b585bca24092fdee3ada57f"
+  },
+  "full_attempt003_evidence_included": true,
+  "receipt": {
+    "status": "HOLD FOR INDEPENDENT FIDELITY REVIEW",
+    "old_checkpoint": "d5f7efbe67193f215e52d95ca912db131a79f31c",
+    "new_checkpoint": "f7eb6f27c661e3db193a4225b56a825d7e41739d",
+    "branch": "build/p-engineering-baseline-20260921-01a0c405",
+    "worktree": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405",
+    "code": {
+      "sha256": "af53b321220001166b73bc420b67c7526cddfe4198b8bf34ef69f7406082d868",
+      "files": {
+        "__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+        "chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+        "diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+        "engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+        "geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+        "inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+        "neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+        "physics.py": "2a2e53bdfb3964488a446f1549682bc00cb4bc0403ef4a95f1adc245a4e58f63",
+        "prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+        "reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+        "records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+        "schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+        "smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+      }
+    },
+    "configuration_sha256": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+    "archive_tree": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "created_at": "2026-09-23T04:36:16.396587+00:00",
+    "prehistory_regenerated": false,
+    "no_remote_operation": true,
+    "smoke_attempt": 3,
+    "scope": "R1–R3 engineering only; no commissioning fitness declaration"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "case": "PC-CONTACT",
+  "recorded_utc": "2026-09-27T01:26:56.419086+00:00",
+  "stop_cause": "operator_withdrawal",
+  "runtime_status": "administrative_pause",
+  "simulation_seconds": 2.299999999999995,
+  "native_steps": 230,
+  "commands": 23,
+  "records": {
+    "sensor": 231,
+    "operator": 49,
+    "controller": 23,
+    "native": 230,
+    "events": 232,
+    "diagnostics": 230
+  },
+  "first_recorded_positive_contact_event": 0.8984177401672448,
+  "first_native_contact_sample": 0.9000000000000006,
+  "impact_event_times": [
+    0.8984177401672448
+  ],
+  "positive_duration_support_intervals": [
+    [
+      0.8984177401672448,
+      2.299999999999995
+    ]
+  ],
+  "contact_colliders": [
+    "wall-0"
+  ],
+  "minimum_wall_clearance": 4.933797814743457e-11,
+  "geometry_tolerance": 1e-10,
+  "total_impact_impulse": 0.2680042263875784,
+  "total_support_impulse": 0.6944027059180403,
+  "impact_damage": 0.005360084527751568,
+  "total_damage": 0.012240227346948596,
+  "expenditure": 0.0049250000000000006,
+  "starting_EI": [
+    0.7,
+    1.0
+  ],
+  "final_EI": [
+    0.6950749999999933,
+    0.9877597726530513
+  ],
+  "initial_position": [
+    0.65,
+    6.0
+  ],
+  "final_position": [
+    0.500000000049338,
+    6.016377941341108
+  ],
+  "final_orientation": 3.097223551504186,
+  "user_observation_file": "PC-CONTACT.USER_CONTACT_OBSERVATION.json",
+  "evidence_scope": "All physical findings concern this completed disclosed PC-CONTACT record only.",
+  "replay_scope": "All native recorded body poses retained; prescribed mover geometry evaluated algebraically at those sample times from recorded config/phase. Playback selects records only, no interpolation, simulation or command path.",
+  "source_receipt_sha256": "bcba4a6c4da850638cb619648b09c4704fc384993632fe27b5c8929e428cd7fd",
+  "all_recorded_artifact_hashes_verified": true,
+  "additional_simulation_steps": 0,
+  "controller_calls": 0,
+  "production_code_changes": 0,
+  "B1_state_accessed": false,
+  "exposure_note": "Jason requested post-case plan-view replay before PC-HOLD. Record this additional practice/evaluator feedback in later interpretation; do not claim an unassisted sequence."
+}

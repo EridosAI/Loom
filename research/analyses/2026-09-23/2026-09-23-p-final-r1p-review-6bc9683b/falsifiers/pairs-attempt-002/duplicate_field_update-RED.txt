@@ -1,0 +1,28 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____ test_oblique_event_subdivision_keeps_native_noise_and_field_cadence _____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001EBFF8C7CE0>
+
+    def test_oblique_event_subdivision_keeps_native_noise_and_field_cadence(monkeypatch):
+        import loom_p.engine as engine_module
+        c,b,s=fixture(.01,1e-5,1.); calls=[]
+        e=Engine.__new__(Engine); e.c=c; e.body=b; e.stocks=s; e.time=0.; e.phase=0.
+        e.raw=[np.zeros(d) for d in (10,4,8,7)]; e.fields=np.zeros((2,1,1))
+        def native(raw,dt,refresh_noise):
+            calls.append(('native_and_noise',dt,refresh_noise)); return np.ones(2)
+        def fields(old,stocks,t,phase,dt,position):
+            calls.append(('field',dt)); return old
+        e.organism=SimpleNamespace(native=native); e.solver=SimpleNamespace(step=fields)
+        monkeypatch.setattr(engine_module,'transduce',lambda *args:e.raw)
+        assert e._coupled(.01,True) is None
+>       assert calls==[('native_and_noise',.01,True),('field',.01)]
+E       AssertionError: assert [('native_and...field', 0.01)] == [('native_and...field', 0.01)]
+E         
+E         Left contains one more item: ('field', 0.01)
+E         Use -v to get more diff
+
+tests\test_r1p_oblique.py:87: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_r1p_oblique.py::test_oblique_event_subdivision_keeps_native_noise_and_field_cadence
+1 failed in 0.15s

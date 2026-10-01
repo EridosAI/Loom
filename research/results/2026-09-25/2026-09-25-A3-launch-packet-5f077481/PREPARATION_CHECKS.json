@@ -1,0 +1,41 @@
+{
+  "scope": "Static identity/saved-state/geometry and one instantaneous time-zero transduction only; no A3 dynamics or commands",
+  "verified_nested_payload_counts": {
+    "A2_result": 60,
+    "A2_launch": 75,
+    "A1_result": 49,
+    "A1_launch": 65
+  },
+  "snapshot_roundtrip_valid": true,
+  "healthy_EI": [
+    0.7,
+    1.0
+  ],
+  "cache_fields_exact_match": true,
+  "cache_phase_receipt_and_law_valid": true,
+  "inactive_organism_and_RNG_unchanged": true,
+  "only_selected_fixture_attributes_changed": true,
+  "live_runtime_controller_dispatch_valid": true,
+  "complete_manifest_execution_structure_valid": true,
+  "null_grant_rejected": "commissioning execution is not authorized",
+  "deadlines_on_0_1_and_0_2_grids": true,
+  "nominal_geometric_segments_nonpenetrating": true,
+  "prospective_execution_destination_absent": true,
+  "Engine_constructor_calls": 0,
+  "Run_constructor_calls": 0,
+  "computed_controller_commands": 0,
+  "world_steps": 0,
+  "field_steps": 0,
+  "neural_steps": 0,
+  "simulation_RNG_draws": 0,
+  "new_prehistory_steps": 0,
+  "replays": 0,
+  "allowed_snapshot_and_static_transduction_calls": {
+    "load_snapshot": 2,
+    "transduce": 1,
+    "save_snapshot": 1
+  },
+  "blocked_dynamic_calls": [],
+  "preparation_limitation": "No controller competence, actual wall damage, repair, energy arrival or performance result has been tested. Production validate_manifest/history check remains a launch preflight after separate approval.",
+  "preparation_wall_seconds": 2.0065736999968067
+}

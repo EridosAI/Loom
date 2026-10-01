@@ -1,0 +1,125 @@
+[
+  {
+    "case": "birth_30s",
+    "native": 3000,
+    "different_neural_hashes": 0,
+    "different_raw_rows": 0,
+    "max_absolute_differences": {
+      "reserves": 0.0,
+      "position": 0.0,
+      "angle": 0.0,
+      "velocity": 0.0,
+      "omega": 0.0,
+      "commands": 0.0,
+      "stocks": 0.0,
+      "contact_rates": 0.0
+    },
+    "wave_rows_equal": true,
+    "old_records": {
+      "native": 3000,
+      "events": 3000,
+      "wave": 150
+    },
+    "new_records": {
+      "native": 3000,
+      "events": 3000,
+      "wave": 150
+    },
+    "matched_identity_fields": [
+      "configuration",
+      "configuration_sha256",
+      "seed",
+      "life",
+      "simulated_seconds_cap",
+      "fixture"
+    ],
+    "initial_state_sha256_equal": true,
+    "old_initial_wrapper_sha256": "008ee3223dd0d9dccf2cd7d5e46da21cbafc3f8f7ccfe2842e3c44932b40d6b9",
+    "new_initial_wrapper_sha256": "c695c172e2b1718631763221826f6e382adedc7dd7c7ef01d45e606f00071796",
+    "resume_identical": null,
+    "observer_noninterference": null,
+    "comparison_trajectory_seconds": null
+  },
+  {
+    "case": "nonzero_resume_1s",
+    "native": 100,
+    "different_neural_hashes": 0,
+    "different_raw_rows": 0,
+    "max_absolute_differences": {
+      "reserves": 0.0,
+      "position": 0.0,
+      "angle": 0.0,
+      "velocity": 0.0,
+      "omega": 0.0,
+      "commands": 0.0,
+      "stocks": 0.0,
+      "contact_rates": 0.0
+    },
+    "wave_rows_equal": true,
+    "old_records": {
+      "native": 100,
+      "events": 100,
+      "wave": 5
+    },
+    "new_records": {
+      "native": 100,
+      "events": 100,
+      "wave": 5
+    },
+    "matched_identity_fields": [
+      "configuration",
+      "configuration_sha256",
+      "seed",
+      "life",
+      "simulated_seconds_cap",
+      "fixture"
+    ],
+    "initial_state_sha256_equal": true,
+    "old_initial_wrapper_sha256": "b5dee0808345b08661d66567968e5889b74f62147e9f7b62fe3f63755c5b5d47",
+    "new_initial_wrapper_sha256": "37919e0610287ebb469fab8130dbb663d496f7e94555cb10e21dfadfb0a832bd",
+    "resume_identical": true,
+    "observer_noninterference": true,
+    "comparison_trajectory_seconds": 0.93
+  },
+  {
+    "case": "contact_ui_1s",
+    "native": 100,
+    "different_neural_hashes": 0,
+    "different_raw_rows": 0,
+    "max_absolute_differences": {
+      "reserves": 0.0,
+      "position": 0.0,
+      "angle": 0.0,
+      "velocity": 0.0,
+      "omega": 0.0,
+      "commands": 0.0,
+      "stocks": 0.0,
+      "contact_rates": 0.0
+    },
+    "wave_rows_equal": true,
+    "old_records": {
+      "native": 100,
+      "events": 101,
+      "wave": 5
+    },
+    "new_records": {
+      "native": 100,
+      "events": 102,
+      "wave": 5
+    },
+    "matched_identity_fields": [
+      "configuration",
+      "configuration_sha256",
+      "seed",
+      "life",
+      "simulated_seconds_cap",
+      "fixture"
+    ],
+    "initial_state_sha256_equal": true,
+    "old_initial_wrapper_sha256": "eabc332aaa0caba8f941e2e45b659421f0dfc1ed7ea0cf687bd6dfe88078c926",
+    "new_initial_wrapper_sha256": "828ff37b0660b5103ab060155fd58ea33ac67174638d065c8c0e02e58176428c",
+    "resume_identical": null,
+    "observer_noninterference": null,
+    "comparison_trajectory_seconds": null
+  }
+]

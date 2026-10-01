@@ -1,0 +1,24 @@
+{
+  "head": "9d31e7902658b15762052a2a6a3d161d64338524",
+  "parent": "05abf60401d08f38750bca589b1c040e10513d7b",
+  "P": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "branch": "build/p-commissioning-apparatus-20260924-01a0c405",
+  "status": "",
+  "diff": "A\tdevelopmental_ecology/loom_commissioning/authority.py\nM\tdevelopmental_ecology/loom_commissioning/contract.py\nM\tdevelopmental_ecology/loom_commissioning/controllers.py\nM\tdevelopmental_ecology/loom_commissioning/runner.py\nA\tdevelopmental_ecology/tests_apparatus/fixtures/review-boundary-input.json\nA\tdevelopmental_ecology/tests_apparatus/test_corrections.py\nA\tdevelopmental_ecology/verify_corrections.py\nA\tdocs/developmental_ecology/p_apparatus_correction_20260924/CORRECTION_REPORT.md\nA\tdocs/developmental_ecology/p_apparatus_correction_20260924/LAW_CODE_TEST_MAP.md\n",
+  "unchanged": {
+    "developmental_ecology/loom_p": true,
+    "developmental_ecology/configuration.json": true,
+    "developmental_ecology/tests": true,
+    "EXP1-21": true,
+    "developmental_ecology/tests_apparatus/test_apparatus.py": true,
+    "developmental_ecology/verify_apparatus.py": true
+  },
+  "EXP1_21_trees": {
+    "6bc9683b54e4fa80136fe8534d7713e2a250a95f": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "05abf60401d08f38750bca589b1c040e10513d7b": "f1b884a7ada4c806786d1530d76d446aac5d37b1",
+    "9d31e7902658b15762052a2a6a3d161d64338524": "f1b884a7ada4c806786d1530d76d446aac5d37b1"
+  },
+  "patch_sha256": "20e5bc0f285a5bac6e7c46443e117b4bfc54c06695c5d6b2e4a98ce38fd19ba1",
+  "patch_bytes": 58401,
+  "prior_checkpoints_ancestors": true
+}

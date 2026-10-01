@@ -1,0 +1,65 @@
+[
+  {
+    "mode": "external_controller",
+    "identical_joined_streams": {
+      "native": true,
+      "wave": true,
+      "events": true,
+      "controller": true,
+      "diagnostics": true
+    },
+    "pause_time": 0.07,
+    "pause_index": 7,
+    "pause_state": "c0251e7d3509e28202a03f83f048cb6074bbaee6d270f514a1d14fee06963621",
+    "resumed_initial_equal": true,
+    "final_equal": true,
+    "final_state": "4781752d53f7f166314afc59d266ec0981fdcd0965469b7fec47c8edc93a7689",
+    "hold_remaining": 3,
+    "parent_manifest_hash": {
+      "manifest_sha256": "de3bfb26c9f5f4c57f7e65de645dc9c7044c37ee55dbf9bd87b9b08817939473"
+    },
+    "expected_parent_manifest_hash": "de3bfb26c9f5f4c57f7e65de645dc9c7044c37ee55dbf9bd87b9b08817939473"
+  },
+  {
+    "mode": "FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC",
+    "identical_joined_streams": {
+      "native": true,
+      "wave": true,
+      "events": true,
+      "controller": true,
+      "diagnostics": true
+    },
+    "pause_time": 0.07,
+    "pause_index": 7,
+    "pause_state": "d1b71c59b11c005db3fff98f1e5da52cafa574e630009c807fd2a6599d0b6115",
+    "resumed_initial_equal": true,
+    "final_equal": true,
+    "final_state": "0f9ad732f0774cf74bf250042dd0002094a0255f37fbeabea0454541cfcaff9a",
+    "hold_remaining": 0,
+    "parent_manifest_hash": {
+      "manifest_sha256": "79ea1fb6563754aad794de6ef9f8fcacf5669cfd82931a30ad4291d626d3da4b"
+    },
+    "expected_parent_manifest_hash": "79ea1fb6563754aad794de6ef9f8fcacf5669cfd82931a30ad4291d626d3da4b"
+  },
+  {
+    "mode": "intact_P",
+    "identical_joined_streams": {
+      "native": true,
+      "wave": true,
+      "events": true,
+      "controller": true,
+      "diagnostics": true
+    },
+    "pause_time": 0.07,
+    "pause_index": 7,
+    "pause_state": "ddaba7c79b0789467ce5d29bde8e5e0dece4261ac9b3b8962548443bf7076b34",
+    "resumed_initial_equal": true,
+    "final_equal": true,
+    "final_state": "d8a58accd4df24e96fe8ee1758950825ed883e7d70c39b49e7d0d933a9722785",
+    "hold_remaining": 0,
+    "parent_manifest_hash": {
+      "manifest_sha256": "d84629fe155402d3af526e789a2e567fb39115fa6c0a3522be38b102d91fd56a"
+    },
+    "expected_parent_manifest_hash": "d84629fe155402d3af526e789a2e567fb39115fa6c0a3522be38b102d91fd56a"
+  }
+]

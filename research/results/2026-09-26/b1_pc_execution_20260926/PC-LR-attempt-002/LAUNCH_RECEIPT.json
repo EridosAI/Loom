@@ -1,0 +1,22 @@
+{
+  "case": "PC-LR",
+  "attempt": 2,
+  "authority_sha256": "a80a9098b7eed714f824eccd841d17e29e94cc607489ddf7a5390f1dc38c493a",
+  "apparatus": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "service_session_id": 58353,
+  "url": "http://127.0.0.1:51692/",
+  "observed_utc": "2026-09-27T00:27:29.4189674+00:00",
+  "service_invocations_this_attempt": 1,
+  "initial_ui_state": "PREPARED / NOT STARTED",
+  "initial_displayed_simulation_seconds": 0,
+  "initial_displayed_energy": 0.7,
+  "initial_displayed_integrity": 1.0,
+  "initial_displayed_command_history_empty": true,
+  "assistant_start_actions": 0,
+  "assistant_actuator_commands": 0,
+  "B1_state_accessed": false,
+  "prior_attempt_preserved": true,
+  "wall_allowance_seconds": 1200,
+  "duration_seconds": 4,
+  "notes": "Separate fresh attempt explicitly authorized by Jason; no execution semantics changed. This observation timestamp is not the exact runtime timer start."
+}

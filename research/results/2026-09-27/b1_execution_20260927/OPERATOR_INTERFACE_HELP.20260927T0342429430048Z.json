@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-09-27T03:42:42.9458208+00:00",
+  "case": "B1-FULL-RAW",
+  "user_question_verbatim": "wait there is no reading here for energy or integrity? I won't have any sense of that.",
+  "assistance": "General interface-location explanation: actual energy and integrity appear below Last complete simulated time near the top. Values update at the existing 0.2-second handoff and are held between samples. No interpretation, direction or actuator suggestion.",
+  "permitted_display_observation": {
+    "lifecycle": "paused",
+    "simulated_time": 0.0,
+    "actual_EI": [
+      0.7,
+      1.0
+    ],
+    "EI_sample_time": 0.0,
+    "command_count": 0
+  },
+  "assistant_actions": "Read-only permitted /session endpoint; no start, command or end.",
+  "private_evaluator_access": false
+}

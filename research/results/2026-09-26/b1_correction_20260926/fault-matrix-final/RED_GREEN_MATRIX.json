@@ -1,0 +1,234 @@
+{
+  "manufactured_only": true,
+  "cases_executed": 0,
+  "rows": [
+    {
+      "fault": "A",
+      "test": "test_A_hidden_authority",
+      "expected_assertion": "old rejection",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 1.0177145000197925,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 0.9855531000066549,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "B",
+      "test": "test_B_payload_canary",
+      "expected_assertion": "CHEMISTRY PAYLOAD LEAK",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 0.7835133000044152,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 0.6871656000148505,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "C",
+      "test": "test_C_DOM_and_UI",
+      "expected_assertion": "CSS-ONLY MASK EXPORTED CHEMISTRY",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 0.7281031999737024,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 0.6927052999963053,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "D",
+      "test": "test_D_raw_record_not_mutated",
+      "expected_assertion": "DISPLAY DEPRIVATION ALTERED PHYSICAL RAW RECORD",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 0.7491161999641918,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 0.6833121000090614,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "E",
+      "test": "test_paused_inertness[E]",
+      "expected_assertion": "PAUSED CLOCK/RNG/EXPENDITURE BREACH E",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 1.261259799997788,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 1.245491800014861,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "F",
+      "test": "test_paused_inertness[F]",
+      "expected_assertion": "PAUSED CLOCK/RNG/EXPENDITURE BREACH F",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 1.2618958000093699,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 1.24917100003222,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "G",
+      "test": "test_paused_inertness[G]",
+      "expected_assertion": "PAUSED CLOCK/RNG/EXPENDITURE BREACH G",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 1.2729706999962218,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 1.2976821000338532,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "H",
+      "test": "test_H_duplicate_token",
+      "expected_assertion": "DUPLICATE CREATED EXTRA HOLD",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 3.6253894999972545,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 2.3482700000167824,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "I",
+      "test": "test_I_running_overlap",
+      "expected_assertion": "OVERLAPPING EXECUTIONS ACCEPTED",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 1.2417367000016384,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 1.2107343000243418,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "J",
+      "test": "test_J_ended_irreversible",
+      "expected_assertion": "ENDED ADVANCED WORLD",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 1.2980626000207849,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 1.3682265999959782,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "K",
+      "test": "test_K_refresh_reconnect_inert",
+      "expected_assertion": "REFRESH/RECONNECT ADVANCED WORLD",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 1.9019925000029616,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 1.7465238000149839,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "fault": "L",
+      "test": "test_L_full_raw_preserved",
+      "expected_assertion": "FULL RAW LOST CHEMISTRY",
+      "runs": [
+        {
+          "condition": "RED",
+          "returncode": 1,
+          "seconds": 0.7394367000088096,
+          "verified": true
+        },
+        {
+          "condition": "GREEN",
+          "returncode": 0,
+          "seconds": 0.6845790999941528,
+          "verified": true
+        }
+      ]
+    }
+  ]
+}

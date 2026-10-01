@@ -1,0 +1,200 @@
+{
+  "checkpoint": "9d31e7902658b15762052a2a6a3d161d64338524",
+  "source": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\portable\\developmental_ecology",
+  "expectation": "old-RED",
+  "scope": "Exact prior manufactured alias fixture; synthetic grant validation only; no commissioning execution.",
+  "command": [
+    "exports\\2026-09-25-p-final-mechanical-closure-5f077481\\controller\\reproduce_controller_closure.py",
+    "--source",
+    "exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\portable\\developmental_ecology",
+    "--checkpoint",
+    "9d31e7902658b15762052a2a6a3d161d64338524",
+    "--output",
+    "exports\\2026-09-25-p-final-mechanical-closure-5f077481\\controller\\old-RED-001",
+    "--expect",
+    "old-RED"
+  ],
+  "source_identity": [
+    {
+      "path": "configuration.json",
+      "raw_sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+      "git_blob_sha256": "c4554dc5eb2f798d01004a85b73753744e5da42ceec177a9b8f571acafe1c4a5",
+      "raw_equal": false,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_commissioning/adapter.py",
+      "raw_sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+      "git_blob_sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_commissioning/authority.py",
+      "raw_sha256": "402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59",
+      "git_blob_sha256": "402f413f731f3b5a08a42038bcfd4fbc02105a45c987f8eb8e61efa5b9173a59",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_commissioning/controllers.py",
+      "raw_sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "git_blob_sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_commissioning/runner.py",
+      "raw_sha256": "a1c2764f0424b815b24e5c49496ba55eb9775757314fc88f6634dd41e3d3ba20",
+      "git_blob_sha256": "a1c2764f0424b815b24e5c49496ba55eb9775757314fc88f6634dd41e3d3ba20",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/__init__.py",
+      "raw_sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+      "git_blob_sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/chemistry.py",
+      "raw_sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "git_blob_sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/diagnostics.py",
+      "raw_sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+      "git_blob_sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/engine.py",
+      "raw_sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "git_blob_sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/geometry.py",
+      "raw_sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "git_blob_sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/inspector.py",
+      "raw_sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+      "git_blob_sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/neural.py",
+      "raw_sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "git_blob_sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/physics.py",
+      "raw_sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+      "git_blob_sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/prehistory.py",
+      "raw_sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+      "git_blob_sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/reconstruction.py",
+      "raw_sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+      "git_blob_sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/records.py",
+      "raw_sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+      "git_blob_sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/schema.py",
+      "raw_sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "git_blob_sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "loom_p/smokes.py",
+      "raw_sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b",
+      "git_blob_sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "tests_apparatus/test_apparatus.py",
+      "raw_sha256": "8cc322b9ad3dc62fa036a351306e66299db94c7c99a51c2b2beb4e8bd35d178e",
+      "git_blob_sha256": "8cc322b9ad3dc62fa036a351306e66299db94c7c99a51c2b2beb4e8bd35d178e",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    },
+    {
+      "path": "tests_apparatus/test_corrections.py",
+      "raw_sha256": "554b65f2b181ea4a40bef2b169bf1fa9905488a16af3bc13e6c1629565eae6ec",
+      "git_blob_sha256": "554b65f2b181ea4a40bef2b169bf1fa9905488a16af3bc13e6c1629565eae6ec",
+      "raw_equal": true,
+      "newline_normalized_equal": true
+    }
+  ],
+  "imported_modules": {
+    "loom_commissioning.authority": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\portable\\developmental_ecology\\loom_commissioning\\authority.py",
+    "loom_commissioning.controllers": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\portable\\developmental_ecology\\loom_commissioning\\controllers.py",
+    "loom_commissioning.runner": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-25-p-apparatus-correction-review-9d31e790\\portable\\developmental_ecology\\loom_commissioning\\runner.py"
+  },
+  "exact_alias": {
+    "expected_command": [
+      0.717668244562803,
+      0.237668244562803
+    ],
+    "body_command": [
+      -0.5,
+      0.5
+    ],
+    "native_index": 1,
+    "time": 0.01,
+    "rejection": null,
+    "alternate_calls": 1,
+    "engine_unchanged": false,
+    "own_commands": [
+      {
+        "time": 0.0,
+        "command": [
+          -0.5,
+          0.5
+        ]
+      }
+    ],
+    "approved_identity_and_request_unchanged": true,
+    "replay_accepted": {
+      "class": "AV",
+      "native_records": 1,
+      "wave_records": 0,
+      "events": 1,
+      "replayed": true,
+      "maximum_accounting_residual": 2.000014195056854e-17,
+      "mode": "external_controller",
+      "status": "administrative_pause"
+    }
+  },
+  "all_expected_assertions_passed": true
+}

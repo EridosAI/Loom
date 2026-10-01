@@ -1,0 +1,56 @@
+{
+  "ended_utc": "2026-09-29T11:02:58.328951+00:00",
+  "checkpoint": "a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad",
+  "authorized_order": [
+    "B1-MINIMAL-S1-FULL",
+    "B1-MINIMAL-S1-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S1-SENSORY-FREE",
+    "B1-MINIMAL-S2-FULL",
+    "B1-MINIMAL-S2-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S2-SENSORY-FREE",
+    "B1-MINIMAL-S3-FULL",
+    "B1-MINIMAL-S3-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S3-SENSORY-FREE"
+  ],
+  "attempted": [
+    "B1-MINIMAL-S1-FULL"
+  ],
+  "outcomes": [
+    {
+      "case_id": "B1-MINIMAL-S1-FULL",
+      "status": "administrative_pause",
+      "complete": true,
+      "stop_cause": "wall_time_limit",
+      "native_steps": 2979,
+      "final_time": 29.790000000001857,
+      "wall_seconds": 600.9738899000222,
+      "controller_records": 298,
+      "receipt_sha256": "84fc5325b49ccf047c5b4c8699127bee26eb7caf79b25741928fea3be06aea27"
+    }
+  ],
+  "not_attempted": [
+    "B1-MINIMAL-S1-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S1-SENSORY-FREE",
+    "B1-MINIMAL-S2-FULL",
+    "B1-MINIMAL-S2-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S2-SENSORY-FREE",
+    "B1-MINIMAL-S3-FULL",
+    "B1-MINIMAL-S3-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S3-SENSORY-FREE"
+  ],
+  "batch_stop": {
+    "category": "declared_batch_stop",
+    "case": "B1-MINIMAL-S1-FULL",
+    "status": "administrative_pause",
+    "cause": "wall_time_limit"
+  },
+  "aggregate_execution_wall_seconds": 601.1839588000439,
+  "resources": {
+    "combined_new_bytes": 99911675,
+    "free_bytes": 634188599296
+  },
+  "no_retry_or_continuation": true,
+  "no_new_prehistory": true,
+  "old_sealed_human_B1_material_accessed": false,
+  "production_code_modified": false
+}

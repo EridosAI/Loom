@@ -1,0 +1,62 @@
+{
+  "profile": {
+    "exclusive_seconds": {
+      "other_harness": 0.025476401089690626,
+      "validation_accounting": 0.03221370268147439,
+      "hashing_binding": 0.17075910104904324,
+      "filesystem_io": 0.08308120351284742,
+      "serialization": 3.5970448057632893,
+      "state_copy": 0.25627770682331175,
+      "body_contact_viability": 0.018158494029194117,
+      "compression": 0.2512924999464303,
+      "snapshot_checkpoint": 0.000574499717913568,
+      "recorder_writes": 0.0015438998816534877,
+      "P_neural": 0.027392199379391968,
+      "chemical_field": 0.03247869771439582,
+      "sensor_computation": 0.032122604083269835,
+      "observer_diagnostics": 0.016992404591292143,
+      "detached_D5": 0.0006121002370491624
+    },
+    "callback_seconds": 5.337442079442553,
+    "profiled_wall_seconds": 9.88347000000067,
+    "events": 10936761,
+    "warning": "Context-attributed measured execution excludes callback time; profiling perturbs throughput. Unprofiled runs determine speed."
+  },
+  "wall_seconds": 9.883421800099313,
+  "setup_wall_seconds": 0.16565400001127273,
+  "blocks": [
+    {
+      "ending_native_index": 10,
+      "simulated_seconds": 0.09999999999999999,
+      "wall_seconds": 4.41697669995483
+    },
+    {
+      "ending_native_index": 20,
+      "simulated_seconds": 0.10000000000000005,
+      "wall_seconds": 5.300776000018232
+    }
+  ],
+  "simulated_seconds": 0.20000000000000004,
+  "native_steps": 20,
+  "waves": 1,
+  "memory": {
+    "peak_working_set_bytes": 90308608,
+    "working_set_bytes": 70885376,
+    "peak_pagefile_bytes": 1650429952
+  },
+  "bytes_by_file": {
+    "controller.jsonl.gz": 37,
+    "diagnostics.jsonl.gz": 462843,
+    "events.jsonl.gz": 1967,
+    "final.restart.json.gz": 773709,
+    "initial.restart.json.gz": 128569,
+    "manifest.json": 7878,
+    "native.jsonl.gz": 357810,
+    "scientific_observations.jsonl.gz": 50,
+    "sensor-display.json": 11963,
+    "sensor.jsonl.gz": 5091,
+    "wave.jsonl.gz": 28801
+  },
+  "no_scientific_outcome_analysis": true,
+  "measurement_label": "old-profile-corrected-attribution"
+}

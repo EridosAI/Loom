@@ -1,0 +1,16 @@
+{
+  "cwd": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97",
+  "python": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+  "environment": {"PYTHONDONTWRITEBYTECODE": "1"},
+  "script": "exports\\2026-09-26-p-clock-final-review-68db2c58\\scheduling\\check_schedule.py",
+  "script_sha256": "292e1ab12c645c6bdc976e205952c1b86d2b78d8b2eb4a635df31a1a6224bc66",
+  "runs": [
+    {"python_options":["-B","-X","utf8"],"script_argument":"old-a","exit":1,"log":"old-a.log","results":"old-a-results.json","outcome":"Intended OLD A RED assertion; actual old pending clock rejection at26950 reproduced."},
+    {"python_options":["-B","-X","utf8"],"script_argument":"old-b","exit":1,"log":"old-b.log","results":"old-b-results.json","outcome":"Intended OLD B RED assertion; exact old stage-only source loop and crossing guard independently reject270s transition."},
+    {"python_options":["-B","-X","utf8"],"script_argument":"new","exit":0,"log":"new.log","results":"new-results.json","outcome":"Both failure sites corrected; all63001 actualschedule indices and6300 holds pass integeroracle; meaningful wrongclocks rejected."}
+  ],
+  "inert_schedule":"STATIC_A5_HOLDS.json",
+  "no_world_or_command_computation":true,
+  "no_new_authority":true,
+  "writes_confined_to_this_new_review_directory":true
+}

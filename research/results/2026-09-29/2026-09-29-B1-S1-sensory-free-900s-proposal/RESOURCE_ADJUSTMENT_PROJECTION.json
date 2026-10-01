@@ -1,0 +1,39 @@
+{
+  "case_id": "B1-MINIMAL-S1-SENSORY-FREE",
+  "maximum_cases": 1,
+  "maximum_attempts": 1,
+  "simulated_seconds": 30,
+  "native_steps": 3000,
+  "command_holds": 300,
+  "wall_seconds_before": 600,
+  "wall_seconds_proposed": 900,
+  "reference_projections_seconds": {
+    "A2": 352.67211736670566,
+    "A3": 358.0332480572267,
+    "A5": 367.3795960240615
+  },
+  "S1_FULL_observed_wall_seconds": 600.9738899000222,
+  "S1_FULL_observed_simulated_seconds": 29.790000000001857,
+  "S1_FULL_scaled_30s_wall_proxy_seconds": 605.210362437044,
+  "primary_planning_bytes_unchanged": 993906579,
+  "with_one_complete_archival_copy_bytes": 1987813158,
+  "S1_FULL_observed_artifact_bytes": 92075074,
+  "S1_FULL_scaled_30s_artifact_proxy_bytes": 92724143.00100127,
+  "S1_FULL_observed_uncompressed_stream_bytes": 282200122,
+  "S1_FULL_scaled_30s_uncompressed_proxy_bytes": 284189448.136941,
+  "stream_cap_bytes_unchanged": 1500000000,
+  "combined_new_artifact_cap_bytes_unchanged": 20000000000,
+  "stop_request_bytes_unchanged": 19000000000,
+  "flush_reserve_bytes_unchanged": 1000000000,
+  "minimum_free_bytes_unchanged": 20000000000,
+  "read_only_reporting_seconds_unchanged": 1800,
+  "free_disk_at_preparation_bytes": 634088980480,
+  "limitations": [
+    "Historical A2/A3/A5 are base-throughput references, not measurements of this sensory-free case.",
+    "S1-FULL is a recent apparatus proxy, not an executed sensory-free timing test. Different inputs/contact paths can change cost.",
+    "900 seconds is an administrative ceiling, not a completion guarantee. Native-step and flush overshoot remain unchanged.",
+    "No historical unused case/batch allowance is available for transfer; no automatic continuation or retry."
+  ],
+  "zero_new_simulated_seconds": true,
+  "zero_new_prehistory": true
+}

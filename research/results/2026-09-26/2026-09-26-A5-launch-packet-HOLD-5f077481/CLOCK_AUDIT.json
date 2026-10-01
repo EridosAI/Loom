@@ -1,0 +1,146 @@
+{
+  "method": "Scalar additions/comparisons under pinned Python; no Loom imports or production validator invocation. Conditional on uninterrupted nonterminal full native steps.",
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "dt": 0.01,
+  "absolute_decision_tolerance": 1e-10,
+  "first_native_exceedance": {
+    "native_index": 26941,
+    "accumulated_time": 269.4099999999,
+    "index_derived_time": 269.41,
+    "difference": -1.000444171950221e-10,
+    "predicate_passes": false
+  },
+  "first_decision_exceedance": {
+    "native_index": 26950,
+    "accumulated_time": 269.4999999998999,
+    "index_derived_time": 269.5,
+    "difference": -1.0010126061388291e-10,
+    "predicate_passes": false
+  },
+  "checkpoints": {
+    "9000": {
+      "native_index": 9000,
+      "accumulated_time": 90.00000000000914,
+      "index_derived_time": 90.0,
+      "difference": 9.137579581874888e-12,
+      "predicate_passes": true
+    },
+    "12000": {
+      "native_index": 12000,
+      "accumulated_time": 120.00000000002449,
+      "index_derived_time": 120.0,
+      "difference": 2.4485302674293052e-11,
+      "predicate_passes": true
+    },
+    "18000": {
+      "native_index": 18000,
+      "accumulated_time": 179.99999999998127,
+      "index_derived_time": 180.0,
+      "difference": -1.872990651463624e-11,
+      "predicate_passes": true
+    },
+    "21000": {
+      "native_index": 21000,
+      "accumulated_time": 209.99999999995399,
+      "index_derived_time": 210.0,
+      "difference": -4.601474756782409e-11,
+      "predicate_passes": true
+    },
+    "26940": {
+      "native_index": 26940,
+      "accumulated_time": 269.3999999999,
+      "index_derived_time": 269.4,
+      "difference": -9.99875737761613e-11,
+      "predicate_passes": true
+    },
+    "26950": {
+      "native_index": 26950,
+      "accumulated_time": 269.4999999998999,
+      "index_derived_time": 269.5,
+      "difference": -1.0010126061388291e-10,
+      "predicate_passes": false
+    },
+    "27000": {
+      "native_index": 27000,
+      "accumulated_time": 269.99999999989944,
+      "index_derived_time": 270.0,
+      "difference": -1.0055600796476938e-10,
+      "predicate_passes": false
+    },
+    "30000": {
+      "native_index": 30000,
+      "accumulated_time": 299.99999999987216,
+      "index_derived_time": 300.0,
+      "difference": -1.2784084901795723e-10,
+      "predicate_passes": false
+    },
+    "45000": {
+      "native_index": 45000,
+      "accumulated_time": 449.99999999973573,
+      "index_derived_time": 450.0,
+      "difference": -2.6426505428389646e-10,
+      "predicate_passes": false
+    },
+    "48000": {
+      "native_index": 48000,
+      "accumulated_time": 479.99999999970845,
+      "index_derived_time": 480.0,
+      "difference": -2.915498953370843e-10,
+      "predicate_passes": false
+    },
+    "63000": {
+      "native_index": 63000,
+      "accumulated_time": 629.9999999995721,
+      "index_derived_time": 630.0,
+      "difference": -4.2791725718416274e-10,
+      "predicate_passes": false
+    }
+  },
+  "source_excerpts": {
+    "loom_commissioning/adapter.py": {
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+      "functions": {
+        "coupled": {
+          "line": 68,
+          "text": "def coupled(e, dt, refresh, mode, command, frozen, allow_terminal=False):\n    discarded=None\n    if mode==FIXED:\n        delivered, discarded=fixed_native(e.organism,e.raw,dt,refresh,frozen)\n    else:\n        delivered=np.array(command,dtype=float).copy()\n    events,actual,terminal=advance(e.c,e.body,e.stocks,e.time,e.phase,delivered,dt,allow_terminal)\n    if actual<dt-e.c.event_time_tol and not allow_terminal: raise ArithmeticError('Short physics without terminal')\n    e.fields=e.solver.step(e.fields,e.stocks,e.time+dt,e.phase,dt,e.body.position)\n    e.time+=dt; e.last_events=events\n    e.raw=transduce(e.c,e.body,e.fields,e.time,e.phase)\n    return terminal,discarded"
+        },
+        "step": {
+          "line": 81,
+          "text": "def step(e, mode, command=None, frozen=None):\n    \"\"\"Intact P delegates directly. Modified arms retain the Engine.step schedule.\n\n    Candidate terminal substeps are discarded copies, including their RNG state.\n    External arms never advance the stored, inactive newborn neural object.\n    \"\"\"\n    if mode==INTACT:\n        n,w,ev=e.step(); return n,w,ev,None\n    require(mode in (FIXED,EXTERNAL), 'unknown adapter mode')\n    require(e.status not in ('failure','terminal','budget_complete'), 'Stopped state cannot advance')\n    if mode==EXTERNAL:\n        command=np.asarray(command,dtype=float)\n        require(command.shape==(2,) and np.isfinite(command).all() and (abs(command)<=1).all(), 'invalid actuator command')\n    old=copy.deepcopy(e); dt=e.c.native_dt\n    refresh=e.native_index>0 and e.native_index%round(e.c.noise_refresh/dt)==0\n    try:\n        try: terminal,discarded=coupled(e,dt,refresh,mode,command,frozen)\n        except TerminalCrossing as event:\n            low=0.; high=dt; dimension=event.dimension\n            for _ in range(80):\n                mid=(low+high)/2; candidate=copy.deepcopy(old)\n                try: coupled(candidate,mid,refresh,mode,command,frozen); low=mid\n                except TerminalCrossing: high=mid\n                if high-low<=e.c.event_time_tol: break\n            else: raise ArithmeticError('Terminal location did not converge')\n            e.__dict__=copy.deepcopy(old.__dict__)\n            terminal,discarded=coupled(e,high,refresh,mode,command,frozen,True)\n            terminal=terminal or dimension; dt=high\n        e.native_index+=1; e.last_wave=None\n        if terminal:\n            e.status='terminal'; e.terminal_dimension=terminal\n        elif e.native_index%round(e.c.wave_dt/e.c.native_dt)==0 and mode==FIXED:\n            e.last_wave=fixed_handoff(e.organism,e.body.reserves,frozen)\n        e.last_native=e.observe_native(dt)\n        e.validate_state()\n        return e.last_native,e.last_wave,e.last_events,discarded\n    except Exception as error:\n        e.__dict__=old.__dict__; e.status='failure'; e.failure=f'{type(error).__name__}: {error}'\n        raise"
+        }
+      }
+    },
+    "loom_commissioning/pending.py": {
+      "sha256": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8",
+      "functions": {
+        "validate_decision": {
+          "line": 37,
+          "text": "def validate_decision(m,d):\n    keys={'time','native_index','actor','controller','inputs','command','hold_native_steps','annotation',\n          'execution_sha256','stage','case_deadline'}\n    require(type(d) is dict and set(d)==keys, 'issued decision schema mismatch')\n    require(d['execution_sha256']==execution_sha256(m) and d['case_deadline']==m['hard_stop_time']\n            and d['actor']==EXTERNAL and m['mode']==EXTERNAL and d['controller']==m['controller'],\n            'issued decision authority mismatch')\n    require(type(d['native_index']) is int and d['native_index']>=m['initial_index']\n            and abs(d['time']-(m['initial_time']+(d['native_index']-m['initial_index'])*.01))<=1e-10,\n            'issued decision clock mismatch')\n    command=c.command_pair(d['command'])\n    steps=min(10,round((m['hard_stop_time']-d['time'])/.01))\n    require(type(d['hold_native_steps']) is int and d['hold_native_steps']==steps and steps>0,\n            'issued hold length mismatch')\n    if m['controller']=='waypoint':\n        c.validate_privileged(d['inputs'])\n        require(d['inputs']['time']==d['time'], 'issued controller input clock mismatch')\n        expected,_=c.waypoint_command(copy.deepcopy(d['inputs']),copy.deepcopy(m['execution']['procedure']['stages']),0)\n        require(command.tolist()==expected.tolist(), 'issued command differs from approved controller')\n    elif m['controller']=='manual_privileged': c.validate_privileged(d['inputs'])\n    else: c.validate_sensor_payload(d['inputs'])\n    require(d['stage']==decision_stage(m,d['inputs']), 'issued stage identity mismatch')\n    if d['stage'] is not None:\n        until=d['stage']['deadline']; end=d['time']+steps*.01\n        require(not c.time_due(d['time'],until) and (end<=until or c.time_due(until,end)),\n                'issued hold crosses stage authority')"
+        }
+      }
+    },
+    "loom_commissioning/runner.py": {
+      "sha256": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57",
+      "functions": {
+        "begin_command": {
+          "line": 154,
+          "text": "    def begin_command(self, command=None, annotation=''):\n        dispatch=self._guard()\n        require(self.manifest['mode']==EXTERNAL and self.session['hold_remaining']==0, 'command hold already active or no external controller')\n        require(self.remaining()>0, 'duration cap reached')\n        kind=self.manifest['controller']; inputs=None\n        cursor=0\n        if kind=='waypoint':\n            require(command is None, 'manual override of deterministic controller')\n            inputs=dispatch['observe_without_interference'](self.engine,dispatch['privileged_input'])\n            # Clock/approved stages determine the decision; a mutable saved\n            # cursor cannot skip a prescribed stage on restart.\n            approved_plan=copy.deepcopy(self.manifest['execution']['procedure']['stages'])\n            command,cursor=dispatch['waypoint_command'](copy.deepcopy(inputs),approved_plan,0)\n            require(approved_plan==self.manifest['execution']['procedure']['stages'], 'controller mutated its approved route input')\n            until=self.session['route'][cursor]['until']\n            require(not dispatch['time_due'](self.engine.time,until), 'route complete; no command hold authorized')\n            end=self.engine.time+min(10,self.remaining())*self.engine.c.native_dt\n            # Preserve the reviewed full ten-step hold (and existing global cap).\n            # An incompatible prescription is rejected; no partial stage hold,\n            # early transition, time extension or compensating later cut is invented.\n            require(end<=until or dispatch['time_due'](until,end), 'command hold would cross prescribed stage boundary')\n        elif kind=='manual_privileged':\n            inputs=dispatch['observe_without_interference'](self.engine,dispatch['privileged_input'])\n        elif kind=='sensor_human':\n            inputs=self.sensor.display()\n        command=dispatch['command_pair'](command)\n        self._guard()  # Revalidate the actual dispatch/configuration before accepting its result.\n        action={'time':self.engine.time,'native_index':self.engine.native_index,'actor':EXTERNAL,'controller':kind,'inputs':inputs,\n                'command':command.tolist(),'hold_native_steps':min(10,self.remaining()),'annotation':str(annotation),\n                'execution_sha256':execution_sha256(self.manifest),'stage':decision_stage(self.manifest,inputs),\n                'case_deadline':self.manifest['hard_stop_time']}\n        validate_decision(self.manifest,action)\n        self.session['decision']=copy.deepcopy(action); self._decision_seal=canonical(action)\n        self.session['held_command']=command.tolist(); self.session['hold_remaining']=action['hold_native_steps']\n        self.session['cursor']=cursor\n        self.recorder.append('controller',action)\n        self.sensor.payload['own_commands'].append({'time':self.engine.time,'command':command.tolist()})\n        if annotation: self.sensor.payload['annotations'].append({'time':self.engine.time,'text':str(annotation)})"
+        }
+      }
+    },
+    "loom_commissioning/controllers.py": {
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+      "functions": {
+        "time_due": {
+          "line": 15,
+          "text": "def time_due(now, deadline):\n    \"\"\"Compare decision deadlines using P's existing absolute event-time tolerance.\n\n    This only classifies a controller boundary; it never modifies world time.\n    \"\"\"\n    return now>=deadline or math.isclose(now,deadline,rel_tol=0.,abs_tol=Config().event_time_tol)"
+        }
+      }
+    }
+  },
+  "world_steps": 0,
+  "controller_calls": 0,
+  "rng_draws": 0,
+  "commissioning_failure_observed": false,
+  "launch_disposition": "HOLD_CLOCK_INCOMPATIBILITY"
+}

@@ -1,0 +1,19 @@
+{
+  "http_checks": {
+    "index_matches": true,
+    "POST /": 405,
+    "PUT /": 405,
+    "DELETE /": 405,
+    "GET /not-allowed.txt": 404,
+    "GET /references/FIRST_A1_COMMISSIONING_RESULT.zip": 404
+  },
+  "four_recorded_states_verified": true,
+  "capture_passes_during_layout_verification": 3,
+  "native_step_scrub_play_pause_speed_end_stop_verified": true,
+  "sensor_rows": 29,
+  "accounting_panel_checked": true,
+  "reported_browser_javascript_errors": 0,
+  "direct_file_url": "Blocked by in-app browser policy; not bypassed. Supported loopback HTTP preview verified.",
+  "launcher_scope": "Command and dependency path inspected; HTTP viewer route verified. OS double-click/default-browser dispatch not automated.",
+  "world_steps": 0
+}

@@ -1,0 +1,14 @@
+{
+  "classification": "IDENTITY-ONLY CHANGE REQUIRED BY NEW APPARATUS",
+  "unchanged_function_AST": [
+    "validate_plan",
+    "validate_privileged",
+    "privileged_input",
+    "command_pair",
+    "observe_without_interference"
+  ],
+  "actuator_arithmetic_check": "See SEMANTIC_DIFF.json; unchanged after approved stage selection except exact native-deadline context.",
+  "changed_live_hash_explanation": "callable_identity normalizes co_filename but retains source line metadata in marshalled code objects. Insertion of the native selector moves later unchanged functions; their live hashes change even when their AST and behavior do not.",
+  "commands_executed": 0,
+  "method": "Source AST comparison only; functions are not invoked."
+}

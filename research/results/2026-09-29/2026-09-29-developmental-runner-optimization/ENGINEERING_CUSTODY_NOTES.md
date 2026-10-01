@@ -1,0 +1,11 @@
+# Engineering evidence custody and development notes
+
+The archive includes all baseline/performance benchmark measurements and stores, the sole 600-second store, shared identity assets, raw profiling results, final component-test stores, the first failed store-test evidence and every saved text test log. Earlier passing component temporary stores remain preserved locally but are not copied repeatedly into this package. No old sealed human B1 state is included or read.
+
+`engineering/benchmarked_apparatus_before_memory_fix` is the exact source identity used for the longer benchmark, checked against its receipt. `source/` contains the release checkpoint. Intermediate benchmark identities are preserved in their own shared-assets manifests; release changes after the long benchmark were the codec recursive-closure fix, storage minimum-envelope guard, explicitly separate analysis compatibility, final analysis warm-up copy reduction and Python native-runtime boundary binding. No causal operation or recording cadence changed after the long benchmark.
+
+Historical benchmark drivers preserve original host paths for audit. They are not launchers for scientific work. Tests use explicit environment overrides described in the technical documentation. Source/runtime checksums are immutable records, not claims that an arbitrary host can replay bit-exactly.
+
+An initial delivery identity audit compared the existing CRLF configuration checkout directly to the Git LF blob and rejected that byte comparison. The corrected audit separately proves the pre-existing runtime-file SHA and Git-normalized blob, recording both. This was a provenance-format check failure; no configuration was changed. The audit then passed for all 29 frozen files. All development-test and codec failures described in the equivalence report remain disclosed.
+
+The compact review folder is not another full evidence copy. One portable archive is made from existing primary stores only after all engineering execution and analysis completes. Compressed evidence members are stored without recompression; small text/source files are deflated. No ongoing background worker or live inspector is part of this delivery.

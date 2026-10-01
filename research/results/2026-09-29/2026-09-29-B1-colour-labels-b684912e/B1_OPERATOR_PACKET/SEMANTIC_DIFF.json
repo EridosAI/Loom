@@ -1,0 +1,119 @@
+{
+  "parent_checkpoint": "1060a17e3dd14c6361f6f15c95bb58fad3110ffc",
+  "checkpoint": "b684912eaf7811cd318ee94c77172aca790f3a0d",
+  "manifest_changes": [
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COORDINATE-COLOUR CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COORDINATE-COLOUR CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COORDINATE-COLOUR CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "PRESENTATION DOCUMENT BINDING REQUIRED BY CORRECTION"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/procedure/protocol/bound_documents/OPERATOR_EXPOSURE_AND_ATTEMPT_HISTORY.json",
+      "classification": "ACCEPTED CLOSURE AND PRIOR EXPOSURE HISTORY BINDING"
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "path": "/execution/procedure/protocol/bound_documents/PROTOCOL_CONTRACT.json",
+      "classification": "ACCEPTED CLOSURE AND PRIOR EXPOSURE HISTORY BINDING"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/files/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COORDINATE-COLOUR CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/apparatus/sha256",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COORDINATE-COLOUR CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/controller/implementation/sensor.html",
+      "classification": "IDENTITY-ONLY / REQUIRED BY APPROVED COORDINATE-COLOUR CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/procedure/protocol/bound_documents/DISPLAY_CONTRACT.json",
+      "classification": "PRESENTATION DOCUMENT BINDING REQUIRED BY CORRECTION"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/procedure/protocol/bound_documents/OPERATOR_EXPOSURE_AND_ATTEMPT_HISTORY.json",
+      "classification": "ACCEPTED CLOSURE AND PRIOR EXPOSURE HISTORY BINDING"
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "path": "/execution/procedure/protocol/bound_documents/PROTOCOL_CONTRACT.json",
+      "classification": "ACCEPTED CLOSURE AND PRIOR EXPOSURE HISTORY BINDING"
+    }
+  ],
+  "changed_public_contract_fields": {
+    "DISPLAY_CONTRACT.json": [
+      "/coordinate_label_colours",
+      "/independent_disposition",
+      "/reviewed_checkpoint",
+      "/reviewed_files/sensor.html"
+    ],
+    "PROTOCOL_CONTRACT.json": [
+      "/memory"
+    ],
+    "OPERATOR_EXPOSURE_AND_ATTEMPT_HISTORY.json": [
+      "/all_prior_attempts_ended",
+      "/approval_scope",
+      "/approved_layout_preview_sha256",
+      "/closure_record_sha256",
+      "/colour_label_change",
+      "/companion_hidden",
+      "/hidden_evaluator_access_or_feedback",
+      "/hidden_evaluator_feedback_released",
+      "/next_full_raw",
+      "/operator_previous_sealed_access_self_report",
+      "/positive_controls",
+      "/previous_full_raw_authority",
+      "/prior_attempt_closed",
+      "/prior_attempt_closure_record_sha256",
+      "/prior_attempts",
+      "/prior_commands",
+      "/prior_full_raw_authority",
+      "/prior_native_steps",
+      "/prior_permitted_1_2_second_movement_history_seen",
+      "/prior_sealed_access_self_report",
+      "/prior_simulated_seconds",
+      "/restrictions",
+      "/scope",
+      "/separate_colour_key",
+      "/whole_start_unseen_naivety_claim_permitted",
+      "/whole_start_unseen_or_first_naive_trial_claim_permitted"
+    ]
+  },
+  "expected_changes": [
+    "Existing coordinate-label colours match existing graph traces; no separate key",
+    "Required HTML, apparatus and bound-display identities",
+    "Explicitly bind two zero-step closures and one 1.2-second prefix closure/exposure; no naive-start claim"
+  ],
+  "unchanged": [
+    "all physical initial fields and opaque snapshot bytes",
+    "P, configuration, body/world/sensor laws, controller and runtime",
+    "paired order and chemistry-only display omission",
+    "duration, holds, cadence, resource limits and recording fidelity",
+    "completion and interpretation criteria"
+  ],
+  "operator_lifecycle_representation_changes": [],
+  "unexpected_semantic_changes": []
+}

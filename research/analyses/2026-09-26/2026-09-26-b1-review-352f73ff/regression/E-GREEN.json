@@ -1,0 +1,24 @@
+{
+  "name": "E-GREEN",
+  "root": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-apparatus-correction-20260926\\developmental_ecology",
+  "command": [
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "tests_apparatus/test_b1_operator.py::test_paused_inertness[E]",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-b1-review-352f73ff\\regression\\E-GREEN-temp",
+    "--junitxml",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-b1-review-352f73ff\\regression\\E-GREEN.xml"
+  ],
+  "exit": 0,
+  "wall_seconds": 1.3152489000349306,
+  "fault": null,
+  "node": "C:\\Program Files\\nodejs\\node.exe"
+}

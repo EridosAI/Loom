@@ -1,0 +1,13 @@
+# Passive viewer verification
+
+The viewer was opened and operated through the Codex in-app browser using the loopback HTTP preview. Native stepping, scrubber Home/End, restart, play/pause, 1× and 20× playback, automatic stopping at the recorded end, all named event jumps, 29-coordinate sensor panel and accounting panel were checked. No browser JavaScript errors were reported. `BROWSER_VERIFICATION.json` and `screenshots/browser-control-checks.json` retain the checks.
+
+Four exact displayed states are recorded in `screenshots/browser-states.json`: t=0; first impact at 6.31019048650431 s (event 632, prior native sample 631); the first complete positive-net window at native 640 / 6.4 s; and the administrative stop at native 9183 / 91.83 s. Three capture passes reflect layout/label verification; the four final screenshot files and static validation page use the last pass. The force/integrity screenshot shows the recorded peak at 6.4 s (event 641). No transient intermediate animation state is presented as a physical sample.
+
+The viewer-data checker passed 14 checks, comparing all 9183 native rows to immutable evidence, all event ledgers, all fixed windows and all 919 recorded mover samples. V3's separate copied-record test suite passed 20 tests. These are analysis/display checks, not additional commissioning cases. The passive server returned the expected page and rejected POST/PUT/DELETE with 405 and non-allowlisted paths/archive access with 404.
+
+The direct file URL was blocked by the in-app browser's URL policy and was not bypassed. The supported double-click launcher therefore starts the verified loopback HTTP server. Its path/arguments and Python availability were inspected; OS double-click/default-browser dispatch itself was not automated. The helper is local-only, standard-library-only, read-only, has a 30-minute default lifetime, and may be closed using the launch window. No service installation or auto-start exists.
+
+Display limitations are explicit: mover geometry is held from its latest recorded 0.1-second decision sample, with timestamp/age; exact-event pose/reserves may be between native sensor/velocity/actuator samples, which retain their own times. No interpolation, reconstructed mover motion, live control or neural-development display is used. High-speed display can skip intermediate screen frames; all recorded rows remain individually inspectable.
+
+The original record is still the same 91.83-second wall-limit pause. It is not extended, retuned or reinterpreted as a P learning/survival result. The original failed V3 files remain unchanged; the new versioned analysis closes their previously unreached record comparisons.

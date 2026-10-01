@@ -1,0 +1,29 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+________ test_oblique_release_free_return_and_accounting[review-exact] ________
+
+normal_force = 0.01, outward_speed = 1e-05, side = 1.0
+
+    @pytest.mark.parametrize('normal_force,outward_speed,side',CASES)
+    def test_oblique_release_free_return_and_accounting(normal_force,outward_speed,side):
+        c,b,stocks=fixture(normal_force,outward_speed,side); initial=copy.deepcopy(b)
+        characteristic=outward_speed/normal_force
+        peak_sample=characteristic/2
+        assert gap_oracle(c,b,peak_sample)>10*c.geometry_tol
+        if normal_force==.01 and outward_speed==1e-5:
+            assert gap_oracle(c,b,.0005)==pytest.approx(2.4981434698645444e-9,rel=0,abs=3e-16)
+        tol_return=brentq(lambda s:gap_oracle(c,b,s)-c.geometry_tol,peak_sample,2*characteristic,xtol=c.event_time_tol/10)
+        zero_return=brentq(lambda s:gap_oracle(c,b,s),peak_sample,2*characteristic,xtol=c.event_time_tol/10)
+        events,elapsed,terminal=advance(c,b,stocks,0.,0.,np.ones(2),.01)
+        releases=[r for r in events if r.get('event_kind')=='release']
+        flights=[r for r in events if r['duration']>0 and not r['contacts']]
+        returns=[r for r in events if r.get('event_kind')=='recontact_or_first_touch']
+>       assert len(releases)==1 and len(flights)==1, 'R1-P: resolvable free flight was charged as contact'
+E       AssertionError: R1-P: resolvable free flight was charged as contact
+E       assert (0 == 1)
+E        +  where 0 = len([])
+
+tests\test_r1p_oblique.py:45: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]
+1 failed in 0.17s

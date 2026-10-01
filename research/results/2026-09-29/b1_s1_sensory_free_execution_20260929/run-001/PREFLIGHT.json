@@ -1,0 +1,63 @@
+{
+  "started_utc": "2026-09-29T11:49:09.966148+00:00",
+  "status": "PASS",
+  "ended_utc": "2026-09-29T11:49:24.227484+00:00",
+  "checkpoint": "a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad",
+  "git_status": "clean",
+  "outer_authority_sha256": "57386e964ea018050bedc18a397e4611203926626e4363c2c9b04d79c9fc5ba2",
+  "execution_sha256": "97bf333344bc97c2bdf7bd61f2ce0c758a75a9f7201561ca297d3539c6fe565f",
+  "packet_files_verified": 65,
+  "runtime": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "executable_sha256": "935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256",
+    "python_dlls": {
+      "python3.dll": "85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b",
+      "python313.dll": "0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": {
+        "version": "2.3.3",
+        "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af",
+        "file_count": 432,
+        "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+      },
+      "scipy": {
+        "version": "1.16.2",
+        "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1",
+        "file_count": 1078,
+        "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+      }
+    }
+  },
+  "initial_state_sha256": "5cc5eda4aa4b1ac94fccda97ea42b485a2508fe33e2bb659f82cb61725d72671",
+  "initial_snapshot_sha256": "d8a2657916dc62a9a80d58d26f25f374e597526da69d409128ecf61c074aba2b",
+  "full_runtime_cache_loader": "PASS",
+  "grant_dispatch_manifest_validation": "PASS",
+  "matched_FULL_complete_initial_state": true,
+  "state_RNG_time_unchanged": true,
+  "prior_evidence_preservation_inventory": "PRESERVED_FULL_AND_PRIOR_INVENTORY.json",
+  "resources": {
+    "combined_new_bytes": 193941663,
+    "free_bytes": 633281957888
+  },
+  "counted_roots": [
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_s1_sensory_free_execution_20260929",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_minimal_execution_20260929",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_minimal_implementation_20260929",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_minimal_closure_design_20260929",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-minimal-apparatus-a8cdd75",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-minimal-apparatus-a8cdd75.zip",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-minimal-closure-results-a8cdd75",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-minimal-closure-results-a8cdd75.zip",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-S1-sensory-free-900s-proposal",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-S1-sensory-free-900s-proposal.zip",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_s1_sensory_free_resource_proposal_20260929",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-S1-paired-closure-a8cdd75",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-S1-paired-closure-a8cdd75.zip"
+  ],
+  "new_native_steps": 0,
+  "new_controller_decisions": 0,
+  "old_human_B1_accessed": false
+}

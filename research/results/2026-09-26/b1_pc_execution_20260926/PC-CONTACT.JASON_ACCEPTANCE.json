@@ -1,0 +1,17 @@
+{
+  "case": "PC-CONTACT",
+  "attempt": 1,
+  "recorded_utc": "2026-09-27T03:12:19.2542372+00:00",
+  "user_statement_verbatim": "I can accept the pc contact result. The interface was too limited to udnerstand what the contact signal meant. Once I saw teh image of it it was fine.",
+  "accepted_result": "Corrected PC-CONTACT onset-recognition result accepted by Jason",
+  "assessment_reference": "PC-CONTACT.ASSESSMENT_CORRECTION.json",
+  "assessment_sha256": "306508cebd272490f8c745582119f79be580e12031e1651f0731c064709b50c0",
+  "operator_report": "The raw interface was difficult to interpret; the subsequent visual replay clarified what the contact signal meant.",
+  "qualification": "Post-replay understanding remains distinct from the original sensor-only interpretation. Preserve original timing uncertainty, mistaken scene interpretation and all practice guidance.",
+  "evidence_scope": "Jason acceptance and usability feedback; no new inference about P learning or sufficiency of the sensors.",
+  "prior_records_and_review_packages_unchanged": true,
+  "new_execution_authorized": false,
+  "B1_state_accessed": false,
+  "simulation_steps": 0,
+  "code_or_interface_changes": 0
+}

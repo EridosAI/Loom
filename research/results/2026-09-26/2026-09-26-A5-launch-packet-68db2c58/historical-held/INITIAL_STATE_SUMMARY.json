@@ -1,0 +1,83 @@
+{
+  "snapshot_file": "INITIAL_A5.snapshot.json.gz",
+  "snapshot_sha256": "348079e967a34a98cd395a5b117f484c3ea8ba58edc6b0f4cb3f4975e6bbd557",
+  "state_sha256": "37adf68654e324141c678316f0f1f4b777853948e548cdd0d133e810c8722a6b",
+  "body": {
+    "position": [
+      6.0,
+      3.0
+    ],
+    "angle": 3.141592653589793,
+    "energy": 0.7,
+    "integrity": 1.0,
+    "velocity": [
+      0.0,
+      0.0
+    ],
+    "omega": 0.0,
+    "commands": [
+      0.0,
+      0.0
+    ],
+    "forces": [
+      0.0,
+      0.0
+    ],
+    "contact_rates": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "stocks": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "time": 0,
+  "native_index": 0,
+  "status": "paused",
+  "phase": 3.558411277237072,
+  "field_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+  "history": {
+    "kind": "verified_phase_history",
+    "birth_id": 0,
+    "phase": 3.558411277237072,
+    "field_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+    "cache_directory": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001",
+    "cache_receipt_sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3"
+  },
+  "unchanged_inactive_organism_sha256": "0d1de850e85a085dd7288cadbd8be0da577211a8a1e47d819a5d7e111024a5ed",
+  "snapshot_is_byte_identical_A1_A2_start": true,
+  "fixture_type": "manufactured_external_geometry_start; not newborn, not a continuation",
+  "cache_dependency_verification": {
+    "chemistry.py": {
+      "original_sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "current_sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "required_dependencies_identical": true
+    },
+    "geometry.py": {
+      "original_sha256": "b57861757e051c7a789df0ef31a28632d1e57dae3e0c3c933edf07667c11d877",
+      "current_sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "required_dependencies_identical": true
+    },
+    "schema.py": {
+      "original_sha256": "2df77ee95f708aa755750e214ac9269985d8988760d2c08b5e9c36e477b574bd",
+      "current_sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "required_dependencies_identical": true
+    }
+  },
+  "new_prehistory_steps": 0,
+  "sensor_evaluations": 0,
+  "fixture_mutations": 0
+}

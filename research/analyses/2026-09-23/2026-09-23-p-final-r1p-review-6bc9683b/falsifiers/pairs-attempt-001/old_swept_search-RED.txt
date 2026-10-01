@@ -1,0 +1,89 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+________ test_oblique_release_free_return_and_accounting[review-exact] ________
+
+normal_force = 0.01, outward_speed = 1e-05, side = 1.0
+
+    @pytest.mark.parametrize('normal_force,outward_speed,side',CASES)
+    def test_oblique_release_free_return_and_accounting(normal_force,outward_speed,side):
+        c,b,stocks=fixture(normal_force,outward_speed,side); initial=copy.deepcopy(b)
+        characteristic=outward_speed/normal_force
+        peak_sample=characteristic/2
+        assert gap_oracle(c,b,peak_sample)>10*c.geometry_tol
+        if normal_force==.01 and outward_speed==1e-5:
+            assert gap_oracle(c,b,.0005)==pytest.approx(2.4981434698645444e-9,rel=0,abs=3e-16)
+        tol_return=brentq(lambda s:gap_oracle(c,b,s)-c.geometry_tol,peak_sample,2*characteristic,xtol=c.event_time_tol/10)
+        zero_return=brentq(lambda s:gap_oracle(c,b,s),peak_sample,2*characteristic,xtol=c.event_time_tol/10)
+>       events,elapsed,terminal=advance(c,b,stocks,0.,0.,np.ones(2),.01)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_r1p_oblique.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = Config(schema_version=1, identifier='p_engineering_baseline_v0_1', status='uncommissioned', widths=[8, 8, 8, 8], pools...1e-10, arithmetic_tol=1e-12, geometry_tol=1e-10, overlap_tol=1e-08, event_time_tol=1e-10, illumination_boundary='open')
+body = Body(position=array([2., 3.]), angle=1.557638052356994, energy=0.7, integrity=1.0, velocity=array([-1.e-05,  0.e+00]), omega=0.0, command=array([1., 1.]), force=array([0.38, 0.38]), contact_rates=array([0., 0., 0., 0., 0., 0., 0., 0.]))
+stocks = array([0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]), t = 0.0, phase = 0.0
+command = array([1., 1.]), dt = 0.01, allow_terminal = False
+
+    def advance(c,body,stocks,t,phase,command,dt,allow_terminal=False):
+        body.command=np.asarray(command).copy(); body.force=actuator_forces(c,body,command)
+        events=[]; elapsed=0.; impulses_by_sector=np.zeros(8); loops=0; pending=None
+        def append_record(record,time):
+            record['time']=time; record['body_position']=body.position.copy(); record['body_angle']=body.angle
+            events.append(record)
+            for contact in record['contacts']:
+                normal=contact['normal']; angle=(math.atan2(-normal[1],-normal[0])-body.angle)%(2*np.pi)
+                address=angle/(2*np.pi)*8; lower=int(math.floor(address))%8; f=address-math.floor(address)
+                impulses_by_sector[lower]+=contact['impulse']*(1-f); impulses_by_sector[(lower+1)%8]+=contact['impulse']*f
+        while elapsed<dt-1e-14 or pending is not None:
+            loops+=1
+            if loops>200: raise ArithmeticError('Physical event subdivision limit')
+            now=t+elapsed; remaining=dt-elapsed; scene=fixtures(c,now,phase)
+            active=[]; normals=[]
+            for i,f in enumerate(scene):
+                gap,normal=gap_normal(body.position,c.body_radius,f)
+                if gap < -c.overlap_tol: raise ArithmeticError(f"Rigid overlap {f['id']}: {gap}")
+                if gap<=c.geometry_tol*2: active.append(i); normals.append(normal)
+            if active:
+                bounds=[float(normals[j]@scene[i]['velocity']) for j,i in enumerate(active)]
+                v,impulses=project_velocity(body.velocity,normals,bounds,c.body_mass)
+                if impulses.sum()>1e-12 or pending is not None:
+                    body.velocity=v
+                    contacts=[contact_record(c,body,scene[i],normals[j],impulses[j]) for j,i in enumerate(active) if impulses[j]>0 or i==pending]
+                    record=account(c,body,stocks,contacts,0,True)
+                    if pending is not None: record['event_kind']='recontact_or_first_touch'
+                    append_record(record,now)
+                    if body.integrity<=0:
+                        body.contact_rates=impulses_by_sector/max(elapsed,c.event_time_tol)
+                        if allow_terminal: return events,elapsed,'integrity'
+                        raise TerminalCrossing(elapsed,'integrity',events)
+            pending=None
+            if remaining<=1e-14: break
+            # Freeze force for this physical subinterval, using its actual starting
+            # reserves (including damage at an immediately preceding impact).
+            body.force=actuator_forces(c,body,body.command)
+            released={i:probe for i in active if (probe:=release_probe(c,body,body.force,now,phase,remaining,i)) is not None}
+            if released:
+                record=account(c,body,stocks,[],0,True)
+                record.update(event_kind='release',colliders=[scene[i]['id'] for i in released])
+                append_record(record,now)
+                retained=[(i,n) for i,n in zip(active,normals) if i not in released]
+                active=[i for i,n in retained]; normals=[n for i,n in retained]
+>           collision=first_collision(c,body,body.force,now,phase,remaining,set(active),released)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+loom_p\physics.py:292: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+c = Config(schema_version=1, identifier='p_engineering_baseline_v0_1', status='uncommissioned', widths=[8, 8, 8, 8], pools...1e-10, arithmetic_tol=1e-12, geometry_tol=1e-10, overlap_tol=1e-08, event_time_tol=1e-10, illumination_boundary='open')
+body = Body(position=array([2., 3.]), angle=1.557638052356994, energy=0.7, integrity=1.0, velocity=array([-1.e-05,  0.e+00]), omega=0.0, command=array([1., 1.]), force=array([0.38, 0.38]), contact_rates=array([0., 0., 0., 0., 0., 0., 0., 0.]))
+forces = array([0.38, 0.38]), t = 0.0, phase = 0.0, dt = 0.01, excluded = set()
+released = {4: 0.000625}
+
+>   ???
+E   ArithmeticError: Swept contact search iteration limit
+
+<unmodified f7eb6f27 physics>:158: ArithmeticError
+=========================== short test summary info ===========================
+FAILED tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]
+1 failed in 0.19s

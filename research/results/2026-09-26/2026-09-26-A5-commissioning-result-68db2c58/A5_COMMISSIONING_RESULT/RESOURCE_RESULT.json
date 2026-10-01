@@ -1,0 +1,31 @@
+{
+  "case": "A5",
+  "authority_sha256": "bdff35693db38800528d91e6d2d4d2085c640268e50713731df5ec27f8b76d1d",
+  "simulated_seconds": 629.9999999995721,
+  "native_steps": 63000,
+  "recorder_wall_seconds": 7714.9715165000525,
+  "whole_process_wall_seconds": 7718.343870199984,
+  "uncompressed_stream_bytes": 376284429,
+  "stored_trajectory_bytes": 448657204,
+  "recorded_files": 73,
+  "record_counts": {
+    "sensor": 63001,
+    "controller": 6300,
+    "native": 63000,
+    "events": 63609,
+    "diagnostics": 63000
+  },
+  "runner_wall_cap_seconds": 14400,
+  "reporting_allowance_seconds": 3600,
+  "uncompressed_stream_cap_bytes": 1500000000,
+  "combined_new_artifact_cap_bytes": 10000000000,
+  "stop_request_bytes": 9000000000,
+  "flush_reserve_bytes": 1000000000,
+  "disk_monitor_checks": 6300,
+  "peak_combined_disk_during_run": 1068359209,
+  "analysis_wall_seconds": 92.06534059997648,
+  "elapsed_since_first_stop_before_packaging_seconds": 374.934524,
+  "projected_basis": "Unchanged A2/A3 projection: 123.44–125.31 recorder wall minutes; 444.52–474.24 MB stored trajectory.",
+  "no_benchmark_rerun": true,
+  "no_fidelity_reduction": true
+}

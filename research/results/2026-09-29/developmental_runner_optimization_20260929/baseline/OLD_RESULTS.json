@@ -1,0 +1,109 @@
+[
+  {
+    "label": "profiled",
+    "seconds": 0.2,
+    "total_wall_seconds": 3.7975467999931425,
+    "initialization_wall_seconds": 0.08838029997423291,
+    "wall_seconds_per_simulated_second": 18.987733999965712,
+    "blocks": [
+      {
+        "native_index": 10,
+        "seconds": 0.1,
+        "wall_seconds": 1.670756799983792
+      },
+      {
+        "native_index": 20,
+        "seconds": 0.1,
+        "wall_seconds": 2.038375800009817
+      }
+    ],
+    "final_state": "58cdc10bbeaa878ae5b2c5c69a951a692b378b7174c665dd334e6e6efb7e06d6",
+    "bytes_by_file": {
+      "controller.jsonl.gz": 37,
+      "diagnostics.jsonl.gz": 462843,
+      "events.jsonl.gz": 1967,
+      "final.restart.json.gz": 773714,
+      "initial.restart.json.gz": 128574,
+      "manifest.json": 7892,
+      "native.jsonl.gz": 357810,
+      "scientific_observations.jsonl.gz": 50,
+      "sensor-display.json": 11963,
+      "sensor.jsonl.gz": 5091,
+      "wave.jsonl.gz": 28801
+    },
+    "final_native_index": 20,
+    "final_wave_index": 1,
+    "profile_exclusive": {
+      "serialization": 1.7986007000000002,
+      "validation": 0.011289999999999996,
+      "hashing": 0.1580583,
+      "other_shared_kernels_python": 1.2844440999999998,
+      "observer_diagnostics": 0.0017122000000000003,
+      "state_copy": 0.1503163,
+      "fields": 0.018390700000000003,
+      "geometry_sensing_shared": 0.030079300000000003,
+      "compression": 0.255189,
+      "P_neural": 0.018378900000000004,
+      "filesystem": 0.0626474,
+      "snapshot_generation": 0.0003634,
+      "physics": 0.005166199999999999,
+      "recorder_writes": 0.0018552000000000002,
+      "detached_D5": 0.00037210000000000005
+    }
+  },
+  {
+    "label": "unprofiled",
+    "seconds": 0.6,
+    "total_wall_seconds": 9.826981500023976,
+    "initialization_wall_seconds": 0.08066740003414452,
+    "wall_seconds_per_simulated_second": 16.37830250003996,
+    "blocks": [
+      {
+        "native_index": 10,
+        "seconds": 0.1,
+        "wall_seconds": 1.3004390000132844
+      },
+      {
+        "native_index": 20,
+        "seconds": 0.1,
+        "wall_seconds": 1.3436832000734285
+      },
+      {
+        "native_index": 30,
+        "seconds": 0.1,
+        "wall_seconds": 1.689752799924463
+      },
+      {
+        "native_index": 40,
+        "seconds": 0.1,
+        "wall_seconds": 1.7661358000477776
+      },
+      {
+        "native_index": 50,
+        "seconds": 0.1,
+        "wall_seconds": 1.6986405999632552
+      },
+      {
+        "native_index": 60,
+        "seconds": 0.1,
+        "wall_seconds": 1.9476536000147462
+      }
+    ],
+    "final_state": "b2d4fb2cbf7a03730f045ec112a21cf3ec088840b53a0e82d5553d877ba7828f",
+    "bytes_by_file": {
+      "controller.jsonl.gz": 37,
+      "diagnostics.jsonl.gz": 1492938,
+      "events.jsonl.gz": 5404,
+      "final.restart.json.gz": 937959,
+      "initial.restart.json.gz": 128578,
+      "manifest.json": 7897,
+      "native.jsonl.gz": 1095921,
+      "scientific_observations.jsonl.gz": 50,
+      "sensor-display.json": 35437,
+      "sensor.jsonl.gz": 14438,
+      "wave.jsonl.gz": 182418
+    },
+    "final_native_index": 60,
+    "final_wave_index": 3
+  }
+]

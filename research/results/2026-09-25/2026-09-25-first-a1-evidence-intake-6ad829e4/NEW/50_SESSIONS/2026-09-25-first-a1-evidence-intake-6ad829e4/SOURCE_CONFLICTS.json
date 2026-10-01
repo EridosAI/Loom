@@ -1,0 +1,19 @@
+{
+  "material_wording_discrepancy": {
+    "request_wording": "459 complete contact windows",
+    "packaged_summary_field": "complete_fixed_windows = 459",
+    "saved_window_labels": {
+      "complete_fixed_total": 459,
+      "complete_with_contact": 428,
+      "complete_without_contact": 31,
+      "complete_contact_positive_resolved": 229,
+      "complete_contact_negative_resolved": 199,
+      "partial_tail_contact_negative_resolved": 1
+    },
+    "source_member": "evidence/read-only-review/A1_OBSERVATIONS.json::all_fixed_windows",
+    "resolution": "Record 459 complete fixed windows in total, of which 428 contain positive-duration source-0 contact; preserve original request and evidence. This is a census of stored labels, not corrected V3 analysis.",
+    "first_positive_window_note": "The 6.2–6.4 s complete fixed bin contains first contact at 6.31019048650431 s; complete describes the bin, not contact throughout it."
+  },
+  "identity_conflicts": [],
+  "historical_labels": "Original launch proposal labels precede the preserved genuine grant. Earlier NOT STARTED navigation is pre-run history; originals not rewritten."
+}

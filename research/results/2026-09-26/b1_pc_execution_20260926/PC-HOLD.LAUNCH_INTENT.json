@@ -1,0 +1,20 @@
+{
+  "case": "PC-HOLD",
+  "attempt": 1,
+  "authority_sha256": "ac1c5615c2c99ebe2524e3648b81003d7eeb42f1b54493212afd8d3cb83d719f",
+  "apparatus": "352f73fffa6d9781eae8aa38e708a9a05669588f",
+  "preflight_utc": "2026-09-27T02:35:42.509350+00:00",
+  "readiness_verbatim": "Ok go.",
+  "free_disk_bytes": 647440613376,
+  "source_clean": true,
+  "identity_and_approval_verified": true,
+  "initial_snapshot_hash_verified": true,
+  "invocation_reserved": 1,
+  "service_started": false,
+  "simulation_steps": 0,
+  "snapshot_not_deserialized_by_preflight": true,
+  "B1_state_accessed": false,
+  "prior_practice_feedback": "Jason has seen the disclosed PC-CONTACT passive physical replay and explanations. Preserve this training exposure; do not claim an unassisted sequence.",
+  "preceding_control_limit": "PC-CONTACT remains documented as partial/not fully demonstrated. This does not block the already authorized fourth practice control, but the B1 demonstration gate is not satisfied.",
+  "scope": "One unchanged predetermined PC-HOLD; original 10 s and 1200 wall-second limits. No retry, controller choice, tuning, interface change or B1 execution."
+}

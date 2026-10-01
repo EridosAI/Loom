@@ -1,0 +1,171 @@
+{
+  "simulated_seconds": 0.20000000000000004,
+  "native_steps": 20,
+  "waves": 1,
+  "wall_seconds": 2.001588199986145,
+  "setup_wall_seconds": 1.1556993999984115,
+  "execution_wall_seconds": 0.8458731999853626,
+  "profile": {
+    "exclusive_seconds": {
+      "other_harness": 0.004946799832396209,
+      "state_copy": 0.007258098456077278,
+      "serialization": 0.1946082120994106,
+      "validation_accounting": 0.004578701569698751,
+      "hashing_binding": 0.32280697161331773,
+      "filesystem_io": 0.14738109218887985,
+      "snapshot_checkpoint": 0.0002578997518867254,
+      "recorder_writes": 0.0044925002148374915,
+      "compression": 0.0205139999743551,
+      "P_neural": 0.02497600275091827,
+      "body_contact_viability": 0.01750270207412541,
+      "chemical_field": 0.026992195402272046,
+      "sensor_computation": 0.03134710236918181,
+      "tier1_extraction": 0.0006582003552466631
+    },
+    "callback_seconds": 1.1932944214204326,
+    "profiled_wall_seconds": 2.0016219000099227,
+    "events": 2311535,
+    "warning": "Context-attributed measured execution excludes callback time; profiling perturbs throughput. Unprofiled runs determine speed."
+  },
+  "blocks": [
+    {
+      "ending_native_index": 20,
+      "simulated_seconds": 0.20000000000000004,
+      "wall_seconds": 0.8456778998952359,
+      "peak_working_set_bytes": 93929472,
+      "working_set_bytes": 76689408,
+      "peak_pagefile_bytes": 1644298240
+    }
+  ],
+  "memory": {
+    "peak_working_set_bytes": 93929472,
+    "working_set_bytes": 76689408,
+    "peak_pagefile_bytes": 1644298240
+  },
+  "memory_before": {
+    "peak_working_set_bytes": 66220032,
+    "working_set_bytes": 66220032,
+    "peak_pagefile_bytes": 1593458688
+  },
+  "stop_status": "stage_complete",
+  "initial_fixture": {
+    "name": "nonzero_resume_1s",
+    "duration": 1.0,
+    "seed": 5284097,
+    "life": 0,
+    "manufactured": true,
+    "definition": "loom_p.smokes.make_case; field is unchanged lawful prehistory; no outcome selection"
+  },
+  "checkpoint_measurements": [
+    {
+      "file": "checkpoint-000000000-s000-initial.ld",
+      "bytes": 128503,
+      "raw_bytes": 2141971,
+      "sha256": "99c6c30e45fb7f8934808fb880c30fcb99bd2cabadf54c6653c4ef057fa81379",
+      "raw_sha256": "68202ad3b4d380de3252f1580412cd327f68842563686498b7abd038f7684482",
+      "index": 0,
+      "wave": 0,
+      "seconds": 0.041979099973104894
+    },
+    {
+      "file": "checkpoint-000000020-s000-final.ld",
+      "bytes": 637341,
+      "raw_bytes": 2601847,
+      "sha256": "22a7fdbcecb1b67806071a1f728ac070e24f6d257bd55ed1b81c9329ac9fcb5d",
+      "raw_sha256": "123216a9ff2870c278a222ac3bd5b3f7d82bcac57eab24b58e7abfc02774bceb",
+      "index": 20,
+      "wave": 1,
+      "seconds": 0.1812250999500975
+    }
+  ],
+  "recording_timings": {
+    "checkpoint": 0.2232041999232024,
+    "chunk_write": 0.12938289996236563
+  },
+  "shared_asset_bytes": 159083,
+  "stored_bytes": 783507,
+  "verification": {
+    "segments": 1,
+    "native_steps": 20,
+    "waves": 1,
+    "events": 20,
+    "ledger_maximum": 5.463362509790237e-17,
+    "family_bytes": {
+      "native": 12212,
+      "waves": 8396,
+      "events": 23749,
+      "checkpoint": 765844,
+      "chunks_stored": 13298,
+      "metadata": 4365
+    },
+    "verification_wall_seconds": 0.11728500004392117,
+    "chunks": [
+      {
+        "bytes": 13298,
+        "file": "chunk-000000001-000000020.ld",
+        "first_index": 1,
+        "last_index": 20,
+        "raw_bytes": 46313,
+        "raw_sha256": "195242f59b05655e16acc3dc6ccfd98fb84833da5406ed8718d95cb7a43a87d9",
+        "sha256": "6daef504e37224fd8f04903752b6c2ebdc82e4b48bfa9f0de19a69e41b98f68e"
+      }
+    ],
+    "checkpoints": [
+      {
+        "bytes": 128503,
+        "file": "checkpoint-000000000-s000-initial.ld",
+        "index": 0,
+        "raw_bytes": 2141971,
+        "raw_sha256": "68202ad3b4d380de3252f1580412cd327f68842563686498b7abd038f7684482",
+        "seconds": 0.041979099973104894,
+        "sha256": "99c6c30e45fb7f8934808fb880c30fcb99bd2cabadf54c6653c4ef057fa81379",
+        "wave": 0
+      },
+      {
+        "bytes": 637341,
+        "file": "checkpoint-000000020-s000-final.ld",
+        "index": 20,
+        "raw_bytes": 2601847,
+        "raw_sha256": "123216a9ff2870c278a222ac3bd5b3f7d82bcac57eab24b58e7abfc02774bceb",
+        "seconds": 0.1812250999500975,
+        "sha256": "22a7fdbcecb1b67806071a1f728ac070e24f6d257bd55ed1b81c9329ac9fcb5d",
+        "wave": 1
+      }
+    ],
+    "last_receipt_sha256": "ca6e615ccc8b5fbd96fbd130551a2f7023a8ec2c1d9b7910ca02f3bfe97a0f33",
+    "final_causal_sha256": "47bfd51e9a20816e6d157052b84b29c94ede01c07423c6fb5ab27ca8314074bb",
+    "physical_replay": false,
+    "P_execution": false
+  },
+  "compression_benchmark": [
+    {
+      "level": 0,
+      "input_bytes": 46313,
+      "stored_bytes": 46313,
+      "compress_seconds": 2.00001522898674e-07,
+      "decompress_seconds": 1.00000761449337e-07
+    },
+    {
+      "level": 1,
+      "input_bytes": 46313,
+      "stored_bytes": 13249,
+      "compress_seconds": 0.00022160005755722523,
+      "decompress_seconds": 6.84000551700592e-05
+    },
+    {
+      "level": 3,
+      "input_bytes": 46313,
+      "stored_bytes": 13094,
+      "compress_seconds": 0.00019479996990412474,
+      "decompress_seconds": 7.229996845126152e-05
+    },
+    {
+      "level": 6,
+      "input_bytes": 46313,
+      "stored_bytes": 13044,
+      "compress_seconds": 0.00035089999437332153,
+      "decompress_seconds": 6.610003765672445e-05
+    }
+  ],
+  "no_scientific_outcome_analysis": true
+}

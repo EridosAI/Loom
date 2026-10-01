@@ -1,0 +1,52 @@
+{
+  "status": "PASS_FOR_FRESH_BOUNDED_SCREEN_PREPARATION",
+  "utc": "2026-09-30T12:00:39.871538+00:00",
+  "checks": {
+    "historical_execution_files": 220,
+    "historical_preparation_files": 57,
+    "historical_result_files": 27,
+    "historical_result_archive_sha256": "73873228bbc26d9d5de65eb16ee68cd108c61a4691098141be47fe8a29901446"
+  },
+  "component_test_counts": {
+    "MECHANICS_GREEN_03.xml": 45,
+    "IDENTITY_TESTS.xml": 2,
+    "COMPONENT_TESTS.xml": 26
+  },
+  "exact_failed_geometry_reproduced": true,
+  "old_guard_still_rejects_invalid_free_path": true,
+  "physical_tolerances_unchanged": true,
+  "corrected_restart_bit_identical": true,
+  "apparatus_checkpoint": "1d7cd6fd450ea528562b2c825589ab4de18a5b38",
+  "branch": "build/p-contact-release-20260930",
+  "worktree": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-contact-release-20260930",
+  "changed_files": [
+    "developmental_ecology/loom_developmental/runner.py",
+    "developmental_ecology/loom_p/physics.py",
+    "developmental_ecology/tests/fixtures/fs001_m2_step1026.json",
+    "developmental_ecology/tests/test_contact_face_exit.py",
+    "developmental_ecology/tests/test_corrected_identity.py",
+    "docs/developmental_ecology/CONTACT_FACE_RELEASE_CORRECTION_20260930.md"
+  ],
+  "runtime_sha256": "5df0ced8bf5602c84852bc2074fca8d422cc39cc55b9bab00a4b653bbe714c49",
+  "new_authorities": 9,
+  "new_packet_static_preflight": "PASS",
+  "all_initial_engine_bytes_unchanged": true,
+  "motor_process_and_distribution_unchanged": true,
+  "new_motor_screen_executions": 0,
+  "long_runs": 0,
+  "new_prehistory": 0,
+  "old_records_modified": false,
+  "source_or_configuration_tuning": false,
+  "automatic_selection": false,
+  "nursery_changes": false,
+  "P_neural_learning_changes": false,
+  "world_constitutive_parameter_changes": false,
+  "overnight_sandbox_readiness": "NOT_ESTABLISHED_NOT_READY_FOR_LAUNCH",
+  "test_attempt_qualification": "First replay harness passed all prefixes then failed before corrected physical step in a tracing hook; engineering replay repeated successfully. Two prefix reconstructions, no scientific retries.",
+  "historical_prefix_reconstruction_passes": 2,
+  "engineering_committed_replay_steps_both_attempts": 38052,
+  "engineering_step_after_1025": 1026,
+  "no_later_M2_step_attempted": true,
+  "push": false,
+  "merge": false
+}

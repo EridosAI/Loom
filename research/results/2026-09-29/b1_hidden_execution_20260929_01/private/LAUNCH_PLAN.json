@@ -1,0 +1,27 @@
+{
+  "case": "B1-CHEMISTRY-HIDDEN",
+  "command": [
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "loom_commissioning.sensor_ui",
+    "--manifest",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_hidden_execution_20260929_01\\private\\B1-CHEMISTRY-HIDDEN.launch-manifest.json",
+    "--initial",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-29-B1-colour-labels-b684912e\\B1_SEALED_EVALUATOR\\initial-states\\B1-PAIR-INITIAL.snapshot.json.gz",
+    "--output",
+    "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\b1_hidden_execution_20260929_01\\private\\runs\\B1-CHEMISTRY-HIDDEN",
+    "--port",
+    "0"
+  ],
+  "cwd": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-coordinate-colours-20260929\\developmental_ecology",
+  "environment": {
+    "PYTHONPATH": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\worktrees\\loom-p-b1-coordinate-colours-20260929\\developmental_ecology",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "maximum_invocations": 1,
+  "automatic_commands": false,
+  "authority_sha256": "9a1a6c5f3927398cb0827a89ed72fe243a1d5cdb458cc4a114f4caef4dbffc84"
+}

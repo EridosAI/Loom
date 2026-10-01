@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loom · Sensor-only reference</title>
+<style>
+body{font:16px system-ui;background:#f5f4ef;color:#183a3c;margin:32px auto;max-width:1150px;padding:0 22px}h1{font-size:30px;margin-bottom:8px}p{line-height:1.5}.bar,.panel{background:white;border:1px solid #d3ddda;border-radius:10px;padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}table{width:100%;font-variant-numeric:tabular-nums}td,th{padding:3px;text-align:right}td:first-child,th:first-child{text-align:left}canvas{width:100%;height:135px}input{width:90px;padding:9px}button{padding:10px 16px;background:#245c58;color:white;border:0;border-radius:6px;margin:4px}button:disabled{opacity:.45}label{display:inline-block;margin-right:15px}.muted{color:#536764}#note{width:55%}#state{font-size:22px}pre{white-space:pre-wrap;overflow-wrap:anywhere}@media(max-width:700px){.grid{grid-template-columns:1fr}#note{width:90%}}
+</style>
+<h1>Sensor-only reference</h1>
+<p>Inspect the raw history and choose one paired command. Deliberation while paused consumes no bodily time.</p>
+<div class="bar"><strong id="state" role="status">NOT CONNECTED</strong><p id="mode"></p><p id="current"></p><p id="body"></p>
+<button id="start" disabled>Begin paused session</button><button id="end" disabled>End this case</button><button id="refresh">Refresh readings</button>
+<p><label>History endpoint <input id="at" type="range" min="0" value="0" style="width:300px"></label><span id="time"></span></p></div>
+<div id="channels" class="grid"></div>
+<div class="panel"><h2>Two actuator commands</h2><p>One decision holds the pair for 0.1 bodily seconds, or until an earlier stop. Each command ranges from −1 to 1. A zero pair still advances one hold.</p>
+<label>Left <input id="left" type="number" min="-1" max="1" step="0.05" value="0"></label><label>Right <input id="right" type="number" min="-1" max="1" step="0.05" value="0"></label><button id="send" disabled>Apply one hold</button>
+<p><label>Own note <input id="note" type="text" maxlength="1000"></label></p><p id="message" role="status"></p>
+<h3>Your command history</h3><pre id="commands"></pre><h3>Your notes</h3><pre id="notes"></pre><button id="download" disabled>Save displayed history</button></div>
+<p class="muted">Actual energy and integrity are held between 5 Hz samples. Running shows the last complete readings until the bounded hold returns. A saved review cannot advance a world.</p>
+<script>
+'use strict';
+let session=null,inFlight=false,inFlightAction=null,locked=false,reading=false,epoch=0;
+const q=s=>document.querySelector(s);
+const allLabels=['light','chemistry','contact','proprioception'].flatMap((n,g)=>Array.from({length:[10,4,8,7][g]},(_,i)=>`${n}_${i}`));
+function keys(value,names){return value && Object.keys(value).sort().join('|')===names.slice().sort().join('|');}
+function validateEnvelope(v){
+  if(!keys(v,['schema','lifecycle','display_condition','decision_token','sensors','offline']) || v.schema!==1 || !['prepared','paused','running','ended'].includes(v.lifecycle) || !['none','chemistry_hidden'].includes(v.display_condition))throw Error();
+  const d=v.sensors,hidden=v.display_condition==='chemistry_hidden',labels=allLabels.filter(n=>!hidden||!n.startsWith('chemistry_'));
+  if(!keys(d,['schema','raw_labels','history','own_commands','annotations','availability']) || d.schema!==(hidden?2:1) || JSON.stringify(d.raw_labels)!==JSON.stringify(labels) || !Array.isArray(d.history) || !d.history.length)throw Error();
+  let prev=-1;
+  for(const r of d.history){
+    if(!keys(r,['native_index','time','raw','actual_EI','EI_sample_time']) || r.native_index<=prev || !Array.isArray(r.raw) || r.raw.length!==labels.length || !r.raw.every(Number.isFinite) || r.actual_EI.length!==2 || !r.actual_EI.every(Number.isFinite))throw Error();
+    prev=r.native_index;
+  }
+  if(!d.own_commands.every(c=>keys(c,['time','command'])&&c.command.length===2&&c.command.every(Number.isFinite)) || !d.annotations.every(n=>keys(n,['time','text'])&&typeof n.text==='string'))throw Error();
+}
+function controls(){
+  const available=session&&!inFlight&&!locked&&!session.offline;
+  q('#send').disabled=!(available&&session.lifecycle==='paused');
+  q('#start').disabled=!(available&&session.lifecycle==='prepared');
+  q('#end').disabled=!(available&&['prepared','paused'].includes(session.lifecycle));
+  q('#download').disabled=!session||locked;
+  q('#refresh').disabled=inFlight;
+}
+function render(){
+  controls();if(!session)return;
+  const d=session.sensors,idx=Number(q('#at').value),row=d.history[idx],latest=d.history[d.history.length-1];if(!row)return;
+  q('#state').textContent=locked?'CONNECTION UNCERTAIN — CONTROLS LOCKED':inFlight?(inFlightAction==='/command'?'RUNNING / REQUEST IN FLIGHT':session.lifecycle.toUpperCase()+' / REQUEST PENDING'):session.offline?'ENDED · SAVED REVIEW':session.lifecycle==='prepared'?'PREPARED / NOT STARTED':session.lifecycle.toUpperCase();
+  q('#mode').textContent=session.display_condition==='chemistry_hidden'?'CHEMISTRY UNAVAILABLE IN THIS CONDITION':'FULL-RAW · 29 coordinates';
+  q('#current').textContent='Last complete simulated time: '+latest.time.toFixed(3)+' s';
+  q('#time').textContent='Selected history: '+row.time.toFixed(3)+' s';
+  q('#body').textContent='Actual energy '+latest.actual_EI[0].toFixed(6)+' · Actual integrity '+latest.actual_EI[1].toFixed(6)+' · sampled at '+latest.EI_sample_time.toFixed(3)+' s';
+  q('#channels').replaceChildren();
+  for(const name of ['light','chemistry','contact','proprioception']){
+    const indices=d.raw_labels.map((label,i)=>label.startsWith(name+'_')?i:-1).filter(i=>i>=0);
+    const section=document.createElement('section');section.className='panel';const title=document.createElement('h2');title.textContent=name[0].toUpperCase()+name.slice(1);section.append(title);
+    if(!indices.length){const label=document.createElement('p');label.textContent='CHEMISTRY UNAVAILABLE IN THIS CONDITION';section.append(label);q('#channels').append(section);continue;}
+    const canvas=document.createElement('canvas');canvas.width=520;canvas.height=140;canvas.setAttribute('aria-label',name+' raw history');section.append(canvas);
+    const table=document.createElement('table'),heading=document.createElement('tr');
+    for(const text of ['Coordinate','Current','Selected']){const cell=document.createElement('th');cell.textContent=text;heading.append(cell);}table.append(heading);
+    for(const i of indices){const tr=document.createElement('tr');for(const text of [d.raw_labels[i],latest.raw[i].toPrecision(7),row.raw[i].toPrecision(7)]){const cell=document.createElement('td');cell.textContent=text;tr.append(cell);}table.append(tr);}
+    section.append(table);q('#channels').append(section);
+    const ctx=canvas.getContext('2d'),samples=d.history.slice(Math.max(0,idx-999),idx+1),vals=samples.flatMap(r=>indices.map(i=>r.raw[i])),lo=Math.min(...vals),hi=Math.max(...vals);
+    indices.forEach((i,k)=>{ctx.strokeStyle=`hsl(${k*360/indices.length},55%,40%)`;ctx.beginPath();samples.forEach((r,j)=>{const x=j*520/Math.max(1,samples.length-1),y=130-120*(r.raw[i]-lo)/Math.max(1e-12,hi-lo);j?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();});
+  }
+  q('#commands').textContent=d.own_commands.map(c=>c.time.toFixed(3)+' s  ['+c.command.join(', ')+']').join('\n');
+  q('#notes').textContent=d.annotations.map(n=>n.time.toFixed(3)+' s  '+n.text).join('\n');
+}
+function accept(v,latest=false){
+  validateEnvelope(v);const oldLength=session?session.sensors.history.length:0;session=v;
+  const slider=q('#at');slider.max=v.sensors.history.length-1;
+  if(latest||oldLength!==v.sensors.history.length)slider.value=slider.max;
+  render();
+}
+function failClosed(){locked=true;q('#message').textContent='Connection or request uncertain. Do not resubmit. Refresh the permitted display to inspect the case state.';render();controls();}
+async function read(){
+  if(reading||inFlight)return;reading=true;const requestedEpoch=epoch;
+  try{const r=await fetch('/session',{cache:'no-store'});if(!r.ok)throw Error();const v=await r.json();if(requestedEpoch!==epoch||inFlight)return;validateEnvelope(v);locked=false;accept(v);}catch(_){if(requestedEpoch===epoch&&!inFlight)failClosed();}finally{reading=false;}
+}
+async function action(path){
+  if(inFlight||locked||!session||session.offline)return;
+  const required=path==='/start'?'prepared':'paused';
+  if(path==='/end'?!['prepared','paused'].includes(session.lifecycle):session.lifecycle!==required)return;
+  const body={token:session.decision_token};
+  if(path==='/command'){
+    body.left=Number(q('#left').value);body.right=Number(q('#right').value);body.annotation=q('#note').value;
+    if(![body.left,body.right].every(v=>Number.isFinite(v)&&Math.abs(v)<=1)){q('#message').textContent='Enter both commands between −1 and 1.';return;}
+  }
+  epoch+=1;inFlightAction=path;inFlight=true;render();
+  try{const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});if(!r.ok)throw Error();const v=await r.json();inFlight=false;accept(v,true);q('#message').textContent='';}
+  catch(_){inFlight=false;failClosed();}finally{controls();}
+}
+q('#at').oninput=render;
+q('#send').onclick=e=>{if(!e||e.detail<=1)action('/command');};
+q('#send').onkeydown=e=>{if(e.repeat)e.preventDefault();};
+q('#start').onclick=()=>action('/start');q('#end').onclick=()=>action('/end');q('#refresh').onclick=read;
+q('#download').onclick=()=>{if(!session||locked)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(session.sensors)],{type:'application/json'}));a.download='sensor-history.json';a.click();URL.revokeObjectURL(a.href);};
+// Reads may refresh/reconnect; they never submit a command or repeat an action.
+setInterval(()=>{if(session&&!session.offline&&!locked&&!inFlight)read();},1000);
+read();
+</script></html>

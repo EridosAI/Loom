@@ -1,0 +1,43 @@
+{
+  "checkpoint": "a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad",
+  "worktree_clean": true,
+  "component_checks_passed": 35,
+  "world_cases_executed": 0,
+  "physical_native_steps": 0,
+  "field_steps": 0,
+  "neural_steps": 0,
+  "new_prehistory_steps": 0,
+  "controller_calls_on_prepared_starts": 0,
+  "simulation_RNG_draws_during_preparation": 0,
+  "preparation_transductions_at_time_zero": 3,
+  "finalization_allowed_calls": {
+    "load_snapshot": 9
+  },
+  "blocked_dynamic_calls": [],
+  "fresh_three_starts_admissible": true,
+  "complete_triplet_snapshot_bytes_identical": true,
+  "null_grant_rejected_cases": [
+    "B1-MINIMAL-S1-FULL",
+    "B1-MINIMAL-S1-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S1-SENSORY-FREE",
+    "B1-MINIMAL-S2-FULL",
+    "B1-MINIMAL-S2-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S2-SENSORY-FREE",
+    "B1-MINIMAL-S3-FULL",
+    "B1-MINIMAL-S3-CHEMISTRY-HIDDEN",
+    "B1-MINIMAL-S3-SENSORY-FREE"
+  ],
+  "proposed_authorities": 9,
+  "execution_grants": 0,
+  "full_raw_human_files_verified_opaque": 17,
+  "hidden_human_files_verified_opaque": 15,
+  "old_human_B1_fixture_or_evaluator_decoded": false,
+  "full_human_record_preserved": true,
+  "hidden_human_withdrawal_preserved": true,
+  "P_world_sensor_actuator_viability_cadence_and_UI_preserved": true,
+  "production_history_loader_preflight": "Deferred until authorization; static exact cache law/bytes/dependencies already verified.",
+  "no_new_independent_review_claim": true,
+  "no_push_PR_merge": true,
+  "no_vault_Git_writes": true,
+  "current_scope_complete": "Implementation, components, static starts and proposals only; stop for Jason review."
+}

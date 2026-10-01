@@ -1,0 +1,416 @@
+{
+  "files": {
+    "README.md": {
+      "sha256": "e2faaf561366a8e6d70d5ddfb2826031123464f564e0a7edf2770fa1371be71a",
+      "bytes": 1764
+    },
+    "execution/execute_once.py": {
+      "sha256": "da45b0076bc1e1054970f32f481eb885e6862550921f7f390709c4572c52779c",
+      "bytes": 12631
+    },
+    "execution/package_pair.py": {
+      "sha256": "b4417405539174d1a095a7ea27a1d4f846a3916ceee60222e6d273b5f1dca0c8",
+      "bytes": 8231
+    },
+    "execution/review/B1-MINIMAL-S1-SENSORY-FREE-command-trace.csv": {
+      "sha256": "7fa7f85546e8c626507ecd0be209a87af473d11f384440274b29013f67ca2ada",
+      "bytes": 15123
+    },
+    "execution/review/B1-MINIMAL-S1-SENSORY-FREE.json": {
+      "sha256": "54458ddbfc8b077a06496dc6c8f2a639124c366cf4db31a583cd12d8b396badc",
+      "bytes": 1931
+    },
+    "execution/review/B1_MINIMAL_CLOSURE_REPORT.md": {
+      "sha256": "e954aef8bba4ea00532f31ecf2679606bbd27a3e2e06996a3409417e8ee69b63",
+      "bytes": 11116
+    },
+    "execution/review/FULL_COMPANION.json": {
+      "sha256": "cf997ed505b83160ccc8978e400585a981d66a0f4488c1ee62b6fbd469921a74",
+      "bytes": 701
+    },
+    "execution/review/PAIRED_CLOSURE_RESULTS.json": {
+      "sha256": "9035359adef0bbca9aac17000a37429fea448b28da363141e48e2e6d67110596",
+      "bytes": 5565
+    },
+    "execution/review/POSTFLIGHT_IDENTITY.json": {
+      "sha256": "ba0a06f08ce141d612db4adbe1d7849dfcdbc352e457f1ef7aeeb3e86dc58a7a",
+      "bytes": 574
+    },
+    "execution/review/PRESERVED_S1_FULL_RESULT.json": {
+      "sha256": "6153e8db22de2ef9a525cffaa7a83eb1095c34f7497ccabfd9b14d0bbfeaa1a9",
+      "bytes": 2047
+    },
+    "execution/review/REUSED_SAVED_RECORD_AUDITOR.py": {
+      "sha256": "7dee55e78a39ca9d7e4ee16550a433eb0bd2ad7e82cac4a39ed2c92cc7562daf",
+      "bytes": 14397
+    },
+    "execution/review/REVIEW_START.json": {
+      "sha256": "1571dd793dc3e6358b19d275a48a3fe8b3aaedb50642b6eae7dc18f05da19e20",
+      "bytes": 197
+    },
+    "execution/review_pair.py": {
+      "sha256": "55e0accd7b78c283f9ca02ceada87c52ab690d625b48244817674baf355fa46a",
+      "bytes": 4763
+    },
+    "execution/run-001/APPROVAL.json": {
+      "sha256": "65d67c8355a869ccee36daa97afa692f3966dc660a7ddaa332125212e09069ad",
+      "bytes": 11389
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/controller.jsonl.gz": {
+      "sha256": "173e7b112edd28055be414303f259ad3f0168efca013cf676d8996a172df3abb",
+      "bytes": 6921
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/diagnostics.jsonl.gz": {
+      "sha256": "ba0235a078b042bb27321f67bc935b714780be848af334e35873320525a88c1a",
+      "bytes": 674883
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/events.jsonl.gz": {
+      "sha256": "d64f2fbc326395086919bba593112e1feaa03bfcb7e273a0a2bf710a0e520ca3",
+      "bytes": 199368
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/final.restart.json.gz": {
+      "sha256": "5e781caa303a7a8dafbca3dddda37fe645921762cb3a3f89f3e975182833506b",
+      "bytes": 638000
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/initial.restart.json.gz": {
+      "sha256": "df69539a062521dda9b2d31a89326b61984aa0e6d59401b3e8e41e193b51c661",
+      "bytes": 125873
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/manifest.json": {
+      "sha256": "f341e05698b19e09d9fa55c2e442e7c63e60278579103eca2ba31494830b9568",
+      "bytes": 11559
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/native-1000.restart.json.gz": {
+      "sha256": "48805bb59984ad562b4a8c26f7d2770c486ad48d7485b642267e8073ed290bc8",
+      "bytes": 285883
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/native-2000.restart.json.gz": {
+      "sha256": "4d1a8bdf3c4c334bf8574b072495231b757bbabbeae280c1eddd8ad90e897c09",
+      "bytes": 452122
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/native-3000.restart.json.gz": {
+      "sha256": "bc324b28d3c252107e6840937ee65ce2ca53d9a8d53aa7c27ab904e4ed5c8df3",
+      "bytes": 637982
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/native.jsonl.gz": {
+      "sha256": "39545889b597697a124ff83f17f283e2c381b0db9b20f7a227f29fbdc977444f",
+      "bytes": 1353455
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/scientific_observations.jsonl.gz": {
+      "sha256": "ff97a3665a7ea334f991a256f5b63b9ed986a89f7221344de227f0cf7e40820d",
+      "bytes": 50
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/sensor-display.json": {
+      "sha256": "4401c2fe4f6d255322182e071b7e25d92a25d29f3631087e0b6b349cdd205ea2",
+      "bytes": 1683160
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/sensor.jsonl.gz": {
+      "sha256": "4861b0d68f623e734973e4c52cbc32eb6aa6b88c1521d32061e0e991dd7db4e5",
+      "bytes": 607708
+    },
+    "execution/run-001/cases/B1-MINIMAL-S1-SENSORY-FREE/wave.jsonl.gz": {
+      "sha256": "5ec736c1042be312e97d5ef33cf5a0ac5bfa3e0ffc581fa40a558dadfba03abb",
+      "bytes": 31
+    },
+    "execution/run-001/EXECUTION_RESULT.json": {
+      "sha256": "2214f8bb7ce2d944387559ab8a838465e5726826b15591d301cf24955934ea6e",
+      "bytes": 875
+    },
+    "execution/run-001/LAUNCHED_MANIFEST.json": {
+      "sha256": "430f4662304d62a9f53664dc8a0987714d2f07411484d07d50a4ba2780b12b1c",
+      "bytes": 10242
+    },
+    "execution/run-001/ONE_ATTEMPT_CLAIM.json": {
+      "sha256": "c970ebc566b01845b8be65e7ec26e3f3243ff776bf9655e963c426f449791632",
+      "bytes": 451
+    },
+    "execution/run-001/operations.jsonl": {
+      "sha256": "7b013293ca77cd04646e6429f71573dd7bcc0a455900c222b262442b67171bf2",
+      "bytes": 5998
+    },
+    "execution/run-001/PREFLIGHT.json": {
+      "sha256": "9bf1276d0c491a4ddd771eac6045dd116e12e6e5c7b48a9237cc8e6de91ba99c",
+      "bytes": 3916
+    },
+    "execution/run-001/PRESERVED_FULL_AND_PRIOR_INVENTORY.json": {
+      "sha256": "118f156ff46e2412b920f2c0bd59d32d356f9173b70cc414d821b10bf63397f3",
+      "bytes": 7101
+    },
+    "execution/USER_AUTHORIZATION.md": {
+      "sha256": "41f24954212fdb6ff65a2e3879796be883ab4809e23d2dd9741a745dd27d8eb8",
+      "bytes": 1074
+    },
+    "prepared-proposal/accepted-design/B1_MINIMAL_CLOSURE_DESIGN_v0_2.md": {
+      "sha256": "8f0437aaa53bb192dad36f5337340a2cc8a4b7060660445d573f9c5ca473cbe6",
+      "bytes": 16481
+    },
+    "prepared-proposal/AUTHORITY_INDEX.json": {
+      "sha256": "ca52cdeb3cd88aa692c94a31e6985fd5ae0389d71dad1282ff5269f317e38f0c",
+      "bytes": 495
+    },
+    "prepared-proposal/cases/B1-MINIMAL-S1-SENSORY-FREE/AUTHORITY_OBJECT.canonical.json": {
+      "sha256": "57386e964ea018050bedc18a397e4611203926626e4363c2c9b04d79c9fc5ba2",
+      "bytes": 11695
+    },
+    "prepared-proposal/cases/B1-MINIMAL-S1-SENSORY-FREE/AUTHORITY_OBJECT.json": {
+      "sha256": "6f9e7c0bd423841ac65c09bdd7d45413ef09f4471bdf39a4a8b2666907614758",
+      "bytes": 15072
+    },
+    "prepared-proposal/cases/B1-MINIMAL-S1-SENSORY-FREE/EXECUTION_OBJECT.canonical.json": {
+      "sha256": "97bf333344bc97c2bdf7bd61f2ce0c758a75a9f7201561ca297d3539c6fe565f",
+      "bytes": 7329
+    },
+    "prepared-proposal/cases/B1-MINIMAL-S1-SENSORY-FREE/INITIAL.snapshot.json.gz": {
+      "sha256": "d8a2657916dc62a9a80d58d26f25f374e597526da69d409128ecf61c074aba2b",
+      "bytes": 121672
+    },
+    "prepared-proposal/cases/B1-MINIMAL-S1-SENSORY-FREE/MANIFEST.json": {
+      "sha256": "663c3b499fedb67dcbc67b206271af892225079d9a8053e410505fdf23ced72f",
+      "bytes": 9703
+    },
+    "prepared-proposal/CHECKPOINT.json": {
+      "sha256": "d5960415a57f89c770af082ad84ccff1c9ac793eea50459118cd51c2f6de764f",
+      "bytes": 4652
+    },
+    "prepared-proposal/FILE_MANIFEST.json": {
+      "sha256": "6acd2020724fbafb1cd093d0ed8460668cb8846526cc6c41e5a0d203018f9675",
+      "bytes": 11004
+    },
+    "prepared-proposal/instrument/developmental_ecology/configuration.json": {
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+      "bytes": 3445
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/__init__.py": {
+      "sha256": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+      "bytes": 81
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/adapter.py": {
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+      "bytes": 6032
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/authority.py": {
+      "sha256": "93257ab0bcb0ab593e45c1164cdca5d36d52c47d701cd60a6abfcf8551f7a23a",
+      "bytes": 13760
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/clock.py": {
+      "sha256": "2fa876c7ff2a0b1e704da009bf23300e046105512ab9d104a885ceb213e658b2",
+      "bytes": 3603
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/contract.py": {
+      "sha256": "f9924c2c0cf24bf3c1590b19e8b2c259138321a45c181f13ab2fc3d83b8d978d",
+      "bytes": 7257
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/controllers.py": {
+      "sha256": "b1aaaa2b41da7c41524512ed0104cf0195b83a0611c3dc84c392c579b375403b",
+      "bytes": 8264
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/diagnostics.py": {
+      "sha256": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+      "bytes": 7466
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/evaluation.py": {
+      "sha256": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+      "bytes": 5907
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/initialization.py": {
+      "sha256": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+      "bytes": 1299
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/operator_view.py": {
+      "sha256": "1c4fa0dcd6e941d6d93ddbdad24ca813524ab66854ba1b1b8c30f5a23a9473b7",
+      "bytes": 1914
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/pending.py": {
+      "sha256": "38fddaa3c8d28c21ad7d291626f85a798152bb6a4a91ea1c4b5cc485c056ff82",
+      "bytes": 8286
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/raw_reference.py": {
+      "sha256": "4e9a1f38435946eb1386ce4a94458f99ef1a76b96b8589c358899c005d3e2682",
+      "bytes": 4995
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/runner.py": {
+      "sha256": "1cf0a8ba57403617e5640ce33af613ab02662cecfc4578c97546281338a3c346",
+      "bytes": 21868
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/sensor.html": {
+      "sha256": "3742b5989c0e3dd7d11e39d4376699dc3d3dd88918519a0bbe380073eb1c75b3",
+      "bytes": 14993
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/sensor_ui.py": {
+      "sha256": "2ffd2128771cd8244b2be8b4fc4d6b35e54ca66d6cd84d3ecaed33ce9bbe9df9",
+      "bytes": 12049
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_commissioning/validators.py": {
+      "sha256": "766a4a4a5d7403e7f6278d1cc821d3c12d83e6aba5aa8624f81ed799177e06c2",
+      "bytes": 9783
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/__init__.py": {
+      "sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+      "bytes": 99
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/chemistry.py": {
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "bytes": 4565
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/diagnostics.py": {
+      "sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+      "bytes": 4887
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/engine.py": {
+      "sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+      "bytes": 9957
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/geometry.py": {
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+      "bytes": 8616
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/inspector.py": {
+      "sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+      "bytes": 20150
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/neural.py": {
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+      "bytes": 15195
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/physics.py": {
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+      "bytes": 19333
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/prehistory.py": {
+      "sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+      "bytes": 6513
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/reconstruction.py": {
+      "sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+      "bytes": 1879
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/records.py": {
+      "sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+      "bytes": 7470
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/schema.py": {
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+      "bytes": 7190
+    },
+    "prepared-proposal/instrument/developmental_ecology/loom_p/smokes.py": {
+      "sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b",
+      "bytes": 5575
+    },
+    "prepared-proposal/instrument/developmental_ecology/requirements-lock.txt": {
+      "sha256": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6",
+      "bytes": 129
+    },
+    "prepared-proposal/JASON_REQUEST.md": {
+      "sha256": "8a6ffcb2ae27bcb0ae4bb31f9aa73b6b6c65b66dbc67a50aa7f101853a630edd",
+      "bytes": 1157
+    },
+    "prepared-proposal/MATCHED_INITIAL_STATE_PROOF.json": {
+      "sha256": "b021a0aeab296b23e0bd58e4fabc1c54f7dccaf429c524c23db04b6ab5f1ca0b",
+      "bytes": 3688
+    },
+    "prepared-proposal/PREHISTORY_REUSE.json": {
+      "sha256": "67eaa8b4ffef7ca0ea85700e9406515982c2a94fe9e17a8263c2ab4c91428cf9",
+      "bytes": 1157
+    },
+    "prepared-proposal/preparation/prepare_proposal.py": {
+      "sha256": "432ea530fc0682554d1a9c8ceaa61a3de330263e29bcd4204f34f06bdb99c1f7",
+      "bytes": 20065
+    },
+    "prepared-proposal/provenance/original-S1-SENSORY-FREE/AUTHORITY_OBJECT.canonical.json": {
+      "sha256": "394dfc775fc1c6dc93820384a79f4fd63291f06ee03bb28f80e464c989861dbc",
+      "bytes": 10195
+    },
+    "prepared-proposal/provenance/original-S1-SENSORY-FREE/AUTHORITY_OBJECT.json": {
+      "sha256": "8aecdb64fc16730829a55b51ae0a6eb1b6309f6134075e4fc3621212b479f0ac",
+      "bytes": 13749
+    },
+    "prepared-proposal/provenance/original-S1-SENSORY-FREE/EXECUTION_OBJECT.canonical.json": {
+      "sha256": "62edc20ae079707d978b7785f047fcc41e155562edf4a485b56f68252b629dd9",
+      "bytes": 7329
+    },
+    "prepared-proposal/provenance/original-S1-SENSORY-FREE/MANIFEST.json": {
+      "sha256": "d74a1ca9d4092060c08fdb66024520bce39647c7d864680d72244633ec1472d6",
+      "bytes": 9962
+    },
+    "prepared-proposal/provenance/S1-FULL_OBSERVED_RESULT.json": {
+      "sha256": "6153e8db22de2ef9a525cffaa7a83eb1095c34f7497ccabfd9b14d0bbfeaa1a9",
+      "bytes": 2047
+    },
+    "prepared-proposal/provenance/STOPPED_BATCH_RESULT.json": {
+      "sha256": "1d3baddf6db42c12b00daed44cbaa0de24b587d5197ca86a153e61b85193dc7a",
+      "bytes": 1647
+    },
+    "prepared-proposal/README.md": {
+      "sha256": "8f7f49ca2da110df10a68003fe6995b62f90b169016068a84dd02d74901bdccc",
+      "bytes": 1558
+    },
+    "prepared-proposal/RESOURCE_ADJUSTMENT_PROJECTION.json": {
+      "sha256": "1217c90c270843b836953e5fdbbd8e5c283be415104dcb95570d55ace48372eb",
+      "bytes": 1787
+    },
+    "prepared-proposal/RESOURCE_AND_EXECUTION_PLAN.md": {
+      "sha256": "819c9c92b21e5482764a40f213f11f264fd08efc20299b98418cf060162221e6",
+      "bytes": 5659
+    },
+    "prepared-proposal/RESOURCE_PROJECTION.json": {
+      "sha256": "b1b85804297785c346ced9f39056411910385711bcf99030357d34ea177ca81b",
+      "bytes": 1245
+    },
+    "prepared-proposal/SEMANTIC_DIFF.json": {
+      "sha256": "2deb1c4d50a39f66e9d0e792f80b339e820569de740b9882e9a131e7134c44ab",
+      "bytes": 3312
+    },
+    "prepared-proposal/SEMANTIC_DIFF.md": {
+      "sha256": "5f3f3c0ef88858b628693b45d92d6edd07b4ff4199a1417ae762f7de450d6fc9",
+      "bytes": 2101
+    },
+    "prepared-proposal/SINGLE_CASE_RESOURCE_PLAN.md": {
+      "sha256": "91fa30ccfae33368ee8d81716f977bf744a38a4bcd8bf127da65556ce9261505",
+      "bytes": 3498
+    },
+    "prepared-proposal/SOURCE_IDENTITIES.json": {
+      "sha256": "bcf18ad650f8a668fc5668b7c4265dd92b67e66e50dcb0a37f209db6e46cd996",
+      "bytes": 5346
+    },
+    "prepared-proposal/starts/S1/START_MANIFEST.json": {
+      "sha256": "06c9a2a18490cf41ee5ace68ae566ac619eb0eb2b33bc95c5089a0b8e4b0627b",
+      "bytes": 4493
+    },
+    "prepared-proposal/STATIC_PREPARATION_CHECKS.json": {
+      "sha256": "8294109364aea9bd0eb53e6e4ba23273effedd3d7f1a62fb2f0d8cb76cb0fd7d",
+      "bytes": 577
+    },
+    "prepared-proposal/STATIC_VERIFICATION.json": {
+      "sha256": "517329f1f07ae8c0074cae97b7bb388376dd3248a7e2fe4455078463d3908c19",
+      "bytes": 1111
+    },
+    "prepared-proposal/verified-cache/fields.npz": {
+      "sha256": "f968ed0875d68e3421c5acc9f9a4a218727b9698877b1cc86225d4fec9e6ef7d",
+      "bytes": 94596
+    },
+    "prepared-proposal/verified-cache/law-source-at-preparation/chemistry.py": {
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+      "bytes": 4565
+    },
+    "prepared-proposal/verified-cache/law-source-at-preparation/geometry.py": {
+      "sha256": "b57861757e051c7a789df0ef31a28632d1e57dae3e0c3c933edf07667c11d877",
+      "bytes": 7814
+    },
+    "prepared-proposal/verified-cache/law-source-at-preparation/schema.py": {
+      "sha256": "2df77ee95f708aa755750e214ac9269985d8988760d2c08b5e9c36e477b574bd",
+      "bytes": 7050
+    },
+    "prepared-proposal/verified-cache/manifest.json": {
+      "sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3",
+      "bytes": 2020
+    }
+  },
+  "excludes": [
+    "FILE_MANIFEST.json (self)",
+    "external DELIVERY_VERIFICATION.json and ARCHIVE.sha256 (created after ZIP verification)"
+  ],
+  "checkpoint": "a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad",
+  "FULL_companion_archive_sha256": "6f81433c1102a3d008be9a7243951213c0396b805e6a5674f7ee89212df8fd66",
+  "new_cases": 1,
+  "physical_replays": 0
+}

@@ -1,0 +1,428 @@
+Perform the final independent post-R1-P fidelity review of the Loom P
+engineering baseline.
+
+Use the highest reasoning level available.
+
+This is a NARROW DELTA REVIEW.
+
+Previously reviewed HOLD checkpoint:
+f7eb6f27c661e3db193a4225b56a825d7e41739d
+
+New corrective checkpoint:
+6bc9683b54e4fa80136fe8534d7713e2a250a95f
+
+Branch:
+build/p-engineering-baseline-20260921-01a0c405
+
+Worktree:
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405
+
+Read first:
+- LOOM_P_INDEPENDENT_POST_CORRECTION_FIDELITY_REVIEW.md
+- docs/developmental_ecology/p_r1p_correction_20260923/BUILD_REPORT.md
+- the new portable review package
+- the exact diff f7eb6f27... -> 6bc9683b...
+- the prior independent review as needed for R2/R3 and mechanism status
+
+Portable package:
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\
+developmental_ecology\artifacts\
+review-package-r1p-20260923-01a0c405\
+Loom_P_R1P_corrective_review_20260923.zip
+
+Exact diff:
+C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405\
+developmental_ecology\artifacts\
+review-package-r1p-20260923-01a0c405\
+assembled\CORRECTION.patch
+
+Do not inherit builder claims as true. Reproduce the consequential ones.
+
+Do not modify target files, configuration, Git state, Workbench files,
+existing artifacts or source documents. Do not fix anything. Do not
+start commissioning, scientific lifetimes, sweeps or efficacy runs.
+
+You may run existing deterministic tests, component reproductions,
+in-memory mutants/falsifiers, read-only reconstruction/provenance tools,
+and inspect already-recorded bounded smoke evidence.
+
+PRIMARY QUESTION
+
+Did 6bc9683b correctly close the remaining R1-P release/free-flight/
+recontact class without changing the scientific object or introducing
+a new engineering defect material to coupling commissioning?
+
+The final disposition must be exactly one of:
+
+FIT TO PROCEED TO COUPLING COMMISSIONING
+
+or
+
+HOLD BEFORE COUPLING COMMISSIONING
+
+
+==================================================
+1. EXACT DIFF / SCOPE
+==================================================
+
+Independently inspect the full diff:
+
+f7eb6f27c661e3db193a4225b56a825d7e41739d
+    ->
+6bc9683b54e4fa80136fe8534d7713e2a250a95f
+
+Confirm whether production changes are confined to the necessary
+physical/event implementation.
+
+Verify that no scientific/world-law parameter, numerical tolerance,
+native timestep, packet rule, P equation, neural schedule, random-stream
+cadence, associative regime, illumination law or E/I learning rule changed.
+
+Classify any unexpected law-bearing change as:
+UNRESOLVED / REQUIRES JASON.
+
+Do not rationalize an out-of-scope change as harmless.
+
+
+==================================================
+2. EXACT PREVIOUSLY FAILING OBLIQUE FIXTURE
+==================================================
+
+Independently reproduce the exact previous R1-P fixture:
+
+body centre = [2, 3]
+source = source 0
+energy = 0.7
+integrity = 1
+velocity = [-1e-5, 0]
+orientation = arccos(.01/.76)
+            = 1.557638052356994 rad
+command = [1, 1]
+native duration = 0.01 s
+baseline Config unchanged
+
+Use an oracle independent of the production release detector.
+
+Establish under the selected frozen-force trajectory:
+
+- the body genuinely leaves contact beyond geometry_tol;
+- the release/free excursion is resolvable;
+- free duration is positive;
+- return/recontact occurs;
+- free flight receives no source transfer, repair or contact damage;
+- subsequent contact accounting uses only positive contact duration;
+- total event durations conserve the native interval;
+- source debit/body credit remain conserved;
+- no duplicate release/recontact appears;
+- no zero-duration transfer/repair is introduced;
+- the event search terminates normally.
+
+Compare the observed timing with the builder-reported free duration
+approximately 0.000994507574 s without assuming that number is correct.
+
+
+==================================================
+3. CLASS-LEVEL GENERALISATION
+==================================================
+
+Inspect and reproduce the builder's two additional deterministic
+oblique variants.
+
+Determine whether they genuinely vary the release geometry rather than
+being cosmetic near-duplicates.
+
+Retain the original radial R1 fixture as a regression.
+
+The intent is NOT exhaustive contact-space proof.
+
+The required evidence is that the correction handles the demonstrated
+CLASS:
+
+initially touching
+    -> resolvable normal separation
+    -> free flight
+    -> return/recontact within the same native step
+
+under radial and materially oblique force geometries.
+
+If you discover another ordinary deterministic variant inside this same
+demonstrated class that the corrected law still converts into
+full-duration sustained contact, classify HOLD.
+
+Do not launch a broad contact-geometry sweep or search indefinitely for
+pathological cases.
+
+
+==================================================
+4. RELEASE SEARCH AND SWEPT-SEARCH TERMINATION
+==================================================
+
+Inspect the new whole-interval release search and the modified swept
+search.
+
+Verify that:
+
+- failure of the cheap early release certificate no longer means
+  "continuous contact";
+- the release search uses actual normal-gap geometry under the declared
+  trajectory;
+- the search cannot silently resolve uncertainty by retaining contact;
+- unresolved paths explicitly raise/report apparatus failure;
+- large tangential motion does not force pathological micro-stepping
+  through the old global-speed bound when the normal gap evolves slowly;
+- the normal-gap-rate step remains conservative under its stated
+  curvature bound;
+- existing finite search limits remain unchanged;
+- the exact oblique case terminates well within those limits.
+
+The builder reports 15 first-collision passes for the exact oblique
+fixture. Independently inspect/measure the relevant loop behaviour;
+do not accept the reported count solely from logs.
+
+Also specifically revisit the previous review's finding that merely
+forcing release under f7 caused swept-contact iteration exhaustion.
+Confirm that the new implementation closes that complete event path,
+rather than only replacing where the failure occurs.
+
+
+==================================================
+5. RED -> GREEN EVIDENCE
+==================================================
+
+Independently establish consequential RED-before-GREEN evidence.
+
+At minimum verify:
+
+A. exact old f7 runtime is RED on the oblique regression;
+B. disabling the new class-level release search is RED;
+C. retaining the old swept search with otherwise corrected release is
+   RED where the builder claims;
+D. corrected runtime is GREEN;
+E. original radial regression remains GREEN.
+
+Inspect the independent oracle. It must not merely call the same
+production function being tested.
+
+Do not accept a test whose failure branch is unreachable.
+
+
+==================================================
+6. R2 / R3 REGRESSION ONLY
+==================================================
+
+R2 and R3 were independently CLOSED at f7eb6f27.
+
+Do not redesign or reopen them without new evidence.
+
+Rerun their existing consequential checks under the new checkpoint and
+confirm they remain green.
+
+If the physics change does not touch their relevant paths, this is a
+regression check, not a new full audit.
+
+
+==================================================
+7. P MECHANISM REGRESSION
+==================================================
+
+Confirm the correction did not modify the selected P mechanism.
+
+At minimum verify unchanged identity or semantics for:
+
+- equations 1-21;
+- neural handoff ordering;
+- previous-perturbation bodily credit;
+- old-H read before current coactivity write;
+- support/query latency;
+- separate E/I learning;
+- actual/evoked reserve separation;
+- mean-plus-endpoint packets;
+- cortical centring/adaptation;
+- pooling;
+- configurable sensory widths/pools;
+- contracting associative regime;
+- illumination ruling;
+- random-stream cadence.
+
+A changed physical trajectory caused by corrected contact scheduling is
+NOT itself a neural-mechanism change.
+
+
+==================================================
+8. FINAL SUITES
+==================================================
+
+Independently run the complete test suite from:
+
+1. the final worktree;
+2. the assembled portable package.
+
+Use fresh temp roots, no pytest cache, no ambient artifact dependence,
+and the pinned existing environment.
+
+Builder claim to verify:
+
+59 passed in each final delivery.
+
+A green count alone does not close R1-P; the consequential regressions
+above remain required.
+
+
+==================================================
+9. ATTEMPT-004 SAVED EVIDENCE
+==================================================
+
+Inspect only the already-recorded attempt-004 bounded engineering cases:
+
+- birth_30s
+- nonzero_resume_1s
+- contact_ui_1s
+
+Verify:
+- same semantic configuration as previous attempts;
+- same master seed and life;
+- same administrative durations;
+- earlier attempts preserved;
+- no additional scientific case introduced;
+- all 3,200 neural states reconstruct exactly;
+- all three final fields reconstruct exactly;
+- pause/resume remains exact;
+- observer/replay isolation remains intact;
+- source/body accounting remains consistent.
+
+The builder reports no trajectory differences from attempt-003.
+Independently check that claim, but do NOT require equality if the new
+physics law was actually exercised. A legitimate corrected trajectory
+difference is not a failure.
+
+
+==================================================
+10. PHYSICAL EVENT / NATIVE-CLOCK SEPARATION
+==================================================
+
+Verify that multiple contact subevents inside one native step do not
+create:
+
+- extra neural native updates;
+- extra wave handoffs;
+- extra random/noise draws;
+- extra field updates.
+
+The correction may subdivide physical events only.
+
+Inspect the builder's repeated/duplicated field-update fault and any
+native-clock regression that supports this claim.
+
+
+==================================================
+11. CHEMICAL PREHISTORY
+==================================================
+
+Verify the cached 600-second world-only chemical prehistory was reused
+only because all of its true dependencies remained unchanged.
+
+Independently compare dependency identities.
+
+If a relevant prehistory dependency changed while the old cache was
+reused, classify MUST-FIX.
+
+Do not rerun the prehistory merely to prove identity.
+
+
+==================================================
+12. PRESERVATION / PROVENANCE
+==================================================
+
+Verify:
+
+- f7eb6f27 remains preserved and reachable;
+- d5f7efbe remains preserved;
+- old smoke/review artifacts remain unchanged;
+- the builder's stated 489 preserved artifact files retain identity;
+- new commit and branch identities are exact;
+- EXP1-21 tree remains unchanged;
+- package/code/config identities correspond to 6bc9683b;
+- no scientific source/canon document was silently amended.
+
+Do not attempt remote or vault operations merely to prove negative
+process claims.
+
+
+==================================================
+13. LIMITS THAT ARE NOT AUTOMATIC HOLD REASONS
+==================================================
+
+Do NOT require proof of:
+
+- exhaustive arbitrary contact geometry;
+- global convergence of the finite-step contact solver;
+- natural terminal complete-loop behaviour;
+- cross-platform bit identity;
+- scientific efficacy;
+- useful learning;
+- survival;
+- adequate eight-unit capacity;
+- adequate temporal packet richness;
+- noncontracting association;
+- separate configurable E/I constants.
+
+Those remain disclosed limitations or scientific/commissioning questions
+unless you find a concrete implementation violation.
+
+Finite search limits are acceptable if unresolved cases HALT explicitly
+rather than silently manufacture contact.
+
+
+==================================================
+14. FINDING CLASSIFICATION
+==================================================
+
+Classify each material finding as exactly one of:
+
+VERIFIED
+
+LIMITATION / EXPECTED PROVISIONAL CHOICE
+
+MUST-FIX BEFORE COMMISSIONING
+
+SCIENTIFIC QUESTION, NOT AN ENGINEERING DEFECT
+
+UNRESOLVED / REQUIRES JASON
+
+
+==================================================
+15. FINAL DISPOSITION
+==================================================
+
+Return:
+
+FIT TO PROCEED TO COUPLING COMMISSIONING
+
+only if:
+
+- the demonstrated radial/oblique R1 class is closed;
+- the complete event path terminates correctly;
+- free-flight accounting is physically separated from contact accounting;
+- consequential falsifiers genuinely bite;
+- R2/R3 remain closed;
+- final suites reproduce;
+- attempt-004 evidence is internally reproducible;
+- no out-of-scope scientific/configuration change occurred;
+- no new engineering defect material to commissioning was found.
+
+Do NOT require exhaustive contact-space proof.
+
+If another example inside the same ordinary demonstrated release/recontact
+class fails, return HOLD and state the smallest closure.
+
+If FIT, do not design or begin commissioning. Commissioning remains a
+separate Jason-authorized design task.
+
+Produce:
+- full review;
+- concise closure table;
+- exact reproduction commands;
+- reviewed commit/config/package identities;
+- portable Workbench-intake ZIP.
+
+Then stop.

@@ -1,0 +1,349 @@
+{
+  "exact_approved_specification_accepted": true,
+  "zero_initial_native_steps": 0,
+  "canonical_spec_fields": [
+    "schema",
+    "baseline",
+    "p_code",
+    "configuration",
+    "apparatus",
+    "case_id",
+    "purpose",
+    "mode",
+    "controller",
+    "initial_state",
+    "initial_time",
+    "initial_index",
+    "initial_fields",
+    "phase",
+    "initialization",
+    "duration_seconds",
+    "hard_stop_time",
+    "command_hold_seconds",
+    "selection",
+    "roster",
+    "execution"
+  ],
+  "approved_sha256": "d6dc6a799d3f46c762027a3572e5ec804822dc2ce1ac2ee3c13c9cf884028851",
+  "independent_substitutions": [
+    {
+      "field": "controller_implementation",
+      "new_hash": "d17d0cb44de8241f48a44bdd46dfc51538b29159d8c89071ae1e4866921bc2a9",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "controller execution identity mismatch"
+      }
+    },
+    {
+      "field": "controller_constants",
+      "new_hash": "511180efa871e53459cbf424ce95a1853541ebdbc82955da7403ea040d050261",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "controller execution identity mismatch"
+      }
+    },
+    {
+      "field": "route_waypoints",
+      "new_hash": "4349ab65ab0686de8c05cfbd16700db8e3a801dea7d6496b0db74a7a946eb1f2",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "stage_order",
+      "new_hash": "0d560202d7ef3df2d11bbc115771da390e2044537a2271d3fa11d5b91a92a54b",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "stage_duration",
+      "new_hash": "1dcba3a9fa8257c1e3f06646f14418603ab855aedab0a55715977243c6331692",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "initial_state",
+      "new_hash": "a08fb18eba4f3272f664fc619fdbae89cfc2d13479b6bda22151525c7f02246b",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "initial state identity mismatch"
+      }
+    },
+    {
+      "field": "mover_phase",
+      "new_hash": "4cf391630c0dcf8cf94d553dc534af7edcf4b741089a16b0238c0bdde5f65d6e",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "wrong field/mover phase"
+      }
+    },
+    {
+      "field": "prehistory",
+      "new_hash": "30b4c13b027c1fb8c4aa02940c3f3ba0ffca34d0b4d1186b5d9d9ab427c791f8",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "field history receipt mismatch"
+      }
+    },
+    {
+      "field": "case_deadline",
+      "new_hash": "67e6887781b08405fd719217acfa306bfc503d65a70d0666ce5f8d96e134f8f1",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "execution grant scope mismatch"
+      }
+    },
+    {
+      "field": "deprivation",
+      "new_hash": "3a6739d334c0b7aaffe8adc2b5d87e7b75564320a9bdb0236db5a63d8fd950a7",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "unsupported display intervention"
+      }
+    },
+    {
+      "field": "arm_identity",
+      "new_hash": "827171c2610242fb3f41c2b266d1833aa7249535347c00b649c3310a3a5bffe8",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "execution grant scope mismatch"
+      }
+    },
+    {
+      "field": "adapter_identity",
+      "new_hash": "2c0a8153038d161dba76e744efca79d38596869bbf48d5017da96ff0fb7291b7",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "adapter execution identity mismatch"
+      }
+    },
+    {
+      "field": "manual_controller",
+      "new_hash": "a7e17717249d20b7f4f7eb0b256e07c6c990ff48ba2daf21d6f962f9d8a3d0b7",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "sensor_controller",
+      "new_hash": "73ad1f7477e32776a25c3d2792614d0b9bbb9b43ef35c533049264d09ed89152",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "fixed_arm",
+      "new_hash": "c58da06f36c42effb0d3c05ac4256002ebb1e0f78a669077dddbc43aeff24d0a",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "intact_arm",
+      "new_hash": "c4fa2b2cc59168978f85787dd218b7edd51057e525faabfd4cac7d6b2aa9384b",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "route_prefix",
+      "new_hash": "354f1358b125936cd45a34e2812ca07f3a4b50bc81ce5dba016b755169b96abc",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "route_suffix",
+      "new_hash": "3a9a3a12f0bdd3f300bef072a42991fe56570931ad410b07c305fb8ce0064815",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "resource_scope",
+      "new_hash": "ee1c5c7d3eff9fdbab24ea7f3985ef3e5cf995cd67260297217d86986bd29a71",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      }
+    },
+    {
+      "field": "controller_defaults_omitted",
+      "new_hash": "37811ecec645e4136fc027c51d5e9ee570599cc6f2e138adb168dbc12b5a3406",
+      "binding": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "approved execution identity mismatch"
+      },
+      "full_pre_output_entry": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "controller execution identity mismatch"
+      }
+    }
+  ],
+  "key_order_whitespace_unambiguous": true,
+  "AMBIGUOUS_APPROVAL_FINDING": [
+    {
+      "case": "duplicate-approved-execution",
+      "strict_independent_parser": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "duplicate JSON key: approved_execution"
+      },
+      "production_authorization": {
+        "accepted": true
+      },
+      "request_sha256": "b6efa768ee86703ab604118ea8f8e72d46070146ca1ac36535dc555e9cad2f51",
+      "resolved_spec_hash": "d6dc6a799d3f46c762027a3572e5ec804822dc2ce1ac2ee3c13c9cf884028851"
+    },
+    {
+      "case": "duplicate-nested-waypoint",
+      "strict_independent_parser": {
+        "accepted": false,
+        "exception": "ValueError",
+        "message": "duplicate JSON key: point"
+      },
+      "production_authorization": {
+        "accepted": true
+      },
+      "request_sha256": "7331d8ab7036f1bec1a8a995e994e52e7a08c65b3f08df6a9b69771eac3446e0",
+      "resolved_spec_hash": "d6dc6a799d3f46c762027a3572e5ec804822dc2ce1ac2ee3c13c9cf884028851"
+    }
+  ],
+  "non_string_protocol_key_coercion": {
+    "different_python_objects_same_hash": true,
+    "validation": {
+      "accepted": true
+    }
+  },
+  "nonfinite_rejected": true,
+  "native_steps": 0,
+  "trajectory_output_created": false,
+  "scope": "Validation-only existing-cache load; synthetic requests; rejected constructor probes protected by recorder sentinel."
+}

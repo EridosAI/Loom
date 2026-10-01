@@ -1,0 +1,223 @@
+[
+  {
+    "name": "unmodified_f7",
+    "test": "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]",
+    "expected_message": "R1-P: resolvable free flight was charged as contact",
+    "expected_location": "tests/test_r1p_oblique.py:45",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-final-r1p-review-6bc9683b\\falsifiers\\recheck_mutants.py",
+        "--child",
+        "unmodified_f7"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\unmodified_f7-RED.txt",
+      "sha256": "c7fb1740d290ecaedbe40c076537621ca6067406521c8c57b632bd28c2f6a644"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\unmodified_f7-GREEN.txt",
+      "sha256": "7148718990d7ea797310a566f73839afc086a66a233d8b87a51420dbd3998814"
+    }
+  },
+  {
+    "name": "class_search_disabled",
+    "test": "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]",
+    "expected_message": "R1-P: resolvable free flight was charged as contact",
+    "expected_location": "tests/test_r1p_oblique.py:45",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-final-r1p-review-6bc9683b\\falsifiers\\recheck_mutants.py",
+        "--child",
+        "class_search_disabled"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\class_search_disabled-RED.txt",
+      "sha256": "7d6b11254f4f40bdbfec50e367e2e9d1c1c3af933fc35388902f4a0afe030f5e"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\class_search_disabled-GREEN.txt",
+      "sha256": "146d19e02d1378b105c1e5940aad665dab08e1f5c8544cf88ff5ed55ec290793"
+    }
+  },
+  {
+    "name": "old_swept_search",
+    "test": "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]",
+    "expected_message": "Swept contact search iteration limit",
+    "expected_location": "<unmodified f7eb6f27 physics>:158",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-final-r1p-review-6bc9683b\\falsifiers\\recheck_mutants.py",
+        "--child",
+        "old_swept_search"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\old_swept_search-RED.txt",
+      "sha256": "54b6d3657c5f4e2ea4c6a2c9bd593e1f2fbeb84c431ed69a8ef5fc7b3ff1dc72"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_r1p_oblique.py::test_oblique_release_free_return_and_accounting[review-exact]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\old_swept_search-GREEN.txt",
+      "sha256": "146d19e02d1378b105c1e5940aad665dab08e1f5c8544cf88ff5ed55ec290793"
+    }
+  },
+  {
+    "name": "duplicate_field_update",
+    "test": "tests/test_r1p_oblique.py::test_oblique_event_subdivision_keeps_native_noise_and_field_cadence",
+    "expected_message": "assert calls==",
+    "expected_location": "tests/test_r1p_oblique.py:87",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-final-r1p-review-6bc9683b\\falsifiers\\recheck_mutants.py",
+        "--child",
+        "duplicate_field_update"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\duplicate_field_update-RED.txt",
+      "sha256": "9f308f9ff2d4b12410615192af9a041ee3cb9656c078729a401b5a2ad8e91043"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_r1p_oblique.py::test_oblique_event_subdivision_keeps_native_noise_and_field_cadence",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\duplicate_field_update-GREEN.txt",
+      "sha256": "1b6d285e9bf8c2d7876becb3febd98832a4a060079ff2e22611ccc00af141ee5"
+    }
+  },
+  {
+    "name": "release_disabled",
+    "test": "tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting",
+    "expected_message": "Touching body must release",
+    "expected_location": "tests/test_corrective_contracts.py:29",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-final-r1p-review-6bc9683b\\falsifiers\\recheck_mutants.py",
+        "--child",
+        "release_disabled"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\release_disabled-RED.txt",
+      "sha256": "e753f868c0eac5e0b65457c3bea1888ee0831c2ea17676709529f9d252086f29"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "pairs-attempt-001\\release_disabled-GREEN.txt",
+      "sha256": "6c9294c723e8b4f0071bc1ed44f3dc172e3f96f376c22867366595be33b8d48c"
+    }
+  },
+  {
+    "name": "live_branch_missing",
+    "test": "tests/test_records.py::test_live_handoff_observation_has_physical_timestamp",
+    "expected_message": "Live handoff branch was not exercised",
+    "expected_location": "tests/test_records.py:85",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-final-r1p-review-6bc9683b\\falsifiers\\recheck_mutants.py",
+        "--child",
+        "live_branch_missing"
+      ],
+      "exit_code": 1,
+      "confirmed": false,
+      "output": "pairs-attempt-001\\live_branch_missing-RED.txt",
+      "sha256": "71b11e45d834c3e167080ccf2dff85c8f9e2ec4337517896b4239c88dbf889d3"
+    }
+  }
+]

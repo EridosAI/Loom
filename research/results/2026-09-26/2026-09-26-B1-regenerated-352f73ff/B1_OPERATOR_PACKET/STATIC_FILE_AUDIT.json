@@ -1,0 +1,70 @@
+{
+  "independent_file_only_audit": true,
+  "case_checks": [
+    {
+      "case": "PC-LR",
+      "canonical_binding_verified": true,
+      "all_non_identity_case_fields_preserved": true,
+      "protocol_semantics_preserved": true,
+      "unchanged_prehistory_receipt_present": true,
+      "null_grant": true
+    },
+    {
+      "case": "PC-MOTION",
+      "canonical_binding_verified": true,
+      "all_non_identity_case_fields_preserved": true,
+      "protocol_semantics_preserved": true,
+      "unchanged_prehistory_receipt_present": true,
+      "null_grant": true
+    },
+    {
+      "case": "PC-CONTACT",
+      "canonical_binding_verified": true,
+      "all_non_identity_case_fields_preserved": true,
+      "protocol_semantics_preserved": true,
+      "unchanged_prehistory_receipt_present": true,
+      "null_grant": true
+    },
+    {
+      "case": "PC-HOLD",
+      "canonical_binding_verified": true,
+      "all_non_identity_case_fields_preserved": true,
+      "protocol_semantics_preserved": true,
+      "unchanged_prehistory_receipt_present": true,
+      "null_grant": true
+    },
+    {
+      "case": "B1-FULL-RAW",
+      "canonical_binding_verified": true,
+      "all_non_identity_case_fields_preserved": true,
+      "protocol_semantics_preserved": true,
+      "unchanged_prehistory_receipt_present": true,
+      "null_grant": true
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "canonical_binding_verified": true,
+      "all_non_identity_case_fields_preserved": true,
+      "protocol_semantics_preserved": true,
+      "unchanged_prehistory_receipt_present": true,
+      "null_grant": true
+    }
+  ],
+  "all_authorities_new_and_separate": true,
+  "same_complete_pair_state": true,
+  "unchanged_snapshot_files": 5,
+  "unchanged_prehistory_receipts": 1,
+  "all_resource_hard_limits_unchanged": true,
+  "resource_change_only_new_lifecycle_audit_allowance": true,
+  "unexpected_semantic_changes": 0,
+  "public_bundle_contains_no_B1_scalar_state": true,
+  "public_bundle_contains_no_current_manifest_snapshot_or_canonical_execution_object": true,
+  "existing_disclosed_PC_cards_preserved_under_Jason_clarification": true,
+  "hidden_B1_evaluator_not_opened_to_operator": true,
+  "native_fidelity_unchanged": true,
+  "code_worktree_clean": true,
+  "historical_files_unchanged": 130,
+  "launch_state": "All grants null; no simulations/controllers/tests/live services executed; awaiting positive-control authorization only.",
+  "available_disk_bytes_at_static_audit": 648683601920,
+  "repeat_disk_check_required_before_future_launch": true
+}

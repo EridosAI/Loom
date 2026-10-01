@@ -1,0 +1,11 @@
+# FS-060 unexpected worker termination
+
+47 expansion lives have authentic complete runner receipts. FS-060 started once and stopped without a closing receipt. The monitored tool session 64441 returned exit code 1. Worker PID 144848 was absent on inspection at 2026-09-30 02:32:07 UTC. There is no Python traceback, runner failure record, final receipt or temporary partial file for FS-060. The cause is unresolved; the event is not labelled biological death or P/world failure.
+
+The last complete durable native chunk ends at index 12,400, time 124.00000000002653 s; 620 actual waves are retained. The last complete physical/P checkpoint is index 12,000, time 120.00000000002449 s. Execution beyond the last durable chunk, including an in-memory partial tail, is unknown. No tail, final state or closing receipt was synthesized. No ecological replay, retry, continuation, rewind, replacement, or new birth was performed.
+
+The last progress record reports 30.312519500032067 active wall seconds for FS-060, below its 900-second allowance. Its preserved files occupy 9,198,847 bytes, below 83,333,333. The recorded aggregate active-wall lower bound is 7385.040592200 s; the UTC span from original batch launch to the absence observation is approximately 7,440 s, below the 43,200-second aggregate allowance. Known completed primary bytes are 1,565,161,382; fixed input/metadata reserve plus those bytes and the interrupted store is 1,587,540,393, below 4,000,000,000. No resource-pause record was written. These observations do not establish why the process disappeared.
+
+Original records and the execution ledger are preserved unchanged. Interruption custody (filename: INTERRUPTION_CUSTODY_SEAL.json) is an external evidence-preservation record, explicitly not a runner closure. The new denominator seal labels FS-060 APPARATUS_INTERRUPTED_UNCLOSED. All 48 cases were attempted once; the fixed combined denominator is 60, with FS-060 administratively incomplete. There are no later authorized lives to leave unstarted. A bounded Application-event query retrieved no matching Python process event; that absence does not prove the absence of an operating-system/runtime cause.
+
+Continue only with the already-authorized passive custody checks, single archive and bounded A/B/C analysis. No scientific restart is authorized.

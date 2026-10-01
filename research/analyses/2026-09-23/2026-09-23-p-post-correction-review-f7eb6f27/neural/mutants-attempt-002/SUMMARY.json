@@ -1,0 +1,642 @@
+[
+  {
+    "name": "bank_reference_frozen",
+    "test": "tests/test_neural.py::test_bank_projection_and_reference_follow_new_value",
+    "expected_message": "assert np.allclose(r.reference",
+    "expected_test_line": "tests/test_neural.py:204",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "bank_reference_frozen"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\bank_reference_frozen-RED.txt",
+      "sha256": "6b36c976c7d364aaf3fd16a71fd27278ca384a67991c53f18adbaff1fdfef8ef"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_neural.py::test_bank_projection_and_reference_follow_new_value",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\bank_reference_frozen-GREEN.txt",
+      "sha256": "188c7d2c78e3347bd0649f49b266c0cd289fd68f9cfe0221f5ea1989c86953ff"
+    }
+  },
+  {
+    "name": "bank_reference_old_target",
+    "test": "tests/test_neural.py::test_bank_projection_and_reference_follow_new_value",
+    "expected_message": "Bank reference must follow newly projected theta",
+    "expected_test_line": "tests/test_neural.py:215",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "bank_reference_old_target"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\bank_reference_old_target-RED.txt",
+      "sha256": "e3be00e1475a3fd67adc1d06fa25a8cbdc303160461b44fd316e33bb2bca0a35"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_neural.py::test_bank_projection_and_reference_follow_new_value",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\bank_reference_old_target-GREEN.txt",
+      "sha256": "e595c9dd5a9edc1722d0f72303c939afef026f4ec243dac3267b63461a9fa194"
+    }
+  },
+  {
+    "name": "shared_reference_frozen",
+    "test": "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[shared_ref-shared-tau_shared_reference]",
+    "expected_message": "shared_ref movement missing",
+    "expected_test_line": "tests/test_corrective_contracts.py:91",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "shared_reference_frozen"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\shared_reference_frozen-RED.txt",
+      "sha256": "24aca0ba7744be2b14ad860bbded14ff9db1dc8017c9b4b76db33b3c1dc88b6f"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[shared_ref-shared-tau_shared_reference]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\shared_reference_frozen-GREEN.txt",
+      "sha256": "88bd8dfdb7a94b6010ba5e505610de7af6f1c0243a48a0fdf1fe146c619a4fa4"
+    }
+  },
+  {
+    "name": "fine_reference_frozen",
+    "test": "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]",
+    "expected_message": "fine_ref movement missing",
+    "expected_test_line": "tests/test_corrective_contracts.py:91",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "fine_reference_frozen"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\fine_reference_frozen-RED.txt",
+      "sha256": "7c4c79242809598969b864c26fd2ded83cd0e3a5ea726a716f51195c661dd0c1"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\fine_reference_frozen-GREEN.txt",
+      "sha256": "db80ef13e92e5f4207aae7adf10abb9db0cc7dfaccd870dc2654e9a9a25ec009"
+    }
+  },
+  {
+    "name": "terminal_guard_removed",
+    "test": "tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[19]",
+    "expected_message": "Invented terminal handoff",
+    "expected_test_line": "tests/test_boundary_and_scheduler.py:48",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "terminal_guard_removed"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\terminal_guard_removed-RED.txt",
+      "sha256": "03becf86ee46af9d79cbff2817a4fa3822ae21f7de404110b3817dc59985f9e4"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[19]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\terminal_guard_removed-GREEN.txt",
+      "sha256": "6c9294c723e8b4f0071bc1ed44f3dc172e3f96f376c22867366595be33b8d48c"
+    }
+  },
+  {
+    "name": "body_footprint_missing",
+    "test": "tests/test_physical.py::test_field_flux_mass_and_moving_geometry_continuity",
+    "expected_message": "Body footprint must change diffusion",
+    "expected_test_line": "tests/test_physical.py:31",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "body_footprint_missing"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\body_footprint_missing-RED.txt",
+      "sha256": "682920d80968a2e431b881e48d977844130e53b147574ebc113eb50a13089349"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_physical.py::test_field_flux_mass_and_moving_geometry_continuity",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\body_footprint_missing-GREEN.txt",
+      "sha256": "8ad57cbc4d8db15412b66082549e8911659560cbb57b5b814b8a722c2227bc6f"
+    }
+  },
+  {
+    "name": "hidden_pose_injected",
+    "test": "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+    "expected_message": "Hidden world state entered native learner arithmetic",
+    "expected_test_line": "tests/test_corrective_contracts.py:135",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "hidden_pose_injected"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_pose_injected-RED.txt",
+      "sha256": "51c15b6a903565a9ba4cee832ec7a2cfc2c591467d2fb7d437eaa1063e89710c"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_pose_injected-GREEN.txt",
+      "sha256": "fbc152957b35a7a3a4725c17e32918f23f5bd96cce7574aa2d01ba5068369be2"
+    }
+  },
+  {
+    "name": "hidden_config_read",
+    "test": "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+    "expected_message": "Forbidden learner configuration read",
+    "expected_test_line": "tests/test_corrective_contracts.py:116",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "hidden_config_read"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_config_read-RED.txt",
+      "sha256": "23b03e0e0bef91f6bf5b66fd7c0ce27581773216b925a85cd635853659e0b603"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_config_read-GREEN.txt",
+      "sha256": "fbc152957b35a7a3a4725c17e32918f23f5bd96cce7574aa2d01ba5068369be2"
+    }
+  },
+  {
+    "name": "evoked_refill",
+    "test": "tests/test_corrective_contracts.py::test_evoked_reserves_have_no_direct_physical_ownership",
+    "expected_message": "Evoked reserve bypassed motor/physical ownership",
+    "expected_test_line": "tests/test_corrective_contracts.py:165",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "evoked_refill"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\evoked_refill-RED.txt",
+      "sha256": "74f96a4bc1001adcdd208bf0fbd48791f46d79332a85e8e39093931a90194b87"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_evoked_reserves_have_no_direct_physical_ownership",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\evoked_refill-GREEN.txt",
+      "sha256": "db4ce22a81508ccb886f409bf6d5791df57d3810dd37302d8c4c62e5f45a28a3"
+    }
+  },
+  {
+    "name": "shared_reference_new_target",
+    "test": "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[shared_ref-shared-tau_shared_reference]",
+    "expected_message": "shared_ref movement missing",
+    "expected_test_line": "tests/test_corrective_contracts.py:91",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "shared_reference_new_target"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\shared_reference_new_target-RED.txt",
+      "sha256": "e258f468c29df6d0d5429f9a5d202d27a55c6aa3fd2986f484f50f446ef344f6"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[shared_ref-shared-tau_shared_reference]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\shared_reference_new_target-GREEN.txt",
+      "sha256": "db80ef13e92e5f4207aae7adf10abb9db0cc7dfaccd870dc2654e9a9a25ec009"
+    }
+  },
+  {
+    "name": "fine_reference_new_target",
+    "test": "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]",
+    "expected_message": "fine_ref movement missing",
+    "expected_test_line": "tests/test_corrective_contracts.py:91",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "fine_reference_new_target"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\fine_reference_new_target-RED.txt",
+      "sha256": "3b7a565b7d2e8691073fbc37cb19bc7685f84e72c38157c6aedc6249b12325e5"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\fine_reference_new_target-GREEN.txt",
+      "sha256": "db80ef13e92e5f4207aae7adf10abb9db0cc7dfaccd870dc2654e9a9a25ec009"
+    }
+  },
+  {
+    "name": "terminal_guard_removed_59",
+    "test": "tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[59]",
+    "expected_message": "Invented terminal handoff",
+    "expected_test_line": "tests/test_boundary_and_scheduler.py:48",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "terminal_guard_removed_59"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\terminal_guard_removed_59-RED.txt",
+      "sha256": "0fa798df8f46ce2289c540f5ecb4a449132c24fc0c2319e319228adc38122091"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[59]",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\terminal_guard_removed_59-GREEN.txt",
+      "sha256": "d821f20c04a12f9d1bd510aef0cb4b1ab9c00a29682deb7187f6986b6fb8ecfe"
+    }
+  },
+  {
+    "name": "hidden_stock_injected",
+    "test": "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+    "expected_message": "Hidden world state entered native learner arithmetic",
+    "expected_test_line": "tests/test_corrective_contracts.py:135",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "hidden_stock_injected"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_stock_injected-RED.txt",
+      "sha256": "9b3dea0122e1c571af9a5a63e8d9eb0c2740ae93f45a220553d6219eeb1971b0"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_stock_injected-GREEN.txt",
+      "sha256": "773d5ae9b1ba699af0b8aa56d30953f3f75b84e7c76c61a77a882ed1a595f171"
+    }
+  },
+  {
+    "name": "hidden_clock_injected",
+    "test": "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+    "expected_message": "Hidden world state entered native learner arithmetic",
+    "expected_test_line": "tests/test_corrective_contracts.py:135",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "hidden_clock_injected"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_clock_injected-RED.txt",
+      "sha256": "1c55b68e4bd862b947e7dc0c671b2f7b27a8c57157a3864894668404e7be57df"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_clock_injected-GREEN.txt",
+      "sha256": "201f5a20b2fed2d18981a2cf094a90cbd230f4e0c22d666d1e0e2af3e8aef27a"
+    }
+  },
+  {
+    "name": "hidden_world_counter_injected",
+    "test": "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+    "expected_message": "Hidden world state entered native learner arithmetic",
+    "expected_test_line": "tests/test_corrective_contracts.py:135",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "hidden_world_counter_injected"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_world_counter_injected-RED.txt",
+      "sha256": "7c9a00cb44cf73f99b4b8b72985cdf713a594fc3306e89c1e786a14cc2ac7c9d"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\hidden_world_counter_injected-GREEN.txt",
+      "sha256": "f04e236a140756a8601c5fee98e861ab0eeeea06c2f332062e97abc85bb7c47d"
+    }
+  },
+  {
+    "name": "evoked_integrity_refill",
+    "test": "tests/test_corrective_contracts.py::test_evoked_reserves_have_no_direct_physical_ownership",
+    "expected_message": "Evoked reserve bypassed motor/physical ownership",
+    "expected_test_line": "tests/test_corrective_contracts.py:165",
+    "RED": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-23-p-post-correction-review-f7eb6f27\\neural\\recheck_r3.py",
+        "--child",
+        "evoked_integrity_refill"
+      ],
+      "exit_code": 1,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\evoked_integrity_refill-RED.txt",
+      "sha256": "747bc5158d5df90c9a324096a568de632a025d8f14ccee45e114622a81d5c9f6"
+    },
+    "GREEN": {
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_corrective_contracts.py::test_evoked_reserves_have_no_direct_physical_ownership",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--tb=long"
+      ],
+      "exit_code": 0,
+      "confirmed": true,
+      "output": "mutants-attempt-002\\evoked_integrity_refill-GREEN.txt",
+      "sha256": "188c7d2c78e3347bd0649f49b266c0cd289fd68f9cfe0221f5ea1989c86953ff"
+    }
+  }
+]

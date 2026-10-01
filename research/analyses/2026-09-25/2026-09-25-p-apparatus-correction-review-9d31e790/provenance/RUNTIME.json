@@ -1,0 +1,41 @@
+{
+  "runtime": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "executable_sha256": "935016795f3e6908e75acbc2040a01e2e4cdb494a57c42f63a0d6eedb2372256",
+    "python_dlls": {
+      "python3.dll": "85d02d4c7e28c0f183415dc2be5fe8e06aa7fa0567673c75c65c0031f59e1e8b",
+      "python313.dll": "0565965617d94274d7f2c2958d0bef33392cd9d2f346f99d8e1bedbdf264ee85"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": {
+        "version": "2.3.3",
+        "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af",
+        "file_count": 432,
+        "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+      },
+      "scipy": {
+        "version": "1.16.2",
+        "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1",
+        "file_count": 1078,
+        "coverage": "installed .py/.pyd/.dll/.so plus METADATA/RECORD; excludes bytecode"
+      }
+    }
+  },
+  "packages": {
+    "numpy": {
+      "files_verified": 432,
+      "content_sha256": "02f2c322af89d7a3867affce199f92e6b3a2e1770e0add5a36c0498632fe80af"
+    },
+    "scipy": {
+      "files_verified": 1078,
+      "content_sha256": "b92faa9f140cce9e3ad3130ec5a3a3637f3bd10b314deb9d5c4e40c3f1c374a1"
+    }
+  },
+  "all_file_memberships_and_bytes_verified": true,
+  "record": {
+    "bytes": 173275,
+    "sha256": "fc22192a037325b2a12130b7c8cb24997fc316c0b108723da38c93e4d0be3207"
+  }
+}

@@ -1,0 +1,27 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________ test_field_flux_mass_and_moving_geometry_continuity _____________
+
+    def test_field_flux_mass_and_moving_geometry_continuity():
+        c=Config(); solver=FieldSolver(c); fields=np.zeros((2,80,80)); fields[:,20,20]=[.2,.3]
+        before=fields.copy(); stocks=np.full(8,.2)
+        result=solver.step(fields,stocks,.01,.7,.01)
+        assert np.array_equal(fields,before)
+        assert np.max(np.abs(solver.last['mass_balance']))<1e-10
+        assert np.max(solver.last['relative_residual'])<=1e-10*(1+1e-5)
+        assert np.min(result)>=0
+        diffusion,_,_=solver.coefficients(.01,.7)
+        assert diffusion.min()>=.025-1e-12 and diffusion.max()<=.5+1e-12
+        # Changing solid footprint changes coefficients, not the old concentration buffer.
+        d2,_,_=solver.coefficients(.01,.7,[5.,5.])
+        footprint=disk_areas(c,[5.,5.],c.body_radius)>0
+>       assert np.all(d2[footprint]<diffusion[footprint]), 'Body footprint must change diffusion'
+E       AssertionError: Body footprint must change diffusion
+E       assert np.False_
+E        +  where np.False_ = <function all at 0x0000018F7FDBDD30>(array([0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,\n       0.5, 0.5, 0.5]) < array([0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,\n       0.5, 0.5, 0.5]))
+E        +    where <function all at 0x0000018F7FDBDD30> = np.all
+
+tests\test_physical.py:31: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_physical.py::test_field_flux_mass_and_moving_geometry_continuity
+1 failed in 0.07s

@@ -1,0 +1,17 @@
+{
+  "classification": "VERIFIED",
+  "fixture": "geometry evaluator stand-in exactly at threshold",
+  "error_type": "ArithmeticError",
+  "message": "Active-contact gap enclosure unresolved at event time tolerance",
+  "gap_evaluations": 30,
+  "physical_steps": 0,
+  "organism_created": false,
+  "configuration_sha256": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+  "actual_geometry_loose_bound_check": {
+    "fixture": "touching source, stationary body, inward force; actual gap evaluator; deliberately loose valid bound only",
+    "error_type": "ArithmeticError",
+    "message": "Active-contact gap enclosure unresolved at event time tolerance",
+    "bound_evaluations": 28,
+    "final_enclosure_duration": 7.450580596923828e-11
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "fragment_path": "C:\\Users\\Jason\\.codex\\visualizations\\2026\\09\\21\\01a0c405-424f-7493-9252-7fa59a88d0d2\\loom-pc-contact-replay.html",
+  "fragment_sha256": "ff5da8e70e104e75d0a5d23d529851f3c21a03f6b7ab92eb70959fce2f00809e",
+  "frame_count": 231,
+  "first_time": 0.0,
+  "last_time": 2.299999999999995,
+  "source_receipt_sha256": "bcba4a6c4da850638cb619648b09c4704fc384993632fe27b5c8929e428cd7fd",
+  "data_sha256": "0ebe2cca64848fe17a2b506934544c45a4a5368dcc23540c97331821600f653f",
+  "source_files": {
+    "controller.jsonl.gz": {
+      "bytes": 447292,
+      "sha256": "5785c3dd0d8d4e3c79a64c5016e07765a12ac421a878f8916a5f23f2dc30cec0"
+    },
+    "diagnostics.jsonl.gz": {
+      "bytes": 55507,
+      "sha256": "288ace24829ede113630ed38fcc3fef7686a58a81c75d35654de201cf28671a5"
+    },
+    "events.jsonl.gz": {
+      "bytes": 22676,
+      "sha256": "7d1350cf395f0a95b542f6fc4fd68b362447fc2702bbb8e127af03c39861e6cd"
+    },
+    "final.restart.json.gz": {
+      "bytes": 212301,
+      "sha256": "2bf89f257d79e634b4d93ff62ef73d30a08324ba4dfb7f29700f4eadbba40182"
+    },
+    "initial.restart.json.gz": {
+      "bytes": 125536,
+      "sha256": "4e43c5a49ffeae4c7eb53b19051594ab3d2d3815b32ebada06e4de0dd7669a26"
+    },
+    "native.jsonl.gz": {
+      "bytes": 113599,
+      "sha256": "fdeb43c3c8ee40fa1c031818c22c55a0e387230e2089ed2967ae1de375a3cede"
+    },
+    "operator.jsonl.gz": {
+      "bytes": 2761,
+      "sha256": "34d531e494239b8f8cdcad70fffd1e8391fe45ec69ac004a2e56dd458eaa82e3"
+    },
+    "scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "451e4e2fef5c8e444b81d16aee7dd2c8baa0e8bad2f20232069536d128af0007"
+    },
+    "sensor-display.json": {
+      "bytes": 133102,
+      "sha256": "6d58d65e5786353a054ff978f7235c79ae1d0e9408c0e0a10bb2eb83f7667c5a"
+    },
+    "sensor.jsonl.gz": {
+      "bytes": 50247,
+      "sha256": "d916eb3854f0abab79e30e70e1fe22129660608a07d37ffb945a7d3a923ce4c1"
+    },
+    "wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "46117e23efc2aa4b24a8271fa22be0ebfbfab4718da9f99cddf8e43e613a7068"
+    }
+  },
+  "no_world_instantiation": true,
+  "no_simulation": true,
+  "no_B1_access": true,
+  "validation": {
+    "validated_utc": "2026-09-27T01:30:48.1595700+00:00",
+    "native_samples_retained": 231,
+    "script_syntax_check": "passed",
+    "browser_initial_render": "passed",
+    "slider_first_contact_sample": "0.90 s, contact values displayed",
+    "playback": "advanced from 0.90 to 0.94 s and stopped at 2.30 s",
+    "whole_arena_selector": "passed",
+    "wall_and_arena_layout": "visually inspected",
+    "commands_and_EI_update_during_playback": true,
+    "network_or_actuator_path_in_fragment": false,
+    "source_run_files_not_modified": true
+  }
+}

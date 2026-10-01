@@ -1,0 +1,34 @@
+**I authorize the following twelve Founder Search initial-stage authority objects exactly as written, in this exact order, and no others:**
+
+1. **FS-001** — `d2960d88f93074c6b361697743fac4fac5a05bddfcdf2e7e644c7b3fbc5ebf0e`
+2. **FS-002** — `a016fb805d2f8467bf8f6ccb1f7358a20236e0a6116e521551736174a0e79fbc`
+3. **FS-003** — `376dcefd28ee44795cdd55e5b066e1e1029f3deb6355039b8ffc39728213e84b`
+4. **FS-004** — `4799d6e1d4ed4d4240eb29f131948004e7fab567e1895dc4632411d59b9601f2`
+5. **FS-005** — `572b3420b803ac9a799634afbabbfa027afe002e545d521d81cf7badefc90372`
+6. **FS-006** — `5e6c3730fce723704313f82b88474b6f992dbe218f4234de3d69a55e456aad84`
+7. **FS-007** — `894d39535ce7e28f351d1d0f7d619953ba3c725271b96766c585da7002c7f7e3`
+8. **FS-008** — `b868a25197bf4a703bfbe6a0651b3f58f71efde28940371734a87ea6d84a1432`
+9. **FS-009** — `b49acf6456e1afdb7a38479421d8968eb1b3443d2a5469c2055a7f823533e10c`
+10. **FS-010** — `62693c8111206835bb36755162dcdcc6914e8fe52a2838b9a5ba223e4cbad730`
+11. **FS-011** — `61fd716eb39f92d639e592eec3c4319c5f3d93399c1c546df3a086fbcd22942a`
+12. **FS-012** — `596451cdd73353af2c1dddf1994d1766a9aba1f1f255a2dc0587357bf52fd622`
+
+Execute the twelve lives once each, in the prepared order, using frozen P `6bc9683b54e4fa80136fe8534d7713e2a250a95f` and lean developmental runner checkpoint `87abae34e19d4e46234402a6b1ba776814956ec1`.
+
+Each life may run from its exact prepared blank-start snapshot until genuine nonviability, a valid apparatus/resource stop, or **600 seconds total age**, whichever comes first.
+
+Run the declared preflight immediately before execution. Preflight must confirm each authority binds the prepared initial state, correct life stream, frozen P/configuration/runtime, 600-second ceiling, and no continuation/retry/replacement permission. Any mismatch stops the batch before that life advances.
+
+**Run all twelve before performing founder selection or developmental interpretation.** Do not inspect an early life and use its outcome to alter, skip, replace, reorder, tune or extend any later life.
+
+Preserve every trajectory: death, no encounter, stagnation, harmful contact, accidental benefit, productive contact, unusual behaviour and administrative censoring all remain in the denominator.
+
+Use Tier-1 lean evidence only during execution. No live Tier-2/D5 deep diagnostics, plotting, founder scoring or outcome-dependent analysis while lives are running.
+
+Report-don’t-patch. No retry, rewind, continuation, replacement birth, parameter change, P/world modification, nursery change, additional population, or 900/1,800-second extension without separate authorization.
+
+If a declared shared apparatus/resource defect stops the batch, leave all later lives unstarted and preserve the exact boundary.
+
+After the declared initial stage has stopped, seal and verify the complete available denominator, create the single planned archive, perform only the approved passive A/B/C analysis, and report the full 12-life result.
+
+**Do not prepare or execute any 900-second or 1,800-second continuation yet. Stop for Jason’s review after the initial-stage report.**

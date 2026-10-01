@@ -1,0 +1,26 @@
+# Evidence retained and reconstructed
+
+Scope: unchanged intact P and Base World. A = causally unique; B = exactly derivable; C = immutable provenance; D = redundant representation. Classification concerns evidence, not whether a biological outcome was desirable. No benchmark outcome is interpreted scientifically.
+
+| Question / information | Class | Retained evidence and recovery |
+|---|---|---|
+| Actual lived input | A | All 29 raw endpoint channels at every native step; exact initial raw input; exact actual elapsed dt and absolute time/index. Step-start input is the preceding endpoint, including across continuations. No sensory downsampling. |
+| Actual action | A | Delivered command pair, forces, body position/orientation/velocity/angular velocity, contact rates at each native endpoint. |
+| Bodily consequences | A | E/I/stocks at each endpoint; unchanged full physical event records contain substep timing, source debit/body credit, renewal, expenditure, damage, repair, colliders, impulses and release markers. Incremental and post-run ledger reconciliation. |
+| Exposure/world | A + B | Actual sampled mover rectangle/velocity, exact phase and world configuration; field diagnostics per step; exact fields at checkpoints. Intervening realized fields reconstruct from prior fields, saved actual body/stocks/dt/time through the original deterministic solver. Chunk field SHA checks. No simulated alternate body trajectory. |
+| Actual handoffs and outputs | A | Every handoff index and compact actual packets/psi/q/control/credit trend/learned/exploration/need outputs, map update/use summaries, sensory norms, pooling openings and regulator bank norms. Native/wave indices retained absolutely. |
+| Changes to learned sensory structure, H and regulator banks | A operands + B matrices | Full initial and periodic exact P state; all actual raw input, dt, reserves and original RNG/clock position. Replay original native/handoff functions to recover every matrix, reference, eligibility, trace, control, update operand and motor contribution. Compact use/change summaries also retained during life. No lossy matrix approximation. |
+| Was changed structure used? | B with A audit | Actual association-use summaries at handoffs; exact map/bank history and read state recovered from lived inputs. Original D5 immediate receiver queries can run offline. This distinguishes actual and evoked motor/regulatory contributions without making a benefit claim. |
+| RNG | A | Full RNG object and stream counter dictionary in every exact checkpoint; dynamic counters per native row; full dictionary plus exact P digest per closed chunk. No reseed on continuation. |
+| Terminal/cutoff/failure | A | Exact terminal partial elapsed time/events/state; administrative pause/resource cause separately labelled; incomplete I/O failure/tail retained and automatic continuation rejected. |
+| Exact continuing organism | A | All Engine/organism/world/field/source/body/RNG state at each boundary, exact continuous indices and partial-wave state. Initial-state hash + parent receipt + runtime/apparatus agreement required to append a segment. |
+| Law/config/code/runtime/authority | C | Frozen P/configuration identities, apparatus file hashes, executable/version/platform, NumPy/SciPy source/native library identities, Python native runtime files in release; exact grant and request hash per segment; shared immutable assets. Verification at boundaries. |
+| Chart/UI/history presentation and repeated diagnostic containers | D | Omitted from live execution; reconstruct from immutable evidence when required. They are not additional experiences of the organism. |
+
+No scientifically unique variable identified in the existing intact-P path is intentionally discarded. The replacement is lossless causal data plus exact deterministic reconstruction, not retention of every old representation. This statement is supported by short every-step full-causal-state and D5 comparisons, full-600-second P/RNG reconstruction, selected exact field/full-state reconstruction and full-state checkpoints. It is not an empirical equivalence proof for every possible trajectory or numerical platform.
+
+`Engine.last_native` is the sole state-comparison exception: a duplicate observer cache with no causal reader. All its scientifically relevant quantities are retained natively or derived exactly. All other fields, including internal P diagnostic state, are compared exactly. Historical old evidence and P files remain unchanged.
+
+Tier 2 requires the recorded P and numerical runtime. Unsupported runtime changes are rejected, rather than producing approximate diagnostics presented as exact. A future diagnostic requiring information absent from this inventory must be assessed before claiming it is recoverable. Current original passive/D5 outputs were tested byte-for-byte from saved inputs. Analysis is detached/read-only and has no callback into a living organism.
+
+Physical event dictionaries are intentionally retained in full. Further event-table specialization could save some repeated key bytes, but their compressed cost is small and preserving substep causal/accounting detail was more important than an unverified format shortcut.

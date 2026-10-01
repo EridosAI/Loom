@@ -1,0 +1,23 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________ test_bank_projection_and_reference_follow_new_value _____________
+
+    def test_bank_projection_and_reference_follow_new_value():
+        c=Config(); o=setup_neural(c); r=o.regulator
+        r.theta[:,:,0]=1.; r.reference[:,:,0]=.8
+        r.eligibility[:,:,0]=1.; r.xi[:]=1; r.phi[:]=0; r.phi[0]=1
+        r.body_mean[:]=0.
+        before=r.reference.copy(); r.credit(c,np.ones(2))
+        assert np.allclose(np.linalg.norm(r.theta,axis=2),1.)
+        expected=before+(-np.expm1(-c.wave_dt/c.tau_bank_reference))*(r.theta-before)
+        assert np.max(np.abs(expected-before))>1e-6
+>       assert np.allclose(r.reference,expected,rtol=0,atol=1e-16)
+E       assert False
+E        +  where False = <function allclose at 0x000001EACCE6A070>(array([[[0.8, 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. ,\n         0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , ...   0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. ,\n         0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. ]]]), array([[[0.800008, 0.      , 0.      , 0.      , 0.      , 0.      ,\n         0.      , 0.      , 0.      , 0.      , ....      ,\n         0.      , 0.      , 0.      , 0.      , 0.      , 0.      ,\n         0.      , 0.      , 0.      ]]]), rtol=0, atol=1e-16)
+E        +    where <function allclose at 0x000001EACCE6A070> = np.allclose
+E        +    and   array([[[0.8, 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. ,\n         0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , ...   0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. ,\n         0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. , 0. ]]]) = <loom_p.neural.Regulator object at 0x000001EAFCCCDBE0>.reference
+
+tests\test_neural.py:204: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_neural.py::test_bank_projection_and_reference_follow_new_value
+1 failed in 0.11s

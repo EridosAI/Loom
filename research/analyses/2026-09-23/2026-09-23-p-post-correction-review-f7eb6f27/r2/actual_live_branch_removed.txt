@@ -1,0 +1,10 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________ test_live_handoff_observation_has_physical_timestamp _____________
+tests\test_records.py:85: in test_live_handoff_observation_has_physical_timestamp
+    assert result['wave'] is not None, 'Live handoff branch was not exercised'
+E   AssertionError: Live handoff branch was not exercised
+E   assert None is not None
+=========================== short test summary info ===========================
+FAILED tests/test_records.py::test_live_handoff_observation_has_physical_timestamp
+1 failed in 0.28s

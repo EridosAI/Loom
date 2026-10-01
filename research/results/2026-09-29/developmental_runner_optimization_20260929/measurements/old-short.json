@@ -1,0 +1,60 @@
+{
+  "profile": null,
+  "wall_seconds": 9.874650600017048,
+  "setup_wall_seconds": 0.07822440005838871,
+  "blocks": [
+    {
+      "ending_native_index": 10,
+      "simulated_seconds": 0.09999999999999999,
+      "wall_seconds": 1.29218570003286
+    },
+    {
+      "ending_native_index": 20,
+      "simulated_seconds": 0.10000000000000005,
+      "wall_seconds": 1.378809400019236
+    },
+    {
+      "ending_native_index": 30,
+      "simulated_seconds": 0.10000000000000006,
+      "wall_seconds": 1.7516955999890342
+    },
+    {
+      "ending_native_index": 40,
+      "simulated_seconds": 0.10000000000000009,
+      "wall_seconds": 1.744972600019537
+    },
+    {
+      "ending_native_index": 50,
+      "simulated_seconds": 0.10000000000000003,
+      "wall_seconds": 1.690503199934028
+    },
+    {
+      "ending_native_index": 60,
+      "simulated_seconds": 0.10000000000000009,
+      "wall_seconds": 1.938249700004235
+    }
+  ],
+  "simulated_seconds": 0.6000000000000003,
+  "native_steps": 60,
+  "waves": 3,
+  "memory": {
+    "peak_working_set_bytes": 89538560,
+    "working_set_bytes": 71999488,
+    "peak_pagefile_bytes": 1651937280
+  },
+  "bytes_by_file": {
+    "controller.jsonl.gz": 37,
+    "diagnostics.jsonl.gz": 1492938,
+    "events.jsonl.gz": 5404,
+    "final.restart.json.gz": 937942,
+    "initial.restart.json.gz": 128570,
+    "manifest.json": 7881,
+    "native.jsonl.gz": 1095921,
+    "scientific_observations.jsonl.gz": 50,
+    "sensor-display.json": 35437,
+    "sensor.jsonl.gz": 14438,
+    "wave.jsonl.gz": 182418
+  },
+  "no_scientific_outcome_analysis": true,
+  "measurement_label": "old-short"
+}

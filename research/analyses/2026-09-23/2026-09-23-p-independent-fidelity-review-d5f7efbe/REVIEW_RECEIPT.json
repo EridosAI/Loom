@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-23",
+  "review_id": "REVIEW-P-ENGINEERING-2026-09-23-D5F7EFBE",
+  "reviewed_worktree": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405",
+  "reviewed_branch": "build/p-engineering-baseline-20260921-01a0c405",
+  "reviewed_commit": "d5f7efbe67193f215e52d95ca912db131a79f31c",
+  "configuration_sha256": "a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a",
+  "runtime_code_sha256": "cf17d3248c463d9f2d00921b991ce433bb49956476fe02027c3d7ce062bf7456",
+  "input_zip_sha256": "a376ad876a164e96cc0b0b1f4f9d250fc8bb70bc4b585bca24092fdee3ada57f",
+  "disposition": "HOLD: must fix physical contact release/recontact and verification findings before commissioning",
+  "independent_existing_suite": {
+    "passed": 43,
+    "failed": 1,
+    "failure": "tests/test_records.py::test_live_handoff_observation_has_physical_timestamp",
+    "seconds": 3.73
+  },
+  "independent_physical_scheduler_subset": {
+    "passed": 19,
+    "failed": 0
+  },
+  "review_execution_notes": [
+    "One subreview collection attempt used the repository root and failed to import loom_p; corrected working directory.",
+    "One subreview default temporary-directory setup was inaccessible; rerun in a fresh writable review directory passed all 19 physical/scheduler tests.",
+    "Component probes and in-memory test mutants only; no new Engine loop, prehistory, commissioning execution, organism lifetime or parameter sweep."
+  ],
+  "reconstruction": {
+    "native_states": 3200,
+    "waves": 160,
+    "all_neural_hashes_identical": true,
+    "all_final_fields_bit_identical": true,
+    "maximum_accounting_error": 5.535190903717402e-17,
+    "independent_sensory_packet_max_error": 0.0
+  },
+  "inventory_checks": {
+    "portable_entries": 145,
+    "local_evidence_entries": 87,
+    "original_sources": 16,
+    "pinned_git_blobs": 5,
+    "post_review_evidence_runtime_and_source_recheck": "all matched"
+  },
+  "mutations_to_reviewed_worktree_or_workbench": false,
+  "fixes_performed": false,
+  "scientific_conclusion": null,
+  "export_scope": "New files in task workspace only; not integrated into Loom Research Workbench.",
+  "files": {
+    "LOOM_P_INDEPENDENT_FIDELITY_REVIEW.md": {
+      "bytes": 41991,
+      "sha256": "ffa7ffe6561ed94c2003faf1eb123637a37932c8573757b018c0dfe070dada54"
+    }
+  }
+}

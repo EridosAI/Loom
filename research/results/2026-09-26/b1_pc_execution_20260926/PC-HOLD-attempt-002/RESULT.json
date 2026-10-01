@@ -1,0 +1,174 @@
+{
+  "case": "PC-HOLD",
+  "attempt": 2,
+  "recorded_utc": "2026-09-27T03:08:57.235065+00:00",
+  "outcome": "DEMONSTRATED WITH PRIOR PRACTICE AND TIMING GUIDANCE",
+  "physical_gentle_hold_target_met": true,
+  "target_seconds": 1.0,
+  "stress_threshold": 0.25,
+  "qualifying_intervals": [
+    {
+      "start": 0.3000000000000001,
+      "end": 1.500000000000001,
+      "force_min": 0.03764168576651539,
+      "force_max": 0.1508622698329131,
+      "events": 120,
+      "stress_damage": 0,
+      "duration": 1.200000000000001
+    }
+  ],
+  "longest_qualifying_interval": {
+    "start": 0.3000000000000001,
+    "end": 1.500000000000001,
+    "force_min": 0.03764168576651539,
+    "force_max": 0.1508622698329131,
+    "events": 120,
+    "stress_damage": 0,
+    "duration": 1.200000000000001
+  },
+  "impact_times": [
+    0.23365622892364132
+  ],
+  "impact_damage": 0.003166194241554501,
+  "sustained_stress_damage": 0.0006696064479052632,
+  "total_damage": 0.0038358006894597643,
+  "expenditure": 0.002625,
+  "repair": 0.0,
+  "starting_EI": [
+    0.7,
+    1.0
+  ],
+  "final_EI": [
+    0.697375000000004,
+    0.9961641993105402
+  ],
+  "simulated_seconds": 1.500000000000001,
+  "wall_seconds": 120.36839710001368,
+  "native_steps": 150,
+  "commands": 15,
+  "command_history": [
+    {
+      "time": 0.0,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 0.09999999999999999,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 0.20000000000000004,
+      "pair": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "time": 0.3000000000000001,
+      "pair": [
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "time": 0.4000000000000002,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.5000000000000002,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.6000000000000003,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.7000000000000004,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.8000000000000005,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 0.9000000000000006,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 1.0000000000000007,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 1.1000000000000008,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 1.2000000000000008,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 1.300000000000001,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    },
+    {
+      "time": 1.400000000000001,
+      "pair": [
+        0.05,
+        0.05
+      ]
+    }
+  ],
+  "stop_cause": "operator_withdrawal",
+  "runtime_status": "administrative_pause",
+  "authority_sha256": "ac1c5615c2c99ebe2524e3648b81003d7eeb42f1b54493212afd8d3cb83d719f",
+  "repeated_execution_object_unchanged": true,
+  "complete_initial_state_identical_to_attempt_001": true,
+  "runtime_receipt_sha256": "d3de30c964330edeb1ef31ff216a46b3f60c28d376d9fc89b5a178acbfb6cfeb",
+  "initial_state_identity": "553870aa38d113fb6b9d6a575969a792cd8ce11fbefa8da9726b73ce394b0b80",
+  "all_run_hashes_and_lengths_verified": true,
+  "force_and_damage_arithmetic_verified": true,
+  "operator_end_statement": "done.\nWhat was wrong with the pc contact?",
+  "operator_explanation": "Earlier recognition of reduced contact signal and holding was recorded in PC-HOLD.USER_CONTACT_OBSERVATION.json. No new explanatory statement beyond done was supplied for the repeat.",
+  "qualification": "Separately authorized repeat after physical feedback on attempt 001 and explicit duration clarification. Jason selected all commands. Not naive or unassisted.",
+  "first_attempt_preserved": true,
+  "assistant_actuator_or_end_actions": 0,
+  "additional_world_steps_during_review": 0,
+  "production_code_changes": 0,
+  "source_clean": true,
+  "B1_state_accessed": false
+}

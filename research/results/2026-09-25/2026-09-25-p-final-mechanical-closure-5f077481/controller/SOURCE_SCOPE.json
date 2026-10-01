@@ -1,0 +1,130 @@
+{
+  "head": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "comparisons": [
+    {
+      "name": "P_and_configuration",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=C:/Users/Jason/Desktop/Eridos/Loom-p-apparatus-20260924-01a0c405",
+        "-C",
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405",
+        "diff",
+        "--exit-code",
+        "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+        "5f07748102cb5eaa302569c87efbae095050e9fe",
+        "--",
+        "developmental_ecology/loom_p",
+        "developmental_ecology/configuration.json"
+      ],
+      "exit": 0,
+      "diff_empty": true
+    },
+    {
+      "name": "prior_tests_and_unchanged_controller_adapter",
+      "command": [
+        "git",
+        "-c",
+        "safe.directory=C:/Users/Jason/Desktop/Eridos/Loom-p-apparatus-20260924-01a0c405",
+        "-C",
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405",
+        "diff",
+        "--exit-code",
+        "9d31e7902658b15762052a2a6a3d161d64338524",
+        "5f07748102cb5eaa302569c87efbae095050e9fe",
+        "--",
+        "developmental_ecology/loom_commissioning/controllers.py",
+        "developmental_ecology/loom_commissioning/adapter.py",
+        "developmental_ecology/tests",
+        "developmental_ecology/tests_apparatus/test_apparatus.py",
+        "developmental_ecology/tests_apparatus/test_corrections.py"
+      ],
+      "exit": 0,
+      "diff_empty": true
+    }
+  ],
+  "checkout_bytes": [
+    {
+      "path": "configuration.json",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9"
+    },
+    {
+      "path": "loom_commissioning/adapter.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee"
+    },
+    {
+      "path": "loom_commissioning/controllers.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e"
+    },
+    {
+      "path": "loom_p/__init__.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a"
+    },
+    {
+      "path": "loom_p/chemistry.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d"
+    },
+    {
+      "path": "loom_p/diagnostics.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0"
+    },
+    {
+      "path": "loom_p/engine.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d"
+    },
+    {
+      "path": "loom_p/geometry.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3"
+    },
+    {
+      "path": "loom_p/inspector.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83"
+    },
+    {
+      "path": "loom_p/neural.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca"
+    },
+    {
+      "path": "loom_p/physics.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783"
+    },
+    {
+      "path": "loom_p/prehistory.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588"
+    },
+    {
+      "path": "loom_p/reconstruction.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b"
+    },
+    {
+      "path": "loom_p/records.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e"
+    },
+    {
+      "path": "loom_p/schema.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc"
+    },
+    {
+      "path": "loom_p/smokes.py",
+      "old_portable_equals_current_raw_bytes": true,
+      "sha256": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"
+    }
+  ],
+  "P_has_no_commissioning_import_or_literal": true,
+  "all_checks_passed": true
+}

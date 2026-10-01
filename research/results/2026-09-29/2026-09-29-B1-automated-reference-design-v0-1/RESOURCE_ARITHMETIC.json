@@ -1,0 +1,37 @@
+{
+  "status": "PROPOSAL ONLY / NO EXECUTION BUDGET SET",
+  "proposed_training_starts": 16,
+  "proposed_development_starts": 4,
+  "proposed_held_out_starts": 12,
+  "proposed_primary_test_conditions": 2,
+  "proposed_sensory_free_control_conditions": 1,
+  "proposed_trajectory_ceiling_seconds": 30,
+  "proposed_total_trajectories": 56,
+  "proposed_maximum_simulated_seconds": 1680,
+  "proposed_maximum_native_steps": 168000,
+  "proposed_maximum_command_holds": 16800,
+  "recorded_wall_per_simulated_second": {
+    "A2": 11.755737245556855,
+    "A3": 11.934441601907556,
+    "A5": 12.245986534135385
+  },
+  "base_simulation_hours": {
+    "A2": 5.486010714593199,
+    "A3": 5.569406080890193,
+    "A5": 5.714793715929846
+  },
+  "proposed_fitting_wall_ceiling_hours": 3,
+  "fit_and_inference_throughput_measured": false,
+  "excluded_costs": [
+    "lawful prehistory construction",
+    "new model inference and sensory-history overhead",
+    "dataset construction and packaging"
+  ],
+  "conservative_existing_human_record_allowance_per_case_bytes": 993906579,
+  "conservative_primary_case_bytes": 55658768424,
+  "conservative_primary_plus_one_archive_copy_bytes": 111317536848,
+  "old_human_batch_storage_cap_bytes": 12000000000,
+  "old_cap_not_reused_or_raised": true,
+  "native_fidelity_reduction": false,
+  "benchmark_runs": 0
+}

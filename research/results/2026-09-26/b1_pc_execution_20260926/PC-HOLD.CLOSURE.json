@@ -1,0 +1,59 @@
+{
+  "case": "PC-HOLD",
+  "recorded_utc": "2026-09-27T02:56:44.177161+00:00",
+  "complete": true,
+  "stop_cause": "operator_withdrawal",
+  "runtime_status": "administrative_pause",
+  "final_time": 3.899999999999961,
+  "native_steps": 390,
+  "commands": 39,
+  "runtime_receipt_sha256": "bd0db1053809c6c88d84814682385b9a2beb0e963fe164a6f0a4758cfcf9dd18",
+  "files_verified": {
+    "controller.jsonl.gz": {
+      "bytes": 1229303,
+      "sha256": "6e1ebaa55fb828c04a677c16f28a695d3fc2e4d43034944653804601a2cd0130"
+    },
+    "diagnostics.jsonl.gz": {
+      "bytes": 90337,
+      "sha256": "b1b8f21a5226710ef7a50b82d964ca94eb1a7e664ee111565e8d7bae23786add"
+    },
+    "events.jsonl.gz": {
+      "bytes": 31397,
+      "sha256": "680d98d829f3e568eb56d7f113af967843bd0b6ae21f39389f56820e89101187"
+    },
+    "final.restart.json.gz": {
+      "bytes": 263792,
+      "sha256": "a33726652cf3bb6d6213bf3f045a04b449024f5f8c2572723a7a9e7af3b9d7a1"
+    },
+    "initial.restart.json.gz": {
+      "bytes": 125497,
+      "sha256": "144df488831778fb1e91b3892a96391a7f36ed118ee2ce5f73fbf0ce6c148772"
+    },
+    "native.jsonl.gz": {
+      "bytes": 187399,
+      "sha256": "24b7e9834fe077a3db50cf18d9985f64604c8a2846e31f5f9397af1fbbf86211"
+    },
+    "operator.jsonl.gz": {
+      "bytes": 4419,
+      "sha256": "7c6de75b3e1f136ab279ca0d313aa002bce97639c8efbfb5aba5eda59bc4d02d"
+    },
+    "scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "fe91c2f53347626319c5a307ee53029a16d507082179a4708596841a75676b7c"
+    },
+    "sensor-display.json": {
+      "bytes": 225762,
+      "sha256": "09c78c694668985814c54a94d5aa944fd063449d0de80e9392fe640d37a61f7a"
+    },
+    "sensor.jsonl.gz": {
+      "bytes": 81393,
+      "sha256": "386068eace670b1d71e2b8b46356a5e6eaf8c075c8b1273088cfab2ab6c1057f"
+    },
+    "wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "b795089ba683a3f149bb18baab55c4b4d22967b9e6e82d595317b3ddd1e3e277"
+    }
+  },
+  "assistant_sent_end": false,
+  "additional_world_steps": 0
+}

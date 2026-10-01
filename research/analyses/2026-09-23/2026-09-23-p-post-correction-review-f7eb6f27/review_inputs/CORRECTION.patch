@@ -1,0 +1,1100 @@
+diff --git a/developmental_ecology/README.md b/developmental_ecology/README.md
+index 5429fec..aa1c16a 100644
+--- a/developmental_ecology/README.md
++++ b/developmental_ecology/README.md
+@@ -1,13 +1,11 @@
+-# Loom P engineering build
++# Loom P — correction awaiting independent review
+ 
+-**Bounded engineering verification complete; uncommissioned.** The intact P body/world/organism, records and local inspector are ready for review. Reports are under `../docs/developmental_ecology/p_engineering_20260921/`. No scientific lifetime or developmental claim is implied.
++The R1–R3 corrective pass is documented in `../docs/developmental_ecology/p_correction_20260923/BUILD_REPORT.md`. **Hold for independent fidelity review. No commissioning fitness is declared.** The reviewed d5f7efbe checkpoint, prior report and all prior artifacts remain preserved.
+ 
+-Double-click **Open Loom Inspector.cmd**. It opens paused at time zero with the saved initial **contact_ui_1s** fixture. This is a manufactured engineering contact state, not continuation of your previous UI session. Nothing advances at launch. Native step, Step to wave boundary, Pause and Stop are available. At most one simulated second can be stepped per session; this is not permission for scientific runs.
++Double-click **Open Loom Inspector.cmd** to open the initial **attempt-003 contact_ui_1s** fixture paused at time zero. Launch advances nothing. Use saved-record replay and detached parameter reconstruction to inspect existing evidence. The existing native/wave controls are explicit, capped engineering controls; this delivery does not authorize further runs.
+ 
+-Use the saved-record slider for the existing one-second case. **Reconstruct selected parameters** rebuilds a detached neural state from saved actual inputs and checks every hash without altering the paused organism. Internal data flow shows the selected saved wave's raw/residual/activity history, exact packet and effective signals. Development shows pooling, association and fixed information-loss calculations. Full history plots use saved replay; live stepping shows endpoint/handoff values. Parameter panels identify snapshot versus reconstructed values.
++Portable setup: with Python 3.13 installed, **Setup Loom Inspector.cmd** creates the adjacent `.venv` and installs pinned dependencies. The verified host used Python 3.13.5; cross-platform bit identity is not claimed. The server binds only 127.0.0.1:8767. Stop closes it.
+ 
+-After extracting the portable package, if the environment is absent, double-click **Setup Loom Inspector.cmd** with Python 3.13 installed. It installs pinned dependencies only in the adjacent `.venv`. The verified host used Python 3.13.5; cross-version/platform bit identity is not claimed. Preserve runtime source bytes: same-code snapshots reject changed code hashes. Only `http://127.0.0.1:8767` is served; no cloud service, model API or remote assets are required.
++The new portable package includes every attempt-003 native, wave and event record, snapshots, exact sources/configuration/runtime records, correction review/authority, RED/GREEN evidence and the unchanged older review ZIP. Check `CHECKPOINT_RECEIPT.json` for exact commits and `ARTIFACT_MANIFEST.json` for content hashes. Original build documents are historical; the new correction report controls the delivered verification status.
+ 
+-Full local evidence remains in `artifacts/`. The portable review contains both short-case traces/snapshots, birth snapshots/manifests, source documents and verification results, with failed attempts disclosed. Large routine birth streams remain local and are listed by size/hash in the portable inventory. See BUILD_REPORT.md for 44 component checks, three named smokes, repeats, measured costs and coverage limits.
+-
+-For maintenance: `python -m pytest tests -q` runs components. `python verify_engineering_records.py` performs detached reconstruction against the full local evidence. The smoke runner permits only the three named cases and refuses to overwrite attempts. This delivery stops at review; no longer life, new case, sweep or tuning is authorized.
++The component command is `python -B -X utf8 -m pytest tests -q -p no:cacheprovider` from this directory. New verification helpers use exclusive output paths to prevent overwriting evidence. Do not rerun smokes, generate prehistory, invoke old package preparation or commission experiments as part of opening this review.
+diff --git a/developmental_ecology/loom_p/physics.py b/developmental_ecology/loom_p/physics.py
+index f958627..9f552f0 100644
+--- a/developmental_ecology/loom_p/physics.py
++++ b/developmental_ecology/loom_p/physics.py
+@@ -87,7 +87,52 @@ def contact_record(c,body,fixture,normal,impulse):
+     if 'source' in fixture: record['source']=fixture['source']
+     return record
+ 
+-def first_collision(c,body,forces,t,phase,dt,excluded):
++def release_probe(c,body,forces,t,phase,dt,index):
++    """Certify an initial separating part of the existing p(s)=p0+s*v(s).
++
++    This is a search guard, not an integration step. Convex distance is bounded
++    below by its starting supporting plane. A bound on |p''| gives a strictly
++    increasing plane gap for s <= u/A when the initial normal speed u is positive.
++    For zero normal speed use positive plane acceleration and its jerk bound;
++    disk tangency additionally admits the exact distance curvature term.
++    """
++    scene=fixtures(c,t,phase); f=scene[index]
++    gap,n=gap_normal(body.position,c.body_radius,f)
++    gamma=c.linear_drag/c.body_mass
++    end,_=free_velocity(c,body,forces,dt)
++    vmax=max(float(np.linalg.norm(body.velocity)),float(np.linalg.norm(end)))
++    acceleration=(forces.sum()*np.array([np.cos(body.angle),np.sin(body.angle)])-c.linear_drag*body.velocity)/c.body_mass
++    amax=(abs(float(forces.sum()))+c.linear_drag*vmax)/c.body_mass
++    omega=2*np.pi/c.mover_period
++    moving=f['id']=='mover'
++    mover_a=c.mover_amplitude*omega**2 if moving else 0.
++    A=(2+gamma*dt)*amax+mover_a
++    J=(3*gamma+gamma**2*dt)*amax+(c.mover_amplitude*omega**3 if moving else 0.)
++    relative=body.velocity-f['velocity']; u=float(n@relative)
++    probe=0.
++    if u>0:
++        probe=min(dt,u/max(A,1e-300))
++    elif u==0:
++        fixture_a=np.array([-c.mover_amplitude*omega**2*np.sin(omega*t+phase),0.]) if moving else np.zeros(2)
++        second=float(n@(2*acceleration-fixture_a))
++        if f['kind']=='disk':
++            radius=c.body_radius+f['radius']+gap
++            second+=float(relative@relative)/radius
++            V=vmax+dt*amax
++            # Distances stay at least radius/2 over this guard interval.
++            limit=radius/(2*max(V,1e-300))
++            J+=6*V*A/radius+12*V**3/radius**2
++        else: limit=dt
++        if second>0: probe=min(dt,limit,second/max(J,1e-300))
++    if probe<=0: return None
++    v,_=free_velocity(c,body,forces,probe)
++    clear,_=gap_normal(body.position+probe*v,c.body_radius,fixtures(c,t+probe,phase)[index])
++    # Do not release on sub-tolerance excursions produced by locating a return
++    # just before zero gap. This uses the existing geometric resolution.
++    return probe if clear-gap>c.geometry_tol else None
++
++
++def first_collision(c,body,forces,t,phase,dt,excluded,released=None):
+     """Conservative advancement using a global relative-speed bound; analytic mover."""
+     # v(t) is a convex interpolation along one line under frozen force. Its norm
+     # is bounded by the endpoint norms. For p(t)=p0+t*v(t), bound |p'| by
+@@ -96,21 +141,25 @@ def first_collision(c,body,forces,t,phase,dt,excluded):
+     ending_velocity,_=free_velocity(c,body,forces,dt)
+     vmax=max(float(np.linalg.norm(body.velocity)),float(np.linalg.norm(ending_velocity)))
+     speed_bound=vmax+dt*(abs(float(forces.sum()))+c.linear_drag*vmax)/c.body_mass+1e-12
+-    elapsed=0.
++    elapsed=0.; released=released or {}
+     for _ in range(500):
+         velocity,_=free_velocity(c,body,forces,elapsed); position=body.position+elapsed*velocity
+-        candidates=[(gap_normal(position,c.body_radius,f)[0],i,speed_bound+(c.mover_amplitude*2*np.pi/c.mover_period if f['id']=='mover' else 0.)) for i,f in enumerate(fixtures(c,t+elapsed,phase)) if i not in excluded]
+-        if not candidates: return None
++        candidates=[(gap_normal(position,c.body_radius,f)[0],i,speed_bound+(c.mover_amplitude*2*np.pi/c.mover_period if f['id']=='mover' else 0.)) for i,f in enumerate(fixtures(c,t+elapsed,phase)) if i not in excluded and elapsed>=released.get(i,0.)]
++        guards=[probe-elapsed for probe in released.values() if probe>elapsed]
++        if not candidates:
++            if not guards: return None
++            elapsed+=min(guards); continue
+         gap,index,_=min(candidates)
+         if gap<=c.geometry_tol: return elapsed,index
+         if elapsed>=dt: return None
+         increment=max(c.event_time_tol*.1,min(.8*g/speed for g,_,speed in candidates))
++        if guards: increment=min(increment,min(guards))
+         elapsed=min(dt,elapsed+increment)
+     raise ArithmeticError('Swept contact search iteration limit')
+ 
+ def advance(c,body,stocks,t,phase,command,dt,allow_terminal=False):
+     body.command=np.asarray(command).copy(); body.force=actuator_forces(c,body,command)
+-    events=[]; elapsed=0.; impulses_by_sector=np.zeros(8); loops=0
++    events=[]; elapsed=0.; impulses_by_sector=np.zeros(8); loops=0; pending=None
+     def append_record(record,time):
+         record['time']=time; record['body_position']=body.position.copy(); record['body_angle']=body.angle
+         events.append(record)
+@@ -118,7 +167,7 @@ def advance(c,body,stocks,t,phase,command,dt,allow_terminal=False):
+             normal=contact['normal']; angle=(math.atan2(-normal[1],-normal[0])-body.angle)%(2*np.pi)
+             address=angle/(2*np.pi)*8; lower=int(math.floor(address))%8; f=address-math.floor(address)
+             impulses_by_sector[lower]+=contact['impulse']*(1-f); impulses_by_sector[(lower+1)%8]+=contact['impulse']*f
+-    while elapsed<dt-1e-14:
++    while elapsed<dt-1e-14 or pending is not None:
+         loops+=1
+         if loops>200: raise ArithmeticError('Physical event subdivision limit')
+         now=t+elapsed; remaining=dt-elapsed; scene=fixtures(c,now,phase)
+@@ -130,18 +179,29 @@ def advance(c,body,stocks,t,phase,command,dt,allow_terminal=False):
+         if active:
+             bounds=[float(normals[j]@scene[i]['velocity']) for j,i in enumerate(active)]
+             v,impulses=project_velocity(body.velocity,normals,bounds,c.body_mass)
+-            if impulses.sum()>1e-12:
++            if impulses.sum()>1e-12 or pending is not None:
+                 body.velocity=v
+-                contacts=[contact_record(c,body,scene[i],normals[j],impulses[j]) for j,i in enumerate(active) if impulses[j]>0]
+-                append_record(account(c,body,stocks,contacts,0,True),now)
++                contacts=[contact_record(c,body,scene[i],normals[j],impulses[j]) for j,i in enumerate(active) if impulses[j]>0 or i==pending]
++                record=account(c,body,stocks,contacts,0,True)
++                if pending is not None: record['event_kind']='recontact_or_first_touch'
++                append_record(record,now)
+                 if body.integrity<=0:
+                     body.contact_rates=impulses_by_sector/max(elapsed,c.event_time_tol)
+                     if allow_terminal: return events,elapsed,'integrity'
+                     raise TerminalCrossing(elapsed,'integrity',events)
++        pending=None
++        if remaining<=1e-14: break
+         # Freeze force for this physical subinterval, using its actual starting
+         # reserves (including damage at an immediately preceding impact).
+         body.force=actuator_forces(c,body,body.command)
+-        collision=first_collision(c,body,body.force,now,phase,remaining,set(active))
++        released={i:probe for i in active if (probe:=release_probe(c,body,body.force,now,phase,remaining,i)) is not None}
++        if released:
++            record=account(c,body,stocks,[],0,True)
++            record.update(event_kind='release',colliders=[scene[i]['id'] for i in released])
++            append_record(record,now)
++            retained=[(i,n) for i,n in zip(active,normals) if i not in released]
++            active=[i for i,n in retained]; normals=[n for i,n in retained]
++        collision=first_collision(c,body,body.force,now,phase,remaining,set(active),released)
+         interval=remaining if collision is None else collision[0]
+         if interval<c.event_time_tol*.01:
+             # A newly located touch joins the next exact constraint solve.
+@@ -175,6 +235,7 @@ def advance(c,body,stocks,t,phase,command,dt,allow_terminal=False):
+             return events,elapsed,dimension
+         if collision is not None:
+             # Next loop processes the zero-duration impact at this location.
++            pending=collision[1]
+             continue
+     body.contact_rates=impulses_by_sector/dt
+     for f in fixtures(c,t+dt,phase):
+diff --git a/developmental_ecology/package_correction.py b/developmental_ecology/package_correction.py
+new file mode 100644
+index 0000000..99f9ae0
+--- /dev/null
++++ b/developmental_ecology/package_correction.py
+@@ -0,0 +1,239 @@
++"""New correction report/package. Never updates the preserved baseline reports."""
++import argparse
++from datetime import datetime,timezone
++import hashlib
++import importlib.metadata
++import json
++from pathlib import Path
++import platform
++import subprocess
++import sys
++import zipfile
++from loom_p.records import code_identity,strict_bytes
++from loom_p.schema import Config
++from create_review_package import source_identities,WORKBENCH
++from verify_correction import ROOT,OUT,OLD,sha
++
++REPO=ROOT.parent
++DOCS=REPO/'docs/developmental_ecology/p_correction_20260923'
++PACKAGE=ROOT/'artifacts/review-package-correction-20260923-01a0c405'
++
++def git(*args): return subprocess.check_output(['git','-C',str(REPO),*args],text=True).strip()
++def read(name): return json.loads((OUT/name).read_text(encoding='utf-8'))
++def write(path,value):
++    with path.open('xb') as f: f.write(value.encode('utf-8') if isinstance(value,str) else strict_bytes(value))
++
++def prepare():
++    DOCS.mkdir(parents=True,exist_ok=False)
++    sources=source_identities(); write(DOCS/'SOURCE_IDENTITIES.json',sources)
++    runtime=dict(python=sys.version,executable=sys.executable,platform=platform.platform(),git=git('--version'),dependencies={n:importlib.metadata.version(n) for n in ('numpy','scipy','pytest','colorama','iniconfig','packaging','pluggy','pygments')},old_checkpoint=OLD,code=code_identity(),configuration_sha256=Config().identity(),configuration_file_sha256=sha(ROOT/'configuration.json'),executed_on='Jason local Windows host through approved scoped execution; not a cloud code sandbox',prehistory_reexecuted=False)
++    write(DOCS/'RUNTIME_RECORD.json',runtime)
++    verification=dict(review_status='HOLD FOR INDEPENDENT FIDELITY REVIEW; no self-declaration of commissioning fitness',old_checkpoint=OLD,final_suite=read('FINAL_COMPONENT_RECEIPT.json'),mutants=read('mutants-attempt-001/SUMMARY.json'),reconstruction=read('RECONSTRUCTION.json'),observer=read('OBSERVER_ISOLATION.json'),trajectory_comparison=read('TRAJECTORY_COMPARISON.json'),preservation=read('PRESERVATION_VERIFIED.json'))
++    assert verification['final_suite']['exit_code']==0
++    assert all(r['observed_red'] and r['observed_green'] for r in verification['mutants']['receipts'])
++    write(DOCS/'VERIFICATION_SUMMARY.json',verification)
++    suite=(OUT/'FINAL_COMPONENT_SUITE.txt').read_text(encoding='utf-8').strip().splitlines()[-1]
++    table=[]
++    for row in verification['reconstruction']['cases']:
++        table.append(f"| {row['case']} / 003 | {row['native']} / {row['wave']} / {row['events']} | {row['time']:.14g} | {row['execution_wall_seconds']:.3f} | {row['status']} |")
++    delta='\n'.join('- '+r['case']+': '+json.dumps(r['max_absolute_difference'])+f"; differing organism hashes {r['different_organism_hashes']}/{r['native_compared']}; physical records {r['old_events']} → {r['new_events']}." for r in verification['trajectory_comparison'])
++    r1=read('R1_COUNTEREXAMPLE.json')['comparison']; old=r1['old']; new=r1['corrected']
++    flight=next(r for r in new['events'] if r['duration']>0 and not r['contacts'])
++    sustained=next(r for r in new['events'] if r['duration']>0 and r['contacts'])
++    report=f'''# Loom P — bounded corrective engineering report, 2026-09-23
++
++**Hold for independent fidelity review.** This pass implements the authorized R1 correction and supplies new R2/R3 verification. It does not declare the build fit for coupling commissioning. The independent review's failing checkpoint and all its artifacts remain preserved; its old completion claims are historical, not the status of this correction.
++
++## Identity and authority
++
++Old reviewed checkpoint: `{OLD}`. Worktree: `{REPO}`. Existing branch: `{git('branch','--show-current')}`. The new commit is recorded in the package's `CHECKPOINT_RECEIPT.json`, generated after the evidence commit. No amend, rebase, merge, push or PR occurred. Historical EXP1-21 tree remains `f1b884a7ada4c806786d1530d76d446aac5d37b1`.
++
++Authority is the exact `CORRECTION_AUTHORITY.txt`; scope is R1–R3 from `LOOM_P_INDEPENDENT_FIDELITY_REVIEW.md`, copied byte-for-byte into the new evidence directory. The original complete handoff, five-file source manifest and accepted physical references remain the selected sources. Their identities were reverified in `SOURCE_IDENTITIES.json`; project history did not replace the specification. The directional open-domain ruling, P equations, eight-unit/equal-pool baseline, mean-plus-endpoint packet and fading associative regime are unchanged. R and all alternatives remain preserved.
++
++Execution was local Windows Python 3.13.5 and Git 2.50.0.windows.1, using the existing scoped `.venv`; no dependency installation was needed. Restricted read-only inspection and approved worktree writes were distinguished. No Git writes or file edits were made in the Obsidian workbench. The original code checkout's unrelated changes were left alone.
++
++## Exact change
++
++Production change: `developmental_ecology/loom_p/physics.py` only. The new `release_probe` certifies a separating initial segment of the existing frozen-force trajectory. `advance` removes released contacts from the sustained constraint set and emits a zero-duration release record. `first_collision` skips that fixture only until the certified clear point, then includes it in the ordinary swept search. A returned touch is recorded even when its normal impulse is zero. A pending touch at a substep endpoint is processed. No free-motion equation, normal projection, reserve law, field solver, neural equation, constitutive parameter or tolerance was replaced.
++
++Tests changed: `test_neural.py`, `test_physical.py`, `test_records.py`, `test_boundary_and_scheduler.py`; added `test_corrective_contracts.py`. New verification/package helpers are outside `loom_p`, so they do not change snapshot code identity. The current README points to this correction. Exact committed changes are in `CORRECTION.patch`; runtime module hashes are in `RUNTIME_RECORD.json` and every new smoke manifest.
++
++## R1–R3 closure evidence for review
++
++| Finding | Correction and evidence | Review status |
++|---|---|---|
++| R1 release/recontact | Exact review counterexample; start release, positive free flight, swept return and only the remaining duration charged as contact. Source/body balance, duration, stress/repair identity and native/noise isolation checked. Disabled release, double debit, suppressed damage and repeated native call each observed RED, then GREEN. | Implemented and locally verified; independent closure pending |
++| R2 live inspector test | Empty temporary inspector root isolates both native replay and wave artifacts; unique live sentinel and exact `0.2` timestamp prove the intended branch. Missing live wave observed RED, then GREEN. Entire suite runs after all attempt-003 artifacts exist. | Implemented and locally verified; independent closure pending |
++| R3 consequential falsifiers | Zero-relative-tolerance reference oracles, separate shared/fine checks, changed-theta bank oracle; terminal indices 19→20 and 59→60 plus retained index-50 noise check; fixed-time/fixed-phase body footprint; executable hidden-state and evoked-reserve injections. Each designated fault produces its expected assertion failure and then a clean test passes. | Implemented and locally verified; independent closure pending |
++
++Final assembled component suite: **{suite}**. Before correction, the reproduced assembled baseline was **43 passed, 1 failed**. `mutants-attempt-001/SUMMARY.json` and 28 separate logs preserve **14 observed RED → GREEN pairs**. Every red subprocess exited 1 at its designated assertion; every corresponding unmutated subprocess exited 0. These are executed faults, not hypothetical statements that a test should fail.
++
++The bank oracle independently checks an interior update as well as active projection, rejecting both a frozen reference and an old-theta target. Sensory reference movements use independent exponential formulas and separately reject disabling each operation. The terminal mutant changes the actual scheduler `elif` to `if` and reaches the intended failing callback, not an unrelated missing-body error. Diffusion holds mover time and phase fixed, checks the occupied cells and exact equality elsewhere.
++
++Hidden-state checks execute real learner native/handoff arithmetic inside the actual coupled wrapper, with physical/field stand-ins and declared transductions clamped. Pose, stocks, fields, time, phase, world configuration and world-stream counter differ while every learner component stays identical. A proxy traps forbidden configuration reads; injected pose and hidden-config mutants fail. A real transduction positive control changes chemistry input and learner arithmetic. This is executable path coverage, not a security sandbox or proof against arbitrary future code.
++
++Evoked E/I channel content is changed with nonzero regulatory weights. Actual reserve inputs remain unchanged through regulation; subsequent body state must exactly equal a separate physical advance receiving only the delivered motor command. Opposite injections do change commands and hence permitted physical effort costs. A direct evoked refill mutant fails. Neither real fields nor a fourth full organism/world case is executed by these fixtures.
++
++## R1 bodily consequences
++
++Exact starting fixture: position `[2,3]`, angle `0`, velocity `[-0.001,0]`, E=`0.7`, I=`1`, stocks all `0.2`, command `[1,1]`, time/phase `0`, dt=`0.01`. The analytic return of the unchanged free path is 0.001314924581309022 s. Its halfway gap is about 3.28623e-7, over 3,000 geometry tolerances.
++
++Observed free flight: **{flight['duration']:.17g} s**; sustained contact: **{sustained['duration']:.17g} s**. Swept detection stops at spatial tolerance; the test's 2e-7 s return-time allowance is derived from the approximately 0.001 normal path speed and unchanged 1e-10 geometry tolerance. It is not a relaxed configuration tolerance. A zero-impulse return is still an explicit event. All positive durations sum to 0.01 s.
++
++| Counterexample consequence | Preserved old implementation | Corrected |
++|---|---:|---:|
++| Source transfer | {old['transfer']:.17g} | {new['transfer']:.17g} |
++| Damage | {old['damage']:.17g} | {new['damage']:.17g} |
++| Final E | {old['reserves'][0]:.17g} | {new['reserves'][0]:.17g} |
++| Final I | {old['reserves'][1]:.17g} | {new['reserves'][1]:.17g} |
++
++Damage increases here because the impulse threshold allowance is proportional to the shorter sustained-contact duration. The existing damage equation, source debit/body credit and subinterval reserve-dependent force calculation are retained. No attempt was made to recover the prior bodily values. Full old/new events are in `R1_COUNTEREXAMPLE.json`; the old source bytes were read from the preserved commit and executed only for this component comparison.
++
++## Exact bounded reverification
++
++Same configuration SHA `{Config().identity()}`, master seed **5284097 / 0x50A101**, life **0**, unchanged fixture definitions and administrative durations. New identities are attempt **003**. Attempt 002 and all earlier evidence remain unchanged.
++
++| Case / attempt | Native / wave / physical records | Simulated seconds | Wall seconds | Stop |
++|---|---:|---:|---:|---|
++{chr(10).join(table)}
++
++All **3,200 native neural hashes** and all three final chemical fields reconstruct exactly from initial snapshots and saved actual inputs. Checksums, records, random clocks and source/body accounting pass. `RECONSTRUCTION.json` carries every final hash and accounting residual. Nonzero pause at 0.07 s resumes bit-identically through the remaining 0.93 s, with observed versus unobserved continuations compared at every step. A separate paused-inspector replay/reconstruction at record 40 leaves the live state and counters unchanged and runs zero simulation steps.
++
++New complete-loop execution totals **32.93 simulated seconds**: 30 + 1 + 1 + the authorized 0.93 restart comparison. There were no failed new smoke attempts and no extra UI stepping. Detached reconstruction and arithmetic component fixtures are separate from complete-loop execution. Including the preserved build's disclosed 63.47 seconds, the combined historical total is 96.40 seconds; this is repetition accounting, not a new lifetime.
++
++Observed attempt-002 → attempt-003 differences (maximum absolute values; no efficacy target):
++
++{delta}
++
++Only `physics.py` differs among runtime modules. All field/prehistory dependencies match the baseline bytes; configuration file bytes also match the original runtime receipt. The existing lawful 600-second field cache was checked by module/AST identities, field-law values, phase, archive hash and array hash, then reused. **Zero prehistory steps were rerun.** `PREHISTORY_REUSE.json` gives the receipt. The initial preflight also exposed Git's ordinary JSON newline normalization; the check now separately verifies original working-file bytes and committed JSON content rather than confusing their representations.
++
++## Preservation, use and review boundary
++
++All **252 preexisting artifact files** retain their original lengths and SHA-256 values (`PRESERVATION_VERIFIED.json`). The old report, old review package, attempt-002 results and reviewed commit are preserved. An initial development assertion predicted lower damage; it failed with 54 other tests passing and was removed because that directional prediction was unsupported by the law. The retained gate is the independent duration-specific damage equation. An initial component invocation from the wrong directory failed import collection before tests; the actual recorded checks run from `developmental_ecology`. These setup failures did not run additional organisms.
++
++Open `developmental_ecology/Open Loom Inspector.cmd` by double-clicking. It loads **attempt-003 initial contact_ui_1s at time zero, paused**, with new saved records available for replay. Nothing advances on launch. The launcher and inspector production bytes are unchanged. The browser/server was not launched or visually retested in this correction; paused observer/replay/reconstruction was exercised directly. No inspector server or background simulation was started by this pass. For a portable extraction, the existing `Setup Loom Inspector.cmd` uses Python 3.13 and installs the pinned local dependencies. Cross-host bit identity is not claimed.
++
++The new ZIP contains full attempt-003 traces (including birth), snapshots, tests, exact configuration/runtime/source records, correction authority/review, 14 RED/GREEN pairs, preservation/reconstruction evidence and this report. It also carries the previous portable review ZIP unchanged for the failing checkpoint. `ARTIFACT_MANIFEST.json` hashes every packaged member; the adjacent receipt supplies old/new commits, exact branch, archive tree and ZIP checksum. No source archive was added to Git. All current reports sit in the new `p_correction_20260923` directory.
++
++## What remains uncovered and what was NOT tested
++
++No scientific lifetime, cohort, ecological commissioning, coupling commissioning, capacity/parameter sweep, efficacy tuning, developmental success, useful learning, survival gate, experiment number or preregistration. No 600-second organism run or repeated prehistory. No mechanism alternative, R run, tonic bypass, JEPA, packet replacement, magnitude balancing or stronger association. No extra complete-loop case; no natural terminal death occurred in the three smokes. Terminal scheduling is a stand-in plus separate real-physics component test. No long-duration storage/performance test, cross-platform/version identity, real disk exhaustion, fresh dependency install or renewed visual browser/double-click QA.
++
++Finite frozen-force/contact-normal mechanics remain an uncommissioned numerical realization. The release guards and selected outward/rest/tangent source fixtures do not establish convergence or exhaustive adequacy for curved, grazing, simultaneous or moving contact geometries. Changes below the existing spatial resolution are not resolved into separate flights. Information-flow and reserve-ownership tests cover the named executable paths and mutants, not arbitrary malicious future code. The review's separate limitation that equal-valued E/I constants share configuration fields is unchanged and outside R1–R3. Broader temporal compression, sensory differentiation, associative adequacy and ecology questions remain open. Independent fidelity review must assess closure and any commissioning decision. **Stop here.**
++'''
++    write(DOCS/'BUILD_REPORT.md',report)
++    write(DOCS/'CORRECTION_EQUATION_TEST_MAP.md', '''# Correction equation and test map
++
++The original complete 21-operation map is preserved at `../p_engineering_20260921/EQUATION_TO_CODE_AND_TEST_MAP.md`. Its former verification-strength claims must be read with the independent review and this correction. Production `neural.py`, `engine.py`, `chemistry.py`, `geometry.py` and `schema.py` are unchanged.
++
++| Source operation / rule | Corrective code or assertion | Executed fault |
++|---|---|---|
++| Physical realization, swept release/return | physics.release_probe / first_collision / advance; test_touch_release_return_duration_and_accounting | release_disabled |
++| Physical source/body and duration-specific damage | test_touch_release_return_duration_and_accounting, independent balance/stress oracles | double_source_debit; damage_suppressed |
++| One native/noise update per native interval | test_release_subdivision_does_not_repeat_native_or_noise | native_repeated |
++| Observer physical timestamp | test_live_handoff_observation_has_physical_timestamp | live_branch_missing |
++| Equation 21, new projected bank-reference target | test_bank_projection_and_reference_follow_new_value; rtol=0 | bank_reference_frozen; bank_reference_old_target |
++| Equation 15, old shared/fine references | test_separate_sensory_reference_following; independent exponential, rtol=0 | shared_reference_frozen; fine_reference_frozen |
++| Terminal exclusion at scheduled handoff | test_terminal_scheduler_restores_trial_state_and_draws_once, indices 19/59 | terminal_guard_removed |
++| Solid footprint in field coefficient | test_field_flux_mass_and_moving_geometry_continuity, same time and phase | body_footprint_missing |
++| Declared transduction boundary / equations 1–21 | test_hidden_state_cannot_bypass_declared_transductions | hidden_pose_injected; hidden_config_read |
++| Evoked E/I versus actual body ownership / equations 10,14,18 | test_evoked_reserves_have_no_direct_physical_ownership | evoked_refill |
++
++Every fault runs in a fresh subprocess with an in-memory patch; runtime files are never mutated by the harness. The 14 assertions and exact logs are named in the mutant summary. The final assembled component result is separate from these selective tests. The three new smokes preserve the exact previously authorized case definitions; detached replay checks every native learner hash and final field without adding a full-loop case.
++''')
++    write(DOCS/'EXECUTION_LEDGER.md','''# Corrective execution ledger
++
++All Python executions used the existing worktree `.venv`, `-B -X utf8`, from `developmental_ecology`; pytest cache was disabled. No global dependency or Git configuration changed.
++
++1. Read full independent review and user correction authority; inspect local identities/status; capture all 252 preexisting artifact hashes and baseline runtime module hashes. Reproduce baseline suite: 43 passed, 1 failed.
++2. Apply the scoped physical correction and verification changes. Development check: 54 passed, 1 failed on an unsupported lower-damage prediction, then remove that outcome assumption while retaining the independent constitutive oracle. One wrong-directory invocation failed import collection before execution.
++3. `python -B -X utf8 verify_correction_mutants.py --output artifacts/correction-20260923-01a0c405/mutants-attempt-001` — 14 deliberately broken subprocesses failed their designated assertions; 14 subsequent unmutated selective checks passed.
++4. `python -B -X utf8 verify_correction.py preflight` — verify all runtime modules except physics byte-identical; original configuration working bytes and committed JSON content match; validate and reuse existing cache. No prehistory generation call.
++5. `python -B -X utf8 verify_correction.py smokes` — only birth_30s, nonzero_resume_1s, contact_ui_1s, each attempt 003, seed 5284097, life 0, same durations. Nonzero comparison is the declared duplicate 0.93-second continuation.
++6. `python -B -X utf8 verify_correction.py verify` — all neural/field record reconstruction, accounting, old/new trajectory comparison, paused observation/replay/reconstruction, exact R1 old/new arithmetic fixture. No fourth full loop.
++7. `python -B -X utf8 verify_correction.py suite` — full suite after all three new smoke artifacts and reconstruction fixtures exist.
++8. `python -B -X utf8 verify_correction.py preserve` — verify every captured preexisting artifact byte/hash.
++9. `python -B -X utf8 package_correction.py prepare` — new report/source/runtime/evidence records only. Scoped local Git commit on existing branch; no amend or remote operation.
++10. `python -B -X utf8 package_correction.py package` — package committed code and evidence, exact old/new patch, all full new smoke streams, preserved old ZIP and checksum manifests. ZIP verification reads every member. Independent review remains the next boundary.
++
++The unchanged legacy `create_review_package.py` is preserved for provenance; its `prepare` action and the legacy verifier's CLI were NOT run because they target old evidence paths. The new helpers use new paths and exclusive creation.
++''')
++    readme='''# Loom P — correction awaiting independent review
++
++The R1–R3 corrective pass is documented in `../docs/developmental_ecology/p_correction_20260923/BUILD_REPORT.md`. **Hold for independent fidelity review. No commissioning fitness is declared.** The reviewed d5f7efbe checkpoint, prior report and all prior artifacts remain preserved.
++
++Double-click **Open Loom Inspector.cmd** to open the initial **attempt-003 contact_ui_1s** fixture paused at time zero. Launch advances nothing. Use saved-record replay and detached parameter reconstruction to inspect existing evidence. The existing native/wave controls are explicit, capped engineering controls; this delivery does not authorize further runs.
++
++Portable setup: with Python 3.13 installed, **Setup Loom Inspector.cmd** creates the adjacent `.venv` and installs pinned dependencies. The verified host used Python 3.13.5; cross-platform bit identity is not claimed. The server binds only 127.0.0.1:8767. Stop closes it.
++
++The new portable package includes every attempt-003 native, wave and event record, snapshots, exact sources/configuration/runtime records, correction review/authority, RED/GREEN evidence and the unchanged older review ZIP. Check `CHECKPOINT_RECEIPT.json` for exact commits and `ARTIFACT_MANIFEST.json` for content hashes. Original build documents are historical; the new correction report controls the delivered verification status.
++
++The component command is `python -B -X utf8 -m pytest tests -q -p no:cacheprovider` from this directory. New verification helpers use exclusive output paths to prevent overwriting evidence. Do not rerun smokes, generate prehistory, invoke old package preparation or commission experiments as part of opening this review.
++'''
++    (ROOT/'README.md').write_bytes(readme.encode('utf-8'))
++    print('New correction report and source/runtime records prepared.',flush=True)
++
++def package():
++    commit=git('rev-parse','HEAD'); branch=git('branch','--show-current')
++    assert commit!=OLD and git('rev-parse','HEAD^')==OLD
++    assert git('rev-parse','HEAD:EXP1-21')=='f1b884a7ada4c806786d1530d76d446aac5d37b1'
++    assert not git('status','--porcelain','--','developmental_ecology','docs/developmental_ecology/p_correction_20260923')
++    for name,h in code_identity()['files'].items():
++        blob=subprocess.check_output(['git','-C',str(REPO),'show',commit+':developmental_ecology/loom_p/'+name])
++        assert hashlib.sha256(blob).hexdigest()==h
++    PACKAGE.mkdir(exist_ok=False)
++    receipt=dict(status='HOLD FOR INDEPENDENT FIDELITY REVIEW',old_checkpoint=OLD,new_checkpoint=commit,branch=branch,worktree=str(REPO),code=code_identity(),configuration_sha256=Config().identity(),archive_tree=git('rev-parse','HEAD:EXP1-21'),created_at=datetime.now(timezone.utc).isoformat(),prehistory_regenerated=False,no_remote_operation=True,smoke_attempt=3,scope='R1–R3 engineering only; no commissioning fitness declaration')
++    selected={}
++    def add(path):
++        selected[path.relative_to(REPO).as_posix()]=path.read_bytes()
++    for folder in (ROOT/'loom_p',ROOT/'tests',DOCS,REPO/'docs/developmental_ecology/p_engineering_20260921',OUT,ROOT/'artifacts/prehistory-attempt-001'):
++        for path in folder.rglob('*'):
++            if path.is_file() and '__pycache__' not in path.parts: add(path)
++    for name in ('configuration.json','requirements-lock.txt','README.md','Open Loom Inspector.cmd','Setup Loom Inspector.cmd','verify_correction.py','verify_correction_mutants.py','package_correction.py','verify_engineering_records.py','create_review_package.py','.gitignore','.gitattributes'):
++        add(ROOT/name)
++    add(ROOT/'artifacts/information_loss.json')
++    for case in ('birth_30s','nonzero_resume_1s','contact_ui_1s'):
++        for path in (ROOT/'artifacts'/f'smoke-{case}-attempt-003').iterdir(): add(path)
++    oldzip=ROOT/'artifacts/review-package-20260922-01a0c405/Loom_P_build_review_20260922.zip'
++    selected['preserved_checkpoint/Loom_P_build_review_20260922.zip']=oldzip.read_bytes()
++    selected['preserved_checkpoint/physics.py']=subprocess.check_output(['git','-C',str(REPO),'show',OLD+':developmental_ecology/loom_p/physics.py'])
++    source=source_identities()
++    for row in source['sources']:
++        path=Path(row['path']); key='review_inputs/'+(row['package_path'] if row.get('package_path') else 'workbench/'+path.relative_to(WORKBENCH).as_posix())
++        selected[key]=path.read_bytes()
++        if row.get('pinned_commit'):
++            relative=path.relative_to(WORKBENCH/'90_SOURCES/reference_7ada2b300fa1').as_posix()
++            selected['review_inputs/pinned_git_blobs/'+relative]=subprocess.check_output(['git','-C',str(REPO),'show',row['pinned_commit']+':'+relative])
++    selected['CHECKPOINT_RECEIPT.json']=strict_bytes(receipt)
++    selected['CORRECTION.patch']=subprocess.check_output(['git','-C',str(REPO),'diff','--binary',OLD,commit,'--','developmental_ecology','docs/developmental_ecology/p_correction_20260923'])
++    selected['READ_FIRST.md']=(DOCS/'BUILD_REPORT.md').read_bytes()
++    # Exercise exactly the portable member bytes from a separate assembled root.
++    # This full component run occurs after every packaged fixture is present.
++    assembled=PACKAGE/'assembled'
++    for name,data in selected.items():
++        path=assembled/name
++        assert path.resolve().is_relative_to(assembled.resolve())
++        path.parent.mkdir(parents=True,exist_ok=True)
++        with path.open('xb') as f: f.write(data)
++    result=subprocess.run([sys.executable,'-B','-X','utf8','-m','pytest','tests','-q','-p','no:cacheprovider','--basetemp',str(PACKAGE/'portable-test-tmp')],cwd=assembled/'developmental_ecology',capture_output=True,text=True,encoding='utf-8')
++    portable_log=(result.stdout+result.stderr).encode('utf-8')
++    write(PACKAGE/'PORTABLE_COMPONENT_SUITE.txt',portable_log.decode('utf-8'))
++    if result.returncode or '55 passed' not in result.stdout:
++        print(result.stdout+result.stderr,flush=True); raise RuntimeError('Portable assembled suite failed')
++    selected['PORTABLE_COMPONENT_SUITE.txt']=portable_log
++    selected['PORTABLE_VERIFICATION.json']=strict_bytes(dict(exit_code=result.returncode,component_checks=55,cwd=str(assembled/'developmental_ecology'),runtime_executable=sys.executable,after_all_portable_fixtures_present=True,new_dependency_install=False,additional_complete_loop_execution=False))
++    manifest={n:dict(bytes=len(b),sha256=hashlib.sha256(b).hexdigest()) for n,b in sorted(selected.items())}
++    selected['ARTIFACT_MANIFEST.json']=strict_bytes(manifest)
++    target=PACKAGE/'Loom_P_corrective_review_20260923.zip'
++    with zipfile.ZipFile(target,'x',zipfile.ZIP_DEFLATED) as z:
++        for n,b in sorted(selected.items()): z.writestr(n,b)
++    with zipfile.ZipFile(target) as z:
++        for n,row in manifest.items():
++            b=z.read(n); assert len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['sha256']
++    write(PACKAGE/'CHECKPOINT_RECEIPT.json',receipt)
++    write(PACKAGE/'ARTIFACT_MANIFEST.json',manifest)
++    write(PACKAGE/'ZIP_SHA256.txt',sha(target)+'  '+target.name+'\n')
++    print(json.dumps(dict(package=str(target),bytes=target.stat().st_size,sha256=sha(target),members=len(selected),commit=commit,branch=branch)),flush=True)
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser(); parser.add_argument('action',choices=['prepare','package']); args=parser.parse_args(); globals()[args.action]()
+diff --git a/developmental_ecology/tests/test_boundary_and_scheduler.py b/developmental_ecology/tests/test_boundary_and_scheduler.py
+index b0c0cba..03faed1 100644
+--- a/developmental_ecology/tests/test_boundary_and_scheduler.py
++++ b/developmental_ecology/tests/test_boundary_and_scheduler.py
+@@ -38,15 +38,17 @@ def test_ambient_survives_shadow_and_directional_surface_response(monkeypatch):
+     shadow=light_readings(c,position,np.pi,0,0)
+     assert np.allclose(shadow[4:6],ambient[4:6],rtol=0,atol=1e-15)
+ 
+-def test_terminal_scheduler_restores_trial_state_and_draws_once(monkeypatch):
++@pytest.mark.parametrize('start_index',[50,19,59])
++def test_terminal_scheduler_restores_trial_state_and_draws_once(monkeypatch,start_index):
+     # Scheduler arithmetic fixture, with physical/neural/field stand-ins. No fourth
+     # complete-loop organism case. The real physical crossing is tested separately.
+-    e=Engine.__new__(Engine); e.c=Config(); e.time=0.; e.native_index=50
++    e=Engine.__new__(Engine); e.c=Config(); e.time=0.; e.native_index=start_index
+     e.status='paused'; e.failure=None; e.terminal_dimension=None
+     e.rng=Streams(1); e.accumulator=0.; e.last_events=[]; e.last_wave=None
+     e.organism=SimpleNamespace(handoff=lambda _:pytest.fail('Invented terminal handoff'))
++    e.body=SimpleNamespace(reserves=np.array([0.,1.]))
+     def coupled(self,dt,refresh,allow_terminal=False):
+-        assert refresh
++        assert refresh==(start_index==50)
+         self.rng.draw('terminal-test',(1,)); self.accumulator+=dt; self.time+=dt
+         if dt>=.003:
+             if not allow_terminal: raise TerminalCrossing(.003,'energy',[])
+@@ -57,7 +59,7 @@ def test_terminal_scheduler_restores_trial_state_and_draws_once(monkeypatch):
+     native,wave,_=e.step()
+     assert .003<=e.time<=.003+e.c.event_time_tol
+     assert e.accumulator==e.time and e.rng.counters=={'life/terminal-test':1}
+-    assert e.native_index==51 and e.status=='terminal' and wave is None
++    assert e.native_index==start_index+1 and e.status=='terminal' and wave is None
+ 
+ def test_coupled_failure_rolls_back_and_run_marks_incomplete(monkeypatch,tmp_path):
+     import loom_p.records as records
+diff --git a/developmental_ecology/tests/test_corrective_contracts.py b/developmental_ecology/tests/test_corrective_contracts.py
+new file mode 100644
+index 0000000..c29bee8
+--- /dev/null
++++ b/developmental_ecology/tests/test_corrective_contracts.py
+@@ -0,0 +1,169 @@
++"""R1/R3 arithmetic fixtures; no additional complete-loop organism runs."""
++import copy
++import hashlib
++from types import SimpleNamespace
++import numpy as np
++import pytest
++from loom_p.schema import Config,Streams
++from loom_p.physics import Body,advance,actuator_forces,free_velocity
++from loom_p.geometry import fixtures,gap_normal,transduce
++from loom_p.neural import Organism
++from loom_p.engine import Engine
++from loom_p.records import state_bytes
++
++
++def touching_counterexample():
++    return Config(),Body(np.array([2.,3.]),0.,velocity=np.array([-.001,0.])),np.full(8,.2)
++
++
++def test_touch_release_return_duration_and_accounting():
++    c,b,stocks=touching_counterexample(); initial=copy.deepcopy(b)
++    force=actuator_forces(c,b,np.ones(2)); vinf=force.sum()/c.linear_drag
++    tr=np.log((vinf-b.velocity[0])/vinf)*c.body_mass/c.linear_drag
++    v,_=free_velocity(c,b,force,tr/2)
++    source=next(f for f in fixtures(c,0,0) if f['id']=='source-0')
++    gap,_=gap_normal(b.position+tr/2*v,c.body_radius,source)
++    assert gap>3000*c.geometry_tol
++    events,elapsed,terminal=advance(c,b,stocks,0.,0.,np.ones(2),.01)
++    releases=[r for r in events if r.get('event_kind')=='release']
++    assert releases and releases[0]['time']==0., 'Touching body must release at the start'
++    flights=[r for r in events if r['duration']>0 and not r['contacts']]
++    assert len(flights)==1, 'A finite free-flight interval must precede recontact'
++    # Swept search stops at geometry_tol, not at an exact zero-gap root. At this
++    # root |gap derivative| is about .001; 2e-7 s covers 1e-10 spatial resolution.
++    assert abs(flights[0]['duration']-tr)<2e-7
++    touches=[r for r in events if r.get('event_kind')=='recontact_or_first_touch']
++    assert len(touches)==1 and touches[0]['time']==flights[0]['time']
++    assert any(x['collider']=='source-0' for x in touches[0]['contacts'])
++    sustained=[r for r in events if r['duration']>0 and r['contacts']]
++    assert len(sustained)==1 and sustained[0]['duration']<.008686
++    assert elapsed==.01 and terminal is None
++    assert sum(r['duration'] for r in events)==pytest.approx(.01,abs=1e-16)
++    assert b.position[0]==pytest.approx(2.,abs=c.geometry_tol*2)
++    for r in events:
++        assert r['energy_after']-r['energy_before']==pytest.approx(r['transfer'].sum()-r['expenditure'],abs=1e-16)
++        assert np.allclose(r['stock_after']-r['stock_before'],r['renewal_first']+r['renewal_second']-r['transfer'],rtol=0,atol=1e-16)
++        expected=c.damage_per_impulse*sum(x['impulse'] if r['impact'] else max(x['impulse']-c.stress_threshold*r['duration'],0) for x in r['contacts'])
++        assert r['damage']==pytest.approx(expected,abs=1e-16)
++        assert r['integrity_after']-r['integrity_before']==pytest.approx(r['repair']-expected,abs=1e-16)
++        if r['impact'] or not r['contacts']: assert r['transfer'].sum()==0
++    assert b.energy-initial.energy==pytest.approx(sum(r['transfer'].sum()-r['expenditure'] for r in events),abs=1e-16)
++    assert sum(r['transfer'].sum() for r in events)<.00010415229960600089
++    # Damage need not decrease: the stress allowance also has shorter duration.
++    # The per-event constitutive oracle above, not a preferred outcome, is the gate.
++
++
++@pytest.mark.parametrize('velocity,angle',[([-.001,0.],np.pi),([0.,0.],np.pi),([0.,.1],0.)])
++def test_outward_or_tangent_source_release(velocity,angle):
++    c,b,s=touching_counterexample(); b.velocity=np.array(velocity); b.angle=angle
++    command=np.zeros(2) if velocity[1] else np.ones(2)
++    events,_,_=advance(c,b,s,0,0,command,.01)
++    assert any(r.get('event_kind')=='release' for r in events)
++    assert all(r['transfer'].sum()==0 for r in events)
++    assert b.position[0]<2 or b.position[1]>3
++
++
++def test_release_subdivision_does_not_repeat_native_or_noise(monkeypatch):
++    import loom_p.engine as engine_module
++    c,b,s=touching_counterexample(); calls=[]
++    e=Engine.__new__(Engine); e.c=c; e.body=b; e.stocks=s; e.time=0.; e.phase=0.
++    e.raw=[np.zeros(d) for d in (10,4,8,7)]; e.fields=np.zeros((2,1,1))
++    def native(raw,dt,refresh_noise):
++        calls.append(('native',dt,refresh_noise)); return np.ones(2)
++    def field(fields,stocks,t,phase,dt,position):
++        calls.append(('field',dt)); return fields
++    e.organism=SimpleNamespace(native=native); e.solver=SimpleNamespace(step=field)
++    monkeypatch.setattr(engine_module,'transduce',lambda *args:e.raw)
++    assert e._coupled(.01,True) is None
++    assert calls==[('native',.01,True),('field',.01)] and e.time==.01
++    assert any(r.get('event_kind')=='release' for r in e.last_events)
++
++
++@pytest.mark.parametrize('reference,target,tau',[('shared_ref','shared','tau_shared_reference'),('fine_ref','fine','tau_fine_reference')])
++def test_separate_sensory_reference_following(reference,target,tau):
++    c=Config(); raw=[np.zeros(d) for d in (10,4,8,7)]
++    o=Organism(c,Streams(c.master_seed),raw,np.array([.7,1.])); x=o.cortices[0]
++    setattr(x,reference,getattr(x,reference)*.5)
++    x.x[:]=np.linspace(-.4,.5,8); old=copy.deepcopy(x)
++    expected=getattr(old,reference)+(-np.expm1(-.01/getattr(c,tau)))*(getattr(old,target)-getattr(old,reference))
++    assert np.max(np.abs(expected-getattr(old,reference)))>1e-10
++    x.step(c,np.linspace(0,.9,10),np.array([.2,.8]),.01)
++    assert np.allclose(getattr(x,reference),expected,rtol=0,atol=1e-18), reference+' movement missing'
++    wrong=getattr(old,reference)+(-np.expm1(-.01/getattr(c,tau)))*(getattr(x,target)-getattr(old,reference))
++    assert np.max(np.abs(wrong-expected))>1e-15
++
++
++def arithmetic_engine():
++    c=Config(); e=Engine.__new__(Engine); e.c=c; e.time=0.; e.phase=0.
++    e.body=Body(np.array([5.,5.]),.3); e.stocks=np.full(8,.2)
++    e.raw=[np.linspace(.01,.3,d) for d in (10,4,8,7)]; e.fields=np.zeros((2,80,80))
++    e.organism=Organism(c,Streams(c.master_seed),e.raw,e.body.reserves)
++    e.solver=SimpleNamespace(step=lambda fields,*args:fields)
++    return e
++
++
++def neural_digest(o):
++    return hashlib.sha256(state_bytes([o.cortices,o.association,o.regulator,o.motor,o.native_count,o.wave_count,o.wave_elapsed])).hexdigest()
++
++
++class LearnerConfig:
++    """Adversarial proxy: shared config still contains world constants in production.
++    Verify executed learner arithmetic never requests those fields. Not a sandbox.
++    """
++    forbidden={'source_positions','source_capacity','world_side','mover_centre','repair_rectangles','birth_energy','grid_n','illumination_boundary'}
++    def __init__(self,c): self.config=c
++    def __getattr__(self,name):
++        assert name not in self.forbidden, 'Forbidden learner configuration read: '+name
++        return getattr(self.config,name)
++
++
++def test_hidden_state_cannot_bypass_declared_transductions(monkeypatch):
++    import loom_p.engine as engine_module
++    a=arithmetic_engine(); b=arithmetic_engine(); fixed=copy.deepcopy(a.raw)
++    b.body.position[:]=[16.,14.]; b.body.angle=2.1; b.stocks[:]=.017
++    b.fields[:]=19.; b.time=42.; b.phase=2.8
++    b.c.source_positions=[[1.,1.]]; b.c.mover_centre=[18.,18.]
++    b.organism.rng.counters['life/world-position']=800
++    for e in (a,b): e.organism.c=LearnerConfig(e.c)
++    received=[]
++    def declared_transduction(c,body,fields,t,phase):
++        received.append((body.position.copy(),t,phase)); return copy.deepcopy(fixed)
++    monkeypatch.setattr(engine_module,'transduce',declared_transduction)
++    monkeypatch.setattr(engine_module,'advance',lambda c,body,stocks,t,phase,command,dt,allow:([],dt,None))
++    for _ in range(20):
++        a._coupled(.01,False); b._coupled(.01,False)
++        assert neural_digest(a.organism)==neural_digest(b.organism), 'Hidden world state entered native learner arithmetic'
++    for e in (a,b): e.organism.handoff(e.body.reserves)
++    assert neural_digest(a.organism)==neural_digest(b.organism), 'Hidden world state entered handoff arithmetic'
++    assert len(received)==40 and not np.array_equal(received[0][0],received[1][0])
++    # Positive control: real transduction is allowed to convey field/pose effects.
++    p=arithmetic_engine(); q=arithmetic_engine(); q.fields[:]=.2
++    p.raw=transduce(p.c,p.body,p.fields,0,0); q.raw=transduce(q.c,q.body,q.fields,0,0)
++    assert not np.array_equal(p.raw[1],q.raw[1])
++    p.organism.native(p.raw,.01); q.organism.native(q.raw,.01)
++    assert neural_digest(p.organism)!=neural_digest(q.organism)
++
++
++def test_evoked_reserves_have_no_direct_physical_ownership(monkeypatch):
++    import loom_p.engine as engine_module
++    commands=[]; outcomes=[]
++    monkeypatch.setattr(engine_module,'transduce',lambda *args:[np.zeros(d) for d in (10,4,8,7)])
++    for sign in (-1.,1.):
++        e=arithmetic_engine(); o=e.organism; before=copy.deepcopy(e.body)
++        o.association.q[e.c.slices[4]]=sign*.8
++        o.association.q[e.c.slices[5]]=sign*.6
++        o.regulator.theta[:,:,1:]=.03
++        reserves=e.body.reserves
++        o.regulator.output(e.c,o.rng,o.association.q,reserves)
++        assert np.array_equal(reserves,before.reserves), 'Evocation mutated actual reserve input'
++        assert np.array_equal(e.body.reserves,before.reserves)
++        # Independent physical oracle gets only the declared delivered command.
++        clone=copy.deepcopy(o); command=clone.native(e.raw,.01)
++        expected=copy.deepcopy(before); expected_stocks=e.stocks.copy()
++        advance(e.c,expected,expected_stocks,e.time,e.phase,command,.01)
++        e._coupled(.01,False)
++        assert state_bytes(e.body)==state_bytes(expected), 'Evoked reserve bypassed motor/physical ownership'
++        assert np.array_equal(e.stocks,expected_stocks)
++        commands.append(command); outcomes.append(e.body.reserves.copy())
++    assert np.linalg.norm(commands[0]-commands[1])>1e-8
++    assert not np.array_equal(outcomes[0],outcomes[1])  # allowed effort cost, not refill
+diff --git a/developmental_ecology/tests/test_neural.py b/developmental_ecology/tests/test_neural.py
+index 7507c68..1f2cd4e 100644
+--- a/developmental_ecology/tests/test_neural.py
++++ b/developmental_ecology/tests/test_neural.py
+@@ -41,7 +41,8 @@ def test_sensory_old_rhs_and_pool_terms():
+     assert np.allclose(cortex.diagnostic['formation'],expected,atol=1e-16)
+     assert np.allclose(cortex.x,follow(old.x,np.tanh(w@r+old.A@old.x),dt,.1),atol=1e-16)
+     assert np.allclose(cortex.C,follow(old.C,np.outer(old.x,old.x),dt,10),atol=1e-16)
+-    assert np.allclose(cortex.shared_ref,follow(old.shared_ref,old.shared,dt,10000),atol=1e-16)
++    assert np.allclose(cortex.shared_ref,old.shared_ref+(-np.expm1(-dt/c.tau_shared_reference))*(old.shared-old.shared_ref),rtol=0,atol=1e-17)
++    assert np.allclose(cortex.fine_ref,old.fine_ref+(-np.expm1(-dt/c.tau_fine_reference))*(old.fine-old.fine_ref),rtol=0,atol=1e-18)
+     assert np.allclose(cortex.integral,dt*(old.x+cortex.x)/2,atol=1e-16)
+     for ids in cortex.groups: assert np.linalg.norm(cortex.fine[ids].sum(axis=0))<1e-16
+     # Deliberately using newly updated activity must be rejected by this fixture.
+@@ -198,8 +199,20 @@ def test_bank_projection_and_reference_follow_new_value():
+     r.body_mean[:]=0.
+     before=r.reference.copy(); r.credit(c,np.ones(2))
+     assert np.allclose(np.linalg.norm(r.theta,axis=2),1.)
+-    assert np.allclose(r.reference,before+(1-np.exp(-.2/5000))*(r.theta-before),atol=1e-16)
++    expected=before+(-np.expm1(-c.wave_dt/c.tau_bank_reference))*(r.theta-before)
++    assert np.max(np.abs(expected-before))>1e-6
++    assert np.allclose(r.reference,expected,rtol=0,atol=1e-16)
+     assert np.linalg.norm(r.credit_diagnostic['projection'])>0
++    # An interior row actually changes, so following old theta cannot pass.
++    r=setup_neural(c).regulator; r.theta[:,:,0]=.4; r.reference[:,:,0]=.8
++    r.eligibility[:,:,0]=1.; r.xi[:]=1.; r.phi[:]=0.; r.phi[0]=1.; r.body_mean[:]=0.
++    old_theta=r.theta.copy(); before=r.reference.copy(); r.credit(c,np.ones(2))
++    expected_theta=old_theta+.05*.2*.5*r.eligibility-.0001*.2*(old_theta-before)
++    assert np.allclose(r.theta,expected_theta,rtol=0,atol=1e-16)
++    rate=-np.expm1(-c.wave_dt/c.tau_bank_reference)
++    expected=before+rate*(expected_theta-before)
++    assert np.max(abs(expected-(before+rate*(old_theta-before))))>1e-8
++    assert np.allclose(r.reference,expected,rtol=0,atol=1e-16), 'Bank reference must follow newly projected theta'
+ 
+ def test_opening_group_independence_and_fixed_weight_count():
+     c=Config(); o=setup_neural(c); x=o.cortices[0]; count=x.shared.size+x.fine.size
+diff --git a/developmental_ecology/tests/test_physical.py b/developmental_ecology/tests/test_physical.py
+index 164b384..b18d298 100644
+--- a/developmental_ecology/tests/test_physical.py
++++ b/developmental_ecology/tests/test_physical.py
+@@ -26,8 +26,11 @@ def test_field_flux_mass_and_moving_geometry_continuity():
+     diffusion,_,_=solver.coefficients(.01,.7)
+     assert diffusion.min()>=.025-1e-12 and diffusion.max()<=.5+1e-12
+     # Changing solid footprint changes coefficients, not the old concentration buffer.
+-    d2,_,_=solver.coefficients(2.,.7,[5.,5.])
+-    assert np.linalg.norm(diffusion-d2)>0 and np.array_equal(fields,before)
++    d2,_,_=solver.coefficients(.01,.7,[5.,5.])
++    footprint=disk_areas(c,[5.,5.],c.body_radius)>0
++    assert np.all(d2[footprint]<diffusion[footprint]), 'Body footprint must change diffusion'
++    assert np.array_equal(d2[~footprint],diffusion[~footprint])
++    assert np.array_equal(fields,before)
+ 
+ def test_zero_rhs_and_solver_failure():
+     c=Config(); s=FieldSolver(c); s.emission=lambda stocks:np.zeros((2,80,80))
+diff --git a/developmental_ecology/tests/test_records.py b/developmental_ecology/tests/test_records.py
+index b858c9c..37bbe54 100644
+--- a/developmental_ecology/tests/test_records.py
++++ b/developmental_ecology/tests/test_records.py
+@@ -73,9 +73,15 @@ def test_valid_checksum_cannot_hide_missing_or_wrong_shape_state(tmp_path):
+     path=tmp_path/'shape.gz'; save_snapshot(path,e)
+     with pytest.raises(ValueError,match='Map shape'): load_snapshot(path)
+ 
+-def test_live_handoff_observation_has_physical_timestamp():
+-    e=manufactured_component_state(); app=Inspector(); app.engine=e; app.replay=[]
++def test_live_handoff_observation_has_physical_timestamp(monkeypatch,tmp_path):
++    import loom_p.inspector as inspector
++    # Constructor sees an explicitly empty artifact root, including wave history.
++    monkeypatch.setattr(inspector,'ROOT',tmp_path)
++    e=manufactured_component_state(); app=Inspector(); app.engine=e
++    assert app.replay==[] and app.waves==[] and app.record_path is None
+     e.time=.2; e.last_native={'time':.2,'position':[5,5],'angle':0,'stocks':[.2]*8,'reserves':[.7,1]}
+-    e.last_wave={'wave':1}
++    e.last_wave={'wave':1,'live_branch_sentinel':'manufactured-live-only'}
+     before=state_hash(e); result=app.observation()
++    assert result['wave'] is not None, 'Live handoff branch was not exercised'
++    assert result['wave']['live_branch_sentinel']=='manufactured-live-only'
+     assert result['wave']['time']==.2 and state_hash(e)==before
+diff --git a/developmental_ecology/verify_correction.py b/developmental_ecology/verify_correction.py
+new file mode 100644
+index 0000000..64e6927
+--- /dev/null
++++ b/developmental_ecology/verify_correction.py
+@@ -0,0 +1,114 @@
++"""Bounded corrective evidence; stages never silently rerun or replace artifacts."""
++import argparse
++import copy
++import gzip
++import hashlib
++import json
++import subprocess
++import sys
++from pathlib import Path
++import numpy as np
++from loom_p.records import code_identity,strict_bytes,view,state_hash
++from loom_p.schema import Config
++
++ROOT=Path(__file__).resolve().parent
++OUT=ROOT/'artifacts/correction-20260923-01a0c405'
++OLD='d5f7efbe67193f215e52d95ca912db131a79f31c'
++
++def sha(path):
++    with path.open('rb') as f: return hashlib.file_digest(f,'sha256').hexdigest()
++
++def save(name,value):
++    with (OUT/name).open('xb') as f: f.write(strict_bytes(view(value)))
++
++def preflight():
++    from loom_p.prehistory import load
++    before=json.loads((OUT/'BASELINE_CODE_HASHES.json').read_text())
++    current=code_identity()['files']
++    changed=[n for n in current if current[n]!=before[n]]
++    assert changed==['physics.py'], changed
++    old_config=subprocess.check_output(['git','-C',str(ROOT.parent),'show',OLD+':developmental_ecology/configuration.json'])
++    # Git normalizes this JSON's CRLF checkout; the original runtime receipt
++    # records actual file bytes. Require both that byte identity and JSON law.
++    original_runtime=json.loads((ROOT.parent/'docs/developmental_ecology/p_engineering_20260921/RUNTIME_RECORD.json').read_text())
++    assert sha(ROOT/'configuration.json')==original_runtime['configuration_file_sha256']
++    assert json.loads(old_config)==json.loads((ROOT/'configuration.json').read_bytes())
++    fields,phase,rng,m=load(Config(),ROOT/'artifacts/prehistory-attempt-001')
++    save('PREHISTORY_REUSE.json',dict(changed_runtime_modules=changed,unchanged_dependencies={n:current[n] for n in current if n!='physics.py'},configuration_byte_identical=True,configuration_sha256=Config().identity(),phase=phase,field_sha256=hashlib.sha256(fields.tobytes()).hexdigest(),cached_manifest=m,prehistory_executions=0,decision='Reuse unchanged lawful field cache. No field/prehistory dependency changed.'))
++    print('Prehistory dependencies unchanged; cache verified; no regeneration.',flush=True)
++
++def smokes():
++    from loom_p.smokes import CASES,execute
++    assert (OUT/'PREHISTORY_REUSE.json').exists()
++    for case in CASES:
++        print('START',case,'attempt-003',flush=True)
++        result=execute(case,ROOT/'configuration.json',3,'Authorized R1 release/recontact correction and R2/R3 reverification; same configuration, seed, life and duration.')
++        save(case+'-attempt-003-result.json',result)
++        print('DONE',case,result['status'],result['records'],flush=True)
++
++def rows(root,kind):
++    with gzip.open(root/(kind+'.jsonl.gz'),'rt',encoding='utf-8') as f:
++        for line in f: yield json.loads(line)
++
++def verify():
++    from verify_engineering_records import verify as reconstruct_case
++    from loom_p.smokes import CASES
++    from loom_p.inspector import Inspector
++    from loom_p.physics import Body,advance
++    results=[]; comparisons=[]
++    for case in CASES:
++        old=ROOT/'artifacts'/f'smoke-{case}-attempt-002'; new=ROOT/'artifacts'/f'smoke-{case}-attempt-003'
++        result=reconstruct_case(new); results.append(result)
++        delta={key:0. for key in ('reserves','position','angle','velocity','omega','commands','stocks','contact_rates')}
++        different_neural=0; first=None; count=0
++        for a,b in zip(rows(old,'native'),rows(new,'native'),strict=True):
++            count+=1
++            if a['organism_sha256']!=b['organism_sha256']: different_neural+=1
++            for key in delta:
++                d=float(np.max(np.abs(np.asarray(a[key])-np.asarray(b[key])))); delta[key]=max(delta[key],d)
++                if d and first is None: first=b['native_index']
++        old_m=json.loads((old/'manifest.json').read_text()); new_m=json.loads((new/'manifest.json').read_text())
++        assert all(old_m[k]==new_m[k] for k in ('configuration_sha256','seed','life','simulated_seconds_cap','fixture'))
++        comparisons.append(dict(case=case,native_compared=count,max_absolute_difference=delta,first_body_difference_native=first,different_organism_hashes=different_neural,old_events=old_m['records']['events'],new_events=new_m['records']['events'],same_configuration_seed_life_fixture_and_cap=True))
++        print('RECONSTRUCTED',case,'neural, field, clocks, source/body accounting',flush=True)
++    save('RECONSTRUCTION.json',dict(cases=results,method='Detached neural and field arithmetic on saved records; no new complete-loop execution.'))
++    save('TRAJECTORY_COMPARISON.json',comparisons)
++    app=Inspector(); assert app.engine is not None and app.error is None
++    assert app.record_path.endswith('smoke-contact_ui_1s-attempt-003')
++    before=state_hash(app.engine); before_counts=copy.deepcopy(app.engine.organism.rng.counters)
++    app.observation(); app.command('pause'); app.command('replay',39); app.command('reconstruct'); result=app.observation()
++    assert state_hash(app.engine)==before and app.engine.organism.rng.counters==before_counts
++    assert app.engine.time==0. and app.session_steps==0 and app.recorder is None
++    save('OBSERVER_ISOLATION.json',dict(paused=True,initial_engine_time=app.engine.time,session_steps=app.session_steps,record=result['record_path'],cursor=39,live_before=before,live_after=state_hash(app.engine),counters_identical=True,detached_reconstruction=result['parameters']['provenance'],server_launched=False,simulation_steps=0))
++    # Exact old/new R1 component comparison, running archived physics in its own
++    # module namespace. Only this arithmetic fixture, never the old full loop.
++    source=subprocess.check_output(['git','-C',str(ROOT.parent),'show',OLD+':developmental_ecology/loom_p/physics.py'])
++    import types
++    module=types.ModuleType('loom_p._preserved_r1_physics'); module.__package__='loom_p'; sys.modules[module.__name__]=module
++    exec(compile(source,'<preserved d5f7efbe physics>','exec'),module.__dict__)
++    observations={}
++    for label,bodyclass,fn in [('old',module.Body,module.advance),('corrected',Body,advance)]:
++        b=bodyclass(np.array([2.,3.]),0.,velocity=np.array([-.001,0.])); stocks=np.full(8,.2)
++        events,elapsed,terminal=fn(Config(),b,stocks,0.,0.,np.ones(2),.01)
++        observations[label]=dict(events=events,elapsed=elapsed,terminal=terminal,position=b.position,reserves=b.reserves,stocks=stocks,transfer=sum(r['transfer'].sum() for r in events),damage=sum(r['damage'] for r in events))
++    save('R1_COUNTEREXAMPLE.json',dict(old_source_sha256=hashlib.sha256(source).hexdigest(),comparison=observations))
++
++def suite():
++    # Run only after all new smoke artifacts and reconstruction fixtures exist.
++    assert (OUT/'RECONSTRUCTION.json').exists() and (OUT/'OBSERVER_ISOLATION.json').exists()
++    result=subprocess.run([sys.executable,'-B','-X','utf8','-m','pytest','tests','-q','-p','no:cacheprovider'],cwd=ROOT,capture_output=True,text=True,encoding='utf-8')
++    with (OUT/'FINAL_COMPONENT_SUITE.txt').open('xb') as f: f.write((result.stdout+result.stderr).encode('utf-8'))
++    save('FINAL_COMPONENT_RECEIPT.json',dict(exit_code=result.returncode,code=code_identity(),all_three_attempt_003_manifests_present=True,command='python -B -X utf8 -m pytest tests -q -p no:cacheprovider',cwd=str(ROOT)))
++    print(result.stdout+result.stderr,flush=True)
++    if result.returncode: raise SystemExit(result.returncode)
++
++def preserve():
++    expected=json.loads((OUT/'PRESERVED_ARTIFACTS_BEFORE.json').read_text())
++    mismatches=[p for p,r in expected.items() if not (ROOT/'artifacts'/p).exists() or (ROOT/'artifacts'/p).stat().st_size!=r['bytes'] or sha(ROOT/'artifacts'/p)!=r['sha256']]
++    assert not mismatches,mismatches
++    save('PRESERVATION_VERIFIED.json',dict(preexisting_files=len(expected),all_bytes_and_sha256_unchanged=True,old_checkpoint=OLD))
++    print('All',len(expected),'preserved artifact files unchanged.',flush=True)
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser(); parser.add_argument('stage',choices=['preflight','smokes','verify','suite','preserve']); args=parser.parse_args()
++    globals()[args.stage]()
+diff --git a/developmental_ecology/verify_correction_mutants.py b/developmental_ecology/verify_correction_mutants.py
+new file mode 100644
+index 0000000..6e0b49f
+--- /dev/null
++++ b/developmental_ecology/verify_correction_mutants.py
+@@ -0,0 +1,120 @@
++"""Isolated in-memory faults; each subprocess must fail its designated assertion.
++Never edits a production module or runs a complete-loop smoke.
++"""
++import argparse
++import hashlib
++import inspect
++import json
++import subprocess
++import sys
++import textwrap
++from pathlib import Path
++
++CASES={
++ 'release_disabled':('tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting','Touching body must release'),
++ 'live_branch_missing':('tests/test_records.py::test_live_handoff_observation_has_physical_timestamp','Live handoff branch was not exercised'),
++ 'bank_reference_frozen':('tests/test_neural.py::test_bank_projection_and_reference_follow_new_value','assert np.allclose(r.reference'),
++ 'bank_reference_old_target':('tests/test_neural.py::test_bank_projection_and_reference_follow_new_value','Bank reference must follow newly projected theta'),
++ 'shared_reference_frozen':('tests/test_corrective_contracts.py::test_separate_sensory_reference_following[shared_ref-shared-tau_shared_reference]','shared_ref movement missing'),
++ 'fine_reference_frozen':('tests/test_corrective_contracts.py::test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]','fine_ref movement missing'),
++ 'terminal_guard_removed':('tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[19]','Invented terminal handoff'),
++ 'body_footprint_missing':('tests/test_physical.py::test_field_flux_mass_and_moving_geometry_continuity','Body footprint must change diffusion'),
++ 'hidden_pose_injected':('tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions','Hidden world state entered native learner arithmetic'),
++ 'hidden_config_read':('tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions','Forbidden learner configuration read'),
++ 'evoked_refill':('tests/test_corrective_contracts.py::test_evoked_reserves_have_no_direct_physical_ownership','Evoked reserve bypassed motor/physical ownership'),
++ 'double_source_debit':('tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting',"r['stock_after']-r['stock_before']"),
++ 'damage_suppressed':('tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting',"r['integrity_after']-r['integrity_before']"),
++ 'native_repeated':('tests/test_corrective_contracts.py::test_release_subdivision_does_not_repeat_native_or_noise',"assert calls=="),
++}
++
++
++def install(name):
++    import loom_p.physics as p
++    import loom_p.engine as e
++    import loom_p.neural as n
++    import loom_p.inspector as i
++    import loom_p.chemistry as ch
++    if name=='release_disabled': p.release_probe=lambda *args:None
++    elif name=='live_branch_missing':
++        old=i.Inspector.observation
++        def broken(self):
++            result=old(self); result['wave']=None; return result
++        i.Inspector.observation=broken
++    elif name=='bank_reference_frozen':
++        old=n.Regulator.credit
++        def broken(self,*args):
++            reference=self.reference.copy(); old(self,*args); self.reference=reference
++        n.Regulator.credit=broken
++    elif name=='bank_reference_old_target':
++        old=n.Regulator.credit
++        def broken(self,c,*args):
++            theta=self.theta.copy(); reference=self.reference.copy(); old(self,c,*args)
++            self.reference=n.follow(reference,theta,c.wave_dt,c.tau_bank_reference)
++        n.Regulator.credit=broken
++    elif name in ('shared_reference_frozen','fine_reference_frozen'):
++        old=n.Cortex.step; attr='shared_ref' if name.startswith('shared') else 'fine_ref'
++        def broken(self,*args):
++            reference=getattr(self,attr).copy(); old(self,*args); setattr(self,attr,reference)
++        n.Cortex.step=broken
++    elif name=='terminal_guard_removed':
++        source=textwrap.dedent(inspect.getsource(e.Engine.step))
++        assert 'elif self.native_index%' in source
++        source=source.replace('elif self.native_index%','if self.native_index%')
++        namespace=dict(vars(e)); exec(compile(source,'<mutant terminal guard>','exec'),namespace)
++        e.Engine.step=namespace['step']
++    elif name=='body_footprint_missing':
++        old=ch.FieldSolver.coefficients
++        ch.FieldSolver.coefficients=lambda self,t,phase,body_position=None:old(self,t,phase,None)
++    elif name=='hidden_config_read':
++        old=n.Organism.native
++        def broken(self,*args,**kwargs):
++            hidden=self.c.source_positions
++            return old(self,*args,**kwargs)
++        n.Organism.native=broken
++    elif name in ('hidden_pose_injected','evoked_refill','native_repeated'):
++        old=e.Engine._coupled
++        def broken(self,dt,refresh,allow_terminal=False):
++            if name=='hidden_pose_injected': self.raw[0][0]+=self.body.position[0]
++            if name=='native_repeated': self.organism.native(self.raw,dt,refresh_noise=refresh)
++            result=old(self,dt,refresh,allow_terminal)
++            if name=='evoked_refill': self.body.energy+=.0001*self.organism.association.q[self.c.slices[4]][0]
++            return result
++        e.Engine._coupled=broken
++    elif name in ('double_source_debit','damage_suppressed'):
++        old=p.account
++        def broken(c,body,stocks,contacts,dt,instant=False):
++            result=old(c,body,stocks,contacts,dt,instant)
++            if name=='double_source_debit':
++                stocks-=result['transfer']; result['stock_after']=stocks.copy()
++            else:
++                body.integrity+=result['damage']; result['integrity_after']=body.integrity
++            return result
++        p.account=broken
++    else: raise ValueError(name)
++
++
++def main():
++    parser=argparse.ArgumentParser(); parser.add_argument('--child'); parser.add_argument('--output',type=Path); args=parser.parse_args()
++    if args.child:
++        import pytest
++        install(args.child)
++        raise SystemExit(pytest.main([CASES[args.child][0],'-q','-p','no:cacheprovider','--tb=short']))
++    args.output.mkdir(parents=True,exist_ok=False)
++    receipts=[]
++    for name,(test,expected) in CASES.items():
++        red=subprocess.run([sys.executable,'-B','-X','utf8',__file__,'--child',name],capture_output=True,text=True,encoding='utf-8')
++        output=red.stdout+red.stderr
++        (args.output/(name+'-RED.txt')).write_bytes(output.encode('utf-8'))
++        valid=red.returncode==1 and expected in output and '1 failed' in output
++        receipt=dict(mutant=name,test=test,expected_failure=expected,red_exit=red.returncode,observed_red=valid)
++        if not valid:
++            print(output,flush=True); raise RuntimeError('Mutant did not fail its intended assertion: '+name)
++        green=subprocess.run([sys.executable,'-B','-X','utf8','-m','pytest',test,'-q','-p','no:cacheprovider'],capture_output=True,text=True,encoding='utf-8')
++        (args.output/(name+'-GREEN.txt')).write_bytes((green.stdout+green.stderr).encode('utf-8'))
++        receipt.update(green_exit=green.returncode,observed_green=green.returncode==0)
++        receipts.append(receipt); print(name,receipt['red_exit'],receipt['green_exit'],flush=True)
++        if green.returncode: raise RuntimeError('Unmutated test failed: '+name)
++    (args.output/'SUMMARY.json').write_bytes(json.dumps(dict(harness_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),receipts=receipts),indent=2).encode('utf-8'))
++
++
++if __name__=='__main__': main()
+diff --git a/docs/developmental_ecology/p_correction_20260923/BUILD_REPORT.md b/docs/developmental_ecology/p_correction_20260923/BUILD_REPORT.md
+new file mode 100644
+index 0000000..d7888c4
+--- /dev/null
++++ b/docs/developmental_ecology/p_correction_20260923/BUILD_REPORT.md
+@@ -0,0 +1,84 @@
++# Loom P — bounded corrective engineering report, 2026-09-23
++
++**Hold for independent fidelity review.** This pass implements the authorized R1 correction and supplies new R2/R3 verification. It does not declare the build fit for coupling commissioning. The independent review's failing checkpoint and all its artifacts remain preserved; its old completion claims are historical, not the status of this correction.
++
++## Identity and authority
++
++Old reviewed checkpoint: `d5f7efbe67193f215e52d95ca912db131a79f31c`. Worktree: `C:\Users\Jason\Desktop\Eridos\Loom-p-engineering-20260921-01a0c405`. Existing branch: `build/p-engineering-baseline-20260921-01a0c405`. The new commit is recorded in the package's `CHECKPOINT_RECEIPT.json`, generated after the evidence commit. No amend, rebase, merge, push or PR occurred. Historical EXP1-21 tree remains `f1b884a7ada4c806786d1530d76d446aac5d37b1`.
++
++Authority is the exact `CORRECTION_AUTHORITY.txt`; scope is R1–R3 from `LOOM_P_INDEPENDENT_FIDELITY_REVIEW.md`, copied byte-for-byte into the new evidence directory. The original complete handoff, five-file source manifest and accepted physical references remain the selected sources. Their identities were reverified in `SOURCE_IDENTITIES.json`; project history did not replace the specification. The directional open-domain ruling, P equations, eight-unit/equal-pool baseline, mean-plus-endpoint packet and fading associative regime are unchanged. R and all alternatives remain preserved.
++
++Execution was local Windows Python 3.13.5 and Git 2.50.0.windows.1, using the existing scoped `.venv`; no dependency installation was needed. Restricted read-only inspection and approved worktree writes were distinguished. No Git writes or file edits were made in the Obsidian workbench. The original code checkout's unrelated changes were left alone.
++
++## Exact change
++
++Production change: `developmental_ecology/loom_p/physics.py` only. The new `release_probe` certifies a separating initial segment of the existing frozen-force trajectory. `advance` removes released contacts from the sustained constraint set and emits a zero-duration release record. `first_collision` skips that fixture only until the certified clear point, then includes it in the ordinary swept search. A returned touch is recorded even when its normal impulse is zero. A pending touch at a substep endpoint is processed. No free-motion equation, normal projection, reserve law, field solver, neural equation, constitutive parameter or tolerance was replaced.
++
++Tests changed: `test_neural.py`, `test_physical.py`, `test_records.py`, `test_boundary_and_scheduler.py`; added `test_corrective_contracts.py`. New verification/package helpers are outside `loom_p`, so they do not change snapshot code identity. The current README points to this correction. Exact committed changes are in `CORRECTION.patch`; runtime module hashes are in `RUNTIME_RECORD.json` and every new smoke manifest.
++
++## R1–R3 closure evidence for review
++
++| Finding | Correction and evidence | Review status |
++|---|---|---|
++| R1 release/recontact | Exact review counterexample; start release, positive free flight, swept return and only the remaining duration charged as contact. Source/body balance, duration, stress/repair identity and native/noise isolation checked. Disabled release, double debit, suppressed damage and repeated native call each observed RED, then GREEN. | Implemented and locally verified; independent closure pending |
++| R2 live inspector test | Empty temporary inspector root isolates both native replay and wave artifacts; unique live sentinel and exact `0.2` timestamp prove the intended branch. Missing live wave observed RED, then GREEN. Entire suite runs after all attempt-003 artifacts exist. | Implemented and locally verified; independent closure pending |
++| R3 consequential falsifiers | Zero-relative-tolerance reference oracles, separate shared/fine checks, changed-theta bank oracle; terminal indices 19→20 and 59→60 plus retained index-50 noise check; fixed-time/fixed-phase body footprint; executable hidden-state and evoked-reserve injections. Each designated fault produces its expected assertion failure and then a clean test passes. | Implemented and locally verified; independent closure pending |
++
++Final assembled component suite: **55 passed in 2.27s**. Before correction, the reproduced assembled baseline was **43 passed, 1 failed**. `mutants-attempt-001/SUMMARY.json` and 28 separate logs preserve **14 observed RED → GREEN pairs**. Every red subprocess exited 1 at its designated assertion; every corresponding unmutated subprocess exited 0. These are executed faults, not hypothetical statements that a test should fail.
++
++The bank oracle independently checks an interior update as well as active projection, rejecting both a frozen reference and an old-theta target. Sensory reference movements use independent exponential formulas and separately reject disabling each operation. The terminal mutant changes the actual scheduler `elif` to `if` and reaches the intended failing callback, not an unrelated missing-body error. Diffusion holds mover time and phase fixed, checks the occupied cells and exact equality elsewhere.
++
++Hidden-state checks execute real learner native/handoff arithmetic inside the actual coupled wrapper, with physical/field stand-ins and declared transductions clamped. Pose, stocks, fields, time, phase, world configuration and world-stream counter differ while every learner component stays identical. A proxy traps forbidden configuration reads; injected pose and hidden-config mutants fail. A real transduction positive control changes chemistry input and learner arithmetic. This is executable path coverage, not a security sandbox or proof against arbitrary future code.
++
++Evoked E/I channel content is changed with nonzero regulatory weights. Actual reserve inputs remain unchanged through regulation; subsequent body state must exactly equal a separate physical advance receiving only the delivered motor command. Opposite injections do change commands and hence permitted physical effort costs. A direct evoked refill mutant fails. Neither real fields nor a fourth full organism/world case is executed by these fixtures.
++
++## R1 bodily consequences
++
++Exact starting fixture: position `[2,3]`, angle `0`, velocity `[-0.001,0]`, E=`0.7`, I=`1`, stocks all `0.2`, command `[1,1]`, time/phase `0`, dt=`0.01`. The analytic return of the unchanged free path is 0.001314924581309022 s. Its halfway gap is about 3.28623e-7, over 3,000 geometry tolerances.
++
++Observed free flight: **0.0013148287095122722 s**; sustained contact: **0.0086851712904877278 s**. Swept detection stops at spatial tolerance; the test's 2e-7 s return-time allowance is derived from the approximately 0.001 normal path speed and unchanged 1e-10 geometry tolerance. It is not a relaxed configuration tolerance. A zero-impulse return is still an explicit event. All positive durations sum to 0.01 s.
++
++| Counterexample consequence | Preserved old implementation | Corrected |
++|---|---:|---:|
++| Source transfer | 0.00010415229960600089 | 9.2057513732946743e-05 |
++| Damage | 8.1441530337662235e-05 | 8.8015219082599464e-05 |
++| Final E | 0.70007915229960593 | 0.70006705751373288 |
++| Final I | 0.99991855846966238 | 0.99991198478091736 |
++
++Damage increases here because the impulse threshold allowance is proportional to the shorter sustained-contact duration. The existing damage equation, source debit/body credit and subinterval reserve-dependent force calculation are retained. No attempt was made to recover the prior bodily values. Full old/new events are in `R1_COUNTEREXAMPLE.json`; the old source bytes were read from the preserved commit and executed only for this component comparison.
++
++## Exact bounded reverification
++
++Same configuration SHA `a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a`, master seed **5284097 / 0x50A101**, life **0**, unchanged fixture definitions and administrative durations. New identities are attempt **003**. Attempt 002 and all earlier evidence remain unchanged.
++
++| Case / attempt | Native / wave / physical records | Simulated seconds | Wall seconds | Stop |
++|---|---:|---:|---:|---|
++| birth_30s / 003 | 3000 / 150 / 3000 | 30.000000000002 | 125.216 | administrative_pause |
++| nonzero_resume_1s / 003 | 100 / 5 / 100 | 1 | 15.778 | administrative_pause |
++| contact_ui_1s / 003 | 100 / 5 / 102 | 1 | 4.169 | administrative_pause |
++
++All **3,200 native neural hashes** and all three final chemical fields reconstruct exactly from initial snapshots and saved actual inputs. Checksums, records, random clocks and source/body accounting pass. `RECONSTRUCTION.json` carries every final hash and accounting residual. Nonzero pause at 0.07 s resumes bit-identically through the remaining 0.93 s, with observed versus unobserved continuations compared at every step. A separate paused-inspector replay/reconstruction at record 40 leaves the live state and counters unchanged and runs zero simulation steps.
++
++New complete-loop execution totals **32.93 simulated seconds**: 30 + 1 + 1 + the authorized 0.93 restart comparison. There were no failed new smoke attempts and no extra UI stepping. Detached reconstruction and arithmetic component fixtures are separate from complete-loop execution. Including the preserved build's disclosed 63.47 seconds, the combined historical total is 96.40 seconds; this is repetition accounting, not a new lifetime.
++
++Observed attempt-002 → attempt-003 differences (maximum absolute values; no efficacy target):
++
++- birth_30s: {"reserves": 0.0, "position": 0.0, "angle": 0.0, "velocity": 0.0, "omega": 0.0, "commands": 0.0, "stocks": 0.0, "contact_rates": 0.0}; differing organism hashes 0/3000; physical records 3000 → 3000.
++- nonzero_resume_1s: {"reserves": 0.0, "position": 0.0, "angle": 0.0, "velocity": 0.0, "omega": 0.0, "commands": 0.0, "stocks": 0.0, "contact_rates": 0.0}; differing organism hashes 0/100; physical records 100 → 100.
++- contact_ui_1s: {"reserves": 0.0, "position": 0.0, "angle": 0.0, "velocity": 0.0, "omega": 0.0, "commands": 0.0, "stocks": 0.0, "contact_rates": 0.0}; differing organism hashes 0/100; physical records 101 → 102.
++
++Only `physics.py` differs among runtime modules. All field/prehistory dependencies match the baseline bytes; configuration file bytes also match the original runtime receipt. The existing lawful 600-second field cache was checked by module/AST identities, field-law values, phase, archive hash and array hash, then reused. **Zero prehistory steps were rerun.** `PREHISTORY_REUSE.json` gives the receipt. The initial preflight also exposed Git's ordinary JSON newline normalization; the check now separately verifies original working-file bytes and committed JSON content rather than confusing their representations.
++
++## Preservation, use and review boundary
++
++All **252 preexisting artifact files** retain their original lengths and SHA-256 values (`PRESERVATION_VERIFIED.json`). The old report, old review package, attempt-002 results and reviewed commit are preserved. An initial development assertion predicted lower damage; it failed with 54 other tests passing and was removed because that directional prediction was unsupported by the law. The retained gate is the independent duration-specific damage equation. An initial component invocation from the wrong directory failed import collection before tests; the actual recorded checks run from `developmental_ecology`. These setup failures did not run additional organisms.
++
++Open `developmental_ecology/Open Loom Inspector.cmd` by double-clicking. It loads **attempt-003 initial contact_ui_1s at time zero, paused**, with new saved records available for replay. Nothing advances on launch. The launcher and inspector production bytes are unchanged. The browser/server was not launched or visually retested in this correction; paused observer/replay/reconstruction was exercised directly. No inspector server or background simulation was started by this pass. For a portable extraction, the existing `Setup Loom Inspector.cmd` uses Python 3.13 and installs the pinned local dependencies. Cross-host bit identity is not claimed.
++
++The new ZIP contains full attempt-003 traces (including birth), snapshots, tests, exact configuration/runtime/source records, correction authority/review, 14 RED/GREEN pairs, preservation/reconstruction evidence and this report. It also carries the previous portable review ZIP unchanged for the failing checkpoint. `ARTIFACT_MANIFEST.json` hashes every packaged member; the adjacent receipt supplies old/new commits, exact branch, archive tree and ZIP checksum. No source archive was added to Git. All current reports sit in the new `p_correction_20260923` directory.
++
++## What remains uncovered and what was NOT tested
++
++No scientific lifetime, cohort, ecological commissioning, coupling commissioning, capacity/parameter sweep, efficacy tuning, developmental success, useful learning, survival gate, experiment number or preregistration. No 600-second organism run or repeated prehistory. No mechanism alternative, R run, tonic bypass, JEPA, packet replacement, magnitude balancing or stronger association. No extra complete-loop case; no natural terminal death occurred in the three smokes. Terminal scheduling is a stand-in plus separate real-physics component test. No long-duration storage/performance test, cross-platform/version identity, real disk exhaustion, fresh dependency install or renewed visual browser/double-click QA.
++
++Finite frozen-force/contact-normal mechanics remain an uncommissioned numerical realization. The release guards and selected outward/rest/tangent source fixtures do not establish convergence or exhaustive adequacy for curved, grazing, simultaneous or moving contact geometries. Changes below the existing spatial resolution are not resolved into separate flights. Information-flow and reserve-ownership tests cover the named executable paths and mutants, not arbitrary malicious future code. The review's separate limitation that equal-valued E/I constants share configuration fields is unchanged and outside R1–R3. Broader temporal compression, sensory differentiation, associative adequacy and ecology questions remain open. Independent fidelity review must assess closure and any commissioning decision. **Stop here.**
+diff --git a/docs/developmental_ecology/p_correction_20260923/CORRECTION_EQUATION_TEST_MAP.md b/docs/developmental_ecology/p_correction_20260923/CORRECTION_EQUATION_TEST_MAP.md
+new file mode 100644
+index 0000000..4d0aefc
+--- /dev/null
++++ b/docs/developmental_ecology/p_correction_20260923/CORRECTION_EQUATION_TEST_MAP.md
+@@ -0,0 +1,18 @@
++# Correction equation and test map
++
++The original complete 21-operation map is preserved at `../p_engineering_20260921/EQUATION_TO_CODE_AND_TEST_MAP.md`. Its former verification-strength claims must be read with the independent review and this correction. Production `neural.py`, `engine.py`, `chemistry.py`, `geometry.py` and `schema.py` are unchanged.
++
++| Source operation / rule | Corrective code or assertion | Executed fault |
++|---|---|---|
++| Physical realization, swept release/return | physics.release_probe / first_collision / advance; test_touch_release_return_duration_and_accounting | release_disabled |
++| Physical source/body and duration-specific damage | test_touch_release_return_duration_and_accounting, independent balance/stress oracles | double_source_debit; damage_suppressed |
++| One native/noise update per native interval | test_release_subdivision_does_not_repeat_native_or_noise | native_repeated |
++| Observer physical timestamp | test_live_handoff_observation_has_physical_timestamp | live_branch_missing |
++| Equation 21, new projected bank-reference target | test_bank_projection_and_reference_follow_new_value; rtol=0 | bank_reference_frozen; bank_reference_old_target |
++| Equation 15, old shared/fine references | test_separate_sensory_reference_following; independent exponential, rtol=0 | shared_reference_frozen; fine_reference_frozen |
++| Terminal exclusion at scheduled handoff | test_terminal_scheduler_restores_trial_state_and_draws_once, indices 19/59 | terminal_guard_removed |
++| Solid footprint in field coefficient | test_field_flux_mass_and_moving_geometry_continuity, same time and phase | body_footprint_missing |
++| Declared transduction boundary / equations 1–21 | test_hidden_state_cannot_bypass_declared_transductions | hidden_pose_injected; hidden_config_read |
++| Evoked E/I versus actual body ownership / equations 10,14,18 | test_evoked_reserves_have_no_direct_physical_ownership | evoked_refill |
++
++Every fault runs in a fresh subprocess with an in-memory patch; runtime files are never mutated by the harness. The 14 assertions and exact logs are named in the mutant summary. The final assembled component result is separate from these selective tests. The three new smokes preserve the exact previously authorized case definitions; detached replay checks every native learner hash and final field without adding a full-loop case.
+diff --git a/docs/developmental_ecology/p_correction_20260923/EXECUTION_LEDGER.md b/docs/developmental_ecology/p_correction_20260923/EXECUTION_LEDGER.md
+new file mode 100644
+index 0000000..6c69fc9
+--- /dev/null
++++ b/docs/developmental_ecology/p_correction_20260923/EXECUTION_LEDGER.md
+@@ -0,0 +1,16 @@
++# Corrective execution ledger
++
++All Python executions used the existing worktree `.venv`, `-B -X utf8`, from `developmental_ecology`; pytest cache was disabled. No global dependency or Git configuration changed.
++
++1. Read full independent review and user correction authority; inspect local identities/status; capture all 252 preexisting artifact hashes and baseline runtime module hashes. Reproduce baseline suite: 43 passed, 1 failed.
++2. Apply the scoped physical correction and verification changes. Development check: 54 passed, 1 failed on an unsupported lower-damage prediction, then remove that outcome assumption while retaining the independent constitutive oracle. One wrong-directory invocation failed import collection before execution.
++3. `python -B -X utf8 verify_correction_mutants.py --output artifacts/correction-20260923-01a0c405/mutants-attempt-001` — 14 deliberately broken subprocesses failed their designated assertions; 14 subsequent unmutated selective checks passed.
++4. `python -B -X utf8 verify_correction.py preflight` — verify all runtime modules except physics byte-identical; original configuration working bytes and committed JSON content match; validate and reuse existing cache. No prehistory generation call.
++5. `python -B -X utf8 verify_correction.py smokes` — only birth_30s, nonzero_resume_1s, contact_ui_1s, each attempt 003, seed 5284097, life 0, same durations. Nonzero comparison is the declared duplicate 0.93-second continuation.
++6. `python -B -X utf8 verify_correction.py verify` — all neural/field record reconstruction, accounting, old/new trajectory comparison, paused observation/replay/reconstruction, exact R1 old/new arithmetic fixture. No fourth full loop.
++7. `python -B -X utf8 verify_correction.py suite` — full suite after all three new smoke artifacts and reconstruction fixtures exist.
++8. `python -B -X utf8 verify_correction.py preserve` — verify every captured preexisting artifact byte/hash.
++9. `python -B -X utf8 package_correction.py prepare` — new report/source/runtime/evidence records only. Scoped local Git commit on existing branch; no amend or remote operation.
++10. `python -B -X utf8 package_correction.py package` — package committed code and evidence, exact old/new patch, all full new smoke streams, preserved old ZIP and checksum manifests. ZIP verification reads every member. Independent review remains the next boundary.
++
++The unchanged legacy `create_review_package.py` is preserved for provenance; its `prepare` action and the legacy verifier's CLI were NOT run because they target old evidence paths. The new helpers use new paths and exclusive creation.
+diff --git a/docs/developmental_ecology/p_correction_20260923/RUNTIME_RECORD.json b/docs/developmental_ecology/p_correction_20260923/RUNTIME_RECORD.json
+new file mode 100644
+index 0000000..aa5552d
+--- /dev/null
++++ b/docs/developmental_ecology/p_correction_20260923/RUNTIME_RECORD.json
+@@ -0,0 +1 @@
++{"python":"3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]","executable":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe","platform":"Windows-11-10.0.26200-SP0","git":"git version 2.50.0.windows.1","dependencies":{"numpy":"2.3.3","scipy":"1.16.2","pytest":"8.4.2","colorama":"0.4.6","iniconfig":"2.3.0","packaging":"26.3","pluggy":"1.6.0","pygments":"2.21.0"},"old_checkpoint":"d5f7efbe67193f215e52d95ca912db131a79f31c","code":{"sha256":"af53b321220001166b73bc420b67c7526cddfe4198b8bf34ef69f7406082d868","files":{"__init__.py":"e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a","chemistry.py":"44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d","diagnostics.py":"f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0","engine.py":"ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d","geometry.py":"b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3","inspector.py":"8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83","neural.py":"92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca","physics.py":"2a2e53bdfb3964488a446f1549682bc00cb4bc0403ef4a95f1adc245a4e58f63","prehistory.py":"3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588","reconstruction.py":"b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b","records.py":"4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e","schema.py":"65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc","smokes.py":"1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"}},"configuration_sha256":"a97335ec22445cacf66831290444f933986774f6a63c9f11626988e6781a7d3a","configuration_file_sha256":"985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9","executed_on":"Jason local Windows host through approved scoped execution; not a cloud code sandbox","prehistory_reexecuted":false}
+\ No newline at end of file
+diff --git a/docs/developmental_ecology/p_correction_20260923/SOURCE_IDENTITIES.json b/docs/developmental_ecology/p_correction_20260923/SOURCE_IDENTITIES.json
+new file mode 100644
+index 0000000..aa0a3ed
+--- /dev/null
++++ b/docs/developmental_ecology/p_correction_20260923/SOURCE_IDENTITIES.json
+@@ -0,0 +1 @@
++{"schema_version":1,"verified_at":"2026-09-23T04:34:22.250216+00:00","reference_commit_not_remote_head":"7ada2b300fa12a26b0daf40b1fa5682243ff6625","sources":[{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-21-p-engineering-build\\sources\\LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md","package_path":"sources/LOOM_ASSOCIATIVE_REGULATORY_CANDIDATE_v0_1_DISCUSSION_DRAFT.md","bytes":38379,"sha256":"34bd519bb01253f783521204c9e6358b11703282ec322f4707e5ece1bb6a4da4","manifest_match":true},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-21-p-engineering-build\\sources\\P_IMPLEMENTATION_AND_OBSERVATION_SPEC_v0_1_REVIEW_DRAFT.md","package_path":"sources/P_IMPLEMENTATION_AND_OBSERVATION_SPEC_v0_1_REVIEW_DRAFT.md","bytes":68773,"sha256":"f1af7cf234e15c0215848c5775d7f84c2d8edbeea389dce53b889b1cfa9c64ba","manifest_match":true},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-21-p-engineering-build\\sources\\P_PLAIN_LANGUAGE_DATA_FLOW_v0_1_REVIEW_DRAFT.md","package_path":"sources/P_PLAIN_LANGUAGE_DATA_FLOW_v0_1_REVIEW_DRAFT.md","bytes":32906,"sha256":"c31218c3f65bb4e5d35d02a9030978c25504f3d93a7a95682e2255d701d8294b","manifest_match":true},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-21-p-engineering-build\\sources\\LOOM_P_SPECIFICATION_HANDOFF_2026-09-20.md","package_path":"sources/LOOM_P_SPECIFICATION_HANDOFF_2026-09-20.md","bytes":21878,"sha256":"c133f2114a1b41254c5965f61ae202c9b198733173bdc9e9d8193164be12be33","manifest_match":true},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-21-p-engineering-build\\sources\\P_SPECIFICATION_DESIGN_REVIEW.md","package_path":"sources/P_SPECIFICATION_DESIGN_REVIEW.md","bytes":19317,"sha256":"f490e9c91ad62fc34a26c81de914dfeff6ffa22c2a11436179b888ca84fe7d62","manifest_match":true},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\AGENTS.md","bytes":8812,"sha256":"4a6d5a5fe00a956aff1661d8fbffeeede026863bb9c0ed818013a12eacc40a56","manifest_match":"not_in_five_file_manifest"},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\00_RESEARCH_MAP.md","bytes":4919,"sha256":"94568977c104a3511f20b36784fe0613134764eab6c883dee35d4a8042df2150","manifest_match":"not_in_five_file_manifest"},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\01_WORKSPACE_STATUS.md","bytes":6573,"sha256":"e38231bc1c9b0df9240e30e95c49fdefdb53b590c4e55b42d02e6707926686a4","manifest_match":"not_in_five_file_manifest"},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-21-p-engineering-build\\LOOM_P_ENGINEERING_BUILD_HANDOFF_2026-09-21.md","bytes":30746,"sha256":"0227310e66cc32e254dee20ff97858163f5667d9274d2198c4171332061786eb","manifest_match":"not_in_five_file_manifest"},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\INBOX\\2026-09-21-p-engineering-build\\SOURCE_MANIFEST.json","bytes":2100,"sha256":"760e7eb338232715f1f04ba8d36284c4b485a9f60ac6e266e17f6d1f01c3bc58","manifest_match":"not_in_five_file_manifest"},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\40_DECISIONS\\DECISION-P-SPECIFICATION-2026-09-20-83a00674.md","bytes":6635,"sha256":"93075ad480ccead93ac70a4134b55b298aef763f1fc205f020f1c6a2f345996c","manifest_match":"not_in_five_file_manifest"},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\90_SOURCES\\reference_7ada2b300fa1\\00_LOOM_CURRENT_STATE.md","bytes":13757,"sha256":"6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b","manifest_match":"not_in_five_file_manifest","pinned_commit":"7ada2b300fa12a26b0daf40b1fa5682243ff6625","pinned_git_blob":"e1fb0f14298e6800813377572f37d88b34a01874","pinned_blob_sha256":"6302cb2990419121b4dcddf5c90283c3fe9562eb0e1b07a303506a19f4c9e26b","current_workbench_bytes_equal_git_blob":true,"note":"Current reading copy identity and pinned Git blob identity are separate; authorized workbench formatting is not assumed byte-identical."},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\90_SOURCES\\reference_7ada2b300fa1\\docs\\developmental_ecology\\DEVELOPMENTAL_ECOLOGY_DESIGN_FRAME_v0_2.md","bytes":25684,"sha256":"729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab","manifest_match":"not_in_five_file_manifest","pinned_commit":"7ada2b300fa12a26b0daf40b1fa5682243ff6625","pinned_git_blob":"a9d3d0cf5bb3dfcc0bd04e7c05fc654f18e613a4","pinned_blob_sha256":"729085e81177e9bd518aed3ab3927d374ec0a4d80c57856040dba5669567e6ab","current_workbench_bytes_equal_git_blob":true,"note":"Current reading copy identity and pinned Git blob identity are separate; authorized workbench formatting is not assumed byte-identical."},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\90_SOURCES\\reference_7ada2b300fa1\\docs\\developmental_ecology\\PRIMITIVE_ORGANISM_WORLD_COUPLING_SPEC_v0_1.md","bytes":31840,"sha256":"3ecb0bc5627003ee3f8e464d677e175692ac0a0ac94fa9a22d2c45e1496ac5b6","manifest_match":"not_in_five_file_manifest","pinned_commit":"7ada2b300fa12a26b0daf40b1fa5682243ff6625","pinned_git_blob":"6cad779bafb4c1c60d1f008916628fb2e1b0fa76","pinned_blob_sha256":"9cb58ab268acb7a6023c0a7ab80fa2f1a816de69dabf1df2b48fe7d4c597edbc","current_workbench_bytes_equal_git_blob":false,"note":"Current reading copy identity and pinned Git blob identity are separate; authorized workbench formatting is not assumed byte-identical."},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\90_SOURCES\\reference_7ada2b300fa1\\docs\\developmental_ecology\\BASE_WORLD_COMPLETION_v0_1.md","bytes":59939,"sha256":"b647f4e7f61deb09eea83272be9a2f3229f838de753a835447f64e91977e0d45","manifest_match":"not_in_five_file_manifest","pinned_commit":"7ada2b300fa12a26b0daf40b1fa5682243ff6625","pinned_git_blob":"f05bc1b894cd44c12446a19bd42151adab523dc1","pinned_blob_sha256":"97756677a5c7d659198cb49a4771de43741bb4b05c17de017cd94973a05a67ab","current_workbench_bytes_equal_git_blob":false,"note":"Current reading copy identity and pinned Git blob identity are separate; authorized workbench formatting is not assumed byte-identical."},{"path":"C:\\Users\\Jason\\Documents\\Obsidian\\All Projects\\Projects\\Eridos\\Experiments\\Loom\\Loom Research Workbench\\90_SOURCES\\reference_7ada2b300fa1\\docs\\developmental_ecology\\DEVELOPMENTAL_ECOLOGY_DECISION_LEDGER_v0_2.md","bytes":29585,"sha256":"80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef","manifest_match":"not_in_five_file_manifest","pinned_commit":"7ada2b300fa12a26b0daf40b1fa5682243ff6625","pinned_git_blob":"95dd66dd161c2ab591fc2ff272fe14e0e5adead7","pinned_blob_sha256":"80c53222e8260b39b4bd9bf6abdd3cba0571b6c2381b4b9db27ff3568d742fef","current_workbench_bytes_equal_git_blob":true,"note":"Current reading copy identity and pinned Git blob identity are separate; authorized workbench formatting is not assumed byte-identical."}]}
+\ No newline at end of file
+diff --git a/docs/developmental_ecology/p_correction_20260923/VERIFICATION_SUMMARY.json b/docs/developmental_ecology/p_correction_20260923/VERIFICATION_SUMMARY.json
+new file mode 100644
+index 0000000..1977fa9
+--- /dev/null
++++ b/docs/developmental_ecology/p_correction_20260923/VERIFICATION_SUMMARY.json
+@@ -0,0 +1 @@
++{"review_status":"HOLD FOR INDEPENDENT FIDELITY REVIEW; no self-declaration of commissioning fitness","old_checkpoint":"d5f7efbe67193f215e52d95ca912db131a79f31c","final_suite":{"exit_code":0,"code":{"sha256":"af53b321220001166b73bc420b67c7526cddfe4198b8bf34ef69f7406082d868","files":{"__init__.py":"e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a","chemistry.py":"44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d","diagnostics.py":"f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0","engine.py":"ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d","geometry.py":"b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3","inspector.py":"8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83","neural.py":"92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca","physics.py":"2a2e53bdfb3964488a446f1549682bc00cb4bc0403ef4a95f1adc245a4e58f63","prehistory.py":"3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588","reconstruction.py":"b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b","records.py":"4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e","schema.py":"65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc","smokes.py":"1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b"}},"all_three_attempt_003_manifests_present":true,"command":"python -B -X utf8 -m pytest tests -q -p no:cacheprovider","cwd":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\developmental_ecology"},"mutants":{"harness_sha256":"1323cfcaa3841d2dba4fa5b4cc8d3bf4098b1cba5f1b9480e17bc2af7f727d20","receipts":[{"mutant":"release_disabled","test":"tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting","expected_failure":"Touching body must release","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"live_branch_missing","test":"tests/test_records.py::test_live_handoff_observation_has_physical_timestamp","expected_failure":"Live handoff branch was not exercised","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"bank_reference_frozen","test":"tests/test_neural.py::test_bank_projection_and_reference_follow_new_value","expected_failure":"assert np.allclose(r.reference","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"bank_reference_old_target","test":"tests/test_neural.py::test_bank_projection_and_reference_follow_new_value","expected_failure":"Bank reference must follow newly projected theta","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"shared_reference_frozen","test":"tests/test_corrective_contracts.py::test_separate_sensory_reference_following[shared_ref-shared-tau_shared_reference]","expected_failure":"shared_ref movement missing","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"fine_reference_frozen","test":"tests/test_corrective_contracts.py::test_separate_sensory_reference_following[fine_ref-fine-tau_fine_reference]","expected_failure":"fine_ref movement missing","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"terminal_guard_removed","test":"tests/test_boundary_and_scheduler.py::test_terminal_scheduler_restores_trial_state_and_draws_once[19]","expected_failure":"Invented terminal handoff","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"body_footprint_missing","test":"tests/test_physical.py::test_field_flux_mass_and_moving_geometry_continuity","expected_failure":"Body footprint must change diffusion","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"hidden_pose_injected","test":"tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions","expected_failure":"Hidden world state entered native learner arithmetic","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"hidden_config_read","test":"tests/test_corrective_contracts.py::test_hidden_state_cannot_bypass_declared_transductions","expected_failure":"Forbidden learner configuration read","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"evoked_refill","test":"tests/test_corrective_contracts.py::test_evoked_reserves_have_no_direct_physical_ownership","expected_failure":"Evoked reserve bypassed motor/physical ownership","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"double_source_debit","test":"tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting","expected_failure":"r['stock_after']-r['stock_before']","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"damage_suppressed","test":"tests/test_corrective_contracts.py::test_touch_release_return_duration_and_accounting","expected_failure":"r['integrity_after']-r['integrity_before']","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true},{"mutant":"native_repeated","test":"tests/test_corrective_contracts.py::test_release_subdivision_does_not_repeat_native_or_noise","expected_failure":"assert calls==","red_exit":1,"observed_red":true,"green_exit":0,"observed_green":true}]},"reconstruction":{"cases":[{"case":"birth_30s","path":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\developmental_ecology\\artifacts\\smoke-birth_30s-attempt-003","complete":true,"native":3000,"wave":150,"events":3000,"time":30.00000000000189,"status":"administrative_pause","snapshot_initial_hash":"63a2c9a85c9536b91e672c4e3d737eb0287a9d36ba0357a97cbd6ebd7e99d6de","snapshot_final_hash":"a00f93dbf36f8dd8b1ceaf107ef33c72d8a002562342966105265554a6a422d2","reconstruction":{"snapshot_time":0.0,"time":30.00000000000189,"records_checked":3000,"identical":true,"provenance":"Detached reconstruction from initial full snapshot and each saved actual receptor/reserve input; every complete neural-state hash matched. No body/world simulation or live-state change."},"field_reconstruction_bit_identical":true,"max_accounting_error":5.535190903717402e-17,"final_reserves":[0.651103585929035,1.0],"record_scalar_widths":{"native":{"min":2513,"max":2513},"events":{"min":62,"max":62},"wave":{"min":13685,"max":13685}},"uncompressed_bytes":165615915,"stored_bytes":59125759,"execution_wall_seconds":125.2156074999948,"verification_wall_seconds":43.227396000002045,"noise_clock_checked":true,"archive_checksums_checked":true},{"case":"nonzero_resume_1s","path":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\developmental_ecology\\artifacts\\smoke-nonzero_resume_1s-attempt-003","complete":true,"native":100,"wave":5,"events":100,"time":1.0000000000000007,"status":"administrative_pause","snapshot_initial_hash":"ea1546289cad7861012e01c0b77e4e385667bf20cafca49bebaf63808b769804","snapshot_final_hash":"ad168f9afffc34612a66e84569efbfa44dc12f97d4aaac811e5250e9c0df58b3","reconstruction":{"snapshot_time":0.0,"time":1.0000000000000007,"records_checked":100,"identical":true,"provenance":"Detached reconstruction from initial full snapshot and each saved actual receptor/reserve input; every complete neural-state hash matched. No body/world simulation or live-state change."},"field_reconstruction_bit_identical":true,"max_accounting_error":5.463362509790237e-17,"final_reserves":[0.6983480855280211,1.0],"record_scalar_widths":{"native":{"min":2513,"max":2513},"events":{"min":62,"max":62},"wave":{"min":13685,"max":13685}},"uncompressed_bytes":6353341,"stored_bytes":3463155,"execution_wall_seconds":15.778160299989395,"verification_wall_seconds":1.685956899978919,"noise_clock_checked":true,"archive_checksums_checked":true},{"case":"contact_ui_1s","path":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\developmental_ecology\\artifacts\\smoke-contact_ui_1s-attempt-003","complete":true,"native":100,"wave":5,"events":102,"time":1.0000000000000007,"status":"administrative_pause","snapshot_initial_hash":"54a10515c2e5a099a0441445cf30fd926af4ccbb040060a9f9928895ea9f22f3","snapshot_final_hash":"89bcc4e608b539786beb82e60e5e7a339b1e96d9f10a31d5c166496b74de3f94","reconstruction":{"snapshot_time":0.0,"time":1.0000000000000007,"records_checked":100,"identical":true,"provenance":"Detached reconstruction from initial full snapshot and each saved actual receptor/reserve input; every complete neural-state hash matched. No body/world simulation or live-state change."},"field_reconstruction_bit_identical":true,"max_accounting_error":5.5162173656989055e-17,"final_reserves":[0.6983471335807035,0.7998000000000001],"record_scalar_widths":{"native":{"min":2513,"max":2513},"events":{"min":61,"max":67},"wave":{"min":13685,"max":13685}},"uncompressed_bytes":6222999,"stored_bytes":3467321,"execution_wall_seconds":4.168980799993733,"verification_wall_seconds":1.6902402999985497,"noise_clock_checked":true,"archive_checksums_checked":true}],"method":"Detached neural and field arithmetic on saved records; no new complete-loop execution."},"observer":{"paused":true,"initial_engine_time":0.0,"session_steps":0,"record":"C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\developmental_ecology\\artifacts\\smoke-contact_ui_1s-attempt-003","cursor":39,"live_before":"54a10515c2e5a099a0441445cf30fd926af4ccbb040060a9f9928895ea9f22f3","live_after":"54a10515c2e5a099a0441445cf30fd926af4ccbb040060a9f9928895ea9f22f3","counters_identical":true,"detached_reconstruction":{"snapshot_time":0.0,"time":0.4000000000000002,"records_checked":40,"identical":true,"provenance":"Detached reconstruction from initial full snapshot and each saved actual receptor/reserve input; every complete neural-state hash matched. No body/world simulation or live-state change."},"server_launched":false,"simulation_steps":0},"trajectory_comparison":[{"case":"birth_30s","native_compared":3000,"max_absolute_difference":{"reserves":0.0,"position":0.0,"angle":0.0,"velocity":0.0,"omega":0.0,"commands":0.0,"stocks":0.0,"contact_rates":0.0},"first_body_difference_native":null,"different_organism_hashes":0,"old_events":3000,"new_events":3000,"same_configuration_seed_life_fixture_and_cap":true},{"case":"nonzero_resume_1s","native_compared":100,"max_absolute_difference":{"reserves":0.0,"position":0.0,"angle":0.0,"velocity":0.0,"omega":0.0,"commands":0.0,"stocks":0.0,"contact_rates":0.0},"first_body_difference_native":null,"different_organism_hashes":0,"old_events":100,"new_events":100,"same_configuration_seed_life_fixture_and_cap":true},{"case":"contact_ui_1s","native_compared":100,"max_absolute_difference":{"reserves":0.0,"position":0.0,"angle":0.0,"velocity":0.0,"omega":0.0,"commands":0.0,"stocks":0.0,"contact_rates":0.0},"first_body_difference_native":null,"different_organism_hashes":0,"old_events":101,"new_events":102,"same_configuration_seed_life_fixture_and_cap":true}],"preservation":{"preexisting_files":252,"all_bytes_and_sha256_unchanged":true,"old_checkpoint":"d5f7efbe67193f215e52d95ca912db131a79f31c"}}
+\ No newline at end of file

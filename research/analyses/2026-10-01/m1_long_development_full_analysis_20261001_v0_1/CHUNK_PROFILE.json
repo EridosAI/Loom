@@ -1,0 +1,619 @@
+{
+  "label": "NON-CANONICAL RESURRECTION SANDBOX",
+  "first_index": 234001,
+  "last_index": 234100,
+  "start_time": 2339.963720845616,
+  "native": {
+    "shape": [
+      100,
+      76
+    ],
+    "dtype": "float64"
+  },
+  "waves": [
+    {
+      "index": 234018,
+      "wave": 11698,
+      "packets": {
+        "shape": [
+          82
+        ],
+        "dtype": "float64"
+      },
+      "psi": {
+        "shape": [
+          164
+        ],
+        "dtype": "float64"
+      },
+      "q": {
+        "shape": [
+          164
+        ],
+        "dtype": "float64"
+      },
+      "controls": {
+        "shape": [
+          12
+        ],
+        "dtype": "float64"
+      },
+      "credit_trend": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "learned": {
+        "shape": [
+          2,
+          12
+        ],
+        "dtype": "float64"
+      },
+      "exploration": {
+        "shape": [
+          2,
+          12
+        ],
+        "dtype": "float64"
+      },
+      "need": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "map_update_use": {
+        "shape": [
+          56,
+          8
+        ],
+        "dtype": "float64"
+      },
+      "sensory_shared_norm": {
+        "shape": [
+          4
+        ],
+        "dtype": "float64"
+      },
+      "sensory_fine_norm": {
+        "shape": [
+          4
+        ],
+        "dtype": "float64"
+      },
+      "pool_opening": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "regulator_bank_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "motor_coupling": {
+        "oscillator": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "direct_feedback": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "evoked": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "current": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "target": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "tendency": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "command": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "phase": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "nu": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "drive": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "attenuation_used": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        }
+      },
+      "motor_process": {
+        "process": "M1",
+        "tick": 234018,
+        "latent": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "rng_counters": {
+          "life/motor-screen-v1-m1-initial": 1,
+          "life/motor-screen-v1-m1-innovation": 4680
+        }
+      },
+      "label": "NON-CANONICAL RESURRECTION SANDBOX",
+      "time": 2340.14372084562,
+      "packet_epoch": 2149.3437208414553,
+      "regulator_reference_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "regulator_eligibility_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "regulator_learning_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "regulator_reference_force_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "body_mean": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "sensory_reference_norm": {
+        "shape": [
+          4,
+          2
+        ],
+        "dtype": "float64"
+      },
+      "sensory_activity_norm": {
+        "shape": [
+          4
+        ],
+        "dtype": "float64"
+      },
+      "map_write_decay": {
+        "shape": [
+          56,
+          8
+        ],
+        "dtype": "float64"
+      }
+    },
+    {
+      "index": 234038,
+      "wave": 11699,
+      "packets": {
+        "shape": [
+          82
+        ],
+        "dtype": "float64"
+      },
+      "psi": {
+        "shape": [
+          164
+        ],
+        "dtype": "float64"
+      },
+      "q": {
+        "shape": [
+          164
+        ],
+        "dtype": "float64"
+      },
+      "controls": {
+        "shape": [
+          12
+        ],
+        "dtype": "float64"
+      },
+      "credit_trend": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "learned": {
+        "shape": [
+          2,
+          12
+        ],
+        "dtype": "float64"
+      },
+      "exploration": {
+        "shape": [
+          2,
+          12
+        ],
+        "dtype": "float64"
+      },
+      "need": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "map_update_use": {
+        "shape": [
+          56,
+          8
+        ],
+        "dtype": "float64"
+      },
+      "sensory_shared_norm": {
+        "shape": [
+          4
+        ],
+        "dtype": "float64"
+      },
+      "sensory_fine_norm": {
+        "shape": [
+          4
+        ],
+        "dtype": "float64"
+      },
+      "pool_opening": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "regulator_bank_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "motor_coupling": {
+        "oscillator": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "direct_feedback": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "evoked": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "current": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "target": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "tendency": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "command": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "phase": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "nu": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "drive": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "attenuation_used": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        }
+      },
+      "motor_process": {
+        "process": "M1",
+        "tick": 234038,
+        "latent": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64"
+        },
+        "rng_counters": {
+          "life/motor-screen-v1-m1-initial": 1,
+          "life/motor-screen-v1-m1-innovation": 4680
+        }
+      },
+      "label": "NON-CANONICAL RESURRECTION SANDBOX",
+      "time": 2340.3437208456244,
+      "packet_epoch": 2149.3437208414553,
+      "regulator_reference_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "regulator_eligibility_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "regulator_learning_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "regulator_reference_force_norm": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "body_mean": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "sensory_reference_norm": {
+        "shape": [
+          4,
+          2
+        ],
+        "dtype": "float64"
+      },
+      "sensory_activity_norm": {
+        "shape": [
+          4
+        ],
+        "dtype": "float64"
+      },
+      "map_write_decay": {
+        "shape": [
+          56,
+          8
+        ],
+        "dtype": "float64"
+      }
+    },
+    "..."
+  ],
+  "events": [
+    {
+      "duration": 0.01,
+      "impact": false,
+      "contacts": [],
+      "energy_before": 0.426759139586691,
+      "energy_after": 0.4267428835157554,
+      "integrity_before": 0.8444127878101532,
+      "integrity_after": 0.8444127878101532,
+      "damage": 0.0,
+      "repair": 0.0,
+      "repair_quality": 0.0,
+      "requested": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "transfer": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "renewal_first": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "renewal_second": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "expenditure": 1.6256070935594358e-05,
+      "stock_before": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "stock_after": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "time": 2339.9737208456163,
+      "body_position": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "body_angle": -6.191248752915867
+    },
+    {
+      "duration": 0.01,
+      "impact": false,
+      "contacts": [],
+      "energy_before": 0.4267428835157554,
+      "energy_after": 0.42672663335717753,
+      "integrity_before": 0.8444127878101532,
+      "integrity_after": 0.8444127878101532,
+      "damage": 0.0,
+      "repair": 0.0,
+      "repair_quality": 0.0,
+      "requested": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "transfer": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "renewal_first": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "renewal_second": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "expenditure": 1.625015857784151e-05,
+      "stock_before": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "stock_after": {
+        "shape": [
+          8
+        ],
+        "dtype": "float64"
+      },
+      "time": 2339.9837208456165,
+      "body_position": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64"
+      },
+      "body_angle": -6.1922055775937475
+    },
+    "..."
+  ],
+  "endpoint_status": "paused",
+  "terminal_dimension": null,
+  "P_endpoint_sha256": "442e74ace97ba1390a6bbabaf74ac7012670158fc56cc22f072507ef3c265460",
+  "rng_endpoint": {
+    "life/world-phase": 1,
+    "life/world-position": 1,
+    "life/world-orientation": 1,
+    "anatomy/sensory-0-A": 1,
+    "anatomy/sensory-0-shared": 1,
+    "anatomy/sensory-0-fine": 1,
+    "anatomy/sensory-1-A": 1,
+    "anatomy/sensory-1-shared": 1,
+    "anatomy/sensory-1-fine": 1,
+    "anatomy/sensory-2-A": 1,
+    "anatomy/sensory-2-shared": 1,
+    "anatomy/sensory-2-fine": 1,
+    "anatomy/sensory-3-A": 1,
+    "anatomy/sensory-3-shared": 1,
+    "anatomy/sensory-3-fine": 1,
+    "anatomy/gate-0": 1,
+    "anatomy/gate-bias-0": 1,
+    "anatomy/gate-1": 1,
+    "anatomy/gate-bias-1": 1,
+    "anatomy/gate-2": 1,
+    "anatomy/gate-bias-2": 1,
+    "anatomy/gate-3": 1,
+    "anatomy/gate-bias-3": 1,
+    "anatomy/gate-4": 1,
+    "anatomy/gate-bias-4": 1,
+    "anatomy/gate-5": 1,
+    "anatomy/gate-bias-5": 1,
+    "anatomy/gate-6": 1,
+    "anatomy/gate-bias-6": 1,
+    "anatomy/gate-7": 1,
+    "anatomy/gate-bias-7": 1,
+    "anatomy/regulator-Bq": 1,
+    "anatomy/regulator-Bv": 1,
+    "anatomy/regulator-bias": 1,
+    "anatomy/motor-feedback": 1,
+    "life/motor-birth-phase": 1,
+    "life/motor-birth-nu": 1,
+    "life/motor-noise": 4682,
+    "life/regulation-E": 11703,
+    "life/regulation-I": 11703
+  },
+  "field_endpoint_sha256": "f7205b57d283453778b74b4bad12328bd265228e35397d83d996700347d96fbf"
+}

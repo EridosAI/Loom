@@ -1,0 +1,45 @@
+{
+  "scope": "Same B1 pair. Coordinate-label presentation correction. Closure and new packet preparation approved; replacement execution not yet granted.",
+  "previous_full_raw_authority": "45f2349183579ed478e4c5582cdb70ba6619e06769ccfaad05f2dd36d26b173d",
+  "prior_attempts": [
+    {
+      "attempt": 1,
+      "authority": "2e338ae61dceaac3c3db0863f02cbccf0a9d98eb0842caf06c363207951e7c4c",
+      "native_steps": 0,
+      "commands": 0,
+      "simulated_seconds": 0,
+      "closure": "Operator-requested compact layout; complete zero-step record retained."
+    },
+    {
+      "attempt": 2,
+      "authority": "45f2349183579ed478e4c5582cdb70ba6619e06769ccfaad05f2dd36d26b173d",
+      "native_steps": 0,
+      "commands": 0,
+      "simulated_seconds": 0,
+      "closure": "Administrative wall allowance expired; complete zero-step record retained."
+    },
+    {
+      "attempt": 3,
+      "authority": "45f2349183579ed478e4c5582cdb70ba6619e06769ccfaad05f2dd36d26b173d",
+      "native_steps": 120,
+      "commands": 12,
+      "simulated_seconds": 1.2000000000000008,
+      "closure": "Explicit withdrawal for coordinate-label colours; complete prefix retained."
+    }
+  ],
+  "all_prior_attempts_ended": true,
+  "prior_permitted_start_readings_seen": true,
+  "prior_permitted_1_2_second_movement_history_seen": true,
+  "whole_start_unseen_or_first_naive_trial_claim_permitted": false,
+  "prior_sealed_access_self_report": "No, before the earlier preparation; retained self-report, not a new attestation or independent access audit.",
+  "hidden_evaluator_feedback_released": false,
+  "pair_abandoned": false,
+  "positive_controls": "Completed and accepted with documented guidance/practice, PC-CONTACT qualification and separately approved PC-HOLD repeat; historical evidence retained.",
+  "separate_colour_key": "Draft created but never delivered; user requested coloured coordinate labels and explicitly rejected a separate key.",
+  "colour_label_change": "Each existing coordinate label has the exact existing graph colour; no separate key, numeric change or new channel.",
+  "closure_record_sha256": "b90123a5e9fb96fae110a76869e461f42c3a37cdae5683f4ccec7b5feab9effd",
+  "next_full_raw": "One fresh, separately authorized attempt at the same complete physical start and unchanged 30-second ceiling; never continuation of the preserved prefix.",
+  "companion_hidden": "Prepared separately, ungranted. FULL-RAW permission never authorizes CHEMISTRY-HIDDEN.",
+  "restrictions": "No automatic retry, continuation, fixture replacement, tuning, live plan view or between-pair evaluator feedback.",
+  "approval_scope": "Close/preserve existing prefix and prepare revised authority objects only. Both grants remain null."
+}

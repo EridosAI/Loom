@@ -1,0 +1,844 @@
+{
+  "status": "PASS",
+  "date_utc": "2026-09-30T05:37:03.250379+00:00",
+  "scope": "DESIGN_ONLY_WITH_PASSIVE_NATIVE_EXPLORATION_AUDIT",
+  "P_commit": "6bc9683b54e4fa80136fe8534d7713e2a250a95f",
+  "runner_checkpoint": "87abae34e19d4e46234402a6b1ba776814956ec1",
+  "git_clean": true,
+  "git_warnings": [
+    "warning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied\nwarning: unable to access 'C:\\Users\\Jason/.config/git/ignore': Permission denied"
+  ],
+  "scientific_files_unchanged": 26158,
+  "previous_founder_analysis_files_unchanged": 1194,
+  "previous_impact_files_unchanged": 374,
+  "archives_unchanged": [
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-30-Founder-Search-initial-stage-results.zip",
+      "sha256": "e3377cb965f6801b2e9a53831af6afddffe9814eea7ba78cb1ba71da9fcfbb29"
+    },
+    {
+      "path": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-30-Founder-Search-expansion-48-results.zip",
+      "sha256": "f184dd2ca6fd98e06a81543a8627b6a3bd7b6a67bdd7d1af410cdd08c7fc2da0"
+    }
+  ],
+  "source_references_verified": 88,
+  "candidate_count": 3,
+  "all_candidate_values_preserved_from_pre_addendum_draft": true,
+  "exploration_checks": {
+    "native_files_verified": 25503,
+    "native_steps_read": 2547923,
+    "all_native_paths_match_prior": true,
+    "world_steps": 0,
+    "P_steps": 0,
+    "prehistory_steps": 0,
+    "world_replay_steps": 0,
+    "new_random_draws": 0,
+    "wall_seconds": 24.232161900028586
+  },
+  "detached_observer_component_checks": "PASS: straight motion, reversal, reentry, MSD and correlations",
+  "P_steps": 0,
+  "motor_generator_calls": 0,
+  "world_steps": 0,
+  "field_steps": 0,
+  "prehistory_steps": 0,
+  "new_rng_draws": 0,
+  "new_births": 0,
+  "new_launch_authorities": 0,
+  "production_code_modified": false,
+  "current_configuration_modified": false,
+  "canon_modified": false,
+  "no_founder_selection": true,
+  "FS060": "APPARATUS_INTERRUPTED_UNCLOSED",
+  "no_git_writes": true,
+  "no_push_PR_merge": true,
+  "no_dependency_install": true,
+  "figures_visually_reviewed": true,
+  "bytes": 33050308,
+  "files": [
+    {
+      "path": "audit_exploration.py",
+      "bytes": 19372,
+      "sha256": "034978d946ac7c4dabedd5adab4e76bd9cbb063bcc16b574254ebf01f74aabb2"
+    },
+    {
+      "path": "CURRENT_WORLD_60_LIFE_EVIDENCE.csv",
+      "bytes": 7741,
+      "sha256": "8930a3ff55c91b46931b12155910c234c1dbdd64aa3802f13ac65c75588d6106"
+    },
+    {
+      "path": "CURRENT_WORLD_DEVELOPMENTAL_EVIDENCE.md",
+      "bytes": 7947,
+      "sha256": "1a6076c9d8816fd61760dd997692a8c84fa04bd5eb4419ac38a7011b816e1e3e"
+    },
+    {
+      "path": "derive_design_numbers.py",
+      "bytes": 8239,
+      "sha256": "1829bd380d0fbd9c83f5691187d12fbb58e1f39d1a7614bc2a3d7e66f07d79f7"
+    },
+    {
+      "path": "DESIGN_ARITHMETIC.json",
+      "bytes": 28129,
+      "sha256": "023f54803365784cda4f350d158441ffdb9b797c211a97284bdb5c0c2d1349e3"
+    },
+    {
+      "path": "EXPLORATION_AGE_BLOCKS.csv",
+      "bytes": 127152,
+      "sha256": "d8278bffe96570305a0995013480056bfa982c4283bf5f93b5372aa991127b89"
+    },
+    {
+      "path": "EXPLORATION_AUDIT_METHODS.md",
+      "bytes": 3864,
+      "sha256": "1bf3e445449912ef308456f1121725706e53e29ca901e5b53e309a0011a67225"
+    },
+    {
+      "path": "EXPLORATION_AUDIT_RESULTS.json",
+      "bytes": 51949,
+      "sha256": "37232504fe939e3ac241f97163c3b0bfac6e869b0cf0fc87333978e9fec743dc"
+    },
+    {
+      "path": "EXPLORATION_CORRELATIONS_MSD_BY_LAG.csv",
+      "bytes": 1485460,
+      "sha256": "3279dc0b5fcc765ef36db7401f4f16c044a9ad36b2d2badfc9e903a6d1462d42"
+    },
+    {
+      "path": "EXPLORATION_COVERAGE_MSD_BY_AGE.csv",
+      "bytes": 82423,
+      "sha256": "866dd12dce9c0548318c90dd83f32212628f6a986d5ddc30d2dbc3db38e8d7ec"
+    },
+    {
+      "path": "EXPLORATION_DYNAMICS.png",
+      "bytes": 352464,
+      "sha256": "53157f41f34bffb7bce3230d85e3a7231bc848c89ede8fcd4992b033acd06422"
+    },
+    {
+      "path": "EXPLORATION_DYNAMICS.svg",
+      "bytes": 1631057,
+      "sha256": "ae719b7fc72849f83d159278df9d14b6a01f945a1c577cdf08070ce3a37b7940"
+    },
+    {
+      "path": "EXPLORATION_PER_LIFE.csv",
+      "bytes": 46201,
+      "sha256": "c57e6746635ae38837dde0e7824edefd0e5ff279e23fc416c91eaa4edc9bab90"
+    },
+    {
+      "path": "EXPLORATION_SUPPLEMENT.json",
+      "bytes": 30350,
+      "sha256": "d5a1541f8ec812829846f934ab1b2ce3b0ef74ce23bfeac143ae9ab0982dfbc1"
+    },
+    {
+      "path": "finalize_design.py",
+      "bytes": 9971,
+      "sha256": "9300cdea5eb861da2dd8a418a3d9db45c5c8e642e91e30c3eb8d1295f411714d"
+    },
+    {
+      "path": "finish_exploration_design.py",
+      "bytes": 26050,
+      "sha256": "a3bdc8308285ab0a62881a4d3b3b29e0219c21171761f4dd192ed0d4e8d63952"
+    },
+    {
+      "path": "FS-001_EXPLORATION_DETAILS.json",
+      "bytes": 114097,
+      "sha256": "2f378db13b2a3d36cc1c0c0d8f926b4ca06465e76fd791994aaf3c3d66a25f75"
+    },
+    {
+      "path": "FS-001_PASSIVE_KINEMATICS.npz",
+      "bytes": 366614,
+      "sha256": "505b73f4d12795dc21c43c24453dc71799ec8a48b5a7322bb3b445c877262d8c"
+    },
+    {
+      "path": "FS-002_EXPLORATION_DETAILS.json",
+      "bytes": 114364,
+      "sha256": "4f89e1f9585c771032a4edfbdeec6ba785805b67c9a49cc27cbf308af010ea6f"
+    },
+    {
+      "path": "FS-002_PASSIVE_KINEMATICS.npz",
+      "bytes": 374561,
+      "sha256": "1ee085861621ec51f596594e9cfd79f17d135809a5a0587976fc9cea996484a3"
+    },
+    {
+      "path": "FS-003_EXPLORATION_DETAILS.json",
+      "bytes": 114050,
+      "sha256": "255900e2b6ef5f2b32ae6979aefa28f97c58c29354873b3925febdaa836dec3e"
+    },
+    {
+      "path": "FS-003_PASSIVE_KINEMATICS.npz",
+      "bytes": 365997,
+      "sha256": "737b1f763cf60eb5e717cd718737f0a25ec2129d445dcbc5a8bffff8c90c27dd"
+    },
+    {
+      "path": "FS-004_EXPLORATION_DETAILS.json",
+      "bytes": 114097,
+      "sha256": "f78fdbcd15ff4fe4c8c5084ffd0304e722aff4464ca3ad1593d5c6c0b7c37e0b"
+    },
+    {
+      "path": "FS-004_PASSIVE_KINEMATICS.npz",
+      "bytes": 368635,
+      "sha256": "b524babb389a53a8b81c42e6056e2be504d8be791124ccd5bb660365ade68f32"
+    },
+    {
+      "path": "FS-005_EXPLORATION_DETAILS.json",
+      "bytes": 114107,
+      "sha256": "3b22dde0246ac29edc1d79427d2c05c799f06195f199dbafd70044eb79f6f47b"
+    },
+    {
+      "path": "FS-005_PASSIVE_KINEMATICS.npz",
+      "bytes": 366391,
+      "sha256": "6ff11c4481ff7bd210dd7b4592b20a01bc04c1eded37147ce0ab797ddf133f74"
+    },
+    {
+      "path": "FS-006_EXPLORATION_DETAILS.json",
+      "bytes": 114197,
+      "sha256": "d468f35498b74d7eee7355169eedb74109fd9b7342ab1f1e215db9ffccd1d41e"
+    },
+    {
+      "path": "FS-006_PASSIVE_KINEMATICS.npz",
+      "bytes": 372789,
+      "sha256": "d1ba2e09404e2df4d513d945b983d2d57cef1802ac0ee9d1dc2257d93622dbb7"
+    },
+    {
+      "path": "FS-007_EXPLORATION_DETAILS.json",
+      "bytes": 114225,
+      "sha256": "df32b67611b4f3047ac3c68ad27a4c2fdfe0feecaa506ad278ca2ab20db3b5b4"
+    },
+    {
+      "path": "FS-007_PASSIVE_KINEMATICS.npz",
+      "bytes": 365796,
+      "sha256": "66c6bd4077bceb7ed23f9f5674ba2c352d7034aa0712a6ab7ec9cc3928631ac7"
+    },
+    {
+      "path": "FS-008_EXPLORATION_DETAILS.json",
+      "bytes": 114113,
+      "sha256": "038b3343ba247c9dc0a28e43bef14fb3417b74efa7d3d100acf75cc34e1209f9"
+    },
+    {
+      "path": "FS-008_PASSIVE_KINEMATICS.npz",
+      "bytes": 366726,
+      "sha256": "59766e0cf07dca0f22e69cd8db60648c6af189ce1cd5d7992daf8fd77f1cb24a"
+    },
+    {
+      "path": "FS-009_EXPLORATION_DETAILS.json",
+      "bytes": 114258,
+      "sha256": "bed48b1a067908966d4f6bdca22e986414b482a018f5019cf676068e1eb8deb3"
+    },
+    {
+      "path": "FS-009_PASSIVE_KINEMATICS.npz",
+      "bytes": 372840,
+      "sha256": "88f7c394620bcab554481fddeb872644db04899bf7855336a4bac1fdfadfa1dd"
+    },
+    {
+      "path": "FS-010_EXPLORATION_DETAILS.json",
+      "bytes": 114031,
+      "sha256": "48fec9c6e9bc0e0844e3ab799c74e4280dfdcf49ca941484647f378d046ca6b7"
+    },
+    {
+      "path": "FS-010_PASSIVE_KINEMATICS.npz",
+      "bytes": 367825,
+      "sha256": "04b7e7c4e0c9a088eb7189e1a88b8301977f2aadf04c89234dc966c45e287b30"
+    },
+    {
+      "path": "FS-011_EXPLORATION_DETAILS.json",
+      "bytes": 114073,
+      "sha256": "b1f818ea1e0135c24b5f85dea69d68a32e5569320ec646ac35345a1441598640"
+    },
+    {
+      "path": "FS-011_PASSIVE_KINEMATICS.npz",
+      "bytes": 367978,
+      "sha256": "b30701d3bef9e7a65cc8fb85df1a4310c9225bf3031386e6926d742713ba0f73"
+    },
+    {
+      "path": "FS-012_EXPLORATION_DETAILS.json",
+      "bytes": 114247,
+      "sha256": "c97bec7d071a6a793902fd646509da85b6c736cc1625b344b80bbb1cf02fed07"
+    },
+    {
+      "path": "FS-012_PASSIVE_KINEMATICS.npz",
+      "bytes": 369159,
+      "sha256": "c11466fbc206b40385a65fc567486622464b3fb062c756ca17207065e7220845"
+    },
+    {
+      "path": "FS-013_EXPLORATION_DETAILS.json",
+      "bytes": 114143,
+      "sha256": "90ddb4eaa0f92f134b2146bdb309ec254c686b0050370b2a2f7a25fc9453f7e2"
+    },
+    {
+      "path": "FS-013_PASSIVE_KINEMATICS.npz",
+      "bytes": 364612,
+      "sha256": "f3734708044d5006246efad95358cbbd4843bfbafabd2c3bf5353088a4071106"
+    },
+    {
+      "path": "FS-014_EXPLORATION_DETAILS.json",
+      "bytes": 114149,
+      "sha256": "8a2725bb598d094ee89aa6c7f2bd27cf3aae1ebbe461b827cb2ebaca6010be1e"
+    },
+    {
+      "path": "FS-014_PASSIVE_KINEMATICS.npz",
+      "bytes": 368241,
+      "sha256": "39e2425f90662c743419f77c94d8800e17301dee1a7712b99336dad12d6102e9"
+    },
+    {
+      "path": "FS-015_EXPLORATION_DETAILS.json",
+      "bytes": 114320,
+      "sha256": "0bae6723be39852600f5cf9ecb3fede90f7a0a4f1e3408177891b8b676b254ca"
+    },
+    {
+      "path": "FS-015_PASSIVE_KINEMATICS.npz",
+      "bytes": 368005,
+      "sha256": "20e4f259ab6eaf53890e5756ae061ebc90d207669af1345db2e37da1c9b0d904"
+    },
+    {
+      "path": "FS-016_EXPLORATION_DETAILS.json",
+      "bytes": 114111,
+      "sha256": "06f02037dc232f024f08f8b096adfadad1218e2640a723b9364654f6ab72c9ec"
+    },
+    {
+      "path": "FS-016_PASSIVE_KINEMATICS.npz",
+      "bytes": 367633,
+      "sha256": "0d30c0b0278b6f2f166d28836e33e724c23639fed8b6e2a406952bf381ed3557"
+    },
+    {
+      "path": "FS-017_EXPLORATION_DETAILS.json",
+      "bytes": 114261,
+      "sha256": "0fe8bd84c9e2526214117320f7a6457e30cadf0b6d6b073cb2f2e1bf47879699"
+    },
+    {
+      "path": "FS-017_PASSIVE_KINEMATICS.npz",
+      "bytes": 372562,
+      "sha256": "1aa3ac1313941ac2a97c50fe4dda72957d56ab1e8a2e76890a9effb759430b2d"
+    },
+    {
+      "path": "FS-018_EXPLORATION_DETAILS.json",
+      "bytes": 114176,
+      "sha256": "35d5caf89a792255b579737b47757708cec98de71f56c7c2f5d311bc4a2048e9"
+    },
+    {
+      "path": "FS-018_PASSIVE_KINEMATICS.npz",
+      "bytes": 366669,
+      "sha256": "1df695fe042acf010486cec051f6d0b218940e7851c98bb49c4dfd5ee0bdce43"
+    },
+    {
+      "path": "FS-019_EXPLORATION_DETAILS.json",
+      "bytes": 114123,
+      "sha256": "34a7003baf6f3ef121d795314c8dd5526288c7aaff02a6a195d0ba5e58021d23"
+    },
+    {
+      "path": "FS-019_PASSIVE_KINEMATICS.npz",
+      "bytes": 370470,
+      "sha256": "e66a733eb65c234a45101899107fbccefb340e859997d49fd37637906f539586"
+    },
+    {
+      "path": "FS-020_EXPLORATION_DETAILS.json",
+      "bytes": 114312,
+      "sha256": "2939ccfa5295f9c942e8f1b2f6bce34ac0ec850fd2e1334e164988817dd59cb5"
+    },
+    {
+      "path": "FS-020_PASSIVE_KINEMATICS.npz",
+      "bytes": 367418,
+      "sha256": "c93620736a0ad9fa472614c716dc0419c0e7b6b0b95c586911c95f9517b6bc9c"
+    },
+    {
+      "path": "FS-021_EXPLORATION_DETAILS.json",
+      "bytes": 114170,
+      "sha256": "339642d9505475b6366a087a9a4bc5d2fddd91e4e15e8d8210e90656ebdf5f5f"
+    },
+    {
+      "path": "FS-021_PASSIVE_KINEMATICS.npz",
+      "bytes": 369574,
+      "sha256": "e17d0701604ee61869ad99e560ac2a7db12f3398ed6a8c43d294039f46f2cd2d"
+    },
+    {
+      "path": "FS-022_EXPLORATION_DETAILS.json",
+      "bytes": 114324,
+      "sha256": "8b25aecdde77a07706ad0f891b6978e2a0b5bf1773c19268c787e1d72f9dc3fc"
+    },
+    {
+      "path": "FS-022_PASSIVE_KINEMATICS.npz",
+      "bytes": 371864,
+      "sha256": "adf4334a27759c214286608a613d7bdbc5d5fdfd2c163b0c69bdce622d1ba6f6"
+    },
+    {
+      "path": "FS-023_EXPLORATION_DETAILS.json",
+      "bytes": 114234,
+      "sha256": "310d85208982768ee4a27e2fe3632630e27501bb76186db027e0fdd37d6c5e42"
+    },
+    {
+      "path": "FS-023_PASSIVE_KINEMATICS.npz",
+      "bytes": 368734,
+      "sha256": "894f28919017c48398a230a4a2ba3233eb383506fceaa05ae57528f2cbec2499"
+    },
+    {
+      "path": "FS-024_EXPLORATION_DETAILS.json",
+      "bytes": 114279,
+      "sha256": "d33c6c0eece67c6ca3199bb5311627ffadfb34822f6ac28348bcd90bc0a7c888"
+    },
+    {
+      "path": "FS-024_PASSIVE_KINEMATICS.npz",
+      "bytes": 368128,
+      "sha256": "bb587ab3fa529a607dc759c6312eb3dbca73f917783db1fd68a954e5d1792453"
+    },
+    {
+      "path": "FS-025_EXPLORATION_DETAILS.json",
+      "bytes": 114180,
+      "sha256": "719c4d3dc5d15720445b66a3a141b0382fbd17413dee36ea9ade93d521258526"
+    },
+    {
+      "path": "FS-025_PASSIVE_KINEMATICS.npz",
+      "bytes": 365112,
+      "sha256": "5b47894d9c5b5ae40e4c7ca81da37d8f35a1844d260d6a48f43e794ab9800a0c"
+    },
+    {
+      "path": "FS-026_EXPLORATION_DETAILS.json",
+      "bytes": 114167,
+      "sha256": "5ec66b1d269e9ed6cecf182dec127a9835b882b50b641347bb423f6cc35f36ec"
+    },
+    {
+      "path": "FS-026_PASSIVE_KINEMATICS.npz",
+      "bytes": 368841,
+      "sha256": "f68762b526a00160522051bd378d7e3134b0c6becfaaa72a8caaafa29e66a814"
+    },
+    {
+      "path": "FS-027_EXPLORATION_DETAILS.json",
+      "bytes": 114048,
+      "sha256": "4a106d9707eafee7307f06cc2005e0ecf53be26294905bfb153c17bc73798c5a"
+    },
+    {
+      "path": "FS-027_PASSIVE_KINEMATICS.npz",
+      "bytes": 365085,
+      "sha256": "6fec50c34cfab50f7c6973142683c797a6ed943b191e9c76a46b8f3cfcb6fced"
+    },
+    {
+      "path": "FS-028_EXPLORATION_DETAILS.json",
+      "bytes": 114240,
+      "sha256": "70387d6d667b5fee0486b95b6be3cd581f03f8cc52d0d074291a124bb9c4d6fe"
+    },
+    {
+      "path": "FS-028_PASSIVE_KINEMATICS.npz",
+      "bytes": 371138,
+      "sha256": "c8142312af9d6d1b7b38735df1fed4e3058677e27247c80cd98a2690fa81bc85"
+    },
+    {
+      "path": "FS-029_EXPLORATION_DETAILS.json",
+      "bytes": 114313,
+      "sha256": "cb20b15efb4743f0cf27332fb8597a15c4250c7d6a47afcec17e5f98500dd386"
+    },
+    {
+      "path": "FS-029_PASSIVE_KINEMATICS.npz",
+      "bytes": 365189,
+      "sha256": "fded62ef3bd4445de00508a66d5828cd3370353521792a80f6498593cfe22ec7"
+    },
+    {
+      "path": "FS-030_EXPLORATION_DETAILS.json",
+      "bytes": 114103,
+      "sha256": "32a70a9dfab8a7f819300f3bf0adc2036882683090e6689f0dbb88e6e0425d03"
+    },
+    {
+      "path": "FS-030_PASSIVE_KINEMATICS.npz",
+      "bytes": 365927,
+      "sha256": "ddfe3f916dd1efcc0b8a6cfb59d805fa6d0115762ccf8f1c2476a478803a5a28"
+    },
+    {
+      "path": "FS-031_EXPLORATION_DETAILS.json",
+      "bytes": 114044,
+      "sha256": "41123055e879923a1dc90293274f1b8fa1c88e1a00bd1f882edd42c03f277f46"
+    },
+    {
+      "path": "FS-031_PASSIVE_KINEMATICS.npz",
+      "bytes": 372145,
+      "sha256": "6d815165c0d2fd3a00909ffe387081c21d868ac3c9134c9b854fcdfde5a0bc6e"
+    },
+    {
+      "path": "FS-032_EXPLORATION_DETAILS.json",
+      "bytes": 114165,
+      "sha256": "e1103f6e9656fcb6cfbdf08d4e899af70fae6ddf328cfc83504c6c3ad67df09c"
+    },
+    {
+      "path": "FS-032_PASSIVE_KINEMATICS.npz",
+      "bytes": 368834,
+      "sha256": "3367ae28bcf5b1a05938653f6d48b29799dc5f393930f1fdb284163cbe086f02"
+    },
+    {
+      "path": "FS-033_EXPLORATION_DETAILS.json",
+      "bytes": 114011,
+      "sha256": "85f1a1040e4398016ee01b702506e530875b7465cd74da055d3d427571f041aa"
+    },
+    {
+      "path": "FS-033_PASSIVE_KINEMATICS.npz",
+      "bytes": 367545,
+      "sha256": "b5cb4becea9c81fad8a356f6a8bde6aba62a969d8630a8152e7afee9b82b3686"
+    },
+    {
+      "path": "FS-034_EXPLORATION_DETAILS.json",
+      "bytes": 114113,
+      "sha256": "bba1807c6dafa19c9898b4a6c09b87ea8addb562e63c2afa444a3a5d21062be9"
+    },
+    {
+      "path": "FS-034_PASSIVE_KINEMATICS.npz",
+      "bytes": 368833,
+      "sha256": "2da1198f3ed84ddef5d36faa1658ed46873fbaacadf1396e788f7648c2bda2ec"
+    },
+    {
+      "path": "FS-035_EXPLORATION_DETAILS.json",
+      "bytes": 114129,
+      "sha256": "0ed048c3ad70d7f344e6f995cdb2dbd5f4e0dded7c6ff0b8ae1a485490e5c13f"
+    },
+    {
+      "path": "FS-035_PASSIVE_KINEMATICS.npz",
+      "bytes": 365580,
+      "sha256": "351f0ebab83dbc95401cece1640f190ca0ff4743c8697981b24c772305406d31"
+    },
+    {
+      "path": "FS-036_EXPLORATION_DETAILS.json",
+      "bytes": 114059,
+      "sha256": "76a90d771991d9542cc32353e46e7ae15a6f6ab48c6b0cef6e9c762012f94751"
+    },
+    {
+      "path": "FS-036_PASSIVE_KINEMATICS.npz",
+      "bytes": 372571,
+      "sha256": "48da9ada9671278f6bddc5b7880513f04114fb0d4000407e9012802961914c15"
+    },
+    {
+      "path": "FS-037_EXPLORATION_DETAILS.json",
+      "bytes": 114228,
+      "sha256": "5b392aa4c567aa36fe2d72f330c5e87707aa2973ddd8aad96996928164d9fefd"
+    },
+    {
+      "path": "FS-037_PASSIVE_KINEMATICS.npz",
+      "bytes": 364680,
+      "sha256": "5fe3d3f5da0eef996a75cb830a0fc68cbaa3cfb5e801efb584734537b2f15715"
+    },
+    {
+      "path": "FS-038_EXPLORATION_DETAILS.json",
+      "bytes": 114237,
+      "sha256": "8b400aba996a3df3fe4216d1cdc7c4208d5784332a4eb591a548afc94cdea6f3"
+    },
+    {
+      "path": "FS-038_PASSIVE_KINEMATICS.npz",
+      "bytes": 374349,
+      "sha256": "c3c3b5efad4c32a70eeb2de8a670153bba9fd8c260edaa6e8119d43903aeae9e"
+    },
+    {
+      "path": "FS-039_EXPLORATION_DETAILS.json",
+      "bytes": 114100,
+      "sha256": "fc06e8e75539896280be577d21587cc8b97ae51bca9ec66affa56b4c4968ba5d"
+    },
+    {
+      "path": "FS-039_PASSIVE_KINEMATICS.npz",
+      "bytes": 368315,
+      "sha256": "eba4feae7b29af11d93893b375c06f5027aaeefa9c6ca0ce299132bd555207ed"
+    },
+    {
+      "path": "FS-040_EXPLORATION_DETAILS.json",
+      "bytes": 114220,
+      "sha256": "b6324e7f06f145ff7b6939771fcd14864007b52f783284a3893b555595b093e6"
+    },
+    {
+      "path": "FS-040_PASSIVE_KINEMATICS.npz",
+      "bytes": 364204,
+      "sha256": "5223c13cf0b56fd6e39b448ce0f7e697577e4813e9fb6f155b5f99da341f2d7c"
+    },
+    {
+      "path": "FS-041_EXPLORATION_DETAILS.json",
+      "bytes": 114153,
+      "sha256": "5c2e6f4a3e700b4c951faab9c49f59b6e714c08d73fcebee80a360389bdbec72"
+    },
+    {
+      "path": "FS-041_PASSIVE_KINEMATICS.npz",
+      "bytes": 367837,
+      "sha256": "7cc32cc7b1dbb12c2cdf1dfe583e9fe94210c2a389cfa9d9eedef85379d89410"
+    },
+    {
+      "path": "FS-042_EXPLORATION_DETAILS.json",
+      "bytes": 114300,
+      "sha256": "d7f7991f23a44470f04e718fd480e1ae15940be114a0778d1b0b4bb36fa22455"
+    },
+    {
+      "path": "FS-042_PASSIVE_KINEMATICS.npz",
+      "bytes": 366810,
+      "sha256": "0f90e583ce2ab0509baab1e4d0d3b99002f9abbe0619507679bea7011ebc49c6"
+    },
+    {
+      "path": "FS-043_EXPLORATION_DETAILS.json",
+      "bytes": 114141,
+      "sha256": "a74a4b81f04f65f9b26d0ad1e733c74fa55837f045ae5f42e9b27210a41dad66"
+    },
+    {
+      "path": "FS-043_PASSIVE_KINEMATICS.npz",
+      "bytes": 369215,
+      "sha256": "99e1549c643c9e1c51e7e94963dbbdc55361538437e1bf5b6464af450eb38b03"
+    },
+    {
+      "path": "FS-044_EXPLORATION_DETAILS.json",
+      "bytes": 114299,
+      "sha256": "8e8fd274c9ec24b9a5a8f3d060412c633207ae2800a784d7278c72a4532ff038"
+    },
+    {
+      "path": "FS-044_PASSIVE_KINEMATICS.npz",
+      "bytes": 362502,
+      "sha256": "8f9003876a8b97ceff3ef694a115ad04c0a9116a905da3197dd9337e154d2512"
+    },
+    {
+      "path": "FS-045_EXPLORATION_DETAILS.json",
+      "bytes": 114194,
+      "sha256": "a356fbd5534d92d5d5da406e26ff6faf1da24d3550a1fc9fecc5770f726fd8f6"
+    },
+    {
+      "path": "FS-045_PASSIVE_KINEMATICS.npz",
+      "bytes": 370504,
+      "sha256": "9f96c71ee10ba7ae0b6db4f73c4fde8bde1bd8c096d2a8f3a084339e0c4e6208"
+    },
+    {
+      "path": "FS-046_EXPLORATION_DETAILS.json",
+      "bytes": 114221,
+      "sha256": "3001c3768f10d63cb1c6d44a0ad2c308b6e4ec8fdaadfdfc5666a46f88b0e612"
+    },
+    {
+      "path": "FS-046_PASSIVE_KINEMATICS.npz",
+      "bytes": 367695,
+      "sha256": "2ba1edd512bb504191a8c55465c4ca390562be963910a9159696791b4372a89e"
+    },
+    {
+      "path": "FS-047_EXPLORATION_DETAILS.json",
+      "bytes": 114155,
+      "sha256": "f26c534a069ef5dbe0915d8ac45a94c2ff6b888fc9ae91d9892552d7fda1f1c9"
+    },
+    {
+      "path": "FS-047_PASSIVE_KINEMATICS.npz",
+      "bytes": 366107,
+      "sha256": "0ad6f11db1de6fe2c2dd3ebbe05c8a1f07f5b42dd261da91a77a705d03d00a3b"
+    },
+    {
+      "path": "FS-048_EXPLORATION_DETAILS.json",
+      "bytes": 114081,
+      "sha256": "5599579615cdf6b059b9f424760d67f6c99b390e094a9234d7e31cc2595d6c18"
+    },
+    {
+      "path": "FS-048_PASSIVE_KINEMATICS.npz",
+      "bytes": 367542,
+      "sha256": "da5b3e3d0bfe16cfe3c0df0919213838d2cc4307f521ee47c609e4f1424a97b6"
+    },
+    {
+      "path": "FS-049_EXPLORATION_DETAILS.json",
+      "bytes": 114170,
+      "sha256": "fb7e0749fb3302f1317d38944cc4c8727c43e6b9105d4b4c88e5556ddc80b0f9"
+    },
+    {
+      "path": "FS-049_PASSIVE_KINEMATICS.npz",
+      "bytes": 365560,
+      "sha256": "a994ac52965150a51a161efd80a817db216a289863f4fc9ce71e74acb0b58fce"
+    },
+    {
+      "path": "FS-050_EXPLORATION_DETAILS.json",
+      "bytes": 114279,
+      "sha256": "b8853024ae9be496cbaea33f23f76cba49c1e5d1a27f94a6e324af84631cbf97"
+    },
+    {
+      "path": "FS-050_PASSIVE_KINEMATICS.npz",
+      "bytes": 367436,
+      "sha256": "abdbfe02f62a97bfbdf1302805d43c532a99917e82e9eecba949fb3fdccccf8b"
+    },
+    {
+      "path": "FS-051_EXPLORATION_DETAILS.json",
+      "bytes": 114193,
+      "sha256": "30c95ad2d0a32dcfdfd6ce3092fad5b60d52b8dcb6ee73c65bad6cb252640e7a"
+    },
+    {
+      "path": "FS-051_PASSIVE_KINEMATICS.npz",
+      "bytes": 370214,
+      "sha256": "17a18ba98cf07bb2d05e92bcd71de9fde3296872f37355d67b1e1ee4bebce5ed"
+    },
+    {
+      "path": "FS-052_EXPLORATION_DETAILS.json",
+      "bytes": 114277,
+      "sha256": "7e95b635c3b3a85f4addb56bd86bb8e0c482eb967d2dcdabc25979d8b595d5d8"
+    },
+    {
+      "path": "FS-052_PASSIVE_KINEMATICS.npz",
+      "bytes": 366674,
+      "sha256": "222940d70a1e1a6859fddb6239a8b98a4cbddf31f0c47bf1ef1d5273350ff922"
+    },
+    {
+      "path": "FS-053_EXPLORATION_DETAILS.json",
+      "bytes": 114142,
+      "sha256": "1870602b6341c8926b4de9c0c755cce489405411ab6eece0f05fe38d9008aaed"
+    },
+    {
+      "path": "FS-053_PASSIVE_KINEMATICS.npz",
+      "bytes": 366342,
+      "sha256": "428277f23567ec879587a9814d434f37420eb0f3a64adaa9b126c013da42a657"
+    },
+    {
+      "path": "FS-054_EXPLORATION_DETAILS.json",
+      "bytes": 114231,
+      "sha256": "9ce42f1ae23ac451d059932863f6a4e947c502c765f07ab6f3e5a9720b79e5ec"
+    },
+    {
+      "path": "FS-054_PASSIVE_KINEMATICS.npz",
+      "bytes": 364709,
+      "sha256": "51c9b26aa58cb9a900ca54313f39d5653ac1a52a698943099d1b0860d5270ff8"
+    },
+    {
+      "path": "FS-055_EXPLORATION_DETAILS.json",
+      "bytes": 114085,
+      "sha256": "b10b5cc265b0169efb5d666df11cb143516332cc5177a4cb94d33e1b8cde2427"
+    },
+    {
+      "path": "FS-055_PASSIVE_KINEMATICS.npz",
+      "bytes": 365094,
+      "sha256": "7c12b3112bbcd8cbe485587d76521e09c189536a1139dad17e4be6862459c86b"
+    },
+    {
+      "path": "FS-056_EXPLORATION_DETAILS.json",
+      "bytes": 114161,
+      "sha256": "4fae74487c879e17743b7bc0457908ecfc03b79b85004ef1cb9cf77b25fb0884"
+    },
+    {
+      "path": "FS-056_PASSIVE_KINEMATICS.npz",
+      "bytes": 369150,
+      "sha256": "dd52314c9d26560861c6766981a43d2957c2129d98381c82f1f8d42dfae5d95f"
+    },
+    {
+      "path": "FS-057_EXPLORATION_DETAILS.json",
+      "bytes": 114169,
+      "sha256": "fbc5229e68155623a8ef052737af0125f18a4600c44a7c7d70f0468614a415ad"
+    },
+    {
+      "path": "FS-057_PASSIVE_KINEMATICS.npz",
+      "bytes": 368910,
+      "sha256": "c3ddbe6b4596670ad30181cbb9c6bb12ea9b043750da047616bc8e37d532339c"
+    },
+    {
+      "path": "FS-058_EXPLORATION_DETAILS.json",
+      "bytes": 114253,
+      "sha256": "1be48fffd60d0ce2fcee940f386646c2fc79c758817e3f5c66d366f8c1ec4c5c"
+    },
+    {
+      "path": "FS-058_PASSIVE_KINEMATICS.npz",
+      "bytes": 367078,
+      "sha256": "804576c804b05392e3e64ac41201ff51295919f16a9ab2d63cabd5b486c4e362"
+    },
+    {
+      "path": "FS-059_EXPLORATION_DETAILS.json",
+      "bytes": 114061,
+      "sha256": "dbcaedb0282d2f782b14fa36dc8019580d7e6a74465a33de4d15f89184b4b0e6"
+    },
+    {
+      "path": "FS-059_PASSIVE_KINEMATICS.npz",
+      "bytes": 368116,
+      "sha256": "afa08aeeac4c171b3a46770cc7abb79ca694335a509361ac77e3d1d541bc2e35"
+    },
+    {
+      "path": "FS-060_EXPLORATION_DETAILS.json",
+      "bytes": 113857,
+      "sha256": "20bc50b403a411e1dd0f1db59cc87fb0c3223015eaca30a21ca14c97934c0635"
+    },
+    {
+      "path": "FS-060_PASSIVE_KINEMATICS.npz",
+      "bytes": 108387,
+      "sha256": "2f70cd7a9bd0d13434bfdd3240007a02b15caeead7187a2bec09f8ac8c29e650"
+    },
+    {
+      "path": "INTEGRITY_PATHWAY_EVIDENCE_SUMMARY.md",
+      "bytes": 6496,
+      "sha256": "9b767e6fefed5beb55a19a08201e545a912ffd3bd304768923c8d590ff9d0934"
+    },
+    {
+      "path": "JASON_EXPLORATION_ADDENDUM.md",
+      "bytes": 3622,
+      "sha256": "cd20a3d75cb81eb28436bffa2b442fbb60454fd266ab153875597a9c71d2bc9f"
+    },
+    {
+      "path": "JASON_REQUEST.txt",
+      "bytes": 15345,
+      "sha256": "9c2cc6cca8d0c35c2c16817e7a0eaa481e519ba5cbd7f0bfb3c1f2dc144f8110"
+    },
+    {
+      "path": "LEAN_RUNNER_RESOURCE_ESTIMATE.md",
+      "bytes": 3863,
+      "sha256": "c701c3af1ee279c0fb49434d5b2a67777a3f783757b3e375f41fee4b90d5c3c1"
+    },
+    {
+      "path": "NEWBORN_EXPLORATION_DYNAMICS_AUDIT_v0_1.md",
+      "bytes": 14599,
+      "sha256": "2bd10a1d4e54986f4904e9052d9534c797d64c0916b489440aaf13a6512b273c"
+    },
+    {
+      "path": "NURSERY_0_DESIGN_v0_1.md",
+      "bytes": 50751,
+      "sha256": "ba66b13246120250ab4b72dcbba6a1db61e1c4e1607500d61da031767b447d2d"
+    },
+    {
+      "path": "NURSERY_0_LAYOUT_REVIEW.png",
+      "bytes": 148432,
+      "sha256": "33d38f6c361569161a6274a3dc772e059280b51e41d8b30c60766a7dd2ed7b1b"
+    },
+    {
+      "path": "NURSERY_0_LAYOUT_REVIEW.svg",
+      "bytes": 11986,
+      "sha256": "bf439ed569f84f0d69f1c6b6bb760a9f996fdb89f75f3e91881fc12dad892ee0"
+    },
+    {
+      "path": "NURSERY_0_STATIC_LAYOUT.svg",
+      "bytes": 5488,
+      "sha256": "5a11f9a04cd754e056a67e8f48eda62ea39a48cafd72c311c922088270da94bf"
+    },
+    {
+      "path": "NURSERY_CANDIDATE_PROPOSALS.json",
+      "bytes": 18124,
+      "sha256": "ee8cead5b45bf5abc213d1eacfdfad17a188f626f6055ac2c328d518482d3ff2"
+    },
+    {
+      "path": "plot_exploration.py",
+      "bytes": 7333,
+      "sha256": "342de483d832db1b786e7dfdba081756dd37029d06814d3a525af91f705f9f7f"
+    },
+    {
+      "path": "PLOT_RUNTIME.json",
+      "bytes": 322,
+      "sha256": "04e416d3f9f56e66c9e369f168a2fb271e398b507a159f0211fddc3d2e680064"
+    },
+    {
+      "path": "provisional_pre_exploration/CURRENT_WORLD_DEVELOPMENTAL_EVIDENCE.md",
+      "bytes": 7320,
+      "sha256": "377baeeb1f104ae682f315713147488f4356b32d63a4279bfe1714e2c1f2b13e"
+    },
+    {
+      "path": "provisional_pre_exploration/INTEGRITY_PATHWAY_EVIDENCE_SUMMARY.md",
+      "bytes": 6496,
+      "sha256": "9b767e6fefed5beb55a19a08201e545a912ffd3bd304768923c8d590ff9d0934"
+    },
+    {
+      "path": "provisional_pre_exploration/LEAN_RUNNER_RESOURCE_ESTIMATE.md",
+      "bytes": 3360,
+      "sha256": "e2a8c7e481c0a333acb90356588e76258a90ec8225f348a60137eff65219a4a6"
+    },
+    {
+      "path": "provisional_pre_exploration/NURSERY_0_DESIGN_v0_1.md",
+      "bytes": 41965,
+      "sha256": "2a6697e60ecf72b534a6b9e99f68c0b8773b1a9786026f6d7e3fc8af8014e235"
+    },
+    {
+      "path": "provisional_pre_exploration/NURSERY_0_STATIC_LAYOUT.svg",
+      "bytes": 5488,
+      "sha256": "5a11f9a04cd754e056a67e8f48eda62ea39a48cafd72c311c922088270da94bf"
+    },
+    {
+      "path": "provisional_pre_exploration/NURSERY_CANDIDATE_PROPOSALS.json",
+      "bytes": 17885,
+      "sha256": "d188202099cb70a89e8ef0fd3a9075d0977bbd8271f154118b8940a5394bdf5f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2671,
+      "sha256": "301330d380960c4c073c13ac3c5b18dc41811fe4dc8c627bdac5def5993aad1f"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "bytes": 24582,
+      "sha256": "7890cc4a315aeee9af5e8e67eb17ec402956dbfec22db80b17474a18f7e9e54f"
+    },
+    {
+      "path": "write_proposal.py",
+      "bytes": 62120,
+      "sha256": "230c59b8c788534ada3f4fe502646540508eafa4584600a29f28ac8082282fd9"
+    }
+  ]
+}

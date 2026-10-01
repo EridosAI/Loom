@@ -1,0 +1,40 @@
+{
+  "checkpoint": "1060a17e3dd14c6361f6f15c95bb58fad3110ffc",
+  "cases": [
+    {
+      "case": "B1-FULL-RAW",
+      "canonical_authority_sha256": "45f2349183579ed478e4c5582cdb70ba6619e06769ccfaad05f2dd36d26b173d",
+      "previous_authority_sha256": "2e338ae61dceaac3c3db0863f02cbccf0a9d98eb0842caf06c363207951e7c4c",
+      "duration_seconds": 30,
+      "native_ceiling": 3000,
+      "maximum_command_holds": 300,
+      "operator_coordinates": 29,
+      "initial_state_sha256": "1d701ab649a331bbc4d3a117d3e779103d04282c3a83ac520b9c8f17a8a1bbf0",
+      "initial_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+      "execution_grant": null,
+      "static_validation": true,
+      "null_grant_rejected": true
+    },
+    {
+      "case": "B1-CHEMISTRY-HIDDEN",
+      "canonical_authority_sha256": "aba8ca69db2a9ae66f9eb62c25ba0c64a82733d249310876e82e12ab94571a9e",
+      "previous_authority_sha256": "4bf57dbfcc56404e3e43122d7359fdeff76363ff6e1cab41e2a942e98b629a33",
+      "duration_seconds": 30,
+      "native_ceiling": 3000,
+      "maximum_command_holds": 300,
+      "operator_coordinates": 25,
+      "initial_state_sha256": "1d701ab649a331bbc4d3a117d3e779103d04282c3a83ac520b9c8f17a8a1bbf0",
+      "initial_snapshot_sha256": "ba02bfbed87653bdd6103aee1ba6791eb9549bbb35993dfb4513e2e66f7292e8",
+      "execution_grant": null,
+      "static_validation": true,
+      "null_grant_rejected": true
+    }
+  ],
+  "complete_pair_initial_state_identical": true,
+  "shared_snapshot_not_deserialized": true,
+  "current_run_prefix_preserved": true,
+  "production_change": "sensor.html style only",
+  "unchanged_controller_semantics": true,
+  "unexpected_semantic_changes": [],
+  "scope": "Pure identity, schema, null-grant rejection and integer clock checks. No physical-state rerun, controller invocation or B1 launch."
+}

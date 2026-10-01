@@ -1,0 +1,16 @@
+{
+  "label": "NON-CANONICAL RESURRECTION SANDBOX",
+  "reason": "Windows native Python memory-read access violation; process remained in Application Error wait and was terminated without retry.",
+  "stage": "overnight",
+  "life": "RS-M1-008",
+  "age": 2968.9548705465913,
+  "native_index": 296900,
+  "boundary_kind": "LAST_DURABLE_NATIVE_PREFIX_NOT_EXACT_CRASH_CALL",
+  "exact_inflight_state_available": false,
+  "last_full_checkpoint": "overnight-000294000-periodic.ld",
+  "last_full_checkpoint_age": 2939.9548705459583,
+  "last_full_checkpoint_index": 294000,
+  "no_retry": true,
+  "no_reconstruction": true,
+  "no_simulation_after_host_failure": true
+}

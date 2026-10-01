@@ -1,0 +1,39 @@
+{
+  "status": "PROPOSAL / NO EXECUTION AUTHORITY",
+  "starts": 3,
+  "arms_per_start": 3,
+  "maximum_trajectories": 9,
+  "per_case_simulated_ceiling_seconds": 30,
+  "total_simulated_ceiling_seconds": 270,
+  "native_step_ceiling": 27000,
+  "command_hold_ceiling": 2700,
+  "model_fitting_runs": 0,
+  "recorded_wall_per_simulated_second": {
+    "A2": 11.755737245556855,
+    "A3": 11.934441601907556,
+    "A5": 12.245986534135385
+  },
+  "base_simulation_minutes": {
+    "A2": 52.90081760500585,
+    "A3": 53.70498720858401,
+    "A5": 55.10693940360923
+  },
+  "proposed_per_case_wall_ceiling_seconds": 600,
+  "proposed_aggregate_execution_wall_ceiling_seconds": 5400,
+  "proposed_separate_reporting_wall_ceiling_seconds": 1800,
+  "overhead_measured": false,
+  "overheads": [
+    "sensory-history serialization",
+    "static verification and packaging"
+  ],
+  "no_new_prehistory_in_projection": true,
+  "prehistory_dependency": "Reuse verified non-human A-series world-only cache if compatible; otherwise stop for Jason decision.",
+  "conservative_existing_B1_allowance_per_case_bytes": 993906579,
+  "primary_bytes": 8945159211,
+  "primary_plus_second_full_copy_bytes": 17890318422,
+  "exact_storage_cap_requires_later_packet": true,
+  "old_grants_or_caps_not_reused": true,
+  "storage_redesign": false,
+  "native_fidelity_reduction": false,
+  "benchmark_runs": 0
+}

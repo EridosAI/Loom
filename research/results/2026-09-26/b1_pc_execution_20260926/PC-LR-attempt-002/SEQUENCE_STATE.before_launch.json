@@ -1,0 +1,41 @@
+{
+  "status": "PC-LR ENDED AT WALL LIMIT; AWAITING DECISION ON FRESH ATTEMPT",
+  "next_case": "PC-LR",
+  "order": [
+    "PC-LR",
+    "PC-MOTION",
+    "PC-CONTACT",
+    "PC-HOLD"
+  ],
+  "cases": [
+    {
+      "case": "PC-LR",
+      "attempts": 1,
+      "status": "ENDED: administrative wall cutoff; zero commands/steps; NOT DEMONSTRATED"
+    },
+    {
+      "case": "PC-MOTION",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    },
+    {
+      "case": "PC-CONTACT",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    },
+    {
+      "case": "PC-HOLD",
+      "attempts": 0,
+      "status": "NOT STARTED"
+    }
+  ],
+  "live_services": 0,
+  "timers_started": 1,
+  "worlds_loaded": 1,
+  "simulation_steps": 0,
+  "controller_commands": 0,
+  "all_commands_must_be_Jason_choices": true,
+  "service_url": "http://127.0.0.1:53754/",
+  "service_session_id": 13454,
+  "status_observed_utc": "2026-09-27T08:24:41.1105108+08:00"
+}

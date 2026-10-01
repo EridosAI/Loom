@@ -1,0 +1,43 @@
+F
+================================== FAILURES ===================================
+__________________ test_exact_tier2_and_D5_from_saved_inputs __________________
+
+tmp_path = WindowsPath('C:/Users/Jason/.codex/.chatgpt-projects/g-p-6a6fb425222c8191a814fdc0f7d89f97/developmental_runner_optimization_20260929/store-temp-001/test_exact_tier2_and_D5_from_s0')
+
+    def test_exact_tier2_and_D5_from_saved_inputs(tmp_path):
+        initial=fixture();old=copy.deepcopy(initial);expected={};expected_d5={}
+        for i in range(1,61):
+            before=copy.deepcopy(old);n,w,events=old.step()
+            expected[i]=codec.encode(core.causal_state(old))
+            expected_d5[i]=codec.encode(passive(before,old,w,INTACT,None))
+        run=Life(initial,tmp_path/'life',grant(initial,60));run.advance()
+        assert verify_store(run.store)['native_steps']==60
+        checked=[]
+        def check(index,detached,diag):
+            assert codec.encode(core.causal_state(detached))==expected[index]
+            assert codec.encode(diag)==expected_d5[index];checked.append(index)
+>       reconstruct(run.store,first_index=1,last_index=60,deep=True,fields=True,callback=check)
+
+tests_developmental\test_store.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+loom_developmental\replay.py:66: in reconstruct
+    if callback is not None:callback(index,e,diag)
+                            ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+index = 1, detached = <loom_p.engine.Engine object at 0x000001EE7FE1BE30>
+diag = {'class': 'CO', 'cortices': [{'activity_integral': array([-0.00075854, -0.0005405 , -0.00032926, -0.00011157,  0.00011...1027303, 0.01061289,
+       0.031023  , 0.0521808 , 0.07259091]), ...}], 'endpoint_time': 0.01, 'input_time': 0.0, ...}
+
+    def check(index,detached,diag):
+>       assert codec.encode(core.causal_state(detached))==expected[index]
+E       AssertionError: assert b'd\x12\x00\x...ome selection' == b'd\x12\x00\x...ome selection'
+E         
+E         At index 1293478 diff: b'l' != b'u'
+E         Use -v to get more diff
+
+tests_developmental\test_store.py:30: AssertionError
+=========================== short test summary info ===========================
+FAILED tests_developmental/test_store.py::test_exact_tier2_and_D5_from_saved_inputs
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed in 8.34s

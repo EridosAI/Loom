@@ -1,0 +1,147 @@
+{
+  "raw_denominator": {
+    "active_wall_seconds": 319.4926008001203,
+    "cases": [
+      {
+        "case_id": "MC-FS-001-CURRENT",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-001-M1",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-001-M2",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-002-CURRENT",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-002-M1",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-002-M2",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-003-CURRENT",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-003-M1",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      },
+      {
+        "case_id": "MC-FS-003-M2",
+        "cause": null,
+        "native_steps": 9000,
+        "status": "stage_complete",
+        "time": 90.00000000000914
+      }
+    ],
+    "no_automatic_selection": true,
+    "no_continuation": true,
+    "no_retry": true,
+    "preflight_wall_seconds": 24.15880519989878,
+    "stop": null,
+    "verification_wall_seconds": 13.856149600120261
+  },
+  "cases": [
+    {
+      "case_id": "MC-FS-001-CURRENT",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-001-M1",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-001-M2",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-002-CURRENT",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-002-M1",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-002-M2",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-003-CURRENT",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-003-M1",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    },
+    {
+      "case_id": "MC-FS-003-M2",
+      "status": "COMPLETE_90_SECONDS",
+      "native_steps": 9000,
+      "duration_s": 90.0,
+      "has_closed_receipt": true
+    }
+  ],
+  "reason": "Final executor rows reconciled against every closed receipt and any authoritative failure tail; raw records unchanged.",
+  "complete_cases": 9,
+  "interrupted_prefixes": 0,
+  "unstarted_cases": 0,
+  "no_retry": true,
+  "no_continuation": true
+}

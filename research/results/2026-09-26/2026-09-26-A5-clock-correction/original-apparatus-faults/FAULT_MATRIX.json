@@ -1,0 +1,690 @@
+[
+  {
+    "fault": "identity",
+    "test": "test_manifest_identity",
+    "intended_failure": "manifest/code identity mismatch",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.9819638999761082,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_manifest_identity",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\identity-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.9620139999897219,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_manifest_identity",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\identity-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "missing_native",
+    "test": "test_native_completeness",
+    "intended_failure": "missing native record",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0296617000130937,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_native_completeness",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\missing_native-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.002423700003419,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_native_completeness",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\missing_native-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "phase",
+    "test": "test_field_phase",
+    "intended_failure": "wrong field/mover phase",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.9783147000125609,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_field_phase",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\phase-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.9545969999744557,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_field_phase",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\phase-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "ledger",
+    "test": "test_accounting",
+    "intended_failure": "source debit/body credit mismatch",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.63405849999981,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_accounting",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\ledger-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.5841958000091836,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_accounting",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\ledger-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "input",
+    "test": "test_controller_allowlist",
+    "intended_failure": "forbidden controller input",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.6738749000360258,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_allowlist",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\input-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.6767540000146255,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_allowlist",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\input-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "observer",
+    "test": "test_observer_noninterference",
+    "intended_failure": "observer RNG/state interference",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.746320599981118,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_observer_noninterference",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\observer-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.6803280999884009,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_observer_noninterference",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\observer-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "stop",
+    "test": "test_stop_reason",
+    "intended_failure": "mislabelled stop reason",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0036657000309788,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_stop_reason",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\stop-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.9061143000144511,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_stop_reason",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\stop-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "sensor_leak",
+    "test": "test_sensor_boundary",
+    "intended_failure": "privileged data leakage into sensor-only interface",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.6844930999795906,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_sensor_boundary",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\sensor_leak-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.6494575999677181,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_sensor_boundary",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\sensor_leak-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "label",
+    "test": "test_external_label",
+    "intended_failure": "external controller incorrectly labelled intact P",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0184797000256367,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_external_label",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\label-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.9469005999853835,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_external_label",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\label-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "frozen",
+    "test": "test_frozen_persistence",
+    "intended_failure": "frozen structural parameter changed",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 0.6957758999778889,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_frozen_persistence",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\frozen-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 0.6627314000506885,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_frozen_persistence",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\frozen-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "discarded",
+    "test": "test_discarded_update_has_no_later_effect",
+    "intended_failure": "discarded structural update affected later output/state",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.2094903000397608,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_discarded_update_has_no_later_effect",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\discarded-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.169220999989193,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_discarded_update_has_no_later_effect",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\discarded-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "duration",
+    "test": "test_duration_guard",
+    "intended_failure": "manifest changed during run",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 1.0823707000236027,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_duration_guard",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\duration-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 1.2197836000123061,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_duration_guard",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\duration-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "extra_updates",
+    "test": "test_controller_hold_schedule",
+    "intended_failure": "extra native/wave/random/field updates introduced by controller hold",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.349244999990333,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\extra_updates-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 2.771134400041774,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\extra_updates-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "extra_native",
+    "test": "test_controller_hold_schedule",
+    "intended_failure": "extra native/wave/random state change from external hold",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.409490599995479,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\extra_native-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 2.6768281999975443,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\extra_native-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "extra_wave",
+    "test": "test_controller_hold_schedule",
+    "intended_failure": "extra native/wave/random state change from external hold",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.7175946999923326,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\extra_wave-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 2.7114317000377923,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\extra_wave-GREEN-temp"
+      ]
+    }
+  },
+  {
+    "fault": "extra_random",
+    "test": "test_controller_hold_schedule",
+    "intended_failure": "extra native/wave/random state change from external hold",
+    "RED": {
+      "exit": 1,
+      "intended": true,
+      "wall_seconds": 2.285161399981007,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\extra_random-RED-temp"
+      ]
+    },
+    "GREEN": {
+      "exit": 0,
+      "intended": true,
+      "wall_seconds": 2.6242793000419624,
+      "command": [
+        "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests_apparatus/test_apparatus.py::test_controller_hold_schedule",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97\\exports\\2026-09-26-A5-clock-correction\\original-apparatus-faults\\extra_random-GREEN-temp"
+      ]
+    }
+  }
+]

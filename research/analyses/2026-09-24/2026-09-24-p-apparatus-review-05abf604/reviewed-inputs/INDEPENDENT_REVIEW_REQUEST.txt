@@ -1,0 +1,582 @@
+Perform the independent fidelity and safety review of the Loom P
+coupling-commissioning apparatus.
+
+Use the highest reasoning level available.
+
+P scientific implementation being commissioned:
+6bc9683b54e4fa80136fe8534d7713e2a250a95f
+
+Commissioning-apparatus checkpoint:
+05abf60401d08f38750bca589b1c040e10513d7b
+
+Branch:
+build/p-commissioning-apparatus-20260924-01a0c405
+
+Worktree:
+C:\Users\Jason\Desktop\Eridos\Loom-p-apparatus-20260924-01a0c405
+
+Read:
+- the complete commissioning design;
+- commissioning matrix;
+- plain-language commissioning walkthrough;
+- configuration-change rules;
+- decisions-required document;
+- final P engineering fidelity review;
+- apparatus BUILD_REPORT.md;
+- exact diff from 6bc9683b... to 05abf604...;
+- portable apparatus review package.
+
+Portable package:
+C:\Users\Jason\Desktop\Eridos\Loom-p-apparatus-20260924-01a0c405\
+developmental_ecology\artifacts\
+review-package-apparatus-20260924-01a0c405\
+Loom_P_Commissioning_Apparatus_Review_20260924.zip
+
+This is an APPARATUS REVIEW ONLY.
+
+Do not begin A1-A5, B1-B4, C1, C2, 600-second lives, commissioning,
+efficacy testing, tuning or scientific trials.
+
+Do not modify target code/configuration/artifacts/Git/Workbench.
+Do not fix findings.
+No push, PR, merge or rebase.
+
+You may run:
+- existing component/test suites;
+- manufactured apparatus fixtures;
+- deliberate in-memory/subprocess faults;
+- read-only reconstruction/provenance tools;
+- inert/saved-display checks.
+
+Do not create a freely acting commissioning trajectory beyond the
+already-authorized manufactured apparatus fixtures.
+
+PRIMARY QUESTION
+
+Does 05abf604... faithfully provide the commissioning apparatus specified
+by the reviewed design, without changing P, leaking privileged
+information, altering timing, contaminating frozen diagnostics, or
+allowing scientific outcomes to tune the apparatus?
+
+Final disposition must be exactly one of:
+
+FIT TO BEGIN AUTHORIZED COUPLING COMMISSIONING
+
+or
+
+HOLD BEFORE COUPLING COMMISSIONING
+
+
+==================================================
+1. EXACT DIFF AND P IMMUTABILITY
+==================================================
+
+Independently inspect the complete diff:
+
+6bc9683b54e4fa80136fe8534d7713e2a250a95f
+    ->
+05abf60401d08f38750bca589b1c040e10513d7b
+
+Verify:
+
+- no file in loom_p changed;
+- no P configuration value changed;
+- no P equation, packet, centring operation, pooling law,
+  associative regime, E/I rule, motor law or world law changed;
+- commissioning code is a separate apparatus layer;
+- any shared import/interface addition does not alter P behaviour;
+- the final P engineering tests remain unchanged and green.
+
+If a law-bearing P change exists, classify:
+MUST-FIX BEFORE COMMISSIONING or UNRESOLVED / REQUIRES JASON.
+
+Do not treat an apparatus wrapper around existing P as a mechanism change
+unless its execution actually alters P semantics.
+
+
+==================================================
+2. EXTENDED COMMISSIONING RUNNER
+==================================================
+
+Audit the extended runner.
+
+Verify it:
+
+- supports explicit horizons beyond 30 s without repeatedly calling the
+  old <=30 s bounded runner;
+- advances P through the original Engine.step path;
+- preserves native 0.01 s, wave 0.2 s, field, noise and terminal timing;
+- enforces an explicit absolute deadline;
+- cannot silently extend beyond the authorized manifest duration;
+- preserves complete state on pause;
+- resumes only an authorized administrative pause;
+- cannot resume terminal, cutoff, incomplete or apparatus-failed runs as
+  though they were ordinary pauses;
+- retains controller state, remaining held-command steps, RNG, neural
+  state, body, fields and deadline across restart;
+- does not add native/wave/random/field updates because the controller
+  operates at a slower command cadence.
+
+Independently exercise the relevant manufactured boundary fixtures.
+
+Specifically verify command holds of ten native steps and a pause partway
+through a hold resume with the remaining hold count intact.
+
+Verify that a 1200-second manifest can be validated while unauthorized
+execution is rejected before creating trajectory output.
+
+Do not run a 1200-second life.
+
+
+==================================================
+3. AUTHORITY / CASE BINDING
+==================================================
+
+Inspect the apparatus authority-file mechanism.
+
+Verify a permitted case is bound to:
+- exact apparatus identity;
+- exact P identity;
+- exact configuration;
+- exact initial-state/phase/prehistory identity;
+- controller/arm identity;
+- duration/deadline;
+- case identity.
+
+Verify absent, wrong or mismatched authority is rejected before world
+execution.
+
+This is a workflow guard, not cryptographic security. Judge it only
+against its declared purpose.
+
+
+==================================================
+4. PRIVILEGED PHYSICAL CONTROLLER
+==================================================
+
+Audit the deterministic external physical-ceiling controller.
+
+Verify:
+
+- its input schema is exactly the reviewed privileged allowlist;
+- inputs are copies/read-only views rather than mutable world references;
+- its only causal output is the existing two bounded actuator commands;
+- it cannot set pose, velocity, E, I, source stock, mover state, field
+  state, collision outcome, repair or damage;
+- it cannot call hidden semantic actions;
+- every trajectory using it is labelled external_controller and cannot
+  be confused with intact_P;
+- controller state survives pause/restart exactly;
+- controller clock use is external apparatus information and never enters
+  P.
+
+Inspect its disclosed constants and establish they are fixed apparatus
+settings rather than outcome-dependent tuning.
+
+DO NOT require that this controller already demonstrates A1-A5 route
+competence.
+
+Route/contact competence is a Stage-1 commissioning question.
+A controller architecture defect is an apparatus finding; failure to
+navigate an untried route is not yet one.
+
+
+==================================================
+5. SENSOR-ONLY HUMAN INTERFACE
+==================================================
+
+Independently audit the sensor-only human reference interface.
+
+The live operator may receive only:
+
+- 10 raw light coordinates;
+- 4 raw chemistry coordinates;
+- 8 raw contact coordinates;
+- 7 raw proprioceptive coordinates;
+- permitted sensory history;
+- actual E and I only at their specified wave cadence, held between
+  handoffs;
+- the operator's own previous commands/notes.
+
+Verify it cannot expose through UI, API, logs, filenames, response
+payloads or hidden metadata:
+
+- global pose;
+- orientation;
+- object/fixture identity;
+- source stock;
+- mover phase/velocity;
+- material labels;
+- analytic gradients;
+- privileged event notifications;
+- world images/maps;
+- future values;
+- evaluator outputs.
+
+Verify privileged evaluation is structurally separate from the operator
+server/interface.
+
+Verify pausing for human deliberation does not advance:
+- world time;
+- bodily costs;
+- fields;
+- P clocks;
+- random streams.
+
+Verify E/I cadence using saved/manufactured records.
+
+The display's browser appearance is secondary to information isolation.
+
+DO NOT require human positive controls to have already succeeded.
+Those are required before interpreting later perceptual-ceiling failures,
+not before certifying the apparatus implementation.
+
+
+==================================================
+6. FIXED-STRUCTURE / NO-LASTING-PLASTICITY DIAGNOSTIC
+==================================================
+
+This is the highest-risk apparatus addition.
+
+Independently trace the exact frozen state list:
+
+Sensory:
+- shared
+- fine
+- shared_ref
+- fine_ref
+
+Association:
+- H
+- use
+
+Regulator:
+- theta
+- reference
+
+Confirm the intended transient/live states remain live exactly as
+specified.
+
+Verify ordering, especially:
+
+- sensory structural values are restored before their next causal read;
+- map/use values are restored after hypothetical write and before their
+  next read;
+- regulator structural values are restored BETWEEN credit and output;
+- discarded hypothetical updates remain inspectable;
+- applied persistent structural increment is zero;
+- discarded updates cannot alter later controls, neural state or RNG;
+- no hidden copied mutable structure survives into the next step.
+
+Reproduce the poison fixtures.
+
+Independently demonstrate:
+- correct restoration => subsequent causal state and RNG match;
+- deliberately late restoration => consequential RED;
+- frozen parameter state stays frozen;
+- fast/transient dynamics still evolve.
+
+Verify every trajectory from this adapter is labelled
+fixed_structure_diagnostic / no_lasting_plasticity and can never be
+reported as intact_P.
+
+Do not judge whether the diagnostic survives well.
+That is not apparatus fidelity.
+
+
+==================================================
+7. COMMISSIONING FIREWALL: AV / CO / SO
+==================================================
+
+Audit the classification and configuration-change machinery.
+
+Verify:
+
+- AV and CO can enter the commissioning review surface;
+- SO observations are preserved separately;
+- SO cannot become valid configuration_grounds;
+- no API automatically changes configuration;
+- any proposed configuration change produces only a request requiring
+  Jason's separate decision;
+- useful survival, learning, association, sensory differentiation or
+  credit cannot act as a commissioning pass/fail signal.
+
+Deliberately inject an SO-type result and prove the configuration-change
+path rejects it as grounds.
+
+Deliberately inject a valid AV defect classification and verify it can
+create a review request WITHOUT changing configuration.
+
+This firewall must fail consequentially under deliberate corruption.
+
+
+==================================================
+8. D5 RECEIVER-INFLUENCE SAMPLING
+==================================================
+
+Verify sampling is mechanically predetermined before contribution
+magnitudes exist.
+
+Wave level:
+- confirm every handoff is selected where specified.
+
+Native level:
+- confirm the deterministic index rule is fixed and cannot inspect q,
+  regulatory magnitude, error, survival or other outcomes before
+  selection.
+
+Audit detached receiver calculations.
+
+Verify:
+- original receiver output is reconstructed first;
+- one declared contribution is removed;
+- required immediate dependencies are recomputed correctly;
+- live state and RNG are never mutated;
+- no alternative world/behavioral trajectory is created;
+- results cannot normalize or adjust gains.
+
+Use manufactured nonzero H/bank fixtures so the checks are consequential.
+
+
+==================================================
+9. RECORDING AND RECONSTRUCTION
+==================================================
+
+Audit alignment of:
+
+native:
+- raw input;
+- receptor mean/residual;
+- x;
+- formation pressures;
+- references;
+- support/opening;
+- applied increments;
+
+wave:
+- packet;
+- packet mean;
+- beta;
+- trace;
+- query;
+- association contributions;
+- separate E/I credit operands.
+
+Verify timestamp semantics distinguish step-start raw used by neural
+operations from post-physics endpoint raw where applicable.
+
+Independently reconstruct each of the three manufactured apparatus modes
+from saved initial state/inputs and verify final neural/field state.
+
+Verify pause/continuous equivalence and observer non-interference.
+
+
+==================================================
+10. INFORMATION BOUNDARY / NO LEAKAGE
+==================================================
+
+Go beyond schema names.
+
+Use adversarial manufactured inputs/proxies where practical to test:
+
+- privileged controller cannot contaminate intact P inputs;
+- privileged evaluator state cannot appear in sensor-only output;
+- observer reads consume no RNG;
+- controller reads cannot mutate world objects;
+- fixed-structure adapter cannot expose hidden labels into P;
+- commissioning metadata/AV/SO labels do not enter neural calculations.
+
+Representative executable routes are sufficient.
+This is not a general security proof.
+
+
+==================================================
+11. VALIDATORS AND RED->GREEN EVIDENCE
+==================================================
+
+Independently rerun the delivered 16 RED->GREEN pairs.
+
+Inspect whether each fault actually reaches the failure branch it claims
+to test.
+
+At minimum verify consequential rejection of:
+
+- wrong manifest/code/config identity;
+- missing native record;
+- wrong field/mover phase;
+- debit/credit mismatch;
+- forbidden controller input;
+- observer RNG/state interference;
+- incorrect stop reason;
+- sensor-interface privileged leakage;
+- external controller mislabelled intact_P;
+- frozen structural parameter persistent change;
+- discarded fixed-structure update influencing later state/output;
+- duration-cap bypass;
+- duplicate native update;
+- duplicate wave update;
+- extra random draw;
+- extra field update.
+
+Do not accept a test because its name sounds correct.
+
+For important validators, use in-memory/subprocess mutations and confirm
+RED on the intended assertion, then GREEN unmodified.
+
+
+==================================================
+12. FINAL TEST SUITES / PORTABLE PACKAGE
+==================================================
+
+Independently run:
+
+1. complete worktree suite;
+2. complete assembled portable-package suite.
+
+Builder claim:
+83 passed in each.
+
+Use:
+- fresh temp directories;
+- no pytest cache;
+- plugin autoload disabled where appropriate;
+- existing pinned environment;
+- no ambient artifact dependency.
+
+Verify all previous 59 P engineering checks remain green.
+
+
+==================================================
+13. PREHISTORY / BIRTH ROSTER SAFETY
+==================================================
+
+Verify:
+
+- existing life-0 prehistory is not silently reused for births 1-4;
+- commissioning manifest contains births 1,2,3,4 but no execution occurs;
+- a wrong phase/cache identity is rejected;
+- no new prehistory was generated;
+- future birth-specific caches remain an execution prerequisite rather
+  than an inferred substitution.
+
+Do not prepare those caches in this review.
+
+
+==================================================
+14. PERFORMANCE / STORAGE CLAIMS
+==================================================
+
+Treat short component costs as measurements of apparatus fixtures only.
+
+Verify the arithmetic of any projected 8960-second resource envelope,
+but do not require the projections to be accurate.
+
+Do not classify the higher ~37.74-hour / ~43.02-GB estimate as a
+scientific or commissioning result.
+
+Long-run performance remains unmeasured.
+
+
+==================================================
+15. PRESERVATION / PROVENANCE
+==================================================
+
+Verify:
+
+- exact apparatus commit and parent;
+- P checkpoint 6bc9683b remains reachable and unchanged;
+- loom_p runtime/config remain unchanged;
+- historical EXP1-21 tree unchanged;
+- prior 792 artifacts preserved as claimed;
+- package/diff/runtime/source identities;
+- no source/canon decision silently rewritten.
+
+Do not perform remote/vault operations merely to prove negative process
+claims.
+
+
+==================================================
+16. FINDING CLASSIFICATION
+==================================================
+
+Classify every material finding as exactly one of:
+
+VERIFIED
+
+LIMITATION / EXPECTED PROVISIONAL CHOICE
+
+MUST-FIX BEFORE COMMISSIONING
+
+SCIENTIFIC / COMMISSIONING QUESTION, NOT AN APPARATUS DEFECT
+
+UNRESOLVED / REQUIRES JASON
+
+
+==================================================
+17. IMPORTANT NON-BLOCKERS
+==================================================
+
+Do NOT HOLD merely because these remain untested:
+
+- A1-A5 controller competence;
+- B1-B4 perceptual-ceiling outcomes;
+- human positive controls;
+- C1/C2 newborn outcomes;
+- 600-second running;
+- birth-specific caches not yet prepared;
+- long-run storage growth;
+- useful learning;
+- survival;
+- capacity adequacy;
+- temporal packet adequacy;
+- association magnitude/usefulness;
+- natural terminal life.
+
+Those are commissioning execution or scientific questions.
+
+HOLD only for an apparatus defect that makes subsequent commissioning
+unsafe, uninterpretable or scientifically contaminated.
+
+
+==================================================
+18. FINAL DISPOSITION
+==================================================
+
+Return exactly one:
+
+FIT TO BEGIN AUTHORIZED COUPLING COMMISSIONING
+
+or
+
+HOLD BEFORE COUPLING COMMISSIONING
+
+FIT requires:
+
+- P remains unchanged;
+- extended runner faithfully preserves clocks/state/deadlines;
+- authority/case binding works;
+- privileged controller is causally restricted;
+- sensor-only interface is genuinely isolated;
+- fixed-structure adapter is causally clean;
+- AV/CO/SO firewall is consequential;
+- D5 selection/receiver probes are outcome-independent and detached;
+- recording/reconstruction is sound;
+- consequential validators bite;
+- final suites reproduce;
+- no new material apparatus defect is found.
+
+If FIT:
+do not begin commissioning and do not choose Stage-1 cases.
+Jason separately authorizes execution.
+
+If HOLD:
+state the smallest exact closure.
+
+Produce:
+1. full independent apparatus review;
+2. concise closure table;
+3. exact reproduction commands;
+4. reviewed identities;
+5. portable Workbench-intake ZIP.
+
+Then stop.

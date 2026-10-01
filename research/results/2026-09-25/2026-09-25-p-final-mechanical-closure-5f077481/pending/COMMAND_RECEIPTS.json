@@ -1,0 +1,37 @@
+{
+  "cwd": "C:\\Users\\Jason\\.codex\\.chatgpt-projects\\g-p-6a6fb425222c8191a814fdc0f7d89f97",
+  "python": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-engineering-20260921-01a0c405\\.venv\\Scripts\\python.exe",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+  },
+  "subprocesses": [
+    {
+      "arguments": ["-B", "-X", "utf8", "exports\\2026-09-25-p-final-mechanical-closure-5f077481\\pending\\check_pending.py", "old"],
+      "script_sha256": "09e99da03ea04d299a8a776a9d201530ec256b2a68b578475bbc3d2a40c543f4",
+      "preserved_script": "check_pending_attempt001.py",
+      "log": "old.log",
+      "results": "old-results.json",
+      "observed_python_exit": 1,
+      "assessment": "Intended OLD PENDING HOLD BREACH assertion after fresh exact normal-save-resume and loaded-session counterexamples; both reach native11."
+    },
+    {
+      "arguments": ["-B", "-X", "utf8", "exports\\2026-09-25-p-final-mechanical-closure-5f077481\\pending\\check_pending.py", "new"],
+      "script_sha256": "09e99da03ea04d299a8a776a9d201530ec256b2a68b578475bbc3d2a40c543f4",
+      "preserved_script": "check_pending_attempt001.py",
+      "original_log_name": "new.log",
+      "preserved_log": "new-attempt001.log",
+      "observed_python_exit": 1,
+      "assessment": "Review harness setup error: .07 case mistakenly given final route until.1. Correctly rejected before constructor output; retained without treating it as an apparatus defect."
+    },
+    {
+      "arguments": ["-B", "-X", "utf8", "exports\\2026-09-25-p-final-mechanical-closure-5f077481\\pending\\check_pending.py", "new", "-002"],
+      "script_sha256": "7203da0afbb08cb4525c41a462cafebcf7c2557e10d62598b03133320d5e002b",
+      "log": "new-002.log",
+      "results": "new-002-results.json",
+      "observed_python_exit": 0,
+      "assessment": "GREEN: four delivered pending mutations, exact original failure entry points, lawful7+3, five delivered saved boundaries, global cap controls, copied journal integrity; no source fixes."
+    }
+  ],
+  "scope": "Known pending-command mechanical closure only; all outputs in this new export, no commissioning or new prehistory."
+}

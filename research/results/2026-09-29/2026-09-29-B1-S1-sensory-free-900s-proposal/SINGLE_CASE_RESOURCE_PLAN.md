@@ -1,0 +1,17 @@
+# Single S1-SENSORY-FREE resource proposal — NOT AUTHORIZED
+
+Prepare exactly one unchanged S1-SENSORY-FREE case at checkpoint a8cdd75c7f98ebd85d9625ce4d8ae8fa4d790dad. Its complete prepared initial snapshot, SENSORY-FREE no-input (0.30,0.30) law, 30-second ceiling, 3,000 native-step maximum, 300 existing 0.1-second holds, recording, validation, physics and existing prehistory are unchanged.
+
+The sole numerical execution change is administrative wall_limit_seconds 600 -> 900. The outer shared_resource_limits.wall_per_case_seconds mirror is likewise 900. All other inherited resource ceilings are unchanged. For this one-case proposal the effective execution allowance is at most 900 seconds, with the existing native-step/flush overrun behavior. The historical 5,400-second aggregate and nine-case maxima do not provide a new spending pool or authorize another case.
+
+The original shared_batch_order, original RESOURCE_AND_EXECUTION_PLAN.md and RESOURCE_PROJECTION.json are retained as historical provenance. The single_case_resource_amendment in the new object takes precedence for the current launch scope and this 900-second allowance. The nine-case batch remains stopped; the original rule permitting a next independently authorized batch case is inactive here. Stop after this one case on its normal horizon, terminal, apparatus/controller failure or administrative/resource cutoff. No retry, continuation, substitution, tuning, extra case or new prehistory.
+
+Before any separately authorized future launch, perform the unchanged full-runtime preflight again: exact new authority, checkpoint/source/runtime, unchanged snapshot and cache identities, state matching, grant, unused output, per-case/global storage and free-disk checks. Generate no new prehistory. No execution grant or runner is supplied in this proposal. The old 600-second grant cannot authorize this changed execution object.
+
+Retain 1,500,000,000 bytes per-case uncompressed stream cap; 20,000,000,000 bytes for combined new artifacts including existing preparation/execution records and all copies; stop requesting work at 19,000,000,000 bytes; preserve 1,000,000,000-byte flush reserve and at least 20,000,000,000 free bytes before launch. Retain the 1,800-second read-only reporting ceiling and existing full-fidelity records. At each hold a future supervisor must check shared storage; the existing runner owns the unchanged stop rules and the new 900-second wall limit. No physical replay is authorized as reporting.
+
+Use RESOURCE_ADJUSTMENT_PROJECTION.json for updated estimates: approximately 10.09 minutes from the recent partial S1-FULL wall-rate proxy, with older A2/A3 base estimates near 5.88-5.97 minutes. These are estimates, not a sensory-free execution. The unchanged conservative storage allowance is 993,906,579 bytes primary or 1,987,813,158 bytes including one archive copy. No evidence-fidelity reduction is proposed.
+
+Jason now accepts the preserved S1-FULL result as the productive FULL witness. Record this as Jason's later decision, without rewriting its administrative-cutoff receipt or the earlier report. The outstanding proposed comparison is only this matched sensory-free case. No new outcome exists; no B1 closure is declared by packet preparation.
+
+S1-FULL must not be continued or retried. S1-HIDDEN, S2 and S3 must not be prepared or executed under this object. No old sealed human B1 evaluator state may be inspected. Stop for Jason's authorization of the new outer authority hash.

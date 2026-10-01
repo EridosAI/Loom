@@ -1,0 +1,143 @@
+{
+  "label": "A4-CROSS proposed independent manufactured external start, not newborn or continuation",
+  "body": {
+    "position": [
+      10.0,
+      8.8
+    ],
+    "angle": 1.5707963267948966,
+    "energy": 0.7,
+    "integrity": 1.0,
+    "velocity": [
+      0.0,
+      0.0
+    ],
+    "omega": 0.0,
+    "command": [
+      0.0,
+      0.0
+    ],
+    "force": [
+      0.0,
+      0.0
+    ],
+    "contact_rates": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "time": 0.0,
+  "native_index": 0,
+  "status": "paused",
+  "stocks": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "mover_phase": 3.558411277237072,
+  "initialization": {
+    "kind": "verified_phase_history",
+    "birth_id": 0,
+    "phase": 3.558411277237072,
+    "field_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+    "cache_directory": "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001",
+    "cache_receipt_sha256": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3"
+  },
+  "field_sha256": "7804edb2257a3a2cd016944776e60c265a5815db838f506ae6fa5a9f14dc4096",
+  "state_sha256": "0577bf0ede785c957c1622f30c869366e8fcf63c5f1130867662bc2c7ab7ac60",
+  "snapshot_sha256": "57cdc478ff38fb2b06627a9107365e0986d9187061abcecf1beccaaeb6721947",
+  "inactive_organism_sha256": "0d1de850e85a085dd7288cadbd8be0da577211a8a1e47d819a5d7e111024a5ed",
+  "rng_counters": {
+    "life/world-phase": 1,
+    "life/world-position": 1,
+    "life/world-orientation": 1,
+    "anatomy/sensory-0-A": 1,
+    "anatomy/sensory-0-shared": 1,
+    "anatomy/sensory-0-fine": 1,
+    "anatomy/sensory-1-A": 1,
+    "anatomy/sensory-1-shared": 1,
+    "anatomy/sensory-1-fine": 1,
+    "anatomy/sensory-2-A": 1,
+    "anatomy/sensory-2-shared": 1,
+    "anatomy/sensory-2-fine": 1,
+    "anatomy/sensory-3-A": 1,
+    "anatomy/sensory-3-shared": 1,
+    "anatomy/sensory-3-fine": 1,
+    "anatomy/gate-0": 1,
+    "anatomy/gate-bias-0": 1,
+    "anatomy/gate-1": 1,
+    "anatomy/gate-bias-1": 1,
+    "anatomy/gate-2": 1,
+    "anatomy/gate-bias-2": 1,
+    "anatomy/gate-3": 1,
+    "anatomy/gate-bias-3": 1,
+    "anatomy/gate-4": 1,
+    "anatomy/gate-bias-4": 1,
+    "anatomy/gate-5": 1,
+    "anatomy/gate-bias-5": 1,
+    "anatomy/gate-6": 1,
+    "anatomy/gate-bias-6": 1,
+    "anatomy/gate-7": 1,
+    "anatomy/gate-bias-7": 1,
+    "anatomy/regulator-Bq": 1,
+    "anatomy/regulator-Bv": 1,
+    "anatomy/regulator-bias": 1,
+    "anatomy/motor-feedback": 1,
+    "life/motor-birth-phase": 1,
+    "life/motor-birth-nu": 1,
+    "life/motor-noise": 1,
+    "life/regulation-E": 1,
+    "life/regulation-I": 1
+  },
+  "birth_provenance": {
+    "kind": "manufactured_external_geometry_start",
+    "lawful_newborn_sample": false,
+    "case_label": "A4-CROSS",
+    "position": [
+      10.0,
+      8.8
+    ],
+    "angle": 1.5707963267948966,
+    "phase": 3.558411277237072,
+    "constructor_origin_retained": {
+      "position": [
+        6.217419885394378,
+        12.772167149995251
+      ],
+      "angle": 2.746065465224073,
+      "phase": 3.558411277237072,
+      "rejected": []
+    },
+    "fixture_parent_snapshot_sha256": "348079e967a34a98cd395a5b117f484c3ea8ba58edc6b0f4cb3f4975e6bbd557",
+    "description": "Independent healthy zero-time A4 external physical witness. Only initial position, heading, instantaneous sensors and provenance change; cached fields and inactive organism/RNG retained. No previous trajectory state or outcome used."
+  },
+  "changed_engine_attributes": [
+    "birth_provenance",
+    "body",
+    "raw"
+  ],
+  "changed_body_attributes": [
+    "position",
+    "angle"
+  ],
+  "all_other_body_engine_attributes_identical": true,
+  "fresh_session": {
+    "cursor": 0,
+    "hold_remaining": 0,
+    "decision": null,
+    "own_commands": []
+  },
+  "world_steps": 0,
+  "time_zero_sensor_recomputations": 1
+}

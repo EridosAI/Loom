@@ -1,0 +1,256 @@
+{
+  "authority_sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc",
+  "apparatus_checkpoint": "5f07748102cb5eaa302569c87efbae095050e9fe",
+  "branch": "build/p-commissioning-apparatus-20260924-01a0c405",
+  "checkpoint_unchanged": true,
+  "git_status_clean": true,
+  "original_runtime_configuration_cache_file_count": 33,
+  "original_files": {
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\diagnostics.py": "f8edeff894e97711e5f7fb5e655025f2e99b3f6487b46e03e9146221bdd0cce0",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\engine.py": "ef6d2d4383df301057f903b21b924842d9833e95d36e469406b4a9ad7a78195d",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\geometry.py": "b36343303477b4d86dea8e6fc5b4b03dfa795ae2ef6f9b1fa8f6cd0e5bdab1b3",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\inspector.py": "8f6d1b71c392f10b2f97a6c6909080a6a69f3b634a09e7b9e8c14985cc27da83",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\neural.py": "92d42ec7d0ea5da8e820f21e5001ddb0aa43efeae9e02096ed631d3ed691b5ca",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\physics.py": "72a7768a82d23cbb9aed806a67a3e466a2a1d053d3488d3e10f91d5376413783",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\prehistory.py": "3a8bf88998c911c89f23aa89242f8be2a5e7e2198a0c86f6c978b256f9e75588",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\reconstruction.py": "b943cfc41c8e5d68a52a4577d5f6f0a5a3e7c89159e86d7d61d344d0e9bf883b",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\records.py": "4ab0df0a30d9612898608be016671ee17f60cc7e6768093a2c87351d6041294e",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\schema.py": "65e8122c574c1987ba0e18f900ddb12b531fd761dc3a96cbee448cdf14374bbc",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\smokes.py": "1c78ea405431ef4ea0dc8cd50a58847f7f8a70a111a68677c7a93be030d33a2b",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_p\\__init__.py": "e1618e7d9ab7a892289337b3c513c034223455b4d04981a9dbcfa660fecc192a",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\adapter.py": "ded81ad92bba426580ae4e9609fb95211aedf92a51fe19a63d05003970972aee",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\authority.py": "b2ecfff9ae898aa5cda8e6ab230e5f11254beb965b9a4a95e18f9b9f752d11ca",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\contract.py": "e092f6c97f058688ded9bac9ae0c0e827d5adba7c77194a366a8ea4e89b8c7f3",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\controllers.py": "45e37b3d8827e72d2757a31113a3ea282d9322d9c357b7103874f9a33e6b089e",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\diagnostics.py": "dc9e1d6a2d609750c44edfe195e501f201da6790b59f621709de33857e6064da",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\evaluation.py": "0077288b95cc817228ac4a8b1c8f46a5866593c12cca9b76ee103582906a92f3",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\initialization.py": "bfaebb23e07f2e9b85f8c0c937200c75ec7ffbb6634ca8425cc78ba6e71b733a",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\pending.py": "8e8a34b87fcc8fa20e649e247bebabceafb8c59c9f02ada3a5315a0e67e14ea8",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\runner.py": "258e8a23e79364acf32af15769cfd28f448834a91571d6b3f1a6068344eb5b57",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\sensor.html": "3edbe672a73d66dc3ff84282670f28983f6d6dd1ca263d9183607ec24761083a",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\sensor_ui.py": "b5596ad3aff664df951d63ba2311e232ff483de6c7dcc8ac446b0c240868572e",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\validators.py": "6d8d415ef97c0edff8b73063b74b4f77ce96a01474ecc8ac60c653436b18eb1a",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\loom_commissioning\\__init__.py": "426332181567ad9035500742be1bf34f122c1701487d224616bdbba603936b46",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\configuration.json": "985d2de66f9f378765bd3a2ceba75bfe210a5bf7fe30be6716dd1051bb2315a9",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\requirements-lock.txt": "dc0386d51a4f750adb3429ddf1d8156b18e67c914e53f9aa17470ae39c3709a6",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001\\fields.npz": "f968ed0875d68e3421c5acc9f9a4a218727b9698877b1cc86225d4fec9e6ef7d",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001\\manifest.json": "847b07eae82aeb9eeabefad7f5b9f84254e2e9324a1e93d0ff89909958019ac3",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001\\law-source-at-preparation\\chemistry.py": "44955dee41ce5c3ede386ca762fbdd68058112df9ed55ed6a6a59899ba38960d",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001\\law-source-at-preparation\\geometry.py": "b57861757e051c7a789df0ef31a28632d1e57dae3e0c3c933edf07667c11d877",
+    "C:\\Users\\Jason\\Desktop\\Eridos\\Loom-p-apparatus-20260924-01a0c405\\developmental_ecology\\artifacts\\prehistory-attempt-001\\law-source-at-preparation\\schema.py": "2df77ee95f708aa755750e214ac9269985d8988760d2c08b5e9c36e477b574bd"
+  },
+  "approved_packet_payload_count": 65,
+  "approved_packet_payloads_unchanged": true,
+  "approved_launch_zip": {
+    "bytes": 426696,
+    "sha256": "371e5ea9c7ab2972a5c1d2eee3914d9a9bb27e7bda13a76bf5a20b5331d61be5"
+  },
+  "raw_and_derived_evidence_inventory": {
+    "APPROVAL_REQUEST.json": {
+      "bytes": 11037,
+      "sha256": "de9d67e63d4eb048eb3394cb31fdc7bf56d87a1bafe2311f956ca10882660a0e"
+    },
+    "APPROVED_INITIAL_A1.snapshot.json.gz": {
+      "bytes": 121474,
+      "sha256": "348079e967a34a98cd395a5b117f484c3ea8ba58edc6b0f4cb3f4975e6bbd557"
+    },
+    "APPROVED_OBJECT.canonical.json": {
+      "bytes": 8019,
+      "sha256": "a744982d245d479a36fdc47c49f0459c24da2b0a1de109e947e543d1a06023dc"
+    },
+    "AUTHORIZATION_SOURCE.txt": {
+      "bytes": 195,
+      "sha256": "3b0c89a124cbdfca57ac35e050ff237ca391999a949b4725dc16407bb9a6bda7"
+    },
+    "execute_once.py": {
+      "bytes": 8908,
+      "sha256": "fc985bf9be5f18cd206244418024a35d61b5b9348d84be83882da414008ccced"
+    },
+    "EXECUTION_RESULT.json": {
+      "bytes": 734,
+      "sha256": "0eb47de62c55b805fd1cb3dc96cf9a637bd809061c39a0bd811161f10238c467"
+    },
+    "LAUNCHED_MANIFEST.json": {
+      "bytes": 10823,
+      "sha256": "2b59af4a130ca1b9c55fffda70acfc9629c5bd28b9694311dbaa1cca1a3b985b"
+    },
+    "progress.jsonl": {
+      "bytes": 14746,
+      "sha256": "0f8edf69fd34c6bddb33893831908d634317e58c18891f59216c493061c1af2f"
+    },
+    "read-only-review/A0_GEOMETRY.json": {
+      "bytes": 3092,
+      "sha256": "60bcaaf5f28bc2fe2c36d11fa17cda225c87d88ea093520494a415b8973970e2"
+    },
+    "read-only-review/A1_OBSERVATIONS.json": {
+      "bytes": 28743224,
+      "sha256": "c3f2cee338a8704ddea56ed9292c6af6db3ba6e1d67d6406dc479192fcdea39a"
+    },
+    "read-only-review/A1_RESULT_SUMMARY.json": {
+      "bytes": 4020,
+      "sha256": "21e4d9e316cb7d611065aca9b1ec27013c74c42a7218a9d4cd1b7d18f668088d"
+    },
+    "read-only-review/FIRST_A1_COMMISSIONING_REPORT.md": {
+      "bytes": 8616,
+      "sha256": "b277198d38c925142822e98cd0e37fe8534a425183ae6d53fee5d1407078c9f8"
+    },
+    "read-only-review/RAW_EVIDENCE_BEFORE_ANALYSIS.json": {
+      "bytes": 4274,
+      "sha256": "2dcc30ebd44623347b744b1bfb3b4dd1ec3276278101311cb183aaea2f94cff8"
+    },
+    "read-only-review/read_results.py": {
+      "bytes": 11898,
+      "sha256": "1a17768261b606cbaed0258efad42ab3b1719f17444715b23644816461ba5e21"
+    },
+    "read-only-review/record_v3_finding.py": {
+      "bytes": 4139,
+      "sha256": "78b248b970dc16c627561db3043870f9a651a51f5652c8fd2492d7dffa71c91c"
+    },
+    "read-only-review/SOURCE_0_CONTACT_INTERVALS.json": {
+      "bytes": 342,
+      "sha256": "75c19b39438d972f9d5196eab0d6482faa14feeeb14a189548f676551eef828c"
+    },
+    "read-only-review/V1_POST_RECORD_VALIDATION.json": {
+      "bytes": 239,
+      "sha256": "ed2b737e45273e68c467b18a55e95643a35cd87c870a91ef7e462c72f4d6b5ce"
+    },
+    "read-only-review/V1_V3_PREFLIGHT.json": {
+      "bytes": 7467,
+      "sha256": "d2716f8c72c287610ce1610301d8b16ff3e4368a53ce57af3b8f9f563b53ab0b"
+    },
+    "read-only-review/V2_ACCOUNTING.json": {
+      "bytes": 10779921,
+      "sha256": "aa1e55bf6e25d61dc149147a075872396505e5f8f6e080499245ad149a4a700a"
+    },
+    "read-only-review/V2_ARCHIVED_ACCOUNTING_CHECK.json": {
+      "bytes": 18538,
+      "sha256": "ded589368d0319cfda262738e2d284c81c2a8fbc8c1f237b39b6a11896737d71"
+    },
+    "read-only-review/V3_BOUNDARY_ERROR.json": {
+      "bytes": 616,
+      "sha256": "03dab60b31d45eb7aae2963a6a8feac8ef7377e00538bab4e2e6caac1035fc34"
+    },
+    "read-only-review/V3_COUNT_FINDING.json": {
+      "bytes": 1891,
+      "sha256": "40c64c1282db57142caea8115ecb0734d42041841e8265aa47c2cd90b85e0bad"
+    },
+    "read-only-review/V3_POST_CHECK_LIMITATION.md": {
+      "bytes": 1606,
+      "sha256": "f5f10c5523eaac9aa7e0fee9e155aedbb89c186e949cc86186aceecda5e1ec3a"
+    },
+    "read-only-review/write_report.py": {
+      "bytes": 10377,
+      "sha256": "84a368f4bd7f3e6fc46b9d1ab9d58b17a72a6a55ee3bc9b997409ae06f92c725"
+    },
+    "trajectory-001/controller.jsonl.gz": {
+      "bytes": 204691,
+      "sha256": "04a726e0fb33f6043bdb4fa7ab5551a8e8027cc7476bb9d350422a3ddd81a39a"
+    },
+    "trajectory-001/diagnostics.jsonl.gz": {
+      "bytes": 1810722,
+      "sha256": "1a14005aeb7324bc66fcbc578898efb6cde0f5f79d1d4c8cd53dbde80c2931c0"
+    },
+    "trajectory-001/events.jsonl.gz": {
+      "bytes": 1440761,
+      "sha256": "518951ecb02d03bede21f0501ab6fc0a8499750ac424eb93bd1cb730539d2524"
+    },
+    "trajectory-001/final.restart.json.gz": {
+      "bytes": 1493457,
+      "sha256": "5adf83ae239173cb28ec17913f84753e8eaee41f7c9991e91185b54b20ced423"
+    },
+    "trajectory-001/initial.restart.json.gz": {
+      "bytes": 126180,
+      "sha256": "6e97f2cef4d22b80bfc6c5cb65c8dce2472ca4e1414be903a9290890b2ba807f"
+    },
+    "trajectory-001/manifest.json": {
+      "bytes": 13015,
+      "sha256": "a51be0e79589e8922d3f53485dad80aa7cfbf580775d77d9e614f69f0fcfa3f8"
+    },
+    "trajectory-001/native-1000.restart.json.gz": {
+      "bytes": 282920,
+      "sha256": "6c30220c342ed8be246e2dc5e3a8e986bbb59f0514e1a8335323ec8a4a448d20"
+    },
+    "trajectory-001/native-2000.restart.json.gz": {
+      "bytes": 437565,
+      "sha256": "22761d60b2335ce1fc73279dd64a9e007757f32d7c41f604a4fbd8abc2346dcc"
+    },
+    "trajectory-001/native-3000.restart.json.gz": {
+      "bytes": 590526,
+      "sha256": "7332b33a0b7f707463c0e6b454f3f16c5565fa94813920d7e493f45e4b8622e9"
+    },
+    "trajectory-001/native-4000.restart.json.gz": {
+      "bytes": 740203,
+      "sha256": "f15d9b28ed1d5b3fdd21d93c24cef94bf8e6a408917632960e83bc1239aa5401"
+    },
+    "trajectory-001/native-5000.restart.json.gz": {
+      "bytes": 886254,
+      "sha256": "ca79ff5dd2ea43375a6c355179beaad3145b83986f928c832f05e0218111ede1"
+    },
+    "trajectory-001/native-6000.restart.json.gz": {
+      "bytes": 1027012,
+      "sha256": "77eec4a58bbe638b16bf7a8ba7046a55ddfc59ae9d09ae08c2b388c3d7e34261"
+    },
+    "trajectory-001/native-7000.restart.json.gz": {
+      "bytes": 1171245,
+      "sha256": "0ad3a4743adca1b67d1e68a511bbff96f575fa8a36aef66ef0cebf78e8fb3591"
+    },
+    "trajectory-001/native-8000.restart.json.gz": {
+      "bytes": 1318077,
+      "sha256": "e741c81f935c1d348d5cd4c06357cb12611e79b8114ba458e2f6084a758ee621"
+    },
+    "trajectory-001/native-9000.restart.json.gz": {
+      "bytes": 1466211,
+      "sha256": "fb7cabb00ce3d0e3d8e9042028feb92b9b7f8c7b85396003ec0f7782059a9e13"
+    },
+    "trajectory-001/native.jsonl.gz": {
+      "bytes": 4504570,
+      "sha256": "4c625c219c67665242535fe1ddca5b3f5a1b480aa2a5cc1d73b26fb27eaff3fe"
+    },
+    "trajectory-001/scientific_observations.jsonl.gz": {
+      "bytes": 50,
+      "sha256": "8d6f8ee0a403206f63026f64a39db5b8ad2c54149d694b1ad06b17a67bd58e96"
+    },
+    "trajectory-001/sensor-display.json": {
+      "bytes": 5820658,
+      "sha256": "0aed12cf579b81b702277925328ef5f5cb958587c5052c3ca98b129f61dd3b39"
+    },
+    "trajectory-001/sensor.jsonl.gz": {
+      "bytes": 1642912,
+      "sha256": "c7302a040fa0cf16bcdcff472569d143efc746010d3e8f78c2a72c1e41a5f90f"
+    },
+    "trajectory-001/wave.jsonl.gz": {
+      "bytes": 31,
+      "sha256": "55adcc66cdc1626d54b1da524328634ae6cbfc176aa871eb6fd9df367f978473"
+    }
+  },
+  "workbench_navigation_before_copy": {
+    "AGENTS.md": {
+      "bytes": 13223,
+      "sha256": "58f0ab1ad6916b84a2133310389288503323aae72a8207606aa6aa83adb59b79"
+    },
+    "00_RESEARCH_MAP.md": {
+      "bytes": 12535,
+      "sha256": "a88e21beab9adaeb77a5bec895aa22c626c682c8c2d0733a11832b292aafa739"
+    },
+    "01_WORKSPACE_STATUS.md": {
+      "bytes": 14988,
+      "sha256": "93cd26313dd44081c96a612d8a68cd609830dfe4ee4bf56e5b08da584578f0aa"
+    },
+    "SOURCE_CATALOG.json": {
+      "bytes": 100218,
+      "sha256": "dfd02f291f694aaf5bb6a874a806c9baea94724b46444a476006884e4f6aca11"
+    },
+    "SOURCE_REGISTER.md": {
+      "bytes": 26124,
+      "sha256": "90ee690add1ae856142b6567e099a5e49d55282ca2ca47024e769367f50d528a"
+    }
+  },
+  "primary_evidence_bytes": 64753256,
+  "component_records_bytes": 39600260,
+  "recorded_preflight_plus_main_analysis_wall_seconds": 17.23110179998912,
+  "preflight_plus_all_elapsed_post_execution_wall_seconds_upper_bound": 220.36791529996,
+  "replays": 0,
+  "research_modules_imported_by_packager": false,
+  "scope": "Read-only custody and new local review delivery only; no code, configuration, source, navigation or Git mutation."
+}

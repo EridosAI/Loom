@@ -1,0 +1,13 @@
+# Fresh v0.2 proposals — NOT AUTHORIZED
+
+All nine are independent cases under one corrected apparatus. No old authorization applies.
+
+1. **MC-FS-001-CURRENT** — `90d60942d787ef8e3ef717942acb6d30795e66bc16adf91e02a8b92fc58e2552`
+2. **MC-FS-001-M1** — `1fc115335e23737839e04f32673bd10bd9a7006e9a74aea9c4d08b55d0b9f523`
+3. **MC-FS-001-M2** — `87506a21a4f7b5f3f9d4303ff3b668ef9cab8c488b088b0c2f79763daa135d15`
+4. **MC-FS-002-CURRENT** — `08c1675795c33f091397040a15bf44c22a60101a5a612f326fea5d3c3ce8c0b7`
+5. **MC-FS-002-M1** — `3cc7aa5a49126532e9fddf9f2b9d25bebb7df35b989f6d2845bceb92b5af4dbb`
+6. **MC-FS-002-M2** — `04ef62b8663d59cc42267e4c0c4f63697b5f8089961ed3afc36e9d3b9600e3c7`
+7. **MC-FS-003-CURRENT** — `727f291b45d97a2cdd2542b08d4db6d7feadd37aabfb98fa146e7d748c8305ee`
+8. **MC-FS-003-M1** — `49531d2ae134443adbe1e1d80410e75c962f689fbee292615cf5981863ac8005`
+9. **MC-FS-003-M2** — `13f5534f8f3c09c0e021a17750e376be89d86796c6e1bb56f312b3df099ccf2e`
